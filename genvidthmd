@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#shellcheck disable=SC1091
+source ./vidmd.sh
+usage() {
+  echo "$0 vid vidurl caption doy"
+  echo "vid - video id"
+  echo "vidurl - video url"
+  echo "caption - video title"
+  echo "doy - day of year"
+  exit 1
+}
+
+require() {
+  hash "$@" || exit
+}
+require curl
+if test $# -lt 3; then
+  usage
+fi
+vid="$1"
+vidurl="$2"
+caption="$3"
+doy="$4"
+if md="$(vidmdloc "$vid" "$vidurl" "$caption" "$doy")"; then
+  printf "%s\n" "$md"
+fi

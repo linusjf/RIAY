@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+require() {
+  hash "$@" || exit
+}
+require curl realpath mkdir
+usage() {
+  echo "$0 vid doy"
+  echo "vid - video id"
+  echo "doy - day of year (numeric)"
+  exit 1
+}
+if test $# -ne 2; then
+  usage
+fi
+#shellcheck disable=SC1091
+source ./vidmd.sh
+if ! isnumeric "$2"; then
+  usage
+fi
+if imgurl="$(thumbnailurl "$1")"; then
+  month="$(mfromdoy "$2")"
+  doy="$(printf "%03d" "${2#0}")"
+  dir="${month}/jpgs"
+  mkdir -p "$dir"
+  relfile="${dir}/Day${doy}.jpg"
+  relfile="$(realpath "$relfile")"
+  curl --silent "$imgurl" --output "$relfile" --
+  ./overlayicon "$relfile"
+else
+  exit 1
+fi

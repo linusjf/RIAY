@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+require() {
+  hash "$@" || exit
+}
+usage() {
+  echo "$0 [doy ... doy]"
+  echo "doy - day of year"
+  echo "doy must be integer"
+  exit 1
+}
+require date markdown-toc
+#shellcheck disable=SC1091
+source ./vidmd.sh
+if test $# -eq 0; then
+  usage
+fi
+for doy in "$@"; do
+  if ! isnumeric "$doy"; then
+    usage
+  fi
+done
+
+oldmonth="$(mfromdoy "$1")"
+month=""
+root="$(getroot)"
+for doy in "$@"; do
+  month="$(mfromdoy "$doy")"
+  mdfile="${month}/Day$(printf "%03d" "${doy#0}").md"
+  fname="${month}/jpgs/Day$(printf "%d" "$doy")Snippet*.jpg"
+  regexjpg='^\./[A-Za-z]+/jpgs/Day[0-9]+Snippet([0-9]?)\.jpg$'
+  shopt -s nullglob
+  for file in ./$fname; do
+    if [[ $file =~ $regexjpg ]]; then
+      snippet="${BASH_REMATCH[1]}"
+      url="https://raw.githubusercontent.com/linusjf/${root}/main/${month}/jpgs/Day$(printf "%d" "${doy#0}")Snippet${snippet}.jpg"
+      caption="Day $(printf "%d" "${doy#0}") Snippet ${snippet}"
+      md="![${caption}](${url})"
+      echo "$md" >> "$mdfile"
+    fi
+  done
+  shopt -u nullglob
+  if [[ "$oldmonth" != "$month" ]]; then
+    ./compact "$oldmonth" >| "${oldmonth}2023.md" \
+      && markdown-toc -i "${oldmonth}2023.md"
+    oldmonth="$month"
+  fi
+done
+./compact "$month" >| "${month}2023.md" \
+  && markdown-toc -i "${month}2023.md"

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+usage() {
+  echo "$0" vid output
+  echo "vid - video id"
+  echo "output - path to output jpeg file"
+  exit 1
+}
+#shellcheck disable=SC1091
+source ./vidmd.sh
+if test $# -ne 2; then
+  usage
+fi
+if test -d "${2}"; then
+  usage
+fi
+if ! test -d "$(dirname "${2}")"; then
+  usage
+fi
+path="$2"
+ext="${path##*.}"
+if [ "$ext" != "jpg" ] && [ "$ext" != "jpeg" ]; then
+  usage
+fi
+if downloadthumbnail "$1" "$2"; then
+  ./overlayicon "$2"
+else
+  exit 1
+fi

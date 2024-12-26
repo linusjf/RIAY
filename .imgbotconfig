@@ -1,0 +1,9 @@
+{
+    "schedule": "daily", 
+    "ignoredFiles": [],
+    "aggressiveCompression": "false", 
+    "compressWiki": "true", 
+    "minKBReduced": 10, 
+    "prTitle" : "[ImgBot] Optimize images",
+    "prBody" : "Beep boop. Your images are optimized! Your image size is reduced by {optimization_ratio}. The details are as follows:  {optimization_details}",
+}

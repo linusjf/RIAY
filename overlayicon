@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+require() {
+  hash "$@" || exit
+}
+require gm mv file grep mktemp
+
+usage() {
+  echo "$0 file"
+  echo "file - jpeg image file path"
+  exit 1
+}
+
+isjpegfile() {
+  file "$1" | grep 'JPEG' &> /dev/null
+}
+
+if test $# -ne 1; then
+  usage
+fi
+if ! test -f "$1"; then
+  usage
+fi
+if ! isjpegfile "$1"; then
+  usage
+fi
+
+icon="play-button.png"
+tmp=$(mktemp)
+if gm composite -gravity center -geometry 256x256+32+0 \
+  "$icon" "$1" "$tmp"; then
+  mv "$tmp" "$1"
+  exit "$?"
+else
+  exit 1
+fi

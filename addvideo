@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+require() {
+  hash "$@" || exit
+}
+usage() {
+  echo "$0 vid doy caption"
+  echo "vid - video id"
+  echo "caption - video title"
+  exit 1
+}
+set -e
+require sed basename date markdown-toc
+if test $# -ne 2; then
+  usage
+fi
+
+#shellcheck disable=SC1091
+source ./internet.sh
+checkinternet || exit
+
+#shellcheck disable=SC1091
+source ./vidmd.sh
+vid="$1"
+doy=$(("$(wc -l < videos.txt)" + 1))
+videourl="https://youtu.be/${vid}"
+caption="$2"
+year="2025"
+if ./genoverlay "$vid" "$doy"; then
+  md="$(./genvidthmd "$vid" "$videourl" "$caption" "$doy")"
+  month="$(mfromdoy "$doy")"
+  fname="${month}/Day$(printf "%03d" "${doy#0}").md"
+  formatdt="$(datefromdoy "$doy")"
+  if test -f "$fname"; then
+    mv "$fname" "${fname}.bak"
+    if test $? -eq 0; then
+      echo "File ${fname} exists. Moved to ${fname}.bak"
+    else
+      echo "Back up of ${fname} unsuccessful. It will be overwritten."
+    fi
+  fi
+  echo "## $formatdt ##" >| "$fname"
+  {
+    echo
+    echo "### $caption ###"
+    echo
+    echo "$md"
+  } >> "$fname"
+
+  basename -- "$fname" >> "${month}/compact.txt"
+  monthmd="${month}${year}.md"
+  ./compact "$month" >| "$monthmd" \
+    && markdown-toc -i "$monthmd"
+  sed -i '/\S/,$!d' "$monthmd"
+  echo "$vid" >> videos.txt
+  echo "$fname generated for $vid."
+else
+  echo "Unable to find or generate video thumbnail. Video may not exist."
+fi

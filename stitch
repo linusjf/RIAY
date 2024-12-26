@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+require() {
+  hash "$@" || exit
+}
+require stitchmd
+stitchmd -o README.md -- stitch.md

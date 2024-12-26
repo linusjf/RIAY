@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+usage() {
+  echo "$0 vid caption pathtoimg"
+  echo "vid - video id"
+  echo "caption - video title"
+  echo "pathtoimg - relative path to jpeg image file to be generated"
+  exit 1
+}
+if test $# -lt 3; then
+  usage
+fi
+
+#shellcheck disable=SC1091
+source ./internet.sh
+checkinternet || exit
+
+#shellcheck disable=SC1091
+source ./vidmd.sh
+if ./overlayimg "${1}" "${3}"; then
+  vidurl="https://youtu.be/${1}"
+  caption="${2}"
+  root="$(getroot)"
+  if test -e "${3}" && test -f "${3}"; then
+    imgurl="https://raw.githubusercontent.com/linusjf/${root}/main/${3}"
+    printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
+  else
+    usage
+  fi
+fi

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+declare -r fname="videos.txt"
+declare -i count=0
+while IFS= read -r vid; do
+  ((count = count + 1))
+  if ! ./genoverlay "$vid" "$count"; then
+    exit 1
+  fi
+done <<< "$(< "$fname")"
+exit 0

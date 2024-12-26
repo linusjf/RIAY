@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+usage() {
+  echo "$0 dir"
+  echo "dir - directory to process"
+  exit 1
+}
+#shellcheck disable=SC1091
+source ./vidmd.sh
+require() {
+  hash "$@" || exit 127
+}
+isvalid() {
+  test -d "$1"
+}
+if test $# -eq 0; then
+  usage
+fi
+require mv mktemp curl
+
+dir="$1"
+
+regex='^\[\!\[([A-Za-z0-9\? -]+)\]'
+regex+='\((https\://.+)\)\]\('
+regex+='(https\://youtu\.be/|'
+regex+='https\://www\.youtube\.com/watch\?v=)([A-Za-z0-9_\-]+)'
+regex+=' +'
+regex+='"(.+)"'
+regex+=' *\)$'
+
+regexdoy='^\./Day([0-9]+)\.md$'
+if isvalid "$dir"; then
+  (
+    cd "$dir" || exit
+    shopt -s nullglob
+    for fname in ./Day*.md; do
+      echo "Processing ${fname} ..."
+      if [[ $fname =~ $regexdoy ]]; then
+        doy="${BASH_REMATCH[1]}"
+      fi
+      tmp="$(mktemp)"
+      declare -i count=0
+      _matched=true
+      while IFS= read -r line; do
+        if [[ $line =~ $regex ]]; then
+          caption="${BASH_REMATCH[1]}"
+          vid="${BASH_REMATCH[4]}"
+          vidurl="${BASH_REMATCH[3]}${vid}"
+          if test "$caption" != "${BASH_REMATCH[5]}"; then
+            echo "Mismatch in captions in file ${fname}"
+            _matched=false
+          fi
+          ((count = count + 1))
+          if md="$(vidmdloc "$vid" "$vidurl" "$caption" "$doy")"; then
+            echo "$md" >> "$tmp"
+          else
+            echo "$line" >> "$tmp"
+          fi
+        else
+          echo "$line" >> "$tmp"
+        fi
+      done <<< "$(< "$fname")"
+      if "$_matched"; then
+        mv "$tmp" "$fname"
+      fi
+      if test "$count" -eq 0; then
+        echo "${fname} does not have video markup"
+      fi
+    done
+    shopt -u nullglob
+  )
+fi
