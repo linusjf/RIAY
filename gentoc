@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+usage() {
+  echo "$0 markdownfile"
+  echo "markdownfile - the markdown file for which table of contents is to be generated"
+  exit 1
+}
+if test $# -ne 1; then
+  usage
+fi
+if test -d "$1"; then
+  usage
+fi
+
+markdown-toc -i "$1"
+exit "$?"
