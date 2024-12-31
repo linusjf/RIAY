@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+require() {
+  hash "$@" || exit
+}
+require gen-toc
 usage() {
   echo "$0 markdownfile"
   echo "markdownfile - the markdown file for which table of contents is to be generated"
@@ -11,5 +15,5 @@ if test -d "$1"; then
   usage
 fi
 
-markdown-toc -i "$1"
+gen-toc --write "$1"
 exit "$?"

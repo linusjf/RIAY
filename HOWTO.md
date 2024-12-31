@@ -1,14 +1,13 @@
 # HOWTO
 
-<!-- vim-markdown-toc GFM -->
+<!-- Table of Contents -->
 
-* [Prerequisites](#prerequisites)
-* [Add the daily Youtube video](#add-the-daily-youtube-video)
-* [Add today's sharing](#add-todays-sharing)
-* [Generate markdown for Youtube video](#generate-markdown-for-youtube-video)
-* [Merge monthly markdown files into one large README](#merge-monthly-markdown-files-into-one-large-readme)
-
-<!-- vim-markdown-toc -->
+- [Prerequisites](#Prerequisites)
+- [Add the daily Youtube video](<#Add the daily Youtube video>)
+- [Add today's sharing](<#Add today's sharing>)
+- [Generate markdown for Youtube video](<#Generate markdown for Youtube video>)
+- [Merge monthly markdown files into one large README](<#Merge monthly markdown files into one large README>)
+- [Generate table of contents for markdown file(s).](<#Generate table of contents for markdown file(s).>)
 
 ## Prerequisites
 
@@ -17,15 +16,17 @@
 - [m4](https://www.gnu.org/software/m4/)
 - [markdown-toc](https://github.com/jonschlinkert/markdown-toc)
 - [stitchmd](https://github.com/abhinav/stitchmd)
+- [gen-toc](https://github.com/sosukesuzuki/gen-toc)
 
 Create a directory for each month of the year under the root directory.
 Add a `header.md` file under each monthly directory with the following content.
 
 Example for January:
 
-```text
+```markdown
 <!-- toc -->
-# January 2025 #
+
+# January 2025
 
 RIAY January 2025
 ```
@@ -61,21 +62,21 @@ Example:
 
 Results:
 
-1. The day is generated from the length of the videos.txt file. The day is the number of lines in the file + 1.
-   In this case, 10.
-2. Video id is appended to the `videos.txt` file in the root directory.
-3. `Day010.md` is generated in the January subdirectory.
-4. `Day010.jpg` image is generated in the `January/jpgs` directory.
-5. `Day010.md` file name is appended to the `January/compact.txt` file.
-6. `January20XX.md` file is updated (in the root directory) with the `Day010.md` contents.
+1.  The day is generated from the length of the videos.txt file. The day is the number of lines in the file + 1.
+    In this case, 10.
+2.  Video id is appended to the `videos.txt` file in the root directory.
+3.  `Day010.md` is generated in the January subdirectory.
+4.  `Day010.jpg` image is generated in the `January/jpgs` directory.
+5.  `Day010.md` file name is appended to the `January/compact.txt` file.
+6.  `January20XX.md` file is updated (in the root directory) with the `Day010.md` contents.
 
 ## Add today's sharing
 
-1. First, add today's video.
-2. Edit the generated `Dayxxx.md` file for today.
-3. Paste the sharing text into the file adding appropriate markdown headers as needed.
-4. Save the file.
-5. Execute script `genmonth` with the following parameters:
+1.  First, add today's video.
+2.  Edit the generated `Dayxxx.md` file for today.
+3.  Paste the sharing text into the file adding appropriate markdown headers as needed.
+4.  Save the file.
+5.  Execute script `genmonth` with the following parameters:
 
 - month index - 1 - 12
 
@@ -119,36 +120,36 @@ Example:
 
 Results:
 
-1. The markdown is generated on the command line. This can be used to insert video markdown in your markdown files.
-2. The overlaid image file for the video is generated as `January/jpgs/bringingback.jpg`.
+1.  The markdown is generated on the command line. This can be used to insert video markdown in your markdown files.
+2.  The overlaid image file for the video is generated as `January/jpgs/bringingback.jpg`.
 
 ## Merge monthly markdown files into one large README
 
-1. Edit the `stitch.md` file provided to include the markdown files you wish to merge.
+1.  Edit the `stitch.md` file provided to include the markdown files you wish to merge.
 
-2. The file format is as follows:
+2.  The file format is as follows:
 
-   ```markdown
-   # README
+    ```markdown
+    # README
 
-   - [BIAY](redme.md)
-   - [January 2025](January2025.md)
-   - [February 2025](February2025.md)
-   - [March 2025](March2025.md)
-   - [April 2025](April2025.md)
-   - [May 2025](May2025.md)
-   - [June 2025](June2025.md)
-   - [July 2025](July2025.md)
-   - [August 2025](August2025.md)
-   - [September 2025](September2025.md)
-   - [October 2025](October2025.md)
-   - [November 2025](November2025.md)
-   - [December 2025](December2025.md)
-   ```
+    - [BIAY](redme.md)
+    - [January 2025](January2025.md)
+    - [February 2025](February2025.md)
+    - [March 2025](March2025.md)
+    - [April 2025](April2025.md)
+    - [May 2025](May2025.md)
+    - [June 2025](June2025.md)
+    - [July 2025](July2025.md)
+    - [August 2025](August2025.md)
+    - [September 2025](September2025.md)
+    - [October 2025](October2025.md)
+    - [November 2025](November2025.md)
+    - [December 2025](December2025.md)
+    ```
 
-   Include or exclude any files you need or don't need.
+    Include or exclude any files you need or don't need.
 
-3. Execute the `stitch` script.
+3.  Execute the `stitch` script.
 
 ```bash
 ./stitch
@@ -157,3 +158,17 @@ Results:
 Results:
 
 A huge README is generated with all the contents of the listed markdown files in `stitch.md`.
+
+## Generate table of contents for markdown file(s)
+
+Execute the `gentoc` script as follows:
+
+```bash
+./gentoc <path to markdown file>
+```
+
+Before executing the script, update the file and place the comment `<-- Table of Contents -->` where you want the table of contents to be generated.
+
+Results:
+
+The table of contents will be generated as per the existing headings in the markdown file.
