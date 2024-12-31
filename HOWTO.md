@@ -39,7 +39,7 @@ You can replace the top-level markdown header
 ```markdown
 # January 2025
 
-BIAY January 2025
+RIAY January 2025
 ```
 
 with your own if you wish.
@@ -132,7 +132,7 @@ Results:
     ```markdown
     # README
 
-    - [BIAY](redme.md)
+    - [RIAY](redme.md)
     - [January 2025](January2025.md)
     - [February 2025](February2025.md)
     - [March 2025](March2025.md)
