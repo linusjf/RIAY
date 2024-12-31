@@ -5,7 +5,8 @@
 <!-- vim-markdown-toc GFM -->
 
 * [Rosary In A Year](#rosary-in-a-year)
-
+  - [Rosary In a Year Prayer Plan](#rosary-in-a-year-prayer-plan)
+  - [Preparing for Rosary in a Year Podcast](#preparing-for-rosary-in-a-year-podcast)
 <!-- vim-markdown-toc -->
 
 ## Rosary In A Year
