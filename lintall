@@ -3,6 +3,9 @@ require() {
   hash "$@" || exit
 }
 require mdl mdformat
+declare -i exitcode=0
 mdformat -- **/*.md
+exitcode=$((exitcode + $?))
 mdl -- **/*.md
-exit $?
+exitcode=$((exitcode + $?))
+exit "$exitcode"
