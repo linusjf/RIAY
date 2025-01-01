@@ -43,7 +43,11 @@ Would like to encourage the participants to share their thoughts, it can be one 
 Please use the below format:
 
 —————————
+
 BIAY/CIAY/RIAY
-DayXX - Your Name 
+
+DayXX - Your Name
+
 Your sharing……
+
 —————————
