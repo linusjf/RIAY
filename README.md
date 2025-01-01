@@ -10,6 +10,7 @@
   - [Preparing for Rosary In a Year Podcast](<#Preparing for Rosary In a Year Podcast>)
   - [The Rosary Has Changed History — And It Will Again](<#The Rosary Has Changed History — And It Will Again>)
   - [How to Pray the Rosary Like Never Before](<#How to Pray the Rosary Like Never Before>)
+  - [Forming the Relationship](<#Forming the Relationship>)
 
 <!-- tocstop -->
 
@@ -30,3 +31,7 @@
 ### How to Pray the Rosary Like Never Before
 
 [![How to Pray the Rosary Like Never Before (+ NEW Podcast)](https://raw.githubusercontent.com/linusjf/RIAY/main/HowToPray.jpg)](https://youtu.be/JjWRqYt1ljQ "How to Pray the Rosary Like Never Before (+ NEW Podcast)")
+
+### Forming the Relationship
+
+[![Forming The Relationship - Intro to Phase 1 of the Rosary in a Year Podcast](https://raw.githubusercontent.com/linusjf/RIAY/main/forming.jpg)](https://youtu.be/785cmjJBqvI "Forming The Relationship - Intro to Phase 1 of the Rosary in a Year Podcast")
