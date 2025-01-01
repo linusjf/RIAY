@@ -10,8 +10,8 @@
 
 RIAY January 2025
 
-## January 01,2025 ##
+## January 01,2025
 
-### Responding to God ###
+### Responding to God
 
 [![Responding to God](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day001.jpg)](https://youtu.be/PesisPSBosg "Responding to God")
