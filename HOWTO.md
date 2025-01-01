@@ -169,7 +169,7 @@ Execute the `gentoc` script as follows:
 ./gentoc <path to markdown file>
 ```
 
-Before executing the script, update the file and place the comment `<!-- toc -->` and `<!-- tocstop --> where you want the table of contents to be generated.
+Before executing the script, update the file and place the comment `<!-- toc -->` and `<!-- tocstop -->` where you want the table of contents to be generated.
 
 Results:
 
