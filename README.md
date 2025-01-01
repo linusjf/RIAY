@@ -36,7 +36,7 @@
 
 [![Forming The Relationship - Intro to Phase 1 of the Rosary in a Year Podcast](https://raw.githubusercontent.com/linusjf/RIAY/main/forming.jpg)](https://youtu.be/785cmjJBqvI "Forming The Relationship - Intro to Phase 1 of the Rosary in a Year Podcast")
 
-### Format for sharing on the WhatsApp group
+### Format for sharing on [the WhatsApp group](https://chat.whatsapp.com/EPXBhsE4GzJ0j8YXt98YT1)
 
 Would like to encourage the participants to share their thoughts, it can be one word, one line or a reflection, it does not have to be perfect. We the admins will review it before posting so feel free to drop us a note. Let us know how the days readings inspired you. 
 
