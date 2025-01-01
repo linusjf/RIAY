@@ -4,13 +4,12 @@
 
 <!-- toc -->
 
-- [Rosary In A Year](<#Rosary In A Year>)
-
-  - [Rosary In a Year Prayer Plan](<#Rosary In a Year Prayer Plan>)
-  - [Preparing for Rosary In a Year Podcast](<#Preparing for Rosary In a Year Podcast>)
-  - [The Rosary Has Changed History — And It Will Again](<#The Rosary Has Changed History — And It Will Again>)
-  - [How to Pray the Rosary Like Never Before](<#How to Pray the Rosary Like Never Before>)
-  - [Forming the Relationship](<#Forming the Relationship>)
+- [Rosary In A Year](#rosary-in-a-year)
+  - [Rosary In a Year Prayer Plan](#rosary-in-a-year-prayer-plan)
+  - [Preparing for Rosary In a Year Podcast](#preparing-for-rosary-in-a-year-podcast)
+  - [The Rosary Has Changed History — And It Will Again](#the-rosary-has-changed-history--and-it-will-again)
+  - [How to Pray the Rosary Like Never Before](#how-to-pray-the-rosary-like-never-before)
+  - [Forming the Relationship](#forming-the-relationship)
 
 <!-- tocstop -->
 

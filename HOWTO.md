@@ -1,13 +1,15 @@
 # HOWTO
 
-<!-- Table of Contents -->
+<!-- toc -->
 
-- [Prerequisites](#Prerequisites)
-- [Add the daily Youtube video](<#Add the daily Youtube video>)
-- [Add today's sharing](<#Add today's sharing>)
-- [Generate markdown for Youtube video](<#Generate markdown for Youtube video>)
-- [Merge monthly markdown files into one large README](<#Merge monthly markdown files into one large README>)
-- [Generate table of contents for markdown file(s).](<#Generate table of contents for markdown file(s).>)
+- [Prerequisites](#prerequisites)
+- [Add the daily Youtube video](#add-the-daily-youtube-video)
+- [Add today's sharing](#add-todays-sharing)
+- [Generate markdown for Youtube video](#generate-markdown-for-youtube-video)
+- [Merge monthly markdown files into one large README](#merge-monthly-markdown-files-into-one-large-readme)
+- [Generate table of contents for markdown file(s)](#generate-table-of-contents-for-markdown-files)
+
+<!-- tocstop -->
 
 ## Prerequisites
 
@@ -16,7 +18,7 @@
 - [m4](https://www.gnu.org/software/m4/)
 - [markdown-toc](https://github.com/jonschlinkert/markdown-toc)
 - [stitchmd](https://github.com/abhinav/stitchmd)
-- [gen-toc](https://github.com/sosukesuzuki/gen-toc)
+- [markdown-toc-gen](https://github.com/thesilk-tux/markdown-toc-gen)
 
 Create a directory for each month of the year under the root directory.
 Add a `header.md` file under each monthly directory with the following content.
@@ -167,7 +169,7 @@ Execute the `gentoc` script as follows:
 ./gentoc <path to markdown file>
 ```
 
-Before executing the script, update the file and place the comment `<-- Table of Contents -->` where you want the table of contents to be generated.
+Before executing the script, update the file and place the comment `<!-- toc -->` and `<!-- tocstop --> where you want the table of contents to be generated.
 
 Results:
 

@@ -2,7 +2,7 @@
 require() {
   hash "$@" || exit
 }
-require gen-toc
+require markdown-toc-gen
 usage() {
   echo "$0 markdownfile"
   echo "markdownfile - the markdown file for which table of contents is to be generated"
@@ -15,5 +15,5 @@ if test -d "$1"; then
   usage
 fi
 
-gen-toc --write "$1"
+markdown-toc-gen insert "$1"
 exit "$?"
