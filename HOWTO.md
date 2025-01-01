@@ -20,8 +20,9 @@
 - [stitchmd](https://github.com/abhinav/stitchmd)
 - [markdown-toc-gen](https://github.com/thesilk-tux/markdown-toc-gen)
 
-Create a directory for each month of the year under the root directory.
-Add a `header.md` file under each monthly directory with the following content.
+1. Create an empty `videos.txt` file under the root directory.
+2. Create a directory for each month of the year under the root directory.
+3. Add a `header.md` file under each monthly directory with the following content.
 
 Example for January:
 
