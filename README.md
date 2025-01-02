@@ -51,3 +51,5 @@ DayXX - Your Name
 Your sharing……
 
 —————————
+
+All the WhatsApp groups are closed for 2025, if anyone wants to follow the programs they can subscribe to Ascension Press Podcast, Facebook groups, YouTube channel or on the Ascension Press app.
