@@ -8,6 +8,8 @@
     + [The King Knows You](#the-king-knows-you)
     + [ROSARY IN A YEAR DAY 02 Michelle Jackson](#rosary-in-a-year-day-02-michelle-jackson)
     + [Day 2 - Michael Eltham](#day-2---michael-eltham)
+  * [January 03,2025](#january-032025)
+    + [Heart of Jesus](#heart-of-jesus)
 
 <!-- tocstop -->
 
@@ -100,3 +102,9 @@ my days were shaped, before one came to be.
 It is good to simply be held by our Father, to rest in His bosom. Knowing that He is always watching over us and we are precious to Him.
 
 May the Holy Spirit lead us.
+
+## January 03,2025
+
+### Heart of Jesus
+
+[![Heart of Jesus](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day003.jpg)](https://youtu.be/KiLJc32YPKg "Heart of Jesus")
