@@ -13,8 +13,10 @@
     + [RIAY Day 3 Heart of Jesus Michael Eltham](#riay-day-3-heart-of-jesus-michael-eltham)
     + [RIAY Day 3 - Marcy](#riay-day-3---marcy)
     + [Rosary IN A YEAR DAY 03- Heart of Jesus Michelle Jackson](#rosary-in-a-year-day-03--heart-of-jesus-michelle-jackson)
+    + [RIAY Day 3 - Gavril](#riay-day-3---gavril)
   * [January 04,2025](#january-042025)
     + [Prayer With Mercy](#prayer-with-mercy)
+    + [RIAY Day 4/ 04- 01- 2025](#riay-day-4-04--01--2025)
 
 <!-- tocstop -->
 
@@ -140,8 +142,23 @@ I see myself like a child in His workshop and inspite of Him giving me instructi
 This picture within is so real the truth to it all - Jesus and i in His workshop,was not for what i came for but that i came to be with Him and He values that so much.
 Jesus values the time we give to Him even though we may not know now or feel it strongly, but we will know it once we enter into that personal relationship with Him ,which He waits for eagerly. Shalom.🙏🏽🏼
 
+### RIAY Day 3 - Gavril
+
+"Mom wants us to spend time together more than she wants these new candlesticks. In fact, just us spending time together is the greatest gift we can give to her"
+This was the most beautiful line in the meditation🥹
+
 ## January 04,2025
 
 ### Prayer With Mercy
 
 [![Prayer With Mercy](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day004.jpg)](https://youtu.be/ZeY21DCQZzI "Prayer With Mercy")
+
+### RIAY Day 4/ 04- 01- 2025
+
+*Praying with Mary*
+Immaculate Heart of Mary beside the Sacred Heart of Jesus is a picture frame has been in my heart and home for like forever. Yet it took me a minute to focus on a picture of Mother Mary to pray.
+Very beautifully reflected upon by Fr... Mary was actively involved in the growth of her Son Jesus in every aspect Mind Body and Spirit, her own beloved Son..and then John her second beloved son...then San Juan " Am I not your mother?" And the list can go on...
+
+God our loving Father I pray today for myself and all Catholics who have taken Our Blessed Mother Mary for granted and for all who have turned their back on her. *may we understand that we cannot and never will be able to love her more than Jesus did*
+May we receive grace everyday through her maternal intercession. Amen.
+Poco poco Fr Mark. God bless you too. Thankyou. 🙏🏻
