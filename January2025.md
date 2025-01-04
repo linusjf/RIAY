@@ -12,6 +12,7 @@
     + [Heart of Jesus](#heart-of-jesus)
     + [RIAY Day 3 Heart of Jesus Michael Eltham](#riay-day-3-heart-of-jesus-michael-eltham)
     + [RIAY Day 3 - Marcy](#riay-day-3---marcy)
+    + [Rosary IN A YEAR DAY 03- Heart of Jesus Michelle Jackson](#rosary-in-a-year-day-03--heart-of-jesus-michelle-jackson)
   * [January 04,2025](#january-042025)
     + [Prayer With Mercy](#prayer-with-mercy)
 
@@ -126,7 +127,18 @@ May the Holy Spirit lead us.
 ### RIAY Day 3 - Marcy
 
 So grateful for the RIAY.
-Being in the workshop with Jesus as my teacher today was just awesome 👌.  I was not anxious,  nervous or afraid but was excited that now I am really going to get it right. I am not in a hurry, I will be patient, I will do my best to listen and follow the instructions, even when a heavy tool falls on my toe or if I miss the target and bash my fingers 😉,  I will dance to the pain till it cools off and will continue trying till I get it right. 🙏🏼
+Being in the workshop with Jesus as my teacher today was just awesome 👌.  I was not anxious,  nervous or afraid but was excited that now I am really going to get it right. I am not in a hurry, I will be patient, I will do my best to listen and follow the instructions, even when a heavy tool falls on my toe or if I miss the target and bash my fingers 😉,  I will dance to the pain till it cools off and will continue trying till I get it right. 🙏
+
+### Rosary IN A YEAR DAY 03- Heart of Jesus Michelle Jackson
+
+*Jesus who are You?*
+*Jesus, What is Your heart like?*
+*Jesus, what is Your heart like to me?*
+*Jesus is my safe space, my home, my heaven, my best friend, my hope, my life, my saviour, my EVERYTHING. The very meaning of my life*❤‍🔥
+Yes Jesus' heart is full of Patience and Mercy
+I see myself like a child in His workshop and inspite of Him giving me instructions i keep interrupting Him and asking if i'm doing well and all i see is He smiles back at me , im in a hurry but He is not, He's full of Love and I feel so safe and free to be myself that even though i'm messing up He's not angry or upset. Im trying to keep up, looking at what He's doing but i don't seem to match n i cry , and just then He tells me His secret, that He loves spending time with me and loves it that i'm spending time with Him.  And that's what Mamma told Him, that we need to spend time together.😭❤‍🔥🥹 It melts my heart hearing that, i drop the tools and jump onto Him and He embraces me.
+This picture within is so real the truth to it all - Jesus and i in His workshop,was not for what i came for but that i came to be with Him and He values that so much.
+Jesus values the time we give to Him even though we may not know now or feel it strongly, but we will know it once we enter into that personal relationship with Him ,which He waits for eagerly. Shalom.🙏🏽🏼
 
 ## January 04,2025
 
