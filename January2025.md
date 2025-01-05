@@ -17,6 +17,9 @@
   * [January 04,2025](#january-042025)
     + [Prayer With Mercy](#prayer-with-mercy)
     + [RIAY Day 4/ 04- 01- 2025](#riay-day-4-04--01--2025)
+    + [ROSARY IN A YEAR DAY 04 - PRAYER WITH MARY - Michelle Jackson](#rosary-in-a-year-day-04---prayer-with-mary---michelle-jackson)
+  * [January 05,2025](#january-052025)
+    + [A Garden of Rest](#a-garden-of-rest)
 
 <!-- tocstop -->
 
@@ -162,3 +165,13 @@ Very beautifully reflected upon by Fr... Mary was actively involved in the growt
 God our loving Father I pray today for myself and all Catholics who have taken Our Blessed Mother Mary for granted and for all who have turned their back on her. *may we understand that we cannot and never will be able to love her more than Jesus did*
 May we receive grace everyday through her maternal intercession. Amen.
 Poco poco Fr Mark. God bless you too. Thankyou. 🙏🏻
+
+### ROSARY IN A YEAR DAY 04 - PRAYER WITH MARY - Michelle Jackson
+
+The depth of Mamma Mary mirroring the Light of Christ, and the reflection of our God in her, the way Father Mark put that sounded simple but was deep, it calls us to understand that slowly by slowly layer by layer, she mothered what was asked of her she took it all in and did what was asked of her she even went beyond when she took st John to be her son now, what a responsible son Jesus is handing over His beloved Mother to His disciple not wanting her to be alone, and he becomes her son and She his Mother. i believe that they are here with me at home. Greeting Mamma and Jesus when we leave home and return feels like we're never alone. It's a deep relationship, with  our Mother who never leaves our side. In the words of Mother Teresa, she asks when we feel low or lonely ask Mamma to be a Mother to me now and knowing she always has and will be, is such a gift from God our Father and Jesus and the Holy Spirit. 🙏🏽Mamma Mary bring all the lost to Jesus.  Let those who have never experienced a mother's love feel yours strongly. Amen Shalom
+
+## January 05,2025
+
+### A Garden of Rest
+
+[![A Garden of Rest](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day005.jpg)](https://youtu.be/IhrhpVelcbc "A Garden of Rest")
