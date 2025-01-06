@@ -4,3 +4,4 @@ Day002.md
 Day003.md
 Day004.md
 Day005.md
+Day006.md

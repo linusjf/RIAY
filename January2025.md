@@ -20,6 +20,8 @@
     + [ROSARY IN A YEAR DAY 04 - PRAYER WITH MARY - Michelle Jackson](#rosary-in-a-year-day-04---prayer-with-mary---michelle-jackson)
   * [January 05,2025](#january-052025)
     + [A Garden of Rest](#a-garden-of-rest)
+  * [January 06,2025](#january-062025)
+    + [Prayer is a Battle](#prayer-is-a-battle)
 
 <!-- tocstop -->
 
@@ -175,3 +177,9 @@ The depth of Mamma Mary mirroring the Light of Christ, and the reflection of our
 ### A Garden of Rest
 
 [![A Garden of Rest](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day005.jpg)](https://youtu.be/IhrhpVelcbc "A Garden of Rest")
+
+## January 06,2025
+
+### Prayer is a Battle
+
+[![Prayer is a Battle](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day006.jpg)](https://youtu.be/UTyod-E1AHA "Prayer is a Battle")
