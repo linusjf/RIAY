@@ -20,6 +20,7 @@
     + [ROSARY IN A YEAR DAY 04 - PRAYER WITH MARY - Michelle Jackson](#rosary-in-a-year-day-04---prayer-with-mary---michelle-jackson)
   * [January 05,2025](#january-052025)
     + [A Garden of Rest](#a-garden-of-rest)
+    + [ROSARY IN A YEAR DAY 5- A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson](#rosary-in-a-year-day-5--a-garden-of-rest--mary-mother-inviolate-michelle-jackson)
   * [January 06,2025](#january-062025)
     + [Prayer is a Battle](#prayer-is-a-battle)
 
@@ -177,6 +178,10 @@ The depth of Mamma Mary mirroring the Light of Christ, and the reflection of our
 ### A Garden of Rest
 
 [![A Garden of Rest](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day005.jpg)](https://youtu.be/IhrhpVelcbc "A Garden of Rest")
+
+### ROSARY IN A YEAR DAY 5- A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson
+
+*Woaw that was a beautiful Walk, a safe place,  a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 🥹 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria*🌹
 
 ## January 06,2025
 
