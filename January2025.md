@@ -23,6 +23,8 @@
     + [ROSARY IN A YEAR DAY 5 - A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson](#rosary-in-a-year-day-5---a-garden-of-rest--mary-mother-inviolate-michelle-jackson)
   * [January 06,2025](#january-062025)
     + [Prayer is a Battle](#prayer-is-a-battle)
+  * [January 07,2025](#january-072025)
+    + [Grace Will Overflow](#grace-will-overflow)
 
 <!-- tocstop -->
 
@@ -188,3 +190,9 @@ The depth of Mamma Mary mirroring the Light of Christ, and the reflection of our
 ### Prayer is a Battle
 
 [![Prayer is a Battle](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day006.jpg)](https://youtu.be/UTyod-E1AHA "Prayer is a Battle")
+
+## January 07,2025
+
+### Grace Will Overflow
+
+[![Grace Will Overflow](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day007.jpg)](https://youtu.be/Yz2_NEmpF-c "Grace Will Overflow")
