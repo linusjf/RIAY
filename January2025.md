@@ -23,8 +23,10 @@
     + [ROSARY IN A YEAR DAY 5 - A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson](#rosary-in-a-year-day-5---a-garden-of-rest--mary-mother-inviolate-michelle-jackson)
   * [January 06,2025](#january-062025)
     + [Prayer is a Battle](#prayer-is-a-battle)
+    + [ROSARY IN A YEAR DAY 6 - PRAYER IS A BATTLE - Michelle Jackson](#rosary-in-a-year-day-6---prayer-is-a-battle---michelle-jackson)
   * [January 07,2025](#january-072025)
     + [Grace Will Overflow](#grace-will-overflow)
+    + [ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson](#rosary-in-a-year-day-07---grace-will-overflow---michelle-jackson)
 
 <!-- tocstop -->
 
@@ -191,8 +193,16 @@ The depth of Mamma Mary mirroring the Light of Christ, and the reflection of our
 
 [![Prayer is a Battle](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day006.jpg)](https://youtu.be/UTyod-E1AHA "Prayer is a Battle")
 
+### ROSARY IN A YEAR DAY 6 - PRAYER IS A BATTLE - Michelle Jackson
+
+Prayer is a weapon to disarm the evil one, the very thoughts he tempts us with especially when we begin to pray shows clear signs he's always around. As 1 Peter 5:8 says -Like a roaring lion your adversary the devil prowls around, looking for someone to devour. And Ephesians 6: 11&12 says , put on the whole armor of God, that you may be able to stand against the wiles of the devil, for we are not fighting against flesh and blood enemies but against the principalities against powers against the world  rulers of this present darkness , against the spiritual wickedness in the heavenly places. (Defeats him).We need grace and God's armor of protection when we pray, we need to ask our Holy Angels to pray with us and  keep watch over us when we begin to pray. Prayer changes everything if we allow it to change us, we need to trust and surrender to God when we pray. Prayer is the health of our soul and living on this earth. We need to cooperate with the Holy Spirit when we pray, we pray and need to listen as well,  prayer truly wages war on the inside cause we are weak and vulnerable but we need to defeat that by using the Word of God at all times. st. Alphonsus' says "Those who pray are certainly saved, those who do not are damned, !! so deep. May the HolySpirit reawaken in us. Amen\*
+
 ## January 07,2025
 
 ### Grace Will Overflow
 
 [![Grace Will Overflow](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day007.jpg)](https://youtu.be/Yz2_NEmpF-c "Grace Will Overflow")
+
+### ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson
+
+*"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but  we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.🥹 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu,  and this much we can do by praying the Rosary and offering them through our Lady to Jesus.  Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria*🙏🏽
