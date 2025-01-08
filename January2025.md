@@ -27,6 +27,9 @@
   * [January 07,2025](#january-072025)
     + [Grace Will Overflow](#grace-will-overflow)
     + [ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson](#rosary-in-a-year-day-07---grace-will-overflow---michelle-jackson)
+  * [January 08,2025](#january-082025)
+    + [Biblical Roots of the Rosary](#biblical-roots-of-the-rosary)
+    + [Our Father in Heaven](#our-father-in-heaven)
 
 <!-- tocstop -->
 
@@ -206,3 +209,13 @@ Prayer is a weapon to disarm the evil one, the very thoughts he tempts us with e
 ### ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson
 
 *"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but  we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.🥹 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu,  and this much we can do by praying the Rosary and offering them through our Lady to Jesus.  Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria*🙏🏽
+
+## January 08,2025
+
+### Biblical Roots of the Rosary
+
+[![Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/biblicalroots.jpg)](https://youtu.be/8Vv86L0uhco "Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast")
+
+### Our Father in Heaven
+
+[![Our Father in Heaven](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day008.jpg)](https://youtu.be/WOaecrQZS5s "Our Father in Heaven")
