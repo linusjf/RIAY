@@ -30,6 +30,8 @@
   * [January 08,2025](#january-082025)
     + [Biblical Roots of the Rosary](#biblical-roots-of-the-rosary)
     + [Our Father in Heaven](#our-father-in-heaven)
+  * [January 09,2025](#january-092025)
+    + [Thy Will Be Done](#thy-will-be-done)
 
 <!-- tocstop -->
 
@@ -219,3 +221,9 @@ Prayer is a weapon to disarm the evil one, the very thoughts he tempts us with e
 ### Our Father in Heaven
 
 [![Our Father in Heaven](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day008.jpg)](https://youtu.be/WOaecrQZS5s "Our Father in Heaven")
+
+## January 09,2025
+
+### Thy Will Be Done
+
+[![Thy Will Be Done](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day009.jpg)](https://youtu.be/gnkxlNFBGcs "Thy Will Be Done")
