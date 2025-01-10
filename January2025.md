@@ -30,6 +30,7 @@
   * [January 08,2025](#january-082025)
     + [Biblical Roots of the Rosary](#biblical-roots-of-the-rosary)
     + [Our Father in Heaven](#our-father-in-heaven)
+    + [ROSARY IN A YEAR DAY 08 - "OUR FATHER IN HEAVEN" Michelle Jackson](#rosary-in-a-year-day-08---our-father-in-heaven-michelle-jackson)
   * [January 09,2025](#january-092025)
     + [Thy Will Be Done](#thy-will-be-done)
 
@@ -222,8 +223,16 @@ Prayer is a weapon to disarm the evil one, the very thoughts he tempts us with e
 
 [![Our Father in Heaven](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day008.jpg)](https://youtu.be/WOaecrQZS5s "Our Father in Heaven")
 
+### ROSARY IN A YEAR DAY 08 - "OUR FATHER IN HEAVEN" Michelle Jackson
+
+\*God is Good, all the time, and all the Time, God is Good!! How God Loves us is so precious, and that truth needs to take root in us, i love that when  Jesus' disciples asked Him how to pray He said; say "OUR FATHER!!" that relationship He extends to us is unfathomable. He wants us to know That He is our Father and Jesus came to reveal that to us, to restore that relationship that was broken in the beginning. He wants us to approach Our Father as little children who don't need to use big words or our language to be perfect but simply, us being like Children who are learning to talk.  But with great reverence and adoration. God understands our hearts more than we ever know or the words we want to speak even before we say it. Thank you Yeshua for teaching us to pray and Thank you Abba Father for allowing us to call You "OUR FATHER".\*🙏🏽
+
 ## January 09,2025
 
 ### Thy Will Be Done
 
 [![Thy Will Be Done](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day009.jpg)](https://youtu.be/gnkxlNFBGcs "Thy Will Be Done")
+
+ROSARY IN A YEAR Day 09 - "THY WILL BE DONE" Michelle Jackson
+
+Mathew 18 :1-4 , Jesus talking about who is the greatest in the kingdom of heaven? It is the children who will be the greatest in His Kingdom. God is calling each of us to be like little children, like children who aren't afraid to ask their parents for anything, they are themselves and they don't need to work on themselves to get things done, they simply approach them in confidence and Joy. Here Jesus calls us to be like them, surrendering themselves to the Father with Child like confidence and Trust. That He will always do what's best for us. We need to be humble like Jesus and do as He did in the garden by saying Thy will be done not mine. In all moments of life when life is challenging and we are uncertain we need to approach God and give way for His Will to be done. Then we will have true peace and Joy and experience the Kingdom of heaven.🙏🏽
