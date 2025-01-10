@@ -33,6 +33,8 @@
     + [ROSARY IN A YEAR DAY 08 - "OUR FATHER IN HEAVEN" Michelle Jackson](#rosary-in-a-year-day-08---our-father-in-heaven-michelle-jackson)
   * [January 09,2025](#january-092025)
     + [Thy Will Be Done](#thy-will-be-done)
+  * [January 10,2025](#january-102025)
+    + [Daily Bread](#daily-bread)
 
 <!-- tocstop -->
 
@@ -236,3 +238,9 @@ Prayer is a weapon to disarm the evil one, the very thoughts he tempts us with e
 ROSARY IN A YEAR Day 09 - "THY WILL BE DONE" Michelle Jackson
 
 Mathew 18 :1-4 , Jesus talking about who is the greatest in the kingdom of heaven? It is the children who will be the greatest in His Kingdom. God is calling each of us to be like little children, like children who aren't afraid to ask their parents for anything, they are themselves and they don't need to work on themselves to get things done, they simply approach them in confidence and Joy. Here Jesus calls us to be like them, surrendering themselves to the Father with Child like confidence and Trust. That He will always do what's best for us. We need to be humble like Jesus and do as He did in the garden by saying Thy will be done not mine. In all moments of life when life is challenging and we are uncertain we need to approach God and give way for His Will to be done. Then we will have true peace and Joy and experience the Kingdom of heaven.🙏🏽
+
+## January 10,2025 ##
+
+### Daily Bread ###
+
+[![Daily Bread](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day010.jpg)](https://youtu.be/5j0Q_eP-ec0 "Daily Bread")
