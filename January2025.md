@@ -35,6 +35,7 @@
     + [Thy Will Be Done](#thy-will-be-done)
   * [January 10,2025](#january-102025)
     + [Daily Bread](#daily-bread)
+    + [ROSARY IN A YEAR DAY 10 - " DAILY BREAD" Michelle Jackson](#rosary-in-a-year-day-10----daily-bread-michelle-jackson)
 
 <!-- tocstop -->
 
@@ -239,8 +240,12 @@ ROSARY IN A YEAR Day 09 - "THY WILL BE DONE" Michelle Jackson
 
 Mathew 18 :1-4 , Jesus talking about who is the greatest in the kingdom of heaven? It is the children who will be the greatest in His Kingdom. God is calling each of us to be like little children, like children who aren't afraid to ask their parents for anything, they are themselves and they don't need to work on themselves to get things done, they simply approach them in confidence and Joy. Here Jesus calls us to be like them, surrendering themselves to the Father with Child like confidence and Trust. That He will always do what's best for us. We need to be humble like Jesus and do as He did in the garden by saying Thy will be done not mine. In all moments of life when life is challenging and we are uncertain we need to approach God and give way for His Will to be done. Then we will have true peace and Joy and experience the Kingdom of heaven.🙏🏽
 
-## January 10,2025 ##
+## January 10,2025
 
-### Daily Bread ###
+### Daily Bread
 
 [![Daily Bread](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day010.jpg)](https://youtu.be/5j0Q_eP-ec0 "Daily Bread")
+
+### ROSARY IN A YEAR DAY 10 - " DAILY BREAD" Michelle Jackson
+
+Give us this day our daily bread. Jesus wants us to trust Him and asks us not to be anxious about the next day. He tells us we are of more value than the birds of the air and that as He provides for them who neither sow nor reap nor gather them into the barns yet He provides for them. Our God is Jehovah Jireh - "The God who provides" God Himself is our portion.  Jesus came so that we may have life in abundance and He wants us to trust Him. We need to persevere in Joy and Faith and go to Him daily in prayer and communion. This bread is the sharing of His own divine life. This grace we receive flows generously from Him but we need to come to Him and receive that daily. Like the Israelites who had to collect their daily bread we too christians have to do the same through prayer. We get to receive Him in the Sacraments the Holy Eucharist which is real bread, Himself!  to live the Life He's offering to us. Thank you Jesus for this life giving food you give to us all.
