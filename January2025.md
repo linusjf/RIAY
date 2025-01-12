@@ -38,6 +38,8 @@
     + [ROSARY IN A YEAR DAY 10 - " DAILY BREAD" Michelle Jackson](#rosary-in-a-year-day-10----daily-bread-michelle-jackson)
   * [January 11,2025](#january-112025)
     + [As We Forgive](#as-we-forgive)
+  * [January 12,2025](#january-122025)
+    + [Deliver Us From Evil](#deliver-us-from-evil)
 
 <!-- tocstop -->
 
@@ -257,3 +259,9 @@ Give us this day our daily bread. Jesus wants us to trust Him and asks us not to
 ### As We Forgive ###
 
 [![As We Forgive](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day011.jpg)](https://youtu.be/hSa8NhXUgws "As We Forgive")
+
+## January 12,2025 ##
+
+### Deliver Us From Evil ###
+
+[![Deliver Us From Evil](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day012.jpg)](https://youtu.be/wfZGUzggWT4 "Deliver Us From Evil")
