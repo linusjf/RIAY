@@ -40,6 +40,8 @@
     + [As We Forgive](#as-we-forgive)
   * [January 12,2025](#january-122025)
     + [Deliver Us From Evil](#deliver-us-from-evil)
+  * [January 13,2025](#january-132025)
+    + [Full of Grace](#full-of-grace)
 
 <!-- tocstop -->
 
@@ -265,3 +267,9 @@ Give us this day our daily bread. Jesus wants us to trust Him and asks us not to
 ### Deliver Us From Evil ###
 
 [![Deliver Us From Evil](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day012.jpg)](https://youtu.be/wfZGUzggWT4 "Deliver Us From Evil")
+
+## January 13,2025 ##
+
+### Full of Grace ###
+
+[![Full of Grace](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day013.jpg)](https://youtu.be/MIY3Xyn8ou0 "Full of Grace")
