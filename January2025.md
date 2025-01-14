@@ -44,6 +44,7 @@
     + [Full of Grace](#full-of-grace)
   * [January 14,2025](#january-142025)
     + [Blessed Are You](#blessed-are-you)
+    + [Mary](#mary)
 
 <!-- tocstop -->
 
@@ -258,26 +259,30 @@ Mathew 18 :1-4 , Jesus talking about who is the greatest in the kingdom of heave
 
 Give us this day our daily bread. Jesus wants us to trust Him and asks us not to be anxious about the next day. He tells us we are of more value than the birds of the air and that as He provides for them who neither sow nor reap nor gather them into the barns yet He provides for them. Our God is Jehovah Jireh - "The God who provides" God Himself is our portion.  Jesus came so that we may have life in abundance and He wants us to trust Him. We need to persevere in Joy and Faith and go to Him daily in prayer and communion. This bread is the sharing of His own divine life. This grace we receive flows generously from Him but we need to come to Him and receive that daily. Like the Israelites who had to collect their daily bread we too christians have to do the same through prayer. We get to receive Him in the Sacraments the Holy Eucharist which is real bread, Himself!  to live the Life He's offering to us. Thank you Jesus for this life giving food you give to us all.
 
-## January 11,2025 ##
+## January 11,2025
 
-### As We Forgive ###
+### As We Forgive
 
 [![As We Forgive](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day011.jpg)](https://youtu.be/hSa8NhXUgws "As We Forgive")
 
-## January 12,2025 ##
+## January 12,2025
 
-### Deliver Us From Evil ###
+### Deliver Us From Evil
 
 [![Deliver Us From Evil](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day012.jpg)](https://youtu.be/wfZGUzggWT4 "Deliver Us From Evil")
 
-## January 13,2025 ##
+## January 13,2025
 
-### Full of Grace ###
+### Full of Grace
 
 [![Full of Grace](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day013.jpg)](https://youtu.be/MIY3Xyn8ou0 "Full of Grace")
 
-## January 14,2025 ##
+## January 14,2025
 
-### Blessed Are You ###
+### Blessed Are You
 
 [![Blessed Are You](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day014.jpg)](https://youtu.be/xqD3-dXtTFI "Blessed Are You")
+
+### Mary
+
+![Mary](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/IMG-20250114-WA0011.jpg)
