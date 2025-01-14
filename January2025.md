@@ -42,6 +42,8 @@
     + [Deliver Us From Evil](#deliver-us-from-evil)
   * [January 13,2025](#january-132025)
     + [Full of Grace](#full-of-grace)
+  * [January 14,2025](#january-142025)
+    + [Blessed Are You](#blessed-are-you)
 
 <!-- tocstop -->
 
@@ -273,3 +275,9 @@ Give us this day our daily bread. Jesus wants us to trust Him and asks us not to
 ### Full of Grace ###
 
 [![Full of Grace](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day013.jpg)](https://youtu.be/MIY3Xyn8ou0 "Full of Grace")
+
+## January 14,2025 ##
+
+### Blessed Are You ###
+
+[![Blessed Are You](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day014.jpg)](https://youtu.be/xqD3-dXtTFI "Blessed Are You")
