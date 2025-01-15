@@ -44,9 +44,11 @@
     + [ROSARY IN A YEAR DAY 12 - "DELIVER US FROM EVIL" Michelle Jackson](#rosary-in-a-year-day-12---deliver-us-from-evil-michelle-jackson)
   * [January 13,2025](#january-132025)
     + [Full of Grace](#full-of-grace)
+    + [ROSARY IN A YEAR DAY 13 - "FULL OF GRACE" Michelle Jackson](#rosary-in-a-year-day-13---full-of-grace-michelle-jackson)
   * [January 14,2025](#january-142025)
     + [Blessed Are You](#blessed-are-you)
     + [Mary](#mary)
+    + [ROSARY IN A YEAR DAY 14 - "BLESSED ARE YOU" Michelle Jackson](#rosary-in-a-year-day-14---blessed-are-you-michelle-jackson)
   * [January 15,2025](#january-152025)
     + [Mother of God](#mother-of-god)
 
@@ -289,6 +291,10 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 
 [![Full of Grace](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day013.jpg)](https://youtu.be/MIY3Xyn8ou0 "Full of Grace")
 
+### ROSARY IN A YEAR DAY 13 - "FULL OF GRACE" Michelle Jackson
+
+"Hail Mary, full of grace, the Lord is with thee." This greeting given by God to the Angel Gabriel is whole. Mission plan revealed. This greeting  is not by the angel but is God's greeting. It's what Mamma Mary is and who He created her to be. It is at this moment He reveals His mission plan to her . The Lord is with thee, these words are so beautiful to ponder on. As in the "Our Father" we are taught how to approach  God and in the "Hail Mary" we are taught how to approach Mamma Mary.  We Honour Jesus when we honour Mamma Mary. Truly no one can love her as much as Jesus did. He gave His Mother to us and we need to thank Him for that.  This prayer, this salutation was a revelation for and to her for the whole world and she said "Yes", let us too ask God what is His mission for us. For surely The Lord is with us always. 🙏🏽Hail Mary full of grace🌹
+
 ## January 14,2025
 
 ### Blessed Are You
@@ -298,6 +304,10 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 ### Mary
 
 ![Mary](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/IMG-20250114-WA0011.jpg)
+
+### ROSARY IN A YEAR DAY 14 - "BLESSED ARE YOU" Michelle Jackson
+
+"Blesses are you among women, and blessed is the fruit of your womb, JESUS". these words found in scripture tell us that Mamma Mary was not like any other woman on the earth. She was God's most unique master piece. Chosen to bear Jesus, God in her womb. When our lady visited elizabeth, she was filled with the HolySpirit at her greeting and she cried out with a shout of Joy. Calling her blessed are you among women and blessed is the fruit of your womb. Mamma Mary is the God bearer and the HolySpirit dwells in her. She gave us Jesus, and we need to ask for that grace to honour her as God did and as Elizabeth did. Lord help us to love and rejoice in the blessed mother as you love and rejoice in her.. and when we pray the Hail Mary may we encounter her in Joy, and be filled with the HolySpirit 😇🙏🏽
 
 ## January 15,2025
 
