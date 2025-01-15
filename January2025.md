@@ -38,13 +38,17 @@
     + [ROSARY IN A YEAR DAY 10 - " DAILY BREAD" Michelle Jackson](#rosary-in-a-year-day-10----daily-bread-michelle-jackson)
   * [January 11,2025](#january-112025)
     + [As We Forgive](#as-we-forgive)
+    + [ROSARY IN A YEAR DAY 11 - "AS WE FORGIVE" Michelle Jackson](#rosary-in-a-year-day-11---as-we-forgive-michelle-jackson)
   * [January 12,2025](#january-122025)
     + [Deliver Us From Evil](#deliver-us-from-evil)
+    + [ROSARY IN A YEAR DAY 12 - "DELIVER US FROM EVIL" Michelle Jackson](#rosary-in-a-year-day-12---deliver-us-from-evil-michelle-jackson)
   * [January 13,2025](#january-132025)
     + [Full of Grace](#full-of-grace)
   * [January 14,2025](#january-142025)
     + [Blessed Are You](#blessed-are-you)
     + [Mary](#mary)
+  * [January 15,2025](#january-152025)
+    + [Mother of God](#mother-of-god)
 
 <!-- tocstop -->
 
@@ -265,11 +269,19 @@ Give us this day our daily bread. Jesus wants us to trust Him and asks us not to
 
 [![As We Forgive](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day011.jpg)](https://youtu.be/hSa8NhXUgws "As We Forgive")
 
+### ROSARY IN A YEAR DAY 11 - "AS WE FORGIVE" Michelle Jackson
+
+"And forgive us our trespasses, as we forgive those who trespass against us". That truly isn't something we can do by ourselves.  We need Grace.  God is calling us to share in His Divinity through the Grace we receive through the HolySpirit in Jesus. We are called to do as He does and that comes with a cost, we need to become selfless and die to ourselves to become like Jesus. He took the hardest part the one that got Him killed for us so that we could gain merit through all He did for us. We need Grace and every day we need to seek that from Him. The more we allow ourselves to see and be reminded of the suffering Christ through meditation on His crucifixion the more it should make us aware of what He did for us on the cross. When He said Father forgive them for they do not know what they are doing. He begged God's Mercy on us, and as baptized Christians we are you all called to do that. Forgive as we are forgiven. We are all accountable to God for our actions. Let us remember the highest gift of His love and Mercy through Jesus Christ. 🙏🏻
+
 ## January 12,2025
 
 ### Deliver Us From Evil
 
 [![Deliver Us From Evil](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day012.jpg)](https://youtu.be/wfZGUzggWT4 "Deliver Us From Evil")
+
+### ROSARY IN A YEAR DAY 12 - "DELIVER US FROM EVIL" Michelle Jackson
+
+And lead us not into temptation, but deliver us from evil. The Lord is the Good shepherd who leads His flock, who delivers and protects His flock. He goes in search of His sheep and  He lays down His life for His sheep, Such is our God🙌🏼Our God is our deliverer and our only protection.  These words in the "our Father" are given by the Father through Jesus to us. He wants us to "TRUST" Him and to know that He alone is the one who can and will save us. We need to meditate and ponder each line in that prayer that reveals the heart of the Father. We need to remind ourselves and renew our thinking each time we are tempted to stress and worry about situations in our lives that are beyond our control. Because Jesus came as the Good shepherd to provide, protect, defend, deliver and save us and that He died for us so that we may live. Thank you Abba Father for the gift of Thyself through Jesus in the HolySpirit.🙏🏽
 
 ## January 13,2025
 
@@ -286,3 +298,9 @@ Give us this day our daily bread. Jesus wants us to trust Him and asks us not to
 ### Mary
 
 ![Mary](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/IMG-20250114-WA0011.jpg)
+
+## January 15,2025
+
+### Mother of God
+
+[![Mother of God](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day015.jpg)](https://youtu.be/mFtDsxE2q18 "Mother of God")
