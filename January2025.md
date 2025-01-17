@@ -54,6 +54,8 @@
   * [January 16,2025](#january-162025)
     + [Glorify Him](#glorify-him)
     + [ROSARY IN A YEAR DAY 15 - "MOTHER OF GOD" Michelle Jackson](#rosary-in-a-year-day-15---mother-of-god-michelle-jackson)
+  * [January 17,2025](#january-172025)
+    + [Turn On The Light](#turn-on-the-light)
 
 <!-- tocstop -->
 
@@ -327,3 +329,9 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 ### ROSARY IN A YEAR DAY 15 - "MOTHER OF GOD" Michelle Jackson
 
 "Holy Mary, Mother of God , pray for us Sinners, now and at the hour of our death."So beautifully explained by Fr. Mark Mary, on the role and relationship of going through our Mother to Jesus. To understand that He led us through Scripture  in the old testament about Adonijah who knows Queen Bathsheba ,and  she knows the King, King Solomon her Son. Who goes with a request,  and the Son even before knowing, says "of course I will grant it". If in the natural order things were the way they were so too the supernatural order reflects the natural. Here we know our Blessed Mother and She being the Mother of Jesus goes to Him each time we ask for her help, Jesus listens to her. More than granting our requests about situations we don't seem to understand, for it is our  Soul she cares about even more. We entrust ourselves to her and ask her special protection and prayers for us at the hour of our death that is so precious and Jesus WILL grant her that request, because He loves Her and He loves us. 🙏🏽
+
+## January 17,2025 ##
+
+### Turn On The Light ###
+
+[![Turn On The Light](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day017.jpg)](https://youtu.be/nHM8krUU1rk "Turn On The Light")
