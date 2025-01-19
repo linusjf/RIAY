@@ -58,6 +58,8 @@
     + [Turn On The Light](#turn-on-the-light)
   * [January 18,2025](#january-182025)
     + [Our Sweetness, Our Hope](#our-sweetness-our-hope)
+  * [January 19,2025](#january-192025)
+    + [Valley of Tears](#valley-of-tears)
 
 <!-- tocstop -->
 
@@ -338,8 +340,14 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 
 [![Turn On The Light](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day017.jpg)](https://youtu.be/nHM8krUU1rk "Turn On The Light")
 
-## January 18,2025 ##
+## January 18,2025
 
-### Our Sweetness, Our Hope ###
+### Our Sweetness, Our Hope
 
 [![Our Sweetness, Our Hope](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day018.jpg)](https://youtu.be/x6ZYspdYFi8 "Our Sweetness, Our Hope")
+
+## January 19,2025 ##
+
+### Valley of Tears ###
+
+[![Valley of Tears](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day019.jpg)](https://youtu.be/BhYy9fcgha8 "Valley of Tears")
