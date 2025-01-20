@@ -60,6 +60,8 @@
     + [Our Sweetness, Our Hope](#our-sweetness-our-hope)
   * [January 19,2025](#january-192025)
     + [Valley of Tears](#valley-of-tears)
+  * [January 20,2025](#january-202025)
+    + [Eyes of Mercy](#eyes-of-mercy)
 
 <!-- tocstop -->
 
@@ -346,8 +348,14 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 
 [![Our Sweetness, Our Hope](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day018.jpg)](https://youtu.be/x6ZYspdYFi8 "Our Sweetness, Our Hope")
 
-## January 19,2025 ##
+## January 19,2025
 
-### Valley of Tears ###
+### Valley of Tears
 
 [![Valley of Tears](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day019.jpg)](https://youtu.be/BhYy9fcgha8 "Valley of Tears")
+
+## January 20,2025 ##
+
+### Eyes of Mercy ###
+
+[![Eyes of Mercy](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day020.jpg)](https://youtu.be/Dr3bjvXMjmY "Eyes of Mercy")
