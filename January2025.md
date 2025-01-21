@@ -51,17 +51,22 @@
     + [ROSARY IN A YEAR DAY 14 - "BLESSED ARE YOU" Michelle Jackson](#rosary-in-a-year-day-14---blessed-are-you-michelle-jackson)
   * [January 15,2025](#january-152025)
     + [Mother of God](#mother-of-god)
+    + [ROSARY IN A YEAR DAY 15 - "MOTHER OF GOD" Michelle Jackson](#rosary-in-a-year-day-15---mother-of-god-michelle-jackson)
   * [January 16,2025](#january-162025)
     + [Glorify Him](#glorify-him)
-    + [ROSARY IN A YEAR DAY 15 - "MOTHER OF GOD" Michelle Jackson](#rosary-in-a-year-day-15---mother-of-god-michelle-jackson)
+    + [ROSARY IN A YEAR DAY 16 - "GLORIFY HIM" Michelle Jackson](#rosary-in-a-year-day-16---glorify-him-michelle-jackson)
   * [January 17,2025](#january-172025)
     + [Turn On The Light](#turn-on-the-light)
+    + [ROSARY IN A YEAR DAY 17 - "Turn on the Light" Michelle Jackson](#rosary-in-a-year-day-17---turn-on-the-light-michelle-jackson)
   * [January 18,2025](#january-182025)
     + [Our Sweetness, Our Hope](#our-sweetness-our-hope)
+    + [ROSARY IN A YEAR DAY 18 - "OUR SWEETNESS, OUR HOPE" Michelle Jackson](#rosary-in-a-year-day-18---our-sweetness-our-hope-michelle-jackson)
   * [January 19,2025](#january-192025)
     + [Valley of Tears](#valley-of-tears)
   * [January 20,2025](#january-202025)
     + [Eyes of Mercy](#eyes-of-mercy)
+  * [January 21,2025](#january-212025)
+    + [Show Unto Us](#show-unto-us)
 
 <!-- tocstop -->
 
@@ -326,15 +331,21 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 
 [![Mother of God](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day015.jpg)](https://youtu.be/mFtDsxE2q18 "Mother of God")
 
+### ROSARY IN A YEAR DAY 15 - "MOTHER OF GOD" Michelle Jackson
+
+"Holy Mary, Mother of God , pray for us Sinners, now and at the hour of our death."So beautifully explained by Fr. Mark Mary, on the role and relationship of going through our Mother to Jesus. To understand that He led us through Scripture  in the old testament about Adonijah who knows Queen Bathsheba ,and  she knows the King, King Solomon her Son. Who goes with a request,  and the Son even before knowing, says "of course I will grant it". If in the natural order things were the way they were so too the supernatural order reflects the natural. Here we know our Blessed Mother and She being the Mother of Jesus goes to Him each time we ask for her help, Jesus listens to her. More than granting our requests about situations we don't seem to understand, for it is our  Soul she cares about even more. We entrust ourselves to her and ask her special protection and prayers for us at the hour of our death that is so precious and Jesus WILL grant her that request, because He loves Her and He loves us. 🙏🏽
+
 ## January 16,2025
 
 ### Glorify Him
 
 [![Glorify Him](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day016.jpg)](https://youtu.be/ynEX9kc4nv4 "Glorify Him")
 
-### ROSARY IN A YEAR DAY 15 - "MOTHER OF GOD" Michelle Jackson
+### ROSARY IN A YEAR DAY 16 - "GLORIFY HIM" Michelle Jackson
 
-"Holy Mary, Mother of God , pray for us Sinners, now and at the hour of our death."So beautifully explained by Fr. Mark Mary, on the role and relationship of going through our Mother to Jesus. To understand that He led us through Scripture  in the old testament about Adonijah who knows Queen Bathsheba ,and  she knows the King, King Solomon her Son. Who goes with a request,  and the Son even before knowing, says "of course I will grant it". If in the natural order things were the way they were so too the supernatural order reflects the natural. Here we know our Blessed Mother and She being the Mother of Jesus goes to Him each time we ask for her help, Jesus listens to her. More than granting our requests about situations we don't seem to understand, for it is our  Soul she cares about even more. We entrust ourselves to her and ask her special protection and prayers for us at the hour of our death that is so precious and Jesus WILL grant her that request, because He loves Her and He loves us. 🙏🏽
+"Glory be to the Father and to the Son and to the Holy Spirit, as it was in the beginning,is now and ever shall be world without end.Amen". All Praise and Glory be to the Holy Trinity.   What is Praise? It is a form of prayer which recognises that God is God. It is right that we praise Him. It is to look to Him always, cause it is the right thing to do. It is for our own Good to Praise God, not for what he does but for who He is. He the maker of all things must be acknowledged by all, and Praised and Glorified by all. God is pleased when we do so not because He needs it,But because its right. When you Love Him and see how Faithful God is in your life you will begin to Praise Him. Cause everyday we are alive and its cause He wills it for us and we take that for granted. Let us Thank Him Throughout the day by asking for that grace. * *Psalms 34:1- I will bless the LORD at all times : His praise shall continually be in my mouth.*
+
+Psalms 150:6- Let everything that has breath praise the Lord🙌🏼
 
 ## January 17,2025
 
@@ -342,11 +353,22 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 
 [![Turn On The Light](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day017.jpg)](https://youtu.be/nHM8krUU1rk "Turn On The Light")
 
+### ROSARY IN A YEAR DAY 17 - "Turn on the Light" Michelle Jackson
+
+"IN THE NAME OF THE FATHER AND OF THE SON AND OF THE HOLYSPIRIT - THE SIGN OF THE CROSS"
+*The mystery of the most Holy Trinity is the central mystery of Christian Faith and life , it is the mystery of God Himself. It also is the source of all other* *mysteries of Faith, the Light that enlightens them.* \*Truly one needs Faith to understand that. We need to ask the HolySpirit for grace to See which God gives us through Baptism all through our lives. And when we make the sign of the cross we are opening our eyes to see Him, to see all of creation and all other mysteries in His light. Jesus Christ is the Light of the World and we need His light to guide us through, there are many other lights in this world to lead us astray, so to know and see the difference we need to understand the path we are taking if it leads us to Him or away from Him. May Christ' light be our light always. Jesus said whoever follows me shall never walk in darkness.  *Hebrew 11:6 And without faith it is impossible to please him, for whoever would approach God must believe that he exists and that he rewards those who seek him.*
+
+Romans 10:17- So faith comes from what is heard, and what is heard comes through the word of Christ.
+
 ## January 18,2025
 
 ### Our Sweetness, Our Hope
 
 [![Our Sweetness, Our Hope](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day018.jpg)](https://youtu.be/x6ZYspdYFi8 "Our Sweetness, Our Hope")
+
+### ROSARY IN A YEAR DAY 18 - "OUR SWEETNESS, OUR HOPE" Michelle Jackson
+
+"Hail Holy Queen, Mother of Mercy, our Sweetness and our Hope", what a beautiful way to put that Father Mark😇, as Jesus provided food for our journey to Eternal life, which is bread( Himself) when He instituted the Holy Eucharist and the wine His blood, which is sweet, and wine that is used to celebrate Joys in life, He adds that sweetness to our lives  by giving us His Mother to be  our Mother, and she truly gives us Joy when we go through her to Him. The warmth and love of a Mother He gave us all . The Mother of all Mothers. Thank you Yeshua for the gift Thy Mother. You did not hold back anything from us. You gave us Yourself fully, and also your Mother. How much our God loves us. Thank you for being our Mother Mamma Mary 🙏🏻
 
 ## January 19,2025
 
@@ -354,8 +376,14 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 
 [![Valley of Tears](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day019.jpg)](https://youtu.be/BhYy9fcgha8 "Valley of Tears")
 
-## January 20,2025 ##
+## January 20,2025
 
-### Eyes of Mercy ###
+### Eyes of Mercy
 
 [![Eyes of Mercy](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day020.jpg)](https://youtu.be/Dr3bjvXMjmY "Eyes of Mercy")
+
+## January 21,2025
+
+### Show Unto Us
+
+[![Show Unto Us](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day021.jpg)](https://youtu.be/fWi-63owEk0 "Show Unto Us")
