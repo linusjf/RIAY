@@ -63,10 +63,15 @@
     + [ROSARY IN A YEAR DAY 18 - "OUR SWEETNESS, OUR HOPE" Michelle Jackson](#rosary-in-a-year-day-18---our-sweetness-our-hope-michelle-jackson)
   * [January 19,2025](#january-192025)
     + [Valley of Tears](#valley-of-tears)
+    + [ROSARY IN A YEAR DAY 19 - "VALLEY OF TEARS" Michelle Jackson](#rosary-in-a-year-day-19---valley-of-tears-michelle-jackson)
   * [January 20,2025](#january-202025)
     + [Eyes of Mercy](#eyes-of-mercy)
+    + [ROSARY IN A YEAR DAY 20 - "Eyes of Mercy" Michelle Jackson](#rosary-in-a-year-day-20---eyes-of-mercy-michelle-jackson)
   * [January 21,2025](#january-212025)
     + [Show Unto Us](#show-unto-us)
+    + [ROSARY IN A YEAR DAY 21b- "Show unto us" Michelle Jackson](#rosary-in-a-year-day-21b--show-unto-us-michelle-jackson)
+  * [January 22,2025](#january-222025)
+    + [Lead Souls to Heaven](#lead-souls-to-heaven)
 
 <!-- tocstop -->
 
@@ -376,14 +381,32 @@ Romans 10:17- So faith comes from what is heard, and what is heard comes through
 
 [![Valley of Tears](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day019.jpg)](https://youtu.be/BhYy9fcgha8 "Valley of Tears")
 
+### ROSARY IN A YEAR DAY 19 - "VALLEY OF TEARS" Michelle Jackson
+
+"To thee do we cry poor banished children of Eve, to thee do we send up our sighs mourning and weeping in this valley of tears" . Our Lord who understands our pain and suffering and is always with us. He who died for us and suffered for us comes to comfort and consoles us   when we suffer. We are never alone and in our misery, when He was on the cross He gave His beloved disciple His Mother and Her to Him. Our mother who suffered seeing her son betrayed and crucified and experienced extreme sorrow and pain, like the pain of a sword piercing her heart ,that much sorrow she felt and suffered, she understands us when we go through pain and suffering. She comforts and consoles us with Jesus. Our pain is precious to them. When we understand and know the value of pain and suffering we can unite it to the sufferings of Jesus and Mamma Mary to be sanctified and purified by it. We are never alone. Our Lord and Mother understands us when we cry and cannot pray, for our tears become our silent prayers. Thank Yeshua Thank you Mamma for your  Love🙏🏽
+
 ## January 20,2025
 
 ### Eyes of Mercy
 
 [![Eyes of Mercy](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day020.jpg)](https://youtu.be/Dr3bjvXMjmY "Eyes of Mercy")
 
+### ROSARY IN A YEAR DAY 20 - "Eyes of Mercy" Michelle Jackson
+
+So beautifully put Father Mark. The Lord who understands the poverty of man and all He has to give, He accepts with love. The Holy Family poor as they were, offering what they could afford was pleasing to God. God understands and accepts all we give Him, as He understood the condition of the poor widow who offered all she had and put into the treasury. Comparing her to our blessed Mother was looking at it through humble eyes. Mamma Mary too accepts all we give to her even if it isn't the best we can or imperfect as it can be,  she accepts it with love from her little children. Let us pray to desire to give our best to her. It's so comforting to know that even if we couldn't do our best in offering our prayers it's the heart she sees. Thank you Mamma Mary
+
 ## January 21,2025
 
 ### Show Unto Us
 
 [![Show Unto Us](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day021.jpg)](https://youtu.be/fWi-63owEk0 "Show Unto Us")
+
+### ROSARY IN A YEAR DAY 21b- "Show unto us" Michelle Jackson
+
+"And after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement,O loving O sweet Virgin Mary." Mother's know what to do, I love how Fr. Mike said our Lady understands us, she experiences our pain and our need and our sufferings and takes us to Jesus, as at the wedding at Cana ,when they had run out of wine, She told Jesus about the situation and when He said His time hadn't come yet She told  the servants there to "do whatever He tells you". And Jesus did His first miracle. He obeyed His mamma, and so too for us she takes us to Jesus bringing us into a relationship with Him and tells us to do the same. Listen to Him, do what He tells you. Such a beautiful way of communication we are taught. And that's  what prayer should be like. It should be that conversation. Let us ask for grace to speak and make known our requests and listen to what Jesus tells us to do...
+
+## January 22,2025
+
+### Lead Souls to Heaven
+
+[![Lead Souls to Heaven](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day022.jpg)](https://youtu.be/U_nCAl0mzmA "Lead Souls to Heaven")
