@@ -72,6 +72,8 @@
     + [ROSARY IN A YEAR DAY 21b- "Show unto us" Michelle Jackson](#rosary-in-a-year-day-21b--show-unto-us-michelle-jackson)
   * [January 22,2025](#january-222025)
     + [Lead Souls to Heaven](#lead-souls-to-heaven)
+  * [January 23,2025](#january-232025)
+    + [Creator of Heaven and Earth](#creator-of-heaven-and-earth)
 
 <!-- tocstop -->
 
@@ -410,3 +412,9 @@ So beautifully put Father Mark. The Lord who understands the poverty of man and 
 ### Lead Souls to Heaven
 
 [![Lead Souls to Heaven](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day022.jpg)](https://youtu.be/U_nCAl0mzmA "Lead Souls to Heaven")
+
+## January 23,2025 ##
+
+### Creator of Heaven and Earth ###
+
+[![Creator of Heaven and Earth](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day023.jpg)](https://youtu.be/uR-pRPrIh6Q "Creator of Heaven and Earth")
