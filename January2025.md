@@ -72,8 +72,10 @@
     + [ROSARY IN A YEAR DAY 21b- "Show unto us" Michelle Jackson](#rosary-in-a-year-day-21b--show-unto-us-michelle-jackson)
   * [January 22,2025](#january-222025)
     + [Lead Souls to Heaven](#lead-souls-to-heaven)
+    + [ROSARY IN A YEAR DAY 22 - "LEAD SOULS TO HEAVEN" Michelle Jackson](#rosary-in-a-year-day-22---lead-souls-to-heaven-michelle-jackson)
   * [January 23,2025](#january-232025)
     + [Creator of Heaven and Earth](#creator-of-heaven-and-earth)
+    + [ROSARY IN A YEAR DAY 23 - "CREATOR OF HEAVEN AND EARTH" Michelle Jackson](#rosary-in-a-year-day-23---creator-of-heaven-and-earth-michelle-jackson)
 
 <!-- tocstop -->
 
@@ -413,8 +415,17 @@ So beautifully put Father Mark. The Lord who understands the poverty of man and 
 
 [![Lead Souls to Heaven](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day022.jpg)](https://youtu.be/U_nCAl0mzmA "Lead Souls to Heaven")
 
-## January 23,2025 ##
+### ROSARY IN A YEAR DAY 22 - "LEAD SOULS TO HEAVEN" Michelle Jackson
 
-### Creator of Heaven and Earth ###
+That was an intense journey with Father Mike,on our own salvation and the salvation of our loved ones. God is Love and He desires Salvation of the whole World. More than we desire the salvation of our loved ones God is already pursuing us.\* *And for those gone astray, the Good shepherd goes in search, not wanting to lose even one. He searches and brings us back to His flock.* *He reveals His heart to those who respond and co-operate with His Will for mankind. He did reveal this to our blessed Mother of when she appeared to the 3 visionaries, to pray many Rosaries for poor sinners and taught them to pray a special prayer after every decade. So precious.* *Our life is precious, bought by the Blood Of The Lamb and we need to take that seriously asking grace to reflect on our life and our living. Does it please God?* *Do we please Him or the World?Do we know our Worth?*
+*When we die we either will go to heaven or hell.* \*How we live here, what we do now matters. Let us not be afraid but Trust God. We are Christians.and Christians are people of Hope. The Hope that comes from God Himself. Thank you Lord for Your Saving Grace and Your Love for us all. May the whole world respond to that grace and co-operate and desire our own salvation and the salvation of the whole world. May the whole world be Sanctified Sanctified and purified. Amen.
+
+## January 23,2025
+
+### Creator of Heaven and Earth
 
 [![Creator of Heaven and Earth](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day023.jpg)](https://youtu.be/uR-pRPrIh6Q "Creator of Heaven and Earth")
+
+### ROSARY IN A YEAR DAY 23 - "CREATOR OF HEAVEN AND EARTH" Michelle Jackson
+
+"I Believe in God, the Father Almighty, Creator of heaven and earth, and in Jesus Christ, His only Son our Lord." The Apostle's Creed is so beautiful, may they be a great reminder of the fullness of the truth and let them form our minds, but also fill our hearts. Such a wonderful way to reflect on the creed and meditate on them. As Father Mark took us through Job who struggles and complains and questions God,with his friends by his side provoking him, and God responds to him questioning him, were you there when I laid the foundations of the world? Now who dare talk back to God?how terrifying to hear God respond, God who is the Creator, the maker of all things ,who can even understand the why's or what's of what He does and why He does and for who He does what He does? Many times we play God, we don't trust Him enough and we want to control all things our way and how we want, we who Father Mark put it, can't make even one donkey, let alone a donkey , we can't make anything without something and get so upset and mad and question God when we don't see things going our way. Let us repent of this ungrateful attitude and quit playing God. Let God be God and let us surrender and submit to Him. God loves us, Jesus in the New testament understood the pain Mary felt at the death of her brother, and Jesus who knew that He could give back life to Lazarus . He said I am the Life, and the Resurrection, yet when He saw her crying, "He wept".  God is all knowing we are not, God is God we are not, we cannot do anything without God. We wouldn't even have been here if He didn't Will us into existence. God Loves us, but do we.? Let us look around  and see this wonderful World He created for you and me from the tiny little mite to the highest peak of a mountain top, the wisdom and love He put into it all is for us. Thank you Abba Father for being our God
