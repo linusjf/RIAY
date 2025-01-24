@@ -76,6 +76,8 @@
   * [January 23,2025](#january-232025)
     + [Creator of Heaven and Earth](#creator-of-heaven-and-earth)
     + [ROSARY IN A YEAR DAY 23 - "CREATOR OF HEAVEN AND EARTH" Michelle Jackson](#rosary-in-a-year-day-23---creator-of-heaven-and-earth-michelle-jackson)
+  * [January 24,2025](#january-242025)
+    + [Still, Small Voice](#still-small-voice)
 
 <!-- tocstop -->
 
@@ -429,3 +431,9 @@ That was an intense journey with Father Mike,on our own salvation and the salvat
 ### ROSARY IN A YEAR DAY 23 - "CREATOR OF HEAVEN AND EARTH" Michelle Jackson
 
 "I Believe in God, the Father Almighty, Creator of heaven and earth, and in Jesus Christ, His only Son our Lord." The Apostle's Creed is so beautiful, may they be a great reminder of the fullness of the truth and let them form our minds, but also fill our hearts. Such a wonderful way to reflect on the creed and meditate on them. As Father Mark took us through Job who struggles and complains and questions God,with his friends by his side provoking him, and God responds to him questioning him, were you there when I laid the foundations of the world? Now who dare talk back to God?how terrifying to hear God respond, God who is the Creator, the maker of all things ,who can even understand the why's or what's of what He does and why He does and for who He does what He does? Many times we play God, we don't trust Him enough and we want to control all things our way and how we want, we who Father Mark put it, can't make even one donkey, let alone a donkey , we can't make anything without something and get so upset and mad and question God when we don't see things going our way. Let us repent of this ungrateful attitude and quit playing God. Let God be God and let us surrender and submit to Him. God loves us, Jesus in the New testament understood the pain Mary felt at the death of her brother, and Jesus who knew that He could give back life to Lazarus . He said I am the Life, and the Resurrection, yet when He saw her crying, "He wept".  God is all knowing we are not, God is God we are not, we cannot do anything without God. We wouldn't even have been here if He didn't Will us into existence. God Loves us, but do we.? Let us look around  and see this wonderful World He created for you and me from the tiny little mite to the highest peak of a mountain top, the wisdom and love He put into it all is for us. Thank you Abba Father for being our God
+
+## January 24,2025 ##
+
+### Still, Small Voice ###
+
+[![Still, Small Voice](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day024.jpg)](https://youtu.be/Ou4r9yu24pA "Still, Small Voice")
