@@ -80,6 +80,8 @@
     + [Still, Small Voice](#still-small-voice)
   * [January 25,2025](#january-252025)
     + [No Longer in Darkness](#no-longer-in-darkness)
+  * [January 26,2025](#january-262025)
+    + [The Room is Ours](#the-room-is-ours)
 
 <!-- tocstop -->
 
@@ -440,8 +442,14 @@ That was an intense journey with Father Mike,on our own salvation and the salvat
 
 [![Still, Small Voice](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day024.jpg)](https://youtu.be/Ou4r9yu24pA "Still, Small Voice")
 
-## January 25,2025 ##
+## January 25,2025
 
-### No Longer in Darkness ###
+### No Longer in Darkness
 
 [![No Longer in Darkness](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day025.jpg)](https://youtu.be/eJg24VMua_4 "No Longer in Darkness")
+
+## January 26,2025 ##
+
+### The Room is Ours ###
+
+[![The Room is Ours](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day026.jpg)](https://youtu.be/UqLJqFHKtzw "The Room is Ours")
