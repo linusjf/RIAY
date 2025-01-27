@@ -82,6 +82,8 @@
     + [No Longer in Darkness](#no-longer-in-darkness)
   * [January 26,2025](#january-262025)
     + [The Room is Ours](#the-room-is-ours)
+  * [January 27,2025](#january-272025)
+    + [The Spirit Prepares Us](#the-spirit-prepares-us)
 
 <!-- tocstop -->
 
@@ -448,8 +450,14 @@ That was an intense journey with Father Mike,on our own salvation and the salvat
 
 [![No Longer in Darkness](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day025.jpg)](https://youtu.be/eJg24VMua_4 "No Longer in Darkness")
 
-## January 26,2025 ##
+## January 26,2025
 
-### The Room is Ours ###
+### The Room is Ours
 
 [![The Room is Ours](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day026.jpg)](https://youtu.be/UqLJqFHKtzw "The Room is Ours")
+
+## January 27,2025 ##
+
+### The Spirit Prepares Us ###
+
+[![The Spirit Prepares Us](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day027.jpg)](https://youtu.be/sHVJdpXlRyc "The Spirit Prepares Us")
