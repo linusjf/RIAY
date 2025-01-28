@@ -84,6 +84,8 @@
     + [The Room is Ours](#the-room-is-ours)
   * [January 27,2025](#january-272025)
     + [The Spirit Prepares Us](#the-spirit-prepares-us)
+  * [January 28,2025](#january-282025)
+    + [Be Joyful, Be Free](#be-joyful-be-free)
 
 <!-- tocstop -->
 
@@ -456,8 +458,14 @@ That was an intense journey with Father Mike,on our own salvation and the salvat
 
 [![The Room is Ours](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day026.jpg)](https://youtu.be/UqLJqFHKtzw "The Room is Ours")
 
-## January 27,2025 ##
+## January 27,2025
 
-### The Spirit Prepares Us ###
+### The Spirit Prepares Us
 
 [![The Spirit Prepares Us](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day027.jpg)](https://youtu.be/sHVJdpXlRyc "The Spirit Prepares Us")
+
+## January 28,2025 ##
+
+### Be Joyful, Be Free ###
+
+[![Be Joyful, Be Free](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day028.jpg)](https://youtu.be/IeGsyy6vVBg "Be Joyful, Be Free")
