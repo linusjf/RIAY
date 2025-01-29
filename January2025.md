@@ -86,6 +86,8 @@
     + [The Spirit Prepares Us](#the-spirit-prepares-us)
   * [January 28,2025](#january-282025)
     + [Be Joyful, Be Free](#be-joyful-be-free)
+  * [January 29,2025](#january-292025)
+    + [Something Unexpected](#something-unexpected)
 
 <!-- tocstop -->
 
@@ -469,3 +471,9 @@ That was an intense journey with Father Mike,on our own salvation and the salvat
 ### Be Joyful, Be Free ###
 
 [![Be Joyful, Be Free](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day028.jpg)](https://youtu.be/IeGsyy6vVBg "Be Joyful, Be Free")
+
+## January 29,2025 ##
+
+### Something Unexpected ###
+
+[![Something Unexpected](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day029.jpg)](https://youtu.be/JRBX1CIDyV4 "Something Unexpected")
