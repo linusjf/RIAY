@@ -88,6 +88,8 @@
     + [Be Joyful, Be Free](#be-joyful-be-free)
   * [January 29,2025](#january-292025)
     + [Something Unexpected](#something-unexpected)
+  * [January 30,2025](#january-302025)
+    + [The New Ark](#the-new-ark)
 
 <!-- tocstop -->
 
@@ -477,3 +479,9 @@ That was an intense journey with Father Mike,on our own salvation and the salvat
 ### Something Unexpected ###
 
 [![Something Unexpected](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day029.jpg)](https://youtu.be/JRBX1CIDyV4 "Something Unexpected")
+
+## January 30,2025 ##
+
+### The New Ark ###
+
+[![The New Ark](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day030.jpg)](https://youtu.be/HJNDwboMJ-k "The New Ark")
