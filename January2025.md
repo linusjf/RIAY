@@ -468,20 +468,20 @@ That was an intense journey with Father Mike,on our own salvation and the salvat
 
 [![The Spirit Prepares Us](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day027.jpg)](https://youtu.be/sHVJdpXlRyc "The Spirit Prepares Us")
 
-## January 28,2025 ##
+## January 28,2025
 
-### Be Joyful, Be Free ###
+### Be Joyful, Be Free
 
 [![Be Joyful, Be Free](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day028.jpg)](https://youtu.be/IeGsyy6vVBg "Be Joyful, Be Free")
 
-## January 29,2025 ##
+## January 29,2025
 
-### Something Unexpected ###
+### Something Unexpected
 
 [![Something Unexpected](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day029.jpg)](https://youtu.be/JRBX1CIDyV4 "Something Unexpected")
 
-## January 30,2025 ##
+## January 30,2025
 
-### The New Ark ###
+### The New Ark
 
 [![The New Ark](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day030.jpg)](https://youtu.be/HJNDwboMJ-k "The New Ark")
