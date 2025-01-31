@@ -88,8 +88,10 @@
     + [Be Joyful, Be Free](#be-joyful-be-free)
   * [January 29,2025](#january-292025)
     + [Something Unexpected](#something-unexpected)
+    + [Rosary in a Year - Day 29 - Joyful Mysteries](#rosary-in-a-year---day-29---joyful-mysteries)
   * [January 30,2025](#january-302025)
     + [The New Ark](#the-new-ark)
+    + [Rosary in a Year - Day 30 - Joyful Mysteries](#rosary-in-a-year---day-30---joyful-mysteries)
   * [January 31,2025](#january-312025)
     + [No Other Savior](#no-other-savior)
 
@@ -482,14 +484,34 @@ That was an intense journey with Father Mike,on our own salvation and the salvat
 
 [![Something Unexpected](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day029.jpg)](https://youtu.be/JRBX1CIDyV4 "Something Unexpected")
 
+### Rosary in a Year - Day 29 - Joyful Mysteries
+
+1. The Annunciation - Luke 1: 26-38
+   Jesus is the one who is the fulfilment of the promise made to David (2 Samuel 7: 12-16).
+   Mary is the tabernacle, new meeting tent, from whom, Christ, the Son of God, comes into the world ( Exodus 40: 34-35)
+
+Nadya Baracho
+Goa, India.
+
 ## January 30,2025
 
 ### The New Ark
 
 [![The New Ark](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day030.jpg)](https://youtu.be/HJNDwboMJ-k "The New Ark")
 
-## January 31,2025 ##
+### Rosary in a Year - Day 30 - Joyful Mysteries
 
-### No Other Savior ###
+2. The Visitation - Luke 1:39-56
+   Mary is the new Ark of the Covenant in the NT as She conceives Jesus, who is the high priest (staff in the old Ark of Covenant), the bread of life (Jar of manna in the old Ark of Covenant) and the fulfilment and the giver of the law (ten commandments). Mary is the new meeting tent through whom God meets his people and leads them to victory (Salvation).
+   As David brings the Ark of Covenant back to Jerusalem (2 Samuel 6) the New Ark ( Mary) visits Elizabeth. Just like David felt unworthy of being given the privilige of bringing the Ark back, so does Elizabeth feel unworthy of the Lord's mother coming to visit her.
+   In the OT there singing and dancing in front of the Ark, likewise, John the Baptist leaped in his mother's womb hearing Mary's greeting.
+   Let us be renewed in Joy.
+
+Nadya Baracho
+Goa, India
+
+## January 31,2025
+
+### No Other Savior
 
 [![No Other Savior](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day031.jpg)](https://youtu.be/CXk5WJ4OhqQ "No Other Savior")
