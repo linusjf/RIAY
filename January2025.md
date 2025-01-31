@@ -90,6 +90,8 @@
     + [Something Unexpected](#something-unexpected)
   * [January 30,2025](#january-302025)
     + [The New Ark](#the-new-ark)
+  * [January 31,2025](#january-312025)
+    + [No Other Savior](#no-other-savior)
 
 <!-- tocstop -->
 
@@ -485,3 +487,9 @@ That was an intense journey with Father Mike,on our own salvation and the salvat
 ### The New Ark
 
 [![The New Ark](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day030.jpg)](https://youtu.be/HJNDwboMJ-k "The New Ark")
+
+## January 31,2025 ##
+
+### No Other Savior ###
+
+[![No Other Savior](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day031.jpg)](https://youtu.be/CXk5WJ4OhqQ "No Other Savior")
