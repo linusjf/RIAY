@@ -94,6 +94,7 @@
     + [Rosary in a Year - Day 30 - Joyful Mysteries](#rosary-in-a-year---day-30---joyful-mysteries)
   * [January 31,2025](#january-312025)
     + [No Other Savior](#no-other-savior)
+    + [Rosary in a Year Day 31](#rosary-in-a-year-day-31)
 
 <!-- tocstop -->
 
@@ -515,3 +516,13 @@ Goa, India
 ### No Other Savior
 
 [![No Other Savior](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day031.jpg)](https://youtu.be/CXk5WJ4OhqQ "No Other Savior")
+
+### Rosary in a Year Day 31
+
+Nadya Baracho
+Goa, India
+
+The Joyful Mysteries
+3\. The Nativity - Luke 2: 1-20
+Joseph went to Bethlehem to enroll themselves as per the rule of Caesar Augustus and it was time for Mary to give birth. This was so that the prophesy of Micah (Micah 5:2) would be fulfilled, that from Bethlehem will come a ruler of Israel.
+The angels appear to the poor shepherds who according to the Jewish culture were  considered outside of God's covenant. This shows inclusion of all under God's Covenant.
