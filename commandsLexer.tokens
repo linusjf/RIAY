@@ -1,0 +1,14 @@
+T__0=1
+T__1=2
+T__2=3
+T__3=4
+COMMENT=5
+STRING=6
+MONTH_DIGIT=7
+DIGIT=8
+INTEGER=9
+WS=10
+'addvideo'=1
+'genmonth'=2
+'lintall'=3
+'genvidmd'=4
