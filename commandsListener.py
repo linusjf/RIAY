@@ -17,6 +17,15 @@ class commandsListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by commandsParser#command.
+    def enterCommand(self, ctx:commandsParser.CommandContext):
+        pass
+
+    # Exit a parse tree produced by commandsParser#command.
+    def exitCommand(self, ctx:commandsParser.CommandContext):
+        pass
+
+
     # Enter a parse tree produced by commandsParser#addVideo.
     def enterAddVideo(self, ctx:commandsParser.AddVideoContext):
         pass

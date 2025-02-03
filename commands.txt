@@ -1,0 +1,4 @@
+addvideo "123567" "helllo"
+genvidmd "2234568" "title" "jpgs/title.jpg"
+genmonth 02 2025
+lintall
