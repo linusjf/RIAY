@@ -20,7 +20,7 @@ pathtoimg: STRING;
 
 STRING: '"' .*? '"';
 YEAR: [2][0-9][0-9][0-9];
-MONTH_DIGIT: '1' '0'..'2' | '0' '1'..'9';
+MONTH_DIGIT: '1' '0'..'2' | '0' '1'..'9' | '1'..'9';
 
 NEWLINE: '\r'? '\n';
 
