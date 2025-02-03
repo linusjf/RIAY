@@ -7,6 +7,8 @@
   * [February 02,2025](#february-022025)
     + [Lost and Found](#lost-and-found)
     + [Rosary in a Year Day 33](#rosary-in-a-year-day-33)
+  * [February 03,2025](#february-032025)
+    + [The Anointed One](#the-anointed-one)
 
 <!-- tocstop -->
 
@@ -46,3 +48,9 @@ Goa, India
 Jesus, along with his parents, makes the pilgrimage to Jerusalem for the feast of the passover. Though it was obligatory for Jewish boys to make the pilgrimage at the age of 13, Jesus accompanies his father Joseph at the age of 12 in preparation for the following year. Mary is faithful in accompanying her spouse and son. This teaches us that our life on earth is a pilgrimage, we are all walking in faith towards being more holy.
 Jesus was lost and found in 3 days, which was an indication of Mary losing him at Mt. Calvary and getting him back in 3 days.
 Jesus stays back at the temple to fulfil filial obedience. With the same obedience he surrendered himself on the cross, so we could share inner oneness with God.
+
+## February 03,2025 ##
+
+### The Anointed One ###
+
+[![The Anointed One](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day034.jpg)](https://youtu.be/PPnhBgd_Ggs "The Anointed One")
