@@ -9,6 +9,8 @@
     + [Rosary in a Year Day 33](#rosary-in-a-year-day-33)
   * [February 03,2025](#february-032025)
     + [The Anointed One](#the-anointed-one)
+  * [February 04,2025](#february-042025)
+    + [Divine Bridegroom](#divine-bridegroom)
 
 <!-- tocstop -->
 
@@ -49,8 +51,14 @@ Jesus, along with his parents, makes the pilgrimage to Jerusalem for the feast o
 Jesus was lost and found in 3 days, which was an indication of Mary losing him at Mt. Calvary and getting him back in 3 days.
 Jesus stays back at the temple to fulfil filial obedience. With the same obedience he surrendered himself on the cross, so we could share inner oneness with God.
 
-## February 03,2025 ##
+## February 03,2025
 
-### The Anointed One ###
+### The Anointed One
 
 [![The Anointed One](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day034.jpg)](https://youtu.be/PPnhBgd_Ggs "The Anointed One")
+
+## February 04,2025 ##
+
+### Divine Bridegroom ###
+
+[![Divine Bridegroom](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day035.jpg)](https://youtu.be/-jtqsyXYDwA "Divine Bridegroom")
