@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 import subprocess
 import sys
+from pathlib import Path
 from antlr4 import *
 from commandsLexer import commandsLexer
 from commandsParser import commandsParser
 from commandsListener import commandsListener
 
 class commands(commandsListener):
+
+    def __init__(self):
+        self.cwd = Path.cwd()
 
     # Enter a parse tree produced by commandsParser#addVideo.
     def enterAddVideo(self, ctx:commandsParser.AddVideoContext):
@@ -33,9 +37,6 @@ class commands(commandsListener):
 
 
 def main():
-    result = subprocess.run(["pwd"], shell=True, capture_output=True, text=True, check=True)
-    print(result.stdout)
-
     input_stream = FileStream("commands.txt")
     lexer = commandsLexer(input_stream)
     stream = CommonTokenStream(lexer)
@@ -43,6 +44,7 @@ def main():
     tree = parser.program()
 
     execute_commands = commands()
+    print(execute_commands.cwd)
     walker = ParseTreeWalker()
     walker.walk(execute_commands, tree)
 
