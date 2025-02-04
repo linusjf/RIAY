@@ -175,3 +175,13 @@ Before executing the script, update the file and place the comment `<!-- toc -->
 Results:
 
 The table of contents will be generated as per the existing headings in the markdown file.
+
+## Using the commands utility that accepts text commands in file commands.txt
+
+1. Install ANTLR4
+
+Assuming that you have Python3 and its installer pip3 installed on your machine.
+
+```bash
+pip install antlr4-tools antlr4-python3-runtime
+```
