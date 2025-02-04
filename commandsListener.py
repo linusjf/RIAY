@@ -26,12 +26,12 @@ class commandsListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by commandsParser#addVideo.
-    def enterAddVideo(self, ctx:commandsParser.AddVideoContext):
+    # Enter a parse tree produced by commandsParser#addvideo.
+    def enterAddvideo(self, ctx:commandsParser.AddvideoContext):
         pass
 
-    # Exit a parse tree produced by commandsParser#addVideo.
-    def exitAddVideo(self, ctx:commandsParser.AddVideoContext):
+    # Exit a parse tree produced by commandsParser#addvideo.
+    def exitAddvideo(self, ctx:commandsParser.AddvideoContext):
         pass
 
 
@@ -53,12 +53,12 @@ class commandsListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by commandsParser#genMonth.
-    def enterGenMonth(self, ctx:commandsParser.GenMonthContext):
+    # Enter a parse tree produced by commandsParser#genmonth.
+    def enterGenmonth(self, ctx:commandsParser.GenmonthContext):
         pass
 
-    # Exit a parse tree produced by commandsParser#genMonth.
-    def exitGenMonth(self, ctx:commandsParser.GenMonthContext):
+    # Exit a parse tree produced by commandsParser#genmonth.
+    def exitGenmonth(self, ctx:commandsParser.GenmonthContext):
         pass
 
 
@@ -80,21 +80,21 @@ class commandsListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by commandsParser#lintAll.
-    def enterLintAll(self, ctx:commandsParser.LintAllContext):
+    # Enter a parse tree produced by commandsParser#lintall.
+    def enterLintall(self, ctx:commandsParser.LintallContext):
         pass
 
-    # Exit a parse tree produced by commandsParser#lintAll.
-    def exitLintAll(self, ctx:commandsParser.LintAllContext):
+    # Exit a parse tree produced by commandsParser#lintall.
+    def exitLintall(self, ctx:commandsParser.LintallContext):
         pass
 
 
-    # Enter a parse tree produced by commandsParser#genVidMD.
-    def enterGenVidMD(self, ctx:commandsParser.GenVidMDContext):
+    # Enter a parse tree produced by commandsParser#genvidmd.
+    def enterGenvidmd(self, ctx:commandsParser.GenvidmdContext):
         pass
 
-    # Exit a parse tree produced by commandsParser#genVidMD.
-    def exitGenVidMD(self, ctx:commandsParser.GenVidMDContext):
+    # Exit a parse tree produced by commandsParser#genvidmd.
+    def exitGenvidmd(self, ctx:commandsParser.GenvidmdContext):
         pass
 
 

@@ -25,14 +25,14 @@ WS
 rule names:
 program
 command
-addVideo
+addvideo
 videoId
 videoName
-genMonth
+genmonth
 month
 year
-lintAll
-genVidMD
+lintall
+genvidmd
 caption
 pathtoimg
 

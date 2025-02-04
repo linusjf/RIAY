@@ -2,19 +2,19 @@ grammar commands;
 
 program: (command NEWLINE)* command? EOF;
 
-command: addVideo | genMonth | lintAll | genVidMD;
+command: addvideo | genmonth  | lintall | genvidmd;
 
-addVideo: 'addvideo' videoId videoName;
+addvideo: 'addvideo' videoId videoName;
 videoId: STRING;
 videoName: STRING;
 
-genMonth: 'genmonth' month year;
+genmonth: 'genmonth' month year;
 month: MONTH_DIGIT;
 year: YEAR;
 
-lintAll: 'lintall';
+lintall: 'lintall';
 
-genVidMD: 'genvidmd' videoId caption pathtoimg;
+genvidmd: 'genvidmd' videoId caption pathtoimg;
 caption: STRING;
 pathtoimg: STRING;
 

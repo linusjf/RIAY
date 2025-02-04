@@ -51,19 +51,19 @@ class commandsParser ( Parser ):
 
     RULE_program = 0
     RULE_command = 1
-    RULE_addVideo = 2
+    RULE_addvideo = 2
     RULE_videoId = 3
     RULE_videoName = 4
-    RULE_genMonth = 5
+    RULE_genmonth = 5
     RULE_month = 6
     RULE_year = 7
-    RULE_lintAll = 8
-    RULE_genVidMD = 9
+    RULE_lintall = 8
+    RULE_genvidmd = 9
     RULE_caption = 10
     RULE_pathtoimg = 11
 
-    ruleNames =  [ "program", "command", "addVideo", "videoId", "videoName",
-                   "genMonth", "month", "year", "lintAll", "genVidMD", "caption",
+    ruleNames =  [ "program", "command", "addvideo", "videoId", "videoName",
+                   "genmonth", "month", "year", "lintall", "genvidmd", "caption",
                    "pathtoimg" ]
 
     EOF = Token.EOF
@@ -169,20 +169,20 @@ class commandsParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def addVideo(self):
-            return self.getTypedRuleContext(commandsParser.AddVideoContext,0)
+        def addvideo(self):
+            return self.getTypedRuleContext(commandsParser.AddvideoContext,0)
 
 
-        def genMonth(self):
-            return self.getTypedRuleContext(commandsParser.GenMonthContext,0)
+        def genmonth(self):
+            return self.getTypedRuleContext(commandsParser.GenmonthContext,0)
 
 
-        def lintAll(self):
-            return self.getTypedRuleContext(commandsParser.LintAllContext,0)
+        def lintall(self):
+            return self.getTypedRuleContext(commandsParser.LintallContext,0)
 
 
-        def genVidMD(self):
-            return self.getTypedRuleContext(commandsParser.GenVidMDContext,0)
+        def genvidmd(self):
+            return self.getTypedRuleContext(commandsParser.GenvidmdContext,0)
 
 
         def getRuleIndex(self):
@@ -210,22 +210,22 @@ class commandsParser ( Parser ):
             if token in [1]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 37
-                self.addVideo()
+                self.addvideo()
                 pass
             elif token in [2]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 38
-                self.genMonth()
+                self.genmonth()
                 pass
             elif token in [3]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 39
-                self.lintAll()
+                self.lintall()
                 pass
             elif token in [4]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 40
-                self.genVidMD()
+                self.genvidmd()
                 pass
             else:
                 raise NoViableAltException(self)
@@ -239,7 +239,7 @@ class commandsParser ( Parser ):
         return localctx
 
 
-    class AddVideoContext(ParserRuleContext):
+    class AddvideoContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -255,23 +255,23 @@ class commandsParser ( Parser ):
 
 
         def getRuleIndex(self):
-            return commandsParser.RULE_addVideo
+            return commandsParser.RULE_addvideo
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAddVideo" ):
-                listener.enterAddVideo(self)
+            if hasattr( listener, "enterAddvideo" ):
+                listener.enterAddvideo(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAddVideo" ):
-                listener.exitAddVideo(self)
+            if hasattr( listener, "exitAddvideo" ):
+                listener.exitAddvideo(self)
 
 
 
 
-    def addVideo(self):
+    def addvideo(self):
 
-        localctx = commandsParser.AddVideoContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 4, self.RULE_addVideo)
+        localctx = commandsParser.AddvideoContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 4, self.RULE_addvideo)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 43
@@ -371,7 +371,7 @@ class commandsParser ( Parser ):
         return localctx
 
 
-    class GenMonthContext(ParserRuleContext):
+    class GenmonthContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -387,23 +387,23 @@ class commandsParser ( Parser ):
 
 
         def getRuleIndex(self):
-            return commandsParser.RULE_genMonth
+            return commandsParser.RULE_genmonth
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterGenMonth" ):
-                listener.enterGenMonth(self)
+            if hasattr( listener, "enterGenmonth" ):
+                listener.enterGenmonth(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitGenMonth" ):
-                listener.exitGenMonth(self)
+            if hasattr( listener, "exitGenmonth" ):
+                listener.exitGenmonth(self)
 
 
 
 
-    def genMonth(self):
+    def genmonth(self):
 
-        localctx = commandsParser.GenMonthContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 10, self.RULE_genMonth)
+        localctx = commandsParser.GenmonthContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 10, self.RULE_genmonth)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 51
@@ -503,7 +503,7 @@ class commandsParser ( Parser ):
         return localctx
 
 
-    class LintAllContext(ParserRuleContext):
+    class LintallContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -512,23 +512,23 @@ class commandsParser ( Parser ):
 
 
         def getRuleIndex(self):
-            return commandsParser.RULE_lintAll
+            return commandsParser.RULE_lintall
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLintAll" ):
-                listener.enterLintAll(self)
+            if hasattr( listener, "enterLintall" ):
+                listener.enterLintall(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLintAll" ):
-                listener.exitLintAll(self)
+            if hasattr( listener, "exitLintall" ):
+                listener.exitLintall(self)
 
 
 
 
-    def lintAll(self):
+    def lintall(self):
 
-        localctx = commandsParser.LintAllContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_lintAll)
+        localctx = commandsParser.LintallContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 16, self.RULE_lintall)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 59
@@ -542,7 +542,7 @@ class commandsParser ( Parser ):
         return localctx
 
 
-    class GenVidMDContext(ParserRuleContext):
+    class GenvidmdContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -562,23 +562,23 @@ class commandsParser ( Parser ):
 
 
         def getRuleIndex(self):
-            return commandsParser.RULE_genVidMD
+            return commandsParser.RULE_genvidmd
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterGenVidMD" ):
-                listener.enterGenVidMD(self)
+            if hasattr( listener, "enterGenvidmd" ):
+                listener.enterGenvidmd(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitGenVidMD" ):
-                listener.exitGenVidMD(self)
+            if hasattr( listener, "exitGenvidmd" ):
+                listener.exitGenvidmd(self)
 
 
 
 
-    def genVidMD(self):
+    def genvidmd(self):
 
-        localctx = commandsParser.GenVidMDContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_genVidMD)
+        localctx = commandsParser.GenvidmdContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 18, self.RULE_genvidmd)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 61
