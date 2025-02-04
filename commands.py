@@ -16,7 +16,7 @@ class commands(commandsListener):
     def enterAddVideo(self, ctx:commandsParser.AddVideoContext):
         videoId = ctx.videoId().getText().strip('"')
         videoName = ctx.videoName().getText().strip('"')
-        print(f"Adding video {videoId} with name {videoName}")
+        print(f"Adding video '{videoId}' with name '{videoName}'")
 
     # Enter a parse tree produced by commandsParser#genMonth.
     def enterGenMonth(self, ctx:commandsParser.GenMonthContext):
@@ -33,7 +33,7 @@ class commands(commandsListener):
         videoId = ctx.videoId().getText().strip('"')
         caption = ctx.caption().getText().strip('"')
         pathtoimg = ctx.pathtoimg().getText().strip('"')
-        print(f"Generating video markdown for {videoId} with caption {caption} and image {pathtoimg}")
+        print(f"Generating video markdown for '{videoId}' with caption '{caption}' and image '{pathtoimg}'")
 
 
 def main():
