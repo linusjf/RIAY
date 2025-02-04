@@ -19,23 +19,33 @@ class commands(commandsListener):
         ruleIndex = ctx.getRuleIndex()
         ruleName = ctx.parser.ruleNames[ruleIndex]
         print(f"Rule {ruleName}: Adding video '{videoId}' with name '{videoName}'")
+        self.executeCommand([ruleName, videoId, videoName])
 
     # Enter a parse tree produced by commandsParser#genMonth.
     def enterGenmonth(self, ctx:commandsParser.GenmonthContext):
         month = ctx.month().getText()
         year = ctx.year().getText()
-        print(f"Generating month {month} for year {year}")
+        ruleIndex = ctx.getRuleIndex()
+        ruleName = ctx.parser.ruleNames[ruleIndex]
+        print(f"Rule {ruleName}: Generating month {month} for year {year}")
+        self.executeCommand([ruleName, month, year])
 
     # Enter a parse tree produced by commandsParser#lintAll.
     def enterLintall(self, ctx:commandsParser.LintallContext):
-        print("Linting all")
+        ruleIndex = ctx.getRuleIndex()
+        ruleName = ctx.parser.ruleNames[ruleIndex]
+        print(f"Rule {ruleName}: Linting all")
+        self.executeCommand([ruleName])
 
     # Enter a parse tree produced by commandsParser#genVidMD.
     def enterGenvidmd(self, ctx:commandsParser.GenvidmdContext):
         videoId = ctx.videoId().getText().strip('"')
         caption = ctx.caption().getText().strip('"')
         pathtoimg = ctx.pathtoimg().getText().strip('"')
-        print(f"Generating video markdown for '{videoId}' with caption '{caption}' and image '{pathtoimg}'")
+        ruleIndex = ctx.getRuleIndex()
+        ruleName = ctx.parser.ruleNames[ruleIndex]
+        print(f"Rule {ruleName}: Generating video markdown for '{videoId}' with caption '{caption}' and image '{pathtoimg}'")
+        self.executeCommand([ruleName, videoId, caption, pathtoimg])
 
     def executeCommand(self, cmdline:list[str]):
         pass
