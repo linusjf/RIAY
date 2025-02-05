@@ -59,14 +59,14 @@ Jesus stays back at the temple to fulfil filial obedience. With the same obedien
 
 [![The Anointed One](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day034.jpg)](https://youtu.be/PPnhBgd_Ggs "The Anointed One")
 
-## February 04,2025 ##
+## February 04,2025
 
-### Divine Bridegroom ###
+### Divine Bridegroom
 
 [![Divine Bridegroom](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day035.jpg)](https://youtu.be/-jtqsyXYDwA "Divine Bridegroom")
 
-## February 05,2025 ##
+## February 05,2025
 
-### The Kingdom and the Gospel ###
+### The Kingdom and the Gospel
 
 [![The Kingdom and the Gospel](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day036.jpg)](https://youtu.be/q7g8Wwzzs3U "The Kingdom and the Gospel")
