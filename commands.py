@@ -16,8 +16,7 @@ class commands(commandsListener):
     def enterAddvideo(self, ctx:commandsParser.AddvideoContext):
         videoId = ctx.videoId().getText().strip('"')
         videoName = ctx.videoName().getText().strip('"')
-        ruleIndex = ctx.getRuleIndex()
-        ruleName = ctx.parser.ruleNames[ruleIndex]
+        ruleName = self.getRuleName(ctx)
         print(f"Rule {ruleName}: Adding video '{videoId}' with name '{videoName}'")
         self.executeCommand([ruleName, videoId, videoName])
 
@@ -25,15 +24,13 @@ class commands(commandsListener):
     def enterGenmonth(self, ctx:commandsParser.GenmonthContext):
         month = ctx.month().getText()
         year = ctx.year().getText()
-        ruleIndex = ctx.getRuleIndex()
-        ruleName = ctx.parser.ruleNames[ruleIndex]
+        ruleName = self.getRuleName(ctx)
         print(f"Rule {ruleName}: Generating month {month} for year {year}")
         self.executeCommand([ruleName, month, year])
 
     # Enter a parse tree produced by commandsParser#lintAll.
     def enterLintall(self, ctx:commandsParser.LintallContext):
-        ruleIndex = ctx.getRuleIndex()
-        ruleName = ctx.parser.ruleNames[ruleIndex]
+        ruleName = self.getRuleName(ctx)
         print(f"Rule {ruleName}: Linting all")
         self.executeCommand([ruleName])
 
@@ -42,11 +39,17 @@ class commands(commandsListener):
         videoId = ctx.videoId().getText().strip('"')
         caption = ctx.caption().getText().strip('"')
         pathtoimg = ctx.pathtoimg().getText().strip('"')
-        ruleIndex = ctx.getRuleIndex()
-        ruleName = ctx.parser.ruleNames[ruleIndex]
+        ruleName = self.getRuleName(ctx)
         print(f"Rule {ruleName}: Generating video markdown for '{videoId}' with caption '{caption}' and image '{pathtoimg}'")
         self.executeCommand([ruleName, videoId, caption, pathtoimg])
 
+    # Get Rule Name
+    def getRuleName(self, ctx):
+        ruleIndex = ctx.getRuleIndex()
+        ruleName = ctx.parser.ruleNames[ruleIndex]
+        return ruleName
+
+    # Execute command
     def executeCommand(self, command:list[str]):
         """
         Execute a command line program.
