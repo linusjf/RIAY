@@ -10,7 +10,7 @@ from commandsListener import commandsListener
 class commands(commandsListener):
 
     def __init__(self):
-        self.cwd = Path.cwd()
+        self.cwd = str(Path.cwd())
 
     # Enter a parse tree produced by commandsParser#addVideo.
     def enterAddvideo(self, ctx:commandsParser.AddvideoContext):
@@ -47,8 +47,28 @@ class commands(commandsListener):
         print(f"Rule {ruleName}: Generating video markdown for '{videoId}' with caption '{caption}' and image '{pathtoimg}'")
         self.executeCommand([ruleName, videoId, caption, pathtoimg])
 
-    def executeCommand(self, cmdline:list[str]):
-        pass
+    def executeCommand(self, command:list[str]):
+        """
+        Execute a command line program.
+        Args:
+            command (list[str]): A list of strings containing the command line program and its options.
+        Returns:
+            int: The return code of the executed command.
+        """
+        file_path = Path(self.cwd + "/" + command[0])
+        if file_path.exists():
+            command[0] = self.cwd + "/" + command[0]
+        try:
+            # Use subprocess.run to execute the command
+            result = subprocess.run(command, check=True)
+            return result.returncode
+        except subprocess.CalledProcessError as e:
+            # If the command returns a non-zero exit code, raise an exception
+            raise Exception(f"Command failed with return code {e.returncode}")
+        except Exception as e:
+            # If any other exception occurs, raise it
+            raise Exception(f"Error executing command: {str(e)}")
+
 
 def main():
     input_stream = FileStream("commands.txt")
