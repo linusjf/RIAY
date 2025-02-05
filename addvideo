@@ -55,6 +55,6 @@ if ./genoverlay "$vid" "$doy"; then
   echo "$fname generated for $vid."
   exit 0
 else
-  echo "Unable to find or generate video thumbnail. Video may not exist. The video id ${vid} is invalid."
+  echo "Unable to find or generate video thumbnail. Video may not exist. The video id '${vid}' is invalid."
   exit 1
 fi
