@@ -69,7 +69,12 @@ thumbnailurl() {
 downloadthumbnail() {
   hash curl || exit
   url="$(thumbnailurl "$1")"
-  curl --silent "$url" --output "$2"
+  if [ -z "${url}" ]; then
+    return 1
+  else
+    curl --silent "$url" --output "$2"
+    return $?
+  fi
 }
 
 vidmd() {
