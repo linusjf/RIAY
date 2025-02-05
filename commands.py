@@ -81,7 +81,6 @@ def main():
     tree = parser.program()
 
     execute_commands = commands()
-    print(execute_commands.cwd)
     walker = ParseTreeWalker()
     walker.walk(execute_commands, tree)
 

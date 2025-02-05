@@ -1,1 +1,5 @@
-addvideo "q7g8Wwzzs3U" "The Kingdom and the Gospel"
+genmonth 02 2025
+lintall
+genmonth 2 2025
+genvidmd "2234568" "title of the world" "February/jpgs/title.jpg"
+addvideo "123567" "helllo this is a new video"
