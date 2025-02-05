@@ -21,7 +21,7 @@ if ./overlayimg "${1}" "${3}"; then
   caption="${2}"
   root="$(getroot)"
   if test -e "${3}" && test -f "${3}"; then
-    imgurl="https://raw.githubusercontent.com/linusjf/${root}/main/${3}"
+    imgurl="https://raw.githubusercontent.com/${GIT_USER}/${root}/main/${3}"
     printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
   else
     usage

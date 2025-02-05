@@ -33,7 +33,7 @@ playiconurl() {
   doy="$1"
   doy="$(printf "%03d" "${doy#0}")"
   month="$(mfromdoy "$doy")"
-  echo "https://raw.githubusercontent.com/linusjf/${root}/main/${month}/jpgs/Day${doy}.jpg"
+  echo "https://raw.githubusercontent.com/${GIT_USER}/${root}/main/${month}/jpgs/Day${doy}.jpg"
 }
 
 thumbnailurl() {
