@@ -9,6 +9,7 @@
     + [Rosary in a Year Day 33](#rosary-in-a-year-day-33)
   * [February 03,2025](#february-032025)
     + [The Anointed One](#the-anointed-one)
+    + [RIAY Luminous Mysteries - Day 34](#riay-luminous-mysteries---day-34)
   * [February 04,2025](#february-042025)
     + [Divine Bridegroom](#divine-bridegroom)
   * [February 05,2025](#february-052025)
@@ -58,6 +59,20 @@ Jesus stays back at the temple to fulfil filial obedience. With the same obedien
 ### The Anointed One
 
 [![The Anointed One](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day034.jpg)](https://youtu.be/PPnhBgd_Ggs "The Anointed One")
+
+### RIAY Luminous Mysteries - Day 34
+
+Nadya Baracho
+Goa, India
+
+1. Baptism of Jesus Mathew 3:13-17
+
+The mystery of the Holy Trinity is revealed as soon as Jesus is baptised at the Jordan. The Holy Spirit in the form of a dove, the Spirit of God, descends from heaven.
+The river Jordan had a lot historic significance. It was the turning point for Joshua at the end of the Exodus. Prophet Elijah went up to heaven at the river Jordan, Prophet Elisha started his prophetic ministry at the river Jordan.
+
+John's baptism was about beginning anew, reorienting one's life and preparing for the coming of the Messiah.
+John through his baptism with water washed away sins and prepared the peoples' heart for the Messiah.
+Jesus by dying on the cross, going to the tomb and resurrecting, washed away our sins to get us closer to His Father.
 
 ## February 04,2025
 
