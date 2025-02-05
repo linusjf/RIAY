@@ -35,7 +35,7 @@ if ./genoverlay "$vid" "$doy"; then
     if test $? -eq 0; then
       echo "File ${fname} exists. Moved to ${fname}.bak"
     else
-      echo "Back up of ${fname} unsuccessful. It will be overwritten."
+      echo "Back up of ${fname} unsuccessful. It will be overwritten." >&2
     fi
   fi
   echo "## $formatdt ##" >| "$fname"
@@ -55,6 +55,6 @@ if ./genoverlay "$vid" "$doy"; then
   echo "$fname generated for $vid."
   exit 0
 else
-  echo "Unable to find or generate video thumbnail. Video may not exist. The video id '${vid}' is invalid."
+  echo "Unable to find or generate video thumbnail. Video may not exist. The video id '${vid}' is invalid." >&2
   exit 1
 fi
