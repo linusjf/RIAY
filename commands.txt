@@ -1,5 +1,1 @@
-addvideo "123567" "helllo this is a new video"
-genvidmd "2234568" "title of the world" "February/jpgs/title.jpg"
-genmonth 02 2025
-lintall
-genmonth 2 2025
+addvideo "q7g8Wwzzs3U" "The Kingdom and the Gospel"

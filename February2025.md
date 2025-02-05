@@ -11,6 +11,8 @@
     + [The Anointed One](#the-anointed-one)
   * [February 04,2025](#february-042025)
     + [Divine Bridegroom](#divine-bridegroom)
+  * [February 05,2025](#february-052025)
+    + [The Kingdom and the Gospel](#the-kingdom-and-the-gospel)
 
 <!-- tocstop -->
 
@@ -62,3 +64,9 @@ Jesus stays back at the temple to fulfil filial obedience. With the same obedien
 ### Divine Bridegroom ###
 
 [![Divine Bridegroom](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day035.jpg)](https://youtu.be/-jtqsyXYDwA "Divine Bridegroom")
+
+## February 05,2025 ##
+
+### The Kingdom and the Gospel ###
+
+[![The Kingdom and the Gospel](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day036.jpg)](https://youtu.be/q7g8Wwzzs3U "The Kingdom and the Gospel")
