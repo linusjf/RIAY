@@ -1,1 +1,3 @@
-addvideo "q7g8Wwzzs3U" "The Kingdom and the Gospel"
+# addvideo "q7g8Wwzzs3U" "The Kingdom and the Gospel"
+lintall # lint all files
+genmonth 01 2025 # generate

@@ -1,6 +1,6 @@
 grammar commands;
 
-program: (command NEWLINE)* command? EOF;
+program: (command NEWLINE | NEWLINE)* command? EOF;
 
 command: addvideo | genmonth  | lintall | genvidmd;
 
@@ -25,3 +25,5 @@ MONTH_DIGIT: '1' '0'..'2' | '0' '1'..'9' | '1'..'9';
 NEWLINE: '\r'? '\n';
 
 WS: [ \t\r\n]+ -> skip;
+
+COMMENT: '#' .*? '\r'? '\n'  -> type(NEWLINE);
