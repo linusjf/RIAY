@@ -53,6 +53,8 @@ if ./genoverlay "$vid" "$doy"; then
   sed -i '/\S/,$!d' "$monthmd"
   echo "$vid" >> videos.txt
   echo "$fname generated for $vid."
+  exit 0
 else
-  echo "Unable to find or generate video thumbnail. Video may not exist."
+  echo "Unable to find or generate video thumbnail. Video may not exist. The video id ${vid} is invalid."
+  exit 1
 fi
