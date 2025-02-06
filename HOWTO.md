@@ -183,16 +183,17 @@ Results:
 
 The table of contents will be generated as per the existing headings in the markdown file.
 
-## Using the commands utility that accepts text commands in file commands.txt
+## Using the commands utility that accepts text commands in file `commands.txt`
 
 1. Install ANTLR4
 
 Assuming that you have Python3 and its installer pip3 installed on your machine.
+You can download and install Python3 from <https://www.python.org/downloads/>.
 
 ```bash
 pip install antlr4-tools antlr4-python3-runtime
 ```
-2. Add commands to the commands.txt file.
+2. Add commands to the `commands.txt` file.
 
 The commands available are:
 - addvideo
@@ -200,7 +201,7 @@ The commands available are:
 - lintall
 - genvidmd
 
-For simplicity and consistency, the commands follow the parameters used in their command line equivalents above. In fact, they are wrappers around the existing
+For simplicity and consistency, the commands are the command line equivalents above. They are wrappers around the existing
 command line scripts.
 
 3. Execute the commands.py script.
@@ -209,7 +210,7 @@ command line scripts.
 ```
 This will execute the commands in the `commands.txt` file.
 
-The commands are executed in sequence as placed in the file `commands.txt`. If any of the commands fail to execute, the program exits and the subsequent commands (if any) are not completed.
+Commands are executed in sequence as placed in the file `commands.txt`. If any command fails, the program exits and the subsequent commands (if any) are not completed.
 
 4. Sample commands.txt
 ```
@@ -220,4 +221,4 @@ genvidmd "abc123456" "Sample video" "February/jpgs/samplevideo.jpg" # generate m
 lintall # lint all the markdown files
 ```
 
-Everything after the `#` symbol is considered a comment and is ignored by the program.
+Everything after the `#` symbol is a comment and ignored by the program.
