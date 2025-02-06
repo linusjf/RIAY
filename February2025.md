@@ -12,6 +12,8 @@
     + [RIAY Luminous Mysteries - Day 34](#riay-luminous-mysteries---day-34)
   * [February 04,2025](#february-042025)
     + [Divine Bridegroom](#divine-bridegroom)
+    + [Rosary in a Year Day 35](#rosary-in-a-year-day-35)
+      - [Luminous Mysteries](#luminous-mysteries)
   * [February 05,2025](#february-052025)
     + [The Kingdom and the Gospel](#the-kingdom-and-the-gospel)
 
@@ -79,6 +81,20 @@ Jesus by dying on the cross, going to the tomb and resurrecting, washed away our
 ### Divine Bridegroom
 
 [![Divine Bridegroom](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day035.jpg)](https://youtu.be/-jtqsyXYDwA "Divine Bridegroom")
+
+### Rosary in a Year Day 35
+
+Nadya Baracho
+Goa, India
+
+#### Luminous Mysteries
+
+2. The wedding at Cana John 2:1-12
+   Jesus performs his first miracle. Mary's words 'do whatever he says' are also her last in the scripture. These words should echo with us in our daily lives in every situation.
+   Jesus performs the miracle on the 7th day of his ministry. The number 7 indicates perfection, completion.
+   At the wedding there were 6 jars filled with water (6 days of creation). These are turned to wine (fulfillment with the sabbath). The 6 jars filled by human hands are going to be completed, fulfilled, turned into wine by Jesus.
+   The wedding at Cana was the first among the 7 signs he perfomed. The other signs were healing of the official's son, healing of the paralytic, multiplying of loaves, healing of the blind man, raising lazarus from death and His ressurection.
+   Jesus is the new wine. He is the new creation, the Lord of the Sabbath. Jesus is the divine bridegroom. Just as the bridegroom rejoices over his bride (Isaiah 62:5), Jesus rejoices over us, His people. He is the bridegroom who laid down His life for His bride - the Church. Jesus is inviting us to be in an intimate relationship with Him.
 
 ## February 05,2025
 
