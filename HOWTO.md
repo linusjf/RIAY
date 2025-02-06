@@ -210,7 +210,7 @@ command line scripts.
 ```
 This will execute the commands in the `commands.txt` file.
 
-Commands are executed in sequence as placed in the file `commands.txt`. If any command fails, the program exits and the subsequent commands (if any) are not completed.
+Commands are executed in sequence as placed in the file `commands.txt`. If any command fails, the program outputs an error message for that command and the subsequent commands (if any) are executed.
 
 4. Sample commands.txt
 ```
