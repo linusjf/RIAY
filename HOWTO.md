@@ -217,7 +217,7 @@ The commands are executed in sequence as placed in the file `commands.txt`. If a
 addvideo "abc123456" "Sample video" # add sample video
 genmonth 01 2025 # generate markdown for month January, 2025
 genvidmd "abc123456" "Sample video" "February/jpgs/samplevideo.jpg" # generate markdown for video including jpeg image
-lintall # lint all the marldown files
+lintall # lint all the markdown files
 ```
 
 Everything after the `#` symbol is considered a comment and is ignored by the program.
