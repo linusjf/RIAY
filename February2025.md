@@ -104,8 +104,8 @@ Goa, India
 
 [![The Kingdom and the Gospel](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day036.jpg)](https://youtu.be/q7g8Wwzzs3U "The Kingdom and the Gospel")
 
-## February 06,2025 ##
+## February 06,2025
 
-### To Be Transfigured ###
+### To Be Transfigured
 
 [![To Be Transfigured](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day037.jpg)](https://youtu.be/IB3oKZDyoM8 "To Be Transfigured")

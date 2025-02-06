@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import logging
 import subprocess
 import sys
 from pathlib import Path
@@ -11,6 +12,7 @@ class commands(commandsListener):
 
     def __init__(self):
         self.cwd = str(Path.cwd())
+        self.exitcode = 0
 
     # Enter a parse tree produced by commandsParser#addVideo.
     def enterAddvideo(self, ctx:commandsParser.AddvideoContext):
@@ -67,7 +69,8 @@ class commands(commandsListener):
             return result.returncode
         except subprocess.CalledProcessError as e:
             # If the command returns a non-zero exit code, raise an exception
-            raise Exception(f"Command failed with return code {e.returncode}")
+            logging.error(e)
+            self.exitcode = 1
         except Exception as e:
             # If any other exception occurs, raise it
             raise Exception(f"Error executing command: {str(e)}")
@@ -83,6 +86,7 @@ def main():
     execute_commands = commands()
     walker = ParseTreeWalker()
     walker.walk(execute_commands, tree)
+    sys.exit(execute_commands.exitcode)
 
 
 if __name__ == "__main__":
