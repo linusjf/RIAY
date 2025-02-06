@@ -19,6 +19,8 @@
 - [markdown-toc](https://github.com/jonschlinkert/markdown-toc)
 - [stitchmd](https://github.com/abhinav/stitchmd)
 - [markdown-toc-gen](https://github.com/thesilk-tux/markdown-toc-gen)
+- [mdformat](https://github.com/hukkin/mdformat)
+- [mdl](https://github.com/markdownlint/markdownlint)
 
 1. Create an empty `videos.txt` file under the root directory.
 2. Create a directory for each month of the year under the root directory.
@@ -190,3 +192,32 @@ Assuming that you have Python3 and its installer pip3 installed on your machine.
 ```bash
 pip install antlr4-tools antlr4-python3-runtime
 ```
+2. Add commands to the commands.txt file.
+
+The commands available are:
+- addvideo
+- genmonth
+- lintall
+- genvidmd
+
+For simplicity and consistency, the commands follow the parameters used in their command line equivalents above. In fact, they are wrappers around the existing
+command line scripts.
+
+3. Execute the commands.py script.
+```
+./commands.py
+```
+This will execute the commands in the `commands.txt` file.
+
+The commands are executed in sequence as placed in the file `commands.txt`. If any of the commands fail to execute, the program exits and the subsequent commands (if any) are not completed.
+
+4. Sample commands.txt
+```
+# Sample commands
+addvideo "abc123456" "Sample video" # add sample video
+genmonth 01 2025 # generate markdown for month January, 2025
+genvidmd "abc123456" "Sample video" "February/jpgs/samplevideo.jpg" # generate markdown for video including jpeg image
+lintall # lint all the marldown files
+```
+
+Everything after the `#` symbol is considered a comment and is ignored by the program.
