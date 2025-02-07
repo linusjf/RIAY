@@ -18,6 +18,8 @@
     + [The Kingdom and the Gospel](#the-kingdom-and-the-gospel)
   * [February 06,2025](#february-062025)
     + [To Be Transfigured](#to-be-transfigured)
+  * [February 07,2025](#february-072025)
+    + [Food for the Journey](#food-for-the-journey)
 
 <!-- tocstop -->
 
@@ -109,3 +111,9 @@ Goa, India
 ### To Be Transfigured
 
 [![To Be Transfigured](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day037.jpg)](https://youtu.be/IB3oKZDyoM8 "To Be Transfigured")
+
+## February 07,2025 ##
+
+### Food for the Journey ###
+
+[![Food for the Journey](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day038.jpg)](https://youtu.be/5JaBXQcW0K4 "Food for the Journey")
