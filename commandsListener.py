@@ -89,6 +89,15 @@ class commandsListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by commandsParser#stitch.
+    def enterStitch(self, ctx:commandsParser.StitchContext):
+        pass
+
+    # Exit a parse tree produced by commandsParser#stitch.
+    def exitStitch(self, ctx:commandsParser.StitchContext):
+        pass
+
+
     # Enter a parse tree produced by commandsParser#genvidmd.
     def enterGenvidmd(self, ctx:commandsParser.GenvidmdContext):
         pass

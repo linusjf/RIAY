@@ -14,7 +14,7 @@ class commands(commandsListener):
         self.cwd = str(Path.cwd())
         self.exitcode = 0
 
-    # Enter a parse tree produced by commandsParser#addVideo.
+    # Enter a parse tree produced by commandsParser#Addvideo.
     def enterAddvideo(self, ctx:commandsParser.AddvideoContext):
         videoId = ctx.videoId().getText().strip('"')
         videoName = ctx.videoName().getText().strip('"')
@@ -22,7 +22,7 @@ class commands(commandsListener):
         print(f"Adding video '{videoId}' with name '{videoName}'")
         self.executeCommand([ruleName, videoId, videoName])
 
-    # Enter a parse tree produced by commandsParser#genMonth.
+    # Enter a parse tree produced by commandsParser#Genmonth.
     def enterGenmonth(self, ctx:commandsParser.GenmonthContext):
         month = ctx.month().getText()
         year = ctx.year().getText()
@@ -30,13 +30,19 @@ class commands(commandsListener):
         print(f"Generating month {month} for year {year}")
         self.executeCommand([ruleName, month, year])
 
-    # Enter a parse tree produced by commandsParser#lintAll.
+    # Enter a parse tree produced by commandsParser#Lintall.
     def enterLintall(self, ctx:commandsParser.LintallContext):
         ruleName = self.getRuleName(ctx)
         print(f"Linting all")
         self.executeCommand([ruleName])
 
-    # Enter a parse tree produced by commandsParser#genVidMD.
+    # Enter a parse tree produced by commandsParser#stitch.
+    def enterStitch(self, ctx:commandsParser.StitchContext):
+        ruleName = self.getRuleName(ctx)
+        print(f"Stitching")
+        self.executeCommand([ruleName])
+
+    # Enter a parse tree produced by commandsParser#Genvidmd.
     def enterGenvidmd(self, ctx:commandsParser.GenvidmdContext):
         videoId = ctx.videoId().getText().strip('"')
         caption = ctx.caption().getText().strip('"')

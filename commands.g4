@@ -2,7 +2,7 @@ grammar commands;
 
 program: (command NEWLINE | NEWLINE)* command? EOF;
 
-command: addvideo | genmonth  | lintall | genvidmd;
+command: addvideo | genmonth  | lintall | genvidmd | stitch;
 
 addvideo: 'addvideo' videoId videoName;
 videoId: STRING;
@@ -13,6 +13,8 @@ month: MONTH_DIGIT;
 year: YEAR;
 
 lintall: 'lintall';
+
+stitch: 'stitch';
 
 genvidmd: 'genvidmd' videoId caption pathtoimg;
 caption: STRING;
