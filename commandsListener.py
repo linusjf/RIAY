@@ -98,6 +98,24 @@ class commandsListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by commandsParser#gentoc.
+    def enterGentoc(self, ctx:commandsParser.GentocContext):
+        pass
+
+    # Exit a parse tree produced by commandsParser#gentoc.
+    def exitGentoc(self, ctx:commandsParser.GentocContext):
+        pass
+
+
+    # Enter a parse tree produced by commandsParser#pathtomdfile.
+    def enterPathtomdfile(self, ctx:commandsParser.PathtomdfileContext):
+        pass
+
+    # Exit a parse tree produced by commandsParser#pathtomdfile.
+    def exitPathtomdfile(self, ctx:commandsParser.PathtomdfileContext):
+        pass
+
+
     # Enter a parse tree produced by commandsParser#genvidmd.
     def enterGenvidmd(self, ctx:commandsParser.GenvidmdContext):
         pass

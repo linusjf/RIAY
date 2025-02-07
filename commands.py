@@ -51,6 +51,12 @@ class commands(commandsListener):
         print(f"Generating video markdown for '{videoId}' with caption '{caption}' and image '{pathtoimg}'")
         self.executeCommand([ruleName, videoId, caption, pathtoimg])
 
+    # Enter a parse tree produced by commandsParser#gentoc.
+    def enterGentoc(self, ctx:commandsParser.GentocContext):
+        ruleName = self.getRuleName(ctx)
+        pathtomdfile = ctx.pathtomdfile().getText().strip('"')
+        self.executeCommand([ruleName, pathtomdfile])
+
     # Get Rule Name
     def getRuleName(self, ctx):
         ruleIndex = ctx.getRuleIndex()
