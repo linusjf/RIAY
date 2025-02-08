@@ -22,6 +22,7 @@
 - [markdown-toc-gen](https://github.com/thesilk-tux/markdown-toc-gen)
 - [mdformat](https://github.com/hukkin/mdformat)
 - [mdl](https://github.com/markdownlint/markdownlint)
+- [vale](https://github.com/errata-ai/vale)
 
 1. Create an empty `videos.txt` file under the root directory.
 2. Create a directory for each month of the year under the root directory.
