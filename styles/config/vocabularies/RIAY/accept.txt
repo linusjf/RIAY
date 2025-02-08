@@ -1,3 +1,4 @@
+HOWTO
 gentoc
 jpeg
 vid
