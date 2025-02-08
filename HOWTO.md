@@ -229,4 +229,4 @@ genvidmd "abc123456" "Example video" "February/jpgs/examplevideo.jpg" # generate
 lintall # lint all the markdown files
 ```
 
-The program ignores anything after the `#` symbol.
+The program ignores everything after the `#` symbol and treats it like a new line character.
