@@ -20,6 +20,8 @@
     + [To Be Transfigured](#to-be-transfigured)
   * [February 07,2025](#february-072025)
     + [Food for the Journey](#food-for-the-journey)
+  * [February 08,2025](#february-082025)
+    + [In the Garden](#in-the-garden)
 
 <!-- tocstop -->
 
@@ -117,3 +119,9 @@ Goa, India
 ### Food for the Journey
 
 [![Food for the Journey](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day038.jpg)](https://youtu.be/5JaBXQcW0K4 "Food for the Journey")
+
+## February 08,2025 ##
+
+### In the Garden ###
+
+[![In the Garden](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day039.jpg)](https://youtu.be/sfspYnodC6Q "In the Garden")
