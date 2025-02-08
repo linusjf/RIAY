@@ -30,7 +30,7 @@
 ```
 export GIT_USER="<userid>"
 ```
-   Substitute your Github user id for <userid>.
+   Substitute your Github user id for `<userid>`.
 
 Example for January:
 
