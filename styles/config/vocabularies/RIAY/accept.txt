@@ -1,1 +1,14 @@
+gentoc
+jpeg
+vid
+pathtoimg
 Schmitz
+Youtube
+stitchmd
+mdl
+addvideo
+genmonth
+genvidmd
+lintall
+Github
+mdformat
