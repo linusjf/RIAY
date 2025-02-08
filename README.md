@@ -1,4 +1,4 @@
-# RIAY
+# Rosary In A Year (RIAY)
 
 [![Hits-of-Code](https://hitsofcode.com/github/linusjf/RIAY?branch=main)](https://hitsofcode.com/github/linusjf/RIAY/view?branch=main)
 
@@ -7,7 +7,7 @@
 - [Rosary In A Year](#rosary-in-a-year)
   - [Rosary In a Year Prayer Plan](#rosary-in-a-year-prayer-plan)
   - [Preparing for Rosary In a Year Podcast](#preparing-for-rosary-in-a-year-podcast)
-  - [The Rosary Has Changed History — And It Will Again](#the-rosary-has-changed-history--and-it-will-again)
+  - [The Rosary Has Changed History—And It Will Again](#the-rosary-has-changed-history-and-it-will-again)
   - [How to Pray the Rosary Like Never Before](#how-to-pray-the-rosary-like-never-before)
   - [Forming the Relationship](#forming-the-relationship)
   - [Format for sharing on the WhatsApp group](#format-for-sharing-on-the-whatsapp-group)
@@ -24,9 +24,9 @@
 
 [![Preparing for Rosary in a Year Podcast w/ Fr. Mark-Mary (+ Special Guest Fr. Mike Schmitz!)](https://raw.githubusercontent.com/linusjf/RIAY/main/Podcast.jpg)](https://youtu.be/kTKyflR2H-Q "Preparing for Rosary in a Year Podcast w/ Fr. Mark-Mary (+ Special Guest Fr. Mike Schmitz!)")
 
-### The Rosary Has Changed History — And It Will Again
+### The Rosary Has Changed History—And It Will Again
 
-[![The Rosary Has Changed History — And It Will Again](https://raw.githubusercontent.com/linusjf/RIAY/main/History.jpg)](https://youtu.be/exy8-Ffbls4 "The Rosary Has Changed History — And It Will Again")
+[![The Rosary Has Changed History—And It Will Again](https://raw.githubusercontent.com/linusjf/RIAY/main/History.jpg)](https://youtu.be/exy8-Ffbls4 "The Rosary Has Changed History — And It Will Again")
 
 ### How to Pray the Rosary Like Never Before
 
@@ -44,7 +44,7 @@ Please use the below format:
 
 —————————
 
-BIAY/CIAY/RIAY
+RIAY
 
 DayXX - Your Name
 
