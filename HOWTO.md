@@ -27,12 +27,6 @@
 1. Create an empty `videos.txt` file under the root directory.
 2. Create a directory for each month of the year under the root directory.
 3. Add a `header.md` file under each monthly directory with the following content.
-4. Export an environment variable `GIT_USER` by adding the following line to your `.bash_profile` file.
-```
-export GIT_USER="<userid>"
-```
-   Substitute your Github user id for `<userid>`.
-
 Example for January:
 
 ```markdown
@@ -58,6 +52,14 @@ with your own if you wish.
 
 Add a `compact.txt` file with the first line as `header.md` under each monthly directory.
 This ensures the presence of the header for each month's markdown.
+
+4. Export an environment variable `GIT_USER` by adding the following line to your `.bash_profile` file.
+```
+export GIT_USER="<userid>"
+```
+   Substitute your Github user id for `<userid>`.
+
+5. Initialize `vale` styles by executing the command `vale sync`. This should download the specified styles in `.vale.ini`.
 
 ## Add the daily Youtube video
 
