@@ -1,5 +1,7 @@
 __pycache__/*
 *.test
 *.bak
-styles/**
+styles/Microsoft
+styles/Google
+styles/write-good
 Microsoft.zip
