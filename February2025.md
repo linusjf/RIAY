@@ -24,6 +24,8 @@
     + [RIAY Day 38 Nadya Baracho](#riay-day-38-nadya-baracho)
   * [February 08,2025](#february-082025)
     + [In the Garden](#in-the-garden)
+  * [February 09,2025](#february-092025)
+    + [Suffering Servant](#suffering-servant)
 
 <!-- tocstop -->
 
@@ -113,7 +115,7 @@ Goa, India
 ### RIAY Day 36 Nadya Baracho
 
 Luminous Mysteries
-3.The proclamation of the kingdom  - The Kingdom and the Gospel. Mark 1:14-15.
+3.The proclamation of the kingdom - The Kingdom and the Gospel. Mark 1:14-15.
 
 The Greek word euangèlion means to preach. Jesus not only preaches the word of God but also brought it to fruition through miracles. He proclaims the sovereignty of God, the good news.
 
@@ -132,7 +134,7 @@ The Greek word euangèlion means to preach. Jesus not only preaches the word of 
 ### RIAY Day 38 Nadya Baracho
 
 Luminous Mysteries
-5. The Institution of the Eucharist - Jesus tthe Bread of Life. Luke 22:14-23
+5\. The Institution of the Eucharist - Jesus tthe Bread of Life. Luke 22:14-23
 Jesus institutes the new covenant at the last supper with his apostles. Just as the traditional passover revolved around the sacrifice of the lamb, the new passover revolves around the body and blood of Christ who was crucified for us. Jesus is the lamb of God who led us through the new Exodus from sin to freedom. He is the new manna which sustains us through our journey to the promised land. The bread blessed, broken and given becomes His flesh!
 It is mandatory for us to eat his flesh to receive eternal life.
 
@@ -141,3 +143,9 @@ It is mandatory for us to eat his flesh to receive eternal life.
 ### In the Garden
 
 [![In the Garden](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day039.jpg)](https://youtu.be/sfspYnodC6Q "In the Garden")
+
+## February 09,2025 ##
+
+### Suffering Servant ###
+
+[![Suffering Servant](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day040.jpg)](https://youtu.be/AhFxUZeZK1s "Suffering Servant")
