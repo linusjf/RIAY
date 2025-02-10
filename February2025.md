@@ -26,6 +26,8 @@
     + [In the Garden](#in-the-garden)
   * [February 09,2025](#february-092025)
     + [Suffering Servant](#suffering-servant)
+  * [February 10,2025](#february-102025)
+    + [The Victorious King](#the-victorious-king)
 
 <!-- tocstop -->
 
@@ -144,8 +146,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![In the Garden](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day039.jpg)](https://youtu.be/sfspYnodC6Q "In the Garden")
 
-## February 09,2025 ##
+## February 09,2025
 
-### Suffering Servant ###
+### Suffering Servant
 
 [![Suffering Servant](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day040.jpg)](https://youtu.be/AhFxUZeZK1s "Suffering Servant")
+
+## February 10,2025 ##
+
+### The Victorious King ###
+
+[![The Victorious King](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day041.jpg)](https://youtu.be/2fSlDxobHv8 "The Victorious King")

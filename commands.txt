@@ -1,3 +1,3 @@
-addvideo "AhFxUZeZK1s" "Suffering Servant" # add video
+addvideo "2fSlDxobHv8" "The Victorious King" # add video
 genmonth 02 2025 # generate
 lintall # lint all files
