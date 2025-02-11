@@ -28,6 +28,8 @@
     + [Suffering Servant](#suffering-servant)
   * [February 10,2025](#february-102025)
     + [The Victorious King](#the-victorious-king)
+  * [February 11,2025](#february-112025)
+    + [Sent into Exile](#sent-into-exile)
 
 <!-- tocstop -->
 
@@ -152,8 +154,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![Suffering Servant](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day040.jpg)](https://youtu.be/AhFxUZeZK1s "Suffering Servant")
 
-## February 10,2025 ##
+## February 10,2025
 
-### The Victorious King ###
+### The Victorious King
 
 [![The Victorious King](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day041.jpg)](https://youtu.be/2fSlDxobHv8 "The Victorious King")
+
+## February 11,2025 ##
+
+### Sent into Exile ###
+
+[![Sent into Exile](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day042.jpg)](https://youtu.be/BsXmaN4wt5M "Sent into Exile")
