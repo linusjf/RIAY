@@ -1,3 +1,3 @@
-addvideo "BsXmaN4wt5M" "Sent into Exile" # add video
+addvideo "RpK_72ah0R4" "The Veil is Torn" # add video
 genmonth 02 2025 # generate
 lintall # lint all files

@@ -30,6 +30,8 @@
     + [The Victorious King](#the-victorious-king)
   * [February 11,2025](#february-112025)
     + [Sent into Exile](#sent-into-exile)
+  * [February 12,2025](#february-122025)
+    + [The Veil is Torn](#the-veil-is-torn)
 
 <!-- tocstop -->
 
@@ -160,8 +162,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![The Victorious King](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day041.jpg)](https://youtu.be/2fSlDxobHv8 "The Victorious King")
 
-## February 11,2025 ##
+## February 11,2025
 
-### Sent into Exile ###
+### Sent into Exile
 
 [![Sent into Exile](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day042.jpg)](https://youtu.be/BsXmaN4wt5M "Sent into Exile")
+
+## February 12,2025 ##
+
+### The Veil is Torn ###
+
+[![The Veil is Torn](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day043.jpg)](https://youtu.be/RpK_72ah0R4 "The Veil is Torn")
