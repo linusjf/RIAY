@@ -32,6 +32,8 @@
     + [Sent into Exile](#sent-into-exile)
   * [February 12,2025](#february-122025)
     + [The Veil is Torn](#the-veil-is-torn)
+  * [February 13,2025](#february-132025)
+    + [Glorified Reality](#glorified-reality)
 
 <!-- tocstop -->
 
@@ -168,8 +170,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![Sent into Exile](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day042.jpg)](https://youtu.be/BsXmaN4wt5M "Sent into Exile")
 
-## February 12,2025 ##
+## February 12,2025
 
-### The Veil is Torn ###
+### The Veil is Torn
 
 [![The Veil is Torn](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day043.jpg)](https://youtu.be/RpK_72ah0R4 "The Veil is Torn")
+
+## February 13,2025 ##
+
+### Glorified Reality ###
+
+[![Glorified Reality](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day044.jpg)](https://youtu.be/bOJeFZU-fyY "Glorified Reality")
