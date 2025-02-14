@@ -34,6 +34,8 @@
     + [The Veil is Torn](#the-veil-is-torn)
   * [February 13,2025](#february-132025)
     + [Glorified Reality](#glorified-reality)
+  * [February 14,2025](#february-142025)
+    + [He Parted from Them](#he-parted-from-them)
 
 <!-- tocstop -->
 
@@ -176,8 +178,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![The Veil is Torn](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day043.jpg)](https://youtu.be/RpK_72ah0R4 "The Veil is Torn")
 
-## February 13,2025 ##
+## February 13,2025
 
-### Glorified Reality ###
+### Glorified Reality
 
 [![Glorified Reality](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day044.jpg)](https://youtu.be/bOJeFZU-fyY "Glorified Reality")
+
+## February 14,2025 ##
+
+### He Parted from Them ###
+
+[![He Parted from Them](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day045.jpg)](https://youtu.be/ufgV6eyOopE "He Parted from Them")
