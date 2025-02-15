@@ -7,10 +7,10 @@
 - [Rosary In A Year](#rosary-in-a-year)
   - [Rosary In a Year Prayer Plan](#rosary-in-a-year-prayer-plan)
   - [Preparing for Rosary In a Year Podcast](#preparing-for-rosary-in-a-year-podcast)
-  - [The Rosary Has Changed History—And It Will Again](#the-rosary-has-changed-history-and-it-will-again)
+  - [The Rosary Has Changed History—And It Will Again](#the-rosary-has-changed-historyand-it-will-again)
   - [How to Pray the Rosary Like Never Before](#how-to-pray-the-rosary-like-never-before)
   - [Forming the Relationship](#forming-the-relationship)
-  - [Format for sharing on the WhatsApp group](#format-for-sharing-on-the-whatsapp-group)
+  - [Format for sharing on [the WhatsApp group](https://chat.whatsapp.com/EPXBhsE4GzJ0j8YXt98YT1)](#format-for-sharing-on-the-whatsapp-grouphttpschatwhatsappcomepxbhse4gzj0j8yxt98yt1)
 
 <!-- tocstop -->
 

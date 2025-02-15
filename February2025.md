@@ -36,6 +36,8 @@
     + [Glorified Reality](#glorified-reality)
   * [February 14,2025](#february-142025)
     + [He Parted from Them](#he-parted-from-them)
+  * [February 15,2025](#february-152025)
+    + [Come Holy Spirit](#come-holy-spirit)
 
 <!-- tocstop -->
 
@@ -184,8 +186,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![Glorified Reality](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day044.jpg)](https://youtu.be/bOJeFZU-fyY "Glorified Reality")
 
-## February 14,2025 ##
+## February 14,2025
 
-### He Parted from Them ###
+### He Parted from Them
 
 [![He Parted from Them](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day045.jpg)](https://youtu.be/ufgV6eyOopE "He Parted from Them")
+
+## February 15,2025 ##
+
+### Come Holy Spirit ###
+
+[![Come Holy Spirit](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day046.jpg)](https://youtu.be/W0_rEVsZ0G4 "Come Holy Spirit")
