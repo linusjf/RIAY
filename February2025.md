@@ -38,6 +38,8 @@
     + [He Parted from Them](#he-parted-from-them)
   * [February 15,2025](#february-152025)
     + [Come Holy Spirit](#come-holy-spirit)
+  * [February 16,2025](#february-162025)
+    + [Mary's Return Home](#marys-return-home)
 
 <!-- tocstop -->
 
@@ -192,8 +194,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![He Parted from Them](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day045.jpg)](https://youtu.be/ufgV6eyOopE "He Parted from Them")
 
-## February 15,2025 ##
+## February 15,2025
 
-### Come Holy Spirit ###
+### Come Holy Spirit
 
 [![Come Holy Spirit](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day046.jpg)](https://youtu.be/W0_rEVsZ0G4 "Come Holy Spirit")
+
+## February 16,2025 ##
+
+### Mary's Return Home ###
+
+[![Mary's Return Home](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day047.jpg)](https://youtu.be/DbDImWk1y4E "Mary's Return Home")
