@@ -40,6 +40,8 @@
     + [Come Holy Spirit](#come-holy-spirit)
   * [February 16,2025](#february-162025)
     + [Mary's Return Home](#marys-return-home)
+  * [February 17,2025](#february-172025)
+    + [Mother and Queen](#mother-and-queen)
 
 <!-- tocstop -->
 
@@ -200,8 +202,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![Come Holy Spirit](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day046.jpg)](https://youtu.be/W0_rEVsZ0G4 "Come Holy Spirit")
 
-## February 16,2025 ##
+## February 16,2025
 
-### Mary's Return Home ###
+### Mary's Return Home
 
 [![Mary's Return Home](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day047.jpg)](https://youtu.be/DbDImWk1y4E "Mary's Return Home")
+
+## February 17,2025 ##
+
+### Mother and Queen ###
+
+[![Mother and Queen](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day048.jpg)](https://youtu.be/zjcZzil4Mfs "Mother and Queen")
