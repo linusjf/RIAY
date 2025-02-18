@@ -42,6 +42,8 @@
     + [Mary's Return Home](#marys-return-home)
   * [February 17,2025](#february-172025)
     + [Mother and Queen](#mother-and-queen)
+  * [February 18,2025](#february-182025)
+    + [How Can This Be?](#how-can-this-be)
 
 <!-- tocstop -->
 
@@ -208,8 +210,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![Mary's Return Home](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day047.jpg)](https://youtu.be/DbDImWk1y4E "Mary's Return Home")
 
-## February 17,2025 ##
+## February 17,2025
 
-### Mother and Queen ###
+### Mother and Queen
 
 [![Mother and Queen](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day048.jpg)](https://youtu.be/zjcZzil4Mfs "Mother and Queen")
+
+## February 18,2025 ##
+
+### How Can This Be? ###
+
+[![How Can This Be?](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day049.jpg)](https://youtu.be/ZdOs23aM6tE "How Can This Be?")
