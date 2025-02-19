@@ -44,6 +44,8 @@
     + [Mother and Queen](#mother-and-queen)
   * [February 18,2025](#february-182025)
     + [How Can This Be?](#how-can-this-be)
+  * [February 19,2025](#february-192025)
+    + [Rejoice in the Beauty](#rejoice-in-the-beauty)
 
 <!-- tocstop -->
 
@@ -216,8 +218,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![Mother and Queen](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day048.jpg)](https://youtu.be/zjcZzil4Mfs "Mother and Queen")
 
-## February 18,2025 ##
+## February 18,2025
 
-### How Can This Be? ###
+### How Can This Be?
 
 [![How Can This Be?](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day049.jpg)](https://youtu.be/ZdOs23aM6tE "How Can This Be?")
+
+## February 19,2025 ##
+
+### Rejoice in the Beauty ###
+
+[![Rejoice in the Beauty](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day050.jpg)](https://youtu.be/maFcTvNPNJw "Rejoice in the Beauty")

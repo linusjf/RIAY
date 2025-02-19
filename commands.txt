@@ -1,3 +1,3 @@
-addvideo "ZdOs23aM6tE" "How Can This Be?" # add video
+addvideo "maFcTvNPNJw" "Rejoice in the Beauty" # add video
 genmonth 02 2025 # generate
 lintall # lint all files
