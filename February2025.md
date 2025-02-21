@@ -48,6 +48,8 @@
     + [Rejoice in the Beauty](#rejoice-in-the-beauty)
   * [February 20,2025](#february-202025)
     + [Moved With Awe](#moved-with-awe)
+  * [February 21,2025](#february-212025)
+    + [My Eyes Have Seen Salvation](#my-eyes-have-seen-salvation)
 
 <!-- tocstop -->
 
@@ -232,8 +234,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![Rejoice in the Beauty](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day050.jpg)](https://youtu.be/maFcTvNPNJw "Rejoice in the Beauty")
 
-## February 20,2025 ##
+## February 20,2025
 
-### Moved With Awe ###
+### Moved With Awe
 
 [![Moved With Awe](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day051.jpg)](https://youtu.be/ObfPyKSPxrk "Moved With Awe")
+
+## February 21,2025 ##
+
+### My Eyes Have Seen Salvation ###
+
+[![My Eyes Have Seen Salvation](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day052.jpg)](https://youtu.be/rYVyMTsCeDQ "My Eyes Have Seen Salvation")
