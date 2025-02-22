@@ -50,6 +50,8 @@
     + [Moved With Awe](#moved-with-awe)
   * [February 21,2025](#february-212025)
     + [My Eyes Have Seen Salvation](#my-eyes-have-seen-salvation)
+  * [February 22,2025](#february-222025)
+    + [Our Perfect Director](#our-perfect-director)
 
 <!-- tocstop -->
 
@@ -240,8 +242,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![Moved With Awe](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day051.jpg)](https://youtu.be/ObfPyKSPxrk "Moved With Awe")
 
-## February 21,2025 ##
+## February 21,2025
 
-### My Eyes Have Seen Salvation ###
+### My Eyes Have Seen Salvation
 
 [![My Eyes Have Seen Salvation](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day052.jpg)](https://youtu.be/rYVyMTsCeDQ "My Eyes Have Seen Salvation")
+
+## February 22,2025 ##
+
+### Our Perfect Director ###
+
+[![Our Perfect Director](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day053.jpg)](https://youtu.be/pbJIzB2vEzQ "Our Perfect Director")

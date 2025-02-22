@@ -1,3 +1,3 @@
-addvideo "rYVyMTsCeDQ" "My Eyes Have Seen Salvation" # add video
+addvideo "pbJIzB2vEzQ" "Our Perfect Director" # add video
 genmonth 02 2025 # generate
 lintall # lint all files
