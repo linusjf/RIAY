@@ -54,6 +54,8 @@
     + [Our Perfect Director](#our-perfect-director)
   * [February 23,2025](#february-232025)
     + [My Beloved Son](#my-beloved-son)
+  * [February 24,2025](#february-242025)
+    + [Water Into Wine](#water-into-wine)
 
 <!-- tocstop -->
 
@@ -256,8 +258,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![Our Perfect Director](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day053.jpg)](https://youtu.be/pbJIzB2vEzQ "Our Perfect Director")
 
-## February 23,2025 ##
+## February 23,2025
 
-### My Beloved Son ###
+### My Beloved Son
 
 [![My Beloved Son](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day054.jpg)](https://youtu.be/aNLTmtYzma0 "My Beloved Son")
+
+## February 24,2025 ##
+
+### Water Into Wine ###
+
+[![Water Into Wine](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day055.jpg)](https://youtu.be/o-KP7TP9JaY "Water Into Wine")
