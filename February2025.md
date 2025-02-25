@@ -56,6 +56,8 @@
     + [My Beloved Son](#my-beloved-son)
   * [February 24,2025](#february-242025)
     + [Water Into Wine](#water-into-wine)
+  * [February 25,2025](#february-252025)
+    + [Good News](#good-news)
 
 <!-- tocstop -->
 
@@ -264,8 +266,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![My Beloved Son](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day054.jpg)](https://youtu.be/aNLTmtYzma0 "My Beloved Son")
 
-## February 24,2025 ##
+## February 24,2025
 
-### Water Into Wine ###
+### Water Into Wine
 
 [![Water Into Wine](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day055.jpg)](https://youtu.be/o-KP7TP9JaY "Water Into Wine")
+
+## February 25,2025 ##
+
+### Good News ###
+
+[![Good News](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day056.jpg)](https://youtu.be/rwSRDiElWMQ "Good News")
