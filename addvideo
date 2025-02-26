@@ -8,7 +8,7 @@ usage() {
   echo "caption - video title"
   exit 1
 }
-set -e
+set -eu
 require sed basename date markdown-toc
 if test $# -ne 2; then
   usage
@@ -58,13 +58,16 @@ if ./genoverlay "$vid" "$doy"; then
 
   basename -- "$fname" >> "${month}/compact.txt"
   monthmd="${month}${year}.md"
-  ./compact "$month" >| "$monthmd" \
-    && markdown-toc -i "$monthmd"
-  sed -i '/\S/,$!d' "$monthmd"
-  echo "$vid" >> videos.txt
-  echo "$fname generated for $vid."
-  exit 0
+  if ./compact "$month" >| "$monthmd" && markdown-toc -i "$monthmd"; then
+    sed -i '/\S/,$!d' "$monthmd"
+    printf "%s\n" "$vid" >> videos.txt
+    printf "%s generated for %s.\n" "$fname" "$vid"
+    exit 0
+  else
+    printf "Error generating %s.\n" "$monthmd" >&2
+    exit 1
+  fi
 else
-  echo "Unable to find or generate video thumbnail. Video may not exist. The video id '${vid}' is invalid." >&2
+  printf "Unable to find or generate video thumbnail. Video may not exist. The video id '%s' is invalid.\n" "$vid" >&2
   exit 1
 fi
