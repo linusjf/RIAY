@@ -20,7 +20,7 @@ if ! isnumeric "$2"; then
 fi
 year="$2"
 len=$((${#year}))
-if [ "$len" -ne 4 ]; then
+if ((len != 4)); then
   usage
 fi
 month=$((10#$1))
@@ -33,7 +33,18 @@ fi
 
 month="$(monthfromnumber "$((10#${month}))")"
 monthmd="${month}${year}.md"
-./compact "${month}" >| "${monthmd}" \
-  && markdown-toc -i "${monthmd}"
-sed -i '/\S/,$!d' "${monthmd}"
-exit "$?"
+if ! ./compact "$month" >| "$monthmd"; then
+  echo "Error running compact"
+  exit 1
+fi
+
+if ! markdown-toc -i "$monthmd"; then
+  echo "Error running markdown-toc"
+  exit 1
+fi
+
+if ! sed -i '/\S/,$!d' "$monthmd"; then
+  echo "Error running sed"
+  exit 1
+fi
+exit 0
