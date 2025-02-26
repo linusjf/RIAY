@@ -138,3 +138,36 @@ monthfromnumber() {
     *) exit 1 ;;
   esac
 }
+
+# Define a function to validate input
+validate_input() {
+  local value="$1"
+  local max_length="$2"
+  local error_message="$3"
+
+  if [[ -z "$value" ]]; then
+    echo "Error: $error_message cannot be empty." >&2
+    return 1
+  fi
+  if [[ ${#value} -gt $max_length ]]; then
+    echo "Error: $error_message too long. Maximum $max_length characters." >&2
+    return 1
+  fi
+}
+
+VIDEO_ID_LENGTH=11
+# Define a function to validate the video ID
+validate_vid() {
+  local vid="$1"
+  if [[ ! "$vid" =~ ^[a-zA-Z0-9_-]{${VIDEO_ID_LENGTH}$ ]]; then
+    echo "Error: Invalid video ID '$vid'. Expected ${VIDEO_ID_LENGTH} characters." >&2
+    return 1
+  fi
+  validate_input "$vid" ${VIDEO_ID_LENGTH} "Video ID"
+}
+
+MAX_CAPTION_LENGTH=100
+# Define a function to validate the caption
+validate_caption() {
+  validate_input "$1" ${MAX_CAPTION_LENGTH} "Caption"
+}

@@ -21,10 +21,20 @@ checkinternet || exit
 #shellcheck disable=SC1091
 source ./vidmd.sh
 vid="$1"
+caption="$2"
+
+if ! validate_vid "$vid"; then
+  exit 1
+fi
+
+if ! validate_caption "$caption"; then
+  exit 1
+fi
+YEAR=2025
+
 doy=$(("$(wc -l < videos.txt)" + 1))
 videourl="https://youtu.be/${vid}"
-caption="$2"
-year="2025"
+year="${YEAR}"
 if ./genoverlay "$vid" "$doy"; then
   md="$(./genvidthmd "$vid" "$videourl" "$caption" "$doy")"
   month="$(mfromdoy "$doy")"
