@@ -58,6 +58,8 @@
     + [Water Into Wine](#water-into-wine)
   * [February 25,2025](#february-252025)
     + [Good News](#good-news)
+  * [February 26,2025](#february-262025)
+    + [Let's Step Away](#lets-step-away)
 
 <!-- tocstop -->
 
@@ -272,8 +274,14 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 [![Water Into Wine](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day055.jpg)](https://youtu.be/o-KP7TP9JaY "Water Into Wine")
 
-## February 25,2025 ##
+## February 25,2025
 
-### Good News ###
+### Good News
 
 [![Good News](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day056.jpg)](https://youtu.be/rwSRDiElWMQ "Good News")
+
+## February 26,2025 ##
+
+### Let's Step Away ###
+
+[![Let's Step Away](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day057.jpg)](https://youtu.be/8AN6TrNBuUs "Let's Step Away")
