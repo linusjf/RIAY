@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 ######################################################################
 # @author      : Linus Fernandes (linusfernandes at gmail dot com)
-# @file        : vidmd
+# @file        : vidmd.sh
 # @created     : Wednesday Feb 08, 2023 18:45:15 IST
 #
 # @description :
 ######################################################################
 getroot() {
-  hash git basename || exit
+  command -v git basename > /dev/null || exit
   basename "$(git rev-parse --show-toplevel)"
 }
 
@@ -29,16 +29,19 @@ usagevidmdloc() {
 }
 
 playiconurl() {
+  local root
   root="$(getroot)"
-  doy="$1"
-  doy="$(printf "%03d" "${doy#0}")"
-  month="$(mfromdoy "$doy")"
+  local doy_raw="$1"
+  local doy_padded
+  doy_padded="$(printf "%03d" "${doy_raw#0}")"
+  local month
+  month="$(mfromdoy "$doy_padded")"
   echo "https://raw.githubusercontent.com/${GIT_USER}/${root}/main/${month}/jpgs/Day${doy}.jpg"
 }
 
 thumbnailurl() {
-  hash curl || exit
-  urls=("https://img.youtube.com/vi/${1}/maxresdefault.jpg"
+  command -v curl > /dev/null || exit
+  local urls=("https://img.youtube.com/vi/${1}/maxresdefault.jpg"
     "https://img.youtube.com/vi/${1}/hqdefault.jpg"
     "https://img.youtube.com/vi/${1}/hq1.jpg"
     "https://img.youtube.com/vi/${1}/hq2.jpg"
@@ -57,17 +60,20 @@ thumbnailurl() {
     "https://img.youtube.com/vi/${1}/1.jpg"
     "https://img.youtube.com/vi/${1}/2.jpg"
     "https://img.youtube.com/vi/${1}/3.jpg")
+
   for url in "${urls[@]}"; do
-    if test 200 -eq "$(curl -o /dev/null --silent -Iw '%{http_code}' "${url}")"; then
+    if curl --silent --head --fail "$url" > /dev/null; then
       echo "$url"
       return 0
     fi
   done
+
   return 1
 }
 
 downloadthumbnail() {
   hash curl || exit
+  local url=
   url="$(thumbnailurl "$1")"
   if [ -z "${url}" ]; then
     return 1
@@ -78,28 +84,27 @@ downloadthumbnail() {
 }
 
 vidmd() {
-  if test $# -lt 3; then
+  if (($# < 3)); then
     usagevidmd
   fi
-  vidid="$1"
-  vidurl="$2"
-  caption="$3"
-  if imgurl="$(thumbnailurl "$vidid")"; then
-    printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
-  else
-    echo >&2 "Thumbnails unverifiable,invalid or absent."
+  local vidid="$1" vidurl="$2" caption="$3"
+  local imgurl
+  imgurl="$(thumbnailurl "$vidid")" || {
+    echo "Error: Thumbnails unverifiable or absent." >&2
     return 1
-  fi
+  }
+  printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
 }
 
 vidmdloc() {
   if test $# -lt 4; then
     usagevidmdloc
   fi
-  vidid="$1"
-  vidurl="$2"
-  caption="$3"
-  doy="$4"
+  local vidid="$1"
+  local vidurl="$2"
+  local caption="$3"
+  local doy="$4"
+  local imgurl
   imgurl="$(playiconurl "${doy#0}")"
   printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
 }
@@ -113,7 +118,7 @@ isnumeric() {
 
 mfromdoy() {
   if ! isnumeric "$1"; then
-    echo 2> "$1 is not numeric"
+    echo "$1 is not numeric" >&2
     return 1
   fi
   ((day = 10#$1 - 1))
