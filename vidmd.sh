@@ -7,7 +7,14 @@
 # @description :
 ######################################################################
 getroot() {
-  command -v git basename > /dev/null || exit
+  command -v git > /dev/null || {
+    printf "%s not found.\n" "git"
+    exit
+  }
+  command -v basename > /dev/null || {
+    printf "%s not found.\n" "basename"
+    exit
+  }
   basename "$(git rev-parse --show-toplevel)"
 }
 
@@ -40,7 +47,10 @@ playiconurl() {
 }
 
 thumbnailurl() {
-  command -v curl > /dev/null || exit
+  command -v curl > /dev/null || {
+    printf "%s not found.\n" "curl"
+    exit
+  }
   local urls=("https://img.youtube.com/vi/${1}/maxresdefault.jpg"
     "https://img.youtube.com/vi/${1}/hqdefault.jpg"
     "https://img.youtube.com/vi/${1}/hq1.jpg"
