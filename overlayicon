@@ -1,35 +1,73 @@
 #!/usr/bin/env bash
+
 require() {
-  hash "$@" || exit
+  hash "$1" 2> /dev/null || {
+    echo "Error: '$1' command not found. Please install it."
+    exit 1
+  }
 }
-require gm mv file grep mktemp
+
+require gm
+require mv
+require file
+require grep
+require mktemp
 
 usage() {
-  echo "$0 file"
-  echo "file - jpeg image file path"
+  echo "Usage: $0 file"
+  echo "  file - Path to a JPEG image"
   exit 1
 }
 
 isjpegfile() {
-  file "$1" | grep 'JPEG' &> /dev/null
+  file "$1" | grep -q 'JPEG'
 }
 
-if test $# -ne 1; then
-  usage
-fi
-if ! test -f "$1"; then
-  usage
-fi
-if ! isjpegfile "$1"; then
+# Validate input arguments
+if [[ $# -ne 1 ]]; then
+  echo "Error: Missing file argument."
   usage
 fi
 
-icon="play-button.png"
-tmp=$(mktemp)
-if gm composite -gravity center -geometry 256x256+32+0 \
-  "$icon" "$1" "$tmp"; then
-  mv "$tmp" "$1"
-  exit "$?"
-else
+file_path="$1"
+
+# Check if the file exists
+if [[ ! -f "$file_path" ]]; then
+  echo "Error: File '$file_path' not found."
   exit 1
 fi
+
+# Check if the file is a valid JPEG
+if ! isjpegfile "$file_path"; then
+  echo "Error: '$file_path' is not a valid JPEG file."
+  exit 1
+fi
+
+# Check if overlay icon exists
+icon="play-button.png"
+if [[ ! -f "$icon" ]]; then
+  echo "Error: Overlay icon '$icon' not found."
+  exit 1
+fi
+
+# Create a temporary file
+tmp=$(mktemp) || {
+  echo "Error: Failed to create temporary file."
+  exit 1
+}
+
+# Apply overlay
+if ! gm composite -gravity center -geometry 256x256+32+0 "$icon" "$file_path" "$tmp"; then
+  echo "Error: Failed to overlay icon onto '$file_path'."
+  rm -f "$tmp"
+  exit 1
+fi
+
+# Replace the original file
+if ! mv "$tmp" "$file_path"; then
+  echo "Error: Failed to replace original file with overlaid image."
+  rm -f "$tmp"
+  exit 1
+fi
+
+exit 0

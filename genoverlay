@@ -1,31 +1,61 @@
 #!/usr/bin/env bash
+
 require() {
-  hash "$@" || exit
+  hash "$@" || exit 1
 }
 require curl realpath mkdir
+
 usage() {
-  echo "$0 vid doy"
-  echo "vid - video id"
+  echo "Usage: $0 vid doy"
+  echo "vid - video ID"
   echo "doy - day of year (numeric)"
   exit 1
 }
-if test $# -ne 2; then
+
+if [[ $# -ne 2 ]]; then
   usage
 fi
-#shellcheck disable=SC1091
+
+if [[ ! -f ./vidmd.sh ]]; then
+  echo "Error: vidmd.sh not found!"
+  exit 1
+fi
+# shellcheck disable=SC1091
 source ./vidmd.sh
+
 if ! isnumeric "$2"; then
   usage
 fi
-if imgurl="$(thumbnailurl "$1")"; then
-  month="$(mfromdoy "$2")"
-  doy="$(printf "%03d" "${2#0}")"
-  dir="${month}/jpgs"
-  mkdir -p "$dir"
-  relfile="${dir}/Day${doy}.jpg"
-  relfile="$(realpath "$relfile")"
-  curl --silent "$imgurl" --output "$relfile" --
-  ./overlayicon "$relfile"
-else
+
+if ! imgurl="$(thumbnailurl "$1")"; then
+  echo "Error: Failed to retrieve thumbnail URL for video ID: $1"
   exit 1
 fi
+
+month="$(mfromdoy "$2")"
+doy="$(printf "%03d" "${2#0}")"
+dir="${month}/jpgs"
+
+if ! mkdir -p "$dir"; then
+  echo "Error: Failed to create directory $dir"
+  exit 1
+fi
+
+relfile="${dir}/Day${doy}.jpg"
+
+if ! relfile="$(realpath "$relfile")"; then
+  echo "Error: Failed to resolve realpath for $relfile"
+  exit 1
+fi
+
+if ! curl --silent "$imgurl" --output "$relfile"; then
+  echo "Error: Failed to download thumbnail from $imgurl"
+  exit 1
+fi
+
+if [[ ! -x ./overlayicon ]]; then
+  echo "Error: overlayicon script is missing or not executable!"
+  exit 1
+fi
+
+./overlayicon "$relfile"

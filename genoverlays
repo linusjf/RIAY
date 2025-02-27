@@ -1,10 +1,27 @@
 #!/usr/bin/env bash
 declare -r fname="videos.txt"
 declare -i count=0
+
+# Ensure the input file exists
+if [[ ! -f "$fname" ]]; then
+  echo "Error: File '$fname' not found!"
+  exit 1
+fi
+
+# Ensure genoverlay is executable
+if [[ ! -x ./genoverlay ]]; then
+  echo "Error: 'genoverlay' script is missing or not executable!"
+  exit 1
+fi
+
+# Process each line
 while IFS= read -r vid; do
-  ((count = count + 1))
+  [[ -z "$vid" ]] && continue # Skip empty lines
+  ((count++))
   if ! ./genoverlay "$vid" "$count"; then
+    echo "Error: genoverlay failed for video ID '$vid'"
     exit 1
   fi
-done <<< "$(< "$fname")"
+done < "$fname"
+
 exit 0

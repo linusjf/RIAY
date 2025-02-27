@@ -1,32 +1,68 @@
 #!/usr/bin/env bash
+
 usage() {
-  echo "$0 vid caption pathtoimg"
-  echo "vid - video id"
-  echo "caption - video title"
-  echo "pathtoimg - relative path to jpeg image file to be generated"
+  echo "Usage: $0 vid caption pathtoimg"
+  echo "  vid       - YouTube video ID"
+  echo "  caption   - Video title"
+  echo "  pathtoimg - Relative path to the generated JPEG image"
   exit 1
 }
-if test $# -lt 3; then
+
+# Ensure at least three arguments are provided
+if [[ $# -lt 3 ]]; then
   usage
 fi
 
-#shellcheck disable=SC1091
-source ./internet.sh
-checkinternet || exit
-
-#shellcheck disable=SC1091
-source ./vidmd.sh
-if ./overlayimg "${1}" "${3}"; then
-  vidurl="https://youtu.be/${1}"
-  caption="${2}"
-  root="$(getroot)"
-  if test -e "${3}" && test -f "${3}"; then
-    imgurl="https://raw.githubusercontent.com/${GIT_USER}/${root}/main/${3}"
-    printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
-  else
-    usage
+# Ensure required scripts exist
+for script in "./internet.sh" "./vidmd.sh"; do
+  if [[ ! -f "$script" ]]; then
+    echo "Error: Required script '$script' not found!"
+    exit 1
   fi
-else
-  echo "The video id '${1}' is invalid." >&2
+done
+
+# Source required scripts
+# shellcheck disable=SC1091
+source ./internet.sh
+# shellcheck disable=SC1091
+source ./vidmd.sh
+
+# Check internet connectivity
+checkinternet || {
+  echo "Error: No internet connection detected."
+  exit 1
+}
+
+# Ensure GIT_USER is set
+if [[ -z "$GIT_USER" ]]; then
+  echo "Error: GIT_USER environment variable is not set."
   exit 1
 fi
+
+# Ensure target image directory is writable
+if [[ ! -w "$(dirname "$3")" ]]; then
+  echo "Error: Cannot write to directory '$(dirname "$3")'."
+  exit 1
+fi
+
+# Generate overlay image
+if ! ./overlayimg "${1}" "${3}"; then
+  echo "Error: Failed to overlay image for video ID '${1}'." >&2
+  exit 1
+fi
+
+# Verify the image file was created
+if [[ ! -f "$3" ]]; then
+  echo "Error: Image file '$3' was not generated correctly."
+  exit 1
+fi
+
+# Generate Markdown link
+vidurl="https://youtu.be/${1}"
+caption="${2}"
+root="$(getroot)"
+imgurl="https://raw.githubusercontent.com/${GIT_USER}/${root}/main/${3}"
+
+printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
+
+exit 0

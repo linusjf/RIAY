@@ -1,26 +1,61 @@
 #!/usr/bin/env bash
+
+# Ensure vidmd.sh exists before sourcing
+if [[ ! -f "./vidmd.sh" ]]; then
+  echo "Error: Required script 'vidmd.sh' not found!"
+  exit 1
+fi
 #shellcheck disable=SC1091
 source ./vidmd.sh
+
 usage() {
-  echo "$0 vid vidurl caption doy"
-  echo "vid - video id"
-  echo "vidurl - video url"
-  echo "caption - video title"
-  echo "doy - day of year"
+  echo "Usage: $0 vid vidurl caption [doy]"
+  echo "  vid      - YouTube video ID"
+  echo "  vidurl   - YouTube video URL"
+  echo "  caption  - Video title"
+  echo "  doy      - (Optional) Day of the year (numeric)"
   exit 1
 }
 
 require() {
-  hash "$@" || exit
+  hash "$1" 2> /dev/null || {
+    echo "Error: '$1' command not found. Please install it."
+    exit 1
+  }
 }
+
 require curl
-if test $# -lt 3; then
+
+# Validate number of arguments
+if [[ $# -lt 3 ]]; then
   usage
 fi
+
 vid="$1"
 vidurl="$2"
 caption="$3"
 doy="$4"
-if md="$(vidmdloc "$vid" "$vidurl" "$caption" "$doy")"; then
-  printf "%s\n" "$md"
+
+# Validate video URL format
+regex="https?://"
+if [[ ! "$vidurl" =~ ^${regex} ]]; then
+  echo "Error: Invalid video URL format."
+  exit 1
 fi
+
+# Validate day of year if provided
+if [[ -n "$doy" && ! "$doy" =~ ^[0-9]+$ ]]; then
+  echo "Error: 'doy' must be a numeric value."
+  exit 1
+fi
+
+# Generate Markdown content
+md="$(vidmdloc "$vid" "$vidurl" "$caption" "$doy")"
+if [[ -z "$md" ]]; then
+  echo "Error: Failed to generate Markdown content."
+  exit 1
+fi
+
+printf "%s\n" "$md"
+
+exit 0

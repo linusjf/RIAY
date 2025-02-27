@@ -1,6 +1,25 @@
 #!/usr/bin/env bash
+
+# Ensure required command is available
 require() {
-  hash "$@" || exit
+  hash "$1" 2> /dev/null || {
+    echo "Error: '$1' command not found. Please install it."
+    exit 1
+  }
 }
+
 require stitchmd
-stitchmd -o README.md -- stitch.md
+
+# Check if input file exists
+if [[ ! -f "stitch.md" ]]; then
+  echo "Error: 'stitch.md' not found. Cannot generate README.md."
+  exit 1
+fi
+
+# Run stitchmd and handle potential failure
+if ! stitchmd -o README.md -- stitch.md; then
+  echo "Error: Failed to generate README.md."
+  exit 1
+fi
+
+exit 0

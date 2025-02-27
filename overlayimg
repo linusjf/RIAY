@@ -1,28 +1,58 @@
 #!/usr/bin/env bash
+
 usage() {
-  echo "$0" vid output
-  echo "vid - video id"
-  echo "output - path to output jpeg file"
+  echo "Usage: $0 vid output"
+  echo "  vid    - YouTube video ID"
+  echo "  output - Path to output JPEG file"
   exit 1
 }
-#shellcheck disable=SC1091
-source ./vidmd.sh
-if test $# -ne 2; then
-  usage
-fi
-if test -d "${2}"; then
-  usage
-fi
-if ! test -d "$(dirname "${2}")"; then
-  usage
-fi
-path="$2"
-ext="${path##*.}"
-if [ "$ext" != "jpg" ] && [ "$ext" != "jpeg" ]; then
-  usage
-fi
-if downloadthumbnail "$1" "$2"; then
-  ./overlayicon "$2"
-else
+
+# Ensure vidmd.sh exists before sourcing
+if [[ ! -f "./vidmd.sh" ]]; then
+  echo "Error: Required script 'vidmd.sh' not found!"
   exit 1
 fi
+#shellcheck disable=SC1091
+source ./vidmd.sh
+
+# Validate arguments
+if [[ $# -ne 2 ]]; then
+  echo "Error: Missing arguments."
+  usage
+fi
+
+vid="$1"
+output="$2"
+
+# Validate output path
+if [[ -d "$output" ]]; then
+  echo "Error: Output path '$output' is a directory."
+  exit 1
+fi
+
+if [[ ! -d "$(dirname "$output")" ]]; then
+  echo "Error: Parent directory for output path does not exist."
+  exit 1
+fi
+
+# Validate file extension (case-insensitive)
+ext="${output##*.}"
+ext_lower=$(echo "$ext" | tr '[:upper:]' '[:lower:]')
+if [[ "$ext_lower" != "jpg" && "$ext_lower" != "jpeg" ]]; then
+  echo "Error: Output file must have a '.jpg' or '.jpeg' extension."
+  exit 1
+fi
+
+# Download thumbnail
+if ! downloadthumbnail "$vid" "$output"; then
+  echo "Error: Failed to download thumbnail for video ID '$vid'."
+  exit 1
+fi
+
+# Overlay icon
+if ! ./overlayicon "$output"; then
+  echo "Error: Failed to overlay icon on '$output'."
+  exit 1
+fi
+
+exit 0

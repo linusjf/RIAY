@@ -1,19 +1,34 @@
 #!/usr/bin/env bash
+
 require() {
-  hash "$@" || exit
+  hash "$1" 2> /dev/null || {
+    echo "Error: '$1' command not found. Please install it."
+    exit 1
+  }
 }
 require markdown-toc-gen
+
 usage() {
-  echo "$0 markdownfile"
-  echo "markdownfile - the markdown file for which table of contents is to be generated"
+  echo "Usage: $0 markdownfile"
+  echo "Error: Please provide a valid Markdown file to generate a Table of Contents."
   exit 1
 }
-if test $# -ne 1; then
-  usage
-fi
-if test -d "$1"; then
+
+# Check if exactly one argument is provided
+if [[ $# -ne 1 ]]; then
   usage
 fi
 
-markdown-toc-gen insert "$1"
-exit "$?"
+# Ensure the provided argument is a valid file
+if [[ ! -f "$1" || ! -r "$1" ]]; then
+  echo "Error: '$1' is not a valid readable file."
+  usage
+fi
+
+# Generate TOC
+if ! markdown-toc-gen insert "$1"; then
+  echo "Error: Failed to generate TOC for '$1'."
+  exit 1
+fi
+
+exit 0
