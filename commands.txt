@@ -1,3 +1,3 @@
-addvideo "8AN6TrNBuUs" "Let's Step Away" # add video
+addvideo "TFXuCOuK7LI" "Creativity of Love" # add video
 genmonth 02 2025 # generate
 lintall # lint all files

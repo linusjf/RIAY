@@ -10,7 +10,7 @@
   - [The Rosary Has Changed History—And It Will Again](#the-rosary-has-changed-historyand-it-will-again)
   - [How to Pray the Rosary Like Never Before](#how-to-pray-the-rosary-like-never-before)
   - [Forming the Relationship](#forming-the-relationship)
-  - [Format for sharing on [the WhatsApp group](https://chat.whatsapp.com/EPXBhsE4GzJ0j8YXt98YT1)](#format-for-sharing-on-the-whatsapp-grouphttpschatwhatsappcomepxbhse4gzj0j8yxt98yt1)
+  - \[Format for sharing on [the WhatsApp group](https://chat.whatsapp.com/EPXBhsE4GzJ0j8YXt98YT1)\](#format-for-sharing-on-the-whatsapp-grouphttpschatwhatsappcomepxbhse4gzj0j8yxt98yt1)
 
 <!-- tocstop -->
 
@@ -38,7 +38,7 @@
 
 ### Format for sharing on [the WhatsApp group](https://chat.whatsapp.com/EPXBhsE4GzJ0j8YXt98YT1)
 
-Would like to encourage the participants to share their thoughts, it can be one word, one line or a reflection, it doesn't have to be perfect. We the admins will review it before posting so feel free to drop us a note. Let us know how the days readings inspired you. 
+Would like to encourage the participants to share their thoughts, it can be one word, one line or a reflection, it doesn't have to be perfect. We the admins will review it before posting so feel free to drop us a note. Let us know how the days readings inspired you.
 
 Please use the below format:
 

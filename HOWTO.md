@@ -25,9 +25,9 @@
 - [vale](https://github.com/errata-ai/vale)
 
 1. Create an empty `videos.txt` file under the root directory.
-2. Create a directory for each month of the year under the root directory.
-3. Add a `header.md` file under each monthly directory with the following content.
-Example for January:
+1. Create a directory for each month of the year under the root directory.
+1. Add a `header.md` file under each monthly directory with the following content.
+   Example for January:
 
 ```markdown
 <!-- toc -->
@@ -54,10 +54,12 @@ Add a `compact.txt` file with the first line as `header.md` under each monthly d
 This ensures the presence of the header for each month's markdown.
 
 4. Export an environment variable `GIT_USER` by adding the following line to your `.bash_profile` file.
-```
+
+```bash
 export GIT_USER="<userid>"
 ```
-   Substitute your Github user id for `<userid>`.
+
+Substitute your Github user id for `<userid>`.
 
 5. Initialize `vale` styles by executing the command `vale sync`. This should download the specified styles in `.vale.ini`.
 
@@ -77,28 +79,28 @@ Example:
 Results:
 
 1. Computes the `day of year` from the length of the videos.txt file.
-`day of year = (number of lines in videos.txt) + 1`
-    In this case, 10.
-2. Appends the Video id to the file `videos.txt` present in the root directory.
-3.  Generates markdown file `Day010.md` in the `January` subdirectory.
-4.  Generates image file `Day010.jpg` in the `January/jpgs` directory.
-5.  Appends `Day010.md` filename to the `January/compact.txt` file.
-6.  Updates `January20XX.md` file in the root directory with the contents of `Day010.md`.
-7. Updated files:
-  7.1 `./videos.txt`
-  7.2 `./January20XX.md`
-  7.3 `./January/compact.txt`
-8. Created files:
-  8.1 `./January/Day010.md`
-  8.2 `./January/jpgs/Day010.jpg`
+   `day of year = (number of lines in videos.txt) + 1`
+   In this case, 10.
+1. Appends the Video id to the file `videos.txt` present in the root directory.
+1. Generates markdown file `Day010.md` in the `January` subdirectory.
+1. Generates image file `Day010.jpg` in the `January/jpgs` directory.
+1. Appends `Day010.md` filename to the `January/compact.txt` file.
+1. Updates `January20XX.md` file in the root directory with the contents of `Day010.md`.
+1. Updated files:
+   7.1 `./videos.txt`
+   7.2 `./January20XX.md`
+   7.3 `./January/compact.txt`
+1. Created files:
+   8.1 `./January/Day010.md`
+   8.2 `./January/jpgs/Day010.jpg`
 
 ## Add today's sharing
 
-1.  First, add today's video.
-2.  Edit the generated `Dayxxx.md` file for today.
-3.  Paste the sharing text into the file adding appropriate markdown headers as needed.
-4.  Save the file.
-5.  Execute script `genmonth` with the following parameters:
+1. First, add today's video.
+1. Edit the generated `Dayxxx.md` file for today.
+1. Paste the sharing text into the file adding appropriate markdown headers as needed.
+1. Save the file.
+1. Execute script `genmonth` with the following parameters:
 
 - month index - 1 - 12
 
@@ -142,36 +144,36 @@ Example:
 
 Results:
 
-1.  Generates markdown on the command line. Used this to insert video markdown in your markdown files.
-2.  Generates overlaid image file for the video as `January/jpgs/bringingback.jpg`.
+1. Generates markdown on the command line. Used this to insert video markdown in your markdown files.
+1. Generates overlaid image file for the video as `January/jpgs/bringingback.jpg`.
 
 ## Merge monthly markdown files into one large README
 
-1.  Edit the `stitch.md` file provided to include the markdown files you wish to merge.
+1. Edit the `stitch.md` file provided to include the markdown files you wish to merge.
 
-2.  The file format follows:
+1. The file format follows:
 
-    ```markdown
-    # README
+   ```markdown
+   # README
 
-    - [RIAY](redme.md)
-    - [January 2025](January2025.md)
-    - [February 2025](February2025.md)
-    - [March 2025](March2025.md)
-    - [April 2025](April2025.md)
-    - [May 2025](May2025.md)
-    - [June 2025](June2025.md)
-    - [July 2025](July2025.md)
-    - [August 2025](August2025.md)
-    - [September 2025](September2025.md)
-    - [October 2025](October2025.md)
-    - [November 2025](November2025.md)
-    - [December 2025](December2025.md)
-    ```
+   - [RIAY](redme.md)
+   - [January 2025](January2025.md)
+   - [February 2025](February2025.md)
+   - [March 2025](March2025.md)
+   - [April 2025](April2025.md)
+   - [May 2025](May2025.md)
+   - [June 2025](June2025.md)
+   - [July 2025](July2025.md)
+   - [August 2025](August2025.md)
+   - [September 2025](September2025.md)
+   - [October 2025](October2025.md)
+   - [November 2025](November2025.md)
+   - [December 2025](December2025.md)
+   ```
 
-    Include or exclude any files you need or don't need.
+   Include or exclude any files you need or don't need.
 
-3.  Execute the `stitch` script.
+1. Execute the `stitch` script.
 
 ```bash
 ./stitch
@@ -189,7 +191,7 @@ Execute the `gentoc` script as follows:
 ./gentoc <path to markdown file>
 ```
 
-Before executing the script, update the file and place the comment `<!-- toc -->` and `<!-- tocstop -->` to generate  the table of contents inside these markers.
+Before executing the script, update the file and place the comment `<!-- toc -->` and `<!-- tocstop -->` to generate the table of contents inside these markers.
 
 Results:
 
@@ -205,9 +207,11 @@ You can download and install Python3 from <https://www.python.org/downloads/>.
 ```bash
 pip install antlr4-tools antlr4-python3-runtime
 ```
+
 2. Add commands to the `commands.txt` file.
 
 Available commands:
+
 - addvideo
 - genmonth
 - lintall
@@ -218,13 +222,16 @@ Available commands:
 For simplicity and consistency, the commands wrap their command line equivalents.
 
 3. Execute the commands.py script.
-```
+
+```bash
 ./commands.py
 ```
+
 This executes the commands in order as placed in the `commands.txt`. If any command fails, the program outputs an error message for that command and executes all following commands.
 
 4. Example `commands.txt` file
-```
+
+```text
 # example commands
 addvideo "abc123456" "Example video" # add example video
 genmonth 01 2025 # generate markdown for month January, 2025
