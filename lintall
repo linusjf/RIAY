@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
+set -e # Exit immediately on any error
+
 require() {
-  hash "$@" || exit
+  for cmd in "$@"; do
+    if ! hash "$cmd" 2> /dev/null; then
+      echo "Error: Required command '$cmd' is not installed or not in PATH" >&2
+      exit 1
+    fi
+  done
 }
+
 require mdl mdformat
-declare -i exitcode=0
-mdformat -- **/*.md
-exitcode=$((exitcode + $?))
-mdl -- **/*.md
-exitcode=$((exitcode + $?))
-exit "$exitcode"
+
+shopt -s globstar # Enable recursive globbing for better portability
+
+mdformat -- **/*.md || exit 1
+mdl -- **/*.md || exit 1
