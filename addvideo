@@ -68,6 +68,6 @@ if ./genoverlay "$vid" "$doy"; then
     exit 1
   fi
 else
-  printf "Unable to find or generate video thumbnail. Video may not exist. The video id '%s' is invalid.\n" "$vid" >&2
+  printf "Unable to find or generate video thumbnail. Video may not exist or the overlay generation failed. The video id '%s' may be invalid.\n" "$vid" >&2
   exit 1
 fi
