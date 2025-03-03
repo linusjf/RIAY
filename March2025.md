@@ -5,6 +5,8 @@
     - [Effects of Sin](#effects-of-sin)
   - [March 02,2025](#march-022025)
     - [You Are Beloved](#you-are-beloved)
+  - [March 03,2025](#march-032025)
+    - [He Meets Us](#he-meets-us)
 
 <!-- tocstop -->
 
@@ -23,3 +25,9 @@ RIAY March 2025
 ### You Are Beloved
 
 [![You Are Beloved](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day61.jpg)](https://youtu.be/DWAyh_NBxig "You Are Beloved")
+
+## March 03,2025
+
+### He Meets Us
+
+[![He Meets Us](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day62.jpg)](https://youtu.be/hkBJF6EpEKs "He Meets Us")
