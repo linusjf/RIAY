@@ -1,3 +1,4 @@
+# commands
 addvideo "jFRgcmuS2G8" "Even Unto Death" # add video
 genmonth 03 2025 # generate
 lintall # lint all files
