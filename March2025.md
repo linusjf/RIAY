@@ -7,6 +7,8 @@
     - [You Are Beloved](#you-are-beloved)
   - [March 03,2025](#march-032025)
     - [He Meets Us](#he-meets-us)
+  - [March 04,2025](#march-042025)
+    - [Even Unto Death](#even-unto-death)
 
 <!-- tocstop -->
 
@@ -31,3 +33,9 @@ RIAY March 2025
 ### He Meets Us
 
 [![He Meets Us](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day62.jpg)](https://youtu.be/hkBJF6EpEKs "He Meets Us")
+
+## March 04,2025
+
+### Even Unto Death
+
+[![Even Unto Death](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day63.jpg)](https://youtu.be/jFRgcmuS2G8 "Even Unto Death")
