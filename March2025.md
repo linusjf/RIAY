@@ -9,6 +9,8 @@
     - [He Meets Us](#he-meets-us)
   - [March 04,2025](#march-042025)
     - [Even Unto Death](#even-unto-death)
+  - [March 05,2025](#march-052025)
+    - [Christ is Risen](#christ-is-risen)
 
 <!-- tocstop -->
 
@@ -39,3 +41,9 @@ RIAY March 2025
 ### Even Unto Death
 
 [![Even Unto Death](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day63.jpg)](https://youtu.be/jFRgcmuS2G8 "Even Unto Death")
+
+## March 05,2025
+
+### Christ is Risen
+
+[![Christ is Risen](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day64.jpg)](https://youtu.be/ukldEFtB6sE "Christ is Risen")
