@@ -11,6 +11,8 @@
     - [Even Unto Death](#even-unto-death)
   - [March 05,2025](#march-052025)
     - [Christ is Risen](#christ-is-risen)
+  - [March 06,2025](#march-062025)
+    - [Returning Home](#returning-home)
 
 <!-- tocstop -->
 
@@ -47,3 +49,9 @@ RIAY March 2025
 ### Christ is Risen
 
 [![Christ is Risen](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day64.jpg)](https://youtu.be/ukldEFtB6sE "Christ is Risen")
+
+## March 06,2025
+
+### Returning Home
+
+[![Returning Home](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day65.jpg)](https://youtu.be/shHa5FsnPEM "Returning Home")
