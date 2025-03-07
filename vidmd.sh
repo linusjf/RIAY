@@ -51,7 +51,8 @@ thumbnailurl() {
     printf "%s not found.\n" "curl"
     exit
   }
-  local urls=("https://img.youtube.com/vi/${1}/maxresdefault.jpg"
+  local urls
+  urls=("https://img.youtube.com/vi/${1}/maxresdefault.jpg"
     "https://img.youtube.com/vi/${1}/hqdefault.jpg"
     "https://img.youtube.com/vi/${1}/hq1.jpg"
     "https://img.youtube.com/vi/${1}/hq2.jpg"
@@ -83,7 +84,7 @@ thumbnailurl() {
 
 downloadthumbnail() {
   hash curl || exit
-  local url=
+  local url
   url="$(thumbnailurl "$1")"
   if [ -z "${url}" ]; then
     return 1
@@ -174,7 +175,8 @@ VIDEO_ID_LENGTH=11
 # Define a function to validate the video ID
 validate_vid() {
   local vid="$1"
-  local regex="[a-zA-Z0-9_-]{${VIDEO_ID_LENGTH}}"
+  local regex
+  regex="[a-zA-Z0-9_-]{${VIDEO_ID_LENGTH}}"
   if [[ ! "$vid" =~ ^${regex}$ ]]; then
     echo "Error: Invalid video ID ${vid}. Expected ${VIDEO_ID_LENGTH} characters." >&2
     return 1
