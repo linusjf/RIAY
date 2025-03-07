@@ -13,6 +13,8 @@
     - [Christ is Risen](#christ-is-risen)
   - [March 06,2025](#march-062025)
     - [Returning Home](#returning-home)
+  - [March 07,2025](#march-072025)
+    - [Wait and Pray](#wait-and-pray)
 
 <!-- tocstop -->
 
@@ -55,3 +57,9 @@ RIAY March 2025
 ### Returning Home
 
 [![Returning Home](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day65.jpg)](https://youtu.be/shHa5FsnPEM "Returning Home")
+
+## March 07,2025
+
+### Wait and Pray
+
+[![Wait and Pray](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day66.jpg)](https://youtu.be/MoGAbC67sWE "Wait and Pray")
