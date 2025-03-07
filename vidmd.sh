@@ -175,8 +175,7 @@ VIDEO_ID_LENGTH=11
 # Define a function to validate the video ID
 validate_vid() {
   local vid="$1"
-  local regex
-  regex="[a-zA-Z0-9_-]{${VIDEO_ID_LENGTH}}"
+  local regex="[a-zA-Z0-9_-]{${VIDEO_ID_LENGTH}}"
   if [[ ! "$vid" =~ ^${regex}$ ]]; then
     echo "Error: Invalid video ID ${vid}. Expected ${VIDEO_ID_LENGTH} characters." >&2
     return 1
