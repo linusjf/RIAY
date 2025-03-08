@@ -15,6 +15,8 @@
     - [Returning Home](#returning-home)
   - [March 07,2025](#march-072025)
     - [Wait and Pray](#wait-and-pray)
+  - [March 08,2025](#march-082025)
+    - [He Has Promised](#he-has-promised)
 
 <!-- tocstop -->
 
@@ -63,3 +65,9 @@ RIAY March 2025
 ### Wait and Pray
 
 [![Wait and Pray](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day66.jpg)](https://youtu.be/MoGAbC67sWE "Wait and Pray")
+
+## March 08,2025
+
+### He Has Promised
+
+[![He Has Promised](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day67.jpg)](https://youtu.be/krn_lVSmiWc "He Has Promised")

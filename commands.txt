@@ -1,4 +1,4 @@
 # commands
-addvideo "MoGAbC67sWE" "Wait and Pray" # add video
+addvideo "krn_lVSmiWc" "He Has Promised" # add video
 genmonth 03 2025 # generate
 lintall # lint all files
