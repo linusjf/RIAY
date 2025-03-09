@@ -17,6 +17,8 @@
     - [Wait and Pray](#wait-and-pray)
   - [March 08,2025](#march-082025)
     - [He Has Promised](#he-has-promised)
+  - [March 09,2025](#march-092025)
+    - [Fancy Friends](#fancy-friends)
 
 <!-- tocstop -->
 
@@ -71,3 +73,9 @@ RIAY March 2025
 ### He Has Promised
 
 [![He Has Promised](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day67.jpg)](https://youtu.be/krn_lVSmiWc "He Has Promised")
+
+## March 09,2025
+
+### Fancy Friends
+
+[![Fancy Friends](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day68.jpg)](https://youtu.be/hBRgXdvfCbU "Fancy Friends")

@@ -1,4 +1,4 @@
 # commands
-addvideo "krn_lVSmiWc" "He Has Promised" # add video
+addvideo "hBRgXdvfCbU" "Fancy Friends" # add video
 genmonth 03 2025 # generate
 lintall # lint all files
