@@ -19,6 +19,7 @@
     - [He Has Promised](#he-has-promised)
   - [March 09,2025](#march-092025)
     - [Fancy Friends](#fancy-friends)
+    - [Meditating With The Mysteries - Intro to Phase 3](#meditating-with-the-mysteries---intro-to-phase-3)
 
 <!-- tocstop -->
 
@@ -79,3 +80,7 @@ RIAY March 2025
 ### Fancy Friends
 
 [![Fancy Friends](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day68.jpg)](https://youtu.be/hBRgXdvfCbU "Fancy Friends")
+
+### Meditating With The Mysteries - Intro to Phase 3
+
+[![Meditating With The Mysteries - Intro to Phase 3](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/meditating.jpg)](https://youtu.be/IDrilE5sXE8 "Meditating With The Mysteries - Intro to Phase 3")
