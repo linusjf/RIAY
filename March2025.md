@@ -20,6 +20,8 @@
   - [March 09,2025](#march-092025)
     - [Fancy Friends](#fancy-friends)
     - [Meditating With The Mysteries - Intro to Phase 3](#meditating-with-the-mysteries---intro-to-phase-3)
+  - [March 10,2025](#march-102025)
+    - [Nothing is Impossible](#nothing-is-impossible)
 
 <!-- tocstop -->
 
@@ -84,3 +86,9 @@ RIAY March 2025
 ### Meditating With The Mysteries - Intro to Phase 3
 
 [![Meditating With The Mysteries - Intro to Phase 3](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/meditating.jpg)](https://youtu.be/IDrilE5sXE8 "Meditating With The Mysteries - Intro to Phase 3")
+
+## March 10,2025
+
+### Nothing is Impossible
+
+[![Nothing is Impossible](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day69.jpg)](https://youtu.be/TXCD4f66I6g "Nothing is Impossible")
