@@ -22,6 +22,8 @@
     - [Meditating With The Mysteries - Intro to Phase 3](#meditating-with-the-mysteries---intro-to-phase-3)
   - [March 10,2025](#march-102025)
     - [Nothing is Impossible](#nothing-is-impossible)
+  - [March 11,2025](#march-112025)
+    - [The Faith of Mary](#the-faith-of-mary)
 
 <!-- tocstop -->
 
@@ -92,3 +94,9 @@ RIAY March 2025
 ### Nothing is Impossible
 
 [![Nothing is Impossible](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day69.jpg)](https://youtu.be/TXCD4f66I6g "Nothing is Impossible")
+
+## March 11,2025
+
+### The Faith of Mary
+
+[![The Faith of Mary](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day70.jpg)](https://youtu.be/7HD7-y0NIBk "The Faith of Mary")
