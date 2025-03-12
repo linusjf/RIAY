@@ -1,4 +1,4 @@
 # commands
-addvideo "7HD7-y0NIBk" "The Faith of Mary" # add video
+addvideo "Kubhh7JFEwA" "Behold God" # add video
 genmonth 03 2025 # generate
 lintall # lint all files

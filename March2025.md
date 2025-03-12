@@ -24,6 +24,8 @@
     - [Nothing is Impossible](#nothing-is-impossible)
   - [March 11,2025](#march-112025)
     - [The Faith of Mary](#the-faith-of-mary)
+  - [March 12,2025](#march-122025)
+    - [Behold God](#behold-god)
 
 <!-- tocstop -->
 
@@ -100,3 +102,9 @@ RIAY March 2025
 ### The Faith of Mary
 
 [![The Faith of Mary](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day70.jpg)](https://youtu.be/7HD7-y0NIBk "The Faith of Mary")
+
+## March 12,2025
+
+### Behold God
+
+[![Behold God](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day71.jpg)](https://youtu.be/Kubhh7JFEwA "Behold God")
