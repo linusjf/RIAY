@@ -26,6 +26,8 @@
     - [The Faith of Mary](#the-faith-of-mary)
   - [March 12,2025](#march-122025)
     - [Behold God](#behold-god)
+  - [March 13,2025](#march-132025)
+    - [You Don't Wait in Vain](#you-dont-wait-in-vain)
 
 <!-- tocstop -->
 
@@ -108,3 +110,9 @@ RIAY March 2025
 ### Behold God
 
 [![Behold God](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day71.jpg)](https://youtu.be/Kubhh7JFEwA "Behold God")
+
+## March 13,2025
+
+### You Don't Wait in Vain
+
+[![You Don't Wait in Vain](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day72.jpg)](https://youtu.be/xuih5Y-coWA "You Don't Wait in Vain")
