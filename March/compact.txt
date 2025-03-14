@@ -12,3 +12,4 @@ Day069.md
 Day070.md
 Day071.md
 Day072.md
+Day073.md

@@ -1,4 +1,4 @@
 # commands
-addvideo "xuih5Y-coWA" "You Don't Wait in Vain" # add video
+addvideo "aHy3ZmgCEsM" "Seek Him" # add video
 genmonth 03 2025 # generate
 lintall # lint all files

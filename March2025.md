@@ -28,6 +28,8 @@
     - [Behold God](#behold-god)
   - [March 13,2025](#march-132025)
     - [You Don't Wait in Vain](#you-dont-wait-in-vain)
+  - [March 14,2025](#march-142025)
+    - [Seek Him](#seek-him)
 
 <!-- tocstop -->
 
@@ -116,3 +118,9 @@ RIAY March 2025
 ### You Don't Wait in Vain
 
 [![You Don't Wait in Vain](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day72.jpg)](https://youtu.be/xuih5Y-coWA "You Don't Wait in Vain")
+
+## March 14,2025
+
+### Seek Him
+
+[![Seek Him](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day73.jpg)](https://youtu.be/aHy3ZmgCEsM "Seek Him")
