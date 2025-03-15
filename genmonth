@@ -14,6 +14,24 @@ usage() {
   exit 1
 }
 
+# Check if no arguments are provided
+if [ $# -eq 0 ]; then
+  echo "No arguments provided"
+  usage
+fi
+
+# Check if exactly one argument is provided
+if [ $# -eq 1 ]; then
+  echo "One argument provided: $1"
+  usage
+fi
+
+# Check if more than two arguments are provided
+if [ $# -gt 2 ]; then
+  echo "More than two arguments provided"
+  usage
+fi
+
 if ! isnumeric "$1"; then
   usage
 fi
