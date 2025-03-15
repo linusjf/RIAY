@@ -8,6 +8,7 @@ require() {
   }
 }
 
+set -euo pipefail
 require stitchmd
 
 # Check if input file exists

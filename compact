@@ -18,6 +18,7 @@ isvalid() {
   test -d "$1" && test -e "${1}/${compactfile}"
 }
 
+set -euo pipefail
 require m4 mktemp awk rm
 
 thisdir="$(pwd)"

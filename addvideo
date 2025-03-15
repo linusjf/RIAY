@@ -8,7 +8,7 @@ usage() {
   echo "caption - video title"
   exit 1
 }
-set -eu
+set -euo pipefail
 require sed basename date markdown-toc
 if test $# -ne 2; then
   usage

@@ -8,6 +8,7 @@ usage() {
   echo "doy must be integer"
   exit 1
 }
+set -euo pipefail
 require date markdown-toc
 #shellcheck disable=SC1091
 source ./vidmd.sh

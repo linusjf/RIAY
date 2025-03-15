@@ -6,6 +6,7 @@ require() {
     exit 1
   }
 }
+set -euo pipefail
 require markdown-toc-gen
 
 usage() {

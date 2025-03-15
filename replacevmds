@@ -5,6 +5,7 @@ usage() {
   echo "dir - directory to process"
   exit 1
 }
+set -euo pipefail
 #shellcheck disable=SC1091
 source ./vidmd.sh
 require() {

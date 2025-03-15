@@ -5,6 +5,7 @@ if [[ ! -f "./vidmd.sh" ]]; then
   echo "Error: Required script 'vidmd.sh' not found!"
   exit 1
 fi
+set -euo pipefail
 #shellcheck disable=SC1091
 source ./vidmd.sh
 

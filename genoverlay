@@ -3,6 +3,7 @@
 require() {
   hash "$@" || exit 1
 }
+set -euo pipefail
 require curl realpath mkdir
 
 usage() {
