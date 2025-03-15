@@ -9,6 +9,7 @@ usage() {
 }
 
 set -euo pipefail
+shopt -s inherit_errexit
 # Ensure at least three arguments are provided
 if [[ $# -lt 3 ]]; then
   usage

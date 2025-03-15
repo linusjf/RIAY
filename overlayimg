@@ -8,6 +8,7 @@ usage() {
 }
 
 set -euo pipefail
+shopt -s inherit_errexit
 # Ensure vidmd.sh exists before sourcing
 if [[ ! -f "./vidmd.sh" ]]; then
   echo "Error: Required script 'vidmd.sh' not found!"

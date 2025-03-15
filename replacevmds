@@ -6,6 +6,7 @@ usage() {
   exit 1
 }
 set -euo pipefail
+shopt -s inherit_errexit
 #shellcheck disable=SC1091
 source ./vidmd.sh
 require() {

@@ -9,6 +9,7 @@ usage() {
   exit 1
 }
 set -euo pipefail
+shopt -s inherit_errexit
 require sed basename date markdown-toc
 if test $# -ne 2; then
   usage

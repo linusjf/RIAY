@@ -4,6 +4,7 @@ require() {
   hash "$@" || exit 1
 }
 set -euo pipefail
+shopt -s inherit_errexit
 require curl realpath mkdir
 
 usage() {

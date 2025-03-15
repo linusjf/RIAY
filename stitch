@@ -9,6 +9,7 @@ require() {
 }
 
 set -euo pipefail
+shopt -s inherit_errexit
 require stitchmd
 
 # Check if input file exists

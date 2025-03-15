@@ -9,6 +9,7 @@ usage() {
   exit 1
 }
 set -euo pipefail
+shopt -s inherit_errexit
 require date markdown-toc
 #shellcheck disable=SC1091
 source ./vidmd.sh

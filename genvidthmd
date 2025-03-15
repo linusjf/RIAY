@@ -6,6 +6,7 @@ if [[ ! -f "./vidmd.sh" ]]; then
   exit 1
 fi
 set -euo pipefail
+shopt -s inherit_errexit
 #shellcheck disable=SC1091
 source ./vidmd.sh
 

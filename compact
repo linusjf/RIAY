@@ -19,6 +19,7 @@ isvalid() {
 }
 
 set -euo pipefail
+shopt -s inherit_errexit
 require m4 mktemp awk rm
 
 thisdir="$(pwd)"

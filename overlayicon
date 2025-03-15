@@ -8,6 +8,7 @@ require() {
 }
 
 set -euo pipefail
+shopt -s inherit_errexit
 require gm
 require mv
 require file

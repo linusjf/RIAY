@@ -12,6 +12,7 @@ isvalid() {
   test -d "$1"
 }
 set -euo pipefail
+shopt -s inherit_errexit
 if test $# -eq 0; then
   usage
 fi
