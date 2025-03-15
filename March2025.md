@@ -30,6 +30,8 @@
     - [You Don't Wait in Vain](#you-dont-wait-in-vain)
   - [March 14,2025](#march-142025)
     - [Seek Him](#seek-him)
+  - [March 15,2025](#march-152025)
+    - [Beloved of the Father](#beloved-of-the-father)
 
 <!-- tocstop -->
 
@@ -124,3 +126,9 @@ RIAY March 2025
 ### Seek Him
 
 [![Seek Him](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day73.jpg)](https://youtu.be/aHy3ZmgCEsM "Seek Him")
+
+## March 15,2025
+
+### Beloved of the Father
+
+[![Beloved of the Father](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day74.jpg)](https://youtu.be/ByEx2pE3s0s "Beloved of the Father")

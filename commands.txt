@@ -1,4 +1,4 @@
 # commands
-addvideo "aHy3ZmgCEsM" "Seek Him" # add video
+addvideo "ByEx2pE3s0s" "Beloved of the Father" # add video
 genmonth 03 2025 # generate
 lintall # lint all files
