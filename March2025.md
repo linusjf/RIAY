@@ -34,6 +34,8 @@
     - [Beloved of the Father](#beloved-of-the-father)
   - [March 16,2025](#march-162025)
     - [Jesus and Mary See You](#jesus-and-mary-see-you)
+  - [March 17,2025](#march-172025)
+    - [The Shepherd is Shepherding](#the-shepherd-is-shepherding)
 
 <!-- tocstop -->
 
@@ -140,3 +142,9 @@ RIAY March 2025
 ### Jesus and Mary See You
 
 [![Jesus and Mary See You](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day75.jpg)](https://youtu.be/RXTdqCM-bZo "Jesus and Mary See You")
+
+## March 17,2025
+
+### The Shepherd is Shepherding
+
+[![The Shepherd is Shepherding](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day76.jpg)](https://youtu.be/OapnMaPfpOw "The Shepherd is Shepherding")
