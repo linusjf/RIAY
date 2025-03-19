@@ -38,6 +38,8 @@
     - [The Shepherd is Shepherding](#the-shepherd-is-shepherding)
   - [March 18,2025](#march-182025)
     - [Have No Fear](#have-no-fear)
+  - [March 19,2025](#march-192025)
+    - [Given for You](#given-for-you)
 
 <!-- tocstop -->
 
@@ -156,3 +158,9 @@ RIAY March 2025
 ### Have No Fear
 
 [![Have No Fear](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day77.jpg)](https://youtu.be/HlEfAuKfB80 "Have No Fear")
+
+## March 19,2025
+
+### Given for You
+
+[![Given for You](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day78.jpg)](https://youtu.be/57CqoTmAE9g "Given for You")
