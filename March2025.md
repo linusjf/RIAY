@@ -40,6 +40,8 @@
     - [Have No Fear](#have-no-fear)
   - [March 19,2025](#march-192025)
     - [Given for You](#given-for-you)
+  - [March 20,2025](#march-202025)
+    - [Trust like Jesus](#trust-like-jesus)
 
 <!-- tocstop -->
 
@@ -164,3 +166,9 @@ RIAY March 2025
 ### Given for You
 
 [![Given for You](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day78.jpg)](https://youtu.be/57CqoTmAE9g "Given for You")
+
+## March 20,2025
+
+### Trust like Jesus
+
+[![Trust like Jesus](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day79.jpg)](https://youtu.be/LaPqd-5s4ZM "Trust like Jesus")
