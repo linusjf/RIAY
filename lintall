@@ -11,7 +11,7 @@ require() {
   done
 }
 
-require mdl mdformat
+require markdownlint mdformat
 
 shopt -s globstar # Enable recursive globbing for better portability
 

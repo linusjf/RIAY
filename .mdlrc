@@ -1,6 +1,0 @@
-verbose false
-git_recurse false
-ignore_front_matter true
-skip_default_ruleset false
-rules "~MD013"
-style "#{File.dirname(__FILE__)}/RIAY.rb"
