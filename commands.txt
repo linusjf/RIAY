@@ -1,4 +1,4 @@
 # commands
-addvideo "LaPqd-5s4ZM" "Trust like Jesus" # add video
+addvideo "tO3inM38VZc" "His Blood For You" # add video
 genmonth 03 2025 # generate
 lintall # lint all files

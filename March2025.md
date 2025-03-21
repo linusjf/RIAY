@@ -42,6 +42,8 @@
     - [Given for You](#given-for-you)
   - [March 20,2025](#march-202025)
     - [Trust like Jesus](#trust-like-jesus)
+  - [March 21,2025](#march-212025)
+    - [His Blood For You](#his-blood-for-you)
 
 <!-- tocstop -->
 
@@ -172,3 +174,9 @@ RIAY March 2025
 ### Trust like Jesus
 
 [![Trust like Jesus](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day79.jpg)](https://youtu.be/LaPqd-5s4ZM "Trust like Jesus")
+
+## March 21,2025
+
+### His Blood For You
+
+[![His Blood For You](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day80.jpg)](https://youtu.be/tO3inM38VZc "His Blood For You")
