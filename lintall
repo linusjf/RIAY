@@ -15,5 +15,5 @@ require mdl mdformat
 
 shopt -s globstar # Enable recursive globbing for better portability
 
+markdownlint --fix -- **/*.md || exit 1
 mdformat -- **/*.md || exit 1
-mdl -- **/*.md || exit 1

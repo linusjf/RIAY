@@ -110,12 +110,12 @@ RIAY January 2025
 
 ### ROSARY IN A YEAR DAY 01 Michelle Jackson
 
-Thank God for this blessing, i love the intro *when the evil one accuses us he leaves us hopeless and helpless but when the HolySpirit convicts us of our sin He always leads us to Hope.*
-*What we believe in should change us*
-*Prayer doesn't help our relationship with God, prayer "is" our relationship with God*
-*Our body and soul should connect when we pray*
+Thank God for this blessing, i love the intro _when the evil one accuses us he leaves us hopeless and helpless but when the HolySpirit convicts us of our sin He always leads us to Hope._
+_What we believe in should change us_
+_Prayer doesn't help our relationship with God, prayer "is" our relationship with God_
+_Our body and soul should connect when we pray_
 *Most importantly it's raising our heart and mind to God by making an act of Faith by which we look at Him who is "always" looking at us, listening to us and loving us*🥹
-*We need to practice His presence by recognising His presence, He's always there.*
+_We need to practice His presence by recognising His presence, He's always there._
 *We need to give our all when we pray it's not one sided it's a relationship, we need to listen after we speak. Thankyou Lord for this relationship you give us through prayer*🙏🏽
 
 ## January 02,2025
@@ -126,10 +126,10 @@ Thank God for this blessing, i love the intro *when the evil one accuses us he l
 
 ### ROSARY IN A YEAR DAY 02 Michelle Jackson
 
-*The King knows "you/me"*
-*This is so personal for me*🥹 *The king of the universe knows me even before i was knit in my mother's womb,* *He knows the very number of hairs on my head,* *how precious and heart striking it is to know that.* *The King sees me, the King Knows me, the King "Loves" to hear my voice* ❤‍🔥 *and the King knows my name* 🥰😍
-*My God My God how I love Thee. This way of praying having the image of Him in our hearts when we pray is something so precious, we see ourselves and feel so unworthy while all along He looks at us in Love.* *Thankyou Jesus.*
-*i once asked Jesus while at a retreat to call to my name aloud and He did while it was on the last day of the retreat we were all having a JAM dance (Jesus and me) in the midst of all the music and loud noise I heard someone call my name it was clear and soft I asked my husband if he called my name and he said no and I knew it at once it was Jesus who called my name. So yes ,* *The King knows me/ the King knows you/ the King knows each of us by name* 😇🥹❤‍🔥
+_The King knows "you/me"_
+*This is so personal for me*🥹 _The king of the universe knows me even before i was knit in my mother's womb,_ _He knows the very number of hairs on my head,_ _how precious and heart striking it is to know that._ _The King sees me, the King Knows me, the King "Loves" to hear my voice_ ❤‍🔥 _and the King knows my name_ 🥰😍
+_My God My God how I love Thee. This way of praying having the image of Him in our hearts when we pray is something so precious, we see ourselves and feel so unworthy while all along He looks at us in Love._ _Thankyou Jesus._
+_i once asked Jesus while at a retreat to call to my name aloud and He did while it was on the last day of the retreat we were all having a JAM dance (Jesus and me) in the midst of all the music and loud noise I heard someone call my name it was clear and soft I asked my husband if he called my name and he said no and I knew it at once it was Jesus who called my name. So yes ,_ _The King knows me/ the King knows you/ the King knows each of us by name_ 😇🥹❤‍🔥
 
 ### Day 2 - Michael Eltham
 
@@ -211,9 +211,9 @@ Being in the workshop with Jesus as my teacher today was just awesome 👌. I wa
 
 ### Rosary IN A YEAR DAY 03- Heart of Jesus Michelle Jackson
 
-*Jesus who are You?*
-*Jesus, What is Your heart like?*
-*Jesus, what is Your heart like to me?*
+_Jesus who are You?_
+_Jesus, What is Your heart like?_
+_Jesus, what is Your heart like to me?_
 *Jesus is my safe space, my home, my heaven, my best friend, my hope, my life, my saviour, my EVERYTHING. The very meaning of my life*❤‍🔥
 Yes Jesus' heart is full of Patience and Mercy
 I see myself like a child in His workshop and inspite of Him giving me instructions i keep interrupting Him and asking if i'm doing well and all i see is He smiles back at me , im in a hurry but He is not, He's full of Love and I feel so safe and free to be myself that even though i'm messing up He's not angry or upset. Im trying to keep up, looking at what He's doing but i don't seem to match n i cry , and just then He tells me His secret, that He loves spending time with me and loves it that i'm spending time with Him. And that's what Mamma told Him, that we need to spend time together.😭❤‍🔥🥹 It melts my heart hearing that, i drop the tools and jump onto Him and He embraces me.
@@ -233,11 +233,11 @@ This was the most beautiful line in the meditation🥹
 
 ### RIAY Day 4/ 04- 01- 2025
 
-*Praying with Mary*
+_Praying with Mary_
 Immaculate Heart of Mary beside the Sacred Heart of Jesus is a picture frame has been in my heart and home for like forever. Yet it took me a minute to focus on a picture of Mother Mary to pray.
 Very beautifully reflected upon by Fr... Mary was actively involved in the growth of her Son Jesus in every aspect Mind Body and Spirit, her own beloved Son..and then John her second beloved son...then San Juan " Am I not your mother?" And the list can go on...
 
-God our loving Father I pray today for myself and all Catholics who have taken Our Blessed Mother Mary for granted and for all who have turned their back on her. *may we understand that we cannot and never will be able to love her more than Jesus did*
+God our loving Father I pray today for myself and all Catholics who have taken Our Blessed Mother Mary for granted and for all who have turned their back on her. _may we understand that we cannot and never will be able to love her more than Jesus did_
 May we receive grace everyday through her maternal intercession. Amen.
 Poco poco Fr Mark. God bless you too. Thankyou. 🙏🏻
 
@@ -371,7 +371,7 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 
 ### ROSARY IN A YEAR DAY 16 - "GLORIFY HIM" Michelle Jackson
 
-"Glory be to the Father and to the Son and to the Holy Spirit, as it was in the beginning,is now and ever shall be world without end.Amen". All Praise and Glory be to the Holy Trinity. What is Praise? It is a form of prayer which recognises that God is God. It is right that we praise Him. It is to look to Him always, cause it is the right thing to do. It is for our own Good to Praise God, not for what he does but for who He is. He the maker of all things must be acknowledged by all, and Praised and Glorified by all. God is pleased when we do so not because He needs it,But because its right. When you Love Him and see how Faithful God is in your life you will begin to Praise Him. Cause everyday we are alive and its cause He wills it for us and we take that for granted. Let us Thank Him Throughout the day by asking for that grace. * *Psalms 34:1- I will bless the LORD at all times : His praise shall continually be in my mouth.*
+"Glory be to the Father and to the Son and to the Holy Spirit, as it was in the beginning,is now and ever shall be world without end.Amen". All Praise and Glory be to the Holy Trinity. What is Praise? It is a form of prayer which recognises that God is God. It is right that we praise Him. It is to look to Him always, cause it is the right thing to do. It is for our own Good to Praise God, not for what he does but for who He is. He the maker of all things must be acknowledged by all, and Praised and Glorified by all. God is pleased when we do so not because He needs it,But because its right. When you Love Him and see how Faithful God is in your life you will begin to Praise Him. Cause everyday we are alive and its cause He wills it for us and we take that for granted. Let us Thank Him Throughout the day by asking for that grace. \* _Psalms 34:1- I will bless the LORD at all times : His praise shall continually be in my mouth._
 
 Psalms 150:6- Let everything that has breath praise the Lord🙌🏼
 
@@ -384,7 +384,7 @@ Psalms 150:6- Let everything that has breath praise the Lord🙌🏼
 ### ROSARY IN A YEAR DAY 17 - "Turn on the Light" Michelle Jackson
 
 "IN THE NAME OF THE FATHER AND OF THE SON AND OF THE HOLYSPIRIT - THE SIGN OF THE CROSS"
-*The mystery of the most Holy Trinity is the central mystery of Christian Faith and life , it is the mystery of God Himself. It also is the source of all other* *mysteries of Faith, the Light that enlightens them.* \*Truly one needs Faith to understand that. We need to ask the HolySpirit for grace to See which God gives us through Baptism all through our lives. And when we make the sign of the cross we are opening our eyes to see Him, to see all of creation and all other mysteries in His light. Jesus Christ is the Light of the World and we need His light to guide us through, there are many other lights in this world to lead us astray, so to know and see the difference we need to understand the path we are taking if it leads us to Him or away from Him. May Christ' light be our light always. Jesus said whoever follows me shall never walk in darkness. *Hebrew 11:6 And without faith it is impossible to please him, for whoever would approach God must believe that he exists and that he rewards those who seek him.*
+_The mystery of the most Holy Trinity is the central mystery of Christian Faith and life , it is the mystery of God Himself. It also is the source of all other_ _mysteries of Faith, the Light that enlightens them._ \*Truly one needs Faith to understand that. We need to ask the HolySpirit for grace to See which God gives us through Baptism all through our lives. And when we make the sign of the cross we are opening our eyes to see Him, to see all of creation and all other mysteries in His light. Jesus Christ is the Light of the World and we need His light to guide us through, there are many other lights in this world to lead us astray, so to know and see the difference we need to understand the path we are taking if it leads us to Him or away from Him. May Christ' light be our light always. Jesus said whoever follows me shall never walk in darkness. _Hebrew 11:6 And without faith it is impossible to please him, for whoever would approach God must believe that he exists and that he rewards those who seek him._
 
 Romans 10:17- So faith comes from what is heard, and what is heard comes through the word of Christ.
 
@@ -436,8 +436,8 @@ So beautifully put Father Mark. The Lord who understands the poverty of man and 
 
 ### ROSARY IN A YEAR DAY 22 - "LEAD SOULS TO HEAVEN" Michelle Jackson
 
-That was an intense journey with Father Mike,on our own salvation and the salvation of our loved ones. God is Love and He desires Salvation of the whole World. More than we desire the salvation of our loved ones God is already pursuing us.\* *And for those gone astray, the Good shepherd goes in search, not wanting to lose even one. He searches and brings us back to His flock.* *He reveals His heart to those who respond and co-operate with His Will for mankind. He did reveal this to our blessed Mother of when she appeared to the 3 visionaries, to pray many Rosaries for poor sinners and taught them to pray a special prayer after every decade. So precious.* *Our life is precious, bought by the Blood Of The Lamb and we need to take that seriously asking grace to reflect on our life and our living. Does it please God?* *Do we please Him or the World?Do we know our Worth?*
-*When we die we either will go to heaven or hell.* \*How we live here, what we do now matters. Let us not be afraid but Trust God. We are Christians.and Christians are people of Hope. The Hope that comes from God Himself. Thank you Lord for Your Saving Grace and Your Love for us all. May the whole world respond to that grace and co-operate and desire our own salvation and the salvation of the whole world. May the whole world be Sanctified Sanctified and purified. Amen.
+That was an intense journey with Father Mike,on our own salvation and the salvation of our loved ones. God is Love and He desires Salvation of the whole World. More than we desire the salvation of our loved ones God is already pursuing us.\* _And for those gone astray, the Good shepherd goes in search, not wanting to lose even one. He searches and brings us back to His flock._ _He reveals His heart to those who respond and co-operate with His Will for mankind. He did reveal this to our blessed Mother of when she appeared to the 3 visionaries, to pray many Rosaries for poor sinners and taught them to pray a special prayer after every decade. So precious._ _Our life is precious, bought by the Blood Of The Lamb and we need to take that seriously asking grace to reflect on our life and our living. Does it please God?_ _Do we please Him or the World?Do we know our Worth?_
+_When we die we either will go to heaven or hell._ \*How we live here, what we do now matters. Let us not be afraid but Trust God. We are Christians.and Christians are people of Hope. The Hope that comes from God Himself. Thank you Lord for Your Saving Grace and Your Love for us all. May the whole world respond to that grace and co-operate and desire our own salvation and the salvation of the whole world. May the whole world be Sanctified Sanctified and purified. Amen.
 
 ## January 23,2025
 
@@ -502,7 +502,7 @@ Goa, India.
 
 ### Rosary in a Year - Day 30 - Joyful Mysteries
 
-2. The Visitation - Luke 1:39-56
+1. The Visitation - Luke 1:39-56
    Mary is the new Ark of the Covenant in the NT as She conceives Jesus, who is the high priest (staff in the old Ark of Covenant), the bread of life (Jar of manna in the old Ark of Covenant) and the fulfilment and the giver of the law (ten commandments). Mary is the new meeting tent through whom God meets his people and leads them to victory (Salvation).
    As David brings the Ark of Covenant back to Jerusalem (2 Samuel 6) the New Ark ( Mary) visits Elizabeth. Just like David felt unworthy of being given the privilige of bringing the Ark back, so does Elizabeth feel unworthy of the Lord's mother coming to visit her.
    In the OT there singing and dancing in front of the Ark, likewise, John the Baptist leaped in his mother's womb hearing Mary's greeting.

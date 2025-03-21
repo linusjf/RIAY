@@ -53,7 +53,7 @@ with your own if you wish.
 Add a `compact.txt` file with the first line as `header.md` under each monthly directory.
 This ensures the presence of the header for each month's markdown.
 
-4. Export an environment variable `GIT_USER` by adding the following line to your `.bash_profile` file.
+1. Export an environment variable `GIT_USER` by adding the following line to your `.bash_profile` file.
 
 ```bash
 export GIT_USER="<userid>"
@@ -61,7 +61,7 @@ export GIT_USER="<userid>"
 
 Substitute your Github user id for `<userid>`.
 
-5. Initialize `vale` styles by executing the command `vale sync`. This should download the specified styles in `.vale.ini`.
+1. Initialize `vale` styles by executing the command `vale sync`. This should download the specified styles in `.vale.ini`.
 
 ## Add the daily Youtube video
 
@@ -208,7 +208,7 @@ You can download and install Python3 from <https://www.python.org/downloads/>.
 pip install antlr4-tools antlr4-python3-runtime
 ```
 
-2. Add commands to the `commands.txt` file.
+1. Add commands to the `commands.txt` file.
 
 Available commands:
 
@@ -221,7 +221,7 @@ Available commands:
 
 For simplicity and consistency, the commands wrap their command line equivalents.
 
-3. Execute the commands.py script.
+1. Execute the commands.py script.
 
 ```bash
 ./commands.py
@@ -229,7 +229,7 @@ For simplicity and consistency, the commands wrap their command line equivalents
 
 This executes the commands in order as placed in the `commands.txt`. If any command fails, the program outputs an error message for that command and executes all following commands.
 
-4. Example `commands.txt` file
+1. Example `commands.txt` file
 
 ```text
 # example commands
