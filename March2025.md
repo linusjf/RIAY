@@ -44,6 +44,8 @@
     - [Trust like Jesus](#trust-like-jesus)
   - [March 21,2025](#march-212025)
     - [His Blood For You](#his-blood-for-you)
+  - [March 22,2025](#march-222025)
+    - [Behold Your King](#behold-your-king)
 
 <!-- tocstop -->
 
@@ -180,3 +182,9 @@ RIAY March 2025
 ### His Blood For You
 
 [![His Blood For You](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day80.jpg)](https://youtu.be/tO3inM38VZc "His Blood For You")
+
+## March 22,2025
+
+### Behold Your King
+
+[![Behold Your King](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day81.jpg)](https://youtu.be/iV-N20c3OGE "Behold Your King")
