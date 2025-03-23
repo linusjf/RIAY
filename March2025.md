@@ -46,6 +46,8 @@
     - [His Blood For You](#his-blood-for-you)
   - [March 22,2025](#march-222025)
     - [Behold Your King](#behold-your-king)
+  - [March 23,2025](#march-232025)
+    - [Simon's Choice](#simons-choice)
 
 <!-- tocstop -->
 
@@ -188,3 +190,9 @@ RIAY March 2025
 ### Behold Your King
 
 [![Behold Your King](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day81.jpg)](https://youtu.be/iV-N20c3OGE "Behold Your King")
+
+## March 23,2025
+
+### Simon's Choice
+
+[![Simon's Choice](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day82.jpg)](https://youtu.be/vODOomIH5Sg "Simon's Choice")
