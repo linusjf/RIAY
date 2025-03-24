@@ -1,4 +1,4 @@
 # commands
-addvideo "vODOomIH5Sg" "Simon's Choice" # add video
+addvideo "KGatDQdwv9w" "Father Forgive Them" # add video
 genmonth 03 2025 # generate
 lintall # lint all files

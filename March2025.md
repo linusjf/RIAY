@@ -48,6 +48,8 @@
     - [Behold Your King](#behold-your-king)
   - [March 23,2025](#march-232025)
     - [Simon's Choice](#simons-choice)
+  - [March 24,2025](#march-242025)
+    - [Father Forgive Them](#father-forgive-them)
 
 <!-- tocstop -->
 
@@ -196,3 +198,9 @@ RIAY March 2025
 ### Simon's Choice
 
 [![Simon's Choice](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day82.jpg)](https://youtu.be/vODOomIH5Sg "Simon's Choice")
+
+## March 24,2025
+
+### Father Forgive Them
+
+[![Father Forgive Them](https://raw.githubusercontent.com/linusjf/RIAY/main/March/jpgs/Day83.jpg)](https://youtu.be/KGatDQdwv9w "Father Forgive Them")
