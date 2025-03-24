@@ -23,12 +23,12 @@ fi
 
 # Ensure the provided argument is a valid file
 if [[ ! -f "$1" || ! -r "$1" ]]; then
-  echo "Error: '$1' is not a valid readable file."
+  echo "Error: ${1} is not a valid readable file."
   usage
 fi
 
 # Generate TOC
-if ! markdown-toc-gen insert "$1"; then
+if ! markdown-toc-gen insert "$1" > /dev/null; then
   echo "Error: Failed to generate TOC for '$1'."
   exit 1
 fi
