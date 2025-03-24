@@ -113,9 +113,9 @@ Thank God for this blessing, i love the intro _when the evil one accuses us he l
 _What we believe in should change us_
 _Prayer doesn't help our relationship with God, prayer "is" our relationship with God_
 _Our body and soul should connect when we pray_
-*Most importantly it's raising our heart and mind to God by making an act of Faith by which we look at Him who is "always" looking at us, listening to us and loving us*🥹
-_We need to practice His presence by recognising His presence, He's always there._
-*We need to give our all when we pray it's not one sided it's a relationship, we need to listen after we speak. Thankyou Lord for this relationship you give us through prayer*🙏🏽
+\_Most importantly it's raising our heart and mind to God by making an act of Faith by which we look at Him who is "always" looking at us, listening to us and loving us*🥹
+\_We need to practice His presence by recognising His presence, He's always there.*
+\_We need to give our all when we pray it's not one sided it's a relationship, we need to listen after we speak. Thankyou Lord for this relationship you give us through prayer_🙏🏽
 
 ## January 02,2025
 
@@ -126,7 +126,7 @@ _We need to practice His presence by recognising His presence, He's always there
 ### ROSARY IN A YEAR DAY 02 Michelle Jackson
 
 _The King knows "you/me"_
-*This is so personal for me*🥹 _The king of the universe knows me even before i was knit in my mother's womb,_ _He knows the very number of hairs on my head,_ _how precious and heart striking it is to know that._ _The King sees me, the King Knows me, the King "Loves" to hear my voice_ ❤‍🔥 _and the King knows my name_ 🥰😍
+\_This is so personal for me*🥹 \_The king of the universe knows me even before i was knit in my mother's womb,* _He knows the very number of hairs on my head,_ _how precious and heart striking it is to know that._ _The King sees me, the King Knows me, the King "Loves" to hear my voice_ ❤‍🔥 _and the King knows my name_ 🥰😍
 _My God My God how I love Thee. This way of praying having the image of Him in our hearts when we pray is something so precious, we see ourselves and feel so unworthy while all along He looks at us in Love._ _Thankyou Jesus._
 _i once asked Jesus while at a retreat to call to my name aloud and He did while it was on the last day of the retreat we were all having a JAM dance (Jesus and me) in the midst of all the music and loud noise I heard someone call my name it was clear and soft I asked my husband if he called my name and he said no and I knew it at once it was Jesus who called my name. So yes ,_ _The King knows me/ the King knows you/ the King knows each of us by name_ 😇🥹❤‍🔥
 
@@ -213,7 +213,7 @@ Being in the workshop with Jesus as my teacher today was just awesome 👌. I wa
 _Jesus who are You?_
 _Jesus, What is Your heart like?_
 _Jesus, what is Your heart like to me?_
-*Jesus is my safe space, my home, my heaven, my best friend, my hope, my life, my saviour, my EVERYTHING. The very meaning of my life*❤‍🔥
+\_Jesus is my safe space, my home, my heaven, my best friend, my hope, my life, my saviour, my EVERYTHING. The very meaning of my life_❤‍🔥
 Yes Jesus' heart is full of Patience and Mercy
 I see myself like a child in His workshop and inspite of Him giving me instructions i keep interrupting Him and asking if i'm doing well and all i see is He smiles back at me , im in a hurry but He is not, He's full of Love and I feel so safe and free to be myself that even though i'm messing up He's not angry or upset. Im trying to keep up, looking at what He's doing but i don't seem to match n i cry , and just then He tells me His secret, that He loves spending time with me and loves it that i'm spending time with Him. And that's what Mamma told Him, that we need to spend time together.😭❤‍🔥🥹 It melts my heart hearing that, i drop the tools and jump onto Him and He embraces me.
 This picture within is so real the truth to it all - Jesus and i in His workshop,was not for what i came for but that i came to be with Him and He values that so much.
@@ -252,7 +252,7 @@ The depth of Mamma Mary mirroring the Light of Christ, and the reflection of our
 
 ### ROSARY IN A YEAR DAY 5 - A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson
 
-*Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 🥹 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria*🌹
+\_Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 🥹 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria_🌹
 
 ## January 06,2025
 
@@ -272,7 +272,7 @@ Prayer is a weapon to disarm the evil one, the very thoughts he tempts us with e
 
 ### ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson
 
-*"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.🥹 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria*🙏🏽
+\_"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.🥹 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria_🙏🏽
 
 ## January 08,2025
 

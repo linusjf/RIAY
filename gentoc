@@ -28,9 +28,11 @@ if [[ ! -f "$1" || ! -r "$1" ]]; then
 fi
 
 # Generate TOC
-if ! markdown-toc-gen insert "$1" > /dev/null; then
-  echo "Error: Failed to generate TOC for '$1'."
-  exit 1
+if ! markdown-toc-gen check "$1" >&/dev/null; then
+  if ! markdown-toc-gen update "$1" > /dev/null; then
+    echo "Error: Failed to generate TOC for '$1'."
+    exit 1
+  fi
 fi
 
 exit 0
