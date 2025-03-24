@@ -58,8 +58,8 @@ if ! ./compact "$month" >| "$monthmd"; then
   exit 1
 fi
 
-if ! markdown-toc -i "$monthmd"; then
-  echo "Error running markdown-toc"
+if ! ./gentoc "$monthmd"; then
+  echo "Error running ./gentoc"
   exit 1
 fi
 
