@@ -8,25 +8,36 @@ require date markdown-toc
 #shellcheck disable=SC1091
 source ./vidmd.sh
 usage() {
-  echo "$0 month year"
+  echo "$0 [-n|--dry-run] month year"
   echo "month - month number (1 - 12)"
   echo "year - 4 digit year"
+  echo "-n, --dry-run - show what would happen without making changes"
   exit 1
 }
 
-# Check if no arguments are provided
+DRY_RUN=false
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -n|--dry-run)
+      DRY_RUN=true
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
 if [ $# -eq 0 ]; then
   echo "No arguments provided"
   usage
 fi
 
-# Check if exactly one argument is provided
 if [ $# -eq 1 ]; then
   echo "One argument provided: $1"
   usage
 fi
 
-# Check if more than two arguments are provided
 if [ $# -gt 2 ]; then
   echo "More than two arguments provided"
   usage
@@ -53,6 +64,19 @@ fi
 
 month="$(monthfromnumber "$((10#${month}))")"
 monthmd="${month}${year}.md"
+
+if $DRY_RUN; then
+  echo "DRY RUN: Would process month $month ($(monthfromnumber $month)) for year $year"
+  echo "DRY RUN: Would generate these files:"
+  echo "  - $monthmd (monthly markdown file)"
+  echo "DRY RUN: Would run these commands:"
+  echo "  - ./compact \"$month\" >| \"$monthmd\""
+  echo "  - ./gentoc \"$monthmd\""
+  echo "  - sed -i '/\\S/,\$!d' \"$monthmd\""
+  echo "DRY RUN: No files would actually be modified"
+  exit 0
+fi
+
 if ! ./compact "$month" >| "$monthmd"; then
   echo "Error running compact"
   exit 1
