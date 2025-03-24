@@ -126,10 +126,11 @@ _We need to practice His presence by recognising His presence, He's always there
 ### ROSARY IN A YEAR DAY 02 Michelle Jackson
 
 _The King knows "you/me"_
-*This is so personal for me*🥹 _The king of the universe knows me even before i was knit in my mother's womb,\* \_He knows the very number of hairs on my head,_ _how precious and heart striking it is to know that._ _The King sees me, the King Knows me, the King "Loves" to hear my voice_ ❤‍🔥 _and the King knows my name_ 🥰😍
+_This is so personal for me_
+_The king of the universe knows me even before i was knit in my mother's womb,\* \_He knows the very number of hairs on my head,_ _how precious and heart striking it is to know that._ _The King sees me, the King Knows me, the King "Loves" to hear my voice_ ❤‍🔥 _and the King knows my name_ 🥰😍
 _My God My God how I love Thee. This way of praying having the image of Him in our hearts when we pray is something so precious, we see ourselves and feel so unworthy while all along He looks at us in Love._
-_Thankyou Jesus._
-_i once asked Jesus while at a retreat to call to my name aloud and He did while it was on the last day of the retreat we were all having a JAM dance (Jesus and me) in the midst of all the music and loud noise I heard someone call my name it was clear and soft I asked my husband if he called my name and he said no and I knew it at once it was Jesus who called my name. So yes ,\_The King knows me/ the King knows you/ the King knows each of us by name_ 😇🥹❤‍🔥
+_Thank you Jesus._
+_i once asked Jesus while at a retreat to call to my name aloud and He did while it was on the last day of the retreat we were all having a JAM dance (Jesus and me) in the midst of all the music and loud noise I heard someone call my name it was clear and soft I asked my husband if he called my name and he said no and I knew it at once it was Jesus who called my name. So yes ,The King knows me/ the King knows you/ the King knows each of us by name_ 😇🥹❤‍🔥
 
 ### Day 2 - Michael Eltham
 
@@ -162,7 +163,7 @@ Even there your hand guides me,
 your right hand holds me fast.
 
 If I say, “Surely darkness shall hide me,
-and night shall be my light”\*—
+and night shall be my light”
 
 Darkness is not dark for you,
 and night shines as the day.
@@ -371,7 +372,8 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 
 ### ROSARY IN A YEAR DAY 16 - "GLORIFY HIM" Michelle Jackson
 
-"Glory be to the Father and to the Son and to the Holy Spirit, as it was in the beginning,is now and ever shall be world without end.Amen". All Praise and Glory be to the Holy Trinity. What is Praise? It is a form of prayer which recognises that God is God. It is right that we praise Him. It is to look to Him always, cause it is the right thing to do. It is for our own Good to Praise God, not for what he does but for who He is. He the maker of all things must be acknowledged by all, and Praised and Glorified by all. God is pleased when we do so not because He needs it,But because its right. When you Love Him and see how Faithful God is in your life you will begin to Praise Him. Cause everyday we are alive and its cause He wills it for us and we take that for granted. Let us Thank Him Throughout the day by asking for that grace. _Psalms 34:1- I will bless the LORD at all times : His praise shall continually be in my mouth._
+"Glory be to the Father and to the Son and to the Holy Spirit, as it was in the beginning,is now and ever shall be world without end.Amen". All Praise and Glory be to the Holy Trinity. What is Praise? It is a form of prayer which recognises that God is God. It is right that we praise Him. It is to look to Him always, cause it is the right thing to do. It is for our own Good to Praise God, not for what he does but for who He is. He the maker of all things must be acknowledged by all, and Praised and Glorified by all. God is pleased when we do so not because He needs it,But because its right. When you Love Him and see how Faithful God is in your life you will begin to Praise Him. Cause everyday we are alive and its cause He wills it for us and we take that for granted. Let us Thank Him Throughout the day by asking for that grace
+_Psalms 34:1- I will bless the LORD at all times : His praise shall continually be in my mouth._
 
 Psalms 150:6- Let everything that has breath praise the Lord🙌🏼
 
