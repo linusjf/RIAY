@@ -1,0 +1,3 @@
+[submodule "Conventions"]
+	path = Conventions
+	url = ssh://git@github.com/linusjf/Conventions
