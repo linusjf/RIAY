@@ -5,7 +5,7 @@ shopt -s inherit_errexit
 require() {
   for cmd in "$@"; do
     if ! hash "$cmd" 2> /dev/null; then
-      echo "Error: Required command '$cmd' is not installed or not in PATH" >&2
+      echo "Error: Required command '$cmd' is not installed or not in PATH." >&2
       exit 1
     fi
   done
@@ -15,5 +15,17 @@ require markdownlint mdformat
 
 shopt -s globstar # Enable recursive globbing for better portability
 
-mdformat -- **/*.md || exit 1
-markdownlint --fix -- **/*.md || exit 1
+echo "Running markdown formatter..."
+if ! mdformat -- **/*.md; then
+  echo "Error: mdformat failed." >&2
+  exit 1
+fi
+
+echo "Running markdown linter..."
+if ! markdownlint --fix -- **/*.md; then
+  echo "Error: markdownlint failed." >&2
+  exit 1
+fi
+
+echo "All markdown files linted successfully."
+exit 0
