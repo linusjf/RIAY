@@ -17,11 +17,10 @@
 - [curl](https://curl.se/)
 - [gm](http://www.graphicsmagick.org/)
 - [m4](https://www.gnu.org/software/m4/)
-- [markdown-toc](https://github.com/jonschlinkert/markdown-toc)
 - [stitchmd](https://github.com/abhinav/stitchmd)
 - [markdown-toc-gen](https://github.com/thesilk-tux/markdown-toc-gen)
 - [mdformat](https://github.com/hukkin/mdformat)
-- [mdl](https://github.com/markdownlint/markdownlint)
+- [markdownlint](https://github.com/DavidAnson/markdownlint)
 - [vale](https://github.com/errata-ai/vale)
 
 1. Create an empty `videos.txt` file under the root directory.
@@ -32,13 +31,15 @@
 ```markdown
 <!-- toc -->
 
+<!-- tocstop -->
+
 # January 2025
 
 RIAY January 2025
 ```
 
-`markdown-toc` won't generate the table of contents
-for the monthly markdown (in this case, `January2025.md`) without the mandatory `<!-- toc -->` comment header.
+`markdown-toc-gen` won't generate the table of contents
+for the monthly markdown (in this case, `January2025.md`) without the mandatory `<!-- toc --> <!-- tocstop -->` comments header.
 
 You can replace the top-level markdown header
 
