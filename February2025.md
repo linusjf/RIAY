@@ -98,7 +98,7 @@ Simeon and Anna who belonged to the old Covenant were awaiting the arrival of th
 Nadya Baracho
 Goa, India
 
-*Joyful Mysteries*
+_Joyful Mysteries_
 5\. The finding of Lord Jesus in the temple - Luke 2:41-52
 Jesus, along with his parents, makes the pilgrimage to Jerusalem for the feast of the passover. Though it was obligatory for Jewish boys to make the pilgrimage at the age of 13, Jesus accompanies his father Joseph at the age of 12 in preparation for the following year. Mary is faithful in accompanying her spouse and son. This teaches us that our life on earth is a pilgrimage, we are all walking in faith towards being more holy.
 Jesus was lost and found in 3 days, which was an indication of Mary losing him at Mt. Calvary and getting him back in 3 days.
