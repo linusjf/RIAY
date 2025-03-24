@@ -300,4 +300,4 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 ### The Nature of Sin
 
-[![The Nature of Sin](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/refs/heads/main/February/jpgs/Day59.jpg)](https://youtu.be/dSOBgpW1kM4 "The Nature of Sin")
+[![The Nature of Sin](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day59.jpg)](https://youtu.be/dSOBgpW1kM4 "The Nature of Sin")
