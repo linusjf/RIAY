@@ -3,14 +3,29 @@ require() {
   hash "$@" || exit
 }
 usage() {
-  echo "$0 vid caption"
+  echo "$0 [-n|--dry-run] vid caption"
   echo "vid - video id"
   echo "caption - video title"
+  echo "-n, --dry-run - show what would happen without making changes"
   exit 1
 }
 set -euo pipefail
 shopt -s inherit_errexit
 require sed basename date markdown-toc
+
+DRY_RUN=false
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -n | --dry-run)
+      DRY_RUN=true
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
 if test $# -ne 2; then
   usage
 fi
@@ -36,6 +51,26 @@ YEAR=2025
 doy=$(("$(wc -l < videos.txt)" + 1))
 videourl="https://youtu.be/${vid}"
 year="${YEAR}"
+
+if $DRY_RUN; then
+  echo "DRY RUN: Would generate overlay for video $vid"
+  md="$(./genvidthmd "$vid" "$videourl" "$caption" "$doy")"
+  month="$(mfromdoy "$doy")"
+  fname="${month}/Day$(printf "%03d" "${doy#0}").md"
+  formatdt="$(datefromdoy "$doy")"
+  monthmd="${month}${year}.md"
+  echo "DRY RUN: Would create file $fname with contents:"
+  echo "## $formatdt ##"
+  echo
+  echo "### $caption ###"
+  echo
+  echo "$md"
+  echo
+  echo "DRY RUN: Would append to ${month}/compact.txt and videos.txt"
+  echo "DRY RUN: Would generate $monthmd with table of contents"
+  exit 0
+fi
+
 if ./genoverlay "$vid" "$doy"; then
   md="$(./genvidthmd "$vid" "$videourl" "$caption" "$doy")"
   month="$(mfromdoy "$doy")"
@@ -49,10 +84,10 @@ if ./genoverlay "$vid" "$doy"; then
       echo "Back up of ${fname} unsuccessful. It will be overwritten." >&2
     fi
   fi
-  echo "## $formatdt ##" >| "$fname"
+  echo "## $formatdt" >| "$fname"
   {
     echo
-    echo "### $caption ###"
+    echo "### $caption"
     echo
     echo "$md"
   } >> "$fname"
