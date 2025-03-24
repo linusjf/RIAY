@@ -63,7 +63,7 @@ fi
 vidurl="https://youtu.be/${1}"
 caption="${2}"
 root="$(getroot)"
-imgurl="https://raw.githubusercontent.com/${GIT_USER}/${root}/main/${3}"
+imgurl="https://raw.githubusercontent.com/${GIT_USER}/${root}/refs/heads/main/${3}"
 
 printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
 

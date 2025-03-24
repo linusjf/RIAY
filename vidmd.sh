@@ -43,7 +43,7 @@ playiconurl() {
   doy_padded="$(printf "%03d" "${doy_raw#0}")"
   local month
   month="$(mfromdoy "$doy_padded")"
-  echo "https://raw.githubusercontent.com/${GIT_USER}/${root}/main/${month}/jpgs/Day${doy}.jpg"
+  echo "https://raw.githubusercontent.com/${GIT_USER}/${root}/refs/heads/main/${month}/jpgs/Day${doy}.jpg"
 }
 
 thumbnailurl() {
