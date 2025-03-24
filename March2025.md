@@ -60,55 +60,55 @@ RIAY March 2025
 
 ### Effects of Sin
 
-[![Effects of Sin](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day60.jpg)](https://youtu.be/4acY2UUFnkM "Effects of Sin")
+[![Effects of Sin](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day060.jpg)](https://youtu.be/4acY2UUFnkM "Effects of Sin")
 
 ## March 02,2025
 
 ### You Are Beloved
 
-[![You Are Beloved](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day61.jpg)](https://youtu.be/DWAyh_NBxig "You Are Beloved")
+[![You Are Beloved](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day061.jpg)](https://youtu.be/DWAyh_NBxig "You Are Beloved")
 
 ## March 03,2025
 
 ### He Meets Us
 
-[![He Meets Us](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day62.jpg)](https://youtu.be/hkBJF6EpEKs "He Meets Us")
+[![He Meets Us](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day062.jpg)](https://youtu.be/hkBJF6EpEKs "He Meets Us")
 
 ## March 04,2025
 
 ### Even Unto Death
 
-[![Even Unto Death](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day63.jpg)](https://youtu.be/jFRgcmuS2G8 "Even Unto Death")
+[![Even Unto Death](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day063.jpg)](https://youtu.be/jFRgcmuS2G8 "Even Unto Death")
 
 ## March 05,2025
 
 ### Christ is Risen
 
-[![Christ is Risen](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day64.jpg)](https://youtu.be/ukldEFtB6sE "Christ is Risen")
+[![Christ is Risen](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day064.jpg)](https://youtu.be/ukldEFtB6sE "Christ is Risen")
 
 ## March 06,2025
 
 ### Returning Home
 
-[![Returning Home](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day65.jpg)](https://youtu.be/shHa5FsnPEM "Returning Home")
+[![Returning Home](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day065.jpg)](https://youtu.be/shHa5FsnPEM "Returning Home")
 
 ## March 07,2025
 
 ### Wait and Pray
 
-[![Wait and Pray](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day66.jpg)](https://youtu.be/MoGAbC67sWE "Wait and Pray")
+[![Wait and Pray](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day066.jpg)](https://youtu.be/MoGAbC67sWE "Wait and Pray")
 
 ## March 08,2025
 
 ### He Has Promised
 
-[![He Has Promised](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day67.jpg)](https://youtu.be/krn_lVSmiWc "He Has Promised")
+[![He Has Promised](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day067.jpg)](https://youtu.be/krn_lVSmiWc "He Has Promised")
 
 ## March 09,2025
 
 ### Fancy Friends
 
-[![Fancy Friends](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day68.jpg)](https://youtu.be/hBRgXdvfCbU "Fancy Friends")
+[![Fancy Friends](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day068.jpg)](https://youtu.be/hBRgXdvfCbU "Fancy Friends")
 
 ### Meditating With The Mysteries - Intro to Phase 3
 
@@ -118,88 +118,88 @@ RIAY March 2025
 
 ### Nothing is Impossible
 
-[![Nothing is Impossible](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day69.jpg)](https://youtu.be/TXCD4f66I6g "Nothing is Impossible")
+[![Nothing is Impossible](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day069.jpg)](https://youtu.be/TXCD4f66I6g "Nothing is Impossible")
 
 ## March 11,2025
 
 ### The Faith of Mary
 
-[![The Faith of Mary](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day70.jpg)](https://youtu.be/7HD7-y0NIBk "The Faith of Mary")
+[![The Faith of Mary](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day070.jpg)](https://youtu.be/7HD7-y0NIBk "The Faith of Mary")
 
 ## March 12,2025
 
 ### Behold God
 
-[![Behold God](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day71.jpg)](https://youtu.be/Kubhh7JFEwA "Behold God")
+[![Behold God](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day071.jpg)](https://youtu.be/Kubhh7JFEwA "Behold God")
 
 ## March 13,2025
 
 ### You Don't Wait in Vain
 
-[![You Don't Wait in Vain](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day72.jpg)](https://youtu.be/xuih5Y-coWA "You Don't Wait in Vain")
+[![You Don't Wait in Vain](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day072.jpg)](https://youtu.be/xuih5Y-coWA "You Don't Wait in Vain")
 
 ## March 14,2025
 
 ### Seek Him
 
-[![Seek Him](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day73.jpg)](https://youtu.be/aHy3ZmgCEsM "Seek Him")
+[![Seek Him](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day073.jpg)](https://youtu.be/aHy3ZmgCEsM "Seek Him")
 
 ## March 15,2025
 
 ### Beloved of the Father
 
-[![Beloved of the Father](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day74.jpg)](https://youtu.be/ByEx2pE3s0s "Beloved of the Father")
+[![Beloved of the Father](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day074.jpg)](https://youtu.be/ByEx2pE3s0s "Beloved of the Father")
 
 ## March 16,2025
 
 ### Jesus and Mary See You
 
-[![Jesus and Mary See You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day75.jpg)](https://youtu.be/RXTdqCM-bZo "Jesus and Mary See You")
+[![Jesus and Mary See You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day075.jpg)](https://youtu.be/RXTdqCM-bZo "Jesus and Mary See You")
 
 ## March 17,2025
 
 ### The Shepherd is Shepherding
 
-[![The Shepherd is Shepherding](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day76.jpg)](https://youtu.be/OapnMaPfpOw "The Shepherd is Shepherding")
+[![The Shepherd is Shepherding](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day076.jpg)](https://youtu.be/OapnMaPfpOw "The Shepherd is Shepherding")
 
 ## March 18,2025
 
 ### Have No Fear
 
-[![Have No Fear](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day77.jpg)](https://youtu.be/HlEfAuKfB80 "Have No Fear")
+[![Have No Fear](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day077.jpg)](https://youtu.be/HlEfAuKfB80 "Have No Fear")
 
 ## March 19,2025
 
 ### Given for You
 
-[![Given for You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day78.jpg)](https://youtu.be/57CqoTmAE9g "Given for You")
+[![Given for You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day078.jpg)](https://youtu.be/57CqoTmAE9g "Given for You")
 
 ## March 20,2025
 
 ### Trust like Jesus
 
-[![Trust like Jesus](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day79.jpg)](https://youtu.be/LaPqd-5s4ZM "Trust like Jesus")
+[![Trust like Jesus](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day079.jpg)](https://youtu.be/LaPqd-5s4ZM "Trust like Jesus")
 
 ## March 21,2025
 
 ### His Blood For You
 
-[![His Blood For You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day80.jpg)](https://youtu.be/tO3inM38VZc "His Blood For You")
+[![His Blood For You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day080.jpg)](https://youtu.be/tO3inM38VZc "His Blood For You")
 
 ## March 22,2025
 
 ### Behold Your King
 
-[![Behold Your King](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day81.jpg)](https://youtu.be/iV-N20c3OGE "Behold Your King")
+[![Behold Your King](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day081.jpg)](https://youtu.be/iV-N20c3OGE "Behold Your King")
 
 ## March 23,2025
 
 ### Simon's Choice
 
-[![Simon's Choice](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day82.jpg)](https://youtu.be/vODOomIH5Sg "Simon's Choice")
+[![Simon's Choice](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day082.jpg)](https://youtu.be/vODOomIH5Sg "Simon's Choice")
 
 ## March 24,2025
 
 ### Father Forgive Them
 
-[![Father Forgive Them](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day83.jpg)](https://youtu.be/KGatDQdwv9w "Father Forgive Them")
+[![Father Forgive Them](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day083.jpg)](https://youtu.be/KGatDQdwv9w "Father Forgive Them")

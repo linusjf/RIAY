@@ -293,10 +293,10 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 ### Creativity of Love
 
-[![Creativity of Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day58.jpg)](https://youtu.be/TFXuCOuK7LI "Creativity of Love")
+[![Creativity of Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day058.jpg)](https://youtu.be/TFXuCOuK7LI "Creativity of Love")
 
 ## February 28,2025
 
 ### The Nature of Sin
 
-[![The Nature of Sin](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day59.jpg)](https://youtu.be/dSOBgpW1kM4 "The Nature of Sin")
+[![The Nature of Sin](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day059.jpg)](https://youtu.be/dSOBgpW1kM4 "The Nature of Sin")
