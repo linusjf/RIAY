@@ -75,7 +75,7 @@ RIAY February 2025
 
 ### A Total Offering
 
-[![A Total Offering](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day032.jpg)](https://youtu.be/CagK_uBu6LU "A Total Offering")
+[![A Total Offering](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day032.jpg)](https://youtu.be/CagK_uBu6LU "A Total Offering")
 
 ### Rosary in a year Day 32
 
@@ -91,7 +91,7 @@ Simeon and Anna who belonged to the old Covenant were awaiting the arrival of th
 
 ### Lost and Found
 
-[![Lost and Found](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day033.jpg)](https://youtu.be/9bDTkqsM3Hc "Lost and Found")
+[![Lost and Found](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day033.jpg)](https://youtu.be/9bDTkqsM3Hc "Lost and Found")
 
 ### Rosary in a Year Day 33
 
@@ -108,7 +108,7 @@ Jesus stays back at the temple to fulfil filial obedience. With the same obedien
 
 ### The Anointed One
 
-[![The Anointed One](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day034.jpg)](https://youtu.be/PPnhBgd_Ggs "The Anointed One")
+[![The Anointed One](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day034.jpg)](https://youtu.be/PPnhBgd_Ggs "The Anointed One")
 
 ### RIAY Luminous Mysteries - Day 34
 
@@ -128,7 +128,7 @@ Jesus by dying on the cross, going to the tomb and resurrecting, washed away our
 
 ### Divine Bridegroom
 
-[![Divine Bridegroom](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day035.jpg)](https://youtu.be/-jtqsyXYDwA "Divine Bridegroom")
+[![Divine Bridegroom](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day035.jpg)](https://youtu.be/-jtqsyXYDwA "Divine Bridegroom")
 
 ### Rosary in a Year Day 35
 
@@ -148,7 +148,7 @@ Goa, India
 
 ### The Kingdom and the Gospel
 
-[![The Kingdom and the Gospel](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day036.jpg)](https://youtu.be/q7g8Wwzzs3U "The Kingdom and the Gospel")
+[![The Kingdom and the Gospel](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day036.jpg)](https://youtu.be/q7g8Wwzzs3U "The Kingdom and the Gospel")
 
 ### RIAY Day 36 Nadya Baracho
 
@@ -161,13 +161,13 @@ The Greek word euangèlion means to preach. Jesus not only preaches the word of 
 
 ### To Be Transfigured
 
-[![To Be Transfigured](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day037.jpg)](https://youtu.be/IB3oKZDyoM8 "To Be Transfigured")
+[![To Be Transfigured](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day037.jpg)](https://youtu.be/IB3oKZDyoM8 "To Be Transfigured")
 
 ## February 07,2025
 
 ### Food for the Journey
 
-[![Food for the Journey](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day038.jpg)](https://youtu.be/5JaBXQcW0K4 "Food for the Journey")
+[![Food for the Journey](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day038.jpg)](https://youtu.be/5JaBXQcW0K4 "Food for the Journey")
 
 ### RIAY Day 38 Nadya Baracho
 
@@ -180,124 +180,124 @@ It is mandatory for us to eat his flesh to receive eternal life.
 
 ### In the Garden
 
-[![In the Garden](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day039.jpg)](https://youtu.be/sfspYnodC6Q "In the Garden")
+[![In the Garden](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day039.jpg)](https://youtu.be/sfspYnodC6Q "In the Garden")
 
 ## February 09,2025
 
 ### Suffering Servant
 
-[![Suffering Servant](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day040.jpg)](https://youtu.be/AhFxUZeZK1s "Suffering Servant")
+[![Suffering Servant](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day040.jpg)](https://youtu.be/AhFxUZeZK1s "Suffering Servant")
 
 ## February 10,2025
 
 ### The Victorious King
 
-[![The Victorious King](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day041.jpg)](https://youtu.be/2fSlDxobHv8 "The Victorious King")
+[![The Victorious King](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day041.jpg)](https://youtu.be/2fSlDxobHv8 "The Victorious King")
 
 ## February 11,2025
 
 ### Sent into Exile
 
-[![Sent into Exile](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day042.jpg)](https://youtu.be/BsXmaN4wt5M "Sent into Exile")
+[![Sent into Exile](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day042.jpg)](https://youtu.be/BsXmaN4wt5M "Sent into Exile")
 
 ## February 12,2025
 
 ### The Veil is Torn
 
-[![The Veil is Torn](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day043.jpg)](https://youtu.be/RpK_72ah0R4 "The Veil is Torn")
+[![The Veil is Torn](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day043.jpg)](https://youtu.be/RpK_72ah0R4 "The Veil is Torn")
 
 ## February 13,2025
 
 ### Glorified Reality
 
-[![Glorified Reality](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day044.jpg)](https://youtu.be/bOJeFZU-fyY "Glorified Reality")
+[![Glorified Reality](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day044.jpg)](https://youtu.be/bOJeFZU-fyY "Glorified Reality")
 
 ## February 14,2025
 
 ### He Parted from Them
 
-[![He Parted from Them](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day045.jpg)](https://youtu.be/ufgV6eyOopE "He Parted from Them")
+[![He Parted from Them](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day045.jpg)](https://youtu.be/ufgV6eyOopE "He Parted from Them")
 
 ## February 15,2025
 
 ### Come Holy Spirit
 
-[![Come Holy Spirit](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day046.jpg)](https://youtu.be/W0_rEVsZ0G4 "Come Holy Spirit")
+[![Come Holy Spirit](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day046.jpg)](https://youtu.be/W0_rEVsZ0G4 "Come Holy Spirit")
 
 ## February 16,2025
 
 ### Mary's Return Home
 
-[![Mary's Return Home](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day047.jpg)](https://youtu.be/DbDImWk1y4E "Mary's Return Home")
+[![Mary's Return Home](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day047.jpg)](https://youtu.be/DbDImWk1y4E "Mary's Return Home")
 
 ## February 17,2025
 
 ### Mother and Queen
 
-[![Mother and Queen](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day048.jpg)](https://youtu.be/zjcZzil4Mfs "Mother and Queen")
+[![Mother and Queen](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day048.jpg)](https://youtu.be/zjcZzil4Mfs "Mother and Queen")
 
 ## February 18,2025
 
 ### How Can This Be?
 
-[![How Can This Be?](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day049.jpg)](https://youtu.be/ZdOs23aM6tE "How Can This Be?")
+[![How Can This Be?](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day049.jpg)](https://youtu.be/ZdOs23aM6tE "How Can This Be?")
 
 ## February 19,2025
 
 ### Rejoice in the Beauty
 
-[![Rejoice in the Beauty](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day050.jpg)](https://youtu.be/maFcTvNPNJw "Rejoice in the Beauty")
+[![Rejoice in the Beauty](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day050.jpg)](https://youtu.be/maFcTvNPNJw "Rejoice in the Beauty")
 
 ## February 20,2025
 
 ### Moved With Awe
 
-[![Moved With Awe](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day051.jpg)](https://youtu.be/ObfPyKSPxrk "Moved With Awe")
+[![Moved With Awe](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day051.jpg)](https://youtu.be/ObfPyKSPxrk "Moved With Awe")
 
 ## February 21,2025
 
 ### My Eyes Have Seen Salvation
 
-[![My Eyes Have Seen Salvation](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day052.jpg)](https://youtu.be/rYVyMTsCeDQ "My Eyes Have Seen Salvation")
+[![My Eyes Have Seen Salvation](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day052.jpg)](https://youtu.be/rYVyMTsCeDQ "My Eyes Have Seen Salvation")
 
 ## February 22,2025
 
 ### Our Perfect Director
 
-[![Our Perfect Director](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day053.jpg)](https://youtu.be/pbJIzB2vEzQ "Our Perfect Director")
+[![Our Perfect Director](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day053.jpg)](https://youtu.be/pbJIzB2vEzQ "Our Perfect Director")
 
 ## February 23,2025
 
 ### My Beloved Son
 
-[![My Beloved Son](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day054.jpg)](https://youtu.be/aNLTmtYzma0 "My Beloved Son")
+[![My Beloved Son](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day054.jpg)](https://youtu.be/aNLTmtYzma0 "My Beloved Son")
 
 ## February 24,2025
 
 ### Water Into Wine
 
-[![Water Into Wine](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day055.jpg)](https://youtu.be/o-KP7TP9JaY "Water Into Wine")
+[![Water Into Wine](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day055.jpg)](https://youtu.be/o-KP7TP9JaY "Water Into Wine")
 
 ## February 25,2025
 
 ### Good News
 
-[![Good News](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day056.jpg)](https://youtu.be/rwSRDiElWMQ "Good News")
+[![Good News](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day056.jpg)](https://youtu.be/rwSRDiElWMQ "Good News")
 
 ## February 26,2025
 
 ### Let's Step Away
 
-[![Let's Step Away](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day057.jpg)](https://youtu.be/8AN6TrNBuUs "Let's Step Away")
+[![Let's Step Away](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day057.jpg)](https://youtu.be/8AN6TrNBuUs "Let's Step Away")
 
 ## February 27,2025
 
 ### Creativity of Love
 
-[![Creativity of Love](https://raw.githubusercontent.com/linusjf/RIAY/main/February/jpgs/Day58.jpg)](https://youtu.be/TFXuCOuK7LI "Creativity of Love")
+[![Creativity of Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day58.jpg)](https://youtu.be/TFXuCOuK7LI "Creativity of Love")
 
 ## February 28,2025
 
 ### The Nature of Sin
 
-[![The Nature of Sin](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day59.jpg)](https://youtu.be/dSOBgpW1kM4 "The Nature of Sin")
+[![The Nature of Sin](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/refs/heads/main/February/jpgs/Day59.jpg)](https://youtu.be/dSOBgpW1kM4 "The Nature of Sin")

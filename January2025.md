@@ -106,7 +106,7 @@ RIAY January 2025
 
 ### Responding to God
 
-[![Responding to God](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day001.jpg)](https://youtu.be/PesisPSBosg "Responding to God")
+[![Responding to God](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day001.jpg)](https://youtu.be/PesisPSBosg "Responding to God")
 
 ### ROSARY IN A YEAR DAY 01 Michelle Jackson
 
@@ -122,7 +122,7 @@ Thank God for this blessing, i love the intro *when the evil one accuses us he l
 
 ### The King Knows You
 
-[![The King Knows You](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day002.jpg)](https://youtu.be/lW9LA2uYhp0 "The King Knows You")
+[![The King Knows You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day002.jpg)](https://youtu.be/lW9LA2uYhp0 "The King Knows You")
 
 ### ROSARY IN A YEAR DAY 02 Michelle Jackson
 
@@ -192,7 +192,7 @@ May the Holy Spirit lead us.
 
 ### Heart of Jesus
 
-[![Heart of Jesus](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day003.jpg)](https://youtu.be/KiLJc32YPKg "Heart of Jesus")
+[![Heart of Jesus](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day003.jpg)](https://youtu.be/KiLJc32YPKg "Heart of Jesus")
 
 ### RIAY Day 3 Heart of Jesus Michael Eltham
 
@@ -229,7 +229,7 @@ This was the most beautiful line in the meditation🥹
 
 ### Prayer With Mercy
 
-[![Prayer With Mercy](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day004.jpg)](https://youtu.be/ZeY21DCQZzI "Prayer With Mercy")
+[![Prayer With Mercy](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day004.jpg)](https://youtu.be/ZeY21DCQZzI "Prayer With Mercy")
 
 ### RIAY Day 4/ 04- 01- 2025
 
@@ -249,7 +249,7 @@ The depth of Mamma Mary mirroring the Light of Christ, and the reflection of our
 
 ### A Garden of Rest
 
-[![A Garden of Rest](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day005.jpg)](https://youtu.be/IhrhpVelcbc "A Garden of Rest")
+[![A Garden of Rest](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day005.jpg)](https://youtu.be/IhrhpVelcbc "A Garden of Rest")
 
 ### ROSARY IN A YEAR DAY 5 - A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson
 
@@ -259,7 +259,7 @@ The depth of Mamma Mary mirroring the Light of Christ, and the reflection of our
 
 ### Prayer is a Battle
 
-[![Prayer is a Battle](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day006.jpg)](https://youtu.be/UTyod-E1AHA "Prayer is a Battle")
+[![Prayer is a Battle](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day006.jpg)](https://youtu.be/UTyod-E1AHA "Prayer is a Battle")
 
 ### ROSARY IN A YEAR DAY 6 - PRAYER IS A BATTLE - Michelle Jackson
 
@@ -269,7 +269,7 @@ Prayer is a weapon to disarm the evil one, the very thoughts he tempts us with e
 
 ### Grace Will Overflow
 
-[![Grace Will Overflow](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day007.jpg)](https://youtu.be/Yz2_NEmpF-c "Grace Will Overflow")
+[![Grace Will Overflow](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day007.jpg)](https://youtu.be/Yz2_NEmpF-c "Grace Will Overflow")
 
 ### ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson
 
@@ -279,11 +279,11 @@ Prayer is a weapon to disarm the evil one, the very thoughts he tempts us with e
 
 ### Biblical Roots of the Rosary
 
-[![Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/biblicalroots.jpg)](https://youtu.be/8Vv86L0uhco "Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast")
+[![Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/biblicalroots.jpg)](https://youtu.be/8Vv86L0uhco "Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast")
 
 ### Our Father in Heaven
 
-[![Our Father in Heaven](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day008.jpg)](https://youtu.be/WOaecrQZS5s "Our Father in Heaven")
+[![Our Father in Heaven](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day008.jpg)](https://youtu.be/WOaecrQZS5s "Our Father in Heaven")
 
 ### ROSARY IN A YEAR DAY 08 - "OUR FATHER IN HEAVEN" Michelle Jackson
 
@@ -293,7 +293,7 @@ Prayer is a weapon to disarm the evil one, the very thoughts he tempts us with e
 
 ### Thy Will Be Done
 
-[![Thy Will Be Done](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day009.jpg)](https://youtu.be/gnkxlNFBGcs "Thy Will Be Done")
+[![Thy Will Be Done](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day009.jpg)](https://youtu.be/gnkxlNFBGcs "Thy Will Be Done")
 
 ROSARY IN A YEAR Day 09 - "THY WILL BE DONE" Michelle Jackson
 
@@ -303,7 +303,7 @@ Mathew 18 :1-4 , Jesus talking about who is the greatest in the kingdom of heave
 
 ### Daily Bread
 
-[![Daily Bread](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day010.jpg)](https://youtu.be/5j0Q_eP-ec0 "Daily Bread")
+[![Daily Bread](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day010.jpg)](https://youtu.be/5j0Q_eP-ec0 "Daily Bread")
 
 ### ROSARY IN A YEAR DAY 10 - " DAILY BREAD" Michelle Jackson
 
@@ -313,7 +313,7 @@ Give us this day our daily bread. Jesus wants us to trust Him and asks us not to
 
 ### As We Forgive
 
-[![As We Forgive](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day011.jpg)](https://youtu.be/hSa8NhXUgws "As We Forgive")
+[![As We Forgive](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day011.jpg)](https://youtu.be/hSa8NhXUgws "As We Forgive")
 
 ### ROSARY IN A YEAR DAY 11 - "AS WE FORGIVE" Michelle Jackson
 
@@ -323,7 +323,7 @@ Give us this day our daily bread. Jesus wants us to trust Him and asks us not to
 
 ### Deliver Us From Evil
 
-[![Deliver Us From Evil](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day012.jpg)](https://youtu.be/wfZGUzggWT4 "Deliver Us From Evil")
+[![Deliver Us From Evil](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day012.jpg)](https://youtu.be/wfZGUzggWT4 "Deliver Us From Evil")
 
 ### ROSARY IN A YEAR DAY 12 - "DELIVER US FROM EVIL" Michelle Jackson
 
@@ -333,7 +333,7 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 
 ### Full of Grace
 
-[![Full of Grace](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day013.jpg)](https://youtu.be/MIY3Xyn8ou0 "Full of Grace")
+[![Full of Grace](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day013.jpg)](https://youtu.be/MIY3Xyn8ou0 "Full of Grace")
 
 ### ROSARY IN A YEAR DAY 13 - "FULL OF GRACE" Michelle Jackson
 
@@ -343,11 +343,11 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 
 ### Blessed Are You
 
-[![Blessed Are You](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day014.jpg)](https://youtu.be/xqD3-dXtTFI "Blessed Are You")
+[![Blessed Are You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day014.jpg)](https://youtu.be/xqD3-dXtTFI "Blessed Are You")
 
 ### Mary
 
-![Mary](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/IMG-20250114-WA0011.jpg)
+![Mary](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/IMG-20250114-WA0011.jpg)
 
 ### ROSARY IN A YEAR DAY 14 - "BLESSED ARE YOU" Michelle Jackson
 
@@ -357,7 +357,7 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 
 ### Mother of God
 
-[![Mother of God](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day015.jpg)](https://youtu.be/mFtDsxE2q18 "Mother of God")
+[![Mother of God](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day015.jpg)](https://youtu.be/mFtDsxE2q18 "Mother of God")
 
 ### ROSARY IN A YEAR DAY 15 - "MOTHER OF GOD" Michelle Jackson
 
@@ -367,7 +367,7 @@ And lead us not into temptation, but deliver us from evil. The Lord is the Good 
 
 ### Glorify Him
 
-[![Glorify Him](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day016.jpg)](https://youtu.be/ynEX9kc4nv4 "Glorify Him")
+[![Glorify Him](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day016.jpg)](https://youtu.be/ynEX9kc4nv4 "Glorify Him")
 
 ### ROSARY IN A YEAR DAY 16 - "GLORIFY HIM" Michelle Jackson
 
@@ -379,7 +379,7 @@ Psalms 150:6- Let everything that has breath praise the Lord🙌🏼
 
 ### Turn On The Light
 
-[![Turn On The Light](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day017.jpg)](https://youtu.be/nHM8krUU1rk "Turn On The Light")
+[![Turn On The Light](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day017.jpg)](https://youtu.be/nHM8krUU1rk "Turn On The Light")
 
 ### ROSARY IN A YEAR DAY 17 - "Turn on the Light" Michelle Jackson
 
@@ -392,7 +392,7 @@ Romans 10:17- So faith comes from what is heard, and what is heard comes through
 
 ### Our Sweetness, Our Hope
 
-[![Our Sweetness, Our Hope](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day018.jpg)](https://youtu.be/x6ZYspdYFi8 "Our Sweetness, Our Hope")
+[![Our Sweetness, Our Hope](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day018.jpg)](https://youtu.be/x6ZYspdYFi8 "Our Sweetness, Our Hope")
 
 ### ROSARY IN A YEAR DAY 18 - "OUR SWEETNESS, OUR HOPE" Michelle Jackson
 
@@ -402,7 +402,7 @@ Romans 10:17- So faith comes from what is heard, and what is heard comes through
 
 ### Valley of Tears
 
-[![Valley of Tears](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day019.jpg)](https://youtu.be/BhYy9fcgha8 "Valley of Tears")
+[![Valley of Tears](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day019.jpg)](https://youtu.be/BhYy9fcgha8 "Valley of Tears")
 
 ### ROSARY IN A YEAR DAY 19 - "VALLEY OF TEARS" Michelle Jackson
 
@@ -412,7 +412,7 @@ Romans 10:17- So faith comes from what is heard, and what is heard comes through
 
 ### Eyes of Mercy
 
-[![Eyes of Mercy](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day020.jpg)](https://youtu.be/Dr3bjvXMjmY "Eyes of Mercy")
+[![Eyes of Mercy](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day020.jpg)](https://youtu.be/Dr3bjvXMjmY "Eyes of Mercy")
 
 ### ROSARY IN A YEAR DAY 20 - "Eyes of Mercy" Michelle Jackson
 
@@ -422,7 +422,7 @@ So beautifully put Father Mark. The Lord who understands the poverty of man and 
 
 ### Show Unto Us
 
-[![Show Unto Us](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day021.jpg)](https://youtu.be/fWi-63owEk0 "Show Unto Us")
+[![Show Unto Us](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day021.jpg)](https://youtu.be/fWi-63owEk0 "Show Unto Us")
 
 ### ROSARY IN A YEAR DAY 21b- "Show unto us" Michelle Jackson
 
@@ -432,7 +432,7 @@ So beautifully put Father Mark. The Lord who understands the poverty of man and 
 
 ### Lead Souls to Heaven
 
-[![Lead Souls to Heaven](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day022.jpg)](https://youtu.be/U_nCAl0mzmA "Lead Souls to Heaven")
+[![Lead Souls to Heaven](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day022.jpg)](https://youtu.be/U_nCAl0mzmA "Lead Souls to Heaven")
 
 ### ROSARY IN A YEAR DAY 22 - "LEAD SOULS TO HEAVEN" Michelle Jackson
 
@@ -443,7 +443,7 @@ That was an intense journey with Father Mike,on our own salvation and the salvat
 
 ### Creator of Heaven and Earth
 
-[![Creator of Heaven and Earth](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day023.jpg)](https://youtu.be/uR-pRPrIh6Q "Creator of Heaven and Earth")
+[![Creator of Heaven and Earth](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day023.jpg)](https://youtu.be/uR-pRPrIh6Q "Creator of Heaven and Earth")
 
 ### ROSARY IN A YEAR DAY 23 - "CREATOR OF HEAVEN AND EARTH" Michelle Jackson
 
@@ -453,37 +453,37 @@ That was an intense journey with Father Mike,on our own salvation and the salvat
 
 ### Still, Small Voice
 
-[![Still, Small Voice](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day024.jpg)](https://youtu.be/Ou4r9yu24pA "Still, Small Voice")
+[![Still, Small Voice](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day024.jpg)](https://youtu.be/Ou4r9yu24pA "Still, Small Voice")
 
 ## January 25,2025
 
 ### No Longer in Darkness
 
-[![No Longer in Darkness](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day025.jpg)](https://youtu.be/eJg24VMua_4 "No Longer in Darkness")
+[![No Longer in Darkness](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day025.jpg)](https://youtu.be/eJg24VMua_4 "No Longer in Darkness")
 
 ## January 26,2025
 
 ### The Room is Ours
 
-[![The Room is Ours](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day026.jpg)](https://youtu.be/UqLJqFHKtzw "The Room is Ours")
+[![The Room is Ours](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day026.jpg)](https://youtu.be/UqLJqFHKtzw "The Room is Ours")
 
 ## January 27,2025
 
 ### The Spirit Prepares Us
 
-[![The Spirit Prepares Us](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day027.jpg)](https://youtu.be/sHVJdpXlRyc "The Spirit Prepares Us")
+[![The Spirit Prepares Us](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day027.jpg)](https://youtu.be/sHVJdpXlRyc "The Spirit Prepares Us")
 
 ## January 28,2025
 
 ### Be Joyful, Be Free
 
-[![Be Joyful, Be Free](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day028.jpg)](https://youtu.be/IeGsyy6vVBg "Be Joyful, Be Free")
+[![Be Joyful, Be Free](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day028.jpg)](https://youtu.be/IeGsyy6vVBg "Be Joyful, Be Free")
 
 ## January 29,2025
 
 ### Something Unexpected
 
-[![Something Unexpected](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day029.jpg)](https://youtu.be/JRBX1CIDyV4 "Something Unexpected")
+[![Something Unexpected](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day029.jpg)](https://youtu.be/JRBX1CIDyV4 "Something Unexpected")
 
 ### Rosary in a Year - Day 29 - Joyful Mysteries
 
@@ -498,7 +498,7 @@ Goa, India.
 
 ### The New Ark
 
-[![The New Ark](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day030.jpg)](https://youtu.be/HJNDwboMJ-k "The New Ark")
+[![The New Ark](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day030.jpg)](https://youtu.be/HJNDwboMJ-k "The New Ark")
 
 ### Rosary in a Year - Day 30 - Joyful Mysteries
 
@@ -515,7 +515,7 @@ Goa, India
 
 ### No Other Savior
 
-[![No Other Savior](https://raw.githubusercontent.com/linusjf/RIAY/main/January/jpgs/Day031.jpg)](https://youtu.be/CXk5WJ4OhqQ "No Other Savior")
+[![No Other Savior](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day031.jpg)](https://youtu.be/CXk5WJ4OhqQ "No Other Savior")
 
 ### Rosary in a Year Day 31
 
