@@ -88,12 +88,12 @@ Results:
 1. Appends `Day010.md` filename to the `January/compact.txt` file.
 1. Updates `January20XX.md` file in the root directory with the contents of `Day010.md`.
 1. Updated files:
-   7.1 `./videos.txt`
-   7.2 `./January20XX.md`
-   7.3 `./January/compact.txt`
+   1. `./videos.txt`
+   1. `./January20XX.md`
+   1. `./January/compact.txt`
 1. Created files:
-   8.1 `./January/Day010.md`
-   8.2 `./January/jpgs/Day010.jpg`
+   1. `./January/Day010.md`
+   1. `./January/jpgs/Day010.jpg`
 
 ## Add today's sharing
 
