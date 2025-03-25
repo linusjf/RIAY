@@ -202,10 +202,13 @@ Generates the table of contents per the existing headings in the markdown file.
 
 1. Install ANTLR4
 
-Assuming that you have Python3 and its installer pip3 installed on your machine.
-You can download and install Python3 from <https://www.python.org/downloads/>.
+Use [pyenv](https://github.com/pyenv/pyenv) to install and set up your Python3 environment.
+
+Example of setting up your Python and ANTLR4 environment
 
 ```bash
+pyenv install 3.10
+pyenv global 3.10
 pip install antlr4-tools antlr4-python3-runtime
 ```
 
