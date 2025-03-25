@@ -49,6 +49,8 @@
   - [Simon's Choice](#simons-choice)
 - [March 24,2025](#march-242025)
   - [Father Forgive Them](#father-forgive-them)
+- [March 25,2025](#march-252025)
+  - [Do Not Be Afraid](#do-not-be-afraid)
 
 <!-- tocstop -->
 
@@ -203,3 +205,9 @@ RIAY March 2025
 ### Father Forgive Them
 
 [![Father Forgive Them](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day083.jpg)](https://youtu.be/KGatDQdwv9w "Father Forgive Them")
+
+## March 25,2025
+
+### Do Not Be Afraid
+
+[![Do Not Be Afraid](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day084.jpg)](https://youtu.be/3TUyD_QbOnE "Do Not Be Afraid")
