@@ -60,9 +60,9 @@ if $DRY_RUN; then
   formatdt="$(datefromdoy "$doy")"
   monthmd="${month}${year}.md"
   echo "DRY RUN: Would create file $fname with contents:"
-  echo "## $formatdt ##"
+  echo "## $formatdt"
   echo
-  echo "### $caption ###"
+  echo "### $caption"
   echo
   echo "$md"
   echo
@@ -92,6 +92,7 @@ if ./genoverlay "$vid" "$doy"; then
     echo "$md"
   } >> "$fname"
 
+  rm -f "${month}/compact.txt.bak" && cp "${month}/compact.txt" "${month}/compact.txt.bak"
   basename -- "$fname" >> "${month}/compact.txt"
   monthmd="${month}${year}.md"
   if ./compact "$month" >| "$monthmd" && markdown-toc -i "$monthmd"; then
@@ -101,6 +102,7 @@ if ./genoverlay "$vid" "$doy"; then
     exit 0
   else
     printf "Error generating %s.\n" "$monthmd" >&2
+    mv "${month}/compact.txt.bak" "${month}/compact.txt"
     exit 1
   fi
 else

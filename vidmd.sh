@@ -4,188 +4,157 @@
 # @file        : vidmd.sh
 # @created     : Wednesday Feb 08, 2023 18:45:15 IST
 #
-# @description :
+# @description : Utilities for video markdown generation
 ######################################################################
+
+# Constants
+readonly VIDEO_ID_LENGTH=11
+readonly MAX_CAPTION_LENGTH=100
+readonly THUMBNAIL_URLS=(
+  "https://img.youtube.com/vi/${1}/maxresdefault.jpg"
+  "https://img.youtube.com/vi/${1}/hqdefault.jpg"
+  "https://img.youtube.com/vi/${1}/hq1.jpg"
+  "https://img.youtube.com/vi/${1}/hq2.jpg"
+  "https://img.youtube.com/vi/${1}/hq3.jpg"
+  "https://img.youtube.com/vi/${1}/hq720.jpg"
+  "https://img.youtube.com/vi/${1}/mqdefault.jpg"
+  "https://img.youtube.com/vi/${1}/mq1.jpg"
+  "https://img.youtube.com/vi/${1}/mq2.jpg"
+  "https://img.youtube.com/vi/${1}/mq3.jpg"
+  "https://img.youtube.com/vi/${1}/sddefault.jpg"
+  "https://img.youtube.com/vi/${1}/sd1.jpg"
+  "https://img.youtube.com/vi/${1}/sd2.jpg"
+  "https://img.youtube.com/vi/${1}/sd3.jpg"
+  "https://img.youtube.com/vi/${1}/default.jpg"
+  "https://img.youtube.com/vi/${1}/0.jpg"
+  "https://img.youtube.com/vi/${1}/1.jpg"
+  "https://img.youtube.com/vi/${1}/2.jpg"
+  "https://img.youtube.com/vi/${1}/3.jpg"
+)
+
+# Error handling
+die() {
+  printf "%s\n" "$1" >&2
+  exit 1
+}
+
+# Dependency checks
+require() {
+  for cmd in "$@"; do
+    if ! command -v "$cmd" > /dev/null 2>&1; then
+      die "Required command '$cmd' not found"
+    fi
+  done
+}
+
 getroot() {
-  command -v git > /dev/null || {
-    printf "%s not found.\n" "git"
-    exit
-  }
-  command -v basename > /dev/null || {
-    printf "%s not found.\n" "basename"
-    exit
-  }
+  require git basename
   basename "$(git rev-parse --show-toplevel)"
 }
 
 usagevidmd() {
-  echo "vidmd vidid vidurl caption"
-  echo "vid - video id"
-  echo "vidurl - video url"
-  echo "caption - video title"
+  cat << EOF
+Usage: $0 vidid vidurl caption
+  vidid   - YouTube video ID (11 characters)
+  vidurl  - Full video URL
+  caption - Video title (max $MAX_CAPTION_LENGTH chars)
+EOF
   exit 1
 }
 
 usagevidmdloc() {
-  echo "vidmdloc vidid vidurl caption doy"
-  echo "vid - video id"
-  echo "vidurl - video url"
-  echo "caption - video title"
-  echo "doy - day of year"
+  cat << EOF
+Usage: $0 vidid vidurl caption doy
+  vidid   - YouTube video ID (11 characters)
+  vidurl  - Full video URL
+  caption - Video title (max $MAX_CAPTION_LENGTH chars)
+  doy     - Day of year (1-366)
+EOF
   exit 1
 }
 
 playiconurl() {
-  local root
+  local root doy_raw doy_padded month
   root="$(getroot)"
-  local doy_raw="$1"
-  local doy_padded
+  doy_raw="$1"
   doy_padded="$(printf "%03d" "${doy_raw#0}")"
-  local month
   month="$(mfromdoy "$doy_padded")"
   echo "https://raw.githubusercontent.com/${GIT_USER}/${root}/refs/heads/main/${month}/jpgs/Day${doy_padded}.jpg"
 }
 
 thumbnailurl() {
-  command -v curl > /dev/null || {
-    printf "%s not found.\n" "curl"
-    exit
-  }
-  local urls
-  urls=("https://img.youtube.com/vi/${1}/maxresdefault.jpg"
-    "https://img.youtube.com/vi/${1}/hqdefault.jpg"
-    "https://img.youtube.com/vi/${1}/hq1.jpg"
-    "https://img.youtube.com/vi/${1}/hq2.jpg"
-    "https://img.youtube.com/vi/${1}/hq3.jpg"
-    "https://img.youtube.com/vi/${1}/hq720.jpg"
-    "https://img.youtube.com/vi/${1}/mqdefault.jpg"
-    "https://img.youtube.com/vi/${1}/mq1.jpg"
-    "https://img.youtube.com/vi/${1}/mq2.jpg"
-    "https://img.youtube.com/vi/${1}/mq3.jpg"
-    "https://img.youtube.com/vi/${1}/sddefault.jpg"
-    "https://img.youtube.com/vi/${1}/sd1.jpg"
-    "https://img.youtube.com/vi/${1}/sd2.jpg"
-    "https://img.youtube.com/vi/${1}/sd3.jpg"
-    "https://img.youtube.com/vi/${1}/default.jpg"
-    "https://img.youtube.com/vi/${1}/0.jpg"
-    "https://img.youtube.com/vi/${1}/1.jpg"
-    "https://img.youtube.com/vi/${1}/2.jpg"
-    "https://img.youtube.com/vi/${1}/3.jpg")
-
-  for url in "${urls[@]}"; do
+  require curl
+  local vid="$1" url
+  for url in "${THUMBNAIL_URLS[@]/${1}/$vid}"; do
     if curl --silent --head --fail "$url" > /dev/null; then
       echo "$url"
       return 0
     fi
   done
-
   return 1
 }
 
 downloadthumbnail() {
-  hash curl || exit
+  require curl
   local url
-  url="$(thumbnailurl "$1")"
-  if [ -z "${url}" ]; then
-    return 1
-  else
-    curl --silent "$url" --output "$2"
-    return $?
-  fi
+  url="$(thumbnailurl "$1")" || return 1
+  curl --silent "$url" --output "$2"
 }
 
 vidmd() {
-  if (($# < 3)); then
-    usagevidmd
-  fi
-  local vidid="$1" vidurl="$2" caption="$3"
-  local imgurl
-  imgurl="$(thumbnailurl "$vidid")" || {
-    echo "Error: Thumbnails unverifiable or absent." >&2
-    return 1
-  }
-  printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
+  [[ $# -lt 3 ]] && usagevidmd
+  local vidid="$1" vidurl="$2" caption="$3" imgurl
+  imgurl="$(thumbnailurl "$vidid")" || die "Error: Thumbnails unverifiable or absent"
+  printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
 }
 
 vidmdloc() {
-  if test $# -lt 4; then
-    usagevidmdloc
-  fi
-  local vidid="$1"
-  local vidurl="$2"
-  local caption="$3"
-  local doy="$4"
-  local imgurl
+  [[ $# -lt 4 ]] && usagevidmdloc
+  local vidid="$1" vidurl="$2" caption="$3" doy="$4" imgurl
   imgurl="$(playiconurl "${doy#0}")"
-  printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
+  printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
 }
 
 isnumeric() {
-  if [[ "$1" =~ ^[0-9]+$ ]]; then
-    return 0
-  fi
-  return 1
+  [[ "$1" =~ ^[0-9]+$ ]]
 }
 
 mfromdoy() {
-  if ! isnumeric "$1"; then
-    echo "$1 is not numeric" >&2
-    return 1
-  fi
-  ((day = 10#$1 - 1))
-  hash date || exit
-  date --date="jan 1 + $day days" +%B
+  isnumeric "$1" || die "$1 is not numeric"
+  require date
+  local day=$((10#$1))
+  [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
+  date --date="jan 1 + $((day - 1)) days" +%B
 }
 
 datefromdoy() {
-  if ! isnumeric "$1"; then
-    echo 2> "$1 is not numeric"
-    return 1
-  fi
-  ((day = 10#$1 - 1))
-  hash date || exit
-  date --date="jan 1 + $day days" "+%B %d,%Y"
+  isnumeric "$1" || die "$1 is not numeric"
+  require date
+  local day=$((10#$1))
+  [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
+  date --date="jan 1 + $((day - 1)) days" "+%B %d,%Y"
 }
 
 monthfromnumber() {
-  hash date || exit
+  require date
   case $1 in
     [1-9] | 1[0-2]) date -d "${1}/01" +%B ;;
-    *) exit 1 ;;
+    *) die "Invalid month number: $1" ;;
   esac
 }
 
-# Define a function to validate input
 validate_input() {
-  local value="$1"
-  local max_length="$2"
-  local error_message="$3"
-
-  if [[ -z "$value" ]]; then
-    echo "Error: $error_message cannot be empty." >&2
-    return 1
-  fi
-  if [[ ${#value} -gt $max_length ]]; then
-    echo "Error: $error_message too long. Maximum $max_length characters." >&2
-    return 1
-  fi
+  local value="$1" max_length="$2" error_message="$3"
+  [[ -z "$value" ]] && die "Error: $error_message cannot be empty"
+  [[ ${#value} -gt "$max_length" ]] && die "Error: $error_message too long. Maximum $max_length characters"
+  return 0
 }
 
-VIDEO_ID_LENGTH=11
-# Define a function to validate the video ID
 validate_vid() {
-  local vid="$1"
-  local regex
-  regex="[a-zA-Z0-9_-]{${VIDEO_ID_LENGTH}}"
-  if [[ ! "$vid" =~ ^${regex}$ ]]; then
-    echo "Error: Invalid video ID ${vid}. Expected ${VIDEO_ID_LENGTH} characters." >&2
-    return 1
-  fi
-  validate_input "$vid" ${VIDEO_ID_LENGTH} "Video ID"
+  [[ "$1" =~ ^[a-zA-Z0-9_-]{$VIDEO_ID_LENGTH}$ ]] || die "Invalid video ID $1. Expected $VIDEO_ID_LENGTH characters"
+  validate_input "$1" "$VIDEO_ID_LENGTH" "Video ID"
 }
 
-MAX_CAPTION_LENGTH=100
-# Define a function to validate the caption
 validate_caption() {
-  validate_input "$1" ${MAX_CAPTION_LENGTH} "Caption"
+  validate_input "$1" "$MAX_CAPTION_LENGTH" "Caption"
 }
