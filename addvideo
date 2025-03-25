@@ -95,7 +95,7 @@ if ./genoverlay "$vid" "$doy"; then
   rm -f "${month}/compact.txt.bak" && cp "${month}/compact.txt" "${month}/compact.txt.bak"
   basename -- "$fname" >> "${month}/compact.txt"
   monthmd="${month}${year}.md"
-  if ./compact "$month" >| "$monthmd" && markdown-toc -i "$monthmd"; then
+  if ./compact "$month" >| "$monthmd" && markdown-toc-gen update "$monthmd" &> /dev/null; then
     sed -i '/\S/,$!d' "$monthmd"
     printf "%s\n" "$vid" >> videos.txt
     printf "%s generated for %s.\n" "$fname" "$vid"
