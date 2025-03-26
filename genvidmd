@@ -1,73 +1,108 @@
 #!/usr/bin/env bash
-
-usage() {
-  echo "Usage: $0 vid caption pathtoimg"
-  echo "  vid       - YouTube video ID"
-  echo "  caption   - Video title"
-  echo "  pathtoimg - Relative path to the generated JPEG image"
-  exit 1
-}
+# Generate markdown for embedding YouTube videos with overlay images
+# Creates markdown link with video thumbnail and proper formatting
 
 set -euo pipefail
 shopt -s inherit_errexit
-# Ensure at least three arguments are provided
-if [[ $# -lt 3 ]]; then
-  usage
-fi
 
-# Ensure required scripts exist
-for script in "./internet.sh" "./vidmd.sh"; do
-  if [[ ! -f "$script" ]]; then
-    echo "Error: Required script '$script' not found!"
-    exit 1
-  fi
-done
-
-# Source required scripts
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-# Source required scripts
+# shellcheck disable=SC2155
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 # shellcheck disable=SC1091
-source "$SCRIPT_DIR/internet.sh"
-#shellcheck disable=SC1091
-source "$SCRIPT_DIR/vidmd.sh"
+source "${SCRIPT_DIR}/internet.sh"
+# shellcheck disable=SC1091
+source "${SCRIPT_DIR}/vidmd.sh"
 
-# Check internet connectivity
-checkinternet || {
-  echo "Error: No internet connection detected."
+usage() {
+  cat << EOF
+Usage: ${0##*/} vid caption pathtoimg
+
+Generate markdown for embedding YouTube videos with overlay images.
+
+Arguments:
+  vid       YouTube video ID (11 characters)
+  caption   Video title/description
+  pathtoimg Relative path to generated JPEG image
+
+Output:
+  Markdown formatted link with embedded image to STDOUT
+EOF
   exit 1
 }
 
-# Ensure GIT_USER is set
-if [[ -z "$GIT_USER" ]]; then
-  echo "Error: GIT_USER environment variable is not set."
-  exit 1
+validate_inputs() {
+  if [[ $# -ne 3 ]]; then
+    echo "Error: Requires exactly 3 arguments" >&2
+    usage
+  fi
+
+  if ! validate_vid "$1"; then
+    echo "Error: Invalid YouTube video ID format: '$1'" >&2
+    return 1
+  fi
+
+  if [[ -z "$2" ]]; then
+    echo "Error: Caption cannot be empty" >&2
+    return 1
+  fi
+
+  local img_dir
+  img_dir="$(dirname "$3")"
+  if [[ ! -d "$img_dir" ]] || [[ ! -w "$img_dir" ]]; then
+    echo "Error: Directory '${img_dir}' does not exist or is not writable" >&2
+    return 1
+  fi
+}
+
+generate_markdown() {
+  local vid="$1"
+  local caption="$2"
+  local img_path="$3"
+  local vidurl imgurl root
+
+  vidurl="https://youtu.be/${vid}"
+  root="$(getroot)"
+  imgurl="https://raw.githubusercontent.com/${GIT_USER}/${root}/refs/heads/main/${img_path}"
+
+  printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
+}
+
+main() {
+  # Check dependencies
+  require getroot validate_vid
+
+  # Validate environment
+  if [[ -z "${GIT_USER:-}" ]]; then
+    echo "Error: GIT_USER environment variable is not set" >&2
+    exit 1
+  fi
+
+  # Validate inputs
+  if ! validate_inputs "$@"; then
+    exit 1
+  fi
+
+  # Check internet connection
+  checkinternet || {
+    echo "Error: No internet connection detected" >&2
+    exit 1
+  }
+
+  # Generate overlay image
+  if ! "${SCRIPT_DIR}/overlayimg" "$1" "$3"; then
+    echo "Error: Failed to generate overlay image for video ID '$1'" >&2
+    exit 1
+  fi
+
+  # Verify image creation
+  if [[ ! -f "$3" ]]; then
+    echo "Error: Image file '$3' was not generated correctly" >&2
+    exit 1
+  fi
+
+  # Output markdown
+  generate_markdown "$@"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
 fi
-
-# Ensure target image directory is writable
-dir="$(dirname "$3")"
-if [[ ! -d "$dir" ]] || [[ ! -w "$dir" ]]; then
-  echo "Error: Directory '${dir}' does not exist or is not writable."
-  exit 1
-fi
-
-# Generate overlay image
-if ! "${SCRIPT_DIR}/overlayimg" "${1}" "${3}"; then
-  echo "Error: Failed to overlay image for video ID '${1}'." >&2
-  exit 1
-fi
-
-# Verify the image file was created
-if [[ ! -f "$3" ]]; then
-  echo "Error: Image file '$3' was not generated correctly."
-  exit 1
-fi
-
-# Generate Markdown link
-vidurl="https://youtu.be/${1}"
-caption="${2}"
-root="$(getroot)"
-imgurl="https://raw.githubusercontent.com/${GIT_USER}/${root}/refs/heads/main/${3}"
-
-printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
-
-exit 0
