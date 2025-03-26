@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2317
 require() {
   hash "$@" || exit
 }
@@ -20,6 +21,9 @@ isvalid() {
 
 set -euo pipefail
 shopt -s inherit_errexit
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+#shellcheck disable=SC1091
+source "$SCRIPT_DIR/vidmd.sh"
 require m4 mktemp awk rm
 
 thisdir="$(pwd)"

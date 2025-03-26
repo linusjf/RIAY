@@ -30,12 +30,13 @@ if test $# -ne 2; then
   usage
 fi
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 #shellcheck disable=SC1091
-source ./internet.sh
+source "${SCRIPT_DIR}/internet.sh"
 checkinternet || exit
 
 #shellcheck disable=SC1091
-source ./vidmd.sh
+source "${SCRIPT_DIR}/vidmd.sh"
 vid="$1"
 caption="$2"
 
@@ -54,7 +55,7 @@ year="${YEAR}"
 
 if $DRY_RUN; then
   echo "DRY RUN: Would generate overlay for video $vid"
-  md="$(./genvidthmd "$vid" "$videourl" "$caption" "$doy")"
+  md="$("${SCRIPT_DIR}/genvidthmd" "$vid" "$videourl" "$caption" "$doy")"
   month="$(mfromdoy "$doy")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(datefromdoy "$doy")"
@@ -71,8 +72,8 @@ if $DRY_RUN; then
   exit 0
 fi
 
-if ./genoverlay "$vid" "$doy"; then
-  md="$(./genvidthmd "$vid" "$videourl" "$caption" "$doy")"
+if "${SCRIPT_DIR}/genoverlay" "$vid" "$doy"; then
+  md="$("${SCRIPT_DIR}/genvidthmd" "$vid" "$videourl" "$caption" "$doy")"
   month="$(mfromdoy "$doy")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(datefromdoy "$doy")"
@@ -95,7 +96,7 @@ if ./genoverlay "$vid" "$doy"; then
   rm -f "${month}/compact.txt.bak" && cp "${month}/compact.txt" "${month}/compact.txt.bak"
   basename -- "$fname" >> "${month}/compact.txt"
   monthmd="${month}${year}.md"
-  if ./compact "$month" >| "$monthmd" && markdown-toc-gen update "$monthmd" &> /dev/null; then
+  if "${SCRIPT_DIR}/compact" "$month" >| "$monthmd" && markdown-toc-gen update "$monthmd" &> /dev/null; then
     sed -i '/\S/,$!d' "$monthmd"
     printf "%s\n" "$vid" >> videos.txt
     printf "%s generated for %s.\n" "$fname" "$vid"

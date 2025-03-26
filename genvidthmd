@@ -7,8 +7,9 @@ if [[ ! -f "./vidmd.sh" ]]; then
 fi
 set -euo pipefail
 shopt -s inherit_errexit
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 #shellcheck disable=SC1091
-source ./vidmd.sh
+source "${SCRIPT_DIR}/vidmd.sh"
 
 usage() {
   echo "Usage: $0 vid vidurl caption [doy]"

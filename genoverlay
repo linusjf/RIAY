@@ -18,12 +18,13 @@ if [[ $# -ne 2 ]]; then
   usage
 fi
 
-if [[ ! -f ./vidmd.sh ]]; then
-  echo "Error: vidmd.sh not found!"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+if [[ ! -f "${SCRIPT_DIR}/vidmd.sh" ]]; then
+  echo "Error: ${SCRIPT_DIR}/vidmd.sh not found!"
   exit 1
 fi
-# shellcheck disable=SC1091
-source ./vidmd.sh
+#shellcheck disable=SC1091
+source "$SCRIPT_DIR/vidmd.sh"
 
 if ! isnumeric "$2"; then
   usage
@@ -60,4 +61,4 @@ if [[ ! -x ./overlayicon ]]; then
   exit 1
 fi
 
-./overlayicon "$relfile"
+"${SCRIPT_DIR}/overlayicon" "$relfile"

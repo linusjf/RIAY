@@ -11,25 +11,25 @@
 readonly VIDEO_ID_LENGTH=11
 readonly MAX_CAPTION_LENGTH=100
 readonly THUMBNAIL_URLS=(
-  "https://img.youtube.com/vi/${1}/maxresdefault.jpg"
-  "https://img.youtube.com/vi/${1}/hqdefault.jpg"
-  "https://img.youtube.com/vi/${1}/hq1.jpg"
-  "https://img.youtube.com/vi/${1}/hq2.jpg"
-  "https://img.youtube.com/vi/${1}/hq3.jpg"
-  "https://img.youtube.com/vi/${1}/hq720.jpg"
-  "https://img.youtube.com/vi/${1}/mqdefault.jpg"
-  "https://img.youtube.com/vi/${1}/mq1.jpg"
-  "https://img.youtube.com/vi/${1}/mq2.jpg"
-  "https://img.youtube.com/vi/${1}/mq3.jpg"
-  "https://img.youtube.com/vi/${1}/sddefault.jpg"
-  "https://img.youtube.com/vi/${1}/sd1.jpg"
-  "https://img.youtube.com/vi/${1}/sd2.jpg"
-  "https://img.youtube.com/vi/${1}/sd3.jpg"
-  "https://img.youtube.com/vi/${1}/default.jpg"
-  "https://img.youtube.com/vi/${1}/0.jpg"
-  "https://img.youtube.com/vi/${1}/1.jpg"
-  "https://img.youtube.com/vi/${1}/2.jpg"
-  "https://img.youtube.com/vi/${1}/3.jpg"
+  "https://img.youtube.com/vi/vid/maxresdefault.jpg"
+  "https://img.youtube.com/vi/vid/hqdefault.jpg"
+  "https://img.youtube.com/vi/vid/hq1.jpg"
+  "https://img.youtube.com/vi/vid/hq2.jpg"
+  "https://img.youtube.com/vi/vid/hq3.jpg"
+  "https://img.youtube.com/vi/vid/hq720.jpg"
+  "https://img.youtube.com/vi/vid/mqdefault.jpg"
+  "https://img.youtube.com/vi/vid/mq1.jpg"
+  "https://img.youtube.com/vi/vid/mq2.jpg"
+  "https://img.youtube.com/vi/vid/mq3.jpg"
+  "https://img.youtube.com/vi/vid/sddefault.jpg"
+  "https://img.youtube.com/vi/vid/sd1.jpg"
+  "https://img.youtube.com/vi/vid/sd2.jpg"
+  "https://img.youtube.com/vi/vid/sd3.jpg"
+  "https://img.youtube.com/vi/vid/default.jpg"
+  "https://img.youtube.com/vi/vid/0.jpg"
+  "https://img.youtube.com/vi/vid/1.jpg"
+  "https://img.youtube.com/vi/vid/2.jpg"
+  "https://img.youtube.com/vi/vid/3.jpg"
 )
 
 # Error handling
@@ -85,7 +85,7 @@ playiconurl() {
 thumbnailurl() {
   require curl
   local vid="$1" url
-  for url in "${THUMBNAIL_URLS[@]/${1}/$vid}"; do
+  for url in "${THUMBNAIL_URLS[@]/vid/$vid}"; do
     if curl --silent --head --fail "$url" > /dev/null; then
       echo "$url"
       return 0
