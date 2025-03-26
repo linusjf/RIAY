@@ -12,6 +12,7 @@ shopt -s inherit_errexit
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 # shellcheck disable=SC1091
 source "${SCRIPT_DIR}/internet.sh"
+# shellcheck disable=SC1091
 source "${SCRIPT_DIR}/vidmd.sh"
 
 readonly YEAR=2025
