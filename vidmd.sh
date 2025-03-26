@@ -4,8 +4,15 @@
 # @file        : vidmd.sh
 # @created     : Wednesday Feb 08, 2023 18:45:15 IST
 #
-# @description : Utilities for video markdown generation
+# @description : Utilities for video markdown generation including:
+#                - YouTube video ID validation
+#                - Thumbnail URL generation
+#                - Markdown formatting for video embeds
+#                - Date and month calculations
 ######################################################################
+
+set -euo pipefail
+shopt -s inherit_errexit
 
 # Constants
 readonly VIDEO_ID_LENGTH=11
@@ -32,13 +39,11 @@ readonly THUMBNAIL_URLS=(
   "https://img.youtube.com/vi/vid/3.jpg"
 )
 
-# Error handling
 die() {
   printf "%s\n" "$1" >&2
   exit 1
 }
 
-# Dependency checks
 require() {
   for cmd in "$@"; do
     if ! command -v "$cmd" > /dev/null 2>&1; then
@@ -79,7 +84,8 @@ playiconurl() {
   doy_raw="$1"
   doy_padded="$(printf "%03d" "${doy_raw#0}")"
   month="$(mfromdoy "$doy_padded")"
-  echo "https://raw.githubusercontent.com/${GIT_USER}/${root}/refs/heads/main/${month}/jpgs/Day${doy_padded}.jpg"
+  printf "https://raw.githubusercontent.com/%s/%s/refs/heads/main/%s/jpgs/Day%s.jpg\n" \
+    "${GIT_USER}" "$root" "$month" "$doy_padded"
 }
 
 thumbnailurl() {
@@ -87,7 +93,7 @@ thumbnailurl() {
   local vid="$1" url
   for url in "${THUMBNAIL_URLS[@]/vid/$vid}"; do
     if curl --silent --head --fail "$url" > /dev/null; then
-      echo "$url"
+      printf "%s\n" "$url"
       return 0
     fi
   done
@@ -122,7 +128,8 @@ isnumeric() {
 mfromdoy() {
   isnumeric "$1" || die "$1 is not numeric"
   require date
-  local day=$((10#$1))
+  local day
+  day=$(($1))
   [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
   date --date="jan 1 + $((day - 1)) days" +%B
 }
@@ -130,7 +137,8 @@ mfromdoy() {
 datefromdoy() {
   isnumeric "$1" || die "$1 is not numeric"
   require date
-  local day=$((10#$1))
+  local day
+  day=$(($1))
   [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
   date --date="jan 1 + $((day - 1)) days" "+%B %d,%Y"
 }
