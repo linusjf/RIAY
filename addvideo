@@ -1,112 +1,205 @@
 #!/usr/bin/env bash
-require() {
-  hash "$@" || exit
-}
-usage() {
-  echo "$0 [-n|--dry-run] vid caption"
-  echo "vid - video id"
-  echo "caption - video title"
-  echo "-n, --dry-run - show what would happen without making changes"
-  exit 1
-}
+# Script to add new videos to the system by:
+# 1. Generating markdown content
+# 2. Creating overlay images
+# 3. Updating index files
+# 4. Maintaining video lists
+
 set -euo pipefail
 shopt -s inherit_errexit
-require sed basename date markdown-toc
 
-DRY_RUN=false
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-    -n | --dry-run)
-      DRY_RUN=true
-      shift
-      ;;
-    *)
-      break
-      ;;
-  esac
-done
-
-if test $# -ne 2; then
-  usage
-fi
-
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-#shellcheck disable=SC1091
+# shellcheck disable=SC2155
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 source "${SCRIPT_DIR}/internet.sh"
-checkinternet || exit
-
-#shellcheck disable=SC1091
 source "${SCRIPT_DIR}/vidmd.sh"
-vid="$1"
-caption="$2"
 
-if ! validate_vid "$vid"; then
+readonly YEAR=2025
+readonly COMPACT_FILE="compact.txt"
+readonly VIDEOS_FILE="videos.txt"
+
+usage() {
+  cat << EOF
+Usage: ${0##*/} [-n|--dry-run] vid caption
+
+Add a new video to the system by generating markdown and updating indexes.
+
+Options:
+  -n, --dry-run    Show what would happen without making changes
+Arguments:
+  vid              YouTube video ID
+  caption          Video title/description
+EOF
   exit 1
-fi
+}
 
-if ! validate_caption "$caption"; then
-  exit 1
-fi
-YEAR=2025
+require() {
+  hash "$@" || {
+    echo "Error: Required command not found: $*" >&2
+    exit 127
+  }
+}
 
-doy=$(("$(wc -l < videos.txt)" + 1))
-videourl="https://youtu.be/${vid}"
-year="${YEAR}"
+check_video_exists() {
+  video_id="$1"
+  url="https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${video_id}&format=json"
 
-if $DRY_RUN; then
-  echo "DRY RUN: Would generate overlay for video $vid"
-  md="$("${SCRIPT_DIR}/genvidthmd" "$vid" "$videourl" "$caption" "$doy")"
+  # Send a request and check HTTP response code
+  http_status=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+
+  if [[ "$http_status" == "200" ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+validate_inputs() {
+  if ! validate_vid "$1"; then
+    echo "Error: Invalid YouTube video ID format: '$1'" >&2
+    echo "       YouTube video IDs should be 11 characters long" >&2
+    return 1
+  fi
+
+  if ! validate_caption "$2"; then
+    echo "Error: Invalid caption format: '$2'" >&2
+    return 1
+  fi
+
+  if ! check_video_exists "$1"; then
+    echo "Error: No video found with ID: '$1'" >&2
+    echo "       Please verify the video exists at https://youtu.be/$1" >&2
+    return 1
+  fi
+  return 0
+}
+
+generate_files() {
+  local vid="$1"
+  local caption="$2"
+  local doy="$3"
+  local videourl="https://youtu.be/${vid}"
+  local month monthmd fname formatdt
+
   month="$(mfromdoy "$doy")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(datefromdoy "$doy")"
-  monthmd="${month}${year}.md"
-  echo "DRY RUN: Would create file $fname with contents:"
-  echo "## $formatdt"
-  echo
-  echo "### $caption"
-  echo
-  echo "$md"
-  echo
-  echo "DRY RUN: Would append to ${month}/compact.txt and videos.txt"
-  echo "DRY RUN: Would generate $monthmd with table of contents"
-  exit 0
-fi
+  monthmd="${month}${YEAR}.md"
 
-if "${SCRIPT_DIR}/genoverlay" "$vid" "$doy"; then
+  # Generate markdown content
+  local md
   md="$("${SCRIPT_DIR}/genvidthmd" "$vid" "$videourl" "$caption" "$doy")"
-  month="$(mfromdoy "$doy")"
-  fname="${month}/Day$(printf "%03d" "${doy#0}").md"
-  formatdt="$(datefromdoy "$doy")"
-  if test -f "$fname"; then
-    mv "$fname" "${fname}.bak"
-    if test $? -eq 0; then
-      echo "File ${fname} exists. Moved to ${fname}.bak"
-    else
-      echo "Back up of ${fname} unsuccessful. It will be overwritten." >&2
+
+  # Create backup if file exists
+  if [[ -f "$fname" ]]; then
+    if ! mv "$fname" "${fname}.bak"; then
+      echo "Warning: Failed to backup ${fname}" >&2
     fi
   fi
-  echo "## $formatdt" >| "$fname"
+
+  # Write new markdown file
   {
+    echo "## $formatdt"
     echo
     echo "### $caption"
     echo
     echo "$md"
-  } >> "$fname"
+  } >| "$fname"
 
-  rm -f "${month}/compact.txt.bak" && cp "${month}/compact.txt" "${month}/compact.txt.bak"
-  basename -- "$fname" >> "${month}/compact.txt"
-  monthmd="${month}${year}.md"
-  if "${SCRIPT_DIR}/compact" "$month" >| "$monthmd" && markdown-toc-gen update "$monthmd" &> /dev/null; then
+  # Update compact file
+  if ! cp "${month}/${COMPACT_FILE}" "${month}/${COMPACT_FILE}.bak"; then
+    echo "Warning: Failed to backup compact file" >&2
+  fi
+  basename -- "$fname" >> "${month}/${COMPACT_FILE}"
+
+  # Generate month index
+  if "${SCRIPT_DIR}/compact" "$month" >| "$monthmd"; then
+    markdown-toc-gen update "$monthmd" &> /dev/null
     sed -i '/\S/,$!d' "$monthmd"
-    printf "%s\n" "$vid" >> videos.txt
-    printf "%s generated for %s.\n" "$fname" "$vid"
-    exit 0
+    printf "%s\n" "$vid" >> "$VIDEOS_FILE"
+    echo "Successfully added video $vid"
+    return 0
   else
-    printf "Error generating %s.\n" "$monthmd" >&2
-    mv "${month}/compact.txt.bak" "${month}/compact.txt"
+    echo "Error: Failed to generate $monthmd" >&2
+    mv "${month}/${COMPACT_FILE}.bak" "${month}/${COMPACT_FILE}"
+    return 1
+  fi
+}
+
+dry_run() {
+  local vid="$1"
+  local caption="$2"
+  local doy="$3"
+  local videourl="https://youtu.be/${vid}"
+  local month fname formatdt monthmd
+
+  month="$(mfromdoy "$doy")"
+  fname="${month}/Day$(printf "%03d" "${doy#0}").md"
+  formatdt="$(datefromdoy "$doy")"
+  monthmd="${month}${YEAR}.md"
+
+  cat << EOF
+DRY RUN: Would execute the following actions:
+- Generate overlay for video $vid
+- Create file $fname with contents:
+## $formatdt
+
+### $caption
+
+$("${SCRIPT_DIR}/genvidthmd" "$vid" "$videourl" "$caption" "$doy")
+
+- Append to ${month}/${COMPACT_FILE} and $VIDEOS_FILE
+- Generate $monthmd with table of contents
+EOF
+}
+
+main() {
+  local DRY_RUN=false
+  local vid caption
+
+  # Parse options
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -n | --dry-run)
+        DRY_RUN=true
+        shift
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
+
+  # Validate arguments
+  if [[ $# -ne 2 ]]; then
+    usage
+  fi
+
+  vid="$1"
+  caption="$2"
+
+  if ! validate_inputs "$vid" "$caption"; then
     exit 1
   fi
-else
-  printf "Unable to find or generate video thumbnail. Video may not exist or the overlay generation failed. The video id '%s' may be invalid.\n" "$vid" >&2
-  exit 1
+
+  checkinternet || exit 1
+
+  local doy
+  doy=$(("$(wc -l < "$VIDEOS_FILE")" + 1))
+
+  if $DRY_RUN; then
+    dry_run "$vid" "$caption" "$doy"
+    exit 0
+  fi
+
+  if ! "${SCRIPT_DIR}/genoverlay" "$vid" "$doy"; then
+    echo "Error: Failed to generate overlay for video $vid" >&2
+    exit 1
+  fi
+
+  generate_files "$vid" "$caption" "$doy"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require sed basename date markdown-toc
+  main "$@"
 fi
