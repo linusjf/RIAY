@@ -1,20 +1,13 @@
 #!/usr/bin/env bash
 ######################################################################
-# @author      : Linus Fernandes (linusfernandes at gmail dot com)
-# @file        : vidmd.sh
-# @created     : Wednesday Feb 08, 2023 18:45:15 IST
-#
-# @description : Utilities for video markdown generation including:
-#                - YouTube video ID validation
-#                - Thumbnail URL generation
-#                - Markdown formatting for video embeds
-#                - Date and month calculations
+# Video Markdown Generator
+# Generates markdown for embedding YouTube videos with thumbnails
+# Supports both standard YouTube embeds and custom day-of-year thumbnails
 ######################################################################
 
 set -euo pipefail
 shopt -s inherit_errexit
 
-# Constants
 readonly VIDEO_ID_LENGTH=11
 readonly MAX_CAPTION_LENGTH=100
 readonly THUMBNAIL_URLS=(
@@ -39,11 +32,27 @@ readonly THUMBNAIL_URLS=(
   "https://img.youtube.com/vi/vid/3.jpg"
 )
 
+######################################################################
+# Display error message and exit with failure status
+# Globals: None
+# Arguments:
+#   $1 - Error message
+# Outputs: Error message to STDERR
+# Returns: None (exits with status 1)
+######################################################################
 die() {
   printf "%s\n" "$1" >&2
   exit 1
 }
 
+######################################################################
+# Verify required commands are available
+# Globals: None
+# Arguments:
+#   $@ - Commands to check
+# Outputs: Error message to STDERR if command missing
+# Returns: None (exits with status 1 if command missing)
+######################################################################
 require() {
   for cmd in "$@"; do
     if ! command -v "$cmd" > /dev/null 2>&1; then
@@ -52,11 +61,25 @@ require() {
   done
 }
 
+######################################################################
+# Get repository root name
+# Globals: None
+# Arguments: None
+# Outputs: Repository root name to STDOUT
+# Returns: None (exits with status 1 if git command fails)
+######################################################################
 getroot() {
   require git basename
   basename "$(git rev-parse --show-toplevel)"
 }
 
+######################################################################
+# Display usage information for standard video markdown
+# Globals: None
+# Arguments: None
+# Outputs: Usage message to STDOUT
+# Returns: None (exits with status 1)
+######################################################################
 usagevidmd() {
   cat << EOF
 Usage: $0 vidid vidurl caption
@@ -67,6 +90,13 @@ EOF
   exit 1
 }
 
+######################################################################
+# Display usage information for localized video markdown
+# Globals: None
+# Arguments: None
+# Outputs: Usage message to STDOUT
+# Returns: None (exits with status 1)
+######################################################################
 usagevidmdloc() {
   cat << EOF
 Usage: $0 vidid vidurl caption doy
@@ -78,6 +108,15 @@ EOF
   exit 1
 }
 
+######################################################################
+# Generate play icon URL for given day of year
+# Globals:
+#   GIT_USER - GitHub username
+# Arguments:
+#   $1 - Day of year
+# Outputs: URL to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 playiconurl() {
   local root doy_raw doy_padded month
   root="$(getroot)"
@@ -88,6 +127,15 @@ playiconurl() {
     "${GIT_USER}" "$root" "$month" "$doy_padded"
 }
 
+######################################################################
+# Find working thumbnail URL for given video ID
+# Globals:
+#   THUMBNAIL_URLS - Array of thumbnail URL patterns
+# Arguments:
+#   $1 - Video ID
+# Outputs: First working thumbnail URL to STDOUT
+# Returns: 1 if no working thumbnail found
+######################################################################
 thumbnailurl() {
   require curl
   local vid="$1" url
@@ -100,6 +148,15 @@ thumbnailurl() {
   return 1
 }
 
+######################################################################
+# Download thumbnail for given video ID
+# Globals: None
+# Arguments:
+#   $1 - Video ID
+#   $2 - Output filename
+# Outputs: None
+# Returns: 1 if download fails
+######################################################################
 downloadthumbnail() {
   require curl
   local url
@@ -107,6 +164,16 @@ downloadthumbnail() {
   curl --silent "$url" --output "$2"
 }
 
+######################################################################
+# Generate standard video markdown
+# Globals: None
+# Arguments:
+#   $1 - Video ID
+#   $2 - Video URL
+#   $3 - Caption
+# Outputs: Markdown to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 vidmd() {
   [[ $# -lt 3 ]] && usagevidmd
   local vidid="$1" vidurl="$2" caption="$3" imgurl
@@ -114,6 +181,17 @@ vidmd() {
   printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
 }
 
+######################################################################
+# Generate localized video markdown with day-of-year thumbnail
+# Globals: None
+# Arguments:
+#   $1 - Video ID
+#   $2 - Video URL
+#   $3 - Caption
+#   $4 - Day of year
+# Outputs: Markdown to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 vidmdloc() {
   [[ $# -lt 4 ]] && usagevidmdloc
   local vidid="$1" vidurl="$2" caption="$3" doy="$4" imgurl
@@ -121,10 +199,26 @@ vidmdloc() {
   printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
 }
 
+######################################################################
+# Check if input is numeric
+# Globals: None
+# Arguments:
+#   $1 - Value to check
+# Outputs: None
+# Returns: 0 if numeric, 1 otherwise
+######################################################################
 isnumeric() {
   [[ "$1" =~ ^[0-9]+$ ]]
 }
 
+######################################################################
+# Get month name from day of year
+# Globals: None
+# Arguments:
+#   $1 - Day of year
+# Outputs: Month name to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 mfromdoy() {
   isnumeric "$1" || die "$1 is not numeric"
   require date
@@ -134,6 +228,14 @@ mfromdoy() {
   date --date="jan 1 + $((day - 1)) days" +%B
 }
 
+######################################################################
+# Get full date from day of year
+# Globals: None
+# Arguments:
+#   $1 - Day of year
+# Outputs: Formatted date to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 datefromdoy() {
   isnumeric "$1" || die "$1 is not numeric"
   require date
@@ -143,6 +245,14 @@ datefromdoy() {
   date --date="jan 1 + $((day - 1)) days" "+%B %d,%Y"
 }
 
+######################################################################
+# Get month name from month number
+# Globals: None
+# Arguments:
+#   $1 - Month number (1-12)
+# Outputs: Month name to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 monthfromnumber() {
   require date
   case $1 in
@@ -152,6 +262,16 @@ monthfromnumber() {
   esac
 }
 
+######################################################################
+# Validate input length
+# Globals: None
+# Arguments:
+#   $1 - Input value
+#   $2 - Maximum length
+#   $3 - Error message prefix
+# Outputs: Error message to STDERR if validation fails
+# Returns: None (exits with status 1 on error)
+######################################################################
 validate_input() {
   local value="$1" max_length="$2" error_message="$3"
   [[ -z "$value" ]] && die "Error: $error_message cannot be empty"
@@ -159,11 +279,37 @@ validate_input() {
   return 0
 }
 
+######################################################################
+# Validate video ID format
+# Globals:
+#   VIDEO_ID_LENGTH - Expected video ID length
+# Arguments:
+#   $1 - Video ID
+# Outputs: Error message to STDERR if validation fails
+# Returns: None (exits with status 1 on error)
+######################################################################
 validate_vid() {
   [[ "$1" =~ ^[a-zA-Z0-9_-]{$VIDEO_ID_LENGTH}$ ]] || die "Invalid video ID $1. Expected $VIDEO_ID_LENGTH characters"
   validate_input "$1" "$VIDEO_ID_LENGTH" "Video ID"
 }
 
+######################################################################
+# Validate caption length
+# Globals:
+#   MAX_CAPTION_LENGTH - Maximum allowed caption length
+# Arguments:
+#   $1 - Caption text
+# Outputs: Error message to STDERR if validation fails
+# Returns: None (exits with status 1 on error)
+######################################################################
 validate_caption() {
   validate_input "$1" "$MAX_CAPTION_LENGTH" "Caption"
 }
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main() {
+    # Example main function if needed
+    :
+  }
+  main "$@"
+fi
