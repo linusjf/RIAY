@@ -51,6 +51,8 @@
   - [Father Forgive Them](#father-forgive-them)
 - [March 25,2025](#march-252025)
   - [Do Not Be Afraid](#do-not-be-afraid)
+- [March 26,2025](#march-262025)
+  - [The Blessing Never Stops](#the-blessing-never-stops)
 
 <!-- tocstop -->
 
@@ -211,3 +213,9 @@ RIAY March 2025
 ### Do Not Be Afraid
 
 [![Do Not Be Afraid](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day084.jpg)](https://youtu.be/3TUyD_QbOnE "Do Not Be Afraid")
+
+## March 26,2025
+
+### The Blessing Never Stops
+
+[![The Blessing Never Stops](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day085.jpg)](https://youtu.be/IbijJLg53O0 "The Blessing Never Stops")
