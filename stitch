@@ -1,27 +1,69 @@
 #!/usr/bin/env bash
 
-# Ensure required command is available
+# Generate README.md from stitch.md using stitchmd
+# Processes markdown file to create formatted README output
+
+set -euo pipefail
+shopt -s inherit_errexit
+
+readonly SCRIPT_NAME="${0##*/}"
+
+usage() {
+  cat << EOF
+Usage: ${SCRIPT_NAME}
+
+Generates README.md from stitch.md in current directory.
+
+Globals:
+  None
+
+Outputs:
+  README.md - Generated documentation file
+  Error messages to STDERR on failure
+
+Returns:
+  0 on success
+  1 on input file or dependency errors
+  2 on generation failure
+EOF
+  exit 1
+}
+
 require() {
   hash "$1" 2> /dev/null || {
-    echo "Error: '$1' command not found. Please install it."
+    echo "Error: Required command '$1' not found" >&2
     exit 1
   }
 }
 
-set -euo pipefail
-shopt -s inherit_errexit
-require stitchmd
+validate_input() {
+  if [[ ! -f "stitch.md" ]]; then
+    echo "Error: 'stitch.md' not found in current directory" >&2
+    return 1
+  fi
+  return 0
+}
 
-# Check if input file exists
-if [[ ! -f "stitch.md" ]]; then
-  echo "Error: 'stitch.md' not found. Cannot generate README.md."
-  exit 1
+generate_readme() {
+  if ! stitchmd -o README.md -- stitch.md; then
+    echo "Error: Failed to generate README.md" >&2
+    return 2
+  fi
+  return 0
+}
+
+main() {
+  require stitchmd
+
+  if ! validate_input; then
+    exit 1
+  fi
+
+  if ! generate_readme; then
+    exit 2
+  fi
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
 fi
-
-# Run stitchmd and handle potential failure
-if ! stitchmd -o README.md -- stitch.md; then
-  echo "Error: Failed to generate README.md."
-  exit 1
-fi
-
-exit 0
