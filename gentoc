@@ -1,38 +1,80 @@
 #!/usr/bin/env bash
 
-require() {
-  hash "$1" 2> /dev/null || {
-    echo "Error: '$1' command not found. Please install it."
-    exit 1
-  }
-}
+# Generates and updates table of contents for Markdown files
+# Verifies TOC is present and up-to-date, updates if needed
+
 set -euo pipefail
 shopt -s inherit_errexit
-require markdown-toc-gen
+
+readonly SCRIPT_NAME="${0##*/}"
 
 usage() {
-  echo "Usage: $0 markdownfile"
-  echo "Error: Please provide a valid Markdown file to generate a Table of Contents."
+  cat << EOF
+Usage: ${SCRIPT_NAME} markdown_file
+
+Generates or updates table of contents in specified Markdown file.
+
+Arguments:
+  markdown_file  Path to Markdown file to process
+
+Globals:
+  None
+
+Outputs:
+  Error messages to STDERR on failure
+
+Returns:
+  0 on success
+  1 on invalid arguments or file issues
+  2 on dependency errors
+EOF
   exit 1
 }
 
-# Check if exactly one argument is provided
-if [[ $# -ne 1 ]]; then
-  usage
-fi
+require() {
+  hash "$1" 2> /dev/null || {
+    echo "Error: Required command '$1' not found" >&2
+    exit 2
+  }
+}
 
-# Ensure the provided argument is a valid file
-if [[ ! -f "$1" || ! -r "$1" ]]; then
-  echo "Error: ${1} is not a valid readable file."
-  usage
-fi
+validate_input() {
+  local file="$1"
 
-# Generate TOC
-if ! markdown-toc-gen check "$1" &> /dev/null; then
-  if ! markdown-toc-gen update "$1" > /dev/null; then
-    echo "Error: Failed to generate TOC for '$1'."
+  if [[ $# -ne 1 ]]; then
+    echo "Error: Exactly one argument required" >&2
+    usage
+  fi
+
+  if [[ ! -f "${file}" ]]; then
+    echo "Error: '${file}' is not a valid file" >&2
     exit 1
   fi
-fi
 
-exit 0
+  if [[ ! -r "${file}" ]]; then
+    echo "Error: Cannot read '${file}'" >&2
+    exit 1
+  fi
+}
+
+generate_toc() {
+  local file="$1"
+
+  if ! markdown-toc-gen check "${file}" &> /dev/null; then
+    if ! markdown-toc-gen update "${file}" > /dev/null; then
+      echo "Error: Failed to generate TOC for '${file}'" >&2
+      return 1
+    fi
+  fi
+  return 0
+}
+
+main() {
+  require markdown-toc-gen
+  validate_input "$@"
+  generate_toc "$@"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
+fi
