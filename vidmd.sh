@@ -139,6 +139,7 @@ monthfromnumber() {
   require date
   case $1 in
     [1-9] | 1[0-2]) date -d "${1}/01" +%B ;;
+    0[1-9]) date -d "${1}/01" +%B ;;
     *) die "Invalid month number: $1" ;;
   esac
 }

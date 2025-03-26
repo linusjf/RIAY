@@ -1,95 +1,150 @@
 #!/usr/bin/env bash
-require() {
-  hash "$@" || exit
-}
+# Generate monthly markdown file with video index and table of contents
+
 set -euo pipefail
 shopt -s inherit_errexit
-require date markdown-toc
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-#shellcheck disable=SC1091
-source "$SCRIPT_DIR/vidmd.sh"
+
+# shellcheck disable=SC2155
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+source "${SCRIPT_DIR}/vidmd.sh"
+
 usage() {
-  echo "$0 [-n|--dry-run] month year"
-  echo "month - month number (1 - 12)"
-  echo "year - 4 digit year"
-  echo "-n, --dry-run - show what would happen without making changes"
+  cat << EOF
+Usage: ${0##*/} [-n|--dry-run] month year
+
+Generate monthly markdown file with video index and table of contents.
+
+Options:
+  -n, --dry-run    Show what would happen without making changes
+Arguments:
+  month            Month number (1-12)
+  year             4-digit year
+EOF
   exit 1
 }
 
-DRY_RUN=false
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-    -n | --dry-run)
-      DRY_RUN=true
-      shift
-      ;;
-    *)
-      break
-      ;;
-  esac
-done
+require() {
+  hash "$@" || {
+    echo "Error: Required command not found: $*" >&2
+    exit 127
+  }
+}
 
-if [ $# -eq 0 ]; then
-  echo "No arguments provided"
-  usage
-fi
+validate_inputs() {
+  local month="$1"
+  local year="$2"
 
-if [ $# -eq 1 ]; then
-  echo "One argument provided: $1"
-  usage
-fi
+  if ! isnumeric "$month"; then
+    echo "Error: Month must be a number" >&2
+    return 1
+  fi
 
-if [ $# -gt 2 ]; then
-  echo "More than two arguments provided"
-  usage
-fi
+  if ! isnumeric "$year"; then
+    echo "Error: Year must be a number" >&2
+    return 1
+  fi
 
-if ! isnumeric "$1"; then
-  usage
-fi
-if ! isnumeric "$2"; then
-  usage
-fi
-year="$2"
-len=$((${#year}))
-if ((len != 4)); then
-  usage
-fi
-month=$((10#$1))
-if ((month < 1 || month > 12)); then
-  usage
-fi
-if [ "$len" -ne 4 ]; then
-  usage
-fi
+  if ((${#year} != 4)); then
+    echo "Error: Year must be 4 digits" >&2
+    return 1
+  fi
 
-month="$(monthfromnumber "$((10#${month}))")"
-monthmd="${month}${year}.md"
+  month=$((10#$month))
+  if ((month < 1 || month > 12)); then
+    echo "Error: Month must be between 1 and 12" >&2
+    return 1
+  fi
 
-if $DRY_RUN; then
-  echo "DRY RUN: Would process month $month ($(monthfromnumber "$month")) for year $year"
-  echo "DRY RUN: Would generate these files:"
-  echo "  - $monthmd (monthly markdown file)"
-  echo "DRY RUN: Would run these commands:"
-  echo "  - ${SCRIPT_DIR}/compact \"$month\" >| \"$monthmd\""
-  echo "  - ${SCRIPT_DIR}/gentoc \"$monthmd\""
-  echo "  - sed -i '/\\S/,\$!d' \"$monthmd\""
-  echo "DRY RUN: No files would actually be modified"
-  exit 0
-fi
+  return 0
+}
 
-if ! "${SCRIPT_DIR}/compact" "$month" >| "$monthmd"; then
-  echo "Error running compact"
-  exit 1
-fi
+generate_month_file() {
+  local month="$1"
+  local year="$2"
+  local month_name monthmd
 
-if ! "${SCRIPT_DIR}/gentoc" "$monthmd"; then
-  echo "Error running ${SCRIPT_DIR}/gentoc"
-  exit 1
-fi
+  month_name="$(monthfromnumber "$month")"
+  monthmd="${month_name}${year}.md"
 
-if ! sed -i '/\S/,$!d' "$monthmd"; then
-  echo "Error running sed"
-  exit 1
+  if ! "${SCRIPT_DIR}/compact" "$month_name" >| "$monthmd"; then
+    echo "Error: Failed to generate compact index" >&2
+    return 1
+  fi
+
+  if ! "${SCRIPT_DIR}/gentoc" "$monthmd"; then
+    echo "Error: Failed to generate table of contents" >&2
+    return 1
+  fi
+
+  if ! sed -i '/\S/,$!d' "$monthmd"; then
+    echo "Error: Failed to clean up file" >&2
+    return 1
+  fi
+
+  return 0
+}
+
+dry_run() {
+  local month="$1"
+  local year="$2"
+  local month_name monthmd
+
+  month_name="$(monthfromnumber "$month")"
+  monthmd="${month_name}${year}.md"
+
+  cat << EOF
+DRY RUN: Would process month $month_name ($(monthfromnumber "$month")) for year $year
+Would generate these files:
+  - $monthmd (monthly markdown file)
+Would run these commands:
+  - ${SCRIPT_DIR}/compact "$month_name" >| "$monthmd"
+  - ${SCRIPT_DIR}/gentoc "$monthmd"
+  - sed -i '/\\S/,\$!d' "$monthmd"
+No files actually modified
+EOF
+}
+
+main() {
+  local DRY_RUN=false
+  local month year
+
+  # Parse options
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -n | --dry-run)
+        DRY_RUN=true
+        shift
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
+
+  # Validate arguments
+  if [[ $# -ne 2 ]]; then
+    usage
+  fi
+
+  month="$1"
+  year="$2"
+
+  if ! validate_inputs "$month" "$year"; then
+    usage
+  fi
+
+  require date markdown-toc
+
+  if $DRY_RUN; then
+    dry_run "$month" "$year"
+    exit 0
+  fi
+
+  if ! generate_month_file "$month" "$year"; then
+    exit 1
+  fi
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
 fi
-exit 0
