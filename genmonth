@@ -5,8 +5,9 @@ require() {
 set -euo pipefail
 shopt -s inherit_errexit
 require date markdown-toc
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 #shellcheck disable=SC1091
-source ./vidmd.sh
+source "$SCRIPT_DIR/vidmd.sh"
 usage() {
   echo "$0 [-n|--dry-run] month year"
   echo "month - month number (1 - 12)"
@@ -70,20 +71,20 @@ if $DRY_RUN; then
   echo "DRY RUN: Would generate these files:"
   echo "  - $monthmd (monthly markdown file)"
   echo "DRY RUN: Would run these commands:"
-  echo "  - ./compact \"$month\" >| \"$monthmd\""
-  echo "  - ./gentoc \"$monthmd\""
+  echo "  - ${SCRIPT_DIR}/compact \"$month\" >| \"$monthmd\""
+  echo "  - ${SCRIPT_DIR}/gentoc \"$monthmd\""
   echo "  - sed -i '/\\S/,\$!d' \"$monthmd\""
   echo "DRY RUN: No files would actually be modified"
   exit 0
 fi
 
-if ! ./compact "$month" >| "$monthmd"; then
+if ! "${SCRIPT_DIR}/compact" "$month" >| "$monthmd"; then
   echo "Error running compact"
   exit 1
 fi
 
-if ! ./gentoc "$monthmd"; then
-  echo "Error running ./gentoc"
+if ! "${SCRIPT_DIR}/gentoc" "$monthmd"; then
+  echo "Error running ${SCRIPT_DIR}/gentoc"
   exit 1
 fi
 

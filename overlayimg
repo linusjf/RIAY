@@ -9,13 +9,16 @@ usage() {
 
 set -euo pipefail
 shopt -s inherit_errexit
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 # Ensure vidmd.sh exists before sourcing
-if [[ ! -f "./vidmd.sh" ]]; then
-  echo "Error: Required script 'vidmd.sh' not found!"
+if [[ ! -f "${SCRIPT_DIR}/vidmd.sh" ]]; then
+  echo "Error: Required script ${SCRIPT_DIR}/vidmd.sh not found!"
   exit 1
 fi
+
 #shellcheck disable=SC1091
-source ./vidmd.sh
+source "${SCRIPT_DIR}/vidmd.sh"
 
 # Validate arguments
 if [[ $# -ne 2 ]]; then

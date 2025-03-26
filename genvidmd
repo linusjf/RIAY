@@ -24,10 +24,12 @@ for script in "./internet.sh" "./vidmd.sh"; do
 done
 
 # Source required scripts
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+# Source required scripts
 # shellcheck disable=SC1091
-source ./internet.sh
-# shellcheck disable=SC1091
-source ./vidmd.sh
+source "$SCRIPT_DIR/internet.sh"
+#shellcheck disable=SC1091
+source "$SCRIPT_DIR/vidmd.sh"
 
 # Check internet connectivity
 checkinternet || {
@@ -42,13 +44,14 @@ if [[ -z "$GIT_USER" ]]; then
 fi
 
 # Ensure target image directory is writable
-if [[ ! -w "$(dirname "$3")" ]]; then
-  echo "Error: Cannot write to directory '$(dirname "$3")'."
+dir="$(dirname "$3")"
+if [[ ! -d "$dir" ]] || [[ ! -w "$dir" ]]; then
+  echo "Error: Directory '${dir}' does not exist or is not writable."
   exit 1
 fi
 
 # Generate overlay image
-if ! ./overlayimg "${1}" "${3}"; then
+if ! "${SCRIPT_DIR}/overlayimg" "${1}" "${3}"; then
   echo "Error: Failed to overlay image for video ID '${1}'." >&2
   exit 1
 fi

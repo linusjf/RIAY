@@ -9,10 +9,10 @@ if [[ ! -f "$fname" ]]; then
   echo "Error: File '$fname' not found!"
   exit 1
 fi
-
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 # Ensure genoverlay is executable
-if [[ ! -x ./genoverlay ]]; then
-  echo "Error: 'genoverlay' script is missing or not executable!"
+if [[ ! -x "${SCRIPT_DIR}/genoverlay" ]]; then
+  echo "Error: '${SCRIPT_DIR}/genoverlay' script is missing or not executable!"
   exit 1
 fi
 
@@ -20,8 +20,8 @@ fi
 while IFS= read -r vid; do
   [[ -z "$vid" ]] && continue # Skip empty lines
   ((count++))
-  if ! ./genoverlay "$vid" "$count"; then
-    echo "Error: genoverlay failed for video ID '$vid'"
+  if ! "${SCRIPT_DIR}/genoverlay" "$vid" "$count"; then
+    echo "Error: ${SCRIPT_DIR}/genoverlay failed for video ID '$vid'"
     exit 1
   fi
 done < "$fname"
