@@ -64,6 +64,44 @@ is_valid_dir() {
 }
 
 ######################################################################
+# Get downloads directory path based on system type
+# Globals: None
+# Arguments: None
+# Outputs: Downloads directory path
+# Returns: None (exits on failure)
+######################################################################
+get_downloads_dir() {
+  local downloads_dir=""
+
+  # Check for Termux (Android)
+  if [[ -d "/data/data/com.termux/files" ]]; then
+    downloads_dir="${HOME}/storage/downloads"
+  # Check for standard Linux
+  else
+    # Check common download directory locations
+    local possible_dirs=(
+      "${HOME}/Downloads"
+      "${HOME}/downloads"
+      "${HOME}/Download"
+      "/tmp/downloads"
+    )
+
+    for dir in "${possible_dirs[@]}"; do
+      if [[ -d "${dir}" ]]; then
+        downloads_dir="${dir}"
+        break
+      fi
+    done
+  fi
+
+  if [[ -z "${downloads_dir}" ]]; then
+    die "Could not find downloads directory in any standard location"
+  fi
+
+  echo "${downloads_dir}"
+}
+
+######################################################################
 # Main function
 # Globals: None
 # Arguments: directory path
@@ -76,6 +114,8 @@ main() {
   fi
 
   local dir="$1"
+  local downloads_dir
+  downloads_dir="$(get_downloads_dir)"
 
   require gm rm mv
 
@@ -90,8 +130,8 @@ main() {
       die "Directory 'jpgs' not found in ${dir}"
     fi
 
-    mv "${HOME}/storage/downloads/"Day*.jpg jpgs &> /dev/null || true
-    mv "${HOME}/storage/downloads/"Day*.png jpgs &> /dev/null || true
+    mv "${downloads_dir}/"Day*.jpg jpgs &> /dev/null || true
+    mv "${downloads_dir}/"Day*.png jpgs &> /dev/null || true
 
     cd jpgs || die "Failed to change to jpgs directory"
 
