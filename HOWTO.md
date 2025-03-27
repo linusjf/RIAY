@@ -64,6 +64,15 @@ Substitute your Github user id for `<userid>`.
 
 1. Initialize `vale` styles by executing the command `vale sync`. This should download the specified styles in `.vale.ini`.
 
+1. Export environment variable `YOUTUBE_API_KEY` by adding the following line to `.bash_profile`.
+
+```bash
+export YOUTUBE_API_KEY=<api_key>
+```
+
+Substitute your Google API Key which can access YouTube Data API.
+Set up your API key using instructions at <https://support.google.com/googleapi/answer/6158862?hl=en>
+
 ## Add the daily Youtube video
 
 Execute the script `addvideo` with the following parameters:
