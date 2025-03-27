@@ -54,24 +54,28 @@ with your own if you wish.
 Add a `compact.txt` file with the first line as `header.md` under each monthly directory.
 This ensures the presence of the header for each month's markdown.
 
+### Environment variables
+
 1. Export an environment variable `GIT_USER` by adding the following line to your `.bash_profile` file.
 
 ```bash
 export GIT_USER="<userid>"
 ```
 
-Substitute your Github user id for `<userid>`.
-
-1. Initialize `vale` styles by executing the command `vale sync`. This should download the specified styles in `.vale.ini`.
+    Substitute your Github user id for `<userid>`.
 
 1. Export environment variable `YOUTUBE_API_KEY` by adding the following line to `.bash_profile`.
 
-```bash
-export YOUTUBE_API_KEY=<api_key>
-```
+   ```bash
+   export YOUTUBE_API_KEY=<api_key>
+   ```
 
-Substitute your Google API Key which can access YouTube Data API.
-Set up your API key using instructions at <https://support.google.com/googleapi/answer/6158862?hl=en>
+   Substitute your Google API Key which can access YouTube Data API.
+   Set up your API key using instructions at <https://support.google.com/googleapi/answer/6158862?hl=en>
+
+### Vale
+
+Initialize `vale` styles by executing the command `vale sync`. This should download the specified styles in `.vale.ini`.
 
 ## Add the daily Youtube video
 
