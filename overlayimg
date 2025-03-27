@@ -1,63 +1,100 @@
 #!/usr/bin/env bash
+######################################################################
+# overlayimg - Download YouTube thumbnail and overlay play icon
+######################################################################
 
-usage() {
-  echo "Usage: $0 vid output"
-  echo "  vid    - YouTube video ID"
-  echo "  output - Path to output JPEG file"
-  exit 1
-}
-
+# shellcheck disable=SC1090,SC1091,SC2155
 set -euo pipefail
 shopt -s inherit_errexit
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-# Ensure vidmd.sh exists before sourcing
-if [[ ! -f "${SCRIPT_DIR}/vidmd.sh" ]]; then
-  echo "Error: Required script ${SCRIPT_DIR}/vidmd.sh not found!"
-  exit 1
+readonly SUCCESS=0
+readonly FAILURE=1
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+readonly VIDMD_SCRIPT="${SCRIPT_DIR}/vidmd.sh"
+
+######################################################################
+######################################################################
+usage() {
+  cat << EOF
+Usage: ${0##*/} vid output
+  vid    - YouTube video ID
+  output - Path to output JPEG file
+EOF
+  exit "${SUCCESS}"
+}
+
+######################################################################
+######################################################################
+die() {
+  printf "Error: %s\n" "$1" >&2
+  exit "${FAILURE}"
+}
+
+######################################################################
+######################################################################
+require() {
+  for cmd in "$@"; do
+    if ! command -v "${cmd}" > /dev/null 2>&1; then
+      die "Required command '${cmd}' not found in PATH"
+    fi
+  done
+}
+
+######################################################################
+######################################################################
+is_jpeg_extension() {
+  local ext="${1##*.}"
+  local ext_lower
+  ext_lower=$(echo "${ext}" | tr '[:upper:]' '[:lower:]')
+  [[ "${ext_lower}" == "jpg" || "${ext_lower}" == "jpeg" ]]
+}
+
+######################################################################
+######################################################################
+main() {
+  # Validate arguments
+  if [[ $# -ne 2 ]]; then
+    usage
+  fi
+
+  local vid="$1"
+  local output="$2"
+
+  # Ensure vidmd.sh exists before sourcing
+  if [[ ! -f "${VIDMD_SCRIPT}" ]]; then
+    die "Required script '${VIDMD_SCRIPT}' not found"
+  fi
+
+  # Source vidmd.sh functions
+  source "${VIDMD_SCRIPT}"
+
+  # Validate output path
+  if [[ -d "${output}" ]]; then
+    die "Output path '${output}' is a directory"
+  fi
+
+  if [[ ! -d "$(dirname "${output}")" ]]; then
+    die "Parent directory for output path does not exist"
+  fi
+
+  # Validate file extension
+  if ! is_jpeg_extension "${output}"; then
+    die "Output file must have a '.jpg' or '.jpeg' extension"
+  fi
+
+  # Download thumbnail
+  if ! downloadthumbnail "${vid}" "${output}"; then
+    die "Failed to download thumbnail for video ID '${vid}'"
+  fi
+
+  # Overlay icon
+  if ! "${SCRIPT_DIR}/overlayicon" "${output}"; then
+    die "Failed to overlay icon on '${output}'"
+  fi
+
+  exit "${SUCCESS}"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
 fi
-
-#shellcheck disable=SC1091
-source "${SCRIPT_DIR}/vidmd.sh"
-
-# Validate arguments
-if [[ $# -ne 2 ]]; then
-  echo "Error: Missing arguments."
-  usage
-fi
-
-vid="$1"
-output="$2"
-
-# Validate output path
-if [[ -d "$output" ]]; then
-  echo "Error: Output path '$output' is a directory."
-  exit 1
-fi
-
-if [[ ! -d "$(dirname "$output")" ]]; then
-  echo "Error: Parent directory for output path does not exist."
-  exit 1
-fi
-
-# Validate file extension (case-insensitive)
-ext="${output##*.}"
-ext_lower=$(echo "$ext" | tr '[:upper:]' '[:lower:]')
-if [[ "$ext_lower" != "jpg" && "$ext_lower" != "jpeg" ]]; then
-  echo "Error: Output file must have a '.jpg' or '.jpeg' extension."
-  exit 1
-fi
-
-# Download thumbnail
-if ! downloadthumbnail "$vid" "$output"; then
-  echo "Error: Failed to download thumbnail for video ID '$vid'."
-  exit 1
-fi
-
-# Overlay icon
-if ! ./overlayicon "$output"; then
-  echo "Error: Failed to overlay icon on '$output'."
-  exit 1
-fi
-
-exit 0
