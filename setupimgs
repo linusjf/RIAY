@@ -1,38 +1,109 @@
 #!/usr/bin/env bash
-require() {
-  hash "$@" || exit
-}
-usage() {
-  echo "Usage:"
-  echo "$0 dir"
-  echo "dir - directory to process for images"
-  exit 1
-}
-isvalid() {
-  test -d "$1"
-}
+######################################################################
+# Script to process and convert images in a directory
+# Moves downloaded images to jpgs directory and converts PNGs to JPGs
+######################################################################
+
 set -euo pipefail
 shopt -s inherit_errexit
-if test $# -eq 0; then
-  usage
-fi
-dir="$1"
-require gm rm mv
-if isvalid "$dir"; then
-  (
-    cd "$dir" || exit
-    if test -d "jpgs"; then
-      mv "${HOME}/storage/downloads/"Day*.jpg jpgs &> /dev/null
-      mv "${HOME}/storage/downloads/"Day*.png jpgs &> /dev/null
-      cd jpgs || exit
-      shopt -s nullglob
-      for file in ./*.png; do
-        gm convert "$file" "${file%.*}.jpg"
-        rm "$file"
-      done
-      shopt -u nullglob
+
+readonly SUCCESS=0
+readonly FAILURE=1
+
+######################################################################
+# Check if required commands are available
+# Globals: None
+# Arguments: command names
+# Outputs: Error message if command not found
+# Returns: None (exits on failure)
+######################################################################
+require() {
+  for cmd in "$@"; do
+    if ! command -v "${cmd}" > /dev/null 2>&1; then
+      die "Required command '${cmd}' not found in PATH"
     fi
+  done
+}
+
+######################################################################
+# Print error message and exit
+# Globals: None
+# Arguments: error message
+# Outputs: Error message to STDERR
+# Returns: None (exits with FAILURE status)
+######################################################################
+die() {
+  printf "Error: %s\n" "$1" >&2
+  exit "${FAILURE}"
+}
+
+######################################################################
+# Display usage information
+# Globals: None
+# Arguments: None
+# Outputs: Usage message to STDOUT
+# Returns: None (exits with SUCCESS status)
+######################################################################
+usage() {
+  cat << EOF
+Usage: ${0##*/} dir
+  dir - directory to process for images
+EOF
+  exit "${SUCCESS}"
+}
+
+######################################################################
+# Validate directory exists
+# Globals: None
+# Arguments: directory path
+# Outputs: None
+# Returns: 0 if valid, 1 otherwise
+######################################################################
+is_valid_dir() {
+  [[ -d "$1" ]]
+}
+
+######################################################################
+# Main function
+# Globals: None
+# Arguments: directory path
+# Outputs: None
+# Returns: None (exits with appropriate status)
+######################################################################
+main() {
+  if [[ $# -eq 0 ]]; then
+    usage
+  fi
+
+  local dir="$1"
+
+  require gm rm mv
+
+  if ! is_valid_dir "${dir}"; then
+    die "Invalid directory: ${dir}"
+  fi
+
+  (
+    cd "${dir}" || die "Failed to change to directory: ${dir}"
+
+    if [[ ! -d "jpgs" ]]; then
+      die "Directory 'jpgs' not found in ${dir}"
+    fi
+
+    mv "${HOME}/storage/downloads/"Day*.jpg jpgs &> /dev/null || true
+    mv "${HOME}/storage/downloads/"Day*.png jpgs &> /dev/null || true
+
+    cd jpgs || die "Failed to change to jpgs directory"
+
+    shopt -s nullglob
+    for file in ./*.png; do
+      gm convert "${file}" "${file%.*}.jpg" || die "Failed to convert ${file}"
+      rm "${file}" || die "Failed to remove ${file}"
+    done
+    shopt -u nullglob
   )
-else
-  usage
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
 fi
