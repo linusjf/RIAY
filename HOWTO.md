@@ -3,6 +3,8 @@
 <!-- toc -->
 
 - [Prerequisites](#prerequisites)
+  - [Environment variables](#environment-variables)
+  - [Vale](#vale)
 - [Add the daily Youtube video](#add-the-daily-youtube-video)
 - [Add today's sharing](#add-todays-sharing)
 - [Generate markdown for Youtube video](#generate-markdown-for-youtube-video)
@@ -29,9 +31,9 @@
    Example for January:
 
 ```markdown
-<!-- toc -->
+\<!-- toc -->
 
-<!-- tocstop -->
+\<!-- tocstop -->
 
 # January 2025
 
