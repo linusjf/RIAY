@@ -53,6 +53,8 @@
   - [Do Not Be Afraid](#do-not-be-afraid)
 - [March 26,2025](#march-262025)
   - [The Blessing Never Stops](#the-blessing-never-stops)
+- [March 27,2025](#march-272025)
+  - [Filled with New Wine](#filled-with-new-wine)
 
 <!-- tocstop -->
 
@@ -219,3 +221,9 @@ RIAY March 2025
 ### The Blessing Never Stops
 
 [![The Blessing Never Stops](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day085.jpg)](https://youtu.be/IbijJLg53O0 "The Blessing Never Stops")
+
+## March 27,2025
+
+### Filled with New Wine
+
+[![Filled with New Wine](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day086.jpg)](https://youtu.be/zJVuLwHF0I8 "Filled with New Wine")

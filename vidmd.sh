@@ -10,26 +10,15 @@ shopt -s inherit_errexit
 
 readonly VIDEO_ID_LENGTH=11
 readonly MAX_CAPTION_LENGTH=100
-readonly THUMBNAIL_URLS=(
-  "https://img.youtube.com/vi/vid/maxresdefault.jpg"
-  "https://img.youtube.com/vi/vid/hqdefault.jpg"
-  "https://img.youtube.com/vi/vid/hq1.jpg"
-  "https://img.youtube.com/vi/vid/hq2.jpg"
-  "https://img.youtube.com/vi/vid/hq3.jpg"
-  "https://img.youtube.com/vi/vid/hq720.jpg"
-  "https://img.youtube.com/vi/vid/mqdefault.jpg"
-  "https://img.youtube.com/vi/vid/mq1.jpg"
-  "https://img.youtube.com/vi/vid/mq2.jpg"
-  "https://img.youtube.com/vi/vid/mq3.jpg"
-  "https://img.youtube.com/vi/vid/sddefault.jpg"
-  "https://img.youtube.com/vi/vid/sd1.jpg"
-  "https://img.youtube.com/vi/vid/sd2.jpg"
-  "https://img.youtube.com/vi/vid/sd3.jpg"
-  "https://img.youtube.com/vi/vid/default.jpg"
-  "https://img.youtube.com/vi/vid/0.jpg"
-  "https://img.youtube.com/vi/vid/1.jpg"
-  "https://img.youtube.com/vi/vid/2.jpg"
-  "https://img.youtube.com/vi/vid/3.jpg"
+# array of youtube thumbnail sizes in descending order. Not all may be available.
+# cycle through the sizes to pick the largest
+# available one.
+readonly THUMBNAIL_SIZES=(
+  "maxres"
+  "standard"
+  "high"
+  "medium"
+  "default"
 )
 
 ######################################################################
@@ -127,20 +116,19 @@ playiconurl() {
     "${GIT_USER}" "$root" "$month" "$doy_padded"
 }
 
-######################################################################
-# Find working thumbnail URL for given video ID
-# Globals:
-#   THUMBNAIL_URLS - Array of thumbnail URL patterns
-# Arguments:
-#   $1 - Video ID
-# Outputs: First working thumbnail URL to STDOUT
-# Returns: 1 if no working thumbnail found
-######################################################################
 thumbnailurl() {
-  require curl
-  local vid="$1" url
-  for url in "${THUMBNAIL_URLS[@]/vid/$vid}"; do
-    if curl --silent --head --fail "$url" > /dev/null; then
+  require curl grep
+  if [[ "${YOUTUBE_API_KEY:-}" == "" ]]; then
+    printf "Environment variable YOUTUBE_API_KEY is empty or unset.\n"
+    return 1
+  fi
+  local vid="$1"
+  local api_url="https://www.googleapis.com/youtube/v3/videos?id=$vid&key=$YOUTUBE_API_KEY&part=snippet&fields=items(snippet(thumbnails(<size>(url))))"
+  for size in "${THUMBNAIL_SIZES[@]}"; do
+    sized_api_url="${api_url//<size>/$size}"
+    if url=$(
+      curl -s "$sized_api_url" | grep -oP 'https://[^"\}\]]*'
+    ); then
       printf "%s\n" "$url"
       return 0
     fi
@@ -223,7 +211,8 @@ mfromdoy() {
   isnumeric "$1" || die "$1 is not numeric"
   require date
   local day
-  day=$(($1))
+  # convert number to base ten
+  day=$((10#${1}))
   [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
   date --date="jan 1 + $((day - 1)) days" +%B
 }
@@ -240,7 +229,8 @@ datefromdoy() {
   isnumeric "$1" || die "$1 is not numeric"
   require date
   local day
-  day=$(($1))
+  # convert number to base ten
+  day=$((10#${1}))
   [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
   date --date="jan 1 + $((day - 1)) days" "+%B %d,%Y"
 }
