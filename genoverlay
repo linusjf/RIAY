@@ -1,64 +1,105 @@
 #!/usr/bin/env bash
+######################################################################
+######################################################################
 
-require() {
-  hash "$@" || exit 1
-}
 set -euo pipefail
 shopt -s inherit_errexit
-require curl realpath mkdir
 
+readonly SUCCESS=0
+readonly FAILURE=1
+# shellcheck disable=SC2155
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+
+######################################################################
+######################################################################
 usage() {
-  echo "Usage: $0 vid doy"
-  echo "vid - video ID"
-  echo "doy - day of year (numeric)"
-  exit 1
+  cat << EOF
+Usage: ${0##*/} vid doy
+  vid - YouTube video ID
+  doy - day of year (numeric)
+EOF
+  exit "${SUCCESS}"
 }
 
-if [[ $# -ne 2 ]]; then
-  usage
+######################################################################
+######################################################################
+die() {
+  printf "Error: %s\n" "$1" >&2
+  exit "${FAILURE}"
+}
+
+######################################################################
+######################################################################
+require() {
+  for cmd in "$@"; do
+    if ! command -v "${cmd}" > /dev/null 2>&1; then
+      die "Required command '${cmd}' not found in PATH"
+    fi
+  done
+}
+
+######################################################################
+######################################################################
+main() {
+  # Validate arguments
+  if [[ $# -ne 2 ]]; then
+    usage
+  fi
+
+  local vid="$1"
+  local doy="$2"
+
+  # Check required commands
+  require curl realpath mkdir
+
+  # Verify vidmd.sh exists
+  if [[ ! -f "${SCRIPT_DIR}/vidmd.sh" ]]; then
+    die "${SCRIPT_DIR}/vidmd.sh not found"
+  fi
+
+  # shellcheck disable=SC1091
+  source "${SCRIPT_DIR}/vidmd.sh"
+
+  # Validate numeric input
+  if ! isnumeric "${doy}"; then
+    usage
+  fi
+
+  # Get thumbnail URL
+  if ! imgurl="$(thumbnailurl "${vid}")"; then
+    die "Failed to retrieve thumbnail URL for video ID: ${vid}"
+  fi
+
+  # Create directory structure
+  # shellcheck disable=SC2155
+  local month="$(mfromdoy "${doy#0}")"
+  # shellcheck disable=SC2155
+  local doy_padded="$(printf "%03d" "${doy#0}")"
+  local dir="${month}/jpgs"
+  local relfile="${dir}/Day${doy_padded}.jpg"
+
+  if ! mkdir -p "${dir}"; then
+    die "Failed to create directory ${dir}"
+  fi
+
+  if ! relfile="$(realpath "${relfile}")"; then
+    die "Failed to resolve realpath for ${relfile}"
+  fi
+
+  # Download thumbnail
+  if ! curl --silent "${imgurl}" --output "${relfile}"; then
+    die "Failed to download thumbnail from ${imgurl}"
+  fi
+
+  # Verify overlayicon exists and is executable
+  if [[ ! -x "${SCRIPT_DIR}/overlayicon" ]]; then
+    die "overlayicon script is missing or not executable"
+  fi
+
+  "${SCRIPT_DIR}/overlayicon" "${relfile}"
+  exit "${SUCCESS}"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
 fi
-
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-if [[ ! -f "${SCRIPT_DIR}/vidmd.sh" ]]; then
-  echo "Error: ${SCRIPT_DIR}/vidmd.sh not found!"
-  exit 1
-fi
-#shellcheck disable=SC1091
-source "$SCRIPT_DIR/vidmd.sh"
-
-if ! isnumeric "$2"; then
-  usage
-fi
-
-if ! imgurl="$(thumbnailurl "$1")"; then
-  echo "Error: Failed to retrieve thumbnail URL for video ID: $1"
-  exit 1
-fi
-
-month="$(mfromdoy "$2")"
-doy="$(printf "%03d" "${2#0}")"
-dir="${month}/jpgs"
-
-if ! mkdir -p "$dir"; then
-  echo "Error: Failed to create directory $dir"
-  exit 1
-fi
-
-relfile="${dir}/Day${doy}.jpg"
-
-if ! relfile="$(realpath "$relfile")"; then
-  echo "Error: Failed to resolve realpath for $relfile"
-  exit 1
-fi
-
-if ! curl --silent "$imgurl" --output "$relfile"; then
-  echo "Error: Failed to download thumbnail from $imgurl"
-  exit 1
-fi
-
-if [[ ! -x ./overlayicon ]]; then
-  echo "Error: overlayicon script is missing or not executable!"
-  exit 1
-fi
-
-"${SCRIPT_DIR}/overlayicon" "$relfile"
