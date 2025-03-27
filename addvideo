@@ -84,7 +84,7 @@ generate_files() {
 
   month="$(mfromdoy "$doy")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
-  formatdt="$(datefromdoy "$doy")"
+  formatdt="$(datefromdoy "${doy#0}")"
   monthmd="${month}${YEAR}.md"
 
   # Generate markdown content
@@ -136,7 +136,7 @@ dry_run() {
 
   month="$(mfromdoy "$doy")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
-  formatdt="$(datefromdoy "$doy")"
+  formatdt="$(datefromdoy "${doy#0}")"
   monthmd="${month}${YEAR}.md"
 
   cat << EOF

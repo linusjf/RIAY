@@ -111,7 +111,7 @@ playiconurl() {
   root="$(getroot)"
   doy_raw="$1"
   doy_padded="$(printf "%03d" "${doy_raw#0}")"
-  month="$(mfromdoy "$doy_padded")"
+  month="$(mfromdoy "${doy_padded#0}")"
   printf "https://raw.githubusercontent.com/%s/%s/refs/heads/main/%s/jpgs/Day%s.jpg\n" \
     "${GIT_USER}" "$root" "$month" "$doy_padded"
 }
@@ -212,7 +212,7 @@ mfromdoy() {
   require date
   local day
   # convert number to base ten
-  day=$((10#${1}))
+  day=$((${1}))
   [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
   date --date="jan 1 + $((day - 1)) days" +%B
 }
@@ -230,7 +230,7 @@ datefromdoy() {
   require date
   local day
   # convert number to base ten
-  day=$((10#${1}))
+  day=$((${1}))
   [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
   date --date="jan 1 + $((day - 1)) days" "+%B %d,%Y"
 }
