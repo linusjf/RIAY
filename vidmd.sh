@@ -13,6 +13,7 @@ readonly MAX_CAPTION_LENGTH=100
 # array of youtube thumbnail sizes in descending order. Not all may be available.
 # cycle through the sizes to pick the largest
 # available one.
+# https://developers.google.com/youtube/v3/docs/thumbnails
 readonly THUMBNAIL_SIZES=(
   "maxres"
   "standard"
