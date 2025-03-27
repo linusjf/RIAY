@@ -1,51 +1,118 @@
 #!/usr/bin/env bash
-require() {
-  hash "$@" || exit
-}
-usage() {
-  echo "$0 [doy ... doy]"
-  echo "doy - day of year"
-  echo "doy must be integer"
-  exit 1
-}
+######################################################################
+# Adds snippet images to markdown files and generates compact versions
+# with table of contents for each month.
+######################################################################
+# shellcheck disable=SC2155,SC1090,SC1091
 set -euo pipefail
 shopt -s inherit_errexit
-require date markdown-toc
-#shellcheck disable=SC1091
-source ./vidmd.sh
-if test $# -eq 0; then
-  usage
-fi
-for doy in "$@"; do
-  if ! isnumeric "$doy"; then
-    usage
-  fi
-done
 
-oldmonth="$(mfromdoy "$1")"
-month=""
-root="$(getroot)"
-for doy in "$@"; do
-  month="$(mfromdoy "$doy")"
-  mdfile="${month}/Day$(printf "%03d" "${doy#0}").md"
-  fname="${month}/jpgs/Day$(printf "%d" "$doy")Snippet*.jpg"
-  regexjpg='^\./[A-Za-z]+/jpgs/Day[0-9]+Snippet([0-9]?)\.jpg$'
-  shopt -s nullglob
-  for file in ./$fname; do
-    if [[ $file =~ $regexjpg ]]; then
-      snippet="${BASH_REMATCH[1]}"
-      url="https://raw.githubusercontent.com/${GIT_USER}/${root}/refs/heads/main/${month}/jpgs/Day$(printf "%d" "${doy#0}")Snippet${snippet}.jpg"
-      caption="Day $(printf "%d" "${doy#0}") Snippet ${snippet}"
-      md="![${caption}](${url})"
-      echo "$md" >> "$mdfile"
+readonly SUCCESS=0
+readonly FAILURE=1
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+readonly YEAR=2025
+######################################################################
+# Check if required commands are available
+# Globals: None
+# Arguments: commands to check
+# Returns: None (exits on failure)
+######################################################################
+require() {
+  for cmd in "$@"; do
+    if ! command -v "${cmd}" > /dev/null 2>&1; then
+      die "Required command '${cmd}' not found in PATH"
     fi
   done
-  shopt -u nullglob
-  if [[ "$oldmonth" != "$month" ]]; then
-    ./compact "$oldmonth" >| "${oldmonth}2023.md" \
-      && markdown-toc -i "${oldmonth}2023.md"
-    oldmonth="$month"
+}
+
+######################################################################
+# Print error message and exit with failure
+# Globals: None
+# Arguments: error message
+# Returns: None (exits script)
+######################################################################
+die() {
+  printf "Error: %s\n" "$1" >&2
+  exit "${FAILURE}"
+}
+
+######################################################################
+# Display usage information
+# Globals: FNAME
+# Arguments: None
+# Returns: None (exits script)
+######################################################################
+usage() {
+  cat << EOF
+Usage: ${0##*/} [doy ... doy]
+  doy - day of year (must be integer)
+Processes snippet images for specified days of year
+EOF
+  exit "${SUCCESS}"
+}
+
+######################################################################
+# Main function
+# Globals: FNAME, SCRIPT_DIR
+# Arguments: list of day-of-year values
+# Returns: None
+######################################################################
+main() {
+  # Validate arguments
+  if [[ $# -eq 0 ]]; then
+    usage
   fi
-done
-./compact "$month" >| "${month}2023.md" \
-  && markdown-toc -i "${month}2023.md"
+
+  # Check required commands
+  require date markdown-toc-gen
+
+  # Source vidmd.sh functions
+  # shellcheck disable=SC1091
+  source "${SCRIPT_DIR}/vidmd.sh"
+
+  # Validate numeric inputs
+  for doy in "$@"; do
+    if ! isnumeric "${doy}"; then
+      usage
+    fi
+  done
+
+  local oldmonth="$(mfromdoy "${1#0}")"
+  local month=""
+  local root="$(getroot)"
+
+  # Process each day of year
+  for doy in "$@"; do
+    month="$(mfromdoy "${doy#0}")"
+    local mdfile="${month}/Day$(printf "%03d" "${doy#0}").md"
+    local fname="${month}/jpgs/Day$(printf "%d" "${doy}")Snippet*.jpg"
+    local regexjpg='^\./[A-Za-z]+/jpgs/Day[0-9]+Snippet([0-9]?)\.jpg$'
+
+    shopt -s nullglob
+    for file in ./${fname}; do
+      if [[ "${file}" =~ ${regexjpg} ]]; then
+        local snippet="${BASH_REMATCH[1]}"
+        local url="https://raw.githubusercontent.com/${GIT_USER}/${root}/refs/heads/main/${month}/jpgs/Day$(printf "%d" "${doy#0}")Snippet${snippet}.jpg"
+        local caption="Day $(printf "%d" "${doy#0}") Snippet ${snippet}"
+        local md="![${caption}](${url})"
+        echo "${md}" >> "${mdfile}"
+      fi
+    done
+    shopt -u nullglob
+
+    # Generate compact version when month changes
+    if [[ "${oldmonth}" != "${month}" ]]; then
+      "${SCRIPT_DIR}/compact" "${oldmonth}" >| "${oldmonth}${YEAR}.md" \
+        && markdown-toc-gen update "${oldmonth}${YEAR}.md"
+      oldmonth="${month}"
+    fi
+  done
+
+  # Generate final compact version
+  "${SCRIPT_DIR}/compact" "${month}" >| "${month}${YEAR}.md" \
+    && markdown-toc-gen update "${month}${YEAR}.md"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
+fi
