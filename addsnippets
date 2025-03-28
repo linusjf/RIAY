@@ -110,7 +110,7 @@ main() {
 
   # Generate final compact version
   "${SCRIPT_DIR}/compact" "${month}" >| "${month}${YEAR}.md" \
-    && markdown-toc-gen update "${month}${YEAR}.md"
+    && markdown-toc-gen update "${month}${YEAR}.md" &> /dev/null
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
