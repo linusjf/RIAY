@@ -1,4 +1,4 @@
 # commands
-addvideo "IbijJLg53O0" "The Blessing Never Stops" # add video
+addvideo "s6os8_azLQI" "It's All True" # add video
 genmonth 03 2025 # generate
 lintall # lint all files
