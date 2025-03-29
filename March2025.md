@@ -57,6 +57,8 @@
   - [Filled with New Wine](#filled-with-new-wine)
 - [March 28,2025](#march-282025)
   - [It's All True](#its-all-true)
+- [March 29,2025](#march-292025)
+  - [The Road of Humility](#the-road-of-humility)
 
 <!-- tocstop -->
 
@@ -235,3 +237,9 @@ RIAY March 2025
 ### It's All True
 
 [![It's All True](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day087.jpg)](https://youtu.be/s6os8_azLQI "It's All True")
+
+## March 29,2025
+
+### The Road of Humility
+
+[![The Road of Humility](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day088.jpg)](https://youtu.be/uD_1kQlZ1vg "The Road of Humility")
