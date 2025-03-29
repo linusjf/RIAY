@@ -58,12 +58,12 @@ This ensures the presence of the header for each month's markdown.
 
 ### Environment variables
 
-1. Export an environment variable `GIT_USER` by adding the following line to your `.bash_profile` file.
+1. Export an environment variable `GITHUB_USERNAME` by adding the following line to your `.bash_profile` file.
 
 1. Substitute your Github user id for `<userid>`.
 
    ```bash
-   export GIT_USER="<userid>"
+   export GITHUB_USERNAME="<userid>"
    ```
 
 1. Export environment variable `YOUTUBE_API_KEY` by adding the following line to `.bash_profile`.

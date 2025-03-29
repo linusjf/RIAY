@@ -61,7 +61,7 @@ generate_markdown() {
 
   vidurl="https://youtu.be/${vid}"
   root="$(getroot)"
-  imgurl="https://raw.githubusercontent.com/${GIT_USER}/${root}/refs/heads/main/${img_path}"
+  imgurl="https://raw.githubusercontent.com/${GITHUB_USERNAME}/${root}/refs/heads/main/${img_path}"
 
   printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
 }
@@ -71,8 +71,8 @@ main() {
   require getroot validate_vid
 
   # Validate environment
-  if [[ -z "${GIT_USER:-}" ]]; then
-    echo "Error: GIT_USER environment variable is not set" >&2
+  if [[ -z "${GITHUB_USERNAME:-}" ]]; then
+    echo "Error: GITHUB_USERNAME environment variable is not set" >&2
     exit 1
   fi
 

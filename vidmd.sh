@@ -101,7 +101,7 @@ EOF
 ######################################################################
 # Generate play icon URL for given day of year
 # Globals:
-#   GIT_USER - GitHub username
+#   GITHUB_USERNAME - GitHub username
 # Arguments:
 #   $1 - Day of year
 # Outputs: URL to STDOUT
@@ -114,7 +114,7 @@ playiconurl() {
   doy_padded="$(printf "%03d" "${doy_raw#0}")"
   month="$(mfromdoy "${doy_padded#0}")"
   printf "https://raw.githubusercontent.com/%s/%s/refs/heads/main/%s/jpgs/Day%s.jpg\n" \
-    "${GIT_USER}" "$root" "$month" "$doy_padded"
+    "${GITHUB_USERNAME}" "$root" "$month" "$doy_padded"
 }
 
 thumbnailurl() {
