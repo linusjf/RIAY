@@ -22,6 +22,7 @@ Usage: ${0##*/} [options]
 Options:
   -h, --help    Show this help message and exit
   -v, --verbose Enable verbose output
+  -d, --debug   Enable debug output (set -x)
 EOF
   exit "${SUCCESS}"
 }
@@ -50,16 +51,23 @@ die() {
 ######################################################################
 main() {
   local verbose=0
+  local debug_mode=0
 
   # Parse command line options
   while [[ $# -gt 0 ]]; do
     case "$1" in
       -h | --help) usage ;;
       -v | --verbose) verbose=1 ;;
+      -d | --debug) debug_mode=1 ;;
       *) die "Invalid option: $1" ;;
     esac
     shift
   done
+
+  # Enable debug if requested
+  if ((debug_mode)); then
+    set -x
+  fi
 
   require markdownlint mdformat
 
