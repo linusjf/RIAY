@@ -36,7 +36,11 @@ die() {
 ######################################################################
 usage() {
   cat << EOF
-Usage: ${0##*/} FILE
+Usage: ${0##*/} [OPTIONS] FILE
+Options:
+  -d, --debug    Enable debug output (set -x)
+  
+Arguments:
   FILE  Path to JPEG image file to overlay
 EOF
   exit "${SUCCESS}"
@@ -53,6 +57,28 @@ is_jpeg_file() {
 # Main function
 ######################################################################
 main() {
+  # Parse options
+  local debug_mode=false
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -d | --debug)
+        debug_mode=true
+        shift
+        ;;
+      -*)
+        usage
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
+
+  # Enable debug if requested
+  if [[ "${debug_mode}" == true ]]; then
+    set -x
+  fi
+
   # Verify dependencies
   require gm mv file grep mktemp
 

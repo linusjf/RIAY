@@ -16,7 +16,11 @@ readonly VIDMD_SCRIPT="${SCRIPT_DIR}/vidmd.sh"
 ######################################################################
 usage() {
   cat << EOF
-Usage: ${0##*/} vid output
+Usage: ${0##*/} [OPTIONS] vid output
+Options:
+  -d, --debug    Enable debug output (set -x)
+  
+Arguments:
   vid    - YouTube video ID
   output - Path to output JPEG file
 EOF
@@ -52,6 +56,28 @@ is_jpeg_extension() {
 ######################################################################
 ######################################################################
 main() {
+  # Parse options
+  local debug_mode=false
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -d | --debug)
+        debug_mode=true
+        shift
+        ;;
+      -*)
+        usage
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
+
+  # Enable debug if requested
+  if [[ "${debug_mode}" == true ]]; then
+    set -x
+  fi
+
   # Validate arguments
   if [[ $# -ne 2 ]]; then
     usage
