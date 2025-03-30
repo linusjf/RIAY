@@ -44,8 +44,10 @@ die() {
 ######################################################################
 usage() {
   cat << EOF
-Usage: ${0##*/} [doy ... doy]
+Usage: ${0##*/} [-d|--debug] [doy ... doy]
   doy - day of year (must be integer)
+Options:
+  -d, --debug      Enable debug output
 Processes snippet images for specified days of year
 EOF
   exit "${SUCCESS}"
@@ -112,6 +114,18 @@ main() {
   "${SCRIPT_DIR}/compact" "${month}" >| "${month}${YEAR}.md" \
     && markdown-toc-gen update "${month}${YEAR}.md" &> /dev/null
 }
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main "$@"

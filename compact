@@ -24,11 +24,13 @@ require() {
 # Display usage information
 usage() {
   cat << EOF
-Usage: ${0##*/} [dir]
+Usage: ${0##*/} [-d|--debug] [dir]
 Compact multiple markdown files into a single output
 
+Options:
+  -d, --debug      Enable debug output
 Arguments:
-  dir  Directory containing compact.txt and files to merge (default: current dir)
+  dir              Directory containing compact.txt and files to merge (default: current dir)
 
 The program will:
 1. Look for ${COMPACT_FILE} in the specified directory
@@ -86,6 +88,18 @@ main() {
     rm -f "${tmp_output}" "${temp_file}" &> /dev/null
   )
 }
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   require m4 mktemp awk rm

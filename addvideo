@@ -21,12 +21,13 @@ readonly VIDEOS_FILE="videos.txt"
 
 usage() {
   cat << EOF
-Usage: ${0##*/} [-n|--dry-run] vid caption
+Usage: ${0##*/} [-n|--dry-run] [-d|--debug] vid caption
 
 Add a new video to the system by generating markdown and updating indexes.
 
 Options:
   -n, --dry-run    Show what would happen without making changes
+  -d, --debug      Enable debug output
 Arguments:
   vid              YouTube video ID
   caption          Video title/description
@@ -163,6 +164,10 @@ main() {
     case "$1" in
       -n | --dry-run)
         DRY_RUN=true
+        shift
+        ;;
+      -d | --debug)
+        set -x
         shift
         ;;
       *)
