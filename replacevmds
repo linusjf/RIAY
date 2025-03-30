@@ -16,7 +16,11 @@ readonly FAILURE=1
 ######################################################################
 # Load required library
 ######################################################################
-source ./vidmd.sh
+script_dir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+source "${script_dir}/vidmd.sh" || {
+  echo "Error: Failed to source vidmd.sh from ${script_dir}" >&2
+  exit "${FAILURE}"
+}
 
 ######################################################################
 # Display usage information
