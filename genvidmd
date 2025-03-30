@@ -14,10 +14,12 @@ source "${SCRIPT_DIR}/vidmd.sh"
 
 usage() {
   cat << EOF
-Usage: ${0##*/} vid caption pathtoimg
+Usage: ${0##*/} [-d|--debug] vid caption pathtoimg
 
 Generate markdown for embedding YouTube videos with overlay images.
 
+Options:
+  -d, --debug      Enable debug output
 Arguments:
   vid       YouTube video ID (11 characters)
   caption   Video title/description
@@ -65,6 +67,18 @@ generate_markdown() {
 
   printf "[![%s](%s)](%s \"%s\")\n" "$caption" "$imgurl" "$vidurl" "$caption"
 }
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
 
 main() {
   # Check dependencies

@@ -15,8 +15,11 @@ readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 ######################################################################
 usage() {
   cat << EOF
-Usage: ${0##*/}
+Usage: ${0##*/} [-d|--debug]
 Processes video IDs from ${FNAME} and generates overlays
+
+Options:
+  -d, --debug      Enable debug output
 EOF
   exit "${SUCCESS}"
 }
@@ -65,6 +68,18 @@ main() {
 
   exit "${SUCCESS}"
 }
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main "$@"

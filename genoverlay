@@ -14,7 +14,10 @@ readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 ######################################################################
 usage() {
   cat << EOF
-Usage: ${0##*/} vid doy
+Usage: ${0##*/} [-d|--debug] vid doy
+Options:
+  -d, --debug      Enable debug output
+Arguments:
   vid - YouTube video ID
   doy - day of year (numeric)
 EOF
@@ -99,6 +102,18 @@ main() {
   "${SCRIPT_DIR}/overlayicon" "${relfile}"
   exit "${SUCCESS}"
 }
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main "$@"

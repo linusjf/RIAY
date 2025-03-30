@@ -10,10 +10,12 @@ readonly SCRIPT_NAME="${0##*/}"
 
 usage() {
   cat << EOF
-Usage: ${SCRIPT_NAME} markdown_file
+Usage: ${SCRIPT_NAME} [-d|--debug] markdown_file
 
 Generates or updates table of contents in specified Markdown file.
 
+Options:
+  -d, --debug      Enable debug output
 Arguments:
   markdown_file  Path to Markdown file to process
 
@@ -68,6 +70,18 @@ generate_toc() {
   fi
   return 0
 }
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
 
 main() {
   require markdown-toc-gen

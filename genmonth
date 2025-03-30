@@ -11,12 +11,13 @@ source "${SCRIPT_DIR}/vidmd.sh"
 
 usage() {
   cat << EOF
-Usage: ${0##*/} [-n|--dry-run] month year
+Usage: ${0##*/} [-n|--dry-run] [-d|--debug] month year
 
 Generate monthly markdown file with video index and table of contents.
 
 Options:
   -n, --dry-run    Show what would happen without making changes
+  -d, --debug      Enable debug output
 Arguments:
   month            Month number (1-12)
   year             4-digit year
@@ -105,22 +106,24 @@ No files actually modified
 EOF
 }
 
-main() {
-  local DRY_RUN=false
-  local month year
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -n | --dry-run)
+      DRY_RUN=true
+      shift
+      ;;
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
 
-  # Parse options
-  while [[ $# -gt 0 ]]; do
-    case "$1" in
-      -n | --dry-run)
-        DRY_RUN=true
-        shift
-        ;;
-      *)
-        break
-        ;;
-    esac
-  done
+main() {
+  local month year
 
   # Validate arguments
   if [[ $# -ne 2 ]]; then
