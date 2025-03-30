@@ -46,7 +46,12 @@ die() {
 ######################################################################
 usage() {
   cat << EOF
-Usage: ${0##*/} dir
+Usage: ${0##*/} [OPTIONS] dir
+
+Options:
+  -d, --debug    Enable debug output (set -x)
+
+Arguments:
   dir - directory to process for images
 EOF
   exit "${SUCCESS}"
@@ -109,6 +114,29 @@ get_downloads_dir() {
 # Returns: None (exits with appropriate status)
 ######################################################################
 main() {
+  local debug_mode=0
+
+  # Parse options
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -d | --debug)
+        debug_mode=1
+        shift
+        ;;
+      -*)
+        usage
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
+
+  # Enable debug if requested
+  if ((debug_mode)); then
+    set -x
+  fi
+
   if [[ $# -eq 0 ]]; then
     usage
   fi

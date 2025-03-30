@@ -10,7 +10,10 @@ readonly SCRIPT_NAME="${0##*/}"
 
 usage() {
   cat << EOF
-Usage: ${SCRIPT_NAME}
+Usage: ${SCRIPT_NAME} [OPTIONS]
+
+Options:
+  -d, --debug    Enable debug output (set -x)
 
 Generates README.md from stitch.md in current directory.
 
@@ -53,6 +56,29 @@ generate_readme() {
 }
 
 main() {
+  local debug_mode=0
+
+  # Parse options
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -d | --debug)
+        debug_mode=1
+        shift
+        ;;
+      -*)
+        usage
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
+
+  # Enable debug if requested
+  if ((debug_mode)); then
+    set -x
+  fi
+
   require stitchmd
 
   if ! validate_input; then
