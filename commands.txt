@@ -1,4 +1,4 @@
 # commands
-addvideo "uD_1kQlZ1vg" "The Road of Humility" # add video
+addvideo "bRkqNkKFAkQ" "Long Desired" # add video
 genmonth 03 2025 # generate
 lintall # lint all files

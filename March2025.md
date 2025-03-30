@@ -59,6 +59,8 @@
   - [It's All True](#its-all-true)
 - [March 29,2025](#march-292025)
   - [The Road of Humility](#the-road-of-humility)
+- [March 30,2025](#march-302025)
+  - [Long Desired](#long-desired)
 
 <!-- tocstop -->
 
@@ -243,3 +245,9 @@ RIAY March 2025
 ### The Road of Humility
 
 [![The Road of Humility](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day088.jpg)](https://youtu.be/uD_1kQlZ1vg "The Road of Humility")
+
+## March 30,2025
+
+### Long Desired
+
+[![Long Desired](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day089.jpg)](https://youtu.be/bRkqNkKFAkQ "Long Desired")
