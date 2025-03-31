@@ -61,6 +61,8 @@
   - [The Road of Humility](#the-road-of-humility)
 - [March 30,2025](#march-302025)
   - [Long Desired](#long-desired)
+- [March 31,2025](#march-312025)
+  - [Consoling Mother](#consoling-mother)
 
 <!-- tocstop -->
 
@@ -251,3 +253,9 @@ RIAY March 2025
 ### Long Desired
 
 [![Long Desired](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day089.jpg)](https://youtu.be/bRkqNkKFAkQ "Long Desired")
+
+## March 31,2025
+
+### Consoling Mother
+
+[![Consoling Mother](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day090.jpg)](https://youtu.be/-ty2ZglS-x8 "Consoling Mother")
