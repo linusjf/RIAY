@@ -8,6 +8,7 @@ shopt -s inherit_errexit
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 # shellcheck disable=SC1091
 source "${SCRIPT_DIR}/vidmd.sh"
+DRY_RUN=false
 
 usage() {
   cat << EOF

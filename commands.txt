@@ -1,4 +1,4 @@
 # commands
-addvideo "bRkqNkKFAkQ" "Long Desired" # add video
-genmonth 03 2025 # generate
+addvideo "Gq96TC-oQ60" "Cause For Joy" # add video
+genmonth 04 2025 # generate
 lintall # lint all files
