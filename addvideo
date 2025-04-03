@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script to add new videos to the system by:
+# Add new videos to the system by:
 # 1. Generating markdown content
 # 2. Creating overlay images
 # 3. Updating index files
@@ -8,54 +8,79 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-# shellcheck disable=SC2155
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-# shellcheck disable=SC1091
-source "${SCRIPT_DIR}/internet.sh"
-# shellcheck disable=SC1091
-source "${SCRIPT_DIR}/vidmd.sh"
-
+readonly VERSION="1.0.0"
 readonly YEAR=2025
 readonly COMPACT_FILE="compact.txt"
 readonly VIDEOS_FILE="videos.txt"
 
+######################################################################
+# Functions
+######################################################################
+
+# Print usage information
+# Globals: none
+# Arguments: none
+# Outputs: usage information to STDOUT
+# Returns: exits with status 1
 usage() {
   cat << EOF
-Usage: ${0##*/} [-n|--dry-run] [-d|--debug] vid caption
+Usage: ${0##*/} [-n|--dry-run] [-d|--debug] [-v|--version] vid caption
 
 Add a new video to the system by generating markdown and updating indexes.
 
 Options:
   -n, --dry-run    Show what would happen without making changes
   -d, --debug      Enable debug output
+  -v, --version    Show version information
 Arguments:
-  vid              YouTube video ID
-  caption          Video title/description
+  vid              YouTube video ID (11 characters)
+  caption          Video title/description (max 100 chars)
 EOF
   exit 1
 }
 
+# Print version information
+# Globals: VERSION
+# Arguments: none
+# Outputs: version string to STDOUT
+# Returns: none
+version() {
+  printf "%s\n" "$VERSION"
+}
+
+# Check if required commands are available
+# Globals: none
+# Arguments: command names
+# Outputs: error message to STDERR if command not found
+# Returns: exits with status 127 if command not found
 require() {
-  hash "$@" || {
-    echo "Error: Required command not found: $*" >&2
-    exit 127
-  }
+  for cmd in "$@"; do
+    if ! command -v "$cmd" > /dev/null 2>&1; then
+      echo "Error: Required command not found: $cmd" >&2
+      exit 127
+    fi
+  done
 }
 
+# Check if YouTube video exists
+# Globals: none
+# Arguments: video_id
+# Outputs: none
+# Returns: 0 if video exists, 1 otherwise
 check_video_exists() {
-  video_id="$1"
-  url="https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${video_id}&format=json"
+  local video_id="$1"
+  local url="https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${video_id}&format=json"
+  local http_status
 
-  # Send a request and check HTTP response code
   http_status=$(curl -s -o /dev/null -w "%{http_code}" "$url")
-
-  if [[ "$http_status" == "200" ]]; then
-    return 0
-  else
-    return 1
-  fi
+  [[ "$http_status" == "200" ]]
 }
 
+# Validate script inputs
+# Globals: none
+# Arguments: vid caption
+# Outputs: error messages to STDERR
+# Returns: 0 if valid, 1 otherwise
 validate_inputs() {
   if ! validate_vid "$1"; then
     echo "Error: Invalid YouTube video ID format: '$1'" >&2
@@ -76,30 +101,29 @@ validate_inputs() {
   return 0
 }
 
+# Generate all required files for new video
+# Globals: COMPACT_FILE VIDEOS_FILE YEAR
+# Arguments: vid caption doy
+# Outputs: status messages to STDOUT/STDERR
+# Returns: 0 on success, 1 on failure
 generate_files() {
   local vid="$1"
   local caption="$2"
   local doy="$3"
   local videourl="https://youtu.be/${vid}"
-  local month monthmd fname formatdt
+  local month monthmd fname formatdt md
 
-  month="$(mfromdoy "$doy")"
+  month="$(mfromdoy "${doy#0}")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(datefromdoy "${doy#0}")"
   monthmd="${month}${YEAR}.md"
 
-  # Generate markdown content
-  local md
   md="$("${SCRIPT_DIR}/genvidthmd" "$vid" "$videourl" "$caption" "$doy")"
 
-  # Create backup if file exists
-  if [[ -f "$fname" ]]; then
-    if ! mv "$fname" "${fname}.bak"; then
-      echo "Warning: Failed to backup ${fname}" >&2
-    fi
+  if [[ -f "$fname" ]] && ! mv "$fname" "${fname}.bak"; then
+    echo "Warning: Failed to backup ${fname}" >&2
   fi
 
-  # Write new markdown file
   {
     echo "## $formatdt"
     echo
@@ -108,13 +132,12 @@ generate_files() {
     echo "$md"
   } >| "$fname"
 
-  # Update compact file
   if ! cp "${month}/${COMPACT_FILE}" "${month}/${COMPACT_FILE}.bak"; then
     echo "Warning: Failed to backup compact file" >&2
   fi
+
   basename -- "$fname" >> "${month}/${COMPACT_FILE}"
 
-  # Generate month index
   if "${SCRIPT_DIR}/compact" "$month" >| "$monthmd"; then
     markdown-toc-gen update "$monthmd" &> /dev/null
     sed -i '/\S/,$!d' "$monthmd"
@@ -128,6 +151,11 @@ generate_files() {
   fi
 }
 
+# Simulate adding a video (dry run)
+# Globals: none
+# Arguments: vid caption doy
+# Outputs: simulation output to STDOUT
+# Returns: none
 dry_run() {
   local vid="$1"
   local caption="$2"
@@ -135,7 +163,7 @@ dry_run() {
   local videourl="https://youtu.be/${vid}"
   local month fname formatdt monthmd
 
-  month="$(mfromdoy "$doy")"
+  month="$(mfromdoy "$doy#0")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(datefromdoy "${doy#0}")"
   monthmd="${month}${YEAR}.md"
@@ -155,28 +183,36 @@ $("${SCRIPT_DIR}/genvidthmd" "$vid" "$videourl" "$caption" "$doy")
 EOF
 }
 
+# Main function
+# Globals: COMPACT_FILE VIDEOS_FILE
+# Arguments: command line arguments
+# Outputs: various status messages
+# Returns: 0 on success, non-zero on failure
 main() {
-  local DRY_RUN=false
+  local dry_run=false
+  local debug=false
   local vid caption
 
-  # Parse options
   while [[ $# -gt 0 ]]; do
     case "$1" in
       -n | --dry-run)
-        DRY_RUN=true
+        dry_run=true
         shift
         ;;
       -d | --debug)
-        set -x
+        debug=true
         shift
         ;;
-      *)
-        break
+      -v | --version)
+        version
+        exit 0
         ;;
+      *) break ;;
     esac
   done
 
-  # Validate arguments
+  $debug && set -x
+
   if [[ $# -ne 2 ]]; then
     usage
   fi
@@ -193,7 +229,7 @@ main() {
   local doy
   doy=$(("$(wc -l < "$VIDEOS_FILE")" + 1))
 
-  if $DRY_RUN; then
+  if $dry_run; then
     dry_run "$vid" "$caption" "$doy"
     exit 0
   fi
@@ -206,7 +242,23 @@ main() {
   generate_files "$vid" "$caption" "$doy"
 }
 
+######################################################################
+# Main script execution
+######################################################################
+
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  # Check for required YouTube API key
+  if [[ -z "${YOUTUBE_API_KEY:-}" ]]; then
+    echo "Error: YOUTUBE_API_KEY environment variable is not set" >&2
+    echo "Please set this variable to enable YouTube thumbnail downloads" >&2
+    exit 1
+  fi
+
+  # shellcheck disable=SC2155
+  readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+  source "${SCRIPT_DIR}/internet.sh"
+  source "${SCRIPT_DIR}/vidmd.sh"
+
   require sed basename date markdown-toc
   main "$@"
 fi

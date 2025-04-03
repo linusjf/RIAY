@@ -119,10 +119,6 @@ playiconurl() {
 
 thumbnailurl() {
   require curl grep
-  if [ -z "${YOUTUBE_API_KEY}" ]; then
-    printf "Environment variable YOUTUBE_API_KEY is empty or unset.\n"
-    return 1
-  fi
   local vid="$1"
   local api_url="https://www.googleapis.com/youtube/v3/videos?id=$vid&key=$YOUTUBE_API_KEY&part=snippet&fields=items(snippet(thumbnails(<size>(url))))"
   for size in "${THUMBNAIL_SIZES[@]}"; do
