@@ -7,6 +7,10 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 readonly SCRIPT_NAME="${0##*/}"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+
+# Source require.sh from same directory as script
+source "${SCRIPT_DIR}/require.sh"
 
 usage() {
   cat << EOF
@@ -30,13 +34,6 @@ Returns:
   2 on generation failure
 EOF
   exit 1
-}
-
-require() {
-  hash "$1" 2> /dev/null || {
-    echo "Error: Required command '$1' not found" >&2
-    exit 1
-  }
 }
 
 validate_input() {
@@ -79,7 +76,7 @@ main() {
     set -x
   fi
 
-  require stitchmd
+  require_commands stitchmd
 
   if ! validate_input; then
     exit 1
