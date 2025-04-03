@@ -45,20 +45,6 @@ version() {
   printf "%s\n" "$VERSION"
 }
 
-# Check if required commands are available
-# Globals: none
-# Arguments: command names
-# Outputs: error message to STDERR if command not found
-# Returns: exits with status 127 if command not found
-require() {
-  for cmd in "$@"; do
-    if ! command -v "$cmd" > /dev/null 2>&1; then
-      echo "Error: Required command not found: $cmd" >&2
-      exit 127
-    fi
-  done
-}
-
 # Main function
 # Globals: SCRIPT_DIR
 # Arguments: vid doy
@@ -73,7 +59,7 @@ main() {
   local doy="$2"
   local month doy_padded dir relfile imgurl
 
-  require curl realpath mkdir
+  require_commands curl realpath mkdir
 
   if [[ ! -f "${SCRIPT_DIR}/vidmd.sh" ]]; then
     echo "Error: ${SCRIPT_DIR}/vidmd.sh not found" >&2
@@ -125,15 +111,18 @@ main() {
 ######################################################################
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  # Check for required YouTube API key
-  if [[ -z "${YOUTUBE_API_KEY:-}" ]]; then
-    echo "Error: YOUTUBE_API_KEY environment variable is not set" >&2
-    echo "Please set this variable to enable YouTube thumbnail downloads" >&2
-    exit 1
+  # Resolve script directory
+  if command -v realpath > /dev/null 2>&1; then
+    SCRIPT_DIR=$(dirname "$(realpath "$0")")
+  else
+    SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
   fi
 
-  # shellcheck disable=SC2155
-  readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+  # Source required libraries
+  source "${SCRIPT_DIR}/require.sh"
+
+  # Check requirements
+  require_vars YOUTUBE_API_KEY
 
   debug=false
   while [[ $# -gt 0 ]]; do
