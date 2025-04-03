@@ -12,6 +12,12 @@ shopt -s inherit_errexit
 readonly SUCCESS=0
 readonly FAILURE=1
 
+# Source the require.sh library
+source "$(dirname "$(readlink -f "$0")")/require.sh" || {
+  echo "Error: Failed to source require.sh" >&2
+  exit 1
+}
+
 ######################################################################
 # Display usage information
 ######################################################################
@@ -25,17 +31,6 @@ Options:
   -d, --debug   Enable debug output (set -x)
 EOF
   exit "${SUCCESS}"
-}
-
-######################################################################
-# Check if required commands are available
-######################################################################
-require() {
-  for cmd in "$@"; do
-    if ! command -v "${cmd}" > /dev/null 2>&1; then
-      die "Required command '${cmd}' not found in PATH"
-    fi
-  done
 }
 
 ######################################################################
@@ -69,7 +64,7 @@ main() {
     set -x
   fi
 
-  require markdownlint mdformat
+  require_commands markdownlint mdformat
 
   # Enable recursive globbing
   shopt -s globstar
@@ -85,7 +80,6 @@ main() {
   if ((verbose)); then
     echo "Running markdown linter..."
   fi
-
   if ! markdownlint --fix -- **/*.md; then
     die "markdownlint failed"
   fi
