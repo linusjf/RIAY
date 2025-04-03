@@ -8,6 +8,8 @@ shopt -s inherit_errexit
 # shellcheck disable=SC2155
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 # shellcheck disable=SC1091
+source "${SCRIPT_DIR}/require.sh"
+# shellcheck disable=SC1091
 source "${SCRIPT_DIR}/internet.sh"
 # shellcheck disable=SC1091
 source "${SCRIPT_DIR}/vidmd.sh"
@@ -82,13 +84,10 @@ done
 
 main() {
   # Check dependencies
-  require getroot validate_vid
+  require_commands getroot validate_vid
 
   # Validate environment
-  if [[ -z "${GITHUB_USERNAME:-}" ]]; then
-    echo "Error: GITHUB_USERNAME environment variable is not set" >&2
-    exit 1
-  fi
+  require_vars GITHUB_USERNAME
 
   # Validate inputs
   if ! validate_inputs "$@"; then
