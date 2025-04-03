@@ -119,7 +119,7 @@ playiconurl() {
 
 thumbnailurl() {
   require curl grep
-  if [[ "${YOUTUBE_API_KEY:-}" == "" ]]; then
+  if [ -z "${YOUTUBE_API_KEY}" ]; then
     printf "Environment variable YOUTUBE_API_KEY is empty or unset.\n"
     return 1
   fi
