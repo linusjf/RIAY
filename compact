@@ -9,18 +9,6 @@ shopt -s inherit_errexit
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 readonly COMPACT_FILE="compact.txt"
 
-# Load shared functions
-# shellcheck disable=SC1091
-source "${SCRIPT_DIR}/vidmd.sh"
-
-# Verify required commands are available
-require() {
-  hash "$@" || {
-    echo "Error: Required command not found: $*" >&2
-    exit 127
-  }
-}
-
 # Display usage information
 usage() {
   cat << EOF
@@ -56,6 +44,10 @@ main() {
   if ! is_valid_dir "${target_dir}"; then
     usage
   fi
+
+  # Source required libraries
+  source "${SCRIPT_DIR}/require.sh"
+  source "${SCRIPT_DIR}/vidmd.sh"
 
   (
     cd "${target_dir}" || exit 1
@@ -102,6 +94,8 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require m4 mktemp awk rm
+  # Check requirements
+  source "${SCRIPT_DIR}/require.sh"
+  require_commands m4 mktemp awk rm
   main "$@"
 fi
