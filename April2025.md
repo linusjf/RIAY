@@ -7,6 +7,8 @@
 - [April 03,2025](#april-032025)
   - [Look Like You Love Him](#look-like-you-love-him)
 - [April 04,2025](#april-042025)
+  - [No Doubt](#no-doubt)
+- [April 05,2025](#april-052025)
   - [Moms are Special](#moms-are-special)
 
 <!-- tocstop -->
@@ -35,6 +37,12 @@ RIAY April 2025
 
 ## April 04,2025
 
+### No Doubt
+
+[![No Doubt](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day094.jpg)](https://youtu.be/udGTa5JC9Mw "No Doubt")
+
+## April 05,2025
+
 ### Moms are Special
 
-[![Moms are Special](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day094.jpg)](https://youtu.be/XLos3uwj4Js "Moms are Special")
+[![Moms are Special](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day095.jpg)](https://youtu.be/XLos3uwj4Js "Moms are Special")
