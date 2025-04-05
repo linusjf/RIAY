@@ -1,4 +1,4 @@
 # commands
-addvideo "IZ6f66RmT4c" "Look Like You Love Him" # add video
+addvideo "XLos3uwj4Js" "Moms are Special" # add video
 genmonth 04 2025 # generate
 lintall # lint all files
