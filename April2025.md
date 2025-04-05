@@ -6,6 +6,8 @@
   - [Waiting in the Temple](#waiting-in-the-temple)
 - [April 03,2025](#april-032025)
   - [Look Like You Love Him](#look-like-you-love-him)
+- [April 04,2025](#april-042025)
+  - [Moms are Special](#moms-are-special)
 
 <!-- tocstop -->
 
@@ -30,3 +32,9 @@ RIAY April 2025
 ### Look Like You Love Him
 
 [![Look Like You Love Him](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day093.jpg)](https://youtu.be/IZ6f66RmT4c "Look Like You Love Him")
+
+## April 04,2025
+
+### Moms are Special
+
+[![Moms are Special](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day094.jpg)](https://youtu.be/XLos3uwj4Js "Moms are Special")
