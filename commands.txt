@@ -1,5 +1,4 @@
 # commands
-addvideo "udGTa5JC9Mw" "No Doubt" # add video
-addvideo "XLos3uwj4Js" "Moms are Special" # add video
+addvideo "9Q_YnIxbPrg" "A New Love" # add video
 genmonth 04 2025 # generate
 lintall # lint all files

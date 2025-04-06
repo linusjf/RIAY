@@ -4,3 +4,4 @@ Day092.md
 Day093.md
 Day094.md
 Day095.md
+Day096.md
