@@ -10,6 +10,10 @@
   - [No Doubt](#no-doubt)
 - [April 05,2025](#april-052025)
   - [Moms are Special](#moms-are-special)
+- [April 06,2025](#april-062025)
+  - [A New Love](#a-new-love)
+- [April 07,2025](#april-072025)
+  - [Climb the Mountain](#climb-the-mountain)
 
 <!-- tocstop -->
 
@@ -46,3 +50,15 @@ RIAY April 2025
 ### Moms are Special
 
 [![Moms are Special](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day095.jpg)](https://youtu.be/XLos3uwj4Js "Moms are Special")
+
+## April 06,2025
+
+### A New Love
+
+[![A New Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day096.jpg)](https://youtu.be/9Q_YnIxbPrg "A New Love")
+
+## April 07,2025
+
+### Climb the Mountain
+
+[![Climb the Mountain](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day097.jpg)](https://youtu.be/6sKvRFzo8vw "Climb the Mountain")
