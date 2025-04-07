@@ -23,15 +23,3 @@ exclude_patterns = ["stitch.md","January/*.md","February/*.md", "March/*.md", "A
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'alabaster'
-latex_elements = {
-    'inputenc': '',
-    'utf8extra': '',
-    'preamble': '''
-\\usepackage{fontspec}
-\\setsansfont{Arial}
-\\setromanfont{Arial}
-\\setmonofont{DejaVu Sans Mono}
-''',
-}
-
-latex_engine = 'xelatex'

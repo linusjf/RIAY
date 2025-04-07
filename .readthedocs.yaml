@@ -17,7 +17,6 @@ sphinx:
   configuration: conf.py
   fail_on_warning: true
 formats:
-  - pdf
   - epub
 # Optionally, but recommended,
 # declare the Python requirements required to build your documentation
