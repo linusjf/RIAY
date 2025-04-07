@@ -32,6 +32,6 @@ latex_engine = 'xelatex'
 latex_elements = {
     'preamble': r'''
 \usepackage{fontspec}
-\setmainfont{DejaVu Serif}
+\setmainfont{Symbola}
 ''',
 }
