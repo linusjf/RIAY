@@ -34,3 +34,7 @@ latex_elements = {
 \usepackage{emoji}
 ''',
 }
+
+latex_documents = [
+    ('book', 'riay.tex', 'RIAY content', 'Linus Fernandes', 'manual'),
+]
