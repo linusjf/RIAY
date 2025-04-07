@@ -28,6 +28,7 @@ documentation for details.
    October2025.md
    November2025.md
    December2025.md
+   HOWTO.md
 
 .. include:: redme.md
    :parser: myst_parser.sphinx_
@@ -66,4 +67,7 @@ documentation for details.
    :parser: myst_parser.sphinx_
 
 .. include:: December2025.md
+   :parser: myst_parser.sphinx_
+
+.. include:: HOWTO.md
    :parser: myst_parser.sphinx_
