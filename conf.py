@@ -27,11 +27,10 @@ exclude_patterns = ["stitch.md","January/*.md","February/*.md", "March/*.md", "A
 html_theme = 'alabaster'
 
 # -- Options for PDF output
-latex_engine = 'xelatex'
+latex_engine = 'lualatex'
 
 latex_elements = {
     'preamble': r'''
-\usepackage{fontspec}
-\setmainfont{Symbola}
+\usepackage{emoji}
 ''',
 }
