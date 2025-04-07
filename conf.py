@@ -23,3 +23,14 @@ exclude_patterns = ["stitch.md","January/*.md","February/*.md", "March/*.md", "A
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'alabaster'
+
+# -- Options for PDF output
+latex_engine = 'xelatex'
+
+latex_elements = {
+    'preamble': r'''
+\usepackage{fontspec}
+\setmainfont{Noto Sans}
+\newfontfamily\emoji{Noto Color Emoji}
+''',
+}
