@@ -32,7 +32,6 @@ latex_engine = 'xelatex'
 latex_elements = {
     'preamble': r'''
 \usepackage{fontspec}
-\setmainfont{Noto Sans}
-\newfontfamily\emoji{Noto Color Emoji}
+\setmainfont{DejaVu Serif}
 ''',
 }
