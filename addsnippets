@@ -86,8 +86,11 @@ main() {
         local caption="Day $(printf "%d" "${doy#0}") Snippet ${snippet}"
         local header="### ${caption}"
         local md="![${caption}](${url})"
-        echo "${header}" >> "${mdfile}"
-        echo "${md}" >> "${mdfile}"
+        {
+          echo "${header}"
+          echo ""
+          echo "${md}"
+        } >> "${mdfile}"
       fi
     done
     shopt -u nullglob
