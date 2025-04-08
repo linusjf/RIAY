@@ -18,10 +18,7 @@ master_doc = 'index'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser","sphinxcontrib.inkscapeconverter"]
-
-svg2pdf_converter = 'dvisvgm'  # or 'rsvg-convert', depending on what’s installed
-
+extensions = ["myst_parser","sphinxcontrib.cairosvgconverter"]
 
 templates_path = ['_templates']
 exclude_patterns = ["stitch.md","January/*.md","February/*.md", "March/*.md", "April/*.md", "May/*.md", "June/*.md", "July/*.md", "August/*.md", "September/*.md", "October/*.md"\
@@ -35,21 +32,6 @@ html_theme = 'alabaster'
 
 # -- Options for PDF output
 latex_engine = 'lualatex'
-
-r"""
-latex_elements = {  
-        'fontpkg': r'''
-        \usepackage{fontspec}
-    ''',
-'preamble': r'''
-\usepackage{fontspec}
-\usepackage{tikzsymbols}
-\usepackage{emoji}
-\setemojifont{Apple Color Emoji}
-\setmainfont{Symbola}
-''',
- }
- """
 
 latex_elements = { 
         'fontpkg': r'''
