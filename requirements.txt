@@ -1,2 +1,3 @@
 myst-parser
-sphinxcontrib-svg2pdfconverter[inkscape]
+cairosvg
+sphinxcontrib-svg2pdfconverter[CairoSVG]
