@@ -38,6 +38,7 @@ latex_elements = {
         \usepackage{fontspec}
     ''',
     'preamble': r'''
+\pdfminorversion=7
 \setmainfont{Symbola}
 ''',
  }
