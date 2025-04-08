@@ -52,4 +52,4 @@ if tags.has('latex'):
 
 # If we're building EPUB → exclude book.rst
 if tags.has('epub'):
-    epub_exclude_files = ['book.rst']
+    epub_exclude_files = ['book.rst','README.md']
