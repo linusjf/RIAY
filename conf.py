@@ -36,13 +36,26 @@ html_theme = 'alabaster'
 # -- Options for PDF output
 latex_engine = 'lualatex'
 
+r"""
 latex_elements = {  
         'fontpkg': r'''
         \usepackage{fontspec}
-        \setmainfont{Free Serif}  % or Times New Roman, or whatever you prefer
     ''',
 'preamble': r'''
 \usepackage{fontspec}
-\setmainfont{Free Serif}
+\usepackage{tikzsymbols}
+\usepackage{emoji}
+\setemojifont{Apple Color Emoji}
+\setmainfont{Symbola}
+''',
+ }
+ """
+
+latex_elements = { 
+        'fontpkg': r'''
+        \usepackage{fontspec}
+    ''',
+    'preamble': r'''
+\setmainfont{Symbola}
 ''',
  }
