@@ -11,6 +11,9 @@ copyright = '2025, Linus Fernandes'
 author = 'Linus Fernandes'
 version = '1'
 release = '1.0'
+master_doc = 'index'
+
+# Default for HTML and EPUB
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -27,7 +30,7 @@ suppress_warnings = ['toc.not_included']
 
 html_theme = 'alabaster'
 
-html_exclude_files = ['book.rst']
+#html_exclude_files = ['book.rst']
 # -- Options for PDF output
 latex_engine = 'lualatex'
 
@@ -37,19 +40,9 @@ latex_elements = {
 ''',
 }
 
-latex_documents = [
-    ('book', 'riay.tex', 'RIAY content', 'Linus Fernandes', 'manual'),
-]
+# latex_documents = [
+  #  ('book', 'riay.tex', 'RIAY content', 'Linus Fernandes', 'manual'),
+#]
 
-import sphinx
 
-# Default for HTML and EPUB
-master_doc = 'index'
 
-# If we're building LaTeX → override master_doc to 'book'
-if tags.has('latex'):
-    master_doc = 'book'
-
-# If we're building EPUB → exclude book.rst
-if tags.has('epub'):
-    epub_exclude_files = ['book.rst','README.md']
