@@ -20,7 +20,7 @@ extensions = ["myst_parser"]
 
 templates_path = ['_templates']
 exclude_patterns = ["stitch.md","January/*.md","February/*.md", "March/*.md", "April/*.md", "May/*.md", "June/*.md", "July/*.md", "August/*.md", "September/*.md", "October/*.md"\
-                    , "November/*.md", "December/*.md","README.md"]
+                    , "November/*.md", "December/*.md","README.md", "book.rst"]
 suppress_warnings = ['toc.not_included']
 
 # -- Options for HTML output -------------------------------------------------
