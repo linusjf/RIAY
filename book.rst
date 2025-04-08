@@ -5,6 +5,9 @@
 
 RIAY documentation
 ==================
+.. _book:
+
+.. only:: latex
 
 .. include:: redme.md
    :parser: myst_parser.sphinx_
