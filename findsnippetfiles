@@ -1,5 +1,4 @@
-#!usr/bin/env bash
+#!/usr/bin/env bash
 
 # Find files named Day*.md that contain the term 'Snippet'
 find . -type f -name "Day*.md" -exec grep -l 'Snippet' {} +
-
