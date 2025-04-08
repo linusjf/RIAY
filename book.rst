@@ -5,9 +5,10 @@
 
 RIAY documentation
 ==================
-.. _book:
+.. toctree::
+   :hidden:
 
-.. only:: latex
+.. warning:: This file is for PDF output only.
 
 .. include:: redme.md
    :parser: myst_parser.sphinx_
