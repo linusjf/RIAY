@@ -18,31 +18,44 @@ master_doc = 'index'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser"]
+extensions = ["myst_parser","sphinxcontrib.inkscapeconverter"]
+
+svg2pdf_converter = 'dvisvgm'  # or 'rsvg-convert', depending on what’s installed
+
 
 templates_path = ['_templates']
 exclude_patterns = ["stitch.md","January/*.md","February/*.md", "March/*.md", "April/*.md", "May/*.md", "June/*.md", "July/*.md", "August/*.md", "September/*.md", "October/*.md"\
-                    , "November/*.md", "December/*.md","README.md"]
-suppress_warnings = ['toc.not_included']
+                    , "November/*.md", "December/*.md","README.md", "Conventions/*.md", ".aider.chat*"]
+suppress_warnings = ['toc.not_included','myst.xref_missing','image/svg+xml']
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'alabaster'
 
-#html_exclude_files = ['book.rst']
 # -- Options for PDF output
 latex_engine = 'lualatex'
 
-latex_elements = {
-    'preamble': r'''
+r"""
+latex_elements = {  
+        'fontpkg': r'''
+        \usepackage{fontspec}
+    ''',
+'preamble': r'''
+\usepackage{fontspec}
+\usepackage{tikzsymbols}
 \usepackage{emoji}
+\setemojifont{Apple Color Emoji}
+\setmainfont{Symbola}
 ''',
-}
+ }
+ """
 
-# latex_documents = [
-  #  ('book', 'riay.tex', 'RIAY content', 'Linus Fernandes', 'manual'),
-#]
-
-
-
+latex_elements = { 
+        'fontpkg': r'''
+        \usepackage{fontspec}
+    ''',
+    'preamble': r'''
+\setmainfont{Symbola}
+''',
+ }
