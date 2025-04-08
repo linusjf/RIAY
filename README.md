@@ -1192,6 +1192,8 @@ RIAY March 2025
   - [A New Love](#a-new-love)
 - [April 07,2025](#april-072025)
   - [Climb the Mountain](#climb-the-mountain)
+- [April 08,2025](#april-082025)
+  - [An Abyss of Love](#an-abyss-of-love)
 
 <!-- tocstop -->
 
@@ -1240,6 +1242,12 @@ RIAY April 2025
 ##### Climb the Mountain
 
 [![Climb the Mountain](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day097.jpg)](https://youtu.be/6sKvRFzo8vw "Climb the Mountain")
+
+#### April 08,2025
+
+##### An Abyss of Love
+
+[![An Abyss of Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day098.jpg)](https://youtu.be/lZlrhf3RAqI "An Abyss of Love")
 
 ## May
 

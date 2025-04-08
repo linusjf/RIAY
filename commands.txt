@@ -1,5 +1,5 @@
 # commands
-addvideo "6sKvRFzo8vw" "Climb the Mountain" # add video
+addvideo "lZlrhf3RAqI" "An Abyss of Love" # add video
 genmonth 04 2025 # generate
 stitch # generate the README
 lintall # lint all files
