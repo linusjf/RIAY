@@ -24,7 +24,7 @@ escape_grep() {
 
 # Function to get the month name from the day number and year
 get_month_from_day() {
-  local day_num="$1"
+  local day_num="${1#0}"
   local year="$2"
   local date_string="$year-01-01 + $((day_num - 1)) days"
   date -d "$date_string" "+%B"
@@ -55,9 +55,9 @@ find . -type f -name "Day???.md" -print0 | while IFS= read -r -d $'\0' file; do
 
     # First, check for the snippet without any suffix
     snippet_no_suffix=$(echo "$base_snippet_no_suffix" |
-                           sed "s/PLACEHOLDER_MONTH/$month/g" |
-                           sed "s/PLACEHOLDER_DAY/$day_number/g" |
-                           sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g")
+      sed "s/PLACEHOLDER_MONTH/$month/g" |
+      sed "s/PLACEHOLDER_DAY/$day_number/g" |
+      sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g")
     escaped_snippet_no_suffix=$(escape_grep "$snippet_no_suffix")
 
     if grep -F -z "$escaped_snippet_no_suffix" "$file" > /dev/null; then
@@ -76,10 +76,10 @@ find . -type f -name "Day???.md" -print0 | while IFS= read -r -d $'\0' file; do
         if [ -n "$suffix" ]; then # Only check suffixes if they are not empty (already checked empty case)
           # Construct the specific snippet with the current suffix
           snippet_with_suffix=$(echo "$base_snippet_with_suffix" |
-                                  sed "s/PLACEHOLDER_MONTH/$month/g" |
-                                  sed "s/PLACEHOLDER_DAY/$day_number/g" |
-                                  sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g" |
-                                  sed "s/PLACEHOLDER_SUFFIX/$suffix/g")
+            sed "s/PLACEHOLDER_MONTH/$month/g" |
+            sed "s/PLACEHOLDER_DAY/$day_number/g" |
+            sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g" |
+            sed "s/PLACEHOLDER_SUFFIX/$suffix/g")
 
           # Escape the snippet for use in grep
           escaped_snippet_with_suffix=$(escape_grep "$snippet_with_suffix")
@@ -104,4 +104,3 @@ find . -type f -name "Day???.md" -print0 | while IFS= read -r -d $'\0' file; do
 done
 
 echo "Scan and deletion process complete."
-
