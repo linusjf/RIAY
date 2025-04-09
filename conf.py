@@ -39,6 +39,6 @@ latex_elements = {
     ''',
     'preamble': r'''
 \pdfminorversion=7
-\setmainfont{Unifont Upper}
+\setmainfont{Symbola}
 ''',
  }
