@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Declare an associative array (set) to store unique numbers
+declare -A numbers_set
+
+# Loop through month names
+for month in January February March April May June July August September October November December; do
+  # Find files in Month/jpgs directories, extract numbers, and add to the set
+  while IFS= read -r number; do
+    numbers_set["$number"]=1
+  done < <(
+    find . -type f -path "./$month/jpgs/Day*Snippet*.jpg" -print0 \
+      | xargs -0 -n 1 basename \
+      | grep -oE 'Day([0-9]+)Snippet\.jpg' \
+      | sed 's/Day//' \
+      | sed 's/Snippet\.jpg//'
+  )
+done
+
+# Print the numbers in the set
+echo "Numbers in the set:"
+for number in "${!numbers_set[@]}"; do
+  echo "$number"
+done
