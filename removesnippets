@@ -41,8 +41,7 @@ read -r -p "Enter the year (YYYY): " target_year
 suffixes=("" "1" "2" "3" "4" "5" "6" "7" "8" "9")
 
 # List of month directories to search in
-#month_dirs=("January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December")
-month_dirs=("January")
+month_dirs=("January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December")
 
 # Search only in month directories
 for month_dir in "${month_dirs[@]}"; do
@@ -61,14 +60,11 @@ for month_dir in "${month_dirs[@]}"; do
         found_and_deleted=false
 
         # First, check for the snippet without any suffix
-        snippet_no_suffix=$(echo "$base_snippet_no_suffix" \
-          | sed "s/PLACEHOLDER_MONTH/$month/g" \
-          | sed "s/PLACEHOLDER_DAY/$day_number/g" \
-          | sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g")
+        snippet_no_suffix=$(echo "$base_snippet_no_suffix" |
+          sed "s/PLACEHOLDER_MONTH/$month/g" |
+          sed "s/PLACEHOLDER_DAY/$day_number/g" |
+          sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g")
 
-        echo "$snippet_no_suffix"
-
-        : << 'END_COMMENT'
         if grep -F -z "$snippet_no_suffix" "$file" > /dev/null; then
           echo "Found snippet (no suffix) in: $file (Day: $day_number, Month: $month)"
           temp_file=$(mktemp)
@@ -77,7 +73,6 @@ for month_dir in "${month_dirs[@]}"; do
           echo "Snippet (no suffix) removed from: $file"
           found_and_deleted=true
         fi
-END_COMMENT
 
         # If not found without a suffix, then check with suffixes
         if ! "$found_and_deleted"; then
@@ -85,15 +80,12 @@ END_COMMENT
           for suffix in "${suffixes[@]}"; do
             if [ -n "$suffix" ]; then # Only check suffixes if they are not empty (already checked empty case)
               # Construct the specific snippet with the current suffix
-              snippet_with_suffix=$(echo "$base_snippet_with_suffix" \
-                | sed "s/PLACEHOLDER_MONTH/$month/g" \
-                | sed "s/PLACEHOLDER_DAY/$day_number/g" \
-                | sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g" \
-                | sed "s/PLACEHOLDER_SUFFIX/$suffix/g")
+              snippet_with_suffix=$(echo "$base_snippet_with_suffix" |
+                sed "s/PLACEHOLDER_MONTH/$month/g" |
+                sed "s/PLACEHOLDER_DAY/$day_number/g" |
+                sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g" |
+                sed "s/PLACEHOLDER_SUFFIX/$suffix/g")
 
-              echo "$snippet_with_suffix"
-
-              : << 'COMMENT'
               # Check if the snippet exists in the file
               if grep -F -z "$snippet_with_suffix" "$file" > /dev/null; then
                 echo "Found snippet (suffix: '$suffix') in: $file (Day: $day_number, Month: $month)"
@@ -107,7 +99,6 @@ END_COMMENT
                 # Once found and deleted, no need to check other suffixes for this file
                 break
               fi
-COMMENT
             fi
           done
         fi
