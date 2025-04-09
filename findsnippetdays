@@ -3,22 +3,39 @@
 # Declare an associative array (set) to store unique numbers
 declare -A numbers_set
 
+found_files=false
+
 # Loop through month names
 for month in January February March April May June July August September October November December; do
   # Find files in Month/jpgs directories, extract numbers, and add to the set
-  while IFS= read -r number; do
-    numbers_set["$number"]=1
+  while IFS= read -r -d $'\0' file_path; do
+    found_files=true
+    filename=$(basename "$file_path")
+
+    # Match filenames like Day1Snippet.jpg
+    number=$(echo "$filename" | grep -oE 'Day([0-9]+)Snippet\.jpg' | sed 's/Day//' | sed 's/Snippet\.jpg//')
+    if [ -n "$number" ]; then
+      numbers_set["$number"]=1
+      continue # Move to the next file
+    fi
+
+    # Match filenames like Snippet1.jpg or Snippet2.jpg
+    number=$(echo "$filename" | grep -oE 'Snippet([0-9]+)\.jpg' | sed 's/Snippet//' | sed 's/\.jpg//')
+    if [ -n "$number" ]; then
+      numbers_set["$number"]=1
+    fi
+
   done < <(
-    find . -type f -path "./$month/jpgs/Day*Snippet*.jpg" -print0 \
-      | xargs -0 -n 1 basename \
-      | grep -oE 'Day([0-9]+)Snippet\.jpg' \
-      | sed 's/Day//' \
-      | sed 's/Snippet\.jpg//'
+    find . -type f -path "./$month/jpgs/*Snippet*.jpg" -print0
   )
 done
 
-# Print the numbers in the set
-echo "Numbers in the set:"
-for number in "${!numbers_set[@]}"; do
-  echo "$number"
-done
+# Check if any files were found
+if [ "$found_files" = false ]; then
+  :
+else
+  # Print the numbers in the set
+  for number in "${!numbers_set[@]}"; do
+    echo "$number"
+  done
+fi
