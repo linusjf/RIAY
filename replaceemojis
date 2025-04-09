@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Replace "Face Holding Back Tears" (🥹) with "Crying Face" (😢)
+sed -i 's/🥹/😢/g' ./**/*.md
+
+# Replace "Smiling Face with Hearts" (🥰) with "Heart Eyes" (😍)
+sed -i 's/🥰/😍/g' ./**/*.md
