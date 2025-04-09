@@ -5,7 +5,6 @@ declare -A numbers_set
 
 found_files=false
 
-# Loop through month names
 for month in January February March April May June July August September October November December; do
   # Find files in Month/jpgs directories, extract numbers, and add to the set
   while IFS= read -r -d $'\0' file_path; do
@@ -20,7 +19,7 @@ for month in January February March April May June July August September October
     fi
 
     # Match filenames like Snippet1.jpg or Snippet2.jpg
-    number=$(echo "$filename" | grep -oE 'Snippet([0-9]+)\.jpg' | sed 's/Snippet//' | sed 's/\.jpg//')
+    number=$(echo "$filename" | grep -oE 'Day([0-9]+)Snippet[1-9]\.jpg' | sed 's/Day//' | sed 's/Snippet[1-9]\.jpg//')
     if [ -n "$number" ]; then
       numbers_set["$number"]=1
     fi
@@ -31,9 +30,7 @@ for month in January February March April May June July August September October
 done
 
 # Check if any files were found
-if [ "$found_files" = false ]; then
-  :
-else
+if [ "$found_files" = true ]; then
   # Print the numbers in the set
   for number in "${!numbers_set[@]}"; do
     echo "$number"
