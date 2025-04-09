@@ -16,6 +16,8 @@
   - [Climb the Mountain](#climb-the-mountain)
 - [April 08,2025](#april-082025)
   - [An Abyss of Love](#an-abyss-of-love)
+- [April 09,2025](#april-092025)
+  - [Stay in Dialogue](#stay-in-dialogue)
 
 <!-- tocstop -->
 
@@ -70,3 +72,9 @@ RIAY April 2025
 ### An Abyss of Love
 
 [![An Abyss of Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day098.jpg)](https://youtu.be/lZlrhf3RAqI "An Abyss of Love")
+
+## April 09,2025
+
+### Stay in Dialogue
+
+[![Stay in Dialogue](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day099.jpg)](https://youtu.be/j_SLDYjpCKc "Stay in Dialogue")
