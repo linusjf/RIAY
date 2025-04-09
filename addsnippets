@@ -98,7 +98,7 @@ main() {
     # Generate compact version when month changes
     if [[ "${oldmonth}" != "${month}" ]]; then
       "${SCRIPT_DIR}/compact" "${oldmonth}" >| "${oldmonth}${YEAR}.md" \
-        && markdown-toc-gen update "${oldmonth}${YEAR}.md"
+        && markdown-toc-gen update "${oldmonth}${YEAR}.md" &> /dev/null
       oldmonth="${month}"
     fi
   done
