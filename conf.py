@@ -44,16 +44,40 @@ latex_elements = {
  }
 
 import os
-import subprocess
+import codecs
 
-# Define a hook that runs only for LaTeX builds
-def run_pre_install(app):
-    # Check if we're building a PDF (latexpdf)
-    if 'latexpdf' in os.environ.get('SPHINX_BUILDER', ''):
-        print("Running pre-install task for latexpdf rendering...")
-        # Run the Bash script
-        subprocess.run(['bash', './replaceemojis'])
+def replace_emojis_in_file(file_path):
+    replacements = {
+        "🥹": "😢",
+        "🥰": "😍",
+    }
 
-# Attach the hook to the Sphinx build
+    try:
+        with codecs.open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        original_content = content
+        for old, new in replacements.items():
+            content = content.replace(old, new)
+
+        if content != original_content:
+            with codecs.open(file_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            print(f"Updated: {file_path}")
+    except Exception as e:
+        print(f"Error processing {file_path}: {e}")
+
+def replace_emojis_in_markdown():
+    for dirpath, _, filenames in os.walk('.'):
+        for filename in filenames:
+            if filename.endswith('.md'):
+                replace_emojis_in_file(os.path.join(dirpath, filename))
+
+def run_only_for_pdf(app):
+    if app.builder.name == "latex":  # "latexpdf" invokes the "latex" builder
+        print("Running emoji replacement for PDF build...")
+        replace_emojis_in_markdown()
+
 def setup(app):
-    app.connect('builder-inited', run_pre_install)
+    app.connect('builder-inited', run_only_for_pdf)
+
