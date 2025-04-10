@@ -1,7 +1,33 @@
 #!/usr/bin/env bash
 
-# Replace "Face Holding Back Tears" (🥹) with "Crying Face" (😢)
+# @file restoreemojis
+# @brief Replace certain emojis in markdown files with alternatives
+# @description Replaces specific emoji characters in all markdown files:
+# - "Crying Face" (😢) with "Face Holding Back Tears" (🥹)
+# - "Heart Eyes" (😍) with "Smiling Face with Hearts" (🥰)
 
-sed -i 's/😢/🥹/g' ./**/*.md
-# Replace "Smiling Face with Hearts" (🥰) with "Heart Eyes" (😍)
-sed -i 's/😍/🥰/g' ./**/*.md
+#######################################
+# Main function
+# Globals:
+#   None
+# Arguments:
+#   None
+# Outputs:
+#   None
+# Returns:
+#   0 on success, non-zero on error
+#######################################
+function main() {
+  local -r files=(./**/*.md ./*.md)
+
+  # Replace emojis in all matching files
+  for file in "${files[@]}"; do
+    [[ -f "$file" ]] || continue
+    sed -i 's/😢/🥹/g' "$file"
+    sed -i 's/😍/🥰/g' "$file"
+  done
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
+fi

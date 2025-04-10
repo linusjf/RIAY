@@ -1,116 +1,279 @@
 #!/usr/bin/env bash
 set -euo pipefail
+shopt -s inherit_errexit
 
-# Check if month number was provided
-if [ $# -eq 0 ]; then
-  echo "Error: Month number (1-12) must be provided as first argument"
-  exit 1
+######################################################################
+# @file removesnippets
+# @brief Remove snippet references from day markdown files
+# @description
+#   Scans and removes snippet image references from Day*.md files
+#   in month directories. Validates inputs and provides feedback.
+######################################################################
+
+# Source utility functions
+if command -v realpath > /dev/null 2>&1; then
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+else
+  SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)
 fi
+source "$SCRIPT_DIR/util.sh"
+source "$SCRIPT_DIR/require.sh"
 
-month_num=$1
-if [ "$month_num" -lt 1 ] || [ "$month_num" -gt 12 ]; then
-  echo "Error: Month number must be between 1 and 12"
-  exit 1
-fi
+readonly VERSION="1.0.0"
+readonly REQUIRED_COMMANDS=("git" "find" "sed" "grep" "basename")
 
+#######################################
+# Display script version
+# Globals: VERSION
+# Arguments: none
+# Outputs: Version to STDOUT
+# Returns: none
+#######################################
+version() {
+  printf "%s\n" "$VERSION"
+}
+
+#######################################
+# Display usage information
+# Globals: none
+# Arguments: none
+# Outputs: Usage to STDOUT
+# Returns: none
+#######################################
+usage() {
+  cat << EOF
+Usage: $0 month_num
+  month_num - Month number (1-12)
+EOF
+}
+
+#######################################
+# Get absolute path to findsnippetfiles
+# Globals: none
+# Arguments: none
+# Outputs: Full path to STDOUT
+# Returns: none
+#######################################
+get_findsnippetfiles_path() {
+  if command -v realpath > /dev/null 2>&1; then
+    printf "%s\n" "$(realpath "$(dirname "$0")/findsnippetfiles")"
+  else
+    printf "%s\n" "$(cd -- "$(dirname "$0")" &> /dev/null && pwd -P)/findsnippetfiles"
+  fi
+}
+
+#######################################
+# Validate month number
+# Globals: none
+# Arguments:
+#   $1 - Month number
+# Outputs: Error to STDERR if invalid
+# Returns: 0 if valid, 1 otherwise
+#######################################
+validate_month() {
+  [[ "$1" =~ ^[1-9]$|^1[0-2]$ ]] || {
+    err "Error: Month number must be between 1 and 12"
+    return 1
+  }
+}
+
+#######################################
 # Convert month number to name
-month_names=("January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December")
-month=${month_names[$((month_num - 1))]}
+# Globals: none
+# Arguments:
+#   $1 - Month number
+# Outputs: Month name to STDOUT
+# Returns: none
+#######################################
+month_number_to_name() {
+  local month_names=(
+    "January" "February" "March" "April" "May" "June"
+    "July" "August" "September" "October" "November" "December"
+  )
+  printf "%s\n" "${month_names[$(($1 - 1))]}"
+}
 
-snippetfiles="$(./findsnippetfiles | grep "${month}" || true)"
+#######################################
+# Get GitHub repository name from origin
+# Globals: none
+# Arguments: none
+# Outputs: Repo name to STDOUT
+# Returns: none
+#######################################
+get_repo_name() {
+  local remote_url
+  remote_url=$(git remote get-url origin | grep '^git@') \
+    || die "Error: Not a Git repository cloned via SSH, or 'origin' remote not found with SSH URL"
 
-if [[ -z "$snippetfiles" ]]; then
-  printf "%s\n" "No snippet files found for ${month}"
-  exit 0
-fi
+  printf "%s\n" "$(echo "$remote_url" | sed -E 's/.*\/([^.]+)\.git$/\1/')"
+}
 
-# Attempt to get the remote URL for origin using SSH format
-remote_url=$(git remote get-url origin | grep '^git@')
+#######################################
+# Process files for a month
+# Globals: GITHUB_USERNAME
+# Arguments:
+#   $1 - Month name
+#   $2 - GitHub repo name
+# Outputs: Processing info to STDOUT
+# Returns: none
+#######################################
+process_month_files() {
+  local month="$1"
+  local repo="$2"
+  local base_snippet_no_suffix="^!\[Day PLACEHOLDER_DAY Snippet \]\(https://raw\.githubusercontent\.com/PLACEHOLDER_USERNAME/$repo/main/PLACEHOLDER_MONTH/jpgs/DayPLACEHOLDER_DAYSnippet\.jpg\)$"
+  local base_snippet_with_suffix="^!\[Day PLACEHOLDER_DAY Snippet PLACEHOLDER_SUFFIX\]\(https://raw\.githubusercontent\.com/PLACEHOLDER_USERNAME/$repo/main/PLACEHOLDER_MONTH/jpgs/DayPLACEHOLDER_DAYSnippetPLACEHOLDER_SUFFIX\.jpg\)$"
+  local suffixes=("" "1" "2" "3" "4" "5" "6" "7" "8" "9")
 
-if [ -z "$remote_url" ]; then
-  echo "Error: Not a Git repository cloned via SSH, or 'origin' remote not found with SSH URL."
-  exit 1
-fi
+  [[ -d "$month" ]] || return
 
-# Extract just the repository name from the SSH URL (without username)
-GITHUB_REPO_NAME=$(echo "$remote_url" | sed -E 's/.*\/([^.]+)\.git$/\1/')
-
-# Define the base snippet with placeholders for month, day, username (will be extracted), repo name, and suffix
-base_snippet_no_suffix="^!\[Day PLACEHOLDER_DAY Snippet \]\(https://raw\.githubusercontent\.com/PLACEHOLDER_USERNAME/$GITHUB_REPO_NAME/main/PLACEHOLDER_MONTH/jpgs/DayPLACEHOLDER_DAYSnippet\.jpg\)$"
-base_snippet_with_suffix="^!\[Day PLACEHOLDER_DAY Snippet PLACEHOLDER_SUFFIX\]\(https://raw\.githubusercontent\.com/PLACEHOLDER_USERNAME/$GITHUB_REPO_NAME/main/PLACEHOLDER_MONTH/jpgs/DayPLACEHOLDER_DAYSnippetPLACEHOLDER_SUFFIX\.jpg\)$"
-
-# Require GitHub username from environment variable
-if [ -z "$GITHUB_USERNAME" ]; then
-  echo "Error: GITHUB_USERNAME environment variable not set"
-  exit 1
-fi
-
-# Define possible suffixes (empty string for no suffix)
-suffixes=("" "1" "2" "3" "4" "5" "6" "7" "8" "9")
-
-# Search only in the specified month directory
-if [ -d "$month" ]; then
-  # Find files with the format DayXXX.md in the month directory
   find "$month" -maxdepth 1 -type f -name "Day???.md" -print0 | while IFS= read -r -d $'\0' file; do
-    # Extract the day number from the filename
+    local filename day_number
     filename=$(basename "$file")
     day_number=$(echo "$filename" | grep -oE '[0-9]{1,3}')
     day_number=$((10#$day_number))
 
-    if [[ -n "$day_number" ]]; then
-      found_and_deleted=false
+    [[ -n "$day_number" ]] || continue
 
-      # First, check for the snippet without any suffix
-      snippet_no_suffix=$(echo "$base_snippet_no_suffix" |
-        sed "s/PLACEHOLDER_MONTH/$month/g" |
-        sed "s/PLACEHOLDER_DAY/$day_number/g" |
-        sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g")
+    process_file "$file" "$month" "$day_number" "$base_snippet_no_suffix" "$base_snippet_with_suffix" "${suffixes[@]}"
+  done
+}
 
-      if grep -E "$snippet_no_suffix" "$file" > /dev/null; then
-        echo "Found snippet ${snippet_no_suffix} in: $file (Day: $day_number, Month: $month)"
-        temp_file=$(mktemp)
-        sed -E "s|${snippet_no_suffix}||g" "$file" > "$temp_file"
-        mv "$temp_file" "$file"
-        echo "Snippet ${snippet_no_suffix} removed from: $file"
+#######################################
+# Process a single file
+# Globals: GITHUB_USERNAME
+# Arguments:
+#   $1 - File path
+#   $2 - Month name
+#   $3 - Day number
+#   $4 - Base snippet no suffix
+#   $5 - Base snippet with suffix
+#   $@ - Suffixes
+# Outputs: Processing info to STDOUT
+# Returns: none
+#######################################
+process_file() {
+  local file="$1" month="$2" day_number="$3" base_no_suffix="$4" base_with_suffix="$5"
+  shift 5
+  local suffixes=("$@")
+  local found_and_deleted=false
+
+  # Process snippet without suffix
+  local snippet_no_suffix=$(echo "$base_no_suffix" \
+    | sed "s/PLACEHOLDER_MONTH/$month/g" \
+    | sed "s/PLACEHOLDER_DAY/$day_number/g" \
+    | sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g")
+
+  if grep -E "$snippet_no_suffix" "$file" > /dev/null; then
+    out "Found snippet ${snippet_no_suffix} in: $file (Day: $day_number, Month: $month)"
+    remove_snippet "$file" "$snippet_no_suffix"
+    found_and_deleted=true
+  fi
+
+  # Process snippets with suffixes if needed
+  if ! "$found_and_deleted"; then
+    for suffix in "${suffixes[@]}"; do
+      [[ -n "$suffix" ]] || continue
+
+      local snippet_with_suffix=$(echo "$base_with_suffix" \
+        | sed "s/PLACEHOLDER_MONTH/$month/g" \
+        | sed "s/PLACEHOLDER_DAY/$day_number/g" \
+        | sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g" \
+        | sed "s/PLACEHOLDER_SUFFIX/$suffix/g")
+
+      if grep -E "$snippet_with_suffix" "$file" > /dev/null; then
+        out "Found snippet ${snippet_with_suffix} in: $file (Day: $day_number, Month: $month)"
+        remove_snippet "$file" "$snippet_with_suffix"
         found_and_deleted=true
       fi
+    done
+  fi
+}
 
-      # If not found without a suffix, then check with suffixes
-      if ! "$found_and_deleted"; then
-        # Loop through possible suffixes
-        for suffix in "${suffixes[@]}"; do
-          if [ -n "$suffix" ]; then # Only check suffixes if they are not empty (already checked empty case)
-            # Construct the specific snippet with the current suffix
-            snippet_with_suffix=$(echo "$base_snippet_with_suffix" |
-              sed "s/PLACEHOLDER_MONTH/$month/g" |
-              sed "s/PLACEHOLDER_DAY/$day_number/g" |
-              sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g" |
-              sed "s/PLACEHOLDER_SUFFIX/$suffix/g")
+#######################################
+# Remove snippet from file
+# Globals: none
+# Arguments:
+#   $1 - File path
+#   $2 - Snippet pattern
+# Outputs: Success message to STDOUT
+# Returns: none
+#######################################
+remove_snippet() {
+  local file="$1" snippet="$2"
+  local temp_file
+  temp_file=$(mktemp)
 
-            # Check if the snippet exists in the file
-            if grep -E "$snippet_with_suffix" "$file" > /dev/null; then
-              echo "Found snippet ${snippet_with_suffix} in: $file (Day: $day_number, Month: $month)"
-              # Create a temporary file to store the content without the snippet
-              temp_file=$(mktemp)
-              sed -E "s|${snippet_with_suffix}||g" "$file" > "$temp_file"
-              # Replace the original file with the modified content
-              mv "$temp_file" "$file"
-              echo "Snippet ${snippet_with_suffix} removed from: $file"
-              found_and_deleted=true
-            fi
-          fi
-        done
-      fi
-    fi
-  done
+  sed -E "s|${snippet}||g" "$file" > "$temp_file"
+  mv "$temp_file" "$file"
+  out "Snippet ${snippet} removed from: $file"
+}
+
+#######################################
+# Verify remaining snippets
+# Globals: none
+# Arguments:
+#   $1 - Month name
+# Outputs: Remaining snippets info to STDOUT
+# Returns: none
+#######################################
+verify_remaining_snippets() {
+  local month="$1" snippetfiles
+  local findsnippetfiles_path
+  findsnippetfiles_path=$(get_findsnippetfiles_path)
+
+  snippetfiles=$("$findsnippetfiles_path" | grep "${month}" || true)
+
+  if [[ -n "$snippetfiles" ]]; then
+    out "Snippet files still found for ${month}:"
+    out "${snippetfiles}"
+    return 1
+  fi
+}
+
+#######################################
+# Main function
+# Globals: GITHUB_USERNAME
+# Arguments:
+#   $@ - Command line arguments
+# Outputs: Processing info to STDOUT
+# Returns: none
+#######################################
+main() {
+  [[ $# -eq 0 ]] && {
+    usage
+    exit 1
+  }
+
+  case "$1" in
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -h | --help)
+      usage
+      exit 0
+      ;;
+  esac
+
+  validate_month "$1" || exit 1
+
+  [[ -n "${GITHUB_USERNAME:-}" ]] \
+    || die "Error: GITHUB_USERNAME environment variable not set"
+
+  require_commands "${REQUIRED_COMMANDS[@]}"
+
+  local month_num=$1
+  local month
+  month=$(month_number_to_name "$month_num")
+  local repo
+  repo=$(get_repo_name)
+
+  process_month_files "$month" "$repo"
+  verify_remaining_snippets "$month" || exit 1
+
+  out "Scan and deletion process complete for $month."
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
 fi
-
-echo "Scan and deletion process complete for $month."
-snippetfiles="$(./findsnippetfiles | grep "${month}" || true)"
-if [[ -n "$snippetfiles" ]]; then
-  printf "%s\n" "Snippet files still found for ${month}:"
-  printf "%s\n" "${snippetfiles}"
-  exit 1
-fi
-
-exit 0
