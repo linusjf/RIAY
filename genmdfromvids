@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+
+# Check for required environment variables
+if [ -z "$RIAY_YEAR" ]; then
+  echo "Error: RIAY_YEAR environment variable not set."
+  exit 1
+fi
+
+if [ -z "$YOUTUBE_API_KEY" ]; then
+  echo "Error: YOUTUBE_API_KEY environment variable not set."
+  exit 1
+fi
+
+API_KEY="$YOUTUBE_API_KEY"
+
+# Ensure required tools are installed
+for cmd in jq curl git; do
+  command -v $cmd > /dev/null 2>&1 || {
+    echo "$cmd is required but not installed."
+    exit 1
+  }
+done
+
+# Determine GitHub repo from git remote URL
+GIT_URL=$(git remote get-url origin 2> /dev/null)
+if [[ "$GIT_URL" == git@github.com:* ]]; then
+  GITHUB_REPO=$(echo "$GIT_URL" | sed -E 's|git@github.com:([^\.]+)(\.git)?|\1|')
+elif [[ "$GIT_URL" == https://github.com/* ]]; then
+  GITHUB_REPO=$(echo "$GIT_URL" | sed -E 's|https://github.com/([^\.]+)(\.git)?|\1|')
+else
+  echo "Error: Could not determine GitHub repo from remote: $GIT_URL"
+  exit 1
+fi
+
+# Handle input (file or stdin)
+if [ -n "$1" ]; then
+  INPUT_STREAM=$(cat "$1")
+else
+  INPUT_STREAM=$(cat)
+fi
+
+# Day counter
+DAY_NUM=1
+
+# Process each video ID
+echo "$INPUT_STREAM" | while IFS= read -r VIDEO_ID; do
+  printf -v DAY_STRING "Day%03d" "$DAY_NUM"
+  MONTH=$(date -d "${RIAY_YEAR}-01-01 +$((DAY_NUM - 1)) days" +"%B")
+  FULL_DATE=$(date -d "${RIAY_YEAR}-01-01 +$((DAY_NUM - 1)) days" +"%B %d, %Y")
+
+  # Create directories for month and jpgs
+  mkdir -p "$MONTH/jpgs"
+  mkdir -p "$MONTH"
+
+  echo "Processing $DAY_STRING ($VIDEO_ID) for $MONTH..."
+
+  # Call YouTube API to get video details
+  API_URL="https://www.googleapis.com/youtube/v3/videos?part=snippet&id=$VIDEO_ID&key=$API_KEY"
+  RESPONSE=$(curl -s "$API_URL")
+
+  # Extract title and largest thumbnail
+  THUMBNAIL_URL=$(echo "$RESPONSE" | jq -r '
+        .items[0].snippet.thumbnails |
+        to_entries | sort_by(.value.width) | last.value.url
+    ')
+  TITLE=$(echo "$RESPONSE" | jq -r '.items[0].snippet.title')
+  VIDEO_URL=$(echo "$RESPONSE" | jq -r '.items[0].snippet.resourceId.videoId')
+
+  # Download thumbnail image
+  if [ -n "$THUMBNAIL_URL" ]; then
+    curl -s "$THUMBNAIL_URL" -o "$MONTH/jpgs/${DAY_STRING}.jpg"
+  else
+    echo "Warning: No thumbnail found for $VIDEO_ID"
+    TITLE="(No Title Found)"
+  fi
+
+  # Generate the shortened YouTube URL
+  SHORT_YOUTUBE_URL="https://youtu.be/${VIDEO_URL}"
+
+  # Write markdown with video link and thumbnail
+  {
+    echo "## ${FULL_DATE}"
+    echo
+    echo "[![${TITLE}](https://raw.githubusercontent.com/${GITHUB_REPO}/refs/heads/main/${MONTH}/jpgs/${DAY_STRING}.jpg)](${SHORT_YOUTUBE_URL} \"${TITLE}\")"
+  } > "$MONTH/${DAY_STRING}.md"
+
+  echo "Saved: $MONTH/${DAY_STRING}.md and $MONTH/jpgs/${DAY_STRING}.jpg"
+
+  ((DAY_NUM++))
+done
