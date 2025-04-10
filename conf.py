@@ -47,7 +47,7 @@ import os
 import subprocess
 
 # Define a hook that runs only for LaTeX builds
-def run_pre_install():
+def run_pre_install(app):
     # Check if we're building a PDF (latexpdf)
     if 'latexpdf' in os.environ.get('SPHINX_BUILDER', ''):
         print("Running pre-install task for latexpdf rendering...")
