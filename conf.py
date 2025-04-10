@@ -31,7 +31,7 @@ suppress_warnings = ['toc.not_included','myst.xref_missing','image/svg+xml']
 html_theme = 'alabaster'
 
 # -- Options for PDF output
-latex_engine = 'xelatex'
+latex_engine = 'lualatex'
 
 latex_elements = { 
         'fontpkg': r'''
@@ -42,23 +42,4 @@ latex_elements = {
 \setmainfont{Symbola}
 ''',
  }
-
-latex_elements = {
-    'preamble': r'''
-\usepackage{fontspec}
-\usepackage{ucharclasses}
-
-% Main font
-\setmainfont{TeX Gyre Termes}
-
-% Emoji fallback font
-\newfontfamily\emojifont{Symbola}
-
-% Auto-switch to Symbola for emoji Unicode blocks
-\setTransitionsForUnicodeBlock{Emoticons}{\emojifont}{\rmfamily}
-\setTransitionsForUnicodeBlock{Supplemental Symbols and Pictographs}{\emojifont}{\rmfamily}
-\setTransitionsForUnicodeBlock{Miscellaneous Symbols and Pictographs}{\emojifont}{\rmfamily}
-\setTransitionsForUnicodeBlock{Transport and Map Symbols}{\emojifont}{\rmfamily}
-    '''
-}
 
