@@ -10,8 +10,14 @@ shopt -s inherit_errexit
 readonly SUCCESS=0
 readonly FAILURE=1
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-readonly YEAR=2025
-
+# Source required libraries
+source "${SCRIPT_DIR}/require.sh"
+source "${SCRIPT_DIR}/vidmd.sh"
+readonly YEAR_VAR="$(getroot)_YEAR"
+# Check requirements
+require_commands date markdown-toc-gen
+require_vars GITHUB_USERNAME "$YEAR_VAR"
+readonly YEAR="${!YEAR_VAR}"
 ######################################################################
 # Print error message and exit with failure
 # Globals: None
@@ -51,10 +57,6 @@ main() {
   if [[ $# -eq 0 ]]; then
     usage
   fi
-
-  # Source required libraries
-  source "${SCRIPT_DIR}/require.sh"
-  source "${SCRIPT_DIR}/vidmd.sh"
 
   # Check requirements
   require_commands date markdown-toc-gen
