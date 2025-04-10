@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+#!/bin/bash
+
+# Check args
+if [ $# -ne 3 ]; then
+  echo "Usage: $0 <day_number> <image_path> <caption>"
+  exit 1
+fi
+
+DAY_NUM="$1"
+IMAGE_PATH="$2"
+CAPTION="$3"
+
+# Validate env var
+if [ -z "$RIAY_YEAR" ]; then
+  echo "Error: RIAY_YEAR environment variable not set."
+  exit 1
+fi
+
+# Validate image file exists
+if [ ! -f "$IMAGE_PATH" ]; then
+  echo "Error: Image file '$IMAGE_PATH' does not exist."
+  exit 1
+fi
+
+# Validate JPEG format using 'file' command
+MIME_TYPE=$(file --mime-type -b "$IMAGE_PATH")
+if [[ "$MIME_TYPE" != "image/jpeg" ]]; then
+  echo "Error: '$IMAGE_PATH' is not a valid JPEG file (detected: $MIME_TYPE)."
+  exit 1
+fi
+
+# Resolve GitHub repo
+GIT_URL=$(git remote get-url origin 2> /dev/null)
+if [[ "$GIT_URL" == git@github.com:* ]]; then
+  GITHUB_REPO=$(echo "$GIT_URL" | sed -E 's|git@github.com:([^\.]+)(\.git)?|\1|')
+elif [[ "$GIT_URL" == https://github.com/* ]]; then
+  GITHUB_REPO=$(echo "$GIT_URL" | sed -E 's|https://github.com/([^\.]+)(\.git)?|\1|')
+else
+  echo "Error: Could not determine GitHub repo from remote: $GIT_URL"
+  exit 1
+fi
+
+# Format paths and strings
+printf -v DAY_STRING "Day%03d" "$DAY_NUM"
+MONTH=$(date -d "${RIAY_YEAR}-01-01 +$((DAY_NUM - 1)) days" +"%B")
+
+MARKDOWN_FILE="$MONTH/${DAY_STRING}.md"
+JPG_BASENAME="$(basename "$IMAGE_PATH")"
+
+# Verify markdown file exists
+if [ ! -f "$MARKDOWN_FILE" ]; then
+  echo "Error: Markdown file '$MARKDOWN_FILE' does not exist."
+  exit 1
+fi
+
+# Append image markdown
+{
+  echo
+  echo "### ${CAPTION}"
+  echo
+  echo "![${CAPTION}](https://raw.githubusercontent.com/${GITHUB_REPO}/refs/heads/main/${MONTH}/jpgs/${JPG_BASENAME})"
+} >> "$MARKDOWN_FILE"
+
+echo "Appended image markdown to $MARKDOWN_FILE"
