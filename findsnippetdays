@@ -1,41 +1,123 @@
 #!/usr/bin/env bash
+# Find and extract day numbers from snippet files in month directories
+# Outputs sorted list of unique day numbers found in snippet filenames
 
-# Declare an associative array (set) to store unique numbers
-declare -A numbers_set
+# Source utility files
+if command -v realpath > /dev/null 2>&1; then
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+else
+  SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)
+fi
+source "$SCRIPT_DIR/util.sh"
+source "$SCRIPT_DIR/color.sh"
+source "$SCRIPT_DIR/require.sh"
 
-found_files=false
+readonly VERSION="1.0.0"
 
-for month in January February March April May June July August September October November December; do
-  # Find files in Month/jpgs directories, extract numbers, and add to the set
-  while IFS= read -r -d $'\0' file_path; do
-    found_files=true
-    filename=$(basename "$file_path")
+require_commands sed basename grep find tr
 
-    # Match filenames like Day1Snippet.jpg
-    number=$(echo "$filename" | grep -oE 'Day([0-9]+)Snippet\.jpg' | sed 's/Day//' | sed 's/Snippet\.jpg//')
-    if [ -n "$number" ]; then
-      numbers_set["$number"]=1
-      continue # Move to the next file
+function usage() {
+  cat << EOF
+Usage: ${0##*/} [options]
+Find and extract day numbers from snippet files.
+
+Options:
+  -h, --help     Show this help message
+  -v, --verbose  Enable verbose output
+  -d, --debug    Enable debug mode (set -x)
+  --version      Show version information
+
+Output:
+  Space-separated list of unique day numbers found in snippet filenames
+EOF
+}
+
+function version() {
+  printf "%s\n" "$VERSION"
+}
+
+function main() {
+  local verbose=false
+  local debug=false
+
+  # Parse options
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -h | --help)
+        usage
+        exit 0
+        ;;
+      -v | --verbose) verbose=true ;;
+      -d | --debug) debug=true ;;
+      --version)
+        version
+        exit 0
+        ;;
+      *)
+        err "Unknown option: $1"
+        usage
+        exit 1
+        ;;
+    esac
+    shift
+  done
+
+  [[ "$debug" = true ]] && set -x
+
+  declare -A numbers_set
+  local found_files=false
+  local months=(January February March April May June July
+    August September October November December)
+
+  for month in "${months[@]}"; do
+    if [[ "$verbose" = true ]]; then
+      log "Searching in $month directory"
     fi
 
-    # Match filenames like Snippet1.jpg or Snippet2.jpg
-    number=$(echo "$filename" | grep -oE 'Day([0-9]+)Snippet[1-9]\.jpg' | sed 's/Day//' | sed 's/Snippet[1-9]\.jpg//')
-    if [ -n "$number" ]; then
-      numbers_set["$number"]=1
-    fi
+    while IFS= read -r -d $'\0' file_path; do
+      found_files=true
+      local filename
+      filename=$(basename "$file_path")
 
-  done < <(
-    find . -type f -path "./$month/jpgs/*Snippet*.jpg" -print0
-  )
-done
+      # Extract day number from filename patterns
+      local number
+      number=$(extract_day_number "$filename")
+      if [[ -n "$number" ]]; then
+        numbers_set["$number"]=1
+        [[ "$verbose" = true ]] && log "Found day $number in $filename"
+      fi
+    done < <(
+      find . -type f -path "./$month/jpgs/*Snippet*.jpg" -print0 2> /dev/null
+    )
+  done
 
-# Check if any files were found
-if [ "$found_files" = true ]; then
-  # Print the numbers in the set
+  if [[ "$found_files" = false ]]; then
+    err "No snippet files found"
+    exit 1
+  fi
+
+  # Output sorted numbers
   {
     for number in "${!numbers_set[@]}"; do
       printf "%s " "$number"
     done
   } | tr ' ' '\n' | sort -n | tr '\n' ' '
+  echo
+}
+
+function extract_day_number() {
+  local filename=$1
+  local number
+
+  # Match filenames like Day1Snippet.jpg
+  number=$(echo "$filename" | grep -oE 'Day([0-9]+)Snippet\.jpg' | sed 's/Day//' | sed 's/Snippet\.jpg//')
+  [[ -n "$number" ]] && echo "$number" && return
+
+  # Match filenames like Snippet1.jpg or Snippet2.jpg
+  number=$(echo "$filename" | grep -oE 'Day([0-9]+)Snippet[1-9]\.jpg' | sed 's/Day//' | sed 's/Snippet[1-9]\.jpg//')
+  [[ -n "$number" ]] && echo "$number"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
 fi
-echo
