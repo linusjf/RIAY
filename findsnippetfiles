@@ -2,4 +2,4 @@
 
 # Find files named Day*.md that contain the term 'Snippet' in month directories only
 find January February March April May June July August September October November December \
-  -type f -name "Day*.md" -exec grep -l 'Snippet' {} +
+  -type f -name "Day*.md" -exec grep -l 'Snippet' {} + | sort

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Run removesnippets for each month (1-12)
+for month in {1..12}; do
+  ./removesnippets "$month"
+done
