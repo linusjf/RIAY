@@ -18,6 +18,8 @@
   - [An Abyss of Love](#an-abyss-of-love)
 - [April 09,2025](#april-092025)
   - [Stay in Dialogue](#stay-in-dialogue)
+- [April 10,2025](#april-102025)
+  - [Always Her Son](#always-her-son)
 
 <!-- tocstop -->
 
@@ -78,3 +80,9 @@ RIAY April 2025
 ### Stay in Dialogue
 
 [![Stay in Dialogue](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day099.jpg)](https://youtu.be/j_SLDYjpCKc "Stay in Dialogue")
+
+## April 10,2025
+
+### Always Her Son
+
+[![Always Her Son](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day100.jpg)](https://youtu.be/BCNG7KuVc3A "Always Her Son")
