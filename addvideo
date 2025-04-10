@@ -9,7 +9,6 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 readonly VERSION="1.0.0"
-readonly YEAR=2025
 readonly COMPACT_FILE="compact.txt"
 readonly VIDEOS_FILE="videos.txt"
 
@@ -245,9 +244,11 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   source "${SCRIPT_DIR}/internet.sh"
   source "${SCRIPT_DIR}/vidmd.sh"
 
+  readonly YEAR_VAR="$(getroot)_YEAR"
   # Check requirements
-  require_vars YOUTUBE_API_KEY
+  require_vars YOUTUBE_API_KEY GITHUB_USERNAME "$YEAR_VAR"
   require_commands sed basename date markdown-toc
+  readonly YEAR="${!YEAR_VAR}"
 
   main "$@"
 fi
