@@ -81,6 +81,8 @@ echo "$INPUT_STREAM" | while IFS= read -r VIDEO_ID; do
   {
     echo "## ${FULL_DATE}"
     echo
+    echo "### ${TITLE}"
+    echo
     echo "[![${TITLE}](https://raw.githubusercontent.com/${GITHUB_REPO}/refs/heads/main/${MONTH}/jpgs/${DAY_STRING}.jpg)](${SHORT_YOUTUBE_URL} \"${TITLE}\")"
   } > "$MONTH/${DAY_STRING}.md"
 
