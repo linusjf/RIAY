@@ -1,5 +1,51 @@
 #!/usr/bin/env bash
+# @file findsnippetfiles
+# @brief Find markdown files containing 'Snippet' in month directories
+# @description
+#   Searches through month-named directories for Day*.md files containing
+#   the term 'Snippet' and outputs matching filenames sorted alphabetically.
 
-# Find files named Day*.md that contain the term 'Snippet' in month directories only
-find January February March April May June July August September October November December \
-  -type f -name "Day*.md" -exec grep -l 'Snippet' {} + | sort
+# Source required utilities
+if [[ -f "$(dirname "$0")/require.sh" ]]; then
+  source "$(dirname "$0")/require.sh"
+else
+  echo "Error: Missing required file require.sh" >&2
+  exit 1
+fi
+
+#######################################
+# Verify system requirements
+# Globals: none
+# Arguments: none
+# Outputs: Error messages if requirements not met
+# Returns: 0 if requirements met, non-zero otherwise
+#######################################
+check_requirements() {
+  require_commands find grep sort
+}
+
+#######################################
+# Main function
+# Globals: none
+# Arguments: none
+# Outputs: List of matching files to STDOUT
+# Returns: 0 on success, non-zero on error
+#######################################
+main() {
+  check_requirements
+
+  local months=(
+    January February March April May June
+    July August September October November December
+  )
+
+  find "${months[@]}" \
+    -type f \
+    -name "Day*.md" \
+    -exec grep -l 'Snippet' {} + \
+    | sort
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
+fi
