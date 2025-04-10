@@ -64,7 +64,6 @@ echo "$INPUT_STREAM" | while IFS= read -r VIDEO_ID; do
         to_entries | sort_by(.value.width) | last.value.url
     ')
   TITLE=$(echo "$RESPONSE" | jq -r '.items[0].snippet.title')
-  VIDEO_URL=$(echo "$RESPONSE" | jq -r '.items[0].snippet.resourceId.videoId')
 
   # Download thumbnail image
   if [ -n "$THUMBNAIL_URL" ]; then
