@@ -1,9 +1,69 @@
 #!/usr/bin/env bash
+######################################################################
+# @file replaceemojis
+# @brief Replace specific emojis in markdown files
+# @description
+# Replaces emoji characters in all markdown files:
+# - "Face Holding Back Tears" (🥹) → "Crying Face" (😢)
+# - "Smiling Face with Hearts" (🥰) → "Heart Eyes" (😍)
 
-# Replace "Face Holding Back Tears" (🥹) with "Crying Face" (😢)
-sed -i 's/🥹/😢/g' ./**/*.md
-sed -i 's/🥹/😢/g' ./*.md
+#######################################
+# Main function
+# Globals:
+#   None
+# Arguments:
+#   None
+# Outputs:
+#   None
+# Returns:
+#   0 on success, non-zero on error
+#######################################
+function main() {
+  local -r files=(./**/*.md ./*.md)
 
-# Replace "Smiling Face with Hearts" (🥰) with "Heart Eyes" (😍)
-sed -i 's/🥰/😍/g' ./**/*.md
-sed -i 's/🥰/😍/g' ./*.md
+  for file in "${files[@]}"; do
+    [[ -f "$file" ]] || continue
+
+    # Replace emojis
+    sed -i 's/🥹/😢/g' "$file"
+    sed -i 's/🥰/😍/g' "$file"
+  done
+}
+
+#######################################
+# Print script version
+# Globals:
+#   VERSION
+# Arguments:
+#   None
+# Outputs:
+#   Version number to STDOUT
+# Returns:
+#   None
+#######################################
+function version() {
+  printf "%s\n" "$VERSION"
+}
+
+# --- Constants ---
+readonly VERSION="1.0.0"
+
+# --- Main Execution ---
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  case "${1:-}" in
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -h | --help)
+      printf "Usage: %s [options]\n" "$(basename "$0")"
+      printf "Options:\n"
+      printf "  -v, --version  Show version\n"
+      printf "  -h, --help     Show this help\n"
+      exit 0
+      ;;
+    *)
+      main "$@"
+      ;;
+  esac
+fi
