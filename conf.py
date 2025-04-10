@@ -43,3 +43,17 @@ latex_elements = {
 ''',
  }
 
+
+latex_engine = 'lualatex'
+
+latex_elements = {
+    'preamble': r'''
+\usepackage{fontspec}
+\defaultfontfeatures{Renderer=Harfbuzz}
+
+% Use Latin Modern Roman or FreeSerif as the main font
+\setmainfont{Latin Modern Roman}[
+  RawFeature={fallback=Symbola}
+]
+    ''',
+}
