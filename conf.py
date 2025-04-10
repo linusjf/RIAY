@@ -31,7 +31,7 @@ suppress_warnings = ['toc.not_included','myst.xref_missing','image/svg+xml']
 html_theme = 'alabaster'
 
 # -- Options for PDF output
-latex_engine = 'lualatex'
+latex_engine = 'xelatex'
 
 latex_elements = { 
         'fontpkg': r'''
@@ -62,26 +62,3 @@ latex_elements = {
     '''
 }
 
-latex_elements = {
-    'preamble': r'''
-\usepackage{fontspec}
-\defaultfontfeatures{Renderer=Harfbuzz}
-
-% Set main font with fallback to Symbola for emojis
-\setmainfont{TeX Gyre Termes}[
-  Path = /usr/share/fonts/truetype/,
-  Extension = .ttf,
-  UprightFont = *,
-  BoldFont = *-Bold,
-  ItalicFont = *-Italic,
-  BoldItalicFont = *-BoldItalic,
-  Emoji = Symbola
-]
-
-% Or set up Symbola fallback manually
-\newfontfamily\symbolafont{Symbola}
-
-% Optional macro to force emoji font
-\newcommand{\emoji}[1]{{\symbolafont #1}}
-    '''
-}
