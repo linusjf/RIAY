@@ -79,7 +79,7 @@ YOUTUBE_URL="https://youtu.be/$VIDEO_ID"
   echo
   echo "### ${TITLE}"
   echo
-  echo "[![${TITLE}](https://githubusercontent.com/${GITHUB_REPO}/${MONTH}/jpgs/${DAY_STRING}.jpg)](${YOUTUBE_URL} \"${TITLE}\")"
+  echo "[![${TITLE}](https://raw.githubusercontent.com/${GITHUB_REPO}/refs/heads/main/${MONTH}/jpgs/${DAY_STRING}.jpg)](${YOUTUBE_URL} \"${TITLE}\")"
 } >> "$MARKDOWN_FILE"
 
 echo "Appended video info to $MARKDOWN_FILE"
