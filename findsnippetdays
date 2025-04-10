@@ -32,7 +32,10 @@ done
 # Check if any files were found
 if [ "$found_files" = true ]; then
   # Print the numbers in the set
-  for number in "${!numbers_set[@]}"; do
-    echo "$number"
-  done
+  {
+    for number in "${!numbers_set[@]}"; do
+      printf "%s " "$number"
+    done
+  } | tr ' ' '\n' | sort -n | tr '\n' ' '
 fi
+echo
