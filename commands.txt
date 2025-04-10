@@ -1,5 +1,5 @@
 # commands
-addvideo "j_SLDYjpCKc" "Stay in Dialogue" # add video
+addvideo "BCNG7KuVc3A" "Always Her Son" # add video
 genmonth 04 2025 # generate
 stitch # generate the README
 lintall # lint all files
