@@ -83,10 +83,16 @@ main() {
       if [[ "${file}" =~ ${regexjpg} ]]; then
         local snippet="${BASH_REMATCH[1]}"
         local url="https://raw.githubusercontent.com/${GITHUB_USERNAME}/${root}/refs/heads/main/${month}/jpgs/Day$(printf "%d" "${doy#0}")Snippet${snippet}.jpg"
-        local caption="Day $(printf "%d" "${doy#0}") Snippet ${snippet}"
+        local caption
+        if [[ -n "$snippet" ]]; then
+          caption="Day $(printf "%d" "${doy#0}") Snippet ${snippet}"
+        else
+          caption="Day $(printf "%d" "${doy#0}") Snippet"
+        fi
         local header="### ${caption}"
         local md="![${caption}](${url})"
         {
+          echo ""
           echo "${header}"
           echo ""
           echo "${md}"
