@@ -12,7 +12,6 @@ build:
   jobs:
     pre_install:
       - python strip_toc.py # <-- This runs your script before Sphinx builds
-      - bash replaceemojis
 
 sphinx:
   configuration: conf.py
