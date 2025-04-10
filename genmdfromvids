@@ -75,7 +75,7 @@ echo "$INPUT_STREAM" | while IFS= read -r VIDEO_ID; do
   fi
 
   # Generate the shortened YouTube URL
-  SHORT_YOUTUBE_URL="https://youtu.be/${VIDEO_URL}"
+  SHORT_YOUTUBE_URL="https://youtu.be/${VIDEO_ID}"
 
   # Write markdown with video link and thumbnail
   {
