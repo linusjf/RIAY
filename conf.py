@@ -42,3 +42,18 @@ latex_elements = {
 \setmainfont{Symbola}
 ''',
  }
+
+import os
+import subprocess
+
+# Define a hook that runs only for LaTeX builds
+def run_pre_install():
+    # Check if we're building a PDF (latexpdf)
+    if 'latexpdf' in os.environ.get('SPHINX_BUILDER', ''):
+        print("Running pre-install task for latexpdf rendering...")
+        # Run the Bash script
+        subprocess.run(['bash', './replaceemojis'])
+
+# Attach the hook to the Sphinx build
+def setup(app):
+    app.connect('builder-inited', run_pre_install)
