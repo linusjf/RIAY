@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# shellcheck disable=SC2030,SC2031
 # Valid month directories (January-December)
 VALID_MONTHS=("January" "February" "March" "April" "May" "June"
   "July" "August" "September" "October" "November" "December")
@@ -17,7 +17,7 @@ updated_files=0
 # Process all month/jpgs directories
 for month in "${VALID_MONTHS[@]}"; do
   jpgdir="${month}/jpgs"
-  
+
   # Check if directory exists
   if [ ! -d "$jpgdir" ]; then
     echo "No jpgs directory found for month: $month"
