@@ -136,7 +136,7 @@ main() {
   fi
 
   # Add exif data to file
-  if ! exiftool -Comment="${COMMENT}" "${file_path}"; then
+  if ! exiftool -overwrite_original -addcomment="${COMMENT}" "${file_path}"; then
     err "Failed to add comment in exif data to ${file_path}"
   fi
 
