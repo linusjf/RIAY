@@ -31,7 +31,7 @@ for month in "${VALID_MONTHS[@]}"; do
 
     if [[ "$current_comment" != "Play Icon Added" ]]; then
       echo "Adding comment to: $imgfile (Month: $month)"
-      exiftool -addcomment="Play Icon Added" -overwrite_original "$imgfile"
+      exiftool -Comment="Play Icon Added" -overwrite_original "$imgfile"
       ((updated_files++))
     else
       echo "Comment already exists in: $imgfile (Month: $month)"
