@@ -1,6 +1,7 @@
 # Read the Docs configuration file
 # See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
 
+---
 # Required
 version: 2
 
@@ -11,18 +12,22 @@ build:
     python: "3.13"
   jobs:
     post_checkout:
-      # Cancel building pull requests when there aren't changed in the README.md file.
-      # If there are no changes (git diff exits with 0) we force the command to return with 183.
-      # This is a special exit code on Read the Docs that will cancel the build immediately.
+      # Cancel building pull requests when there aren't changed in the
+      # README.md file.
+      # If there are no changes (git diff exits with 0) we force the command
+      # to return with 183.
+      # This is a special exit code on Read the Docs that will cancel the
+      # build immediately.
       - |
-        if git diff --quiet origin/main -- README.md;
-        then
-          exit 183;
+        if git diff --quiet origin/main -- README.md; then
+          exit 183
         fi
-     pre_build:
-         - python -m sphinx -b linkcheck -D linkcheck_timeout=1 README.md $READTHEDOCS_OUTPUT/linkcheck
-      pre_install:
-        - python strip_toc.py # <-- This runs your script before Sphinx builds
+    pre_build:
+      - python -m sphinx -b linkcheck -D linkcheck_timeout=1 README.md \
+        $READTHEDOCS_OUTPUT/linkcheck
+    pre_install:
+      # <-- This runs your script before Sphinx builds
+      - python strip_toc.py
 
 sphinx:
   configuration: conf.py
