@@ -1,43 +1,168 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2030,SC2031
-# Valid month directories (January-December)
-VALID_MONTHS=("January" "February" "March" "April" "May" "June"
-  "July" "August" "September" "October" "November" "December")
+# Annotate DayXXX.jpg files in month directories with timestamp metadata
+# Usage: annotatedayjpgs [--verbose] [--debug] [--help] [--version]
 
-# Check if exiftool is installed
-if ! command -v exiftool &> /dev/null; then
-  echo "Error: exiftool is required but not installed."
-  echo "Please install it first (e.g., 'sudo apt install exiftool' on Ubuntu)"
-  exit 1
+set -o nounset
+set -o errexit
+set -o pipefail
+
+# Source color utilities
+if command -v realpath > /dev/null 2>&1; then
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+else
+  SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)
 fi
+source "${SCRIPT_DIR}/color.sh"
 
-# Initialize counter
-updated_files=0
+readonly VERSION="1.0.0"
 
-# Process all month/jpgs directories
-for month in "${VALID_MONTHS[@]}"; do
-  jpgdir="${month}/jpgs"
+# Initialize variables
+declare -i updated_files=0
+declare verbose=false
+declare debug=false
 
-  # Check if directory exists
-  if [ ! -d "$jpgdir" ]; then
-    echo "No jpgs directory found for month: $month"
-    continue
+# Valid month directories (January-December)
+readonly VALID_MONTHS=(
+  "January" "February" "March" "April" "May" "June"
+  "July" "August" "September" "October" "November" "December"
+)
+
+#######################################
+# Print usage information
+# Globals: none
+# Arguments:
+#   exit_code - Exit code to use (default: 0)
+# Outputs: Usage info to STDOUT/STDERR
+# Returns: none
+#######################################
+usage() {
+  local exit_code="${1:-0}"
+  local output_stream=1
+
+  if ((exit_code != 0)); then
+    output_stream=2
   fi
 
-  # Process all DayXXX.jpg files
-  find "$jpgdir" -type f -name "Day*.jpg" | while read -r imgfile; do
-    # Check if comment already exists
-    current_comment=$(exiftool -Comment "$imgfile" | awk -F': ' '{print $2}')
+  >&"$output_stream" printf "%b\n" \
+    "Usage: ${0##*/} [OPTIONS]" \
+    "Annotate DayXXX.jpg files with timestamp metadata" \
+    "" \
+    "Options:" \
+    "  -v, --verbose    Show detailed processing information" \
+    "  -d, --debug      Enable debug output" \
+    "  -h, --help       Show this help message" \
+    "  --version        Show version information" \
+    "" \
+    "Examples:" \
+    "  ${0##*/} --verbose    # Run with verbose output" \
+    "  ${0##*/} --debug      # Run in debug mode"
+}
 
-    if [[ "$current_comment" != "Play Icon Added" ]]; then
-      echo "Adding comment to: $imgfile (Month: $month)"
-      exiftool -Comment="Play Icon Added" -overwrite_original "$imgfile"
+#######################################
+# Print version information
+# Globals: VERSION
+# Arguments: none
+# Outputs: Version info to STDOUT
+# Returns: none
+#######################################
+version() {
+  printf "%s\n" "$VERSION"
+}
+
+#######################################
+# Cleanup function for traps
+# Globals: none
+# Arguments: none
+# Outputs: none
+# Returns: none
+#######################################
+cleanup() {
+  print_info "Cleanup complete"
+}
+
+#######################################
+# Process a single month directory
+# Globals: SCRIPT_DIR, verbose, updated_files
+# Arguments:
+#   month - Month directory to process
+# Outputs: Processing status
+# Returns: none
+#######################################
+process_month() {
+  local month="$1"
+  local jpgdir="${month}/jpgs"
+  local imgfile
+  local exitcode
+
+  if [[ ! -d "$jpgdir" ]]; then
+    print_warning "No jpgs directory found for month: $month"
+    return
+  fi
+
+  print_info "Processing month: $month"
+
+  while read -r imgfile; do
+    print_info "Annotating file: $imgfile"
+
+    if "${SCRIPT_DIR}/annotatejpg" --silent "$imgfile" 2> /dev/null; then
       ((updated_files++))
     else
-      echo "Comment already exists in: $imgfile (Month: $month)"
+      exitcode=$?
+      case $exitcode in
+        2) print_error "File not found: $imgfile" ;;
+        4) print_warning "Skipping non-JPG file: $imgfile" ;;
+        8) print_info "Comment already exists in: $imgfile" ;;
+        *) print_error "Unknown error processing file: $imgfile (code: $exitcode)" ;;
+      esac
     fi
+  done < <(find "$jpgdir" -type f -name "Day*.jpg")
+}
+
+#######################################
+# Main processing function
+# Globals: VALID_MONTHS, updated_files
+# Arguments: none
+# Outputs: Processing status
+# Returns: none
+#######################################
+main() {
+  local month
+
+  trap cleanup EXIT
+
+  if [[ "$debug" = true ]]; then
+    set -x
+  fi
+
+  for month in "${VALID_MONTHS[@]}"; do
+    process_month "$month"
   done
+
+  print_success "Annotation process completed"
+  out "Total files updated: $updated_files"
+}
+
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -v | --verbose) verbose=true ;;
+    -d | --debug) debug=true ;;
+    -h | --help)
+      usage
+      exit 0
+      ;;
+    --version)
+      version
+      exit 0
+      ;;
+    *)
+      usage 1
+      exit 1
+      ;;
+  esac
+  shift
 done
 
-echo "Annotation process completed."
-echo "Total files updated: $updated_files"
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
+fi
