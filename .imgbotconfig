@@ -1,6 +1,14 @@
 {
     "schedule": "daily", 
-    "ignoredFiles": [],
+    "ignoredFiles": [
+    "**/Day*.jpg",
+   "History.jpg",
+   "Podcast.jpg",
+   "HowToPray.jpg",
+   "forming.jpg",
+   "January/jpgs/biblicalroots.jpg",
+   "March/jpgs/meditating.jpg",
+   ],
     "aggressiveCompression": "false", 
     "compressWiki": "true", 
     "minKBReduced": 10, 
