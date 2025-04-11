@@ -17,7 +17,7 @@ updated_files=0
 # Process all month/jpgs directories
 for month in "${VALID_MONTHS[@]}"; do
   jpgdir="${month}/jpgs"
-  
+
   # Check if directory exists
   if [ ! -d "$jpgdir" ]; then
     echo "No jpgs directory found for month: $month"
