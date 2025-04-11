@@ -80,7 +80,7 @@ main() {
   fi
 
   # Verify dependencies
-  require gm mv file grep mktemp
+  require gm mv file grep mktemp exiftool
 
   # Validate arguments
   if [[ $# -ne 1 ]]; then
@@ -120,6 +120,12 @@ main() {
     rm -f "${tmp_file}"
     die "Failed to replace original file with overlaid image"
   fi
+
+  # Add exif data to file
+  if ! exiftool -Comment="Play Icon Added" "${file_path}"; then
+    err "Failed to add comment in exif data to ${file_path}"
+  fi
+
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
