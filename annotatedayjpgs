@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# Valid month directories (January-December)
+VALID_MONTHS=("January" "February" "March" "April" "May" "June"
+  "July" "August" "September" "October" "November" "December")
+
+# Check if exiftool is installed
+if ! command -v exiftool &> /dev/null; then
+  echo "Error: exiftool is required but not installed."
+  echo "Please install it first (e.g., 'sudo apt install exiftool' on Ubuntu)"
+  exit 1
+fi
+
+# Initialize counter
+updated_files=0
+
+# Process all month/jpgs directories
+for month in "${VALID_MONTHS[@]}"; do
+  jpgdir="${month}/jpgs"
+  
+  # Check if directory exists
+  if [ ! -d "$jpgdir" ]; then
+    echo "No jpgs directory found for month: $month"
+    continue
+  fi
+
+  # Process all DayXXX.jpg files
+  find "$jpgdir" -type f -name "Day*.jpg" | while read -r imgfile; do
+    # Check if comment already exists
+    current_comment=$(exiftool -Comment "$imgfile" | awk -F': ' '{print $2}')
+
+    if [[ "$current_comment" != "Play Icon Added" ]]; then
+      echo "Adding comment to: $imgfile (Month: $month)"
+      exiftool -Comment="Play Icon Added" -overwrite_original "$imgfile"
+      ((updated_files++))
+    else
+      echo "Comment already exists in: $imgfile (Month: $month)"
+    fi
+  done
+done
+
+echo "Annotation process completed."
+echo "Total files updated: $updated_files"
