@@ -4,12 +4,9 @@
 VALID_MONTHS=("January" "February" "March" "April" "May" "June"
   "July" "August" "September" "October" "November" "December")
 
-# Check if exiftool is installed
-if ! command -v exiftool &> /dev/null; then
-  echo "Error: exiftool is required but not installed."
-  echo "Please install it first (e.g., 'sudo apt install exiftool' on Ubuntu)"
-  exit 1
-fi
+# Get absolute path to this script and annotatejpg
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+ANNOTATE_JPG="${SCRIPT_DIR}/annotatejpg"
 
 # Initialize counter
 updated_files=0
@@ -26,15 +23,10 @@ for month in "${VALID_MONTHS[@]}"; do
 
   # Process all DayXXX.jpg files
   find "$jpgdir" -type f -name "Day*.jpg" | while read -r imgfile; do
-    # Check if comment already exists
-    current_comment=$(exiftool -Comment "$imgfile" | awk -F': ' '{print $2}')
-
-    if [[ "$current_comment" != "Play Icon Added" ]]; then
-      echo "Adding comment to: $imgfile (Month: $month)"
-      exiftool -Comment="Play Icon Added" -overwrite_original "$imgfile"
+    # Call annotatejpg for each file using absolute path
+    if "$ANNOTATE_JPG" --silent "$imgfile" 2>&1; then
+      # Count updates from annotatejpg output
       ((updated_files++))
-    else
-      echo "Comment already exists in: $imgfile (Month: $month)"
     fi
   done
 done
