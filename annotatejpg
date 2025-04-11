@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2030,SC2031
 # Check if exiftool is installed
+exitcode=0
 if ! command -v exiftool &> /dev/null; then
   echo "Error: exiftool is required but not installed."
   echo "Please install it first (e.g., 'sudo apt install exiftool' on Ubuntu)"
@@ -15,25 +16,47 @@ fi
 
 # Check if files were provided
 if [ $# -eq 0 ]; then
-  echo "Usage: $0 <jpg-file1> [<jpg-file2> ...]"
+  echo "Usage: $0 [-s|--silent] <jpg-file1> [<jpg-file2> ...]"
   exit 1
 fi
 
-# Initialize counter
+# Initialize variables
+silent_mode=false
 updated_files=0
+files=()
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -s | --silent)
+      silent_mode=true
+      shift
+      ;;
+    *)
+      files+=("$1")
+      shift
+      ;;
+  esac
+done
+
+# Check if files were provided after parsing flags
+if [ ${#files[@]} -eq 0 ]; then
+  $silent_mode || echo "Error: No JPG files specified"
+  exit 1
+fi
 
 # Process all provided files
-for imgfile in "$@"; do
+for imgfile in "${files[@]}"; do
   # Check if file exists
   if [ ! -f "$imgfile" ]; then
-    echo "File not found: $imgfile"
+    $silent_mode || echo "File not found: $imgfile"
     continue
   fi
 
   # Check file type using file command
   filetype=$(file -b --mime-type "$imgfile")
   if [[ "$filetype" != "image/jpeg" ]]; then
-    echo "Skipping non-JPG file: $imgfile (detected as $filetype)"
+    $silent_mode || echo "Skipping non-JPG file: $imgfile (detected as $filetype)"
     continue
   fi
 
@@ -41,13 +64,17 @@ for imgfile in "$@"; do
   current_comment=$(exiftool -Comment "$imgfile" | awk -F': ' '{print $2}')
 
   if [[ "$current_comment" != "Play Icon Added" ]]; then
-    echo "Adding comment to: $imgfile"
-    exiftool -Comment="Play Icon Added" -overwrite_original "$imgfile"
+    $silent_mode || echo "Adding comment to: $imgfile"
+    exiftool -Comment="Play Icon Added" -overwrite_original "$imgfile" > /dev/null
     ((updated_files++))
   else
-    echo "Comment already exists in: $imgfile"
+    $silent_mode || echo "Comment already exists in: $imgfile"
+    exitcode=1
   fi
 done
 
-echo "Annotation process completed."
-echo "Total files updated: $updated_files"
+$silent_mode || {
+  echo "Annotation process completed."
+  echo "Total files updated: $updated_files"
+}
+exit "$exitcode"
