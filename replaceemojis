@@ -1,34 +1,21 @@
 #!/usr/bin/env bash
-######################################################################
+
+set -o nounset
+set -o errexit
+set -o pipefail
+
+#######################################
 # @file replaceemojis
 # @brief Replace specific emojis in markdown files
 # @description
 # Replaces emoji characters in all markdown files:
 # - "Face Holding Back Tears" (🥹) → "Crying Face" (😢)
 # - "Smiling Face with Hearts" (🥰) → "Heart Eyes" (😍)
-
 #######################################
-# Main function
-# Globals:
-#   None
-# Arguments:
-#   None
-# Outputs:
-#   None
-# Returns:
-#   0 on success, non-zero on error
-#######################################
-function main() {
-  local -r files=(./**/*.md ./*.md)
 
-  for file in "${files[@]}"; do
-    [[ -f "$file" ]] || continue
-
-    # Replace emojis
-    sed -i 's/🥹/😢/g' "$file"
-    sed -i 's/🥰/😍/g' "$file"
-  done
-}
+readonly VERSION="1.0.0"
+declare verbose=false
+declare debug=false
 
 #######################################
 # Print script version
@@ -45,25 +32,112 @@ function version() {
   printf "%s\n" "$VERSION"
 }
 
-# --- Constants ---
-readonly VERSION="1.0.0"
+#######################################
+# Print usage information
+# Globals:
+#   None
+# Arguments:
+#   exit_code - Exit code to return (default: 0)
+# Outputs:
+#   Usage information to STDOUT or STDERR
+# Returns:
+#   None
+#######################################
+function usage() {
+  local exit_code="${1:-0}"
+  local output_stream=1
+
+  if ((exit_code != 0)); then
+    output_stream=2
+  fi
+
+  >&"$output_stream" printf "%b\n" \
+    "Usage: ${0##*/} [OPTIONS]" \
+    "Replace emoji characters in markdown files" \
+    "" \
+    "Options:" \
+    "  -v, --verbose    Show detailed processing information" \
+    "  -d, --debug      Enable debug output" \
+    "  -h, --help       Show this help message" \
+    "  --version        Show version information" \
+    "" \
+    "Examples:" \
+    "  ${0##*/} --verbose    # Run with verbose output" \
+    "  ${0##*/} --debug      # Run in debug mode"
+}
+
+#######################################
+# Main function
+# Globals:
+#   verbose
+#   debug
+# Arguments:
+#   None
+# Outputs:
+#   Progress messages if verbose=true
+# Returns:
+#   0 on success, non-zero on error
+#######################################
+function main() {
+  local -r files=(./**/*.md ./*.md)
+  local file
+
+  if [[ "$debug" = true ]]; then
+    set -x
+  fi
+
+  for file in "${files[@]}"; do
+    [[ -f "$file" ]] || continue
+
+    if [[ "$verbose" = true ]]; then
+      printf "Processing file: %s\n" "$file"
+    fi
+
+    sed -i 's/🥹/😢/g' "$file"
+    sed -i 's/🥰/😍/g' "$file"
+  done
+}
+
+#######################################
+# Cleanup function
+# Globals:
+#   None
+# Arguments:
+#   None
+# Outputs:
+#   None
+# Returns:
+#   None
+#######################################
+function cleanup() {
+  if [[ "$verbose" = true ]]; then
+    printf "Cleanup complete\n"
+  fi
+}
 
 # --- Main Execution ---
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  case "${1:-}" in
-    -v | --version)
+trap cleanup EXIT
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -v | --verbose) verbose=true ;;
+    -d | --debug) debug=true ;;
+    -h | --help)
+      usage
+      exit 0
+      ;;
+    --version)
       version
       exit 0
       ;;
-    -h | --help)
-      printf "Usage: %s [options]\n" "$(basename "$0")"
-      printf "Options:\n"
-      printf "  -v, --version  Show version\n"
-      printf "  -h, --help     Show this help\n"
-      exit 0
-      ;;
     *)
-      main "$@"
+      usage 1
+      exit 1
       ;;
   esac
+  shift
+done
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
 fi
