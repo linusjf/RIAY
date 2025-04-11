@@ -11,6 +11,7 @@ readonly FAILURE=1
 readonly ICON_FILE="play-button.png"
 readonly ICON_SIZE="256x256"
 readonly ICON_OFFSET="+32+0"
+readonly COMMENT="Play Icon Added"
 
 ######################################################################
 # Verify required commands are available
@@ -51,6 +52,13 @@ EOF
 ######################################################################
 is_jpeg_file() {
   file "$1" | grep -q 'JPEG'
+}
+
+######################################################################
+# Check if file already has play icon comment
+######################################################################
+has_play_icon() {
+  exiftool -Comment "$1" 2> /dev/null | grep -q "${COMMENT}"
 }
 
 ######################################################################
@@ -99,6 +107,12 @@ main() {
     die "'${file_path}' is not a valid JPEG file"
   fi
 
+  # Check if already processed
+  if has_play_icon "${file_path}"; then
+    echo "File '${file_path}' already has play icon overlay"
+    exit "${SUCCESS}"
+  fi
+
   # Check overlay icon exists
   if [[ ! -f "${ICON_FILE}" ]]; then
     die "Overlay icon '${ICON_FILE}' not found"
@@ -122,7 +136,7 @@ main() {
   fi
 
   # Add exif data to file
-  if ! exiftool -Comment="Play Icon Added" "${file_path}"; then
+  if ! exiftool -Comment="${COMMENT}" "${file_path}"; then
     err "Failed to add comment in exif data to ${file_path}"
   fi
 
