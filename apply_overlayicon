@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# shellcheck disable=SC2016
 # Resolve full path to this script's directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 OVERLAY_SCRIPT="${SCRIPT_DIR}/overlayicon"
@@ -7,8 +7,8 @@ LOG_FILE="${SCRIPT_DIR}/overlayicon.log"
 
 # Check overlayicon exists and is executable
 if [ ! -x "$OVERLAY_SCRIPT" ]; then
-    echo "Error: 'overlayicon' not found or not executable at $OVERLAY_SCRIPT"
-    exit 1
+  echo "Error: 'overlayicon' not found or not executable at $OVERLAY_SCRIPT"
+  exit 1
 fi
 
 # Default root directory to current directory if none provided
@@ -19,13 +19,13 @@ export OVERLAY_SCRIPT LOG_FILE
 
 # Function to process a single file
 process_file() {
-    local file="$1"
-    echo "$(date '+%Y-%m-%d %H:%M:%S') Processing: $file" >> "$LOG_FILE"
-    "$OVERLAY_SCRIPT" "$file" >> "$LOG_FILE" 2>&1
+  local file="$1"
+  echo "$(date '+%Y-%m-%d %H:%M:%S') Processing: $file" >> "$LOG_FILE"
+  "$OVERLAY_SCRIPT" "$file" >> "$LOG_FILE" 2>&1
 }
 
 export -f process_file
 
 # Find DayXXX.jpg files and process them in parallel (up to 4 at a time)
 find "$ROOT_DIR" -type f -regextype posix-extended -regex '.*/Day[0-9]{3}\.jpg' \
-    -print0 | xargs -0 -n1 -P4 bash -c 'process_file "$0"'
+  -print0 | xargs -0 -n1 -P4 bash -c 'process_file "$0"'
