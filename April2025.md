@@ -20,6 +20,8 @@
   - [Stay in Dialogue](#stay-in-dialogue)
 - [April 10,2025](#april-102025)
   - [Always Her Son](#always-her-son)
+- [April 11,2025](#april-112025)
+  - [Glory and Indignity](#glory-and-indignity)
 
 <!-- tocstop -->
 
@@ -86,3 +88,9 @@ RIAY April 2025
 ### Always Her Son
 
 [![Always Her Son](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day100.jpg)](https://youtu.be/BCNG7KuVc3A "Always Her Son")
+
+## April 11,2025
+
+### Glory and Indignity
+
+[![Glory and Indignity](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day101.jpg)](https://youtu.be/DMEabT65dsI "Glory and Indignity")
