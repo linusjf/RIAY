@@ -22,8 +22,11 @@ build:
         then
           exit 183;
         fi
-    pre_install:
-      - python strip_toc.py # <-- This runs your script before Sphinx builds
+     pre_build:
+       pre_build:
+         - python -m sphinx -b linkcheck -D linkcheck_timeout=1 README.md $READTHEDOCS_OUTPUT/linkcheck
+      pre_install:
+        - python strip_toc.py # <-- This runs your script before Sphinx builds
 
 sphinx:
   configuration: conf.py
