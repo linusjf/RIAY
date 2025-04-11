@@ -1,80 +1,171 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2030,SC2031
-# Check if exiftool is installed
-exitcode=0
-if ! command -v exiftool &> /dev/null; then
-  echo "Error: exiftool is required but not installed."
-  echo "Please install it first (e.g., 'sudo apt install exiftool' on Ubuntu)"
-  exit 1
+# @file annotatejpg
+# @brief Add metadata comments to JPG files
+# @description Adds "Play Icon Added" comment to JPG files if not already present
+
+# Source utility libraries
+if command -v realpath > /dev/null 2>&1; then
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+else
+  SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)
 fi
 
-# Check if file command is available
-if ! command -v file &> /dev/null; then
-  echo "Error: file command is required but not installed."
-  exit 1
-fi
+source "$SCRIPT_DIR/util.sh"
+source "$SCRIPT_DIR/require.sh"
 
-# Check if files were provided
-if [ $# -eq 0 ]; then
-  echo "Usage: $0 [-s|--silent] <jpg-file1> [<jpg-file2> ...]"
-  exit 1
-fi
+readonly VERSION="1.0.0"
 
-# Initialize variables
-silent_mode=false
-updated_files=0
-files=()
+#######################################
+# Main function
+# Globals:
+#   silent_mode
+#   updated_files
+#   exitcode
+# Arguments:
+#   None
+# Outputs:
+#   Status messages unless silent_mode
+# Returns:
+#   Exit code
+#######################################
+main() {
+  local silent_mode=false
+  local updated_files=0
+  local exitcode=0
+  local files=()
 
-# Parse arguments
-while [[ $# -gt 0 ]]; do
-  case $1 in
-    -s | --silent)
-      silent_mode=true
-      shift
-      ;;
-    *)
-      files+=("$1")
-      shift
-      ;;
-  esac
-done
+  # Parse arguments
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+      -s | --silent) silent_mode=true ;;
+      -v | --version)
+        version
+        return 0
+        ;;
+      -h | --help)
+        usage
+        return 0
+        ;;
+      *) files+=("$1") ;;
+    esac
+    shift
+  done
 
-# Check if files were provided after parsing flags
-if [ ${#files[@]} -eq 0 ]; then
-  $silent_mode || echo "Error: No JPG files specified"
-  exit 1
-fi
+  # Check requirements
+  require_commands exiftool file
 
-# Process all provided files
-for imgfile in "${files[@]}"; do
-  # Check if file exists
-  if [ ! -f "$imgfile" ]; then
-    $silent_mode || echo "File not found: $imgfile"
-    continue
+  # Validate files
+  if [[ ${#files[@]} -eq 0 ]]; then
+    $silent_mode || err "Error: No JPG files specified"
+    usage >&2
+    return 1
   fi
 
-  # Check file type using file command
+  # Process files
+  for imgfile in "${files[@]}"; do
+    process_file "$imgfile" || exitcode="$((exitcode | $?))"
+  done
+
+  $silent_mode || {
+    out "Annotation process completed."
+    out "Total files updated: $updated_files"
+  }
+
+  return "$exitcode"
+}
+
+#######################################
+# Process a single image file
+# Globals:
+#   silent_mode
+#   updated_files
+# Arguments:
+#   imgfile - Path to image file
+# Outputs:
+#   Status messages unless silent_mode
+# Returns:
+#   0 on success, 1 if comment already exists
+#######################################
+process_file() {
+  local imgfile="$1"
+  local filetype
+  local current_comment
+
+  # Check if file exists
+  if [[ ! -f "$imgfile" ]]; then
+    $silent_mode || err "File not found: $imgfile"
+    return 2
+  fi
+
+  # Check file type
   filetype=$(file -b --mime-type "$imgfile")
   if [[ "$filetype" != "image/jpeg" ]]; then
-    $silent_mode || echo "Skipping non-JPG file: $imgfile (detected as $filetype)"
-    continue
+    $silent_mode || err "Skipping non-JPG file: $imgfile (detected as $filetype)"
+    return 4
   fi
 
-  # Check if comment already exists
+  # Check existing comment
   current_comment=$(exiftool -Comment "$imgfile" | awk -F': ' '{print $2}')
 
   if [[ "$current_comment" != "Play Icon Added" ]]; then
-    $silent_mode || echo "Adding comment to: $imgfile"
+    $silent_mode || out "Adding comment to: $imgfile"
     exiftool -Comment="Play Icon Added" -overwrite_original "$imgfile" > /dev/null
     ((updated_files++))
   else
-    $silent_mode || echo "Comment already exists in: $imgfile"
-    exitcode=1
+    $silent_mode || out "Comment already exists in: $imgfile"
+    return 8
   fi
-done
-
-$silent_mode || {
-  echo "Annotation process completed."
-  echo "Total files updated: $updated_files"
 }
-exit "$exitcode"
+
+#######################################
+# Print version information
+# Globals:
+#   VERSION
+# Arguments:
+#   None
+# Outputs:
+#   Version string
+# Returns:
+#   None
+#######################################
+version() {
+  out "$(program) version $VERSION"
+}
+
+#######################################
+# Print usage information
+# Globals:
+#   None
+# Arguments:
+#   None
+# Outputs:
+#   Usage instructions
+# Returns:
+#   None
+#######################################
+usage() {
+  cat << EOF
+Usage: $(program) [OPTIONS] <jpg-file1> [<jpg-file2> ...]
+
+Options:
+  -s, --silent    Suppress output messages
+  -v, --version   Show version information
+  -h, --help      Show this help message
+
+Exit Codes:
+  0 - Success
+  1 - No files specified
+  2 - File not found
+  4 - Not a JPG file
+  8 - Comment already exists
+  Other - Bitwise OR combination of above codes when processing multiple files
+
+Examples:
+  $(program) image1.jpg image2.jpg
+  $(program) --silent *.jpg
+EOF
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
+fi
