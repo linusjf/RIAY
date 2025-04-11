@@ -11,10 +11,7 @@ build:
     python: "3.13"
   jobs:
     post_checkout:
-      # Cancel building pull requests when there aren't changed in the docs directory or YAML file.
-      # You can add any other files or directories that you'd like here as well,
-      # like your docs requirements file, or other files that will change your docs build.
-      #
+      # Cancel building pull requests when there aren't changed in the README.md file.
       # If there are no changes (git diff exits with 0) we force the command to return with 183.
       # This is a special exit code on Read the Docs that will cancel the build immediately.
       - |
@@ -23,7 +20,6 @@ build:
           exit 183;
         fi
      pre_build:
-       pre_build:
          - python -m sphinx -b linkcheck -D linkcheck_timeout=1 README.md $READTHEDOCS_OUTPUT/linkcheck
       pre_install:
         - python strip_toc.py # <-- This runs your script before Sphinx builds
