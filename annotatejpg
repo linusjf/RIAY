@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2030,SC2031
+# Check if exiftool is installed
+if ! command -v exiftool &> /dev/null; then
+  echo "Error: exiftool is required but not installed."
+  echo "Please install it first (e.g., 'sudo apt install exiftool' on Ubuntu)"
+  exit 1
+fi
+
+# Check if file command is available
+if ! command -v file &> /dev/null; then
+  echo "Error: file command is required but not installed."
+  exit 1
+fi
+
+# Check if files were provided
+if [ $# -eq 0 ]; then
+  echo "Usage: $0 <jpg-file1> [<jpg-file2> ...]"
+  exit 1
+fi
+
+# Initialize counter
+updated_files=0
+
+# Process all provided files
+for imgfile in "$@"; do
+  # Check if file exists
+  if [ ! -f "$imgfile" ]; then
+    echo "File not found: $imgfile"
+    continue
+  fi
+
+  # Check file type using file command
+  filetype=$(file -b --mime-type "$imgfile")
+  if [[ "$filetype" != "image/jpeg" ]]; then
+    echo "Skipping non-JPG file: $imgfile (detected as $filetype)"
+    continue
+  fi
+
+  # Check if comment already exists
+  current_comment=$(exiftool -Comment "$imgfile" | awk -F': ' '{print $2}')
+
+  if [[ "$current_comment" != "Play Icon Added" ]]; then
+    echo "Adding comment to: $imgfile"
+    exiftool -Comment="Play Icon Added" -overwrite_original "$imgfile"
+    ((updated_files++))
+  else
+    echo "Comment already exists in: $imgfile"
+  fi
+done
+
+echo "Annotation process completed."
+echo "Total files updated: $updated_files"
