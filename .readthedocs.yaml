@@ -12,8 +12,7 @@ build:
     post_checkout:
       - git fetch origin main || true
       - git log --oneline -n 5
-      - git diff --name-only FETCH_HEAD
-      - git fetch origin main || true
+      - git diff --quiet FETCH_HEAD -- README.md
       - |
         if git diff --quiet FETCH_HEAD -- README.md; then
           echo "No changes in README.md, exiting with 183"
