@@ -10,12 +10,16 @@ build:
     python: "3.13"
   jobs:
     post_checkout:
+      - git fetch origin main || true
+      - git log --oneline -n 5
+      - git diff --name-only FETCH_HEAD
+      - git fetch origin main || true
       - |
-        if git diff --quiet origin/main -- README.md; then
-          # No changes, cancel the build
+        if git diff --quiet FETCH_HEAD -- README.md; then
+          echo "No changes in README.md, exiting with 183"
           exit 183
         else
-          echo "README.md has changes, continuing build."
+          echo "README.md has changes, continuing build"
         fi
     pre_build:
       - |
