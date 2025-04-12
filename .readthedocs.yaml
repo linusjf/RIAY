@@ -9,22 +9,21 @@ build:
   tools:
     python: "3.13"
   jobs:
-    jobs:
-      post_checkout:
-        - |
-          if git diff --quiet origin/main -- README.md; then
-            # No changes, cancel the build
-            exit 183
-          else
-            echo "README.md has changes, continuing build."
-          fi
-      pre_build:
-        - |
-          python -m sphinx -b linkcheck -D linkcheck_timeout=1 README.md \
-          $READTHEDOCS_OUTPUT/linkcheck
-      pre_install:
-        # <-- This runs your script before Sphinx builds
-        - python strip_toc.py
+    post_checkout:
+      - |
+        if git diff --quiet origin/main -- README.md; then
+          # No changes, cancel the build
+          exit 183
+        else
+          echo "README.md has changes, continuing build."
+        fi
+    pre_build:
+      - |
+        python -m sphinx -b linkcheck -D linkcheck_timeout=1 README.md \
+        $READTHEDOCS_OUTPUT/linkcheck
+    pre_install:
+      # <-- This runs your script before Sphinx builds
+      - python strip_toc.py
 sphinx:
   configuration: conf.py
   fail_on_warning: true
