@@ -7,17 +7,95 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 readonly SCRIPT_NAME="${0##*/}"
+readonly VERSION="1.0.0"
 
+# Source require.sh
+if command -v realpath > /dev/null 2>&1; then
+  readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+else
+  readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
+fi
+source "${SCRIPT_DIR}/require.sh"
+
+#######################################
+# Validate input file exists and is readable
+# Globals: none
+# Arguments:
+#   file - path to markdown file
+# Outputs: error message to STDERR on failure
+# Returns: exits with status 1 on invalid input
+#######################################
+validate_input() {
+  local file="$1"
+
+  if [[ $# -ne 1 ]]; then
+    err "Error: Exactly one argument required"
+    usage
+  fi
+
+  if [[ ! -f "${file}" ]]; then
+    err "Error: '${file}' is not a valid file"
+    exit 1
+  fi
+
+  if [[ ! -r "${file}" ]]; then
+    err "Error: Cannot read '${file}'"
+    exit 1
+  fi
+}
+
+#######################################
+# Generate or update table of contents
+# Globals: none
+# Arguments:
+#   file - path to markdown file
+# Outputs: error message to STDERR on failure
+# Returns: 0 on success, 1 on failure
+#######################################
+generate_toc() {
+  local file="$1"
+
+  if ! markdown-toc-gen check "${file}" &> /dev/null; then
+    if ! markdown-toc-gen update "${file}" > /dev/null; then
+      err "Error: Failed to generate TOC for '${file}'"
+      return 1
+    fi
+  fi
+  return 0
+}
+
+#######################################
+# Print version information
+# Globals: VERSION
+# Arguments: none
+# Outputs: version string to STDOUT
+# Returns: none
+#######################################
+version() {
+  printf "%s\n" "${VERSION}"
+}
+
+#######################################
+# Print usage information
+# Globals: SCRIPT_NAME
+# Arguments: none
+# Outputs: usage message to STDOUT
+# Returns: none
+#######################################
 usage() {
   cat << EOF
-Usage: ${SCRIPT_NAME} [-d|--debug] markdown_file
+Usage: ${SCRIPT_NAME} [-d|--debug] [-v|--version] [-h|--help] markdown_file
 
 Generates or updates table of contents in specified Markdown file.
 
 Options:
   -d, --debug      Enable debug output
-Arguments:
-  markdown_file  Path to Markdown file to process
+  -v, --version    Show version information
+  -h, --help       Show this help message
+
+Examples:
+  ${SCRIPT_NAME} README.md
+  ${SCRIPT_NAME} --debug docs/API.md
 
 Globals:
   None
@@ -30,63 +108,35 @@ Returns:
   1 on invalid arguments or file issues
   2 on dependency errors
 EOF
-  exit 1
+  exit 0
 }
-
-require() {
-  hash "$1" 2> /dev/null || {
-    echo "Error: Required command '$1' not found" >&2
-    exit 2
-  }
-}
-
-validate_input() {
-  local file="$1"
-
-  if [[ $# -ne 1 ]]; then
-    echo "Error: Exactly one argument required" >&2
-    usage
-  fi
-
-  if [[ ! -f "${file}" ]]; then
-    echo "Error: '${file}' is not a valid file" >&2
-    exit 1
-  fi
-
-  if [[ ! -r "${file}" ]]; then
-    echo "Error: Cannot read '${file}'" >&2
-    exit 1
-  fi
-}
-
-generate_toc() {
-  local file="$1"
-
-  if ! markdown-toc-gen check "${file}" &> /dev/null; then
-    if ! markdown-toc-gen update "${file}" > /dev/null; then
-      echo "Error: Failed to generate TOC for '${file}'" >&2
-      return 1
-    fi
-  fi
-  return 0
-}
-
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-    -d | --debug)
-      set -x
-      shift
-      ;;
-    *)
-      break
-      ;;
-  esac
-done
 
 main() {
-  require markdown-toc-gen
-  validate_input "$@"
-  generate_toc "$@"
+  local file=""
+
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      -v | --version)
+        version
+        exit 0
+        ;;
+      -h | --help)
+        usage
+        ;;
+      *)
+        file="$1"
+        shift
+        ;;
+    esac
+  done
+
+  require_commands markdown-toc-gen
+  validate_input "${file}"
+  generate_toc "${file}"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
