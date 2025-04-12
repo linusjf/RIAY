@@ -11,7 +11,7 @@ build:
   jobs:
     post_checkout:
       - |
-        # check if README and/or index.rst has changed between successive commits
+        # check if README and/or index.rst has changed since successive commits
         if git rev-parse HEAD^ >/dev/null 2>&1; then
           if git diff --quiet HEAD^ -- README.md index.rst; then
             echo "No change to README.md. Exiting."
