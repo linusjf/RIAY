@@ -1,10 +1,8 @@
 # Read the Docs configuration file
 # See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
-
----
 # Required
+---
 version: 2
-
 # Set the OS, Python version, and other tools you might need
 build:
   os: ubuntu-24.04
@@ -23,22 +21,19 @@ build:
           exit 183
         fi
     pre_build:
-      - python -m sphinx -b linkcheck -D linkcheck_timeout=1 README.md \
+      - |
+        python -m sphinx -b linkcheck -D linkcheck_timeout=1 README.md \
         $READTHEDOCS_OUTPUT/linkcheck
     pre_install:
       # <-- This runs your script before Sphinx builds
       - python strip_toc.py
-
 sphinx:
   configuration: conf.py
   fail_on_warning: true
 formats:
   - epub
   - pdf
-# Optionally, but recommended,
-# declare the Python requirements required to build your documentation
-# See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
 python:
   install:
+    # Install our python packages before building the docs
     - requirements: requirements.txt
-    # Install our python package before building the docs
