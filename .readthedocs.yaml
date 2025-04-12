@@ -10,15 +10,16 @@ build:
     python: "3.13"
   jobs:
     post_checkout:
-      # Cancel building pull requests when there aren't changed in the
-      # README.md file.
-      # If there are no changes (git diff exits with 0) we force the command
-      # to return with 183.
-      # This is a special exit code on Read the Docs that will cancel the
-      # build immediately.
+      - git fetch origin main || true
+      - git log --oneline -n 5
+      - git diff --name-only FETCH_HEAD
+      - git fetch origin main || true
       - |
-        if git diff --quiet origin/main -- README.md; then
+        if git diff --quiet FETCH_HEAD -- README.md; then
+          echo "No changes in README.md, exiting with 183"
           exit 183
+        else
+          echo "README.md has changes, continuing build"
         fi
     pre_build:
       - |
