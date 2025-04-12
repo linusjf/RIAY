@@ -10,20 +10,16 @@ build:
     python: "3.13"
   jobs:
     post_checkout:
-      # Cancel building pull requests when there aren't changed in the
-      # README.md file.
-      # If there are no changes (git diff exits with 0) we force the command
-      # to return with 183.
-      # This is a special exit code on Read the Docs that will cancel the
-      # build immediately.
       - |
-        if git diff --quiet origin/main -- README.md; then
-          exit 183
+        if git rev-parse HEAD^ >/dev/null 2>&1; then
+          if git diff --quiet HEAD^ -- README.md; then
+            echo "No change to README.md. Exiting."
+            exit 183
+          fi
         fi
     pre_build:
       - |
-        python -m sphinx -b linkcheck -D linkcheck_timeout=1 README.md \
-        $READTHEDOCS_OUTPUT/linkcheck
+        python -m sphinx -b linkcheck . $READTHEDOCS_OUTPUT/linkcheck
     pre_install:
       # <-- This runs your script before Sphinx builds
       - python strip_toc.py
