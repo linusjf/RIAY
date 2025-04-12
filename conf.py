@@ -43,6 +43,13 @@ latex_elements = {
 ''',
  }
 
+linkcheck_timeout = 5  # seconds
+linkcheck_ignore = [
+    r'http://localhost:\d+/',  # Ignore local dev servers
+    r'https://example\.com/redirect',  # Ignore known redirect
+]
+linkcheck_ignore_redirects = True
+
 import os
 import codecs
 
