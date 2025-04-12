@@ -58,6 +58,16 @@ This ensures the presence of the header for each month's markdown.
 
 ### Environment variables
 
+1. Export an environment variable `RIAY_YEAR` by adding the following line to your `.bash_profile` file.
+
+1. Substitute the four-digit year for `<year>`.
+
+   ```bash
+   export RIAY_YEAR="<year>"
+   ```
+
+   Note: remember to clone the repo into a directory `RIAY` only.
+
 1. Export an environment variable `GITHUB_USERNAME` by adding the following line to your `.bash_profile` file.
 
 1. Substitute your Github user id for `<userid>`.
