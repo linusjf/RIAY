@@ -13,8 +13,6 @@ version = '1'
 release = '1.0'
 master_doc = 'index'
 
-# Default for HTML and EPUB
-
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
@@ -43,6 +41,7 @@ latex_elements = {
 ''',
  }
 
+# -- Ootions for linkcheck
 linkcheck_timeout = 5  # seconds
 linkcheck_ignore = [
     r'http://localhost:\d+/',  # Ignore local dev servers
@@ -50,6 +49,8 @@ linkcheck_ignore = [
 ]
 linkcheck_ignore_redirects = True
 
+# hook to replace unavailable emojis in Symbola
+# for available ones only during pdf latex generation
 import os
 import codecs
 
@@ -87,4 +88,3 @@ def run_only_for_pdf(app):
 
 def setup(app):
     app.connect('builder-inited', run_only_for_pdf)
-
