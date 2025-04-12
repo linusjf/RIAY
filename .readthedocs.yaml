@@ -11,14 +11,16 @@ build:
   jobs:
     post_checkout:
       - |
+        # check if README and/or index.rst has changed between successive commits
         if git rev-parse HEAD^ >/dev/null 2>&1; then
-          if git diff --quiet HEAD^ -- README.md; then
+          if git diff --quiet HEAD^ -- README.md index.rst; then
             echo "No change to README.md. Exiting."
             exit 183
           fi
         fi
     pre_build:
       - |
+        # checks that all links are valid i.e., there are no broken links
         python -m sphinx -b linkcheck . $READTHEDOCS_OUTPUT/linkcheck
     pre_install:
       # <-- This runs your script before Sphinx builds
