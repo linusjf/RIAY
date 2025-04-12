@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 RIAY (Rosary In a Year 2025)
-==================
+============================
 
 .. toctree::
    :maxdepth: 2
