@@ -1201,7 +1201,7 @@ RIAY March 2025
 - [April 11,2025](#april-112025)
   - [Glory and Indignity](#glory-and-indignity)
 - [April 12,2025](#april-122025)
-  - [Carried with Love](#carried-with-love)
+  - [Carried with Love Day 102](#carried-with-love-day-102)
 
 <!-- tocstop -->
 
@@ -1277,7 +1277,7 @@ RIAY April 2025
 
 #### April 12,2025
 
-##### Carried with Love
+##### Carried with Love Day 102
 
 [![Carried with Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day102.jpg)](https://youtu.be/kqQa2SSSJnM "Carried with Love")
 
