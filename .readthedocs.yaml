@@ -19,7 +19,7 @@ build:
         fi
     pre_build:
       - |
-        python -m sphinx -b linkcheck -D linkcheck_timeout=1 README.md \
+        python -m sphinx -b linkcheck -D linkcheck_timeout=1 . \
         $READTHEDOCS_OUTPUT/linkcheck
     pre_install:
       # <-- This runs your script before Sphinx builds
