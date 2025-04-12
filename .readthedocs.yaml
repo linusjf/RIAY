@@ -13,8 +13,7 @@ build:
       - |
         if git rev-parse HEAD^ >/dev/null 2>&1; then
           if git diff --quiet HEAD^ -- README.md index.rst conf.py \
-          .readthedocs.yaml
-          ; then
+          .readthedocs.yaml; then
             echo "No change to visible artifacts. Exiting."
             exit 183
           fi
