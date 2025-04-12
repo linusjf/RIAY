@@ -11,10 +11,11 @@ build:
   jobs:
     post_checkout:
       - |
-        # check if README and/or index.rst has changed since successive commits
         if git rev-parse HEAD^ >/dev/null 2>&1; then
-          if git diff --quiet HEAD^ -- README.md index.rst; then
-            echo "No change to README.md. Exiting."
+          if git diff --quiet HEAD^ -- README.md index.rst conf.py \
+          .readthedocs.yaml
+          ; then
+            echo "No change to visible artifacts. Exiting."
             exit 183
           fi
         fi
