@@ -1,5 +1,5 @@
 # commands
-addvideo "kqQa2SSSJnM" "Carried with Love" # add video
+addvideo "ZWCBK7gr0VU" "Pilgrimage of Faith" # add video
 genmonth 04 2025 # generate
 stitch # generate the README
 lintall # lint all files

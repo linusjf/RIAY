@@ -24,6 +24,8 @@
   - [Glory and Indignity](#glory-and-indignity)
 - [April 12,2025](#april-122025)
   - [Carried with Love](#carried-with-love)
+- [April 13,2025](#april-132025)
+  - [Pilgrimage of Faith](#pilgrimage-of-faith)
 
 <!-- tocstop -->
 
@@ -102,3 +104,9 @@ RIAY April 2025
 ### Carried with Love
 
 [![Carried with Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day102.jpg)](https://youtu.be/kqQa2SSSJnM "Carried with Love")
+
+## April 13,2025
+
+### Pilgrimage of Faith
+
+[![Pilgrimage of Faith](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day103.jpg)](https://youtu.be/ZWCBK7gr0VU "Pilgrimage of Faith")
