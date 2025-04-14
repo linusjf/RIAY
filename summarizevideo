@@ -41,9 +41,10 @@ if [[ "$VIDEO_TITLE" == "null" ]]; then
   exit 1
 fi
 
-# Download auto-subtitles using yt-dlp
-rm -f "${VIDEO_ID}.en.vtt"
+# remove any prevuous subtitle and caption files
+rm -f "${VIDEO_ID}.*"
 
+# Download auto-subtitles using yt-dlp
 yt-dlp --write-auto-sub --sub-lang "en" --skip-download --sub-format "vtt" \
   -o "${VIDEO_ID}.%(ext)s" "https://www.youtube.com/watch?v=${VIDEO_ID}" > /dev/null 2>&1
 
