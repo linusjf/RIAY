@@ -20,36 +20,13 @@ extract_text_from_vtt() {
 }
 
 # Fetch video title
-VIDEO_TITLE=$(curl -s "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${VIDEO_ID}&key=${YOUTUBE_API_KEY}" |
-  jq -r '.items[0].snippet.title')
+VIDEO_TITLE=$(curl -s "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${VIDEO_ID}&key=${YOUTUBE_API_KEY}" \
+  | jq -r '.items[0].snippet.title')
 
 if [[ "$VIDEO_TITLE" == "null" ]]; then
   echo "Error: Could not fetch video title."
   exit 1
 fi
-
-# Generate concise, readable title using DeepSeek
-SHORT_TITLE=$(
-  curl -s https://api.deepseek.com/chat/completions \
-    -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
-    -H "Content-Type: application/json" \
-    -d @- << EOF | jq -r '.choices[0].message.content'
-{
-  "model": "deepseek-chat",
-  "messages": [
-    {
-      "role": "system",
-      "content": "You are a helpful assistant that rewrites long YouTube video titles into concise, natural, and readable versions for humans."
-    },
-    {
-      "role": "user",
-      "content": "Please rewrite this YouTube title to be short and readable. Give me only the title. Omit host, day and Rosary In a Year info. We know that already:\n\n${VIDEO_TITLE}"
-    }
-  ],
-  "temperature": 0.5
-}
-EOF
-)
 
 # Download auto-subtitles using yt-dlp
 rm -f "${VIDEO_ID}.en.vtt"

@@ -26,6 +26,8 @@
   - [Carried with Love](#carried-with-love)
 - [April 13,2025](#april-132025)
   - [Pilgrimage of Faith](#pilgrimage-of-faith)
+- [April 14,2025](#april-142025)
+  - [Where is Your Sting?](#where-is-your-sting)
 
 <!-- tocstop -->
 
@@ -110,3 +112,9 @@ RIAY April 2025
 ### Pilgrimage of Faith
 
 [![Pilgrimage of Faith](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day103.jpg)](https://youtu.be/ZWCBK7gr0VU "Pilgrimage of Faith")
+
+## April 14,2025
+
+### Where is Your Sting?
+
+[![Where is Your Sting?](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day104.jpg)](https://youtu.be/VCzXwTJfet4 "Where is Your Sting?")
