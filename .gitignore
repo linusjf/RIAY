@@ -10,3 +10,4 @@ commit.txt
 **/1_py3_script
 build/**
 *.log
+*.vtt
