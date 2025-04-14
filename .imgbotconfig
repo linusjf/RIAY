@@ -1,7 +1,7 @@
 {
     "schedule": "daily", 
     "ignoredFiles": [
-    "**/Day*.jpg",
+    "Day*.jpg",
    "History.jpg",
    "Podcast.jpg",
    "HowToPray.jpg",
