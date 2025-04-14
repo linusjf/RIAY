@@ -11,3 +11,4 @@ commit.txt
 build/**
 *.log
 *.vtt
+*.captions

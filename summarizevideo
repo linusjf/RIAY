@@ -3,12 +3,24 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-VIDEO_ID="$1"
-
 if [[ -z "${YOUTUBE_API_KEY:-}" || -z "${DEEPSEEK_API_KEY:-}" ]]; then
   echo "Error: YOUTUBE_API_KEY and/or DEEPSEEK_API_KEY environment variables not set."
   exit 1
 fi
+
+caption_only=false
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -c | --caption-only)
+      caption_only=true
+      shift
+      ;;
+    *) break ;;
+  esac
+done
+
+VIDEO_ID="$1"
 
 if [[ -z "$VIDEO_ID" ]]; then
   echo "Usage: $0 <youtube-video-id>"
@@ -46,6 +58,11 @@ TRANSCRIPT=$(extract_text_from_vtt "${VIDEO_ID}.en.vtt" | tr '\n' ' ')
 if [[ -z "$TRANSCRIPT" ]]; then
   echo "Error: Transcript conversion failed."
   exit 1
+fi
+
+if "$caption_only"; then
+  echo "$TRANSCRIPT" > "${VIDEO_ID}.en.captions"
+  exit 0
 fi
 
 # Chunk transcript into 8000-character parts
