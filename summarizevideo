@@ -1,0 +1,149 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+VIDEO_ID="$1"
+
+if [[ -z "${YOUTUBE_API_KEY:-}" || -z "${DEEPSEEK_API_KEY:-}" ]]; then
+  echo "Error: YOUTUBE_API_KEY and/or DEEPSEEK_API_KEY environment variables not set."
+  exit 1
+fi
+
+if [[ -z "$VIDEO_ID" ]]; then
+  echo "Usage: $0 <youtube-video-id>"
+  exit 1
+fi
+
+extract_text_from_vtt() {
+  local vtt_file="$1"
+  grep -vE '^[0-9]+$|^[0-9]{2}:' "$vtt_file" | sed '/^$/d' | sed 's/<[^>]*>//g'
+}
+
+# Fetch video title
+VIDEO_TITLE=$(curl -s "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${VIDEO_ID}&key=${YOUTUBE_API_KEY}" |
+  jq -r '.items[0].snippet.title')
+
+if [[ "$VIDEO_TITLE" == "null" ]]; then
+  echo "Error: Could not fetch video title."
+  exit 1
+fi
+
+# Generate concise, readable title using DeepSeek
+SHORT_TITLE=$(
+  curl -s https://api.deepseek.com/chat/completions \
+    -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
+    -H "Content-Type: application/json" \
+    -d @- << EOF | jq -r '.choices[0].message.content'
+{
+  "model": "deepseek-chat",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant that rewrites long YouTube video titles into concise, natural, and readable versions for humans."
+    },
+    {
+      "role": "user",
+      "content": "Please rewrite this YouTube title to be short and readable. Give me only the title. Omit host, day and Rosary In a Year info. We know that already:\n\n${VIDEO_TITLE}"
+    }
+  ],
+  "temperature": 0.5
+}
+EOF
+)
+
+# Download auto-subtitles using yt-dlp
+rm -f "${VIDEO_ID}.en.vtt"
+
+yt-dlp --write-auto-sub --sub-lang "en" --skip-download --sub-format "vtt" \
+  -o "${VIDEO_ID}.%(ext)s" "https://www.youtube.com/watch?v=${VIDEO_ID}" > /dev/null 2>&1
+
+if [[ ! -f "${VIDEO_ID}.en.vtt" ]]; then
+  echo "Error: Subtitle file not found."
+  exit 1
+fi
+
+# Convert VTT to plain text
+TRANSCRIPT=$(extract_text_from_vtt "${VIDEO_ID}.en.vtt" | tr '\n' ' ')
+
+if [[ -z "$TRANSCRIPT" ]]; then
+  echo "Error: Transcript conversion failed."
+  exit 1
+fi
+
+# Chunk transcript into 8000-character parts
+CHUNK_SIZE=8000
+TOTAL_LEN=${#TRANSCRIPT}
+CHUNKS=()
+for ((i = 0; i < TOTAL_LEN; i += CHUNK_SIZE)); do
+  CHUNKS+=("${TRANSCRIPT:i:CHUNK_SIZE}")
+done
+
+# Function to summarize a single chunk
+summarize_chunk() {
+  local chunk="$1"
+  curl -s https://api.deepseek.com/chat/completions \
+    -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
+    -H "Content-Type: application/json" \
+    -d @- << EOF | jq -r '.choices[0].message.content'
+{
+  "model": "deepseek-chat",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant that summarizes YouTube transcripts. Exclude plugs, branding, and service/product promotions."
+    },
+    {
+      "role": "user",
+      "content": "Summarize this transcript:\n\n${chunk}"
+    }
+  ],
+  "temperature": 0.5
+}
+EOF
+}
+
+# Process each chunk
+INTERMEDIATE_SUMMARIES=()
+for chunk in "${CHUNKS[@]}"; do
+  summary=$(summarize_chunk "$chunk")
+  INTERMEDIATE_SUMMARIES+=("$summary")
+done
+
+# Final summarization step
+FINAL_INPUT=$(printf "%s\n\n" "${INTERMEDIATE_SUMMARIES[@]}")
+
+ESCAPED_INPUT=$(jq -Rs <<< "$FINAL_INPUT")
+
+RESPONSE=$(
+  curl -s https://api.deepseek.com/chat/completions \
+    -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
+    -H "Content-Type: application/json" \
+    -d @- << EOF
+{
+  "model": "deepseek-chat",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Condense the following into a single, clean, human-readable summary. Exclude all promotional or branding references. Start with a level three header and annotate it as AI-Generated Summary followed by your generated title."
+    },
+    {
+      "role": "user",
+      "content": ${ESCAPED_INPUT}
+    }
+  ],
+  "temperature": 0.5
+}
+EOF
+)
+
+# Debug output if the JSON is invalid
+if ! echo "$RESPONSE" | jq . > /dev/null 2>&1; then
+  echo "ERROR: DeepSeek API returned invalid response:"
+  echo "$RESPONSE"
+  exit 1
+fi
+
+FINAL_SUMMARY=$(echo "$RESPONSE" | jq -r '.choices[0].message.content')
+
+# Output Markdown
+echo -e "${FINAL_SUMMARY}"
