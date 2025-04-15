@@ -98,7 +98,7 @@ summarize_chunk_gemini() {
 {
   "contents": [{
     "parts": [{
-      "text": "Summarize this podcast transcript, excluding plugs, branding, and promotions:\n\n${chunk}"
+      "text": "Summarize this podcast transcript, excluding plugs, branding, and promotions. Omit mention of Day, podcast and Rosary in a Day. The listener knows that already:\n\n${chunk}"
     }]
   }],
   "generationConfig": {
@@ -131,7 +131,7 @@ summarize_chunk_deepseek() {
   "messages": [
     {
       "role": "system",
-      "content": "You are a helpful assistant that summarizes YouTube transcripts. Exclude plugs, branding, and service/product promotions."
+      "content": "You are a helpful assistant that summarizes YouTube transcripts. Exclude plugs, branding, and service/product promotions. Omit mention of Day, podcast and Rosary in a Day. The listener knows that already."
     },
     {
       "role": "user",
