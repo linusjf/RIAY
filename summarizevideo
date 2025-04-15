@@ -3,8 +3,13 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-if [[ -z "${YOUTUBE_API_KEY:-}" || -z "${DEEPSEEK_API_KEY:-}" ]]; then
-  echo "Error: YOUTUBE_API_KEY and/or DEEPSEEK_API_KEY environment variables not set."
+if [[ -z "${YOUTUBE_API_KEY:-}" ]]; then
+  echo "Error: YOUTUBE_API_KEY environment variable not set."
+  exit 1
+fi
+
+if [[ -z "${GEMINI_API_KEY:-}" && -z "${DEEPSEEK_API_KEY:-}" ]]; then
+  echo "Error: At least one of GEMINI_API_KEY or DEEPSEEK_API_KEY environment variables must be set."
   exit 1
 fi
 
@@ -84,8 +89,39 @@ for ((i = 0; i < TOTAL_LEN; i += CHUNK_SIZE)); do
   CHUNKS+=("${TRANSCRIPT:i:CHUNK_SIZE}")
 done
 
-# Function to summarize a single chunk
-summarize_chunk() {
+# Function to summarize a single chunk using Gemini
+summarize_chunk_gemini() {
+  local chunk="$1"
+  local payload=''
+  payload="$(
+    cat << EOM
+{
+  "contents": [{
+    "parts": [{
+      "text": "Summarize this podcast transcript, excluding plugs, branding, and promotions:\n\n${chunk}"
+    }]
+  }],
+  "generationConfig": {
+    "temperature": 0.5
+  }
+}
+EOM
+  )"
+  local response="$(
+    curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
+      -H "Content-Type: application/json" \
+      -d "$payload"
+  )"
+  if ! echo "$response" | jq . > /dev/null 2>&1; then
+    echo "ERROR: Gemini API returned invalid response:"
+    echo "$response"
+    return 1
+  fi
+  echo "$response" | jq -r '.candidates[0].content.parts[0].text'
+}
+
+# Function to summarize a single chunk using DeepSeek
+summarize_chunk_deepseek() {
   local chunk="$1"
   local payload=''
   payload="$(
@@ -110,15 +146,37 @@ EOM
     curl -s https://api.deepseek.com/chat/completions \
       -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
       -H "Content-Type: application/json" \
-      -d @- "${payload}"
+      -d "$payload"
   )"
-  # Debug output if the JSON is invalid
   if ! echo "$response" | jq . > /dev/null 2>&1; then
     echo "ERROR: DeepSeek API returned invalid response:"
     echo "$response"
-    exit 1
+    return 1
   fi
   echo "$response" | jq -r '.choices[0].message.content'
+}
+
+# Function to try Gemini first, then fall back to DeepSeek
+summarize_chunk() {
+  local chunk="$1"
+  if [[ -n "${GEMINI_API_KEY:-}" ]]; then
+    local summary=$(summarize_chunk_gemini "$chunk" 2> /dev/null || true)
+    if [[ -n "$summary" ]]; then
+      echo "$summary"
+      return 0
+    fi
+  fi
+
+  if [[ -n "${DEEPSEEK_API_KEY:-}" ]]; then
+    local summary=$(summarize_chunk_deepseek "$chunk" 2> /dev/null || true)
+    if [[ -n "$summary" ]]; then
+      echo "$summary"
+      return 0
+    fi
+  fi
+
+  echo "ERROR: Failed to summarize chunk (no working API available)"
+  return 1
 }
 
 # Process each chunk
@@ -131,13 +189,43 @@ done
 # Final summarization step
 FINAL_INPUT=$(printf "%s\n\n" "${INTERMEDIATE_SUMMARIES[@]}")
 
-ESCAPED_INPUT=$(jq -Rs <<< "$FINAL_INPUT")
+# Function for final summarization using Gemini
+final_summary_gemini() {
+  local input="$1"
+  local escaped_input=$(jq -Rs <<< "$input")
+  local response=$(
+    curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
+      -H "Content-Type: application/json" \
+      -d @- << EOF
+{
+  "contents": [{
+    "parts": [{
+      "text": "Condense these summaries into a single, clean, human-readable summary. Exclude all promotional or branding references. Start with a level three header and annotate it as 'AI-Generated Summary:' followed by your generated title.\n\n${escaped_input}"
+    }]
+  }],
+  "generationConfig": {
+    "temperature": 0.5
+  }
+}
+EOF
+  )
+  if ! echo "$response" | jq . > /dev/null 2>&1; then
+    echo "ERROR: Gemini API returned invalid response:"
+    echo "$response"
+    return 1
+  fi
+  echo "$response" | jq -r '.candidates[0].content.parts[0].text'
+}
 
-RESPONSE=$(
-  curl -s https://api.deepseek.com/chat/completions \
-    -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
-    -H "Content-Type: application/json" \
-    -d @- << EOF
+# Function for final summarization using DeepSeek
+final_summary_deepseek() {
+  local input="$1"
+  local escaped_input=$(jq -Rs <<< "$input")
+  local response=$(
+    curl -s https://api.deepseek.com/chat/completions \
+      -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
+      -H "Content-Type: application/json" \
+      -d @- << EOF
 {
   "model": "deepseek-chat",
   "messages": [
@@ -147,22 +235,34 @@ RESPONSE=$(
     },
     {
       "role": "user",
-      "content": ${ESCAPED_INPUT}
+      "content": ${escaped_input}
     }
   ],
   "temperature": 0.5
 }
 EOF
-)
+  )
+  if ! echo "$response" | jq . > /dev/null 2>&1; then
+    echo "ERROR: DeepSeek API returned invalid response:"
+    echo "$response"
+    return 1
+  fi
+  echo "$response" | jq -r '.choices[0].message.content'
+}
 
-# Debug output if the JSON is invalid
-if ! echo "$RESPONSE" | jq . > /dev/null 2>&1; then
-  echo "ERROR: DeepSeek API returned invalid response:"
-  echo "$RESPONSE"
-  exit 1
+# Try Gemini first, then DeepSeek for final summary
+if [[ -n "${GEMINI_API_KEY:-}" ]]; then
+  FINAL_SUMMARY=$(final_summary_gemini "$FINAL_INPUT" || true)
 fi
 
-FINAL_SUMMARY=$(echo "$RESPONSE" | jq -r '.choices[0].message.content')
+if [[ (-z "$FINAL_SUMMARY" || -z "${GEMINI_API_KEY:-}") && -n "${DEEPSEEK_API_KEY:-}" ]]; then
+  FINAL_SUMMARY=$(final_summary_deepseek "$FINAL_INPUT")
+fi
+
+if [[ -z "$FINAL_SUMMARY" ]]; then
+  echo "ERROR: Failed to generate final summary (no working API available)"
+  exit 1
+fi
 
 # Output Markdown
 echo -e "${FINAL_SUMMARY}"
