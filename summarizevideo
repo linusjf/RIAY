@@ -193,21 +193,22 @@ FINAL_INPUT=$(printf "%s\n\n" "${INTERMEDIATE_SUMMARIES[@]}")
 final_summary_gemini() {
   local input="$1"
   local escaped_input=$(jq -Rs <<< "$input")
+  local payload=$(jq -n \
+    --arg input "$escaped_input" \
+    '{
+      "contents": [{
+        "parts": [{
+          "text": ("Condense these summaries into a single, clean, human-readable summary. Exclude all promotional or branding references. Start with a level three header and annotate it as '\''AI-Generated Summary:'\'' followed by your generated title.\n\n" + $input)
+        }]
+      }],
+      "generationConfig": {
+        "temperature": 0.5
+      }
+    }')
   local response=$(
     curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
       -H "Content-Type: application/json" \
-      -d @- << EOF
-{
-  "contents": [{
-    "parts": [{
-      "text": "Condense these summaries into a single, clean, human-readable summary. Exclude all promotional or branding references. Start with a level three header and annotate it as 'AI-Generated Summary:' followed by your generated title.\n\n${escaped_input}"
-    }]
-  }],
-  "generationConfig": {
-    "temperature": 0.5
-  }
-}
-EOF
+      -d "$payload"
   )
   if ! echo "$response" | jq . > /dev/null 2>&1; then
     echo "ERROR: Gemini API returned invalid response:"
@@ -221,26 +222,27 @@ EOF
 final_summary_deepseek() {
   local input="$1"
   local escaped_input=$(jq -Rs <<< "$input")
+  local payload=$(jq -n \
+    --arg input "$escaped_input" \
+    '{
+      "model": "deepseek-chat",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Condense the following into a single, clean, human-readable summary. Exclude all promotional or branding references. Start with a level three header and annotate it as '\''AI-Generated Summary:'\'' followed by your generated title."
+        },
+        {
+          "role": "user",
+          "content": $input
+        }
+      ],
+      "temperature": 0.5
+    }')
   local response=$(
     curl -s https://api.deepseek.com/chat/completions \
       -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
       -H "Content-Type: application/json" \
-      -d @- << EOF
-{
-  "model": "deepseek-chat",
-  "messages": [
-    {
-      "role": "system",
-      "content": "Condense the following into a single, clean, human-readable summary. Exclude all promotional or branding references. Start with a level three header and annotate it as 'AI-Generated Summary:' followed by your generated title."
-    },
-    {
-      "role": "user",
-      "content": ${escaped_input}
-    }
-  ],
-  "temperature": 0.5
-}
-EOF
+      -d "$payload"
   )
   if ! echo "$response" | jq . > /dev/null 2>&1; then
     echo "ERROR: DeepSeek API returned invalid response:"
