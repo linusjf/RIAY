@@ -1211,7 +1211,7 @@ RIAY March 2025
     - [Application and Prayer](#application-and-prayer)
 - [April 15,2025](#april-152025)
   - [Love Draws Us Up](#love-draws-us-up)
-  - [AI-Generated Summary: The Ascension](#ai-generated-summary-the-ascension)
+  - [AI-Generated Summary: Exploring The Ascension and Our Heavenly Desire](#ai-generated-summary-exploring-the-ascension-and-our-heavenly-desire)
 
 <!-- tocstop -->
 
@@ -1336,7 +1336,7 @@ Father Mark Mary guides listeners to apply the homily's teachings to their own l
 
 [![Love Draws Us Up](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day105.jpg)](https://youtu.be/KhFM9KUA-PY "Love Draws Us Up")
 
-##### AI-Generated Summary: The Ascension
+##### AI-Generated Summary: Exploring The Ascension and Our Heavenly Desire
 
 This video focuses on the Second Glorious Mystery: the Ascension of Jesus.
 The speaker introduces the meditation on the Ascension by reading a passage from St. Thomas Aquinas. Aquinas emphasizes the importance of directing our love and focus towards heavenly things, quoting the apostle's exhortation to "Seek the things that are above, where Christ is sitting at the right hand of God". Aquinas connects this to the Holy Spirit, stating that Jesus's ascension was necessary for the Holy Spirit to come to the disciples. He quotes Augustine, saying, "You cannot receive the Holy Spirit as long as you persist in knowing Christ according to the flesh". The reading concludes by explaining that after Christ's ascension, the Holy Spirit, along with the Father and the Son, became spiritually present to the disciples.
