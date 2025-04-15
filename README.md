@@ -1325,7 +1325,7 @@ The homily centers on the first glorious mystery, the Resurrection of Jesus Chri
 
 ###### Application and Prayer
 
-Father Mark Mary guides listeners to apply the homily's teachings to their own lives. He encourages reflection on pride, discouragement, and grief through the lens of the Resurrection's promise. The text concludes with the beginning of the Rosary prayers.
+Father Mark Mary guides listeners to apply the homily's teachings to their own lives. He encourages reflection on pride, discouragement, and grief through the lens of the Resurrection's promise. The video concludes with the beginning of the Rosary prayers.
 
 ## May
 
