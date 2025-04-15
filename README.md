@@ -1211,6 +1211,7 @@ RIAY March 2025
     - [Application and Prayer](#application-and-prayer)
 - [April 15,2025](#april-152025)
   - [Love Draws Us Up](#love-draws-us-up)
+  - [AI-Generated Summary: The Ascension](#ai-generated-summary-the-ascension)
 
 <!-- tocstop -->
 
@@ -1334,6 +1335,17 @@ Father Mark Mary guides listeners to apply the homily's teachings to their own l
 ##### Love Draws Us Up
 
 [![Love Draws Us Up](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day105.jpg)](https://youtu.be/KhFM9KUA-PY "Love Draws Us Up")
+
+##### AI-Generated Summary: The Ascension
+
+This video focuses on the Second Glorious Mystery: the Ascension of Jesus.
+The speaker introduces the meditation on the Ascension by reading a passage from St. Thomas Aquinas. Aquinas emphasizes the importance of directing our love and focus towards heavenly things, quoting the apostle's exhortation to "Seek the things that are above, where Christ is sitting at the right hand of God". Aquinas connects this to the Holy Spirit, stating that Jesus's ascension was necessary for the Holy Spirit to come to the disciples. He quotes Augustine, saying, "You cannot receive the Holy Spirit as long as you persist in knowing Christ according to the flesh". The reading concludes by explaining that after Christ's ascension, the Holy Spirit, along with the Father and the Son, became spiritually present to the disciples.
+The speaker then expounds on the theological truth of the Ascension, explaining that it signifies Jesus's new form of presence, providing greater access to Him through the Holy Spirit. He urges listeners to see the Glorious Mysteries as more than just theological concepts, but as sources of profound love and charity. He connects the mystery of the Ascension to the love one might feel for a child who was thought to be lost and is found again, likening it to the love we should feel for Jesus, who died and is now alive.
+He emphasizes that while we can experience intimacy with Jesus in this world, the Ascension points to a greater reality that awaits us in heaven. This anticipation of heaven, he argues, should inspire a greater love for God and a detachment from worldly anxieties.
+To illustrate this, the speaker shares anecdotes of people who, in the face of loss, experienced an increased desire for heaven. He recounts stories of a grandmother who lost her husband of over 60 years and whose zeal for heaven intensified, and of parents who, in the tragedy of losing a child, were sustained by the hope of being reunited with them in heaven.
+The speaker concludes this part by encouraging listeners to ask the Holy Spirit to increase their longing for heaven and their love for Jesus. He prays that the Ascension would become a personal truth filled with love and desire for union with God.
+The remainder of the video consists of the rosary prayers, including the Our Father, Hail Mary, and Glory Be. Each decade of the rosary focuses on the Second Glorious Mystery, the Ascension.
+The speaker closes the video by thanking the listeners for joining him in prayer and expressing his anticipation for continuing the journey with them.
 
 ## May
 
