@@ -1209,6 +1209,8 @@ RIAY March 2025
   - [AI-Generated Summary: Homily on the Resurrection](#ai-generated-summary-homily-on-the-resurrection)
     - [The Resurrection and its Significance](#the-resurrection-and-its-significance)
     - [Application and Prayer](#application-and-prayer)
+- [April 15,2025](#april-152025)
+  - [Love Draws Us Up](#love-draws-us-up)
 
 <!-- tocstop -->
 
@@ -1326,6 +1328,12 @@ The homily centers on the first glorious mystery, the Resurrection of Jesus Chri
 ###### Application and Prayer
 
 Father Mark Mary guides listeners to apply the homily's teachings to their own lives. He encourages reflection on pride, discouragement, and grief through the lens of the Resurrection's promise. The video concludes with the beginning of the Rosary prayers.
+
+#### April 15,2025
+
+##### Love Draws Us Up
+
+[![Love Draws Us Up](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day105.jpg)](https://youtu.be/KhFM9KUA-PY "Love Draws Us Up")
 
 ## May
 
