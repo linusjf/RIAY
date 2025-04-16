@@ -64,7 +64,7 @@ function extract_text_from_vtt() {
 
 function get_video_title() {
   local video_id="$1"
-  curl --fail-with-body --retry 2 --retry-delay 10 -s "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${YOUTUBE_API_KEY}" |
+  curl --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${YOUTUBE_API_KEY}" |
     jq -r '.items[0].snippet.title'
 }
 
@@ -95,7 +95,7 @@ EOM
 
   local response
   response="$(
-    curl --fail-with-body --retry 2 --retry-delay 10 -s \
+    curl --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s \
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
       -H "Content-Type: application/json" \
       -d "$payload"
@@ -133,7 +133,7 @@ EOM
 
   local response
   response="$(
-    curl --fail-with-body --retry 2 --retry-delay 10 -s https://api.deepseek.com/chat/completions \
+    curl --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s https://api.deepseek.com/chat/completions \
       -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
       -H "Content-Type: application/json" \
       -d "$payload"
@@ -191,7 +191,7 @@ function final_summary_gemini() {
 
   local response
   response=$(
-    curl --fail-with-body --retry 2 --retry-delay 10 -s \
+    curl --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s \
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
       -H "Content-Type: application/json" \
       -d "$payload"
@@ -229,7 +229,7 @@ function final_summary_deepseek() {
 
   local response
   response=$(
-    curl --fail-with-body --retry 2 --retry-delay 10 -s https://api.deepseek.com/chat/completions \
+    curl --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s https://api.deepseek.com/chat/completions \
       -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
       -H "Content-Type: application/json" \
       -d "$payload"
