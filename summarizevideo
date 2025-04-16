@@ -108,7 +108,7 @@ summarize_chunk_gemini() {
 EOM
   )"
   local response="$(
-    curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
+    curl --fail-with-body --retry 2 --retry-delay 10 -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
       -H "Content-Type: application/json" \
       -d "$payload"
   )"
@@ -143,7 +143,7 @@ summarize_chunk_deepseek() {
 EOM
   )"
   local response="$(
-    curl -s https://api.deepseek.com/chat/completions \
+    curl --fail-with-body --retry 2 --retry-delay 10 -s https://api.deepseek.com/chat/completions \
       -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
       -H "Content-Type: application/json" \
       -d "$payload"
@@ -207,7 +207,7 @@ final_summary_gemini() {
       }
     }')
   local response=$(
-    curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
+    curl --fail-with-body --retry 2 --retry-delay 10 -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
       -H "Content-Type: application/json" \
       -d "$payload"
   )
@@ -240,7 +240,7 @@ final_summary_deepseek() {
       "temperature": 0.5
     }')
   local response=$(
-    curl -s https://api.deepseek.com/chat/completions \
+    curl --fail-with-body --retry 2 --retry-delay 10 -s https://api.deepseek.com/chat/completions \
       -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
       -H "Content-Type: application/json" \
       -d "$payload"
