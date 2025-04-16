@@ -238,7 +238,7 @@ While the provided text doesn't contain direct quotes, several insightful concep
 
 1. **Praying the Full Rosary:** The culmination of the program, focusing on receiving the graces of the full Rosary.
 
-**Concluding Ritual:** The daily practice concludes with a structured sequence: the Sign of the Cross, the Our Father, three Hail Marys, the Glory Be, and another Sign of the Cross. This provides a consistent framework for ending the prayer time. The emphasis on expressing love to Jesus and Mary reinforces the relational aspect of prayer.\_🏽
+**Concluding Ritual:** The daily practice concludes with a structured sequence: the Sign of the Cross, the Our Father, three Hail Marys, the Glory Be, and another Sign of the Cross. This provides a consistent framework for ending the prayer time. The emphasis on expressing love to Jesus and Mary reinforces the relational aspect of prayer.
 
 #### January 02,2025
 
