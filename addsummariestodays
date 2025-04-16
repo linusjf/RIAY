@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+# Check for exactly two arguments
+if [ "$#" -ne 2 ]; then
+  echo "Usage: $0 <startday> <endday>"
+  exit 1
+fi
+
+# Check if RIAY_YEAR is set
+if [ -z "$RIAY_YEAR" ]; then
+  echo "Error: RIAY_YEAR environment variable is not set."
+  exit 1
+fi
+
+startday=$1
+endday=$2
+
+# Validate input
+if ! [[ "$startday" =~ ^[0-9]+$ && "$endday" =~ ^[0-9]+$ ]]; then
+  echo "Both startday and endday must be numeric."
+  exit 1
+fi
+
+if [ "$endday" -lt "$startday" ]; then
+  echo "endday must be greater than or equal to startday."
+  exit 1
+fi
+
+# Check if videos.txt exists
+if [ ! -f "videos.txt" ]; then
+  echo "Error: videos.txt not found."
+  exit 1
+fi
+
+# Get number of lines in the file
+total_lines=$(wc -l < videos.txt)
+
+# Adjust endday if it exceeds total lines
+if [ "$endday" -gt "$total_lines" ]; then
+  echo "Warning: endday ($endday) exceeds total lines ($total_lines). Adjusting to $total_lines."
+  endday=$total_lines
+fi
+
+# Process lines
+lineno=$startday
+sed -n "${startday},${endday}p" videos.txt | while read -r videoid; do
+  if [ -n "$videoid" ]; then
+    filename="Day$(printf "%03d" "$lineno").md"
+
+    # Calculate month name using date and RIAY_YEAR
+    month=$(date -d "${RIAY_YEAR}-01-01 +$((lineno - 1)) days" +%B)
+    filepath="$month/$filename"
+
+    if [ -f "$filepath" ]; then
+      echo "Appending to $filepath (Day $lineno, $videoid)"
+      echo "" >> "$filepath"
+      ./summarizevideo "$videoid" >> "$filepath"
+    else
+      echo "Warning: $filepath not found. Skipping videoid $videoid (line $lineno)."
+    fi
+
+    sleep 10
+  fi
+  lineno=$((lineno + 1))
+done
