@@ -184,6 +184,7 @@ INTERMEDIATE_SUMMARIES=()
 for chunk in "${CHUNKS[@]}"; do
   summary=$(summarize_chunk "$chunk")
   INTERMEDIATE_SUMMARIES+=("$summary")
+  sleep 15s
 done
 
 # Final summarization step
