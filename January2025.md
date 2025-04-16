@@ -8,6 +8,7 @@
   - [The King Knows You](#the-king-knows-you)
   - [ROSARY IN A YEAR DAY 02 Michelle Jackson](#rosary-in-a-year-day-02-michelle-jackson)
   - [Day 2 - Michael Eltham](#day-2---michael-eltham)
+  - [AI-Generated Summary: Encountering the King in Prayer](#ai-generated-summary-encountering-the-king-in-prayer)
 - [January 03,2025](#january-032025)
   - [Heart of Jesus](#heart-of-jesus)
   - [RIAY Day 3 Heart of Jesus Michael Eltham](#riay-day-3-heart-of-jesus-michael-eltham)
@@ -235,6 +236,22 @@ my days were shaped, before one came to be.
 It is good to simply be held by our Father, to rest in His bosom. Knowing that He is always watching over us and we are precious to Him.
 
 May the Holy Spirit lead us.
+
+### AI-Generated Summary: Encountering the King in Prayer
+
+This section explores the profound experience of encountering Jesus in prayer, particularly through the lens of the Litany of the Sacred Heart. The speaker initially expresses a past aversion to litanies due to a lack of comprehension regarding the titles attributed to Jesus. However, recent study and contemplation have unveiled the depth and poetic beauty within these titles, leading to a newfound appreciation. A litany, as defined in the segment, is a vocal prayer with a specific focus, incorporating invocations that highlight the titles and attributes of the divine mystery being addressed.
+
+The core of this reflection centers on the invocation "Heart of Jesus, King and Center of All Hearts." The speaker encourages listeners to visualize Christ the King upon his throne, surrounded by angelic hosts, radiating majesty, and holding the world in his hand. He is depicted as omnipotent, the ultimate lawgiver, ruler, and victor. Crucially, and perhaps most importantly, this King knows each individual by name.
+
+To illustrate this point, the speaker recounts a personal anecdote about collaborating with Father Mike Schmitz on video projects for an extended period, despite being geographically separated and having limited direct interaction. The speaker was deeply moved when Father Mike addressed them by name, demonstrating a personal connection despite the lack of close contact. This anecdote serves as a powerful analogy, highlighting that even though Father Mike is a recognizable figure in Catholic media, he is not the literal King of the Universe, unlike Jesus.
+
+This leads to the central theme: Jesus, the Eternal King, possesses an intimate knowledge of each person. He knows our names, formed us in the womb, and even knows the number of hairs on our heads. The speaker emphasizes the importance of envisioning oneself in the King's throne room during prayer, recognizing that He yearns for our presence and focuses intently on us. However, we often allow distractions to our attention – worries, anxieties, our phones, or the lives of others. This is compared to the biblical account of Martha, who busied herself with many things, while Mary chose the better part by sitting at Jesus' feet.
+
+The speaker urges listeners to emulate Mary and choose the better part. This involves approaching the King on his throne, engaging in direct eye contact, and making him the center of our attention. It necessitates recognizing that He sees and knows us completely. We are encouraged to hear Him speak our name, to be attuned to the stirrings within our hearts, and to respond authentically. Sharing our love, needs, and desires with Him is vital because Jesus cherishes the sound of our voices. The message is clear: speak to Him. Maintain Him as the focal point of our hearts, attention, and lives as we pray the Our Father, three Hail Marys, and the Glory Be. The key takeaway is the constant reassurance that the King sees us, knows us, loves to hear our voice, and knows our name.
+
+The segment then transitions into the recitation of the prayers mentioned: the concluding portion of the Lord's Prayer ("Forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen"), followed by three Hail Marys and the Glory Be. The inclusion of these prayers within the segment reinforces the message of actively engaging with Jesus in prayer. The session concludes with a brief expression of gratitude and a farewell.
+
+Notable insights from this segment include the reframing of litanies as poetic expressions of devotion, the powerful analogy of Father Mike Schmitz recognizing the speaker by name, and the emphasis on Jesus' intimate knowledge of each individual. The central message is a call to prioritize our relationship with Jesus, making Him the center of our hearts and lives, and engaging in authentic communication with Him through prayer. The visualization of being present in the King's throne room serves as a powerful tool for fostering this connection and deepening our understanding of His love and attention. The concluding prayers offer a practical application of this message, encouraging listeners to put these principles into practice.
 
 ## January 03,2025
 
