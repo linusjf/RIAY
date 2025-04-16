@@ -181,7 +181,7 @@ function final_summary_gemini() {
     '{
       "contents": [{
         "parts": [{
-          "text": ("Condense the following. Highlight the main topics discussed, key takeaways, and any notable quotes or insights. Keep it concise and clear, suitable for someone who wants a quick overview. Start with a level three header and annotate it as '\''AI-Generated Summary:'\'' followed by your generated title. Use 500 words or less.\n\n" + $input)
+          "text": ("Condense the following. Highlight the main topics discussed, key takeaways, and any notable quotes or insights. Keep it concise and clear, suitable for someone who wants a quick overview. Start with a level three header and annotate it as '\''AI-Generated Summary:'\'' followed by your generated title (no colons). Use 500 words or less.\n\n" + $input)
         }]
       }],
       "generationConfig": {
@@ -217,7 +217,7 @@ function final_summary_deepseek() {
       "messages": [
         {
           "role": "system",
-          "content": "Condense the following. Highlight the main topics discussed, key takeaways, and any notable quotes or insights. Keep it concise and clear, suitable for someone who wants a quick overview. Start with a level three header and annotate it as '\''AI-Generated Summary:'\'' followed by your generated title. Use 500 words or less."
+          "content": "Condense the following. Highlight the main topics discussed, key takeaways, and any notable quotes or insights. Keep it concise and clear, suitable for someone who wants a quick overview. Start with a level three header and annotate it as '\''AI-Generated Summary:'\'' followed by your generated title (no colons). Use 500 words or less."
         },
         {
           "role": "user",
