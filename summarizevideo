@@ -253,6 +253,7 @@ final_summary_deepseek() {
   echo "$response" | jq -r '.choices[0].message.content'
 }
 
+sleep 15s
 # Try Gemini first, then DeepSeek for final summary
 if [[ -n "${GEMINI_API_KEY:-}" ]]; then
   FINAL_SUMMARY=$(final_summary_gemini "$FINAL_INPUT" || true)
