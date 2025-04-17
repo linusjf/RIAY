@@ -12,4 +12,4 @@ build/**
 *.log
 *.vtt
 *.en.txt
-*.captions
+fail*.json
