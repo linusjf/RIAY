@@ -1,0 +1,1 @@
+Failed to parse the request body as JSON: messages[1].content: control character (\u0000-\u001F) found while parsing a string at line 11 column 0

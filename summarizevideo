@@ -37,6 +37,7 @@ Usage: ${SCRIPT_NAME} [OPTIONS] <youtube-video-id>
 Options:
   -c, --caption-only      Extract captions only without summarization
   -d, --debug             Enable debug output
+  --verbose               Enable verbose output
   -p, --prepend-day-index Prepend day index from videos.txt to output files
   --version               Show version information
   --help                  Show this help message
@@ -68,15 +69,26 @@ function check_dependencies() {
 
 function extract_text_from_vtt() {
   local vtt_file="$1"
-  grep -vE '^[0-9]+$|^[0-9]{2}:' "$vtt_file" |
-    sed -e '/^WEBVTT/d' \
+  grep -vE '^[0-9]+$|^[0-9]{2}:' "$vtt_file" \
+    | sed -e '/^WEBVTT/d' \
       -e '/^Kind/d' \
       -e '/^Language/d' \
       -e 's/\[Music\]//g' \
       -e '/^[[:space:]]*$/d' \
-      -e 's/<[^>]*>//g' |
-    tr '\n' ' ' |
-    jq -Rs . | fold -s -w 1000
+      -e 's/<[^>]*>//g' \
+    | tr '\n' ' ' \
+    | jq -Rs . | fold -s -w 1000
+}
+
+function save_failed_response() {
+  local response="$1"
+  local endpoint="$2"
+  local timestamp
+  timestamp=$(date +"%Y%m%d_%H%M%S")
+  local filename="failed_response_${endpoint}_${timestamp}.json"
+
+  echo "$response" > "$filename"
+  err "Saved failed response to $filename"
 }
 
 function safe_curl_request() {
@@ -112,10 +124,17 @@ function safe_curl_request() {
 
     curl_cmd+=("$url")
 
+    if [[ "${verbose:-false}" == "true" ]]; then
+      >&2 echo "Making $method request to $url"
+    fi
+
     status_code=$("${curl_cmd[@]}")
     response=$(cat "$output_file")
 
     if [[ $status_code -ge 200 && $status_code -lt 300 ]]; then
+      if [[ "${verbose:-false}" == "true" ]]; then
+        >&2 echo "Request to $url succeeded with status $status_code"
+      fi
       echo "$response"
       rm -f "$output_file"
       return 0
@@ -123,12 +142,13 @@ function safe_curl_request() {
 
     retry_count=$((retry_count + 1))
     if [[ $retry_count -lt $MAX_RETRIES ]]; then
+      >&2 echo "Request failed with status $status_code, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
       sleep $delay
       delay=$((delay * 2))
     fi
   done
 
-  # On final failure, show verbose output
+  # On final failure, show verbose output and save response
   >&2 echo "CURL VERBOSE OUTPUT:"
   curl -v "$url" \
     -X "$method" \
@@ -139,6 +159,7 @@ function safe_curl_request() {
     --show-error \
     >&2
 
+  save_failed_response "$response" "$(basename "$url")"
   rm -f "$output_file"
   err "Request failed after $MAX_RETRIES attempts. Last status code: $status_code"
   return 1
@@ -260,7 +281,7 @@ function summarize_chunk() {
   if [[ -n "${GEMINI_API_KEY:-}" ]]; then
     local summary
     summary=$(summarize_chunk_gemini "$chunk" 2> /dev/null || true)
-    if [[ -n "$summary" ]] && [[ "$summary" == null* ]]; then
+    if [[ -n "$summary" ]] && [[ "$summary" != null* ]]; then
       echo "$summary"
       return 0
     fi
@@ -269,7 +290,7 @@ function summarize_chunk() {
   if [[ -n "${DEEPSEEK_API_KEY:-}" ]]; then
     local summary
     summary=$(summarize_chunk_deepseek "$chunk" 2> /dev/null || true)
-    if [[ -n "$summary" ]]; then
+    if [[ -n "$summary" ]] && [[ "$summary" != null* ]]; then
       echo "$summary"
       return 0
     fi
@@ -360,7 +381,6 @@ Content-Type: application/json" \
 
 function main() {
   local caption_only=false
-  local debug=false
   local verbose=false
   local prepend_day_index=false
 
@@ -371,7 +391,7 @@ function main() {
         shift
         ;;
       -d | --debug)
-        debug=true
+        set -x
         shift
         ;;
       -p | --prepend-day-index)
@@ -384,8 +404,8 @@ function main() {
         ;;
       --verbose)
         verbose=true
+        shift
         ;;
-
       --help) usage 0 ;;
       --)
         shift
@@ -417,8 +437,8 @@ function main() {
 
   check_dependencies
 
-  if $debug; then
-    echo "Debug: Starting processing for video ID $VIDEO_ID" >&2
+  if $verbose; then
+    echo "Starting processing for video ID $VIDEO_ID" >&2
   fi
 
   local VIDEO_TITLE
@@ -427,8 +447,8 @@ function main() {
     die "Error: Could not fetch video title"
   fi
 
-  if $debug; then
-    echo "Debug: Video title retrieved" >&2
+  if $verbose; then
+    echo "Video title retrieved" >&2
   fi
 
   download_captions "$VIDEO_ID" "$FILE_PREFIX"
@@ -436,8 +456,8 @@ function main() {
     die "Error: Subtitle file not found"
   fi
 
-  if $debug; then
-    echo "Debug: Captions downloaded successfully" >&2
+  if $verbose; then
+    echo "Captions downloaded successfully" >&2
   fi
 
   local TRANSCRIPT
@@ -448,8 +468,8 @@ function main() {
     die "Error: Transcript conversion failed"
   fi
 
-  if $debug; then
-    echo "Debug: Transcript extracted (length: ${#TRANSCRIPT} chars)" >&2
+  if $verbose; then
+    echo "Transcript extracted (length: ${#TRANSCRIPT} chars)" >&2
   fi
 
   if "$caption_only"; then
@@ -464,8 +484,8 @@ function main() {
     CHUNKS+=("${TRANSCRIPT:i:CHUNK_SIZE}")
   done
 
-  if $debug; then
-    echo "Debug: Split transcript into ${#CHUNKS[@]} chunks" >&2
+  if $verbose; then
+    echo "Split transcript into ${#CHUNKS[@]} chunks" >&2
   fi
 
   local INTERMEDIATE_SUMMARIES=()
@@ -473,8 +493,8 @@ function main() {
     local summary
     summary=$(summarize_chunk "$chunk")
     INTERMEDIATE_SUMMARIES+=("$summary")
-    if $debug; then
-      echo "Debug: Processed chunk (length: ${#chunk} chars)" >&2
+    if $verbose; then
+      echo "Processed chunk (length: ${#chunk} chars)" >&2
     fi
     echo "Waiting for ${GAP_BW_REQS}...." >&2
     sleep "$GAP_BW_REQS"
@@ -498,8 +518,8 @@ function main() {
     die "ERROR: Failed to generate final summary (no working API available)"
   fi
 
-  if $debug; then
-    echo "Debug: Final summary generated successfully" >&2
+  if $verbose; then
+    echo "Final summary generated successfully" >&2
   fi
 
   echo -e "${FINAL_SUMMARY}"

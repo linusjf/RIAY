@@ -43,6 +43,7 @@
   - [AI-Generated Summary: Approaching God as Father](#ai-generated-summary-approaching-god-as-father)
 - [January 09,2025](#january-092025)
   - [Thy Will Be Done](#thy-will-be-done)
+  - [AI-Generated Summary: Childlike Dependence and Experiencing God's Kingdom](#ai-generated-summary-childlike-dependence-and-experiencing-gods-kingdom)
 - [January 10,2025](#january-102025)
   - [Daily Bread](#daily-bread)
   - [ROSARY IN A YEAR DAY 10 - " DAILY BREAD" Michelle Jackson](#rosary-in-a-year-day-10----daily-bread-michelle-jackson)
@@ -516,7 +517,34 @@ The episode includes the recitation of the Our Father, three Hail Marys, and the
 
 ROSARY IN A YEAR Day 09 - "THY WILL BE DONE" Michelle Jackson
 
-Mathew 18 :1-4 , Jesus talking about who is the greatest in the kingdom of heaven? It is the children who will be the greatest in His Kingdom. God is calling each of us to be like little children, like children who aren't afraid to ask their parents for anything, they are themselves and they don't need to work on themselves to get things done, they simply approach them in confidence and Joy. Here Jesus calls us to be like them, surrendering themselves to the Father with Child like confidence and Trust. That He will always do what's best for us. We need to be humble like Jesus and do as He did in the garden by saying Thy will be done not mine. In all moments of life when life is challenging and we are uncertain we need to approach God and give way for His Will to be done. Then we will have true peace and Joy and experience the Kingdom of heaven.🙏🏽
+Mathew 18 :1-4 , Jesus talking about who is the greatest in the kingdom of heaven? It is the children who will be the greatest in His Kingdom. God is calling each of us to be like little children, like children who aren't afraid to ask their parents for anything, they are themselves and they don't need to work on themselves to get things done, they simply approach them in confidence and Joy. Here Jesus calls us to be like them, surrendering themselves to the Father with Child like confidence and Trust. That He will always do what's best for us. We need to be humble like Jesus and do as He did in the garden by saying Thy will be done not mine. In all moments of life when life is challenging and we are uncertain we need to approach God and give way for His Will to be done. Then we will have true peace and Joy and experience the Kingdom of heaven.🙏
+
+### AI-Generated Summary: Childlike Dependence and Experiencing God's Kingdom
+
+This reflection explores how to live out the prayer "Thy kingdom come, thy will be done on earth as it is in heaven" by embracing the childlike nature Jesus highlighted in Matthew 18.
+
+**Main Topics Discussed:**
+
+1. **The Nature of Children:** Children are presented as inherently "poor" – dependent, lacking knowledge and resources, and vulnerable. Crucially, in a healthy environment, they accept this dependence without shame or frustration, naturally turning to parents for all needs. Despite their neediness, they often exhibit joy and levity.
+1. **Childlike Humility as the Key:** This trusting dependence and acceptance of one's limitations ("poverty") is the essential characteristic for entering and experiencing the Kingdom of Heaven.
+1. **Experiencing the Kingdom Now:** The Kingdom isn't just a future reality. It is experienced _now_ when we acknowledge our dependence, limitations, and needs, and bring them directly to God the Father without shame, self-hatred, or resorting to anxious self-reliance. This act of trusting dependence meeting God's providence _is_ the Kingdom experience on earth.
+1. **Contrast with Adult Tendencies:** Adults often react to their inherent limitations with shame, frustration, and a drive for self-reliance, which hinders experiencing the peace of the Kingdom.
+1. **Trusting God's Will:** Praying "Thy will be done" mirrors the childlike trust that the Father knows best, loves us, and will provide what is truly needed, even if we don't know what that is (illustrated by the child-in-restaurant analogy). Jesus models this perfectly in Gethsemane.
+
+**Key Takeaways:**
+
+- True Christian humility involves recognizing and accepting our dependence on God without shame.
+- Bringing our acknowledged poverty and need to God in trust is how we experience His Kingdom and its peace _now_.
+- We are called to shed the adult burdens of shame and self-reliance regarding our limitations.
+- Trusting God's will ("Thy will be done") frees us from anxiety and allows us to live with joy and confidence, like a child secure in their parent's care.
+
+**Notable Insights/Quotes:**
+
+- The core insight: Bringing our dependence to meet God's perfect Providence _is_ the experience of the Kingdom now, and its fruit is peace.
+- Children accept dependence "without shame, discouragement, or self-hatred" and are "not tempted towards self-reliance."
+- The goal is "childlike trust and dependence, without shame or frustration."
+- Jesus' prayer, "Father... not my will but your will be done," exemplifies the trusting relationship we enter through the Our Father.
+- The alternative to self-burdening is the "freedom, confidence, joy, and peace that comes from giving our burdens to God... saying, 'Father, thy will be done in all things.'
 
 ## January 10,2025
 
