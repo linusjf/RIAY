@@ -14,6 +14,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/util.sh"
 
+readonly GAP_BW_REQS=10
+
 function version() {
   printf "%s\n" "$VERSION"
 }
@@ -64,7 +66,7 @@ function extract_text_from_vtt() {
 
 function get_video_title() {
   local video_id="$1"
-  curl --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${YOUTUBE_API_KEY}" |
+  curl --show-error --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${YOUTUBE_API_KEY}" |
     jq -r '.items[0].snippet.title'
 }
 
@@ -95,11 +97,16 @@ EOM
 
   local response
   response="$(
-    curl --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s \
+    curl --show-error --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s \
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
       -H "Content-Type: application/json" \
       -d "$payload"
   )"
+
+  if [[ "$response" == null* ]]; then
+    err "Gemini API returned invalid response"
+    return 1
+  fi
 
   if ! echo "$response" | jq . > /dev/null 2>&1; then
     err "Gemini API returned invalid response"
@@ -133,7 +140,7 @@ EOM
 
   local response
   response="$(
-    curl --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s https://api.deepseek.com/chat/completions \
+    curl --show-error --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s https://api.deepseek.com/chat/completions \
       -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
       -H "Content-Type: application/json" \
       -d "$payload"
@@ -152,7 +159,7 @@ function summarize_chunk() {
   if [[ -n "${GEMINI_API_KEY:-}" ]]; then
     local summary
     summary=$(summarize_chunk_gemini "$chunk" 2> /dev/null || true)
-    if [[ -n "$summary" ]]; then
+    if [[ -n "$summary" ]] && [[ "$summary" == null* ]]; then
       echo "$summary"
       return 0
     fi
@@ -191,7 +198,7 @@ function final_summary_gemini() {
 
   local response
   response=$(
-    curl --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s \
+    curl --show-error --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s \
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
       -H "Content-Type: application/json" \
       -d "$payload"
@@ -229,7 +236,7 @@ function final_summary_deepseek() {
 
   local response
   response=$(
-    curl --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s https://api.deepseek.com/chat/completions \
+    curl --show-error --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s https://api.deepseek.com/chat/completions \
       -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
       -H "Content-Type: application/json" \
       -d "$payload"
@@ -325,12 +332,14 @@ function main() {
     local summary
     summary=$(summarize_chunk "$chunk")
     INTERMEDIATE_SUMMARIES+=("$summary")
-    sleep 15
+    echo "Waiting for ${GAP_BW_REQS}...." >&2
+    sleep "$GAP_BW_REQS"
   done
 
   local FINAL_INPUT
   FINAL_INPUT=$(printf "%s\n\n" "${INTERMEDIATE_SUMMARIES[@]}")
-  sleep 15
+  echo "Waiting for ${GAP_BW_REQS}...." >&2
+  sleep "$GAP_BW_REQS"
 
   local FINAL_SUMMARY=""
   if [[ -n "${GEMINI_API_KEY:-}" ]]; then
