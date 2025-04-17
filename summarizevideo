@@ -54,15 +54,15 @@ function check_dependencies() {
 
 function extract_text_from_vtt() {
   local vtt_file="$1"
-  grep -vE '^[0-9]+$|^[0-9]{2}:' "$vtt_file" |
-    sed -e '/^WEBVTT/d' \
+  grep -vE '^[0-9]+$|^[0-9]{2}:' "$vtt_file" \
+    | sed -e '/^WEBVTT/d' \
       -e '/^Kind/d' \
       -e '/^Language/d' \
       -e 's/\[Music\]//g' \
       -e '/^[[:space:]]*$/d' \
-      -e 's/<[^>]*>//g' |
-    tr '\n' ' ' |
-    jq -Rs . | fold -s -w 1000
+      -e 's/<[^>]*>//g' \
+    | tr '\n' ' ' \
+    | jq -Rs . | fold -s -w 1000
 }
 
 function safe_curl_request() {
@@ -135,14 +135,14 @@ function get_chunk_prompt() {
   local chunk="$1"
   local prompt
   prompt=$(cat "${SCRIPT_DIR}/chunkprompt.txt")
-  echo "${prompt}\n\n${chunk}"
+  printf "%s\n\n%s\n" "${prompt}" "${chunk}"
 }
 
 function get_final_prompt() {
   local input="$1"
   local prompt
   prompt=$(cat "${SCRIPT_DIR}/finalsummaryprompt.txt")
-  echo "${prompt}\n\n${input}"
+  printf "%s\n\n%s\n" "${prompt}" "${input}"
 }
 
 function summarize_chunk_gemini() {
