@@ -168,7 +168,14 @@ function safe_curl_request() {
 
 function get_video_title() {
   local video_id="$1"
-  safe_curl_request "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${YOUTUBE_API_KEY}"
+  response="$(safe_curl_request "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${YOUTUBE_API_KEY}")"
+  video_count=$(echo "$response" | jq '.items | length')
+  if [ "$video_count" -eq 0 ]; then
+    echo "Video ${video_id} does NOT exist or is private/unavailable." >&2
+    return 1
+  fi
+  # Extract title
+  echo "$response" | jq -r '.items[0].snippet.title'
 }
 
 function download_captions() {
@@ -443,8 +450,8 @@ function main() {
   fi
 
   local VIDEO_TITLE
-  VIDEO_TITLE=$(get_video_title "$VIDEO_ID")
-  if [[ "$VIDEO_TITLE" == "null" ]]; then
+  VIDEO_TITLE="$(get_video_title "$VIDEO_ID" || return 1)"
+  if [[ "$VIDEO_TITLE" == null ]]; then
     die "Error: Could not fetch video title"
   fi
 
