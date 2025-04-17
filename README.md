@@ -1606,6 +1606,8 @@ RIAY March 2025
 - [April 16,2025](#april-162025)
   - [He Sends His Spirit](#he-sends-his-spirit)
   - [AI-Generated Summary: The Hidden Power and Divinity of the Holy Spirit](#ai-generated-summary-the-hidden-power-and-divinity-of-the-holy-spirit)
+- [April 17,2025](#april-172025)
+  - [Beauty Which Never Fades](#beauty-which-never-fades)
 
 <!-- tocstop -->
 
@@ -1766,6 +1768,12 @@ The Holy Spirit is not a separate entity or a temporary replacement for Jesus, b
 
 While deserving of worship and adoration as God, the Spirit's mission involves a certain self-effacement. The Spirit does not speak on his own but reveals the Father's word, pointing us always towards Jesus and the Father. This divine humility allows us to focus on the message of salvation without being distracted by the messenger. We come to know the Holy Spirit not through direct, sensational experiences, but through the fruits of his labor: the unveiling of Christ, the growth of faith, hope, and charity within us, and our increasing conformity to Jesus. The reflection emphasizes that while much of our prayer naturally focuses on Jesus and the Father's word, acknowledging the Holy Spirit's power and divinity remains crucial.
 This acknowledgment involves recognizing the Spirit's constant, often unseen, work in our lives. Just as the Spirit revealed Christ to the apostles at Pentecost, the Spirit continues to reveal Christ to us, guiding us towards deeper union with him. The Pentecost event, with its dramatic imagery of tongues of fire, serves as a powerful reminder of the Spirit's active presence and transformative power. It is a moment to not only adore the Holy Spirit but also to thank him for the hidden work he performs in shaping us into the image of Christ. A notable insight from the reflection is the distinction between the Spirit's presence and our experience of it. The Spirit is always present, actively working within us, even when we are not consciously aware of it. This highlights the importance of faith and trust in the Spirit's continuous action, even in the absence of tangible feelings or experiences. The reflection encourages us to cultivate a deeper awareness of the Spirit's subtle influence in our lives, recognizing his hand in our growing faith, hope, and love. The reflection concludes with the Lord's Prayer and three Hail Marys, emphasizing the importance of prayer in fostering a relationship with the Trinity. These prayers, directed towards the Father and acknowledging the role of Mary, further underscore the interconnectedness within the Godhead and the importance of seeking communion with the divine. The inclusion of these prayers serves as a practical application of the reflection's message, encouraging us to actively engage with the Trinity through prayer and cultivate a deeper awareness of the Holy Spirit's hidden yet powerful presence in our lives. The reflection encourages us to not only acknowledge the Spirit's divinity but also to actively seek his guidance and grace in our daily lives, trusting in his transformative power to conform us ever more closely to the image of Christ.
+
+#### April 17,2025
+
+##### Beauty Which Never Fades
+
+[![Beauty Which Never Fades](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day107.jpg)](https://youtu.be/tT6OpDXTALQ "Beauty Which Never Fades")
 
 ## May
 

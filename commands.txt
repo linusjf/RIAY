@@ -1,5 +1,5 @@
 # commands
-addvideo "T3Fr93UZvgQ" "He Sends His Spirit" # add video
+addvideo "tT6OpDXTALQ" "Beauty Which Never Fades" # add video
 genmonth 04 2025 # generate
 stitch # generate the README
 lintall # lint all files
