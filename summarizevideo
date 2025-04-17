@@ -15,6 +15,8 @@ source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/util.sh"
 
 readonly GAP_BW_REQS=10
+readonly MAX_RETRIES=5
+readonly INITIAL_RETRY_DELAY=2
 
 function version() {
   printf "%s\n" "$VERSION"
@@ -64,10 +66,63 @@ function extract_text_from_vtt() {
     jq -Rs . | fold -s -w 1000
 }
 
+function safe_curl_request() {
+  local url="$1"
+  local method="${2:-GET}"
+  local headers="${3:-}"
+  local data="${4:-}"
+  local output_file
+  output_file=$(mktemp)
+
+  local retry_count=0
+  local delay=$INITIAL_RETRY_DELAY
+  local status_code=0
+  local response=""
+
+  while [[ $retry_count -lt $MAX_RETRIES ]]; do
+    status_code=0
+    response=""
+
+    local curl_cmd=("curl" "--show-error" "--connect-timeout" "10" "--max-time" "60" "--fail-with-body" "--silent" "--write-out" "%{http_code}" "-o" "$output_file")
+
+    if [[ "$method" == "POST" ]]; then
+      curl_cmd+=("-X" "POST")
+    fi
+
+    if [[ -n "$headers" ]]; then
+      curl_cmd+=("-H" "$headers")
+    fi
+
+    if [[ -n "$data" ]]; then
+      curl_cmd+=("-d" "$data")
+    fi
+
+    curl_cmd+=("$url")
+
+    status_code=$("${curl_cmd[@]}")
+    response=$(cat "$output_file")
+
+    if [[ $status_code -ge 200 && $status_code -lt 300 ]]; then
+      echo "$response"
+      rm -f "$output_file"
+      return 0
+    fi
+
+    retry_count=$((retry_count + 1))
+    if [[ $retry_count -lt $MAX_RETRIES ]]; then
+      sleep $delay
+      delay=$((delay * 2))
+    fi
+  done
+
+  rm -f "$output_file"
+  err "Request failed after $MAX_RETRIES attempts. Last status code: $status_code"
+  return 1
+}
+
 function get_video_title() {
   local video_id="$1"
-  curl --show-error --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${YOUTUBE_API_KEY}" |
-    jq -r '.items[0].snippet.title'
+  safe_curl_request "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${YOUTUBE_API_KEY}"
 }
 
 function download_captions() {
@@ -97,10 +152,11 @@ EOM
 
   local response
   response="$(
-    curl --show-error --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s \
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
-      -H "Content-Type: application/json" \
-      -d "$payload"
+    safe_curl_request \
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-exp-03-25:generateContent?key=${GEMINI_API_KEY}" \
+      "POST" \
+      "Content-Type: application/json" \
+      "$payload"
   )"
 
   if [[ "$response" == null* ]]; then
@@ -140,10 +196,12 @@ EOM
 
   local response
   response="$(
-    curl --show-error --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s https://api.deepseek.com/chat/completions \
-      -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
-      -H "Content-Type: application/json" \
-      -d "$payload"
+    safe_curl_request \
+      "https://api.deepseek.com/chat/completions" \
+      "POST" \
+      "Authorization: Bearer ${DEEPSEEK_API_KEY}
+Content-Type: application/json" \
+      "$payload"
   )"
 
   if ! echo "$response" | jq . > /dev/null 2>&1; then
@@ -198,10 +256,11 @@ function final_summary_gemini() {
 
   local response
   response=$(
-    curl --show-error --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s \
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}" \
-      -H "Content-Type: application/json" \
-      -d "$payload"
+    safe_curl_request \
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-exp-03-25:generateContent?key=${GEMINI_API_KEY}" \
+      "POST" \
+      "Content-Type: application/json" \
+      "$payload"
   )
 
   if ! echo "$response" | jq . > /dev/null 2>&1; then
@@ -236,10 +295,12 @@ function final_summary_deepseek() {
 
   local response
   response=$(
-    curl --show-error --connect-timeout 10 --max-time 60 --fail-with-body --retry 2 --retry-delay 10 -s https://api.deepseek.com/chat/completions \
-      -H "Authorization: Bearer ${DEEPSEEK_API_KEY}" \
-      -H "Content-Type: application/json" \
-      -d "$payload"
+    safe_curl_request \
+      "https://api.deepseek.com/chat/completions" \
+      "POST" \
+      "Authorization: Bearer ${DEEPSEEK_API_KEY}
+Content-Type: application/json" \
+      "$payload"
   )
 
   if ! echo "$response" | jq . > /dev/null 2>&1; then
