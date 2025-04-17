@@ -1608,6 +1608,7 @@ RIAY March 2025
   - [AI-Generated Summary: The Hidden Power and Divinity of the Holy Spirit](#ai-generated-summary-the-hidden-power-and-divinity-of-the-holy-spirit)
 - [April 17,2025](#april-172025)
   - [Beauty Which Never Fades](#beauty-which-never-fades)
+  - [AI-Generated Summary: Meditating on Mary's Assumption with Fulton Sheen](#ai-generated-summary-meditating-on-marys-assumption-with-fulton-sheen)
 
 <!-- tocstop -->
 
@@ -1774,6 +1775,36 @@ This acknowledgment involves recognizing the Spirit's constant, often unseen, wo
 ##### Beauty Which Never Fades
 
 [![Beauty Which Never Fades](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day107.jpg)](https://youtu.be/tT6OpDXTALQ "Beauty Which Never Fades")
+
+##### AI-Generated Summary: Meditating on Mary's Assumption with Fulton Sheen
+
+This summary covers a meditation session led by Father Mark Mary on the Assumption of Mary, drawing heavily on the writings of Venerable Fulton J. Sheen.
+
+**Main Topics Discussed:**
+
+- **Prayer and Meditation:** Emphasized as ways to deepen one's relationship with Jesus and Mary and receive grace.
+- **Venerable Fulton J. Sheen:** Introduced as a significant 20th-century Catholic figure, known for his popular radio and TV shows ("Catholic Hour," "Life is Worth Living") but more importantly, for his deep prayer life (daily Holy Hour) and devotion. He was declared Venerable in 2012.
+- **The Assumption of Mary:** Explored through Sheen's perspective, drawing parallels between Christ's Ascension and Mary's Assumption, uniting her (the "new Eve") with Christ (the "new Adam").
+- **Marian Metaphors:** Mary is described poetically as the "new garden of paradise," the "gate" for the Word, a "tower of ivory," and a "mystic rose."
+- **Critique of Modern Beauty Standards:** Contrasts the cultural obsession with physical appearance and anti-aging ("body beautiful") with the Christian understanding of the body.
+- **True Beauty and Holiness:** Proposes that true, lasting beauty stems from holiness, conformity to Christ, and a life richly lived, not from resisting natural aging. The body is honored as a "temple of God."
+- **Hope in the Resurrection:** Mary's Assumption (body and soul) is presented as a pattern and promise of the resurrection and eternal life awaiting all believers.
+
+**Key Takeaways:**
+
+- Fulton J. Sheen was a profoundly influential and prayerful figure whose writings offer deep spiritual insights. Pope John Paul II commended him: "You have written and spoken well of the Lord Jesus. You are a loyal son of the church."
+- Mary's Assumption signifies her complete unity with Christ and highlights the dignity of the human body.
+- The modern focus on fleeting physical beauty is ultimately unfulfilling and contrasts sharply with the Christian view of beauty rooted in holiness and the body as God's temple.
+- Mary, the "all beautiful one," exemplifies the destiny of believers: the resurrection of the body and eternal, unfading beauty found through holiness in Christ.
+- Our innate longing for enduring beauty points towards our heavenly destiny.
+
+**Notable Insights:**
+
+- Sheen's poetic writing style is fitting for describing Mary's beauty and significance.
+- Imagining an aged Mary, whose physical appearance reflects a life of love and experience, offers a counter-narrative to anti-aging culture.
+- The ultimate fulfillment of the desire for beauty is found not on earth but in heaven, through the resurrection.
+
+The session incorporated recitations of the Hail Mary and Glory Be prayers, concluding with a blessing.
 
 ## May
 
