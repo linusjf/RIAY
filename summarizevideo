@@ -35,10 +35,11 @@ function usage() {
 Usage: ${SCRIPT_NAME} [OPTIONS] <youtube-video-id>
 
 Options:
-  -c, --caption-only  Extract captions only without summarization
-  -d, --debug         Enable debug output
-  --version           Show version information
-  --help              Show this help message
+  -c, --caption-only      Extract captions only without summarization
+  -d, --debug             Enable debug output
+  -p, --prepend-day-index Prepend day index from videos.txt to output files
+  --version               Show version information
+  --help                  Show this help message
 
 Examples:
   ${SCRIPT_NAME} dQw4w9WgXcQ
@@ -46,6 +47,19 @@ Examples:
 EOF
 
   exit "$exit_code"
+}
+
+function get_day_index() {
+  local video_id="$1"
+  local index=0
+  while IFS= read -r line; do
+    if [[ "$line" == "$video_id" ]]; then
+      printf "Day%03d-" "$((index + 1))"
+      return 0
+    fi
+    ((index++))
+  done < "${SCRIPT_DIR}/videos.txt"
+  return 1
 }
 
 function check_dependencies() {
@@ -126,9 +140,10 @@ function get_video_title() {
 
 function download_captions() {
   local video_id="$1"
-  rm -f "${video_id}.*"
+  local prefix="$2"
+  rm -f "${prefix}${video_id}.*"
   yt-dlp --write-auto-sub --sub-lang "en" --skip-download --sub-format "vtt" \
-    -o "${video_id}.%(ext)s" "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1
+    -o "${prefix}${video_id}.%(ext)s" "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1
 }
 
 function get_chunk_prompt() {
@@ -335,6 +350,7 @@ Content-Type: application/json" \
 function main() {
   local caption_only=false
   local debug=false
+  local prepend_day_index=false
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -344,6 +360,10 @@ function main() {
         ;;
       -d | --debug)
         debug=true
+        shift
+        ;;
+      -p | --prepend-day-index)
+        prepend_day_index=true
         shift
         ;;
       --version)
@@ -365,6 +385,14 @@ function main() {
   fi
 
   local VIDEO_ID="$1"
+  local FILE_PREFIX=""
+
+  if $prepend_day_index; then
+    FILE_PREFIX=$(get_day_index "$VIDEO_ID")
+    if [[ -z "$FILE_PREFIX" ]]; then
+      die "Error: Video ID $VIDEO_ID not found in videos.txt"
+    fi
+  fi
 
   require_vars YOUTUBE_API_KEY
   if [[ -z "${GEMINI_API_KEY:-}" && -z "${DEEPSEEK_API_KEY:-}" ]]; then
@@ -387,8 +415,8 @@ function main() {
     echo "Debug: Video title retrieved" >&2
   fi
 
-  download_captions "$VIDEO_ID"
-  if [[ ! -f "${VIDEO_ID}.en.vtt" ]]; then
+  download_captions "$VIDEO_ID" "$FILE_PREFIX"
+  if [[ ! -f "${FILE_PREFIX}${VIDEO_ID}.en.vtt" ]]; then
     die "Error: Subtitle file not found"
   fi
 
@@ -397,7 +425,7 @@ function main() {
   fi
 
   local TRANSCRIPT
-  TRANSCRIPT=$(extract_text_from_vtt "${VIDEO_ID}.en.vtt")
+  TRANSCRIPT=$(extract_text_from_vtt "${FILE_PREFIX}${VIDEO_ID}.en.vtt")
   TRANSCRIPT="${TRANSCRIPT:1:-1}"
 
   if [[ -z "$TRANSCRIPT" ]]; then
@@ -409,7 +437,7 @@ function main() {
   fi
 
   if "$caption_only"; then
-    echo "$TRANSCRIPT" > "${VIDEO_ID}.en.txt"
+    echo "$TRANSCRIPT" > "${FILE_PREFIX}${VIDEO_ID}.en.txt"
     exit 0
   fi
 
