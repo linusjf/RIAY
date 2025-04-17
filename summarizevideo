@@ -36,8 +36,7 @@ Usage: ${SCRIPT_NAME} [OPTIONS] <youtube-video-id>
 
 Options:
   -c, --caption-only  Extract captions only without summarization
-  -v, --verbose       Enable verbose output
-  -q, --quiet         Suppress non-error output
+  -d, --debug         Enable debug output
   --version           Show version information
   --help              Show this help message
 
@@ -132,15 +131,31 @@ function download_captions() {
     -o "${video_id}.%(ext)s" "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1
 }
 
+function get_chunk_prompt() {
+  local chunk="$1"
+  local prompt
+  prompt=$(cat "${SCRIPT_DIR}/chunkprompt.txt")
+  echo "${prompt}\n\n${chunk}"
+}
+
+function get_final_prompt() {
+  local input="$1"
+  local prompt
+  prompt=$(cat "${SCRIPT_DIR}/finalsummaryprompt.txt")
+  echo "${prompt}\n\n${input}"
+}
+
 function summarize_chunk_gemini() {
   local chunk="$1"
+  local prompt
+  prompt=$(get_chunk_prompt "$chunk")
   local payload
   payload="$(
     cat << EOM
 {
   "contents": [{
     "parts": [{
-      "text": "Summarize this podcast transcript, excluding plugs, branding, and promotions. Omit mention of Day, podcast and Rosary in a Day. The listener knows that already:\n\n${chunk}"
+      "text": "$prompt"
     }]
   }],
   "generationConfig": {
@@ -174,6 +189,8 @@ EOM
 
 function summarize_chunk_deepseek() {
   local chunk="$1"
+  local prompt
+  prompt=$(get_chunk_prompt "$chunk")
   local payload
   payload="$(
     cat << EOM
@@ -186,7 +203,7 @@ function summarize_chunk_deepseek() {
     },
     {
       "role": "user",
-      "content": "Summarize this podcast transcript:\n\n${chunk}"
+      "content": "$prompt"
     }
   ],
   "temperature": 0.5
@@ -238,15 +255,17 @@ function summarize_chunk() {
 
 function final_summary_gemini() {
   local input="$1"
-  local escaped_input
-  escaped_input=$(jq -Rs <<< "$input")
+  local prompt
+  prompt=$(get_final_prompt "$input")
+  local escaped_prompt
+  escaped_prompt=$(jq -Rs <<< "$prompt")
   local payload
   payload=$(jq -n \
-    --arg input "$escaped_input" \
+    --arg prompt "$escaped_prompt" \
     '{
       "contents": [{
         "parts": [{
-          "text": ("Condense the following. Highlight the main topics discussed, key takeaways, and any notable quotes or insights. Keep it concise and clear, suitable for someone who wants a quick overview. Start with a level three header and annotate it as '\''AI-Generated Summary:'\'' followed by your generated title (no colons). Use 500 words or less.\n\n" + $input)
+          "text": $prompt
         }]
       }],
       "generationConfig": {
@@ -273,21 +292,23 @@ function final_summary_gemini() {
 
 function final_summary_deepseek() {
   local input="$1"
-  local escaped_input
-  escaped_input=$(jq -Rs <<< "$input")
+  local prompt
+  prompt=$(get_final_prompt "$input")
+  local escaped_prompt
+  escaped_prompt=$(jq -Rs <<< "$prompt")
   local payload
   payload=$(jq -n \
-    --arg input "$escaped_input" \
+    --arg prompt "$escaped_prompt" \
     '{
       "model": "deepseek-chat",
       "messages": [
         {
           "role": "system",
-          "content": "Condense the following. Highlight the main topics discussed, key takeaways, and any notable quotes or insights. Keep it concise and clear, suitable for someone who wants a quick overview. Start with a level three header and annotate it as '\''AI-Generated Summary:'\'' followed by your generated title (no colons). Use 500 words or less."
+          "content": "You are a helpful assistant that summarizes content."
         },
         {
           "role": "user",
-          "content": $input
+          "content": $prompt
         }
       ],
       "temperature": 0.5
@@ -313,8 +334,7 @@ Content-Type: application/json" \
 
 function main() {
   local caption_only=false
-  local verbose=false
-  local quiet=false
+  local debug=false
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -322,12 +342,8 @@ function main() {
         caption_only=true
         shift
         ;;
-      -v | --verbose)
-        verbose=true
-        shift
-        ;;
-      -q | --quiet)
-        quiet=true
+      -d | --debug)
+        debug=true
         shift
         ;;
       --version)
@@ -357,15 +373,27 @@ function main() {
 
   check_dependencies
 
+  if $debug; then
+    echo "Debug: Starting processing for video ID $VIDEO_ID" >&2
+  fi
+
   local VIDEO_TITLE
   VIDEO_TITLE=$(get_video_title "$VIDEO_ID")
   if [[ "$VIDEO_TITLE" == "null" ]]; then
     die "Error: Could not fetch video title"
   fi
 
+  if $debug; then
+    echo "Debug: Video title retrieved" >&2
+  fi
+
   download_captions "$VIDEO_ID"
   if [[ ! -f "${VIDEO_ID}.en.vtt" ]]; then
     die "Error: Subtitle file not found"
+  fi
+
+  if $debug; then
+    echo "Debug: Captions downloaded successfully" >&2
   fi
 
   local TRANSCRIPT
@@ -374,6 +402,10 @@ function main() {
 
   if [[ -z "$TRANSCRIPT" ]]; then
     die "Error: Transcript conversion failed"
+  fi
+
+  if $debug; then
+    echo "Debug: Transcript extracted (length: ${#TRANSCRIPT} chars)" >&2
   fi
 
   if "$caption_only"; then
@@ -388,11 +420,18 @@ function main() {
     CHUNKS+=("${TRANSCRIPT:i:CHUNK_SIZE}")
   done
 
+  if $debug; then
+    echo "Debug: Split transcript into ${#CHUNKS[@]} chunks" >&2
+  fi
+
   local INTERMEDIATE_SUMMARIES=()
   for chunk in "${CHUNKS[@]}"; do
     local summary
     summary=$(summarize_chunk "$chunk")
     INTERMEDIATE_SUMMARIES+=("$summary")
+    if $debug; then
+      echo "Debug: Processed chunk (length: ${#chunk} chars)" >&2
+    fi
     echo "Waiting for ${GAP_BW_REQS}...." >&2
     sleep "$GAP_BW_REQS"
   done
@@ -413,6 +452,10 @@ function main() {
 
   if [[ -z "$FINAL_SUMMARY" ]]; then
     die "ERROR: Failed to generate final summary (no working API available)"
+  fi
+
+  if $debug; then
+    echo "Debug: Final summary generated successfully" >&2
   fi
 
   echo -e "${FINAL_SUMMARY}"
