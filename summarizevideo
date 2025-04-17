@@ -143,6 +143,7 @@ function safe_curl_request() {
     retry_count=$((retry_count + 1))
     if [[ $retry_count -lt $MAX_RETRIES ]]; then
       >&2 echo "Request failed with status $status_code, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
+      save_failed_response "$response" "$(basename "$url")"
       sleep $delay
       delay=$((delay * 2))
     fi
@@ -495,14 +496,16 @@ function main() {
     INTERMEDIATE_SUMMARIES+=("$summary")
     if $verbose; then
       echo "Processed chunk (length: ${#chunk} chars)" >&2
+      echo "Waiting for ${GAP_BW_REQS} seconds before initiating next request...." >&2
     fi
-    echo "Waiting for ${GAP_BW_REQS}...." >&2
     sleep "$GAP_BW_REQS"
   done
 
   local FINAL_INPUT
   FINAL_INPUT=$(printf "%s\n\n" "${INTERMEDIATE_SUMMARIES[@]}")
-  echo "Waiting for ${GAP_BW_REQS}...." >&2
+  if $verbose; then
+    echo "Waiting for ${GAP_BW_REQS} seconds before initiating next request...." >&2
+  fi
   sleep "$GAP_BW_REQS"
 
   local FINAL_SUMMARY=""
