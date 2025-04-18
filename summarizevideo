@@ -219,16 +219,16 @@ function summarize_chunk_gemini() {
   local escaped_prompt
   escaped_prompt=$(jq -Rs <<< "$prompt")
   local payload
-  payload="{
-  \"contents\": [{
-    \"parts\": [{
-      \"text\": \"$prompt\"
+  payload="$(jq -n --arg content "$escaped_prompt" '{
+  "contents": [{
+    "parts": [{
+      "text": $content
     }]
   }],
-  \"generationConfig\": {
-    \"temperature\": 0.5
+  "generationConfig": {
+    "temperature": 0.5
   }
-}"
+}')"
 
   local response
   response="$(
@@ -259,7 +259,8 @@ function summarize_chunk_deepseek() {
   local escaped_prompt
   escaped_prompt="$(jq -Rs <<< "$prompt")"
   local payload
-  payload="$(jq -n --arg content "$escaped_prompt" '{
+  payload="$(jq -n --arg content "$escaped_prompt" \
+    '{
   "model": "deepseek-chat",
   "messages": [
     {
