@@ -50,26 +50,26 @@ sed -n "${startday},${endday}p" videos.txt | while read -r videoid; do
     # Calculate month name using date and RIAY_YEAR
     month=$(date -d "${RIAY_YEAR}-01-01 +$((lineno - 1)) days" +%B)
     filepath="$month/$filename"
-
+    response='y'
     if [ -f "$filepath" ]; then
-      if grep 'AI-Generated Summary:' "$filepath"; then
-        echo "$filepath already contains AI-Generated Summary. Creating backup..."
-        if cp "$filepath" "${filepath}.bak"; then
-          tempfile="$(mktemp)"
-          awk '
+      grep "AI-Generated Summary:" "$filepath" &> /dev/null && read -r -p "$filepath already contains AI-Generated Summary. AI-Generated summaries can differ from each other. The process isn't deterministic. Generate new one (Yy/Nn)?" response
+      [[ "$response" == Y* ]] || [[ "$response" == y* ]] \
+        && echo "Backing up file to ${filepath}.bak ..." \
+        && cp "$filepath" "${filepath}.bak" \
+        && tempfile="$(mktemp)" \
+        && awk '
 /^### AI-Generated Summary:/ { in_block = 1; next }
 /^### / && in_block { in_block = 0 }
 !in_block
 ' "$filepath" > "$tempfile" && mv "$tempfile" "$filepath"
-        fi
-      fi
-      echo "Appending to $filepath (Day $lineno, $videoid)"
-      echo "" >> "$filepath"
-      ./summarizevideo "$videoid" >> "$filepath"
+      [[ "$response" == Y* ]] || [[ "$response" == y* ]] \
+        && echo "Appending to $filepath (Day $lineno, $videoid)" \
+        && echo "" >> "$filepath" \
+        && ./summarizevideo "$videoid" >> "$filepath"
     else
       echo "Warning: $filepath not found. Skipping videoid $videoid (line $lineno)."
     fi
-
+    echo "Waiting for 10 seconds before processing next day's video..."
     sleep 10
   fi
   lineno=$((lineno + 1))
