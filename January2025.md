@@ -959,7 +959,7 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 
 1. **Suffering and Faith:** The "Valley of Tears" metaphor illustrates the shared human experience of hardship, with Jesus and Mary offering solace.
 
-1. **Devotional Practices:** Recitations of prayers like the _Our Father_, _Hail Mary_, and _Hail Holy Queen_ foster communal faith and perseverance.\
+1. **Devotional Practices:** Recitations of prayers like the _Our Father_, _Hail Mary_, and _Hail Holy Queen_ foster communal faith and perseverance.
    **Key Takeaways:**
 
 - Mary’s suffering at the Cross and her witness to the Resurrection make her a compassionate figure for those enduring pain.
