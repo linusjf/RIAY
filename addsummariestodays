@@ -69,8 +69,10 @@ sed -n "${startday},${endday}p" videos.txt | while read -r videoid; do
     else
       echo "Warning: $filepath not found. Skipping videoid $videoid (line $lineno)."
     fi
+  fi
+  lineno=$((lineno + 1))
+  if [[ "$lineno" -le "$endday" ]]; then
     echo "Waiting for 10 seconds before processing next day's video..."
     sleep 10
   fi
-  lineno=$((lineno + 1))
 done
