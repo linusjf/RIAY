@@ -41,6 +41,8 @@
 - [April 17,2025](#april-172025)
   - [Beauty Which Never Fades](#beauty-which-never-fades)
   - [AI-Generated Summary: Meditating on Mary's Assumption with Fulton Sheen](#ai-generated-summary-meditating-on-marys-assumption-with-fulton-sheen)
+- [April 18,2025](#april-182025)
+  - [Heights of Holiness](#heights-of-holiness)
 
 <!-- tocstop -->
 
@@ -237,3 +239,9 @@ This summary covers a meditation session led by Father Mark Mary on the Assumpti
 - The ultimate fulfillment of the desire for beauty is found not on earth but in heaven, through the resurrection.
 
 The session incorporated recitations of the Hail Mary and Glory Be prayers, concluding with a blessing.
+
+## April 18,2025
+
+### Heights of Holiness
+
+[![Heights of Holiness](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day108.jpg)](https://youtu.be/uXvW2KhbtIk "Heights of Holiness")
