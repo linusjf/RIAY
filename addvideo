@@ -115,6 +115,7 @@ generate_files() {
     echo "### $caption"
     echo
     echo "$md"
+    "${SCRIPT_DIR}/summarizevideo" "$vid"
   } >| "$fname"
 
   if ! cp "${month}/${COMPACT_FILE}" "${month}/${COMPACT_FILE}.bak"; then
