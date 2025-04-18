@@ -1,10 +1,10 @@
-Gemini 2.5 Flash Preview 04-17
-Gemini 2.5 Pro Experimental
-Gemini 2.0 Flash
-Gemini 2.0 Flash Experimental
-Gemini 2.0 Flash-Lite
-Gemini 1.5 Flash
-Gemini 1.5 Flash-8B
-Gemini 1.5 Pro
-Gemma 3
-Gemini Embedding Experimental 03-07
+gemini-2.5-flash-preview-04-17
+gemini-2.5-pro-experimental
+gemini-2.0-flash
+gemini-2.0-flash-experimental
+gemini-2.0-flash-lite
+gemini-1.5-flash
+gemini-1.5-flash-8B
+gemini-1.5-pro
+gemma-3
+gemini-embedding-experimental-03-07

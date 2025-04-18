@@ -19,6 +19,9 @@ readonly MAX_RETRIES=5
 readonly INITIAL_RETRY_DELAY=2
 readonly CHUNK_PROMPT="$(cat "${SCRIPT_DIR}/chunkprompt.txt")"
 readonly FINAL_PROMPT="$(cat "${SCRIPT_DIR}/finalsummaryprompt.txt")"
+mapfile -t GEMINI_MODELS < geminimodels.txt
+readonly GEMINI_MODELS
+CURRENT_MODEL_INDEX=0
 
 function version() {
   printf "%s\n" "$VERSION"
@@ -230,10 +233,12 @@ function summarize_chunk_gemini() {
   }
 }')"
 
+  model="${GEMINI_MODELS["$CURRENT_MODEL_INDEX"]}"
+
   local response
   response="$(
     safe_curl_request \
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-exp-03-25:generateContent?key=${GEMINI_API_KEY}" \
+      "https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}" \
       "POST" \
       "Content-Type: application/json" \
       "$payload"
