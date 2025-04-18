@@ -76,18 +76,19 @@ function extract_text_from_vtt() {
       -e 's/\[Music\]//g' \
       -e '/^[[:space:]]*$/d' \
       -e 's/<[^>]*>//g' \
-    | tr '\n' ' ' \
-    | jq -Rs . | fold -s -w 1000
+    | tr '\n' ' ' | fold -s -w 1000 \
+    | jq -Rs .
 }
 
 function save_failed_response() {
-  local response="$1"
-  local endpoint="$2"
+  local data="$1"
+  local response="$2"
+  local endpoint="$3"
   local timestamp
   timestamp=$(date +"%Y%m%d_%H%M%S")
   local filename="failed_response_${endpoint}_${timestamp}.json"
-
-  echo "$response" > "$filename"
+  echo "$data" > "$filename"
+  echo "$response" >> "$filename"
   err "Saved failed response to $filename"
 }
 
@@ -143,7 +144,7 @@ function safe_curl_request() {
     retry_count=$((retry_count + 1))
     if [[ $retry_count -lt $MAX_RETRIES ]]; then
       >&2 echo "Request failed with status $status_code, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
-      save_failed_response "$response" "$(basename "$url")"
+      save_failed_response "$data" "$response" "$(basename "$url")"
       sleep $delay
       delay=$((delay * 2))
     fi
@@ -160,7 +161,7 @@ function safe_curl_request() {
     --show-error \
     >&2
 
-  save_failed_response "$response" "$(basename "$url")"
+  save_failed_response "$data" "$response" "$(basename "$url")"
   rm -f "$output_file"
   err "Request failed after $MAX_RETRIES attempts. Last status code: $status_code"
   return 1
@@ -432,7 +433,7 @@ function main() {
   local FILE_PREFIX=""
 
   if $prepend_day_index; then
-    FILE_PREFIX=$(get_day_index "$VIDEO_ID")
+    FILE_PREFIX="$(get_day_index "$VIDEO_ID" || true)"
     if [[ -z "$FILE_PREFIX" ]]; then
       die "Error: Video ID $VIDEO_ID not found in videos.txt"
     fi
