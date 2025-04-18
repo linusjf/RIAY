@@ -17,6 +17,8 @@ source "${SCRIPT_DIR}/util.sh"
 readonly GAP_BW_REQS=10
 readonly MAX_RETRIES=5
 readonly INITIAL_RETRY_DELAY=2
+readonly CHUNK_PROMPT="$(cat "${SCRIPT_DIR}/chunkprompt.txt")"
+readonly FINAL_PROMPT="$(cat "${SCRIPT_DIR}/finalsummaryprompt.txt")"
 
 function version() {
   printf "%s\n" "$VERSION"
@@ -202,16 +204,12 @@ function download_captions() {
 
 function get_chunk_prompt() {
   local chunk="$1"
-  local prompt
-  prompt=$(cat "${SCRIPT_DIR}/chunkprompt.txt")
-  printf "%s\n\n%s\n" "${prompt}" "${chunk}"
+  printf "%s\n\n%s\n" "${CHUNK_PROMPT}" "${chunk}"
 }
 
 function get_final_prompt() {
   local input="$1"
-  local prompt
-  prompt=$(cat "${SCRIPT_DIR}/finalsummaryprompt.txt")
-  printf "%s\n\n%s\n" "${prompt}" "${input}"
+  printf "%s\n\n%s\n" "${FINAL_PROMPT}" "${input}"
 }
 
 function summarize_chunk_gemini() {
