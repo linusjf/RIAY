@@ -89,8 +89,10 @@ function save_failed_response() {
   local timestamp
   timestamp=$(date +"%Y%m%d_%H%M%S")
   local filename="failed_response_${endpoint}_${timestamp}.json"
-  echo "$data" > "$filename"
-  echo "$response" >> "$filename"
+  {
+    echo "$data"
+    echo "$response"
+  } >> "$filename"
   err "Saved failed response to $filename"
 }
 
@@ -255,24 +257,24 @@ function summarize_chunk_gemini() {
 function summarize_chunk_deepseek() {
   local chunk="$1"
   local prompt
-  prompt=$(get_chunk_prompt "$chunk")
+  prompt="$(get_chunk_prompt "$chunk")"
   local escaped_prompt
-  escaped_prompt=$(jq -Rs <<< "$prompt")
+  escaped_prompt="$(jq -Rs <<< "$prompt")"
   local payload
-  payload="{
-  \"model\": \"deepseek-chat\",
-  \"messages\": [
+  payload="$(jq -n --arg content "$escaped_prompt" '{
+  "model": "deepseek-chat",
+  "messages": [
     {
-      \"role\": \"system\",
-      \"content\": \"You are a helpful assistant that summarizes content. Be concise, helpful.\"
+      "role": "system",
+      "content": "You are a helpful assistant that summarizes content. Be concise, helpful."
     },
     {
-      \"role\": \"user\",
-      \"content\": \"$prompt\"
+      "role": "user",
+      "content": $content
     }
   ],
-  \"temperature\": 0.5
-}"
+  "temperature": 0.5
+}')"
 
   local response
   response="$(
@@ -312,7 +314,7 @@ function summarize_chunk() {
     fi
   fi
 
-  err "Failed to summarize chunk (no working API available)"
+  err "Failed to summarize chunk (no working APIs available)"
   return 1
 }
 
