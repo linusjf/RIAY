@@ -90,6 +90,9 @@ function save_failed_response() {
   echo "$data" > "$filename"
   echo "$response" >> "$filename"
   err "Saved failed response to $filename"
+  if [[ $- == *x* ]]; then
+    exit 1
+  fi
 }
 
 function safe_curl_request() {
