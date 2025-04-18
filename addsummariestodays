@@ -52,6 +52,17 @@ sed -n "${startday},${endday}p" videos.txt | while read -r videoid; do
     filepath="$month/$filename"
 
     if [ -f "$filepath" ]; then
+      if grep 'AI-Generated Summary:' "$filepath"; then
+        echo "$filepath already contains AI-Generated Summary. Creating backup..."
+        if cp "$filepath" "${filepath}.bak"; then
+          tempfile="$(mktemp)"
+          awk '
+/^### AI-Generated Summary:/ { in_block = 1; next }
+/^### / && in_block { in_block = 0 }
+!in_block
+' "$filepath" > "$tempfile" && mv "$tempfile" "$filepath"
+        fi
+      fi
       echo "Appending to $filepath (Day $lineno, $videoid)"
       echo "" >> "$filepath"
       ./summarizevideo "$videoid" >> "$filepath"
