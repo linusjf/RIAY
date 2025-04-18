@@ -69,15 +69,17 @@ function check_dependencies() {
 
 function extract_text_from_vtt() {
   local vtt_file="$1"
-  grep -vE '^[0-9]+$|^[0-9]{2}:' "$vtt_file" \
+  local res="$(grep -vE '^[0-9]+$|^[0-9]{2}:' "$vtt_file" \
     | sed -e '/^WEBVTT/d' \
       -e '/^Kind/d' \
       -e '/^Language/d' \
       -e 's/\[Music\]//g' \
       -e '/^[[:space:]]*$/d' \
       -e 's/<[^>]*>//g' \
-    | tr '\n' ' ' | fold -s -w 1000 \
-    | jq -Rs .
+    | tr '\n' ' ' \
+    | jq -Rs .)"
+  res="${res:1:-1}"
+  echo -n "$res"
 }
 
 function save_failed_response() {
@@ -214,21 +216,19 @@ function summarize_chunk_gemini() {
   local chunk="$1"
   local prompt
   prompt=$(get_chunk_prompt "$chunk")
+  local escaped_prompt
+  escaped_prompt=$(jq -Rs <<< "$prompt")
   local payload
-  payload="$(
-    cat << EOM
-{
-  "contents": [{
-    "parts": [{
-      "text": "$prompt"
+  payload="{
+  \"contents\": [{
+    \"parts\": [{
+      \"text\": \"$prompt\"
     }]
   }],
-  "generationConfig": {
-    "temperature": 0.5
+  \"generationConfig\": {
+    \"temperature\": 0.5
   }
-}
-EOM
-  )"
+}"
 
   local response
   response="$(
@@ -256,25 +256,23 @@ function summarize_chunk_deepseek() {
   local chunk="$1"
   local prompt
   prompt=$(get_chunk_prompt "$chunk")
+  local escaped_prompt
+  escaped_prompt=$(jq -Rs <<< "$prompt")
   local payload
-  payload="$(
-    cat << EOM
-{
-  "model": "deepseek-chat",
-  "messages": [
+  payload="{
+  \"model\": \"deepseek-chat\",
+  \"messages\": [
     {
-      "role": "system",
-      "content": "You are a helpful assistant that summarizes content. Be concise, helpful and provide answers in markdown format."
+      \"role\": \"system\",
+      \"content\": \"You are a helpful assistant that summarizes content. Be concise, helpful.\"
     },
     {
-      "role": "user",
-      "content": "$prompt"
+      \"role\": \"user\",
+      \"content\": \"$prompt\"
     }
   ],
-  "temperature": 0.5
-}
-EOM
-  )"
+  \"temperature\": 0.5
+}"
 
   local response
   response="$(
@@ -480,7 +478,6 @@ function main() {
 
   local TRANSCRIPT
   TRANSCRIPT=$(extract_text_from_vtt "${FILE_PREFIX}${VIDEO_ID}.en.vtt")
-  TRANSCRIPT="${TRANSCRIPT:1:-1}"
 
   if [[ -z "$TRANSCRIPT" ]]; then
     die "Error: Transcript conversion failed"
