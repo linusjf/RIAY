@@ -90,9 +90,6 @@ function save_failed_response() {
   echo "$data" > "$filename"
   echo "$response" >> "$filename"
   err "Saved failed response to $filename"
-  if [[ $- == *x* ]]; then
-    exit 1
-  fi
 }
 
 function safe_curl_request() {
@@ -148,6 +145,15 @@ function safe_curl_request() {
     if [[ $retry_count -lt $MAX_RETRIES ]]; then
       >&2 echo "Request failed with status $status_code, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
       save_failed_response "$data" "$response" "$(basename "$url")"
+
+      if [[ $- == *x* ]]; then
+        >&2 echo "In debug mode, exiting at first failure"
+        exit 1
+      fi
+      if [[ $status_code -eq 429 ]]; then
+        >&2 echo "Request failed with status $status_code, no retries... rate limiting error"
+        break
+      fi
       sleep $delay
       delay=$((delay * 2))
     fi
