@@ -43,6 +43,7 @@
   - [AI-Generated Summary: Meditating on Mary's Assumption with Fulton Sheen](#ai-generated-summary-meditating-on-marys-assumption-with-fulton-sheen)
 - [April 18,2025](#april-182025)
   - [Heights of Holiness](#heights-of-holiness)
+  - [AI-Generated Summary: Meditation on Mary's Queenship and Doing God's Will](#ai-generated-summary-meditation-on-marys-queenship-and-doing-gods-will)
 
 <!-- tocstop -->
 
@@ -245,3 +246,34 @@ The session incorporated recitations of the Hail Mary and Glory Be prayers, conc
 ### Heights of Holiness
 
 [![Heights of Holiness](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day108.jpg)](https://youtu.be/uXvW2KhbtIk "Heights of Holiness")
+
+### AI-Generated Summary: Meditation on Mary's Queenship and Doing God's Will
+
+This text explores deepening one's relationship with Jesus and Mary through prayer and meditation, specifically focusing on the fifth glorious mystery: Mary's coronation as Queen of Heaven and Earth. It draws heavily on the writings of St. John Damascene, a Doctor of the Church known for defending sacred images and his insights on the Assumption.
+
+**Main Topics Discussed:**
+
+- **Prayer and Meditation:** Methods to grow closer to Jesus and Mary and become sources of grace.
+- **Mary's Coronation:** The central theme for meditation, viewed through St. John Damascene's writings.
+- **St. John Damascene:** His historical context (iconoclasm debate), theological contributions (defense of images, Doctor of the Assumption), and devotion to Mary.
+- **Mary's Role:** Explored as both Queen (deserving reverence) and Mother (approachable with confidence), whose primary intercession helps others follow God's will.
+- **Doing God's Will:** Presented as the central aim of the spiritual life, exemplified by Mary's own perseverance in grace.
+- **Human Frailty and Seeking Help:** Acknowledging personal limitations in following God's will and the need to turn to Mary for assistance.
+
+**Key Takeaways:**
+
+- Honoring Mary directs honor towards God.
+- Mary's example and intercession are primarily focused on helping believers accept and live according to the Father's will.
+- Her dual nature as Queen and Mother encourages both reverence and confident reliance.
+- Recognizing personal weakness should lead to seeking Mary's help, not discouragement.
+- The ultimate goal is to persevere in doing God's will, aligning our power with our desire through grace sought from Mary.
+
+**Notable Quotes/Insights:**
+
+- St. John Damascene addresses Mary: "O Queen... O virgin mother of God, stain our souls with our trust in thee..." emphasizing reliance on her.
+- Honoring servants (Mary) reflects honor upon the master (God).
+- Mary's greatest accomplishment was "being preserved and persevering in grace by doing God's will."
+- St. John Damascene's prayer asks Mary to lead believers into the "calm harbor of the divine will."
+- The call to action is to approach Mary confidently, asking for grace that "our power may match our desire" to say "yes" to God.
+
+The text concludes by mentioning the recitation of specific prayers like the Hail Mary and Glory Be as part of this devotional practice.
