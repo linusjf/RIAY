@@ -92,7 +92,7 @@ This ensures the presence of the header for each month's markdown.
    ```
 
    Substitute your Gemini API Key which can access YouTube Data API.
-   Set up your API key using instructions at <https://ai.google.dev/gemini-api/docs/api-key#:~:text=On%20this%20page,~/.zshrc>
+   Set up your API key using instructions at <https://ai.google.dev/gemini-api/docs/api-key>
 
 1. Export environment variable `DEEPSEEK_API_KEY` by adding the following line to `.bash_profile`.
 
