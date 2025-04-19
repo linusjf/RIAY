@@ -33,9 +33,9 @@
    Example for January:
 
 ```text
-<!-- toc -->
+&lt;!-- toc --&gt;
 
-<!-- tocstop -->
+&lt;!-- tocstop --&gt;
 
 # January 2025
 
@@ -43,7 +43,7 @@ RIAY January 2025
 ```
 
 `markdown-toc-gen` won't generate the table of contents
-for the monthly markdown (in this case, `January2025.md`) without the mandatory `<!-- toc --> <!-- tocstop -->` comments header.
+for the monthly markdown (in this case, `January2025.md`) without the mandatory `&lt;!-- toc --&gt; &lt;!-- tocstop --&gt;` comments header.
 
 You can replace the top-level markdown header
 
