@@ -6,9 +6,18 @@ if [ "$#" -ne 2 ]; then
   exit 1
 fi
 
-# Check if RIAY_YEAR is set
-if [ -z "$RIAY_YEAR" ]; then
-  echo "Error: RIAY_YEAR environment variable is not set."
+# Resolve script directory
+if command -v realpath > /dev/null 2>&1; then
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+else
+  SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
+fi
+source "${SCRIPT_DIR}/vidmd.sh"
+readonly YEAR_VAR="$(getroot)_YEAR"
+readonly YEAR="${!YEAR_VAR}"
+# Check if YEAR is set
+if [ -z "$YEAR" ]; then
+  echo "Error: $YEAR_VAR environment variable is not set."
   exit 1
 fi
 
@@ -47,8 +56,8 @@ sed -n "${startday},${endday}p" videos.txt | while read -r videoid; do
   if [ -n "$videoid" ]; then
     filename="Day$(printf "%03d" "$lineno").md"
 
-    # Calculate month name using date and RIAY_YEAR
-    month=$(date -d "${RIAY_YEAR}-01-01 +$((lineno - 1)) days" +%B)
+    # Calculate month name using date and YEAR
+    month=$(date -d "${YEAR}-01-01 +$((lineno - 1)) days" +%B)
     filepath="$month/$filename"
     response='y'
     if [ -f "$filepath" ]; then

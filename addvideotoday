@@ -9,9 +9,19 @@ fi
 VIDEO_ID="$1"
 DAY_NUM="$2"
 
+# Resolve script directory
+if command -v realpath > /dev/null 2>&1; then
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+else
+  SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
+fi
+source "${SCRIPT_DIR}/vidmd.sh"
+readonly YEAR_VAR="$(getroot)_YEAR"
+
+readonly YEAR="${!YEAR_VAR}"
 # Check required env vars
-if [ -z "$RIAY_YEAR" ] || [ -z "$YOUTUBE_API_KEY" ]; then
-  echo "Error: RIAY_YEAR and YOUTUBE_API_KEY environment variables must be set."
+if [ -z "$YEAR" ] || [ -z "$YOUTUBE_API_KEY" ]; then
+  echo "Error: ${YEAR_VAR} and YOUTUBE_API_KEY environment variables must be set."
   exit 1
 fi
 
@@ -38,7 +48,7 @@ fi
 
 # Format day and month
 printf -v DAY_STRING "Day%03d" "$DAY_NUM"
-MONTH=$(date -d "${RIAY_YEAR}-01-01 +$((DAY_NUM - 1)) days" +"%B")
+MONTH=$(date -d "${YEAR}-01-01 +$((DAY_NUM - 1)) days" +"%B")
 
 # Prepare file paths
 MARKDOWN_FILE="$MONTH/${DAY_STRING}.md"

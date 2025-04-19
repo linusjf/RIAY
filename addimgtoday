@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#!/bin/bash
 
 # Check args
 if [ $# -ne 3 ]; then
@@ -11,9 +10,18 @@ DAY_NUM="$1"
 IMAGE_PATH="$2"
 CAPTION="$3"
 
+# Resolve script directory
+if command -v realpath > /dev/null 2>&1; then
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+else
+  SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
+fi
+source "${SCRIPT_DIR}/vidmd.sh"
+readonly YEAR_VAR="$(getroot)_YEAR"
+readonly YEAR="${!YEAR_VAR}"
 # Validate env var
-if [ -z "$RIAY_YEAR" ]; then
-  echo "Error: RIAY_YEAR environment variable not set."
+if [ -z "$YEAR" ]; then
+  echo "Error: ${YEAR_VAR} environment variable not set."
   exit 1
 fi
 
@@ -43,7 +51,7 @@ fi
 
 # Format paths and strings
 printf -v DAY_STRING "Day%03d" "$DAY_NUM"
-MONTH=$(date -d "${RIAY_YEAR}-01-01 +$((DAY_NUM - 1)) days" +"%B")
+MONTH=$(date -d "${YEAR}-01-01 +$((DAY_NUM - 1)) days" +"%B")
 
 MARKDOWN_FILE="$MONTH/${DAY_STRING}.md"
 JPG_BASENAME="$(basename "$IMAGE_PATH")"
