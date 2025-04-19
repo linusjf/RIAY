@@ -24,6 +24,7 @@
 - [mdformat](https://github.com/hukkin/mdformat)
 - [markdownlint](https://github.com/DavidAnson/markdownlint)
 - [vale](https://github.com/errata-ai/vale)
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 
 1. Create an empty `videos.txt` file under the root directory.
 1. Create a directory for each month of the year under the root directory.
