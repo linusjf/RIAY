@@ -44,6 +44,9 @@
 - [April 18,2025](#april-182025)
   - [Heights of Holiness](#heights-of-holiness)
   - [AI-Generated Summary: Meditation on Mary's Queenship and Doing God's Will](#ai-generated-summary-meditation-on-marys-queenship-and-doing-gods-will)
+- [April 19,2025](#april-192025)
+  - [The Gift of Wonder](#the-gift-of-wonder)
+  - [AI-Generated Summary: The Wonder of the Annunciation](#ai-generated-summary-the-wonder-of-the-annunciation)
 
 <!-- tocstop -->
 
@@ -277,3 +280,22 @@ This text explores deepening one's relationship with Jesus and Mary through pray
 - The call to action is to approach Mary confidently, asking for grace that "our power may match our desire" to say "yes" to God.
 
 The text concludes by mentioning the recitation of specific prayers like the Hail Mary and Glory Be as part of this devotional practice.
+
+## April 19,2025
+
+### The Gift of Wonder
+
+[![The Gift of Wonder](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day109.jpg)](https://youtu.be/cDUm_kvTXv0 "The Gift of Wonder")
+
+### AI-Generated Summary: The Wonder of the Annunciation
+
+- Here is offered a quiet moment, a session for prayer with the Rosary, seeking a deeper acquaintance with Our Lord and His Mother, and to draw upon grace.
+- Our focus falls upon the first Joyful Mystery, the Annunciation, guided by the venerable Saint Gregory, known rightly as the Wonderworker.
+- This Gregory, a Bishop of the third century, saw God's power manifest not only in miracles but in the astonishing growth of his small Christian flock, a testament to the Spirit's work.
+- He directs our gaze to that singular moment: the Annunciation, where God's ancient promise, long debated and yearned for by Israel, was at last unveiled.
+- Consider Israel's long waiting, their hopes for a Deliverer, often perhaps clouded by earthly notions of kingship or conquest.
+- Then Gabriel arrives, not with earthly power, but with a message for a humble Virgin: that she would bear the Son of the Highest, the true King whose reign would have no end, conceived by the Spirit.
+- Herein lies the profound Mystery, hidden for ages, now made visible: God Himself, the very Maker of the stars, stooping down to become a man within His own creation.
+- This act, the Incarnation announced at that moment, is the true Wonder, the source of freedom and forgiveness, far surpassing any human expectation.
+- Let us, therefore, look upon this moment anew, not as a familiar tale, but with fresh gratitude and awe for the Advent of the Messiah, the very core of our hope.
+- The session, a simple turning towards this truth, concludes with prayers, a humble response to such astonishing reality.

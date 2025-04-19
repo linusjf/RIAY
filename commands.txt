@@ -1,5 +1,5 @@
 # commands
-addvideo "uXvW2KhbtIk" "Heights of Holiness" # add video
+addvideo "cDUm_kvTXv0" "The Gift of Wonder" # add video
 genmonth 04 2025 # generate
 stitch # generate the README
 lintall # lint all files
