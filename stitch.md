@@ -13,3 +13,4 @@
 - [October](October2025.md)
 - [November](November2025.md)
 - [December](December2025.md)
+- [HOWTO](HOWTO.md)
