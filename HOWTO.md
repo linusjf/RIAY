@@ -32,18 +32,20 @@
 1. Add a `header.md` file under each monthly directory with the following content.
    Example for January:
 
+<pre><code>
+&lt;!-- toc --&gt;
+
+&lt;!-- tocstop --&gt;
+</code></pre>
+
 ```markdown
-\<!-- toc -->
-
-\<!-- tocstop -->
-
 # January 2025
 
 RIAY January 2025
 ```
 
 `markdown-toc-gen` won't generate the table of contents
-for the monthly markdown (in this case, `January2025.md`) without the mandatory `<!-- toc --> <!-- tocstop -->` comments header.
+for the monthly markdown (in this case, `January2025.md`) without the mandatory <pre><code>&lt;!-- toc --&gt; &lt;!-- tocstop --&gt;</code></pre> comments header.
 
 You can replace the top-level markdown header
 
