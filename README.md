@@ -176,6 +176,7 @@ All the WhatsApp groups are closed for 2025, if anyone wants to follow the progr
 - [January 23,2025](#january-232025)
   - [Creator of Heaven and Earth](#creator-of-heaven-and-earth)
   - [ROSARY IN A YEAR DAY 23 - "CREATOR OF HEAVEN AND EARTH" Michelle Jackson](#rosary-in-a-year-day-23---creator-of-heaven-and-earth-michelle-jackson)
+  - [AI-Generated Summary: Meditations on the Creator's Power](#ai-generated-summary-meditations-on-the-creators-power)
 - [January 24,2025](#january-242025)
   - [Still, Small Voice](#still-small-voice)
 - [January 25,2025](#january-252025)
@@ -1172,6 +1173,18 @@ The text underscores a hopeful yet earnest approach to salvation, urging persona
 ##### ROSARY IN A YEAR DAY 23 - "CREATOR OF HEAVEN AND EARTH" Michelle Jackson
 
 "I Believe in God, the Father Almighty, Creator of heaven and earth, and in Jesus Christ, His only Son our Lord." The Apostle's Creed is so beautiful, may they be a great reminder of the fullness of the truth and let them form our minds, but also fill our hearts. Such a wonderful way to reflect on the creed and meditate on them. As Father Mark took us through Job who struggles and complains and questions God,with his friends by his side provoking him, and God responds to him questioning him, were you there when I laid the foundations of the world? Now who dare talk back to God?how terrifying to hear God respond, God who is the Creator, the maker of all things ,who can even understand the why's or what's of what He does and why He does and for who He does what He does? Many times we play God, we don't trust Him enough and we want to control all things our way and how we want, we who Father Mark put it, can't make even one donkey, let alone a donkey , we can't make anything without something and get so upset and mad and question God when we don't see things going our way. Let us repent of this ungrateful attitude and quit playing God. Let God be God and let us surrender and submit to Him. God loves us, Jesus in the New testament understood the pain Mary felt at the death of her brother, and Jesus who knew that He could give back life to Lazarus . He said I am the Life, and the Resurrection, yet when He saw her crying, "He wept". God is all knowing we are not, God is God we are not, we cannot do anything without God. We wouldn't even have been here if He didn't Will us into existence. God Loves us, but do we.? Let us look around and see this wonderful World He created for you and me from the tiny little mite to the highest peak of a mountain top, the wisdom and love He put into it all is for us. Thank you Abba Father for being our God
+
+##### AI-Generated Summary: Meditations on the Creator's Power
+
+Our thoughts turn first to the Apostles' Creed, not merely as a collection of ancient articles for the mind's assent, but as a profound wellspring capable of filling the very chambers of the heart. Reflecting upon its truths, as one might meditate upon a sacred text, serves to remind us of the fullness of reality and allows these truths to shape our inner selves as much as our understanding.
+
+The discourse then leads us to the magnificent theme of God as Creator, a truth woven into the very fabric of the Creed. We are drawn to the Book of Job, where, amidst his questioning and suffering, God speaks from the whirlwind, challenging Job with the overwhelming reality of His presence and power at the dawn of creation. "Where were you," God asks, "when I laid the earth's foundation?"
+
+This divine voice reminds us of the Creator's absolute dominion: He established the world's bedrock, set the boundaries for the tumultuous sea, and endowed all of nature with its form and freedom. Unlike us, who can but observe and perhaps slightly rearrange, God holds the reins of existence itself, bringing order from chaos. In our human frailty and pride, we sometimes forget this, attempting to usurp His rightful place or dictate His actions.
+
+Yet, beholding the vastness, beauty, and intricate order of creation ought to evoke within us not a desire for control, but rather profound praise, wonder, and awe. The only fitting response to such almighty power is a humble reverence, a steadfast trust, and a contrite repentance for our attempts to play God. This same divine power is manifest in Christ, who, as the Resurrection and the Life, demonstrates God's ability to call forth life even from the silence of death, all while showing tender compassion for our earthly woes.
+
+Thus, we are invited to recognise this life-giving power, to find awe in the majesty of creation, and to turn from our prideful attempts to control the uncontrollable. Let us bring our struggles, our doubts, and our pains to the Lord, not demanding answers as Job once did, but with quiet confidence and reverence, trusting that the almighty Creator hears and holds all things in His hand. May we be granted grace to grow in such trust and humility.
 
 #### January 24,2025
 
