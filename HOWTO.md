@@ -32,13 +32,13 @@
 1. Add a `header.md` file under each monthly directory with the following content.
    Example for January:
 
-```markdown
-\<!-- toc -->
+```html
+<!-- toc -->
 
-\<!-- tocstop -->
+<!-- tocstop -->
 
-# January 2025
-
+# January 2025<br />
+<br />
 RIAY January 2025
 ```
 
