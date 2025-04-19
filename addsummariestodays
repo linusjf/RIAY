@@ -65,7 +65,7 @@ sed -n "${startday},${endday}p" videos.txt | while read -r videoid; do
       [[ "$response" == Y* ]] || [[ "$response" == y* ]] \
         && echo "Appending to $filepath (Day $lineno, $videoid)" \
         && echo "" >> "$filepath" \
-        && ./summarizevideo "$videoid" >> "$filepath"
+        && ./summarizevideo -- "$videoid" >> "$filepath"
     else
       echo "Warning: $filepath not found. Skipping videoid $videoid (line $lineno)."
     fi
