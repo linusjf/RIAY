@@ -21,7 +21,7 @@ readonly CHUNK_PROMPT="$(cat "${SCRIPT_DIR}/chunkprompt.txt")"
 readonly FINAL_PROMPT="$(cat "${SCRIPT_DIR}/finalsummaryprompt.txt")"
 mapfile -t GEMINI_MODELS < geminimodels.txt
 readonly GEMINI_MODELS
-CURRENT_MODEL_INDEX=0
+declare -i CURRENT_MODEL_INDEX=0
 
 function version() {
   printf "%s\n" "$VERSION"
@@ -161,7 +161,7 @@ function safe_curl_request() {
       fi
       if [[ $status_code -eq 429 ]]; then
         >&2 echo "Request failed with status $status_code, no retries... rate limiting error"
-        break
+        return 2
       fi
       sleep $delay
       delay=$((delay * 2))
@@ -233,28 +233,37 @@ function summarize_chunk_gemini() {
   }
 }')"
 
-  model="${GEMINI_MODELS["$CURRENT_MODEL_INDEX"]}"
-
   local response
-  response="$(
-    safe_curl_request \
-      "https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}" \
-      "POST" \
-      "Content-Type: application/json" \
-      "$payload"
-  )"
+  while [[ $CURRENT_MODEL_INDEX -lt "${#GEMINI_MODELS[@]}" ]]; do
+    model="${GEMINI_MODELS["$CURRENT_MODEL_INDEX"]}"
 
-  if [[ "$response" == null* ]]; then
-    err "Gemini API returned invalid response"
-    return 1
-  fi
+    response="$(
+      safe_curl_request \
+        "https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}" \
+        "POST" \
+        "Content-Type: application/json" \
+        "$payload"
+    )"
 
-  if ! echo "$response" | jq . > /dev/null 2>&1; then
-    err "Gemini API returned invalid response"
-    return 1
-  fi
+    local res=$?
 
-  echo "$response" | jq -r '.candidates[0].content.parts[0].text'
+    if [[ "$res" -eq 2 ]]; then
+      CURRENT_MODEL_INDEX=$((CURRENT_MODEL_INDEX + 1))
+    else
+      if [[ "$response" == null* ]]; then
+        err "Gemini API returned invalid response"
+        return 1
+      fi
+
+      if ! echo "$response" | jq . > /dev/null 2>&1; then
+        err "Gemini API returned invalid response"
+        return 1
+      fi
+
+      echo "$response" | jq -r '.candidates[0].content.parts[0].text'
+      return
+    fi
+  done
 }
 
 function summarize_chunk_deepseek() {
@@ -300,7 +309,7 @@ Content-Type: application/json" \
 
 function summarize_chunk() {
   local chunk="$1"
-  if [[ "$CURRENT_MODEL_INDEX" -ge 0 ]]; then
+  if [[ "$CURRENT_MODEL_INDEX" -lt "${#GEMINI_MODELS[@]}" ]]; then
     if [[ -n "${GEMINI_API_KEY:-}" ]]; then
       local summary
       summary=$(summarize_chunk_gemini "$chunk" 2> /dev/null || true)
@@ -344,22 +353,32 @@ function final_summary_gemini() {
       }
     }')
 
-  model="${GEMINI_MODELS["$CURRENT_MODEL_INDEX"]}"
   local response
-  response=$(
-    safe_curl_request \
-      "https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}" \
-      "POST" \
-      "Content-Type: application/json" \
-      "$payload"
-  )
 
-  if ! echo "$response" | jq . > /dev/null 2>&1; then
-    err "Gemini API returned invalid response"
-    return 1
-  fi
+  while [[ $CURRENT_MODEL_INDEX -lt "${#GEMINI_MODELS[@]}" ]]; do
+    model="${GEMINI_MODELS["$CURRENT_MODEL_INDEX"]}"
+    response=$(
+      safe_curl_request \
+        "https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}" \
+        "POST" \
+        "Content-Type: application/json" \
+        "$payload"
+    )
 
-  echo "$response" | jq -r '.candidates[0].content.parts[0].text'
+    local res=$?
+
+    if [[ "$res" -eq 2 ]]; then
+      CURRENT_MODEL_INDEX=$((CURRENT_MODEL_INDEX + 1))
+    else
+      if ! echo "$response" | jq . > /dev/null 2>&1; then
+        err "Gemini API returned invalid response"
+        return 1
+      fi
+
+      echo "$response" | jq -r '.candidates[0].content.parts[0].text'
+      return
+    fi
+  done
 }
 
 function final_summary_deepseek() {
