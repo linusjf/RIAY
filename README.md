@@ -3727,13 +3727,13 @@ RIAY December 2025
 3. Add a `header.md` file under each monthly directory with the following content.
    Example for January:
 
-```html
+```text
 <!-- toc -->
 
 <!-- tocstop -->
 
-# January 2025<br />
-<br />
+# January 2025
+
 RIAY January 2025
 ```
 
