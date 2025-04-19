@@ -90,6 +90,7 @@ YOUTUBE_URL="https://youtu.be/$VIDEO_ID"
   echo "### ${TITLE}"
   echo
   echo "[![${TITLE}](https://raw.githubusercontent.com/${GITHUB_REPO}/refs/heads/main/${MONTH}/jpgs/${DAY_STRING}.jpg)](${YOUTUBE_URL} \"${TITLE}\")"
+  "${SCRIPT_DIR}/summarizevideo" "${VIDEO_ID}"
 } >> "$MARKDOWN_FILE"
 
 echo "Appended video info to $MARKDOWN_FILE"
