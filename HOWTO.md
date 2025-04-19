@@ -58,6 +58,8 @@ with your own if you wish.
 Add a `compact.txt` file with the first line as `header.md` under each monthly directory.
 This ensures the presence of the header for each month's markdown.
 
+Note: You can do all this by simply executing the script `setup`.
+
 ### Environment variables
 
 1. Export an environment variable `RIAY_YEAR` by adding the following line to your `.bash_profile` file.
