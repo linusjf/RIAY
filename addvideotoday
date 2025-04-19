@@ -84,6 +84,39 @@ curl -s "$THUMBNAIL_URL" -o "$IMAGE_PATH"
 # Shortened YouTube URL
 YOUTUBE_URL="https://youtu.be/$VIDEO_ID"
 
+# Create a temporary file
+TMP_FILE=$(mktemp)
+
+awk -v vid="$VIDEO_ID" '
+  BEGIN { skip = 0 }
+  {
+    if (skip) {
+      if ($0 ~ /^### /) {
+        skip = 0
+        print
+      }
+      next
+    }
+    if (found) {
+      found = 0
+      if ($0 ~ /^[[:space:]]*$/) {
+        next
+      } else if ($0 ~ /^### AI-Generated Summary:/) {
+        skip = 1
+        next
+      }
+    }
+    if (index($0, vid)) {
+      found = 1
+      next
+    }
+    print
+  }
+' "$MARKDOWN_FILE" > "$TMP_FILE"
+
+# Replace the original file with the processed one
+mv "$TMP_FILE" "$MARKDOWN_FILE"
+
 # Append markdown
 {
   echo
