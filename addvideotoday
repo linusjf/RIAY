@@ -84,6 +84,10 @@ curl -s "$THUMBNAIL_URL" -o "$IMAGE_PATH"
 # Shortened YouTube URL
 YOUTUBE_URL="https://youtu.be/$VIDEO_ID"
 
+# backup existing contents
+echo "Saving backup to ${MARKDOWN_FILE}.bak"
+cp "$MARKDOWN_FILE" "${MARKDOWN_FILE}.bak"
+
 # Create a temporary file
 TMP_FILE=$(mktemp)
 
