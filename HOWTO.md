@@ -85,6 +85,26 @@ This ensures the presence of the header for each month's markdown.
    Substitute your Google API Key which can access YouTube Data API.
    Set up your API key using instructions at <https://support.google.com/googleapi/answer/6158862?hl=en>
 
+1. Export environment variable `GEMINI_API_KEY` by adding the following line to `.bash_profile`.
+
+   ```bash
+   export GEMINI_API_KEY=<api_key>
+   ```
+
+   Substitute your Gemini API Key which can access YouTube Data API.
+   Set up your API key using instructions at <https://ai.google.dev/gemini-api/docs/api-key#:~:text=On%20this%20page,~/.zshrc>
+
+1. Export environment variable `DEEPSEEK_API_KEY` by adding the following line to `.bash_profile`.
+
+   ```bash
+   export DEEPSEEK_API_KEY=<api_key>
+   ```
+
+   Substitute your DeepSeek API Key which can access YouTube Data API.
+   Set up your API key using instructions at <https://docs.aicontentlabs.com/articles/deepseek-api-key/>
+
+**Note:** You will need to set up either DeepSeek or Gemini API keys for AI-generation of podcast summaries.
+
 ### Vale
 
 Initialize `vale` styles by executing the command `vale sync`. This should download the specified styles in `.vale.ini`.
@@ -109,6 +129,8 @@ Results:
    In this case, 10.
 1. Appends the Video id to the file `videos.txt` present in the root directory.
 1. Generates markdown file `Day010.md` in the `January` subdirectory.
+   1. This markdown file has a link to the Youtube video.
+   1. It also has AI-Generated summary of the podcast.
 1. Generates image file `Day010.jpg` in the `January/jpgs` directory.
 1. Appends `Day010.md` filename to the `January/compact.txt` file.
 1. Updates `January20XX.md` file in the root directory with the contents of `Day010.md`.
