@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Ensure RIAY_YEAR env var is set
+
+: "${RIAY_YEAR:?Environment variable RIAY_YEAR must be set}"
+
+year="$RIAY_YEAR"
+
+# 1. Create an empty videos.txt at root
+
+# truncate to zero length or create if not exists
+: > videos.txt
+
+# 2. Names of the months
+
+months=(January February March April May June July August September October November December)
+
+# 3. Loop through each month and set up directories/files
+
+for month in "${months[@]}"; do
+  dir="./$month"
+  mkdir -p "$dir"
+  # Create header.md with the required content
+  cat > "$dir/header.md" << EOF
+  $month $year
+
+  RIAY $month $year 
+EOF
+
+  echo "header.md" > "$dir/compact.txt"
+done
+
+echo "Setup complete: videos.txt plus folders and headers for each month for year $year."
