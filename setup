@@ -1,12 +1,21 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
+shopt -s inherit_errexit
 
-# Ensure RIAY_YEAR env var is set
+# Resolve script directory
+if command -v realpath > /dev/null 2>&1; then
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+else
+  SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
+fi
+source "${SCRIPT_DIR}/vidmd.sh"
+readonly YEAR_VAR="$(getroot)_YEAR"
 
-: "${RIAY_YEAR:?Environment variable RIAY_YEAR must be set}"
+readonly YEAR="${!YEAR_VAR}"
+# Ensure  env var is set
 
-year="$RIAY_YEAR"
+: "${YEAR:?Environment variable ${YEAR_VAR} must be set}"
 
 # 1. Create an empty videos.txt at root
 
@@ -24,9 +33,9 @@ for month in "${months[@]}"; do
   mkdir -p "$dir"
   # Create header.md with the required content
   cat > "$dir/header.md" << EOF
-  $month $year
+  $month $YEAR
 
-  RIAY $month $year 
+  RIAY $month $YEAR 
 EOF
 
   echo "header.md" > "$dir/compact.txt"
