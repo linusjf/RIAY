@@ -32,11 +32,7 @@
 1. Add a `header.md` file under each monthly directory with the following content.
    Example for January:
    <!-- markdownlint-disable MD033 -->
-   <pre><code>
-   &lt;!-- toc --&gt;
-
-\<!-- tocstop -->
-</code></pre>
+   <pre><code>&lt;!-- toc --&gt;&lt;!-- tocstop --&gt;</code></pre>
 
 ```markdown
 # January 2025
