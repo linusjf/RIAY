@@ -43,7 +43,7 @@ RIAY January 2025
 
 `markdown-toc-gen` won't generate the table of contents
 for the monthly markdown (in this case, `January2025.md`)
-without the mandatory <pre><code>&lt;!-- toc --&gt; &lt;!-- tocstop --&gt;</code></pre> comments header.
+without the mandatory `<-- toc -->` and `<!-- tocstop -->` comments header.
 
 You can replace the top-level markdown header
 
