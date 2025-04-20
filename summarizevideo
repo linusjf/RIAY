@@ -315,9 +315,12 @@ function summarize_chunk_gemini() {
     )"
 
     local res=$?
-
     if [[ "$res" -eq 2 ]]; then
       CURRENT_MODEL_INDEX=$((CURRENT_MODEL_INDEX + 1))
+      if $verbose && [[ $CURRENT_MODEL_INDEX -lt "${#GEMINI_MODELS[@]}" ]]; then
+        echo "Moving to model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}" >&2
+      fi
+      continue
     else
       if [[ "$response" == null* ]]; then
         err "Gemini API returned invalid response"
@@ -329,7 +332,7 @@ function summarize_chunk_gemini() {
         return 1
       fi
 
-      echo "$response" | jq -r '.candidates[0].content.parts[0].text'
+      SUMMARIZED_CHUNK="$(echo "$response" | jq -r '.candidates[0].content.parts[0].text')"
       return
     fi
   done
@@ -373,27 +376,24 @@ Content-Type: application/json" \
     return 1
   fi
 
-  echo "$response" | jq -r '.choices[0].message.content'
+  SUMMARIZED_CHUNK="$(echo "$response" | jq -r '.choices[0].message.content')"
 }
 
 function summarize_chunk() {
   local chunk="$1"
   if [[ "$CURRENT_MODEL_INDEX" -lt "${#GEMINI_MODELS[@]}" ]]; then
     if [[ -n "${GEMINI_API_KEY:-}" ]]; then
-      local summary
-      summary=$(summarize_chunk_gemini "$chunk" 2> /dev/null || true)
-      if [[ -n "$summary" ]] && [[ "$summary" != null* ]]; then
-        echo "$summary"
+      if summarize_chunk_gemini "$chunk"; then
         return 0
       fi
     fi
   fi
 
+  if $verbose; then
+    echo "Trying Deep Seek Chat..." >&2
+  fi
   if [[ -n "${DEEPSEEK_API_KEY:-}" ]]; then
-    local summary
-    summary=$(summarize_chunk_deepseek "$chunk" 2> /dev/null || true)
-    if [[ -n "$summary" ]] && [[ "$summary" != null* ]]; then
-      echo "$summary"
+    if summarize_chunk_deepseek "$chunk"; then
       return 0
     fi
   fi
@@ -438,13 +438,17 @@ function final_summary_gemini() {
 
     if [[ "$res" -eq 2 ]]; then
       CURRENT_MODEL_INDEX=$((CURRENT_MODEL_INDEX + 1))
+      if $verbose && [[ $CURRENT_MODEL_INDEX -lt "${#GEMINI_MODELS[@]}" ]]; then
+        echo "Moving to model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}" >&2
+      fi
+      continue
     else
       if ! echo "$response" | jq . > /dev/null 2>&1; then
         err "Gemini API returned invalid response"
         return 1
       fi
 
-      echo "$response" | jq -r '.candidates[0].content.parts[0].text'
+      FINAL_SUMMARY="$(echo "$response" | jq -r '.candidates[0].content.parts[0].text')"
       return
     fi
   done
@@ -489,7 +493,7 @@ Content-Type: application/json" \
     return 1
   fi
 
-  echo "$response" | jq -r '.choices[0].message.content'
+  FINAL_SUMMARY="$(echo "$response" | jq -r '.choices[0].message.content')"
 }
 
 function main() {
@@ -600,11 +604,15 @@ function main() {
     echo "Split transcript into ${#CHUNKS[@]} chunks" >&2
   fi
 
+  if $verbose; then
+    echo "Starting with model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}" >&2
+  fi
   local INTERMEDIATE_SUMMARIES=()
   for chunk in "${CHUNKS[@]}"; do
-    local summary
-    summary=$(summarize_chunk "$chunk")
-    INTERMEDIATE_SUMMARIES+=("$summary")
+    local SUMMARIZED_CHUNK
+    summarize_chunk "$chunk"
+    INTERMEDIATE_SUMMARIES+=("$SUMMARIZED_CHUNK")
+    SUMMARIZED_CHUNK=""
     if $verbose; then
       echo "Processed chunk (length: ${#chunk} chars)" >&2
       echo "Waiting for ${GAP_BW_REQS} seconds before initiating next request...." >&2
@@ -621,11 +629,11 @@ function main() {
 
   local FINAL_SUMMARY=""
   if [[ -n "${GEMINI_API_KEY:-}" ]]; then
-    FINAL_SUMMARY=$(final_summary_gemini "$FINAL_INPUT" || true)
+    final_summary_gemini "$FINAL_INPUT"
   fi
 
   if [[ (-z "$FINAL_SUMMARY" || -z "${GEMINI_API_KEY:-}") && -n "${DEEPSEEK_API_KEY:-}" ]]; then
-    FINAL_SUMMARY=$(final_summary_deepseek "$FINAL_INPUT")
+    final_summary_deepseek "$FINAL_INPUT"
   fi
 
   if [[ -z "$FINAL_SUMMARY" ]]; then
