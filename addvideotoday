@@ -88,10 +88,11 @@ YOUTUBE_URL="https://youtu.be/$VIDEO_ID"
 echo "Saving backup to ${MARKDOWN_FILE}.bak"
 cp "$MARKDOWN_FILE" "${MARKDOWN_FILE}.bak"
 
-# Create a temporary file
-TMP_FILE=$(mktemp)
+if grep -Fq "$VIDEO_ID" "$MARKDOWN_FILE"; then
+  # Create a temporary file
+  TMP_FILE=$(mktemp)
 
-awk -v vid="$VIDEO_ID" '
+  awk -v vid="$VIDEO_ID" '
   BEGIN { skip = 0 }
   {
     if (skip) {
@@ -118,9 +119,10 @@ awk -v vid="$VIDEO_ID" '
   }
 ' "$MARKDOWN_FILE" > "$TMP_FILE"
 
-# Replace the original file with the processed one
-mv "$TMP_FILE" "$MARKDOWN_FILE"
+  # Replace the original file with the processed one
+  mv "$TMP_FILE" "$MARKDOWN_FILE"
 
+fi
 # Append markdown
 {
   echo
