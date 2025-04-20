@@ -1,5 +1,7 @@
 # HOWTO
 
+<!-- markdownlint-disable MD033 -->
+
 <!-- toc -->
 
 - [Prerequisites](#prerequisites)
@@ -31,7 +33,6 @@
 1. Create a directory for each month of the year under the root directory.
 1. Add a `header.md` file under each monthly directory with the following content.
    Example for January:
-   <!-- markdownlint-disable MD033 -->
    <pre><code>&lt;!-- toc --&gt;&lt;!-- tocstop --&gt;</code></pre>
 
 ```markdown
@@ -41,7 +42,8 @@ RIAY January 2025
 ```
 
 `markdown-toc-gen` won't generate the table of contents
-for the monthly markdown (in this case, `January2025.md`) without the mandatory <pre><code>\<!-- toc --> \<!-- tocstop --></code></pre> comments header.
+for the monthly markdown (in this case, `January2025.md`)
+without the mandatory <pre><code>&lt;!-- toc --&gt; &lt;!-- tocstop --&gt;</code></pre> comments header.
 
 You can replace the top-level markdown header
 
