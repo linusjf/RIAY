@@ -622,10 +622,6 @@ function main() {
 
   local FINAL_INPUT
   FINAL_INPUT=$(printf "%s\n\n" "${INTERMEDIATE_SUMMARIES[@]}")
-  if $verbose; then
-    echo "Waiting for ${GAP_BW_REQS} seconds before initiating next request...." >&2
-  fi
-  sleep "$GAP_BW_REQS"
 
   local FINAL_SUMMARY=""
   if [[ -n "${GEMINI_API_KEY:-}" ]]; then
