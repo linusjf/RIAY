@@ -41,4 +41,4 @@ EOF
   echo "header.md" > "$dir/compact.txt"
 done
 
-echo "Setup complete: videos.txt plus folders and headers for each month for year $year."
+echo "Setup complete: videos.txt plus folders and headers for each month for year $YEAR."
