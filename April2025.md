@@ -59,6 +59,9 @@
 - [April 19,2025](#april-192025)
   - [The Gift of Wonder](#the-gift-of-wonder)
   - [AI-Generated Summary: The Wonder of the Annunciation](#ai-generated-summary-the-wonder-of-the-annunciation)
+- [April 20,2025](#april-202025)
+  - [Greater Seeks Lesser](#greater-seeks-lesser)
+  - [AI-Generated Summary: The Visitation, Humility, and the Pursuit of Grace](#ai-generated-summary-the-visitation-humility-and-the-pursuit-of-grace)
 
 <!-- tocstop -->
 
@@ -511,3 +514,23 @@ The text concludes by mentioning the recitation of specific prayers like the Hai
 - This act, the Incarnation announced at that moment, is the true Wonder, the source of freedom and forgiveness, far surpassing any human expectation.
 - Let us, therefore, look upon this moment anew, not as a familiar tale, but with fresh gratitude and awe for the Advent of the Messiah, the very core of our hope.
 - The session, a simple turning towards this truth, concludes with prayers, a humble response to such astonishing reality.
+
+## April 20,2025
+
+### Greater Seeks Lesser
+
+[![Greater Seeks Lesser](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day110.jpg)](https://youtu.be/IlTUSj4LF1s "Greater Seeks Lesser")
+
+### AI-Generated Summary: The Visitation, Humility, and the Pursuit of Grace
+
+The Rosary's Visitation, where Mary visits Elizabeth, offers a potent image of humility and grace. St. Ambrose highlights Mary's lowliness, though bearing Christ, in greeting her elder first. This echoes Christ later sanctifying John's baptism—the greater seeking the lesser. Mary's presence instantly bears fruit: John leaps, and Elizabeth receives the Holy Spirit.
+
+- Mary's visit becomes a conduit of grace, heard by Elizabeth and remarkably, perceived by John in the womb.
+- This awareness of grace is key. A tale illustrates this: a younger friar, vexed by an older friar's distraction during charity work, receives a double apology. The second, exceeding mere politeness, prioritizes their relationship over rightness, a mark of true seniority, of being the "better" brother.
+
+God, like Mary, persistently seeks us, occupying the lowest place to reach us. He doesn't discard us for our flaws but pursues us with relentless mercy.
+
+- The Visitation exemplifies this: the superior (Mary, carrying Christ) comes to the aid of the inferior (Elizabeth and John).
+- We, too, are called to this divine humility, offering patient, merciful, and persevering help to those struggling around us.
+
+Woven throughout are the familiar refrains of the Hail Mary and Glory Be, culminating in thanks for shared prayer.

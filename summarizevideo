@@ -9,6 +9,10 @@ shopt -s inherit_errexit
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME=$(basename "$0")
 
+timestamp=$(date +"%Y%m%d_%H%M%S")
+exec 3> >(tee "summarizevideo${timestamp}.log")
+export BASH_XTRACEFD=3
+
 # Source utility libraries
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/require.sh"
@@ -155,11 +159,7 @@ function safe_curl_request() {
       >&2 echo "Request failed with status $status_code, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
       save_failed_response "$data" "$response" "$(basename "$url")"
 
-      if [[ $- == *x* ]]; then
-        >&2 echo "In debug mode, exiting at first failure"
-        exit 1
-      fi
-      if [[ $status_code -eq 429 ]]; then
+      if [[ $status_code -ge 400 ]] && [[ $status_code -lt 500 ]]; then
         >&2 echo "Request failed with status $status_code, no retries... rate limiting error"
         return 2
       fi

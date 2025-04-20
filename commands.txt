@@ -1,5 +1,5 @@
 # commands
-addvideo "cDUm_kvTXv0" "The Gift of Wonder" # add video
+addvideo "IlTUSj4LF1s" "Greater Seeks Lesser" # add video
 genmonth 04 2025 # generate
 stitch # generate the README
 lintall # lint all files
