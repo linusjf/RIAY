@@ -244,12 +244,12 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   source "${SCRIPT_DIR}/require.sh"
   source "${SCRIPT_DIR}/internet.sh"
   source "${SCRIPT_DIR}/vidmd.sh"
+  source "${SCRIPT_DIR}/config.env"
 
-  readonly YEAR_VAR="$(getroot)_YEAR"
+  readonly YEAR
   # Check requirements
-  require_vars YOUTUBE_API_KEY GITHUB_USERNAME "$YEAR_VAR"
+  require_vars YOUTUBE_API_KEY GITHUB_USERNAME YEAR
   require_commands sed basename date markdown-toc
-  readonly YEAR="${!YEAR_VAR}"
 
   main "$@"
 fi
