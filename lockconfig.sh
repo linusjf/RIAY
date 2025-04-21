@@ -13,7 +13,7 @@ lock_config_vars() {
 
   for var in $config_vars; do
     # Check if it's an array
-    if declare -p "$var" 2> /dev/null | grep -q 'declare \-a'; then
+    if declare -p "$var" 2> /dev/null | grep -q 'declare -a'; then
       # Lock all elements of the array
       declare -r -a "$var"
     else
