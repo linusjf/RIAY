@@ -7,11 +7,11 @@ else
   SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
 fi
 source "${SCRIPT_DIR}/vidmd.sh"
-readonly YEAR_VAR="$(getroot)_YEAR"
-readonly YEAR="${!YEAR_VAR}"
+source "${SCRIPT_DIR}/config.env"
+readonly YEAR
 # Check for required environment variables
 if [ -z "$YEAR" ]; then
-  echo "Error: ${YEAR_VAR} environment variable not set."
+  echo "Error: YEAR environment variable not set."
   exit 1
 fi
 
