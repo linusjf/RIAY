@@ -88,12 +88,16 @@ source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/util.sh"
 source "${SCRIPT_DIR}/config.env"
 
-readonly GAP_BW_REQS=10
-readonly MAX_RETRIES=5
-readonly INITIAL_RETRY_DELAY=2
-readonly CHUNK_PROMPT="$(cat "${SCRIPT_DIR}/chunkprompt.txt")"
-readonly FINAL_PROMPT="$(cat "${SCRIPT_DIR}/finalsummaryprompt.txt")"
+# curl config values
+readonly GAP_BW_REQS
+readonly MAX_RETRIES
+readonly INITIAL_RETRY_DELAY
+
+# gen ai config values
+readonly CHUNK_SUMMARY_PROMPT
+readonly FINAL_SUMMARY_PROMPT
 readonly GEMINI_MODELS
+
 declare -i CURRENT_MODEL_INDEX=0
 
 function version() {
@@ -276,12 +280,12 @@ function download_captions() {
 
 function get_chunk_prompt() {
   local chunk="$1"
-  printf "%s\n\n%s\n" "${CHUNK_PROMPT}" "${chunk}"
+  printf "%s\n\n%s\n" "${CHUNK_SUMMARY_PROMPT}" "${chunk}"
 }
 
 function get_final_prompt() {
   local input="$1"
-  printf "%s\n\n%s\n" "${FINAL_PROMPT}" "${input}"
+  printf "%s\n\n%s\n" "${FINAL_SUMMARY_PROMPT}" "${input}"
 }
 
 function summarize_chunk_gemini() {
