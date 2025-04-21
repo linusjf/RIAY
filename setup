@@ -10,12 +10,12 @@ else
   SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
 fi
 source "${SCRIPT_DIR}/vidmd.sh"
-readonly YEAR_VAR="$(getroot)_YEAR"
+source "${SCRIPT_DIR}/config.env"
+readonly YEAR
 
-readonly YEAR="${!YEAR_VAR}"
 # Ensure  env var is set
 
-: "${YEAR:?Environment variable ${YEAR_VAR} must be set}"
+: "${YEAR:?Environment variable YEAR must be set}"
 
 # 1. Create an empty videos.txt at root
 
@@ -33,6 +33,8 @@ for month in "${months[@]}"; do
   mkdir -p "$dir"
   # Create header.md with the required content
   cat > "$dir/header.md" << EOF
+  <!-- toc -->
+  <!-- tocstop -->
   $month $YEAR
 
   RIAY $month $YEAR 
