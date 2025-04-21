@@ -1,5 +1,5 @@
 # commands
-addvideo "IlTUSj4LF1s" "Greater Seeks Lesser" # add video
+addvideo "rT4GNSQ4fHo" "Manifest in Humility" # add video
 genmonth 04 2025 # generate
 stitch # generate the README
 lintall # lint all files

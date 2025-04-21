@@ -62,6 +62,9 @@
 - [April 20,2025](#april-202025)
   - [Greater Seeks Lesser](#greater-seeks-lesser)
   - [AI-Generated Summary: The Visitation, Humility, and the Pursuit of Grace](#ai-generated-summary-the-visitation-humility-and-the-pursuit-of-grace)
+- [April 21,2025](#april-212025)
+  - [Manifest in Humility](#manifest-in-humility)
+  - [AI-Generated Summary: The Nativity's Astonishing Paradox](#ai-generated-summary-the-nativitys-astonishing-paradox)
 
 <!-- tocstop -->
 
@@ -534,3 +537,21 @@ God, like Mary, persistently seeks us, occupying the lowest place to reach us. H
 - We, too, are called to this divine humility, offering patient, merciful, and persevering help to those struggling around us.
 
 Woven throughout are the familiar refrains of the Hail Mary and Glory Be, culminating in thanks for shared prayer.
+
+## April 21,2025
+
+### Manifest in Humility
+
+[![Manifest in Humility](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day111.jpg)](https://youtu.be/rT4GNSQ4fHo "Manifest in Humility")
+
+### AI-Generated Summary: The Nativity's Astonishing Paradox
+
+Let us ponder the Nativity, guided by the wisdom of St. Bernard. The heart of the matter is this: the entire, boundless fullness of God chose to dwell within Jesus, even as a Babe.
+
+- St. Bernard bids us contrast Christ's eternal glory – the delight of angels, transcendent and vast – with His chosen state on Earth: utterly little, humble, a mere child. This astonishing descent was not for His own sake, but for ours, to bring salvation and peace, enabling us, in time, to share in His greatness.
+- Even in that small form, Christ was full of grace and truth, a source from which St. Paul could draw, leading to that great call to rejoice always. The Nativity is both a mystery to celebrate and a promise of what is to come.
+- Think of God's action as two hands: one that raises, heals, and offers remedies full of merit; the other that receives, blesses, and offers rewards and delights. These divine remedies, though powerful, are gentle, wise, and beautiful, meant for our healing and spiritual nourishment.
+- Now, lift your mind to the cosmos: the sun, vast and potent, is but a speck. Consider our galaxy with its billions of stars, and the trillions of galaxies beyond. This unimaginable scale is upheld by God, who is infinitely greater still, utterly uncontained by His creation.
+- And yet, the profound, breathtaking mystery is this: this same infinite God, He who holds the universe in His thought, became human. The fullness of the Godhead was contained, not by the cosmos, but by a small baby, born in Bethlehem, held in His mother's arms.
+- What are we to make of this humility? It should fill us with awe, certainly, but also with immense confidence. He veiled His glory, became approachable, inviting us to draw near. This same fullness, this very power and beauty, is offered to us still, in that quiet meal we call Holy Communion.
+- When we receive Him there, we receive the Creator of all. If God is with us, who indeed can be against us? Let us therefore rejoice, worship the Child of Bethlehem, and renew our confidence in His ever-present power and hope. (The original meditation included specific prayers, such as the Lord's Prayer and Hail Marys, as part of this contemplative response).
