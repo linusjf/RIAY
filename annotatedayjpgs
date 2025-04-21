@@ -108,12 +108,15 @@ process_month() {
       ((updated_files++))
     else
       exitcode=$?
-      case $exitcode in
-        2) print_error "File not found: $imgfile" ;;
-        4) print_warning "Skipping non-JPG file: $imgfile" ;;
-        8) print_info "Comment already exists in: $imgfile" ;;
-        *) print_error "Unknown error processing file: $imgfile (code: $exitcode)" ;;
-      esac
+      if ((exitcode & 2)); then
+        print_error "File not found: $imgfile"
+      fi
+      if ((exitcode & 4)); then
+        print_warning "Skipping non-JPG file: $imgfile"
+      fi
+      if ((exitcode & 8)); then
+        print_info "Comment already exists in: $imgfile"
+      fi
     fi
   done < <(find "$jpgdir" -type f -name "Day*.jpg")
 }
