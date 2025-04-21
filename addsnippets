@@ -13,11 +13,11 @@ readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 # Source required libraries
 source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/vidmd.sh"
-readonly YEAR_VAR="$(getroot)_YEAR"
+source "${SCRIPT_DIR}/config.env"
+readonly YEAR
 # Check requirements
 require_commands date markdown-toc-gen
-require_vars GITHUB_USERNAME "$YEAR_VAR"
-readonly YEAR="${!YEAR_VAR}"
+require_vars GITHUB_USERNAME
 ######################################################################
 # Print error message and exit with failure
 # Globals: None
