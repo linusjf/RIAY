@@ -16,12 +16,11 @@ else
   SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
 fi
 source "${SCRIPT_DIR}/vidmd.sh"
-readonly YEAR_VAR="$(getroot)_YEAR"
-
-readonly YEAR="${!YEAR_VAR}"
+source "${SCRIPT_DIR}/config.env"
+readonly YEAR
 # Check required env vars
 if [ -z "$YEAR" ] || [ -z "$YOUTUBE_API_KEY" ]; then
-  echo "Error: ${YEAR_VAR} and YOUTUBE_API_KEY environment variables must be set."
+  echo "Error: YEAR and YOUTUBE_API_KEY environment variables must be set."
   exit 1
 fi
 
