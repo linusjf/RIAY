@@ -13,8 +13,8 @@ readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 # Source required libraries
 source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/vidmd.sh"
-source "${SCRIPT_DIR}/config.env"
-readonly YEAR
+source "${SCRIPT_DIR}/lockconfig.sh"
+lock_config_vars "${SCRIPT_DIR}/config.env"
 # Check requirements
 require_commands date markdown-toc-gen
 require_vars GITHUB_USERNAME

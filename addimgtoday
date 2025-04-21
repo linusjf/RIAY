@@ -16,8 +16,8 @@ if command -v realpath > /dev/null 2>&1; then
 else
   SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
 fi
-source "${SCRIPT_DIR}/config.env"
-readonly YEAR
+source "${SCRIPT_DIR}/lockconfig.sh"
+lock_config_vars "${SCRIPT_DIR}/config.env"
 # Validate env var
 if [ -z "$YEAR" ]; then
   echo "Error: ${YEAR} environment variable not set."

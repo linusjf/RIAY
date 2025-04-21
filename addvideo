@@ -244,9 +244,8 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   source "${SCRIPT_DIR}/require.sh"
   source "${SCRIPT_DIR}/internet.sh"
   source "${SCRIPT_DIR}/vidmd.sh"
-  source "${SCRIPT_DIR}/config.env"
-
-  readonly YEAR
+  source "${SCRIPT_DIR}/lockconfig.sh"
+  lock_config_vars "${SCRIPT_DIR}/config.env"
   # Check requirements
   require_vars YOUTUBE_API_KEY GITHUB_USERNAME YEAR
   require_commands sed basename date markdown-toc
