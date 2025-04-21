@@ -282,14 +282,14 @@ function summarize_chunk_gemini() {
   local escaped_prompt
   escaped_prompt=$(jq -Rs <<< "$prompt")
   local payload
-  payload="$(jq -n --arg content "$escaped_prompt" '{
+  payload="$(jq -n --arg content "$escaped_prompt" --arg temperature "${TEMPERATURE}" '{
   "contents": [{
     "parts": [{
       "text": $content
     }]
   }],
   "generationConfig": {
-    "temperature": 0.5
+    "temperature": $temperature
   }
 }')"
 
@@ -336,7 +336,7 @@ function summarize_chunk_deepseek() {
   local escaped_prompt
   escaped_prompt="$(jq -Rs <<< "$prompt")"
   local payload
-  payload="$(jq -n --arg content "$escaped_prompt" \
+  payload="$(jq -n --arg content "$escaped_prompt" --arg temperature "$TEMPERATURE" \
     '{
   "model": "deepseek-chat",
   "messages": [
@@ -349,7 +349,7 @@ function summarize_chunk_deepseek() {
       "content": $content
     }
   ],
-  "temperature": 0.5
+  "temperature": $temperature
 }')"
 
   local response
@@ -402,6 +402,7 @@ function final_summary_gemini() {
   local payload
   payload=$(jq -n \
     --arg content "$escaped_prompt" \
+    --arg temperature "$TEMPERATURE" \
     '{
       "contents": [{
         "parts": [{
@@ -409,7 +410,7 @@ function final_summary_gemini() {
         }]
       }],
       "generationConfig": {
-        "temperature": 0.5
+        "temperature": $temperature
       }
     }')
 
@@ -454,6 +455,7 @@ function final_summary_deepseek() {
   local payload
   payload=$(jq -n \
     --arg content "$escaped_prompt" \
+    --arg temperature "$TEMPERATURE" \
     '{
       "model": "deepseek-chat",
       "messages": [
@@ -466,7 +468,7 @@ function final_summary_deepseek() {
           "content": $content
         }
       ],
-      "temperature": 0.5
+      "temperature": $temperature
     }')
 
   local response
@@ -635,8 +637,12 @@ function main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  timestamp=$(date +"%Y%m%d_%H%M%S")
-  {
-    main "$@" 2> >(tee -a "summarizevideo${timestamp}.stderr.log" >&2)
-  } | tee -a "summarizevideo${timestamp}.stdout.log"
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "summarizevideo${timestamp}.stderr.log" >&2)
+    } | tee -a "summarizevideo${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
 fi
