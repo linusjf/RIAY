@@ -5,7 +5,7 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 # shellcheck disable=SC2155
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 # shellcheck disable=SC1091
 source "${SCRIPT_DIR}/vidmd.sh"
 DRY_RUN=false
