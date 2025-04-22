@@ -103,40 +103,50 @@ Note: You can do all this by simply executing the script `setup`.
 
 The configuration file `config.env` is located in the repo's root directory.
 
-It is of the form:
+It contains the following settings:
+
+#### General Settings
 
 ```bash
-#!/usr/bin/env bash
-# Default configuration
-# shellcheck disable=all
-# Project config values
 # Turn on or turn off logging
 LOGGING=true
 # The year in which the podcasts are being followed
-# This ensures that the day of the week is aligned with the year
 YEAR=2025
+```
 
-# curl config values
-# Time between successive requests to the LLM models
-# This is to minimize triggering of rate limiting
+#### Overlay Icon Configuration
+
+```bash
+ICON_FILE="play-button.png"        # Default play icon filename
+ICON_SIZE="256x256"               # Icon dimensions
+ICON_OFFSET="+32+0"               # Icon positioning offset
+ICON_COMMENT="Play Icon Added"    # EXIF comment for generated images
+```
+
+#### File Configuration
+
+```bash
+COMPACT_FILE="compact.txt"        # File containing markdown file list
+VIDEOS_FILE="videos.txt"         # File containing video IDs
+```
+
+#### API Request Settings
+
+```bash
+# Time between successive requests to the LLM models (seconds)
 GAP_BW_REQS=10
 # Maximum number of retries for a REST API call
 MAX_RETRIES=5
-# The initial retry delay of 2 seconds which increases exponentially for each retry
+# Initial retry delay (seconds) - increases exponentially
 INITIAL_RETRY_DELAY=2
+```
 
-# AI Config values
-# The temperature value to be set for the LLM models
-# Set it to zero to ensure reproducibility for a model
-# Note that the summarizevideo script makes a best effort
-# to ensure that summarization completes despite non-availability
-# and/or request throttling by cycling through a list of
-# free-tier Gemini models. All requests may not be made to the same model
-# thus affecting reproducibility adversely.
-# You can mitigate this either by specifying only one Gemini model
-# which will meet all requests or using DeepSeek only.
-# The script currently supports only these providers.
+#### AI Model Settings
+
+```bash
+# Temperature for LLM responses (0 for deterministic output)
 TEMPERATURE=0
+# Supported Gemini models
 GEMINI_MODELS=(
   "gemini-2.5-pro-exp-03-25"
   "gemini-1.5-pro"
@@ -147,9 +157,9 @@ GEMINI_MODELS=(
   "gemini-1.5-flash"
   "gemini-1.5-flash-8B"
 )
-# The prompt for summarizing chunks within the podcast transcript.
+# Prompt for summarizing transcript chunks
 CHUNK_SUMMARY_PROMPT="Summarize this text, excluding plugs, branding, and promotions. Avoid mention of Day, podcast and Rosary in a Day:"
-# The prompt for the final summary of all the chunk summaries
+# Prompt for final summary generation
 FINAL_SUMMARY_PROMPT="Condense the following using the writing style of CS Lewis in 500 words or less. Be concise and clear, suitable for someone who wants a quick overview. Start with a level three markdown header and annotate it as 'AI-Generated Summary:' followed by your generated title (no colons, proper grammar). Generate well-formatted and line-spaced markdown. Do not fence the markdown. Use lists instead of further sub-headings."
 ```
 
