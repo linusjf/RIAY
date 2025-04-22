@@ -19,16 +19,18 @@
 # Returns:
 #   0 if internet connection is available
 #   1 if no connection
-checkinternet() {
-  if ! hash telnet 2> /dev/null; then
-    echo "Error: telnet command not found" >&2
-    return 1
-  fi
+if ! declare -f checkinternet > /dev/null; then
+  checkinternet() {
+    if ! hash telnet 2> /dev/null; then
+      echo "Error: telnet command not found" >&2
+      return 1
+    fi
 
-  if ! telnet 8.8.8.8 53 &> /dev/null; then
-    echo "Error: No internet connection detected" >&2
-    return 1
-  fi
+    if ! telnet 8.8.8.8 53 &> /dev/null; then
+      echo "Error: No internet connection detected" >&2
+      return 1
+    fi
 
-  return 0
-}
+    return 0
+  }
+fi
