@@ -18,7 +18,7 @@ function setup_directories() {
   local dir
 
   # Create empty videos.txt
-  : > videos.txt
+  : > "$VIDEOS_FILE"
 
   # Create monthly directories and files
   for month in "${MONTHS[@]}"; do

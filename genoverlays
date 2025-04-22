@@ -7,10 +7,10 @@ shopt -s inherit_errexit
 
 readonly SUCCESS=0
 readonly FAILURE=1
-readonly FNAME="videos.txt"
 # shellcheck disable=SC2155
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "${SCRIPT_DIR}/lockconfig.sh"
+lock_config_vars "${SCRIPT_DIR}/config.env"
 ######################################################################
 ######################################################################
 usage() {
@@ -45,8 +45,8 @@ require() {
 ######################################################################
 main() {
   # Ensure the input file exists
-  if [[ ! -f "${FNAME}" ]]; then
-    die "File '${FNAME}' not found"
+  if [[ ! -f "${VIDEOS_FILE}" ]]; then
+    die "File '${VIDEOS_FILE}' not found"
   fi
 
   # Ensure genoverlay is executable
@@ -64,7 +64,7 @@ main() {
     if ! "${SCRIPT_DIR}/genoverlay" "${vid}" "${count}"; then
       die "${SCRIPT_DIR}/genoverlay failed for video ID '${vid}'"
     fi
-  done < "${FNAME}"
+  done < "${VIDEOS_FILE}"
 
   exit "${SUCCESS}"
 }
