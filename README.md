@@ -3838,6 +3838,62 @@ Note: You can do all this by simply executing the script `setup`.
 
 **Note:** You will need to set up either DeepSeek or Gemini API keys for AI-generation of podcast summaries.
 
+#### Configuration
+
+The confuguration file `config.env` is located in the repo's root directory.
+
+It is of the form:
+
+```bash
+#!/usr/bin/env bash
+# Default configuration
+# shellcheck disable=all
+# Project config values
+# Turn on or turn off logging
+LOGGING=true
+# The year in which the podcasts are being followed
+# This ensures that the day of the week is aligned with the year
+YEAR=2025
+
+# curl config values
+# Time between successive requests to the LLM models
+# This is to minimize triggering of rate limiting
+GAP_BW_REQS=10
+# Maximum number of retries for a REST API call
+MAX_RETRIES=5
+# The initial retry delay of 2 seconds which increases exponentially for each retry
+INITIAL_RETRY_DELAY=2
+
+# AI Config values
+# The temperature value to be set for the LLM models
+# Set it to zero to ensure reproducibility for a model
+# Note that the summarizevideo script makes a best effort
+# to ensure that summarization completes despite non-availability
+# and/or request throttling by cycling through a list of
+# free-tier Gemini models. All requests may not be made to the same model
+# thus affecting reproducibility adversely.
+# You can mitigate this either by specifying only one Gemini model
+# which will meet all requests or using DeepSeek only.
+# The script currently supports only these providers.
+TEMPERATURE=0
+GEMINI_MODELS=(
+  "gemini-2.5-pro-exp-03-25"
+  "gemini-1.5-pro"
+  "gemini-2.5-flash-preview-04-17"
+  "gemini-2.0-flash"
+  "gemini-2.0-flash-exp"
+  "gemini-2.0-flash-lite"
+  "gemini-1.5-flash"
+  "gemini-1.5-flash-8B"
+)
+# The prompt for summarizing chunks within the podcast transcript.
+CHUNK_SUMMARY_PROMPT="Summarize this text, excluding plugs, branding, and promotions. Avoid mention of Day, podcast and Rosary in a Day:"
+# The prompt for the final summary of all the chunk summaries
+FINAL_SUMMARY_PROMPT="Condense the following using the writing style of CS Lewis in 500 words or less. Be concise and clear, suitable for someone who wants a quick overview. Start with a level three markdown header and annotate it as 'AI-Generated Summary:' followed by your generated title (no colons, proper grammar). Generate well-formatted and line-spaced markdown. Do not fence the markdown. Use lists instead of further sub-headings."
+```
+
+The config values can be modified as per your preferences.
+
 #### Vale
 
 Initialize `vale` styles by executing the command `vale sync`. This should download the specified styles in `.vale.ini`.
