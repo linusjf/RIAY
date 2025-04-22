@@ -15,7 +15,7 @@ source "${SCRIPT_DIR}/require.sh"
 
 if ! declare -f get_github_repo > /dev/null; then
   function get_github_repo() {
-    require git
+    require_commands git
     local git_url
     git_url=$(git remote get-url origin 2> /dev/null)
 
@@ -38,7 +38,7 @@ fi
 ######################################################################
 if ! declare -f getroot > /dev/null; then
   getroot() {
-    require basename
+    require_commands basename
     basename "$(get_github_repo)"
   }
 fi
