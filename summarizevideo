@@ -87,6 +87,11 @@ lock_config_vars "${SCRIPT_DIR}/config.env"
 
 declare -i CURRENT_MODEL_INDEX=0
 
+function redact_keys() {
+  local input="$1"
+  echo "$input" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g'
+}
+
 function version() {
   printf "%s\n" "$VERSION"
 }
@@ -158,13 +163,11 @@ function save_failed_response() {
   local timestamp
   timestamp=$(date +"%Y%m%d_%H%M%S")
 
-  # Sanitize endpoint name by removing any API keys or tokens
   local sanitized_endpoint=$(echo "$endpoint" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g' | sed 's/[^a-zA-Z0-9_-]/_/g')
   local filename="failed_response_${sanitized_endpoint}_${timestamp}.json"
 
-  # Strip API keys from data and response
-  local sanitized_data=$(echo "$data" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g')
-  local sanitized_response=$(echo "$response" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g')
+  local sanitized_data=$(redact_keys "$data")
+  local sanitized_response=$(redact_keys "$response")
 
   {
     echo "$sanitized_data"
@@ -207,7 +210,7 @@ function safe_curl_request() {
     curl_cmd+=("$url")
 
     if [[ "${verbose:-false}" == "true" ]]; then
-      >&2 echo "Making $method request to $url"
+      >&2 echo "Making $method request to $(redact_keys "$url")"
     fi
 
     status_code=$("${curl_cmd[@]}")
@@ -215,7 +218,7 @@ function safe_curl_request() {
 
     if [[ $status_code -ge 200 && $status_code -lt 300 ]]; then
       if [[ "${verbose:-false}" == "true" ]]; then
-        >&2 echo "Request to $url succeeded with status $status_code : ${HTTP_STATUS_CODES[$status_code]}"
+        >&2 echo "Request to $(redact_keys "$url") succeeded with status $status_code : ${HTTP_STATUS_CODES[$status_code]}"
       fi
       echo "$response"
       rm -f "$output_file"
@@ -240,8 +243,8 @@ function safe_curl_request() {
   >&2 echo "CURL VERBOSE OUTPUT:"
   curl -v "$url" \
     -X "$method" \
-    ${headers:+-H "$headers"} \
-    ${data:+-d "$data"} \
+    ${headers:+-H "$(redact_keys "$headers")"} \
+    ${data:+-d "$(redact_keys "$data")"} \
     --connect-timeout 10 \
     --max-time 60 \
     --show-error \
@@ -261,7 +264,6 @@ function get_video_title() {
     echo "Video ${video_id} does NOT exist or is private/unavailable." >&2
     return 1
   fi
-  # Extract title
   echo "$response" | jq -r '.items[0].snippet.title'
 }
 
@@ -317,7 +319,7 @@ function summarize_chunk_gemini() {
     if [[ "$res" -eq 2 ]]; then
       CURRENT_MODEL_INDEX=$((CURRENT_MODEL_INDEX + 1))
       if $verbose && [[ $CURRENT_MODEL_INDEX -lt "${#GEMINI_MODELS[@]}" ]]; then
-        echo "Moving to model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}" >&2
+        >&2 echo "Moving to model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}"
       fi
       continue
     else
@@ -389,7 +391,7 @@ function summarize_chunk() {
   fi
 
   if $verbose; then
-    echo "Trying Deep Seek Chat..." >&2
+    >&2 echo "Trying Deep Seek Chat..."
   fi
   if [[ -n "${DEEPSEEK_API_KEY:-}" ]]; then
     if summarize_chunk_deepseek "$chunk"; then
@@ -439,7 +441,7 @@ function final_summary_gemini() {
     if [[ "$res" -eq 2 ]]; then
       CURRENT_MODEL_INDEX=$((CURRENT_MODEL_INDEX + 1))
       if $verbose && [[ $CURRENT_MODEL_INDEX -lt "${#GEMINI_MODELS[@]}" ]]; then
-        echo "Moving to model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}" >&2
+        >&2 echo "Moving to model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}"
       fi
       continue
     else
@@ -556,7 +558,7 @@ function main() {
   check_dependencies
 
   if $verbose; then
-    echo "Starting processing for video ID $VIDEO_ID" >&2
+    >&2 echo "Starting processing for video ID $VIDEO_ID"
   fi
 
   local VIDEO_TITLE
@@ -566,7 +568,7 @@ function main() {
   fi
 
   if $verbose; then
-    echo "Video title retrieved" >&2
+    >&2 echo "Video title retrieved"
   fi
 
   download_captions "$VIDEO_ID" "$FILE_PREFIX"
@@ -575,7 +577,7 @@ function main() {
   fi
 
   if $verbose; then
-    echo "Captions downloaded successfully" >&2
+    >&2 echo "Captions downloaded successfully"
   fi
 
   local TRANSCRIPT
@@ -586,7 +588,7 @@ function main() {
   fi
 
   if $verbose; then
-    echo "Transcript extracted (length: ${#TRANSCRIPT} chars)" >&2
+    >&2 echo "Transcript extracted (length: ${#TRANSCRIPT} chars)"
   fi
 
   if "$caption_only"; then
@@ -602,11 +604,11 @@ function main() {
   done
 
   if $verbose; then
-    echo "Split transcript into ${#CHUNKS[@]} chunks" >&2
+    >&2 echo "Split transcript into ${#CHUNKS[@]} chunks"
   fi
 
   if $verbose && [[ "${#GEMINI_MODELS[@]}" -gt 0 ]]; then
-    echo "Starting with model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}" >&2
+    >&2 echo "Starting with model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}"
   fi
   local INTERMEDIATE_SUMMARIES=()
   for chunk in "${CHUNKS[@]}"; do
@@ -615,8 +617,8 @@ function main() {
     INTERMEDIATE_SUMMARIES+=("$SUMMARIZED_CHUNK")
     SUMMARIZED_CHUNK=""
     if $verbose; then
-      echo "Processed chunk (length: ${#chunk} chars)" >&2
-      echo "Waiting for ${GAP_BW_REQS} seconds before initiating next request...." >&2
+      >&2 echo "Processed chunk (length: ${#chunk} chars)"
+      >&2 echo "Waiting for ${GAP_BW_REQS} seconds before initiating next request...."
     fi
     sleep "$GAP_BW_REQS"
   done
@@ -638,7 +640,7 @@ function main() {
   fi
 
   if $verbose; then
-    echo "Final summary generated successfully" >&2
+    >&2 echo "Final summary generated successfully"
   fi
 
   echo -e "${FINAL_SUMMARY}"
