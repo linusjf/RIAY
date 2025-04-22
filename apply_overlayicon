@@ -1,31 +1,111 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2016
-# Resolve full path to this script's directory
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
-OVERLAY_SCRIPT="${SCRIPT_DIR}/overlayicon"
-LOG_FILE="${SCRIPT_DIR}/overlayicon.log"
+# Apply overlay icon to DayXXX.jpg files in directory tree
+# Usage: apply_overlayicon [root_directory]
+# Default root_directory is current directory
 
-# Check overlayicon exists and is executable
-if [ ! -x "$OVERLAY_SCRIPT" ]; then
-  echo "Error: 'overlayicon' not found or not executable at $OVERLAY_SCRIPT"
-  exit 1
-fi
+set -o errexit
+set -o nounset
+set -o pipefail
 
-# Default root directory to current directory if none provided
-ROOT_DIR="${1:-.}"
+readonly VERSION="1.0.0"
 
-# Export script path for xargs to access
-export OVERLAY_SCRIPT LOG_FILE
-
-# Function to process a single file
-process_file() {
-  local file="$1"
-  echo "$(date '+%Y-%m-%d %H:%M:%S') Processing: $file" >> "$LOG_FILE"
-  "$OVERLAY_SCRIPT" "$file" >> "$LOG_FILE" 2>&1
+function version() {
+  printf "%s\n" "$VERSION"
 }
 
-export -f process_file
+function usage() {
+  cat <<EOF
+Usage: ${0##*/} [OPTIONS] [root_directory]
 
-# Find DayXXX.jpg files and process them in parallel (up to 4 at a time)
-find "$ROOT_DIR" -type f -regextype posix-extended -regex '.*/Day[0-9]{3}\.jpg' \
-  -print0 | xargs -0 -n1 -P4 bash -c 'process_file "$0"'
+Options:
+  -h, --help      Show this help message
+  -v, --verbose   Enable verbose output
+  -q, --quiet     Suppress output
+  --version       Show version information
+
+Arguments:
+  root_directory  Directory to search for DayXXX.jpg files (default: current directory)
+
+Examples:
+  ${0##*/} /path/to/images
+  ${0##*/} --verbose
+EOF
+}
+
+function err() {
+  >&2 printf "%b\n" "$*"
+}
+
+function log() {
+  [[ "${verbose:-false}" == "true" ]] && printf "%b %b %b\n" "$(now)" $$ "$*"
+}
+
+function now() {
+  date -u "+%Y-%m-%dT%H:%M:%S.%NZ"
+}
+
+function process_file() {
+  local file="$1"
+  log "Processing: $file"
+  "$OVERLAY_SCRIPT" "$file" >> "$LOG_FILE" 2>&1 || {
+    err "Failed processing $file"
+    return 1
+  }
+}
+
+function main() {
+  local root_dir="${1:-.}"
+  local script_dir
+  
+  script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+  readonly OVERLAY_SCRIPT="${script_dir}/overlayicon"
+  readonly LOG_FILE="${script_dir}/overlayicon.log"
+
+  # Check overlayicon exists and is executable
+  if [[ ! -x "$OVERLAY_SCRIPT" ]]; then
+    err "Error: 'overlayicon' not found or not executable at $OVERLAY_SCRIPT"
+    return 1
+  fi
+
+  # Process files in parallel
+  find "$root_dir" -type f -regextype posix-extended -regex '.*/Day[0-9]{3}\.jpg' \
+    -print0 | xargs -0 -n1 -P4 bash -c 'process_file "$0"'
+}
+
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    -v|--verbose)
+      verbose=true
+      shift
+      ;;
+    -q|--quiet)
+      quiet=true
+      shift
+      ;;
+    --version)
+      version
+      exit 0
+      ;;
+    --)
+      shift
+      break
+      ;;
+    -*)
+      err "Unknown option: $1"
+      usage
+      exit 1
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
+fi
