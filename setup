@@ -4,7 +4,7 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 # Setup script for creating monthly directories and files
-# Creates videos.txt and monthly folders with header.md files
+# Creates videos file and monthly folders with header.md files
 
 readonly VERSION="1.0.0"
 readonly MONTHS=(January February March April May June July August September October November December)
@@ -17,7 +17,7 @@ function setup_directories() {
   local year="$1"
   local dir
 
-  # Create empty videos.txt
+  # Create empty videos file
   : > "$VIDEOS_FILE"
 
   # Create monthly directories and files
@@ -56,7 +56,7 @@ function main() {
   : "${YEAR:?Environment variable YEAR must be set}"
 
   setup_directories "$YEAR"
-  printf "Setup complete: videos.txt plus folders and headers for each month for year %s.\n" "$YEAR"
+  printf "Setup complete: ${VIDEOS_FILE} plus folders and headers for each month for year %s.\n" "$YEAR"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

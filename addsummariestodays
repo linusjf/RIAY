@@ -34,14 +34,14 @@ if [ "$endday" -lt "$startday" ]; then
   exit 1
 fi
 
-# Check if videos.txt exists
-if [ ! -f "videos.txt" ]; then
-  echo "Error: videos.txt not found."
+# Check if videos file exists
+if [ ! -f "${VIDEOS_FILE}" ]; then
+  echo "Error: ${VIDEOS_FILE} not found."
   exit 1
 fi
 
 # Get number of lines in the file
-total_lines=$(wc -l < videos.txt)
+total_lines=$(wc -l < "${VIDEOS_FILE}")
 
 # Adjust endday if it exceeds total lines
 if [ "$endday" -gt "$total_lines" ]; then
@@ -51,7 +51,7 @@ fi
 
 # Process lines
 lineno=$startday
-sed -n "${startday},${endday}p" videos.txt | while read -r videoid; do
+sed -n "${startday},${endday}p" "${VIDEOS_FILE}" | while read -r videoid; do
   if [ -n "$videoid" ]; then
     filename="Day$(printf "%03d" "$lineno").md"
 
