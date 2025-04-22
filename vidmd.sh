@@ -29,6 +29,7 @@ fi
 source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/util.sh"
 source "${SCRIPT_DIR}/date.sh"
+source "${SCRIPT_DIR}/git.sh"
 
 ######################################################################
 # Display usage information for standard video markdown
