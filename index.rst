@@ -24,3 +24,4 @@ RIAY (Rosary In a Year 2025)
    November2025.md
    December2025.md
    HOWTO.md
+   SCRIPTS.md
