@@ -9,8 +9,6 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 readonly VERSION="1.0.0"
-readonly COMPACT_FILE="compact.txt"
-readonly VIDEOS_FILE="videos.txt"
 
 ######################################################################
 # Functions

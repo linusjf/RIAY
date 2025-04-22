@@ -8,10 +8,6 @@ shopt -s inherit_errexit
 
 readonly SUCCESS=0
 readonly FAILURE=1
-readonly ICON_FILE="play-button.png"
-readonly ICON_SIZE="256x256"
-readonly ICON_OFFSET="+32+0"
-readonly COMMENT="Play Icon Added"
 
 ######################################################################
 # Verify required commands are available
@@ -58,7 +54,7 @@ is_jpeg_file() {
 # Check if file already has play icon comment
 ######################################################################
 has_play_icon() {
-  exiftool -Comment "$1" 2> /dev/null | grep -q "${COMMENT}"
+  exiftool -Comment "$1" 2> /dev/null | grep -q "${ICON_COMMENT}"
 }
 
 ######################################################################
@@ -136,12 +132,20 @@ main() {
   fi
 
   # Add exif data to file
-  if ! exiftool -overwrite_original -Comment="${COMMENT}" "${file_path}"; then
+  if ! exiftool -overwrite_original -Comment="${ICON_COMMENT}" "${file_path}"; then
     err "Failed to add comment in exif data to ${file_path}"
   fi
 
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  # Resolve script directory
+  if command -v realpath > /dev/null 2>&1; then
+    SCRIPT_DIR=$(dirname "$(realpath "$0")")
+  else
+    SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
+  fi
+  source "${SCRIPT_DIR}/lockconfig.sh"
+  lock_config_vars "${SCRIPT_DIR}/config.env"
   main "$@"
 fi
