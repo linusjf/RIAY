@@ -282,7 +282,7 @@ function summarize_chunk_gemini() {
   local escaped_prompt
   escaped_prompt=$(jq -Rs <<< "$prompt")
   local payload
-  payload="$(jq -n --arg content "$escaped_prompt" --arg temperature "${TEMPERATURE}" '{
+  payload="$(jq -n --arg content "$escaped_prompt" --argjson temperature "${TEMPERATURE}" '{
   "contents": [{
     "parts": [{
       "text": $content
@@ -336,7 +336,7 @@ function summarize_chunk_deepseek() {
   local escaped_prompt
   escaped_prompt="$(jq -Rs <<< "$prompt")"
   local payload
-  payload="$(jq -n --arg content "$escaped_prompt" --arg temperature "$TEMPERATURE" \
+  payload="$(jq -n --arg content "$escaped_prompt" --argjson temperature "$TEMPERATURE" \
     '{
   "model": "deepseek-chat",
   "messages": [
@@ -402,7 +402,7 @@ function final_summary_gemini() {
   local payload
   payload=$(jq -n \
     --arg content "$escaped_prompt" \
-    --arg temperature "$TEMPERATURE" \
+    --argjson temperature "$TEMPERATURE" \
     '{
       "contents": [{
         "parts": [{
@@ -455,7 +455,7 @@ function final_summary_deepseek() {
   local payload
   payload=$(jq -n \
     --arg content "$escaped_prompt" \
-    --arg temperature "$TEMPERATURE" \
+    --argjson temperature "$TEMPERATURE" \
     '{
       "model": "deepseek-chat",
       "messages": [
@@ -597,7 +597,7 @@ function main() {
     echo "Split transcript into ${#CHUNKS[@]} chunks" >&2
   fi
 
-  if $verbose; then
+  if $verbose && [[ "${#GEMINI_MODELS[@]}" -gt 0 ]]; then
     echo "Starting with model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}" >&2
   fi
   local INTERMEDIATE_SUMMARIES=()
