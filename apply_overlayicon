@@ -1,21 +1,22 @@
 #!/usr/bin/env bash
-# Apply overlay icon to DayXXX.jpg files in directory tree
-# Usage: apply_overlayicon [root_directory]
-# Default root_directory is current directory
 
 set -o errexit
 set -o nounset
 set -o pipefail
 
 readonly VERSION="1.0.0"
+readonly SCRIPT_NAME="${0##*/}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "${SCRIPT_DIR}/lockconfig.sh"
+lock_config_vars "${SCRIPT_DIR}/config.env"
 
 function version() {
   printf "%s\n" "$VERSION"
 }
 
 function usage() {
-  cat <<EOF
-Usage: ${0##*/} [OPTIONS] [root_directory]
+  cat << EOF
+Usage: $SCRIPT_NAME [OPTIONS] [root_directory]
 
 Options:
   -h, --help      Show this help message
@@ -25,65 +26,49 @@ Options:
 
 Arguments:
   root_directory  Directory to search for DayXXX.jpg files (default: current directory)
-
-Examples:
-  ${0##*/} /path/to/images
-  ${0##*/} --verbose
 EOF
 }
 
 function err() {
-  >&2 printf "%b\n" "$*"
+  [[ "${quiet:-false}" != "true" ]] && >&2 printf "%s\n" "$*"
 }
 
 function log() {
-  [[ "${verbose:-false}" == "true" ]] && printf "%b %b %b\n" "$(now)" $$ "$*"
+  [[ "${verbose:-false}" == "true" ]] && printf "%s %s %s\n" "$(date -u +"%Y-%m-%dT%H:%M:%S.%NZ")" $$ "$*"
 }
 
-function now() {
-  date -u "+%Y-%m-%dT%H:%M:%S.%NZ"
-}
-
-function process_file() {
-  local file="$1"
-  log "Processing: $file"
-  "$OVERLAY_SCRIPT" "$file" >> "$LOG_FILE" 2>&1 || {
-    err "Failed processing $file"
-    return 1
-  }
-}
-
-function main() {
-  local root_dir="${1:-.}"
+function validate_environment() {
   local script_dir
-  
   script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
-  readonly OVERLAY_SCRIPT="${script_dir}/overlayicon"
-  readonly LOG_FILE="${script_dir}/overlayicon.log"
 
-  # Check overlayicon exists and is executable
+  readonly OVERLAY_SCRIPT="${script_dir}/overlayicon"
+
   if [[ ! -x "$OVERLAY_SCRIPT" ]]; then
     err "Error: 'overlayicon' not found or not executable at $OVERLAY_SCRIPT"
     return 1
   fi
-
-  # Process files in parallel
-  find "$root_dir" -type f -regextype posix-extended -regex '.*/Day[0-9]{3}\.jpg' \
-    -print0 | xargs -0 -n1 -P4 bash -c 'process_file "$0"'
 }
 
-# Parse command line arguments
+function main() {
+  local root_dir="${1:-.}"
+
+  validate_environment || return 1
+
+  find "$root_dir" -type f -regextype posix-extended -regex '.*/Day[0-9]{3}\.jpg' \
+    -print0 | xargs -0 -n1 -P4 -I{} "$OVERLAY_SCRIPT" "{}"
+}
+
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    -h|--help)
+    -h | --help)
       usage
       exit 0
       ;;
-    -v|--verbose)
+    -v | --verbose)
       verbose=true
       shift
       ;;
-    -q|--quiet)
+    -q | --quiet)
       quiet=true
       shift
       ;;
@@ -100,12 +85,17 @@ while [[ $# -gt 0 ]]; do
       usage
       exit 1
       ;;
-    *)
-      break
-      ;;
+    *) break ;;
   esac
 done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  main "$@"
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
 fi
