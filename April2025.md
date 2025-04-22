@@ -65,6 +65,9 @@
 - [April 21,2025](#april-212025)
   - [Manifest in Humility](#manifest-in-humility)
   - [AI-Generated Summary: The Nativity's Astonishing Paradox](#ai-generated-summary-the-nativitys-astonishing-paradox)
+- [April 22,2025](#april-222025)
+  - [All My Time is Free](#all-my-time-is-free)
+  - [AI-Generated Summary: Mary's Renewed Fiat: A Sacrifice of Love](#ai-generated-summary-marys-renewed-fiat-a-sacrifice-of-love)
 
 <!-- tocstop -->
 
@@ -555,3 +558,25 @@ Let us ponder the Nativity, guided by the wisdom of St. Bernard. The heart of th
 - And yet, the profound, breathtaking mystery is this: this same infinite God, He who holds the universe in His thought, became human. The fullness of the Godhead was contained, not by the cosmos, but by a small baby, born in Bethlehem, held in His mother's arms.
 - What are we to make of this humility? It should fill us with awe, certainly, but also with immense confidence. He veiled His glory, became approachable, inviting us to draw near. This same fullness, this very power and beauty, is offered to us still, in that quiet meal we call Holy Communion.
 - When we receive Him there, we receive the Creator of all. If God is with us, who indeed can be against us? Let us therefore rejoice, worship the Child of Bethlehem, and renew our confidence in His ever-present power and hope. (The original meditation included specific prayers, such as the Lord's Prayer and Hail Marys, as part of this contemplative response).
+
+## April 22,2025
+
+### All My Time is Free
+
+[![All My Time is Free](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day112.jpg)](https://youtu.be/n960q_PL9-M "All My Time is Free")
+
+### AI-Generated Summary: Mary's Renewed Fiat: A Sacrifice of Love
+
+Prayer and meditation deepen our relationship with Jesus and Mary, becoming a wellspring of grace. Reflecting on the Presentation, we see Mary’s renewed “fiat,” her “yes” to God, echoing throughout her life.
+
+St. Alphonsus Liguori reminds us that God, desiring full satisfaction for our sins, sought Mary’s consent not only for Jesus’ birth but also for his sacrifice. Just as a mother rightly has authority over her child, Mary, though her son was innocent, willingly offered him for the world. This offering, made solemnly in the temple, was a profound sacrifice, echoing St. Epiphanius’s title for her: “priest Virgin.”
+
+Imagine Mary’s journey to Jerusalem, carrying her son, entering the temple with humility and devotion. There, Simeon, promised a glimpse of the Messiah, takes the child and, guided by the Holy Spirit, foretells the sorrow that will pierce Mary’s soul, a sacrifice mirroring her son’s.
+
+Mary’s “fiat” is true freedom—freely choosing God’s will, receiving all from Him, and offering it back. This active ascent contrasts with being passively swept along by life. Jesus, in Gethsemane and throughout his passion, embodies this freedom, constantly receiving from and returning all to the Father.
+
+Mary’s first “fiat” at the Annunciation was a profound act of freedom. The Presentation, however, represents a deepening of this “yes.” Her initial consent encompassed all that would unfold, including Jesus’ suffering and death. In the temple, she renewed this consent, uniting her motherly heart’s sacrifice with his.
+
+This illuminates a deeper truth about commitment. Our initial “yes” to God, whether in religious life or other vocations, implies lifelong faithfulness, even amidst unforeseen trials. Each challenge presents a choice: renew our commitment or withdraw. We may be tempted to think we didn’t agree to _these_ specific hardships.
+
+Yet, like Mary, we are called to seek wisdom, prudence, and courage, freely reaffirming our “yes” even when facing unexpected difficulties. Her profound sacrifice, freely receiving her son and freely offering him back to the Father, serves as our guide.
