@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Source require.sh for dependency checking
+source "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/require.sh"
+
 declare -A HTTP_STATUS_CODES=(
   [100]="Continue"
   [101]="Switching Protocols"
@@ -68,6 +71,9 @@ declare -A HTTP_STATUS_CODES=(
   [510]="Not Extended"
   [511]="Network Authentication Required"
 )
+
+# Check required commands
+require_commands curl jq sed
 
 # Only define these if they're not already set
 : "${MAX_RETRIES:=3}"
