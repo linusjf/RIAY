@@ -101,7 +101,7 @@ Note: You can do all this by simply executing the script `setup`.
 
 ### Configuration
 
-The confuguration file `config.env` is located in the repo's root directory.
+The configuration file `config.env` is located in the repo's root directory.
 
 It is of the form:
 
