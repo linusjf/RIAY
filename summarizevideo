@@ -157,12 +157,20 @@ function save_failed_response() {
   local endpoint="$3"
   local timestamp
   timestamp=$(date +"%Y%m%d_%H%M%S")
-  local filename="failed_response_${endpoint}_${timestamp}.json"
+
+  # Sanitize endpoint name by removing any API keys or tokens
+  local sanitized_endpoint=$(echo "$endpoint" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g' | sed 's/[^a-zA-Z0-9_-]/_/g')
+  local filename="failed_response_${sanitized_endpoint}_${timestamp}.json"
+
+  # Strip API keys from data and response
+  local sanitized_data=$(echo "$data" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g')
+  local sanitized_response=$(echo "$response" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g')
+
   {
-    echo "$data"
-    echo "$response"
+    echo "$sanitized_data"
+    echo "$sanitized_response"
   } >> "$filename"
-  err "Saved failed response to $filename"
+  err "Saved failed response to $filename (API keys redacted)"
 }
 
 function safe_curl_request() {
