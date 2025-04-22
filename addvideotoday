@@ -1,96 +1,81 @@
 #!/usr/bin/env bash
 
-# Validate arguments
-if [ $# -ne 2 ]; then
-  echo "Usage: $0 <video_id> <day_number>"
-  exit 1
-fi
+# Script to add YouTube video metadata to daily markdown files
+# Usage: addvideotoday <video_id> <day_number>
 
-VIDEO_ID="$1"
-DAY_NUM="$2"
+readonly VERSION="1.0.0"
 
-# Resolve script directory
-if command -v realpath > /dev/null 2>&1; then
-  SCRIPT_DIR=$(dirname "$(realpath "$0")")
-else
-  SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
-fi
-source "${SCRIPT_DIR}/lockconfig.sh"
-lock_config_vars "${SCRIPT_DIR}/config.env"
-# Check required env vars
-if [ -z "$YEAR" ] || [ -z "$YOUTUBE_API_KEY" ]; then
-  echo "Error: YEAR and YOUTUBE_API_KEY environment variables must be set."
-  exit 1
-fi
+# Load required libraries
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)
+source "${SCRIPT_DIR}/require.sh" || exit 1
+source "${SCRIPT_DIR}/util.sh" || exit 1
+source "${SCRIPT_DIR}/git.sh" || exit 1
 
-API_KEY="$YOUTUBE_API_KEY"
+function usage() {
+  local exit_code=${1:-0}
+  local output=${exit_code:-1}
+  if [ "$exit_code" -eq 0 ]; then
+    output=1
+  else
+    output=2
+  fi
 
-# Check for required tools
-for cmd in jq curl git; do
-  command -v $cmd > /dev/null 2>&1 || {
-    echo "$cmd is required but not installed."
-    exit 1
-  }
-done
+  >&"$output" printf "Usage: %s <video_id> <day_number>\n" "$(basename "$0")"
+  >&"$output" printf "Example: %s ABCDEF12345 42\n" "$(basename "$0")"
+  exit "$exit_code"
+}
 
-# Determine GitHub repo from remote
-GIT_URL=$(git remote get-url origin 2> /dev/null)
-if [[ "$GIT_URL" == git@github.com:* ]]; then
-  GITHUB_REPO=$(echo "$GIT_URL" | sed -E 's|git@github.com:([^\.]+)(\.git)?|\1|')
-elif [[ "$GIT_URL" == https://github.com/* ]]; then
-  GITHUB_REPO=$(echo "$GIT_URL" | sed -E 's|https://github.com/([^\.]+)(\.git)?|\1|')
-else
-  echo "Error: Could not determine GitHub repo from remote: $GIT_URL"
-  exit 1
-fi
+function version() {
+  printf "%s\n" "$VERSION"
+}
 
-# Format day and month
-printf -v DAY_STRING "Day%03d" "$DAY_NUM"
-MONTH=$(date -d "${YEAR}-01-01 +$((DAY_NUM - 1)) days" +"%B")
+function validate_arguments() {
+  if [ $# -ne 2 ]; then
+    err "Error: Invalid number of arguments"
+    usage 1
+  fi
+}
 
-# Prepare file paths
-MARKDOWN_FILE="$MONTH/${DAY_STRING}.md"
-IMAGE_PATH="$MONTH/jpgs/${DAY_STRING}.jpg"
+function check_required_tools() {
+  require_commands jq curl git
+}
 
-# Error if markdown file doesn't exist
-if [ ! -f "$MARKDOWN_FILE" ]; then
-  echo "Error: Markdown file $MARKDOWN_FILE does not exist."
-  exit 1
-fi
+function fetch_video_metadata() {
+  local video_id=$1
+  local api_key=$2
+  local api_url="https://www.googleapis.com/youtube/v3/videos?part=snippet&id=$video_id&key=$api_key"
 
-mkdir -p "$MONTH/jpgs"
+  curl -s "$api_url"
+}
 
-# Fetch video metadata from YouTube API
-API_URL="https://www.googleapis.com/youtube/v3/videos?part=snippet&id=$VIDEO_ID&key=$API_KEY"
-RESPONSE=$(curl -s "$API_URL")
+function extract_thumbnail_url() {
+  jq -r '.items[0].snippet.thumbnails | to_entries | sort_by(.value.width) | last.value.url'
+}
 
-# Extract thumbnail and title
-THUMBNAIL_URL=$(echo "$RESPONSE" | jq -r '
-    .items[0].snippet.thumbnails |
-    to_entries | sort_by(.value.width) | last.value.url
-')
-TITLE=$(echo "$RESPONSE" | jq -r '.items[0].snippet.title')
+function extract_video_title() {
+  jq -r '.items[0].snippet.title'
+}
 
-if [ -z "$THUMBNAIL_URL" ] || [ "$THUMBNAIL_URL" = "null" ]; then
-  echo "Error: Thumbnail not found for video ID $VIDEO_ID"
-  exit 1
-fi
+function download_thumbnail() {
+  local url=$1
+  local output_path=$2
+  curl -s "$url" -o "$output_path"
+}
 
-# Download thumbnail
-curl -s "$THUMBNAIL_URL" -o "$IMAGE_PATH"
+function backup_file() {
+  local file_path=$1
+  cp "$file_path" "${file_path}.bak"
+  out "Saving backup to ${file_path}.bak"
+}
 
-# Shortened YouTube URL
-YOUTUBE_URL="https://youtu.be/$VIDEO_ID"
+function remove_existing_video_entry() {
+  local file_path=$1
+  local video_id=$2
+  local tmp_file
 
-# backup existing contents
-echo "Saving backup to ${MARKDOWN_FILE}.bak"
-cp "$MARKDOWN_FILE" "${MARKDOWN_FILE}.bak"
+  tmp_file=$(mktemp)
 
-if grep -Fq "$VIDEO_ID" "$MARKDOWN_FILE"; then
-  # Create a temporary file
-  TMP_FILE=$(mktemp)
-
-  awk -v vid="$VIDEO_ID" '
+  awk -v vid="$video_id" '
   BEGIN { skip = 0 }
   {
     if (skip) {
@@ -114,20 +99,86 @@ if grep -Fq "$VIDEO_ID" "$MARKDOWN_FILE"; then
       next
     }
     print
-  }
-' "$MARKDOWN_FILE" > "$TMP_FILE"
+  }' "$file_path" > "$tmp_file"
 
-  # Replace the original file with the processed one
-  mv "$TMP_FILE" "$MARKDOWN_FILE"
+  mv "$tmp_file" "$file_path"
+}
 
+function append_video_info() {
+  local file_path=$1
+  local title=$2
+  local github_repo=$3
+  local month=$4
+  local day_string=$5
+  local youtube_url=$6
+  local script_dir=$7
+  local video_id=$8
+
+  {
+    printf "\n### %s\n\n" "$title"
+    printf "[![%s](https://raw.githubusercontent.com/%s/refs/heads/main/%s/jpgs/%s.jpg)](%s \"%s\")\n" \
+      "$title" "$github_repo" "$month" "$day_string" "$youtube_url" "$title"
+    echo
+    "${script_dir}/summarizevideo" "$video_id"
+  } >> "$file_path"
+}
+
+function main() {
+  local video_id=$1
+  local day_num=$2
+  local script_dir month day_string markdown_file image_path
+  local api_key github_repo response thumbnail_url title youtube_url
+
+  validate_arguments "$@"
+  check_required_tools
+
+  source "${SCRIPT_DIR}/lockconfig.sh"
+  lock_config_vars "${SCRIPT_DIR}/config.env"
+
+  require_vars YEAR YOUTUBE_API_KEY
+
+  api_key="$YOUTUBE_API_KEY"
+  github_repo=$(get_github_repo)
+
+  printf -v day_string "Day%03d" "$day_num"
+  month=$(date -d "${YEAR}-01-01 +$((day_num - 1)) days" +"%B")
+
+  markdown_file="$month/${day_string}.md"
+  image_path="$month/jpgs/${day_string}.jpg"
+
+  if [ ! -f "$markdown_file" ]; then
+    die "Error: Markdown file $markdown_file does not exist"
+  fi
+
+  mkdir -p "$month/jpgs"
+
+  response=$(fetch_video_metadata "$video_id" "$api_key")
+  thumbnail_url=$(printf "%s" "$response" | extract_thumbnail_url)
+  title=$(printf "%s" "$response" | extract_video_title)
+
+  if [ -z "$thumbnail_url" ] || [ "$thumbnail_url" = "null" ]; then
+    die "Error: Thumbnail not found for video ID $video_id"
+  fi
+
+  download_thumbnail "$thumbnail_url" "$image_path"
+  youtube_url="https://youtu.be/$video_id"
+
+  backup_file "$markdown_file"
+
+  if grep -Fq "$video_id" "$markdown_file"; then
+    remove_existing_video_entry "$markdown_file" "$video_id"
+  fi
+
+  append_video_info "$markdown_file" "$title" "$github_repo" "$month" \
+    "$day_string" "$youtube_url" "$SCRIPT_DIR" "$video_id"
+
+  out "Appended video info to $markdown_file"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  case "$1" in
+    -h | --help) usage 0 ;;
+    -v | --version) version ;;
+    *) main "$@" ;;
+  esac
 fi
-# Append markdown
-{
-  echo
-  echo "### ${TITLE}"
-  echo
-  echo "[![${TITLE}](https://raw.githubusercontent.com/${GITHUB_REPO}/refs/heads/main/${MONTH}/jpgs/${DAY_STRING}.jpg)](${YOUTUBE_URL} \"${TITLE}\")"
-  "${SCRIPT_DIR}/summarizevideo" "${VIDEO_ID}"
-} >> "$MARKDOWN_FILE"
-
-echo "Appended video info to $MARKDOWN_FILE"

@@ -22,46 +22,13 @@ readonly THUMBNAIL_SIZES=(
   "default"
 )
 
-######################################################################
-# Display error message and exit with failure status
-# Globals: None
-# Arguments:
-#   $1 - Error message
-# Outputs: Error message to STDERR
-# Returns: None (exits with status 1)
-######################################################################
-die() {
-  printf "%s\n" "$1" >&2
-  exit 1
-}
-
-######################################################################
-# Verify required commands are available
-# Globals: None
-# Arguments:
-#   $@ - Commands to check
-# Outputs: Error message to STDERR if command missing
-# Returns: None (exits with status 1 if command missing)
-######################################################################
-require() {
-  for cmd in "$@"; do
-    if ! command -v "$cmd" > /dev/null 2>&1; then
-      die "Required command '$cmd' not found"
-    fi
-  done
-}
-
-######################################################################
-# Get repository root name
-# Globals: None
-# Arguments: None
-# Outputs: Repository root name to STDOUT
-# Returns: None (exits with status 1 if git command fails)
-######################################################################
-getroot() {
-  require git basename
-  basename "$(git rev-parse --show-toplevel)"
-}
+# Source utility functions
+if [[ -z "${SCRIPT_DIR:-}" ]]; then
+  readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+fi
+source "${SCRIPT_DIR}/require.sh"
+source "${SCRIPT_DIR}/util.sh"
+source "${SCRIPT_DIR}/date.sh"
 
 ######################################################################
 # Display usage information for standard video markdown
@@ -118,7 +85,7 @@ playiconurl() {
 }
 
 thumbnailurl() {
-  require curl grep
+  require_commands curl grep
   local vid="$1"
   local api_url="https://www.googleapis.com/youtube/v3/videos?id=$vid&key=$YOUTUBE_API_KEY&part=snippet&fields=items(snippet(thumbnails(<size>(url))))"
   for size in "${THUMBNAIL_SIZES[@]}"; do
@@ -143,7 +110,7 @@ thumbnailurl() {
 # Returns: 1 if download fails
 ######################################################################
 downloadthumbnail() {
-  require curl
+  require_commands curl
   local url
   url="$(thumbnailurl "$1")" || return 1
   curl --silent "$url" --output "$2"
@@ -182,71 +149,6 @@ vidmdloc() {
   local vidid="$1" vidurl="$2" caption="$3" doy="$4" imgurl
   imgurl="$(playiconurl "${doy#0}")"
   printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
-}
-
-######################################################################
-# Check if input is numeric
-# Globals: None
-# Arguments:
-#   $1 - Value to check
-# Outputs: None
-# Returns: 0 if numeric, 1 otherwise
-######################################################################
-isnumeric() {
-  [[ "$1" =~ ^[0-9]+$ ]]
-}
-
-######################################################################
-# Get month name from day of year
-# Globals: None
-# Arguments:
-#   $1 - Day of year
-# Outputs: Month name to STDOUT
-# Returns: None (exits with status 1 on error)
-######################################################################
-mfromdoy() {
-  isnumeric "$1" || die "$1 is not numeric"
-  require date
-  local day
-  # convert number to base ten
-  day=$((${1}))
-  [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
-  date --date="jan 1 + $((day - 1)) days" +%B
-}
-
-######################################################################
-# Get full date from day of year
-# Globals: None
-# Arguments:
-#   $1 - Day of year
-# Outputs: Formatted date to STDOUT
-# Returns: None (exits with status 1 on error)
-######################################################################
-datefromdoy() {
-  isnumeric "$1" || die "$1 is not numeric"
-  require date
-  local day
-  # convert number to base ten
-  day=$((${1}))
-  [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
-  date --date="jan 1 + $((day - 1)) days" "+%B %d,%Y"
-}
-
-######################################################################
-# Get month name from month number
-# Globals: None
-# Arguments:
-#   $1 - Month number (1-12)
-# Outputs: Month name to STDOUT
-# Returns: None (exits with status 1 on error)
-######################################################################
-monthfromnumber() {
-  require date
-  case $1 in
-    [1-9] | 1[0-2]) date -d "${1}/01" +%B ;;
-    0[1-9]) date -d "${1}/01" +%B ;;
-    *) die "Invalid month number: $1" ;;
-  esac
 }
 
 ######################################################################
