@@ -25,7 +25,7 @@ function setup_directories() {
     dir="./$month"
     mkdir -p "$dir"
     create_header_file "$dir" "$month" "$year"
-    echo "header.md" > "$dir/compact.txt"
+    echo "header.md" > "$dir/${COMPACT_FILE}"
   done
 }
 

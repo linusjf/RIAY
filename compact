@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Compact multiple markdown files into a single output
-# Reads a list of files from compact.txt in the specified directory
+# Reads a list of files from compact file usually compact.txt in the specified directory
 # and merges them using m4 preprocessing and awk filtering
 
 set -euo pipefail
@@ -19,7 +19,7 @@ Compact multiple markdown files into a single output
 Options:
   -d, --debug      Enable debug output
 Arguments:
-  dir              Directory containing compact.txt and files to merge (default: current dir)
+  dir              Directory containing compact file and files to merge (default: current dir)
 
 The program will:
 1. Look for ${COMPACT_FILE} in the specified directory
@@ -31,7 +31,7 @@ EOF
   exit 1
 }
 
-# Check if directory contains a valid compact.txt file
+# Check if directory contains a valid compact file
 is_valid_dir() {
   [[ -d "$1" && -e "${1}/${COMPACT_FILE}" ]]
 }
