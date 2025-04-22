@@ -43,3 +43,21 @@ if ! declare -f require_vars > /dev/null; then
     done
   }
 fi
+
+if ! declare -f require_functions > /dev/null; then
+  #######################################
+  # Check if required functions are defined
+  # Globals: none
+  # Arguments: function names
+  # Outputs: error message to STDERR if function not defined
+  # Returns: exits with status 1 if function not defined
+  #######################################
+  require_functions() {
+    for func in "$@"; do
+      if ! declare -f "$func" > /dev/null 2>&1; then
+        err "Required function not defined: $func"
+        exit 1
+      fi
+    done
+  }
+fi
