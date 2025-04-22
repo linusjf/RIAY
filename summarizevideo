@@ -650,8 +650,8 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   if "$LOGGING"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
-      main "$@" 2> >(tee -a "summarizevideo${timestamp}.stderr.log" >&2)
-    } | tee -a "summarizevideo${timestamp}.stdout.log"
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
   else
     main "$@"
   fi
