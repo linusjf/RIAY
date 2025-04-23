@@ -8,6 +8,8 @@ shopt -s inherit_errexit
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 # shellcheck disable=SC1091
 source "${SCRIPT_DIR}/vidmd.sh"
+# shellcheck disable=SC1091
+source "${SCRIPT_DIR}/require.sh"
 DRY_RUN=false
 
 usage() {
@@ -24,13 +26,6 @@ Arguments:
   year             4-digit year
 EOF
   exit 1
-}
-
-require() {
-  hash "$@" || {
-    echo "Error: Required command not found: $*" >&2
-    exit 127
-  }
 }
 
 validate_inputs() {
@@ -138,7 +133,7 @@ main() {
     usage
   fi
 
-  require date markdown-toc
+  require_commands date markdown-toc
 
   if $DRY_RUN; then
     dry_run "$month" "$year"
