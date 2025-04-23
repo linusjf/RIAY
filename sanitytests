@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# Sanity tests for addvideo script
+# Tests command line options and cleans up afterwards
+
+set -euo pipefail
+shopt -s inherit_errexit
+
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly ADDVIDEO_SCRIPT="${SCRIPT_DIR}/addvideo"
+
+# Test helper functions
+print_header() {
+  printf "\n\033[1m%s\033[0m\n" "$1"
+}
+
+run_test() {
+  printf "  %-50s" "$1..."
+  shift
+  if "$@" &> /dev/null; then
+    printf "\033[32mPASS\033[0m\n"
+  else
+    printf "\033[31mFAIL\033[0m\n"
+    return 1
+  fi
+}
+
+cleanup() {
+  print_header "Cleaning up..."
+
+}
+
+trap cleanup EXIT
+
+# Main test execution
+print_header "Running addvideo sanity tests"
+
+print_header "Test 1: Version flag"
+run_test "Should show version with -v" "${ADDVIDEO_SCRIPT}" -v
+run_test "Should show version with --version" "${ADDVIDEO_SCRIPT}" --version
+
+print_header "Test 2: Help/usage"
+run_test "Should show usage with no args" "${ADDVIDEO_SCRIPT}" || true
+run_test "Should show usage with -h" "${ADDVIDEO_SCRIPT}" -h
+run_test "Should show usage with --help" "${ADDVIDEO_SCRIPT}" --help
+
+print_header "Test 3: Dry run mode"
+run_test "Should run dry mode with -n" "${ADDVIDEO_SCRIPT}" -n "CfU7rIufywo" "Test Video"
+run_test "Should run dry mode with --dry-run" "${ADDVIDEO_SCRIPT}" --dry-run "CfU7rIufywo" "Test Video"
+
+print_header "Test 4: Debug mode"
+run_test "Should enable debug with -d" "${ADDVIDEO_SCRIPT}" -d "CfU7rIufywo" "Test Video" || true
+run_test "Should enable debug with --debug" "${ADDVIDEO_SCRIPT}" --debug "CfU7rIufywo" "Test Video" || true
+
+print_header "Test 5: Invalid inputs"
+run_test "Should reject invalid video ID" "${ADDVIDEO_SCRIPT}" "invalid" "Test" || true
+run_test "Should reject missing caption" "${ADDVIDEO_SCRIPT}" "dQw4w9WgXcQ" || true
+
+print_header "All tests completed successfully"

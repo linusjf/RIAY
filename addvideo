@@ -20,6 +20,7 @@ readonly VERSION="1.0.0"
 # Outputs: usage information to STDOUT
 # Returns: exits with status 1
 usage() {
+  exitcode="${1:-0}"
   cat << EOF
 Usage: ${0##*/} [-n|--dry-run] [-d|--debug] [-v|--version] vid caption
 
@@ -33,7 +34,7 @@ Arguments:
   vid              YouTube video ID (11 characters)
   caption          Video title/description (max 100 chars)
 EOF
-  exit 1
+  exit "$exitcode"
 }
 
 # Print version information
@@ -147,7 +148,7 @@ dry_run() {
   local videourl="https://youtu.be/${vid}"
   local month fname formatdt monthmd
 
-  month="$(mfromdoy "$doy#0")"
+  month="$(mfromdoy "${doy#0}")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(datefromdoy "${doy#0}")"
   monthmd="${month}${YEAR}.md"
@@ -191,6 +192,9 @@ main() {
         version
         exit 0
         ;;
+      -h | --help)
+        usage
+        ;;
       *) break ;;
     esac
   done
@@ -198,7 +202,7 @@ main() {
   $debug && set -x
 
   if [[ $# -ne 2 ]]; then
-    usage
+    usage 1
   fi
 
   vid="$1"
