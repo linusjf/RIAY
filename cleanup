@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-rm ./*.vtt
-rm ./*.log
-rm failed*.json
+rm -f ./*.vtt
+rm -f ./*.log
+rm -f failed*.json
