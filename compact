@@ -12,6 +12,7 @@ lock_config_vars "${SCRIPT_DIR}/config.env"
 
 # Display usage information
 usage() {
+  exitcode="${1:-0}"
   cat << EOF
 Usage: ${0##*/} [-d|--debug] [dir]
 Compact multiple markdown files into a single output
@@ -28,7 +29,7 @@ The program will:
 4. Filter empty lines with awk
 5. Output the merged content to stdout
 EOF
-  exit 1
+  exit "$exitcode"
 }
 
 # Check if directory contains a valid compact file
@@ -43,7 +44,7 @@ main() {
   local temp_file tmp_output
 
   if ! is_valid_dir "${target_dir}"; then
-    usage
+    usage 1
   fi
 
   # Source required libraries
@@ -87,6 +88,9 @@ while [[ $# -gt 0 ]]; do
     -d | --debug)
       set -x
       shift
+      ;;
+    -h | --help)
+      usage 0
       ;;
     *)
       break
