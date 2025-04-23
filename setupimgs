@@ -11,21 +11,6 @@ readonly SUCCESS=0
 readonly FAILURE=1
 
 ######################################################################
-# Check if required commands are available
-# Globals: None
-# Arguments: command names
-# Outputs: Error message if command not found
-# Returns: None (exits on failure)
-######################################################################
-require() {
-  for cmd in "$@"; do
-    if ! command -v "${cmd}" > /dev/null 2>&1; then
-      die "Required command '${cmd}' not found in PATH"
-    fi
-  done
-}
-
-######################################################################
 # Print error message and exit
 # Globals: None
 # Arguments: error message
@@ -145,7 +130,10 @@ main() {
   local downloads_dir
   downloads_dir="$(get_downloads_dir)"
 
-  require gm rm mv
+  # Source require.sh
+  readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+  source "${SCRIPT_DIR}/require.sh"
+  require_commands gm rm mv
 
   if ! is_valid_dir "${dir}"; then
     die "Invalid directory: ${dir}"
