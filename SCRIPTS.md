@@ -1,4 +1,4 @@
-# Script Documentation
+# Scripts
 
 This document describes all bash scripts in the project, their functionality, dependencies, and environment variables used.
 
