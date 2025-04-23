@@ -12,6 +12,9 @@ shopt -s inherit_errexit
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 readonly VIDMD_SCRIPT="${SCRIPT_DIR}/vidmd.sh"
 
+# Source require.sh
+source "${SCRIPT_DIR}/require.sh"
+
 ######################################################################
 # Display usage information
 # Globals: None
@@ -31,22 +34,6 @@ Arguments:
   doy      - (Optional) Day of the year (numeric)
 EOF
   exit 1
-}
-
-######################################################################
-# Verify required commands are available
-# Globals: None
-# Arguments:
-#   $@ - Commands to check
-# Outputs: Error message to STDERR if command missing
-# Returns: None (exits with status 1 if command missing)
-######################################################################
-require() {
-  for cmd in "$@"; do
-    if ! command -v "$cmd" > /dev/null 2>&1; then
-      die "Required command '$cmd' not found"
-    fi
-  done
 }
 
 ######################################################################
@@ -108,6 +95,6 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require curl
+  require_commands curl
   main "$@"
 fi
