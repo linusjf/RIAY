@@ -124,12 +124,12 @@ function append_video_info() {
 }
 
 function main() {
+  validate_arguments "$@"
   local video_id=$1
   local day_num=$2
   local script_dir month day_string markdown_file image_path
   local api_key github_repo response thumbnail_url title youtube_url
 
-  validate_arguments "$@"
   check_required_tools
 
   source "${SCRIPT_DIR}/lockconfig.sh"
@@ -176,9 +176,15 @@ function main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  case "$1" in
-    -h | --help) usage 0 ;;
-    -v | --version) version ;;
-    *) main "$@" ;;
-  esac
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -h | --help) usage 0 ;;
+      -v | --version)
+        version
+        exit 0
+        ;;
+      *) break ;;
+    esac
+  done
+  main "$@"
 fi
