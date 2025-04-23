@@ -1,6 +1,17 @@
 #!/usr/bin/env bash
+if [[ -z "$SCRIPT_DIR" ]]; then
+  if command -v realpath > /dev/null 2>&1; then
+    SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+  else
+    SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
+  fi
+fi
+
+source "${SCRIPT_DIR}/require.sh"
+
 if ! declare -f lock_config_vars > /dev/null; then
   lock_config_vars() {
+    require_commands compgen grep comm
     local config_file="$1"
     local before_vars after_vars config_vars var
 

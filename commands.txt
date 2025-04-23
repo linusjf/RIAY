@@ -1,5 +1,5 @@
 # commands
-addvideo "n960q_PL9-M" "All My Time is Free" # add video
+addvideo "bWAZ5VUU3sY" "Spoiler Alert" # add video
 genmonth 04 2025 # generate
 stitch # generate the README
 lintall # lint all files

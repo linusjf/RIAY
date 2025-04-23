@@ -68,6 +68,9 @@
 - [April 22,2025](#april-222025)
   - [All My Time is Free](#all-my-time-is-free)
   - [AI-Generated Summary: Mary's Renewed Fiat: A Sacrifice of Love](#ai-generated-summary-marys-renewed-fiat-a-sacrifice-of-love)
+- [April 23,2025](#april-232025)
+  - [Spoiler Alert](#spoiler-alert)
+  - [AI-Generated Summary: The Boy in the Temple](#ai-generated-summary-the-boy-in-the-temple)
 
 <!-- tocstop -->
 
@@ -580,3 +583,21 @@ Mary’s first “fiat” at the Annunciation was a profound act of freedom. The
 This illuminates a deeper truth about commitment. Our initial “yes” to God, whether in religious life or other vocations, implies lifelong faithfulness, even amidst unforeseen trials. Each challenge presents a choice: renew our commitment or withdraw. We may be tempted to think we didn’t agree to _these_ specific hardships.
 
 Yet, like Mary, we are called to seek wisdom, prudence, and courage, freely reaffirming our “yes” even when facing unexpected difficulties. Her profound sacrifice, freely receiving her son and freely offering him back to the Father, serves as our guide.
+
+## April 23,2025
+
+### Spoiler Alert
+
+[![Spoiler Alert](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day113.jpg)](https://youtu.be/bWAZ5VUU3sY "Spoiler Alert")
+
+### AI-Generated Summary: The Boy in the Temple
+
+We moderns, much like theatre-goers privy to the play’s ending, often approach the Gospels with a certain detachment. We know the climax, the resurrection, the triumph. The mystery, the conflict, the very tension of the narrative is, for many, diminished by foreknowledge. But imagine, if you will, a world without such spoilers. Imagine the raw, electric uncertainty that gripped the first century, a world wrestling with the question: _Who is this Jesus?_
+
+This meditation, drawing upon the wisdom of St. Cyril of Alexandria, invites us to revisit the fifth joyful mystery – the finding of Jesus in the temple – with fresh eyes. St. Cyril, living closer to that age of questioning, understood the profound significance of this seemingly simple event. He saw in the boy Jesus, discoursing with the learned doctors, not merely precocious intelligence, but the burgeoning wisdom and grace of God incarnate.
+
+Recall the scene: Mary and Joseph, frantic with worry, discover their son after three days. Mary’s gentle rebuke, referencing Joseph as “thy father,” elicits a response that reverberates with divine authority: “Did ye not know that I must be at my Father’s…here?” Here, in this sacred space, Jesus openly identifies his true Father, not the earthly Joseph, but the Almighty. He declares, in essence, _I am Lord_.
+
+This declaration, so easily glossed over by modern eyes, would have struck a first-century Jewish audience with the force of thunder. It was a claim of messianic identity, a veiled assertion of divinity, whispered within the hallowed halls of the temple. For those who had ears to hear, it was a revelation of breathtaking magnitude.
+
+St. Cyril emphasizes the unfolding nature of this revelation. Even Mary and Joseph, those closest to Jesus, did not fully grasp the implications of his words. They, like the rest of humanity, were on a journey of discovery, learning step by step the true identity of the child they loved. Like Mary, we too are called to ponder these things, to “keep all these sayings in her heart.” The Hail Marys that punctuate this meditation serve as gentle reminders, echoing the wonder and the mystery of the boy in the temple, the boy who is Lord. _Glory be to the Father, and to the Son, and to the Holy Ghost._

@@ -6,6 +6,13 @@
 
 set -euo pipefail
 shopt -s inherit_errexit
+if [[ -z "$SCRIPT_DIR" ]]; then
+  if command -v realpath > /dev/null 2>&1; then
+    SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+  else
+    SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
+  fi
+fi
 
 if ! declare -f die > /dev/null; then
   ######################################################################
