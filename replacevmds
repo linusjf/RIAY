@@ -14,11 +14,15 @@ readonly SUCCESS=0
 readonly FAILURE=1
 
 ######################################################################
-# Load required library
+# Load required libraries
 ######################################################################
 script_dir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 source "${script_dir}/vidmd.sh" || {
   echo "Error: Failed to source vidmd.sh from ${script_dir}" >&2
+  exit "${FAILURE}"
+}
+source "${script_dir}/require.sh" || {
+  echo "Error: Failed to source require.sh from ${script_dir}" >&2
   exit "${FAILURE}"
 }
 
@@ -37,26 +41,6 @@ Arguments:
   dir - Directory containing Day*.md files to process
 EOF
   exit "${SUCCESS}"
-}
-
-######################################################################
-# Verify required commands are available
-# Globals:
-#   None
-# Arguments:
-#   Commands to check
-# Outputs:
-#   Error message to STDERR if command missing
-# Returns:
-#   0 if all commands available, 127 otherwise
-######################################################################
-require() {
-  for cmd in "$@"; do
-    if ! command -v "${cmd}" > /dev/null 2>&1; then
-      echo "Error: Required command '${cmd}' not found" >&2
-      return 127
-    fi
-  done
 }
 
 ######################################################################
@@ -119,7 +103,7 @@ main() {
   fi
 
   local dir="$1"
-  require mv mktemp curl
+  require_commands mv mktemp curl
 
   if ! is_valid_dir "${dir}"; then
     echo "Error: Invalid directory: ${dir}" >&2
