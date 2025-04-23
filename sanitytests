@@ -77,8 +77,8 @@ run_test 3 "Should run dry mode with -n" 0 "${ADDVIDEO_SCRIPT}" -n "CfU7rIufywo"
 run_test 3 "Should run dry mode with --dry-run" 0 "${ADDVIDEO_SCRIPT}" --dry-run "CfU7rIufywo" "Test Video"
 
 print_header "Test 4: Debug mode"
-run_test 4 "Should enable debug with -d" 0 "${ADDVIDEO_SCRIPT}" -d "CfU7rIufywo" "Test Video" || true
-run_test 4 "Should enable debug with --debug" 0 "${ADDVIDEO_SCRIPT}" --debug "CfU7rIufywo" "Test Video" || true
+run_test 4 "Should enable debug with -d" 0 "${ADDVIDEO_SCRIPT}" -d "Io1G_5I7a-0" "Test Video" || true
+run_test 4 "Should enable debug with --debug" 0 "${ADDVIDEO_SCRIPT}" --debug "Io1G_5I7a-0" "Test Video" || true
 
 print_header "Test 5: Invalid inputs"
 run_test 5 "Should reject invalid video ID" 1 "${ADDVIDEO_SCRIPT}" "invalid" "Test" || true
