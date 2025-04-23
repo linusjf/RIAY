@@ -83,6 +83,7 @@ version() {
 # Returns: none
 #######################################
 usage() {
+  exit_code="${1:=0}"
   cat << EOF
 Usage: ${SCRIPT_NAME} [-d|--debug] [-v|--version] [-h|--help] markdown_file
 
@@ -108,11 +109,11 @@ Returns:
   1 on invalid arguments or file issues
   2 on dependency errors
 EOF
-  exit 0
+  exit "$exit_code"
 }
 
 main() {
-  local file=""
+  local file
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -134,6 +135,9 @@ main() {
     esac
   done
 
+  if [[ $# -ne 1 ]]; then
+    usage 1
+  fi
   require_commands markdown-toc-gen
   validate_input "${file}"
   generate_toc "${file}"
