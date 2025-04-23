@@ -130,7 +130,7 @@ main() {
         ;;
       *)
         file="$1"
-        shift
+        break
         ;;
     esac
   done

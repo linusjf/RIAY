@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Sanity tests for addvideo script
+# Sanity tests for addvideo and genmonth scripts
 # Tests command line options and cleans up afterwards
 
 set -euo pipefail
@@ -7,6 +7,9 @@ shopt -s inherit_errexit
 
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 readonly ADDVIDEO_SCRIPT="${SCRIPT_DIR}/addvideo"
+readonly GENMONTH_SCRIPT="${SCRIPT_DIR}/genmonth"
+readonly TEST_MONTH=1
+readonly TEST_YEAR=2023
 
 # Test helper functions
 print_header() {
@@ -16,17 +19,23 @@ print_header() {
 run_test() {
   printf "  %-50s" "$1..."
   shift
+  expected_exit=${1:-0}
+  shift
   if "$@" &> /dev/null; then
+    actual_exit=0
+  else
+    actual_exit=$?
+  fi
+  if [[ "$actual_exit" -eq "$expected_exit" ]]; then
     printf "\033[32mPASS\033[0m\n"
   else
-    printf "\033[31mFAIL\033[0m\n"
+    printf "\033[31mFAIL (expected %d, got %d)\033[0m\n" "$expected_exit" "$actual_exit"
     return 1
   fi
 }
 
 cleanup() {
   print_header "Cleaning up..."
-
 }
 
 trap cleanup EXIT
@@ -35,24 +44,54 @@ trap cleanup EXIT
 print_header "Running addvideo sanity tests"
 
 print_header "Test 1: Version flag"
-run_test "Should show version with -v" "${ADDVIDEO_SCRIPT}" -v
-run_test "Should show version with --version" "${ADDVIDEO_SCRIPT}" --version
+run_test "Should show version with -v" 0 "${ADDVIDEO_SCRIPT}" -v
+run_test "Should show version with --version" 0 "${ADDVIDEO_SCRIPT}" --version
 
 print_header "Test 2: Help/usage"
-run_test "Should show usage with no args" "${ADDVIDEO_SCRIPT}" || true
-run_test "Should show usage with -h" "${ADDVIDEO_SCRIPT}" -h
-run_test "Should show usage with --help" "${ADDVIDEO_SCRIPT}" --help
+run_test "Should show usage with no args" 1 "${ADDVIDEO_SCRIPT}" || true
+run_test "Should show usage with -h" 0 "${ADDVIDEO_SCRIPT}" -h
+run_test "Should show usage with --help" 0 "${ADDVIDEO_SCRIPT}" --help
 
 print_header "Test 3: Dry run mode"
-run_test "Should run dry mode with -n" "${ADDVIDEO_SCRIPT}" -n "CfU7rIufywo" "Test Video"
-run_test "Should run dry mode with --dry-run" "${ADDVIDEO_SCRIPT}" --dry-run "CfU7rIufywo" "Test Video"
+run_test "Should run dry mode with -n" 0 "${ADDVIDEO_SCRIPT}" -n "CfU7rIufywo" "Test Video"
+run_test "Should run dry mode with --dry-run" 0 "${ADDVIDEO_SCRIPT}" --dry-run "CfU7rIufywo" "Test Video"
 
 print_header "Test 4: Debug mode"
-run_test "Should enable debug with -d" "${ADDVIDEO_SCRIPT}" -d "CfU7rIufywo" "Test Video" || true
-run_test "Should enable debug with --debug" "${ADDVIDEO_SCRIPT}" --debug "CfU7rIufywo" "Test Video" || true
+run_test "Should enable debug with -d" 0 "${ADDVIDEO_SCRIPT}" -d "CfU7rIufywo" "Test Video" || true
+run_test "Should enable debug with --debug" 0 "${ADDVIDEO_SCRIPT}" --debug "CfU7rIufywo" "Test Video" || true
 
 print_header "Test 5: Invalid inputs"
-run_test "Should reject invalid video ID" "${ADDVIDEO_SCRIPT}" "invalid" "Test" || true
-run_test "Should reject missing caption" "${ADDVIDEO_SCRIPT}" "dQw4w9WgXcQ" || true
+run_test "Should reject invalid video ID" 1 "${ADDVIDEO_SCRIPT}" "invalid" "Test" || true
+run_test "Should reject missing caption" 1 "${ADDVIDEO_SCRIPT}" "dQw4w9WgXcQ" || true
+
+print_header "Running genmonth sanity tests"
+
+print_header "Test 6: Version flag"
+run_test "Should show version with -v" 0 "${GENMONTH_SCRIPT}" -v
+run_test "Should show version with --version" 0 "${GENMONTH_SCRIPT}" --version
+
+print_header "Test 7: Help/usage"
+run_test "Should show usage with no args" 1 "${GENMONTH_SCRIPT}" || true
+run_test "Should show usage with -h" 0 "${GENMONTH_SCRIPT}" -h
+run_test "Should show usage with --help" 0 "${GENMONTH_SCRIPT}" --help
+
+print_header "Test 8: Dry run mode"
+run_test "Should run dry mode with -n" 0 "${GENMONTH_SCRIPT}" -n "$TEST_MONTH" "$TEST_YEAR"
+run_test "Should run dry mode with --dry-run" 0 "${GENMONTH_SCRIPT}" --dry-run "$TEST_MONTH" "$TEST_YEAR"
+
+print_header "Test 9: Debug mode"
+run_test "Should enable debug with -d" 1 "${GENMONTH_SCRIPT}" -d "$TEST_MONTH" "$TEST_YEAR" || true
+run_test "Should enable debug with --debug" 1 "${GENMONTH_SCRIPT}" --debug "$TEST_MONTH" "$TEST_YEAR" || true
+
+print_header "Test 10: Invalid inputs"
+run_test "Should reject invalid month (0)" 1 "${GENMONTH_SCRIPT}" 0 "$TEST_YEAR" || true
+run_test "Should reject invalid month (13)" 1 "${GENMONTH_SCRIPT}" 13 "$TEST_YEAR" || true
+run_test "Should reject invalid year (short)" 1 "${GENMONTH_SCRIPT}" "$TEST_MONTH" 23 || true
+run_test "Should reject non-numeric month" 1 "${GENMONTH_SCRIPT}" "Jan" "$TEST_YEAR" || true
+run_test "Should reject non-numeric year" 1 "${GENMONTH_SCRIPT}" "$TEST_MONTH" "TwoThousand" || true
+
+print_header "Test 11: File generation"
+run_test "Should generate markdown file" 0 "${GENMONTH_SCRIPT}" "$TEST_MONTH" "$TEST_YEAR"
+run_test "Generated file should exist" 0 test -f "January2023.md"
 
 print_header "All tests completed successfully"

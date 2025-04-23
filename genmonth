@@ -11,8 +11,10 @@ source "${SCRIPT_DIR}/vidmd.sh"
 # shellcheck disable=SC1091
 source "${SCRIPT_DIR}/require.sh"
 DRY_RUN=false
+readonly VERSION="1.0.0"
 
 usage() {
+  exitcode="${1:-0}"
   cat << EOF
 Usage: ${0##*/} [-n|--dry-run] [-d|--debug] month year
 
@@ -25,7 +27,16 @@ Arguments:
   month            Month number (1-12)
   year             4-digit year
 EOF
-  exit 1
+  exit "$exitcode"
+}
+
+# Print version information
+# Globals: VERSION
+# Arguments: none
+# Outputs: version string to STDOUT
+# Returns: none
+version() {
+  printf "%s\n" "$VERSION"
 }
 
 validate_inputs() {
@@ -112,6 +123,13 @@ while [[ $# -gt 0 ]]; do
       set -x
       shift
       ;;
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -h | --help)
+      usage
+      ;;
     *)
       break
       ;;
@@ -123,14 +141,14 @@ main() {
 
   # Validate arguments
   if [[ $# -ne 2 ]]; then
-    usage
+    usage 1
   fi
 
   month="$1"
   year="$2"
 
   if ! validate_inputs "$month" "$year"; then
-    usage
+    usage 1
   fi
 
   require_commands date markdown-toc
