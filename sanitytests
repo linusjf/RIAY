@@ -56,6 +56,8 @@ run_test() {
 
 cleanup() {
   print_header "Cleaning up..."
+  rm -f January2023.md
+  "${SCRIPT_DIR}/cleanup"
 }
 
 trap cleanup EXIT
