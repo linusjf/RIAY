@@ -250,7 +250,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   lock_config_vars "${SCRIPT_DIR}/config.env"
   # Check requirements
   require_vars YOUTUBE_API_KEY GITHUB_USERNAME YEAR
-  require_commands sed basename date markdown-toc
+  require_commands sed basename date markdown-toc tee
 
   if "$LOGGING"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")

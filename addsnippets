@@ -9,6 +9,7 @@ shopt -s inherit_errexit
 
 readonly SUCCESS=0
 readonly FAILURE=1
+readonly SCRIPT_NAME="$(basename "$0")"
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 # Source required libraries
 source "${SCRIPT_DIR}/require.sh"
@@ -16,7 +17,7 @@ source "${SCRIPT_DIR}/vidmd.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
 lock_config_vars "${SCRIPT_DIR}/config.env"
 # Check requirements
-require_commands date markdown-toc-gen
+require_commands date markdown-toc-gen tee
 require_vars GITHUB_USERNAME
 ######################################################################
 # Print error message and exit with failure
@@ -129,5 +130,12 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  main "$@"
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
 fi
