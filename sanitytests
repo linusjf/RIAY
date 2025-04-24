@@ -99,11 +99,16 @@ run_test() {
   shift 2
   expected_exit=${1:-0}
   shift
+  git tag -f "$test_num"
   if "$@" &> /dev/null; then
     actual_exit=0
   else
     actual_exit=$?
   fi
+  if ! git diff "$test_num" &> /dev/null; then
+    git reset --hard "$test_num"
+  fi
+  git tag -D "$test_num"
   if [[ "$actual_exit" -eq "$expected_exit" ]]; then
     printf "\033[32mPASS\033[0m\n"
   else
