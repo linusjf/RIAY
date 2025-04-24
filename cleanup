@@ -1,5 +1,41 @@
 #!/usr/bin/env bash
+# Remove temporary files
 rm -f ./*.vtt
 rm -f ./*.en.txt
 rm -f ./*.log
 rm -f failed*.json
+
+# Function to clean up backup files
+clean_backups() {
+  echo "Cleaning up backup files..."
+  rm -f ./*~        # Emacs backup files
+  rm -f ./*.bak*    # Generic backup files
+  rm -f ./*.backup  # Alternative backup extension
+  rm -f ./*.swp     # Vim swap files
+  rm -f ./.DS_Store # macOS directory metadata
+  rm -f ./*.tmp     # Temporary files
+  rm -f ./*.temp    # Alternative temp files
+}
+
+# Check for command line arguments
+if [[ $# -gt 0 ]]; then
+  case $1 in
+    --backups | -b)
+      clean_backups
+      ;;
+    --help | -h)
+      echo "Usage: cleanup [OPTION]"
+      echo "Options:"
+      echo "  -b, --backups   Clean up backup files only"
+      echo "  -h, --help      Show this help message"
+      ;;
+    *)
+      echo "Unknown option: $1"
+      echo "Use --help for usage information"
+      exit 1
+      ;;
+  esac
+else
+  # Default behavior: clean everything
+  clean_backups
+fi

@@ -13,10 +13,15 @@ readonly TEST_YEAR=2023
 
 # Parse command line arguments
 START_FROM=1
+TESTS_TO_RUN=()
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --from-test)
       START_FROM="$2"
+      shift 2
+      ;;
+    --tests)
+      IFS=',' read -ra TESTS_TO_RUN <<< "$2"
       shift 2
       ;;
     *)
@@ -31,9 +36,22 @@ print_header() {
   printf "\n\033[1m%s\033[0m\n" "$1"
 }
 
+should_run_test() {
+  local test_num="$1"
+  if [[ ${#TESTS_TO_RUN[@]} -gt 0 ]]; then
+    for t in "${TESTS_TO_RUN[@]}"; do
+      if [[ "$t" == "$test_num" ]]; then
+        return 0
+      fi
+    done
+    return 1
+  fi
+  [[ "$test_num" -ge "$START_FROM" ]]
+}
+
 run_test() {
   local test_num="$1"
-  if [[ "$test_num" -lt "$START_FROM" ]]; then
+  if ! should_run_test "$test_num"; then
     printf "  %-50s\033[33mSKIPPED\033[0m\n" "$2..."
     return 0
   fi
