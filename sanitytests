@@ -11,6 +11,30 @@ readonly GENMONTH_SCRIPT="${SCRIPT_DIR}/genmonth"
 readonly TEST_MONTH=1
 readonly TEST_YEAR=2023
 
+usage() {
+  exitcode="${1:-0}"
+  cat << EOF
+Usage: $0 [OPTIONS]
+
+Run sanity tests for video processing scripts
+
+Options:
+  --from-test NUM    Start running tests from test number NUM
+  --tests TESTLIST   Comma-separated list of specific tests to run
+  --help             Show this help message
+
+Available tests:
+  1-5    addvideo script tests
+  6-12   genmonth script tests
+
+Examples:
+  $0 --from-test 6          # Run tests starting from test 6
+  $0 --tests 1,3,5         # Run only tests 1, 3 and 5
+  $0                       # Run all tests
+EOF
+  exit "$exitcode"
+}
+
 # Parse command line arguments
 START_FROM=1
 TESTS_TO_RUN=()
@@ -24,9 +48,12 @@ while [[ $# -gt 0 ]]; do
       IFS=',' read -ra TESTS_TO_RUN <<< "$2"
       shift 2
       ;;
+    --help | -h)
+      usage
+      ;;
     *)
       echo "Unknown option: $1"
-      exit 1
+      usage 1
       ;;
   esac
 done
@@ -74,7 +101,7 @@ run_test() {
 
 cleanup() {
   print_header "Cleaning up..."
-  rm -f January2023.md
+  rm -f January2023.md January.md
   "${SCRIPT_DIR}/cleanup"
 }
 
@@ -133,5 +160,9 @@ run_test 10 "Should reject non-numeric year" 1 "${GENMONTH_SCRIPT}" "$TEST_MONTH
 print_header "Test 11: File generation"
 run_test 11 "Should generate markdown file" 0 "${GENMONTH_SCRIPT}" "$TEST_MONTH" "$TEST_YEAR"
 run_test 11 "Generated file should exist" 0 test -f "January.md"
+
+print_header "Test 12: Append year option"
+run_test 12 "Should generate file with year when --append-year" 0 "${GENMONTH_SCRIPT}" --append-year "$TEST_MONTH" "$TEST_YEAR"
+run_test 12 "Year-appended file should exist" 0 test -f "January2023.md"
 
 print_header "All tests completed successfully"
