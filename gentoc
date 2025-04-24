@@ -16,6 +16,8 @@ else
   readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
 fi
 source "${SCRIPT_DIR}/require.sh"
+source "${SCRIPT_DIR}/lockconfig.sh"
+lock_config_vars "${SCRIPT_DIR}/config.env"
 
 #######################################
 # Validate input file exists and is readable
@@ -83,7 +85,7 @@ version() {
 # Returns: none
 #######################################
 usage() {
-  exit_code="${1:=0}"
+  exit_code="${1:-0}"
   cat << EOF
 Usage: ${SCRIPT_NAME} [-d|--debug] [-v|--version] [-h|--help] markdown_file
 
@@ -144,5 +146,12 @@ main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  main "$@"
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
 fi
