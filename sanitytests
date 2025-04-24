@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Sanity tests for addvideo and genmonth scripts
+# Sanity tests for addvideo, genmonth and gentoc scripts
 # Tests command line options and cleans up afterwards
 
 set -euo pipefail
@@ -8,8 +8,10 @@ shopt -s inherit_errexit
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 readonly ADDVIDEO_SCRIPT="${SCRIPT_DIR}/addvideo"
 readonly GENMONTH_SCRIPT="${SCRIPT_DIR}/genmonth"
+readonly GENTOC_SCRIPT="${SCRIPT_DIR}/gentoc"
 readonly TEST_MONTH=1
 readonly TEST_YEAR=2023
+readonly TEST_MD_FILE="test_toc.md"
 
 usage() {
   exitcode="${1:-0}"
@@ -21,11 +23,13 @@ Run sanity tests for video processing scripts
 Options:
   --from-test NUM    Start running tests from test number NUM
   --tests TESTLIST   Comma-separated list of specific tests to run
+  --no-cleanup       Don't clean up test files after running
   --help             Show this help message
 
 Available tests:
   1-5    addvideo script tests
   6-12   genmonth script tests
+  13-17  gentoc script tests
 
 Examples:
   $0 --from-test 6          # Run tests starting from test 6
@@ -38,6 +42,7 @@ EOF
 # Parse command line arguments
 START_FROM=1
 TESTS_TO_RUN=()
+NO_CLEANUP=false
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --from-test)
@@ -47,6 +52,10 @@ while [[ $# -gt 0 ]]; do
     --tests)
       IFS=',' read -ra TESTS_TO_RUN <<< "$2"
       shift 2
+      ;;
+    --no-cleanup)
+      NO_CLEANUP=true
+      shift
       ;;
     --help | -h)
       usage
@@ -99,9 +108,25 @@ run_test() {
   fi
 }
 
+create_test_md() {
+  cat << EOF > "${TEST_MD_FILE}"
+# Test Document
+
+## Section 1
+Content
+
+## Section 2
+More content
+EOF
+}
+
 cleanup() {
+  if [[ "$NO_CLEANUP" == true ]]; then
+    print_header "Skipping cleanup (--no-cleanup specified)"
+    return
+  fi
   print_header "Cleaning up..."
-  rm -f January2023.md January.md
+  rm -f January2023.md January.md "${TEST_MD_FILE}"
   "${SCRIPT_DIR}/cleanup"
 }
 
@@ -164,5 +189,28 @@ run_test 11 "Generated file should exist" 0 test -f "January.md"
 print_header "Test 12: Append year option"
 run_test 12 "Should generate file with year when --append-year" 0 "${GENMONTH_SCRIPT}" --append-year "$TEST_MONTH" "$TEST_YEAR"
 run_test 12 "Year-appended file should exist" 0 test -f "January2023.md"
+
+print_header "Running gentoc sanity tests"
+
+print_header "Test 13: Version flag"
+run_test 13 "Should show version with -v" 0 "${GENTOC_SCRIPT}" -v
+run_test 13 "Should show version with --version" 0 "${GENTOC_SCRIPT}" --version
+
+print_header "Test 14: Help/usage"
+run_test 14 "Should show usage with no args" 1 "${GENTOC_SCRIPT}" || true
+run_test 14 "Should show usage with -h" 0 "${GENTOC_SCRIPT}" -h
+run_test 14 "Should show usage with --help" 0 "${GENTOC_SCRIPT}" --help
+
+print_header "Test 15: Debug mode"
+run_test 15 "Should enable debug with -d" 0 "${GENTOC_SCRIPT}" -d "${TEST_MD_FILE}" || true
+run_test 15 "Should enable debug with --debug" 0 "${GENTOC_SCRIPT}" --debug "${TEST_MD_FILE}" || true
+
+print_header "Test 16: Invalid inputs"
+run_test 16 "Should reject missing file argument" 1 "${GENTOC_SCRIPT}" || true
+run_test 16 "Should reject non-existent file" 1 "${GENTOC_SCRIPT}" nonexistent.md || true
+
+print_header "Test 17: TOC generation"
+create_test_md
+run_test 17 "Should generate TOC for valid file" 0 "${GENTOC_SCRIPT}" "${TEST_MD_FILE}"
 
 print_header "All tests completed successfully"
