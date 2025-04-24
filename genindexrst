@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME="$(basename "$0")"
+
+# Resolve script directory
+if command -v realpath > /dev/null 2>&1; then
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+else
+  SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
+fi
+source "${SCRIPT_DIR}/lockconfig.sh"
+lock_config_vars "${SCRIPT_DIR}/config.env"
+
+function version() {
+  printf "%s\n" "$VERSION"
+}
+
+function usage() {
+  echo "Usage: $SCRIPT_NAME [title]"
+  echo "Generates index.rst with the specified title and year from \$YEAR environment variable"
+  exit 1
+}
+
+function main() {
+  local title="$1"
+  if [[ -z "$title" ]]; then
+    usage
+  fi
+
+  # Get year from environment or use current year as fallback
+  local year="${YEAR:-$(date +'%Y')}"
+
+  # Output file
+  OUTPUT="index.rst"
+  if [[ -f "$OUTPUT" ]]; then
+    cp "$OUTPUT" "${OUTPUT}.bak"
+    rm -f "$OUTPUT"
+  fi
+  {
+    # Write header
+    echo ".. RIAY documentation master file, created by"
+    echo "   ${SCRIPT_NAME} on $(date +'%a %b %d %H:%M:%S %Y')."
+    echo "   You can adapt this file completely to your liking, but it should at least"
+    echo "   contain the root \`toctree\` directive."
+    echo
+
+    # Generate header with dynamic underline
+    local header="${title} ${year}"
+    local underline=$(printf '%*s' ${#header} "" | tr ' ' '=')
+    echo "$header"
+    echo "$underline"
+    echo
+    echo ".. toctree::"
+    echo "   :maxdepth: 2"
+    echo "   :caption: Contents:"
+    echo
+  } >> "$OUTPUT"
+
+  # Iterate and write TOC entries; warn if file is missing
+  for entry in "${CONTENT_DOCS[@]}"; do
+    IFS='=' read -r _ path <<< "$entry"
+    echo "   $path" >> "$OUTPUT"
+    if [[ ! -f "$path" ]]; then
+      echo "Warning: File '$path' not found for TOC entry" >&2
+    fi
+  done
+
+  echo "index.rst generated successfully."
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
+fi
