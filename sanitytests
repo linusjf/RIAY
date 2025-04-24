@@ -132,6 +132,6 @@ run_test 10 "Should reject non-numeric year" 1 "${GENMONTH_SCRIPT}" "$TEST_MONTH
 
 print_header "Test 11: File generation"
 run_test 11 "Should generate markdown file" 0 "${GENMONTH_SCRIPT}" "$TEST_MONTH" "$TEST_YEAR"
-run_test 11 "Generated file should exist" 0 test -f "January2023.md"
+run_test 11 "Generated file should exist" 0 test -f "January.md"
 
 print_header "All tests completed successfully"
