@@ -33,7 +33,7 @@ Available tests:
   1-5    addvideo script tests
   6-12   genmonth script tests
   13-17  gentoc script tests
-  18-23  stitch script tests
+  18-24  stitch script tests
 
 Examples:
   $0 --from-test 6          # Run tests starting from test 6
@@ -278,5 +278,9 @@ run_test 22 "Should not generate README.md with wrong file format" 2 "${STITCH_S
 print_header "Test 23: Real-world file generation"
 create_real_stitch
 run_test 23 "Should generate README from real stitch.md" 0 "${STITCH_SCRIPT}"
+
+print_header "Test 24: Missing stitch.md"
+rm -f stitch.md
+run_test 24 "Should fail when stitch.md is missing" 1 "${STITCH_SCRIPT}" || true
 
 print_header "All tests completed successfully"
