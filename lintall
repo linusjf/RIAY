@@ -11,12 +11,17 @@ shopt -s inherit_errexit
 
 readonly SUCCESS=0
 readonly FAILURE=1
+readonly SCRIPT_NAME="$(basename "$0")"
 
-# Source the require.sh library
-source "$(dirname "$(readlink -f "$0")")/require.sh" || {
-  echo "Error: Failed to source require.sh" >&2
-  exit 1
-}
+# Resolve script directory
+if command -v realpath > /dev/null 2>&1; then
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+else
+  SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
+fi
+source "${SCRIPT_DIR}/require.sh"
+source "${SCRIPT_DIR}/lockconfig.sh"
+lock_config_vars "${SCRIPT_DIR}/config.env"
 
 ######################################################################
 # Display usage information
@@ -92,5 +97,12 @@ main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  main "$@"
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
 fi
