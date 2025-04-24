@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 rm -f ./*.vtt
+rm -f ./*.en.txt
 rm -f ./*.log
 rm -f failed*.json
