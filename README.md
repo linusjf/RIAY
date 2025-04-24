@@ -3173,6 +3173,9 @@ This reflection, guided by St. Alphonsus's devotion, leads us naturally to praye
 - [April 23,2025](#april-232025)
   - [Spoiler Alert](#spoiler-alert)
   - [AI-Generated Summary: The Boy in the Temple](#ai-generated-summary-the-boy-in-the-temple)
+- [April 24,2025](#april-242025)
+  - [Baptized with Him](#baptized-with-him)
+  - [AI-Generated Summary: The Opened Heavens and Our Way In](#ai-generated-summary-the-opened-heavens-and-our-way-in)
 
 <!-- tocstop -->
 
@@ -3703,6 +3706,35 @@ Recall the scene: Mary and Joseph, frantic with worry, discover their son after 
 This declaration, so easily glossed over by modern eyes, would have struck a first-century Jewish audience with the force of thunder. It was a claim of messianic identity, a veiled assertion of divinity, whispered within the hallowed halls of the temple. For those who had ears to hear, it was a revelation of breathtaking magnitude.
 
 St. Cyril emphasizes the unfolding nature of this revelation. Even Mary and Joseph, those closest to Jesus, did not fully grasp the implications of his words. They, like the rest of humanity, were on a journey of discovery, learning step by step the true identity of the child they loved. Like Mary, we too are called to ponder these things, to “keep all these sayings in her heart.” The Hail Marys that punctuate this meditation serve as gentle reminders, echoing the wonder and the mystery of the boy in the temple, the boy who is Lord. _Glory be to the Father, and to the Son, and to the Holy Ghost._
+
+#### April 24,2025
+
+##### Baptized with Him
+
+[![Baptized with Him](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day114.jpg)](https://youtu.be/34FEBKz2nGY "Baptized with Him")
+
+##### AI-Generated Summary: The Opened Heavens and Our Way In
+
+My dear friends, let us consider how we might draw nearer to God. Prayer and quiet thought upon Jesus and His Mother, Mary, are not merely pious exercises; they are channels through which grace flows into our troubled world. We turn our minds now to a particular moment: the Baptism of Our Lord in the Jordan, the first of the Luminous Mysteries.
+
+To guide our thoughts, we look to a wise man of old, St. Gregory of Nazianzus, one of those brilliant thinkers called the Cappadocian Fathers who helped the early Church grasp profound truths, especially concerning the Holy Trinity – that mystery of One God in Three Persons: Father, Son, and Holy Spirit. St. Gregory, known rightly as 'the Theologian', helps us see the Baptism clearly.
+
+Why, you might ask, did Jesus, being sinless God, submit to John's baptism? Gregory offers several points for reflection:
+
+- He did it to make holy the one baptizing Him, John.
+- He went down into the water, as it were, to bury the old, fallen nature inherited from Adam.
+- He sanctified the very waters, preparing the way for our own baptism by water and the Spirit.
+- In doing so, He allows us, through faith, to descend and ascend _with_ Him.
+
+Imagine the scene: As Jesus emerges, the heavens, shut tight since Adam's disobedience barred us from Paradise (remember the angel with the flaming sword?), are dramatically torn open. This is the crucial point Gregory emphasizes. Christ, the New Adam, carries humanity up with Him, reopening the path to God that had been closed.
+
+Then, the Holy Spirit descends, not merely as a bird, but like a dove – specifically recalling the dove Noah sent from the Ark, which returned signifying the flood's end and a new beginning. Here, the Spirit rests upon Jesus, the true Ark, testifying to His divinity and marking the start of our ultimate rescue from sin's deluge.
+
+This tearing open of the heavens at the Jordan foreshadows the tearing of the Temple veil when Christ completes His work – His final 'baptism' – upon the Cross at Calvary. Access to God, begun at the river, is perfected on the hill.
+
+Therefore, our own baptism is no mere symbol. It is our entry into Christ, the Ark of Salvation. By remaining united with Him, we find safety amidst the storms of life, journeying towards that perfect New Creation, the restored Eden, where we shall dwell eternally with the Father, Son, and Holy Spirit. The prayers we offer, asking for God's kingdom, seeking Mary's aid, and giving glory to the Trinity, are expressions of this journey, this life lived within the Ark.
+
+Let us continue this journey together, step by step. God bless you.
 
 ## May
 
