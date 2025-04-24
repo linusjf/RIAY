@@ -17,15 +17,17 @@ function version() {
 }
 
 function usage() {
+  exitcode="${1:-0}"
+
   echo "Usage: $SCRIPT_NAME [title]"
   echo "Generates index.rst with the specified title and year from \$YEAR environment variable"
-  exit 1
+  exit "$exitcode"
 }
 
 function main() {
-  local title="$1"
+  local title="${1:-${PROJECT}}"
   if [[ -z "$title" ]]; then
-    usage
+    usage 1
   fi
 
   # Get year from environment or use current year as fallback

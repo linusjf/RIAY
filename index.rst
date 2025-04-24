@@ -1,10 +1,10 @@
 .. RIAY documentation master file, created by
-   genindexrst on Thu Apr 24 13:32:25 2025.
+   genindexrst on Thu Apr 24 13:48:33 2025.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Rosary In A Year 2025
-=====================
+Rosary In A Year (RIAY) 2025
+============================
 
 .. toctree::
    :maxdepth: 2
