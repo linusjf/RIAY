@@ -11,21 +11,23 @@ source "${SCRIPT_DIR}/vidmd.sh"
 # shellcheck disable=SC1091
 source "${SCRIPT_DIR}/require.sh"
 DRY_RUN=false
+APPEND_YEAR=false
 readonly VERSION="1.0.0"
 
 usage() {
   exitcode="${1:-0}"
   cat << EOF
-Usage: ${0##*/} [-n|--dry-run] [-d|--debug] month year
+Usage: ${0##*/} [-n|--dry-run] [-d|--debug] [--append-year] month year
 
 Generate monthly markdown file with video index and table of contents.
 
 Options:
-  -n, --dry-run    Show what would happen without making changes
-  -d, --debug      Enable debug output
+  -n, --dry-run        Show what would happen without making changes
+  -d, --debug          Enable debug output
+  --append-year        Append year to month filename
 Arguments:
-  month            Month number (1-12)
-  year             4-digit year
+  month                Month number (1-12)
+  year                 4-digit year
 EOF
   exit "$exitcode"
 }
@@ -73,7 +75,11 @@ generate_month_file() {
   local month_name monthmd
 
   month_name="$(monthfromnumber "$month")"
-  monthmd="${month_name}${year}.md"
+  if $APPEND_YEAR; then
+    monthmd="${month_name}${year}.md"
+  else
+    monthmd="${month_name}.md"
+  fi
 
   if ! "${SCRIPT_DIR}/compact" "$month_name" >| "$monthmd"; then
     echo "Error: Failed to generate compact index" >&2
@@ -99,7 +105,11 @@ dry_run() {
   local month_name monthmd
 
   month_name="$(monthfromnumber "$month")"
-  monthmd="${month_name}${year}.md"
+  if $APPEND_YEAR; then
+    monthmd="${month_name}${year}.md"
+  else
+    monthmd="${month_name}.md"
+  fi
 
   cat << EOF
 DRY RUN: Would process month $month_name ($(monthfromnumber "$month")) for year $year
@@ -121,6 +131,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     -d | --debug)
       set -x
+      shift
+      ;;
+    --append-year)
+      APPEND_YEAR=true
       shift
       ;;
     -v | --version)
