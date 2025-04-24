@@ -1,6 +1,6 @@
 __pycache__/*
 *.test
-*.bak
+*.bak*
 styles/Microsoft
 styles/Google
 styles/write-good

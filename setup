@@ -14,19 +14,71 @@ function version() {
   printf "%s\n" "$VERSION"
 }
 
+function backup_file() {
+  local file="$1"
+  local timestamp=$(date +"%Y%m%d_%H%M%S")
+  local backup_file="${file}.bak_${timestamp}"
+  cp "$file" "$backup_file"
+  echo "Backed up $file to $backup_file"
+}
+
+function confirm_overwrite() {
+  local file="$1"
+  read -p "File $file already exists. Overwrite? [y/N] " -n 1 -r
+  echo
+  [[ $REPLY =~ ^[Yy]$ ]]
+}
+
 function setup_directories() {
   local year="$1"
   local dir
 
-  # Create empty videos file
-  : > "$VIDEOS_FILE"
+  # Check and create videos file
+  if [[ -f "$VIDEOS_FILE" ]]; then
+    if confirm_overwrite "$VIDEOS_FILE"; then
+      backup_file "$VIDEOS_FILE"
+      : > "$VIDEOS_FILE"
+    else
+      echo "Skipping $VIDEOS_FILE"
+    fi
+  else
+    : > "$VIDEOS_FILE"
+  fi
 
   # Create monthly directories and files
   for month in "${MONTHS[@]}"; do
     dir="./$month"
-    mkdir -p "$dir"
-    create_header_file "$dir" "$month" "$year"
-    echo "header.md" > "$dir/${COMPACT_FILE}"
+
+    # Check if directory exists
+    if [[ -d "$dir" ]]; then
+      echo "Directory $dir already exists"
+    else
+      mkdir -p "$dir"
+    fi
+
+    # Check header.md
+    if [[ -f "$dir/header.md" ]]; then
+      if confirm_overwrite "$dir/header.md"; then
+        backup_file "$dir/header.md"
+        create_header_file "$dir" "$month" "$year"
+      else
+        echo "Skipping $dir/header.md"
+      fi
+    else
+      create_header_file "$dir" "$month" "$year"
+    fi
+
+    # Check compact file
+    if [[ -f "$dir/${COMPACT_FILE}" ]]; then
+      if confirm_overwrite "$dir/${COMPACT_FILE}"; then
+        backup_file "$dir/${COMPACT_FILE}"
+        echo "header.md" > "$dir/${COMPACT_FILE}"
+      else
+        echo "Skipping $dir/${COMPACT_FILE}"
+      fi
+    else
+      echo "header.md" > "$dir/${COMPACT_FILE}"
+    fi
   done
 }
 
@@ -45,20 +97,20 @@ EOF
 }
 
 function main() {
-  # Resolve script directory
-  if command -v realpath > /dev/null 2>&1; then
-    SCRIPT_DIR=$(dirname "$(realpath "$0")")
-  else
-    SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
-  fi
-  source "${SCRIPT_DIR}/lockconfig.sh"
-  lock_config_vars "${SCRIPT_DIR}/config.env"
-
   : "${YEAR:?Environment variable YEAR must be set}"
 
   setup_directories "$YEAR"
   printf "Setup complete: ${VIDEOS_FILE} plus folders and headers for each month for year %s.\n" "$YEAR"
 }
+
+# Resolve script directory
+if command -v realpath > /dev/null 2>&1; then
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+else
+  SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
+fi
+source "${SCRIPT_DIR}/lockconfig.sh"
+lock_config_vars "${SCRIPT_DIR}/config.env"
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   if "$LOGGING"; then
