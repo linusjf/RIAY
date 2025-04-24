@@ -13,3 +13,4 @@ build/**
 *.vtt
 *.en.txt
 fail*.json
+geminimodelids.txt
