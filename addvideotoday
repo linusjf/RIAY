@@ -10,6 +10,7 @@ SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)
 source "${SCRIPT_DIR}/require.sh" || exit 1
 source "${SCRIPT_DIR}/util.sh" || exit 1
 source "${SCRIPT_DIR}/git.sh" || exit 1
+source "${SCRIPT_DIR}/youtube.sh" || exit 1
 
 function usage() {
   local exit_code=${1:-0}
@@ -152,27 +153,31 @@ function main() {
 
   mkdir -p "$month/jpgs"
 
-  response=$(fetch_video_metadata "$video_id" "$api_key")
-  thumbnail_url=$(printf "%s" "$response" | extract_thumbnail_url)
-  title=$(printf "%s" "$response" | extract_video_title)
+  if check_video_exists "$video_id"; then
+    response=$(fetch_video_metadata "$video_id" "$api_key")
+    thumbnail_url=$(printf "%s" "$response" | extract_thumbnail_url)
+    title=$(printf "%s" "$response" | extract_video_title)
 
-  if [ -z "$thumbnail_url" ] || [ "$thumbnail_url" = "null" ]; then
-    die "Error: Thumbnail not found for video ID $video_id"
+    if [ -z "$thumbnail_url" ] || [ "$thumbnail_url" = "null" ]; then
+      die "Error: Thumbnail not found for video ID $video_id"
+    fi
+
+    download_thumbnail "$thumbnail_url" "$image_path"
+    youtube_url="https://youtu.be/$video_id"
+
+    backup_file "$markdown_file"
+
+    if grep -Fq "$video_id" "$markdown_file"; then
+      remove_existing_video_entry "$markdown_file" "$video_id"
+    fi
+
+    append_video_info "$markdown_file" "$title" "$github_repo" "$month" \
+      "$day_string" "$youtube_url" "$SCRIPT_DIR" "$video_id"
+
+    out "Appended video info to $markdown_file"
+  else
+    die "Error: Video with id ${video_id} does not exist."
   fi
-
-  download_thumbnail "$thumbnail_url" "$image_path"
-  youtube_url="https://youtu.be/$video_id"
-
-  backup_file "$markdown_file"
-
-  if grep -Fq "$video_id" "$markdown_file"; then
-    remove_existing_video_entry "$markdown_file" "$video_id"
-  fi
-
-  append_video_info "$markdown_file" "$title" "$github_repo" "$month" \
-    "$day_string" "$youtube_url" "$SCRIPT_DIR" "$video_id"
-
-  out "Appended video info to $markdown_file"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

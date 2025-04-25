@@ -67,6 +67,20 @@ function extract_text_from_vtt() {
   echo -n "$res"
 }
 
+# Check if YouTube video exists
+# Globals: none
+# Arguments: video_id
+# Outputs: none
+# Returns: 0 if video exists, 1 otherwise
+check_video_exists() {
+  local video_id="$1"
+  local url="https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${video_id}&format=json"
+  local http_status
+
+  http_status=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+  [[ "$http_status" == "200" ]]
+}
+
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main() {
     echo "This is a library of functions and not meant to be executed directly" >&2

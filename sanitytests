@@ -12,6 +12,8 @@ readonly ADDVIDEO_SCRIPT="${SCRIPT_DIR}/addvideo"
 readonly GENMONTH_SCRIPT="${SCRIPT_DIR}/genmonth"
 readonly GENTOC_SCRIPT="${SCRIPT_DIR}/gentoc"
 readonly STITCH_SCRIPT="${SCRIPT_DIR}/stitch"
+readonly LINTALL_SCRIPT="${SCRIPT_DIR}/lintall"
+readonly ADDVIDEOTODAY_SCRIPT="${SCRIPT_DIR}/addvideotoday"
 readonly TEST_MONTH=1
 readonly TEST_YEAR=2023
 readonly TEST_MD_FILE="test_toc.md"
@@ -37,6 +39,7 @@ Available tests:
   13-17  gentoc script tests
   18-24  stitch script tests
   25-29  lintall script tests
+  30-34  addvideotoday script tests
 
 Examples:
   $0 --from-test 6          # Run tests starting from test 6
@@ -346,21 +349,46 @@ run_test 24 "Should fail when stitch.md is missing" 1 "${STITCH_SCRIPT}" || true
 print_header "Running lintall sanity tests"
 
 print_header "Test 25: Version flag"
-run_test 25 "Should have a version flag" 0 "${SCRIPT_DIR}/lintall" --version || true
+run_test 25 "Should have a version flag" 0 "${LINTALL_SCRIPT}" --version || true
 
 print_header "Test 26: Help/usage"
-run_test 26 "Should show usage with -h" 0 "${SCRIPT_DIR}/lintall" -h
-run_test 26 "Should show usage with --help" 0 "${SCRIPT_DIR}/lintall" --help
+run_test 26 "Should show usage with -h" 0 "${LINTALL_SCRIPT}" -h
+run_test 26 "Should show usage with --help" 0 "${LINTALL_SCRIPT}" --help
 
 print_header "Test 27: Debug mode"
-run_test 27 "Should enable debug with -d" 0 "${SCRIPT_DIR}/lintall" -d || true
-run_test 27 "Should enable debug with --debug" 0 "${SCRIPT_DIR}/lintall" --debug || true
+run_test 27 "Should enable debug with -d" 0 "${LINTALL_SCRIPT}" -d || true
+run_test 27 "Should enable debug with --debug" 0 "${LINTALL_SCRIPT}" --debug || true
 
 print_header "Test 28: Verbose mode"
-run_test 28 "Should enable verbose with -v" 0 "${SCRIPT_DIR}/lintall" -v || true
-run_test 28 "Should enable verbose with --verbose" 0 "${SCRIPT_DIR}/lintall" --verbose || true
+run_test 28 "Should enable verbose with -v" 0 "${LINTALL_SCRIPT}" -v || true
+run_test 28 "Should enable verbose with --verbose" 0 "${LINTALL_SCRIPT}" --verbose || true
 
 print_header "Test 29: Basic execution"
-run_test 29 "Should run successfully" 0 "${SCRIPT_DIR}/lintall"
+run_test 29 "Should run successfully" 0 "${LINTALL_SCRIPT}"
+
+print_header "Running addvideotoday sanity tests"
+
+print_header "Test 30: Version flag"
+run_test 30 "Should show version with -v" 0 "${ADDVIDEOTODAY_SCRIPT}" -v
+run_test 30 "Should show version with --version" 0 "${ADDVIDEOTODAY_SCRIPT}" --version
+
+print_header "Test 31: Help/usage"
+run_test 31 "Should show usage with no args" 1 "${ADDVIDEOTODAY_SCRIPT}" || true
+run_test 31 "Should show usage with -h" 0 "${ADDVIDEOTODAY_SCRIPT}" -h
+run_test 31 "Should show usage with --help" 0 "${ADDVIDEOTODAY_SCRIPT}" --help
+
+print_header "Test 32: Invalid inputs"
+run_test 32 "Should reject invalid number of arguments" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" || true
+run_test 32 "Should reject invalid video ID" 1 "${ADDVIDEOTODAY_SCRIPT}" "invalid" "1" || true
+run_test 32 "Should reject invalid day number" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "invalid" || true
+
+print_header "Test 33: Missing markdown file"
+run_test 33 "Should fail due to missing markdown file" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "999" || true
+
+print_header "Test 34: Basic execution (dry run)"
+mkdir -p "April"
+touch "April/Day001.md"
+run_test 34 "Should run successfully in dry run mode" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "1"
+rm -rf April
 
 print_header "All tests completed successfully"
