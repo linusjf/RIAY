@@ -385,10 +385,7 @@ run_test 32 "Should reject invalid day number" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4
 print_header "Test 33: Missing markdown file"
 run_test 33 "Should fail due to missing markdown file" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "999" || true
 
-print_header "Test 34: Basic execution (dry run)"
-mkdir -p "April"
-touch "April/Day001.md"
-run_test 34 "Should run successfully in dry run mode" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "1"
-rm -rf April
+print_header "Test 34: Basic execution"
+run_test 34 "Should run successfully" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "1"
 
 print_header "All tests completed successfully"
