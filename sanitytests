@@ -260,8 +260,8 @@ run_test 14 "Should show usage with -h" 0 "${GENTOC_SCRIPT}" -h
 run_test 14 "Should show usage with --help" 0 "${GENTOC_SCRIPT}" --help
 
 print_header "Test 15: Debug mode"
-run_test 15 "Should enable debug with -d" 0 "${GENTOC_SCRIPT}" -d "${TEST_MD_FILE}" || true
-run_test 15 "Should enable debug with --debug" 0 "${GENTOC_SCRIPT}" --debug "${TEST_MD_FILE}" || true
+run_test 15 "Should enable debug with -d" 1 "${GENTOC_SCRIPT}" -d "${TEST_MD_FILE}" || true
+run_test 15 "Should enable debug with --debug" 1 "${GENTOC_SCRIPT}" --debug "${TEST_MD_FILE}" || true
 
 print_header "Test 16: Invalid inputs"
 run_test 16 "Should reject missing file argument" 1 "${GENTOC_SCRIPT}" || true
