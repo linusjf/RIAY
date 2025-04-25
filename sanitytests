@@ -107,8 +107,9 @@ run_test() {
   fi
   if ! git diff "$test_num" &> /dev/null; then
     git reset --hard "$test_num"
+    git clean -fd
   fi
-  git tag -D "$test_num"
+  git tag -d "$test_num"
   if [[ "$actual_exit" -eq "$expected_exit" ]]; then
     printf "\033[32mPASS\033[0m\n"
   else
@@ -170,11 +171,20 @@ cleanup() {
     return
   fi
   print_header "Cleaning up..."
-  rm -f January2023.md January.md "${TEST_MD_FILE}" "${TEST_STITCH_FILE}" README.md "${TEST_STITCH_CONTENT}"
   "${SCRIPT_DIR}/cleanup"
+  git checkout "$orig_branch"
+  git branch -D "testing"
 }
 
 trap cleanup EXIT
+
+orig_branch=$(git symbolic-ref --short -q HEAD || echo "detached")
+if [[ "$orig_branch" == "detached" ]]; then
+  echo "In detached state" >&2
+  exit 1
+fi
+
+git checkout -b "testing"
 
 # Main test execution
 print_header "Running addvideo sanity tests"
