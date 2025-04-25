@@ -99,7 +99,7 @@ generate_files() {
 
   month="$(mfromdoy "${doy#0}")"
   # shellcheck disable=SC2153
-  monthnumber="$(monthnumberfrommonth "${month}" "$YEAR}")"
+  monthnumber="$(monthnumberfrommonth "${month}" "${YEAR}")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(datefromdoy "${doy#0}")"
 
