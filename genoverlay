@@ -120,6 +120,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 
   # Source required libraries
   source "${SCRIPT_DIR}/require.sh"
+  source "${SCRIPT_DIR}/youtube.sh"
 
   # Check requirements
   require_vars YOUTUBE_API_KEY

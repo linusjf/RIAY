@@ -77,6 +77,9 @@
 - [April 25,2025](#april-252025)
   - [Wedding of the Lamb](#wedding-of-the-lamb)
   - [AI-Generated Summary: Wedding Feast of The Divine Bridegroom](#ai-generated-summary-wedding-feast-of-the-divine-bridegroom)
+- [April 26,2025](#april-262025)
+  - [News Video](#news-video)
+  - [AI-Generated Summary: Pakistani Nationals Ordered to Leave Telangana Amidst Heightened Border Tensions After Terror Attack](#ai-generated-summary-pakistani-nationals-ordered-to-leave-telangana-amidst-heightened-border-tensions-after-terror-attack)
 
 <!-- tocstop -->
 
@@ -674,3 +677,20 @@ Newman applies this very human picture to Cana. Jesus, the Divine Bridegroom, is
 His entire mission is directed towards bringing this Bride, the Church, safely home to the eternal wedding banquet in Heaven.
 
 And so, when we pray – reciting the familiar words of the Our Father, the Hail Mary, the Glory Be – we are not merely repeating formulas. We are stepping into this grand story, connecting ourselves to the love of the Divine Bridegroom for His Church and drawing strength from the grace that flows from Him and His mother.
+
+## April 26,2025
+
+### News Video
+
+[![News Video](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day116.jpg)](https://youtu.be/2-caLO3rLL8 "News Video")
+
+### AI-Generated Summary: Pakistani Nationals Ordered to Leave Telangana Amidst Heightened Border Tensions After Terror Attack
+
+In the aftermath of a terror attack in Pelgam, Jammu and Kashmir, tensions between India and Pakistan have escalated sharply. The discovery of suspicious items, including a large tent (100-150 square meters) and Chinese pestles, has further fueled concerns. India has responded with decisive action on multiple fronts, reminiscent of a fortress securing its gates against a rising storm.
+
+- The Ministry of External Affairs has issued a travel advisory, a clear signal of the gravity of the situation.
+- Telangana police, echoing the national sentiment, have instructed Pakistani nationals within their jurisdiction to respect the new guidelines and depart. This directive stems from the suspension of their visas, a swift measure to control the flow of individuals across the border.
+- India has revoked existing visas for Pakistani nationals, save for those on long-term, diplomatic, or official assignments. This distinction underscores a desire to maintain essential communication channels while tightening overall security. The Atari border crossing, a vital artery between the two nations, has been closed, further emphasizing the severity of the situation.
+- Military activity has surged in Jammu and Kashmir. Over three days, the Indian army and security forces have launched a series of counterterrorism operations. These operations are twofold: preventing infiltration across the Line of Control, the volatile border separating the two nations, and dismantling existing terror networks within the region. Like a physician treating both the symptoms and the disease, India seeks to address both the immediate threat and the underlying causes.
+
+This swift and multifaceted response reflects India's determination to protect its borders and its citizens. The situation remains tense, and the coming days will undoubtedly be crucial in determining the trajectory of this escalating conflict.
