@@ -192,8 +192,6 @@ cleanup() {
   print_header "Cleaning up..."
   git checkout "$orig_branch"
   git branch -D "testing"
-  git restore .
-  git clean -fd
   stash_apply_id "$stash_id"
 }
 
