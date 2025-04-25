@@ -157,7 +157,7 @@ main() {
   local month year
 
   # Validate arguments
-  if [[ $# -ne 1 ]]; then
+  if [[ $# -gt 2 ]] || [[ $# -eq 0 ]]; then
     usage 1
   fi
 
