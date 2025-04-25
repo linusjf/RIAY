@@ -34,6 +34,7 @@ Available tests:
   6-12   genmonth script tests
   13-17  gentoc script tests
   18-24  stitch script tests
+  25-29  lintall script tests
 
 Examples:
   $0 --from-test 6          # Run tests starting from test 6
@@ -312,5 +313,25 @@ run_test 23 "Should generate README from real stitch.md" 0 "${STITCH_SCRIPT}"
 print_header "Test 24: Missing stitch.md"
 rm -f stitch.md
 run_test 24 "Should fail when stitch.md is missing" 1 "${STITCH_SCRIPT}" || true
+
+print_header "Running lintall sanity tests"
+
+print_header "Test 25: Version flag"
+run_test 25 "Should have a version flag" 0 "${SCRIPT_DIR}/lintall" --version || true
+
+print_header "Test 26: Help/usage"
+run_test 26 "Should show usage with -h" 0 "${SCRIPT_DIR}/lintall" -h
+run_test 26 "Should show usage with --help" 0 "${SCRIPT_DIR}/lintall" --help
+
+print_header "Test 27: Debug mode"
+run_test 27 "Should enable debug with -d" 0 "${SCRIPT_DIR}/lintall" -d || true
+run_test 27 "Should enable debug with --debug" 0 "${SCRIPT_DIR}/lintall" --debug || true
+
+print_header "Test 28: Verbose mode"
+run_test 28 "Should enable verbose with -v" 0 "${SCRIPT_DIR}/lintall" -v || true
+run_test 28 "Should enable verbose with --verbose" 0 "${SCRIPT_DIR}/lintall" --verbose || true
+
+print_header "Test 29: Basic execution"
+run_test 29 "Should run successfully" 0 "${SCRIPT_DIR}/lintall"
 
 print_header "All tests completed successfully"
