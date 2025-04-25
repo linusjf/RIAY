@@ -98,7 +98,7 @@ generate_files() {
   local month fname formatdt md
 
   month="$(mfromdoy "${doy#0}")"
-  monthnumber="$(monthnumberfrommonth "${month}" "$YEAR")"
+  monthnumber="$(monthnumberfrommonth "${month}" "$YEAR}.")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(datefromdoy "${doy#0}")"
 
@@ -144,12 +144,11 @@ dry_run() {
   local caption="$2"
   local doy="$3"
   local videourl="https://youtu.be/${vid}"
-  local month fname formatdt monthmd
+  local month fname formatdt
 
   month="$(mfromdoy "${doy#0}")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(datefromdoy "${doy#0}")"
-  monthmd="${month}${YEAR}.md"
 
   cat << EOF
 DRY RUN: Would execute the following actions:
@@ -162,7 +161,7 @@ DRY RUN: Would execute the following actions:
 $("${SCRIPT_DIR}/genvidthmd" "$vid" "$videourl" "$caption" "$doy")
 
 - Append to ${month}/${COMPACT_FILE} and $VIDEOS_FILE
-- Generate $monthmd with table of contents
+- Generate markdown for ${month} with table of contents
 EOF
 }
 
