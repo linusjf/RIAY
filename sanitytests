@@ -173,6 +173,7 @@ stash_apply_id() {
   if [ -n "$ref" ]; then
     echo "Applying $ref"
     git stash apply "$ref"
+    git stash drop "$ref"
   else
     echo "No stash found with ID: $id"
   fi
