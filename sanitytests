@@ -171,7 +171,6 @@ cleanup() {
     return
   fi
   print_header "Cleaning up..."
-  "${SCRIPT_DIR}/cleanup"
   git checkout "$orig_branch"
   git branch -D "testing"
   git restore .
@@ -185,6 +184,18 @@ orig_branch=$(git symbolic-ref --short -q HEAD || echo "detached")
 if [[ "$orig_branch" == "detached" ]]; then
   echo "In detached state" >&2
   exit 1
+fi
+
+# Check if testing branch exists
+if git show-ref --verify --quiet refs/heads/testing; then
+  read -p "Testing branch already exists. Delete it? [y/N] " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    git branch -D testing
+  else
+    echo "Aborting tests to preserve existing testing branch"
+    exit 1
+  fi
 fi
 
 git stash
