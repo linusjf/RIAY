@@ -76,7 +76,7 @@
   - [AI-Generated Summary: The Opened Heavens and Our Way In](#ai-generated-summary-the-opened-heavens-and-our-way-in)
 - [April 25,2025](#april-252025)
   - [Wedding of the Lamb](#wedding-of-the-lamb)
-  - [AI-Generated Summary: Jesus, The Divine Bridegroom](#ai-generated-summary-jesus-the-divine-bridegroom)
+  - [AI-Generated Summary: Wedding Feast of The Divine Bridegroom](#ai-generated-summary-wedding-feast-of-the-divine-bridegroom)
 
 <!-- tocstop -->
 
@@ -643,7 +643,7 @@ Let us continue this journey together, step by step. God bless you.
 
 [![Wedding of the Lamb](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day115.jpg)](https://youtu.be/ETjNvvTxQSQ "Wedding of the Lamb")
 
-### AI-Generated Summary: Jesus, The Divine Bridegroom
+### AI-Generated Summary: Wedding Feast of The Divine Bridegroom
 
 It is through the quiet avenues of prayer and meditation that we draw nearer to Jesus and His mother, Mary. This closeness is not merely for our own comfort, you understand, but becomes a channel through which grace flows into the world.
 

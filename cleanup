@@ -10,6 +10,7 @@ clean_backups() {
   echo "Cleaning up backup files..."
   rm -f ./*~        # Emacs backup files
   rm -f ./*.bak*    # Generic backup files
+  rm -f ./**/*.bak* # Generic backup files
   rm -f ./*.backup  # Alternative backup extension
   rm -f ./*.swp     # Vim swap files
   rm -f ./.DS_Store # macOS directory metadata
