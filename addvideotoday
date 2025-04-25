@@ -163,6 +163,7 @@ function main() {
     fi
 
     download_thumbnail "$thumbnail_url" "$image_path"
+    "${SCRIPT_DIR}/overlayicon" "$image_path"
     youtube_url="https://youtu.be/$video_id"
 
     backup_file "$markdown_file"
