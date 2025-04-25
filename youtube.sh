@@ -17,6 +17,38 @@ fi
 source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/curl.sh"
 
+if ! declare -p THUMBNAIL_SIZES &> /dev/null; then
+  # array of youtube thumbnail sizes in descending order. Not all may be available.
+  # cycle through the sizes to pick the largest
+  # available one.
+  # https://developers.google.com/youtube/v3/docs/thumbnails
+  readonly THUMBNAIL_SIZES=(
+    "maxres"
+    "standard"
+    "high"
+    "medium"
+    "default"
+  )
+fi
+
+if ! declare -f thumbnailurl > /dev/null; then
+  function thumbnailurl() {
+    require_commands curl grep
+    local vid="$1"
+    local api_url="https://www.googleapis.com/youtube/v3/videos?id=$vid&key=$YOUTUBE_API_KEY&part=snippet&fields=items(snippet(thumbnails(<size>(url))))"
+    for size in "${THUMBNAIL_SIZES[@]}"; do
+      sized_api_url="${api_url//<size>/$size}"
+      if url=$(
+        curl -s "$sized_api_url" | grep -oP 'https://[^"\}\]]*'
+      ); then
+        printf "%s\n" "$url"
+        return 0
+      fi
+    done
+    return 1
+  }
+fi
+
 if ! declare -f get_video_title > /dev/null; then
   function get_video_title() {
     require_commands jq
