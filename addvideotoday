@@ -188,6 +188,10 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
         version
         exit 0
         ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
       *) break ;;
     esac
   done
