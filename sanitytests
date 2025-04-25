@@ -166,7 +166,7 @@ create_real_stitch() {
 EOF
 }
 
-stash-apply-id() {
+stash_apply_id() {
   id="$1"
   entry=$(git stash list | grep "$id" | head -n1)
   ref=$(echo "$entry" | sed -n 's/^\(stash@{[0-9]\+}\).*/\1/p')
