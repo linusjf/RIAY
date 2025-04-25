@@ -119,3 +119,13 @@ if ! declare -f monthfromnumber > /dev/null; then
     esac
   }
 fi
+
+if ! declare -f monthnumberfrommonth > /dev/null; then
+  monthnumberfrommonth() {
+    require date
+    month_name="$1"
+    year="$2"
+    month_number=$(date -d "1 $month_name $year" +"%m")
+    echo "$month_number"
+  }
+fi

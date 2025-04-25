@@ -74,6 +74,9 @@
 - [April 24,2025](#april-242025)
   - [Baptized with Him](#baptized-with-him)
   - [AI-Generated Summary: The Opened Heavens and Our Way In](#ai-generated-summary-the-opened-heavens-and-our-way-in)
+- [April 25,2025](#april-252025)
+  - [Wedding of the Lamb](#wedding-of-the-lamb)
+  - [AI-Generated Summary: Jesus, The Divine Bridegroom](#ai-generated-summary-jesus-the-divine-bridegroom)
 
 <!-- tocstop -->
 
@@ -633,3 +636,41 @@ This tearing open of the heavens at the Jordan foreshadows the tearing of the Te
 Therefore, our own baptism is no mere symbol. It is our entry into Christ, the Ark of Salvation. By remaining united with Him, we find safety amidst the storms of life, journeying towards that perfect New Creation, the restored Eden, where we shall dwell eternally with the Father, Son, and Holy Spirit. The prayers we offer, asking for God's kingdom, seeking Mary's aid, and giving glory to the Trinity, are expressions of this journey, this life lived within the Ark.
 
 Let us continue this journey together, step by step. God bless you.
+
+## April 25,2025
+
+### Wedding of the Lamb
+
+[![Wedding of the Lamb](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day115.jpg)](https://youtu.be/ETjNvvTxQSQ "Wedding of the Lamb")
+
+### AI-Generated Summary: Jesus, The Divine Bridegroom
+
+It is through the quiet avenues of prayer and meditation that we draw nearer to Jesus and His mother, Mary. This closeness is not merely for our own comfort, you understand, but becomes a channel through which grace flows into the world.
+
+Let us consider one particular moment, often called the second luminous mystery: the Wedding Feast at Cana. A learned man of the last century, John Henry Newman (who journeyed from the Anglican Church to the Catholic faith and eventually became a Cardinal), offers a helpful lens through which to view this familiar story. He points us towards seeing this not just as any feast, but as the symbolic wedding feast of the Divine Bridegroom Himself.
+
+Consider the scene:
+
+- Jesus is among friends and family, at a celebration of marriage.
+- It is here He chooses to begin His public work, His ministry as God's messenger.
+- He performs His first miracle, turning water into wine, thereby showing a glimpse of His true glory.
+
+This event marks a profound shift. His previous life, thirty years lived largely in quiet obscurity, is ending. His new life, a three-year mission culminating in the Cross and Resurrection, is beginning.
+
+We see a hint of this transition in His words to His mother when she points out the lack of wine. His response, "What have I to do with thee?" sounds perhaps startling to our ears. Yet, Newman suggests we see it as marking this change in relationship. Though His love for His mother remained, His primary duty was shifting towards His divine mission. He had to, in a sense, leave His earthly home to embark on the work His Father sent Him to do.
+
+Think of an earthly wedding:
+
+- A father gives his daughter away, entrusting her care to another.
+- A son leaves his parents' home to cleave to his wife, forming a new primary bond.
+
+Newman applies this very human picture to Cana. Jesus, the Divine Bridegroom, is symbolically leaving His mother to unite Himself with His Bride – which is the Church, all of us who are baptized into His life. His public ministry becomes the work of this Bridegroom:
+
+- Providing for His Bride (like the wine at Cana, and later, the Eucharist).
+- Protecting His Bride.
+- Loving His Bride supremely.
+- Ultimately, laying down His life for His Bride.
+
+His entire mission is directed towards bringing this Bride, the Church, safely home to the eternal wedding banquet in Heaven.
+
+And so, when we pray – reciting the familiar words of the Our Father, the Hail Mary, the Glory Be – we are not merely repeating formulas. We are stepping into this grand story, connecting ourselves to the love of the Divine Bridegroom for His Church and drawing strength from the grace that flows from Him and His mother.

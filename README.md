@@ -544,7 +544,7 @@ Mary, reflecting Jesus, the "sun of righteousness," is seen as the Mirror of Jus
 
 ##### ROSARY IN A YEAR DAY 5 - A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson
 
-*Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 🥹 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria*🌹
+\_Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 🥹 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria_🌹
 
 ##### AI-Generated Summary: Mary, Mother Inviolate — Finding Peace in Mary's Rose Garden
 
@@ -615,7 +615,7 @@ Prayer is not simply a passive reception of grace, but an active, determined str
 
 ##### ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson
 
-*"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.🥹 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria*🙏🏽
+\_"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.🥹 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria_🙏🏽
 
 ##### AI-Generated Summary: The Rosary as a Source of Grace
 
@@ -942,7 +942,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3176,6 +3176,9 @@ This reflection, guided by St. Alphonsus's devotion, leads us naturally to praye
 - [April 24,2025](#april-242025)
   - [Baptized with Him](#baptized-with-him)
   - [AI-Generated Summary: The Opened Heavens and Our Way In](#ai-generated-summary-the-opened-heavens-and-our-way-in)
+- [April 25,2025](#april-252025)
+  - [Wedding of the Lamb](#wedding-of-the-lamb)
+  - [AI-Generated Summary: Jesus, The Divine Bridegroom](#ai-generated-summary-jesus-the-divine-bridegroom)
 
 <!-- tocstop -->
 
@@ -3735,6 +3738,44 @@ This tearing open of the heavens at the Jordan foreshadows the tearing of the Te
 Therefore, our own baptism is no mere symbol. It is our entry into Christ, the Ark of Salvation. By remaining united with Him, we find safety amidst the storms of life, journeying towards that perfect New Creation, the restored Eden, where we shall dwell eternally with the Father, Son, and Holy Spirit. The prayers we offer, asking for God's kingdom, seeking Mary's aid, and giving glory to the Trinity, are expressions of this journey, this life lived within the Ark.
 
 Let us continue this journey together, step by step. God bless you.
+
+#### April 25,2025
+
+##### Wedding of the Lamb
+
+[![Wedding of the Lamb](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day115.jpg)](https://youtu.be/ETjNvvTxQSQ "Wedding of the Lamb")
+
+##### AI-Generated Summary: Jesus, The Divine Bridegroom
+
+It is through the quiet avenues of prayer and meditation that we draw nearer to Jesus and His mother, Mary. This closeness is not merely for our own comfort, you understand, but becomes a channel through which grace flows into the world.
+
+Let us consider one particular moment, often called the second luminous mystery: the Wedding Feast at Cana. A learned man of the last century, John Henry Newman (who journeyed from the Anglican Church to the Catholic faith and eventually became a Cardinal), offers a helpful lens through which to view this familiar story. He points us towards seeing this not just as any feast, but as the symbolic wedding feast of the Divine Bridegroom Himself.
+
+Consider the scene:
+
+- Jesus is among friends and family, at a celebration of marriage.
+- It is here He chooses to begin His public work, His ministry as God's messenger.
+- He performs His first miracle, turning water into wine, thereby showing a glimpse of His true glory.
+
+This event marks a profound shift. His previous life, thirty years lived largely in quiet obscurity, is ending. His new life, a three-year mission culminating in the Cross and Resurrection, is beginning.
+
+We see a hint of this transition in His words to His mother when she points out the lack of wine. His response, "What have I to do with thee?" sounds perhaps startling to our ears. Yet, Newman suggests we see it as marking this change in relationship. Though His love for His mother remained, His primary duty was shifting towards His divine mission. He had to, in a sense, leave His earthly home to embark on the work His Father sent Him to do.
+
+Think of an earthly wedding:
+
+- A father gives his daughter away, entrusting her care to another.
+- A son leaves his parents' home to cleave to his wife, forming a new primary bond.
+
+Newman applies this very human picture to Cana. Jesus, the Divine Bridegroom, is symbolically leaving His mother to unite Himself with His Bride – which is the Church, all of us who are baptized into His life. His public ministry becomes the work of this Bridegroom:
+
+- Providing for His Bride (like the wine at Cana, and later, the Eucharist).
+- Protecting His Bride.
+- Loving His Bride supremely.
+- Ultimately, laying down His life for His Bride.
+
+His entire mission is directed towards bringing this Bride, the Church, safely home to the eternal wedding banquet in Heaven.
+
+And so, when we pray – reciting the familiar words of the Our Father, the Hail Mary, the Glory Be – we are not merely repeating formulas. We are stepping into this grand story, connecting ourselves to the love of the Divine Bridegroom for His Church and drawing strength from the grace that flows from Him and His mother.
 
 ## May
 

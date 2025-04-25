@@ -95,12 +95,12 @@ generate_files() {
   local caption="$2"
   local doy="$3"
   local videourl="https://youtu.be/${vid}"
-  local month monthmd fname formatdt md
+  local month fname formatdt md
 
   month="$(mfromdoy "${doy#0}")"
+  monthnumber="$(monthnumberfrommonth "${month}" "$YEAR")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(datefromdoy "${doy#0}")"
-  monthmd="${month}${YEAR}.md"
 
   md="$("${SCRIPT_DIR}/genvidthmd" "$vid" "$videourl" "$caption" "$doy")"
 
@@ -123,14 +123,12 @@ generate_files() {
 
   basename -- "$fname" >> "${month}/${COMPACT_FILE}"
 
-  if "${SCRIPT_DIR}/compact" "$month" >| "$monthmd"; then
-    markdown-toc-gen update "$monthmd" &> /dev/null
-    sed -i '/\S/,$!d' "$monthmd"
+  if "${SCRIPT_DIR}/genmonth" "$monthnumber" "$YEAR"; then
     printf "%s\n" "$vid" >> "$VIDEOS_FILE"
     echo "Successfully added video $vid"
     return 0
   else
-    echo "Error: Failed to generate $monthmd" >&2
+    echo "Error: Failed to generate file for month ${month}"
     mv "${month}/${COMPACT_FILE}.bak" "${month}/${COMPACT_FILE}"
     return 1
   fi
