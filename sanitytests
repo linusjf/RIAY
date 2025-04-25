@@ -6,6 +6,8 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "$SCRIPT_DIR/lockconfig.sh"
+lock_config_vars "$SCRIPT_DIR/config.env"
 readonly ADDVIDEO_SCRIPT="${SCRIPT_DIR}/addvideo"
 readonly GENMONTH_SCRIPT="${SCRIPT_DIR}/genmonth"
 readonly GENTOC_SCRIPT="${SCRIPT_DIR}/gentoc"
@@ -258,10 +260,14 @@ run_test 7 "Should show usage with --help" 0 "${GENMONTH_SCRIPT}" --help
 print_header "Test 8: Dry run mode"
 run_test 8 "Should run dry mode with -n" 0 "${GENMONTH_SCRIPT}" -n "$TEST_MONTH" "$TEST_YEAR"
 run_test 8 "Should run dry mode with --dry-run" 0 "${GENMONTH_SCRIPT}" --dry-run "$TEST_MONTH" "$TEST_YEAR"
+run_test 8 "Should run dry mode with -n" 0 "${GENMONTH_SCRIPT}" -n "$TEST_MONTH"
+run_test 8 "Should run dry mode with --dry-run" 0 "${GENMONTH_SCRIPT}" --dry-run "$TEST_MONTH"
 
 print_header "Test 9: Debug mode"
 run_test 9 "Should enable debug with -d" 0 "${GENMONTH_SCRIPT}" -d "$TEST_MONTH" "$TEST_YEAR" || true
 run_test 9 "Should enable debug with --debug" 0 "${GENMONTH_SCRIPT}" --debug "$TEST_MONTH" "$TEST_YEAR" || true
+run_test 9 "Should enable debug with -d" 0 "${GENMONTH_SCRIPT}" -d "$TEST_MONTH" || true
+run_test 9 "Should enable debug with --debug" 0 "${GENMONTH_SCRIPT}" --debug "$TEST_MONTH" || true
 
 print_header "Test 10: Invalid inputs"
 run_test 10 "Should reject invalid month (0)" 1 "${GENMONTH_SCRIPT}" 0 "$TEST_YEAR" || true
@@ -273,10 +279,15 @@ run_test 10 "Should reject non-numeric year" 1 "${GENMONTH_SCRIPT}" "$TEST_MONTH
 print_header "Test 11: File generation"
 run_test 11 "Should generate markdown file" 0 "${GENMONTH_SCRIPT}" "$TEST_MONTH" "$TEST_YEAR"
 run_test 11 "Generated file should exist" 0 test -f "January.md"
+rm -f January.md
+run_test 11 "Should generate markdown file" 0 "${GENMONTH_SCRIPT}" "$TEST_MONTH"
+run_test 11 "Generated file should exist" 0 test -f "January.md"
 
 print_header "Test 12: Append year option"
 run_test 12 "Should generate file with year when --append-year" 0 "${GENMONTH_SCRIPT}" --append-year "$TEST_MONTH" "$TEST_YEAR"
 run_test 12 "Year-appended file should exist" 0 test -f "January2023.md"
+run_test 12 "Should generate file with year when --append-year" 0 "${GENMONTH_SCRIPT}" --append-year "$TEST_MONTH"
+run_test 12 "Year-appended file should exist" 0 test -f "January${YEAR}.md"
 
 print_header "Running gentoc sanity tests"
 
