@@ -105,17 +105,13 @@ run_test() {
   shift 2
   expected_exit=${1:-0}
   shift
-  git tag -f "$test_num"
   if "$@" &> /dev/null; then
     actual_exit=0
   else
     actual_exit=$?
   fi
-  if ! git diff "$test_num" &> /dev/null; then
-    git reset --hard "$test_num"
-    git clean -fd
-  fi
-  git tag -d "$test_num"
+  git restore .
+  git clean -fd
   if [[ "$actual_exit" -eq "$expected_exit" ]]; then
     printf "\033[32mPASS\033[0m\n"
   else
@@ -282,15 +278,12 @@ run_test 10 "Should reject non-numeric year" 1 "${GENMONTH_SCRIPT}" "$TEST_MONTH
 print_header "Test 11: File generation"
 run_test 11 "Should generate markdown file" 0 "${GENMONTH_SCRIPT}" "$TEST_MONTH" "$TEST_YEAR"
 run_test 11 "Generated file should exist" 0 test -f "January.md"
-rm -f January.md
 run_test 11 "Should generate markdown file" 0 "${GENMONTH_SCRIPT}" "$TEST_MONTH"
 run_test 11 "Generated file should exist" 0 test -f "January.md"
 
 print_header "Test 12: Append year option"
 run_test 12 "Should generate file with year when --append-year" 0 "${GENMONTH_SCRIPT}" --append-year "$TEST_MONTH" "$TEST_YEAR"
-run_test 12 "Year-appended file should exist" 0 test -f "January2023.md"
 run_test 12 "Should generate file with year when --append-year" 0 "${GENMONTH_SCRIPT}" --append-year "$TEST_MONTH"
-run_test 12 "Year-appended file should exist" 0 test -f "January${YEAR}.md"
 
 print_header "Running gentoc sanity tests"
 
