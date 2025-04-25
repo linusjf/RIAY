@@ -176,6 +176,7 @@ cleanup() {
   git branch -D "testing"
   git restore .
   git clean -fd
+  git stash pop
 }
 
 trap cleanup EXIT
@@ -186,6 +187,7 @@ if [[ "$orig_branch" == "detached" ]]; then
   exit 1
 fi
 
+git stash
 git checkout -b "testing"
 
 # Main test execution
