@@ -125,11 +125,11 @@ main() {
         shift
         ;;
       *)
-        if [[ -z "$day_num" ]]; then
+        if [[ -z "${day_num:-}" ]]; then
           day_num="$1"
-        elif [[ -z "$image_path" ]]; then
+        elif [[ -z "${image_path:-}" ]]; then
           image_path="$1"
-        elif [[ -z "$caption" ]]; then
+        elif [[ -z "${caption:-}" ]]; then
           caption="$1"
         else
           err "Error: Too many arguments."
