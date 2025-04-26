@@ -8,6 +8,10 @@ shopt -s inherit_errexit
 
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
+
+overwrite_all=false
+skip_all=false
+
 readonly MONTHS=(January February March April May June July August September October November December)
 
 function version() {
@@ -23,10 +27,45 @@ function backup_file() {
 }
 
 function confirm_overwrite() {
-  local file="$1"
-  read -p "File $file already exists. Overwrite? [y/N] " -n 1 -r
+  local file="${1}"
+
+  # Check if overwrite_all is set
+  if [[ "${overwrite_all}" == true ]]; then
+    echo "Overwriting ${file} (Overwrite All is set)"
+    return 0
+  fi
+
+  # Check if skip_all is set
+  if [[ "${skip_all}" == true ]]; then
+    echo "Skipping ${file} (Skip All is set)"
+    return 1
+  fi
+
+  read -p "File ${file} already exists. Overwrite? [y/N/A/S] " -n 1 -r
   echo
-  [[ $REPLY =~ ^[Yy]$ ]]
+
+  case "${REPLY}" in
+    [Yy]*)
+      return 0 # True: Overwrite
+      ;;
+    [Nn]*)
+      return 1 # False: Don't overwrite
+      ;;
+    [Aa]*)
+      overwrite_all=true
+      echo "Overwrite All set for remaining files"
+      return 0 # True: Overwrite this file and all subsequent
+      ;;
+    [Ss]*)
+      skip_all=true
+      echo "Skip All set for remaining files"
+      return 1 # False: Skip this file and all subsequent
+      ;;
+    *)
+      echo "Invalid input. Skipping ${file}."
+      return 1 # Default: Don't overwrite
+      ;;
+  esac
 }
 
 function setup_directories() {
