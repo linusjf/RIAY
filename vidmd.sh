@@ -58,6 +58,20 @@ EOF
   }
 fi
 
+if ! declare -f usagegenvidthmd > /dev/null; then
+  function usagegenvidthmd() {
+    cat << EOF
+Usage: $0 vid vidurl caption [doy]
+Arguments:
+  vid      - YouTube video ID
+  vidurl   - YouTube video URL
+  caption  - Video title
+  doy      - (Optional) Day of the year (numeric)
+EOF
+    exit 1
+  }
+fi
+
 if ! declare -f playiconurl > /dev/null; then
   ######################################################################
   # Generate play icon URL for given day of year
@@ -183,6 +197,34 @@ if ! declare -f validate_caption > /dev/null; then
   ######################################################################
   validate_caption() {
     validate_input "$1" "$MAX_CAPTION_LENGTH" "Caption"
+  }
+fi
+
+if ! declare -f genvidthmd > /dev/null; then
+  function genvidthmd() {
+    # Validate arguments
+    if [[ $# -lt 3 ]]; then
+      usagegenvidthmd
+    fi
+    local vid="$1"
+    local vidurl="$2"
+    local caption="$3"
+    local doy="${4:-}"
+
+    # Validate video URL format
+    if [[ ! "$vidurl" =~ ^https?:// ]]; then
+      die "Error: Invalid video URL format"
+    fi
+
+    # Validate day of year if provided
+    if [[ -n "$doy" ]]; then
+      if ! isnumeric "$doy"; then
+        die "Error: 'doy' must be a numeric value"
+      fi
+      vidmdloc "$vid" "$vidurl" "$caption" "$doy"
+    else
+      vidmd "$vid" "$vidurl" "$caption"
+    fi
   }
 fi
 
