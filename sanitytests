@@ -14,6 +14,7 @@ readonly GENTOC_SCRIPT="${SCRIPT_DIR}/gentoc"
 readonly STITCH_SCRIPT="${SCRIPT_DIR}/stitch"
 readonly LINTALL_SCRIPT="${SCRIPT_DIR}/lintall"
 readonly ADDVIDEOTODAY_SCRIPT="${SCRIPT_DIR}/addvideotoday"
+readonly ADDIMGTODAY_SCRIPT="${SCRIPT_DIR}/addimgtoday"
 readonly TEST_MONTH=1
 readonly TEST_YEAR=2023
 readonly TEST_MD_FILE="test_toc.md"
@@ -40,6 +41,7 @@ Available tests:
   18-24  stitch script tests
   25-29  lintall script tests
   30-34  addvideotoday script tests
+  35-39  addimgtoday script tests
 
 Examples:
   $0 --from-test 6          # Run tests starting from test 6
@@ -378,5 +380,31 @@ run_test 33 "Should fail due to missing markdown file" 1 "${ADDVIDEOTODAY_SCRIPT
 
 print_header "Test 34: Basic execution"
 run_test 34 "Should run successfully" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "1"
+
+print_header "Running addimgtoday sanity tests"
+
+print_header "Test 35: Version flag"
+run_test 35 "Should show version with -v" 0 "${ADDIMGTODAY_SCRIPT}" -v
+run_test 35 "Should show version with --version" 0 "${ADDIMGTODAY_SCRIPT}" --version
+
+print_header "Test 36: Help/usage"
+run_test 36 "Should show usage with no args" 1 "${ADDIMGTODAY_SCRIPT}" || true
+run_test 36 "Should show usage with -h" 0 "${ADDIMGTODAY_SCRIPT}" -h
+run_test 36 "Should show usage with --help" 0 "${ADDIMGTODAY_SCRIPT}" --help
+
+print_header "Test 37: Invalid inputs"
+run_test 37 "Should reject invalid number of arguments" 1 "${ADDIMGTODAY_SCRIPT}" "1" || true
+run_test 37 "Should reject invalid day number" 1 "${ADDIMGTODAY_SCRIPT}" "invalid" "/path/to/image.jpg" "Caption" || true
+run_test 37 "Should reject invalid image path" 1 "${ADDIMGTODAY_SCRIPT}" "1" "invalid" "Caption" || true
+
+print_header "Test 38: Basic execution"
+curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null
+run_test 38 "Should run successfully" 0 "${ADDIMGTODAY_SCRIPT}" "1" "example.jpg" "Caption"
+
+print_header "Test 39: Debug mode"
+curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null
+run_test 39 "Should enable debug with -d" 0 "${ADDIMGTODAY_SCRIPT}" -d "1" "example.jpg" "Caption" || true
+curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null
+run_test 39 "Should enable debug with --debug" 0 "${ADDIMGTODAY_SCRIPT}" --debug "1" "example.jpg" "Caption" || true
 
 print_header "All tests completed successfully"
