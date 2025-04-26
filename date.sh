@@ -45,7 +45,7 @@ if ! declare -f mfromdoy > /dev/null; then
     require_commands date
     local day
     # convert number to base ten
-    day=$((${1}))
+    day=$((10#$1))
     [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
     date --date="jan 1 + $((day - 1)) days" +%B
   }
