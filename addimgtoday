@@ -1,72 +1,169 @@
 #!/usr/bin/env bash
 
-# Check args
-if [ $# -ne 3 ]; then
-  echo "Usage: $0 <day_number> <image_path> <caption>"
-  exit 1
-fi
+# Description: This script appends image markdown to a specified markdown file.
+# It validates inputs, resolves paths, and formats the markdown output.
 
-DAY_NUM="$1"
-IMAGE_PATH="$2"
-CAPTION="$3"
+set -euo pipefail
+shopt -s inherit_errexit
 
-# Resolve script directory
+# Constants
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME=$(basename "$0")
+readonly DEFAULT_EXIT_CODE=0
+
+# Source common functions
 if command -v realpath > /dev/null 2>&1; then
-  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+  readonly SCRIPT_DIR=$(dirname "$(realpath "$0")")
 else
-  SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
+  readonly SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)
 fi
+source "${SCRIPT_DIR}/util.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
+
+# Load configuration variables
 lock_config_vars "${SCRIPT_DIR}/config.env"
-# Validate env var
-if [ -z "$YEAR" ]; then
-  echo "Error: ${YEAR} environment variable not set."
+
+# Check for required environment variable
+if [[ -z "${YEAR:-}" ]]; then
+  err "Error: YEAR environment variable not set."
   exit 1
 fi
 
-# Validate image file exists
-if [ ! -f "$IMAGE_PATH" ]; then
-  echo "Error: Image file '$IMAGE_PATH' does not exist."
-  exit 1
+# Usage function
+usage() {
+  local exitcode="${1:-$DEFAULT_EXIT_CODE}"
+  cat << EOF
+Usage: $SCRIPT_NAME [OPTIONS] <day_number> <image_path> <caption>
+
+Appends image markdown to a specified markdown file.
+
+Arguments:
+  day_number      Day number (1-366)
+  image_path      Path to the image file (JPEG format)
+  caption         Caption for the image
+
+Options:
+  -h, --help      Show this help message and exit
+  -v, --version   Show script version and exit
+  -d, --debug     Enable debug mode
+
+Examples:
+  $SCRIPT_NAME 123 /path/to/image.jpg "My Image Caption"
+  $SCRIPT_NAME --help
+  $SCRIPT_NAME -v
+
+EOF
+  if [[ "$exitcode" -eq "$DEFAULT_EXIT_CODE" ]]; then
+    out "$(<&0)"
+  else
+    err "$(<&0)"
+  fi
+  exit "$exitcode"
+}
+
+# Function to get the script's version
+version() {
+  out "$VERSION"
+}
+
+# Function to append image markdown to the file
+append_image_markdown() {
+  local day_num="$1"
+  local image_path="$2"
+  local caption="$3"
+
+  # Format paths and strings
+  printf -v day_string "Day%03d" "$day_num"
+  local month=$(date -d "${YEAR}-01-01 +$((day_num - 1)) days" +"%B")
+  local markdown_file="$month/${day_string}.md"
+  local jpg_basename=$(basename "$image_path")
+
+  # Resolve GitHub repo
+  local git_url=$(git remote get-url origin 2> /dev/null)
+  local github_repo
+  if [[ "$git_url" == git@github.com:* ]]; then
+    github_repo=$(echo "$git_url" | sed -E 's|git@github.com:([^\.]+)(\.git)?|\1|')
+  elif [[ "$git_url" == https://github.com/* ]]; then
+    github_repo=$(echo "$git_url" | sed -E 's|https://github.com/([^\.]+)(\.git)?|\1|')
+  else
+    err "Error: Could not determine GitHub repo from remote: $git_url"
+    return 1
+  fi
+
+  # Verify markdown file exists
+  if [[ ! -f "$markdown_file" ]]; then
+    err "Error: Markdown file '$markdown_file' does not exist."
+    return 1
+  fi
+
+  # Append image markdown
+  {
+    out ""
+    out "### ${caption}"
+    out ""
+    out "![${caption}](https://raw.githubusercontent.com/${github_repo}/refs/heads/main/${month}/jpgs/${jpg_basename})"
+  } >> "$markdown_file"
+
+  out "Appended image markdown to $markdown_file"
+  return 0
+}
+
+# Main function
+main() {
+  local day_num image_path caption
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -h | --help)
+        usage
+        ;;
+      -v | --version)
+        version
+        exit 0
+        ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      *)
+        if [[ -z "$day_num" ]]; then
+          day_num="$1"
+        elif [[ -z "$image_path" ]]; then
+          image_path="$1"
+        elif [[ -z "$caption" ]]; then
+          caption="$1"
+        else
+          err "Error: Too many arguments."
+          usage 1
+        fi
+        shift
+        ;;
+    esac
+  done
+
+  # Check if all arguments are provided
+  if [[ -z "${day_num:-}" || -z "${image_path:-}" || -z "${caption:-}" ]]; then
+    err "Error: Missing arguments."
+    usage 1
+  fi
+
+  # Validate image file exists
+  if [[ ! -f "$image_path" ]]; then
+    err "Error: Image file '$image_path' does not exist."
+    exit 1
+  fi
+
+  # Validate JPEG format using 'file' command
+  local mime_type=$(file --mime-type -b "$image_path")
+  if [[ "$mime_type" != "image/jpeg" ]]; then
+    err "Error: '$image_path' is not a valid JPEG file (detected: $mime_type)."
+    exit 1
+  fi
+
+  # Call the function to append the markdown
+  append_image_markdown "$day_num" "$image_path" "$caption"
+}
+
+# Call the main function if the script is executed directly
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
 fi
-
-# Validate JPEG format using 'file' command
-MIME_TYPE=$(file --mime-type -b "$IMAGE_PATH")
-if [[ "$MIME_TYPE" != "image/jpeg" ]]; then
-  echo "Error: '$IMAGE_PATH' is not a valid JPEG file (detected: $MIME_TYPE)."
-  exit 1
-fi
-
-# Resolve GitHub repo
-GIT_URL=$(git remote get-url origin 2> /dev/null)
-if [[ "$GIT_URL" == git@github.com:* ]]; then
-  GITHUB_REPO=$(echo "$GIT_URL" | sed -E 's|git@github.com:([^\.]+)(\.git)?|\1|')
-elif [[ "$GIT_URL" == https://github.com/* ]]; then
-  GITHUB_REPO=$(echo "$GIT_URL" | sed -E 's|https://github.com/([^\.]+)(\.git)?|\1|')
-else
-  echo "Error: Could not determine GitHub repo from remote: $GIT_URL"
-  exit 1
-fi
-
-# Format paths and strings
-printf -v DAY_STRING "Day%03d" "$DAY_NUM"
-MONTH=$(date -d "${YEAR}-01-01 +$((DAY_NUM - 1)) days" +"%B")
-
-MARKDOWN_FILE="$MONTH/${DAY_STRING}.md"
-JPG_BASENAME="$(basename "$IMAGE_PATH")"
-
-# Verify markdown file exists
-if [ ! -f "$MARKDOWN_FILE" ]; then
-  echo "Error: Markdown file '$MARKDOWN_FILE' does not exist."
-  exit 1
-fi
-
-# Append image markdown
-{
-  echo
-  echo "### ${CAPTION}"
-  echo
-  echo "![${CAPTION}](https://raw.githubusercontent.com/${GITHUB_REPO}/refs/heads/main/${MONTH}/jpgs/${JPG_BASENAME})"
-} >> "$MARKDOWN_FILE"
-
-echo "Appended image markdown to $MARKDOWN_FILE"
