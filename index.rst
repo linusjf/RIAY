@@ -10,7 +10,7 @@ Rosary In A Year (RIAY) 2025
    :maxdepth: 2
    :caption: Contents:
 
-   redme.md
+   index.md
    January.md
    February.md
    March.md
