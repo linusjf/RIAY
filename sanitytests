@@ -154,7 +154,7 @@ create_real_stitch() {
   cat << EOF > "${TEST_STITCH_CONTENT}"
 # README
 
-- [RIAY](redme.md)
+- [RIAY](start.md)
 - [January](January.md)
 - [February](February.md)
 - [March](March.md)
