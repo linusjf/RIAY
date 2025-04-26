@@ -942,7 +942,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3922,7 +3922,7 @@ RIAY January 2025
 ```
 
 `markdown-toc-gen` won't generate the table of contents
-for the monthly markdown (in this case, `January2025.md`)
+for the monthly markdown (in this case, `January.md`)
 without the mandatory `<-- toc -->` and `<!-- tocstop -->` comments header.
 
 You can replace the top-level markdown header
@@ -4092,17 +4092,21 @@ Results:
 
 - month index - 1 - 12
 
-- four digit year - 20XX
+- optional four digit year - 20XX
 
   Example:
 
   ```bash
   ./genmonth 01 2025
+  OR
+
+  ./genmonth 01
+  # The year value will be picked from the environment variable YEAR
   ```
 
   Results:
 
-  Updates the `January2025.md` file with the sharing text added to the `Day010.md` file.
+  Updates the `January.md` file with the sharing text added to the `Day010.md` file.
 
 You can add sharing to other days as well in a similar fashion.
 Don't forget to execute `genmonth` with the appropriate month index for that day.
@@ -4144,19 +4148,19 @@ Results:
    ```markdown
    # README
 
-   - [RIAY](redme.md)
-   - [January 2025](January2025.md)
-   - [February 2025](February2025.md)
-   - [March 2025](March2025.md)
-   - [April 2025](April2025.md)
-   - [May 2025](May2025.md)
-   - [June 2025](June2025.md)
-   - [July 2025](July2025.md)
-   - [August 2025](August2025.md)
-   - [September 2025](September2025.md)
-   - [October 2025](October2025.md)
-   - [November 2025](November2025.md)
-   - [December 2025](December2025.md)
+   - [RIAY](start.md)
+   - [January](January.md)
+   - [February](February.md)
+   - [March](March.md)
+   - [April](April.md)
+   - [May](May.md)
+   - [June](June.md)
+   - [July](July.md)
+   - [August](August.md)
+   - [September](September.md)
+   - [October](October.md)
+   - [November](November.md)
+   - [December](December.md)
    ```
 
    Include or exclude any files you need or don't need.
