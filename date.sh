@@ -42,7 +42,7 @@ if ! declare -f mfromdoy > /dev/null; then
   ######################################################################
   mfromdoy() {
     isnumeric "$1" || die "$1 is not numeric"
-    require date
+    require_commands date
     local day
     # convert number to base ten
     day=$((${1}))
@@ -62,7 +62,7 @@ if ! declare -f datefromdoy > /dev/null; then
   ######################################################################
   datefromdoy() {
     isnumeric "$1" || die "$1 is not numeric"
-    require date
+    require_commands date
     local day
     # convert number to base ten
     day=$((${1}))
@@ -81,7 +81,7 @@ if ! declare -f monthfromnumber > /dev/null; then
   # Returns: None (exits with status 1 on error)
   ######################################################################
   monthfromnumber() {
-    require date
+    require_commands date
     case $1 in
       [1-9] | 1[0-2]) date -d "${1}/01" +%B ;;
       0[1-9]) date -d "${1}/01" +%B ;;
@@ -92,7 +92,7 @@ fi
 
 if ! declare -f monthnumberfrommonth > /dev/null; then
   monthnumberfrommonth() {
-    require date
+    require_commands date
     month_name="$1"
     year="$2"
     month_number=$(date -d "1 $month_name $year" +"%m")
