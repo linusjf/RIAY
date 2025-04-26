@@ -15,6 +15,7 @@ readonly STITCH_SCRIPT="${SCRIPT_DIR}/stitch"
 readonly LINTALL_SCRIPT="${SCRIPT_DIR}/lintall"
 readonly ADDVIDEOTODAY_SCRIPT="${SCRIPT_DIR}/addvideotoday"
 readonly ADDIMGTODAY_SCRIPT="${SCRIPT_DIR}/addimgtoday"
+readonly CLEANUP_SCRIPT="${SCRIPT_DIR}/cleanup"
 readonly TEST_MONTH=1
 readonly TEST_YEAR=2023
 readonly TEST_MD_FILE="test_toc.md"
@@ -42,6 +43,7 @@ Available tests:
   25-29  lintall script tests
   30-34  addvideotoday script tests
   35-39  addimgtoday script tests
+  40-44  cleanup script tests
 
 Examples:
   $0 --from-test 6          # Run tests starting from test 6
@@ -406,5 +408,27 @@ curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.j
 run_test 39 "Should enable debug with -d" 0 "${ADDIMGTODAY_SCRIPT}" -d "1" "example.jpg" "Caption" || true
 curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null
 run_test 39 "Should enable debug with --debug" 0 "${ADDIMGTODAY_SCRIPT}" --debug "1" "example.jpg" "Caption" || true
+
+print_header "Running cleanup sanity tests"
+
+print_header "Test 40: Help/usage"
+run_test 40 "Should show usage with no args" 0 "${CLEANUP_SCRIPT}"
+run_test 40 "Should show usage with -h" 0 "${CLEANUP_SCRIPT}" -h
+run_test 40 "Should show usage with --help" 0 "${CLEANUP_SCRIPT}" --help
+
+print_header "Test 41: Basic execution"
+touch testfile.tmp
+run_test 41 "Should run successfully" 0 "${CLEANUP_SCRIPT}"
+rm -f testfile.tmp
+
+print_header "Test 42: Backup cleanup"
+touch testfile~
+touch testfile.bak
+touch testfile.backup
+run_test 42 "Should clean up backup files" 0 "${CLEANUP_SCRIPT}" --backups
+rm -f testfile~ testfile.bak testfile.backup
+
+print_header "Test 43: Unknown option"
+run_test 43 "Should show unknown option message" 1 "${CLEANUP_SCRIPT}" --invalidoption
 
 print_header "All tests completed successfully"
