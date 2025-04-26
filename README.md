@@ -942,7 +942,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3179,6 +3179,9 @@ This reflection, guided by St. Alphonsus's devotion, leads us naturally to praye
 - [April 25,2025](#april-252025)
   - [Wedding of the Lamb](#wedding-of-the-lamb)
   - [AI-Generated Summary: Wedding Feast of The Divine Bridegroom](#ai-generated-summary-wedding-feast-of-the-divine-bridegroom)
+- [April 26,2025](#april-262025)
+  - [Continued Through You](#continued-through-you)
+  - [AI-Generated Summary: The Indwelling Kingdom and the Call to Conversion](#ai-generated-summary-the-indwelling-kingdom-and-the-call-to-conversion)
 
 <!-- tocstop -->
 
@@ -3776,6 +3779,24 @@ Newman applies this very human picture to Cana. Jesus, the Divine Bridegroom, is
 His entire mission is directed towards bringing this Bride, the Church, safely home to the eternal wedding banquet in Heaven.
 
 And so, when we pray – reciting the familiar words of the Our Father, the Hail Mary, the Glory Be – we are not merely repeating formulas. We are stepping into this grand story, connecting ourselves to the love of the Divine Bridegroom for His Church and drawing strength from the grace that flows from Him and His mother.
+
+#### April 26,2025
+
+##### Continued Through You
+
+[![Continued Through You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day116.jpg)](https://youtu.be/JQzrZo1nR1k "Continued Through You")
+
+##### AI-Generated Summary: The Indwelling Kingdom and the Call to Conversion
+
+Prayer and meditation deepen our relationship with Jesus and Mary, becoming a wellspring of grace for the world. This reflection, drawing upon St. John Eudes’ _The Life and the Kingdom of Jesus_, contemplates the third Luminous Mystery: the proclamation of the Kingdom and the call to conversion.
+
+St. John Eudes (1601-1680), a tireless servant of God, journeyed as a parish missionary, founded the Sisters of Our Lady of Charity of the Refuge (now the Good Shepherd Sisters) to minister to vulnerable women, and established six seminaries in France, answering the Council of Trent’s call for improved priestly formation. He also championed devotion to the Sacred Hearts of Jesus and Mary.
+
+The core of this reflection lies in the indwelling presence of Christ. As St. John Eudes teaches, the Son of God desires to perfect and complete His mysteries within each of us, fulfilling within our souls the divine life He eternally shares with the Father. This is not a metaphor, but a mystical reality. Just as the Word became flesh and dwelt among us, so too does He seek to dwell within us, transforming us from within by the power of His grace.
+
+This echoes the very heart of the Gospel message: to know, love, and proclaim Jesus. It is a call to radical discipleship, to place Christ at the center of our lives and respond with all our being. This transformation is not achieved through our own strength, but through the grace of God, freely given and received through prayer, most notably the Our Father and the Hail Mary.
+
+Finally, as all earthly communions must end, so too does this prayer. Yet, the spirit of fellowship and shared devotion persists, a seed planted in the hope of future prayer together, a testament to the enduring power of faith. Just as the Kingdom of God is both present and yet to come, so too is our journey with Christ, a continuous unfolding of grace and transformation.
 
 ## May
 

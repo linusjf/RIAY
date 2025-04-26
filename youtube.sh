@@ -6,11 +6,11 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-if [[ -z "${SCRIPT_DIR:-}" ]]; then
+if [[ -z "${SCRIPT_DIR:-""}" ]]; then
   if command -v realpath > /dev/null 2>&1; then
-    SCRIPT_DIR=$(dirname "$(realpath "$0")")
+    readonly SCRIPT_DIR=$(dirname "$(realpath "$0")")
   else
-    SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)
+    readonly SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)
   fi
 fi
 

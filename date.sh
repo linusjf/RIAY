@@ -6,7 +6,7 @@
 
 set -euo pipefail
 shopt -s inherit_errexit
-if [[ -z "$SCRIPT_DIR" ]]; then
+if [[ -z "${SCRIPT_DIR:-""}" ]]; then
   if command -v realpath > /dev/null 2>&1; then
     SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else
@@ -14,38 +14,8 @@ if [[ -z "$SCRIPT_DIR" ]]; then
   fi
 fi
 
-if ! declare -f die > /dev/null; then
-  ######################################################################
-  # Display error message and exit with failure status
-  # Globals: None
-  # Arguments:
-  #   $1 - Error message
-  # Outputs: Error message to STDERR
-  # Returns: None (exits with status 1)
-  ######################################################################
-  die() {
-    printf "%s\n" "$1" >&2
-    exit 1
-  }
-fi
-
-if ! declare -f require > /dev/null; then
-  ######################################################################
-  # Verify required commands are available
-  # Globals: None
-  # Arguments:
-  #   $@ - Commands to check
-  # Outputs: Error message to STDERR if command missing
-  # Returns: None (exits with status 1 if command missing)
-  ######################################################################
-  require() {
-    for cmd in "$@"; do
-      if ! command -v "$cmd" > /dev/null 2>&1; then
-        die "Required command '$cmd' not found"
-      fi
-    done
-  }
-fi
+source "${SCRIPT_DIR}/require.sh"
+source "${SCRIPT_DIR}/util.sh"
 
 if ! declare -f isnumeric > /dev/null; then
   ######################################################################

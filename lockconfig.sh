@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-if [[ -z "$SCRIPT_DIR" ]]; then
+if [[ -z "${SCRIPT_DIR:-""}" ]]; then
   if command -v realpath > /dev/null 2>&1; then
     SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else

@@ -11,7 +11,7 @@ shopt -s inherit_errexit
 readonly VIDEO_ID_LENGTH=11
 readonly MAX_CAPTION_LENGTH=100
 # Source utility functions
-if [[ -z "${SCRIPT_DIR:-}" ]]; then
+if [[ -z "${SCRIPT_DIR:-""}" ]]; then
   readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 fi
 source "${SCRIPT_DIR}/require.sh"
