@@ -1,6 +1,6 @@
 # README
 
-- [RIAY](index.md)
+- [RIAY](start.md)
 - [January](January.md)
 - [February](February.md)
 - [March](March.md)
