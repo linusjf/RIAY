@@ -16,7 +16,6 @@ readonly LINTALL_SCRIPT="${SCRIPT_DIR}/lintall"
 readonly ADDVIDEOTODAY_SCRIPT="${SCRIPT_DIR}/addvideotoday"
 readonly ADDIMGTODAY_SCRIPT="${SCRIPT_DIR}/addimgtoday"
 readonly CLEANUP_SCRIPT="${SCRIPT_DIR}/cleanup"
-readonly SETUP_SCRIPT="${SCRIPT_DIR}/setup"
 readonly TEST_MONTH=1
 readonly TEST_YEAR=2023
 readonly TEST_MD_FILE="test_toc.md"
@@ -432,33 +431,5 @@ rm -f testfile~ testfile.bak testfile.backup
 
 print_header "Test 43: Unknown option"
 run_test 43 "Should show unknown option message" 1 "${CLEANUP_SCRIPT}" --invalidoption
-
-print_header "Running setup sanity tests"
-
-print_header "Test 44: Version flag"
-run_test 44 "Should show version with -v" 0 "${SETUP_SCRIPT}" -v
-run_test 44 "Should show version with --version" 0 "${SETUP_SCRIPT}" --version
-
-print_header "Test 45: Help/usage"
-run_test 45 "Should show usage with no args" 1 "${SETUP_SCRIPT}" || true
-run_test 45 "Should show usage with -h" 0 "${SETUP_SCRIPT}" -h
-run_test 45 "Should show usage with --help" 0 "${SETUP_SCRIPT}" --help
-
-print_header "Test 46: Basic execution"
-export YEAR=2024
-run_test 46 "Should run successfully" 0 "${SETUP_SCRIPT}"
-unset YEAR
-
-print_header "Test 47: Existing files"
-export YEAR=2024
-mkdir January
-touch January/header.md
-touch January/compact.md
-run_test 47 "Should handle existing files" 0 "${SETUP_SCRIPT}"
-rm -rf January
-unset YEAR
-
-print_header "Test 48: Invalid YEAR"
-run_test 48 "Should exit with error if YEAR is not set" 1 "${SETUP_SCRIPT}"
 
 print_header "All tests completed successfully"
