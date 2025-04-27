@@ -89,7 +89,7 @@ generate_files() {
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(datefromdoy "${doy#0}")"
 
-  md="$("${SCRIPT_DIR}/genvidthmd" "$vid" "$videourl" "$caption" "$doy")"
+  md="$(genvidthmd "$vid" "$videourl" "$caption" "$doy")"
 
   if [[ -f "$fname" ]] && ! mv "$fname" "${fname}.bak"; then
     echo "Warning: Failed to backup ${fname}" >&2
@@ -145,7 +145,7 @@ DRY RUN: Would execute the following actions:
 
 ### $caption
 
-$("${SCRIPT_DIR}/genvidthmd" "$vid" "$videourl" "$caption" "$doy")
+$(genvidthmd "$vid" "$videourl" "$caption" "$doy")
 
 - Append to ${month}/${COMPACT_FILE} and $VIDEOS_FILE
 - Generate markdown for ${month} with table of contents
