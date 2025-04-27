@@ -11,18 +11,6 @@ readonly SUCCESS=0
 readonly FAILURE=1
 
 ######################################################################
-# Print error message and exit
-# Globals: None
-# Arguments: error message
-# Outputs: Error message to STDERR
-# Returns: None (exits with FAILURE status)
-######################################################################
-die() {
-  printf "Error: %s\n" "$1" >&2
-  exit "${FAILURE}"
-}
-
-######################################################################
 # Display usage information
 # Globals: None
 # Arguments: None
@@ -133,6 +121,7 @@ main() {
   # Source require.sh
   readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
   source "${SCRIPT_DIR}/require.sh"
+  source "${SCRIPT_DIR}/util.sh"
   require_commands gm rm mv
 
   if ! is_valid_dir "${dir}"; then
