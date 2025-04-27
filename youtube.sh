@@ -47,6 +47,7 @@ if ! declare -f thumbnailurl > /dev/null; then
     done
     return 1
   }
+  export -f thumbnailurl
 fi
 
 if ! declare -f get_video_title > /dev/null; then
@@ -66,6 +67,7 @@ if ! declare -f get_video_title > /dev/null; then
     fi
     echo "$response" | jq -r '.items[0].snippet.title'
   }
+  export -f get_video_title
 fi
 
 if ! declare -f download_captions > /dev/null; then
@@ -83,6 +85,7 @@ if ! declare -f download_captions > /dev/null; then
       -o "${prefix}${video_id}.%(ext)s" \
       "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1
   }
+  export -f download_captions
 fi
 
 if ! declare -f extract_text_from_vtt > /dev/null; then
@@ -103,6 +106,7 @@ if ! declare -f extract_text_from_vtt > /dev/null; then
     res="${res:1:-1}"
     echo -n "$res"
   }
+  export -f extract_text_from_vtt
 fi
 
 if ! declare -f check_video_exists > /dev/null; then
@@ -119,6 +123,7 @@ if ! declare -f check_video_exists > /dev/null; then
     http_status=$(curl -s -o /dev/null -w "%{http_code}" "$url")
     [[ "$http_status" == "200" ]]
   }
+  export -f check_video_exists
 fi
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
