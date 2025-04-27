@@ -25,13 +25,13 @@ else
   readonly COLOR_NC=''
 fi
 
-# --- Utility Functions ---
-function out() { printf "%b\n" "$*"; }
-function err() { >&2 printf "%b\n" "$*"; }
-function die() {
-  >&2 printf "%b\n" "$*"
-  exit 1
-}
+if [[ -z "${SCRIPT_DIR:-}" ]]; then
+  readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+fi
+# Source util.sh if available
+if [[ -f "${SCRIPT_DIR}/util.sh" ]]; then
+  source "${SCRIPT_DIR}/util.sh"
+fi
 
 #######################################
 # Print error message to STDERR
@@ -43,9 +43,12 @@ function die() {
 # Outputs:
 #   Writes colored error message to STDERR
 #######################################
-function print_error() {
-  err "${COLOR_RED}Error: ${1}${COLOR_NC}"
-}
+if ! declare -f print_error > /dev/null; then
+  function print_error() {
+    err "${COLOR_RED}Error: ${1}${COLOR_NC}"
+  }
+  export -f print_error
+fi
 
 #######################################
 # Print info message to STDOUT if verbose
@@ -58,9 +61,12 @@ function print_error() {
 # Outputs:
 #   Writes colored info message to STDOUT if verbose enabled
 #######################################
-function print_info() {
-  [[ "${verbose:=false}" == true ]] && out "${COLOR_GREEN}Info: $1${COLOR_NC}" || true
-}
+if ! declare -f print_info > /dev/null; then
+  function print_info() {
+    [[ "${verbose:=false}" == true ]] && out "${COLOR_GREEN}Info: $1${COLOR_NC}" || true
+  }
+  export -f print_info
+fi
 
 #######################################
 # Print warning message to STDERR
@@ -72,9 +78,12 @@ function print_info() {
 # Outputs:
 #   Writes colored warning message to STDERR
 #######################################
-function print_warning() {
-  err "${COLOR_YELLOW}Warning: $1${COLOR_NC}"
-}
+if ! declare -f print_warning > /dev/null; then
+  function print_warning() {
+    err "${COLOR_YELLOW}Warning: $1${COLOR_NC}"
+  }
+  export -f print_warning
+fi
 
 #######################################
 # Print debug message to STDOUT if debug
@@ -87,9 +96,12 @@ function print_warning() {
 # Outputs:
 #   Writes colored debug message to STDOUT if debug enabled
 #######################################
-function print_debug() {
-  [[ $- == *x* ]] && out "${COLOR_BLUE}Debug: $1${COLOR_NC}" || true
-}
+if ! declare -f print_debug > /dev/null; then
+  function print_debug() {
+    [[ $- == *x* ]] && out "${COLOR_BLUE}Debug: $1${COLOR_NC}" || true
+  }
+  export -f print_debug
+fi
 
 #######################################
 # Print success message to STDOUT
@@ -101,11 +113,12 @@ function print_debug() {
 # Outputs:
 #   Writes colored success message to STDOUT
 #######################################
-function print_success() {
-  out "${COLOR_GREEN}Success: $1${COLOR_NC}"
-}
-
-export -f out err die print_error print_info print_warning print_debug print_success
+if ! declare -f print_success > /dev/null; then
+  function print_success() {
+    out "${COLOR_GREEN}Success: $1${COLOR_NC}"
+  }
+  export -f print_success
+fi
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   debug=true
