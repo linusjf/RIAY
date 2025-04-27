@@ -111,11 +111,21 @@ if ! declare -f daycount > /dev/null; then
     year="$1"
 
     # Check if year is a leap year
-    if (((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))); then
+    if isleapyear "$year"; then
       echo 366
     else
       echo 365
     fi
   }
   export -f daycount
+fi
+
+if ! declare -f isleapyear > /dev/null; then
+  isleapyear() {
+    year="$1"
+
+    ((year % 4 == 0 && year % 100 != 0)) \
+      || ((year % 400 == 0))
+  }
+  export -f isleapyear
 fi
