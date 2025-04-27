@@ -7,6 +7,8 @@ set -o pipefail
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="${0##*/}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "${SCRIPT_DIR}/vidmd.sh"
+source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
 lock_config_vars "${SCRIPT_DIR}/config.env"
 
@@ -38,15 +40,7 @@ function log() {
 }
 
 function validate_environment() {
-  local script_dir
-  script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
-
-  readonly OVERLAY_SCRIPT="${script_dir}/overlayicon"
-
-  if [[ ! -x "$OVERLAY_SCRIPT" ]]; then
-    err "Error: 'overlayicon' not found or not executable at $OVERLAY_SCRIPT"
-    return 1
-  fi
+  require_commands parallel find tee
 }
 
 function main() {
@@ -54,8 +48,10 @@ function main() {
 
   validate_environment || return 1
 
-  find "$root_dir" -type f -regextype posix-extended -regex '.*/Day[0-9]{3}\.jpg' \
-    -print0 | xargs -0 -n1 -P4 -I{} "$OVERLAY_SCRIPT" "{}"
+  export -f overlayicon
+
+  mapfile -t imgfiles < <(find "$root_dir" -type f -regextype posix-extended -regex '.*/Day[0-9]{3}\.jpg' -print)
+  parallel overlayicon ::: "${imgfiles[@]}"
 }
 
 while [[ $# -gt 0 ]]; do

@@ -38,6 +38,7 @@ Usage: $0 vidid vidurl caption
 EOF
     exit 1
   }
+  export -f usagevidmd
 fi
 
 if ! declare -f usagevidmdloc > /dev/null; then
@@ -58,6 +59,7 @@ Usage: $0 vidid vidurl caption doy
 EOF
     exit 1
   }
+  export -f usagevidmdloc
 fi
 
 if ! declare -f usagegenvidthmd > /dev/null; then
@@ -72,6 +74,7 @@ Arguments:
 EOF
     exit 1
   }
+  export -f usagegenvidthmd
 fi
 
 if ! declare -f playiconurl > /dev/null; then
@@ -93,6 +96,7 @@ if ! declare -f playiconurl > /dev/null; then
     printf "https://raw.githubusercontent.com/%s/%s/refs/heads/main/%s/jpgs/Day%s.jpg\n" \
       "${GITHUB_USERNAME}" "$root" "$month" "$doy_padded"
   }
+  export -f playiconurl
 fi
 
 if ! declare -f downloadthumbnail > /dev/null; then
@@ -111,6 +115,7 @@ if ! declare -f downloadthumbnail > /dev/null; then
     url="$(thumbnailurl "$1")" || return 1
     curl --silent "$url" --output "$2"
   }
+  export -f playiconurl
 fi
 
 if ! declare -f vidmd > /dev/null; then
@@ -130,6 +135,7 @@ if ! declare -f vidmd > /dev/null; then
     imgurl="$(thumbnailurl "$vidid")" || die "Error: Thumbnails unverifiable or absent"
     printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
   }
+  export -f vidmd
 fi
 
 if ! declare -f vidmdloc > /dev/null; then
@@ -150,6 +156,7 @@ if ! declare -f vidmdloc > /dev/null; then
     imgurl="$(playiconurl "${doy#0}")"
     printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
   }
+  export -f vidmdloc
 fi
 
 if ! declare -f validate_input > /dev/null; then
@@ -169,6 +176,7 @@ if ! declare -f validate_input > /dev/null; then
     [[ ${#value} -gt "$max_length" ]] && die "Error: $error_message too long. Maximum $max_length characters"
     return 0
   }
+  export -f validate_input
 fi
 
 if ! declare -f validate_vid > /dev/null; then
@@ -185,6 +193,7 @@ if ! declare -f validate_vid > /dev/null; then
     [[ "$1" =~ ^[a-zA-Z0-9_-]{$VIDEO_ID_LENGTH}$ ]] || die "Invalid video ID $1. Expected $VIDEO_ID_LENGTH characters"
     validate_input "$1" "$VIDEO_ID_LENGTH" "Video ID"
   }
+  export -f validate_vid
 fi
 
 if ! declare -f validate_caption > /dev/null; then
@@ -200,6 +209,7 @@ if ! declare -f validate_caption > /dev/null; then
   validate_caption() {
     validate_input "$1" "$MAX_CAPTION_LENGTH" "Caption"
   }
+  export -f validate_caption
 fi
 
 if ! declare -f genvidthmd > /dev/null; then
@@ -228,6 +238,7 @@ if ! declare -f genvidthmd > /dev/null; then
       vidmd "$vid" "$vidurl" "$caption"
     fi
   }
+  export -f genvidthmd
 fi
 
 ######################################################################
@@ -237,6 +248,7 @@ if ! declare -f has_play_icon > /dev/null; then
   has_play_icon() {
     exiftool -Comment "$1" 2> /dev/null | grep -q "${ICON_COMMENT}"
   }
+  export -f has_play_icon
 fi
 
 ######################################################################
@@ -246,6 +258,7 @@ if ! declare -f is_jpeg_file > /dev/null; then
   is_jpeg_file() {
     file "$1" | grep -q 'JPEG'
   }
+  export -f is_jpeg_file
 fi
 
 if ! declare -f overlayicon > /dev/null; then
@@ -272,7 +285,7 @@ if ! declare -f overlayicon > /dev/null; then
     # Check if already processed
     if has_play_icon "${file_path}"; then
       echo "File '${file_path}' already has play icon overlay"
-      exit "${SUCCESS}"
+      return 0
     fi
 
     # Check overlay icon exists
@@ -301,8 +314,8 @@ if ! declare -f overlayicon > /dev/null; then
     if ! exiftool -overwrite_original -Comment="${ICON_COMMENT}" "${file_path}" &> /dev/null; then
       err "Failed to add comment in exif data to ${file_path}"
     fi
-
   }
+  export -f overlayicon
 fi
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

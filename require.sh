@@ -24,6 +24,7 @@ if ! declare -f require_commands > /dev/null; then
       fi
     done
   }
+  export -f require_commands
 fi
 
 if ! declare -f require_vars > /dev/null; then
@@ -42,6 +43,7 @@ if ! declare -f require_vars > /dev/null; then
       fi
     done
   }
+  export -f require_vars
 fi
 
 if ! declare -f require_functions > /dev/null; then
@@ -60,4 +62,5 @@ if ! declare -f require_functions > /dev/null; then
       fi
     done
   }
+  export -f require_functions
 fi
