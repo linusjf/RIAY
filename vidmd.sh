@@ -233,7 +233,7 @@ fi
 ######################################################################
 # Check if file already has play icon comment
 ######################################################################
-if declare -f has_play_icon > /dev/null; then
+if ! declare -f has_play_icon > /dev/null; then
   has_play_icon() {
     exiftool -Comment "$1" 2> /dev/null | grep -q "${ICON_COMMENT}"
   }
@@ -242,7 +242,7 @@ fi
 ######################################################################
 # Verify file is a valid JPEG
 ######################################################################
-if declare -f is_jpeg_file > /dev/null; then
+if ! declare -f is_jpeg_file > /dev/null; then
   is_jpeg_file() {
     file "$1" | grep -q 'JPEG'
   }
