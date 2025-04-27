@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # HTTP request utility with retry logic and error handling
 
 set -o errexit
@@ -120,121 +119,130 @@ fi
 : "${MAX_RETRIES:=3}"
 : "${INITIAL_RETRY_DELAY:=1}"
 
-function redact_keys() {
-  local input="$1"
-  echo "$input" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g'
-}
+if ! declare -f redact_keys > /dev/null; then
+  function redact_keys() {
+    local input="$1"
+    echo "$input" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g'
+  }
+  export -f redact_keys
+fi
 
-function save_failed_response() {
-  local data="$1"
-  local response="$2"
-  local endpoint="$3"
-  local timestamp
-  timestamp=$(date -u +"%Y%m%d_%H%M%S")
+if ! declare -f save_failed_response > /dev/null; then
+  function save_failed_response() {
+    local data="$1"
+    local response="$2"
+    local endpoint="$3"
+    local timestamp
+    timestamp=$(date -u +"%Y%m%d_%H%M%S")
 
-  local sanitized_endpoint=$(echo "$endpoint" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g' | sed 's/[^a-zA-Z0-9_-]/_/g')
-  local filename="failed_response_${sanitized_endpoint}_${timestamp}.json"
+    local sanitized_endpoint=$(echo "$endpoint" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g' | sed 's/[^a-zA-Z0-9_-]/_/g')
+    local filename="failed_response_${sanitized_endpoint}_${timestamp}.json"
 
-  {
-    redact_keys "$data"
-    redact_keys "$response"
-  } >> "$filename"
-  err "Saved failed response to $filename (API keys redacted)"
-}
+    {
+      redact_keys "$data"
+      redact_keys "$response"
+    } >> "$filename"
+    err "Saved failed response to $filename (API keys redacted)"
+  }
+  export -f save_failed_response
+fi
 
-function safe_curl_request() {
-  local url="$1"
-  local method="${2:-GET}"
-  local headers="${3:-}"
-  local data="${4:-}"
-  local output_file
-  output_file=$(mktemp)
+if ! declare -f safe_curl_request > /dev/null; then
+  function safe_curl_request() {
+    local url="$1"
+    local method="${2:-GET}"
+    local headers="${3:-}"
+    local data="${4:-}"
+    local output_file
+    output_file=$(mktemp)
 
-  local retry_count=0
-  local delay=$INITIAL_RETRY_DELAY
-  local status_code=0
-  local response=""
+    local retry_count=0
+    local delay=$INITIAL_RETRY_DELAY
+    local status_code=0
+    local response=""
 
-  while [[ $retry_count -lt $MAX_RETRIES ]]; do
-    status_code=0
-    response=""
+    while [[ $retry_count -lt $MAX_RETRIES ]]; do
+      status_code=0
+      response=""
 
-    local curl_cmd=(
-      curl
-      --show-error
-      --connect-timeout 10
-      --max-time 60
-      --fail-with-body
-      --silent
-      --write-out "%{http_code}"
-      -D /dev/stdout
-      -o "$output_file"
-    )
+      local curl_cmd=(
+        curl
+        --show-error
+        --connect-timeout 10
+        --max-time 60
+        --fail-with-body
+        --silent
+        --write-out "%{http_code}"
+        -D /dev/stdout
+        -o "$output_file"
+      )
 
-    [[ "$method" == "POST" ]] && curl_cmd+=(-X "POST")
-    [[ -n "$headers" ]] && curl_cmd+=(-H "$headers")
-    [[ -n "$data" ]] && curl_cmd+=(-d "$data")
-    curl_cmd+=("$url")
+      [[ "$method" == "POST" ]] && curl_cmd+=(-X "POST")
+      [[ -n "$headers" ]] && curl_cmd+=(-H "$headers")
+      [[ -n "$data" ]] && curl_cmd+=(-d "$data")
+      curl_cmd+=("$url")
 
-    [[ "${verbose:-false}" == "true" ]] && >&2 echo "Making $method request to $(redact_keys "$url")"
+      [[ "${verbose:-false}" == "true" ]] && >&2 echo "Making $method request to $(redact_keys "$url")"
 
-    local curl_output
-    curl_output="$("${curl_cmd[@]}" 2>&1 || true)"
-    status_code=$(echo "$curl_output" | tail -n 1)
-    response="$(cat "$output_file" || true)"
-    local response_headers=$(echo "$curl_output" | head -n -1)
+      local curl_output
+      curl_output="$("${curl_cmd[@]}" 2>&1 || true)"
+      status_code=$(echo "$curl_output" | tail -n 1)
+      response="$(cat "$output_file" || true)"
+      local response_headers=$(echo "$curl_output" | head -n -1)
 
-    if [[ $status_code -ge 200 && $status_code -lt 300 ]]; then
-      [[ "${verbose:-false}" == "true" ]] && >&2 echo "Request to $(redact_keys "$url") succeeded with status $status_code : ${HTTP_STATUS_CODES[$status_code]}"
-      echo "$response"
-      rm -f "$output_file"
-      return 0
-    fi
-
-    retry_count=$((retry_count + 1))
-    if [[ $retry_count -lt $MAX_RETRIES ]]; then
-      save_failed_response "$data" "$response" "$(basename "$url")"
-
-      if [[ $status_code -ge 400 ]] && [[ $status_code -lt 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]]; then
-        >&2 echo "Request failed with status $status_code: ${HTTP_STATUS_CODES[$status_code]}, no retries..."
-        return 2
+      if [[ $status_code -ge 200 && $status_code -lt 300 ]]; then
+        [[ "${verbose:-false}" == "true" ]] && >&2 echo "Request to $(redact_keys "$url") succeeded with status $status_code : ${HTTP_STATUS_CODES[$status_code]}"
+        echo "$response"
+        rm -f "$output_file"
+        return 0
       fi
 
-      if [[ $status_code -eq 408 ]] || [[ $status_code -eq 429 ]]; then
-        local retry_after=$(echo "$response_headers" | grep -i '^retry-after:' | cut -d' ' -f2- | tr -d '\r')
-        if [[ -n "$retry_after" ]]; then
-          delay="$retry_after"
-          >&2 echo "Request failed with status $status_code: ${HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (Retry-After header value, attempt $retry_count/$MAX_RETRIES)"
-        elif [[ $status_code -eq 429 ]]; then
-          >&2 echo "Request failed with status 429 (Too Many Requests) but no Retry-After header provided, aborting..."
+      retry_count=$((retry_count + 1))
+      if [[ $retry_count -lt $MAX_RETRIES ]]; then
+        save_failed_response "$data" "$response" "$(basename "$url")"
+
+        if [[ $status_code -ge 400 ]] && [[ $status_code -lt 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]]; then
+          >&2 echo "Request failed with status $status_code: ${HTTP_STATUS_CODES[$status_code]}, no retries..."
           return 2
+        fi
+
+        if [[ $status_code -eq 408 ]] || [[ $status_code -eq 429 ]]; then
+          local retry_after=$(echo "$response_headers" | grep -i '^retry-after:' | cut -d' ' -f2- | tr -d '\r')
+          if [[ -n "$retry_after" ]]; then
+            delay="$retry_after"
+            >&2 echo "Request failed with status $status_code: ${HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (Retry-After header value, attempt $retry_count/$MAX_RETRIES)"
+          elif [[ $status_code -eq 429 ]]; then
+            >&2 echo "Request failed with status 429 (Too Many Requests) but no Retry-After header provided, aborting..."
+            return 2
+          else
+            >&2 echo "Request failed with status $status_code: ${HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
+          fi
         else
           >&2 echo "Request failed with status $status_code: ${HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
         fi
-      else
-        >&2 echo "Request failed with status $status_code: ${HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
+
+        sleep "$delay"
+        delay=$((delay * 2))
       fi
+    done
 
-      sleep "$delay"
-      delay=$((delay * 2))
-    fi
-  done
+    >&2 echo "CURL VERBOSE OUTPUT:"
+    curl -v "$url" \
+      -X "$method" \
+      ${headers:+-H "$(redact_keys "$headers")"} \
+      ${data:+-d "$(redact_keys "$data")"} \
+      --connect-timeout 10 \
+      --max-time 60 \
+      --show-error \
+      >&2
 
-  >&2 echo "CURL VERBOSE OUTPUT:"
-  curl -v "$url" \
-    -X "$method" \
-    ${headers:+-H "$(redact_keys "$headers")"} \
-    ${data:+-d "$(redact_keys "$data")"} \
-    --connect-timeout 10 \
-    --max-time 60 \
-    --show-error \
-    >&2
-
-  save_failed_response "$data" "$response" "$(basename "$url")"
-  rm -f "$output_file"
-  err "Request failed after $MAX_RETRIES attempts. Last status code: $status_code: ${HTTP_STATUS_CODES[$status_code]}"
-  return 2
-}
+    save_failed_response "$data" "$response" "$(basename "$url")"
+    rm -f "$output_file"
+    err "Request failed after $MAX_RETRIES attempts. Last status code: $status_code: ${HTTP_STATUS_CODES[$status_code]}"
+    return 2
+  }
+  export -f safe_curl_request
+fi
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main() {
