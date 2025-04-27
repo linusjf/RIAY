@@ -24,12 +24,15 @@ if ! declare -f lock_config_vars > /dev/null; then
     config_vars="$(comm -13 <(echo "$before_vars" | sort) <(echo "$after_vars" | sort))"
 
     for var in $config_vars; do
-      # Check if it's an array
-      if declare -p "$var" 2> /dev/null | grep -q 'declare -a'; then
-        # Lock all elements of the array
-        declare -r -a "$var"
-      else
-        readonly "$var"
+      # Check if the variable is already defined
+      if ! declare -p "$var" > /dev/null 2>&1; then
+        # Check if it's an array
+        if declare -p "$var" 2> /dev/null | grep -q 'declare -a'; then
+          # Lock all elements of the array
+          declare -r -a "$var"
+        else
+          readonly "$var"
+        fi
       fi
     done
   }
