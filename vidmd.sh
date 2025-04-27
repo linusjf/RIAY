@@ -77,6 +77,22 @@ EOF
   export -f usagegenvidthmd
 fi
 
+if ! declare -f usageoverlayimg > /dev/null; then
+  usageoverlayimg() {
+    cat << EOF
+Usage: ${0##*/} [OPTIONS] vid output
+Options:
+  -d, --debug    Enable debug output (set -x)
+  
+Arguments:
+  vid    - YouTube video ID
+  output - Path to output JPEG file
+EOF
+    exit 1
+  }
+  export -f usageoverlayimg
+fi
+
 if ! declare -f playiconurl > /dev/null; then
   ######################################################################
   # Generate play icon URL for given day of year
@@ -261,6 +277,18 @@ if ! declare -f is_jpeg_file > /dev/null; then
   export -f is_jpeg_file
 fi
 
+######################################################################
+######################################################################
+if ! declare -f is_jpeg_extension > /dev/null; then
+  is_jpeg_extension() {
+    local ext="${1##*.}"
+    local ext_lower
+    ext_lower=$(echo "${ext}" | tr '[:upper:]' '[:lower:]')
+    [[ "${ext_lower}" == "jpg" || "${ext_lower}" == "jpeg" ]]
+  }
+  export -f is_jpeg_extension
+fi
+
 if ! declare -f overlayicon > /dev/null; then
   overlayicon() {
     require_commands gm mv file grep mktemp exiftool
@@ -316,6 +344,44 @@ if ! declare -f overlayicon > /dev/null; then
     fi
   }
   export -f overlayicon
+fi
+
+if ! declare -f overlayimg > /dev/null; then
+  overlayimg() {
+
+    # Validate arguments
+    if [[ $# -ne 2 ]]; then
+      usageoverlayimg
+    fi
+
+    local vid="$1"
+    local output="$2"
+    # Validate output path
+    if [[ -d "${output}" ]]; then
+      die "Output path '${output}' is a directory"
+    fi
+
+    if [[ ! -d "$(dirname "${output}")" ]]; then
+      die "Parent directory for output path does not exist"
+    fi
+
+    # Validate file extension
+    if ! is_jpeg_extension "${output}"; then
+      die "Output file must have a '.jpg' or '.jpeg' extension"
+    fi
+
+    # Download thumbnail
+    if ! downloadthumbnail "${vid}" "${output}"; then
+      die "Failed to download thumbnail for video ID '${vid}'"
+    fi
+
+    # Overlay icon
+    if ! overlayicon "${output}"; then
+      die "Failed to overlay icon on '${output}'"
+    fi
+
+    exit 0
+  }
 fi
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
