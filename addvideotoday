@@ -43,7 +43,7 @@ function validate_arguments() {
   if [[ "${2}" -eq 366 ]] && [[ "$(daycount "${YEAR}")" -eq "$2" ]]; then
     return 0
   else
-    err "Error: "$YEAR" has 365 days only."
+    err "Error: ${YEAR} has 365 days only."
     usage 1
   fi
 }
