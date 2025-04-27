@@ -10,26 +10,27 @@ else:
 
 def serializedATN():
     return [
-        4,1,10,71,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,10,72,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,1,0,1,0,1,0,1,0,5,
         0,29,8,0,10,0,12,0,32,9,0,1,0,3,0,35,8,0,1,0,1,0,1,1,1,1,1,1,1,1,
-        1,1,3,1,44,8,1,1,2,1,2,1,2,1,2,1,3,1,3,1,4,1,4,1,5,1,5,1,5,1,5,1,
-        6,1,6,1,7,1,7,1,8,1,8,1,9,1,9,1,10,1,10,1,10,1,11,1,11,1,11,0,0,
-        12,0,2,4,6,8,10,12,14,16,18,20,22,0,0,65,0,30,1,0,0,0,2,43,1,0,0,
-        0,4,45,1,0,0,0,6,49,1,0,0,0,8,51,1,0,0,0,10,53,1,0,0,0,12,57,1,0,
-        0,0,14,59,1,0,0,0,16,61,1,0,0,0,18,63,1,0,0,0,20,65,1,0,0,0,22,68,
-        1,0,0,0,24,25,3,2,1,0,25,26,5,9,0,0,26,29,1,0,0,0,27,29,5,9,0,0,
-        28,24,1,0,0,0,28,27,1,0,0,0,29,32,1,0,0,0,30,28,1,0,0,0,30,31,1,
-        0,0,0,31,34,1,0,0,0,32,30,1,0,0,0,33,35,3,2,1,0,34,33,1,0,0,0,34,
-        35,1,0,0,0,35,36,1,0,0,0,36,37,5,0,0,1,37,1,1,0,0,0,38,44,3,4,2,
-        0,39,44,3,10,5,0,40,44,3,16,8,0,41,44,3,18,9,0,42,44,3,20,10,0,43,
-        38,1,0,0,0,43,39,1,0,0,0,43,40,1,0,0,0,43,41,1,0,0,0,43,42,1,0,0,
-        0,44,3,1,0,0,0,45,46,5,1,0,0,46,47,3,6,3,0,47,48,3,8,4,0,48,5,1,
-        0,0,0,49,50,5,6,0,0,50,7,1,0,0,0,51,52,5,6,0,0,52,9,1,0,0,0,53,54,
-        5,2,0,0,54,55,3,12,6,0,55,56,3,14,7,0,56,11,1,0,0,0,57,58,5,8,0,
-        0,58,13,1,0,0,0,59,60,5,7,0,0,60,15,1,0,0,0,61,62,5,3,0,0,62,17,
-        1,0,0,0,63,64,5,4,0,0,64,19,1,0,0,0,65,66,5,5,0,0,66,67,3,22,11,
-        0,67,21,1,0,0,0,68,69,5,6,0,0,69,23,1,0,0,0,4,28,30,34,43
+        1,1,3,1,44,8,1,1,2,1,2,1,2,1,2,1,3,1,3,1,4,1,4,1,5,1,5,1,5,3,5,57,
+        8,5,1,6,1,6,1,7,1,7,1,8,1,8,1,9,1,9,1,10,1,10,1,10,1,11,1,11,1,11,
+        0,0,12,0,2,4,6,8,10,12,14,16,18,20,22,0,0,67,0,30,1,0,0,0,2,43,1,
+        0,0,0,4,45,1,0,0,0,6,49,1,0,0,0,8,51,1,0,0,0,10,53,1,0,0,0,12,58,
+        1,0,0,0,14,60,1,0,0,0,16,62,1,0,0,0,18,64,1,0,0,0,20,66,1,0,0,0,
+        22,69,1,0,0,0,24,25,3,2,1,0,25,26,5,9,0,0,26,29,1,0,0,0,27,29,5,
+        9,0,0,28,24,1,0,0,0,28,27,1,0,0,0,29,32,1,0,0,0,30,28,1,0,0,0,30,
+        31,1,0,0,0,31,34,1,0,0,0,32,30,1,0,0,0,33,35,3,2,1,0,34,33,1,0,0,
+        0,34,35,1,0,0,0,35,36,1,0,0,0,36,37,5,0,0,1,37,1,1,0,0,0,38,44,3,
+        4,2,0,39,44,3,10,5,0,40,44,3,16,8,0,41,44,3,18,9,0,42,44,3,20,10,
+        0,43,38,1,0,0,0,43,39,1,0,0,0,43,40,1,0,0,0,43,41,1,0,0,0,43,42,
+        1,0,0,0,44,3,1,0,0,0,45,46,5,1,0,0,46,47,3,6,3,0,47,48,3,8,4,0,48,
+        5,1,0,0,0,49,50,5,6,0,0,50,7,1,0,0,0,51,52,5,6,0,0,52,9,1,0,0,0,
+        53,54,5,2,0,0,54,56,3,12,6,0,55,57,3,14,7,0,56,55,1,0,0,0,56,57,
+        1,0,0,0,57,11,1,0,0,0,58,59,5,8,0,0,59,13,1,0,0,0,60,61,5,7,0,0,
+        61,15,1,0,0,0,62,63,5,3,0,0,63,17,1,0,0,0,64,65,5,4,0,0,65,19,1,
+        0,0,0,66,67,5,5,0,0,67,68,3,22,11,0,68,21,1,0,0,0,69,70,5,6,0,0,
+        70,23,1,0,0,0,5,28,30,34,43,56
     ]
 
 class commandsParser ( Parser ):
@@ -426,14 +427,21 @@ class commandsParser ( Parser ):
 
         localctx = commandsParser.GenmonthContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_genmonth)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 53
             self.match(commandsParser.T__1)
             self.state = 54
             self.month()
-            self.state = 55
-            self.year()
+            self.state = 56
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==7:
+                self.state = 55
+                self.year()
+
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -473,7 +481,7 @@ class commandsParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_month)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 57
+            self.state = 58
             self.match(commandsParser.MONTH_DIGIT)
         except RecognitionException as re:
             localctx.exception = re
@@ -514,7 +522,7 @@ class commandsParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_year)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 59
+            self.state = 60
             self.match(commandsParser.YEAR)
         except RecognitionException as re:
             localctx.exception = re
@@ -553,7 +561,7 @@ class commandsParser ( Parser ):
         self.enterRule(localctx, 16, self.RULE_lintall)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 61
+            self.state = 62
             self.match(commandsParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -592,7 +600,7 @@ class commandsParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_stitch)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 63
+            self.state = 64
             self.match(commandsParser.T__3)
         except RecognitionException as re:
             localctx.exception = re
@@ -634,9 +642,9 @@ class commandsParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_gentoc)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 65
-            self.match(commandsParser.T__4)
             self.state = 66
+            self.match(commandsParser.T__4)
+            self.state = 67
             self.pathtomdfile()
         except RecognitionException as re:
             localctx.exception = re
@@ -677,7 +685,7 @@ class commandsParser ( Parser ):
         self.enterRule(localctx, 22, self.RULE_pathtomdfile)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 68
+            self.state = 69
             self.match(commandsParser.STRING)
         except RecognitionException as re:
             localctx.exception = re

@@ -24,11 +24,15 @@ class commands(commandsListener):
 
     # Enter a parse tree produced by commandsParser#Genmonth.
     def enterGenmonth(self, ctx:commandsParser.GenmonthContext):
-        month = ctx.month().getText()
-        year = ctx.year().getText()
         ruleName = self.getRuleName(ctx)
-        print(f"Generating month {month} for year {year}.")
-        self.executeCommand([ruleName, month, year])
+        month = ctx.month().getText()
+        if (ctx.year() is None):
+          print(f"Generating month {month}.")
+          self.executeCommand([ruleName, month])
+        else:  
+          year = ctx.year().getText()
+          print(f"Generating month {month} for year {year}.")
+          self.executeCommand([ruleName, month, year])
 
     # Enter a parse tree produced by commandsParser#Lintall.
     def enterLintall(self, ctx:commandsParser.LintallContext):

@@ -8,7 +8,7 @@ addvideo: 'addvideo' videoId videoName;
 videoId: STRING;
 videoName: STRING;
 
-genmonth: 'genmonth' month year;
+genmonth: 'genmonth' month year?;
 month: MONTH_DIGIT;
 year: YEAR;
 
