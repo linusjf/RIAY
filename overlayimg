@@ -8,7 +8,6 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 readonly SUCCESS=0
-readonly FAILURE=1
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 readonly VIDMD_SCRIPT="${SCRIPT_DIR}/vidmd.sh"
 readonly UTIL_SCRIPT="${SCRIPT_DIR}/util.sh"
