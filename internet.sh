@@ -33,4 +33,5 @@ if ! declare -f checkinternet > /dev/null; then
 
     return 0
   }
+  export -f checkinternet
 fi

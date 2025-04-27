@@ -29,6 +29,7 @@ if ! declare -f get_github_repo > /dev/null; then
       die "Error: Could not determine GitHub repo from remote: $git_url"
     fi
   }
+  export -f get_github_repo
 fi
 
 ######################################################################
@@ -43,4 +44,5 @@ if ! declare -f getroot > /dev/null; then
     require_commands basename
     basename "$(get_github_repo)"
   }
+  export -f getroot
 fi

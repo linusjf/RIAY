@@ -36,4 +36,5 @@ if ! declare -f lock_config_vars > /dev/null; then
       fi
     done
   }
+  export -f lock_config_vars
 fi
