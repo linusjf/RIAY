@@ -29,6 +29,7 @@ if ! declare -f isnumeric > /dev/null; then
   isnumeric() {
     [[ "$1" =~ ^[0-9]+$ ]]
   }
+  export -f isnumeric
 fi
 
 if ! declare -f mfromdoy > /dev/null; then
@@ -49,6 +50,7 @@ if ! declare -f mfromdoy > /dev/null; then
     [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
     date --date="jan 1 + $((day - 1)) days" +%B
   }
+  export -f mfromdoy
 fi
 
 if ! declare -f datefromdoy > /dev/null; then
@@ -69,6 +71,7 @@ if ! declare -f datefromdoy > /dev/null; then
     [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
     date --date="jan 1 + $((day - 1)) days" "+%B %d,%Y"
   }
+  export -f datefromdoy
 fi
 
 if ! declare -f monthfromnumber > /dev/null; then
@@ -88,6 +91,7 @@ if ! declare -f monthfromnumber > /dev/null; then
       *) die "Invalid month number: $1" ;;
     esac
   }
+  export -f monthfromnumber
 fi
 
 if ! declare -f monthnumberfrommonth > /dev/null; then
@@ -98,4 +102,5 @@ if ! declare -f monthnumberfrommonth > /dev/null; then
     month_number=$(date -d "1 $month_name $year" +"%m")
     echo "$month_number"
   }
+  export -f monthnumberfrommonth
 fi
