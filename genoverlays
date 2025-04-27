@@ -6,9 +6,9 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 readonly SUCCESS=0
-readonly FAILURE=1
 # shellcheck disable=SC2155
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "${SCRIPT_DIR}/util.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
 lock_config_vars "${SCRIPT_DIR}/config.env"
 ######################################################################
@@ -22,23 +22,6 @@ Options:
   -d, --debug      Enable debug output
 EOF
   exit "${SUCCESS}"
-}
-
-######################################################################
-######################################################################
-die() {
-  printf "Error: %s\n" "$1" >&2
-  exit "${FAILURE}"
-}
-
-######################################################################
-######################################################################
-require() {
-  for cmd in "$@"; do
-    if ! command -v "${cmd}" > /dev/null 2>&1; then
-      die "Required command '${cmd}' not found in PATH"
-    fi
-  done
 }
 
 ######################################################################
