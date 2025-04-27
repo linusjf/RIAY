@@ -11,12 +11,13 @@ readonly SUCCESS=0
 readonly SCRIPT_NAME="$(basename "$0")"
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 # Source required libraries
+source "${SCRIPT_DIR}/date.sh"
 source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/vidmd.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
 lock_config_vars "${SCRIPT_DIR}/config.env"
 # Check requirements
-require_commands date markdown-toc-gen tee
+require_commands date tee
 require_vars GITHUB_USERNAME
 ######################################################################
 # Display usage information
@@ -94,15 +95,13 @@ main() {
 
     # Generate compact version when month changes
     if [[ "${oldmonth}" != "${month}" ]]; then
-      "${SCRIPT_DIR}/compact" "${oldmonth}" >| "${oldmonth}${YEAR}.md" &&
-        markdown-toc-gen update "${oldmonth}${YEAR}.md" &> /dev/null
+      "${SCRIPT_DIR}/genmonth" "$(monthnumberfrommonth "${oldmonth}" "${YEAR}")"
       oldmonth="${month}"
     fi
   done
 
   # Generate final compact version
-  "${SCRIPT_DIR}/compact" "${month}" >| "${month}${YEAR}.md" &&
-    markdown-toc-gen update "${month}${YEAR}.md" &> /dev/null
+  "${SCRIPT_DIR}/genmonth" "$(monthnumberfrommonth "${oldmonth}" "${YEAR}")"
 }
 
 while [[ $# -gt 0 ]]; do
