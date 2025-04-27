@@ -104,3 +104,18 @@ if ! declare -f monthnumberfrommonth > /dev/null; then
   }
   export -f monthnumberfrommonth
 fi
+
+if ! declare -f daycount > /dev/null; then
+  daycount() {
+
+    year="$1"
+
+    # Check if year is a leap year
+    if (((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))); then
+      echo 366
+    else
+      echo 365
+    fi
+  }
+  export -f daycount
+fi
