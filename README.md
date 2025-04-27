@@ -3912,7 +3912,6 @@ RIAY December 2025
   - [Vale](#vale)
 - [Add the daily Youtube video](#add-the-daily-youtube-video)
 - [Add today's sharing](#add-todays-sharing)
-- [Generate markdown for Youtube video](#generate-markdown-for-youtube-video)
 - [Merge monthly markdown files into one large README](#merge-monthly-markdown-files-into-one-large-readme)
 - [Generate table of contents for markdown files](#generate-table-of-contents-for-markdown-files)
 - [Using the commands utility that accepts text commands in file `commands.txt`](#using-the-commands-utility-that-accepts-text-commands-in-file-commandstxt)
@@ -4143,25 +4142,6 @@ date --date="$(date --date='jan 1 + 30 days' '+%B %d,      %Y')" +%m
 Decrement the day of year by 1 and substitute it in the command.
 The preceding gives the month index for day 31.
 
-### Generate markdown for Youtube video
-
-Execute the `genvidmd` script with the following parameters:
-
-- vid - video id
-- caption - video title
-- pathtoimg - relative path and filename of jpeg image
-
-Example:
-
-```bash
-./genvidmd g7o7WjQc3as "Bringing the Bible back to Catholics" January/jpgs/bringingback.jpg
-```
-
-Results:
-
-1. Generates markdown on the command line. Used this to insert video markdown in your markdown files.
-1. Generates overlaid image file for the video as `January/jpgs/bringingback.jpg`.
-
 ### Merge monthly markdown files into one large README
 
 1. Edit the `stitch.md` file provided to include the markdown files you wish to merge.
@@ -4233,7 +4213,6 @@ Available commands:
 - addvideo
 - genmonth
 - lintall
-- genvidmd
 - stitch
 - gentoc
 
@@ -4253,7 +4232,6 @@ This executes the commands in order as placed in the `commands.txt`. If any comm
 # example commands
 addvideo "abc123456" "Example video" # add example video
 genmonth 01 2025 # generate markdown for month January, 2025
-genvidmd "abc123456" "Example video" "February/jpgs/examplevideo.jpg" # generate markdown for video including jpeg image
 lintall # lint all the markdown files
 ```
 
