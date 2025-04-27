@@ -116,32 +116,5 @@ class commandsListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by commandsParser#genvidmd.
-    def enterGenvidmd(self, ctx:commandsParser.GenvidmdContext):
-        pass
-
-    # Exit a parse tree produced by commandsParser#genvidmd.
-    def exitGenvidmd(self, ctx:commandsParser.GenvidmdContext):
-        pass
-
-
-    # Enter a parse tree produced by commandsParser#caption.
-    def enterCaption(self, ctx:commandsParser.CaptionContext):
-        pass
-
-    # Exit a parse tree produced by commandsParser#caption.
-    def exitCaption(self, ctx:commandsParser.CaptionContext):
-        pass
-
-
-    # Enter a parse tree produced by commandsParser#pathtoimg.
-    def enterPathtoimg(self, ctx:commandsParser.PathtoimgContext):
-        pass
-
-    # Exit a parse tree produced by commandsParser#pathtoimg.
-    def exitPathtoimg(self, ctx:commandsParser.PathtoimgContext):
-        pass
-
-
 
 del commandsParser

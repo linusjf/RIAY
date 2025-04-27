@@ -42,15 +42,6 @@ class commands(commandsListener):
         print(f"Stitching...")
         self.executeCommand([ruleName])
 
-    # Enter a parse tree produced by commandsParser#Genvidmd.
-    def enterGenvidmd(self, ctx:commandsParser.GenvidmdContext):
-        videoId = ctx.videoId().getText().strip('"')
-        caption = ctx.caption().getText().strip('"')
-        pathtoimg = ctx.pathtoimg().getText().strip('"')
-        ruleName = self.getRuleName(ctx)
-        print(f"Generating video markdown for '{videoId}' with caption '{caption}' and image '{pathtoimg}'.")
-        self.executeCommand([ruleName, videoId, caption, pathtoimg])
-
     # Enter a parse tree produced by commandsParser#gentoc.
     def enterGentoc(self, ctx:commandsParser.GentocContext):
         ruleName = self.getRuleName(ctx)
