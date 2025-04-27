@@ -60,7 +60,7 @@ sed -n "${startday},${endday}p" "${VIDEOS_FILE}" | while read -r videoid; do
     filepath="$month/$filename"
     response='y'
     if [ -f "$filepath" ]; then
-      grep "AI-Generated Summary:" "$filepath" &> /dev/null && read -r -p "$filepath already contains AI-Generated Summary. AI-Generated summaries can differ from each other. The process isn't deterministic. Generate new one (Yy/Nn)?" response
+      grep "AI-Generated Summary:" "$filepath" &> /dev/null && read -r -p "$filepath already contains AI-Generated Summary. AI-Generated summaries can differ from each other using summarizevideo. Generate new one (Yy/Nn)?" response
       [[ "$response" == Y* ]] || [[ "$response" == y* ]] \
         && echo "Backing up file to ${filepath}.bak ..." \
         && cp "$filepath" "${filepath}.bak" \
@@ -73,7 +73,7 @@ sed -n "${startday},${endday}p" "${VIDEOS_FILE}" | while read -r videoid; do
       [[ "$response" == Y* ]] || [[ "$response" == y* ]] \
         && echo "Appending to $filepath (Day $lineno, $videoid)" \
         && echo "" >> "$filepath" \
-        && ./summarizevideo -- "$videoid" >> "$filepath"
+        && "${SCRIPT_DIR}/summarizevideo" -- "$videoid" >> "$filepath"
     else
       echo "Warning: $filepath not found. Skipping videoid $videoid (line $lineno)."
     fi
