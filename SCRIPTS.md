@@ -10,7 +10,6 @@ This document describes all bash scripts in the project, their functionality, de
 1. [genoverlays](#genoverlays)
 1. [setupimgs](#setupimgs)
 1. [replacevmds](#replacevmds)
-1. [genvidmd](#genvidmd)
 1. [setup](#setup)
 1. [compact](#compact)
 1. [genmonth](#genmonth)
@@ -149,24 +148,6 @@ This document describes all bash scripts in the project, their functionality, de
 **Called Scripts**:
 
 - vidmd.sh
-
-## genvidmd
-
-**Description**: Generates markdown for embedding YouTube videos with overlay images.\
-**Dependencies**: None\
-**Environment Variables**:
-
-- GITHUB_USERNAME\
-  **Called Scripts**:
-- require.sh
-- internet.sh
-- vidmd.sh
-- overlayimg\
-  **Called Functions**:
-- usage
-- validate_inputs
-- generate_markdown
-- main
 
 ## setup
 
