@@ -18,6 +18,8 @@ source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/util.sh"
 source "${SCRIPT_DIR}/date.sh"
 source "${SCRIPT_DIR}/git.sh"
+source "${SCRIPT_DIR}/lockconfig.sh"
+lock_config_vars "${SCRIPT_DIR}/config.env"
 
 if ! declare -f usagevidmd > /dev/null; then
   ######################################################################
@@ -225,6 +227,24 @@ if ! declare -f genvidthmd > /dev/null; then
     else
       vidmd "$vid" "$vidurl" "$caption"
     fi
+  }
+fi
+
+######################################################################
+# Check if file already has play icon comment
+######################################################################
+if declare -f has_play_icon > /dev/null; then
+  has_play_icon() {
+    exiftool -Comment "$1" 2> /dev/null | grep -q "${ICON_COMMENT}"
+  }
+fi
+
+######################################################################
+# Verify file is a valid JPEG
+######################################################################
+if declare -f is_jpeg_file > /dev/null; then
+  is_jpeg_file() {
+    file "$1" | grep -q 'JPEG'
   }
 fi
 
