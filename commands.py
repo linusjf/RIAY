@@ -7,6 +7,8 @@ from antlr4 import *
 from commandsLexer import commandsLexer
 from commandsParser import commandsParser
 from commandsListener import commandsListener
+from dotenv import load_dotenv
+import os
 
 class commands(commandsListener):
 
@@ -26,13 +28,11 @@ class commands(commandsListener):
     def enterGenmonth(self, ctx:commandsParser.GenmonthContext):
         ruleName = self.getRuleName(ctx)
         month = ctx.month().getText()
-        if (ctx.year() is None):
-          print(f"Generating month {month}.")
-          self.executeCommand([ruleName, month])
-        else:  
+        year = str(os.getenv('YEAR'))
+        if (ctx.year() is not None):
           year = ctx.year().getText()
-          print(f"Generating month {month} for year {year}.")
-          self.executeCommand([ruleName, month, year])
+        print(f"Generating month {month} for year {year}.")
+        self.executeCommand([ruleName, month, year])
 
     # Enter a parse tree produced by commandsParser#Lintall.
     def enterLintall(self, ctx:commandsParser.LintallContext):
@@ -84,6 +84,7 @@ class commands(commandsListener):
 
 
 def main():
+    load_dotenv(dotenv_path='config.env')
     input_stream = FileStream("commands.txt")
     lexer = commandsLexer(input_stream)
     stream = CommonTokenStream(lexer)
