@@ -300,7 +300,7 @@ Example of setting up your Python and ANTLR4 environment
 ```bash
 pyenv install 3.10
 pyenv global 3.10
-pip install antlr4-tools antlr4-python3-runtime
+pip install antlr4-tools antlr4-python3-runtime python-dotenv
 ```
 
 1. Add commands to the `commands.txt` file.
