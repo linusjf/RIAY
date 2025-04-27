@@ -97,12 +97,7 @@ main() {
     return "${FAILURE}"
   fi
 
-  if [[ ! -x "${SCRIPT_DIR}/overlayicon" ]]; then
-    echo "Error: overlayicon script is missing or not executable" >&2
-    return "${FAILURE}"
-  fi
-
-  "${SCRIPT_DIR}/overlayicon" "${relfile}"
+  overlayicon "${relfile}"
   return "${SUCCESS}"
 }
 
