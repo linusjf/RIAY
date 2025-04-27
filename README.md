@@ -544,7 +544,7 @@ Mary, reflecting Jesus, the "sun of righteousness," is seen as the Mirror of Jus
 
 ##### ROSARY IN A YEAR DAY 5 - A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson
 
-*Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 🥹 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria*🌹
+\_Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 🥹 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria_🌹
 
 ##### AI-Generated Summary: Mary, Mother Inviolate — Finding Peace in Mary's Rose Garden
 
@@ -615,7 +615,7 @@ Prayer is not simply a passive reception of grace, but an active, determined str
 
 ##### ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson
 
-*"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.🥹 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria*🙏🏽
+\_"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.🥹 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria_🙏🏽
 
 ##### AI-Generated Summary: The Rosary as a Source of Grace
 
@@ -3182,6 +3182,9 @@ This reflection, guided by St. Alphonsus's devotion, leads us naturally to praye
 - [April 26,2025](#april-262025)
   - [Continued Through You](#continued-through-you)
   - [AI-Generated Summary: The Indwelling Kingdom and the Call to Conversion](#ai-generated-summary-the-indwelling-kingdom-and-the-call-to-conversion)
+- [April 27,2025](#april-272025)
+  - [Come Down, Peter](#come-down-peter)
+  - [AI-Generated Summary: The Transfiguration and the Call to Active Charity](#ai-generated-summary-the-transfiguration-and-the-call-to-active-charity)
 
 <!-- tocstop -->
 
@@ -3797,6 +3800,26 @@ The core of this reflection lies in the indwelling presence of Christ. As St. Jo
 This echoes the very heart of the Gospel message: to know, love, and proclaim Jesus. It is a call to radical discipleship, to place Christ at the center of our lives and respond with all our being. This transformation is not achieved through our own strength, but through the grace of God, freely given and received through prayer, most notably the Our Father and the Hail Mary.
 
 Finally, as all earthly communions must end, so too does this prayer. Yet, the spirit of fellowship and shared devotion persists, a seed planted in the hope of future prayer together, a testament to the enduring power of faith. Just as the Kingdom of God is both present and yet to come, so too is our journey with Christ, a continuous unfolding of grace and transformation.
+
+#### April 27,2025
+
+##### Come Down, Peter
+
+[![Come Down, Peter](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day117.jpg)](https://youtu.be/aIykzO2OBvg "Come Down, Peter")
+
+##### AI-Generated Summary: The Transfiguration and the Call to Active Charity
+
+Like Peter yearning for the mountaintop tranquility with Christ, we are often tempted by the allure of solitary contemplation. St. Augustine, reflecting on the Transfiguration, reminds us that Peter's desire to build tabernacles—to separate Christ, the Law, and the Prophets—was misguided. The overshadowing cloud symbolizes their unity, a unity we are called to carry into the world, not isolate ourselves from. Augustine's message is clear: descend the mountain and preach.
+
+- Embrace labor and hardship. Christ's sacrifice serves as the ultimate example. Spiritual purity and charitable living are forged in the fires of trial, not in the cool shade of seclusion. Our aim should be outward, focused on truth and charity, not inward, seeking personal comfort.
+
+- Beware the allure of misattributed wisdom. The author humorously notes the diligence with which the Missionaries of Charity correct misquotations of Mother Teresa, while spurious words attributed to St. Francis often go unchallenged. Yet, the authentic words of St. Francis, like his counsel to a friar tempted by the hermitage, offer deeper insight. Francis, recognizing the friar's desire to avoid communal challenges rather than a true contemplative calling, advised him to remain within the community.
+
+- Francis, like Peter, wrestled with the balance of contemplation and action. He ultimately chose to preach, guided by prayer and counsel, mirroring Augustine's advice to Peter. While the contemplative life holds validity for some, the text emphasizes that most are called to active charity, to live like Christ, engaged with the world. Dedicated prayer remains essential, but transfiguration is found not in isolation, but in a holy life lived amongst others.
+
+- Trust in God's shaping hand, even amidst difficulty. Our daily struggles, our commitment to our calling, these are the hammer and anvil upon which we are forged into God's image. Prayer draws us near to God, but the trials of life refine us. Both are necessary for growth. While youthful days may have allowed for extended periods of focused prayer, those with greater responsibilities can trust that God works deeply even in the midst of busyness. The mountaintop experience is precious, but God is equally present in the valley, in the everyday struggles after the descent.
+
+- Persevere in prayer, trusting that God sanctifies you through your current circumstances. Ask for renewed faith amidst suffering and difficulty, and be filled with hope, knowing that God is making you new.
 
 ## May
 
