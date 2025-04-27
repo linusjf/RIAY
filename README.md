@@ -4261,7 +4261,7 @@ The program ignores everything after the `#` symbol and treats it like a new lin
 
 ## Scripts
 
-This document describes all bash scripts in the project, their functionality, dependencies, and environment variables used.
+This document describes all bash scripts in the project, their functionality, dependencies, environment variables, and called scripts.
 
 ### Table of Contents
 
@@ -4296,13 +4296,15 @@ This document describes all bash scripts in the project, their functionality, de
 1. [overlayimg](#overlayimg)
 1. [annotatedayjpgs](#annotatedayjpgs)
 1. [addvideo](#addvideo)
+1. [genindexrst](#genindexrst)
+1. [genstitchmd](#genstitchmd)
 
 ---
 
 ### summarizevideo
 
-**Description**: Summarizes YouTube videos by extracting captions and using AI APIs (Gemini/DeepSeek) to generate markdown formatted summaries
-**Dependencies**: jq, curl, yt-dlp
+**Description**: Summarizes YouTube videos by extracting captions and using AI APIs (Gemini/DeepSeek) to generate markdown formatted summaries.
+**Dependencies**: jq, curl, yt-dlp, tee
 **Environment Variables**:
 
 - YOUTUBE_API_KEY
@@ -4320,10 +4322,23 @@ This document describes all bash scripts in the project, their functionality, de
 - curl.sh
 - youtube.sh
 - lockconfig.sh
+  **Called Functions**:
+- version
+- usage
+- get_day_index
+- check_dependencies
+- get_chunk_prompt
+- get_final_prompt
+- summarize_chunk_gemini
+- summarize_chunk_deepseek
+- summarize_chunk
+- final_summary_gemini
+- final_summary_deepseek
+- main
 
 ### findsnippetdays
 
-**Description**: Finds and extracts day numbers from snippet files in month directories
+**Description**: Finds and extracts day numbers from snippet files in month directories.
 **Dependencies**: sed, basename, grep, find, tr
 **Environment Variables**: None
 **Called Scripts**:
@@ -4331,11 +4346,16 @@ This document describes all bash scripts in the project, their functionality, de
 - util.sh
 - color.sh
 - require.sh
+  **Called Functions**:
+- usage
+- version
+- main
+- extract_day_number
 
 ### apply_overlayicon
 
-**Description**: Applies overlay icon to DayXXX.jpg files in specified directory
-**Dependencies**: find, xargs
+**Description**: Applies overlay icon to DayXXX.jpg files in specified directory.
+**Dependencies**: find, parallel, tee
 **Environment Variables**:
 
 - ICON_FILE
@@ -4346,11 +4366,18 @@ This document describes all bash scripts in the project, their functionality, de
   **Called Scripts**:
 - lockconfig.sh
 - overlayicon
+  **Called Functions**:
+- version
+- usage
+- err
+- log
+- validate_environment
+- main
 
 ### genoverlays
 
-**Description**: Processes video IDs from file and generates overlays
-**Dependencies**: None
+**Description**: Processes video IDs from file and generates overlays.
+**Dependencies**: tee
 **Environment Variables**:
 
 - VIDEOS_FILE
@@ -4358,17 +4385,26 @@ This document describes all bash scripts in the project, their functionality, de
   **Called Scripts**:
 - lockconfig.sh
 - genoverlay
+  **Called Functions**:
+- usage
+- main
 
 ### setupimgs
 
-**Description**: Processes and converts images in a directory, moves downloads to jpgs directory
+**Description**: Processes and converts images in a directory, moves downloads to jpgs directory.
 **Dependencies**: gm, rm, mv
 **Environment Variables**: None
 **Called Scripts**: None
+**Called Functions**:
+
+- usage
+- is_valid_dir
+- get_downloads_dir
+- main
 
 ### replacevmds
 
-**Description**: Processes markdown files and replaces video markdown syntax
+**Description**: Processes markdown files and replaces video markdown syntax.
 **Dependencies**: mv, mktemp, curl
 **Environment Variables**: None
 **Called Scripts**:
@@ -4377,7 +4413,7 @@ This document describes all bash scripts in the project, their functionality, de
 
 ### genvidmd
 
-**Description**: Generates markdown for embedding YouTube videos with overlay images
+**Description**: Generates markdown for embedding YouTube videos with overlay images.
 **Dependencies**: None
 **Environment Variables**:
 
@@ -4387,10 +4423,15 @@ This document describes all bash scripts in the project, their functionality, de
 - internet.sh
 - vidmd.sh
 - overlayimg
+  **Called Functions**:
+- usage
+- validate_inputs
+- generate_markdown
+- main
 
 ### setup
 
-**Description**: Creates monthly directories and files, videos file and header.md files
+**Description**: Creates monthly directories and files, videos file and header.md files.
 **Dependencies**: None
 **Environment Variables**:
 
@@ -4399,10 +4440,17 @@ This document describes all bash scripts in the project, their functionality, de
 - COMPACT_FILE
   **Called Scripts**:
 - lockconfig.sh
+  **Called Functions**:
+- version
+- backup_file
+- confirm_overwrite
+- setup_directories
+- create_header_file
+- main
 
 ### compact
 
-**Description**: Compacts multiple markdown files into single output using m4 preprocessing
+**Description**: Compacts multiple markdown files into single output using m4 preprocessing.
 **Dependencies**: m4, mktemp, awk, rm
 **Environment Variables**:
 
@@ -4411,10 +4459,14 @@ This document describes all bash scripts in the project, their functionality, de
 - lockconfig.sh
 - require.sh
 - vidmd.sh
+  **Called Functions**:
+- usage
+- is_valid_dir
+- main
 
 ### genmonth
 
-**Description**: Generates monthly markdown file with video index and table of contents
+**Description**: Generates monthly markdown file with video index and table of contents.
 **Dependencies**: date, markdown-toc
 **Environment Variables**: None
 **Called Scripts**:
@@ -4422,44 +4474,65 @@ This document describes all bash scripts in the project, their functionality, de
 - vidmd.sh
 - compact
 - gentoc
+  **Called Functions**:
+- version
+- validate_inputs
+- generate_month_file
+- dry_run
+- main
 
 ### lintall
 
-**Description**: Lints and formats all markdown files in project using markdownlint and mdformat
+**Description**: Lints and formats all markdown files in project using markdownlint and mdformat.
 **Dependencies**: markdownlint, mdformat
 **Environment Variables**: None
 **Called Scripts**:
 
 - require.sh
+  **Called Functions**:
+- version
+- usage
+- main
 
 ### replaceemojis
 
-**Description**: Replaces specific emoji characters in markdown files
+**Description**: Replaces specific emoji characters in markdown files.
 **Dependencies**: None
 **Environment Variables**: None
 **Called Scripts**: None
+**Called Functions**:
+
+- version
+- usage
+- main
 
 ### removeallsnippets
 
-**Description**: Removes all snippets by running removesnippets for each month (1-12)
+**Description**: Removes all snippets by running removesnippets for each month (1-12).
 **Dependencies**: None
 **Environment Variables**: None
 **Called Scripts**:
 
 - removesnippets
+  **Called Functions**:
+- version
+- main
 
 ### findsnippetfiles
 
-**Description**: Finds markdown files containing 'Snippet' in month directories
+**Description**: Finds markdown files containing 'Snippet' in month directories.
 **Dependencies**: find, grep, sort
 **Environment Variables**: None
 **Called Scripts**:
 
 - require.sh
+  **Called Functions**:
+- check_requirements
+- main
 
 ### genmdfromvids
 
-**Description**: Generates markdown files from video IDs with thumbnails and metadata
+**Description**: Generates markdown files from video IDs with thumbnails and metadata.
 **Dependencies**: jq, curl, git
 **Environment Variables**:
 
@@ -4469,7 +4542,7 @@ This document describes all bash scripts in the project, their functionality, de
 
 ### addsnippets
 
-**Description**: Adds snippet images to markdown files and generates compact versions
+**Description**: Adds snippet images to markdown files and generates compact versions.
 **Dependencies**: date, markdown-toc-gen
 **Environment Variables**:
 
@@ -4479,19 +4552,20 @@ This document describes all bash scripts in the project, their functionality, de
 - require.sh
 - vidmd.sh
 - lockconfig.sh
+  **Called Functions**:
+- usage
+- main
 
 ### genvidthmd
 
-**Description**: Wrapper for vidmd.sh that generates markdown for videos
+**Description**: Generates markdown for embedding YouTube videos.
 **Dependencies**: curl
 **Environment Variables**: None
-**Called Scripts**:
-
-- vidmd.sh
+**Called Scripts**: None
 
 ### genoverlay
 
-**Description**: Generates overlay images for YouTube videos
+**Description**: Generates overlay images for YouTube videos.
 **Dependencies**: curl, realpath
 **Environment Variables**:
 
@@ -4500,29 +4574,39 @@ This document describes all bash scripts in the project, their functionality, de
 - require.sh
 - vidmd.sh
 - overlayicon
+  **Called Functions**:
+- usage
+- version
+- main
 
 ### getgeminimodels
 
-**Description**: Fetches available Gemini models from API and saves to geminimodelids.txt
+**Description**: Fetches available Gemini models from API and saves to geminimodelids.txt.
 **Dependencies**: curl, jq
 **Environment Variables**:
 
 - GEMINI_API_KEY
   **Called Scripts**: None
+  **Called Functions**:
+- get_gemini_models
 
 ### annotatejpg
 
-**Description**: Adds metadata comments to JPG files
+**Description**: Adds metadata comments to JPG files.
 **Dependencies**: exiftool, file
 **Environment Variables**: None
 **Called Scripts**:
 
 - util.sh
 - require.sh
+  **Called Functions**:
+- version
+- usage
+- main
 
 ### removesnippets
 
-**Description**: Removes snippet references from day markdown files
+**Description**: Removes snippet references from day markdown files.
 **Dependencies**: git, find, sed, grep, basename
 **Environment Variables**:
 
@@ -4531,10 +4615,22 @@ This document describes all bash scripts in the project, their functionality, de
 - util.sh
 - require.sh
 - findsnippetfiles
+  **Called Functions**:
+- version
+- usage
+- get_findsnippetfiles_path
+- validate_month
+- month_number_to_name
+- get_repo_name
+- process_month_files
+- process_file
+- remove_snippet
+- verify_remaining_snippets
+- main
 
 ### addvideotoday
 
-**Description**: Adds YouTube video metadata to daily markdown files
+**Description**: Adds YouTube video metadata to daily markdown files.
 **Dependencies**: jq, curl, git
 **Environment Variables**:
 
@@ -4546,10 +4642,23 @@ This document describes all bash scripts in the project, their functionality, de
 - git.sh
 - lockconfig.sh
 - summarizevideo
+  **Called Functions**:
+- usage
+- version
+- validate_arguments
+- check_required_tools
+- fetch_video_metadata
+- extract_thumbnail_url
+- extract_video_title
+- download_thumbnail
+- backup_file
+- remove_existing_video_entry
+- append_video_info
+- main
 
 ### addsummariestodays
 
-**Description**: Adds AI-generated summaries to day markdown files
+**Description**: Adds AI-generated summaries to day markdown files.
 **Dependencies**: None
 **Environment Variables**:
 
@@ -4561,42 +4670,62 @@ This document describes all bash scripts in the project, their functionality, de
 
 ### gentoc
 
-**Description**: Generates and updates table of contents for Markdown files
+**Description**: Generates and updates table of contents for Markdown files.
 **Dependencies**: markdown-toc-gen
 **Environment Variables**: None
 **Called Scripts**:
 
 - require.sh
+  **Called Functions**:
+- validate_input
+- generate_toc
+- version
+- usage
+- main
 
 ### stitch
 
-**Description**: Generates README.md from stitch.md using stitchmd
+**Description**: Generates README.md from stitch.md using stitchmd.
 **Dependencies**: stitchmd
 **Environment Variables**: None
 **Called Scripts**:
 
 - require.sh
+  **Called Functions**:
+- validate_input
+- generate_readme
+- main
 
 ### addimgtoday
 
-**Description**: Adds image to day markdown file with caption
+**Description**: Adds image to day markdown file with caption.
 **Dependencies**: file, git
 **Environment Variables**:
 
 - YEAR
   **Called Scripts**:
 - lockconfig.sh
+  **Called Functions**:
+- usage
+- version
+- append_image_markdown
+- main
 
 ### restoreemojis
 
-**Description**: Replaces certain emojis in markdown files with alternatives
+**Description**: Replaces certain emojis in markdown files with alternatives.
 **Dependencies**: None
 **Environment Variables**: None
 **Called Scripts**: None
+**Called Functions**:
+
+- version
+- usage
+- main
 
 ### overlayicon
 
-**Description**: Applies play button overlay to JPEG images
+**Description**: Applies play button overlay to JPEG images.
 **Dependencies**: gm, file, grep, mktemp, exiftool
 **Environment Variables**:
 
@@ -4609,7 +4738,7 @@ This document describes all bash scripts in the project, their functionality, de
 
 ### overlayimg
 
-**Description**: Downloads YouTube thumbnail and overlays play icon
+**Description**: Downloads YouTube thumbnail and overlays play icon.
 **Dependencies**: None
 **Environment Variables**: None
 **Called Scripts**:
@@ -4619,18 +4748,24 @@ This document describes all bash scripts in the project, their functionality, de
 
 ### annotatedayjpgs
 
-**Description**: Annotates DayXXX.jpg files in month directories with timestamp metadata
+**Description**: Annotates DayXXX.jpg files in month directories with timestamp metadata.
 **Dependencies**: None
 **Environment Variables**: None
 **Called Scripts**:
 
 - color.sh
 - annotatejpg
+  **Called Functions**:
+- usage
+- version
+- cleanup
+- process_month
+- main
 
 ### addvideo
 
-**Description**: Adds new videos to system by generating markdown and updating indexes
-**Dependencies**: sed, basename, date, markdown-toc
+**Description**: Adds new videos to system by generating markdown and updating indexes.
+**Dependencies**: sed, basename, date, markdown-toc, tee
 **Environment Variables**:
 
 - YOUTUBE_API_KEY
@@ -4647,3 +4782,37 @@ This document describes all bash scripts in the project, their functionality, de
 - genvidthmd
 - summarizevideo
 - compact
+  **Called Functions**:
+- usage
+- version
+- validate_inputs
+- generate_files
+- dry_run
+- main
+
+### genindexrst
+
+**Description**: Generates index.rst for Sphinx documentation.
+**Dependencies**: None
+**Environment Variables**:
+
+- PROJECT
+- YEAR
+  **Called Scripts**:
+- lockconfig.sh
+  **Called Functions**:
+- version
+- usage
+- main
+
+### genstitchmd
+
+**Description**: Generates stitch.md from CONTENT_DOCS.
+**Dependencies**: None
+**Environment Variables**: None
+**Called Scripts**:
+
+- lockconfig.sh
+  **Called Functions**:
+- version
+- main
