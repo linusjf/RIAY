@@ -248,6 +248,63 @@ if ! declare -f is_jpeg_file > /dev/null; then
   }
 fi
 
+if ! declare -f overlayicon > /dev/null; then
+  overlayicon() {
+    require_commands gm mv file grep mktemp exiftool
+
+    # Validate arguments
+    if [[ $# -ne 1 ]]; then
+      die "Missing file argument"
+    fi
+
+    local file_path="$1"
+
+    # Check file exists
+    if [[ ! -f "${file_path}" ]]; then
+      die "File '${file_path}' not found"
+    fi
+
+    # Check file type
+    if ! is_jpeg_file "${file_path}"; then
+      die "'${file_path}' is not a valid JPEG file"
+    fi
+
+    # Check if already processed
+    if has_play_icon "${file_path}"; then
+      echo "File '${file_path}' already has play icon overlay"
+      exit "${SUCCESS}"
+    fi
+
+    # Check overlay icon exists
+    if [[ ! -f "${ICON_FILE}" ]]; then
+      die "Overlay icon '${ICON_FILE}' not found"
+    fi
+
+    # Create temporary file
+    local tmp_file
+    tmp_file="$(mktemp)" || die "Failed to create temporary file"
+
+    # Apply overlay
+    if ! gm composite -gravity center -geometry "${ICON_SIZE}${ICON_OFFSET}" \
+      "${ICON_FILE}" "${file_path}" "${tmp_file}"; then
+      rm -f "${tmp_file}"
+      die "Failed to overlay icon onto '${file_path}'"
+    fi
+
+    # Replace original file
+    if ! mv "${tmp_file}" "${file_path}"; then
+      rm -f "${tmp_file}"
+      die "Failed to replace original file with overlaid image"
+    fi
+
+    # Add exif data to file
+    if ! exiftool -overwrite_original -Comment="${ICON_COMMENT}" "${file_path}" &> /dev/null; then
+      err "Failed to add comment in exif data to ${file_path}"
+    fi
+
+  }
+fi
+
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main() {
     # Example main function if needed
