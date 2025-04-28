@@ -26,24 +26,14 @@ STRING: '"' .*? '"';
 YEAR: [2][0-9][0-9][0-9];
 MONTH: '1' '0'..'2' | '0' '1'..'9' | '1'..'9';
 
-DAY_NUMBER: LEADING_ZEROS? (ONE_DIGIT | TWO_DIGIT | THREE_DIGIT);
-
-fragment LEADING_ZEROS
-  : '0' '0'?    // one or two leading zeros allowed
-  ;
+DAY_NUMBER: THREE_DIGIT;
 
 fragment THREE_DIGIT
   : '36' [0-6]            // 360–366
   | '3' [0-5] [0-9]       // 300–359
   | [12] [0-9] [0-9]      // 100–299
-  ;
-
-fragment TWO_DIGIT
-  : [1-9] [0-9]           // 10–99
-  ;
-
-fragment ONE_DIGIT
-  : [1-9]                 // 1–9
+  | '0' [1-9] [0-9]      // 010 - 099
+  | '0' '0' [1-9]        // 001 - 009
   ;
 
 NEWLINE: '\r'? '\n';
