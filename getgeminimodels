@@ -7,7 +7,7 @@ function get_gemini_models() {
   : "${GEMINI_API_KEY:?Environment variable GEMINI_API_KEY must be set}"
 
   # Fetch the list of models from the Gemini API
-  response=$(curl -s "https://generativelanguage.googleapis.com/v1beta/models?key=${GEMINI_API_KEY}")
+  response="$(curl::safe_curl_request "https://generativelanguage.googleapis.com/v1beta/models?key=${GEMINI_API_KEY}")"
 
   # Extract model IDs, filter for Gemini models, sort them, and store in an array
   readarray -t gemini_models < <(
@@ -18,5 +18,13 @@ function get_gemini_models() {
   )
   printf "%s\n" "${gemini_models[@]}" >| geminimodelids.txt
 }
+
+if command -v realpath > /dev/null 2>&1; then
+  readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+else
+  readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
+fi
+
+source "${SCRIPT_DIR}/curl.sh"
 
 get_gemini_models
