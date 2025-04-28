@@ -63,7 +63,7 @@ validate_inputs() {
     return 1
   fi
 
-  if ! check_video_exists "$1"; then
+  if ! youtube::check_video_exists "$1"; then
     echo "Error: No video found with ID: '$1'" >&2
     echo "       Please verify the video exists at https://youtu.be/$1" >&2
     return 1

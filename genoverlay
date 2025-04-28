@@ -68,11 +68,11 @@ main() {
 
   source "${SCRIPT_DIR}/vidmd.sh"
 
-  if ! isnumeric "${doy}"; then
+  if ! date::isnumeric "${doy}"; then
     usage
   fi
 
-  if ! imgurl="$(thumbnailurl "${vid}")"; then
+  if ! imgurl="$(youtube::thumbnailurl "${vid}")"; then
     echo "Error: Failed to retrieve thumbnail URL for video ID: ${vid}" >&2
     return "${FAILURE}"
   fi

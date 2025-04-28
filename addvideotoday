@@ -163,7 +163,7 @@ function main() {
 
   mkdir -p "$month/jpgs"
 
-  if check_video_exists "$video_id"; then
+  if youtube::check_video_exists "$video_id"; then
     response=$(fetch_video_metadata "$video_id" "$api_key")
     thumbnail_url=$(printf "%s" "$response" | extract_thumbnail_url)
     title=$(printf "%s" "$response" | extract_video_title)
