@@ -17,8 +17,8 @@ source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
 lock_config_vars "${SCRIPT_DIR}/config.env"
 
-if ! declare -p HTTP_STATUS_CODES &> /dev/null; then
-  declare -A HTTP_STATUS_CODES=(
+if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
+  declare -A curl__HTTP_STATUS_CODES=(
     [000]="Returned with an HTTP/2 GOAWAY frame if the compressed length of any of the headers exceeds 8K bytes or if more than 10K requests are served through one connection"
     [100]="Continue"
     [101]="Switching Protocols"
@@ -121,16 +121,16 @@ fi
 : "${MAX_RETRIES:=3}"
 : "${INITIAL_RETRY_DELAY:=1}"
 
-if ! declare -f redact_keys > /dev/null; then
-  function redact_keys() {
+if ! declare -f curl::redact_keys > /dev/null; then
+  function curl::redact_keys() {
     local input="$1"
     echo "$input" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g'
   }
-  export -f redact_keys
+  export -f curl::redact_keys
 fi
 
-if ! declare -f save_failed_response > /dev/null; then
-  function save_failed_response() {
+if ! declare -f curl::save_failed_response > /dev/null; then
+  function curl::save_failed_response() {
     local data="$1"
     local response="$2"
     local endpoint="$3"
@@ -141,16 +141,16 @@ if ! declare -f save_failed_response > /dev/null; then
     local filename="failed_response_${sanitized_endpoint}_${timestamp}.json"
 
     {
-      redact_keys "$data"
-      redact_keys "$response"
+      curl::redact_keys "$data"
+      curl::redact_keys "$response"
     } >> "$filename"
     err "Saved failed response to $filename (API keys redacted)"
   }
-  export -f save_failed_response
+  export -f curl::save_failed_response
 fi
 
-if ! declare -f safe_curl_request > /dev/null; then
-  function safe_curl_request() {
+if ! declare -f curl::safe_curl_request > /dev/null; then
+  function curl::safe_curl_request() {
     local url="$1"
     local method="${2:-GET}"
     local headers="${3:-}"
@@ -193,7 +193,7 @@ if ! declare -f safe_curl_request > /dev/null; then
       local response_headers=$(echo "$curl_output" | head -n -1)
 
       if [[ $status_code -ge 200 && $status_code -lt 300 ]]; then
-        [[ "${verbose:-false}" == "true" ]] && >&2 echo "Request to $(redact_keys "$url") succeeded with status $status_code : ${HTTP_STATUS_CODES[$status_code]}"
+        [[ "${verbose:-false}" == "true" ]] && >&2 echo "Request to $(redact_keys "$url") succeeded with status $status_code : ${curl__HTTP_STATUS_CODES[$status_code]}"
         echo "$response"
         rm -f "$output_file"
         return 0
@@ -201,10 +201,10 @@ if ! declare -f safe_curl_request > /dev/null; then
 
       retry_count=$((retry_count + 1))
       if [[ $retry_count -lt $MAX_RETRIES ]]; then
-        save_failed_response "$data" "$response" "$(basename "$url")"
+        curl::save_failed_response "$data" "$response" "$(basename "$url")"
 
         if [[ $status_code -ge 400 ]] && [[ $status_code -lt 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]]; then
-          >&2 echo "Request failed with status $status_code: ${HTTP_STATUS_CODES[$status_code]}, no retries..."
+          >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, no retries..."
           return 2
         fi
 
@@ -212,15 +212,15 @@ if ! declare -f safe_curl_request > /dev/null; then
           local retry_after=$(echo "$response_headers" | grep -i '^retry-after:' | cut -d' ' -f2- | tr -d '\r')
           if [[ -n "$retry_after" ]]; then
             delay="$retry_after"
-            >&2 echo "Request failed with status $status_code: ${HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (Retry-After header value, attempt $retry_count/$MAX_RETRIES)"
+            >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (Retry-After header value, attempt $retry_count/$MAX_RETRIES)"
           elif [[ $status_code -eq 429 ]]; then
             >&2 echo "Request failed with status 429 (Too Many Requests) but no Retry-After header provided, aborting..."
             return 2
           else
-            >&2 echo "Request failed with status $status_code: ${HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
+            >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
           fi
         else
-          >&2 echo "Request failed with status $status_code: ${HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
+          >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
         fi
 
         sleep "$delay"
@@ -238,12 +238,12 @@ if ! declare -f safe_curl_request > /dev/null; then
       --show-error \
       >&2
 
-    save_failed_response "$data" "$response" "$(basename "$url")"
+    curl::save_failed_response "$data" "$response" "$(basename "$url")"
     rm -f "$output_file"
-    err "Request failed after $MAX_RETRIES attempts. Last status code: $status_code: ${HTTP_STATUS_CODES[$status_code]}"
+    err "Request failed after $MAX_RETRIES attempts. Last status code: $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}"
     return 2
   }
-  export -f safe_curl_request
+  export -f curl::safe_curl_request
 fi
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
