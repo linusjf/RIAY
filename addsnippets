@@ -54,18 +54,18 @@ main() {
 
   # Validate numeric inputs
   for doy in "$@"; do
-    if ! isnumeric "${doy}"; then
+    if ! date::isnumeric "${doy}"; then
       usage
     fi
   done
 
-  local oldmonth="$(mfromdoy "${1#0}")"
+  local oldmonth="$(date::mfromdoy "${1#0}")"
   local month=""
   local root="$(getroot)"
 
   # Process each day of year
   for doy in "$@"; do
-    month="$(mfromdoy "${doy#0}")"
+    month="$(date::mfromdoy "${doy#0}")"
     local mdfile="${month}/Day$(printf "%03d" "${doy#0}").md"
     local fname="${month}/jpgs/Day$(printf "%d" "${doy}")Snippet*.jpg"
     local regexjpg='^\./[A-Za-z]+/jpgs/Day[0-9]+Snippet([0-9]?)\.jpg$'
@@ -95,13 +95,13 @@ main() {
 
     # Generate compact version when month changes
     if [[ "${oldmonth}" != "${month}" ]]; then
-      "${SCRIPT_DIR}/genmonth" "$(monthnumberfrommonth "${oldmonth}" "${YEAR}")"
+      "${SCRIPT_DIR}/genmonth" "$(date::monthnumberfrommonth "${oldmonth}" "${YEAR}")"
       oldmonth="${month}"
     fi
   done
 
   # Generate final compact version
-  "${SCRIPT_DIR}/genmonth" "$(monthnumberfrommonth "${oldmonth}" "${YEAR}")"
+  "${SCRIPT_DIR}/genmonth" "$(date::monthnumberfrommonth "${oldmonth}" "${YEAR}")"
 }
 
 while [[ $# -gt 0 ]]; do

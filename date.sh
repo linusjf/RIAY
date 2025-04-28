@@ -17,7 +17,7 @@ fi
 source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/util.sh"
 
-if ! declare -f isnumeric > /dev/null; then
+if ! declare -f date::isnumeric > /dev/null; then
   ######################################################################
   # Check if input is numeric
   # Globals: None
@@ -26,13 +26,13 @@ if ! declare -f isnumeric > /dev/null; then
   # Outputs: None
   # Returns: 0 if numeric, 1 otherwise
   ######################################################################
-  isnumeric() {
+  date::isnumeric() {
     [[ "$1" =~ ^[0-9]+$ ]]
   }
-  export -f isnumeric
+  export -f date::isnumeric
 fi
 
-if ! declare -f mfromdoy > /dev/null; then
+if ! declare -f date::mfromdoy > /dev/null; then
   ######################################################################
   # Get month name from day of year
   # Globals: None
@@ -41,8 +41,8 @@ if ! declare -f mfromdoy > /dev/null; then
   # Outputs: Month name to STDOUT
   # Returns: None (exits with status 1 on error)
   ######################################################################
-  mfromdoy() {
-    isnumeric "$1" || die "$1 is not numeric"
+  date::mfromdoy() {
+    date::isnumeric "$1" || die "$1 is not numeric"
     require_commands date
     local day
     # convert number to base ten
@@ -50,10 +50,10 @@ if ! declare -f mfromdoy > /dev/null; then
     [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
     date --date="jan 1 + $((day - 1)) days" +%B
   }
-  export -f mfromdoy
+  export -f date::mfromdoy
 fi
 
-if ! declare -f datefromdoy > /dev/null; then
+if ! declare -f date::datefromdoy > /dev/null; then
   ######################################################################
   # Get full date from day of year
   # Globals: None
@@ -62,8 +62,8 @@ if ! declare -f datefromdoy > /dev/null; then
   # Outputs: Formatted date to STDOUT
   # Returns: None (exits with status 1 on error)
   ######################################################################
-  datefromdoy() {
-    isnumeric "$1" || die "$1 is not numeric"
+  date::datefromdoy() {
+    date::isnumeric "$1" || die "$1 is not numeric"
     require_commands date
     local day
     # convert number to base ten
@@ -71,10 +71,10 @@ if ! declare -f datefromdoy > /dev/null; then
     [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
     date --date="jan 1 + $((day - 1)) days" "+%B %d,%Y"
   }
-  export -f datefromdoy
+  export -f date::datefromdoy
 fi
 
-if ! declare -f monthfromnumber > /dev/null; then
+if ! declare -f date::monthfromnumber > /dev/null; then
   ######################################################################
   # Get month name from month number
   # Globals: None
@@ -83,7 +83,7 @@ if ! declare -f monthfromnumber > /dev/null; then
   # Outputs: Month name to STDOUT
   # Returns: None (exits with status 1 on error)
   ######################################################################
-  monthfromnumber() {
+  date::monthfromnumber() {
     require_commands date
     case $1 in
       [1-9] | 1[0-2]) date -d "${1}/01" +%B ;;
@@ -91,32 +91,32 @@ if ! declare -f monthfromnumber > /dev/null; then
       *) die "Invalid month number: $1" ;;
     esac
   }
-  export -f monthfromnumber
+  export -f date::monthfromnumber
 fi
 
-if ! declare -f monthnumberfrommonth > /dev/null; then
-  monthnumberfrommonth() {
+if ! declare -f date::monthnumberfrommonth > /dev/null; then
+  date::monthnumberfrommonth() {
     require_commands date
     month_name="$1"
     year="$2"
     month_number=$(date -d "1 $month_name $year" +"%m")
     echo "$month_number"
   }
-  export -f monthnumberfrommonth
+  export -f date::monthnumberfrommonth
 fi
 
-if ! declare -f isleapyear > /dev/null; then
-  isleapyear() {
+if ! declare -f date::isleapyear > /dev/null; then
+  date::isleapyear() {
     year="$1"
 
     ((year % 4 == 0 && year % 100 != 0)) \
       || ((year % 400 == 0))
   }
-  export -f isleapyear
+  export -f date::isleapyear
 fi
 
-if ! declare -f daycount > /dev/null; then
-  daycount() {
+if ! declare -f date::daycount > /dev/null; then
+  date::daycount() {
     year="$1"
     # Check if year is a leap year
     if isleapyear "$year"; then
@@ -125,5 +125,5 @@ if ! declare -f daycount > /dev/null; then
       echo 365
     fi
   }
-  export -f daycount
+  export -f date::daycount
 fi

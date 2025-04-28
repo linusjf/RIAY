@@ -40,7 +40,7 @@ function validate_arguments() {
     err "Error: Invalid number of arguments"
     usage 1
   fi
-  if ! [[ "${2}" -eq 366 ]] && [[ "$(daycount "${year}")" -eq "$2" ]]; then
+  if ! [[ "${2}" -eq 366 ]] && [[ "$(date::daycount "${year}")" -eq "$2" ]]; then
     err "Error: ${year} has 365 days only."
     usage 1
   fi

@@ -108,7 +108,7 @@ if ! declare -f playiconurl > /dev/null; then
     root="$(getroot)"
     doy_raw="$1"
     doy_padded="$(printf "%03d" "${doy_raw#0}")"
-    month="$(mfromdoy "${doy_padded#0}")"
+    month="$(date::mfromdoy "${doy_padded#0}")"
     printf "https://raw.githubusercontent.com/%s/%s/refs/heads/main/%s/jpgs/Day%s.jpg\n" \
       "${GITHUB_USERNAME}" "$root" "$month" "$doy_padded"
   }
@@ -246,7 +246,7 @@ if ! declare -f genvidthmd > /dev/null; then
 
     # Validate day of year if provided
     if [[ -n "$doy" ]]; then
-      if ! isnumeric "$doy"; then
+      if ! date::isnumeric "$doy"; then
         die "Error: 'doy' must be a numeric value"
       fi
       vidmdloc "$vid" "$vidurl" "$caption" "$doy"
