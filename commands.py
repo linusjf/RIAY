@@ -97,6 +97,7 @@ def main():
     lexer = commandsLexer(input_stream)
     stream = CommonTokenStream(lexer)
     parser = commandsParser(stream)
+    parser.setTrace(trace=False)
     tree = parser.program()
 
     execute_commands = commands()

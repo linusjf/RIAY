@@ -51,7 +51,7 @@ class commandsParser ( Parser ):
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "STRING", "YEAR", 
-                      "MONTH_DIGIT", "DAY_NUMBER", "NEWLINE", "WS" ]
+                      "MONTH", "DAY_NUMBER", "NEWLINE", "WS" ]
 
     RULE_program = 0
     RULE_command = 1
@@ -81,7 +81,7 @@ class commandsParser ( Parser ):
     T__5=6
     STRING=7
     YEAR=8
-    MONTH_DIGIT=9
+    MONTH=9
     DAY_NUMBER=10
     NEWLINE=11
     WS=12
@@ -474,8 +474,8 @@ class commandsParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def MONTH_DIGIT(self):
-            return self.getToken(commandsParser.MONTH_DIGIT, 0)
+        def MONTH(self):
+            return self.getToken(commandsParser.MONTH, 0)
 
         def getRuleIndex(self):
             return commandsParser.RULE_month
@@ -498,7 +498,7 @@ class commandsParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 63
-            self.match(commandsParser.MONTH_DIGIT)
+            self.match(commandsParser.MONTH)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

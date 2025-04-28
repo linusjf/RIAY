@@ -1,5 +1,3 @@
 # commands
-addvideotoday "p0XOixAacvA" 001
-genmonth 04 # generate
-stitch
-lintall
+genmonth 1
+addvideotoday "p0XOixAacvA" 111
