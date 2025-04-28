@@ -77,7 +77,7 @@ main() {
     return "${FAILURE}"
   fi
 
-  month="$(mfromdoy "${doy#0}")"
+  month="$(date::mfromdoy "${doy#0}")"
   doy_padded="$(printf "%03d" "${doy#0}")"
   dir="${month}/jpgs"
   relfile="${dir}/Day${doy_padded}.jpg"

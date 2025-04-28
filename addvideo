@@ -83,11 +83,11 @@ generate_files() {
   local videourl="https://youtu.be/${vid}"
   local month fname formatdt md
 
-  month="$(mfromdoy "${doy#0}")"
+  month="$(date::mfromdoy "${doy#0}")"
   # shellcheck disable=SC2153
-  monthnumber="$(monthnumberfrommonth "${month}" "${YEAR}")"
+  monthnumber="$(date::monthnumberfrommonth "${month}" "${YEAR}")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
-  formatdt="$(datefromdoy "${doy#0}")"
+  formatdt="$(date::datefromdoy "${doy#0}")"
 
   md="$(genvidthmd "$vid" "$videourl" "$caption" "$doy")"
 
@@ -133,9 +133,9 @@ dry_run() {
   local videourl="https://youtu.be/${vid}"
   local month fname formatdt
 
-  month="$(mfromdoy "${doy#0}")"
+  month="$(date::mfromdoy "${doy#0}")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
-  formatdt="$(datefromdoy "${doy#0}")"
+  formatdt="$(date::datefromdoy "${doy#0}")"
 
   cat << EOF
 DRY RUN: Would execute the following actions:

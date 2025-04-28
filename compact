@@ -48,7 +48,6 @@ main() {
   fi
 
   # Source required libraries
-  source "${SCRIPT_DIR}/require.sh"
   source "${SCRIPT_DIR}/vidmd.sh"
 
   (

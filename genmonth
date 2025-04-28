@@ -48,12 +48,12 @@ validate_inputs() {
   local month="$1"
   local year="$2"
 
-  if ! isnumeric "$month"; then
+  if ! date::isnumeric "$month"; then
     echo "Error: Month must be a number" >&2
     return 1
   fi
 
-  if ! isnumeric "$year"; then
+  if ! date::isnumeric "$year"; then
     echo "Error: Year must be a number" >&2
     return 1
   fi
@@ -77,7 +77,7 @@ generate_month_file() {
   local year="$2"
   local month_name monthmd
 
-  month_name="$(monthfromnumber "$month")"
+  month_name="$(date::monthfromnumber "$month")"
   if $APPEND_YEAR; then
     monthmd="${month_name}${year}.md"
   else
@@ -107,7 +107,7 @@ dry_run() {
   local year="$2"
   local month_name monthmd
 
-  month_name="$(monthfromnumber "$month")"
+  month_name="$(date::monthfromnumber "$month")"
   if $APPEND_YEAR; then
     monthmd="${month_name}${year}.md"
   else
@@ -115,7 +115,7 @@ dry_run() {
   fi
 
   cat << EOF
-DRY RUN: Would process month $month_name ($(monthfromnumber "$month")) for year $year
+DRY RUN: Would process month $month_name ($(date::monthfromnumber "$month")) for year $year
 Would generate these files:
   - $monthmd (monthly markdown file)
 Would run these commands:
