@@ -149,7 +149,7 @@ function main() {
   require_vars YEAR YOUTUBE_API_KEY
 
   api_key="$YOUTUBE_API_KEY"
-  github_repo=$(get_github_repo)
+  github_repo=$(git::get_github_repo)
 
   printf -v day_string "Day%03d" "$day_num"
   month=$(date -d "${YEAR}-01-01 +$((day_num - 1)) days" +"%B")

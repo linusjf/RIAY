@@ -15,8 +15,8 @@ fi
 source "${SCRIPT_DIR}/require.sh"
 # Git-related utility functions
 
-if ! declare -f get_github_repo > /dev/null; then
-  function get_github_repo() {
+if ! declare -f git::get_github_repo > /dev/null; then
+  function git::get_github_repo() {
     require_commands git
     local git_url
     git_url=$(git remote get-url origin 2> /dev/null)
@@ -29,7 +29,7 @@ if ! declare -f get_github_repo > /dev/null; then
       die "Error: Could not determine GitHub repo from remote: $git_url"
     fi
   }
-  export -f get_github_repo
+  export -f git::get_github_repo
 fi
 
 ######################################################################
@@ -39,10 +39,10 @@ fi
 # Outputs: Repository root name to STDOUT
 # Returns: None (exits with status 1 if git command fails)
 ######################################################################
-if ! declare -f getroot > /dev/null; then
-  getroot() {
+if ! declare -f git::getroot > /dev/null; then
+  git::getroot() {
     require_commands basename
-    basename "$(get_github_repo)"
+    basename "$(git::get_github_repo)"
   }
-  export -f getroot
+  export -f git::getroot
 fi

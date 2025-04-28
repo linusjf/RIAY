@@ -105,7 +105,7 @@ if ! declare -f playiconurl > /dev/null; then
   ######################################################################
   playiconurl() {
     local root doy_raw doy_padded month
-    root="$(getroot)"
+    root="$(git::getroot)"
     doy_raw="$1"
     doy_padded="$(printf "%03d" "${doy_raw#0}")"
     month="$(date::mfromdoy "${doy_padded#0}")"

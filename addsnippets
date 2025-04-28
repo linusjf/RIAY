@@ -61,7 +61,7 @@ main() {
 
   local oldmonth="$(date::mfromdoy "${1#0}")"
   local month=""
-  local root="$(getroot)"
+  local root="$(git::getroot)"
 
   # Process each day of year
   for doy in "$@"; do
