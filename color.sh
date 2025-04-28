@@ -120,6 +120,8 @@ if ! declare -f print_success > /dev/null; then
   export -f print_success
 fi
 
+export COLOR_RED COLOR_GREEN COLOR_YELLOW COLOR_BLUE COLOR_MAGENTA COLOR_CYAN COLOR_NC
+
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   debug=true
   verbose=true
