@@ -221,9 +221,9 @@ main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   # Resolve script directory
   if command -v realpath > /dev/null 2>&1; then
-    SCRIPT_DIR=$(dirname "$(realpath "$0")")
+    readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else
-    SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" && pwd -P)
+    readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
   fi
 
   # Source required libraries

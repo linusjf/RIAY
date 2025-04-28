@@ -15,7 +15,7 @@ function version() {
 
 function main() {
   local script_dir
-  script_dir=$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)
+  script_dir="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
   local removesnippets_path="${script_dir}/removesnippets"
 
   for month in {1..12}; do
