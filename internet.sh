@@ -19,8 +19,8 @@
 # Returns:
 #   0 if internet connection is available
 #   1 if no connection
-if ! declare -f checkinternet > /dev/null; then
-  checkinternet() {
+if ! declare -f internet::checkinternet > /dev/null; then
+  internet::checkinternet() {
     if ! hash telnet 2> /dev/null; then
       echo "Error: telnet command not found" >&2
       return 1
@@ -33,5 +33,5 @@ if ! declare -f checkinternet > /dev/null; then
 
     return 0
   }
-  export -f checkinternet
+  export -f internet::checkinternet
 fi

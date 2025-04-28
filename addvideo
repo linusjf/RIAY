@@ -196,7 +196,7 @@ main() {
     exit 1
   fi
 
-  checkinternet || exit 1
+  internet::checkinternet || exit 1
 
   local doy
   doy=$(("$(wc -l < "$VIDEOS_FILE")" + 1))
