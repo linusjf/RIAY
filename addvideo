@@ -52,13 +52,13 @@ version() {
 # Outputs: error messages to STDERR
 # Returns: 0 if valid, 1 otherwise
 validate_inputs() {
-  if ! validate_vid "$1"; then
+  if ! vidmd::validate_vid "$1"; then
     echo "Error: Invalid YouTube video ID format: '$1'" >&2
     echo "       YouTube video IDs should be 11 characters long" >&2
     return 1
   fi
 
-  if ! validate_caption "$2"; then
+  if ! vidmd::validate_caption "$2"; then
     echo "Error: Invalid caption format: '$2'" >&2
     return 1
   fi
@@ -89,7 +89,7 @@ generate_files() {
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(date::datefromdoy "${doy#0}")"
 
-  md="$(genvidthmd "$vid" "$videourl" "$caption" "$doy")"
+  md="$(vidmd::genvidthmd "$vid" "$videourl" "$caption" "$doy")"
 
   if [[ -f "$fname" ]] && ! mv "$fname" "${fname}.bak"; then
     echo "Warning: Failed to backup ${fname}" >&2
@@ -145,7 +145,7 @@ DRY RUN: Would execute the following actions:
 
 ### $caption
 
-$(genvidthmd "$vid" "$videourl" "$caption" "$doy")
+$(vidmd::genvidthmd "$vid" "$videourl" "$caption" "$doy")
 
 - Append to ${month}/${COMPACT_FILE} and $VIDEOS_FILE
 - Generate markdown for ${month} with table of contents

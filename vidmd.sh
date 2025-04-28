@@ -21,7 +21,7 @@ source "${SCRIPT_DIR}/git.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
-if ! declare -f usagevidmd > /dev/null; then
+if ! declare -f vidmd::usagevidmd > /dev/null; then
   ######################################################################
   # Display usage information for standard video markdown
   # Globals: None
@@ -29,7 +29,7 @@ if ! declare -f usagevidmd > /dev/null; then
   # Outputs: Usage message to STDOUT
   # Returns: None (exits with status 1)
   ######################################################################
-  usagevidmd() {
+  vidmd::usagevidmd() {
     cat << EOF
 Usage: $0 vidid vidurl caption
     vidid   - YouTube video ID (11 characters)
@@ -38,10 +38,10 @@ Usage: $0 vidid vidurl caption
 EOF
     exit 1
   }
-  export -f usagevidmd
+  export -f vidmd::usagevidmd
 fi
 
-if ! declare -f usagevidmdloc > /dev/null; then
+if ! declare -f vidmd::usagevidmdloc > /dev/null; then
   ######################################################################
   # Display usage information for localized video markdown
   # Globals: None
@@ -49,7 +49,7 @@ if ! declare -f usagevidmdloc > /dev/null; then
   # Outputs: Usage message to STDOUT
   # Returns: None (exits with status 1)
   ######################################################################
-  usagevidmdloc() {
+  vidmd::usagevidmdloc() {
     cat << EOF
 Usage: $0 vidid vidurl caption doy
     vidid   - YouTube video ID (11 characters)
@@ -59,11 +59,11 @@ Usage: $0 vidid vidurl caption doy
 EOF
     exit 1
   }
-  export -f usagevidmdloc
+  export -f vidmd::usagevidmdloc
 fi
 
-if ! declare -f usagegenvidthmd > /dev/null; then
-  function usagegenvidthmd() {
+if ! declare -f vidmd::usagegenvidthmd > /dev/null; then
+  function vidmd::usagegenvidthmd() {
     cat << EOF
 Usage: $0 vid vidurl caption [doy]
 Arguments:
@@ -74,11 +74,12 @@ Arguments:
 EOF
     exit 1
   }
-  export -f usagegenvidthmd
+  export -f vidmd::usagegenvidthmd
+
 fi
 
-if ! declare -f usageoverlayimg > /dev/null; then
-  usageoverlayimg() {
+if ! declare -f vidmd::usageoverlayimg > /dev/null; then
+  vidmd::usageoverlayimg() {
     cat << EOF
 Usage: ${0##*/} [OPTIONS] vid output
 Options:
@@ -90,10 +91,10 @@ Arguments:
 EOF
     exit 1
   }
-  export -f usageoverlayimg
+  export -f vidmd::usageoverlayimg
 fi
 
-if ! declare -f playiconurl > /dev/null; then
+if ! declare -f vidmd::playiconurl > /dev/null; then
   ######################################################################
   # Generate play icon URL for given day of year
   # Globals:
@@ -103,7 +104,7 @@ if ! declare -f playiconurl > /dev/null; then
   # Outputs: URL to STDOUT
   # Returns: None (exits with status 1 on error)
   ######################################################################
-  playiconurl() {
+  vidmd::playiconurl() {
     local root doy_raw doy_padded month
     root="$(git::getroot)"
     doy_raw="$1"
@@ -112,10 +113,10 @@ if ! declare -f playiconurl > /dev/null; then
     printf "https://raw.githubusercontent.com/%s/%s/refs/heads/main/%s/jpgs/Day%s.jpg\n" \
       "${GITHUB_USERNAME}" "$root" "$month" "$doy_padded"
   }
-  export -f playiconurl
+  export -f vidmd::playiconurl
 fi
 
-if ! declare -f downloadthumbnail > /dev/null; then
+if ! declare -f vidmd::downloadthumbnail > /dev/null; then
   ######################################################################
   # Download thumbnail for given video ID
   # Globals: None
@@ -125,16 +126,16 @@ if ! declare -f downloadthumbnail > /dev/null; then
   # Outputs: None
   # Returns: 1 if download fails
   ######################################################################
-  downloadthumbnail() {
+  vidmd::downloadthumbnail() {
     require_commands curl
     local url
-    url="$(thumbnailurl "$1")" || return 1
+    url="$(youtube::thumbnailurl "$1")" || return 1
     curl --silent "$url" --output "$2"
   }
-  export -f playiconurl
+  export -f vidmd::downloadthumbnail
 fi
 
-if ! declare -f vidmd > /dev/null; then
+if ! declare -f vidmd::vidmd > /dev/null; then
   ######################################################################
   # Generate standard video markdown
   # Globals: None
@@ -145,16 +146,16 @@ if ! declare -f vidmd > /dev/null; then
   # Outputs: Markdown to STDOUT
   # Returns: None (exits with status 1 on error)
   ######################################################################
-  vidmd() {
+  vidmd::vidmd() {
     [[ $# -lt 3 ]] && usagevidmd
     local vidid="$1" vidurl="$2" caption="$3" imgurl
-    imgurl="$(thumbnailurl "$vidid")" || die "Error: Thumbnails unverifiable or absent"
+    imgurl="$(youtube::thumbnailurl "$vidid")" || die "Error: Thumbnails unverifiable or absent"
     printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
   }
-  export -f vidmd
+  export -f vidmd::vidmd
 fi
 
-if ! declare -f vidmdloc > /dev/null; then
+if ! declare -f vidmd::vidmdloc > /dev/null; then
   ######################################################################
   # Generate localized video markdown with day-of-year thumbnail
   # Globals: None
@@ -166,16 +167,16 @@ if ! declare -f vidmdloc > /dev/null; then
   # Outputs: Markdown to STDOUT
   # Returns: None (exits with status 1 on error)
   ######################################################################
-  vidmdloc() {
+  vidmd::vidmdloc() {
     [[ $# -lt 4 ]] && usagevidmdloc
     local vidid="$1" vidurl="$2" caption="$3" doy="$4" imgurl
-    imgurl="$(playiconurl "${doy#0}")"
+    imgurl="$(vidmd::playiconurl "${doy#0}")"
     printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
   }
-  export -f vidmdloc
+  export -f vidmd::vidmdloc
 fi
 
-if ! declare -f validate_input > /dev/null; then
+if ! declare -f vidmd::validate_input > /dev/null; then
   ######################################################################
   # Validate input length
   # Globals: None
@@ -186,16 +187,16 @@ if ! declare -f validate_input > /dev/null; then
   # Outputs: Error message to STDERR if validation fails
   # Returns: None (exits with status 1 on error)
   ######################################################################
-  validate_input() {
+  vidmd::validate_input() {
     local value="$1" max_length="$2" error_message="$3"
     [[ -z "$value" ]] && die "Error: $error_message cannot be empty"
     [[ ${#value} -gt "$max_length" ]] && die "Error: $error_message too long. Maximum $max_length characters"
     return 0
   }
-  export -f validate_input
+  export -f vidmd::validate_input
 fi
 
-if ! declare -f validate_vid > /dev/null; then
+if ! declare -f vidmd::validate_vid > /dev/null; then
   ######################################################################
   # Validate video ID format
   # Globals:
@@ -205,14 +206,14 @@ if ! declare -f validate_vid > /dev/null; then
   # Outputs: Error message to STDERR if validation fails
   # Returns: None (exits with status 1 on error)
   ######################################################################
-  validate_vid() {
+  vidmd::validate_vid() {
     [[ "$1" =~ ^[a-zA-Z0-9_-]{$VIDEO_ID_LENGTH}$ ]] || die "Invalid video ID $1. Expected $VIDEO_ID_LENGTH characters"
-    validate_input "$1" "$VIDEO_ID_LENGTH" "Video ID"
+    vidmd::validate_input "$1" "$VIDEO_ID_LENGTH" "Video ID"
   }
-  export -f validate_vid
+  export -f vidmd::validate_vid
 fi
 
-if ! declare -f validate_caption > /dev/null; then
+if ! declare -f vidmd::validate_caption > /dev/null; then
   ######################################################################
   # Validate caption length
   # Globals:
@@ -222,17 +223,17 @@ if ! declare -f validate_caption > /dev/null; then
   # Outputs: Error message to STDERR if validation fails
   # Returns: None (exits with status 1 on error)
   ######################################################################
-  validate_caption() {
-    validate_input "$1" "$MAX_CAPTION_LENGTH" "Caption"
+  vidmd::validate_caption() {
+    vidmd::validate_input "$1" "$MAX_CAPTION_LENGTH" "Caption"
   }
-  export -f validate_caption
+  export -f vidmd::validate_caption
 fi
 
-if ! declare -f genvidthmd > /dev/null; then
-  function genvidthmd() {
+if ! declare -f vidmd::genvidthmd > /dev/null; then
+  function vidmd::genvidthmd() {
     # Validate arguments
     if [[ $# -lt 3 ]]; then
-      usagegenvidthmd
+      vidmd::usagegenvidthmd
     fi
     local vid="$1"
     local vidurl="$2"
@@ -249,48 +250,48 @@ if ! declare -f genvidthmd > /dev/null; then
       if ! date::isnumeric "$doy"; then
         die "Error: 'doy' must be a numeric value"
       fi
-      vidmdloc "$vid" "$vidurl" "$caption" "$doy"
+      vidmd::vidmdloc "$vid" "$vidurl" "$caption" "$doy"
     else
-      vidmd "$vid" "$vidurl" "$caption"
+      vidmd::vidmd "$vid" "$vidurl" "$caption"
     fi
   }
-  export -f genvidthmd
+  export -f vidmd::genvidthmd
 fi
 
 ######################################################################
 # Check if file already has play icon comment
 ######################################################################
-if ! declare -f has_play_icon > /dev/null; then
-  has_play_icon() {
+if ! declare -f vidmd::has_play_icon > /dev/null; then
+  vidmd::has_play_icon() {
     exiftool -Comment "$1" 2> /dev/null | grep -q "${ICON_COMMENT}"
   }
-  export -f has_play_icon
+  export -f vidmd::has_play_icon
 fi
 
 ######################################################################
 # Verify file is a valid JPEG
 ######################################################################
-if ! declare -f is_jpeg_file > /dev/null; then
-  is_jpeg_file() {
+if ! declare -f vidmd::is_jpeg_file > /dev/null; then
+  vidmd::is_jpeg_file() {
     file "$1" | grep -q 'JPEG'
   }
-  export -f is_jpeg_file
+  export -f vidmd::is_jpeg_file
 fi
 
 ######################################################################
 ######################################################################
-if ! declare -f is_jpeg_extension > /dev/null; then
-  is_jpeg_extension() {
+if ! declare -f vidmd::is_jpeg_extension > /dev/null; then
+  vidmd::is_jpeg_extension() {
     local ext="${1##*.}"
     local ext_lower
     ext_lower=$(echo "${ext}" | tr '[:upper:]' '[:lower:]')
     [[ "${ext_lower}" == "jpg" || "${ext_lower}" == "jpeg" ]]
   }
-  export -f is_jpeg_extension
+  export -f vidmd::is_jpeg_extension
 fi
 
-if ! declare -f overlayicon > /dev/null; then
-  overlayicon() {
+if ! declare -f vidmd::overlayicon > /dev/null; then
+  vidmd::overlayicon() {
     require_commands gm mv file grep mktemp exiftool
 
     # Validate arguments
@@ -306,12 +307,12 @@ if ! declare -f overlayicon > /dev/null; then
     fi
 
     # Check file type
-    if ! is_jpeg_file "${file_path}"; then
+    if ! vidmd::is_jpeg_file "${file_path}"; then
       die "'${file_path}' is not a valid JPEG file"
     fi
 
     # Check if already processed
-    if has_play_icon "${file_path}"; then
+    if vidmd::has_play_icon "${file_path}"; then
       echo "File '${file_path}' already has play icon overlay"
       return 0
     fi
@@ -343,15 +344,15 @@ if ! declare -f overlayicon > /dev/null; then
       err "Failed to add comment in exif data to ${file_path}"
     fi
   }
-  export -f overlayicon
+  export -f vidmd::overlayicon
 fi
 
-if ! declare -f overlayimg > /dev/null; then
-  overlayimg() {
+if ! declare -f vidmd::overlayimg > /dev/null; then
+  vidmd::overlayimg() {
 
     # Validate arguments
     if [[ $# -ne 2 ]]; then
-      usageoverlayimg
+      vidmd::usageoverlayimg
     fi
 
     local vid="$1"
@@ -366,22 +367,23 @@ if ! declare -f overlayimg > /dev/null; then
     fi
 
     # Validate file extension
-    if ! is_jpeg_extension "${output}"; then
+    if ! vidmd::is_jpeg_extension "${output}"; then
       die "Output file must have a '.jpg' or '.jpeg' extension"
     fi
 
     # Download thumbnail
-    if ! downloadthumbnail "${vid}" "${output}"; then
+    if ! vidmd::downloadthumbnail "${vid}" "${output}"; then
       die "Failed to download thumbnail for video ID '${vid}'"
     fi
 
     # Overlay icon
-    if ! overlayicon "${output}"; then
+    if ! vidmd::overlayicon "${output}"; then
       die "Failed to overlay icon on '${output}'"
     fi
 
     exit 0
   }
+  export -f vidmd::overlayimg
 fi
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

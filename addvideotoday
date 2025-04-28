@@ -45,7 +45,7 @@ function validate_arguments() {
     usage 1
   fi
   if [[ "${2}" -le 0 ]] || [[ "${2}" -gt 366 ]]; then
-    err "Error: Invalid day number ${2}"
+    err "Error: Invalid day number ${2}: Outside range 1 - 366"
     usage 1
   fi
 }
@@ -152,6 +152,7 @@ function main() {
   github_repo=$(git::get_github_repo)
 
   printf -v day_string "Day%03d" "$day_num"
+  # shellcheck disable=SC2153
   month=$(date -d "${YEAR}-01-01 +$((day_num - 1)) days" +"%B")
 
   markdown_file="$month/${day_string}.md"
@@ -173,7 +174,7 @@ function main() {
     fi
 
     download_thumbnail "$thumbnail_url" "$image_path"
-    overlayicon "$image_path"
+    vidmd::overlayicon "$image_path"
     youtube_url="https://youtu.be/$video_id"
 
     backup_file "$markdown_file"

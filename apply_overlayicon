@@ -48,10 +48,8 @@ function main() {
 
   validate_environment || return 1
 
-  export -f overlayicon
-
   mapfile -t imgfiles < <(find "$root_dir" -type f -regextype posix-extended -regex '.*/Day[0-9]{3}\.jpg' -print)
-  parallel overlayicon ::: "${imgfiles[@]}"
+  parallel vidmd::overlayicon ::: "${imgfiles[@]}"
 }
 
 while [[ $# -gt 0 ]]; do

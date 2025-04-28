@@ -6,10 +6,8 @@ shopt -s inherit_errexit
 
 # shellcheck disable=SC2155
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
-# shellcheck disable=SC1091
-source "${SCRIPT_DIR}/vidmd.sh"
-# shellcheck disable=SC1091
 source "${SCRIPT_DIR}/require.sh"
+source "${SCRIPT_DIR}/date.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 DRY_RUN=false

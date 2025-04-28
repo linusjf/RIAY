@@ -47,9 +47,6 @@ main() {
     usage 1
   fi
 
-  # Source required libraries
-  source "${SCRIPT_DIR}/vidmd.sh"
-
   (
     cd "${target_dir}" || exit 1
 

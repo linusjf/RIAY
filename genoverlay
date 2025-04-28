@@ -97,7 +97,7 @@ main() {
     return "${FAILURE}"
   fi
 
-  overlayicon "${relfile}"
+  vidmd::overlayicon "${relfile}"
   return "${SUCCESS}"
 }
 
