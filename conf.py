@@ -42,7 +42,7 @@ latex_elements = {
  }
 
 # -- Ootions for linkcheck
-linkcheck_timeout = 5  # seconds
+linkcheck_timeout = 30  # seconds
 linkcheck_ignore = [
     r'http://localhost:\d+/',  # Ignore local dev servers
     r'https://example\.com/redirect',  # Ignore known redirect
