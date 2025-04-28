@@ -19,7 +19,7 @@ lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 function usage() {
   local exit_code=${1:-0}
-  local output=${exit_code:-1}
+  local output
   if [ "$exit_code" -eq 0 ]; then
     output=1
   else
@@ -27,6 +27,9 @@ function usage() {
   fi
 
   >&"$output" printf "Usage: %s <video_id> <day_number>\n" "$(basename "$0")"
+  >&"$output" printf "Adds YouTube video metadata to daily markdown files.\n"
+  >&"$output" printf "  <video_id>   The YouTube video ID.\n"
+  >&"$output" printf "  <day_number> The day number (1-366).\n"
   >&"$output" printf "Example: %s ABCDEF12345 42\n" "$(basename "$0")"
   exit "$exit_code"
 }
