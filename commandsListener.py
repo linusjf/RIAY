@@ -116,5 +116,23 @@ class commandsListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by commandsParser#addvideotoday.
+    def enterAddvideotoday(self, ctx:commandsParser.AddvideotodayContext):
+        pass
+
+    # Exit a parse tree produced by commandsParser#addvideotoday.
+    def exitAddvideotoday(self, ctx:commandsParser.AddvideotodayContext):
+        pass
+
+
+    # Enter a parse tree produced by commandsParser#dayofyear.
+    def enterDayofyear(self, ctx:commandsParser.DayofyearContext):
+        pass
+
+    # Exit a parse tree produced by commandsParser#dayofyear.
+    def exitDayofyear(self, ctx:commandsParser.DayofyearContext):
+        pass
+
+
 
 del commandsParser

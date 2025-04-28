@@ -119,7 +119,7 @@ if ! declare -f date::daycount > /dev/null; then
   date::daycount() {
     year="$1"
     # Check if year is a leap year
-    if isleapyear "$year"; then
+    if date::isleapyear "$year"; then
       echo 366
     else
       echo 365

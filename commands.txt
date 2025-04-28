@@ -1,5 +1,5 @@
 # commands
-addvideo "p0XOixAacvA" "Partake of God"
+addvideotoday "p0XOixAacvA" 366
 genmonth 04 # generate
 stitch
 lintall
