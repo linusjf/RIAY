@@ -129,16 +129,15 @@ function append_video_info() {
   local file_path=$1
   local title=$2
   local github_repo=$3
-  local month=$4
-  local day_string=$5
-  local youtube_url=$6
-  local script_dir=$7
-  local video_id=$8
+  local image_path=$4
+  local youtube_url=$5
+  local script_dir=$6
+  local video_id=$7
 
   {
     printf "\n### %s\n\n" "$title"
-    printf "[![%s](https://raw.githubusercontent.com/%s/refs/heads/main/%s/jpgs/%s.jpg)](%s \"%s\")\n" \
-      "$title" "$github_repo" "$month" "$day_string" "$youtube_url" "$title"
+    printf "[![%s](https://raw.githubusercontent.com/%s/refs/heads/main/%s)](%s \"%s\")\n" \
+      "$title" "$github_repo" "$image_path" "$youtube_url" "$title"
     echo
     "${script_dir}/summarizevideo" "$video_id"
   } >> "$file_path"
@@ -163,7 +162,7 @@ function main() {
   month=$(date -d "${YEAR}-01-01 +$((day_num - 1)) days" +"%B")
 
   markdown_file="$month/${day_string}.md"
-  image_path="$month/jpgs/${day_string}.jpg"
+  image_path="$month/jpgs/${video_id}.jpg"
 
   if [ ! -f "$markdown_file" ]; then
     die "Error: Markdown file $markdown_file does not exist"
@@ -190,8 +189,8 @@ function main() {
       remove_existing_video_entry "$markdown_file" "$video_id"
     fi
 
-    append_video_info "$markdown_file" "$title" "$github_repo" "$month" \
-      "$day_string" "$youtube_url" "$SCRIPT_DIR" "$video_id"
+    append_video_info "$markdown_file" "$title" "$github_repo" \
+      "$image_path" "$youtube_url" "$SCRIPT_DIR" "$video_id"
 
     out "Appended video info to $markdown_file"
   else

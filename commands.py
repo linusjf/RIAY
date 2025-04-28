@@ -27,10 +27,10 @@ class commands(commandsListener):
     # Enter a parse tree produced by commandsParser#addvideotoday.
     def enterAddvideotoday(self, ctx:commandsParser.AddvideotodayContext):
         videoId = ctx.videoId().getText().strip('"')
-        dayofyear = ctx.dayofyear().getText()
+        dayofyear = int(ctx.dayofyear().getText())
         ruleName = self.getRuleName(ctx)
-        print(f"Adding video '{videoId}' to day '{dayofyear}'.")
-        self.executeCommand([ruleName, videoId, dayofyear])
+        print(f"Adding video '{videoId}' to day {dayofyear}.")
+        self.executeCommand([ruleName, videoId, str(dayofyear)])
 
     # Enter a parse tree produced by commandsParser#Genmonth.
     def enterGenmonth(self, ctx:commandsParser.GenmonthContext):
