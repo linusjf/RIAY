@@ -15,7 +15,7 @@ fi
 
 source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
-lock_config_vars "${SCRIPT_DIR}/config.env"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
   declare -A curl__HTTP_STATUS_CODES=(

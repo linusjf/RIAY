@@ -19,7 +19,7 @@ source "${SCRIPT_DIR}/util.sh"
 source "${SCRIPT_DIR}/date.sh"
 source "${SCRIPT_DIR}/git.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
-lock_config_vars "${SCRIPT_DIR}/config.env"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 if ! declare -f usagevidmd > /dev/null; then
   ######################################################################

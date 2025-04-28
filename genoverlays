@@ -10,7 +10,7 @@ readonly SUCCESS=0
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/util.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
-lock_config_vars "${SCRIPT_DIR}/config.env"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 ######################################################################
 ######################################################################
 usage() {

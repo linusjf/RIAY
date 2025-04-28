@@ -9,8 +9,8 @@ fi
 
 source "${SCRIPT_DIR}/require.sh"
 
-if ! declare -f lock_config_vars > /dev/null; then
-  lock_config_vars() {
+if ! declare -f lockconfig::lock_config_vars > /dev/null; then
+  lockconfig::lock_config_vars() {
     require_commands compgen grep comm
     local config_file="$1"
     local before_vars after_vars config_vars var
@@ -36,5 +36,5 @@ if ! declare -f lock_config_vars > /dev/null; then
       fi
     done
   }
-  export -f lock_config_vars
+  export -f lockconfig::lock_config_vars
 fi

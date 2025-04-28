@@ -13,7 +13,7 @@ readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -
 # Source require.sh from same directory as script
 source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
-lock_config_vars "${SCRIPT_DIR}/config.env"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 #######################################
 # Print version information

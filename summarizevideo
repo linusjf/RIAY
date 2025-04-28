@@ -16,7 +16,7 @@ source "${SCRIPT_DIR}/util.sh"
 source "${SCRIPT_DIR}/curl.sh"
 source "${SCRIPT_DIR}/youtube.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
-lock_config_vars "${SCRIPT_DIR}/config.env"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 declare -i CURRENT_MODEL_INDEX=0
 

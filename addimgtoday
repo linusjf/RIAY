@@ -21,7 +21,7 @@ source "${SCRIPT_DIR}/util.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
 
 # Load configuration variables
-lock_config_vars "${SCRIPT_DIR}/config.env"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 # Check for required environment variable
 if [[ -z "${YEAR:-}" ]]; then
