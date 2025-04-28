@@ -116,17 +116,17 @@ YEAR=2025
 #### Overlay Icon Configuration
 
 ```bash
-ICON_FILE="play-button.png"        # Default play icon filename
-ICON_SIZE="256x256"               # Icon dimensions
-ICON_OFFSET="+32+0"               # Icon positioning offset
-ICON_COMMENT="Play Icon Added"    # EXIF comment for generated images
+ICON_FILE="play-button.png"
+ICON_SIZE="256x256"
+ICON_OFFSET="+32+0"
+ICON_COMMENT="Play Icon Added"
 ```
 
 #### File Configuration
 
 ```bash
-COMPACT_FILE="compact.txt"        # File containing markdown file list
-VIDEOS_FILE="videos.txt"         # File containing video IDs
+COMPACT_FILE="compact.txt"
+VIDEOS_FILE="videos.txt"
 ```
 
 #### API Request Settings
@@ -138,6 +138,10 @@ GAP_BW_REQS=10
 MAX_RETRIES=5
 # Initial retry delay (seconds) - increases exponentially
 INITIAL_RETRY_DELAY=2
+# Connection timeout for curl requests (seconds)
+CONNECT_TIMEOUT=30
+# Maximum time for curl operations (seconds)
+MAX_TIME=90
 ```
 
 #### AI Model Settings
@@ -160,6 +164,29 @@ GEMINI_MODELS=(
 CHUNK_SUMMARY_PROMPT="Summarize this text, excluding plugs, branding, and promotions. Avoid mention of Day, podcast and Rosary in a Day:"
 # Prompt for final summary generation
 FINAL_SUMMARY_PROMPT="Condense the following using the writing style of CS Lewis in 500 words or less. Be concise and clear, suitable for someone who wants a quick overview. Start with a level three markdown header and annotate it as 'AI-Generated Summary:' followed by your generated title (no colons, proper grammar). Generate well-formatted and line-spaced markdown. Do not fence the markdown. Use lists instead of further sub-headings."
+```
+
+#### Content Documentation Settings
+
+```bash
+# List of files for generating documentation
+CONTENT_DOCS=(
+  "RIAY=start.md"
+  "January=January.md"
+  "February=February.md"
+  "March=March.md"
+  "April=April.md"
+  "May=May.md"
+  "June=June.md"
+  "July=July.md"
+  "August=August.md"
+  "September=September.md"
+  "October=October.md"
+  "November=November.md"
+  "December=December.md"
+  "HOWTO=HOWTO.md"
+  "SCRIPTS=SCRIPTS.md"
+)
 ```
 
 The config values can be modified as per your preferences.
