@@ -1,5 +1,5 @@
 # commands
-addvideotoday "p0XOixAacvA" 366
+addvideotoday "p0XOixAacvA" 001
 genmonth 04 # generate
 stitch
 lintall

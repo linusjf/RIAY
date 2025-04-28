@@ -25,12 +25,13 @@ dayofyear: DAY_NUMBER;
 STRING: '"' .*? '"';
 YEAR: [2][0-9][0-9][0-9];
 MONTH_DIGIT: '1' '0'..'2' | '0' '1'..'9' | '1'..'9';
-DAY_NUMBER
-  : '0'? [1-9]                         // 1-9 with optional leading zero
-  | '0'? [1-9] [0-9]                    // 10-99 with leading zero
-  | [1-2] [0-9] [0-9]                  // 100-299
+DAY_NUMBER:
+  '36' [0-6]                         // 360-366
   | '3' [0-5] [0-9]                    // 300-359
-  | '36' [0-6]                         // 360-366
+  | [1-2] [0-9] [0-9]                  // 100-299
+  | '0'? [1-9] [0-9]                    // 10-99 with optional leading zero
+  | '0' '0' [1-9]                         // 1-9 with optional two leading zeros
+  | '0'? [1-9]                         // 1-9 with optional leading zeros
   ;
 
 

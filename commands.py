@@ -27,7 +27,7 @@ class commands(commandsListener):
     # Enter a parse tree produced by commandsParser#addvideotoday.
     def enterAddvideotoday(self, ctx:commandsParser.AddvideotodayContext):
         videoId = ctx.videoId().getText().strip('"')
-        dayofyear = ctx.dayofyear().getText().strip('"')
+        dayofyear = ctx.dayofyear().getText()
         ruleName = self.getRuleName(ctx)
         print(f"Adding video '{videoId}' to day '{dayofyear}'.")
         self.executeCommand([ruleName, videoId, dayofyear])
