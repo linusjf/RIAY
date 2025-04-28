@@ -4294,7 +4294,6 @@ This document describes all bash scripts in the project, their functionality, de
 1. [apply_overlayicon](#apply_overlayicon)
 1. [genoverlays](#genoverlays)
 1. [setupimgs](#setupimgs)
-1. [replacevmds](#replacevmds)
 1. [setup](#setup)
 1. [compact](#compact)
 1. [genmonth](#genmonth)
@@ -4315,8 +4314,6 @@ This document describes all bash scripts in the project, their functionality, de
 1. [stitch](#stitch)
 1. [addimgtoday](#addimgtoday)
 1. [restoreemojis](#restoreemojis)
-1. [overlayicon](#overlayicon)
-1. [overlayimg](#overlayimg)
 1. [annotatedayjpgs](#annotatedayjpgs)
 1. [addvideo](#addvideo)
 1. [genindexrst](#genindexrst)
@@ -4388,7 +4385,6 @@ This document describes all bash scripts in the project, their functionality, de
 - LOGGING
   **Called Scripts**:
 - lockconfig.sh
-- overlayicon
   **Called Functions**:
 - version
 - usage
@@ -4417,22 +4413,14 @@ This document describes all bash scripts in the project, their functionality, de
 **Description**: Processes and converts images in a directory, moves downloads to jpgs directory.
 **Dependencies**: gm, rm, mv
 **Environment Variables**: None
-**Called Scripts**: None
-**Called Functions**:
+**Called Scripts**:
 
+- require.sh
+  **Called Functions**:
 - usage
 - is_valid_dir
 - get_downloads_dir
 - main
-
-### replacevmds
-
-**Description**: Processes markdown files and replaces video markdown syntax.
-**Dependencies**: mv, mktemp, curl
-**Environment Variables**: None
-**Called Scripts**:
-
-- vidmd.sh
 
 ### setup
 
@@ -4672,6 +4660,7 @@ This document describes all bash scripts in the project, their functionality, de
   **Called Scripts**:
 - lockconfig.sh
 - summarizevideo
+  **Called Functions**:
 
 ### gentoc
 
@@ -4727,29 +4716,6 @@ This document describes all bash scripts in the project, their functionality, de
 - version
 - usage
 - main
-
-### overlayicon
-
-**Description**: Applies play button overlay to JPEG images.
-**Dependencies**: gm, file, grep, mktemp, exiftool
-**Environment Variables**:
-
-- ICON_FILE
-- ICON_SIZE
-- ICON_OFFSET
-- ICON_COMMENT
-  **Called Scripts**:
-- lockconfig.sh
-
-### overlayimg
-
-**Description**: Downloads YouTube thumbnail and overlays play icon.
-**Dependencies**: None
-**Environment Variables**: None
-**Called Scripts**:
-
-- vidmd.sh
-- overlayicon
 
 ### annotatedayjpgs
 
