@@ -14,6 +14,8 @@ if [[ -z "${SCRIPT_DIR:-""}" ]]; then
 fi
 
 source "${SCRIPT_DIR}/require.sh"
+source "${SCRIPT_DIR}/lockconfig.sh"
+lock_config_vars "${SCRIPT_DIR}/config.env"
 
 if ! declare -p HTTP_STATUS_CODES &> /dev/null; then
   declare -A HTTP_STATUS_CODES=(
@@ -168,8 +170,8 @@ if ! declare -f safe_curl_request > /dev/null; then
       local curl_cmd=(
         curl
         --show-error
-        --connect-timeout 10
-        --max-time 60
+        --connect-timeout "${CONNECT_TIMEOUT:-30}"
+        --max-time "${MAX_TIME:-90}"
         --fail-with-body
         --silent
         --write-out "%{http_code}"
@@ -231,8 +233,8 @@ if ! declare -f safe_curl_request > /dev/null; then
       -X "$method" \
       ${headers:+-H "$(redact_keys "$headers")"} \
       ${data:+-d "$(redact_keys "$data")"} \
-      --connect-timeout 10 \
-      --max-time 60 \
+      --connect-timeout "${CONNECT_TIMEOUT:-30}" \
+      --max-time "${MAX_TIME:-90}" \
       --show-error \
       >&2
 
