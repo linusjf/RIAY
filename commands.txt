@@ -1,3 +1,5 @@
 # commands
-genmonth 04 2025 # generate
-genmonth 03 # generate
+addvideo "p0XOixAacvA" "Partake of God"
+genmonth 04 # generate
+stitch
+lintall

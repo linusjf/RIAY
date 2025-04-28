@@ -83,6 +83,9 @@
 - [April 27,2025](#april-272025)
   - [Come Down, Peter](#come-down-peter)
   - [AI-Generated Summary: The Transfiguration and the Call to Active Charity](#ai-generated-summary-the-transfiguration-and-the-call-to-active-charity)
+- [April 28,2025](#april-282025)
+  - [Partake of God](#partake-of-god)
+  - [AI-Generated Summary: The Eucharist as Divine Gift and Transformation](#ai-generated-summary-the-eucharist-as-divine-gift-and-transformation)
 
 <!-- tocstop -->
 
@@ -718,3 +721,19 @@ Like Peter yearning for the mountaintop tranquility with Christ, we are often te
 - Trust in God's shaping hand, even amidst difficulty. Our daily struggles, our commitment to our calling, these are the hammer and anvil upon which we are forged into God's image. Prayer draws us near to God, but the trials of life refine us. Both are necessary for growth. While youthful days may have allowed for extended periods of focused prayer, those with greater responsibilities can trust that God works deeply even in the midst of busyness. The mountaintop experience is precious, but God is equally present in the valley, in the everyday struggles after the descent.
 
 - Persevere in prayer, trusting that God sanctifies you through your current circumstances. Ask for renewed faith amidst suffering and difficulty, and be filled with hope, knowing that God is making you new.
+
+## April 28,2025
+
+### Partake of God
+
+[![Partake of God](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day118.jpg)](https://youtu.be/p0XOixAacvA "Partake of God")
+
+### AI-Generated Summary: The Eucharist as Divine Gift and Transformation
+
+Drawing upon the wisdom of St. Cyril of Jerusalem and Alexandria, this reflection explores the Fifth Luminous Mystery, the institution of the Eucharist. St. Cyril of Jerusalem, a staunch defender of orthodoxy, emphasizes the literal meaning of Christ's words at the Last Supper: "This is my body…This is my blood." This understanding is further illuminated by St. Cyril of Alexandria, who argues for the sacramental, not merely symbolic, interpretation of these words. He affirms the real presence of Christ in the Eucharist, a belief rooted in the early Church and supported by Christ's power to transform, as seen in the miracle at Cana.
+
+Two key concepts help us understand the workings of sacraments: _ex opere operato_ and _ex opere operantis_. The former refers to the objective reality of the sacrament, independent of individual belief or priestly holiness. Baptism cleanses from original sin, and marriage forms an indissoluble bond, regardless of the individuals involved. The latter, _ex opere operantis_, describes the subjective fruitfulness of the sacrament, dependent on the recipient's disposition and cooperation with grace. While transubstantiation occurs objectively, the benefits of communion rely on the recipient's devoutness and openness. St. Cyril of Alexandria highlights this, stating that devout reception allows us to "bear Christ in us."
+
+Communion, therefore, is a profound encounter with God, who offers himself fully to us. Yet, the transformative power of this gift hinges on our response. Like seeds sown on different soils, the Eucharist may yield no fruit, some fruit, or abundant fruit, depending on the state of our lives. To cultivate "good soil," we must diligently avoid sin, nurture a daily prayer life, immerse ourselves in Scripture, and practice charity. While the elements truly become Christ's body and blood, our cooperation with grace determines whether we draw strength and partake in divine nature.
+
+We are called to praise Jesus for this extraordinary gift and to seek the grace of ongoing conversion. This involves weeding out the impediments to becoming "good soil," deepening our prayer life, and striving for holiness to fully receive this divine gift. This reflection includes traditional prayers like the Our Father, Hail Mary, and Glory Be, emphasizing the role of prayer and Mary's intercession in our journey towards Christ. It concludes with a final blessing and an invitation to continued spiritual fellowship.
