@@ -57,7 +57,7 @@ if ! declare -f youtube::get_video_title > /dev/null; then
 
     local video_id="$1"
     local response
-    response="$(safe_curl_request "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${YOUTUBE_API_KEY}")"
+    response="$(curl::safe_curl_request "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${YOUTUBE_API_KEY}")"
     local video_count
     video_count=$(echo "$response" | jq '.items | length')
 
