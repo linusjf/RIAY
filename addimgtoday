@@ -18,6 +18,7 @@ else
   readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
 fi
 source "${SCRIPT_DIR}/util.sh"
+source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
 
 # Load configuration variables
@@ -76,7 +77,6 @@ append_image_markdown() {
   printf -v day_string "Day%03d" "$day_num"
   local month=$(date -d "${YEAR}-01-01 +$((day_num - 1)) days" +"%B")
   local markdown_file="$month/${day_string}.md"
-  local jpg_basename=$(basename "$image_path")
 
   # Resolve GitHub repo
   local git_url=$(git remote get-url origin 2> /dev/null)
@@ -101,11 +101,36 @@ append_image_markdown() {
     out ""
     out "### ${caption}"
     out ""
-    out "![${caption}](https://raw.githubusercontent.com/${github_repo}/refs/heads/main/${month}/jpgs/${jpg_basename})"
+    out "![${caption}](https://raw.githubusercontent.com/${github_repo}/refs/heads/main/${image_path})"
   } >> "$markdown_file"
 
   out "Appended image markdown to $markdown_file"
   return 0
+}
+
+check_path_under_current_dir() {
+  require_commands realpath
+  local input_path="$1"
+  local abs_path
+
+  # Resolve to absolute path
+  abs_path="$(realpath "$input_path" 2> /dev/null)" || {
+    err "Error: Invalid path: $abs_path"
+    return 1
+  }
+
+  # Get current directory's absolute path
+  local current_dir
+  current_dir="$(realpath .)"
+
+  # Check if the path is under current directory
+  if [[ "$abs_path" == "$current_dir"* ]] && [[ -f "$abs_path" ]]; then
+    out "Valid and under current directory"
+    return 0
+  else
+    err "Not under current directory"
+    return 1
+  fi
 }
 
 # Main function
@@ -147,8 +172,8 @@ main() {
   fi
 
   # Validate image file exists
-  if [[ ! -f "$image_path" ]]; then
-    err "Error: Image file '$image_path' does not exist."
+  if ! check_path_under_current_dir "$image_path"; then
+    err "Error: Image file '$image_path' does not exist or is not under current dir: $(pwd -P)."
     exit 1
   fi
 
