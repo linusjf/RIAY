@@ -20,6 +20,7 @@ fi
 source "${SCRIPT_DIR}/util.sh"
 source "${SCRIPT_DIR}/require.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
+source "${SCRIPT_DIR}/git.sh"
 
 # Load configuration variables
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
@@ -79,16 +80,8 @@ append_image_markdown() {
   local markdown_file="$month/${day_string}.md"
 
   # Resolve GitHub repo
-  local git_url=$(git remote get-url origin 2> /dev/null)
   local github_repo
-  if [[ "$git_url" == git@github.com:* ]]; then
-    github_repo=$(echo "$git_url" | sed -E 's|git@github.com:([^\.]+)(\.git)?|\1|')
-  elif [[ "$git_url" == https://github.com/* ]]; then
-    github_repo=$(echo "$git_url" | sed -E 's|https://github.com/([^\.]+)(\.git)?|\1|')
-  else
-    err "Error: Could not determine GitHub repo from remote: $git_url"
-    return 1
-  fi
+  github_repo=$(git::get_github_repo)
 
   # Verify markdown file exists
   if [[ ! -f "$markdown_file" ]]; then
