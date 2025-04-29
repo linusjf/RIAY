@@ -6,6 +6,7 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "$SCRIPT_DIR/date.sh"
 source "$SCRIPT_DIR/lockconfig.sh"
 lockconfig::lock_config_vars "$SCRIPT_DIR/config.env"
 readonly ADDVIDEO_SCRIPT="${SCRIPT_DIR}/addvideo"
@@ -378,60 +379,74 @@ run_test 31 "Should show usage with --help" 0 "${ADDVIDEOTODAY_SCRIPT}" --help
 print_header "Test 32: Invalid inputs"
 run_test 32 "Should reject invalid number of arguments" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" || true
 run_test 32 "Should reject invalid video ID" 1 "${ADDVIDEOTODAY_SCRIPT}" "invalid" "1" || true
-run_test 32 "Should reject invalid day number" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "invalid" || true
+run_test 32 "Should reject invalid day number (invalid)" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "invalid" || true
+run_test 32 "Should reject invalid day number (negative)" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "-1" || true
+run_test 32 "Should reject invalid day number (zero)" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "0" || true
+run_test 32 "Should reject invalid day number (too large)" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "367" || true
+# shellcheck disable=SC2153
+if ! date::is_leap_year "$YEAR"; then
+  run_test 32 "Should reject day 366 in non-leap year" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "366"
+fi
 
 print_header "Test 33: Missing markdown file"
 run_test 33 "Should fail due to missing markdown file" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "999" || true
 
-print_header "Test 34: Basic execution"
-run_test 34 "Should run successfully" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "1"
+print_header "Test 34: Video does not exist"
+run_test 34 "Should fail due to video not existing" 1 "${ADDVIDEOTODAY_SCRIPT}" "xxxxxxxxxxx" "1" || true
+
+print_header "Test 35: Basic execution"
+run_test 35 "Should run successfully" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "1"
+if date::is_leap_year "$YEAR"; then
+  touch December/Day366.md
+  run_test 35 "Should accept day 366 in leap year" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "366"
+fi
 
 print_header "Running addimgtoday sanity tests"
 
-print_header "Test 35: Version flag"
-run_test 35 "Should show version with -v" 0 "${ADDIMGTODAY_SCRIPT}" -v
-run_test 35 "Should show version with --version" 0 "${ADDIMGTODAY_SCRIPT}" --version
+print_header "Test 36: Version flag"
+run_test 36 "Should show version with -v" 0 "${ADDIMGTODAY_SCRIPT}" -v
+run_test 36 "Should show version with --version" 0 "${ADDIMGTODAY_SCRIPT}" --version
 
-print_header "Test 36: Help/usage"
-run_test 36 "Should show usage with no args" 1 "${ADDIMGTODAY_SCRIPT}" || true
-run_test 36 "Should show usage with -h" 0 "${ADDIMGTODAY_SCRIPT}" -h
-run_test 36 "Should show usage with --help" 0 "${ADDIMGTODAY_SCRIPT}" --help
+print_header "Test 37: Help/usage"
+run_test 37 "Should show usage with no args" 1 "${ADDIMGTODAY_SCRIPT}" || true
+run_test 37 "Should show usage with -h" 0 "${ADDIMGTODAY_SCRIPT}" -h
+run_test 37 "Should show usage with --help" 0 "${ADDIMGTODAY_SCRIPT}" --help
 
-print_header "Test 37: Invalid inputs"
-run_test 37 "Should reject invalid number of arguments" 1 "${ADDIMGTODAY_SCRIPT}" "1" || true
-run_test 37 "Should reject invalid day number" 1 "${ADDIMGTODAY_SCRIPT}" "invalid" "/path/to/image.jpg" "Caption" || true
-run_test 37 "Should reject invalid image path" 1 "${ADDIMGTODAY_SCRIPT}" "1" "invalid" "Caption" || true
+print_header "Test 38: Invalid inputs"
+run_test 38 "Should reject invalid number of arguments" 1 "${ADDIMGTODAY_SCRIPT}" "1" || true
+run_test 38 "Should reject invalid day number" 1 "${ADDIMGTODAY_SCRIPT}" "/path/to/image.jpg" "Caption" "invalid" || true
+run_test 38 "Should reject invalid image path" 1 "${ADDIMGTODAY_SCRIPT}" "invalid" "Caption" "1" || true
 
-print_header "Test 38: Basic execution"
+print_header "Test 39: Basic execution"
 curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null
-run_test 38 "Should run successfully" 0 "${ADDIMGTODAY_SCRIPT}" "1" "example.jpg" "Caption"
+run_test 39 "Should run successfully" 0 "${ADDIMGTODAY_SCRIPT}" "example.jpg" "Caption" "1"
 
-print_header "Test 39: Debug mode"
+print_header "Test 40: Debug mode"
 curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null
-run_test 39 "Should enable debug with -d" 0 "${ADDIMGTODAY_SCRIPT}" -d "1" "example.jpg" "Caption" || true
+run_test 40 "Should enable debug with -d" 0 "${ADDIMGTODAY_SCRIPT}" -d "example.jpg" "Caption" "1" || true
 curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null
-run_test 39 "Should enable debug with --debug" 0 "${ADDIMGTODAY_SCRIPT}" --debug "1" "example.jpg" "Caption" || true
+run_test 40 "Should enable debug with --debug" 0 "${ADDIMGTODAY_SCRIPT}" --debug "example.jpg" "Caption" "1" || true
 
 print_header "Running cleanup sanity tests"
 
-print_header "Test 40: Help/usage"
-run_test 40 "Should show usage with no args" 0 "${CLEANUP_SCRIPT}"
-run_test 40 "Should show usage with -h" 0 "${CLEANUP_SCRIPT}" -h
-run_test 40 "Should show usage with --help" 0 "${CLEANUP_SCRIPT}" --help
+print_header "Test 41: Help/usage"
+run_test 41 "Should show usage with no args" 0 "${CLEANUP_SCRIPT}"
+run_test 41 "Should show usage with -h" 0 "${CLEANUP_SCRIPT}" -h
+run_test 41 "Should show usage with --help" 0 "${CLEANUP_SCRIPT}" --help
 
-print_header "Test 41: Basic execution"
+print_header "Test 42: Basic execution"
 touch testfile.tmp
-run_test 41 "Should run successfully" 0 "${CLEANUP_SCRIPT}"
+run_test 42 "Should run successfully" 0 "${CLEANUP_SCRIPT}"
 rm -f testfile.tmp
 
-print_header "Test 42: Backup cleanup"
+print_header "Test 43: Backup cleanup"
 touch testfile~
 touch testfile.bak
 touch testfile.backup
-run_test 42 "Should clean up backup files" 0 "${CLEANUP_SCRIPT}" --backups
+run_test 43 "Should clean up backup files" 0 "${CLEANUP_SCRIPT}" --backups
 rm -f testfile~ testfile.bak testfile.backup
 
-print_header "Test 43: Unknown option"
-run_test 43 "Should show unknown option message" 1 "${CLEANUP_SCRIPT}" --invalidoption
+print_header "Test 44: Unknown option"
+run_test 44 "Should show unknown option message" 1 "${CLEANUP_SCRIPT}" --invalidoption
 
 print_header "All tests completed successfully"
