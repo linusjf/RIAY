@@ -384,7 +384,7 @@ run_test 32 "Should reject invalid day number (negative)" 1 "${ADDVIDEOTODAY_SCR
 run_test 32 "Should reject invalid day number (zero)" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "0" || true
 run_test 32 "Should reject invalid day number (too large)" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "367" || true
 # shellcheck disable=SC2153
-if ! date::is_leap_year "$YEAR"; then
+if ! date::isleapyear "$YEAR"; then
   run_test 32 "Should reject day 366 in non-leap year" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "366"
 fi
 
@@ -396,7 +396,7 @@ run_test 34 "Should fail due to video not existing" 1 "${ADDVIDEOTODAY_SCRIPT}" 
 
 print_header "Test 35: Basic execution"
 run_test 35 "Should run successfully" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "1"
-if date::is_leap_year "$YEAR"; then
+if date::isleapyear "$YEAR"; then
   touch December/Day366.md
   run_test 35 "Should accept day 366 in leap year" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "366"
 fi
