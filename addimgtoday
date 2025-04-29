@@ -34,14 +34,14 @@ fi
 usage() {
   local exitcode="${1:-$DEFAULT_EXIT_CODE}"
   cat << EOF
-Usage: $SCRIPT_NAME [OPTIONS] <day_number> <image_path> <caption>
+Usage: $SCRIPT_NAME [OPTIONS] <image_path> <caption> <day_number>
 
 Appends image markdown to a specified markdown file.
 
 Arguments:
-  day_number      Day number (1-366)
   image_path      Path to the image file (JPEG format)
   caption         Caption for the image
+  day_number      Day number (1-366)
 
 Options:
   -h, --help      Show this help message and exit
@@ -150,12 +150,12 @@ main() {
         shift
         ;;
       *)
-        if [[ -z "${day_num:-}" ]]; then
-          day_num="$1"
-        elif [[ -z "${image_path:-}" ]]; then
+        if [[ -z "${image_path:-}" ]]; then
           image_path="$1"
         elif [[ -z "${caption:-}" ]]; then
           caption="$1"
+        elif [[ -z "${day_num:-}" ]]; then
+          day_num="$1"
         else
           err "Error: Too many arguments."
           usage 1
@@ -166,7 +166,7 @@ main() {
   done
 
   # Check if all arguments are provided
-  if [[ -z "${day_num:-}" || -z "${image_path:-}" || -z "${caption:-}" ]]; then
+  if [[ -z "${image_path:-}" || -z "${caption:-}" || -z "${day_num:-}" ]]; then
     err "Error: Missing arguments."
     usage 1
   fi
@@ -178,6 +178,7 @@ main() {
   fi
 
   # Validate JPEG format using 'file' command
+  require_commands file
   local mime_type=$(file --mime-type -b "$image_path")
   if [[ "$mime_type" != "image/jpeg" ]]; then
     err "Error: '$image_path' is not a valid JPEG file (detected: $mime_type)."
