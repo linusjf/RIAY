@@ -4202,7 +4202,7 @@ Results:
 1. Updated files:
    1. `January/Day021.md`
    1. `./January.md`
-      Created files:
+1. Created files:
    1. `./January/jpgs/<videoid>.jpg`
 
 ### Add today's sharing
