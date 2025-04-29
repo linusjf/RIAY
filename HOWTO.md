@@ -376,7 +376,7 @@ Available commands:
 - gentoc
 
 **Note:** The `addvideotoday` command needs the day of year to be a three digit number.
-Hence, 1 becomes 001, 20 becomes 020 and 99 is 09 command needs the day of year to be a three digit number. Hence, 1 becomes 001, 20 becomes 020 and 99 is 0999
+Hence, 1 becomes 001, 20 becomes 020 and 99 is 099.
 
 For simplicity and consistency, the commands wrap their command line equivalents.
 
