@@ -179,11 +179,14 @@ This document describes all bash scripts in the project, their functionality, de
 **Environment Variables**: None\
 **Called Scripts**:
 
-- vidmd.sh
+- require.sh
+- date.sh
+- lockconfig.sh
 - compact
 - gentoc\
   **Called Functions**:
 - version
+- usage
 - validate_inputs
 - generate_month_file
 - dry_run
@@ -469,12 +472,13 @@ This document describes all bash scripts in the project, their functionality, de
 - summarizevideo
 - compact\
   **Called Functions**:
-- usage
 - version
+- usage
 - validate_inputs
 - generate_files
 - dry_run
 - main
+- checkinternet
 
 ## genindexrst
 
