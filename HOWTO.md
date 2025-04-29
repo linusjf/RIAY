@@ -369,10 +369,14 @@ pip install antlr4-tools antlr4-python3-runtime python-dotenv
 Available commands:
 
 - addvideo
+- addvideotoday
 - genmonth
 - lintall
 - stitch
 - gentoc
+
+**Note:** The `addvideotoday` command needs the day of year to be a three digit number.
+Hence, 1 becomes 001, 20 becomes 020 and 99 is 09 command needs the day of year to be a three digit number. Hence, 1 becomes 001, 20 becomes 020 and 99 is 0999
 
 For simplicity and consistency, the commands wrap their command line equivalents.
 
@@ -389,6 +393,7 @@ This executes the commands in order as placed in the `commands.txt`. If any comm
 ```text
 # example commands
 addvideo "abc123456" "Example video" # add example video
+addvideotoday "abc123456" 010 # add example video to day 10 markdown.
 genmonth 01 2025 # generate markdown for month January, 2025
 lintall # lint all the markdown files
 ```
