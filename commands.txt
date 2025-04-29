@@ -1,3 +1,5 @@
 # commands
-genmonth 1
-addvideotoday "p0XOixAacvA" 011
+addvideo "-_Wcmz3mmHE" "Till The End"
+genmonth 4
+stitch
+lintall
