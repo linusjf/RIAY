@@ -105,7 +105,7 @@ process_month() {
     print_info "Annotating file: $imgfile"
 
     if "${SCRIPT_DIR}/annotatejpg" --silent "$imgfile" 2> /dev/null; then
-      ((updated_files++))
+      updated_files="$((updated_files + 1))"
     else
       exitcode=$?
       if ((exitcode & 2)); then
@@ -139,6 +139,8 @@ main() {
 
   for month in "${VALID_MONTHS[@]}"; do
     process_month "$month"
+    out "After $month, files updated: $updated_files"
+
   done
 
   print_success "Annotation process completed"

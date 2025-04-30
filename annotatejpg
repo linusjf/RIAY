@@ -115,6 +115,7 @@ process_file() {
     $silent_mode || out "Comment already exists in: $imgfile"
     return 8
   fi
+  return 0
 }
 
 #######################################
