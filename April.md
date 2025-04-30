@@ -89,6 +89,9 @@
 - [April 29,2025](#april-292025)
   - [Till The End](#till-the-end)
   - [AI-Generated Summary: Love to the End: A Meditation on the Agony in the Garden](#ai-generated-summary-love-to-the-end-a-meditation-on-the-agony-in-the-garden)
+- [April 30,2025](#april-302025)
+  - [Be the One](#be-the-one)
+  - [AI-Generated Summary: The Deeper Scourging](#ai-generated-summary-the-deeper-scourging)
 
 <!-- tocstop -->
 
@@ -758,3 +761,33 @@ This selfless act, even in the face of unimaginable suffering, reveals the heart
 Gethsemane, then, becomes not just a place of agony, but a school of love. It calls us to imitate Christ's selflessness, turning our gaze outward, towards God and neighbor, especially when our own crosses feel heaviest. Like the oft-repeated prayers woven through this reflection – the Our Father, Hail Mary, and Glory Be – and the whispered plea, "not my will but yours be done," we are invited to deny ourselves, take up our daily crosses, and learn to love as he loved us.
 
 Finally, with a spirit of shared devotion, gratitude is expressed for the communion of prayer, anticipating its renewal and offering a blessing to all who have joined in this meditation.
+
+## April 30,2025
+
+### Be the One
+
+[![Be the One](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day120.jpg)](https://youtu.be/hacnsn_onus "Be the One")
+
+### AI-Generated Summary: The Deeper Scourging
+
+One finds, quite naturally, that drawing near to God through prayer deepens that relationship, much like tending a garden encourages growth. This closeness, particularly to Jesus and His Mother, becomes, as it were, a conduit of grace for others.
+
+Let us consider a specific point of reflection: the dreadful Scourging at the Pillar, guided by the experiences of a simple Polish nun, St. Faustina.
+
+- This woman, occupied with humble tasks, received profound insights into the nature of Divine Mercy. Obediently, she recorded these, leaving us a window into her encounters. Pope John Paul II later recognized her significance, holding her up as an apostle of this very Mercy.
+
+- During prayer, St. Faustina was granted a vision of the Scourging. She saw Our Lord, bound and stripped, brutally beaten by executioners. The sight, as one might expect, caused her immense sorrow.
+
+- Yet, Jesus revealed a suffering beyond the merely physical. He spoke of the agony caused by sins of impurity, a moral torment accompanying the blows. Then, He directed her attention elsewhere.
+
+- The initial torturers departed, but others took their place. To Faustina's astonishment, these were not pagans or soldiers, but priests, religious, church leaders, and layfolk – souls one might expect to be His friends. They scourged Him without mercy, venting a surprising malice.
+
+- Observe the difference: during the first assault, Jesus remained silent, looking away. But under the blows of these _ungrateful_ souls, He closed His eyes, uttering a soft moan of pain. He explained that the malice of these souls, those who had received so much yet turned against Him, constituted a torture _greater than His physical death_. Imagine! The betrayal of a friend cuts deeper than the hatred of an enemy.
+
+- Faustina felt an agony mirroring His. Yet, Jesus acknowledged her sincere empathy, finding solace in her shared sorrow.
+
+- This reveals a stark truth about ingratitude. It is not merely forgetting a kindness, like the nine lepers who never returned. It is an active wounding of the Giver. Many live as though Christ’s Passion, the very event that purchased their salvation, never occurred. They ignore His thirst for love, proclaimed from the Cross. This indifference, this failure to acknowledge the Gift, becomes a fresh scourging.
+
+- However, just as ingratitude wounds Him deeply, sincere gratitude brings Him comfort. When a soul truly understands, feels sorrow for this widespread indifference, and accepts His sacrifice with thanks, it offers Him solace.
+
+We are thus presented with a choice. Will we be like those who turned away, forgetting the price paid? Or will we, like Faustina, remain with Him, acknowledging His suffering and His mercy, offering the balm of a grateful heart? True faithfulness lies in remembering His love and living in constant thanks, not just in words, but in the very way we conduct our lives.
