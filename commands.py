@@ -12,6 +12,7 @@ from commandsListener import commandsListener
 from dotenv import load_dotenv
 import os
 
+
 class commands(commandsListener):
 
     def __init__(self):
@@ -19,54 +20,56 @@ class commands(commandsListener):
         self.exitcode = 0
 
     # Enter a parse tree produced by commandsParser#Addvideo.
-    def enterAddvideo(self, ctx:commandsParser.AddvideoContext):
+    def enterAddvideo(self, ctx: commandsParser.AddvideoContext):
         videoId = ctx.videoId().getText().strip('"')
         videoName = ctx.videoName().getText().strip('"')
         ruleName = self.getRuleName(ctx)
         print(f"Adding video '{videoId}' with name '{videoName}'.")
         self.executeCommand([ruleName, videoId, videoName])
-    
+
     # Enter a parse tree produced by commandsParser#addvideotoday.
-    def enterAddvideotoday(self, ctx:commandsParser.AddvideotodayContext):
+    def enterAddvideotoday(self, ctx: commandsParser.AddvideotodayContext):
         videoId = ctx.videoId().getText().strip('"')
         dayofyear = int(ctx.dayofyear().getText())
         ruleName = self.getRuleName(ctx)
         print(f"Adding video '{videoId}' to day {dayofyear}.")
         self.executeCommand([ruleName, videoId, str(dayofyear)])
-    
+
     # Enter a parse tree produced by commandsParser#addimgtoday.
-    def enterAddimgtoday(self, ctx:commandsParser.AddimgtodayContext):
+    def enterAddimgtoday(self, ctx: commandsParser.AddimgtodayContext):
         imagepath = ctx.imagepath().getText().strip('"')
         caption = ctx.caption().getText().strip('""')
         dayofyear = int(ctx.dayofyear().getText())
         ruleName = self.getRuleName(ctx)
-        print(f"Adding image '{imagepath}' to day {dayofyear} with caption '{caption}'.")
-        self.executeCommand([ruleName, imagepath, caption,  str(dayofyear)])
+        print(
+            f"Adding image '{imagepath}' to day {dayofyear} with caption '{caption}'."
+        )
+        self.executeCommand([ruleName, imagepath, caption, str(dayofyear)])
 
     # Enter a parse tree produced by commandsParser#Genmonth.
-    def enterGenmonth(self, ctx:commandsParser.GenmonthContext):
+    def enterGenmonth(self, ctx: commandsParser.GenmonthContext):
         ruleName = self.getRuleName(ctx)
         month = ctx.month().getText()
-        year = str(os.getenv('YEAR'))
-        if (ctx.year() is not None):
-          year = ctx.year().getText()
+        year = str(os.getenv("YEAR"))
+        if ctx.year() is not None:
+            year = ctx.year().getText()
         print(f"Generating month {month} for year {year}.")
         self.executeCommand([ruleName, month, year])
 
     # Enter a parse tree produced by commandsParser#Lintall.
-    def enterLintall(self, ctx:commandsParser.LintallContext):
+    def enterLintall(self, ctx: commandsParser.LintallContext):
         ruleName = self.getRuleName(ctx)
         print(f"Linting all...")
         self.executeCommand([ruleName])
 
     # Enter a parse tree produced by commandsParser#stitch.
-    def enterStitch(self, ctx:commandsParser.StitchContext):
+    def enterStitch(self, ctx: commandsParser.StitchContext):
         ruleName = self.getRuleName(ctx)
         print(f"Stitching...")
         self.executeCommand([ruleName])
 
     # Enter a parse tree produced by commandsParser#gentoc.
-    def enterGentoc(self, ctx:commandsParser.GentocContext):
+    def enterGentoc(self, ctx: commandsParser.GentocContext):
         ruleName = self.getRuleName(ctx)
         pathtomdfile = ctx.pathtomdfile().getText().strip('"')
         self.executeCommand([ruleName, pathtomdfile])
@@ -78,7 +81,7 @@ class commands(commandsListener):
         return ruleName
 
     # Execute command
-    def executeCommand(self, command:list[str]):
+    def executeCommand(self, command: list[str]):
         """
         Execute a command line program.
         Args:
@@ -103,7 +106,7 @@ class commands(commandsListener):
 
 
 def main():
-    load_dotenv(dotenv_path='config.env')
+    load_dotenv(dotenv_path="config.env")
     input_stream = FileStream("commands.txt")
     lexer = commandsLexer(input_stream)
     stream = CommonTokenStream(lexer)
