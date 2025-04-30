@@ -1,165 +1,150 @@
 # Generated from commands.g4 by ANTLR 4.13.2
 from antlr4 import *
+
 if "." in __name__:
     from .commandsParser import commandsParser
 else:
     from commandsParser import commandsParser
 
+
 # This class defines a complete listener for a parse tree produced by commandsParser.
 class commandsListener(ParseTreeListener):
 
     # Enter a parse tree produced by commandsParser#program.
-    def enterProgram(self, ctx:commandsParser.ProgramContext):
+    def enterProgram(self, ctx: commandsParser.ProgramContext):
         pass
 
     # Exit a parse tree produced by commandsParser#program.
-    def exitProgram(self, ctx:commandsParser.ProgramContext):
+    def exitProgram(self, ctx: commandsParser.ProgramContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#command.
-    def enterCommand(self, ctx:commandsParser.CommandContext):
+    def enterCommand(self, ctx: commandsParser.CommandContext):
         pass
 
     # Exit a parse tree produced by commandsParser#command.
-    def exitCommand(self, ctx:commandsParser.CommandContext):
+    def exitCommand(self, ctx: commandsParser.CommandContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#addvideo.
-    def enterAddvideo(self, ctx:commandsParser.AddvideoContext):
+    def enterAddvideo(self, ctx: commandsParser.AddvideoContext):
         pass
 
     # Exit a parse tree produced by commandsParser#addvideo.
-    def exitAddvideo(self, ctx:commandsParser.AddvideoContext):
+    def exitAddvideo(self, ctx: commandsParser.AddvideoContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#videoId.
-    def enterVideoId(self, ctx:commandsParser.VideoIdContext):
+    def enterVideoId(self, ctx: commandsParser.VideoIdContext):
         pass
 
     # Exit a parse tree produced by commandsParser#videoId.
-    def exitVideoId(self, ctx:commandsParser.VideoIdContext):
+    def exitVideoId(self, ctx: commandsParser.VideoIdContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#videoName.
-    def enterVideoName(self, ctx:commandsParser.VideoNameContext):
+    def enterVideoName(self, ctx: commandsParser.VideoNameContext):
         pass
 
     # Exit a parse tree produced by commandsParser#videoName.
-    def exitVideoName(self, ctx:commandsParser.VideoNameContext):
+    def exitVideoName(self, ctx: commandsParser.VideoNameContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#genmonth.
-    def enterGenmonth(self, ctx:commandsParser.GenmonthContext):
+    def enterGenmonth(self, ctx: commandsParser.GenmonthContext):
         pass
 
     # Exit a parse tree produced by commandsParser#genmonth.
-    def exitGenmonth(self, ctx:commandsParser.GenmonthContext):
+    def exitGenmonth(self, ctx: commandsParser.GenmonthContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#month.
-    def enterMonth(self, ctx:commandsParser.MonthContext):
+    def enterMonth(self, ctx: commandsParser.MonthContext):
         pass
 
     # Exit a parse tree produced by commandsParser#month.
-    def exitMonth(self, ctx:commandsParser.MonthContext):
+    def exitMonth(self, ctx: commandsParser.MonthContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#year.
-    def enterYear(self, ctx:commandsParser.YearContext):
+    def enterYear(self, ctx: commandsParser.YearContext):
         pass
 
     # Exit a parse tree produced by commandsParser#year.
-    def exitYear(self, ctx:commandsParser.YearContext):
+    def exitYear(self, ctx: commandsParser.YearContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#lintall.
-    def enterLintall(self, ctx:commandsParser.LintallContext):
+    def enterLintall(self, ctx: commandsParser.LintallContext):
         pass
 
     # Exit a parse tree produced by commandsParser#lintall.
-    def exitLintall(self, ctx:commandsParser.LintallContext):
+    def exitLintall(self, ctx: commandsParser.LintallContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#stitch.
-    def enterStitch(self, ctx:commandsParser.StitchContext):
+    def enterStitch(self, ctx: commandsParser.StitchContext):
         pass
 
     # Exit a parse tree produced by commandsParser#stitch.
-    def exitStitch(self, ctx:commandsParser.StitchContext):
+    def exitStitch(self, ctx: commandsParser.StitchContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#gentoc.
-    def enterGentoc(self, ctx:commandsParser.GentocContext):
+    def enterGentoc(self, ctx: commandsParser.GentocContext):
         pass
 
     # Exit a parse tree produced by commandsParser#gentoc.
-    def exitGentoc(self, ctx:commandsParser.GentocContext):
+    def exitGentoc(self, ctx: commandsParser.GentocContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#pathtomdfile.
-    def enterPathtomdfile(self, ctx:commandsParser.PathtomdfileContext):
+    def enterPathtomdfile(self, ctx: commandsParser.PathtomdfileContext):
         pass
 
     # Exit a parse tree produced by commandsParser#pathtomdfile.
-    def exitPathtomdfile(self, ctx:commandsParser.PathtomdfileContext):
+    def exitPathtomdfile(self, ctx: commandsParser.PathtomdfileContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#addvideotoday.
-    def enterAddvideotoday(self, ctx:commandsParser.AddvideotodayContext):
+    def enterAddvideotoday(self, ctx: commandsParser.AddvideotodayContext):
         pass
 
     # Exit a parse tree produced by commandsParser#addvideotoday.
-    def exitAddvideotoday(self, ctx:commandsParser.AddvideotodayContext):
+    def exitAddvideotoday(self, ctx: commandsParser.AddvideotodayContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#dayofyear.
-    def enterDayofyear(self, ctx:commandsParser.DayofyearContext):
+    def enterDayofyear(self, ctx: commandsParser.DayofyearContext):
         pass
 
     # Exit a parse tree produced by commandsParser#dayofyear.
-    def exitDayofyear(self, ctx:commandsParser.DayofyearContext):
+    def exitDayofyear(self, ctx: commandsParser.DayofyearContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#addimgtoday.
-    def enterAddimgtoday(self, ctx:commandsParser.AddimgtodayContext):
+    def enterAddimgtoday(self, ctx: commandsParser.AddimgtodayContext):
         pass
 
     # Exit a parse tree produced by commandsParser#addimgtoday.
-    def exitAddimgtoday(self, ctx:commandsParser.AddimgtodayContext):
+    def exitAddimgtoday(self, ctx: commandsParser.AddimgtodayContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#imagepath.
-    def enterImagepath(self, ctx:commandsParser.ImagepathContext):
+    def enterImagepath(self, ctx: commandsParser.ImagepathContext):
         pass
 
     # Exit a parse tree produced by commandsParser#imagepath.
-    def exitImagepath(self, ctx:commandsParser.ImagepathContext):
+    def exitImagepath(self, ctx: commandsParser.ImagepathContext):
         pass
 
-
     # Enter a parse tree produced by commandsParser#caption.
-    def enterCaption(self, ctx:commandsParser.CaptionContext):
+    def enterCaption(self, ctx: commandsParser.CaptionContext):
         pass
 
     # Exit a parse tree produced by commandsParser#caption.
-    def exitCaption(self, ctx:commandsParser.CaptionContext):
+    def exitCaption(self, ctx: commandsParser.CaptionContext):
         pass
-
 
 
 del commandsParser

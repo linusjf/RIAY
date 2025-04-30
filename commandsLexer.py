@@ -95,14 +95,14 @@ class commandsLexer(Lexer):
     modeNames = [ "DEFAULT_MODE" ]
 
     literalNames = [ "<INVALID>",
-            "'addvideo'", "'genmonth'", "'lintall'", "'stitch'", "'gentoc'", 
+            "'addvideo'", "'genmonth'", "'lintall'", "'stitch'", "'gentoc'",
             "'addvideotoday'", "'addimgtoday'" ]
 
     symbolicNames = [ "<INVALID>",
             "STRING", "YEAR", "MONTH", "DAY_NUMBER", "NEWLINE", "WS" ]
 
-    ruleNames = [ "T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", 
-                  "STRING", "YEAR", "MONTH", "DAY_NUMBER", "THREE_DIGIT", 
+    ruleNames = [ "T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6",
+                  "STRING", "YEAR", "MONTH", "DAY_NUMBER", "THREE_DIGIT",
                   "NEWLINE", "WS", "COMMENT" ]
 
     grammarFileName = "commands.g4"
@@ -113,5 +113,3 @@ class commandsLexer(Lexer):
         self._interp = LexerATNSimulator(self, self.atn, self.decisionsToDFA, PredictionContextCache())
         self._actions = None
         self._predicates = None
-
-
