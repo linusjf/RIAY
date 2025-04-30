@@ -31,6 +31,15 @@ class commands(commandsListener):
         ruleName = self.getRuleName(ctx)
         print(f"Adding video '{videoId}' to day {dayofyear}.")
         self.executeCommand([ruleName, videoId, str(dayofyear)])
+    
+    # Enter a parse tree produced by commandsParser#addimgtoday.
+    def enterAddimgtoday(self, ctx:commandsParser.AddimgtodayContext):
+        imagepath = ctx.imagepath().getText().strip('"')
+        caption = ctx.caption().getText().strip('""')
+        dayofyear = int(ctx.dayofyear().getText())
+        ruleName = self.getRuleName(ctx)
+        print(f"Adding image '{imagepath}' to day {dayofyear} with caption '{caption}'.")
+        self.executeCommand([ruleName, imagepath, caption,  str(dayofyear)])
 
     # Enter a parse tree produced by commandsParser#Genmonth.
     def enterGenmonth(self, ctx:commandsParser.GenmonthContext):

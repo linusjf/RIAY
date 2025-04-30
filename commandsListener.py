@@ -134,5 +134,32 @@ class commandsListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by commandsParser#addimgtoday.
+    def enterAddimgtoday(self, ctx:commandsParser.AddimgtodayContext):
+        pass
+
+    # Exit a parse tree produced by commandsParser#addimgtoday.
+    def exitAddimgtoday(self, ctx:commandsParser.AddimgtodayContext):
+        pass
+
+
+    # Enter a parse tree produced by commandsParser#imagepath.
+    def enterImagepath(self, ctx:commandsParser.ImagepathContext):
+        pass
+
+    # Exit a parse tree produced by commandsParser#imagepath.
+    def exitImagepath(self, ctx:commandsParser.ImagepathContext):
+        pass
+
+
+    # Enter a parse tree produced by commandsParser#caption.
+    def enterCaption(self, ctx:commandsParser.CaptionContext):
+        pass
+
+    # Exit a parse tree produced by commandsParser#caption.
+    def exitCaption(self, ctx:commandsParser.CaptionContext):
+        pass
+
+
 
 del commandsParser
