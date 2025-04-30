@@ -6,8 +6,16 @@
 
 - [Prerequisites](#prerequisites)
   - [Environment variables](#environment-variables)
+  - [Configuration](#configuration)
+    - [General Settings](#general-settings)
+    - [Overlay Icon Configuration](#overlay-icon-configuration)
+    - [File Configuration](#file-configuration)
+    - [API Request Settings](#api-request-settings)
+    - [AI Model Settings](#ai-model-settings)
+    - [Content Documentation Settings](#content-documentation-settings)
   - [Vale](#vale)
 - [Add the daily Youtube video](#add-the-daily-youtube-video)
+- [Add additional Youtube video to a day](#add-additional-youtube-video-to-a-day)
 - [Add today's sharing](#add-todays-sharing)
 - [Merge monthly markdown files into one large README](#merge-monthly-markdown-files-into-one-large-readme)
 - [Generate table of contents for markdown files](#generate-table-of-contents-for-markdown-files)
@@ -219,14 +227,40 @@ Results:
    1. It also has AI-Generated summary of the podcast.
 1. Generates image file `Day010.jpg` in the `January/jpgs` directory.
 1. Appends `Day010.md` filename to the `January/compact.txt` file.
-1. Updates `January20XX.md` file in the root directory with the contents of `Day010.md`.
+1. Updates `January.md` file in the root directory with the contents of `Day010.md`.
 1. Updated files:
    1. `./videos.txt`
-   1. `./January20XX.md`
+   1. `./January.md`
    1. `./January/compact.txt`
 1. Created files:
    1. `./January/Day010.md`
    1. `./January/jpgs/Day010.jpg`
+
+## Add additional Youtube video to a day
+
+When you have to add an additional video to the markdown for that day, you can execute the script `addvideotoday` with the following parameters:
+
+- video id - the id of the Youtube video
+- day of year - the day of the year for which the video is to be added
+
+Example:
+
+```bash
+./addvideotoday 5I2BbalTOPo 21
+```
+
+Results:
+
+1. Updates markdown file `Day021.md` in the `January` subdirectory.
+   1. This markdown file has a link to the Youtube video.
+   1. It also has AI-Generated summary of the podcast.
+1. Generates image file `<videoid>.jpg` in the `January/jpgs` directory.
+1. Updates `January.md` file in the root directory with the contents of `Day021.md`.
+1. Updated files:
+   1. `January/Day021.md`
+   1. `./January.md`
+1. Created files:
+   1. `./January/jpgs/<videoid>.jpg`
 
 ## Add today's sharing
 
@@ -335,10 +369,14 @@ pip install antlr4-tools antlr4-python3-runtime python-dotenv
 Available commands:
 
 - addvideo
+- addvideotoday
 - genmonth
 - lintall
 - stitch
 - gentoc
+
+**Note:** The `addvideotoday` command needs the day of year to be a three digit number.
+Hence, 1 becomes 001, 20 becomes 020 and 99 is 099.
 
 For simplicity and consistency, the commands wrap their command line equivalents.
 
@@ -355,6 +393,7 @@ This executes the commands in order as placed in the `commands.txt`. If any comm
 ```text
 # example commands
 addvideo "abc123456" "Example video" # add example video
+addvideotoday "abc123456" 010 # add example video to day 10 markdown.
 genmonth 01 2025 # generate markdown for month January, 2025
 lintall # lint all the markdown files
 ```
