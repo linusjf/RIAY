@@ -3,7 +3,9 @@ import logging
 import subprocess
 import sys
 from pathlib import Path
-from antlr4 import *
+from antlr4 import FileStream
+from antlr4 import CommonTokenStream
+from antlr4 import ParseTreeWalker
 from commandsLexer import commandsLexer
 from commandsParser import commandsParser
 from commandsListener import commandsListener
