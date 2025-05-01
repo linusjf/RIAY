@@ -9,6 +9,7 @@ from antlr4 import ParseTreeWalker
 from commandsLexer import commandsLexer
 from commandsParser import commandsParser
 from commandsListener import commandsListener
+from commandsverboselistener import commandsVerboseListener
 from dotenv import load_dotenv
 import os
 
@@ -112,6 +113,8 @@ def main():
     stream = CommonTokenStream(lexer)
     parser = commandsParser(stream)
     parser.setTrace(trace=False)
+    parser.removeErrorListeners()
+    parser.addErrorListener(commandsVerboseListener())
     tree = parser.program()
 
     execute_commands = commands()
