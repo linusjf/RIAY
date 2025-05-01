@@ -63,8 +63,8 @@ save_playlist() {
   true > "$VIDEOS_FILE"
 
   while :; do
-    # Build the API request URL
-    local url="${BASE_URL}?part=contentDetails&playlistId=${playlist_id}&maxResults=${MAX_RESULTS}&key=${YOUTUBE_API_KEY}"
+    # Build the API request URL - now including snippet to get video titles
+    local url="${BASE_URL}?part=contentDetails,snippet&playlistId=${playlist_id}&maxResults=${MAX_RESULTS}&key=${YOUTUBE_API_KEY}"
 
     if [[ -n "$next_page_token" ]]; then
       url="${url}&pageToken=${next_page_token}"
@@ -81,8 +81,20 @@ save_playlist() {
       return 1
     fi
 
-    # Extract video IDs and append to output
-    echo "$response" | jq -r '.items[].contentDetails.videoId' >> "$VIDEOS_FILE"
+    # Process each item in the response
+    local items_count=$(echo "$response" | jq '.items | length')
+    for ((i = 0; i < items_count; i++)); do
+      local video_id="$(echo "$response" | jq -r ".items[$i].contentDetails.videoId")"
+      local title="$(echo "$response" | jq -r ".items[$i].snippet.title")"
+      local privacy_status="$(echo "$response" | jq -r ".items[$i].status.privacyStatus // \"public\"")"
+
+      # Skip hidden videos and videos without titles starting with 'Day'
+      if [[ "$privacy_status" != "private" && "$title" == Day* ]]; then
+        echo "$video_id" >> "$VIDEOS_FILE"
+      elif $verbose; then
+        out "Skipping video: $video_id (Title: '$title', Status: $privacy_status)"
+      fi
+    done
 
     # Get the next page token
     next_page_token=$(echo "$response" | jq -r '.nextPageToken')
@@ -93,7 +105,7 @@ save_playlist() {
     fi
   done
 
-  out "Video IDs saved to $VIDEOS_FILE"
+  out "Filtered video IDs saved to $VIDEOS_FILE"
   return 0
 }
 
@@ -120,7 +132,7 @@ main() {
         exit 0
         ;;
       *)
-        if [[ -z "$playlist_id" ]]; then
+        if [[ -z "${playlist_id:-}" ]]; then
           playlist_id="$1"
         else
           err "Error: Too many arguments."

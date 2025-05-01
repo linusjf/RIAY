@@ -184,7 +184,7 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
       [[ -n "$data" ]] && curl_cmd+=(-d "$data")
       curl_cmd+=("$url")
 
-      [[ "${verbose:-false}" == "true" ]] && >&2 echo "Making $method request to $(redact_keys "$url")"
+      [[ "${verbose:-false}" == "true" ]] && >&2 echo "Making $method request to $(curl::redact_keys "$url")"
 
       local curl_output
       curl_output="$("${curl_cmd[@]}" 2>&1 || true)"
@@ -193,7 +193,7 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
       local response_headers=$(echo "$curl_output" | head -n -1)
 
       if [[ $status_code -ge 200 && $status_code -lt 300 ]]; then
-        [[ "${verbose:-false}" == "true" ]] && >&2 echo "Request to $(redact_keys "$url") succeeded with status $status_code : ${curl__HTTP_STATUS_CODES[$status_code]}"
+        [[ "${verbose:-false}" == "true" ]] && >&2 echo "Request to $(curl::redact_keys "$url") succeeded with status $status_code : ${curl__HTTP_STATUS_CODES[$status_code]}"
         echo "$response"
         rm -f "$output_file"
         return 0
