@@ -10,6 +10,7 @@ from commandsLexer import commandsLexer
 from commandsParser import commandsParser
 from commandsListener import commandsListener
 from commandsverboselistener import commandsVerboseListener
+from commandsverbosestrategy import commandsVerboseStrategy
 from dotenv import load_dotenv
 import os
 
@@ -110,17 +111,22 @@ def main():
     load_dotenv(dotenv_path="config.env")
     input_stream = FileStream("commands.txt")
     lexer = commandsLexer(input_stream)
+    lexer.removeErrorListeners()
     stream = CommonTokenStream(lexer)
     parser = commandsParser(stream)
     parser.setTrace(trace=False)
     parser.removeErrorListeners()
     parser.addErrorListener(commandsVerboseListener())
-    tree = parser.program()
-
-    execute_commands = commands()
-    walker = ParseTreeWalker()
-    walker.walk(execute_commands, tree)
-    sys.exit(execute_commands.exitcode)
+    parser._errHandler = commandsVerboseStrategy()  # pyright: ignore
+    try:
+        tree = parser.program()
+        execute_commands = commands()
+        walker = ParseTreeWalker()
+        walker.walk(execute_commands, tree)
+        sys.exit(execute_commands.exitcode)
+    except Exception as e:
+        print(f"Parsing failed: {type(e)} : {str(e)}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
