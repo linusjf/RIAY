@@ -44,5 +44,5 @@ NEWLINE: '\r'? '\n';
 
 WS: [ \t\r\n]+ -> skip;
 
-COMMENT: '#' ~[\r\n]* '\r'? '\n'  -> type(NEWLINE);
+COMMENT: '#' ~[\r\n]*? '\r'? '\n'  -> type(NEWLINE);
 ANY: .;

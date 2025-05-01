@@ -27,6 +27,3 @@ class commandsVerboseListener(ErrorListener):
         full_line = input_stream.strdata.splitlines()[line - 1]
         print(f"  ➤ Code: {full_line}")
         print(" " * (column + 10) + "^")
-
-        # Optional: Raise custom exception here
-        # raise Exception("Custom syntax error")
