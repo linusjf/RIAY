@@ -69,7 +69,7 @@ class commandsVerboseStrategy(DefaultErrorStrategy):
         """
         Execute a command line program.
         Args:
-            command (list[str]): A list of strings containing the command line program and its options.
+            command (str): A string containing the command line program.
         Returns:
             int: The return code of the executed command.
         """
