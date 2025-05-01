@@ -55,6 +55,29 @@ version() {
   out "$VERSION"
 }
 
+check_playlist_exists() {
+  local playlist_id="$1"
+  local url="https://www.googleapis.com/youtube/v3/playlists?part=id&id=${playlist_id}&key=${YOUTUBE_API_KEY}"
+
+  if $verbose; then
+    out "Checking playlist existence: $url"
+  fi
+
+  local response
+  if ! response="$(curl::safe_curl_request "$url" "GET")"; then
+    err "Error: Failed to check playlist existence."
+    return 1
+  fi
+
+  local item_count=$(echo "$response" | jq '.items | length')
+  if [[ "$item_count" -eq 0 ]]; then
+    err "Error: Playlist '$playlist_id' not found or not accessible."
+    return 1
+  fi
+
+  return 0
+}
+
 save_playlist() {
   local playlist_id="$1"
   local next_page_token=""
@@ -150,6 +173,11 @@ main() {
 
   # Check required environment variables
   require_vars YOUTUBE_API_KEY VIDEOS_FILE
+
+  # Check if playlist exists before proceeding
+  if ! check_playlist_exists "$playlist_id"; then
+    exit 1
+  fi
 
   if ! save_playlist "$playlist_id"; then
     err "Error: $SCRIPT_NAME failed with exit code $?"

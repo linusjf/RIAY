@@ -17,11 +17,13 @@ readonly LINTALL_SCRIPT="${SCRIPT_DIR}/lintall"
 readonly ADDVIDEOTODAY_SCRIPT="${SCRIPT_DIR}/addvideotoday"
 readonly ADDIMGTODAY_SCRIPT="${SCRIPT_DIR}/addimgtoday"
 readonly CLEANUP_SCRIPT="${SCRIPT_DIR}/cleanup"
+readonly SAVEPLAYLIST_SCRIPT="${SCRIPT_DIR}/saveplaylist"
 readonly TEST_MONTH=1
 readonly TEST_YEAR=2023
 readonly TEST_MD_FILE="test_toc.md"
 readonly TEST_STITCH_FILE="test_stitch.md"
 readonly TEST_STITCH_CONTENT="stitch.md"
+readonly TEST_PLAYLIST_FILE="test_playlist.txt"
 
 usage() {
   exitcode="${1:-0}"
@@ -46,6 +48,7 @@ Available tests:
   35-39  addimgtoday script tests
   40-44  cleanup script tests
   45-49  setup script tests
+  50-54  saveplaylist script tests
 
 Examples:
   $0 --from-test 6          # Run tests starting from test 6
@@ -170,6 +173,14 @@ create_real_stitch() {
 - [December](December.md)
 - [HOWTO](HOWTO.md)
 - [SCRIPTS](SCRIPTS.md)
+EOF
+}
+
+create_test_playlist() {
+  cat << EOF > "${TEST_PLAYLIST_FILE}"
+dQw4w9WgXcQ
+CfU7rIufywo
+Io1G_5I7a-0
 EOF
 }
 
@@ -448,5 +459,26 @@ rm -f testfile~ testfile.bak testfile.backup
 
 print_header "Test 44: Unknown option"
 run_test 44 "Should show unknown option message" 1 "${CLEANUP_SCRIPT}" --invalidoption
+
+print_header "Running saveplaylist sanity tests"
+
+print_header "Test 50: Version flag"
+run_test 50 "Should show version with --version" 0 "${SAVEPLAYLIST_SCRIPT}" --version
+
+print_header "Test 51: Help/usage"
+run_test 51 "Should show usage with no args" 1 "${SAVEPLAYLIST_SCRIPT}" || true
+run_test 51 "Should show usage with -h" 0 "${SAVEPLAYLIST_SCRIPT}" -h
+run_test 51 "Should show usage with --help" 0 "${SAVEPLAYLIST_SCRIPT}" --help
+
+print_header "Test 52: Invalid inputs"
+run_test 52 "Should reject missing playlist ID" 1 "${SAVEPLAYLIST_SCRIPT}" || true
+run_test 52 "Should reject invalid playlist ID" 1 "${SAVEPLAYLIST_SCRIPT}" "invalid" || true
+run_test 52 "Should reject missing VIDEOS_FILE env var" 1 env -u VIDEOS_FILE "${SAVEPLAYLIST_SCRIPT}" "PL4iIJvj6ypuG9v3Kg80Qt2ZUnspPHvXO" || true
+run_test 52 "Should reject missing YOUTUBE_API_KEY env var" 1 env -u YOUTUBE_API_KEY "${SAVEPLAYLIST_SCRIPT}" "PL4iIJvj6ypuG9v3Kg80Qt2ZUnspPHvXO" || true
+run_test 52 "Should reject non-existent playlist " 1 "${SAVEPLAYLIST_SCRIPT}" "PL4iIJvj6ypuG9v3Kg80Qt2ZUnspPHvXO" || true
+
+print_header "Test 53: Verbose mode"
+run_test 53 "Should enable verbose with -v" 0 "${SAVEPLAYLIST_SCRIPT}" -v "PLHprCs14Z-sCSlrl1ueVisUKm3lnvqC0S" || true
+run_test 53 "Should enable verbose with --verbose" 0 "${SAVEPLAYLIST_SCRIPT}" --verbose "PLHprCs14Z-sCSlrl1ueVisUKm3lnvqC0S" || true
 
 print_header "All tests completed successfully"
