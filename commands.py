@@ -125,7 +125,7 @@ def main():
         walker.walk(execute_commands, tree)
         sys.exit(execute_commands.exitcode)
     except Exception as e:
-        print(f"Parsing failed: {type(e)} : {str(e)}")
+        print(f"\nParsing failed: {type(e)} : {str(e)}")
         sys.exit(1)
 
 

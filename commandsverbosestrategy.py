@@ -10,6 +10,10 @@ Commandsverbosestrategy.
 # -*- coding: utf-8 -*-'
 ######################################################################
 """
+import sys
+import logging
+from pathlib import Path
+import subprocess
 from antlr4.error.ErrorStrategy import DefaultErrorStrategy, InputMismatchException
 
 
@@ -55,5 +59,34 @@ class commandsVerboseStrategy(DefaultErrorStrategy):
                 full_line = input_stream.strdata.splitlines()[line - 1]
                 print(f"  ➤ Code: {full_line}")
                 print(" " * (column + 10) + "^")
+                commandName = full_line.split()[0]
+                self.executeHelpCommand(commandName)
             except IndexError:
                 pass
+
+    # Execute help command
+    def executeHelpCommand(self, command: str):
+        """
+        Execute a command line program.
+        Args:
+            command (list[str]): A list of strings containing the command line program and its options.
+        Returns:
+            int: The return code of the executed command.
+        """
+        cwd = str(Path.cwd())
+        cmd = ""
+        file_path = Path(cwd + "/" + command)
+        if file_path.exists():
+            cmd = cwd + "/" + command + " --help"
+        try:
+            print(f"Help for script {command}:\n", file=sys.stderr)
+            # Use subprocess.run to execute the command
+            result = subprocess.run(cmd, shell=True, check=True)
+            return result.returncode
+        except subprocess.CalledProcessError as e:
+            # If the command returns a non-zero exit code, raise an exception
+            logging.error(e)
+            self.exitcode = 1
+        except Exception as e:
+            # If any other exception occurs, raise it
+            raise Exception(f"Error executing help command: {str(e)}")
