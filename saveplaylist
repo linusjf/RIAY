@@ -1,47 +1,158 @@
 #!/usr/bin/env bash
 
-# Check for playlist ID argument
-if [ -z "$1" ]; then
-  echo "Usage: $0 PLAYLIST_ID"
-  exit 1
+# YouTube playlist video ID extractor
+# Fetches all video IDs from a YouTube playlist using the YouTube Data API
+# and saves them to a text file.
+
+readonly SCRIPT_NAME="$(basename "$0")"
+readonly VERSION="1.0.0"
+readonly BASE_URL="https://www.googleapis.com/youtube/v3/playlistItems"
+readonly MAX_RESULTS=50
+
+verbose=false
+
+if command -v realpath > /dev/null 2>&1; then
+  readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+else
+  readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
 fi
 
-# Check if YOUTUBE_API_KEY is set
-if [ -z "$YOUTUBE_API_KEY" ]; then
-  echo "Error: YOUTUBE_API_KEY environment variable is not set."
-  exit 1
+# Source required libraries
+source "$SCRIPT_DIR/require.sh"
+source "$SCRIPT_DIR/utils.sh"
+source "$SCRIPT_DIR/lockconfig.sh"
+source "$SCRIPT_DIR/curl.sh"
+
+# Check required commands
+require_commands jq
+
+# Load and lock config
+lockconfig::lock_config_vars "$SCRIPT_DIR/config.env"
+
+usage() {
+  local exit_code="${1:-0}"
+  if [[ "$exit_code" -eq 0 ]]; then
+    out "Usage: $SCRIPT_NAME [OPTIONS] PLAYLIST_ID"
+    out ""
+    out "Options:"
+    out "  -h, --help      Show this help message and exit"
+    out "  -v, --verbose   Enable verbose mode"
+    out "  --version       Show script version and exit"
+    out ""
+    out "Arguments:"
+    out "  PLAYLIST_ID   The ID of the YouTube playlist"
+    out ""
+    out "Examples:"
+    out "  $SCRIPT_NAME PL4iIJvj6ypuG9v3Kg80Qt2ZUnspPHvXO"
+    out "  $SCRIPT_NAME -v PL4iIJvj6ypuG9v3Kg80Qt2ZUnspPHvXO"
+  else
+    err "Usage: $SCRIPT_NAME [OPTIONS] PLAYLIST_ID"
+  fi
+  exit "$exit_code"
+}
+
+version() {
+  out "$VERSION"
+}
+
+save_playlist() {
+  local playlist_id="$1"
+  local next_page_token=""
+
+  # Clear or create the output file
+  true > "$VIDEOS_FILE"
+
+  while :; do
+    # Build the API request URL
+    local url="${BASE_URL}?part=contentDetails&playlistId=${playlist_id}&maxResults=${MAX_RESULTS}&key=${YOUTUBE_API_KEY}"
+
+    if [[ -n "$next_page_token" ]]; then
+      url="${url}&pageToken=${next_page_token}"
+    fi
+
+    if $verbose; then
+      out "Fetching URL: $url"
+    fi
+
+    # Fetch the response using safe_curl_request
+    local response
+    if ! response="$(curl::safe_curl_request "$url" "GET")"; then
+      err "Error: Failed to fetch playlist data."
+      return 1
+    fi
+
+    # Extract video IDs and append to output
+    echo "$response" | jq -r '.items[].contentDetails.videoId' >> "$VIDEOS_FILE"
+
+    # Get the next page token
+    next_page_token=$(echo "$response" | jq -r '.nextPageToken')
+
+    # Stop if there is no next page
+    if [[ "$next_page_token" == "null" ]]; then
+      break
+    fi
+  done
+
+  out "Video IDs saved to $VIDEOS_FILE"
+  return 0
+}
+
+trap_exit() {
+  # Add any cleanup here
+  out "Exiting..."
+}
+trap trap_exit EXIT
+
+main() {
+  local playlist_id
+
+  # Parse options
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -h | --help)
+        usage 0
+        ;;
+      -v | --verbose)
+        verbose=true
+        ;;
+      --version)
+        version
+        exit 0
+        ;;
+      *)
+        if [[ -z "$playlist_id" ]]; then
+          playlist_id="$1"
+        else
+          err "Error: Too many arguments."
+          usage 1
+        fi
+        ;;
+    esac
+    shift
+  done
+
+  if [[ -z "$playlist_id" ]]; then
+    err "Error: Missing playlist ID."
+    usage 1
+  fi
+
+  # Check required environment variables
+  require_vars YOUTUBE_API_KEY VIDEOS_FILE
+
+  if ! save_playlist "$playlist_id"; then
+    err "Error: $SCRIPT_NAME failed with exit code $?"
+    exit 1
+  fi
+  exit 0
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
 fi
-
-PLAYLIST_ID="$1"
-OUTPUT_FILE="videos.txt"
-NEXT_PAGE_TOKEN=""
-BASE_URL="https://www.googleapis.com/youtube/v3/playlistItems"
-MAX_RESULTS=50
-
-# Clear or create the output file
-true > "$OUTPUT_FILE"
-
-while :; do
-  # Build the API request URL
-  URL="${BASE_URL}?part=contentDetails&playlistId=${PLAYLIST_ID}&maxResults=${MAX_RESULTS}&key=${YOUTUBE_API_KEY}"
-
-  if [[ -n "$NEXT_PAGE_TOKEN" ]]; then
-    URL="${URL}&pageToken=${NEXT_PAGE_TOKEN}"
-  fi
-
-  # Fetch the response
-  RESPONSE=$(curl -s "$URL")
-
-  # Extract video IDs and append to output
-  echo "$RESPONSE" | jq -r '.items[].contentDetails.videoId' >> "$OUTPUT_FILE"
-
-  # Get the next page token
-  NEXT_PAGE_TOKEN=$(echo "$RESPONSE" | jq -r '.nextPageToken')
-
-  # Stop if there is no next page
-  if [[ "$NEXT_PAGE_TOKEN" == "null" ]]; then
-    break
-  fi
-done
-
-echo "Video IDs saved to $OUTPUT_FILE"
