@@ -1,5 +1,5 @@
 # commands
-genmonth 45
-addvideo "hacnsn_onus" "Be the One"
+addvideo "qJmcYkPMFbE" "The Cost of Compromise"
+genmonth 5
 stitch
 lintall
