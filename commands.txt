@@ -1,5 +1,5 @@
 # commands
-addvideo "qJmcYkPMFbE" "The Cost of Compromise"
+addvideo "Pc612AjmefY" "Trophy of Victory"
 genmonth 5
 stitch
 lintall

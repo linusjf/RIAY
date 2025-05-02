@@ -342,15 +342,15 @@ While the provided text doesn't contain direct quotes, several insightful concep
 
 1. **Forming the Relationship:** Focuses on the foundational elements of prayer, learning to raise the mind and heart to God.
 
-2. **The Biblical Roots:** Explores the scriptural basis of the prayers, deepening understanding and connecting them to daily life.
+1. **The Biblical Roots:** Explores the scriptural basis of the prayers, deepening understanding and connecting them to daily life.
 
-3. **Meditating on the Mysteries:** Introduces _lectio divina_ and engages with the writings of the Saints and sacred art as aids to prayer.
+1. **Meditating on the Mysteries:** Introduces _lectio divina_ and engages with the writings of the Saints and sacred art as aids to prayer.
 
-4. **Finding Focus:** Applies the learned principles, building the capacity to pray with the mysteries of the Rosary, starting with one decade at a time.
+1. **Finding Focus:** Applies the learned principles, building the capacity to pray with the mysteries of the Rosary, starting with one decade at a time.
 
-5. **Building Up the Decades:** Gradually increases the number of decades prayed, leading towards praying the full Rosary.
+1. **Building Up the Decades:** Gradually increases the number of decades prayed, leading towards praying the full Rosary.
 
-6. **Praying the Full Rosary:** The culmination of the program, focusing on receiving the graces of the full Rosary.
+1. **Praying the Full Rosary:** The culmination of the program, focusing on receiving the graces of the full Rosary.
 
 **Concluding Ritual:** The daily practice concludes with a structured sequence: the Sign of the Cross, the Our Father, three Hail Marys, the Glory Be, and another Sign of the Cross. This provides a consistent framework for ending the prayer time. The emphasis on expressing love to Jesus and Mary reinforces the relational aspect of prayer.
 
@@ -705,10 +705,10 @@ This reflection explores how to live out the prayer "Thy kingdom come, thy will 
 **Main Topics Discussed:**
 
 1. **The Nature of Children:** Children are presented as inherently "poor" – dependent, lacking knowledge and resources, and vulnerable. Crucially, in a healthy environment, they accept this dependence without shame or frustration, naturally turning to parents for all needs. Despite their neediness, they often exhibit joy and levity.
-2. **Childlike Humility as the Key:** This trusting dependence and acceptance of one's limitations ("poverty") is the essential characteristic for entering and experiencing the Kingdom of Heaven.
-3. **Experiencing the Kingdom Now:** The Kingdom isn't just a future reality. It is experienced _now_ when we acknowledge our dependence, limitations, and needs, and bring them directly to God the Father without shame, self-hatred, or resorting to anxious self-reliance. This act of trusting dependence meeting God's providence _is_ the Kingdom experience on earth.
-4. **Contrast with Adult Tendencies:** Adults often react to their inherent limitations with shame, frustration, and a drive for self-reliance, which hinders experiencing the peace of the Kingdom.
-5. **Trusting God's Will:** Praying "Thy will be done" mirrors the childlike trust that the Father knows best, loves us, and will provide what is truly needed, even if we don't know what that is (illustrated by the child-in-restaurant analogy). Jesus models this perfectly in Gethsemane.
+1. **Childlike Humility as the Key:** This trusting dependence and acceptance of one's limitations ("poverty") is the essential characteristic for entering and experiencing the Kingdom of Heaven.
+1. **Experiencing the Kingdom Now:** The Kingdom isn't just a future reality. It is experienced _now_ when we acknowledge our dependence, limitations, and needs, and bring them directly to God the Father without shame, self-hatred, or resorting to anxious self-reliance. This act of trusting dependence meeting God's providence _is_ the Kingdom experience on earth.
+1. **Contrast with Adult Tendencies:** Adults often react to their inherent limitations with shame, frustration, and a drive for self-reliance, which hinders experiencing the peace of the Kingdom.
+1. **Trusting God's Will:** Praying "Thy will be done" mirrors the childlike trust that the Father knows best, loves us, and will provide what is truly needed, even if we don't know what that is (illustrated by the child-in-restaurant analogy). Jesus models this perfectly in Gethsemane.
 
 **Key Takeaways:**
 
@@ -886,9 +886,9 @@ This text explores deepening one's relationship with Jesus and Mary through pray
 **Main Topics Discussed:**
 
 1. **The Opening of the Hail Mary:** Analysis of "Hail Mary, full of grace, the Lord is with thee."
-2. **Origin and Meaning:** These words are traced back to the Angel Gabriel's greeting at the Annunciation, interpreted as God's own greeting to Mary (citing Catechism 2676).
-3. **Repetition in Prayer:** Addressing the nature of repeating prayers like the Hail Mary, drawing on Pope John Paul II's perspective.
-4. **Application:** How to approach praying these specific words with renewed intention and love.
+1. **Origin and Meaning:** These words are traced back to the Angel Gabriel's greeting at the Annunciation, interpreted as God's own greeting to Mary (citing Catechism 2676).
+1. **Repetition in Prayer:** Addressing the nature of repeating prayers like the Hail Mary, drawing on Pope John Paul II's perspective.
+1. **Application:** How to approach praying these specific words with renewed intention and love.
 
 **Key Takeaways:**
 
@@ -926,9 +926,9 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 **Main Topics Discussed:**
 
 1. **Origin of the Prayer:** The phrase originates from the biblical event of the Visitation (Luke 1:39ff), where the pregnant Mary visits her relative Elizabeth.
-2. **The Visitation Context:** Upon hearing Mary's greeting, Elizabeth's unborn child (John the Baptist) leaps, and Elizabeth, filled with the Holy Spirit, proclaims these words.
-3. **Mary's Role:** Mary is presented as a powerful conduit of grace. Her greeting communicates the Holy Spirit, and her very presence sanctifyingly communicates Jesus, whom she carries. This highlights God's humility in becoming small enough to be carried by her.
-4. **Praying with Meaning:** The reflection contrasts mechanical repetition of the prayer with the way Elizabeth spoke – as a loud, joyous, Spirit-filled cry. It encourages emulating this genuine wonder and awe.
+1. **The Visitation Context:** Upon hearing Mary's greeting, Elizabeth's unborn child (John the Baptist) leaps, and Elizabeth, filled with the Holy Spirit, proclaims these words.
+1. **Mary's Role:** Mary is presented as a powerful conduit of grace. Her greeting communicates the Holy Spirit, and her very presence sanctifyingly communicates Jesus, whom she carries. This highlights God's humility in becoming small enough to be carried by her.
+1. **Praying with Meaning:** The reflection contrasts mechanical repetition of the prayer with the way Elizabeth spoke – as a loud, joyous, Spirit-filled cry. It encourages emulating this genuine wonder and awe.
 
 **Key Takeaways:**
 
@@ -942,7 +942,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -964,11 +964,11 @@ This text explores how prayer and meditation deepen one's relationship with Jesu
 
 1. **Mary's Role as Intercessor:** The central theme is Mary's unique position and ability to intercede for believers with her Son, Jesus.
 
-2. **The Power of Relationship:** It draws a parallel between influence in earthly relationships ("who you know") and Mary's influence with Jesus due to their mother-son relationship.
+1. **The Power of Relationship:** It draws a parallel between influence in earthly relationships ("who you know") and Mary's influence with Jesus due to their mother-son relationship.
 
-3. **Biblical Foundation:** The relationship between King Solomon and his mother Bathsheba (1 Kings 2:19-20) serves as a key illustration.
+1. **Biblical Foundation:** The relationship between King Solomon and his mother Bathsheba (1 Kings 2:19-20) serves as a key illustration.
 
-4. **Confidence in Prayer:** Believers are encouraged to approach Mary confidently with their needs, trusting in her love and intercessory power.
+1. **Confidence in Prayer:** Believers are encouraged to approach Mary confidently with their needs, trusting in her love and intercessory power.
 
 **Key Takeaways:**
 
@@ -1011,9 +1011,9 @@ This text explores the nature of the "Glory Be" prayer, identifying it primarily
 **Main Topics Discussed:**
 
 1. **The "Glory Be" as Praise:** The prayer is presented as a quintessential example of praise, supported by scriptural references like Psalm 145 ("I will extol you my God and King...") and the Catechism (section 2649).
-2. **Definition of Praise:** Praise is defined as the form of prayer that most directly recognizes God _as God_. It is uniquely characterized as "entirely disinterested."
-3. **"Disinterested" Praise Explained:** This core concept means praise gives glory to God purely for His own sake – simply because He _is_ – rather than focusing on what He has done for us or what we need from Him.
-4. **Contrast with Other Prayer Forms:** Praise is distinguished from:
+1. **Definition of Praise:** Praise is defined as the form of prayer that most directly recognizes God _as God_. It is uniquely characterized as "entirely disinterested."
+1. **"Disinterested" Praise Explained:** This core concept means praise gives glory to God purely for His own sake – simply because He _is_ – rather than focusing on what He has done for us or what we need from Him.
+1. **Contrast with Other Prayer Forms:** Praise is distinguished from:
    - **Contrition:** Focuses on human failings and God's mercy.
    - **Petition:** Focuses on human dependence and needs presented to God.
    - **Thanksgiving:** Focuses on gratitude for God's specific actions.
@@ -1053,10 +1053,10 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 **Main Topics Discussed:**
 
 1. **Theological Foundation:** The teaching draws heavily on Scripture (Matthew 28:19 - baptizing in the Trinity's name; Psalm 36:9 - God as the fountain and source of light) and the Catechism's emphasis on the Holy Trinity as the central mystery and illuminating source of Christian faith.
-2. **The Sign of the Cross as Faith in Action:** Making the Sign is presented not merely as a ritual, but as a conscious act of faith. It's likened to opening one's eyes to perceive spiritual reality.
-3. **Analogy of Light and Sight:** The Holy Trinity is described as the fundamental "light." The grace of Baptism confers faith, which is likened to spiritual "sight," enabling believers to perceive this divine light.
-4. **Perception in God's Light:** Praying "in the name of the Father, Son, and Holy Spirit" isn't about activating God's light (which is always present), but about using our faith (sight) to see _within_ that divine light. This allows a clearer view of God, faith mysteries, Mary, saints, creation, others, and oneself – revealing both inherent dignity and areas needing conversion.
-5. **Vulnerability and Growth:** Stepping into this light through the Sign of the Cross is an act of courage and vulnerability. It involves leaving darkness or hiding, allowing God's light to reveal shortcomings but also to warm, purify, enlighten, strengthen, and encourage.
+1. **The Sign of the Cross as Faith in Action:** Making the Sign is presented not merely as a ritual, but as a conscious act of faith. It's likened to opening one's eyes to perceive spiritual reality.
+1. **Analogy of Light and Sight:** The Holy Trinity is described as the fundamental "light." The grace of Baptism confers faith, which is likened to spiritual "sight," enabling believers to perceive this divine light.
+1. **Perception in God's Light:** Praying "in the name of the Father, Son, and Holy Spirit" isn't about activating God's light (which is always present), but about using our faith (sight) to see _within_ that divine light. This allows a clearer view of God, faith mysteries, Mary, saints, creation, others, and oneself – revealing both inherent dignity and areas needing conversion.
+1. **Vulnerability and Growth:** Stepping into this light through the Sign of the Cross is an act of courage and vulnerability. It involves leaving darkness or hiding, allowing God's light to reveal shortcomings but also to warm, purify, enlighten, strengthen, and encourage.
 
 **Key Takeaways:**
 
@@ -1088,10 +1088,10 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 **Main Topics:**
 
 1. **Spiritual Nourishment:** The text reflects on the Hail Holy Queen prayer (_Salve Regina_), emphasizing its opening words: _"Hail Holy Queen, Mother of Mercy, our life, our sweetness, and our hope."_
-2. **Eucharistic Analogy:** Drawing from Matthew 26, Jesus’ gifts of bread and wine symbolize essential grace (_bread_) and joyful abundance (_wine_).
+1. **Eucharistic Analogy:** Drawing from Matthew 26, Jesus’ gifts of bread and wine symbolize essential grace (_bread_) and joyful abundance (_wine_).
    - _Bread_: Represents foundational grace for spiritual survival.
    - _Wine_: Symbolizes the "sweetness" of God’s love, enhancing life beyond necessities.
-3. **Mary’s Role:** The Blessed Mother is presented as a gift of "wine"—a source of spiritual sweetness and hope, deepening one’s relationship with God.
+1. **Mary’s Role:** The Blessed Mother is presented as a gift of "wine"—a source of spiritual sweetness and hope, deepening one’s relationship with God.
 
 **Key Takeaways:**
 
@@ -1124,11 +1124,11 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 
 1. **Prayer and Meditation:** Deepening one's relationship with Jesus and Mary through prayer, emphasizing their roles as sources of grace.
 
-2. **Mary’s Compassion:** Reflecting on John 19:26, Mary is portrayed as the "woman of Sorrows" who understands human suffering and serves as an intercessor.
+1. **Mary’s Compassion:** Reflecting on John 19:26, Mary is portrayed as the "woman of Sorrows" who understands human suffering and serves as an intercessor.
 
-3. **Suffering and Faith:** The "Valley of Tears" metaphor illustrates the shared human experience of hardship, with Jesus and Mary offering solace.
+1. **Suffering and Faith:** The "Valley of Tears" metaphor illustrates the shared human experience of hardship, with Jesus and Mary offering solace.
 
-4. **Devotional Practices:** Recitations of prayers like the _Our Father_, _Hail Mary_, and _Hail Holy Queen_ foster communal faith and perseverance.
+1. **Devotional Practices:** Recitations of prayers like the _Our Father_, _Hail Mary_, and _Hail Holy Queen_ foster communal faith and perseverance.
    **Key Takeaways:**
 
 - Mary’s suffering at the Cross and her witness to the Resurrection make her a compassionate figure for those enduring pain.
@@ -1240,8 +1240,8 @@ _When we die we either will go to heaven or hell._ \*How we live here, what we d
 **_Key Takeaways_**
 
 1. **Hope and Seriousness**: Authentic hope avoids flippancy but embraces sober reflection on eternal realities.
-2. **Salvation as a Shared Mission**: Individuals are called to repent and collaborate with God for others’ salvation, prioritizing eternal concerns over trivialities.
-3. **Avoiding Fear**: For those in grace, excessive fear of Hell is counterproductive; a right relationship with God fosters hope and trust.
+1. **Salvation as a Shared Mission**: Individuals are called to repent and collaborate with God for others’ salvation, prioritizing eternal concerns over trivialities.
+1. **Avoiding Fear**: For those in grace, excessive fear of Hell is counterproductive; a right relationship with God fosters hope and trust.
 
 **_Notable Insights_**
 
@@ -3445,12 +3445,12 @@ Let us remain awhile in this contemplation, beholding the innocent, scourged Lor
 Consider, if you will, that stark scene: the Crowning with Thorns, the third sorrowful mystery. To ponder it deeply is to seek a closer walk with Christ and His Mother, finding grace along the path.
 
 1. We might turn our minds, profitably, to the Angelic Doctor, St. Thomas Aquinas, that profound and saintly scholar of old, who guided this reflection.
-2. Aquinas fixes upon the crown, not as a symbol of tragic kingship, but of sheer, deliberate _indignity_. What is indignity? It is the calculated insult, the offering of contempt where honour is not merely due, but richly deserved.
-3. Those thorns, sharp and cruel, might be seen as the very 'prickles' of our own sins, or perhaps the curse upon the ground, now gathered and pressed upon the Head of Him who came to lift it.
-4. We have, perhaps, known something of this ourselves – either in receiving or, worse, in inflicting it. Think of a trust betrayed, a simple kindness met with a clever, wounding slight. It leaves a peculiar ache, a sense of profound wrongness, particularly when the one offended was utterly open and generous.
-5. Now, lift your gaze from such small, human follies to the Divine. He, who is the source of all being, all goodness, all trust, offers Himself entirely. And what is the return? A crown of thorns. Our sins, our self-absorption, our failure to respond with love and honour, are the very substance of that crown.
-6. This is the heart of the mystery: Love receiving indignity. To ponder it in prayer is to see the true nature of our rebellion and the depth of His sacrifice. It draws us closer to His wounded heart and to the heart of His Mother, who shared His suffering.
-7. Such meditation, woven with the simple, enduring threads of prayer (like the Hail Mary and Glory Be), becomes a channel of grace, deepening our bond with Christ and Mary, and teaching us the terrible cost of sin and the glorious power of the Love that bore it.
+1. Aquinas fixes upon the crown, not as a symbol of tragic kingship, but of sheer, deliberate _indignity_. What is indignity? It is the calculated insult, the offering of contempt where honour is not merely due, but richly deserved.
+1. Those thorns, sharp and cruel, might be seen as the very 'prickles' of our own sins, or perhaps the curse upon the ground, now gathered and pressed upon the Head of Him who came to lift it.
+1. We have, perhaps, known something of this ourselves – either in receiving or, worse, in inflicting it. Think of a trust betrayed, a simple kindness met with a clever, wounding slight. It leaves a peculiar ache, a sense of profound wrongness, particularly when the one offended was utterly open and generous.
+1. Now, lift your gaze from such small, human follies to the Divine. He, who is the source of all being, all goodness, all trust, offers Himself entirely. And what is the return? A crown of thorns. Our sins, our self-absorption, our failure to respond with love and honour, are the very substance of that crown.
+1. This is the heart of the mystery: Love receiving indignity. To ponder it in prayer is to see the true nature of our rebellion and the depth of His sacrifice. It draws us closer to His wounded heart and to the heart of His Mother, who shared His suffering.
+1. Such meditation, woven with the simple, enduring threads of prayer (like the Hail Mary and Glory Be), becomes a channel of grace, deepening our bond with Christ and Mary, and teaching us the terrible cost of sin and the glorious power of the Love that bore it.
 
 #### April 12,2025
 
@@ -3901,6 +3901,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 01,2025](#may-012025)
   - [The Cost of Compromise](#the-cost-of-compromise)
   - [AI-Generated Summary: The Terrible Price of Compromise](#ai-generated-summary-the-terrible-price-of-compromise)
+- [May 02,2025](#may-022025)
+  - [Trophy of Victory](#trophy-of-victory)
+  - [AI-Generated Summary: The Victory of the Cross in Suffering](#ai-generated-summary-the-victory-of-the-cross-in-suffering)
 
 <!-- tocstop -->
 
@@ -3929,6 +3932,32 @@ This leads us to a crucial point:
 - **The Ongoing Battle:** Even after recognising this, the temptation to compromise persists. It whispers to us to accept mediocrity, to flirt with lesser sins, to appease people or passions rather than stand firm for what is right and true. It is a spirit that shies away from hard truths and seeks easy ways out.
 
 Let this reflection, then, serve not as condemnation, but as a bracing call. Let us recognise the spirit of compromise for what it is – a mockery of the Lord who endured actual mockery and torture for our sake. Truth cannot be bargained with. God will not be mocked. Let us, therefore, reject these shabby compromises and enthrone Christ fully as King of our hearts and lives, giving Him the adoration He alone deserves.
+
+#### May 02,2025
+
+##### Trophy of Victory
+
+[![Trophy of Victory](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day122.jpg)](https://youtu.be/Pc612AjmefY "Trophy of Victory")
+
+##### AI-Generated Summary: The Victory of the Cross in Suffering
+
+The meditation on the fourth sorrowful mystery reveals the cross as a paradox—an instrument of shame transformed into a symbol of triumph. St. Thomas Aquinas underscores this reversal:
+
+- **The Cross as Victory**: Christ’s willing embrace of the cross turned a sign of disgrace into a banner of dominion, conquering evil and radiating divine light.
+- **The Paradox of Suffering**: What was meant for humiliation became the means of salvation, proving that God’s power shines through apparent defeat.
+
+The passage extends this truth to personal struggles:
+
+- **Suffering United to Christ**: Hardships remain painful, but when shared with Jesus, they gain redemptive purpose. Alone, suffering is tragic; with Him, it becomes transformative.
+- **From Shame to Grace**: Just as Christ’s cross brought glory, our wounds—when surrendered to Him—can become tools for ministry, equipping us to serve others.
+
+Key insights include:
+
+- Faith does not erase pain but infuses it with meaning.
+- The cross teaches that victory often wears the guise of defeat.
+- Closing prayers (e.g., _Hail Mary_, _Glory Be_) anchor this hope in divine grace, seeking intercession for perseverance.
+
+In brief: the cross is both burden and beacon—a call to carry our trials with Christ, trusting in their hidden triumph.
 
 ## June
 
@@ -4039,8 +4068,8 @@ RIAY December 2025
 - [exiftool](https://exiftool.org/)
 
 1. Create an empty `videos.txt` file under the root directory.
-2. Create a directory for each month of the year under the root directory.
-3. Add a `header.md` file under each monthly directory with the following content.
+1. Create a directory for each month of the year under the root directory.
+1. Add a `header.md` file under each monthly directory with the following content.
    Example for January:
    <pre><code>&lt;!-- toc --&gt;&lt;!-- tocstop --&gt;</code></pre>
 
@@ -4073,13 +4102,13 @@ Note: You can do all this by simply executing the script `setup`.
 
 1. Export an environment variable `GITHUB_USERNAME` by adding the following line to your `.bash_profile` file.
 
-2. Substitute your Github user id for `<userid>`.
+1. Substitute your Github user id for `<userid>`.
 
    ```bash
    export GITHUB_USERNAME="<userid>"
    ```
 
-3. Export environment variable `YOUTUBE_API_KEY` by adding the following line to `.bash_profile`.
+1. Export environment variable `YOUTUBE_API_KEY` by adding the following line to `.bash_profile`.
 
    ```bash
    export YOUTUBE_API_KEY=<api_key>
@@ -4088,7 +4117,7 @@ Note: You can do all this by simply executing the script `setup`.
    Substitute your Google API Key which can access YouTube Data API.
    Set up your API key using instructions at <https://support.google.com/googleapi/answer/6158862?hl=en>
 
-4. Export environment variable `GEMINI_API_KEY` by adding the following line to `.bash_profile`.
+1. Export environment variable `GEMINI_API_KEY` by adding the following line to `.bash_profile`.
 
    ```bash
    export GEMINI_API_KEY=<api_key>
@@ -4097,7 +4126,7 @@ Note: You can do all this by simply executing the script `setup`.
    Substitute your Gemini API Key which can access YouTube Data API.
    Set up your API key using instructions at <https://ai.google.dev/gemini-api/docs/api-key>
 
-5. Export environment variable `DEEPSEEK_API_KEY` by adding the following line to `.bash_profile`.
+1. Export environment variable `DEEPSEEK_API_KEY` by adding the following line to `.bash_profile`.
 
    ```bash
    export DEEPSEEK_API_KEY=<api_key>
@@ -4223,20 +4252,20 @@ Results:
 1. Computes the `day of year` from the length of the videos.txt file.
    `day of year = (number of lines in videos.txt) + 1`
    In this case, 10.
-2. Appends the Video id to the file `videos.txt` present in the root directory.
-3. Generates markdown file `Day010.md` in the `January` subdirectory.
+1. Appends the Video id to the file `videos.txt` present in the root directory.
+1. Generates markdown file `Day010.md` in the `January` subdirectory.
    1. This markdown file has a link to the Youtube video.
-   2. It also has AI-Generated summary of the podcast.
-4. Generates image file `Day010.jpg` in the `January/jpgs` directory.
-5. Appends `Day010.md` filename to the `January/compact.txt` file.
-6. Updates `January.md` file in the root directory with the contents of `Day010.md`.
-7. Updated files:
+   1. It also has AI-Generated summary of the podcast.
+1. Generates image file `Day010.jpg` in the `January/jpgs` directory.
+1. Appends `Day010.md` filename to the `January/compact.txt` file.
+1. Updates `January.md` file in the root directory with the contents of `Day010.md`.
+1. Updated files:
    1. `./videos.txt`
-   2. `./January.md`
-   3. `./January/compact.txt`
-8. Created files:
+   1. `./January.md`
+   1. `./January/compact.txt`
+1. Created files:
    1. `./January/Day010.md`
-   2. `./January/jpgs/Day010.jpg`
+   1. `./January/jpgs/Day010.jpg`
 
 ### Add additional Youtube video to a day
 
@@ -4255,22 +4284,22 @@ Results:
 
 1. Updates markdown file `Day021.md` in the `January` subdirectory.
    1. This markdown file has a link to the Youtube video.
-   2. It also has AI-Generated summary of the podcast.
-2. Generates image file `<videoid>.jpg` in the `January/jpgs` directory.
-3. Updates `January.md` file in the root directory with the contents of `Day021.md`.
-4. Updated files:
+   1. It also has AI-Generated summary of the podcast.
+1. Generates image file `<videoid>.jpg` in the `January/jpgs` directory.
+1. Updates `January.md` file in the root directory with the contents of `Day021.md`.
+1. Updated files:
    1. `January/Day021.md`
-   2. `./January.md`
-5. Created files:
+   1. `./January.md`
+1. Created files:
    1. `./January/jpgs/<videoid>.jpg`
 
 ### Add today's sharing
 
 1. First, add today's video.
-2. Edit the generated `Dayxxx.md` file for today.
-3. Paste the sharing text into the file adding appropriate markdown headers as needed.
-4. Save the file.
-5. Execute script `genmonth` with the following parameters:
+1. Edit the generated `Dayxxx.md` file for today.
+1. Paste the sharing text into the file adding appropriate markdown headers as needed.
+1. Save the file.
+1. Execute script `genmonth` with the following parameters:
 
 - month index - 1 - 12
 
@@ -4306,7 +4335,7 @@ The preceding gives the month index for day 31.
 
 1. Edit the `stitch.md` file provided to include the markdown files you wish to merge.
 
-2. The file format follows:
+1. The file format follows:
 
    ```markdown
    # README
@@ -4328,7 +4357,7 @@ The preceding gives the month index for day 31.
 
    Include or exclude any files you need or don't need.
 
-3. Execute the `stitch` script.
+1. Execute the `stitch` script.
 
 ```bash
 ./stitch
@@ -4409,34 +4438,34 @@ This document describes all bash scripts in the project, their functionality, de
 ### Table of Contents
 
 1. [summarizevideo](#summarizevideo)
-2. [findsnippetdays](#findsnippetdays)
-3. [apply_overlayicon](#apply_overlayicon)
-4. [genoverlays](#genoverlays)
-5. [setupimgs](#setupimgs)
-6. [setup](#setup)
-7. [compact](#compact)
-8. [genmonth](#genmonth)
-9. [lintall](#lintall)
-10. [replaceemojis](#replaceemojis)
-11. [removeallsnippets](#removeallsnippets)
-12. [findsnippetfiles](#findsnippetfiles)
-13. [genmdfromvids](#genmdfromvids)
-14. [addsnippets](#addsnippets)
-15. [genvidthmd](#genvidthmd)
-16. [genoverlay](#genoverlay)
-17. [getgeminimodels](#getgeminimodels)
-18. [annotatejpg](#annotatejpg)
-19. [removesnippets](#removesnippets)
-20. [addvideotoday](#addvideotoday)
-21. [addsummariestodays](#addsummariestodays)
-22. [gentoc](#gentoc)
-23. [stitch](#stitch)
-24. [addimgtoday](#addimgtoday)
-25. [restoreemojis](#restoreemojis)
-26. [annotatedayjpgs](#annotatedayjpgs)
-27. [addvideo](#addvideo)
-28. [genindexrst](#genindexrst)
-29. [genstitchmd](#genstitchmd)
+1. [findsnippetdays](#findsnippetdays)
+1. [apply_overlayicon](#apply_overlayicon)
+1. [genoverlays](#genoverlays)
+1. [setupimgs](#setupimgs)
+1. [setup](#setup)
+1. [compact](#compact)
+1. [genmonth](#genmonth)
+1. [lintall](#lintall)
+1. [replaceemojis](#replaceemojis)
+1. [removeallsnippets](#removeallsnippets)
+1. [findsnippetfiles](#findsnippetfiles)
+1. [genmdfromvids](#genmdfromvids)
+1. [addsnippets](#addsnippets)
+1. [genvidthmd](#genvidthmd)
+1. [genoverlay](#genoverlay)
+1. [getgeminimodels](#getgeminimodels)
+1. [annotatejpg](#annotatejpg)
+1. [removesnippets](#removesnippets)
+1. [addvideotoday](#addvideotoday)
+1. [addsummariestodays](#addsummariestodays)
+1. [gentoc](#gentoc)
+1. [stitch](#stitch)
+1. [addimgtoday](#addimgtoday)
+1. [restoreemojis](#restoreemojis)
+1. [annotatedayjpgs](#annotatedayjpgs)
+1. [addvideo](#addvideo)
+1. [genindexrst](#genindexrst)
+1. [genstitchmd](#genstitchmd)
 
 ---
 
