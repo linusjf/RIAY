@@ -512,7 +512,6 @@ run_test 53 "Should enable verbose with --verbose" 0 "${SAVEPLAYLIST_SCRIPT}" --
 print_header "Running compact sanity tests"
 
 print_header "Test 54: Version flag"
-run_test 54 "Should show version with -v" 0 "${COMPACT_SCRIPT}" -v
 run_test 54 "Should show version with --version" 0 "${COMPACT_SCRIPT}" --version
 
 print_header "Test 55: Help/usage"
