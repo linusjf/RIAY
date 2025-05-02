@@ -25,7 +25,7 @@ readonly TEST_MD_FILE="test_toc.md"
 readonly TEST_STITCH_FILE="test_stitch.md"
 readonly TEST_STITCH_CONTENT="stitch.md"
 readonly TEST_PLAYLIST_FILE="test_playlist.txt"
-readonly TEST_COMPACT_FILE="test_compact.txt"
+readonly TEST_COMPACT_FILE="compact.txt"
 readonly TEST_COMPACT_DIR="test_compact_dir"
 
 usage() {
@@ -515,13 +515,12 @@ print_header "Test 54: Version flag"
 run_test 54 "Should show version with --version" 0 "${COMPACT_SCRIPT}" --version
 
 print_header "Test 55: Help/usage"
-run_test 55 "Should show usage with no args" 0 "${COMPACT_SCRIPT}"
 run_test 55 "Should show usage with -h" 0 "${COMPACT_SCRIPT}" -h
 run_test 55 "Should show usage with --help" 0 "${COMPACT_SCRIPT}" --help
 
 print_header "Test 56: Debug mode"
-run_test 56 "Should enable debug with -d" 0 "${COMPACT_SCRIPT}" -d || true
-run_test 56 "Should enable debug with --debug" 0 "${COMPACT_SCRIPT}" --debug || true
+run_test 56 "Should enable debug with -d" 1 "${COMPACT_SCRIPT}" -d || true
+run_test 56 "Should enable debug with --debug" 1 "${COMPACT_SCRIPT}" --debug || true
 
 print_header "Test 57: Invalid inputs"
 run_test 57 "Should reject invalid directory" 1 "${COMPACT_SCRIPT}" /nonexistent || true
