@@ -18,12 +18,15 @@ readonly ADDVIDEOTODAY_SCRIPT="${SCRIPT_DIR}/addvideotoday"
 readonly ADDIMGTODAY_SCRIPT="${SCRIPT_DIR}/addimgtoday"
 readonly CLEANUP_SCRIPT="${SCRIPT_DIR}/cleanup"
 readonly SAVEPLAYLIST_SCRIPT="${SCRIPT_DIR}/saveplaylist"
+readonly COMPACT_SCRIPT="${SCRIPT_DIR}/compact"
 readonly TEST_MONTH=1
 readonly TEST_YEAR=2023
 readonly TEST_MD_FILE="test_toc.md"
 readonly TEST_STITCH_FILE="test_stitch.md"
 readonly TEST_STITCH_CONTENT="stitch.md"
 readonly TEST_PLAYLIST_FILE="test_playlist.txt"
+readonly TEST_COMPACT_FILE="test_compact.txt"
+readonly TEST_COMPACT_DIR="test_compact_dir"
 
 usage() {
   exitcode="${1:-0}"
@@ -49,6 +52,7 @@ Available tests:
   40-44  cleanup script tests
   45-49  setup script tests
   50-54  saveplaylist script tests
+  55-59  compact script tests
 
 Examples:
   $0 --from-test 6          # Run tests starting from test 6
@@ -181,6 +185,30 @@ create_test_playlist() {
 dQw4w9WgXcQ
 CfU7rIufywo
 Io1G_5I7a-0
+EOF
+}
+
+create_test_compact() {
+  mkdir -p "${TEST_COMPACT_DIR}"
+  cat << EOF > "${TEST_COMPACT_DIR}/${TEST_COMPACT_FILE}"
+file1.md
+file2.md
+file3.md
+EOF
+
+  cat << EOF > "${TEST_COMPACT_DIR}/file1.md"
+# File 1
+Content 1
+EOF
+
+  cat << EOF > "${TEST_COMPACT_DIR}/file2.md"
+# File 2
+Content 2
+EOF
+
+  cat << EOF > "${TEST_COMPACT_DIR}/file3.md"
+# File 3
+Content 3
 EOF
 }
 
@@ -480,5 +508,27 @@ run_test 52 "Should reject non-existent playlist " 1 "${SAVEPLAYLIST_SCRIPT}" "P
 print_header "Test 53: Verbose mode"
 run_test 53 "Should enable verbose with -v" 0 "${SAVEPLAYLIST_SCRIPT}" -v "PLHprCs14Z-sCSlrl1ueVisUKm3lnvqC0S" || true
 run_test 53 "Should enable verbose with --verbose" 0 "${SAVEPLAYLIST_SCRIPT}" --verbose "PLHprCs14Z-sCSlrl1ueVisUKm3lnvqC0S" || true
+
+print_header "Running compact sanity tests"
+
+print_header "Test 54: Version flag"
+run_test 54 "Should show version with -v" 0 "${COMPACT_SCRIPT}" -v
+run_test 54 "Should show version with --version" 0 "${COMPACT_SCRIPT}" --version
+
+print_header "Test 55: Help/usage"
+run_test 55 "Should show usage with no args" 0 "${COMPACT_SCRIPT}"
+run_test 55 "Should show usage with -h" 0 "${COMPACT_SCRIPT}" -h
+run_test 55 "Should show usage with --help" 0 "${COMPACT_SCRIPT}" --help
+
+print_header "Test 56: Debug mode"
+run_test 56 "Should enable debug with -d" 0 "${COMPACT_SCRIPT}" -d || true
+run_test 56 "Should enable debug with --debug" 0 "${COMPACT_SCRIPT}" --debug || true
+
+print_header "Test 57: Invalid inputs"
+run_test 57 "Should reject invalid directory" 1 "${COMPACT_SCRIPT}" /nonexistent || true
+
+print_header "Test 58: Basic execution"
+create_test_compact
+run_test 58 "Should run successfully" 0 "${COMPACT_SCRIPT}" "${TEST_COMPACT_DIR}"
 
 print_header "All tests completed successfully"
