@@ -12,6 +12,7 @@ readonly SCRIPT_NAME="$(basename "$0")"
 # Source utility libraries
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/require.sh"
+source "${SCRIPT_DIR}/internet.sh"
 source "${SCRIPT_DIR}/util.sh"
 source "${SCRIPT_DIR}/curl.sh"
 source "${SCRIPT_DIR}/youtube.sh"
@@ -335,6 +336,7 @@ function main() {
     usage 1
   fi
 
+  internet::checkinternet || exit 1
   local VIDEO_ID="$1"
   local FILE_PREFIX=""
 
