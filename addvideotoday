@@ -9,6 +9,7 @@ readonly SCRIPT_NAME="$(basename "$0")"
 # Load required libraries
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/require.sh" || exit 1
+source "${SCRIPT_DIR}/internet.sh" || exit 1
 source "${SCRIPT_DIR}/util.sh" || exit 1
 source "${SCRIPT_DIR}/git.sh" || exit 1
 source "${SCRIPT_DIR}/youtube.sh" || exit 1
@@ -153,6 +154,8 @@ function main() {
   check_required_tools
 
   require_vars YEAR YOUTUBE_API_KEY
+
+  internet::checkinternet || exit 1
 
   api_key="$YOUTUBE_API_KEY"
   github_repo=$(git::get_github_repo)
