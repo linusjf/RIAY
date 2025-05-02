@@ -57,13 +57,17 @@ latex_elements = {
 """,
 }
 
-# -- Ootions for linkcheck
+# -- Options for linkcheck
 linkcheck_timeout = 30  # seconds
 linkcheck_ignore = [
     r"http://localhost:\d+/",  # Ignore local dev servers
     r"https://example\.com/redirect",  # Ignore known redirect
+    r"https://raw.githubusercontent.com/linusjf/RIAY/",
+    r"https://www.gnu.org/software/m4/m4.html",
 ]
 linkcheck_ignore_redirects = True
+linkcheck_workers = 2  # or even 1 to be safer
+linkcheck_retries = 2
 
 # hook to replace unavailable emojis in Symbola
 # for available ones only during pdf latex generation

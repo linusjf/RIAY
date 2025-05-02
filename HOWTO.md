@@ -27,7 +27,7 @@
 
 - [curl](https://curl.se/)
 - [gm](http://www.graphicsmagick.org/)
-- [m4](https://www.gnu.org/software/m4/)
+- [m4](https://www.gnu.org/software/m4/m4.html)
 - [stitchmd](https://github.com/abhinav/stitchmd)
 - [markdown-toc-gen](https://github.com/thesilk-tux/markdown-toc-gen)
 - [mdformat](https://github.com/hukkin/mdformat)
