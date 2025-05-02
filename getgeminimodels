@@ -25,6 +25,8 @@ else
   readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
 fi
 
+source "${SCRIPT_DIR}/internet.sh"
 source "${SCRIPT_DIR}/curl.sh"
 
+internet::checkinternet || exit 1
 get_gemini_models
