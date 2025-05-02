@@ -131,11 +131,7 @@ function summarize_chunk_gemini() {
       return
     fi
   done
-  if [[ -n "${SUMMARIZED_CHUNK:-}" ]]; then
-    return 0
-  else
-    return 1
-  fi
+  [[ -n "${SUMMARIZED_CHUNK:-}" ]]
 }
 
 function summarize_chunk_deepseek() {
