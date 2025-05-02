@@ -18,6 +18,7 @@ else
 fi
 
 # Source required libraries
+source "${SCRIPT_DIR}/internet.sh"
 source "$SCRIPT_DIR/require.sh"
 source "$SCRIPT_DIR/util.sh"
 source "$SCRIPT_DIR/lockconfig.sh"
@@ -174,6 +175,7 @@ main() {
   # Check required environment variables
   require_vars YOUTUBE_API_KEY VIDEOS_FILE
 
+  internet::checkinternet || exit 1
   # Check if playlist exists before proceeding
   if ! check_playlist_exists "$playlist_id"; then
     exit 1
