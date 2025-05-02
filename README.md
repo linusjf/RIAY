@@ -942,7 +942,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -4058,7 +4058,7 @@ RIAY December 2025
 
 - [curl](https://curl.se/)
 - [gm](http://www.graphicsmagick.org/)
-- [m4](https://www.gnu.org/software/m4/)
+- [m4](https://www.gnu.org/software/m4/m4.html)
 - [stitchmd](https://github.com/abhinav/stitchmd)
 - [markdown-toc-gen](https://github.com/thesilk-tux/markdown-toc-gen)
 - [mdformat](https://github.com/hukkin/mdformat)
