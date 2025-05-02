@@ -131,6 +131,11 @@ function summarize_chunk_gemini() {
       return
     fi
   done
+  if [[ -n "${SUMMARIZED_CHUNK:-}" ]]; then
+    return 0
+  else
+    return 1
+  fi
 }
 
 function summarize_chunk_deepseek() {
@@ -408,7 +413,7 @@ function main() {
   for chunk in "${CHUNKS[@]}"; do
     local SUMMARIZED_CHUNK
     summarize_chunk "$chunk"
-    INTERMEDIATE_SUMMARIES+=("$SUMMARIZED_CHUNK")
+    INTERMEDIATE_SUMMARIES+=("${SUMMARIZED_CHUNK}")
     SUMMARIZED_CHUNK=""
     if $verbose; then
       >&2 echo "Processed chunk (length: ${#chunk} chars)"
