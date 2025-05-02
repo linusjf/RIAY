@@ -12,6 +12,7 @@ if command -v realpath > /dev/null 2>&1; then
 else
   readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
 fi
+source "${SCRIPT_DIR}/internet.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 # Check if YEAR is set
@@ -20,6 +21,7 @@ if [ -z "$YEAR" ]; then
   exit 1
 fi
 
+internet::checkinternet || exit 1
 startday=$1
 endday=$2
 
