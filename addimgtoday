@@ -50,7 +50,7 @@ Options:
   -d, --debug     Enable debug mode
 
 Examples:
-  $SCRIPT_NAME 123 /path/to/image.jpg "My Image Caption"
+  $SCRIPT_NAME /path/to/image.jpg "My Image Caption" 123
   $SCRIPT_NAME --help
   $SCRIPT_NAME -v
 
