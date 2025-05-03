@@ -942,7 +942,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3904,6 +3904,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 02,2025](#may-022025)
   - [Trophy of Victory](#trophy-of-victory)
   - [AI-Generated Summary: The Victory of the Cross in Suffering](#ai-generated-summary-the-victory-of-the-cross-in-suffering)
+- [May 03,2025](#may-032025)
+  - [She Magnifies Him](#she-magnifies-him)
+  - [AI-Generated Summary: A Meditation on Mary's Sorrow at the Cross](#ai-generated-summary-a-meditation-on-marys-sorrow-at-the-cross)
 
 <!-- tocstop -->
 
@@ -3958,6 +3961,22 @@ Key insights include:
 - Closing prayers (e.g., _Hail Mary_, _Glory Be_) anchor this hope in divine grace, seeking intercession for perseverance.
 
 In brief: the cross is both burden and beacon—a call to carry our trials with Christ, trusting in their hidden triumph.
+
+#### May 03,2025
+
+##### She Magnifies Him
+
+[![She Magnifies Him](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day123.jpg)](https://youtu.be/t6Ezkng0Oi0 "She Magnifies Him")
+
+##### AI-Generated Summary: A Meditation on Mary's Sorrow at the Cross
+
+- **Mary’s Witness**: The crucifixion is portrayed through Mary’s eyes, blending her memory of Jesus as both the infant of Bethlehem and the suffering man of Calvary. Her dual vision sharpens her grief, making her sorrow a lens for deeper contemplation.
+- **Brutality of the Cross**: St. Bridget’s _Revelations_ underscores the physical torment—nails piercing flesh, limbs wrenched, veins ruptured—while Mary’s steadfast presence magnifies the horror and holiness of the scene.
+- **Devotion’s Paradox**: Mary’s Magnificat, a song of divine glory, contrasts with her anguish at the cross. Her suffering does not diminish Christ’s majesty but reveals its cost, proving that love and sorrow amplify redemption’s weight.
+- **Spiritual Invitation**: To meditate on Mary’s perspective is to awaken sharper sorrow for sin, fiercer gratitude for sacrifice, and truer contrition. Her heart becomes a school for the penitent.
+- **Prayer as Response**: The repeated _Hail Mary_ and _Glory Be_ are not mere recitations but echoes of Mary’s own surrender, framing the crucifixion within praise and petition. The closing trinitarian formula seals the meditation as both gift and grace.
+
+_In brevity, the text weaves brutality, devotion, and prayer into a tapestry meant to pierce the soul as the nails pierced Christ—through the heart of His mother._
 
 ## June
 
