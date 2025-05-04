@@ -11,7 +11,7 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
 function usage() {
-  cat <<EOF
+  cat << EOF
 Usage: ${SCRIPT_NAME} [options] <startday> <endday>
 
 Add AI-generated summaries to daily markdown files for a range of days.
@@ -41,7 +41,6 @@ function version() {
 
 function main() {
   local ai_handling="prompt"
-  local debug_mode=false
 
   # Parse options
   while [[ $# -gt 0 ]]; do
@@ -49,8 +48,7 @@ function main() {
       --ai-handling=*)
         ai_handling="${1#*=}"
         case "${ai_handling}" in
-          overwrite|skip|prompt)
-            ;;
+          overwrite | skip | prompt) ;;
           *)
             err "Invalid --ai-handling value: ${ai_handling}"
             usage >&2
@@ -59,12 +57,11 @@ function main() {
         esac
         shift
         ;;
-      --debug|-d)
-        debug_mode=true
+      --debug | -d)
         set -x
         shift
         ;;
-      --help|-h)
+      --help | -h)
         usage
         exit 0
         ;;
@@ -125,7 +122,7 @@ function main() {
 
   # Get number of lines in the file
   local total_lines
-  total_lines=$(wc -l <"${VIDEOS_FILE}")
+  total_lines=$(wc -l < "${VIDEOS_FILE}")
 
   # Adjust endday if it exceeds total lines
   if [[ "${endday}" -gt "${total_lines}" ]]; then
@@ -171,7 +168,7 @@ function process_single_day() {
     return
   fi
 
-  if grep "AI-Generated Summary:" "${filepath}" &>/dev/null; then
+  if grep "AI-Generated Summary:" "${filepath}" &> /dev/null; then
     case "${ai_handling}" in
       overwrite)
         backup_and_clean_file "${filepath}"
@@ -209,7 +206,7 @@ function backup_and_clean_file() {
     /^### AI-Generated Summary:/ { in_block = 1; next }
     /^### / && in_block { in_block = 0 }
     !in_block
-  ' "${filepath}" >"${tempfile}" && mv "${tempfile}" "${filepath}"
+  ' "${filepath}" > "${tempfile}" && mv "${tempfile}" "${filepath}"
 }
 
 function append_summary() {
@@ -217,13 +214,13 @@ function append_summary() {
   local videoid="$2"
 
   log "Appending to ${filepath} (Day ${lineno}, ${videoid})"
-  printf "\n" >>"${filepath}"
-  "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >>"${filepath}"
+  printf "\n" >> "${filepath}"
+  "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >> "${filepath}"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   # Resolve script directory
-  if command -v realpath >/dev/null 2>&1; then
+  if command -v realpath > /dev/null 2>&1; then
     readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else
     readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"

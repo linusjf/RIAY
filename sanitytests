@@ -223,6 +223,15 @@ Io1G_5I7a-0
 EOF
 }
 
+create_test_day_file() {
+  local month="$1"
+  local day="$2"
+  local content="$3"
+  mkdir -p "$month"
+  printf -v filename "Day%03d.md" "$day"
+  echo "$content" > "${month}/${filename}"
+}
+
 stash_apply_id() {
   id="$1"
   if git stash list | grep "$id"; then
@@ -545,29 +554,29 @@ print_header "Running addsummariestodays sanity tests"
 print_header "Test 59: Version flag"
 run_test 59 "Should show version with --version" 0 "${ADDSUMMARIES_SCRIPT}" --version
 
-print_header "Test 60: Help/usage"
+print_header "Test 60: No args"
 run_test 60 "Should show usage with no args" 1 "${ADDSUMMARIES_SCRIPT}" || true
-run_test 60 "Should show usage with -h" 0 "${ADDSUMMARIES_SCRIPT}" -h
-run_test 60 "Should show usage with --help" 0 "${ADDSUMMARIES_SCRIPT}" --help
 
-print_header "Test 61: Invalid inputs"
-run_test 61 "Should reject invalid day range (non-numeric)" 1 "${ADDSUMMARIES_SCRIPT}" "one" "ten" || true
-run_test 61 "Should reject invalid day range (start > end)" 1 "${ADDSUMMARIES_SCRIPT}" "10" "5" || true
+print_header "Test 60: Help/usage"
+run_test 61 "Should show usage with -h" 0 "${ADDSUMMARIES_SCRIPT}" -h
+run_test 61 "Should show usage with --help" 0 "${ADDSUMMARIES_SCRIPT}" --help
 
-print_header "Test 62: Debug mode"
+print_header "Test 62: Invalid inputs"
+run_test 62 "Should reject invalid day range (non-numeric)" 1 "${ADDSUMMARIES_SCRIPT}" "one" "ten" || true
+run_test 62 "Should reject invalid day range (start > end)" 1 "${ADDSUMMARIES_SCRIPT}" "10" "5" || true
+run_test 62 "Should reject invalid --ai-handling value" 1 "${ADDSUMMARIES_SCRIPT}" --ai-handling=invalid 1 1 || true
+
+print_header "Test 63: AI handling options"
 create_test_videos
-mkdir -p "January"
-touch "January/Day001.md"
-echo "y" > y.txt
-run_test 62 "Should enable debug with -d" 0 "${ADDSUMMARIES_SCRIPT}" -d "1" "1" < y.txt
-echo "N" > N.txt
-run_test 62 "Should enable debug with --debug" 0 "${ADDSUMMARIES_SCRIPT}" --debug 1 1 < N.txt
+create_test_day_file "January" 1 "# Day 1\n### AI-Generated Summary: Test"
+run_test 63 "Should skip with --ai-handling=skip" 0 "${ADDSUMMARIES_SCRIPT}" --ai-handling=skip 1 1
+run_test 63 "Should overwrite with --ai-handling=overwrite" 0 "${ADDSUMMARIES_SCRIPT}" --ai-handling=overwrite 1 1
 
-print_header "Test 63: Basic execution"
+print_header "Test 64: Basic execution"
 create_test_videos
-mkdir -p "January"
-touch "January/Day001.md"
+create_test_day_file "January" 1 "# Day 1"
 echo "Y" > Y.txt
-run_test 63 "Should run successfully" 0 "${ADDSUMMARIES_SCRIPT}" "1" "1" < Y.txt
+run_test 64 "Should run successfully with prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 < Y.txt
+run_test 64 "Should run successfully with --ai-handling=overwrite" 0 "${ADDSUMMARIES_SCRIPT}" --ai-handling=overwrite 1 1
 
 print_header "All tests completed successfully"
