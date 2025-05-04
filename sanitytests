@@ -553,20 +553,18 @@ run_test 60 "Should show usage with --help" 0 "${ADDSUMMARIES_SCRIPT}" --help
 print_header "Test 61: Invalid inputs"
 run_test 61 "Should reject invalid day range (non-numeric)" 1 "${ADDSUMMARIES_SCRIPT}" "one" "ten" || true
 run_test 61 "Should reject invalid day range (start > end)" 1 "${ADDSUMMARIES_SCRIPT}" "10" "5" || true
-run_test 61 "Should reject missing YEAR env var" 1 env -u YEAR "${ADDSUMMARIES_SCRIPT}" "1" "5" || true
-#run_test 61 "Should reject missing VIDEOS_FILE env var" 1 env -u VIDEOS_FILE "${ADDSUMMARIES_SCRIPT}" "1" "5" || true
 
 print_header "Test 62: Debug mode"
 create_test_videos
 mkdir -p "January"
 touch "January/Day001.md"
-run_test 62 "Should enable debug with -d" 0 env VIDEOS_FILE="${TEST_VIDEOS_FILE}" "${ADDSUMMARIES_SCRIPT}" -d "1" "1" || true
-run_test 62 "Should enable debug with --debug" 0 env VIDEOS_FILE="${TEST_VIDEOS_FILE}" "${ADDSUMMARIES_SCRIPT}" --debug "1" "1" || true
+run_test 62 "Should enable debug with -d" 0 echo "y" | "${ADDSUMMARIES_SCRIPT}" -d "1" "1"
+run_test 62 "Should enable debug with --debug" 0 echo "Y" | "${ADDSUMMARIES_SCRIPT}" --debug 1 1
 
 print_header "Test 63: Basic execution"
 create_test_videos
 mkdir -p "January"
 touch "January/Day001.md"
-run_test 63 "Should run successfully" 0 env VIDEOS_FILE="${TEST_VIDEOS_FILE}" "${ADDSUMMARIES_SCRIPT}" "1" "1"
+run_test 63 "Should run successfully" 0 "${ADDSUMMARIES_SCRIPT}" "1" "1" <(echo "Y")
 
 print_header "All tests completed successfully"

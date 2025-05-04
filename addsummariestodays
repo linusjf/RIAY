@@ -43,6 +43,11 @@ function main() {
     exit 0
   fi
 
+  if [[ "$1" == "--debug" || "$1" == "-d" ]]; then
+    set -x
+    shift
+  fi
+
   # Check arguments
   if [[ "$#" -ne 2 ]]; then
     usage >&2
