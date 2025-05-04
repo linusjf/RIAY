@@ -11,6 +11,7 @@ else
 fi
 source "${SCRIPT_DIR}/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+
 function version() {
   printf "%s\n" "$VERSION"
 }
