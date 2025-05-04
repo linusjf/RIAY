@@ -16,6 +16,8 @@ if command -v realpath > /dev/null 2>&1; then
 else
   readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
 fi
+source "$SCRIPT_DIR/date.sh"
+source "$SCRIPT_DIR/git.sh"
 source "$SCRIPT_DIR/util.sh"
 source "$SCRIPT_DIR/require.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
@@ -77,37 +79,6 @@ validate_month() {
     err "Error: Month number must be between 1 and 12"
     return 1
   }
-}
-
-#######################################
-# Convert month number to name
-# Globals: none
-# Arguments:
-#   $1 - Month number
-# Outputs: Month name to STDOUT
-# Returns: none
-#######################################
-month_number_to_name() {
-  local month_names=(
-    "January" "February" "March" "April" "May" "June"
-    "July" "August" "September" "October" "November" "December"
-  )
-  printf "%s\n" "${month_names[$(($1 - 1))]}"
-}
-
-#######################################
-# Get GitHub repository name from origin
-# Globals: none
-# Arguments: none
-# Outputs: Repo name to STDOUT
-# Returns: none
-#######################################
-get_repo_name() {
-  local remote_url
-  remote_url=$(git remote get-url origin | grep '^git@') \
-    || die "Error: Not a Git repository cloned via SSH, or 'origin' remote not found with SSH URL"
-
-  printf "%s\n" "$(echo "$remote_url" | sed -E 's/.*\/([^.]+)\.git$/\1/')"
 }
 
 #######################################
@@ -266,9 +237,9 @@ main() {
 
   local month_num=$1
   local month
-  month=$(month_number_to_name "$month_num")
+  month=$(date::monthfromnumber "$month_num")
   local repo
-  repo=$(get_repo_name)
+  repo=$(git::get_root)
 
   process_month_files "$month" "$repo"
   verify_remaining_snippets "$month" || exit 1
