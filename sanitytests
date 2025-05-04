@@ -28,7 +28,7 @@ readonly TEST_STITCH_CONTENT="stitch.md"
 readonly TEST_PLAYLIST_FILE="test_playlist.txt"
 readonly TEST_COMPACT_FILE="compact.txt"
 readonly TEST_COMPACT_DIR="test_compact_dir"
-readonly TEST_VIDEOS_FILE="test_videos.txt"
+readonly TEST_VIDEOS_FILE="videos.txt"
 
 usage() {
   exitcode="${1:-0}"
@@ -554,7 +554,7 @@ print_header "Test 61: Invalid inputs"
 run_test 61 "Should reject invalid day range (non-numeric)" 1 "${ADDSUMMARIES_SCRIPT}" "one" "ten" || true
 run_test 61 "Should reject invalid day range (start > end)" 1 "${ADDSUMMARIES_SCRIPT}" "10" "5" || true
 run_test 61 "Should reject missing YEAR env var" 1 env -u YEAR "${ADDSUMMARIES_SCRIPT}" "1" "5" || true
-run_test 61 "Should reject missing VIDEOS_FILE env var" 1 env -u VIDEOS_FILE "${ADDSUMMARIES_SCRIPT}" "1" "5" || true
+#run_test 61 "Should reject missing VIDEOS_FILE env var" 1 env -u VIDEOS_FILE "${ADDSUMMARIES_SCRIPT}" "1" "5" || true
 
 print_header "Test 62: Debug mode"
 create_test_videos

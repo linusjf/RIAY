@@ -97,7 +97,8 @@ function process_days() {
   local endday="$2"
   local lineno="${startday}"
 
-  sed -n "${startday},${endday}p" "${VIDEOS_FILE}" | while read -r videoid; do
+  mapfile -t videos < <(sed -n "${startday},${endday}p" "${VIDEOS_FILE}")
+  for videoid in "${videos[@]}"; do
     if [[ -n "${videoid}" ]]; then
       process_single_day "${lineno}" "${videoid}"
       lineno=$((lineno + 1))
@@ -117,7 +118,7 @@ function process_single_day() {
   local month
   month=$(date -d "${YEAR}-01-01 +$((lineno - 1)) days" +%B)
   local filepath="${month}/${filename}"
-  local response
+  local resp
 
   if [[ ! -f "${filepath}" ]]; then
     err "Warning: ${filepath} not found. Skipping videoid ${videoid} (line ${lineno})."
@@ -125,9 +126,9 @@ function process_single_day() {
   fi
 
   if grep "AI-Generated Summary:" "${filepath}" &> /dev/null; then
-    read -r -p "${filepath} already contains AI-Generated Summary. Generate new one (Yy/Nn)? " response
+    read -r -p "${filepath} already contains AI-Generated Summary. Generate new one (Yy/Nn)? " resp
 
-    if [[ "${response}" == Y* || "${response}" == y* ]]; then
+    if [[ "${resp}" == Y* || "${resp}" == y* ]]; then
       backup_and_clean_file "${filepath}"
       append_summary "${filepath}" "${videoid}"
     fi
