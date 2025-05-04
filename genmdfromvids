@@ -6,6 +6,7 @@ if command -v realpath > /dev/null 2>&1; then
 else
   readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
 fi
+source "${SCRIPT_DIR}/git.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 # Check for required environment variables
@@ -29,17 +30,7 @@ for cmd in jq curl git; do
   }
 done
 
-# Determine GitHub repo from git remote URL
-GIT_URL=$(git remote get-url origin 2> /dev/null)
-if [[ "$GIT_URL" == git@github.com:* ]]; then
-  GITHUB_REPO=$(echo "$GIT_URL" | sed -E 's|git@github.com:([^\.]+)(\.git)?|\1|')
-elif [[ "$GIT_URL" == https://github.com/* ]]; then
-  GITHUB_REPO=$(echo "$GIT_URL" | sed -E 's|https://github.com/([^\.]+)(\.git)?|\1|')
-else
-  echo "Error: Could not determine GitHub repo from remote: $GIT_URL"
-  exit 1
-fi
-
+GITHUB_REPO=$(git::get_github_repo)
 # Handle input (file or stdin)
 if [ -n "$1" ]; then
   INPUT_STREAM=$(cat "$1")
