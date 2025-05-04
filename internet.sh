@@ -22,7 +22,7 @@
 if ! declare -f internet::checkinternet > /dev/null; then
   internet::checkinternet() {
     if ! hash ping 2> /dev/null; then
-      echo "Error: telnet command not found" >&2
+      echo "Error: ping command not found" >&2
       return 1
     fi
 
