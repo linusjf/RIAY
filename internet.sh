@@ -21,16 +21,15 @@
 #   1 if no connection
 if ! declare -f internet::checkinternet > /dev/null; then
   internet::checkinternet() {
-    if ! hash telnet 2> /dev/null; then
+    if ! hash ping 2> /dev/null; then
       echo "Error: telnet command not found" >&2
       return 1
     fi
 
-    if ! telnet 8.8.8.8 53 &> /dev/null; then
+    if ! ping -q -c 1 -W 2 8.8.8.8 > /dev/null; then
       echo "Error: No internet connection detected" >&2
       return 1
     fi
-
     return 0
   }
   export -f internet::checkinternet

@@ -112,7 +112,7 @@ function main() {
     exit 1
   fi
 
-  internet::checkinternet || exit 1
+  internet::checkinternet &> /dev/null || exit 1
 
   # Check if videos file exists
   if [[ ! -f "${VIDEOS_FILE}" ]]; then
@@ -178,16 +178,18 @@ function process_single_day() {
         log "Skipping ${filepath} (already contains AI summary)"
         ;;
       prompt)
+        local resp
         # Interactive prompt if neither option was specified
         if [ -t 0 ]; then
-          local resp
           read -r -p "${filepath} already contains AI-Generated Summary. Generate new one (Yy/Nn)? " resp
-          if [[ "${resp}" == Y* || "${resp}" == y* ]]; then
-            backup_and_clean_file "${filepath}"
-            append_summary "${filepath}" "${videoid}"
-          else
-            return 1
-          fi
+        else
+          read -r resp
+        fi
+        if [[ "${resp}" == Y* || "${resp}" == y* ]]; then
+          backup_and_clean_file "${filepath}"
+          append_summary "${filepath}" "${videoid}"
+        else
+          return 1
         fi
         ;;
     esac
