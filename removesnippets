@@ -10,6 +10,7 @@ shopt -s inherit_errexit
 #   in month directories. Validates inputs and provides feedback.
 ######################################################################
 
+readonly SCRIPT_NAME="$(basename "$0")"
 # Source utility functions
 if command -v realpath > /dev/null 2>&1; then
   readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"

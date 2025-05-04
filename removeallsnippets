@@ -7,6 +7,7 @@ shopt -s inherit_errexit
 # Outputs: None
 # Returns: 0 on success, non-zero on failure
 
+readonly SCRIPT_NAME="$(basename "$0")"
 readonly VERSION="1.0.0"
 
 function version() {
@@ -14,9 +15,7 @@ function version() {
 }
 
 function main() {
-  local script_dir
-  script_dir="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
-  local removesnippets_path="${script_dir}/removesnippets"
+  local removesnippets_path="${SCRIPT_DIR}/removesnippets"
 
   for month in {1..12}; do
     "${removesnippets_path}" "${month}"
