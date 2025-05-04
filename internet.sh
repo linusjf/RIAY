@@ -26,7 +26,7 @@ if ! declare -f internet::checkinternet > /dev/null; then
       return 1
     fi
 
-    if ! ping -q -c 1 -W 2 8.8.8.8 > /dev/null; then
+    if ! ping -q -c 1 -W 2 8.8.8.8 &> /dev/null; then
       echo "Error: No internet connection detected" >&2
       return 1
     fi
