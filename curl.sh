@@ -19,7 +19,7 @@ lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
   declare -A curl__HTTP_STATUS_CODES=(
-    [000]="No Response - Unable to connect"
+    [000]="No Response - Unable to connect/Network error"
     [100]="Continue"
     [101]="Switching Protocols"
     [102]="Processing"
