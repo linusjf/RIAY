@@ -11,8 +11,8 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
 function usage() {
-  cat << EOF
-Usage: ${SCRIPT_NAME} <startday> <endday>
+  cat <<EOF
+Usage: ${SCRIPT_NAME} [options] <startday> <endday>
 
 Add AI-generated summaries to daily markdown files for a range of days.
 
@@ -20,9 +20,16 @@ Arguments:
   startday    First day number to process (1-based index)
   endday      Last day number to process (inclusive)
 
+Options:
+  --ai-handling=MODE    How to handle existing AI summaries (overwrite|skip)
+  -d, --debug           Enable debug mode
+  -h, --help            Show this help message
+  --version             Show version information
+
 Examples:
-  ${SCRIPT_NAME} 1 10    # Process days 1 through 10
-  ${SCRIPT_NAME} 5 5     # Process only day 5
+  ${SCRIPT_NAME} 1 10                     # Process days 1 through 10
+  ${SCRIPT_NAME} --ai-handling=skip 5 5   # Skip days with existing AI summaries
+  ${SCRIPT_NAME} --ai-handling=overwrite 1 10 # Overwrite existing AI summaries
 
 Version: ${VERSION}
 EOF
@@ -33,20 +40,52 @@ function version() {
 }
 
 function main() {
-  if [[ "$1" == "--version" ]]; then
-    version
-    exit 0
-  fi
+  local ai_handling="prompt"
+  local debug_mode=false
 
-  if [[ "$1" == "--help" || "$1" == "-h" ]]; then
-    usage
-    exit 0
-  fi
-
-  if [[ "$1" == "--debug" || "$1" == "-d" ]]; then
-    set -x
-    shift
-  fi
+  # Parse options
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --ai-handling=*)
+        ai_handling="${1#*=}"
+        case "${ai_handling}" in
+          overwrite|skip|prompt)
+            ;;
+          *)
+            err "Invalid --ai-handling value: ${ai_handling}"
+            usage >&2
+            exit 1
+            ;;
+        esac
+        shift
+        ;;
+      --debug|-d)
+        debug_mode=true
+        set -x
+        shift
+        ;;
+      --help|-h)
+        usage
+        exit 0
+        ;;
+      --version)
+        version
+        exit 0
+        ;;
+      --)
+        shift
+        break
+        ;;
+      -*)
+        err "Unknown option: $1"
+        usage >&2
+        exit 1
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
 
   # Check arguments
   if [[ "$#" -ne 2 ]]; then
@@ -86,7 +125,7 @@ function main() {
 
   # Get number of lines in the file
   local total_lines
-  total_lines=$(wc -l < "${VIDEOS_FILE}")
+  total_lines=$(wc -l <"${VIDEOS_FILE}")
 
   # Adjust endday if it exceeds total lines
   if [[ "${endday}" -gt "${total_lines}" ]]; then
@@ -94,19 +133,20 @@ function main() {
     endday="${total_lines}"
   fi
 
-  process_days "${startday}" "${endday}"
+  process_days "${startday}" "${endday}" "${ai_handling}"
 }
 
 function process_days() {
   local startday="$1"
   local endday="$2"
+  local ai_handling="$3"
   local lineno="${startday}"
 
   mapfile -t videos < <(sed -n "${startday},${endday}p" "${VIDEOS_FILE}")
   for videoid in "${videos[@]}"; do
     if [[ -n "${videoid}" ]]; then
       local ret=0
-      process_single_day "${lineno}" "${videoid}" || ret=$?
+      process_single_day "${lineno}" "${videoid}" "${ai_handling}" || ret=$?
       lineno=$((lineno + 1))
 
       if [[ "${lineno}" -le "${endday}" ]] && [[ "$ret" == 0 ]]; then
@@ -120,26 +160,38 @@ function process_days() {
 function process_single_day() {
   local lineno="$1"
   local videoid="$2"
+  local ai_handling="$3"
   local filename="Day$(printf "%03d" "${lineno}").md"
   local month
   month=$(date -d "${YEAR}-01-01 +$((lineno - 1)) days" +%B)
   local filepath="${month}/${filename}"
-  local resp
 
   if [[ ! -f "${filepath}" ]]; then
     err "Warning: ${filepath} not found. Skipping videoid ${videoid} (line ${lineno})."
     return
   fi
 
-  if grep "AI-Generated Summary:" "${filepath}" &> /dev/null; then
-    read -r -p "${filepath} already contains AI-Generated Summary. Generate new one (Yy/Nn)? " resp
-
-    if [[ "${resp}" == Y* || "${resp}" == y* ]]; then
-      backup_and_clean_file "${filepath}"
-      append_summary "${filepath}" "${videoid}"
-      return 0
-    fi
-    return 1
+  if grep "AI-Generated Summary:" "${filepath}" &>/dev/null; then
+    case "${ai_handling}" in
+      overwrite)
+        backup_and_clean_file "${filepath}"
+        append_summary "${filepath}" "${videoid}"
+        ;;
+      skip)
+        log "Skipping ${filepath} (already contains AI summary)"
+        ;;
+      prompt)
+        # Interactive prompt if neither option was specified
+        if [ -t 0 ]; then
+          local resp
+          read -r -p "${filepath} already contains AI-Generated Summary. Generate new one (Yy/Nn)? " resp
+          if [[ "${resp}" == Y* || "${resp}" == y* ]]; then
+            backup_and_clean_file "${filepath}"
+            append_summary "${filepath}" "${videoid}"
+          fi
+        fi
+        ;;
+    esac
   else
     append_summary "${filepath}" "${videoid}"
   fi
@@ -157,7 +209,7 @@ function backup_and_clean_file() {
     /^### AI-Generated Summary:/ { in_block = 1; next }
     /^### / && in_block { in_block = 0 }
     !in_block
-  ' "${filepath}" > "${tempfile}" && mv "${tempfile}" "${filepath}"
+  ' "${filepath}" >"${tempfile}" && mv "${tempfile}" "${filepath}"
 }
 
 function append_summary() {
@@ -165,13 +217,13 @@ function append_summary() {
   local videoid="$2"
 
   log "Appending to ${filepath} (Day ${lineno}, ${videoid})"
-  printf "\n" >> "${filepath}"
-  "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >> "${filepath}"
+  printf "\n" >>"${filepath}"
+  "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >>"${filepath}"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   # Resolve script directory
-  if command -v realpath > /dev/null 2>&1; then
+  if command -v realpath >/dev/null 2>&1; then
     readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else
     readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"

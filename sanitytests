@@ -558,13 +558,16 @@ print_header "Test 62: Debug mode"
 create_test_videos
 mkdir -p "January"
 touch "January/Day001.md"
-run_test 62 "Should enable debug with -d" 0 echo "y" | "${ADDSUMMARIES_SCRIPT}" -d "1" "1"
-run_test 62 "Should enable debug with --debug" 0 echo "Y" | "${ADDSUMMARIES_SCRIPT}" --debug 1 1
+echo "y" > y.txt
+run_test 62 "Should enable debug with -d" 0 "${ADDSUMMARIES_SCRIPT}" -d "1" "1" < y.txt
+echo "N" > N.txt
+run_test 62 "Should enable debug with --debug" 0 "${ADDSUMMARIES_SCRIPT}" --debug 1 1 < N.txt
 
 print_header "Test 63: Basic execution"
 create_test_videos
 mkdir -p "January"
 touch "January/Day001.md"
-run_test 63 "Should run successfully" 0 "${ADDSUMMARIES_SCRIPT}" "1" "1" <(echo "Y")
+echo "Y" > Y.txt
+run_test 63 "Should run successfully" 0 "${ADDSUMMARIES_SCRIPT}" "1" "1" < Y.txt
 
 print_header "All tests completed successfully"
