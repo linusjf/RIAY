@@ -239,7 +239,7 @@ main() {
   local month
   month=$(date::monthfromnumber "$month_num")
   local repo
-  repo=$(git::get_root)
+  repo=$(git::getroot)
 
   process_month_files "$month" "$repo"
   verify_remaining_snippets "$month" || exit 1
