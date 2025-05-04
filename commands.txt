@@ -1,5 +1,5 @@
 # commands
-addvideo "t6Ezkng0Oi0" "She Magnifies Him"
+addvideo "Ag6z84FiECw" "Newness of Life"
 genmonth 5
 stitch
 lintall
