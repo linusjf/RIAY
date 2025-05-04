@@ -575,8 +575,7 @@ run_test 63 "Should overwrite with --ai-handling=overwrite" 0 "${ADDSUMMARIES_SC
 print_header "Test 64: Basic execution"
 create_test_videos
 create_test_day_file "January" 1 "# Day 1"
-echo "Y" > Y.txt
-run_test 64 "Should run successfully with prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 < Y.txt
+run_test 64 "Should run successfully with --ai-handling=prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1
 run_test 64 "Should run successfully with --ai-handling=overwrite" 0 "${ADDSUMMARIES_SCRIPT}" --ai-handling=overwrite 1 1
 
 print_header "All tests completed successfully"
