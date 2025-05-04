@@ -3,6 +3,7 @@
 set -o nounset
 set -o errexit
 set -o pipefail
+readonly SCRIPT_NAME="$(basename "$0")"
 # Resolve script directory
 if command -v realpath > /dev/null 2>&1; then
   readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"

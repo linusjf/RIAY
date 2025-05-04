@@ -13,6 +13,7 @@ set -o pipefail
 # - "Smiling Face with Hearts" (🥰) → "Heart Eyes" (😍)
 #######################################
 
+readonly SCRIPT_NAME="$(basename "$0")"
 readonly VERSION="1.0.0"
 declare verbose=false
 declare debug=false

@@ -9,6 +9,7 @@ shopt -s inherit_errexit
 
 readonly SUCCESS=0
 
+readonly SCRIPT_NAME="$(basename "$0")"
 # Source require.sh
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/require.sh"
