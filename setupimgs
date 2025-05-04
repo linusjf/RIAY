@@ -8,8 +8,13 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 readonly SUCCESS=0
-readonly FAILURE=1
 
+# Source require.sh
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "${SCRIPT_DIR}/require.sh"
+source "${SCRIPT_DIR}/util.sh"
+source "${SCRIPT_DIR}/lockconfig.sh"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 ######################################################################
 # Display usage information
 # Globals: None
@@ -118,10 +123,6 @@ main() {
   local downloads_dir
   downloads_dir="$(get_downloads_dir)"
 
-  # Source require.sh
-  readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
-  source "${SCRIPT_DIR}/require.sh"
-  source "${SCRIPT_DIR}/util.sh"
   require_commands gm rm mv
 
   if ! is_valid_dir "${dir}"; then
@@ -150,5 +151,12 @@ main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  main "$@"
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
 fi
