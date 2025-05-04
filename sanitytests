@@ -19,6 +19,7 @@ readonly ADDIMGTODAY_SCRIPT="${SCRIPT_DIR}/addimgtoday"
 readonly CLEANUP_SCRIPT="${SCRIPT_DIR}/cleanup"
 readonly SAVEPLAYLIST_SCRIPT="${SCRIPT_DIR}/saveplaylist"
 readonly COMPACT_SCRIPT="${SCRIPT_DIR}/compact"
+readonly ADDSUMMARIES_SCRIPT="${SCRIPT_DIR}/addsummariestodays"
 readonly TEST_MONTH=1
 readonly TEST_YEAR=2023
 readonly TEST_MD_FILE="test_toc.md"
@@ -27,6 +28,7 @@ readonly TEST_STITCH_CONTENT="stitch.md"
 readonly TEST_PLAYLIST_FILE="test_playlist.txt"
 readonly TEST_COMPACT_FILE="compact.txt"
 readonly TEST_COMPACT_DIR="test_compact_dir"
+readonly TEST_VIDEOS_FILE="test_videos.txt"
 
 usage() {
   exitcode="${1:-0}"
@@ -53,6 +55,7 @@ Available tests:
   45-49  setup script tests
   50-54  saveplaylist script tests
   55-59  compact script tests
+  60-64  addsummariestodays script tests
 
 Examples:
   $0 --from-test 6          # Run tests starting from test 6
@@ -209,6 +212,14 @@ EOF
   cat << EOF > "${TEST_COMPACT_DIR}/file3.md"
 # File 3
 Content 3
+EOF
+}
+
+create_test_videos() {
+  cat << EOF > "${TEST_VIDEOS_FILE}"
+dQw4w9WgXcQ
+CfU7rIufywo
+Io1G_5I7a-0
 EOF
 }
 
@@ -528,5 +539,34 @@ run_test 57 "Should reject invalid directory" 1 "${COMPACT_SCRIPT}" /nonexistent
 print_header "Test 58: Basic execution"
 create_test_compact
 run_test 58 "Should run successfully" 0 "${COMPACT_SCRIPT}" "${TEST_COMPACT_DIR}"
+
+print_header "Running addsummariestodays sanity tests"
+
+print_header "Test 59: Version flag"
+run_test 59 "Should show version with --version" 0 "${ADDSUMMARIES_SCRIPT}" --version
+
+print_header "Test 60: Help/usage"
+run_test 60 "Should show usage with no args" 1 "${ADDSUMMARIES_SCRIPT}" || true
+run_test 60 "Should show usage with -h" 0 "${ADDSUMMARIES_SCRIPT}" -h
+run_test 60 "Should show usage with --help" 0 "${ADDSUMMARIES_SCRIPT}" --help
+
+print_header "Test 61: Invalid inputs"
+run_test 61 "Should reject invalid day range (non-numeric)" 1 "${ADDSUMMARIES_SCRIPT}" "one" "ten" || true
+run_test 61 "Should reject invalid day range (start > end)" 1 "${ADDSUMMARIES_SCRIPT}" "10" "5" || true
+run_test 61 "Should reject missing YEAR env var" 1 env -u YEAR "${ADDSUMMARIES_SCRIPT}" "1" "5" || true
+run_test 61 "Should reject missing VIDEOS_FILE env var" 1 env -u VIDEOS_FILE "${ADDSUMMARIES_SCRIPT}" "1" "5" || true
+
+print_header "Test 62: Debug mode"
+create_test_videos
+mkdir -p "January"
+touch "January/Day001.md"
+run_test 62 "Should enable debug with -d" 0 env VIDEOS_FILE="${TEST_VIDEOS_FILE}" "${ADDSUMMARIES_SCRIPT}" -d "1" "1" || true
+run_test 62 "Should enable debug with --debug" 0 env VIDEOS_FILE="${TEST_VIDEOS_FILE}" "${ADDSUMMARIES_SCRIPT}" --debug "1" "1" || true
+
+print_header "Test 63: Basic execution"
+create_test_videos
+mkdir -p "January"
+touch "January/Day001.md"
+run_test 63 "Should run successfully" 0 env VIDEOS_FILE="${TEST_VIDEOS_FILE}" "${ADDSUMMARIES_SCRIPT}" "1" "1"
 
 print_header "All tests completed successfully"
