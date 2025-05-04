@@ -1,89 +1,184 @@
 #!/usr/bin/env bash
 
-# Check for exactly two arguments
-if [ "$#" -ne 2 ]; then
-  echo "Usage: $0 <startday> <endday>"
-  exit 1
-fi
+# Script to add AI-generated summaries to daily markdown files for a range of days
+# Usage: addsummariestodays <startday> <endday>
 
+set -o errexit
+set -o nounset
+set -o pipefail
+
+readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
-# Resolve script directory
-if command -v realpath > /dev/null 2>&1; then
-  readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-else
-  readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
-fi
-source "${SCRIPT_DIR}/internet.sh"
-source "${SCRIPT_DIR}/lockconfig.sh"
-lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
-# Check if YEAR is set
-if [ -z "$YEAR" ]; then
-  echo "Error: YEAR environment variable is not set."
-  exit 1
-fi
 
-internet::checkinternet || exit 1
-startday=$1
-endday=$2
+function usage() {
+  cat << EOF
+Usage: ${SCRIPT_NAME} <startday> <endday>
 
-# Validate input
-if ! [[ "$startday" =~ ^[0-9]+$ && "$endday" =~ ^[0-9]+$ ]]; then
-  echo "Both startday and endday must be numeric."
-  exit 1
-fi
+Add AI-generated summaries to daily markdown files for a range of days.
 
-if [ "$endday" -lt "$startday" ]; then
-  echo "endday must be greater than or equal to startday."
-  exit 1
-fi
+Arguments:
+  startday    First day number to process (1-based index)
+  endday      Last day number to process (inclusive)
 
-# Check if videos file exists
-if [ ! -f "${VIDEOS_FILE}" ]; then
-  echo "Error: ${VIDEOS_FILE} not found."
-  exit 1
-fi
+Examples:
+  ${SCRIPT_NAME} 1 10    # Process days 1 through 10
+  ${SCRIPT_NAME} 5 5     # Process only day 5
 
-# Get number of lines in the file
-total_lines=$(wc -l < "${VIDEOS_FILE}")
+Version: ${VERSION}
+EOF
+}
 
-# Adjust endday if it exceeds total lines
-if [ "$endday" -gt "$total_lines" ]; then
-  echo "Warning: endday ($endday) exceeds total lines ($total_lines). Adjusting to $total_lines."
-  endday=$total_lines
-fi
+function version() {
+  printf "%s\n" "${VERSION}"
+}
 
-# Process lines
-lineno=$startday
-sed -n "${startday},${endday}p" "${VIDEOS_FILE}" | while read -r videoid; do
-  if [ -n "$videoid" ]; then
-    filename="Day$(printf "%03d" "$lineno").md"
+function main() {
+  # Check arguments
+  if [[ "$#" -ne 2 ]]; then
+    usage >&2
+    exit 1
+  fi
 
-    # Calculate month name using date and YEAR
-    month=$(date -d "${YEAR}-01-01 +$((lineno - 1)) days" +%B)
-    filepath="$month/$filename"
-    response='y'
-    if [ -f "$filepath" ]; then
-      grep "AI-Generated Summary:" "$filepath" &> /dev/null && read -r -p "$filepath already contains AI-Generated Summary. AI-Generated summaries can differ from each other using summarizevideo. Generate new one (Yy/Nn)?" response
-      [[ "$response" == Y* ]] || [[ "$response" == y* ]] &&
-        echo "Backing up file to ${filepath}.bak ..." &&
-        cp "$filepath" "${filepath}.bak" &&
-        tempfile="$(mktemp)" &&
-        awk '
-/^### AI-Generated Summary:/ { in_block = 1; next }
-/^### / && in_block { in_block = 0 }
-!in_block
-' "$filepath" > "$tempfile" && mv "$tempfile" "$filepath"
-      [[ "$response" == Y* ]] || [[ "$response" == y* ]] &&
-        echo "Appending to $filepath (Day $lineno, $videoid)" &&
-        echo "" >> "$filepath" &&
-        "${SCRIPT_DIR}/summarizevideo" -- "$videoid" >> "$filepath"
-    else
-      echo "Warning: $filepath not found. Skipping videoid $videoid (line $lineno)."
+  if [[ "$1" == "--version" ]]; then
+    version
+    exit 0
+  fi
+
+  if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+    usage
+    exit 0
+  fi
+
+  local startday="$1"
+  local endday="$2"
+
+  # Validate numeric input
+  if ! [[ "${startday}" =~ ^[0-9]+$ && "${endday}" =~ ^[0-9]+$ ]]; then
+    err "Both startday and endday must be numeric."
+    usage >&2
+    exit 1
+  fi
+
+  if [[ "${endday}" -lt "${startday}" ]]; then
+    err "endday must be greater than or equal to startday."
+    usage >&2
+    exit 1
+  fi
+
+  # Check if YEAR is set
+  if [[ -z "${YEAR}" ]]; then
+    err "Error: YEAR environment variable is not set."
+    exit 1
+  fi
+
+  internet::checkinternet || exit 1
+
+  # Check if videos file exists
+  if [[ ! -f "${VIDEOS_FILE}" ]]; then
+    err "Error: ${VIDEOS_FILE} not found."
+    exit 1
+  fi
+
+  # Get number of lines in the file
+  local total_lines
+  total_lines=$(wc -l < "${VIDEOS_FILE}")
+
+  # Adjust endday if it exceeds total lines
+  if [[ "${endday}" -gt "${total_lines}" ]]; then
+    err "Warning: endday (${endday}) exceeds total lines (${total_lines}). Adjusting to ${total_lines}."
+    endday="${total_lines}"
+  fi
+
+  process_days "${startday}" "${endday}"
+}
+
+function process_days() {
+  local startday="$1"
+  local endday="$2"
+  local lineno="${startday}"
+
+  sed -n "${startday},${endday}p" "${VIDEOS_FILE}" | while read -r videoid; do
+    if [[ -n "${videoid}" ]]; then
+      process_single_day "${lineno}" "${videoid}"
+      lineno=$((lineno + 1))
+
+      if [[ "${lineno}" -le "${endday}" ]]; then
+        log "Waiting for 10 seconds before processing next day's video..."
+        sleep 10
+      fi
     fi
+  done
+}
+
+function process_single_day() {
+  local lineno="$1"
+  local videoid="$2"
+  local filename="Day$(printf "%03d" "${lineno}").md"
+  local month
+  month=$(date -d "${YEAR}-01-01 +$((lineno - 1)) days" +%B)
+  local filepath="${month}/${filename}"
+  local response
+
+  if [[ ! -f "${filepath}" ]]; then
+    err "Warning: ${filepath} not found. Skipping videoid ${videoid} (line ${lineno})."
+    return
   fi
-  lineno=$((lineno + 1))
-  if [[ "$lineno" -le "$endday" ]]; then
-    echo "Waiting for 10 seconds before processing next day's video..."
-    sleep 10
+
+  if grep "AI-Generated Summary:" "${filepath}" &> /dev/null; then
+    read -r -p "${filepath} already contains AI-Generated Summary. Generate new one (Yy/Nn)? " response
+
+    if [[ "${response}" == Y* || "${response}" == y* ]]; then
+      backup_and_clean_file "${filepath}"
+      append_summary "${filepath}" "${videoid}"
+    fi
+  else
+    append_summary "${filepath}" "${videoid}"
   fi
-done
+}
+
+function backup_and_clean_file() {
+  local filepath="$1"
+  log "Backing up file to ${filepath}.bak ..."
+  cp "${filepath}" "${filepath}.bak"
+
+  local tempfile
+  tempfile="$(mktemp)"
+
+  awk '
+    /^### AI-Generated Summary:/ { in_block = 1; next }
+    /^### / && in_block { in_block = 0 }
+    !in_block
+  ' "${filepath}" > "${tempfile}" && mv "${tempfile}" "${filepath}"
+}
+
+function append_summary() {
+  local filepath="$1"
+  local videoid="$2"
+
+  log "Appending to ${filepath} (Day ${lineno}, ${videoid})"
+  printf "\n" >> "${filepath}"
+  "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >> "${filepath}"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  # Resolve script directory
+  if command -v realpath > /dev/null 2>&1; then
+    readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+  else
+    readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
+  fi
+
+  source "${SCRIPT_DIR}/internet.sh"
+  source "${SCRIPT_DIR}/util.sh"
+  source "${SCRIPT_DIR}/lockconfig.sh"
+  lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
+fi
