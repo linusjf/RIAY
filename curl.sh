@@ -19,7 +19,7 @@ lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
   declare -A curl__HTTP_STATUS_CODES=(
-    [000]="Returned with an HTTP/2 GOAWAY frame if the compressed length of any of the headers exceeds 8K bytes or if more than 10K requests are served through one connection"
+    [000]="No Response - Unable to connect"
     [100]="Continue"
     [101]="Switching Protocols"
     [102]="Processing"
