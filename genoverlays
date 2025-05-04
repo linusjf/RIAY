@@ -6,7 +6,7 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 readonly SUCCESS=0
-# shellcheck disable=SC2155
+readonly SCRIPT_NAME="$(basename "$0")"
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/util.sh"
 source "${SCRIPT_DIR}/lockconfig.sh"
