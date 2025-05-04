@@ -5,6 +5,7 @@
 
 set -euo pipefail
 shopt -s inherit_errexit
+readonly SCRIPT_NAME="$(basename "$0")"
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
@@ -47,7 +48,6 @@ is_valid_dir() {
 }
 
 main() {
-  # shellcheck disable=SC2155
   local this_dir="$(pwd)"
   local target_dir="${1:-${this_dir}}"
   local temp_file tmp_output
@@ -111,5 +111,12 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   # Check requirements
   source "${SCRIPT_DIR}/require.sh"
   require_commands m4 mktemp awk rm
-  main "$@"
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
 fi

@@ -3,7 +3,6 @@
 # Adds snippet images to markdown files and generates compact versions
 # with table of contents for each month.
 ######################################################################
-# shellcheck disable=SC2155,SC1090,SC1091
 set -euo pipefail
 shopt -s inherit_errexit
 
@@ -95,7 +94,6 @@ main() {
 
     # Generate compact version when month changes
     if [[ "${oldmonth}" != "${month}" ]]; then
-      # shellcheck disable=SC2153
       "${SCRIPT_DIR}/genmonth" "$(date::monthnumberfrommonth "${oldmonth}" "${YEAR}")"
       oldmonth="${month}"
     fi
