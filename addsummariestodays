@@ -100,10 +100,11 @@ function process_days() {
   mapfile -t videos < <(sed -n "${startday},${endday}p" "${VIDEOS_FILE}")
   for videoid in "${videos[@]}"; do
     if [[ -n "${videoid}" ]]; then
-      process_single_day "${lineno}" "${videoid}"
+      local ret=0
+      process_single_day "${lineno}" "${videoid}" || ret=$?
       lineno=$((lineno + 1))
 
-      if [[ "${lineno}" -le "${endday}" ]]; then
+      if [[ "${lineno}" -le "${endday}" ]] && [[ "$ret" == 0 ]]; then
         log "Waiting for 10 seconds before processing next day's video..."
         sleep 10
       fi
@@ -131,7 +132,9 @@ function process_single_day() {
     if [[ "${resp}" == Y* || "${resp}" == y* ]]; then
       backup_and_clean_file "${filepath}"
       append_summary "${filepath}" "${videoid}"
+      return 0
     fi
+    return 1
   else
     append_summary "${filepath}" "${videoid}"
   fi
