@@ -112,7 +112,7 @@ function main() {
     exit 1
   fi
 
-  internet::checkinternet &> /dev/null || exit 1
+  internet::checkinternet || exit 1
 
   # Check if videos file exists
   if [[ ! -f "${VIDEOS_FILE}" ]]; then
