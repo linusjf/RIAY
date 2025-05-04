@@ -185,6 +185,8 @@ function process_single_day() {
           if [[ "${resp}" == Y* || "${resp}" == y* ]]; then
             backup_and_clean_file "${filepath}"
             append_summary "${filepath}" "${videoid}"
+          else
+            return 1
           fi
         fi
         ;;
