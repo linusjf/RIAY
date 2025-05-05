@@ -1,5 +1,5 @@
 # commands
-addvideo "Ag6z84FiECw" "Newness of Life"
+addvideo "nBEGxYpYNhU" "Hold Fast to Christ"
 genmonth 5
 stitch
 lintall
