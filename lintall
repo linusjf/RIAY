@@ -11,6 +11,10 @@ shopt -s inherit_errexit
 
 readonly VERSION="1.0.0"
 readonly SUCCESS=0
+readonly ERROR_MISSING_COMMAND=1
+readonly ERROR_MDFORMAT_FAILED=2
+readonly ERROR_MARKDOWNLINT_FAILED=3
+readonly ERROR_INVALID_OPTION=4
 readonly SCRIPT_NAME="$(basename "$0")"
 
 # Resolve script directory
@@ -39,6 +43,14 @@ Options:
   -h, --help    Show this help message and exit
   -v, --verbose Enable verbose output
   -d, --debug   Enable debug output (set -x)
+  --version     Show version information and exit
+
+Exit Codes:
+  0 - Success
+  1 - Required command missing
+  2 - mdformat failed
+  3 - markdownlint failed
+  4 - Invalid command line option
 EOF
   exit "${SUCCESS}"
 }
@@ -60,7 +72,7 @@ main() {
         version
         exit 0
         ;;
-      *) die "Invalid option: $1" ;;
+      *) die "Invalid option: $1" "${ERROR_INVALID_OPTION}" ;;
     esac
     shift
   done
@@ -70,7 +82,7 @@ main() {
     set -x
   fi
 
-  require_commands markdownlint mdformat
+  require_commands markdownlint mdformat || exit "${ERROR_MISSING_COMMAND}"
 
   # Enable recursive globbing
   shopt -s globstar
@@ -80,14 +92,14 @@ main() {
   fi
 
   if ! mdformat -- **/*.md; then
-    die "mdformat failed"
+    die "mdformat failed" "${ERROR_MDFORMAT_FAILED}"
   fi
 
   if ((verbose)); then
     echo "Running markdown linter..."
   fi
   if ! markdownlint --fix -- **/*.md; then
-    die "markdownlint failed"
+    die "markdownlint failed" "${ERROR_MARKDOWNLINT_FAILED}"
   fi
 
   if ((verbose)); then
