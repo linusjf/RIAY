@@ -38,6 +38,15 @@ Arguments:
   month                Month number (1-12)
   year                 Optional 4-digit year
                        If not provided, takes value of environment variable YEAR
+
+Exit Codes:
+  0                    Success
+  1                    Argument error
+  2                    Validation error (invalid month/year)
+  3                    Required command missing
+  4                    File generation error
+  5                    Table of contents generation error
+  6                    File cleanup error
 EOF
   exit "$exitcode"
 }
