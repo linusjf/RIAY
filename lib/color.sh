@@ -29,8 +29,8 @@ if [[ -z "${SCRIPT_DIR:-}" ]]; then
   readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 fi
 # Source util.sh if available
-if [[ -f "${SCRIPT_DIR}/util.sh" ]]; then
-  source "${SCRIPT_DIR}/util.sh"
+if [[ -f "${SCRIPT_DIR}/lib/util.sh" ]]; then
+  source "${SCRIPT_DIR}/lib/util.sh"
 fi
 
 #######################################

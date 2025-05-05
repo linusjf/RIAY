@@ -11,12 +11,12 @@ readonly SCRIPT_NAME="$(basename "$0")"
 
 # Source utility libraries
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
-source "${SCRIPT_DIR}/require.sh"
-source "${SCRIPT_DIR}/internet.sh"
-source "${SCRIPT_DIR}/util.sh"
-source "${SCRIPT_DIR}/curl.sh"
-source "${SCRIPT_DIR}/youtube.sh"
-source "${SCRIPT_DIR}/lockconfig.sh"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/internet.sh"
+source "${SCRIPT_DIR}/lib/util.sh"
+source "${SCRIPT_DIR}/lib/curl.sh"
+source "${SCRIPT_DIR}/lib/youtube.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 declare -i CURRENT_MODEL_INDEX=0

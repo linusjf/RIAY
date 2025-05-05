@@ -14,11 +14,11 @@ readonly MAX_CAPTION_LENGTH=100
 if [[ -z "${SCRIPT_DIR:-""}" ]]; then
   readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 fi
-source "${SCRIPT_DIR}/require.sh"
-source "${SCRIPT_DIR}/util.sh"
-source "${SCRIPT_DIR}/date.sh"
-source "${SCRIPT_DIR}/git.sh"
-source "${SCRIPT_DIR}/lockconfig.sh"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/util.sh"
+source "${SCRIPT_DIR}/lib/date.sh"
+source "${SCRIPT_DIR}/lib/git.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 if ! declare -f vidmd::usagevidmd > /dev/null; then
@@ -84,7 +84,7 @@ if ! declare -f vidmd::usageoverlayimg > /dev/null; then
 Usage: ${0##*/} [OPTIONS] vid output
 Options:
   -d, --debug    Enable debug output (set -x)
-  
+
 Arguments:
   vid    - YouTube video ID
   output - Path to output JPEG file

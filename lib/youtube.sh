@@ -14,8 +14,8 @@ if [[ -z "${SCRIPT_DIR:-}" ]]; then
   fi
 fi
 
-source "${SCRIPT_DIR}/require.sh"
-source "${SCRIPT_DIR}/curl.sh"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/curl.sh"
 
 if ! declare -p youtube__THUMBNAIL_SIZES &> /dev/null; then
   # array of youtube thumbnail sizes in descending order. Not all may be available.

@@ -10,11 +10,11 @@ shopt -s inherit_errexit
 readonly SUCCESS=0
 
 readonly SCRIPT_NAME="$(basename "$0")"
-# Source require.sh
+# Source lib/require.sh
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
-source "${SCRIPT_DIR}/require.sh"
-source "${SCRIPT_DIR}/util.sh"
-source "${SCRIPT_DIR}/lockconfig.sh"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/util.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 ######################################################################
 # Display usage information

@@ -8,14 +8,14 @@ readonly SCRIPT_NAME="$(basename "$0")"
 
 # Load required libraries
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
-source "${SCRIPT_DIR}/require.sh" || exit 1
-source "${SCRIPT_DIR}/internet.sh" || exit 1
-source "${SCRIPT_DIR}/util.sh" || exit 1
-source "${SCRIPT_DIR}/git.sh" || exit 1
-source "${SCRIPT_DIR}/youtube.sh" || exit 1
-source "${SCRIPT_DIR}/vidmd.sh" || exit 1
-source "${SCRIPT_DIR}/date.sh" || exit 1
-source "${SCRIPT_DIR}/lockconfig.sh"
+source "${SCRIPT_DIR}/lib/require.sh" || exit 1
+source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
+source "${SCRIPT_DIR}/lib/util.sh" || exit 1
+source "${SCRIPT_DIR}/lib/git.sh" || exit 1
+source "${SCRIPT_DIR}/lib/youtube.sh" || exit 1
+source "${SCRIPT_DIR}/lib/vidmd.sh" || exit 1
+source "${SCRIPT_DIR}/lib/date.sh" || exit 1
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 function usage() {

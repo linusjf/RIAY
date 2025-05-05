@@ -12,7 +12,7 @@ if [[ -z "${SCRIPT_DIR:-""}" ]]; then
   fi
 fi
 
-source "${SCRIPT_DIR}/require.sh"
+source "${SCRIPT_DIR}/lib/require.sh"
 # Git-related utility functions
 
 if ! declare -f git::get_github_repo > /dev/null; then

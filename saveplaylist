@@ -18,11 +18,11 @@ else
 fi
 
 # Source required libraries
-source "${SCRIPT_DIR}/internet.sh"
-source "$SCRIPT_DIR/require.sh"
-source "$SCRIPT_DIR/util.sh"
-source "$SCRIPT_DIR/lockconfig.sh"
-source "$SCRIPT_DIR/curl.sh"
+source "${SCRIPT_DIR}/lib/internet.sh"
+source "$SCRIPT_DIR/lib/require.sh"
+source "$SCRIPT_DIR/lib/util.sh"
+source "$SCRIPT_DIR/lib/lockconfig.sh"
+source "$SCRIPT_DIR/lib/curl.sh"
 
 # Check required commands
 require_commands jq

@@ -7,7 +7,7 @@ if [[ -z "${SCRIPT_DIR:-""}" ]]; then
   fi
 fi
 
-source "${SCRIPT_DIR}/require.sh"
+source "${SCRIPT_DIR}/lib/require.sh"
 
 if ! declare -f lockconfig::lock_config_vars > /dev/null; then
   lockconfig::lock_config_vars() {

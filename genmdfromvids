@@ -6,8 +6,8 @@ if command -v realpath > /dev/null 2>&1; then
 else
   readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
 fi
-source "${SCRIPT_DIR}/git.sh"
-source "${SCRIPT_DIR}/lockconfig.sh"
+source "${SCRIPT_DIR}/lib/git.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 # Check for required environment variables
 if [ -z "$YEAR" ]; then

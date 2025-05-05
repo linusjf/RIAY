@@ -13,8 +13,8 @@ if [[ -z "${SCRIPT_DIR:-}" ]]; then
   fi
 fi
 
-source "${SCRIPT_DIR}/require.sh"
-source "${SCRIPT_DIR}/lockconfig.sh"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
