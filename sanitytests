@@ -557,7 +557,7 @@ run_test 59 "Should show version with --version" 0 "${ADDSUMMARIES_SCRIPT}" --ve
 print_header "Test 60: No args"
 run_test 60 "Should show usage with no args" 1 "${ADDSUMMARIES_SCRIPT}" || true
 
-print_header "Test 60: Help/usage"
+print_header "Test 61: Help/usage"
 run_test 61 "Should show usage with -h" 0 "${ADDSUMMARIES_SCRIPT}" -h
 run_test 61 "Should show usage with --help" 0 "${ADDSUMMARIES_SCRIPT}" --help
 
