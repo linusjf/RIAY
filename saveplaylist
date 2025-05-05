@@ -9,6 +9,14 @@ readonly VERSION="1.0.0"
 readonly BASE_URL="https://www.googleapis.com/youtube/v3/playlistItems"
 readonly MAX_RESULTS=50
 
+# Exit codes
+readonly EXIT_SUCCESS=0
+readonly EXIT_INVALID_ARGUMENTS=2
+readonly EXIT_MISSING_REQUIREMENTS=3
+readonly EXIT_PLAYLIST_NOT_FOUND=4
+readonly EXIT_API_REQUEST_FAILED=5
+readonly EXIT_INTERNET_CONNECTION=6
+
 verbose=false
 
 if command -v realpath > /dev/null 2>&1; then
@@ -43,11 +51,20 @@ usage() {
     out "Arguments:"
     out "  PLAYLIST_ID   The ID of the YouTube playlist"
     out ""
+    out "Exit Codes:"
+    out "  0  Success"
+    out "  2  Invalid arguments"
+    out "  3  Missing requirements (commands or variables)"
+    out "  4  Playlist not found or inaccessible"
+    out "  5  API request failed"
+    out "  6  No internet connection"
+    out ""
     out "Examples:"
     out "  $SCRIPT_NAME PL4iIJvj6ypuG9v3Kg80Qt2ZUnspPHvXO"
     out "  $SCRIPT_NAME -v PL4iIJvj6ypuG9v3Kg80Qt2ZUnspPHvXO"
   else
     err "Usage: $SCRIPT_NAME [OPTIONS] PLAYLIST_ID"
+    err "Try '$SCRIPT_NAME --help' for more information."
   fi
   exit "$exit_code"
 }
@@ -67,16 +84,16 @@ check_playlist_exists() {
   local response
   if ! response="$(curl::safe_curl_request "$url" "GET")"; then
     err "Error: Failed to check playlist existence."
-    return 1
+    return $EXIT_API_REQUEST_FAILED
   fi
 
   local item_count=$(echo "$response" | jq '.items | length')
   if [[ "$item_count" -eq 0 ]]; then
     err "Error: Playlist '$playlist_id' not found or not accessible."
-    return 1
+    return $EXIT_PLAYLIST_NOT_FOUND
   fi
 
-  return 0
+  return $EXIT_SUCCESS
 }
 
 save_playlist() {
@@ -102,7 +119,7 @@ save_playlist() {
     local response
     if ! response="$(curl::safe_curl_request "$url" "GET")"; then
       err "Error: Failed to fetch playlist data."
-      return 1
+      return $EXIT_API_REQUEST_FAILED
     fi
 
     # Process each item in the response
@@ -130,7 +147,7 @@ save_playlist() {
   done
 
   out "Filtered video IDs saved to $VIDEOS_FILE"
-  return 0
+  return $EXIT_SUCCESS
 }
 
 trap_exit() {
@@ -160,7 +177,7 @@ main() {
           playlist_id="$1"
         else
           err "Error: Too many arguments."
-          usage 1
+          usage $EXIT_INVALID_ARGUMENTS
         fi
         ;;
     esac
@@ -169,23 +186,28 @@ main() {
 
   if [[ -z "${playlist_id:-}" ]]; then
     err "Error: Missing playlist ID."
-    usage 1
+    usage $EXIT_INVALID_ARGUMENTS
   fi
 
   # Check required environment variables
-  require_vars YOUTUBE_API_KEY VIDEOS_FILE
+  if ! require_vars YOUTUBE_API_KEY VIDEOS_FILE; then
+    exit $EXIT_MISSING_REQUIREMENTS
+  fi
 
-  internet::checkinternet || exit 1
+  if ! internet::checkinternet; then
+    exit $EXIT_INTERNET_CONNECTION
+  fi
+
   # Check if playlist exists before proceeding
   if ! check_playlist_exists "$playlist_id"; then
-    exit 1
+    exit $?
   fi
 
   if ! save_playlist "$playlist_id"; then
-    err "Error: $SCRIPT_NAME failed with exit code $?"
-    exit 1
+    exit $?
   fi
-  exit 0
+
+  exit $EXIT_SUCCESS
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
