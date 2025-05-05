@@ -11,6 +11,13 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME=$(basename "$0")
 readonly DEFAULT_EXIT_CODE=0
 
+# Error codes
+readonly ERR_MISSING_ENV=1
+readonly ERR_MISSING_ARGS=2
+readonly ERR_INVALID_PATH=3
+readonly ERR_INVALID_IMAGE=4
+readonly ERR_MARKDOWN_FILE=5
+
 # Source common functions
 if command -v realpath > /dev/null 2>&1; then
   readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
@@ -28,7 +35,7 @@ lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 # Check for required environment variable
 if [[ -z "${YEAR:-}" ]]; then
   err "Error: YEAR environment variable not set."
-  exit 1
+  exit $ERR_MISSING_ENV
 fi
 
 # Usage function
@@ -48,6 +55,14 @@ Options:
   -h, --help      Show this help message and exit
   -v, --version   Show script version and exit
   -d, --debug     Enable debug mode
+
+Exit Codes:
+  0               Success
+  1               Missing required environment variable
+  2               Missing required arguments
+  3               Invalid image path
+  4               Invalid image format (not JPEG)
+  5               Markdown file not found
 
 Examples:
   $SCRIPT_NAME /path/to/image.jpg "My Image Caption" 123
@@ -86,7 +101,7 @@ append_image_markdown() {
   # Verify markdown file exists
   if [[ ! -f "$markdown_file" ]]; then
     err "Error: Markdown file '$markdown_file' does not exist."
-    return 1
+    return $ERR_MARKDOWN_FILE
   fi
 
   # Append image markdown
@@ -109,7 +124,7 @@ check_path_under_current_dir() {
   # Resolve to absolute path
   abs_path="$(realpath "$input_path" 2> /dev/null)" || {
     err "Error: Invalid path: $abs_path"
-    return 1
+    return $ERR_INVALID_PATH
   }
 
   # Get current directory's absolute path
@@ -122,7 +137,7 @@ check_path_under_current_dir() {
     return 0
   else
     err "Not under current directory"
-    return 1
+    return $ERR_INVALID_PATH
   fi
 }
 
@@ -151,7 +166,7 @@ main() {
           day_num="$1"
         else
           err "Error: Too many arguments."
-          usage 1
+          usage $ERR_MISSING_ARGS
         fi
         shift
         ;;
@@ -161,13 +176,13 @@ main() {
   # Check if all arguments are provided
   if [[ -z "${image_path:-}" || -z "${caption:-}" || -z "${day_num:-}" ]]; then
     err "Error: Missing arguments."
-    usage 1
+    usage $ERR_MISSING_ARGS
   fi
 
   # Validate image file exists
   if ! check_path_under_current_dir "$image_path"; then
     err "Error: Image file '$image_path' does not exist or is not under current dir: $(pwd -P)."
-    exit 1
+    exit $ERR_INVALID_PATH
   fi
 
   # Validate JPEG format using 'file' command
@@ -175,7 +190,7 @@ main() {
   local mime_type=$(file --mime-type -b "$image_path")
   if [[ "$mime_type" != "image/jpeg" ]]; then
     err "Error: '$image_path' is not a valid JPEG file (detected: $mime_type)."
-    exit 1
+    exit $ERR_INVALID_IMAGE
   fi
 
   # Call the function to append the markdown
