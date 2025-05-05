@@ -423,7 +423,7 @@ run_test 21 "Should pass with no parameters" 0 "${STITCH_SCRIPT}"
 print_header "Test 22: Basic file generation"
 create_test_stitch
 mv "${TEST_STITCH_FILE}" stitch.md
-run_test 22 "Should not generate README.md with wrong file format" 2 "${STITCH_SCRIPT}" || true
+run_test 22 "Should not generate README.md with wrong file format" 3 "${STITCH_SCRIPT}" || true
 
 print_header "Test 23: Real-world file generation"
 create_real_stitch
