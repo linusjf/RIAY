@@ -9,6 +9,13 @@ shopt -s inherit_errexit
 readonly SCRIPT_NAME="${0##*/}"
 readonly VERSION="1.0.0"
 
+# Exit code constants
+readonly EXIT_SUCCESS=0
+readonly EXIT_INVALID_ARGUMENTS=1
+readonly EXIT_FILE_ERROR=2
+readonly EXIT_DEPENDENCY_ERROR=3
+readonly EXIT_TOC_GENERATION_ERROR=4
+
 # Source lib/require.sh
 if command -v realpath > /dev/null 2>&1; then
   readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
@@ -25,24 +32,24 @@ lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 # Arguments:
 #   file - path to markdown file
 # Outputs: error message to STDERR on failure
-# Returns: exits with status 1 on invalid input
+# Returns: exits with status EXIT_FILE_ERROR on invalid input
 #######################################
 validate_input() {
   local file="$1"
 
   if [[ $# -ne 1 ]]; then
     err "Error: Exactly one argument required"
-    usage
+    usage $EXIT_INVALID_ARGUMENTS
   fi
 
   if [[ ! -f "${file}" ]]; then
     err "Error: '${file}' is not a valid file"
-    exit 1
+    exit $EXIT_FILE_ERROR
   fi
 
   if [[ ! -r "${file}" ]]; then
     err "Error: Cannot read '${file}'"
-    exit 1
+    exit $EXIT_FILE_ERROR
   fi
 }
 
@@ -52,7 +59,7 @@ validate_input() {
 # Arguments:
 #   file - path to markdown file
 # Outputs: error message to STDERR on failure
-# Returns: 0 on success, 1 on failure
+# Returns: EXIT_SUCCESS on success, EXIT_TOC_GENERATION_ERROR on failure
 #######################################
 generate_toc() {
   local file="$1"
@@ -60,10 +67,10 @@ generate_toc() {
   if ! markdown-toc-gen check "${file}" &> /dev/null; then
     if ! markdown-toc-gen update "${file}" > /dev/null; then
       err "Error: Failed to generate TOC for '${file}'"
-      return 1
+      return $EXIT_TOC_GENERATION_ERROR
     fi
   fi
-  return 0
+  return $EXIT_SUCCESS
 }
 
 #######################################
@@ -85,7 +92,7 @@ version() {
 # Returns: none
 #######################################
 usage() {
-  exit_code="${1:-0}"
+  exit_code="${1:-$EXIT_SUCCESS}"
   cat << EOF
 Usage: ${SCRIPT_NAME} [-d|--debug] [-v|--version] [-h|--help] markdown_file
 
@@ -96,20 +103,16 @@ Options:
   -v, --version    Show version information
   -h, --help       Show this help message
 
+Exit Codes:
+  0 - Success
+  1 - Invalid arguments (incorrect usage or missing file)
+  2 - File access error (file not found or unreadable)
+  3 - Dependency error (markdown-toc-gen not available)
+  4 - TOC generation error (failed to create/update TOC)
+
 Examples:
   ${SCRIPT_NAME} README.md
   ${SCRIPT_NAME} --debug docs/API.md
-
-Globals:
-  None
-
-Outputs:
-  Error messages to STDERR on failure
-
-Returns:
-  0 on success
-  1 on invalid arguments or file issues
-  2 on dependency errors
 EOF
   exit "$exit_code"
 }
@@ -125,7 +128,7 @@ main() {
         ;;
       -v | --version)
         version
-        exit 0
+        exit $EXIT_SUCCESS
         ;;
       -h | --help)
         usage
@@ -138,11 +141,11 @@ main() {
   done
 
   if [[ $# -ne 1 ]]; then
-    usage 1
+    usage $EXIT_INVALID_ARGUMENTS
   fi
-  require_commands markdown-toc-gen
+  require_commands markdown-toc-gen || exit $EXIT_DEPENDENCY_ERROR
   validate_input "${file}"
-  generate_toc "${file}"
+  generate_toc "${file}" || exit $EXIT_TOC_GENERATION_ERROR
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
