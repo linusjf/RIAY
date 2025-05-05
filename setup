@@ -9,10 +9,40 @@ shopt -s inherit_errexit
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
+# Exit codes
+readonly EXIT_SUCCESS=0
+readonly EXIT_GENERAL_ERROR=1
+readonly EXIT_INVALID_INPUT=2
+readonly EXIT_FILE_EXISTS=3
+readonly EXIT_DIR_EXISTS=4
+readonly EXIT_CONFIG_ERROR=5
+readonly EXIT_YEAR_NOT_SET=6
+
 overwrite_all=false
 skip_all=false
 
 readonly MONTHS=(January February March April May June July August September October November December)
+
+function usage() {
+  cat << EOF
+Usage: $SCRIPT_NAME
+
+Setup script for creating monthly directories and files.
+
+Exit codes:
+  $EXIT_SUCCESS          - Success
+  $EXIT_GENERAL_ERROR    - General error
+  $EXIT_INVALID_INPUT    - Invalid user input
+  $EXIT_FILE_EXISTS      - File already exists (when not overwriting)
+  $EXIT_DIR_EXISTS       - Directory already exists
+  $EXIT_CONFIG_ERROR     - Configuration error
+  $EXIT_YEAR_NOT_SET     - YEAR environment variable not set
+
+Options:
+  --version   Show version
+  --help      Show this help
+EOF
+}
 
 function version() {
   printf "%s\n" "$VERSION"
@@ -49,7 +79,7 @@ function confirm_overwrite() {
       return 0 # True: Overwrite
       ;;
     [Nn]*)
-      return 1 # False: Don't overwrite
+      return $EXIT_FILE_EXISTS # False: Don't overwrite
       ;;
     [Aa]*)
       overwrite_all=true
@@ -59,11 +89,11 @@ function confirm_overwrite() {
     [Ss]*)
       skip_all=true
       echo "Skip All set for remaining files"
-      return 1 # False: Skip this file and all subsequent
+      return $EXIT_FILE_EXISTS # False: Skip this file and all subsequent
       ;;
     *)
       echo "Invalid input. Skipping ${file}."
-      return 1 # Default: Don't overwrite
+      return $EXIT_INVALID_INPUT # Default: Don't overwrite
       ;;
   esac
 }
@@ -74,12 +104,12 @@ function setup_directories() {
 
   # Check and create videos file
   if [[ -f "$VIDEOS_FILE" ]]; then
-    if confirm_overwrite "$VIDEOS_FILE"; then
-      backup_file "$VIDEOS_FILE"
-      : > "$VIDEOS_FILE"
-    else
+    if ! confirm_overwrite "$VIDEOS_FILE"; then
       echo "Skipping $VIDEOS_FILE"
+      return $EXIT_FILE_EXISTS
     fi
+    backup_file "$VIDEOS_FILE"
+    : > "$VIDEOS_FILE"
   else
     : > "$VIDEOS_FILE"
   fi
@@ -91,30 +121,31 @@ function setup_directories() {
     # Check if directory exists
     if [[ -d "$dir" ]]; then
       echo "Directory $dir already exists"
+      return $EXIT_DIR_EXISTS
     else
-      mkdir -p "$dir"
+      mkdir -p "$dir" || return $EXIT_GENERAL_ERROR
     fi
 
     # Check header.md
     if [[ -f "$dir/header.md" ]]; then
-      if confirm_overwrite "$dir/header.md"; then
-        backup_file "$dir/header.md"
-        create_header_file "$dir" "$month" "$year"
-      else
+      if ! confirm_overwrite "$dir/header.md"; then
         echo "Skipping $dir/header.md"
+        return $EXIT_FILE_EXISTS
       fi
+      backup_file "$dir/header.md"
+      create_header_file "$dir" "$month" "$year"
     else
       create_header_file "$dir" "$month" "$year"
     fi
 
     # Check compact file
     if [[ -f "$dir/${COMPACT_FILE}" ]]; then
-      if confirm_overwrite "$dir/${COMPACT_FILE}"; then
-        backup_file "$dir/${COMPACT_FILE}"
-        echo "header.md" > "$dir/${COMPACT_FILE}"
-      else
+      if ! confirm_overwrite "$dir/${COMPACT_FILE}"; then
         echo "Skipping $dir/${COMPACT_FILE}"
+        return $EXIT_FILE_EXISTS
       fi
+      backup_file "$dir/${COMPACT_FILE}"
+      echo "header.md" > "$dir/${COMPACT_FILE}"
     else
       echo "header.md" > "$dir/${COMPACT_FILE}"
     fi
@@ -136,10 +167,11 @@ EOF
 }
 
 function main() {
-  : "${YEAR:?Environment variable YEAR must be set}"
+  : "${YEAR:?Environment variable YEAR must be set}" || exit $EXIT_YEAR_NOT_SET
 
-  setup_directories "$YEAR"
+  setup_directories "$YEAR" || exit $?
   printf "Setup complete: ${VIDEOS_FILE} plus folders and headers for each month for year %s.\n" "$YEAR"
+  exit $EXIT_SUCCESS
 }
 
 # Resolve script directory
@@ -148,8 +180,8 @@ if command -v realpath > /dev/null 2>&1; then
 else
   readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
 fi
-source "${SCRIPT_DIR}/lib/lockconfig.sh"
-lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+source "${SCRIPT_DIR}/lib/lockconfig.sh" || exit $EXIT_CONFIG_ERROR
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env" || exit $EXIT_CONFIG_ERROR
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   if "$LOGGING"; then
