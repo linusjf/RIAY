@@ -6,8 +6,18 @@
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
+# Error codes
+readonly E_INVALID_ARGS=1
+readonly E_INVALID_DAY=2
+readonly E_MISSING_TOOLS=3
+readonly E_NO_INTERNET=4
+readonly E_MISSING_ENV=5
+readonly E_MISSING_FILE=6
+readonly E_VIDEO_NOT_FOUND=7
+readonly E_THUMBNAIL_ERROR=8
+
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -30,8 +40,17 @@ function usage() {
   >&"$output" printf "Usage: %s <video_id> <day_number>\n" "$(basename "$0")"
   >&"$output" printf "Adds YouTube video metadata to daily markdown files.\n"
   >&"$output" printf "  <video_id>   The YouTube video ID.\n"
-  >&"$output" printf "  <day_number> The day number (1-366).\n"
-  >&"$output" printf "Example: %s ABCDEF12345 42\n" "$(basename "$0")"
+  >&"$output" printf "  <day_number> The day number (1-366).\n\n"
+  >&"$output" printf "Exit codes:\n"
+  >&"$output" printf "  %d - Invalid arguments\n" "$E_INVALID_ARGS"
+  >&"$output" printf "  %d - Invalid day number\n" "$E_INVALID_DAY"
+  >&"$output" printf "  %d - Missing required tools\n" "$E_MISSING_TOOLS"
+  >&"$output" printf "  %d - No internet connection\n" "$E_NO_INTERNET"
+  >&"$output" printf "  %d - Missing required environment variables\n" "$E_MISSING_ENV"
+  >&"$output" printf "  %d - Markdown file not found\n" "$E_MISSING_FILE"
+  >&"$output" printf "  %d - Video not found on YouTube\n" "$E_VIDEO_NOT_FOUND"
+  >&"$output" printf "  %d - Thumbnail error\n" "$E_THUMBNAIL_ERROR"
+  >&"$output" printf "\nExample: %s ABCDEF12345 42\n" "$(basename "$0")"
   exit "$exit_code"
 }
 
@@ -42,11 +61,11 @@ function version() {
 function validate_arguments() {
   if [ $# -ne 2 ]; then
     err "Error: Invalid number of arguments"
-    usage 1
+    usage $E_INVALID_ARGS
   fi
   if [[ "${2}" -le 0 ]] || [[ "${2}" -gt 366 ]]; then
     err "Error: Invalid day number ${2}: Outside range 1 - 366"
-    usage 1
+    usage $E_INVALID_DAY
   fi
   # shellcheck disable=2153
   daycount="$(date::daycount "${YEAR}")"
@@ -54,12 +73,12 @@ function validate_arguments() {
     return 0
   else
     err "Error: ${YEAR} has 365 days only."
-    usage 1
+    usage $E_INVALID_DAY
   fi
 }
 
 function check_required_tools() {
-  require_commands jq curl git
+  require_commands jq curl git || exit $E_MISSING_TOOLS
 }
 
 function fetch_video_metadata() {
@@ -81,7 +100,7 @@ function extract_video_title() {
 function download_thumbnail() {
   local url=$1
   local output_path=$2
-  curl -s "$url" -o "$output_path"
+  curl -s "$url" -o "$output_path" || return $E_THUMBNAIL_ERROR
 }
 
 function backup_file() {
@@ -121,7 +140,7 @@ function remove_existing_video_entry() {
       next
     }
     print
-  }' "$file_path" > "$tmp_file"
+  }' "$file_path" >"$tmp_file"
 
   mv "$tmp_file" "$file_path"
 }
@@ -141,7 +160,7 @@ function append_video_info() {
       "$title" "$github_repo" "$image_path" "$youtube_url" "$title"
     echo
     "${script_dir}/summarizevideo" "$video_id"
-  } >> "$file_path"
+  } >>"$file_path"
 }
 
 function main() {
@@ -153,9 +172,9 @@ function main() {
 
   check_required_tools
 
-  require_vars YEAR YOUTUBE_API_KEY
+  require_vars YEAR YOUTUBE_API_KEY || exit $E_MISSING_ENV
 
-  internet::checkinternet || exit 1
+  internet::checkinternet || exit $E_NO_INTERNET
 
   api_key="$YOUTUBE_API_KEY"
   github_repo=$(git::get_github_repo)
@@ -168,7 +187,7 @@ function main() {
   image_path="$month/jpgs/${video_id}.jpg"
 
   if [ ! -f "$markdown_file" ]; then
-    die "Error: Markdown file $markdown_file does not exist"
+    die "Error: Markdown file $markdown_file does not exist" $E_MISSING_FILE
   fi
 
   mkdir -p "$month/jpgs"
@@ -179,10 +198,10 @@ function main() {
     title=$(printf "%s" "$response" | extract_video_title)
 
     if [ -z "$thumbnail_url" ] || [ "$thumbnail_url" = "null" ]; then
-      die "Error: Thumbnail not found for video ID $video_id"
+      die "Error: Thumbnail not found for video ID $video_id" $E_THUMBNAIL_ERROR
     fi
 
-    download_thumbnail "$thumbnail_url" "$image_path"
+    download_thumbnail "$thumbnail_url" "$image_path" || exit $E_THUMBNAIL_ERROR
     vidmd::overlayicon "$image_path"
     youtube_url="https://youtu.be/$video_id"
 
@@ -197,23 +216,23 @@ function main() {
 
     out "Appended video info to $markdown_file"
   else
-    die "Error: Video with id ${video_id} does not exist."
+    die "Error: Video with id ${video_id} does not exist." $E_VIDEO_NOT_FOUND
   fi
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -h | --help) usage 0 ;;
-      -v | --version)
-        version
-        exit 0
-        ;;
-      -d | --debug)
-        set -x
-        shift
-        ;;
-      *) break ;;
+    -h | --help) usage 0 ;;
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *) break ;;
     esac
   done
   if "$LOGGING"; then
