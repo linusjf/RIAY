@@ -10,6 +10,12 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="${0##*/}"
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 
+# Error codes
+readonly ERR_INPUT_FILE=1
+readonly ERR_DEPENDENCY=2
+readonly ERR_GENERATION=3
+readonly ERR_INVALID_ARG=4
+
 # Source lib/require.sh from same directory as script
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
@@ -33,8 +39,17 @@ Usage: ${SCRIPT_NAME} [OPTIONS]
 
 Options:
   -d, --debug    Enable debug output (set -x)
+  -v, --version  Show version information
+  -h, --help     Show this help message
 
 Generates README.md from stitch.md in current directory.
+
+Exit Codes:
+  0 - Success
+  ${ERR_INPUT_FILE} - Input file (stitch.md) not found
+  ${ERR_DEPENDENCY} - Required dependency (stitchmd) not found
+  ${ERR_GENERATION} - README.md generation failed
+  ${ERR_INVALID_ARG} - Invalid argument provided
 
 Globals:
   None
@@ -42,11 +57,6 @@ Globals:
 Outputs:
   README.md - Generated documentation file
   Error messages to STDERR on failure
-
-Returns:
-  0 on success
-  1 on input file or dependency errors
-  2 on generation failure
 EOF
   exit "$exitcode"
 }
@@ -54,7 +64,15 @@ EOF
 validate_input() {
   if [[ ! -f "stitch.md" ]]; then
     echo "Error: 'stitch.md' not found in current directory" >&2
-    return 1
+    return ${ERR_INPUT_FILE}
+  fi
+  return 0
+}
+
+check_dependencies() {
+  if ! command -v stitchmd &> /dev/null; then
+    echo "Error: 'stitchmd' command not found in PATH" >&2
+    return ${ERR_DEPENDENCY}
   fi
   return 0
 }
@@ -62,7 +80,7 @@ validate_input() {
 generate_readme() {
   if ! stitchmd -o README.md -- stitch.md; then
     echo "Error: Failed to generate README.md" >&2
-    return 2
+    return ${ERR_GENERATION}
   fi
   return 0
 }
@@ -85,10 +103,12 @@ main() {
         usage 0
         ;;
       -*)
-        usage 1
+        echo "Error: Invalid option '$1'" >&2
+        usage ${ERR_INVALID_ARG}
         ;;
       *)
-        break
+        echo "Error: Unexpected argument '$1'" >&2
+        usage ${ERR_INVALID_ARG}
         ;;
     esac
   done
@@ -98,14 +118,16 @@ main() {
     set -x
   fi
 
-  require_commands stitchmd
-
   if ! validate_input; then
-    exit 1
+    exit ${ERR_INPUT_FILE}
+  fi
+
+  if ! check_dependencies; then
+    exit ${ERR_DEPENDENCY}
   fi
 
   if ! generate_readme; then
-    exit 2
+    exit ${ERR_GENERATION}
   fi
 }
 
