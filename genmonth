@@ -14,6 +14,15 @@ DRY_RUN=false
 APPEND_YEAR=false
 readonly VERSION="1.0.0"
 
+# Exit codes
+readonly EXIT_SUCCESS=0
+readonly EXIT_ARG_ERROR=1
+readonly EXIT_VALIDATION_ERROR=2
+readonly EXIT_COMMAND_MISSING=3
+readonly EXIT_FILE_GENERATION_ERROR=4
+readonly EXIT_TOC_GENERATION_ERROR=5
+readonly EXIT_FILE_CLEANUP_ERROR=6
+
 usage() {
   exitcode="${1:-0}"
   cat << EOF
@@ -33,11 +42,6 @@ EOF
   exit "$exitcode"
 }
 
-# Print version information
-# Globals: VERSION
-# Arguments: none
-# Outputs: version string to STDOUT
-# Returns: none
 version() {
   printf "%s\n" "$VERSION"
 }
@@ -48,26 +52,26 @@ validate_inputs() {
 
   if ! date::isnumeric "$month"; then
     echo "Error: Month must be a number" >&2
-    return 1
+    return $EXIT_VALIDATION_ERROR
   fi
 
   if ! date::isnumeric "$year"; then
     echo "Error: Year must be a number" >&2
-    return 1
+    return $EXIT_VALIDATION_ERROR
   fi
 
   if ((${#year} != 4)); then
     echo "Error: Year must be 4 digits" >&2
-    return 1
+    return $EXIT_VALIDATION_ERROR
   fi
 
   month=$((10#$month))
   if ((month < 1 || month > 12)); then
     echo "Error: Month must be between 1 and 12" >&2
-    return 1
+    return $EXIT_VALIDATION_ERROR
   fi
 
-  return 0
+  return $EXIT_SUCCESS
 }
 
 generate_month_file() {
@@ -84,20 +88,20 @@ generate_month_file() {
 
   if ! "${SCRIPT_DIR}/compact" "$month_name" >| "$monthmd"; then
     echo "Error: Failed to generate compact index" >&2
-    return 1
+    return $EXIT_FILE_GENERATION_ERROR
   fi
 
   if ! "${SCRIPT_DIR}/gentoc" "$monthmd"; then
     echo "Error: Failed to generate table of contents" >&2
-    return 1
+    return $EXIT_TOC_GENERATION_ERROR
   fi
 
   if ! sed -i '/\S/,$!d' "$monthmd"; then
     echo "Error: Failed to clean up file" >&2
-    return 1
+    return $EXIT_FILE_CLEANUP_ERROR
   fi
 
-  return 0
+  return $EXIT_SUCCESS
 }
 
 dry_run() {
@@ -140,7 +144,7 @@ while [[ $# -gt 0 ]]; do
       ;;
     -v | --version)
       version
-      exit 0
+      exit $EXIT_SUCCESS
       ;;
     -h | --help)
       usage
@@ -156,25 +160,27 @@ main() {
 
   # Validate arguments
   if [[ $# -gt 2 ]] || [[ $# -eq 0 ]]; then
-    usage 1
+    usage $EXIT_ARG_ERROR
   fi
 
   month="$1"
   year="${2:-${YEAR}}"
 
   if ! validate_inputs "$month" "$year"; then
-    usage 1
+    exit $?
   fi
 
-  require_commands date markdown-toc
+  if ! require_commands date markdown-toc; then
+    exit $EXIT_COMMAND_MISSING
+  fi
 
   if $DRY_RUN; then
     dry_run "$month" "$year"
-    exit 0
+    exit $EXIT_SUCCESS
   fi
 
   if ! generate_month_file "$month" "$year"; then
-    exit 1
+    exit $?
   fi
 }
 
