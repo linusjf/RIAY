@@ -10,6 +10,15 @@ set -o pipefail
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
+# Error codes
+readonly E_INVALID_ARGS=1
+readonly E_INVALID_DAY_RANGE=2
+readonly E_MISSING_YEAR=3
+readonly E_NO_INTERNET=4
+readonly E_MISSING_VIDEOS_FILE=5
+readonly E_INVALID_AI_HANDLING=6
+readonly E_MISSING_FILE=7
+
 function usage() {
   cat << EOF
 Usage: ${SCRIPT_NAME} [options] <startday> <endday>
@@ -21,10 +30,19 @@ Arguments:
   endday      Last day number to process (inclusive)
 
 Options:
-  --ai-handling=MODE    How to handle existing AI summaries (overwrite|skip)
+  --ai-handling=MODE    How to handle existing AI summaries (overwrite|skip|prompt)
   -d, --debug           Enable debug mode
   -h, --help            Show this help message
   --version             Show version information
+
+Exit Codes:
+  ${E_INVALID_ARGS} - Invalid arguments
+  ${E_INVALID_DAY_RANGE} - Invalid day range
+  ${E_MISSING_YEAR} - YEAR environment variable not set
+  ${E_NO_INTERNET} - No internet connection
+  ${E_MISSING_VIDEOS_FILE} - Videos file not found
+  ${E_INVALID_AI_HANDLING} - Invalid AI handling mode
+  ${E_MISSING_FILE} - Markdown file not found
 
 Examples:
   ${SCRIPT_NAME} 1 10                     # Process days 1 through 10
@@ -52,7 +70,7 @@ function main() {
           *)
             err "Invalid --ai-handling value: ${ai_handling}"
             usage >&2
-            exit 1
+            exit ${E_INVALID_AI_HANDLING}
             ;;
         esac
         shift
@@ -76,7 +94,7 @@ function main() {
       -*)
         err "Unknown option: $1"
         usage >&2
-        exit 1
+        exit ${E_INVALID_ARGS}
         ;;
       *)
         break
@@ -87,7 +105,7 @@ function main() {
   # Check arguments
   if [[ "$#" -ne 2 ]]; then
     usage >&2
-    exit 1
+    exit ${E_INVALID_ARGS}
   fi
 
   local startday="$1"
@@ -97,27 +115,27 @@ function main() {
   if ! [[ "${startday}" =~ ^[0-9]+$ && "${endday}" =~ ^[0-9]+$ ]]; then
     err "Both startday and endday must be numeric."
     usage >&2
-    exit 1
+    exit ${E_INVALID_ARGS}
   fi
 
   if [[ "${endday}" -lt "${startday}" ]]; then
     err "endday must be greater than or equal to startday."
     usage >&2
-    exit 1
+    exit ${E_INVALID_DAY_RANGE}
   fi
 
   # Check if YEAR is set
   if [[ -z "${YEAR}" ]]; then
     err "Error: YEAR environment variable is not set."
-    exit 1
+    exit ${E_MISSING_YEAR}
   fi
 
-  internet::checkinternet || exit 1
+  internet::checkinternet || exit ${E_NO_INTERNET}
 
   # Check if videos file exists
   if [[ ! -f "${VIDEOS_FILE}" ]]; then
     err "Error: ${VIDEOS_FILE} not found."
-    exit 1
+    exit ${E_MISSING_VIDEOS_FILE}
   fi
 
   # Get number of lines in the file
@@ -165,7 +183,7 @@ function process_single_day() {
 
   if [[ ! -f "${filepath}" ]]; then
     err "Warning: ${filepath} not found. Skipping videoid ${videoid} (line ${lineno})."
-    return
+    return ${E_MISSING_FILE}
   fi
 
   if grep "AI-Generated Summary:" "${filepath}" &> /dev/null; then
