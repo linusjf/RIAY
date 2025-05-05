@@ -10,6 +10,17 @@ shopt -s inherit_errexit
 
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
+
+# Exit codes
+readonly EXIT_SUCCESS=0
+readonly EXIT_INVALID_ARGUMENTS=1
+readonly EXIT_INVALID_VIDEO_ID=2
+readonly EXIT_INVALID_CAPTION=3
+readonly EXIT_VIDEO_NOT_FOUND=4
+readonly EXIT_NO_INTERNET=5
+readonly EXIT_OVERLAY_FAILED=6
+readonly EXIT_FILE_GENERATION_FAILED=7
+
 ######################################################################
 # Functions
 ######################################################################
@@ -33,6 +44,16 @@ Options:
 Arguments:
   vid              YouTube video ID (11 characters)
   caption          Video title/description (max 100 chars)
+
+Exit Codes:
+  0  Success
+  1  Invalid arguments
+  2  Invalid YouTube video ID format
+  3  Invalid caption format
+  4  Video not found on YouTube
+  5  No internet connection
+  6  Failed to generate overlay
+  7  Failed to generate files
 EOF
   exit "$exitcode"
 }
@@ -50,32 +71,32 @@ version() {
 # Globals: none
 # Arguments: vid caption
 # Outputs: error messages to STDERR
-# Returns: 0 if valid, 1 otherwise
+# Returns: 0 if valid, non-zero otherwise
 validate_inputs() {
   if ! vidmd::validate_vid "$1"; then
     echo "Error: Invalid YouTube video ID format: '$1'" >&2
     echo "       YouTube video IDs should be 11 characters long" >&2
-    return 1
+    return $EXIT_INVALID_VIDEO_ID
   fi
 
   if ! vidmd::validate_caption "$2"; then
     echo "Error: Invalid caption format: '$2'" >&2
-    return 1
+    return $EXIT_INVALID_CAPTION
   fi
 
   if ! youtube::check_video_exists "$1"; then
     echo "Error: No video found with ID: '$1'" >&2
     echo "       Please verify the video exists at https://youtu.be/$1" >&2
-    return 1
+    return $EXIT_VIDEO_NOT_FOUND
   fi
-  return 0
+  return $EXIT_SUCCESS
 }
 
 # Generate all required files for new video
 # Globals: COMPACT_FILE VIDEOS_FILE YEAR
 # Arguments: vid caption doy
 # Outputs: status messages to STDOUT/STDERR
-# Returns: 0 on success, 1 on failure
+# Returns: 0 on success, non-zero on failure
 generate_files() {
   local vid="$1"
   local caption="$2"
@@ -113,11 +134,11 @@ generate_files() {
   if "${SCRIPT_DIR}/genmonth" "$monthnumber" "$YEAR"; then
     printf "%s\n" "$vid" >> "$VIDEOS_FILE"
     echo "Successfully added video $vid"
-    return 0
+    return $EXIT_SUCCESS
   else
-    echo "Error: Failed to generate file for month ${month}"
+    echo "Error: Failed to generate file for month ${month}" >&2
     mv "${month}/${COMPACT_FILE}.bak" "${month}/${COMPACT_FILE}"
-    return 1
+    return $EXIT_FILE_GENERATION_FAILED
   fi
 }
 
@@ -174,7 +195,7 @@ main() {
         ;;
       -v | --version)
         version
-        exit 0
+        exit $EXIT_SUCCESS
         ;;
       -h | --help)
         usage
@@ -186,32 +207,37 @@ main() {
   $debug && set -x
 
   if [[ $# -ne 2 ]]; then
-    usage 1
+    usage $EXIT_INVALID_ARGUMENTS
   fi
 
   vid="$1"
   caption="$2"
 
   if ! validate_inputs "$vid" "$caption"; then
-    exit 1
+    exit $?
   fi
 
-  internet::checkinternet || exit 1
+  if ! internet::checkinternet; then
+    echo "Error: No internet connection available" >&2
+    exit $EXIT_NO_INTERNET
+  fi
 
   local doy
   doy=$(("$(wc -l < "$VIDEOS_FILE")" + 1))
 
   if $dry_run; then
     dry_run "$vid" "$caption" "$doy"
-    exit 0
+    exit $EXIT_SUCCESS
   fi
 
   if ! "${SCRIPT_DIR}/genoverlay" "$vid" "$doy"; then
     echo "Error: Failed to generate overlay for video $vid" >&2
-    exit 1
+    exit $EXIT_OVERLAY_FAILED
   fi
 
-  generate_files "$vid" "$caption" "$doy"
+  if ! generate_files "$vid" "$caption" "$doy"; then
+    exit $?
+  fi
 }
 
 ######################################################################
