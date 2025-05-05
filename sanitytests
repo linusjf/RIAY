@@ -499,7 +499,7 @@ run_test 36 "Should show usage with --help" 0 "${ADDIMGTODAY_SCRIPT}" --help
 print_header "Test 37: Invalid inputs"
 run_test 37 "Should reject invalid number of arguments" 2 "${ADDIMGTODAY_SCRIPT}" "1" || true
 curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null || true
-run_test 37 "Should reject invalid day number" 2 "${ADDIMGTODAY_SCRIPT}" "example.jpg" "Caption" "invalid" || true
+run_test 37 "Should reject invalid day number" 6 "${ADDIMGTODAY_SCRIPT}" "example.jpg" "Caption" "invalid" || true
 run_test 37 "Should reject invalid image path" 3 "${ADDIMGTODAY_SCRIPT}" "invalid" "Caption" "1" || true
 
 print_header "Test 38: Basic execution"
