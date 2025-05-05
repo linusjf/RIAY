@@ -8,7 +8,7 @@
 # Output functions
 #######################################
 
-if ! declare -f out >/dev/null; then
+if ! declare -f out > /dev/null; then
   #######################################
   # Print message to STDOUT
   # Globals: none
@@ -20,7 +20,7 @@ if ! declare -f out >/dev/null; then
   export -f out
 fi
 
-if ! declare -f err >/dev/null; then
+if ! declare -f err > /dev/null; then
   #######################################
   # Print message to STDERR
   # Globals: none
@@ -32,13 +32,13 @@ if ! declare -f err >/dev/null; then
   export -f err
 fi
 
-if ! declare -f die >/dev/null; then
+if ! declare -f die > /dev/null; then
   #######################################
   # Print fatal message to STDERR and exit
   # Globals: none
   # Arguments: message
   # Outputs: message to STDERR
-  # Returns: exits with status 1
+  # Returns: exits with status passed in or default 1
   #######################################
   die() {
     msg="${1:-}"
@@ -49,7 +49,7 @@ if ! declare -f die >/dev/null; then
   export -f die
 fi
 
-if ! declare -f big >/dev/null; then
+if ! declare -f big > /dev/null; then
   #######################################
   # Print banner message to STDOUT
   # Globals: none
@@ -61,7 +61,7 @@ if ! declare -f big >/dev/null; then
   export -f big
 fi
 
-if ! declare -f log >/dev/null; then
+if ! declare -f log > /dev/null; then
   #######################################
   # Print log message with timestamp and PID
   # Globals: none
@@ -77,7 +77,7 @@ fi
 # Time functions
 #######################################
 
-if ! declare -f now >/dev/null; then
+if ! declare -f now > /dev/null; then
   #######################################
   # Get current UTC timestamp in ISO8601 format
   # Globals: none
@@ -89,7 +89,7 @@ if ! declare -f now >/dev/null; then
   export -f now
 fi
 
-if ! declare -f sec >/dev/null; then
+if ! declare -f sec > /dev/null; then
   #######################################
   # Get current Unix epoch timestamp
   # Globals: none
@@ -105,7 +105,7 @@ fi
 # Random ID generation
 #######################################
 
-if ! declare -f zid >/dev/null; then
+if ! declare -f zid > /dev/null; then
   #######################################
   # Generate random 128-bit hex ID
   # Globals: none
@@ -121,7 +121,7 @@ fi
 # Command checking
 #######################################
 
-if ! declare -f cmd >/dev/null; then
+if ! declare -f cmd > /dev/null; then
   #######################################
   # Check if command exists
   # Globals: none
@@ -129,7 +129,7 @@ if ! declare -f cmd >/dev/null; then
   # Outputs: none
   # Returns: 0 if exists, 1 otherwise
   #######################################
-  cmd() { command -v "$1" >/dev/null 2>&1; }
+  cmd() { command -v "$1" > /dev/null 2>&1; }
   export -f cmd
 fi
 
@@ -137,7 +137,7 @@ fi
 # Assertion functions
 #######################################
 
-if ! declare -f assert_empty >/dev/null; then
+if ! declare -f assert_empty > /dev/null; then
   #######################################
   # Assert variable is empty
   # Globals: none
@@ -149,7 +149,7 @@ if ! declare -f assert_empty >/dev/null; then
   export -f assert_empty
 fi
 
-if ! declare -f assert_equal >/dev/null; then
+if ! declare -f assert_equal > /dev/null; then
   #######################################
   # Assert two values are equal
   # Globals: none
@@ -165,7 +165,7 @@ fi
 # Temporary directory functions
 #######################################
 
-if ! declare -f temp_home >/dev/null; then
+if ! declare -f temp_home > /dev/null; then
   #######################################
   # Create temporary directory
   # Globals: none
@@ -177,7 +177,7 @@ if ! declare -f temp_home >/dev/null; then
   export -f temp_home
 fi
 
-if ! declare -f temp_dir >/dev/null; then
+if ! declare -f temp_dir > /dev/null; then
   #######################################
   # Create temporary directory with program name
   # Globals: none
@@ -193,7 +193,7 @@ fi
 # Program information
 #######################################
 
-if ! declare -f program >/dev/null; then
+if ! declare -f program > /dev/null; then
   #######################################
   # Get program name
   # Globals: none
