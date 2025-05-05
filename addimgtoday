@@ -17,6 +17,7 @@ readonly ERR_MISSING_ARGS=2
 readonly ERR_INVALID_PATH=3
 readonly ERR_INVALID_IMAGE=4
 readonly ERR_MARKDOWN_FILE=5
+readonly ERR_INVALID_DAY=6
 
 # Source common functions
 if command -v realpath > /dev/null 2>&1; then
@@ -63,6 +64,7 @@ Exit Codes:
   3               Invalid image path
   4               Invalid image format (not JPEG)
   5               Markdown file not found
+  6               Invalid day number (1 - 366)
 
 Examples:
   $SCRIPT_NAME /path/to/image.jpg "My Image Caption" 123
@@ -174,6 +176,25 @@ main() {
   done
 
   # Check if all arguments are provided
+  if [[ -z "${image_path:-}" || -z "${caption:-}" || -z "${day_num:-}" ]]; then
+    err "Error: Missing arguments."
+    usage $ERR_MISSING_ARGS
+  fi
+
+  # Check if day number is numeric and in range
+  if [[ "$day_num" =~ ^-?[0-9]+$ ]]; then
+    if [[ "$day_num" -le 0 ]] || [[ "$day_num" -gt 366 ]]; then
+      err "Error: Invalid day number - ${day_num}."
+      usage $ERR_INVALID_DAY
+    elif [[ ${day_num} == 366 ]] && ! date::isleapyear "${YEAR}"; then
+      err "Error: Invalid day number - ${day_num}."
+      usage $ERR_INVALID_DAY
+    fi
+  else
+    err "Error: Invalid day number - ${day_num}."
+    usage $ERR_INVALID_DAY
+  fi
+
   if [[ -z "${image_path:-}" || -z "${caption:-}" || -z "${day_num:-}" ]]; then
     err "Error: Missing arguments."
     usage $ERR_MISSING_ARGS
