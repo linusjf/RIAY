@@ -472,7 +472,8 @@ if ! date::isleapyear "$YEAR"; then
 fi
 
 print_header "Test 32: Missing markdown file"
-run_test 32 "Should fail due to missing markdown file" 6 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "999" || true
+rm January/Day001.md
+run_test 32 "Should fail due to missing markdown file" 6 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "001" || true
 
 print_header "Test 33: Video does not exist"
 run_test 33 "Should fail due to video not existing" 7 "${ADDVIDEOTODAY_SCRIPT}" "xxxxxxxxxxx" "1" || true
