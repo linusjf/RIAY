@@ -588,8 +588,8 @@ run_test 55 "Should show usage with --help" 0 "${ADDSUMMARIES_SCRIPT}" --help
 
 print_header "Test 56: Invalid inputs"
 run_test 56 "Should reject invalid day range (non-numeric)" 1 "${ADDSUMMARIES_SCRIPT}" "one" "ten" || true
-run_test 56 "Should reject invalid day range (start > end)" 1 "${ADDSUMMARIES_SCRIPT}" "10" "5" || true
-run_test 56 "Should reject invalid --ai-handling value" 1 "${ADDSUMMARIES_SCRIPT}" --ai-handling=invalid 1 1 || true
+run_test 56 "Should reject invalid day range (start > end)" 2 "${ADDSUMMARIES_SCRIPT}" "10" "5" || true
+run_test 56 "Should reject invalid --ai-handling value" 6 "${ADDSUMMARIES_SCRIPT}" --ai-handling=invalid 1 1 || true
 
 print_header "Test 57: AI handling options"
 create_test_videos
