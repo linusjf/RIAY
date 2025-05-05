@@ -63,8 +63,12 @@ function validate_arguments() {
     err "Error: Invalid number of arguments"
     usage $E_INVALID_ARGS
   fi
-  if [[ "${2}" -le 0 ]] || [[ "${2}" -gt 366 ]]; then
-    err "Error: Invalid day number ${2}: Outside range 1 - 366"
+  if [[ "${2}" =~ ^-?[0-9]+$ ]]; then
+    if [[ "${2}" -le 0 ]] || [[ "${2}" -gt 366 ]]; then
+      err "Error: Invalid day number ${2}: Outside range 1 - 366"
+      usage $E_INVALID_DAY
+    fi
+  else
     usage $E_INVALID_DAY
   fi
   # shellcheck disable=2153
