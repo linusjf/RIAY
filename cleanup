@@ -1,39 +1,166 @@
 #!/usr/bin/env bash
-# Remove temporary files
-rm -f ./*.vtt
-rm -f ./*.en.txt
-rm -f ./*.log
-rm -f failed*.json
+# Cleanup utility script
+# Removes temporary and backup files from current directory
+#
+# Exit codes:
+#   0 - Success
+#   1 - Unknown option
+#   2 - File removal error
+#   3 - Backup cleanup error
+#   4 - Debug mode enabled
+#   5 - Dry run mode enabled
+#   6 - Missing required dependencies
+#   7 - Permission denied
+#   8 - Invalid arguments
 
-# Function to clean up backup files
-clean_backups() {
-  echo "Cleaning up backup files..."
-  rm -f ./*~        # Emacs backup files
-  rm -f ./*.bak*    # Generic backup files
-  rm -f ./**/*.bak* # Generic backup files
-  rm -f ./*.backup  # Alternative backup extension
-  rm -f ./*.swp     # Vim swap files
-  rm -f ./.DS_Store # macOS directory metadata
-  rm -f ./*.tmp     # Temporary files
-  rm -f ./*.temp    # Alternative temp files
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME=$(basename "$0")
+readonly TEMP_FILES_PATTERN=('./*.vtt' './*.en.txt' './*.log' './failed*.json')
+readonly BACKUP_FILES_PATTERN=('./*~' './*.bak*' './**/*.bak*' './*.backup' './*.swp' './.DS_Store' './*.tmp' './*.temp')
+
+# Source utility functions
+if command -v realpath > /dev/null 2>&1; then
+  SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+else
+  SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
+fi
+source "$SCRIPT_DIR/lib/util.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+
+# Global flags
+verbose=false
+dry_run=false
+
+# Display version information
+version() {
+  printf "%s\n" "${VERSION}"
 }
 
-# Check for command line arguments
-if [[ $# -gt 0 ]]; then
-  case $1 in
-    --backups | -b)
-      clean_backups
-      ;;
-    --help | -h)
-      echo "Usage: cleanup [OPTION]"
-      echo "Options:"
-      echo "  -b, --backups   Clean up backup files only"
-      echo "  -h, --help      Show this help message"
-      ;;
-    *)
-      echo "Unknown option: $1"
-      echo "Use --help for usage information"
-      exit 1
-      ;;
-  esac
+# Remove temporary files
+remove_temp_files() {
+  local exit_code=0
+  log "Removing temporary files: ${TEMP_FILES_PATTERN[*]}"
+
+  if $dry_run; then
+    out "Would remove: ${TEMP_FILES_PATTERN[*]}"
+    return 0
+  fi
+
+  if ! rm -f "${TEMP_FILES_PATTERN[@]}"; then
+    err "Failed to remove temporary files"
+    exit_code=2
+  fi
+  return "${exit_code}"
+}
+
+# Clean up backup files
+clean_backups() {
+  local exit_code=0
+  log "Cleaning up backup files..."
+
+  if $dry_run; then
+    out "Would remove: ${BACKUP_FILES_PATTERN[*]}"
+    return 0
+  fi
+
+  if ! rm -f "${BACKUP_FILES_PATTERN[@]}"; then
+    err "Failed to clean up backup files"
+    exit_code=3
+  fi
+  return "${exit_code}"
+}
+
+# Show usage information
+show_usage() {
+  cat << EOF
+${SCRIPT_NAME} - Cleanup utility script v${VERSION}
+
+Usage: ${SCRIPT_NAME} [OPTIONS]
+
+Options:
+  -b, --backups    Clean up backup files only
+  -t, --temp       Clean up temporary files only
+  -d, --debug      Enable debug mode (exits with code 4)
+  -n, --dry-run    Show what would be done without making changes (exits with code 5)
+  -v, --verbose    Enable verbose output
+  -h, --help       Show this help message
+  --version        Show version information
+
+Exit codes:
+  0 - Success
+  1 - Unknown option
+  2 - File removal error
+  3 - Backup cleanup error
+  6 - Missing required dependencies
+  7 - Permission denied
+  8 - Invalid arguments
+
+Examples:
+  ${SCRIPT_NAME} -v            # Run with verbose output
+  ${SCRIPT_NAME} --dry-run     # Show what would be removed
+  ${SCRIPT_NAME} -b            # Clean only backup files
+  ${SCRIPT_NAME} -t            # Clean only temporary files
+EOF
+}
+
+# Parse command line arguments
+parse_args() {
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+      -b | --backups)
+        clean_backups
+        exit $?
+        ;;
+      -t | --temp)
+        remove_temp_files
+        exit $?
+        ;;
+      -d | --debug)
+        set -x
+        ;;
+      -n | --dry-run)
+        dry_run=true
+        ;;
+      -v | --verbose)
+        export verbose=true
+        ;;
+      -h | --help)
+        show_usage
+        exit 0
+        ;;
+      --version)
+        version
+        exit 0
+        ;;
+      *)
+        err "Unknown option: $1"
+        show_usage >&2
+        exit 1
+        ;;
+    esac
+    shift
+  done
+}
+
+# Main function
+main() {
+  parse_args "$@"
+
+  # Default behavior - clean both temp files and backups
+  remove_temp_files
+  clean_backups
+  exit $?
+}
+
+# Only execute if run as main script
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
 fi
