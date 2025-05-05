@@ -5,7 +5,7 @@ set -euo pipefail
 shopt -s inherit_errexit
 
 readonly SCRIPT_NAME="$(basename "$0")"
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/date.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
@@ -25,7 +25,7 @@ readonly EXIT_FILE_CLEANUP_ERROR=6
 
 usage() {
   exitcode="${1:-0}"
-  cat << EOF
+  cat <<EOF
 Usage: ${0##*/} [-n|--dry-run] [-d|--debug] [--append-year] month [year]
 
 Generate monthly markdown file with video index and table of contents.
@@ -95,7 +95,7 @@ generate_month_file() {
     monthmd="${month_name}.md"
   fi
 
-  if ! "${SCRIPT_DIR}/compact" "$month_name" >| "$monthmd"; then
+  if ! "${SCRIPT_DIR}/compact" "$month_name" >|"$monthmd"; then
     echo "Error: Failed to generate compact index" >&2
     return $EXIT_FILE_GENERATION_ERROR
   fi
@@ -125,7 +125,7 @@ dry_run() {
     monthmd="${month_name}.md"
   fi
 
-  cat << EOF
+  cat <<EOF
 DRY RUN: Would process month $month_name ($(date::monthfromnumber "$month")) for year $year
 Would generate these files:
   - $monthmd (monthly markdown file)
@@ -139,28 +139,28 @@ EOF
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    -n | --dry-run)
-      DRY_RUN=true
-      shift
-      ;;
-    -d | --debug)
-      set -x
-      shift
-      ;;
-    --append-year)
-      APPEND_YEAR=true
-      shift
-      ;;
-    -v | --version)
-      version
-      exit $EXIT_SUCCESS
-      ;;
-    -h | --help)
-      usage
-      ;;
-    *)
-      break
-      ;;
+  -n | --dry-run)
+    DRY_RUN=true
+    shift
+    ;;
+  -d | --debug)
+    set -x
+    shift
+    ;;
+  --append-year)
+    APPEND_YEAR=true
+    shift
+    ;;
+  -v | --version)
+    version
+    exit $EXIT_SUCCESS
+    ;;
+  -h | --help)
+    usage
+    ;;
+  *)
+    break
+    ;;
   esac
 done
 
@@ -175,22 +175,16 @@ main() {
   month="$1"
   year="${2:-${YEAR}}"
 
-  if ! validate_inputs "$month" "$year"; then
-    exit $?
-  fi
+  validate_inputs "$month" "$year" || exit $?
 
-  if ! require_commands date markdown-toc; then
-    exit $EXIT_COMMAND_MISSING
-  fi
+  require_commands date markdown-toc || exit $EXIT_COMMAND_MISSING
 
   if $DRY_RUN; then
     dry_run "$month" "$year"
     exit $EXIT_SUCCESS
   fi
 
-  if ! generate_month_file "$month" "$year"; then
-    exit $?
-  fi
+  generate_month_file "$month" "$year" || exit $?
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
