@@ -11,6 +11,13 @@ source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 readonly VERSION="1.0.0"
 
+# Error codes
+readonly ERR_INVALID_DIR=1
+readonly ERR_M4_PROCESSING=2
+readonly ERR_AWK_FILTERING=3
+readonly ERR_MISSING_REQUIREMENTS=4
+readonly ERR_TEMP_FILE=5
+
 # Display usage information
 usage() {
   exitcode="${1:-0}"
@@ -22,6 +29,14 @@ Options:
   -d, --debug      Enable debug output
 Arguments:
   dir              Directory containing compact file and files to merge (default: current dir)
+
+Exit codes:
+  0                Success
+  ${ERR_INVALID_DIR}          Invalid directory or missing compact file
+  ${ERR_M4_PROCESSING}        Failed to process files with m4
+  ${ERR_AWK_FILTERING}        Failed to filter output with awk
+  ${ERR_MISSING_REQUIREMENTS} Missing required commands
+  ${ERR_TEMP_FILE}            Failed to create temporary file
 
 The program will:
 1. Look for ${COMPACT_FILE} in the specified directory
@@ -53,13 +68,17 @@ main() {
   local temp_file tmp_output
 
   if ! is_valid_dir "${target_dir}"; then
-    usage 1
+    echo "Error: Invalid directory or missing ${COMPACT_FILE}" >&2
+    exit ${ERR_INVALID_DIR}
   fi
 
   (
-    cd "${target_dir}" || exit 1
+    cd "${target_dir}" || exit ${ERR_INVALID_DIR}
 
-    temp_file="$(mktemp -t compact.XXXXXX)"
+    temp_file="$(mktemp -t compact.XXXXXX)" || {
+      echo "Error: Failed to create temporary file" >&2
+      exit ${ERR_TEMP_FILE}
+    }
     echo "changequote(\`{{', \`}}')" > "${temp_file}"
 
     # Read files list and generate m4 includes
@@ -72,15 +91,18 @@ main() {
     done
 
     # Process files through m4 and awk
-    tmp_output="$(mktemp -t compact.XXXXXX)"
+    tmp_output="$(mktemp -t compact.XXXXXX)" || {
+      echo "Error: Failed to create temporary file" >&2
+      exit ${ERR_TEMP_FILE}
+    }
     if ! m4 "${temp_file}" > "${tmp_output}"; then
       echo "Error: Failed to process files with m4" >&2
-      exit 1
+      exit ${ERR_M4_PROCESSING}
     fi
 
     if ! awk 'NF {p=1} p' <<< "$(< "${tmp_output}")"; then
       echo "Error: Failed to filter output with awk" >&2
-      exit 1
+      exit ${ERR_AWK_FILTERING}
     fi
 
     # Clean up temp files
@@ -110,7 +132,7 @@ done
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   # Check requirements
   source "${SCRIPT_DIR}/lib/require.sh"
-  require_commands m4 mktemp awk rm
+  require_commands m4 mktemp awk rm || exit ${ERR_MISSING_REQUIREMENTS}
   if "$LOGGING"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
