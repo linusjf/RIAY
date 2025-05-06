@@ -1,49 +1,125 @@
 #!/usr/bin/env bash
+set -euo pipefail
+shopt -s inherit_errexit
+
+# Generate stitch.md file by combining documentation links from config
 
 readonly VERSION="1.0.0"
-
 readonly SCRIPT_NAME="$(basename "$0")"
-# Resolve script directory
-if command -v realpath > /dev/null 2>&1; then
-  readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-else
-  readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
-fi
-source "${SCRIPT_DIR}/lib/require.sh"
-source "${SCRIPT_DIR}/lib/lockconfig.sh"
-lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 function version() {
   printf "%s\n" "$VERSION"
 }
 
-function main() {
+function usage() {
+  local exit_code="${1:-0}"
+  local output
+  [[ "$exit_code" -eq 0 ]] && output=1 || output=2
 
-  # Output file
-  OUTPUT="stitch.md"
-  if [[ -f "$OUTPUT" ]]; then
-    cp "$OUTPUT" "${OUTPUT}.bak"
-    rm -f "$OUTPUT"
+  >&"$output" printf "Usage: %s [OPTIONS]\n" "$SCRIPT_NAME"
+  >&"$output" printf "\nOptions:\n"
+  >&"$output" printf "  -v, --version   Show version\n"
+  >&"$output" printf "  -h, --help      Show this help\n"
+  >&"$output" printf "\nExit Codes:\n"
+  >&"$output" printf "  0 - Success\n"
+  >&"$output" printf "  1 - Command line error\n"
+  >&"$output" printf "  2 - Missing dependencies\n"
+  >&"$output" printf "  3 - File operation error\n"
+  >&"$output" printf "  4 - Config error\n"
+  >&"$output" printf "\nExamples:\n"
+  >&"$output" printf "  %s\n" "$SCRIPT_NAME"
+  >&"$output" printf "  %s -v\n" "$SCRIPT_NAME"
+
+  exit "$exit_code"
+}
+
+function generate_stitch_file() {
+  # Generate stitch.md from CONTENT_DOCS config
+  #
+  # Globals:
+  #   CONTENT_DOCS - array of label=path entries
+  #   OUTPUT - output filename
+  #
+  # Outputs:
+  #   Creates stitch.md file
+  #   Writes warnings to STDERR for missing files
+  #
+  # Returns:
+  #   0 on success
+  #   3 on file operation error
+  #   4 on config error
+
+  local output="stitch.md"
+  local entry label path
+
+  # Verify CONTENT_DOCS is set and not empty
+  if [[ -z "${CONTENT_DOCS+x}" || ${#CONTENT_DOCS[@]} -eq 0 ]]; then
+    err "CONTENT_DOCS is not set or empty"
+    return 4
+  fi
+
+  # Create backup if output exists
+  if [[ -f "$output" ]]; then
+    if ! cp "$output" "${output}.bak"; then
+      err "Failed to create backup of $output"
+      return 3
+    fi
+    if ! rm -f "$output"; then
+      err "Failed to remove old $output"
+      return 3
+    fi
   fi
 
   # Write header
-  echo "# README" > "$OUTPUT"
-  echo >> "$OUTPUT"
+  echo "# README" > "$output" || return 3
+  echo >> "$output" || return 3
 
-  # Iterate and write links; warn if file is missing
+  # Process each entry
   for entry in "${CONTENT_DOCS[@]}"; do
     IFS='=' read -r label path <<< "$entry"
-    echo "- [$label]($path)" >> "$OUTPUT"
+    echo "- [$label]($path)" >> "$output" || return 3
     if [[ ! -f "$path" ]]; then
-      echo "Warning: File '$path' not found for label '$label'" >&2
+      err "Warning: File '$path' not found for label '$label'"
     fi
   done
+}
 
-  echo "stitch.md generated successfully."
+function main() {
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -v | --version)
+        version
+        exit 0
+        ;;
+      -h | --help)
+        usage 0
+        ;;
+      *)
+        usage 1
+        ;;
+    esac
+  done
+
+  if generate_stitch_file; then
+    out "stitch.md generated successfully."
+  else
+    die "Failed to generate stitch.md"
+  fi
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  # Resolve script directory
+  if command -v realpath > /dev/null 2>&1; then
+    readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+  else
+    readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
+  fi
+
+  source "${SCRIPT_DIR}/lib/require.sh"
+  source "${SCRIPT_DIR}/lib/lockconfig.sh"
+
   require_commands date tee cp rm
+  lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env" || exit 4
   if "$LOGGING"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
