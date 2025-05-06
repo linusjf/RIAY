@@ -2,34 +2,130 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-function get_gemini_models() {
-  # Ensure GEMINI_API_KEY is set
-  : "${GEMINI_API_KEY:?Environment variable GEMINI_API_KEY must be set}"
+# Get available Gemini models from Google's API and save to geminimodelids.txt
+#
+# Globals:
+#   GEMINI_API_KEY - Required API key for authentication
+#   SCRIPT_DIR - Directory where script is located
+#
+# Outputs:
+#   Writes model names to geminimodelids.txt
+#   Errors to STDERR
+#
+# Returns:
+#   0 on success
+#   1 for command line errors
+#   2 for missing dependencies
+#   3 for network errors
+#   4 for API key errors
+#   5 for API request failures
+#   6 for lock file errors
 
-  # Fetch the list of models from the Gemini API
-  response="$(curl::safe_curl_request "https://generativelanguage.googleapis.com/v1beta/models?key=${GEMINI_API_KEY}")"
+readonly VERSION="1.0.0"
 
-  # Extract model IDs, filter for Gemini models, sort them, and store in an array
-  readarray -t gemini_models < <(
-    echo "$response" | jq -r '.models[] | select((.description // "" | test("legacy|deprecated"; "i") | not) and ((.supportedGenerationMethods // []) | map(test("generate")) | any)) | .name' \
-      | grep '^models/gemini' \
-      | sed 's/^models\///' \
-      | sort -r
-  )
-  printf "%s\n" "${gemini_models[@]}" >| geminimodelids.txt
+function version() {
+  printf "%s\n" "$VERSION"
 }
 
-if command -v realpath > /dev/null 2>&1; then
-  readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-else
-  readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
+function usage() {
+  local exit_code="${1:-0}"
+  local output
+  [[ "$exit_code" -eq 0 ]] && output=1 || output=2
+
+  >&"$output" printf "Usage: %s [OPTIONS]\n" "$(basename "$0")"
+  >&"$output" printf "\nOptions:\n"
+  >&"$output" printf "  -v, --version   Show version\n"
+  >&"$output" printf "  -h, --help      Show this help\n"
+  >&"$output" printf "\nExit Codes:\n"
+  >&"$output" printf "  0 - Success\n"
+  >&"$output" printf "  1 - Command line error\n"
+  >&"$output" printf "  2 - Missing dependencies\n"
+  >&"$output" printf "  3 - Network error\n"
+  >&"$output" printf "  4 - API key error\n"
+  >&"$output" printf "  5 - API request failure\n"
+  >&"$output" printf "  6 - Lock file error\n"
+  >&"$output" printf "\nExamples:\n"
+  >&"$output" printf "  %s\n" "$(basename "$0")"
+  >&"$output" printf "  GEMINI_API_KEY=yourkey %s\n" "$(basename "$0")"
+
+  exit "$exit_code"
+}
+
+function get_gemini_models() {
+  # Fetch and filter Gemini models from API
+  #
+  # Outputs:
+  #   Writes filtered model names to geminimodelids.txt
+  # Returns:
+  #   0 on success
+  #   4 on API key error
+  #   5 on API request failure
+
+  local response
+  local -a gemini_models
+
+  # Ensure GEMINI_API_KEY is set
+  : "${GEMINI_API_KEY:?Environment variable GEMINI_API_KEY must be set}" || return 4
+
+  if ! response="$(curl::safe_curl_request "https://generativelanguage.googleapis.com/v1beta/models?key=${GEMINI_API_KEY}")"; then
+    return 5
+  fi
+
+  readarray -t gemini_models < <(
+    echo "$response" | jq -r '.models[] |
+      select((.description // "" | test("legacy|deprecated"; "i") | not) and
+      ((.supportedGenerationMethods // []) | map(test("generate")) | any)) | .name' |
+      grep '^models/gemini' |
+      sed 's/^models\///' |
+      sort -r
+  )
+
+  printf "%s\n" "${gemini_models[@]}" >|geminimodelids.txt
+}
+
+function main() {
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -h | --help)
+      usage 0
+      ;;
+    *)
+      usage 1
+      ;;
+    esac
+  done
+
+  internet::checkinternet || exit 3
+  require_commands grep sed sort jq || exit 2
+  
+  if ! lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"; then
+    exit 6
+  fi
+
+  get_gemini_models || exit $?
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  if command -v realpath >/dev/null 2>&1; then
+    readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+  else
+    readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &>/dev/null && pwd -P)"
+  fi
+  source "${SCRIPT_DIR}/lib/internet.sh"
+  source "${SCRIPT_DIR}/lib/curl.sh"
+  source "${SCRIPT_DIR}/lib/require.sh"
+  source "${SCRIPT_DIR}/lib/lockconfig.sh"
+
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
 fi
-
-source "${SCRIPT_DIR}/lib/internet.sh"
-source "${SCRIPT_DIR}/lib/curl.sh"
-source "${SCRIPT_DIR}/lib/require.sh"
-
-require_commands grep sed sort
-
-internet::checkinternet || exit 1
-get_gemini_models
