@@ -942,7 +942,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3913,6 +3913,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 05,2025](#may-052025)
   - [Hold Fast to Christ](#hold-fast-to-christ)
   - [AI-Generated Summary: The Path of Charity and Spiritual Ascent](#ai-generated-summary-the-path-of-charity-and-spiritual-ascent)
+- [May 06,2025](#may-062025)
+  - [Fire of Love](#fire-of-love)
+  - [AI-Generated Summary: The Holy Spirit and the Fire of Divine Love](#ai-generated-summary-the-holy-spirit-and-the-fire-of-divine-love)
 
 <!-- tocstop -->
 
@@ -4039,6 +4042,22 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 - **Final Blessing**
 
   - The text closes with a reminder: every act of love, whether grand or quiet, echoes eternity.
+
+#### May 06,2025
+
+##### Fire of Love
+
+[![Fire of Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day126.jpg)](https://youtu.be/qxaYV7coMc0 "Fire of Love")
+
+##### AI-Generated Summary: The Holy Spirit and the Fire of Divine Love
+
+- **Divine Origin of the Holy Spirit**: The Holy Spirit proceeds from the mutual love of the Father and the Son, a gift of love so profound it is called the greatest of all gifts. St. Paul and St. Gregory affirm that God desires this love to burn ceaselessly in human hearts.
+- **Mission of Love**: Jesus came to ignite this divine love, and the Father, in His generosity, sent both the Son and the Holy Spirit to guide and transform humanity. The Spirit’s work is central to spiritual devotion and the renewal of the soul.
+- **Fiery Tongues and Holy Fire**: The Holy Spirit appeared as fiery tongues, inspiring believers to pray for divine love. This fire empowers saints to love enemies, forsake worldly attachments, and endure suffering joyfully.
+- **Prayer as the Furnace of Love**: True love for God grows through prayer, which acts like a furnace, sustaining and intensifying the Spirit’s fire. Without prayer, the fire dwindles; with it, the heart is purified and transformed.
+- **Carrying the Cross**: The cross, borne with Jesus, becomes the fuel for this inner fire. Just as fire needs oxygen, the soul needs prayer to keep the Spirit’s flame alive.
+- **A Call for Renewal**: The text implores the Holy Spirit to rekindle love, faith, and hope where they have grown cold, invoking the same power that animated the saints.
+- **Closing Prayers**: The passage concludes with repeated invocations of the _Hail Mary_ and _Glory Be_, honoring Mary and the Trinity, and ends with a blessing of gratitude for divine grace.
 
 ## June
 

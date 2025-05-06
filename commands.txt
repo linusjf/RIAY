@@ -1,5 +1,5 @@
 # commands
-addvideo "nBEGxYpYNhU" "Hold Fast to Christ"
+addvideo "qxaYV7coMc0" "Fire of Love"
 genmonth 5
 stitch
 lintall
