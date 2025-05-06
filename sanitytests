@@ -464,7 +464,7 @@ run_test 30 "Should show usage with --help" 0 "${ADDVIDEOTODAY_SCRIPT}" --help
 
 print_header "Test 31: Invalid inputs"
 run_test 31 "Should reject invalid number of arguments" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" || true
-run_test 31 "Should reject invalid video ID" 1 "${ADDVIDEOTODAY_SCRIPT}" "invalid" "1" || true
+run_test 31 "Should reject invalid video ID" 7 "${ADDVIDEOTODAY_SCRIPT}" "invalid" "1" || true
 run_test 31 "Should reject invalid day number (invalid)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "invalid" || true
 run_test 31 "Should reject invalid day number (negative)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "-1" || true
 run_test 31 "Should reject invalid day number (zero)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "0" || true
