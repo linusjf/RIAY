@@ -50,6 +50,7 @@ Options:
   --from-test NUM    Start running tests from test number NUM
   --tests TESTLIST   Comma-separated list of specific tests to run
   --no-cleanup       Don't clean up test files after running
+  --stop-on-failure  Stop test execution on first failure
   --help             Show this help message
 
 Available tests:
@@ -77,6 +78,7 @@ EOF
 START_FROM=1
 TESTS_TO_RUN=()
 NO_CLEANUP=false
+STOP_ON_FAILURE=false
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --from-test)
@@ -89,6 +91,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --no-cleanup)
       NO_CLEANUP=true
+      shift
+      ;;
+    --stop-on-failure)
+      STOP_ON_FAILURE=true
       shift
       ;;
     --help | -h)
@@ -146,6 +152,10 @@ run_test() {
   else
     printf "\033[31mFAIL (expected %d, got %d)\033[0m\n" "$expected_exit" "$actual_exit"
     ((FAILED_TESTS = FAILED_TESTS + 1))
+    if [[ "$STOP_ON_FAILURE" == true ]]; then
+      print_test_summary
+      exit 1
+    fi
     return 1
   fi
 }
