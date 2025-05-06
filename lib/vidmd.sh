@@ -18,8 +18,6 @@ source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
 source "${SCRIPT_DIR}/lib/date.sh"
 source "${SCRIPT_DIR}/lib/git.sh"
-source "${SCRIPT_DIR}/lib/lockconfig.sh"
-lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 require_commands tr date cat curl gm mv file grep mktemp exiftool dirname rm
 
 if ! declare -f vidmd::usagevidmd > /dev/null; then
