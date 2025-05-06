@@ -20,6 +20,7 @@ source "${SCRIPT_DIR}/lib/date.sh"
 source "${SCRIPT_DIR}/lib/git.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+require_commands date cat curl gm mv file grep mktemp exiftool dirname rm
 
 if ! declare -f vidmd::usagevidmd > /dev/null; then
   ######################################################################
@@ -127,7 +128,6 @@ if ! declare -f vidmd::downloadthumbnail > /dev/null; then
   # Returns: 1 if download fails
   ######################################################################
   vidmd::downloadthumbnail() {
-    require_commands curl
     local url
     url="$(youtube::thumbnailurl "$1")" || return 1
     curl --silent "$url" --output "$2"
@@ -292,7 +292,6 @@ fi
 
 if ! declare -f vidmd::overlayicon > /dev/null; then
   vidmd::overlayicon() {
-    require_commands gm mv file grep mktemp exiftool
 
     # Validate arguments
     if [[ $# -ne 1 ]]; then
