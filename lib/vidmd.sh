@@ -20,6 +20,12 @@ source "${SCRIPT_DIR}/lib/date.sh"
 source "${SCRIPT_DIR}/lib/git.sh"
 require_commands tr date cat curl gm mv file grep mktemp exiftool dirname rm
 
+# overlay icon default values
+: ICON_FILE="${ICON_FILE:=play-button.png}"
+: ICON_SIZE="${ICON_SIZE:=256x256}"
+: ICON_OFFSET="${ICON_OFFSET:=+32+0}"
+: ICON_COMMENT="${ICON_COMMENT:=Play Icon Added}"
+
 if ! declare -f vidmd::usagevidmd > /dev/null; then
   ######################################################################
   # Display usage information for standard video markdown
