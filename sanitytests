@@ -31,7 +31,7 @@ readonly TEST_COMPACT_FILE="compact.txt"
 readonly TEST_COMPACT_DIR="test_compact_dir"
 readonly TEST_VIDEOS_FILE="videos.txt"
 
-require_commands curl git rm mkdir
+require_commands curl git rm mkdir cat
 
 # Test counters
 declare -i TOTAL_TESTS=0

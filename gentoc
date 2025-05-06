@@ -143,14 +143,13 @@ main() {
   if [[ $# -ne 1 ]]; then
     usage $EXIT_INVALID_ARGUMENTS
   fi
-  require_commands markdown-toc-gen || exit $EXIT_DEPENDENCY_ERROR
   validate_input "${file}"
   generate_toc "${file}" || exit $EXIT_TOC_GENERATION_ERROR
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands date tee markdown-toc-gen cat || exit $EXIT_DEPENDENCY_ERROR
   if "$LOGGING"; then
-    require_commands date tee
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

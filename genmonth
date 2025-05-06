@@ -177,8 +177,6 @@ main() {
 
   validate_inputs "$month" "$year" || exit $?
 
-  require_commands date markdown-toc || exit $EXIT_COMMAND_MISSING
-
   if $DRY_RUN; then
     dry_run "$month" "$year"
     exit $EXIT_SUCCESS
@@ -188,8 +186,8 @@ main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands date tee sed || exit $EXIT_COMMAND_MISSING
   if "$LOGGING"; then
-    require_commands date tee
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

@@ -60,8 +60,6 @@ main() {
   local doy="$2"
   local month doy_padded dir relfile imgurl
 
-  require_commands curl realpath mkdir
-
   if [[ ! -f "${SCRIPT_DIR}/lib/vidmd.sh" ]]; then
     echo "Error: ${SCRIPT_DIR}/lib/vidmd.sh not found" >&2
     return "${FAILURE}"
@@ -140,8 +138,8 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 
   $debug && set -x
 
+  require_commands date tee cat curl realpath mkdir
   if "$LOGGING"; then
-    require_commands date tee
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

@@ -73,8 +73,8 @@ function main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands tee date rm cp
   if "$LOGGING"; then
-    require_commands tee date
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

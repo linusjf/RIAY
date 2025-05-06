@@ -69,14 +69,6 @@ validate_input() {
   return 0
 }
 
-check_dependencies() {
-  if ! command -v stitchmd &> /dev/null; then
-    echo "Error: 'stitchmd' command not found in PATH" >&2
-    return ${ERR_DEPENDENCY}
-  fi
-  return 0
-}
-
 generate_readme() {
   if ! stitchmd -o README.md -- stitch.md; then
     echo "Error: Failed to generate README.md" >&2
@@ -122,18 +114,14 @@ main() {
     exit ${ERR_INPUT_FILE}
   fi
 
-  if ! check_dependencies; then
-    exit ${ERR_DEPENDENCY}
-  fi
-
   if ! generate_readme; then
     exit ${ERR_GENERATION}
   fi
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands date tee stitchmd cat || exit ${ERR_DEPENDENCY}
   if "$LOGGING"; then
-    require_commands date tee
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

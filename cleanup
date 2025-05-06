@@ -147,7 +147,6 @@ parse_args() {
 # Main function
 main() {
   parse_args "$@"
-
   # Default behavior - clean both temp files and backups
   remove_temp_files
   clean_backups
@@ -156,8 +155,8 @@ main() {
 
 # Only execute if run as main script
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands date tee cat rm
   if "$LOGGING"; then
-    require_commands date tee
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

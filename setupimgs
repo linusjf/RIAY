@@ -124,8 +124,6 @@ main() {
   local downloads_dir
   downloads_dir="$(get_downloads_dir)"
 
-  require_commands gm rm mv
-
   if ! is_valid_dir "${dir}"; then
     die "Invalid directory: ${dir}"
   fi
@@ -152,8 +150,8 @@ main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands date tee cat gm rm mv
   if "$LOGGING"; then
-    require_commands date tee
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

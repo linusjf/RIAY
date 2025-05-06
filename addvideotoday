@@ -81,10 +81,6 @@ function validate_arguments() {
   fi
 }
 
-function check_required_tools() {
-  require_commands jq curl git || exit $E_MISSING_TOOLS
-}
-
 function fetch_video_metadata() {
   local video_id=$1
   local api_key=$2
@@ -174,8 +170,6 @@ function main() {
   local script_dir month day_string markdown_file image_path
   local api_key github_repo response thumbnail_url title youtube_url
 
-  check_required_tools
-
   require_vars YEAR YOUTUBE_API_KEY || exit $E_MISSING_ENV
 
   internet::checkinternet || exit $E_NO_INTERNET
@@ -239,8 +233,8 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
       *) break ;;
     esac
   done
+  require_commands tee date jq curl git mv cp mktemp grep mkdir || exit $E_MISSING_TOOLS
   if "$LOGGING"; then
-    require_commands tee date
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

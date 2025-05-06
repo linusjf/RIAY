@@ -33,13 +33,11 @@ EOF
 }
 
 function validate_environment() {
-  require_commands parallel find tee
+  require_commands parallel find tee cat
 }
 
 function main() {
   local root_dir="${1:-.}"
-
-  validate_environment || return 1
 
   mapfile -t imgfiles < <(find "$root_dir" -type f -regextype posix-extended -regex '.*/Day[0-9]{3}\.jpg' -print)
   parallel vidmd::overlayicon ::: "${imgfiles[@]}"
@@ -77,8 +75,8 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  validate_environment || exit 1
   if "$LOGGING"; then
-    require_commands tee date
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

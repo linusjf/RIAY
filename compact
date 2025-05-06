@@ -19,6 +19,9 @@ readonly ERR_AWK_FILTERING=3
 readonly ERR_MISSING_REQUIREMENTS=4
 readonly ERR_TEMP_FILE=5
 
+# Check requirements
+require_commands m4 mktemp awk rm date tee cat || exit ${ERR_MISSING_REQUIREMENTS}
+
 # Display usage information
 usage() {
   exitcode="${1:-0}"
@@ -131,9 +134,6 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  # Check requirements
-  source "${SCRIPT_DIR}/lib/require.sh"
-  require_commands m4 mktemp awk rm date tee || exit ${ERR_MISSING_REQUIREMENTS}
   if "$LOGGING"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {

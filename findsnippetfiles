@@ -23,17 +23,6 @@ else
 fi
 
 #######################################
-# Verify system requirements
-# Globals: none
-# Arguments: none
-# Outputs: Error messages if requirements not met
-# Returns: 0 if requirements met, non-zero otherwise
-#######################################
-check_requirements() {
-  require_commands find grep sort
-}
-
-#######################################
 # Main function
 # Globals: none
 # Arguments: none
@@ -41,7 +30,6 @@ check_requirements() {
 # Returns: 0 on success, non-zero on error
 #######################################
 main() {
-  check_requirements
 
   local months=(
     January February March April May June
@@ -56,8 +44,8 @@ main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands tee date grep find sort cat
   if "$LOGGING"; then
-    require_commands tee date
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

@@ -56,9 +56,6 @@ main() {
     shift
   done
 
-  # Check requirements
-  require_commands exiftool file
-
   # Validate files
   if [[ ${#files[@]} -eq 0 ]]; then
     $silent_mode || err "Error: No JPG files specified"
@@ -173,8 +170,9 @@ EOF
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands tee date cat exiftool file
+
   if "$LOGGING"; then
-    require_commands tee date
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

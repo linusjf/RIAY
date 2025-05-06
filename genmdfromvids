@@ -24,12 +24,7 @@ fi
 API_KEY="$YOUTUBE_API_KEY"
 
 # Ensure required tools are installed
-for cmd in jq curl git date tee; do
-  command -v $cmd > /dev/null 2>&1 || {
-    echo "$cmd is required but not installed."
-    exit 1
-  }
-done
+require_commands jq curl git date tee cat
 
 GITHUB_REPO=$(git::get_github_repo)
 # Handle input (file or stdin)

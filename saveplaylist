@@ -32,9 +32,6 @@ source "$SCRIPT_DIR/lib/util.sh"
 source "$SCRIPT_DIR/lib/lockconfig.sh"
 source "$SCRIPT_DIR/lib/curl.sh"
 
-# Check required commands
-require_commands jq
-
 # Load and lock config
 lockconfig::lock_config_vars "$SCRIPT_DIR/config.env"
 
@@ -211,8 +208,9 @@ main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands date tee jq basename
+
   if "$LOGGING"; then
-    require_commands date tee
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

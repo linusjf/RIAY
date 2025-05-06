@@ -66,10 +66,6 @@ function get_day_index() {
   return 1
 }
 
-function check_dependencies() {
-  require_commands jq curl yt-dlp tee
-}
-
 function get_chunk_prompt() {
   local chunk="$1"
   printf "%s\n\n%s\n" "${CHUNK_SUMMARY_PROMPT}" "${chunk}"
@@ -444,8 +440,8 @@ function main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands date jq curl yt-dlp tee cat
   if "$LOGGING"; then
-    require_commands date tee
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
