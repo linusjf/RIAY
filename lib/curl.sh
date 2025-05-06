@@ -231,8 +231,8 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
     >&2 echo "CURL VERBOSE OUTPUT:"
     curl -v "$url" \
       -X "$method" \
-      ${headers:+-H "$(redact_keys "$headers")"} \
-      ${data:+-d "$(redact_keys "$data")"} \
+      ${headers:+-H "$headers"} \
+      ${data:+-d "$data"} \
       --connect-timeout "${CONNECT_TIMEOUT:-30}" \
       --max-time "${MAX_TIME:-90}" \
       --show-error \
