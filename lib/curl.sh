@@ -14,8 +14,12 @@ if [[ -z "${SCRIPT_DIR:-}" ]]; then
 fi
 
 source "${SCRIPT_DIR}/lib/require.sh"
-source "${SCRIPT_DIR}/lib/lockconfig.sh"
-lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+require_commands curl sed cat rm date head tail basename mktemp grep cut tr
+
+: "${CURL_MAX_RETRIES:=3}"
+: "${CURL_INITIAL_RETRY_DELAY:=1}"
+: "${CURL_CONNECT_TIMEOUT:=30}"
+: "${CURL_MAX_TIME:=90}"
 
 if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
   declare -A curl__HTTP_STATUS_CODES=(
@@ -118,9 +122,6 @@ if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
   )
 fi
 
-: "${MAX_RETRIES:=3}"
-: "${INITIAL_RETRY_DELAY:=1}"
-
 if ! declare -f curl::redact_keys > /dev/null; then
   function curl::redact_keys() {
     local input="$1"
@@ -159,19 +160,19 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
     output_file=$(mktemp)
 
     local retry_count=0
-    local delay=$INITIAL_RETRY_DELAY
+    local delay=${CURL_INITIAL_RETRY_DELAY}
     local status_code=0
     local response=""
 
-    while [[ $retry_count -lt $MAX_RETRIES ]]; do
+    while [[ $retry_count -lt ${CURL_MAX_RETRIES} ]]; do
       status_code=0
       response=""
 
       local curl_cmd=(
         curl
         --show-error
-        --connect-timeout "${CONNECT_TIMEOUT:-30}"
-        --max-time "${MAX_TIME:-90}"
+        --connect-timeout "${CURL_CONNECT_TIMEOUT}"
+        --max-time "${CURL_MAX_TIME}"
         --fail-with-body
         --silent
         --write-out "%{http_code}"
@@ -200,7 +201,7 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
       fi
 
       retry_count=$((retry_count + 1))
-      if [[ $retry_count -lt $MAX_RETRIES ]]; then
+      if [[ $retry_count -lt $CURL_MAX_RETRIES ]]; then
         curl::save_failed_response "$data" "$response" "$(basename "$url")"
 
         if [[ $status_code -ge 400 ]] && [[ $status_code -lt 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]]; then
@@ -233,8 +234,8 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
       -X "$method" \
       ${headers:+-H "$headers"} \
       ${data:+-d "$data"} \
-      --connect-timeout "${CONNECT_TIMEOUT:-30}" \
-      --max-time "${MAX_TIME:-90}" \
+      --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
+      --max-time "${CURL_MAX_TIME}" \
       --show-error \
       >&2
 
