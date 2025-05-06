@@ -74,51 +74,47 @@ function get_gemini_models() {
   readarray -t gemini_models < <(
     echo "$response" | jq -r '.models[] |
       select((.description // "" | test("legacy|deprecated"; "i") | not) and
-      ((.supportedGenerationMethods // []) | map(test("generate")) | any)) | .name' |
-      grep '^models/gemini' |
-      sed 's/^models\///' |
-      sort -r
+      ((.supportedGenerationMethods // []) | map(test("generate")) | any)) | .name' \
+      | grep '^models/gemini' \
+      | sed 's/^models\///' \
+      | sort -r
   )
 
-  printf "%s\n" "${gemini_models[@]}" >|geminimodelids.txt
+  printf "%s\n" "${gemini_models[@]}" >| geminimodelids.txt
 }
 
 function main() {
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -v | --version)
-      version
-      exit 0
-      ;;
-    -h | --help)
-      usage 0
-      ;;
-    *)
-      usage 1
-      ;;
+      -v | --version)
+        version
+        exit 0
+        ;;
+      -h | --help)
+        usage 0
+        ;;
+      *)
+        usage 1
+        ;;
     esac
   done
-
-  internet::checkinternet || exit 3
-  require_commands grep sed sort jq || exit 2
-  
-  if ! lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"; then
-    exit 6
-  fi
 
   get_gemini_models || exit $?
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  if command -v realpath >/dev/null 2>&1; then
+  if command -v realpath > /dev/null 2>&1; then
     readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else
-    readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &>/dev/null && pwd -P)"
+    readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
   fi
   source "${SCRIPT_DIR}/lib/internet.sh"
   source "${SCRIPT_DIR}/lib/curl.sh"
   source "${SCRIPT_DIR}/lib/require.sh"
   source "${SCRIPT_DIR}/lib/lockconfig.sh"
+  lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env" || exit 6
+  internet::checkinternet || exit 3
+  require_commands grep sed sort jq || exit 2
 
   if "$LOGGING"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
