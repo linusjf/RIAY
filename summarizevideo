@@ -348,8 +348,6 @@ function main() {
     die "Error: At least one of GEMINI_API_KEY or DEEPSEEK_API_KEY environment variables must be set"
   fi
 
-  check_dependencies
-
   if $verbose; then
     >&2 echo "Starting processing for video ID $VIDEO_ID"
   fi
