@@ -27,6 +27,9 @@ fi
 
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/curl.sh"
+source "${SCRIPT_DIR}/lib/require.sh"
+
+require_commands grep sed sort
 
 internet::checkinternet || exit 1
 get_gemini_models

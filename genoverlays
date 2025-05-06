@@ -9,6 +9,7 @@ readonly SUCCESS=0
 readonly SCRIPT_NAME="$(basename "$0")"
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/util.sh"
+source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 ######################################################################
@@ -66,6 +67,7 @@ done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   if "$LOGGING"; then
+    require_commands date tee
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

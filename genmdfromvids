@@ -7,6 +7,7 @@ else
   readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
 fi
 source "${SCRIPT_DIR}/lib/git.sh"
+source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 # Check for required environment variables
@@ -23,7 +24,7 @@ fi
 API_KEY="$YOUTUBE_API_KEY"
 
 # Ensure required tools are installed
-for cmd in jq curl git; do
+for cmd in jq curl git date tee; do
   command -v $cmd > /dev/null 2>&1 || {
     echo "$cmd is required but not installed."
     exit 1

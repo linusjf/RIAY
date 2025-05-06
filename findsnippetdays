@@ -17,7 +17,7 @@ lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 readonly VERSION="1.0.0"
 
-require_commands sed basename grep find tr
+require_commands sed basename grep find tr date tee
 
 function usage() {
   cat << EOF

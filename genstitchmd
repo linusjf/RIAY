@@ -9,6 +9,7 @@ if command -v realpath > /dev/null 2>&1; then
 else
   readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
 fi
+source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
@@ -43,6 +44,7 @@ function main() {
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   if "$LOGGING"; then
+    require_commands date tee
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

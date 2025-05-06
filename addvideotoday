@@ -17,7 +17,7 @@ readonly E_VIDEO_NOT_FOUND=7
 readonly E_THUMBNAIL_ERROR=8
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -144,7 +144,7 @@ function remove_existing_video_entry() {
       next
     }
     print
-  }' "$file_path" >"$tmp_file"
+  }' "$file_path" > "$tmp_file"
 
   mv "$tmp_file" "$file_path"
 }
@@ -164,7 +164,7 @@ function append_video_info() {
       "$title" "$github_repo" "$image_path" "$youtube_url" "$title"
     echo
     "${script_dir}/summarizevideo" "$video_id"
-  } >>"$file_path"
+  } >> "$file_path"
 }
 
 function main() {
@@ -227,19 +227,20 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -h | --help) usage 0 ;;
-    -v | --version)
-      version
-      exit 0
-      ;;
-    -d | --debug)
-      set -x
-      shift
-      ;;
-    *) break ;;
+      -h | --help) usage 0 ;;
+      -v | --version)
+        version
+        exit 0
+        ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      *) break ;;
     esac
   done
   if "$LOGGING"; then
+    require_commands tee date
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
