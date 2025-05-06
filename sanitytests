@@ -125,6 +125,8 @@ run_test() {
   if ! should_run_test "$test_num"; then
     printf "  %-50s\033[33mSKIPPED\033[0m\n" "$2..."
     ((SKIPPED_TESTS = SKIPPED_TESTS + 1))
+    git restore .
+    git clean -fd
     return 0
   fi
   printf "  %-50s" "$2..."
