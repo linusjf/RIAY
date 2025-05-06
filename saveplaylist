@@ -196,13 +196,9 @@ main() {
   fi
 
   # Check if playlist exists before proceeding
-  if ! check_playlist_exists "$playlist_id"; then
-    exit $?
-  fi
+  check_playlist_exists "$playlist_id" || exit $?
 
-  if ! save_playlist "$playlist_id"; then
-    exit $?
-  fi
+  save_playlist "$playlist_id" || exit $?
 
   exit $EXIT_SUCCESS
 }
