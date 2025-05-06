@@ -551,7 +551,7 @@ run_test 45 "Should show usage with --help" 0 "${SAVEPLAYLIST_SCRIPT}" --help
 
 print_header "Test 46: Invalid inputs"
 run_test 46 "Should reject missing playlist ID" 2 "${SAVEPLAYLIST_SCRIPT}" || true
-run_test 46 "Should reject invalid playlist ID" 1 "${SAVEPLAYLIST_SCRIPT}" "invalid" || true
+run_test 46 "Should reject invalid playlist ID" 4 "${SAVEPLAYLIST_SCRIPT}" "invalid" || true
 run_test 46 "Should reject non-existent playlist " 4 "${SAVEPLAYLIST_SCRIPT}" "PL4iIJvj6ypuG9v3Kg80Qt2ZUnspPHvXO" || true
 
 print_header "Test 47: Verbose mode"
