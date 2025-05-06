@@ -7,6 +7,7 @@ shopt -s inherit_errexit
 
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "$SCRIPT_DIR/lib/date.sh"
+source "$SCRIPT_DIR/lib/require.sh"
 source "$SCRIPT_DIR/lib/lockconfig.sh"
 lockconfig::lock_config_vars "$SCRIPT_DIR/config.env"
 readonly ADDVIDEO_SCRIPT="${SCRIPT_DIR}/addvideo"
@@ -29,6 +30,8 @@ readonly TEST_PLAYLIST_FILE="test_playlist.txt"
 readonly TEST_COMPACT_FILE="compact.txt"
 readonly TEST_COMPACT_DIR="test_compact_dir"
 readonly TEST_VIDEOS_FILE="videos.txt"
+
+require_commands curl git rm mkdir
 
 # Test counters
 declare -i TOTAL_TESTS=0
