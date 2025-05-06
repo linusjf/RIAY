@@ -94,6 +94,7 @@ main() {
 
     # Generate compact version when month changes
     if [[ "${oldmonth}" != "${month}" ]]; then
+      # shellcheck disable=SC2153
       "${SCRIPT_DIR}/genmonth" "$(date::monthnumberfrommonth "${oldmonth}" "${YEAR}")"
       oldmonth="${month}"
     fi

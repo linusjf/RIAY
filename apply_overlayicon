@@ -52,11 +52,11 @@ while [[ $# -gt 0 ]]; do
       exit 0
       ;;
     -v | --verbose)
-      verbose=true
+      export verbose=true
       shift
       ;;
     -q | --quiet)
-      quiet=true
+      export quiet=true
       shift
       ;;
     --version)
