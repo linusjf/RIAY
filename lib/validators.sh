@@ -62,21 +62,9 @@ if ! declare -f validators::validate_file > /dev/null; then
   function validators::validate_file() {
     local file="$1"
 
-    if [[ $# -ne 1 ]]; then
-      err "Error: Exactly one argument required"
-      return 1
-    fi
-
-    if [[ ! -f "${file}" ]]; then
-      err "Error: '${file}' is not a valid file"
-      return 2
-    fi
-
-    if [[ ! -r "${file}" ]]; then
-      err "Error: Cannot read '${file}'"
-      return 2
-    fi
-    return 0
+    validators::validate_arg_count "$#" 1 "Error: Exactly one argument required"
+    validators::file_exists "$file"
+    validators::file_readable "$file"
   }
 fi
 
