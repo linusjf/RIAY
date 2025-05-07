@@ -8,6 +8,7 @@ readonly SCRIPT_NAME="$(basename "$0")"
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/date.sh"
+source "${SCRIPT_DIR}/lib/validators.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 DRY_RUN=false
@@ -59,12 +60,12 @@ validate_inputs() {
   local month="$1"
   local year="$2"
 
-  if ! date::isnumeric "$month"; then
+  if ! validators::isnumeric "$month"; then
     echo "Error: Month must be a number" >&2
     return $EXIT_VALIDATION_ERROR
   fi
 
-  if ! date::isnumeric "$year"; then
+  if ! validators::isnumeric "$year"; then
     echo "Error: Year must be a number" >&2
     return $EXIT_VALIDATION_ERROR
   fi
@@ -74,8 +75,7 @@ validate_inputs() {
     return $EXIT_VALIDATION_ERROR
   fi
 
-  month=$((10#$month))
-  if ((month < 1 || month > 12)); then
+  if ! date::validatemonth "$month"; then
     echo "Error: Month must be between 1 and 12" >&2
     return $EXIT_VALIDATION_ERROR
   fi

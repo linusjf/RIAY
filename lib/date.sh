@@ -16,6 +16,7 @@ fi
 
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
+source "${SCRIPT_DIR}/lib/validators.sh"
 
 #######################################
 # Validate month number
@@ -35,21 +36,6 @@ if ! declare -f date::validatemonth > /dev/null; then
   export -f date::validatemonth
 fi
 
-if ! declare -f date::isnumeric > /dev/null; then
-  ######################################################################
-  # Check if input is numeric
-  # Globals: None
-  # Arguments:
-  #   $1 - Value to check
-  # Outputs: None
-  # Returns: 0 if numeric, 1 otherwise
-  ######################################################################
-  date::isnumeric() {
-    [[ "$1" =~ ^[0-9]+$ ]]
-  }
-  export -f date::isnumeric
-fi
-
 if ! declare -f date::mfromdoy > /dev/null; then
   ######################################################################
   # Get month name from day of year
@@ -60,7 +46,7 @@ if ! declare -f date::mfromdoy > /dev/null; then
   # Returns: None (exits with status 1 on error)
   ######################################################################
   date::mfromdoy() {
-    date::isnumeric "$1" || die "$1 is not numeric"
+    validators::isnumeric "$1" || die "$1 is not numeric"
     require_commands date
     local day
     # convert number to base ten
@@ -81,7 +67,7 @@ if ! declare -f date::datefromdoy > /dev/null; then
   # Returns: None (exits with status 1 on error)
   ######################################################################
   date::datefromdoy() {
-    date::isnumeric "$1" || die "$1 is not numeric"
+    validators::isnumeric "$1" || die "$1 is not numeric"
     require_commands date
     local day
     # convert number to base ten

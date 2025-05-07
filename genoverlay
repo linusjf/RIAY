@@ -67,7 +67,7 @@ main() {
 
   source "${SCRIPT_DIR}/lib/vidmd.sh"
 
-  if ! date::isnumeric "${doy}"; then
+  if ! validators::isnumeric "${doy}"; then
     usage
   fi
 
@@ -114,7 +114,9 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 
   # Source required libraries
   source "${SCRIPT_DIR}/lib/require.sh"
+  source "${SCRIPT_DIR}/lib/date.sh"
   source "${SCRIPT_DIR}/lib/youtube.sh"
+  source "${SCRIPT_DIR}/lib/validators.sh"
 
   source "${SCRIPT_DIR}/lib/lockconfig.sh"
   lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"

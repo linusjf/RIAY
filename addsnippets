@@ -11,6 +11,7 @@ readonly SCRIPT_NAME="$(basename "$0")"
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 # Source required libraries
 source "${SCRIPT_DIR}/lib/date.sh"
+source "${SCRIPT_DIR}/lib/validators.sh"
 source "${SCRIPT_DIR}/lib/git.sh"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
@@ -50,7 +51,7 @@ main() {
 
   # Validate numeric inputs
   for doy in "$@"; do
-    if ! date::isnumeric "${doy}"; then
+    if ! validators::isnumeric "${doy}"; then
       usage
     fi
   done

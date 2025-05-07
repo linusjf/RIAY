@@ -17,6 +17,21 @@ if [[ -z "${SCRIPT_DIR:-}" ]]; then
 fi
 source "${SCRIPT_DIR}/lib/util.sh"
 
+if ! declare -f validators::isnumeric > /dev/null; then
+  ######################################################################
+  # Check if input is numeric
+  # Globals: None
+  # Arguments:
+  #   $1 - Value to check
+  # Outputs: None
+  # Returns: 0 if numeric, 1 otherwise
+  ######################################################################
+  validators::isnumeric() {
+    [[ "$1" =~ ^[0-9]+$ ]]
+  }
+  export -f validators::isnumeric
+fi
+
 if ! declare -f validators::validate_input > /dev/null; then
   ######################################################################
   # Validate input length

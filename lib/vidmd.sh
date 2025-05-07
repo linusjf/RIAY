@@ -235,7 +235,7 @@ if ! declare -f vidmd::genvidthmd > /dev/null; then
 
     # Validate day of year if provided
     if [[ -n "$doy" ]]; then
-      if ! date::isnumeric "$doy"; then
+      if ! validators::isnumeric "$doy"; then
         die "Error: 'doy' must be a numeric value"
       fi
       vidmd::vidmdloc "$vid" "$vidurl" "$caption" "$doy"
