@@ -80,7 +80,69 @@ if ! declare -f validators::validate_file > /dev/null; then
   }
 fi
 
+if ! declare -f validators::validate_arg_count > /dev/null; then
+  ######################################################################
+  # Validate argument count
+  # Globals: none
+  # Arguments:
+  #   $1 - actual count
+  #   $2 - expected count
+  #   $3 - error message (optional)
+  # Outputs: error message to STDERR on failure
+  # Returns: exits with status 1 on invalid input
+  ######################################################################
+  function validators::validate_arg_count() {
+    local actual="$1" expected="$2" message="${3:-Incorrect number of arguments}"
+    if [[ "$actual" -ne "$expected" ]]; then
+      err "Error: $message (expected $expected, got $actual)"
+      return 1
+    fi
+    return 0
+  }
+fi
+
+if ! declare -f validators::file_exists > /dev/null; then
+  ######################################################################
+  # Check if file exists
+  # Globals: none
+  # Arguments:
+  #   $1 - path to file
+  # Outputs: error message to STDERR on failure
+  # Returns: exits with status 2 if file doesn't exist
+  ######################################################################
+  function validators::file_exists() {
+    local file="$1"
+    if [[ ! -e "${file}" ]]; then
+      err "Error: '${file}' does not exist"
+      return 2
+    fi
+    return 0
+  }
+fi
+
+if ! declare -f validators::file_readable > /dev/null; then
+  ######################################################################
+  # Check if file is readable
+  # Globals: none
+  # Arguments:
+  #   $1 - path to file
+  # Outputs: error message to STDERR on failure
+  # Returns: exits with status 2 if file isn't readable
+  ######################################################################
+  function validators::file_readable() {
+    local file="$1"
+    if [[ ! -r "${file}" ]]; then
+      err "Error: '${file}' is not readable"
+      return 2
+    fi
+    return 0
+  }
+fi
+
 # Export all functions at the end
 export -f validators::isnumeric
 export -f validators::validate_input
 export -f validators::validate_file
+export -f validators::validate_arg_count
+export -f validators::file_exists
+export -f validators::file_readable
