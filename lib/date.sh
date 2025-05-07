@@ -36,6 +36,37 @@ if ! declare -f date::validatemonth > /dev/null; then
   export -f date::validatemonth
 fi
 
+if ! declare -f date::validate_daynumber > /dev/null; then
+  ######################################################################
+  # Validate day number for a given year
+  # Globals: None
+  # Arguments:
+  #   $1 - Day number
+  #   $2 - Year
+  # Outputs: Error to STDERR if invalid
+  # Returns: 0 if valid, 1 otherwise
+  ######################################################################
+  date::validate_daynumber() {
+    validators::isnumeric "$1" || {
+      err "Error: Day number must be numeric"
+      return 1
+    }
+    validators::isnumeric "$2" || {
+      err "Error: Year must be numeric"
+      return 1
+    }
+
+    local max_days
+    max_days=$(date::daycount "$2")
+    [[ $1 -ge 1 && $1 -le $max_days ]] || {
+      err "Error: Day number must be between 1 and $max_days for year $2"
+      return 1
+    }
+    return 0
+  }
+  export -f date::validate_daynumber
+fi
+
 if ! declare -f date::mfromdoy > /dev/null; then
   ######################################################################
   # Get month name from day of year
