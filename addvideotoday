@@ -15,6 +15,12 @@ readonly E_MISSING_ENV=5
 readonly E_MISSING_FILE=6
 readonly E_VIDEO_NOT_FOUND=7
 readonly E_THUMBNAIL_ERROR=8
+readonly E_METADATA_FETCH_FAILED=9
+readonly E_IMAGE_PROCESSING_FAILED=10
+readonly E_FILE_BACKUP_FAILED=11
+readonly E_GIT_REPO_NOT_FOUND=12
+readonly E_INVALID_VIDEO_ID=13
+readonly E_DIRECTORY_CREATION_FAILED=14
 
 # Load required libraries
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
@@ -39,7 +45,7 @@ function usage() {
 
   >&"$output" printf "Usage: %s <video_id> <day_number>\n" "$(basename "$0")"
   >&"$output" printf "Adds YouTube video metadata to daily markdown files.\n"
-  >&"$output" printf "  <video_id>   The YouTube video ID.\n"
+  >&"$output" printf "  <video_id>   The YouTube video ID (11 characters).\n"
   >&"$output" printf "  <day_number> The day number (1-366).\n\n"
   >&"$output" printf "Exit codes:\n"
   >&"$output" printf "  %d - Invalid arguments\n" "$E_INVALID_ARGS"
@@ -49,7 +55,13 @@ function usage() {
   >&"$output" printf "  %d - Missing required environment variables\n" "$E_MISSING_ENV"
   >&"$output" printf "  %d - Markdown file not found\n" "$E_MISSING_FILE"
   >&"$output" printf "  %d - Video not found on YouTube\n" "$E_VIDEO_NOT_FOUND"
-  >&"$output" printf "  %d - Thumbnail error\n" "$E_THUMBNAIL_ERROR"
+  >&"$output" printf "  %d - Thumbnail download/processing failed\n" "$E_THUMBNAIL_ERROR"
+  >&"$output" printf "  %d - Failed to fetch video metadata\n" "$E_METADATA_FETCH_FAILED"
+  >&"$output" printf "  %d - Image processing failed\n" "$E_IMAGE_PROCESSING_FAILED"
+  >&"$output" printf "  %d - File backup failed\n" "$E_FILE_BACKUP_FAILED"
+  >&"$output" printf "  %d - Git repository not found\n" "$E_GIT_REPO_NOT_FOUND"
+  >&"$output" printf "  %d - Invalid video ID format\n" "$E_INVALID_VIDEO_ID"
+  >&"$output" printf "  %d - Failed to create directory\n" "$E_DIRECTORY_CREATION_FAILED"
   >&"$output" printf "\nExample: %s ABCDEF12345 42\n" "$(basename "$0")"
   exit "$exit_code"
 }
@@ -62,6 +74,11 @@ function validate_arguments() {
   if ! validators::validate_arg_count "$#" 2; then
     usage $E_INVALID_ARGS
   fi
+  
+  if ! [[ "$1" =~ ^[a-zA-Z0-9_-]{11}$ ]]; then
+    die "Error: Invalid video ID format (must be 11 characters)" $E_INVALID_VIDEO_ID
+  fi
+  
   if ! date::validate_daynumber "$2"; then
     usage $E_INVALID_DAY
   fi
@@ -72,15 +89,17 @@ function fetch_video_metadata() {
   local api_key=$2
   local api_url="https://www.googleapis.com/youtube/v3/videos?part=snippet&id=$video_id&key=$api_key"
 
-  curl -s "$api_url"
+  curl -s "$api_url" || die "Failed to fetch video metadata" $E_METADATA_FETCH_FAILED
 }
 
 function extract_thumbnail_url() {
-  jq -r '.items[0].snippet.thumbnails | to_entries | sort_by(.value.width) | last.value.url'
+  jq -r '.items[0].snippet.thumbnails | to_entries | sort_by(.value.width) | last.value.url' || \
+    die "Failed to extract thumbnail URL" $E_METADATA_FETCH_FAILED
 }
 
 function extract_video_title() {
-  jq -r '.items[0].snippet.title'
+  jq -r '.items[0].snippet.title' || \
+    die "Failed to extract video title" $E_METADATA_FETCH_FAILED
 }
 
 function download_thumbnail() {
@@ -91,7 +110,7 @@ function download_thumbnail() {
 
 function backup_file() {
   local file_path=$1
-  cp "$file_path" "${file_path}.bak"
+  cp "$file_path" "${file_path}.bak" || return $E_FILE_BACKUP_FAILED
   out "Saving backup to ${file_path}.bak"
 }
 
@@ -100,7 +119,7 @@ function remove_existing_video_entry() {
   local video_id=$2
   local tmp_file
 
-  tmp_file=$(mktemp)
+  tmp_file=$(mktemp) || die "Failed to create temporary file" $E_FILE_BACKUP_FAILED
 
   awk -v vid="$video_id" '
   BEGIN { skip = 0 }
@@ -126,9 +145,9 @@ function remove_existing_video_entry() {
       next
     }
     print
-  }' "$file_path" > "$tmp_file"
+  }' "$file_path" > "$tmp_file" || return $E_FILE_BACKUP_FAILED
 
-  mv "$tmp_file" "$file_path"
+  mv "$tmp_file" "$file_path" || return $E_FILE_BACKUP_FAILED
 }
 
 function append_video_info() {
@@ -146,7 +165,7 @@ function append_video_info() {
       "$title" "$github_repo" "$image_path" "$youtube_url" "$title"
     echo
     "${script_dir}/summarizevideo" "$video_id"
-  } >> "$file_path"
+  } >> "$file_path" || die "Failed to append video info" $E_FILE_BACKUP_FAILED
 }
 
 function main() {
@@ -161,7 +180,7 @@ function main() {
   internet::checkinternet || exit $E_NO_INTERNET
 
   api_key="$YOUTUBE_API_KEY"
-  github_repo=$(git::get_github_repo)
+  github_repo=$(git::get_github_repo) || exit $E_GIT_REPO_NOT_FOUND
 
   printf -v day_string "Day%03d" "$day_num"
   # shellcheck disable=SC2153
@@ -174,7 +193,7 @@ function main() {
     die "Error: Markdown file $markdown_file does not exist" $E_MISSING_FILE
   fi
 
-  mkdir -p "$month/jpgs"
+  mkdir -p "$month/jpgs" || die "Failed to create directory" $E_DIRECTORY_CREATION_FAILED
 
   if youtube::check_video_exists "$video_id"; then
     response=$(fetch_video_metadata "$video_id" "$api_key")
@@ -186,17 +205,17 @@ function main() {
     fi
 
     download_thumbnail "$thumbnail_url" "$image_path" || exit $E_THUMBNAIL_ERROR
-    vidmd::overlayicon "$image_path"
+    vidmd::overlayicon "$image_path" || exit $E_IMAGE_PROCESSING_FAILED
     youtube_url="https://youtu.be/$video_id"
 
-    backup_file "$markdown_file"
+    backup_file "$markdown_file" || exit $E_FILE_BACKUP_FAILED
 
     if grep -Fq "$video_id" "$markdown_file"; then
-      remove_existing_video_entry "$markdown_file" "$video_id"
+      remove_existing_video_entry "$markdown_file" "$video_id" || exit $E_FILE_BACKUP_FAILED
     fi
 
     append_video_info "$markdown_file" "$title" "$github_repo" \
-      "$image_path" "$youtube_url" "$SCRIPT_DIR" "$video_id"
+      "$image_path" "$youtube_url" "$SCRIPT_DIR" "$video_id" || exit $E_FILE_BACKUP_FAILED
 
     out "Appended video info to $markdown_file"
   else
