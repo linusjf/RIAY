@@ -51,3 +51,34 @@ if ! declare -f validators::validate_input > /dev/null; then
   }
   export -f validators::validate_input
 fi
+
+if ! declare -f validators::validate_file > /dev/null; then
+  ######################################################################
+  # Validate file exists and is readable
+  # Globals: none
+  # Arguments:
+  #   $1 - path to file
+  # Outputs: error message to STDERR on failure
+  # Returns: exits with status 2 on invalid input
+  ######################################################################
+  validators::validate_file() {
+    local file="$1"
+
+    if [[ $# -ne 1 ]]; then
+      err "Error: Exactly one argument required"
+      return 1
+    fi
+
+    if [[ ! -f "${file}" ]]; then
+      err "Error: '${file}' is not a valid file"
+      return 2
+    fi
+
+    if [[ ! -r "${file}" ]]; then
+      err "Error: Cannot read '${file}'"
+      return 2
+    fi
+    return 0
+  }
+  export -f validators::validate_file
+fi

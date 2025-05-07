@@ -24,34 +24,8 @@ else
 fi
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
+source "${SCRIPT_DIR}/lib/validators.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
-
-#######################################
-# Validate input file exists and is readable
-# Globals: none
-# Arguments:
-#   file - path to markdown file
-# Outputs: error message to STDERR on failure
-# Returns: exits with status EXIT_FILE_ERROR on invalid input
-#######################################
-validate_input() {
-  local file="$1"
-
-  if [[ $# -ne 1 ]]; then
-    err "Error: Exactly one argument required"
-    usage $EXIT_INVALID_ARGUMENTS
-  fi
-
-  if [[ ! -f "${file}" ]]; then
-    err "Error: '${file}' is not a valid file"
-    exit $EXIT_FILE_ERROR
-  fi
-
-  if [[ ! -r "${file}" ]]; then
-    err "Error: Cannot read '${file}'"
-    exit $EXIT_FILE_ERROR
-  fi
-}
 
 #######################################
 # Generate or update table of contents
@@ -143,7 +117,7 @@ main() {
   if [[ $# -ne 1 ]]; then
     usage $EXIT_INVALID_ARGUMENTS
   fi
-  validate_input "${file}"
+  validators::validate_file "${file}" || exit $EXIT_FILE_ERROR
   generate_toc "${file}" || exit $EXIT_TOC_GENERATION_ERROR
 }
 
