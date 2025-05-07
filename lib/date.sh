@@ -18,6 +18,8 @@ source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
 source "${SCRIPT_DIR}/lib/validators.sh"
 
+require_commands date
+
 #######################################
 # Validate month number
 # Globals: none
@@ -47,6 +49,7 @@ if ! declare -f date::validate_daynumber > /dev/null; then
   # Returns: 0 if valid, 1 otherwise
   ######################################################################
   date::validate_daynumber() {
+    validators::validate_arg_count "$#" 2
     validators::isnumeric "$1" || {
       err "Error: Day number must be numeric"
       return 1
@@ -78,7 +81,6 @@ if ! declare -f date::mfromdoy > /dev/null; then
   ######################################################################
   date::mfromdoy() {
     validators::isnumeric "$1" || die "$1 is not numeric"
-    require_commands date
     local day
     # convert number to base ten
     day=$((10#$1))
@@ -99,7 +101,6 @@ if ! declare -f date::datefromdoy > /dev/null; then
   ######################################################################
   date::datefromdoy() {
     validators::isnumeric "$1" || die "$1 is not numeric"
-    require_commands date
     local day
     # convert number to base ten
     day=$((${1}))
@@ -119,7 +120,6 @@ if ! declare -f date::monthfromnumber > /dev/null; then
   # Returns: None (exits with status 1 on error)
   ######################################################################
   date::monthfromnumber() {
-    require_commands date
     case $1 in
       [1-9] | 1[0-2]) date -d "${1}/01" +%B ;;
       0[1-9]) date -d "${1}/01" +%B ;;
@@ -131,7 +131,6 @@ fi
 
 if ! declare -f date::monthnumberfrommonth > /dev/null; then
   date::monthnumberfrommonth() {
-    require_commands date
     month_name="$1"
     year="$2"
     month_number=$(date -d "1 $month_name $year" +"%m")

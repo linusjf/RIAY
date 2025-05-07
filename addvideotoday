@@ -23,7 +23,7 @@ readonly E_INVALID_VIDEO_ID=13
 readonly E_DIRECTORY_CREATION_FAILED=14
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -74,12 +74,12 @@ function validate_arguments() {
   if ! validators::validate_arg_count "$#" 2; then
     usage $E_INVALID_ARGS
   fi
-  
+
   if ! [[ "$1" =~ ^[a-zA-Z0-9_-]{11}$ ]]; then
     die "Error: Invalid video ID format (must be 11 characters)" $E_INVALID_VIDEO_ID
   fi
-  
-  if ! date::validate_daynumber "$2"; then
+
+  if ! date::validate_daynumber "$2" "$YEAR"; then
     usage $E_INVALID_DAY
   fi
 }
@@ -93,12 +93,12 @@ function fetch_video_metadata() {
 }
 
 function extract_thumbnail_url() {
-  jq -r '.items[0].snippet.thumbnails | to_entries | sort_by(.value.width) | last.value.url' || \
+  jq -r '.items[0].snippet.thumbnails | to_entries | sort_by(.value.width) | last.value.url' ||
     die "Failed to extract thumbnail URL" $E_METADATA_FETCH_FAILED
 }
 
 function extract_video_title() {
-  jq -r '.items[0].snippet.title' || \
+  jq -r '.items[0].snippet.title' ||
     die "Failed to extract video title" $E_METADATA_FETCH_FAILED
 }
 
@@ -145,7 +145,7 @@ function remove_existing_video_entry() {
       next
     }
     print
-  }' "$file_path" > "$tmp_file" || return $E_FILE_BACKUP_FAILED
+  }' "$file_path" >"$tmp_file" || return $E_FILE_BACKUP_FAILED
 
   mv "$tmp_file" "$file_path" || return $E_FILE_BACKUP_FAILED
 }
@@ -165,7 +165,7 @@ function append_video_info() {
       "$title" "$github_repo" "$image_path" "$youtube_url" "$title"
     echo
     "${script_dir}/summarizevideo" "$video_id"
-  } >> "$file_path" || die "Failed to append video info" $E_FILE_BACKUP_FAILED
+  } >>"$file_path" || die "Failed to append video info" $E_FILE_BACKUP_FAILED
 }
 
 function main() {
@@ -226,16 +226,16 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -h | --help) usage 0 ;;
-      -v | --version)
-        version
-        exit 0
-        ;;
-      -d | --debug)
-        set -x
-        shift
-        ;;
-      *) break ;;
+    -h | --help) usage 0 ;;
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *) break ;;
     esac
   done
   require_commands tee date jq curl git mv cp mktemp grep mkdir || exit $E_MISSING_TOOLS
