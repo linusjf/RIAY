@@ -67,21 +67,6 @@ get_findsnippetfiles_path() {
 }
 
 #######################################
-# Validate month number
-# Globals: none
-# Arguments:
-#   $1 - Month number
-# Outputs: Error to STDERR if invalid
-# Returns: 0 if valid, 1 otherwise
-#######################################
-validate_month() {
-  [[ "$1" =~ ^[1-9]$|^1[0-2]$ ]] || {
-    err "Error: Month number must be between 1 and 12"
-    return 1
-  }
-}
-
-#######################################
 # Process files for a month
 # Globals: GITHUB_USERNAME
 # Arguments:
@@ -228,7 +213,7 @@ main() {
       ;;
   esac
 
-  validate_month "$1" || exit 1
+  date::validatemonth "$1" || exit 1
 
   [[ -n "${GITHUB_USERNAME:-}" ]] \
     || die "Error: GITHUB_USERNAME environment variable not set"

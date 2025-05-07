@@ -17,6 +17,24 @@ fi
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
 
+#######################################
+# Validate month number
+# Globals: none
+# Arguments:
+#   $1 - Month number
+# Outputs: Error to STDERR if invalid
+# Returns: 0 if valid, 1 otherwise
+#######################################
+if ! declare -f date::validatemonth > /dev/null; then
+  date::validatemonth() {
+    [[ "$1" =~ ^[1-9]$|^1[0-2]$ ]] || {
+      err "Error: Month number must be between 1 and 12"
+      return 1
+    }
+  }
+  export -f date::validatemonth
+fi
+
 if ! declare -f date::isnumeric > /dev/null; then
   ######################################################################
   # Check if input is numeric
