@@ -1,3 +1,4 @@
 myst-parser
 cairosvg
 sphinxcontrib-svg2pdfconverter[CairoSVG]
+sphinx_rtd_theme

@@ -16,7 +16,7 @@ master_doc = "index"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser", "sphinxcontrib.cairosvgconverter"]
+extensions = ["myst_parser", "sphinxcontrib.cairosvgconverter", "sphinx_rtd_theme"]
 
 templates_path = ["_templates"]
 exclude_patterns = [
@@ -42,8 +42,8 @@ suppress_warnings = ["toc.not_included", "myst.xref_missing", "image/svg+xml"]
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "alabaster"
-
+#html_theme = "alabaster"
+html_theme = "sphinx_rtd_theme"
 # -- Options for PDF output
 latex_engine = "lualatex"
 
