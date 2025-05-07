@@ -59,24 +59,10 @@ function version() {
 }
 
 function validate_arguments() {
-  if [ $# -ne 2 ]; then
-    err "Error: Invalid number of arguments"
+  if ! validators::validate_arg_count "$#" 2; then
     usage $E_INVALID_ARGS
   fi
-  if [[ "${2}" =~ ^-?[0-9]+$ ]]; then
-    if [[ "${2}" -le 0 ]] || [[ "${2}" -gt 366 ]]; then
-      err "Error: Invalid day number ${2}: Outside range 1 - 366"
-      usage $E_INVALID_DAY
-    fi
-  else
-    usage $E_INVALID_DAY
-  fi
-  # shellcheck disable=2153
-  daycount="$(date::daycount "${YEAR}")"
-  if [[ "${2}" -ge 0 ]] && [[ "$2" -le "$daycount" ]]; then
-    return 0
-  else
-    err "Error: ${YEAR} has 365 days only."
+  if ! date::validate_daynumber "$2"; then
     usage $E_INVALID_DAY
   fi
 }
