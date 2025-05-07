@@ -10,15 +10,19 @@ shopt -s inherit_errexit
 
 readonly VIDEO_ID_LENGTH=11
 readonly MAX_CAPTION_LENGTH=100
+
 # Source utility functions
-if [[ -z "${SCRIPT_DIR:-""}" ]]; then
+if [[ -z "${SCRIPT_DIR:-}" ]]; then
   readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 fi
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
 source "${SCRIPT_DIR}/lib/date.sh"
 source "${SCRIPT_DIR}/lib/git.sh"
-require_commands tr date cat curl gm mv file grep mktemp exiftool dirname rm
+source "${SCRIPT_DIR}/lib/validators.sh"
+source "${SCRIPT_DIR}/lib/filetypes.sh"
+
+require_commands date cat curl gm mv grep mktemp exiftool dirname rm
 
 # overlay icon default values
 : ICON_FILE="${ICON_FILE:=play-button.png}"
@@ -180,26 +184,6 @@ if ! declare -f vidmd::vidmdloc > /dev/null; then
   export -f vidmd::vidmdloc
 fi
 
-if ! declare -f vidmd::validate_input > /dev/null; then
-  ######################################################################
-  # Validate input length
-  # Globals: None
-  # Arguments:
-  #   $1 - Input value
-  #   $2 - Maximum length
-  #   $3 - Error message prefix
-  # Outputs: Error message to STDERR if validation fails
-  # Returns: None (exits with status 1 on error)
-  ######################################################################
-  vidmd::validate_input() {
-    local value="$1" max_length="$2" error_message="$3"
-    [[ -z "$value" ]] && die "Error: $error_message cannot be empty"
-    [[ ${#value} -gt "$max_length" ]] && die "Error: $error_message too long. Maximum $max_length characters"
-    return 0
-  }
-  export -f vidmd::validate_input
-fi
-
 if ! declare -f vidmd::validate_vid > /dev/null; then
   ######################################################################
   # Validate video ID format
@@ -212,7 +196,7 @@ if ! declare -f vidmd::validate_vid > /dev/null; then
   ######################################################################
   vidmd::validate_vid() {
     [[ "$1" =~ ^[a-zA-Z0-9_-]{$VIDEO_ID_LENGTH}$ ]] || die "Invalid video ID $1. Expected $VIDEO_ID_LENGTH characters"
-    vidmd::validate_input "$1" "$VIDEO_ID_LENGTH" "Video ID"
+    validators::validate_input "$1" "$VIDEO_ID_LENGTH" "Video ID"
   }
   export -f vidmd::validate_vid
 fi
@@ -228,7 +212,7 @@ if ! declare -f vidmd::validate_caption > /dev/null; then
   # Returns: None (exits with status 1 on error)
   ######################################################################
   vidmd::validate_caption() {
-    vidmd::validate_input "$1" "$MAX_CAPTION_LENGTH" "Caption"
+    validators::validate_input "$1" "$MAX_CAPTION_LENGTH" "Caption"
   }
   export -f vidmd::validate_caption
 fi
@@ -272,28 +256,6 @@ if ! declare -f vidmd::has_play_icon > /dev/null; then
   export -f vidmd::has_play_icon
 fi
 
-######################################################################
-# Verify file is a valid JPEG
-######################################################################
-if ! declare -f vidmd::is_jpeg_file > /dev/null; then
-  vidmd::is_jpeg_file() {
-    file "$1" | grep -q 'JPEG'
-  }
-  export -f vidmd::is_jpeg_file
-fi
-
-######################################################################
-######################################################################
-if ! declare -f vidmd::is_jpeg_extension > /dev/null; then
-  vidmd::is_jpeg_extension() {
-    local ext="${1##*.}"
-    local ext_lower
-    ext_lower=$(echo "${ext}" | tr '[:upper:]' '[:lower:]')
-    [[ "${ext_lower}" == "jpg" || "${ext_lower}" == "jpeg" ]]
-  }
-  export -f vidmd::is_jpeg_extension
-fi
-
 if ! declare -f vidmd::overlayicon > /dev/null; then
   vidmd::overlayicon() {
 
@@ -310,7 +272,7 @@ if ! declare -f vidmd::overlayicon > /dev/null; then
     fi
 
     # Check file type
-    if ! vidmd::is_jpeg_file "${file_path}"; then
+    if ! filetypes::is_jpeg_file "${file_path}"; then
       die "'${file_path}' is not a valid JPEG file"
     fi
 
@@ -370,7 +332,7 @@ if ! declare -f vidmd::overlayimg > /dev/null; then
     fi
 
     # Validate file extension
-    if ! vidmd::is_jpeg_extension "${output}"; then
+    if ! filetypes::is_jpeg_extension "${output}"; then
       die "Output file must have a '.jpg' or '.jpeg' extension"
     fi
 
