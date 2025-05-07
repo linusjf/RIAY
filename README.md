@@ -3916,6 +3916,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 06,2025](#may-062025)
   - [Fire of Love](#fire-of-love)
   - [AI-Generated Summary: The Holy Spirit and the Fire of Divine Love](#ai-generated-summary-the-holy-spirit-and-the-fire-of-divine-love)
+- [May 07,2025](#may-072025)
+  - [Reunion into Heaven](#reunion-into-heaven)
+  - [AI-Generated Summary: The Joy of Heavenly Reunion and Earthly Devotion](#ai-generated-summary-the-joy-of-heavenly-reunion-and-earthly-devotion)
 
 <!-- tocstop -->
 
@@ -4058,6 +4061,28 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 - **Carrying the Cross**: The cross, borne with Jesus, becomes the fuel for this inner fire. Just as fire needs oxygen, the soul needs prayer to keep the Spirit’s flame alive.
 - **A Call for Renewal**: The text implores the Holy Spirit to rekindle love, faith, and hope where they have grown cold, invoking the same power that animated the saints.
 - **Closing Prayers**: The passage concludes with repeated invocations of the _Hail Mary_ and _Glory Be_, honoring Mary and the Trinity, and ends with a blessing of gratitude for divine grace.
+
+#### May 07,2025
+
+##### Reunion into Heaven
+
+[![Reunion into Heaven](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day127.jpg)](https://youtu.be/6YEbCBh7tjg "Reunion into Heaven")
+
+##### AI-Generated Summary: The Joy of Heavenly Reunion and Earthly Devotion
+
+- **Mary’s Assumption and St. Bernard’s Sermon**
+  The Assumption of Mary is not merely doctrine but a celestial celebration. St. Bernard of Clairvaux depicts heaven’s delight at her arrival, as she bridges the divine and human realms. Her mercy, power, and holiness—rooted in her motherhood of Christ—invite spiritual reflection.
+
+- **Mother Teresa’s Homecoming as an Earthly Parallel**
+  A documentary captures Mother Teresa’s return to her convent, where novices greet her with radiant joy. This mirrors the Assumption: a reunion suffused with love, not abstraction. The scene embodies the holiness of presence, much like Mary’s welcome into heaven.
+
+- **From Theology to Heartfelt Longing**
+  St. Bernard’s words frame Mary’s Assumption as a foretaste of resurrection hope. The text urges a shift from intellectual assent to visceral devotion—yearning to hear Mary’s voice, feel her embrace, and share in eternal joy through the Spirit’s grace.
+
+- **Prayer as the Soul’s Response**
+  Repeated prayers (“Hail Mary,” “Glory Be”) anchor the reflection, transforming longing into liturgy. The closing blessing underscores devotion as both personal and communal, a rhythm of love echoing heaven’s joy.
+
+_Concision note: Lewis’s style favors clarity and vivid imagery, here applied to intertwine theological grandeur with human tenderness._
 
 ## June
 
