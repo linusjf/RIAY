@@ -26,10 +26,9 @@ if ! declare -f validators::isnumeric > /dev/null; then
   # Outputs: None
   # Returns: 0 if numeric, 1 otherwise
   ######################################################################
-  validators::isnumeric() {
+  function validators::isnumeric() {
     [[ "$1" =~ ^[0-9]+$ ]]
   }
-  export -f validators::isnumeric
 fi
 
 if ! declare -f validators::validate_input > /dev/null; then
@@ -43,13 +42,12 @@ if ! declare -f validators::validate_input > /dev/null; then
   # Outputs: Error message to STDERR if validation fails
   # Returns: None (exits with status 1 on error)
   ######################################################################
-  validators::validate_input() {
+  function validators::validate_input() {
     local value="$1" max_length="$2" error_message="$3"
     [[ -z "$value" ]] && die "Error: $error_message cannot be empty"
     [[ ${#value} -gt "$max_length" ]] && die "Error: $error_message too long. Maximum $max_length characters"
     return 0
   }
-  export -f validators::validate_input
 fi
 
 if ! declare -f validators::validate_file > /dev/null; then
@@ -61,7 +59,7 @@ if ! declare -f validators::validate_file > /dev/null; then
   # Outputs: error message to STDERR on failure
   # Returns: exits with status 2 on invalid input
   ######################################################################
-  validators::validate_file() {
+  function validators::validate_file() {
     local file="$1"
 
     if [[ $# -ne 1 ]]; then
@@ -80,5 +78,9 @@ if ! declare -f validators::validate_file > /dev/null; then
     fi
     return 0
   }
-  export -f validators::validate_file
 fi
+
+# Export all functions at the end
+export -f validators::isnumeric
+export -f validators::validate_input
+export -f validators::validate_file
