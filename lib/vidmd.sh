@@ -256,6 +256,13 @@ if ! declare -f vidmd::has_play_icon > /dev/null; then
   export -f vidmd::has_play_icon
 fi
 
+if ! declare -f vidmd::annotate_file > /dev/null; then
+  vidmd::annotate_file() {
+    exiftool -overwrite_original -Comment="$1" "$2" &> /dev/null
+  }
+  export -f vidmd::annotate_file
+fi
+
 if ! declare -f vidmd::overlayicon > /dev/null; then
   vidmd::overlayicon() {
 
@@ -305,7 +312,7 @@ if ! declare -f vidmd::overlayicon > /dev/null; then
     fi
 
     # Add exif data to file
-    if ! exiftool -overwrite_original -Comment="${ICON_COMMENT}" "${file_path}" &> /dev/null; then
+    if ! vidmd::annotate_file "${ICON_COMMENT}" "${file_path}"; then
       err "Failed to add comment in exif data to ${file_path}"
     fi
   }
