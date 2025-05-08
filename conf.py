@@ -7,7 +7,6 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "RIAY"
-copyright = "2025, Linus Fernandes"
 author = "Linus Fernandes"
 version = "1"
 release = "1.0"
