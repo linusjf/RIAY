@@ -25,6 +25,8 @@ if command -v realpath > /dev/null 2>&1; then
 else
   readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
 fi
+source "${SCRIPT_DIR}/lib/date.sh"
+source "${SCRIPT_DIR}/lib/filetypes.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
@@ -181,18 +183,8 @@ main() {
   fi
 
   # Check if day number is numeric and in range
-  if [[ "$day_num" =~ ^-?[0-9]+$ ]]; then
-    if [[ "$day_num" -le 0 ]] || [[ "$day_num" -gt 366 ]]; then
-      err "Error: Invalid day number - ${day_num}."
-      usage $ERR_INVALID_DAY
-    elif [[ ${day_num} == 366 ]] && ! date::isleapyear "${YEAR}"; then
-      err "Error: Invalid day number - ${day_num}."
-      usage $ERR_INVALID_DAY
-    fi
-  else
-    err "Error: Invalid day number - ${day_num}."
-    usage $ERR_INVALID_DAY
-  fi
+  date::validate_daynumber "$day_num" "$YEAR" \
+    || usage $ERR_INVALID_DAY
 
   if [[ -z "${image_path:-}" || -z "${caption:-}" || -z "${day_num:-}" ]]; then
     err "Error: Missing arguments."
@@ -206,11 +198,8 @@ main() {
   fi
 
   # Validate JPEG format using 'file' command
-  local mime_type=$(file --mime-type -b "$image_path")
-  if [[ "$mime_type" != "image/jpeg" ]]; then
-    err "Error: '$image_path' is not a valid JPEG file (detected: $mime_type)."
-    exit $ERR_INVALID_IMAGE
-  fi
+  filetypes::is_jpeg_file "$image_path" \
+    || exit $ERR_INVALID_IMAGE
 
   # Call the function to append the markdown
   append_image_markdown "$day_num" "$image_path" "$caption"
