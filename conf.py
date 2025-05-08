@@ -16,7 +16,7 @@ master_doc = "index"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser", "sphinxcontrib.cairosvgconverter", "sphinx_rtd_dark-mode", "sphinx-rtd-theme"]
+extensions = ["myst_parser", "sphinxcontrib.cairosvgconverter", "sphinx_rtd_dark_mode", "sphinx_rtd_theme"]
 
 templates_path = ["_templates"]
 exclude_patterns = [
