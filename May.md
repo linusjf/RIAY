@@ -21,6 +21,8 @@
 - [May 07,2025](#may-072025)
   - [Reunion into Heaven](#reunion-into-heaven)
   - [AI-Generated Summary: The Joy of Heavenly Reunion and Earthly Devotion](#ai-generated-summary-the-joy-of-heavenly-reunion-and-earthly-devotion)
+- [May 09,2025](#may-092025)
+  - [The Impact](#the-impact)
 
 <!-- tocstop -->
 
@@ -185,3 +187,9 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
   Repeated prayers (“Hail Mary,” “Glory Be”) anchor the reflection, transforming longing into liturgy. The closing blessing underscores devotion as both personal and communal, a rhythm of love echoing heaven’s joy.
 
 _Concision note: Lewis’s style favors clarity and vivid imagery, here applied to intertwine theological grandeur with human tenderness._
+
+## May 09,2025
+
+### The Impact
+
+[![The Impact](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day129.jpg)](https://youtu.be/1se4L6bcM2A "The Impact")

@@ -30,7 +30,7 @@ require_commands date
 #######################################
 if ! declare -f date::validatemonth > /dev/null; then
   date::validatemonth() {
-    [[ "$1" =~ ^[1-9]$|^1[0-2]$ ]] || {
+    [[ "$1" =~ ^0?[1-9]$|^1[0-2]$ ]] || {
       err "Error: Month number must be between 1 and 12"
       return 1
     }

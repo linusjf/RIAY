@@ -230,14 +230,12 @@ main() {
     exit $EXIT_SUCCESS
   fi
 
-  if ! "${SCRIPT_DIR}/genoverlay" "$vid" "$doy"; then
+  "${SCRIPT_DIR}/genoverlay" "$vid" "$doy" || {
     echo "Error: Failed to generate overlay for video $vid" >&2
     exit $EXIT_OVERLAY_FAILED
-  fi
+  }
 
-  if ! generate_files "$vid" "$caption" "$doy"; then
-    exit $?
-  fi
+  generate_files "$vid" "$caption" "$doy" || exit $?
 }
 
 ######################################################################
