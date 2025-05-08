@@ -19,7 +19,7 @@ master_doc = "index"
 extensions = ["myst_parser", "sphinxcontrib.cairosvgconverter", "sphinx_rtd_dark_mode", "sphinx_rtd_theme"]
 
 templates_path = ["_templates"]
-include_patterns = ['**/*.rst', "*.md",  '*/*.jpg']
+include_patterns = ["index.rst", "*.md",  "*/*.jpg"]
 exclude_patterns = [
     "stitch.md",
     "January/*.md",
