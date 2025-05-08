@@ -17,6 +17,7 @@ source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 source "$SCRIPT_DIR/lib/util.sh"
 source "$SCRIPT_DIR/lib/require.sh"
+source "$SCRIPT_DIR/lib/filetypes.sh"
 
 readonly VERSION="1.0.0"
 
@@ -90,7 +91,6 @@ main() {
 #######################################
 process_file() {
   local imgfile="$1"
-  local filetype
   local current_comment
 
   # Check if file exists
@@ -100,9 +100,8 @@ process_file() {
   fi
 
   # Check file type
-  filetype=$(file -b --mime-type "$imgfile")
-  if [[ "$filetype" != "image/jpeg" ]]; then
-    $silent_mode || err "Skipping non-JPG file: $imgfile (detected as $filetype)"
+  if ! filetypes::is_jpeg_file "$imgfile"; then
+    $silent_mode || err "Skipping non-JPG file: $imgfile"
     return 4
   fi
 
