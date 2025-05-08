@@ -27,9 +27,9 @@ readonly TEST_MD_FILE="test_toc.md"
 readonly TEST_STITCH_FILE="test_stitch.md"
 readonly TEST_STITCH_CONTENT="stitch.md"
 readonly TEST_PLAYLIST_FILE="test_playlist.txt"
-readonly TEST_COMPACT_FILE="compact.txt"
+readonly TEST_COMPACT_FILE="$COMPACT_FILE"
 readonly TEST_COMPACT_DIR="test_compact_dir"
-readonly TEST_VIDEOS_FILE="videos.txt"
+readonly TEST_VIDEOS_FILE="$VIDEOS_FILE"
 
 require_commands curl git rm mkdir cat
 
