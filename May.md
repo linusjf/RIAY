@@ -21,8 +21,9 @@
 - [May 07,2025](#may-072025)
   - [Reunion into Heaven](#reunion-into-heaven)
   - [AI-Generated Summary: The Joy of Heavenly Reunion and Earthly Devotion](#ai-generated-summary-the-joy-of-heavenly-reunion-and-earthly-devotion)
-- [May 09,2025](#may-092025)
-  - [The Impact](#the-impact)
+- [May 08,2025](#may-082025)
+  - [Queen of Angels](#queen-of-angels)
+  - [AI-Generated Summary: Mary as Queen of Angels and Mother of Divine Grace](#ai-generated-summary-mary-as-queen-of-angels-and-mother-of-divine-grace)
 
 <!-- tocstop -->
 
@@ -188,8 +189,38 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 
 _Concision note: Lewis’s style favors clarity and vivid imagery, here applied to intertwine theological grandeur with human tenderness._
 
-## May 09,2025
+## May 08,2025
 
-### The Impact
+### Queen of Angels
 
-[![The Impact](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day129.jpg)](https://youtu.be/1se4L6bcM2A "The Impact")
+[![Queen of Angels](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day128.jpg)](https://youtu.be/CFx5VMgBmZo "Queen of Angels")
+
+### AI-Generated Summary: Mary as Queen of Angels and Mother of Divine Grace
+
+- **Mary’s Exalted Role**:
+
+  - St. John Henry Newman underscores Mary’s unparalleled closeness to Jesus, elevating her above even the angels.
+  - Her involvement in the Incarnation ties her to archangels Gabriel (Annunciation) and Michael (Christ’s birth).
+  - A vision from St. John depicts her as a star-crowned woman, shielded from evil by St. Michael and his angels.
+
+- **Motherhood and Queenship**:
+
+  - Mary’s queenship reflects her maternal nature—both tender and fiercely protective.
+  - Like earthly mothers, she actively defends her spiritual children, commanding angels with authority.
+  - Gabriel and Michael serve under her, uniting her roles as nurturing mother and celestial sovereign.
+
+- **Compassionate Guardian**:
+
+  - She leads an angelic army against evil, offering refuge to the vulnerable.
+  - Believers are urged to seek her aid in weakness, temptation, or despair, assured of her intervention.
+
+- **Prayers and Devotion**:
+
+  - The text includes repeated invocations like the _Hail Mary_ and _Glory Be_, affirming reverence for Mary and Christ.
+  - A closing reflection on the Beatitudes ties trust in Mary to broader spiritual growth.
+
+- **Practical Note**:
+
+  - A reference to obtaining further materials is noted without promotional emphasis.
+
+_Summary retains the theological depth and lyrical clarity characteristic of Lewis, distilling Newman’s insights into concise, actionable points._

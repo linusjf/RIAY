@@ -942,7 +942,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3919,6 +3919,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 07,2025](#may-072025)
   - [Reunion into Heaven](#reunion-into-heaven)
   - [AI-Generated Summary: The Joy of Heavenly Reunion and Earthly Devotion](#ai-generated-summary-the-joy-of-heavenly-reunion-and-earthly-devotion)
+- [May 08,2025](#may-082025)
+  - [Queen of Angels](#queen-of-angels)
+  - [AI-Generated Summary: Mary as Queen of Angels and Mother of Divine Grace](#ai-generated-summary-mary-as-queen-of-angels-and-mother-of-divine-grace)
 
 <!-- tocstop -->
 
@@ -4083,6 +4086,42 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
   Repeated prayers (“Hail Mary,” “Glory Be”) anchor the reflection, transforming longing into liturgy. The closing blessing underscores devotion as both personal and communal, a rhythm of love echoing heaven’s joy.
 
 _Concision note: Lewis’s style favors clarity and vivid imagery, here applied to intertwine theological grandeur with human tenderness._
+
+#### May 08,2025
+
+##### Queen of Angels
+
+[![Queen of Angels](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day128.jpg)](https://youtu.be/CFx5VMgBmZo "Queen of Angels")
+
+##### AI-Generated Summary: Mary as Queen of Angels and Mother of Divine Grace
+
+- **Mary’s Exalted Role**:
+
+  - St. John Henry Newman underscores Mary’s unparalleled closeness to Jesus, elevating her above even the angels.
+  - Her involvement in the Incarnation ties her to archangels Gabriel (Annunciation) and Michael (Christ’s birth).
+  - A vision from St. John depicts her as a star-crowned woman, shielded from evil by St. Michael and his angels.
+
+- **Motherhood and Queenship**:
+
+  - Mary’s queenship reflects her maternal nature—both tender and fiercely protective.
+  - Like earthly mothers, she actively defends her spiritual children, commanding angels with authority.
+  - Gabriel and Michael serve under her, uniting her roles as nurturing mother and celestial sovereign.
+
+- **Compassionate Guardian**:
+
+  - She leads an angelic army against evil, offering refuge to the vulnerable.
+  - Believers are urged to seek her aid in weakness, temptation, or despair, assured of her intervention.
+
+- **Prayers and Devotion**:
+
+  - The text includes repeated invocations like the _Hail Mary_ and _Glory Be_, affirming reverence for Mary and Christ.
+  - A closing reflection on the Beatitudes ties trust in Mary to broader spiritual growth.
+
+- **Practical Note**:
+
+  - A reference to obtaining further materials is noted without promotional emphasis.
+
+_Summary retains the theological depth and lyrical clarity characteristic of Lewis, distilling Newman’s insights into concise, actionable points._
 
 ## June
 
