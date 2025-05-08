@@ -48,10 +48,12 @@ remove_temp_files() {
     return 0
   fi
 
+  shopt -s nullglob
   if ! rm -f "${TEMP_FILES_PATTERN[@]}"; then
     err "Failed to remove temporary files"
     exit_code=2
   fi
+  shopt -u nullglob
   return "${exit_code}"
 }
 
@@ -65,10 +67,12 @@ clean_backups() {
     return 0
   fi
 
+  shopt -s nullglob
   if ! rm -f "${BACKUP_FILES_PATTERN[@]}"; then
     err "Failed to clean up backup files"
     exit_code=3
   fi
+  shopt -u nullglob
   return "${exit_code}"
 }
 
