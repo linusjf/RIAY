@@ -92,7 +92,6 @@ main() {
 #######################################
 process_file() {
   local imgfile="$1"
-  local current_comment
 
   # Check if file exists
   if [[ ! -f "$imgfile" ]]; then
