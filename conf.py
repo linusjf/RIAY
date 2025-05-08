@@ -15,10 +15,15 @@ master_doc = "index"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser", "sphinxcontrib.cairosvgconverter", "sphinx_rtd_dark_mode", "sphinx_rtd_theme"]
+extensions = [
+    "myst_parser",
+    "sphinxcontrib.cairosvgconverter",
+    "sphinx_rtd_dark_mode",
+    "sphinx_rtd_theme",
+]
 
 templates_path = ["_templates"]
-include_patterns = ["index.rst", "*.md",  "*/*.jpg"]
+include_patterns = ["index.rst", "*.md", "*/*.jpg"]
 exclude_patterns = [
     "stitch.md",
     "January/*.md",
@@ -41,8 +46,8 @@ suppress_warnings = ["toc.not_included", "myst.xref_missing", "image/svg+xml"]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
-#html_theme = "alabaster"
+# Add paths for custom static files
+html_static_path = ["_static"]
 html_theme = "sphinx_rtd_theme"
 # user starts in dark mode
 default_dark_mode = True
@@ -114,4 +119,5 @@ def run_only_for_pdf(app):
 
 
 def setup(app):
+    app.add_css_file("custom.css")  # For Sphinx 1.8 and later
     app.connect("builder-inited", run_only_for_pdf)
