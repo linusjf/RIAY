@@ -213,9 +213,7 @@ main() {
   vid="$1"
   caption="$2"
 
-  if ! validate_inputs "$vid" "$caption"; then
-    exit $?
-  fi
+  validate_inputs "$vid" "$caption" || exit $?
 
   if ! internet::checkinternet; then
     echo "Error: No internet connection available" >&2
