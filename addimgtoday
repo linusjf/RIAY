@@ -197,7 +197,6 @@ main() {
     exit $ERR_INVALID_PATH
   fi
 
-  # Validate JPEG format using 'file' command
   filetypes::is_jpeg_file "$image_path" \
     || exit $ERR_INVALID_IMAGE
 
@@ -207,7 +206,7 @@ main() {
 
 # Call the main function if the script is executed directly
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require_commands tee date file cat realpath
+  require_commands tee date cat realpath
   if "$LOGGING"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
