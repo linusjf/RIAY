@@ -9,5 +9,5 @@ div[role="contentinfo"]:after {
   position: absolute;
   top: 0;
   left: 0;
-  content: "Content aggregated by Linus Fernandes";
+  content: "Aggregated by Linus Fernandes";
 }
