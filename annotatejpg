@@ -107,11 +107,11 @@ process_file() {
   fi
 
   # Check existing comment
-  current_comment=$(exiftool -Comment "$imgfile" | awk -F': ' '{print $2}')
+  current_comment="$(exiftool -Comment "$imgfile" | awk -F': ' '{print $2}')"
 
-  if [[ "$current_comment" != "Play Icon Added" ]]; then
+  if [[ "$current_comment" != "$ICON_COMMENT" ]]; then
     $silent_mode || out "Adding comment to: $imgfile"
-    exiftool -Comment="Play Icon Added" -overwrite_original "$imgfile" > /dev/null
+    exiftool -Comment="$ICON_COMMENT" -overwrite_original "$imgfile" > /dev/null
     ((updated_files++))
   else
     $silent_mode || out "Comment already exists in: $imgfile"
