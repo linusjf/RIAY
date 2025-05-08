@@ -16,7 +16,7 @@ master_doc = "index"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser", "sphinxcontrib.cairosvgconverter", "sphinx_rtd_theme"]
+extensions = ["myst_parser", "sphinxcontrib.cairosvgconverter", "sphinx_rtd_dark-mode", "sphinx-rtd-theme"]
 
 templates_path = ["_templates"]
 exclude_patterns = [
@@ -44,6 +44,9 @@ suppress_warnings = ["toc.not_included", "myst.xref_missing", "image/svg+xml"]
 
 #html_theme = "alabaster"
 html_theme = "sphinx_rtd_theme"
+# user starts in dark mode
+default_dark_mode = True
+
 # -- Options for PDF output
 latex_engine = "lualatex"
 
