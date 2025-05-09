@@ -22,6 +22,7 @@ readonly SCRIPT_NAME="$(basename "$0")"
 # Outputs: usage information to STDOUT
 # Returns: exits with status SUCCESS
 usage() {
+  exitcode="${1:-0}"
   cat << EOF
 Usage: ${0##*/} [-d|--debug] [-v|--version] vid doy
 
@@ -34,7 +35,7 @@ Arguments:
   vid              YouTube video ID (11 characters)
   doy              Day of year (1-366)
 EOF
-  exit "${SUCCESS}"
+  exit "$exitcode"
 }
 
 # Print version information
@@ -53,7 +54,7 @@ version() {
 # Returns: SUCCESS on success, FAILURE on failure
 main() {
   if [[ $# -ne 2 ]]; then
-    usage
+    usage 1
   fi
 
   local vid="$1"
@@ -67,13 +68,8 @@ main() {
 
   source "${SCRIPT_DIR}/lib/vidmd.sh"
 
-  if ! validators::isnumeric "${doy}"; then
-    usage
-  fi
-
-  if ! imgurl="$(youtube::thumbnailurl "${vid}")"; then
-    echo "Error: Failed to retrieve thumbnail URL for video ID: ${vid}" >&2
-    return "${FAILURE}"
+  if ! date::validate_daynumber "${doy}"; then
+    usage 1
   fi
 
   month="$(date::mfromdoy "${doy#0}")"
@@ -91,8 +87,8 @@ main() {
     return "${FAILURE}"
   fi
 
-  if ! curl --silent "${imgurl}" --output "${relfile}"; then
-    echo "Error: Failed to download thumbnail from ${imgurl}" >&2
+  if ! vidmd::downloadthumbnail "$vid" "$relfile"; then
+    echo "Error: Failed to download thumbnail for ${vid}" >&2
     return "${FAILURE}"
   fi
 
