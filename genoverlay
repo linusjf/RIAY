@@ -68,6 +68,7 @@ main() {
 
   source "${SCRIPT_DIR}/lib/vidmd.sh"
 
+  #shellcheck disable=SC2153
   if ! date::validate_daynumber "${doy}" "$YEAR"; then
     usage 1
   fi
