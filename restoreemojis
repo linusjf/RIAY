@@ -95,7 +95,7 @@ function main() {
     set -x
   fi
 
-  shopt -s nullglob
+  shopt -s nullglob globstar
   for file in "${files[@]}"; do
     [[ -f "$file" ]] || continue
 
@@ -106,7 +106,7 @@ function main() {
     sed -i 's/😢/🥹/g' "$file"
     sed -i 's/😍/🥰/g' "$file"
   done
-  shopt -u nullglob
+  shopt -u nullglob globstar
 }
 
 #######################################

@@ -140,12 +140,12 @@ main() {
 
     cd jpgs || die "Failed to change to jpgs directory"
 
-    shopt -s nullglob
+    shopt -s nullglob globstar
     for file in ./*.png; do
       gm convert "${file}" "${file%.*}.jpg" || die "Failed to convert ${file}"
       rm "${file}" || die "Failed to remove ${file}"
     done
-    shopt -u nullglob
+    shopt -u nullglob globstar
   )
 }
 
