@@ -127,6 +127,20 @@ if ! declare -f validators::file_readable > /dev/null; then
   }
 fi
 
+######################################################################
+# Validate directory exists
+# Globals: None
+# Arguments: directory path
+# Outputs: None
+# Returns: 0 if valid, 1 otherwise
+######################################################################
+
+if ! declare -f validators::is_valid_dir > /dev/null; then
+  validators::is_valid_dir() {
+    [[ -d "$1" ]]
+  }
+fi
+
 # Export all functions at the end
 export -f validators::isnumeric
 export -f validators::validate_input
@@ -134,3 +148,4 @@ export -f validators::validate_file
 export -f validators::validate_arg_count
 export -f validators::file_exists
 export -f validators::file_readable
+export -f validators::is_valid_dir
