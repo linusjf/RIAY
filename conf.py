@@ -77,7 +77,7 @@ linkcheck_ignore = [
 linkcheck_ignore_redirects = True
 linkcheck_workers = 1
 # or even 1 to be safer
-linkcheck_retries = 2
+linkcheck_retries = 1
 
 # hook to replace unavailable emojis in Symbola
 # for available ones only during pdf latex generation
