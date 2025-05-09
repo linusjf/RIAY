@@ -1,15 +1,32 @@
 #!/usr/bin/env bash
-# Sanity tests for addvideo, genmonth, gentoc and stitch scripts
+# Sanity tests for video processing scripts
 # Tests command line options and cleans up afterwards
 
 set -euo pipefail
 shopt -s inherit_errexit
 
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
-source "$SCRIPT_DIR/lib/date.sh"
-source "$SCRIPT_DIR/lib/require.sh"
-source "$SCRIPT_DIR/lib/lockconfig.sh"
-lockconfig::lock_config_vars "$SCRIPT_DIR/config.env"
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME=$(basename "$0")
+
+# Import required libraries
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+source "${SCRIPT_DIR}/lib/date.sh"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
+
+# Configuration
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+readonly TEST_MONTH=1
+readonly TEST_YEAR=2023
+readonly TEST_MD_FILE="test_toc.md"
+readonly TEST_STITCH_FILE="test_stitch.md"
+readonly TEST_STITCH_CONTENT="stitch.md"
+readonly TEST_PLAYLIST_FILE="test_playlist.txt"
+readonly TEST_COMPACT_FILE="$COMPACT_FILE"
+readonly TEST_COMPACT_DIR="test_compact_dir"
+readonly TEST_VIDEOS_FILE="$VIDEOS_FILE"
+
+# Script paths
 readonly ADDVIDEO_SCRIPT="${SCRIPT_DIR}/addvideo"
 readonly GENMONTH_SCRIPT="${SCRIPT_DIR}/genmonth"
 readonly GENTOC_SCRIPT="${SCRIPT_DIR}/gentoc"
@@ -21,28 +38,31 @@ readonly CLEANUP_SCRIPT="${SCRIPT_DIR}/cleanup"
 readonly SAVEPLAYLIST_SCRIPT="${SCRIPT_DIR}/saveplaylist"
 readonly COMPACT_SCRIPT="${SCRIPT_DIR}/compact"
 readonly ADDSUMMARIES_SCRIPT="${SCRIPT_DIR}/addsummariestodays"
-readonly TEST_MONTH=1
-readonly TEST_YEAR=2023
-readonly TEST_MD_FILE="test_toc.md"
-readonly TEST_STITCH_FILE="test_stitch.md"
-readonly TEST_STITCH_CONTENT="stitch.md"
-readonly TEST_PLAYLIST_FILE="test_playlist.txt"
-readonly TEST_COMPACT_FILE="$COMPACT_FILE"
-readonly TEST_COMPACT_DIR="test_compact_dir"
-readonly TEST_VIDEOS_FILE="$VIDEOS_FILE"
-
-require_commands curl git rm mkdir cat
 
 # Test counters
-declare -i TOTAL_TESTS=0
-declare -i PASSED_TESTS=0
-declare -i SKIPPED_TESTS=0
-declare -i FAILED_TESTS=0
+declare -i total_tests=0
+declare -i passed_tests=0
+declare -i skipped_tests=0
+declare -i failed_tests=0
+
+# Command line options
+declare -i start_from=1
+declare -a tests_to_run=()
+declare no_cleanup=false
+declare stop_on_failure=false
+
+###############################################################################
+# Helper functions
+###############################################################################
+
+version() {
+  printf "%s\n" "$VERSION"
+}
 
 usage() {
-  exitcode="${1:-0}"
-  cat << EOF
-Usage: $0 [OPTIONS]
+  local exitcode="${1:-0}"
+  cat <<EOF
+Usage: ${SCRIPT_NAME} [OPTIONS]
 
 Run sanity tests for video processing scripts
 
@@ -52,6 +72,7 @@ Options:
   --no-cleanup       Don't clean up test files after running
   --stop-on-failure  Stop test execution on first failure
   --help             Show this help message
+  --version          Show version information
 
 Available tests:
   1-5    addvideo script tests
@@ -67,92 +88,63 @@ Available tests:
   53-58  addsummariestodays script tests
 
 Examples:
-  $0 --from-test 6          # Run tests starting from test 6
-  $0 --tests 1,3,5         # Run only tests 1, 3 and 5
-  $0                       # Run all tests
+  ${SCRIPT_NAME} --from-test 6    # Run tests starting from test 6
+  ${SCRIPT_NAME} --tests 1,3,5    # Run only tests 1, 3 and 5
+  ${SCRIPT_NAME}                  # Run all tests
 EOF
   exit "$exitcode"
 }
 
-# Parse command line arguments
-START_FROM=1
-TESTS_TO_RUN=()
-NO_CLEANUP=false
-STOP_ON_FAILURE=false
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-    --from-test)
-      START_FROM="$2"
-      shift 2
-      ;;
-    --tests)
-      IFS=',' read -ra TESTS_TO_RUN <<< "$2"
-      shift 2
-      ;;
-    --no-cleanup)
-      NO_CLEANUP=true
-      shift
-      ;;
-    --stop-on-failure)
-      STOP_ON_FAILURE=true
-      shift
-      ;;
-    --help | -h)
-      usage
-      ;;
-    *)
-      echo "Unknown option: $1"
-      usage 1
-      ;;
-  esac
-done
-
-# Test helper functions
 print_header() {
   printf "\n\033[1m%s\033[0m\n" "$1"
 }
 
 should_run_test() {
   local test_num="$1"
-  if [[ ${#TESTS_TO_RUN[@]} -gt 0 ]]; then
-    for t in "${TESTS_TO_RUN[@]}"; do
+  if [[ ${#tests_to_run[@]} -gt 0 ]]; then
+    for t in "${tests_to_run[@]}"; do
       if [[ "$t" == "$test_num" ]]; then
         return 0
       fi
     done
     return 1
   fi
-  [[ "$test_num" -ge "$START_FROM" ]]
+  [[ "$test_num" -ge "$start_from" ]]
 }
 
 run_test() {
   local test_num="$1"
-  ((TOTAL_TESTS = TOTAL_TESTS + 1))
+  local description="$2"
+  local expected_exit="${3:-0}"
+  shift 3
+
+  ((total_tests = total_tests + 1))
+
   if ! should_run_test "$test_num"; then
-    printf "  %-50s\033[33mSKIPPED\033[0m\n" "$2..."
-    ((SKIPPED_TESTS = SKIPPED_TESTS + 1))
+    printf "  %-50s\033[33mSKIPPED\033[0m\n" "${description}..."
+    ((skipped_tests = skipped_tests + 1))
     git restore .
     git clean -fd
     return 0
   fi
-  printf "  %-50s" "$2..."
-  shift 2
-  expected_exit=${1:-0}
-  shift
-  if "$@" &> /dev/null; then
-    actual_exit=0
-  else
+
+  printf "  %-50s" "${description}..."
+
+  local actual_exit=0
+  if ! "$@" &>/dev/null; then
     actual_exit=$?
   fi
+
   git restore .
   git clean -fd
+
   if [[ "$actual_exit" -eq "$expected_exit" ]]; then
     printf "\033[32mPASS\033[0m\n"
-    ((PASSED_TESTS = PASSED_TESTS + 1))
+    ((passed_tests = passed_tests + 1))
   else
     printf "\033[31mFAIL (expected %d, got %d)\033[0m\n" "$expected_exit" "$actual_exit"
-    ((FAILED_TESTS = FAILED_TESTS + 1))
-    if [[ "$STOP_ON_FAILURE" == true ]]; then
+    ((failed_tests = failed_tests + 1))
+    if [[ "$stop_on_failure" == true ]]; then
       print_test_summary
       exit 1
     fi
@@ -162,15 +154,15 @@ run_test() {
 
 print_test_summary() {
   print_header "Test Summary"
-  printf "  Total tests:   %d\n" "$TOTAL_TESTS"
-  printf "  Passed tests:  \033[32m%d\033[0m\n" "$PASSED_TESTS"
-  printf "  Skipped tests: \033[33m%d\033[0m\n" "$SKIPPED_TESTS"
-  printf "  Failed tests:  \033[31m%d\033[0m\n" "$FAILED_TESTS"
+  printf "  Total tests:   %d\n" "$total_tests"
+  printf "  Passed tests:  \033[32m%d\033[0m\n" "$passed_tests"
+  printf "  Skipped tests: \033[33m%d\033[0m\n" "$skipped_tests"
+  printf "  Failed tests:  \033[31m%d\033[0m\n" "$failed_tests"
 
-  if [[ "$FAILED_TESTS" -gt 0 ]]; then
+  if [[ "$failed_tests" -gt 0 ]]; then
     printf "\n\033[31mSome tests failed!\033[0m\n"
     return 1
-  elif [[ "$PASSED_TESTS" -eq 0 && "$SKIPPED_TESTS" -gt 0 ]]; then
+  elif [[ "$passed_tests" -eq 0 && "$skipped_tests" -gt 0 ]]; then
     printf "\n\033[33mAll tests were skipped!\033[0m\n"
     return 0
   else
@@ -180,7 +172,7 @@ print_test_summary() {
 }
 
 create_test_md() {
-  cat << EOF > "${TEST_MD_FILE}"
+  cat <<EOF >"${TEST_MD_FILE}"
 # Test Document
 
 ## Section 1
@@ -192,7 +184,7 @@ EOF
 }
 
 create_test_stitch() {
-  cat << EOF > "${TEST_STITCH_FILE}"
+  cat <<EOF >"${TEST_STITCH_FILE}"
 # Test Stitch Document
 
 ## Introduction
@@ -205,7 +197,7 @@ EOF
 }
 
 create_real_stitch() {
-  cat << EOF > "${TEST_STITCH_CONTENT}"
+  cat <<EOF >"${TEST_STITCH_CONTENT}"
 # README
 
 - [RIAY](start.md)
@@ -227,7 +219,7 @@ EOF
 }
 
 create_test_playlist() {
-  cat << EOF > "${TEST_PLAYLIST_FILE}"
+  cat <<EOF >"${TEST_PLAYLIST_FILE}"
 dQw4w9WgXcQ
 CfU7rIufywo
 Io1G_5I7a-0
@@ -236,30 +228,30 @@ EOF
 
 create_test_compact() {
   mkdir -p "${TEST_COMPACT_DIR}"
-  cat << EOF > "${TEST_COMPACT_DIR}/${TEST_COMPACT_FILE}"
+  cat <<EOF >"${TEST_COMPACT_DIR}/${TEST_COMPACT_FILE}"
 file1.md
 file2.md
 file3.md
 EOF
 
-  cat << EOF > "${TEST_COMPACT_DIR}/file1.md"
+  cat <<EOF >"${TEST_COMPACT_DIR}/file1.md"
 # File 1
 Content 1
 EOF
 
-  cat << EOF > "${TEST_COMPACT_DIR}/file2.md"
+  cat <<EOF >"${TEST_COMPACT_DIR}/file2.md"
 # File 2
 Content 2
 EOF
 
-  cat << EOF > "${TEST_COMPACT_DIR}/file3.md"
+  cat <<EOF >"${TEST_COMPACT_DIR}/file3.md"
 # File 3
 Content 3
 EOF
 }
 
 create_test_videos() {
-  cat << EOF > "${TEST_VIDEOS_FILE}"
+  cat <<EOF >"${TEST_VIDEOS_FILE}"
 dQw4w9WgXcQ
 CfU7rIufywo
 Io1G_5I7a-0
@@ -272,14 +264,14 @@ create_test_day_file() {
   local content="$3"
   mkdir -p "$month"
   printf -v filename "Day%03d.md" "$day"
-  echo "$content" > "${month}/${filename}"
+  echo "$content" >"${month}/${filename}"
 }
 
 stash_apply_id() {
-  id="$1"
+  local id="$1"
   if git stash list | grep "$id"; then
-    entry=$(git stash list | grep "$id" | head -n1)
-    ref=$(echo "$entry" | sed -n 's/^\(stash@{[0-9]\+}\).*/\1/p')
+    local entry=$(git stash list | grep "$id" | head -n1)
+    local ref=$(echo "$entry" | sed -n 's/^\(stash@{[0-9]\+}\).*/\1/p')
     if [ -n "$ref" ]; then
       echo "Applying $ref"
       git stash apply "$ref"
@@ -293,330 +285,380 @@ stash_apply_id() {
 }
 
 cleanup() {
-  if [[ "$NO_CLEANUP" == true ]]; then
+  if [[ "$no_cleanup" == true ]]; then
     print_header "Skipping cleanup (--no-cleanup specified)"
     return
   fi
-  print_header "Cleaning up..."
-  git checkout "$orig_branch"
-  git branch -D "testing"
-  git restore .
-  git clean -fd
-  stash_apply_id "$stash_id"
+  if [[ -n "${orig_branch:-}" ]]; then
+    print_header "Cleaning up..."
+    git checkout "$orig_branch"
+    git branch -D "testing"
+    git restore .
+    git clean -fd
+    stash_apply_id "$stash_id"
+  fi
 }
 
 trap cleanup EXIT
 
-orig_branch=$(git symbolic-ref --short -q HEAD || echo "detached")
-if [[ "$orig_branch" == "detached" ]]; then
-  echo "In detached state" >&2
-  exit 1
-fi
+###############################################################################
+# Main execution
+###############################################################################
 
-# Check if testing branch exists
-if git show-ref --verify --quiet refs/heads/testing; then
-  read -p "Testing branch already exists. Delete it? [y/N] " -n 1 -r
-  echo
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
-    git branch -D testing
-  else
-    echo "Aborting tests to preserve existing testing branch"
+parse_options() {
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+    --from-test)
+      start_from="$2"
+      shift 2
+      ;;
+    --tests)
+      IFS=',' read -ra tests_to_run <<<"$2"
+      shift 2
+      ;;
+    --no-cleanup)
+      no_cleanup=true
+      shift
+      ;;
+    --stop-on-failure)
+      stop_on_failure=true
+      shift
+      ;;
+    --help | -h)
+      usage
+      ;;
+    --version | -v)
+      version
+      exit 0
+      ;;
+    *)
+      echo "Unknown option: $1" >&2
+      usage 1
+      ;;
+    esac
+  done
+}
+
+setup_test_environment() {
+  orig_branch=$(git symbolic-ref --short -q HEAD || echo "detached")
+  if [[ "$orig_branch" == "detached" ]]; then
+    echo "In detached state" >&2
     exit 1
   fi
+
+  if git show-ref --verify --quiet refs/heads/testing; then
+    read -p "Testing branch already exists. Delete it? [y/N] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+      git branch -D testing
+    else
+      echo "Aborting tests to preserve existing testing branch" >&2
+      exit 1
+    fi
+  fi
+
+  local stash_id="stash-$(date +%Y%m%d%H%M%S): sanity tests"
+  git stash push -m "$stash_id"
+  git checkout -b "testing"
+}
+
+run_all_tests() {
+  print_header "Running addvideo sanity tests"
+
+  print_header "Test 1: Version flag"
+  run_test 1 "Should show version with -v" 0 "${ADDVIDEO_SCRIPT}" -v
+  run_test 1 "Should show version with --version" 0 "${ADDVIDEO_SCRIPT}" --version
+
+  print_header "Test 2: Help/usage"
+  run_test 2 "Should show usage with no args" 1 "${ADDVIDEO_SCRIPT}" || true
+  run_test 2 "Should show usage with -h" 0 "${ADDVIDEO_SCRIPT}" -h
+  run_test 2 "Should show usage with --help" 0 "${ADDVIDEO_SCRIPT}" --help
+
+  print_header "Test 3: Dry run mode"
+  run_test 3 "Should run dry mode with -n" 0 "${ADDVIDEO_SCRIPT}" -n "CfU7rIufywo" "Test Video" || true
+  run_test 3 "Should run dry mode with --dry-run" 0 "${ADDVIDEO_SCRIPT}" --dry-run "CfU7rIufywo" "Test Video" || true
+
+  print_header "Test 4: Debug mode"
+  run_test 4 "Should enable debug with -d" 0 "${ADDVIDEO_SCRIPT}" -d "Io1G_5I7a-0" "Test Video" || true
+  run_test 4 "Should enable debug with --debug" 0 "${ADDVIDEO_SCRIPT}" --debug "2-caLO3rLL8" "News Video" || true
+
+  print_header "Test 5: Invalid inputs"
+  run_test 5 "Should reject invalid video ID" 1 "${ADDVIDEO_SCRIPT}" "invalid" "Test" || true
+  run_test 5 "Should reject missing caption" 1 "${ADDVIDEO_SCRIPT}" "dQw4w9WgXcQ" || true
+
+  print_header "Running genmonth sanity tests"
+
+  print_header "Test 6: Version flag"
+  run_test 6 "Should show version with -v" 0 "${GENMONTH_SCRIPT}" -v
+  run_test 6 "Should show version with --version" 0 "${GENMONTH_SCRIPT}" --version
+
+  print_header "Test 7: Help/usage"
+  run_test 7 "Should show usage with no args" 1 "${GENMONTH_SCRIPT}" || true
+  run_test 7 "Should show usage with -h" 0 "${GENMONTH_SCRIPT}" -h
+  run_test 7 "Should show usage with --help" 0 "${GENMONTH_SCRIPT}" --help
+
+  print_header "Test 8: Dry run mode"
+  run_test 8 "Should run dry mode with -n" 0 "${GENMONTH_SCRIPT}" -n "$TEST_MONTH" "$TEST_YEAR"
+  run_test 8 "Should run dry mode with --dry-run" 0 "${GENMONTH_SCRIPT}" --dry-run "$TEST_MONTH" "$TEST_YEAR"
+  run_test 8 "Should run dry mode with -n" 0 "${GENMONTH_SCRIPT}" -n "$TEST_MONTH"
+  run_test 8 "Should run dry mode with --dry-run" 0 "${GENMONTH_SCRIPT}" --dry-run "$TEST_MONTH"
+
+  print_header "Test 9: Debug mode"
+  run_test 9 "Should enable debug with -d" 0 "${GENMONTH_SCRIPT}" -d "$TEST_MONTH" "$TEST_YEAR" || true
+  run_test 9 "Should enable debug with --debug" 0 "${GENMONTH_SCRIPT}" --debug "$TEST_MONTH" "$TEST_YEAR" || true
+  run_test 9 "Should enable debug with -d" 0 "${GENMONTH_SCRIPT}" -d "$TEST_MONTH" || true
+  run_test 9 "Should enable debug with --debug" 0 "${GENMONTH_SCRIPT}" --debug "$TEST_MONTH" || true
+
+  print_header "Test 10: Invalid inputs"
+  run_test 10 "Should reject invalid month (0)" 2 "${GENMONTH_SCRIPT}" 0 "$TEST_YEAR" || true
+  run_test 10 "Should reject invalid month (13)" 2 "${GENMONTH_SCRIPT}" 13 "$TEST_YEAR" || true
+  run_test 10 "Should reject invalid year (short)" 2 "${GENMONTH_SCRIPT}" "$TEST_MONTH" 23 || true
+  run_test 10 "Should reject non-numeric month" 2 "${GENMONTH_SCRIPT}" "Jan" "$TEST_YEAR" || true
+  run_test 10 "Should reject non-numeric year" 2 "${GENMONTH_SCRIPT}" "$TEST_MONTH" "TwoThousand" || true
+
+  print_header "Test 11: File generation"
+  run_test 11 "Should generate markdown file" 0 "${GENMONTH_SCRIPT}" "$TEST_MONTH" "$TEST_YEAR"
+  run_test 11 "Generated file should exist" 0 test -f "January.md"
+  run_test 11 "Should generate markdown file" 0 "${GENMONTH_SCRIPT}" "$TEST_MONTH"
+  run_test 11 "Generated file should exist" 0 test -f "January.md"
+
+  print_header "Running gentoc sanity tests"
+
+  print_header "Test 12: Version flag"
+  run_test 12 "Should show version with -v" 0 "${GENTOC_SCRIPT}" -v
+  run_test 12 "Should show version with --version" 0 "${GENTOC_SCRIPT}" --version
+
+  print_header "Test 13: Help/usage"
+  run_test 13 "Should show usage with no args" 1 "${GENTOC_SCRIPT}" || true
+  run_test 13 "Should show usage with -h" 0 "${GENTOC_SCRIPT}" -h
+  run_test 13 "Should show usage with --help" 0 "${GENTOC_SCRIPT}" --help
+
+  print_header "Test 14: Debug mode"
+  run_test 14 "Should enable debug with -d" 2 "${GENTOC_SCRIPT}" -d "${TEST_MD_FILE}" || true
+  run_test 14 "Should enable debug with --debug" 2 "${GENTOC_SCRIPT}" --debug "${TEST_MD_FILE}" || true
+
+  print_header "Test 15: Invalid inputs"
+  run_test 15 "Should reject missing file argument" 1 "${GENTOC_SCRIPT}" || true
+  run_test 15 "Should reject non-existent file" 2 "${GENTOC_SCRIPT}" nonexistent.md || true
+
+  print_header "Test 16: TOC generation"
+  create_test_md
+  run_test 16 "Should generate TOC for valid file" 0 "${GENTOC_SCRIPT}" "${TEST_MD_FILE}"
+
+  print_header "Running stitch sanity tests"
+
+  print_header "Test 17: Version flag"
+  run_test 17 "Should show version with -v" 0 "${STITCH_SCRIPT}" -v
+  run_test 17 "Should show version with --version" 0 "${STITCH_SCRIPT}" --version
+
+  print_header "Test 18: Help/usage"
+  run_test 18 "Should show usage with no args" 0 "${STITCH_SCRIPT}"
+  run_test 18 "Should show usage with -h" 0 "${STITCH_SCRIPT}" -h
+  run_test 18 "Should show usage with --help" 0 "${STITCH_SCRIPT}" --help
+
+  print_header "Test 19: Debug mode"
+  run_test 19 "Should enable debug with -d" 0 "${STITCH_SCRIPT}" -d || true
+  run_test 19 "Should enable debug with --debug" 0 "${STITCH_SCRIPT}" --debug || true
+
+  print_header "Test 20: Input validation"
+  run_test 20 "Should pass with no parameters" 0 "${STITCH_SCRIPT}"
+
+  print_header "Test 21: Basic file generation"
+  create_test_stitch
+  mv "${TEST_STITCH_FILE}" stitch.md
+  run_test 21 "Should not generate README.md with wrong file format" 3 "${STITCH_SCRIPT}" || true
+
+  print_header "Test 22: Real-world file generation"
+  create_real_stitch
+  run_test 22 "Should generate README from real stitch.md" 0 "${STITCH_SCRIPT}"
+
+  print_header "Test 23: Missing stitch.md"
+  rm -f stitch.md
+  run_test 23 "Should fail when stitch.md is missing" 1 "${STITCH_SCRIPT}" || true
+
+  print_header "Running lintall sanity tests"
+
+  print_header "Test 24: Version flag"
+  run_test 24 "Should have a version flag" 0 "${LINTALL_SCRIPT}" --version || true
+
+  print_header "Test 25: Help/usage"
+  run_test 25 "Should show usage with -h" 0 "${LINTALL_SCRIPT}" -h
+  run_test 25 "Should show usage with --help" 0 "${LINTALL_SCRIPT}" --help
+
+  print_header "Test 26: Debug mode"
+  run_test 26 "Should enable debug with -d" 0 "${LINTALL_SCRIPT}" -d || true
+  run_test 26 "Should enable debug with --debug" 0 "${LINTALL_SCRIPT}" --debug || true
+
+  print_header "Test 27: Verbose mode"
+  run_test 27 "Should enable verbose with -v" 0 "${LINTALL_SCRIPT}" -v || true
+  run_test 27 "Should enable verbose with --verbose" 0 "${LINTALL_SCRIPT}" --verbose || true
+
+  print_header "Test 28: Basic execution"
+  run_test 28 "Should run successfully" 0 "${LINTALL_SCRIPT}"
+
+  print_header "Running addvideotoday sanity tests"
+
+  print_header "Test 29: Version flag"
+  run_test 29 "Should show version with -v" 0 "${ADDVIDEOTODAY_SCRIPT}" -v
+  run_test 29 "Should show version with --version" 0 "${ADDVIDEOTODAY_SCRIPT}" --version
+
+  print_header "Test 30: Help/usage"
+  run_test 30 "Should show usage with no args" 1 "${ADDVIDEOTODAY_SCRIPT}" || true
+  run_test 30 "Should show usage with -h" 0 "${ADDVIDEOTODAY_SCRIPT}" -h
+  run_test 30 "Should show usage with --help" 0 "${ADDVIDEOTODAY_SCRIPT}" --help
+
+  print_header "Test 31: Invalid inputs"
+  run_test 31 "Should reject invalid number of arguments" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" || true
+  run_test 31 "Should reject invalid video ID" 13 "${ADDVIDEOTODAY_SCRIPT}" "invalid" "1" || true
+  run_test 31 "Should reject invalid day number (invalid)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "invalid" || true
+  run_test 31 "Should reject invalid day number (negative)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "-1" || true
+  run_test 31 "Should reject invalid day number (zero)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "0" || true
+  run_test 31 "Should reject invalid day number (too large)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "367" || true
+  if ! date::isleapyear "$YEAR"; then
+    run_test 31 "Should reject day 366 in non-leap year" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "366" || true
+  fi
+
+  print_header "Test 32: Missing markdown file"
+  rm January/Day001.md
+  run_test 32 "Should fail due to missing markdown file" 6 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "001" || true
+
+  print_header "Test 33: Video does not exist"
+  run_test 33 "Should fail due to video not existing" 7 "${ADDVIDEOTODAY_SCRIPT}" "xxxxxxxxxxx" "2" || true
+
+  print_header "Test 34: Basic execution"
+  run_test 34 "Should run successfully" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "1" || true
+  if date::isleapyear "$YEAR"; then
+    touch December/Day366.md
+    run_test 34 "Should accept day 366 in leap year" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "366" || true
+  fi
+
+  print_header "Running addimgtoday sanity tests"
+
+  print_header "Test 35: Version flag"
+  run_test 35 "Should show version with -v" 0 "${ADDIMGTODAY_SCRIPT}" -v
+  run_test 35 "Should show version with --version" 0 "${ADDIMGTODAY_SCRIPT}" --version
+
+  print_header "Test 36: Help/usage"
+  run_test 36 "Should show usage with no args" 2 "${ADDIMGTODAY_SCRIPT}" || true
+  run_test 36 "Should show usage with -h" 0 "${ADDIMGTODAY_SCRIPT}" -h
+  run_test 36 "Should show usage with --help" 0 "${ADDIMGTODAY_SCRIPT}" --help
+
+  print_header "Test 37: Invalid inputs"
+  run_test 37 "Should reject invalid number of arguments" 2 "${ADDIMGTODAY_SCRIPT}" "1" || true
+  curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &>/dev/null || true
+  run_test 37 "Should reject invalid day number" 6 "${ADDIMGTODAY_SCRIPT}" "example.jpg" "Caption" "invalid" || true
+  run_test 37 "Should reject invalid image path" 3 "${ADDIMGTODAY_SCRIPT}" "invalid" "Caption" "1" || true
+
+  print_header "Test 38: Basic execution"
+  curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &>/dev/null || true
+  run_test 38 "Should run successfully" 0 "${ADDIMGTODAY_SCRIPT}" "example.jpg" "Caption" "1" || true
+
+  print_header "Test 39: Debug mode"
+  curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &>/dev/null || true
+  run_test 39 "Should enable debug with -d" 0 "${ADDIMGTODAY_SCRIPT}" -d "example.jpg" "Caption" "1" || true
+  curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &>/dev/null || true
+  run_test 39 "Should enable debug with --debug" 0 "${ADDIMGTODAY_SCRIPT}" --debug "example.jpg" "Caption" "1" || true
+
+  print_header "Running cleanup sanity tests"
+
+  print_header "Test 40: Help/usage"
+  run_test 40 "Should show usage with no args" 0 "${CLEANUP_SCRIPT}"
+  run_test 40 "Should show usage with -h" 0 "${CLEANUP_SCRIPT}" -h
+  run_test 40 "Should show usage with --help" 0 "${CLEANUP_SCRIPT}" --help
+
+  print_header "Test 41: Basic execution"
+  touch testfile.tmp
+  run_test 41 "Should run successfully" 0 "${CLEANUP_SCRIPT}"
+  rm -f testfile.tmp
+
+  print_header "Test 42: Backup cleanup"
+  touch testfile~
+  touch testfile.bak
+  touch testfile.backup
+  run_test 42 "Should clean up backup files" 0 "${CLEANUP_SCRIPT}" --backups
+  rm -f testfile~ testfile.bak testfile.backup
+
+  print_header "Test 43: Unknown option"
+  run_test 43 "Should show unknown option message" 1 "${CLEANUP_SCRIPT}" --invalidoption
+
+  print_header "Running saveplaylist sanity tests"
+
+  print_header "Test 44: Version flag"
+  run_test 44 "Should show version with --version" 0 "${SAVEPLAYLIST_SCRIPT}" --version
+
+  print_header "Test 45: Help/usage"
+  run_test 45 "Should show usage with no args" 2 "${SAVEPLAYLIST_SCRIPT}" || true
+  run_test 45 "Should show usage with -h" 0 "${SAVEPLAYLIST_SCRIPT}" -h
+  run_test 45 "Should show usage with --help" 0 "${SAVEPLAYLIST_SCRIPT}" --help
+
+  print_header "Test 46: Invalid inputs"
+  run_test 46 "Should reject missing playlist ID" 2 "${SAVEPLAYLIST_SCRIPT}" || true
+  run_test 46 "Should reject invalid playlist ID" 4 "${SAVEPLAYLIST_SCRIPT}" "invalid" || true
+  run_test 46 "Should reject non-existent playlist " 4 "${SAVEPLAYLIST_SCRIPT}" "PL4iIJvj6ypuG9v3Kg80Qt2ZUnspPHvXO" || true
+
+  print_header "Test 47: Verbose mode"
+  run_test 47 "Should enable verbose with -v" 0 "${SAVEPLAYLIST_SCRIPT}" -v "PLHprCs14Z-sCSlrl1ueVisUKm3lnvqC0S" || true
+  run_test 47 "Should enable verbose with --verbose" 0 "${SAVEPLAYLIST_SCRIPT}" --verbose "PLHprCs14Z-sCSlrl1ueVisUKm3lnvqC0S" || true
+
+  print_header "Running compact sanity tests"
+
+  print_header "Test 48: Version flag"
+  run_test 48 "Should show version with --version" 0 "${COMPACT_SCRIPT}" --version
+
+  print_header "Test 49: Help/usage"
+  run_test 49 "Should show usage with -h" 0 "${COMPACT_SCRIPT}" -h
+  run_test 49 "Should show usage with --help" 0 "${COMPACT_SCRIPT}" --help
+
+  print_header "Test 50: Debug mode"
+  run_test 50 "Should enable debug with -d" 1 "${COMPACT_SCRIPT}" -d || true
+  run_test 50 "Should enable debug with --debug" 1 "${COMPACT_SCRIPT}" --debug || true
+
+  print_header "Test 51: Invalid inputs"
+  run_test 51 "Should reject invalid directory" 1 "${COMPACT_SCRIPT}" /nonexistent || true
+
+  print_header "Test 52: Basic execution"
+  create_test_compact
+  run_test 52 "Should run successfully" 0 "${COMPACT_SCRIPT}" "${TEST_COMPACT_DIR}"
+
+  print_header "Running addsummariestodays sanity tests"
+
+  print_header "Test 53: Version flag"
+  run_test 53 "Should show version with --version" 0 "${ADDSUMMARIES_SCRIPT}" --version
+
+  print_header "Test 54: No args"
+  run_test 54 "Should show usage with no args" 1 "${ADDSUMMARIES_SCRIPT}" || true
+
+  print_header "Test 55: Help/usage"
+  run_test 55 "Should show usage with -h" 0 "${ADDSUMMARIES_SCRIPT}" -h
+  run_test 55 "Should show usage with --help" 0 "${ADDSUMMARIES_SCRIPT}" --help
+
+  print_header "Test 56: Invalid inputs"
+  run_test 56 "Should reject invalid day range (non-numeric)" 1 "${ADDSUMMARIES_SCRIPT}" "one" "ten" || true
+  run_test 56 "Should reject invalid day range (start > end)" 2 "${ADDSUMMARIES_SCRIPT}" "10" "5" || true
+  run_test 56 "Should reject invalid --ai-handling value" 6 "${ADDSUMMARIES_SCRIPT}" --ai-handling=invalid 1 1 || true
+
+  print_header "Test 57: AI handling options"
+  create_test_videos
+  create_test_day_file "January" 1 "# Day 1\n### AI-Generated Summary: Test"
+  run_test 57 "Should skip with --ai-handling=skip" 0 "${ADDSUMMARIES_SCRIPT}" --ai-handling=skip 1 1 || true
+  run_test 57 "Should overwrite with --ai-handling=overwrite" 0 "${ADDSUMMARIES_SCRIPT}" --ai-handling=overwrite 1 1 || true
+
+  print_header "Test 58: Basic execution"
+  run_test 58 "Should run successfully with --ai-handling=prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 <<<"Y" || true
+  run_test 58 "Should run successfully with --ai-handling=prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 <<<"N" || true
+  create_test_videos
+  create_test_day_file "January" 1 "# Day 1"
+  run_test 58 "Should run successfully with --ai-handling=prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 || true
+  run_test 58 "Should run successfully with --ai-handling=overwrite" 0 "${ADDSUMMARIES_SCRIPT}" --ai-handling=overwrite 1 1 || true
+}
+
+main() {
+  parse_options "$@"
+  setup_test_environment
+  run_all_tests
+  print_test_summary
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
 fi
-
-stash_id="stash-$(date +%Y%m%d%H%M%S): sanity tests"
-git stash push -m "$stash_id"
-git checkout -b "testing"
-
-# Main test execution
-print_header "Running addvideo sanity tests"
-
-print_header "Test 1: Version flag"
-run_test 1 "Should show version with -v" 0 "${ADDVIDEO_SCRIPT}" -v
-run_test 1 "Should show version with --version" 0 "${ADDVIDEO_SCRIPT}" --version
-
-print_header "Test 2: Help/usage"
-run_test 2 "Should show usage with no args" 1 "${ADDVIDEO_SCRIPT}" || true
-run_test 2 "Should show usage with -h" 0 "${ADDVIDEO_SCRIPT}" -h
-run_test 2 "Should show usage with --help" 0 "${ADDVIDEO_SCRIPT}" --help
-
-print_header "Test 3: Dry run mode"
-run_test 3 "Should run dry mode with -n" 0 "${ADDVIDEO_SCRIPT}" -n "CfU7rIufywo" "Test Video" || true
-run_test 3 "Should run dry mode with --dry-run" 0 "${ADDVIDEO_SCRIPT}" --dry-run "CfU7rIufywo" "Test Video" || true
-
-print_header "Test 4: Debug mode"
-run_test 4 "Should enable debug with -d" 0 "${ADDVIDEO_SCRIPT}" -d "Io1G_5I7a-0" "Test Video" || true
-run_test 4 "Should enable debug with --debug" 0 "${ADDVIDEO_SCRIPT}" --debug "2-caLO3rLL8" "News Video" || true
-
-print_header "Test 5: Invalid inputs"
-run_test 5 "Should reject invalid video ID" 1 "${ADDVIDEO_SCRIPT}" "invalid" "Test" || true
-run_test 5 "Should reject missing caption" 1 "${ADDVIDEO_SCRIPT}" "dQw4w9WgXcQ" || true
-
-print_header "Running genmonth sanity tests"
-
-print_header "Test 6: Version flag"
-run_test 6 "Should show version with -v" 0 "${GENMONTH_SCRIPT}" -v
-run_test 6 "Should show version with --version" 0 "${GENMONTH_SCRIPT}" --version
-
-print_header "Test 7: Help/usage"
-run_test 7 "Should show usage with no args" 1 "${GENMONTH_SCRIPT}" || true
-run_test 7 "Should show usage with -h" 0 "${GENMONTH_SCRIPT}" -h
-run_test 7 "Should show usage with --help" 0 "${GENMONTH_SCRIPT}" --help
-
-print_header "Test 8: Dry run mode"
-run_test 8 "Should run dry mode with -n" 0 "${GENMONTH_SCRIPT}" -n "$TEST_MONTH" "$TEST_YEAR"
-run_test 8 "Should run dry mode with --dry-run" 0 "${GENMONTH_SCRIPT}" --dry-run "$TEST_MONTH" "$TEST_YEAR"
-run_test 8 "Should run dry mode with -n" 0 "${GENMONTH_SCRIPT}" -n "$TEST_MONTH"
-run_test 8 "Should run dry mode with --dry-run" 0 "${GENMONTH_SCRIPT}" --dry-run "$TEST_MONTH"
-
-print_header "Test 9: Debug mode"
-run_test 9 "Should enable debug with -d" 0 "${GENMONTH_SCRIPT}" -d "$TEST_MONTH" "$TEST_YEAR" || true
-run_test 9 "Should enable debug with --debug" 0 "${GENMONTH_SCRIPT}" --debug "$TEST_MONTH" "$TEST_YEAR" || true
-run_test 9 "Should enable debug with -d" 0 "${GENMONTH_SCRIPT}" -d "$TEST_MONTH" || true
-run_test 9 "Should enable debug with --debug" 0 "${GENMONTH_SCRIPT}" --debug "$TEST_MONTH" || true
-
-print_header "Test 10: Invalid inputs"
-run_test 10 "Should reject invalid month (0)" 2 "${GENMONTH_SCRIPT}" 0 "$TEST_YEAR" || true
-run_test 10 "Should reject invalid month (13)" 2 "${GENMONTH_SCRIPT}" 13 "$TEST_YEAR" || true
-run_test 10 "Should reject invalid year (short)" 2 "${GENMONTH_SCRIPT}" "$TEST_MONTH" 23 || true
-run_test 10 "Should reject non-numeric month" 2 "${GENMONTH_SCRIPT}" "Jan" "$TEST_YEAR" || true
-run_test 10 "Should reject non-numeric year" 2 "${GENMONTH_SCRIPT}" "$TEST_MONTH" "TwoThousand" || true
-
-print_header "Test 11: File generation"
-run_test 11 "Should generate markdown file" 0 "${GENMONTH_SCRIPT}" "$TEST_MONTH" "$TEST_YEAR"
-run_test 11 "Generated file should exist" 0 test -f "January.md"
-run_test 11 "Should generate markdown file" 0 "${GENMONTH_SCRIPT}" "$TEST_MONTH"
-run_test 11 "Generated file should exist" 0 test -f "January.md"
-
-print_header "Running gentoc sanity tests"
-
-print_header "Test 12: Version flag"
-run_test 12 "Should show version with -v" 0 "${GENTOC_SCRIPT}" -v
-run_test 12 "Should show version with --version" 0 "${GENTOC_SCRIPT}" --version
-
-print_header "Test 13: Help/usage"
-run_test 13 "Should show usage with no args" 1 "${GENTOC_SCRIPT}" || true
-run_test 13 "Should show usage with -h" 0 "${GENTOC_SCRIPT}" -h
-run_test 13 "Should show usage with --help" 0 "${GENTOC_SCRIPT}" --help
-
-print_header "Test 14: Debug mode"
-run_test 14 "Should enable debug with -d" 2 "${GENTOC_SCRIPT}" -d "${TEST_MD_FILE}" || true
-run_test 14 "Should enable debug with --debug" 2 "${GENTOC_SCRIPT}" --debug "${TEST_MD_FILE}" || true
-
-print_header "Test 15: Invalid inputs"
-run_test 15 "Should reject missing file argument" 1 "${GENTOC_SCRIPT}" || true
-run_test 15 "Should reject non-existent file" 2 "${GENTOC_SCRIPT}" nonexistent.md || true
-
-print_header "Test 16: TOC generation"
-create_test_md
-run_test 16 "Should generate TOC for valid file" 0 "${GENTOC_SCRIPT}" "${TEST_MD_FILE}"
-
-print_header "Running stitch sanity tests"
-
-print_header "Test 17: Version flag"
-run_test 17 "Should show version with -v" 0 "${STITCH_SCRIPT}" -v
-run_test 17 "Should show version with --version" 0 "${STITCH_SCRIPT}" --version
-
-print_header "Test 18: Help/usage"
-run_test 18 "Should show usage with no args" 0 "${STITCH_SCRIPT}"
-run_test 18 "Should show usage with -h" 0 "${STITCH_SCRIPT}" -h
-run_test 18 "Should show usage with --help" 0 "${STITCH_SCRIPT}" --help
-
-print_header "Test 19: Debug mode"
-run_test 19 "Should enable debug with -d" 0 "${STITCH_SCRIPT}" -d || true
-run_test 19 "Should enable debug with --debug" 0 "${STITCH_SCRIPT}" --debug || true
-
-print_header "Test 20: Input validation"
-run_test 20 "Should pass with no parameters" 0 "${STITCH_SCRIPT}"
-
-print_header "Test 21: Basic file generation"
-create_test_stitch
-mv "${TEST_STITCH_FILE}" stitch.md
-run_test 21 "Should not generate README.md with wrong file format" 3 "${STITCH_SCRIPT}" || true
-
-print_header "Test 22: Real-world file generation"
-create_real_stitch
-run_test 22 "Should generate README from real stitch.md" 0 "${STITCH_SCRIPT}"
-
-print_header "Test 23: Missing stitch.md"
-rm -f stitch.md
-run_test 23 "Should fail when stitch.md is missing" 1 "${STITCH_SCRIPT}" || true
-
-print_header "Running lintall sanity tests"
-
-print_header "Test 24: Version flag"
-run_test 24 "Should have a version flag" 0 "${LINTALL_SCRIPT}" --version || true
-
-print_header "Test 25: Help/usage"
-run_test 25 "Should show usage with -h" 0 "${LINTALL_SCRIPT}" -h
-run_test 25 "Should show usage with --help" 0 "${LINTALL_SCRIPT}" --help
-
-print_header "Test 26: Debug mode"
-run_test 26 "Should enable debug with -d" 0 "${LINTALL_SCRIPT}" -d || true
-run_test 26 "Should enable debug with --debug" 0 "${LINTALL_SCRIPT}" --debug || true
-
-print_header "Test 27: Verbose mode"
-run_test 27 "Should enable verbose with -v" 0 "${LINTALL_SCRIPT}" -v || true
-run_test 27 "Should enable verbose with --verbose" 0 "${LINTALL_SCRIPT}" --verbose || true
-
-print_header "Test 28: Basic execution"
-run_test 28 "Should run successfully" 0 "${LINTALL_SCRIPT}"
-
-print_header "Running addvideotoday sanity tests"
-
-print_header "Test 29: Version flag"
-run_test 29 "Should show version with -v" 0 "${ADDVIDEOTODAY_SCRIPT}" -v
-run_test 29 "Should show version with --version" 0 "${ADDVIDEOTODAY_SCRIPT}" --version
-
-print_header "Test 30: Help/usage"
-run_test 30 "Should show usage with no args" 1 "${ADDVIDEOTODAY_SCRIPT}" || true
-run_test 30 "Should show usage with -h" 0 "${ADDVIDEOTODAY_SCRIPT}" -h
-run_test 30 "Should show usage with --help" 0 "${ADDVIDEOTODAY_SCRIPT}" --help
-
-print_header "Test 31: Invalid inputs"
-run_test 31 "Should reject invalid number of arguments" 1 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" || true
-run_test 31 "Should reject invalid video ID" 13 "${ADDVIDEOTODAY_SCRIPT}" "invalid" "1" || true
-run_test 31 "Should reject invalid day number (invalid)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "invalid" || true
-run_test 31 "Should reject invalid day number (negative)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "-1" || true
-run_test 31 "Should reject invalid day number (zero)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "0" || true
-run_test 31 "Should reject invalid day number (too large)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "367" || true
-# shellcheck disable=SC2153
-if ! date::isleapyear "$YEAR"; then
-  run_test 31 "Should reject day 366 in non-leap year" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "366" || true
-fi
-
-print_header "Test 32: Missing markdown file"
-rm January/Day001.md
-run_test 32 "Should fail due to missing markdown file" 6 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "001" || true
-
-print_header "Test 33: Video does not exist"
-run_test 33 "Should fail due to video not existing" 7 "${ADDVIDEOTODAY_SCRIPT}" "xxxxxxxxxxx" "2" || true
-
-print_header "Test 34: Basic execution"
-run_test 34 "Should run successfully" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "1" || true
-if date::isleapyear "$YEAR"; then
-  touch December/Day366.md
-  run_test 34 "Should accept day 366 in leap year" 0 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "366" || true
-fi
-
-print_header "Running addimgtoday sanity tests"
-
-print_header "Test 35: Version flag"
-run_test 35 "Should show version with -v" 0 "${ADDIMGTODAY_SCRIPT}" -v
-run_test 35 "Should show version with --version" 0 "${ADDIMGTODAY_SCRIPT}" --version
-
-print_header "Test 36: Help/usage"
-run_test 36 "Should show usage with no args" 2 "${ADDIMGTODAY_SCRIPT}" || true
-run_test 36 "Should show usage with -h" 0 "${ADDIMGTODAY_SCRIPT}" -h
-run_test 36 "Should show usage with --help" 0 "${ADDIMGTODAY_SCRIPT}" --help
-
-print_header "Test 37: Invalid inputs"
-run_test 37 "Should reject invalid number of arguments" 2 "${ADDIMGTODAY_SCRIPT}" "1" || true
-curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null || true
-run_test 37 "Should reject invalid day number" 6 "${ADDIMGTODAY_SCRIPT}" "example.jpg" "Caption" "invalid" || true
-run_test 37 "Should reject invalid image path" 3 "${ADDIMGTODAY_SCRIPT}" "invalid" "Caption" "1" || true
-
-print_header "Test 38: Basic execution"
-curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null || true
-run_test 38 "Should run successfully" 0 "${ADDIMGTODAY_SCRIPT}" "example.jpg" "Caption" "1" || true
-
-print_header "Test 39: Debug mode"
-curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null || true
-run_test 39 "Should enable debug with -d" 0 "${ADDIMGTODAY_SCRIPT}" -d "example.jpg" "Caption" "1" || true
-curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null || true
-run_test 39 "Should enable debug with --debug" 0 "${ADDIMGTODAY_SCRIPT}" --debug "example.jpg" "Caption" "1" || true
-
-print_header "Running cleanup sanity tests"
-
-print_header "Test 40: Help/usage"
-run_test 40 "Should show usage with no args" 0 "${CLEANUP_SCRIPT}"
-run_test 40 "Should show usage with -h" 0 "${CLEANUP_SCRIPT}" -h
-run_test 40 "Should show usage with --help" 0 "${CLEANUP_SCRIPT}" --help
-
-print_header "Test 41: Basic execution"
-touch testfile.tmp
-run_test 41 "Should run successfully" 0 "${CLEANUP_SCRIPT}"
-rm -f testfile.tmp
-
-print_header "Test 42: Backup cleanup"
-touch testfile~
-touch testfile.bak
-touch testfile.backup
-run_test 42 "Should clean up backup files" 0 "${CLEANUP_SCRIPT}" --backups
-rm -f testfile~ testfile.bak testfile.backup
-
-print_header "Test 43: Unknown option"
-run_test 43 "Should show unknown option message" 1 "${CLEANUP_SCRIPT}" --invalidoption
-
-print_header "Running saveplaylist sanity tests"
-
-print_header "Test 44: Version flag"
-run_test 44 "Should show version with --version" 0 "${SAVEPLAYLIST_SCRIPT}" --version
-
-print_header "Test 45: Help/usage"
-run_test 45 "Should show usage with no args" 2 "${SAVEPLAYLIST_SCRIPT}" || true
-run_test 45 "Should show usage with -h" 0 "${SAVEPLAYLIST_SCRIPT}" -h
-run_test 45 "Should show usage with --help" 0 "${SAVEPLAYLIST_SCRIPT}" --help
-
-print_header "Test 46: Invalid inputs"
-run_test 46 "Should reject missing playlist ID" 2 "${SAVEPLAYLIST_SCRIPT}" || true
-run_test 46 "Should reject invalid playlist ID" 4 "${SAVEPLAYLIST_SCRIPT}" "invalid" || true
-run_test 46 "Should reject non-existent playlist " 4 "${SAVEPLAYLIST_SCRIPT}" "PL4iIJvj6ypuG9v3Kg80Qt2ZUnspPHvXO" || true
-
-print_header "Test 47: Verbose mode"
-run_test 47 "Should enable verbose with -v" 0 "${SAVEPLAYLIST_SCRIPT}" -v "PLHprCs14Z-sCSlrl1ueVisUKm3lnvqC0S" || true
-run_test 47 "Should enable verbose with --verbose" 0 "${SAVEPLAYLIST_SCRIPT}" --verbose "PLHprCs14Z-sCSlrl1ueVisUKm3lnvqC0S" || true
-
-print_header "Running compact sanity tests"
-
-print_header "Test 48: Version flag"
-run_test 48 "Should show version with --version" 0 "${COMPACT_SCRIPT}" --version
-
-print_header "Test 49: Help/usage"
-run_test 49 "Should show usage with -h" 0 "${COMPACT_SCRIPT}" -h
-run_test 49 "Should show usage with --help" 0 "${COMPACT_SCRIPT}" --help
-
-print_header "Test 50: Debug mode"
-run_test 50 "Should enable debug with -d" 1 "${COMPACT_SCRIPT}" -d || true
-run_test 50 "Should enable debug with --debug" 1 "${COMPACT_SCRIPT}" --debug || true
-
-print_header "Test 51: Invalid inputs"
-run_test 51 "Should reject invalid directory" 1 "${COMPACT_SCRIPT}" /nonexistent || true
-
-print_header "Test 52: Basic execution"
-create_test_compact
-run_test 52 "Should run successfully" 0 "${COMPACT_SCRIPT}" "${TEST_COMPACT_DIR}"
-
-print_header "Running addsummariestodays sanity tests"
-
-print_header "Test 53: Version flag"
-run_test 53 "Should show version with --version" 0 "${ADDSUMMARIES_SCRIPT}" --version
-
-print_header "Test 54: No args"
-run_test 54 "Should show usage with no args" 1 "${ADDSUMMARIES_SCRIPT}" || true
-
-print_header "Test 55: Help/usage"
-run_test 55 "Should show usage with -h" 0 "${ADDSUMMARIES_SCRIPT}" -h
-run_test 55 "Should show usage with --help" 0 "${ADDSUMMARIES_SCRIPT}" --help
-
-print_header "Test 56: Invalid inputs"
-run_test 56 "Should reject invalid day range (non-numeric)" 1 "${ADDSUMMARIES_SCRIPT}" "one" "ten" || true
-run_test 56 "Should reject invalid day range (start > end)" 2 "${ADDSUMMARIES_SCRIPT}" "10" "5" || true
-run_test 56 "Should reject invalid --ai-handling value" 6 "${ADDSUMMARIES_SCRIPT}" --ai-handling=invalid 1 1 || true
-
-print_header "Test 57: AI handling options"
-create_test_videos
-create_test_day_file "January" 1 "# Day 1\n### AI-Generated Summary: Test"
-run_test 57 "Should skip with --ai-handling=skip" 0 "${ADDSUMMARIES_SCRIPT}" --ai-handling=skip 1 1 || true
-run_test 57 "Should overwrite with --ai-handling=overwrite" 0 "${ADDSUMMARIES_SCRIPT}" --ai-handling=overwrite 1 1 || true
-
-print_header "Test 58: Basic execution"
-run_test 58 "Should run successfully with --ai-handling=prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 <<< "Y" || true
-run_test 58 "Should run successfully with --ai-handling=prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 <<< "N" || true
-create_test_videos
-create_test_day_file "January" 1 "# Day 1"
-run_test 58 "Should run successfully with --ai-handling=prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 || true
-run_test 58 "Should run successfully with --ai-handling=overwrite" 0 "${ADDSUMMARIES_SCRIPT}" --ai-handling=overwrite 1 1 || true
-
-print_test_summary
