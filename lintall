@@ -83,7 +83,7 @@ main() {
   fi
 
   # Enable recursive globbing
-  shopt -s globstar
+  shopt -s globstar nullglob
 
   if ((verbose)); then
     echo "Running markdown formatter..."
