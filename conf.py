@@ -75,7 +75,8 @@ linkcheck_ignore = [
     r"https://www.gnu.org/software/m4/m4.html",
 ]
 linkcheck_ignore_redirects = True
-linkcheck_workers = 2  # or even 1 to be safer
+linkcheck_workers = 1
+# or even 1 to be safer
 linkcheck_retries = 2
 
 # hook to replace unavailable emojis in Symbola
