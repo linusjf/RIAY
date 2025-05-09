@@ -357,7 +357,7 @@ setup_test_environment() {
     fi
   fi
 
-  local stash_id="stash-$(date +%Y%m%d%H%M%S): sanity tests"
+  stash_id="stash-$(date +%Y%m%d%H%M%S): sanity tests"
   git stash push -m "$stash_id"
   git checkout -b "testing"
 }
