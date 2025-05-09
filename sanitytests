@@ -9,7 +9,7 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME=$(basename "$0")
 
 # Import required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/date.sh"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
@@ -61,7 +61,7 @@ version() {
 
 usage() {
   local exitcode="${1:-0}"
-  cat <<EOF
+  cat << EOF
 Usage: ${SCRIPT_NAME} [OPTIONS]
 
 Run sanity tests for video processing scripts
@@ -131,7 +131,7 @@ run_test() {
   printf "  %-50s" "${description}..."
 
   local actual_exit=0
-  if ! "$@" &>/dev/null; then
+  if ! "$@" &> /dev/null; then
     actual_exit=$?
   fi
 
@@ -172,7 +172,7 @@ print_test_summary() {
 }
 
 create_test_md() {
-  cat <<EOF >"${TEST_MD_FILE}"
+  cat << EOF > "${TEST_MD_FILE}"
 # Test Document
 
 ## Section 1
@@ -184,7 +184,7 @@ EOF
 }
 
 create_test_stitch() {
-  cat <<EOF >"${TEST_STITCH_FILE}"
+  cat << EOF > "${TEST_STITCH_FILE}"
 # Test Stitch Document
 
 ## Introduction
@@ -197,7 +197,7 @@ EOF
 }
 
 create_real_stitch() {
-  cat <<EOF >"${TEST_STITCH_CONTENT}"
+  cat << EOF > "${TEST_STITCH_CONTENT}"
 # README
 
 - [RIAY](start.md)
@@ -219,7 +219,7 @@ EOF
 }
 
 create_test_playlist() {
-  cat <<EOF >"${TEST_PLAYLIST_FILE}"
+  cat << EOF > "${TEST_PLAYLIST_FILE}"
 dQw4w9WgXcQ
 CfU7rIufywo
 Io1G_5I7a-0
@@ -228,30 +228,30 @@ EOF
 
 create_test_compact() {
   mkdir -p "${TEST_COMPACT_DIR}"
-  cat <<EOF >"${TEST_COMPACT_DIR}/${TEST_COMPACT_FILE}"
+  cat << EOF > "${TEST_COMPACT_DIR}/${TEST_COMPACT_FILE}"
 file1.md
 file2.md
 file3.md
 EOF
 
-  cat <<EOF >"${TEST_COMPACT_DIR}/file1.md"
+  cat << EOF > "${TEST_COMPACT_DIR}/file1.md"
 # File 1
 Content 1
 EOF
 
-  cat <<EOF >"${TEST_COMPACT_DIR}/file2.md"
+  cat << EOF > "${TEST_COMPACT_DIR}/file2.md"
 # File 2
 Content 2
 EOF
 
-  cat <<EOF >"${TEST_COMPACT_DIR}/file3.md"
+  cat << EOF > "${TEST_COMPACT_DIR}/file3.md"
 # File 3
 Content 3
 EOF
 }
 
 create_test_videos() {
-  cat <<EOF >"${TEST_VIDEOS_FILE}"
+  cat << EOF > "${TEST_VIDEOS_FILE}"
 dQw4w9WgXcQ
 CfU7rIufywo
 Io1G_5I7a-0
@@ -264,7 +264,7 @@ create_test_day_file() {
   local content="$3"
   mkdir -p "$month"
   printf -v filename "Day%03d.md" "$day"
-  echo "$content" >"${month}/${filename}"
+  echo "$content" > "${month}/${filename}"
 }
 
 stash_apply_id() {
@@ -308,33 +308,33 @@ trap cleanup EXIT
 parse_options() {
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    --from-test)
-      start_from="$2"
-      shift 2
-      ;;
-    --tests)
-      IFS=',' read -ra tests_to_run <<<"$2"
-      shift 2
-      ;;
-    --no-cleanup)
-      no_cleanup=true
-      shift
-      ;;
-    --stop-on-failure)
-      stop_on_failure=true
-      shift
-      ;;
-    --help | -h)
-      usage
-      ;;
-    --version | -v)
-      version
-      exit 0
-      ;;
-    *)
-      echo "Unknown option: $1" >&2
-      usage 1
-      ;;
+      --from-test)
+        start_from="$2"
+        shift 2
+        ;;
+      --tests)
+        IFS=',' read -ra tests_to_run <<< "$2"
+        shift 2
+        ;;
+      --no-cleanup)
+        no_cleanup=true
+        shift
+        ;;
+      --stop-on-failure)
+        stop_on_failure=true
+        shift
+        ;;
+      --help | -h)
+        usage
+        ;;
+      --version | -v)
+        version
+        exit 0
+        ;;
+      *)
+        echo "Unknown option: $1" >&2
+        usage 1
+        ;;
     esac
   done
 }
@@ -514,6 +514,7 @@ run_all_tests() {
   run_test 31 "Should reject invalid day number (negative)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "-1" || true
   run_test 31 "Should reject invalid day number (zero)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "0" || true
   run_test 31 "Should reject invalid day number (too large)" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "367" || true
+  #shellcheck disable=SC2153
   if ! date::isleapyear "$YEAR"; then
     run_test 31 "Should reject day 366 in non-leap year" 2 "${ADDVIDEOTODAY_SCRIPT}" "dQw4w9WgXcQ" "366" || true
   fi
@@ -545,18 +546,18 @@ run_all_tests() {
 
   print_header "Test 37: Invalid inputs"
   run_test 37 "Should reject invalid number of arguments" 2 "${ADDIMGTODAY_SCRIPT}" "1" || true
-  curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &>/dev/null || true
+  curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null || true
   run_test 37 "Should reject invalid day number" 6 "${ADDIMGTODAY_SCRIPT}" "example.jpg" "Caption" "invalid" || true
   run_test 37 "Should reject invalid image path" 3 "${ADDIMGTODAY_SCRIPT}" "invalid" "Caption" "1" || true
 
   print_header "Test 38: Basic execution"
-  curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &>/dev/null || true
+  curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null || true
   run_test 38 "Should run successfully" 0 "${ADDIMGTODAY_SCRIPT}" "example.jpg" "Caption" "1" || true
 
   print_header "Test 39: Debug mode"
-  curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &>/dev/null || true
+  curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null || true
   run_test 39 "Should enable debug with -d" 0 "${ADDIMGTODAY_SCRIPT}" -d "example.jpg" "Caption" "1" || true
-  curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &>/dev/null || true
+  curl https://yavuzceliker.github.io/sample-images/image-1.jpg --output example.jpg &> /dev/null || true
   run_test 39 "Should enable debug with --debug" 0 "${ADDIMGTODAY_SCRIPT}" --debug "example.jpg" "Caption" "1" || true
 
   print_header "Running cleanup sanity tests"
@@ -644,8 +645,8 @@ run_all_tests() {
   run_test 57 "Should overwrite with --ai-handling=overwrite" 0 "${ADDSUMMARIES_SCRIPT}" --ai-handling=overwrite 1 1 || true
 
   print_header "Test 58: Basic execution"
-  run_test 58 "Should run successfully with --ai-handling=prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 <<<"Y" || true
-  run_test 58 "Should run successfully with --ai-handling=prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 <<<"N" || true
+  run_test 58 "Should run successfully with --ai-handling=prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 <<< "Y" || true
+  run_test 58 "Should run successfully with --ai-handling=prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 <<< "N" || true
   create_test_videos
   create_test_day_file "January" 1 "# Day 1"
   run_test 58 "Should run successfully with --ai-handling=prompt" 0 "${ADDSUMMARIES_SCRIPT}" 1 1 || true
