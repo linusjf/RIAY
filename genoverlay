@@ -68,7 +68,7 @@ main() {
 
   source "${SCRIPT_DIR}/lib/vidmd.sh"
 
-  if ! date::validate_daynumber "${doy}"; then
+  if ! date::validate_daynumber "${doy}" "$YEAR"; then
     usage 1
   fi
 

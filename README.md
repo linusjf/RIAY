@@ -544,7 +544,7 @@ Mary, reflecting Jesus, the "sun of righteousness," is seen as the Mirror of Jus
 
 ##### ROSARY IN A YEAR DAY 5 - A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson
 
-*Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 😢 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria*🌹
+\_Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 😢 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria_🌹
 
 ##### AI-Generated Summary: Mary, Mother Inviolate — Finding Peace in Mary's Rose Garden
 
@@ -615,7 +615,7 @@ Prayer is not simply a passive reception of grace, but an active, determined str
 
 ##### ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson
 
-*"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.😢 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria*🙏🏽
+\_"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.😢 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria_🙏🏽
 
 ##### AI-Generated Summary: The Rosary as a Source of Grace
 
@@ -942,7 +942,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3922,6 +3922,8 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 08,2025](#may-082025)
   - [Queen of Angels](#queen-of-angels)
   - [AI-Generated Summary: Mary as Queen of Angels and Mother of Divine Grace](#ai-generated-summary-mary-as-queen-of-angels-and-mother-of-divine-grace)
+- [May 09,2025](#may-092025)
+  - [A Disposition of Reverence](#a-disposition-of-reverence)
 
 <!-- tocstop -->
 
@@ -4122,6 +4124,51 @@ _Concision note: Lewis’s style favors clarity and vivid imagery, here applied 
   - A reference to obtaining further materials is noted without promotional emphasis.
 
 _Summary retains the theological depth and lyrical clarity characteristic of Lewis, distilling Newman’s insights into concise, actionable points._
+
+#### May 09,2025
+
+##### A Disposition of Reverence
+
+[![A Disposition of Reverence](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day129.jpg)](https://youtu.be/jze1CWoM1C4 "A Disposition of Reverence")
+
+```markdown
+### AI-Generated Summary: Deepening Devotion Through Sacred Art and Prayer
+
+The text explores how prayer, meditation, and sacred art can deepen one’s spiritual relationship with Jesus and Mary. It emphasizes the value of contemplative engagement with religious artworks, using Fra Angelico’s _Annunciation_ as a focal point.
+
+#### Key Insights:
+
+- **Sacred Art as Meditation**:
+
+  - Visual art serves as a gateway to reflection, with the artist’s insights enriching spiritual practice.
+  - Direct, unhurried engagement with artworks is encouraged to aid ongoing meditation.
+
+- **Structure of Contemplation**:
+
+  - Sessions begin with historical context and visual description to guide reflection.
+  - Fra Angelico’s _Annunciation_ (mid-1430s) is analyzed for its theological and artistic depth.
+
+- **Symbolism in Fra Angelico’s Work**:
+
+  - The painting juxtaposes two arches: Mary (in blue, holding a book) and Gabriel (bowing in reverence).
+  - Adam and Eve appear in the background, linking the Fall to Mary’s redemptive _fiat_.
+  - A golden beam and descending dove signify divine intervention.
+
+- **Theological Contrasts**:
+
+  - Eve’s disobedience is undone by Mary’s obedience; Christ, the “new Adam,” restores humanity.
+  - Gabriel and Mary’s mutual bowing reflects humility before God’s will during the Incarnation.
+
+- **Invitation to Reverence**:
+  - Readers are urged to emulate Mary’s surrender and examine their own posture toward God.
+
+#### Closing Devotions:
+
+- Recitation of the _Hail Mary_ and _Glory Be_, honoring Mary and the Trinity.
+- A farewell blessing, expressing gratitude and hope.
+
+Fra Angelico’s humility (as noted by Vasari) mirrors the text’s call to quiet devotion—a harmony of art, prayer, and surrender.
+```
 
 ## June
 

@@ -49,7 +49,10 @@ if ! declare -f date::validate_daynumber > /dev/null; then
   # Returns: 0 if valid, 1 otherwise
   ######################################################################
   date::validate_daynumber() {
-    validators::validate_arg_count "$#" 2
+    validators::validate_arg_count "$#" 2 || {
+      err "Error: Two arguments 'doy' and 'year' expected"
+      return 1
+    }
     validators::isnumeric "$1" || {
       err "Error: Day number must be numeric"
       return 1
