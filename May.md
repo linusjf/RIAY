@@ -26,6 +26,9 @@
   - [AI-Generated Summary: Mary as Queen of Angels and Mother of Divine Grace](#ai-generated-summary-mary-as-queen-of-angels-and-mother-of-divine-grace)
 - [May 09,2025](#may-092025)
   - [A Disposition of Reverence](#a-disposition-of-reverence)
+  - [AI-Generated Summary: Deepening Devotion Through Sacred Art and Prayer](#ai-generated-summary-deepening-devotion-through-sacred-art-and-prayer)
+    - [Key Insights:](#key-insights)
+    - [Closing Devotions](#closing-devotions)
 
 <!-- tocstop -->
 
@@ -233,12 +236,11 @@ _Summary retains the theological depth and lyrical clarity characteristic of Lew
 
 [![A Disposition of Reverence](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day129.jpg)](https://youtu.be/jze1CWoM1C4 "A Disposition of Reverence")
 
-```markdown
 ### AI-Generated Summary: Deepening Devotion Through Sacred Art and Prayer
 
 The text explores how prayer, meditation, and sacred art can deepen one’s spiritual relationship with Jesus and Mary. It emphasizes the value of contemplative engagement with religious artworks, using Fra Angelico’s _Annunciation_ as a focal point.
 
-#### Key Insights:
+#### Key Insights
 
 - **Sacred Art as Meditation**:
 
@@ -262,12 +264,12 @@ The text explores how prayer, meditation, and sacred art can deepen one’s spir
   - Gabriel and Mary’s mutual bowing reflects humility before God’s will during the Incarnation.
 
 - **Invitation to Reverence**:
+
   - Readers are urged to emulate Mary’s surrender and examine their own posture toward God.
 
-#### Closing Devotions:
+#### Closing Devotions
 
 - Recitation of the _Hail Mary_ and _Glory Be_, honoring Mary and the Trinity.
 - A farewell blessing, expressing gratitude and hope.
 
 Fra Angelico’s humility (as noted by Vasari) mirrors the text’s call to quiet devotion—a harmony of art, prayer, and surrender.
-```
