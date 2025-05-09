@@ -131,9 +131,7 @@ run_test() {
   printf "  %-50s" "${description}..."
 
   local actual_exit=0
-  if ! "$@" &> /dev/null; then
-    actual_exit=$?
-  fi
+  "$@" &> /dev/null || actual_exit=$?
 
   git restore .
   git clean -fd
