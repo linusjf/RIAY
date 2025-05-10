@@ -68,7 +68,7 @@ get_findsnippetfiles_path() {
 
 #######################################
 # Process files for a month
-# Globals: GITHUB_USERNAME
+# Globals: REPO_OWNER
 # Arguments:
 #   $1 - Month name
 #   $2 - GitHub repo name
@@ -98,7 +98,7 @@ process_month_files() {
 
 #######################################
 # Process a single file
-# Globals: GITHUB_USERNAME
+# Globals: REPO_OWNER
 # Arguments:
 #   $1 - File path
 #   $2 - Month name
@@ -119,7 +119,7 @@ process_file() {
   local snippet_no_suffix=$(echo "$base_no_suffix" \
     | sed "s/PLACEHOLDER_MONTH/$month/g" \
     | sed "s/PLACEHOLDER_DAY/$day_number/g" \
-    | sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g")
+    | sed "s/PLACEHOLDER_USERNAME/$REPO_OWNER/g")
 
   if grep -E "$snippet_no_suffix" "$file" > /dev/null; then
     out "Found snippet ${snippet_no_suffix} in: $file (Day: $day_number, Month: $month)"
@@ -135,7 +135,7 @@ process_file() {
       local snippet_with_suffix=$(echo "$base_with_suffix" \
         | sed "s/PLACEHOLDER_MONTH/$month/g" \
         | sed "s/PLACEHOLDER_DAY/$day_number/g" \
-        | sed "s/PLACEHOLDER_USERNAME/$GITHUB_USERNAME/g" \
+        | sed "s/PLACEHOLDER_USERNAME/$REPO_OWNER/g" \
         | sed "s/PLACEHOLDER_SUFFIX/$suffix/g")
 
       if grep -E "$snippet_with_suffix" "$file" > /dev/null; then
@@ -190,7 +190,7 @@ verify_remaining_snippets() {
 
 #######################################
 # Main function
-# Globals: GITHUB_USERNAME
+# Globals: REPO_OWNER
 # Arguments:
 #   $@ - Command line arguments
 # Outputs: Processing info to STDOUT
@@ -215,8 +215,8 @@ main() {
 
   date::validatemonth "$1" || exit 1
 
-  [[ -n "${GITHUB_USERNAME:-}" ]] \
-    || die "Error: GITHUB_USERNAME environment variable not set"
+  [[ -n "${REPO_OWNER:-}" ]] \
+    || die "Error: REPO_OWNER environment variable not set"
 
   local month_num=$1
   local month

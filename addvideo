@@ -256,7 +256,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   source "${SCRIPT_DIR}/lib/lockconfig.sh"
   lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
   # Check requirements
-  require_vars YOUTUBE_API_KEY GITHUB_USERNAME YEAR
+  require_vars YOUTUBE_API_KEY REPO_OWNER YEAR
   require_commands sed basename date tee mv date wc cat cp
 
   if "$LOGGING"; then

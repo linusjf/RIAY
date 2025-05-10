@@ -47,7 +47,7 @@ main() {
   fi
 
   # Check requirements
-  require_vars GITHUB_USERNAME
+  require_vars REPO_OWNER
 
   # Validate numeric inputs
   for doy in "$@"; do
@@ -71,7 +71,7 @@ main() {
     for file in ./${fname}; do
       if [[ "${file}" =~ ${regexjpg} ]]; then
         local snippet="${BASH_REMATCH[1]}"
-        local url="https://raw.githubusercontent.com/${GITHUB_USERNAME}/${root}/refs/heads/main/${month}/jpgs/Day$(printf "%d" "${doy#0}")Snippet${snippet}.jpg"
+        local url="https://raw.githubusercontent.com/${REPO_OWNER}/${root}/refs/heads/main/${month}/jpgs/Day$(printf "%d" "${doy#0}")Snippet${snippet}.jpg"
         local caption
         if [[ -n "$snippet" ]]; then
           caption="Day $(printf "%d" "${doy#0}") Snippet ${snippet}"
