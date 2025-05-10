@@ -321,5 +321,3 @@ The repeated "Hail Mary" and "Glory Be" prayers in the original text echo the pa
 - Trust in God’s eternal light ("Glory be to the Father, and to the Son...").
 
 In _The Visitation_, Rembrandt distills a moment where heaven touches earth, and two women—illuminated by faith—become vessels of grace. The artwork, like the prayers it inspires, reminds us that divine companionship transforms uncertainty into hope.
-
-_Note: Summary structured for clarity, with lists replacing subheadings per your request. Word count: ~500._
