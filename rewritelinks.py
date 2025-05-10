@@ -3,6 +3,8 @@ import sys
 import re
 from pathlib import Path
 import shutil
+from dotenv import load_dotenv
+import os
 
 # Base GitHub raw URL to be replaced
 URL_BASE = "https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/"
@@ -41,6 +43,7 @@ def main():
         print("Usage: python rewrite_links.py file1.md file2.md ...")
         return
 
+    load_dotenv(dotenv_path="config.env")
     for arg in sys.argv[1:]:
         backup_and_rewrite(Path(arg))
 
