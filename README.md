@@ -4614,6 +4614,7 @@ Available commands:
 
 - addvideo
 - addvideotoday
+- addimgtoday
 - genmonth
 - lintall
 - stitch
