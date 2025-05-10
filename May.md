@@ -31,6 +31,11 @@
     - [Closing Devotions](#closing-devotions)
 - [May 10,2025](#may-102025)
   - [Joy in the Darkness](#joy-in-the-darkness)
+  - [AI-Generated Summary: Rembrandt’s The Visitation and the Divine Light of Shared Faith](#ai-generated-summary-rembrandts-the-visitation-and-the-divine-light-of-shared-faith)
+    - [Key Elements of the Painting](#key-elements-of-the-painting)
+    - [Theological and Emotional Depth](#theological-and-emotional-depth)
+    - [Reflections on the Scene](#reflections-on-the-scene)
+    - [Connection to Prayer](#connection-to-prayer)
 
 <!-- tocstop -->
 
@@ -282,8 +287,7 @@ Fra Angelico’s humility (as noted by Vasari) mirrors the text’s call to quie
 
 [![Joy in the Darkness](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day130.jpg)](https://youtu.be/7dScG5-xco8 "Joy in the Darkness")
 
-```markdown
-### AI-Generated Summary: Rembrandt’s _The Visitation_ and the Divine Light of Shared Faith
+### AI-Generated Summary: Rembrandt’s The Visitation and the Divine Light of Shared Faith
 
 Rembrandt’s _The Visitation_ (c. 1640) captures a biblical moment rich in spiritual and artistic significance. The Dutch master, working amid Europe’s religious upheavals, imbues the scene with tender humanity and divine mystery.
 
@@ -317,6 +321,5 @@ The repeated "Hail Mary" and "Glory Be" prayers in the original text echo the pa
 - Trust in God’s eternal light ("Glory be to the Father, and to the Son...").
 
 In _The Visitation_, Rembrandt distills a moment where heaven touches earth, and two women—illuminated by faith—become vessels of grace. The artwork, like the prayers it inspires, reminds us that divine companionship transforms uncertainty into hope.
-```
 
 _Note: Summary structured for clarity, with lists replacing subheadings per your request. Word count: ~500._
