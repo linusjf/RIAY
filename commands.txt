@@ -1,5 +1,5 @@
 # commands
-addvideo "jze1CWoM1C4" "A Disposition of Reverence"
+addvideo "7dScG5-xco8" "Joy in the Darkness"
 genmonth 5
 stitch
 lintall
