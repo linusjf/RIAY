@@ -22,7 +22,7 @@ build:
     pre_install:
       # <-- This runs your script before Sphinx builds
       - python strip_toc.py
-      - python copyimagestostatic.py
+      - python copytostatic.py
 sphinx:
   configuration: conf.py
   fail_on_warning: true
