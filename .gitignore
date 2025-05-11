@@ -14,5 +14,4 @@ build/**
 *.en.txt
 fail*.json
 geminimodelids.txt
-1.txt
-2.txt
+venv/**
