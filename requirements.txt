@@ -3,4 +3,3 @@ cairosvg
 sphinxcontrib-svg2pdfconverter[CairoSVG]
 sphinx-rtd-theme
 sphinx-rtd-dark-mode
-python-dotenv

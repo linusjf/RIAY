@@ -17,6 +17,7 @@ URL_BASE = URL_BASE.replace("{user}", user).replace("{repo}", repo)
 # Regex pattern to match and capture everything after the base URL
 pattern = re.compile(re.escape(URL_BASE) + r"([^)]+)")
 
+
 def get_relative_prefix(file_path: str) -> str:
     if file_path.endswith(".jpg"):
         return "_static/images/"
@@ -24,6 +25,7 @@ def get_relative_prefix(file_path: str) -> str:
         return "_static/pdfs/"
     else:
         return "_static/others/"
+
 
 def rewrite(md_file: Path):
     if not md_file.is_file():
@@ -43,9 +45,13 @@ def rewrite(md_file: Path):
 
     if count > 0:
         md_file.write_text(modified)
-        print(f"✅ Updated: {md_file} ({count} link{'s' if count != 1 else ''} modified)")
+        print(
+            f"✅ Updated: {md_file} ({count} link{'s' if count != 1 else ''} modified)"
+        )
     else:
         print(f"➖ No changes: {md_file}")
+    return 0
+
 
 def main():
     if len(sys.argv) < 2:
@@ -54,6 +60,8 @@ def main():
 
     for arg in sys.argv[1:]:
         rewrite(Path(arg))
+    return 0
+
 
 if __name__ == "__main__":
     main()
