@@ -20,6 +20,7 @@ readonly EXIT_VIDEO_NOT_FOUND=4
 readonly EXIT_NO_INTERNET=5
 readonly EXIT_OVERLAY_FAILED=6
 readonly EXIT_FILE_GENERATION_FAILED=7
+readonly EXIT_VIDEO_EXISTS=8
 
 ######################################################################
 # Functions
@@ -54,6 +55,7 @@ Exit Codes:
   5  No internet connection
   6  Failed to generate overlay
   7  Failed to generate files
+  8  Video already exists in videos.txt
 EOF
   exit "$exitcode"
 }
@@ -65,6 +67,15 @@ EOF
 # Returns: none
 version() {
   printf "%s\n" "$VERSION"
+}
+
+# Check if video ID already exists
+# Globals: VIDEOS_FILE
+# Arguments: vid
+# Outputs: none
+# Returns: 0 if exists, 1 otherwise
+check_video_exists() {
+  grep -q "^$1$" "$VIDEOS_FILE"
 }
 
 # Validate script inputs
@@ -82,6 +93,11 @@ validate_inputs() {
   if ! vidmd::validate_caption "$2"; then
     echo "Error: Invalid caption format: '$2'" >&2
     return $EXIT_INVALID_CAPTION
+  fi
+
+  if check_video_exists "$1"; then
+    echo "Error: Video ID '$1' already exists in $VIDEOS_FILE" >&2
+    return $EXIT_VIDEO_EXISTS
   fi
 
   if ! youtube::check_video_exists "$1"; then
