@@ -24,7 +24,8 @@ build:
       - python strip_toc.py
       - python copytostatic.py
       - python -m pip install python-dotenv
-      - python rewritelinks.py start.md January.md February.md March.md \
+      - |
+        python rewritelinks.py start.md January.md February.md March.md \
         April.md May.md June.md July.md August.md September.md October.md \
         November.md December.md
 python:
