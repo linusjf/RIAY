@@ -26,13 +26,13 @@ build:
       - python rewritelinks.py start.md January.md February.md March.md \
         April.md May.md June.md July.md August.md September.md October.md \
         November.md December.md
+  python:
+    install:
+      # Install our python packages before building the docs
+      - requirements: requirements.txt
 sphinx:
   configuration: conf.py
   fail_on_warning: true
 formats:
   - epub
   - pdf
-python:
-  install:
-    # Install our python packages before building the docs
-    - requirements: requirements.txt
