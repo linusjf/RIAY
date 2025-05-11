@@ -434,7 +434,7 @@ function main() {
     >&2 echo "Final summary generated successfully"
   fi
 
-  echo -e "${FINAL_SUMMARY}" | sed '/^```markdown$/d' | sed '/^```$/d'
+  echo -e "${FINAL_SUMMARY}" | sed -E '/^```(markdown)?[[:space:]]*$/d'
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
