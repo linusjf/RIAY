@@ -13,7 +13,7 @@ TOC_FILES := start.md January.md February.md March.md April.md May.md June.md Ju
 all: git venv deps preprocess html pdf epub
 
 git:
-	git stash
+	git stash || true
 	git checkout -b readthedocs
 
 venv:
@@ -51,5 +51,5 @@ clean:
 	git restore .
 	git clean -fd
 	git checkout development
-	git stash pop
+	git stash pop || true
 	git branch -d readthedocs
