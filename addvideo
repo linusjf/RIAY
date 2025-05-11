@@ -33,7 +33,7 @@ readonly EXIT_VIDEO_EXISTS=8
 # Returns: exits with status 1
 usage() {
   exitcode="${1:-0}"
-  cat << EOF
+  cat <<EOF
 Usage: ${0##*/} [-n|--dry-run] [-d|--debug] [-v|--version] vid caption
 
 Add a new video to the system by generating markdown and updating indexes.
@@ -55,7 +55,7 @@ Exit Codes:
   5  No internet connection
   6  Failed to generate overlay
   7  Failed to generate files
-  8  Video already exists in videos.txt
+  8  Video already exists in ${VIDEOS_FILE}
 EOF
   exit "$exitcode"
 }
@@ -139,16 +139,16 @@ generate_files() {
     echo
     echo "$md"
     "${SCRIPT_DIR}/summarizevideo" -- "$vid"
-  } >| "$fname"
+  } >|"$fname"
 
   if ! cp "${month}/${COMPACT_FILE}" "${month}/${COMPACT_FILE}.bak"; then
     echo "Warning: Failed to backup compact file" >&2
   fi
 
-  basename -- "$fname" >> "${month}/${COMPACT_FILE}"
+  basename -- "$fname" >>"${month}/${COMPACT_FILE}"
 
   if "${SCRIPT_DIR}/genmonth" "$monthnumber" "$YEAR"; then
-    printf "%s\n" "$vid" >> "$VIDEOS_FILE"
+    printf "%s\n" "$vid" >>"$VIDEOS_FILE"
     echo "Successfully added video $vid"
     return $EXIT_SUCCESS
   else
@@ -174,18 +174,38 @@ dry_run() {
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(date::datefromdoy "${doy#0}")"
 
-  cat << EOF
-DRY RUN: Would execute the following actions:
-- Generate overlay for video $vid
-- Create file $fname with contents:
-## $formatdt
+  cat <<EOF
+=== DRY RUN SIMULATION ===
+Video Details:
+- ID: $vid
+- Caption: "$caption"
+- Day of Year: $doy
+- Month: $month
+- Date: $formatdt
 
-### $caption
+Operations that would be performed:
+1. Overlay Generation:
+   - Command: ${SCRIPT_DIR}/genoverlay "$vid" "$doy"
+   - Would create overlay image for day $doy
 
-$(vidmd::genvidthmd "$vid" "$videourl" "$caption" "$doy")
+2. File Creation:
+   - Path: $fname
+   - Contents:
+     ## $formatdt
 
-- Append to ${month}/${COMPACT_FILE} and $VIDEOS_FILE
-- Generate markdown for ${month} with table of contents
+     ### $caption
+
+     $(vidmd::genvidthmd "$vid" "$videourl" "$caption" "$doy")
+
+3. File Updates:
+   - Would append to ${month}/${COMPACT_FILE}
+   - Would append to $VIDEOS_FILE
+
+4. Month Regeneration:
+   - Command: ${SCRIPT_DIR}/genmonth "$(date::monthnumberfrommonth "${month}" "${YEAR}")" "$YEAR"
+   - Would regenerate TOC for $month
+
+=== END DRY RUN ===
 EOF
 }
 
@@ -201,22 +221,22 @@ main() {
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -n | --dry-run)
-        dry_run=true
-        shift
-        ;;
-      -d | --debug)
-        debug=true
-        shift
-        ;;
-      -v | --version)
-        version
-        exit $EXIT_SUCCESS
-        ;;
-      -h | --help)
-        usage
-        ;;
-      *) break ;;
+    -n | --dry-run)
+      dry_run=true
+      shift
+      ;;
+    -d | --debug)
+      debug=true
+      shift
+      ;;
+    -v | --version)
+      version
+      exit $EXIT_SUCCESS
+      ;;
+    -h | --help)
+      usage
+      ;;
+    *) break ;;
     esac
   done
 
@@ -237,7 +257,7 @@ main() {
   fi
 
   local doy
-  doy=$(("$(wc -l < "$VIDEOS_FILE")" + 1))
+  doy=$(("$(wc -l <"$VIDEOS_FILE")" + 1))
 
   if $dry_run; then
     dry_run "$vid" "$caption" "$doy"
@@ -258,7 +278,7 @@ main() {
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   # Resolve script directory
-  if command -v realpath > /dev/null 2>&1; then
+  if command -v realpath >/dev/null 2>&1; then
     readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else
     readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
