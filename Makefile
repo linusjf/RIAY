@@ -8,9 +8,9 @@ VENV := venv
 OUTPUT := _build
 TOC_FILES := start.md January.md February.md March.md April.md May.md June.md July.md August.md September.md October.md November.md December.md
 
-.PHONY: all git venv deps preprocess html latex pdf epub clean
+.PHONY: all git venv deps preprocess linkcheck html latex pdf epub clean
 
-all: git venv deps preprocess html pdf epub
+all: git venv deps preprocess linkcheck html pdf epub
 
 git:
 	git stash || true
@@ -30,6 +30,10 @@ preprocess:
 	$(PYTHON) strip_toc.py && \
 	$(PYTHON) copytostatic.py && \
 	$(PYTHON) rewritelinks.py $(TOC_FILES)
+
+linkcheck:
+	. $(VENV)/bin/activate && \
+ 	$(PYTHON) -m sphinx -b linkcheck . $(OUTPUT)/linkcheck
 
 html:
 	. $(VENV)/bin/activate && \
