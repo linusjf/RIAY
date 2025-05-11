@@ -66,6 +66,9 @@ latex_elements = {
 """,
 }
 
+# -- Options for epub output
+epub_exclude_files = ['_static/pdfs/Rosary_in_a_Year_Prayer_Plan.pdf']
+
 # -- Options for linkcheck
 linkcheck_timeout = 30  # seconds
 linkcheck_ignore = [
