@@ -10,7 +10,8 @@ project = "RIAY"
 copyright = "Aggregated by Linus Fernandes"
 author = "Linus Fernandes"
 version = "1"
-release = "1.0"
+import os
+release = os.environ.get('READTHEDOCS_VERSION', 'latest')
 master_doc = "index"
 
 # -- General configuration ---------------------------------------------------
