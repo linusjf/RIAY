@@ -8,9 +8,13 @@ VENV := venv
 OUTPUT := _build
 TOC_FILES := start.md January.md February.md March.md April.md May.md June.md July.md August.md September.md October.md November.md December.md
 
-.PHONY: all venv deps preprocess html latex pdf epub clean
+.PHONY: all git venv deps preprocess html latex pdf epub clean
 
-all: venv deps preprocess html pdf epub
+all: git venv deps preprocess html pdf epub
+
+git:
+	git stash
+	git checkout -b readthedocs
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -44,3 +48,8 @@ epub:
 
 clean:
 	rm -rf $(VENV) $(OUTPUT)
+	git restore .
+	git clean -fd
+	git checkout development
+	git stash pop
+	git branch -d readthedocs
