@@ -19,6 +19,7 @@ build:
         exit 183
         fi
       fi
+    - python -m pip install python3-dotenv
     - python strip_toc.py
     - python copytostatic.py
     - python rewritelinks.py start.md January.md February.md March.md \
