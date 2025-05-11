@@ -89,14 +89,15 @@ main() {
     echo "Running markdown formatter..."
   fi
 
-  if ! mdformat -- **/*.md; then
+  mapfile -t mdfiles < <(find . -path '*/venv' -prune -o -name '*.md' -print)
+  if ! parallel mdformat ::: "${mdfiles[@]}"; then
     die "mdformat failed" "${ERROR_MDFORMAT_FAILED}"
   fi
 
   if ((verbose)); then
     echo "Running markdown linter..."
   fi
-  if ! markdownlint --fix -- **/*.md; then
+  if ! markdownlint --fix --ignore venv -- **/*.md; then
     die "markdownlint failed" "${ERROR_MARKDOWNLINT_FAILED}"
   fi
 
@@ -108,7 +109,7 @@ main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require_commands date tee markdownlint mdformat || exit "${ERROR_MISSING_COMMAND}"
+  require_commands parallel date tee markdownlint mdformat || exit "${ERROR_MISSING_COMMAND}"
   if "$LOGGING"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
