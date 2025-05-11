@@ -1,20 +1,46 @@
-# Minimal makefile for Sphinx documentation
-#
+######################################################################
+# @author      : Linus Fernandes (linusfernandes at gmail dot com)
+# @file        : Makefile
+# @created     : Sunday May 11, 2025 17:03:06 IST
+######################################################################
+PYTHON := python
+VENV := venv
+OUTPUT := _build
+TOC_FILES := start.md January.md February.md March.md April.md May.md June.md July.md August.md September.md October.md November.md December.md
 
-# You can set these variables from the command line, and also
-# from the environment for the first two.
-SPHINXOPTS    ?=
-SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = .
-BUILDDIR      = build
+.PHONY: all venv deps preprocess html latex pdf epub clean
 
-# Put it first so that "make" without argument is like "make help".
-help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+all: venv deps preprocess html pdf epub
 
-.PHONY: help Makefile
+venv:
+	$(PYTHON) -m venv $(VENV)
 
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+deps: venv
+	. $(VENV)/bin/activate && \
+	$(PYTHON) -m pip install --upgrade pip setuptools && \
+	$(PYTHON) -m pip install --upgrade python-dotenv sphinx && \
+	$(PYTHON) -m pip install --exists-action=w -r requirements.txt
+
+preprocess:
+	. $(VENV)/bin/activate && \
+	$(PYTHON) strip_toc.py && \
+	$(PYTHON) copytostatic.py && \
+	$(PYTHON) rewritelinks.py $(TOC_FILES)
+
+html:
+	. $(VENV)/bin/activate && \
+	$(PYTHON) -m sphinx -T -W --keep-going -b html -d $(OUTPUT)/doctrees -D language=en . $(OUTPUT)/html
+
+latex:
+	. $(VENV)/bin/activate && \
+	$(PYTHON) -m sphinx -T -b latex -d $(OUTPUT)/doctrees -D language=en . $(OUTPUT)/latex
+
+pdf: latex
+	latexmk -r latexmkrc -pdf -f -dvi- -ps- -jobname=riay -interaction=nonstopmode -output-directory=$(OUTPUT)/latex $(OUTPUT)/latex/riay.tex
+
+epub:
+	. $(VENV)/bin/activate && \
+	$(PYTHON) -m sphinx -T -W --keep-going -b epub -d $(OUTPUT)/doctrees -D language=en . $(OUTPUT)/epub
+
+clean:
+	rm -rf $(VENV) $(OUTPUT)

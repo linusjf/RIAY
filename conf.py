@@ -11,7 +11,8 @@ copyright = "Aggregated by Linus Fernandes"
 author = "Linus Fernandes"
 version = "1"
 import os
-release = os.environ.get('READTHEDOCS_VERSION', 'latest')
+
+release = os.environ.get("READTHEDOCS_VERSION", "latest")
 master_doc = "index"
 
 # -- General configuration ---------------------------------------------------
@@ -44,7 +45,12 @@ exclude_patterns = [
     "Conventions/*.md",
     ".aider.chat*",
 ]
-suppress_warnings = ["toc.not_included", "myst.xref_missing", "image/svg+xml"]
+suppress_warnings = [
+    "toc.not_included",
+    "myst.xref_missing",
+    "image/svg+xml",
+    "epub.unknown_project_files",
+]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -68,7 +74,7 @@ latex_elements = {
 }
 
 # -- Options for epub output
-epub_exclude_files = ['_static/pdfs/Rosary_in_a_Year_Prayer_Plan.pdf']
+epub_exclude_files = ["_static/pdfs/*.pdf"]
 
 # -- Options for linkcheck
 linkcheck_timeout = 30  # seconds
