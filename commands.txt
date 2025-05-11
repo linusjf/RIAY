@@ -1,5 +1,4 @@
 # commands
-addvideo "7dScG5-xco8" "Joy in the Darkness"
-genmonth 5
+addvideo "Q9IPhitx20M" "Worship and Warmth"
 stitch
 lintall
