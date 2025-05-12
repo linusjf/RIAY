@@ -55,7 +55,7 @@ def rewrite(md_file: Path):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python rewrite_links.py file1.md file2.md ...")
+        print("Usage: python rewritelinks.py file1.md file2.md ...")
         return
 
     for arg in sys.argv[1:]:
