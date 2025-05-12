@@ -1,0 +1,31 @@
+name: Link Checker
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lychee:
+    name: Check links in root Markdown files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Lychee
+        run: |
+          curl -LsSf https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          sudo mv lychee /usr/local/bin/
+
+      - name: Run Lychee and save report
+        run: |
+          lychee --verbose --cache --max-cache-age 1d --exclude 'https://localhost:.*' *.md > lychee.out
+
+      - name: Upload report as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-report
+          path: lychee.out

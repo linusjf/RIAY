@@ -19,7 +19,7 @@ gitcommands:
 	git stash || true
 	git checkout -b $(READTHEDOCS_BRANCH)
 
-venv:
+venv: gitcommands
 	$(PYTHON) -m venv $(VENV)
 
 deps: venv
