@@ -85,7 +85,7 @@ glob_ignore_case = false
 exclude = [
   "https://example.com",
   "https://localhost:.*",
-# "https://www.gnu.org/software/m4/m4.html",
+  "https://www.gnu.org/software/m4/m4.html",
 ]
 
 # Exclude these filesystem paths from getting checked.
