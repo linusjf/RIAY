@@ -20,11 +20,11 @@ pattern = re.compile(re.escape(URL_BASE) + r"([^)]+)")
 
 def get_relative_prefix(file_path: str) -> str:
     if file_path.endswith(".jpg"):
-        return "_static/images/"
+        return "/_static/images/"
     elif file_path.endswith(".pdf"):
-        return "_static/pdfs/"
+        return "/_static/pdfs/"
     else:
-        return "_static/others/"
+        return "/_static/others/"
 
 
 def rewrite(md_file: Path):
