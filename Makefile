@@ -7,6 +7,8 @@ PYTHON := python
 VENV := venv
 OUTPUT := _build
 TOC_FILES := start.md January.md February.md March.md April.md May.md June.md July.md August.md September.md October.md November.md December.md
+CURRENT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
+READTHEDOCS_BRANCH := readthedocs
 
 .PHONY: all git venv deps preprocess linkcheck html latex pdf epub clean
 
@@ -14,7 +16,7 @@ all: git venv deps preprocess linkcheck html pdf epub
 
 git:
 	git stash || true
-	git checkout -b readthedocs
+	git checkout -b $(READTHEDOCS_BRANCH)
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -54,6 +56,6 @@ clean:
 	rm -rf $(VENV) $(OUTPUT)
 	git restore .
 	git clean -fd
-	git checkout development
+	git checkout $(CURRENT_BRANCH)
 	git stash pop || true
-	git branch -d readthedocs
+	git branch -d $(READTHEDOCS_BRANCH)
