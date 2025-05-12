@@ -9,12 +9,14 @@ OUTPUT := _build
 TOC_FILES := start.md January.md February.md March.md April.md May.md June.md July.md August.md September.md October.md November.md December.md
 CURRENT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
 READTHEDOCS_BRANCH := readthedocs
+NOW := $(shell date)
 
-.PHONY: all git venv deps preprocess linkcheck html latex pdf epub clean
+.PHONY: all gitcommands venv deps preprocess linkcheck html latex pdf epub clean
 
-all: git venv deps preprocess linkcheck html pdf epub
+all: gitcommands venv deps preprocess linkcheck html pdf epub
 
-git:
+gitcommands:
+	echo "In branch: " $(CURRENT_BRANCH)
 	git stash || true
 	git checkout -b $(READTHEDOCS_BRANCH)
 
@@ -35,7 +37,7 @@ preprocess:
 
 linkcheck:
 	. $(VENV)/bin/activate && \
- 	$(PYTHON) -m sphinx -b linkcheck . $(OUTPUT)/linkcheck
+ 	$(PYTHON) -m sphinx -b linkcheck -j auto . $(OUTPUT)/linkcheck
 
 html:
 	. $(VENV)/bin/activate && \
