@@ -32,3 +32,14 @@ jobs:
         with:
           name: lychee-report
           path: lychee.out
+
+  trigger-readthedocs:
+    needs: lychee
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: Trigger Read the Docs build
+        run: |
+          curl -X POST \
+            -H "Authorization: Token ${{ secrets.RTD_TOKEN }}" \
+            https://readthedocs.org/api/v3/projects/RIAY/versions/latest/builds/
