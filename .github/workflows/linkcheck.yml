@@ -1,3 +1,4 @@
+---
 name: Link Checker
 
 on:
@@ -7,28 +8,28 @@ on:
     branches: [main]
 
 jobs:
-  check-readme-change:
+  check-readme-or-jpg-change:
     runs-on: ubuntu-latest
     outputs:
-      readme_changed: ${{ steps.check.outputs.readme_changed }}
+      relevant_changed: ${{ steps.check.outputs.relevant_changed }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Check if README.md changed
+      - name: Check if README.md or any .jpg file changed
         id: check
         run: |
           git fetch origin main --depth=2
-          if git diff --name-only HEAD HEAD^ | grep -q "^README.md$"; then
-            echo "readme_changed=true" >> $GITHUB_OUTPUT
+          if git diff --name-only HEAD HEAD^ | grep -Eq "^README.md$|\.jpg$"; then
+            echo "relevant_changed=true" >> $GITHUB_OUTPUT
           else
-            echo "readme_changed=false" >> $GITHUB_OUTPUT
+            echo "relevant_changed=false" >> $GITHUB_OUTPUT
           fi
 
   lychee:
     name: Check links in README
-    needs: check-readme-change
-    if: needs.check-readme-change.outputs.readme_changed == 'true'
+    needs: check-readme-or-jpg-change
+    if: needs.check-readme-or-jpg-change.outputs.relevant_changed == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
