@@ -25,7 +25,7 @@ jobs:
 
       - name: Run Lychee and save report
         run: |
-          lychee --config .lycee.toml *.md
+          lychee --config .lychee.toml *.md
 
       - name: Upload report as artifact
         uses: actions/upload-artifact@v4
