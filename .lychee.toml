@@ -73,7 +73,7 @@ headers = []
 
 # Remap URI matching pattern to different URI.
 remap = [
-  "https://youtu\\.be/(.*)=https://www.youtube.com/watch?v=$1"
+  "https://youtu\\.be/(.*)" "https://www.youtube.com/watch?v=$1"
 ]
 
 
