@@ -39,6 +39,9 @@
 - [May 11,2025](#may-112025)
   - [Worship and Warmth](#worship-and-warmth)
   - [AI-Generated Summary: A Meditation on Pellegrini’s Nativity and the Adoration of the Christ Child](#ai-generated-summary-a-meditation-on-pellegrinis-nativity-and-the-adoration-of-the-christ-child)
+- [May 12,2025](#may-122025)
+  - [Eyes on Jesus](#eyes-on-jesus)
+  - [AI-Generated Summary: A Reflection on Campy’s Fresco and the Devotion of Mary](#ai-generated-summary-a-reflection-on-campys-fresco-and-the-devotion-of-mary)
 
 <!-- tocstop -->
 
@@ -350,3 +353,30 @@ _In the name of the Father, the Son, and the Holy Spirit._
 - **Invitation to Worship**: The Nativity as a model for Christian devotion.
 
 _Conciseness note: Repetitive prayers and promotional phrasing omitted; focus retained on thematic depth and Lewisian clarity._
+
+## May 12,2025
+
+### Eyes on Jesus
+
+[![Eyes on Jesus](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day132.jpg)](https://youtu.be/pyNEt5taMiY "Eyes on Jesus")
+
+### AI-Generated Summary: A Reflection on Campy’s Fresco and the Devotion of Mary
+
+The fresco by Julio Campy (1547), a master from Cremona renowned for his altarpieces, depicts the _Presentation of Jesus in the Temple_. Mary places the infant Christ upon the altar, encircled by Simeon, an elderly woman, and Joseph—a scene shifting from the serenity of the Nativity to the temple’s clamor.
+
+Here lies a striking contrast: Simeon, overcome by the fulfillment of prophecy, shuts his eyes in peace, while Mary’s gaze remains fixed on her Son. Amid the chaos, her posture is one of unwavering adoration—a model of devotion undisturbed by circumstance. The passage invites us to emulate her steadiness, anchoring ourselves in worship even when turmoil threatens distraction.
+
+The text weaves prayers of gratitude and submission—_Our Father_, _Hail Mary_—reiterating themes of reverence and divine guidance. It closes with doxology:
+
+> _Glory be to the Father, the Son, and the Holy Spirit._
+
+In Campy’s art and the accompanying meditation, we find a call to mirror Mary’s offering: to hold fast to faith, not as escape, but as the lens through which all life is rightly seen.
+
+_Blessed art thou among women... pray for us sinners._
+
+**Notes on Style**:
+
+- Lewis’s clarity and conciseness are reflected in short, rhythmic sentences.
+- Theological depth is rendered accessible, avoiding abstraction.
+- The closing doxology mirrors Lewis’s habit of ending reflections with liturgical resonance.
+- Italics and blockquotes honor Lewis’s preference for textual emphasis.
