@@ -11,6 +11,7 @@ copyright = "Aggregated by Linus Fernandes"
 author = "Linus Fernandes"
 version = "1"
 import os
+from pathlib import Path
 
 release = os.environ.get("READTHEDOCS_VERSION", "latest")
 master_doc = "index"
@@ -55,7 +56,7 @@ suppress_warnings = [
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 # Add paths for custom static files
-html_static_path = ["_static"]
+html_static_path = [Path("_static")]
 html_theme = "sphinx_rtd_theme"
 # user starts in dark mode
 default_dark_mode = True
