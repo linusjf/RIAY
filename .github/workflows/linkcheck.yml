@@ -1,7 +1,7 @@
 ---
 name: Link Checker
 
-true:
+on:
   push:
     branches: [main]
   pull_request:
