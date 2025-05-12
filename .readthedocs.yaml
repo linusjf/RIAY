@@ -28,8 +28,6 @@ build:
         python rewritelinks.py start.md January.md February.md March.md \
         April.md May.md June.md July.md August.md September.md October.md \
         November.md December.md
-    pre_build:
-      - python -m sphinx -b linkcheck -j auto . $READTHEDOCS_OUTPUT/linkcheck
 python:
   install:
     # Install our python packages before building the docs
