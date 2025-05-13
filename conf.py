@@ -87,7 +87,7 @@ epub_copyright = copyright
 epub_title = project
 epub_identifier = 'https://github.com/linusjf/RIAY'  # Should be a unique URI
 epub_uid = 'riay'  # Unique ID for EPUB file
-# epub_cover = ('_static/cover.jpg', '')  # Optional
+epub_cover = ('_static/cover.jpg', '')
 epub_exclude_files = ["_static/*.pdf"]
 
 # -- Options for linkcheck
