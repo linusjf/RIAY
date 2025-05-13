@@ -843,9 +843,14 @@ This text explores how prayer and meditation deepen one's relationship with Jesu
 ### ROSARY IN A YEAR DAY 16 - "GLORIFY HIM" Michelle Jackson
 
 "Glory be to the Father and to the Son and to the Holy Spirit, as it was in the beginning,is now and ever shall be world without end.Amen". All Praise and Glory be to the Holy Trinity. What is Praise? It is a form of prayer which recognises that God is God. It is right that we praise Him. It is to look to Him always, cause it is the right thing to do. It is for our own Good to Praise God, not for what he does but for who He is. He the maker of all things must be acknowledged by all, and Praised and Glorified by all. God is pleased when we do so not because He needs it,But because its right. When you Love Him and see how Faithful God is in your life you will begin to Praise Him. Cause everyday we are alive and its cause He wills it for us and we take that for granted. Let us Thank Him Throughout the day by asking for that grace
-_Psalms 34:1- I will bless the LORD at all times : His praise shall continually be in my mouth._
 
-Psalms 150:6- Let everything that has breath praise the Lord🙌🏼
+Psalms 34:1
+
+I will bless the LORD at all times : His praise shall continually be in my mouth.\_
+
+Psalms 150:6
+
+Let everything that has breath praise the Lord🙌🏼
 
 ### AI-Generated Summary: Understanding the Prayer of Praise
 
@@ -885,9 +890,15 @@ The text frames this explanation within invocations to the Trinity and includes 
 ### ROSARY IN A YEAR DAY 17 - "Turn on the Light" Michelle Jackson
 
 "IN THE NAME OF THE FATHER AND OF THE SON AND OF THE HOLYSPIRIT - THE SIGN OF THE CROSS"
-_The mystery of the most Holy Trinity is the central mystery of Christian Faith and life , it is the mystery of God Himself. It also is the source of all other_ _mysteries of Faith, the Light that enlightens them._ \*Truly one needs Faith to understand that. We need to ask the HolySpirit for grace to See which God gives us through Baptism all through our lives. And when we make the sign of the cross we are opening our eyes to see Him, to see all of creation and all other mysteries in His light. Jesus Christ is the Light of the World and we need His light to guide us through, there are many other lights in this world to lead us astray, so to know and see the difference we need to understand the path we are taking if it leads us to Him or away from Him. May Christ' light be our light always. Jesus said whoever follows me shall never walk in darkness. _Hebrew 11:6 And without faith it is impossible to please him, for whoever would approach God must believe that he exists and that he rewards those who seek him._
+_The mystery of the most Holy Trinity is the central mystery of Christian Faith and life , it is the mystery of God Himself. It also is the source of all other mysteries of Faith, the Light that enlightens them. Truly one needs Faith to understand that. We need to ask the HolySpirit for grace to See which God gives us through Baptism all through our lives. And when we make the sign of the cross we are opening our eyes to see Him, to see all of creation and all other mysteries in His light. Jesus Christ is the Light of the World and we need His light to guide us through, there are many other lights in this world to lead us astray, so to know and see the difference we need to understand the path we are taking if it leads us to Him or away from Him. May Christ' light be our light always. Jesus said whoever follows me shall never walk in darkness._
 
-Romans 10:17- So faith comes from what is heard, and what is heard comes through the word of Christ.
+Hebrew 11:6
+
+And without faith it is impossible to please him, for whoever would approach God must believe that he exists and that he rewards those who seek him.
+
+Romans 10:17
+
+So faith comes from what is heard, and what is heard comes through the word of Christ.
 
 ### AI-Generated Summary: The Sign of the Cross An Act of Faith in Divine Light
 
@@ -1031,7 +1042,9 @@ This text reflects on prayer and scripture, focusing on the theme of humble yet 
 
 ### ROSARY IN A YEAR DAY 21b- "Show unto us" Michelle Jackson
 
-"And after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement,O loving O sweet Virgin Mary." Mother's know what to do, I love how Fr. Mike said our Lady understands us, she experiences our pain and our need and our sufferings and takes us to Jesus, as at the wedding at Cana ,when they had run out of wine, She told Jesus about the situation and when He said His time hadn't come yet She told the servants there to "do whatever He tells you". And Jesus did His first miracle. He obeyed His mamma, and so too for us she takes us to Jesus bringing us into a relationship with Him and tells us to do the same. Listen to Him, do what He tells you. Such a beautiful way of communication we are taught. And that's what prayer should be like. It should be that conversation. Let us ask for grace to speak and make known our requests and listen to what Jesus tells us to do...
+"And after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement,O loving O sweet Virgin Mary."
+
+Mothers know what to do, I love how Fr. Mike said our Lady understands us, she experiences our pain and our need and our sufferings and takes us to Jesus, as at the wedding at Cana ,when they had run out of wine, She told Jesus about the situation and when He said His time hadn't come yet She told the servants there to "do whatever He tells you". And Jesus did His first miracle. He obeyed His mamma, and so too for us she takes us to Jesus bringing us into a relationship with Him and tells us to do the same. Listen to Him, do what He tells you. Such a beautiful way of communication we are taught. And that's what prayer should be like. It should be that conversation. Let us ask for grace to speak and make known our requests and listen to what Jesus tells us to do...
 
 ### AI-Generated Summary: Mary Shows Us Jesus Through Obedience
 
@@ -1068,8 +1081,12 @@ The reflection highlights how Mary responds to human need with compassion, bring
 
 ### ROSARY IN A YEAR DAY 22 - "LEAD SOULS TO HEAVEN" Michelle Jackson
 
-That was an intense journey with Father Mike,on our own salvation and the salvation of our loved ones. God is Love and He desires Salvation of the whole World. More than we desire the salvation of our loved ones God is already pursuing us.\* _And for those gone astray, the Good shepherd goes in search, not wanting to lose even one. He searches and brings us back to His flock._ _He reveals His heart to those who respond and co-operate with His Will for mankind. He did reveal this to our blessed Mother of when she appeared to the 3 visionaries, to pray many Rosaries for poor sinners and taught them to pray a special prayer after every decade. So precious._ _Our life is precious, bought by the Blood Of The Lamb and we need to take that seriously asking grace to reflect on our life and our living. Does it please God?_ _Do we please Him or the World?Do we know our Worth?_
-_When we die we either will go to heaven or hell._ \*How we live here, what we do now matters. Let us not be afraid but Trust God. We are Christians.and Christians are people of Hope. The Hope that comes from God Himself. Thank you Lord for Your Saving Grace and Your Love for us all. May the whole world respond to that grace and co-operate and desire our own salvation and the salvation of the whole world. May the whole world be Sanctified Sanctified and purified. Amen.
+That was an intense journey with Father Mike,on our own salvation and the salvation of our loved ones. God is Love and He desires Salvation of the whole World. More than we desire the salvation of our loved ones God is already pursuing us.
+
+_And for those gone astray, the Good shepherd goes in search, not wanting to lose even one. He searches and brings us back to His flock._ _He reveals His heart to those who respond and co-operate with His Will for mankind. He did reveal this to our blessed Mother of when she appeared to the 3 visionaries, to pray many Rosaries for poor sinners and taught them to pray a special prayer after every decade. So precious._ _Our life is precious, bought by the Blood Of The Lamb and we need to take that seriously asking grace to reflect on our life and our living. Does it please God?_ _Do we please Him or the World?Do we know our Worth?_
+_When we die we either will go to heaven or hell._
+
+How we live here, what we do now matters. Let us not be afraid but Trust God. We are Christians.and Christians are people of Hope. The Hope that comes from God Himself. Thank you Lord for Your Saving Grace and Your Love for us all. May the whole world respond to that grace and co-operate and desire our own salvation and the salvation of the whole world. May the whole world be Sanctified Sanctified and purified. Amen.
 
 ### AI-Generated Summary: Overview of the Fatima Prayer and Christian Hope
 
@@ -1288,7 +1305,9 @@ Nadya Baracho
 Goa, India
 
 The Joyful Mysteries
+
 3\. The Nativity - Luke 2: 1-20
+
 Joseph went to Bethlehem to enroll themselves as per the rule of Caesar Augustus and it was time for Mary to give birth. This was so that the prophesy of Micah (Micah 5:2) would be fulfilled, that from Bethlehem will come a ruler of Israel.
 The angels appear to the poor shepherds who according to the Jewish culture were considered outside of God's covenant. This shows inclusion of all under God's Covenant.
 
