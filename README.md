@@ -304,9 +304,9 @@ Thank God for this blessing, i love the intro when the evil one accuses us he le
 What we believe in should change us
 Prayer doesn't help our relationship with God, prayer "is" our relationship with God
 Our body and soul should connect when we pray
-\\Most importantly it's raising our heart and mind to God by making an act of Faith by which we look at Him who is "always" looking at us, listening to us and loving us*😢
-\\We need to practice His presence by recognising His presence, He's always there.*
-\\We need to give our all when we pray it's not one sided it's a relationship, we need to listen after we speak. Thank you Lord for this relationship you give us through prayer🙏
+Most importantly it's raising our heart and mind to God by making an act of Faith by which we look at Him who is "always" looking at us, listening to us and loving us\*😢
+We need to practice His presence by recognising His presence, He's always there.\*
+We need to give our all when we pray it's not one sided it's a relationship, we need to listen after we speak. Thank you Lord for this relationship you give us through prayer🙏
 
 ##### AI-Generated Summary: A Year-Long Journey to Deeper Prayer Through the Rosary
 
