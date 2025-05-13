@@ -4,8 +4,10 @@ permissions:
   actions: write
 on:
   schedule:
-    - cron: "0 3 * * *" # Runs daily at 3 AM UTC
-  workflow_dispatch: # Allows manual trigger
+    # Runs daily at 3 AM UTC
+    - cron: "0 3 * * *"
+      # Allows manual trigger
+      workflow_dispatch:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
