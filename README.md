@@ -300,13 +300,13 @@ RIAY January 2025
 
 ##### ROSARY IN A YEAR DAY 01 Michelle Jackson
 
-Thank God for this blessing, i love the intro _when the evil one accuses us he leaves us hopeless and helpless but when the HolySpirit convicts us of our sin He always leads us to Hope._
-_What we believe in should change us_
-_Prayer doesn't help our relationship with God, prayer "is" our relationship with God_
-_Our body and soul should connect when we pray_
-\_Most importantly it's raising our heart and mind to God by making an act of Faith by which we look at Him who is "always" looking at us, listening to us and loving us*😢
-\_We need to practice His presence by recognising His presence, He's always there.*
-\_We need to give our all when we pray it's not one sided it's a relationship, we need to listen after we speak. Thank you Lord for this relationship you give us through prayer🙏
+Thank God for this blessing, i love the intro when the evil one accuses us he leaves us hopeless and helpless but when the HolySpirit convicts us of our sin He always leads us to Hope.
+What we believe in should change us
+Prayer doesn't help our relationship with God, prayer "is" our relationship with God
+Our body and soul should connect when we pray
+\\Most importantly it's raising our heart and mind to God by making an act of Faith by which we look at Him who is "always" looking at us, listening to us and loving us*😢
+\\We need to practice His presence by recognising His presence, He's always there.*
+\\We need to give our all when we pray it's not one sided it's a relationship, we need to listen after we speak. Thank you Lord for this relationship you give us through prayer🙏
 
 ##### AI-Generated Summary: A Year-Long Journey to Deeper Prayer Through the Rosary
 
@@ -316,7 +316,7 @@ This summary provides an overview of a year-long program designed to deepen pray
 
 - **Structured Prayer Program:** The program is divided into six phases, guiding participants through a progressive journey of prayer.
 - **Theological Foundation:** It emphasizes understanding the biblical roots of the prayers and their application to daily life.
-- **Engaging with Scripture and Tradition:** The program incorporates _lectio divina_, writings of the Saints, and sacred art to enrich prayer.
+- **Engaging with Scripture and Tradition:** The program incorporates lectio divina, writings of the Saints, and sacred art to enrich prayer.
 - **Practicing the Presence of God:** This is a core element, emphasizing the importance of acknowledging God's presence before, during, and after prayer.
 - **Gradual Progression with the Rosary:** Participants gradually increase the number of decades they pray, culminating in praying the full Rosary.
 - **Developing a Relationship with Jesus and Mary:** The program encourages a personal connection with Jesus and Mary, fostering love and devotion.
@@ -344,7 +344,7 @@ While the provided text doesn't contain direct quotes, several insightful concep
 
 1. **The Biblical Roots:** Explores the scriptural basis of the prayers, deepening understanding and connecting them to daily life.
 
-1. **Meditating on the Mysteries:** Introduces _lectio divina_ and engages with the writings of the Saints and sacred art as aids to prayer.
+1. **Meditating on the Mysteries:** Introduces lectio divina and engages with the writings of the Saints and sacred art as aids to prayer.
 
 1. **Finding Focus:** Applies the learned principles, building the capacity to pray with the mysteries of the Rosary, starting with one decade at a time.
 
@@ -544,7 +544,7 @@ Mary, reflecting Jesus, the "sun of righteousness," is seen as the Mirror of Jus
 
 ##### ROSARY IN A YEAR DAY 5 - A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson
 
-\_Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 😢 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria_🌹
+*Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 😢 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria*🌹
 
 ##### AI-Generated Summary: Mary, Mother Inviolate — Finding Peace in Mary's Rose Garden
 
@@ -615,7 +615,7 @@ Prayer is not simply a passive reception of grace, but an active, determined str
 
 ##### ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson
 
-\_"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.😢 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria_🙏🏽
+*"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.😢 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria*🙏🏽
 
 ##### AI-Generated Summary: The Rosary as a Source of Grace
 
@@ -942,7 +942,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
