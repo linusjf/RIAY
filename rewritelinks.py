@@ -18,13 +18,8 @@ URL_BASE = URL_BASE.replace("{user}", user).replace("{repo}", repo)
 pattern = re.compile(re.escape(URL_BASE) + r"([^)]+)")
 
 
-def get_relative_prefix(file_path: str) -> str:
-    if file_path.endswith(".jpg"):
-        return "/_static/images/"
-    elif file_path.endswith(".pdf"):
-        return "/_static/pdfs/"
-    else:
-        return "/_static/others/"
+def get_relative_prefix() -> str:
+    return "/_static/"
 
 
 def rewrite(md_file: Path):
@@ -39,7 +34,7 @@ def rewrite(md_file: Path):
         nonlocal count
         count += 1
         file_path = match.group(1)
-        return get_relative_prefix(file_path) + file_path
+        return get_relative_prefix() + file_path
 
     modified = pattern.sub(replacement, original)
 
