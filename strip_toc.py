@@ -1,18 +1,76 @@
 #!/usr/bin/env python3
+"""Remove table of contents blocks from markdown files.
+
+This script scans markdown files and removes any blocks delimited by
+'<!-- toc -->' and '<!-- tocstop -->' comments.
+"""
+
 import re
 from pathlib import Path
+from typing import Iterator
 
-toc_pattern = re.compile(r"<!-- toc -->.*?<!-- tocstop -->", flags=re.DOTALL)
+TOC_START_MARKER = "<!-- toc -->"
+TOC_END_MARKER = "<!-- tocstop -->"
+TOC_PATTERN = re.compile(
+    rf"{re.escape(TOC_START_MARKER)}.*?{re.escape(TOC_END_MARKER)}",
+    flags=re.DOTALL
+)
 
 
-def strip_toc_blocks(directory="."):
-    for md_file in Path(directory).rglob("*.md"):
-        text = md_file.read_text(encoding="utf-8")
-        new_text = toc_pattern.sub("", text)
-        if new_text != text:
+def find_markdown_files(directory: str = ".") -> Iterator[Path]:
+    """Generate paths to markdown files in directory.
+    
+    Args:
+        directory: Root directory to search for markdown files
+        
+    Yields:
+        Path objects for each .md file found
+    """
+    yield from Path(directory).rglob("*.md")
+
+
+def strip_toc_from_file(file_path: Path) -> bool:
+    """Remove table of contents from a markdown file.
+    
+    Args:
+        file_path: Path to markdown file to process
+        
+    Returns:
+        bool: True if changes were made, False otherwise
+    """
+    original_text = file_path.read_text(encoding="utf-8")
+    new_text = TOC_PATTERN.sub("", original_text)
+    
+    if new_text != original_text:
+        file_path.write_text(new_text, encoding="utf-8")
+        return True
+    return False
+
+
+def strip_toc_blocks(directory: str = ".") -> int:
+    """Remove table of contents from all markdown files in directory.
+    
+    Args:
+        directory: Root directory to search for markdown files
+        
+    Returns:
+        int: Number of files modified
+    """
+    modified_count = 0
+    
+    for md_file in find_markdown_files(directory):
+        if strip_toc_from_file(md_file):
             print(f"Stripped ToC from: {md_file}")
-            md_file.write_text(new_text, encoding="utf-8")
+            modified_count += 1
+            
+    return modified_count
+
+
+def main() -> None:
+    """Main entry point for the script."""
+    modified = strip_toc_blocks()
+    print(f"Modified {modified} files")
 
 
 if __name__ == "__main__":
-    strip_toc_blocks()
+    main()
