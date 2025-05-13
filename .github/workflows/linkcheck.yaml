@@ -8,13 +8,7 @@ on:
     branches: [main]
 
 env:
-  RELEVANT_FILES: |
-    README.md
-    index.rst
-    conf.py
-    .readthedocs.yaml
-    **/*.jpg
-    **/*.css
+  RELEVANT_FILES: "README.md index.rst conf.py .readthedocs.yaml **/*.jpg **/*.css"
 
 jobs:
   check-content-changes:
