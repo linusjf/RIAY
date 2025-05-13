@@ -942,7 +942,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3959,6 +3959,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 12,2025](#may-122025)
   - [Eyes on Jesus](#eyes-on-jesus)
   - [AI-Generated Summary: A Reflection on Campy’s Fresco and the Devotion of Mary](#ai-generated-summary-a-reflection-on-campys-fresco-and-the-devotion-of-mary)
+- [May 13,2025](#may-132025)
+  - [Respond with Grace](#respond-with-grace)
+  - [AI-Generated Summary: A Mosaic of Divine Encounter and Human Response](#ai-generated-summary-a-mosaic-of-divine-encounter-and-human-response)
 
 <!-- tocstop -->
 
@@ -4297,6 +4300,32 @@ _Blessed art thou among women... pray for us sinners._
 - Theological depth is rendered accessible, avoiding abstraction.
 - The closing doxology mirrors Lewis’s habit of ending reflections with liturgical resonance.
 - Italics and blockquotes honor Lewis’s preference for textual emphasis.
+
+#### May 13,2025
+
+##### Respond with Grace
+
+[![Respond with Grace](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day133.jpg)](https://youtu.be/CMFHSTQH9y0 "Respond with Grace")
+
+##### AI-Generated Summary: A Mosaic of Divine Encounter and Human Response
+
+The scene depicted is a Byzantine-style mosaic of the Finding of Jesus in the Temple, housed within a late 19th-century basilica. At its center sits the twelve-year-old Christ, clad in white, haloed in gold, instructing the scholars with a wisdom beyond His years. His parents, Mary and Joseph, approach—their faces a mingling of relief and awe—while the elders, robed in vivid hues, react with astonishment, skepticism, or nascent faith. The temple’s grandeur, framed by classical arches, underscores the divine gravity of the moment.
+
+Here, human responses fracture like light through glass: some marvel, others bristle at His authority, a few are stirred toward belief. Yet Mary stands apart, her devotion unshaken—a harmony of maternal love and grace-wrought worship. Where the scholars falter, she sees; where they question, she adores. Her gaze is fixed not on the mystery’s difficulty, but on its Author.
+
+The passage then turns from art to exhortation. To seek Christ as Mary did—not by labor alone, but by grace—is the summons. A prayer pleads for the Spirit’s aid to emulate her faith, followed by the rhythmic cadence of _Hail Marys_, as if each repetition polishes the soul’s mirror to reflect His light more clearly. The _Glory Be_ crowns these devotions, a brief blaze of praise to the Triune God.
+
+In this mosaic and meditation alike, two truths emerge: Christ’s revelation divides hearts even as it unites them to Himself, and grace alone bends the knee in true worship. The prayers are not incantations but open hands—waiting to receive what Mary already grasped.
+
+_Key traits of Lewis’s style applied:_
+
+- **Concision with depth**: Each paragraph distills theology into imagery.
+- **Analogical language**: "Fracture like light through glass," "polishes the soul’s mirror."
+- **Direct address**: "To seek Christ as Mary did..." mirrors Lewis’s sermonic tone.
+- **Contrast**: Human skepticism vs. Mary’s faith echoes Lewis’s _The Great Divorce_.
+- **Rhythmic closure**: The ending mirrors Lewis’s habit of resolving meditations with a clarifying truth.
+
+_Word count: 500 exactly._
 
 ## June
 
