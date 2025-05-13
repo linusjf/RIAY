@@ -1,4 +1,3 @@
----
 name: Link Checker
 
 on:
@@ -7,29 +6,39 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  RELEVANT_FILES: |
+    README.md
+    index.rst 
+    conf.py
+    .readthedocs.yaml
+    **/*.jpg
+    **/*.css
+
 jobs:
   check-content-changes:
+    name: Check for Relevant Changes
     runs-on: ubuntu-latest
     outputs:
       relevant_changed: ${{ steps.check.outputs.relevant_changed }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
-      - name: Check if any content changed
+      - name: Check changed files
         id: check
         run: |
-          git fetch origin main --depth=2
-          if git diff --quiet HEAD^ -- README.md index.rst conf.py \
-          .readthedocs.yaml **/*.jpg **/*.css && \
-          ! git describe --exact-match > /dev/null 2>&1; then
+          if git diff --quiet HEAD^ -- ${{ env.RELEVANT_FILES }} && \
+             ! git describe --exact-match > /dev/null 2>&1; then
             echo "relevant_changed=false" >> $GITHUB_OUTPUT
           else
             echo "relevant_changed=true" >> $GITHUB_OUTPUT
           fi
 
-  lychee:
-    name: Check links in README
+  link-check:
+    name: Check Links
     needs: check-content-changes
     if: needs.check-content-changes.outputs.relevant_changed == 'true'
     runs-on: ubuntu-latest
@@ -37,29 +46,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Lychee
+      - name: Setup Lychee
         run: |
-          curl -LsSf \
-          https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz \
-          | tar xz
+          curl -LsSf https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz | tar xz
           sudo mv lychee /usr/local/bin/
 
-      - name: Run Lychee and save report
-        run: |
-          lychee --config .lychee.toml README.md
+      - name: Run Link Checker
+        run: lychee --config .lychee.toml README.md
 
-      - name: Upload report as artifact
+      - name: Archive Link Report
         uses: actions/upload-artifact@v4
         with:
           name: lychee-report
           path: lychee.out
 
-  trigger-readthedocs:
-    needs: lychee
-    runs-on: ubuntu-latest
+  trigger-docs-build:
+    name: Trigger Docs Build
+    needs: link-check
     if: success()
+    runs-on: ubuntu-latest
     steps:
-      - name: Trigger Read the Docs build
+      - name: Trigger ReadTheDocs
         run: |
           curl -X POST \
             -H "Authorization: Token ${{ secrets.RTD_TOKEN }}" \
