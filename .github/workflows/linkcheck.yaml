@@ -25,12 +25,14 @@ jobs:
       - name: Check changed files
         id: check
         run: |
-          if git diff --quiet HEAD^ -- ${{ env.RELEVANT_FILES }} && \
-            git describe --exact-match > /dev/null 2>&1; then
-            echo "relevant_changed=true" >> $GITHUB_OUTPUT
-          else
-            echo "relevant_changed=false" >> $GITHUB_OUTPUT
-          fi
+          if git rev-parse HEAD^ >/dev/null 2>&1; then
+            if git diff --quiet HEAD^ -- ${{ env.RELEVANT_FILES }} && \
+              git describe --exact-match > /dev/null 2>&1; then
+              echo "relevant_changed=true" >> $GITHUB_OUTPUT
+            else
+              echo "relevant_changed=false" >> $GITHUB_OUTPUT
+            fi
+           fi
 
   link-check:
     name: Check Links
