@@ -3,21 +3,21 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import os
+import codecs
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
 project = "RIAY"
 copyright = "Aggregated by Linus Fernandes"
 author = "Linus Fernandes"
 version = "1"
-import os
 
 release = os.environ.get("READTHEDOCS_VERSION", "latest")
 master_doc = "index"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
 extensions = [
     "myst_parser",
     "sphinxcontrib.cairosvgconverter",
@@ -26,7 +26,9 @@ extensions = [
 ]
 
 templates_path = ["_templates"]
-include_patterns = ["index.rst", "*.md", "*/*.jpg"]
+
+include_patterns = ["index.rst", "*.md", "*/*.jpg", "*/*.pdf"]
+
 exclude_patterns = [
     "stitch.md",
     "January/*.md",
@@ -45,6 +47,7 @@ exclude_patterns = [
     "Conventions/*.md",
     ".aider.chat*",
 ]
+
 suppress_warnings = [
     "toc.not_included",
     "myst.xref_missing",
@@ -56,7 +59,9 @@ suppress_warnings = [
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 # Add paths for custom static files
 html_static_path = ["_static"]
+
 html_theme = "sphinx_rtd_theme"
+
 # user starts in dark mode
 default_dark_mode = True
 
@@ -74,25 +79,27 @@ latex_elements = {
 }
 
 # -- Options for epub output
-epub_exclude_files = ["_static/pdfs/*.pdf"]
+epub_exclude_files = ["_static/*.pdf"]
 
 # -- Options for linkcheck
-linkcheck_timeout = 30  # seconds
+# seconds
+linkcheck_timeout = 30
+
 linkcheck_ignore = [
     r"http://localhost:\d+/",  # Ignore local dev servers
     r"https://example\.com/redirect",  # Ignore known redirect
-    r"https://raw.githubusercontent.com/linusjf/RIAY/",
     r"https://www.gnu.org/software/m4/m4.html",
 ]
+
 linkcheck_ignore_redirects = True
+
 linkcheck_workers = 1
-# or even 1 to be safer
+
 linkcheck_retries = 1
+
 
 # hook to replace unavailable emojis in Symbola
 # for available ones only during pdf latex generation
-import os
-import codecs
 
 
 def replace_emojis_in_file(file_path):
@@ -125,11 +132,14 @@ def replace_emojis_in_markdown():
 
 
 def run_only_for_pdf(app):
-    if app.builder.name == "latex":  # "latexpdf" invokes the "latex" builder
+    # "latexpdf" invokes the "latex" builder
+    if app.builder.name == "latex":
         print("Running emoji replacement for PDF build...")
         replace_emojis_in_markdown()
 
 
 def setup(app):
-    app.add_css_file("custom.css")  # For Sphinx 1.8 and later
+    # add custom css to overwrite copyright text inserted by Sphinx
+    app.add_css_file("custom.css")
+    # For Sphinx 1.8 and later
     app.connect("builder-inited", run_only_for_pdf)
