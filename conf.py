@@ -80,7 +80,7 @@ latex_elements = {
 }
 
 # -- Options for EPUB output -------------------------------------------------
-epub_show_urls = 'footnote'  # or 'inline', 'no'
+epub_show_urls = 'inline'  # or 'no', 'footnote'
 epub_author = author
 epub_publisher = 'Linus Fernandes'
 epub_copyright = copyright
