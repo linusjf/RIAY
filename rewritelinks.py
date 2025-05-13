@@ -1,62 +1,98 @@
 #!/usr/bin/env python3
-import sys
-import re
-from pathlib import Path
-from dotenv import load_dotenv
+"""Script to rewrite absolute GitHub raw URLs to relative paths in markdown files."""
+
 import os
+import re
+import sys
+from pathlib import Path
+from typing import Match, Optional
 
-load_dotenv(dotenv_path="config.env")
-
-# Base GitHub raw URL to be replaced
-URL_BASE = "https://raw.githubusercontent.com/{user}/{repo}/refs/heads/main/"
-user = str(os.getenv("REPO_OWNER"))
-repo = str(os.getenv("REPO_NAME"))
-
-URL_BASE = URL_BASE.replace("{user}", user).replace("{repo}", repo)
-
-# Regex pattern to match and capture everything after the base URL
-pattern = re.compile(re.escape(URL_BASE) + r"([^)]+)")
+from dotenv import load_dotenv
 
 
-def get_relative_prefix() -> str:
-    return "/_static/"
+DEFAULT_ENV_FILE = "config.env"
+GITHUB_URL_TEMPLATE = "https://raw.githubusercontent.com/{user}/{repo}/refs/heads/main/"
+RELATIVE_PREFIX = "/_static/"
 
 
-def rewrite(md_file: Path):
-    if not md_file.is_file():
-        print(f"❌ Not found or not a file: {md_file}")
-        return
-
-    original = md_file.read_text()
-    count = 0  # Counter for replacements
-
-    def replacement(match: re.Match) -> str:
-        nonlocal count
-        count += 1
-        file_path = match.group(1)
-        return get_relative_prefix() + file_path
-
-    modified = pattern.sub(replacement, original)
-
-    if count > 0:
-        md_file.write_text(modified)
-        print(
-            f"✅ Updated: {md_file} ({count} link{'s' if count != 1 else ''} modified)"
+def get_github_base_url() -> str:
+    """Construct the GitHub base URL from environment variables.
+    
+    Returns:
+        str: Formatted GitHub raw content base URL
+    """
+    load_dotenv(dotenv_path=DEFAULT_ENV_FILE)
+    
+    user = os.getenv("REPO_OWNER", "")
+    repo = os.getenv("REPO_NAME", "")
+    
+    if not user or not repo:
+        raise ValueError(
+            "REPO_OWNER and REPO_NAME must be set in environment variables"
         )
-    else:
-        print(f"➖ No changes: {md_file}")
-    return 0
+        
+    return GITHUB_URL_TEMPLATE.format(user=user, repo=repo)
 
 
-def main():
+def rewrite_links_in_file(md_file: Path) -> int:
+    """Rewrite GitHub raw URLs to relative paths in a markdown file.
+    
+    Args:
+        md_file: Path to markdown file to process
+        
+    Returns:
+        int: Number of links modified (0 if none)
+    """
+    if not md_file.is_file():
+        print(f"Error: File not found - {md_file}", file=sys.stderr)
+        return 0
+
+    url_base = get_github_base_url()
+    pattern = re.compile(re.escape(url_base) + r"([^)]+)")
+    original_text = md_file.read_text()
+    replacement_count = 0
+
+    def make_relative(match: Match) -> str:
+        """Create relative path from matched URL."""
+        nonlocal replacement_count
+        replacement_count += 1
+        file_path = match.group(1)
+        return f"{RELATIVE_PREFIX}{file_path}"
+
+    modified_text = pattern.sub(make_relative, original_text)
+
+    if replacement_count > 0:
+        md_file.write_text(modified_text)
+        print(
+            f"Updated {md_file}: {replacement_count} link(s) modified",
+            file=sys.stdout
+        )
+
+    return replacement_count
+
+
+def main() -> int:
+    """Main entry point for the script.
+    
+    Returns:
+        int: Exit code (0 for success)
+    """
     if len(sys.argv) < 2:
-        print("Usage: python rewritelinks.py file1.md file2.md ...")
-        return
+        print(
+            "Usage: python rewritelinks.py file1.md file2.md ...",
+            file=sys.stderr
+        )
+        return 1
 
-    for arg in sys.argv[1:]:
-        rewrite(Path(arg))
+    total_changes = 0
+    for file_path in sys.argv[1:]:
+        total_changes += rewrite_links_in_file(Path(file_path))
+
+    if total_changes == 0:
+        print("No links were modified in any files", file=sys.stdout)
+        
     return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
