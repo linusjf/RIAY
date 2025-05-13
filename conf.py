@@ -79,7 +79,15 @@ latex_elements = {
 """,
 }
 
-# -- Options for epub output
+# -- Options for EPUB output -------------------------------------------------
+epub_show_urls = 'footnote'  # or 'inline', 'no'
+epub_author = author
+epub_publisher = 'Linus Fernandes'
+epub_copyright = copyright
+epub_title = project
+epub_identifier = 'https://github.com/linusjf/RIAY'  # Should be a unique URI
+epub_uid = 'riay'  # Unique ID for EPUB file
+# epub_cover = ('_static/cover.jpg', '')  # Optional
 epub_exclude_files = ["_static/*.pdf"]
 
 # -- Options for linkcheck
