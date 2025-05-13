@@ -8,7 +8,7 @@ on:
     branches: [main]
 
 jobs:
-  check-readme-or-jpg-change:
+  check-content-changes:
     runs-on: ubuntu-latest
     outputs:
       relevant_changed: ${{ steps.check.outputs.relevant_changed }}
@@ -16,11 +16,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Check if README.md or any .jpg file changed
+      - name: Check if any content changed
         id: check
         run: |
           git fetch origin main --depth=2
-          if git diff --name-only HEAD HEAD^ | grep -Eq "^README.md$|\.jpg$"; \
+          if git diff --name-only HEAD HEAD^ \
+          | grep -Eq "^README.md$|\.jpg$|^\.readthedocs\.yaml$|^config\.py$|\.css$|^index\.rst$"; \
                                                          then
             echo "relevant_changed=true" >> $GITHUB_OUTPUT
           else
@@ -29,8 +30,8 @@ jobs:
 
   lychee:
     name: Check links in README
-    needs: check-readme-or-jpg-change
-    if: needs.check-readme-or-jpg-change.outputs.relevant_changed == 'true'
+    needs: check-content-changes
+    if: needs.check-content-changes.outputs.relevant_changed == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

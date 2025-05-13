@@ -13,7 +13,7 @@ build:
       - |
         if git rev-parse HEAD^ >/dev/null 2>&1; then
           if git diff --quiet HEAD^ -- README.md index.rst conf.py \
-          .readthedocs.yaml **/*.jpg  && \
+          .readthedocs.yaml **/*.jpg **/*.css && \
           ! git describe --exact-match > /dev/null 2>&1; then
             echo "No change in visible artifacts or new version. Exiting."
             exit 183
