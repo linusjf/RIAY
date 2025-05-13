@@ -5,6 +5,7 @@
 
 import os
 import codecs
+from typing import Dict, Any
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -98,48 +99,65 @@ linkcheck_workers = 1
 linkcheck_retries = 1
 
 
-# hook to replace unavailable emojis in Symbola
-# for available ones only during pdf latex generation
+def replace_emojis_in_file(file_path: str) -> None:
+    """Replace unsupported emojis in a file with alternatives.
 
-
-def replace_emojis_in_file(file_path):
+    Args:
+        file_path: Path to file to process
+    """
     replacements = {
         "🥹": "😢",
         "🥰": "😍",
     }
 
     try:
-        with codecs.open(file_path, "r", encoding="utf-8") as f:
-            content = f.read()
+        with codecs.open(file_path, "r", encoding="utf-8") as file:
+            content = file.read()
 
         original_content = content
         for old, new in replacements.items():
             content = content.replace(old, new)
 
         if content != original_content:
-            with codecs.open(file_path, "w", encoding="utf-8") as f:
-                f.write(content)
+            with codecs.open(file_path, "w", encoding="utf-8") as file:
+                file.write(content)
             print(f"Updated: {file_path}")
-    except Exception as e:
-        print(f"Error processing {file_path}: {e}")
+    except Exception as error:
+        print(f"Error processing {file_path}: {error}")
 
 
-def replace_emojis_in_markdown():
+def replace_emojis_in_markdown() -> None:
+    """Find and replace emojis in all markdown files."""
     for dirpath, _, filenames in os.walk("."):
         for filename in filenames:
             if filename.endswith(".md"):
                 replace_emojis_in_file(os.path.join(dirpath, filename))
 
 
-def run_only_for_pdf(app):
-    # "latexpdf" invokes the "latex" builder
+def run_only_for_pdf(app) -> None:
+    """Run emoji replacement only for PDF builds.
+
+    Args:
+        app: Sphinx application object
+    """
     if app.builder.name == "latex":
         print("Running emoji replacement for PDF build...")
         replace_emojis_in_markdown()
 
 
-def setup(app):
-    # add custom css to overwrite copyright text inserted by Sphinx
+def setup(app) -> Dict[str, Any]:
+    """Set up Sphinx extensions and callbacks.
+
+    Args:
+        app: Sphinx application object
+
+    Returns:
+        Dictionary of metadata for Sphinx
+    """
     app.add_css_file("custom.css")
-    # For Sphinx 1.8 and later
     app.connect("builder-inited", run_only_for_pdf)
+    return {
+        "version": version,
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }
