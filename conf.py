@@ -10,7 +10,7 @@ from typing import Dict, Any
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 project = "RIAY"
-copyright = "Aggregated by Linus Fernandes"
+copyright = "Compiled by Linus Fernandes"
 author = "Linus Fernandes"
 version = "1"
 language = "English"
