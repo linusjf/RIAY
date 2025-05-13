@@ -1,129 +1,131 @@
 #!/usr/bin/env python
+"""Main command processor for ANTLR-generated command parser."""
+
 import logging
+import os
 import subprocess
 import sys
 from pathlib import Path
-from antlr4 import FileStream
-from antlr4 import CommonTokenStream
-from antlr4 import ParseTreeWalker
+
+from antlr4 import CommonTokenStream, FileStream, ParseTreeWalker
+from dotenv import load_dotenv
+
 from commandsLexer import commandsLexer
 from commandsParser import commandsParser
 from commandsListener import commandsListener
 from commandsverboselistener import commandsVerboseListener
 from commandsverbosestrategy import commandsVerboseStrategy
-from dotenv import load_dotenv
-import os
 
 
-class commands(commandsListener):
+class Commands(commandsListener):
+    """Listener implementation for processing commands."""
 
     def __init__(self):
+        """Initialize the command processor."""
         self.cwd = str(Path.cwd())
         self.exitcode = 0
 
-    # Enter a parse tree produced by commandsParser#Addvideo.
-    def enterAddvideo(self, ctx: commandsParser.AddvideoContext):
-        videoId = ctx.videoId().getText().strip('"')
-        videoName = ctx.videoName().getText().strip('"')
-        ruleName = self.getRuleName(ctx)
-        print(f"Adding video '{videoId}' with name '{videoName}'.")
-        self.executeCommand([ruleName, videoId, videoName])
+    def enterAddvideo(self, ctx: commandsParser.AddvideoContext) -> None:
+        """Process Addvideo command."""
+        video_id = ctx.videoId().getText().strip('"')
+        video_name = ctx.videoName().getText().strip('"')
+        rule_name = self._get_rule_name(ctx)
+        print(f"Adding video '{video_id}' with name '{video_name}'.")
+        self._execute_command([rule_name, video_id, video_name])
 
-    # Enter a parse tree produced by commandsParser#addvideotoday.
-    def enterAddvideotoday(self, ctx: commandsParser.AddvideotodayContext):
-        videoId = ctx.videoId().getText().strip('"')
-        dayofyear = int(ctx.dayofyear().getText())
-        ruleName = self.getRuleName(ctx)
-        print(f"Adding video '{videoId}' to day {dayofyear}.")
-        self.executeCommand([ruleName, videoId, str(dayofyear)])
+    def enterAddvideotoday(self, ctx: commandsParser.AddvideotodayContext) -> None:
+        """Process Addvideotoday command."""
+        video_id = ctx.videoId().getText().strip('"')
+        day_of_year = int(ctx.dayofyear().getText())
+        rule_name = self._get_rule_name(ctx)
+        print(f"Adding video '{video_id}' to day {day_of_year}.")
+        self._execute_command([rule_name, video_id, str(day_of_year)])
 
-    # Enter a parse tree produced by commandsParser#addimgtoday.
-    def enterAddimgtoday(self, ctx: commandsParser.AddimgtodayContext):
-        imagepath = ctx.imagepath().getText().strip('"')
+    def enterAddimgtoday(self, ctx: commandsParser.AddimgtodayContext) -> None:
+        """Process Addimgtoday command."""
+        image_path = ctx.imagepath().getText().strip('"')
         caption = ctx.caption().getText().strip('""')
-        dayofyear = int(ctx.dayofyear().getText())
-        ruleName = self.getRuleName(ctx)
-        print(
-            f"Adding image '{imagepath}' to day {dayofyear} with caption '{caption}'."
-        )
-        self.executeCommand([ruleName, imagepath, caption, str(dayofyear)])
+        day_of_year = int(ctx.dayofyear().getText())
+        rule_name = self._get_rule_name(ctx)
+        msg = f"Adding image '{image_path}' to day {day_of_year} with caption '{caption}'."
+        print(msg)
+        self._execute_command([rule_name, image_path, caption, str(day_of_year)])
 
-    # Enter a parse tree produced by commandsParser#Genmonth.
-    def enterGenmonth(self, ctx: commandsParser.GenmonthContext):
-        ruleName = self.getRuleName(ctx)
+    def enterGenmonth(self, ctx: commandsParser.GenmonthContext) -> None:
+        """Process Genmonth command."""
+        rule_name = self._get_rule_name(ctx)
         month = ctx.month().getText()
         year = str(os.getenv("YEAR"))
         if ctx.year() is not None:
             year = ctx.year().getText()
         print(f"Generating month {month} for year {year}.")
-        self.executeCommand([ruleName, month, year])
+        self._execute_command([rule_name, month, year])
 
-    # Enter a parse tree produced by commandsParser#Lintall.
-    def enterLintall(self, ctx: commandsParser.LintallContext):
-        ruleName = self.getRuleName(ctx)
-        print(f"Linting all...")
-        self.executeCommand([ruleName])
+    def enterLintall(self, ctx: commandsParser.LintallContext) -> None:
+        """Process Lintall command."""
+        rule_name = self._get_rule_name(ctx)
+        print("Linting all...")
+        self._execute_command([rule_name])
 
-    # Enter a parse tree produced by commandsParser#stitch.
-    def enterStitch(self, ctx: commandsParser.StitchContext):
-        ruleName = self.getRuleName(ctx)
-        print(f"Stitching...")
-        self.executeCommand([ruleName])
+    def enterStitch(self, ctx: commandsParser.StitchContext) -> None:
+        """Process Stitch command."""
+        rule_name = self._get_rule_name(ctx)
+        print("Stitching...")
+        self._execute_command([rule_name])
 
-    # Enter a parse tree produced by commandsParser#gentoc.
-    def enterGentoc(self, ctx: commandsParser.GentocContext):
-        ruleName = self.getRuleName(ctx)
-        pathtomdfile = ctx.pathtomdfile().getText().strip('"')
-        self.executeCommand([ruleName, pathtomdfile])
+    def enterGentoc(self, ctx: commandsParser.GentocContext) -> None:
+        """Process Gentoc command."""
+        rule_name = self._get_rule_name(ctx)
+        path_to_md = ctx.pathtomdfile().getText().strip('"')
+        self._execute_command([rule_name, path_to_md])
 
-    # Get Rule Name
-    def getRuleName(self, ctx):
-        ruleIndex = ctx.getRuleIndex()
-        ruleName = ctx.parser.ruleNames[ruleIndex]
-        return ruleName
+    def _get_rule_name(self, ctx) -> str:
+        """Get the name of the current rule being processed."""
+        rule_index = ctx.getRuleIndex()
+        return ctx.parser.ruleNames[rule_index]
 
-    # Execute command
-    def executeCommand(self, command: list[str]):
-        """
-        Execute a command line program.
+    def _execute_command(self, command: list[str]) -> None:
+        """Execute a command line program.
+        
         Args:
-            command (list[str]): A list of strings containing the command line program and its options.
-        Returns:
-            int: The return code of the executed command.
+            command: A list containing the command line program and its options.
         """
-        file_path = Path(self.cwd + "/" + command[0])
+        file_path = Path(self.cwd) / command[0]
         if file_path.exists():
-            command[0] = self.cwd + "/" + command[0]
+            command[0] = str(file_path)
+        
         try:
-            # Use subprocess.run to execute the command
             result = subprocess.run(command, check=True)
-            return result.returncode
+            if result.returncode != 0:
+                self.exitcode = 1
         except subprocess.CalledProcessError as e:
-            # If the command returns a non-zero exit code, raise an exception
-            logging.error(e)
+            logging.error("Command failed: %s", str(e))
             self.exitcode = 1
         except Exception as e:
-            # If any other exception occurs, raise it
-            raise Exception(f"Error executing command: {str(e)}")
+            logging.error("Unexpected error executing command: %s", str(e))
+            self.exitcode = 1
 
 
-def main():
+def main() -> None:
+    """Main entry point for command processing."""
     load_dotenv(dotenv_path="config.env")
     input_stream = FileStream("commands.txt")
     lexer = commandsLexer(input_stream)
     lexer.removeErrorListeners()
+    
     stream = CommonTokenStream(lexer)
     parser = commandsParser(stream)
     parser.setTrace(trace=False)
     parser.removeErrorListeners()
     parser.addErrorListener(commandsVerboseListener())
     parser._errHandler = commandsVerboseStrategy()  # pyright: ignore
+    
     try:
         tree = parser.program()
-        execute_commands = commands()
+        executor = Commands()
         walker = ParseTreeWalker()
-        walker.walk(execute_commands, tree)
-        sys.exit(execute_commands.exitcode)
+        walker.walk(executor, tree)
+        sys.exit(executor.exitcode)
     except Exception as e:
         print(f"\nParsing failed: {type(e)} : {str(e)}")
         sys.exit(1)
