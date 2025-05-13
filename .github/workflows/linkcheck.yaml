@@ -26,7 +26,7 @@ jobs:
         id: check
         run: |
           if git rev-parse HEAD^ >/dev/null 2>&1; then
-            if git diff --quiet HEAD^ -- ${{ env.RELEVANT_FILES }} && \
+            if ! git diff --quiet HEAD^ -- ${{ env.RELEVANT_FILES }} || \
               git describe --exact-match > /dev/null 2>&1; then
               echo "relevant_changed=true" >> $GITHUB_OUTPUT
             else
