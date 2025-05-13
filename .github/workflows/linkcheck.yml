@@ -20,12 +20,12 @@ jobs:
         id: check
         run: |
           git fetch origin main --depth=2
-          if git diff --name-only HEAD HEAD^ \
-          | grep -Eq "^README.md$|\.jpg$|^\.readthedocs\.yaml$|^config\.py$|\.css$|^index\.rst$"; \
-                                                         then
-            echo "relevant_changed=true" >> $GITHUB_OUTPUT
-          else
+          if git diff --quiet HEAD^ -- README.md index.rst conf.py \
+          .readthedocs.yaml **/*.jpg **/*.css && \
+          ! git describe --exact-match > /dev/null 2>&1; then
             echo "relevant_changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "relevant_changed=true" >> $GITHUB_OUTPUT
           fi
 
   lychee:

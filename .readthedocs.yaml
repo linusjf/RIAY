@@ -3,7 +3,6 @@
 # Required
 ---
 version: 2
-# Set the OS, Python version, and other tools you might need
 build:
   os: ubuntu-24.04
   tools:
@@ -20,7 +19,6 @@ build:
           fi
         fi
     pre_install:
-      # <-- This runs your script before Sphinx builds
       - python strip_toc.py
       - python copytostatic.py
       - python -m pip install --upgrade --no-cache-dir python-dotenv
@@ -30,7 +28,6 @@ build:
         November.md December.md
 python:
   install:
-    # Install our python packages before building the docs
     - requirements: requirements.txt
 sphinx:
   configuration: conf.py
