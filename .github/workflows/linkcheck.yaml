@@ -1,3 +1,4 @@
+---
 name: Link Checker
 
 on:
@@ -9,7 +10,7 @@ on:
 env:
   RELEVANT_FILES: |
     README.md
-    index.rst 
+    index.rst
     conf.py
     .readthedocs.yaml
     **/*.jpg
@@ -31,10 +32,10 @@ jobs:
         id: check
         run: |
           if git diff --quiet HEAD^ -- ${{ env.RELEVANT_FILES }} && \
-             ! git describe --exact-match > /dev/null 2>&1; then
-            echo "relevant_changed=false" >> $GITHUB_OUTPUT
-          else
+            git describe --exact-match > /dev/null 2>&1; then
             echo "relevant_changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "relevant_changed=false" >> $GITHUB_OUTPUT
           fi
 
   link-check:
