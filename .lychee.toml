@@ -34,10 +34,12 @@ max_retries = 2
 # Maximum number of concurrent link checks.
 max_concurrency = 14
 
+format = "json"
+
 #############################  Requests  ############################
 
 # User agent to send with each request.
-user_agent = "curl/7.83. 1"
+user_agent = "curl/7.83.1"
 
 # Website timeout from connect to response finished.
 timeout = 30

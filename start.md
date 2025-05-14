@@ -1,7 +1,5 @@
 # Rosary In A Year (RIAY)
 
-[![Hits-of-Code](https://hitsofcode.com/github/linusjf/RIAY?branch=main)](https://hitsofcode.com/github/linusjf/RIAY/view?branch=main)
-
 <!-- toc -->
 
 - [Rosary In A Year](#rosary-in-a-year)

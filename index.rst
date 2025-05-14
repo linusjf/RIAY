@@ -1,5 +1,5 @@
 .. RIAY documentation master file, created by
-   genindexrst on Sat Apr 26 18:08:15 2025.
+   genindexrst on Wed May 14 13:24:37 2025.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
@@ -23,5 +23,3 @@ Rosary In A Year (RIAY) 2025
    October.md
    November.md
    December.md
-   HOWTO.md
-   SCRIPTS.md

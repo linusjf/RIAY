@@ -10,9 +10,10 @@ from typing import Dict, Any
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 project = "RIAY"
-copyright = "Aggregated by Linus Fernandes"
+copyright = "Compiled by Linus Fernandes"
 author = "Linus Fernandes"
 version = "1"
+language = "English"
 
 release = os.environ.get("READTHEDOCS_VERSION", "latest")
 master_doc = "index"
@@ -60,8 +61,11 @@ suppress_warnings = [
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 # Add paths for custom static files
 html_static_path = ["_static"]
-
+html_show_copyright = False
+html_show_sphinx = False
 html_theme = "sphinx_rtd_theme"
+html_split_index = True
+html_last_updated_use_utc = True
 
 # user starts in dark mode
 default_dark_mode = True
@@ -69,7 +73,11 @@ default_dark_mode = True
 # -- Options for PDF output
 latex_engine = "lualatex"
 
+latex_show_urls = "inline"
+
 latex_elements = {
+    'papersize': 'a4paper',
+    'pointsize': '11pt',
     "fontpkg": r"""
         \usepackage{fontspec}
     """,
@@ -79,12 +87,26 @@ latex_elements = {
 """,
 }
 
-# -- Options for epub output
+# -- Options for EPUB output -------------------------------------------------
+epub_show_urls = 'inline'  # or 'no', 'footnote'
+epub_author = author
+epub_publisher = 'Linus Fernandes'
+epub_copyright = copyright
+epub_title = project
+epub_description = "Rosary in a Year"
+epub_scheme = "URL"
+epub_identifier = 'https://github.com/linusjf/RIAY'  # Should be a unique URI
+epub_uid = 'riay'  # Unique ID for EPUB file
+epub_cover = ('_static/cover.jpg', '')
 epub_exclude_files = ["_static/*.pdf"]
 
 # -- Options for linkcheck
 # seconds
 linkcheck_timeout = 30
+
+linkcheck_anchors = False
+
+linkcheck_report_timeouts_as_broken = True
 
 linkcheck_ignore = [
     r"http://localhost:\d+/",  # Ignore local dev servers

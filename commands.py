@@ -13,8 +13,8 @@ from dotenv import load_dotenv
 from commandsLexer import commandsLexer
 from commandsParser import commandsParser
 from commandsListener import commandsListener
-from commandsverboselistener import commandsVerboseListener
-from commandsverbosestrategy import commandsVerboseStrategy
+from commandsverboselistener import CommandsVerboseListener
+from commandsverbosestrategy import CommandsVerboseStrategy
 
 
 class Commands(commandsListener):
@@ -86,14 +86,14 @@ class Commands(commandsListener):
 
     def _execute_command(self, command: list[str]) -> None:
         """Execute a command line program.
-        
+
         Args:
             command: A list containing the command line program and its options.
         """
         file_path = Path(self.cwd) / command[0]
         if file_path.exists():
             command[0] = str(file_path)
-        
+
         try:
             result = subprocess.run(command, check=True)
             if result.returncode != 0:
@@ -112,14 +112,14 @@ def main() -> None:
     input_stream = FileStream("commands.txt")
     lexer = commandsLexer(input_stream)
     lexer.removeErrorListeners()
-    
+
     stream = CommonTokenStream(lexer)
     parser = commandsParser(stream)
     parser.setTrace(trace=False)
     parser.removeErrorListeners()
-    parser.addErrorListener(commandsVerboseListener())
-    parser._errHandler = commandsVerboseStrategy()  # pyright: ignore
-    
+    parser.addErrorListener(CommandsVerboseListener())
+    parser._errHandler = CommandsVerboseStrategy()  # pyright: ignore
+
     try:
         tree = parser.program()
         executor = Commands()
