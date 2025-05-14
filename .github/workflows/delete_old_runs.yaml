@@ -6,8 +6,8 @@ on:
   schedule:
     # Runs daily at 3 AM UTC
     - cron: "0 3 * * *"
-      # Allows manual trigger
-      workflow_dispatch:
+  # Allows manual trigger
+  workflow_dispatch:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
