@@ -62,6 +62,7 @@ suppress_warnings = [
 # Add paths for custom static files
 html_static_path = ["_static"]
 html_show_copyright = False
+html_show_sphinx = False
 html_theme = "sphinx_rtd_theme"
 html_split_index = True
 html_last_updated_use_utc = True
@@ -75,6 +76,8 @@ latex_engine = "lualatex"
 latex_show_urls = "inline"
 
 latex_elements = {
+    'papersize': 'a4paper',
+    'pointsize': '11pt',
     "fontpkg": r"""
         \usepackage{fontspec}
     """,
@@ -90,6 +93,8 @@ epub_author = author
 epub_publisher = 'Linus Fernandes'
 epub_copyright = copyright
 epub_title = project
+epub_description = "Rosary in a Year"
+epub_scheme = "URL"
 epub_identifier = 'https://github.com/linusjf/RIAY'  # Should be a unique URI
 epub_uid = 'riay'  # Unique ID for EPUB file
 epub_cover = ('_static/cover.jpg', '')
