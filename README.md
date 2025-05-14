@@ -13,8 +13,6 @@
 - [October](#october)
 - [November](#november)
 - [December](#december)
-- [HOWTO](#howto)
-- [SCRIPTS](#scripts)
 
 ## Rosary In A Year (RIAY)
 
@@ -340,15 +338,15 @@ While the provided text doesn't contain direct quotes, several insightful concep
 
 1. **Forming the Relationship:** Focuses on the foundational elements of prayer, learning to raise the mind and heart to God.
 
-1. **The Biblical Roots:** Explores the scriptural basis of the prayers, deepening understanding and connecting them to daily life.
+2. **The Biblical Roots:** Explores the scriptural basis of the prayers, deepening understanding and connecting them to daily life.
 
-1. **Meditating on the Mysteries:** Introduces lectio divina and engages with the writings of the Saints and sacred art as aids to prayer.
+3. **Meditating on the Mysteries:** Introduces lectio divina and engages with the writings of the Saints and sacred art as aids to prayer.
 
-1. **Finding Focus:** Applies the learned principles, building the capacity to pray with the mysteries of the Rosary, starting with one decade at a time.
+4. **Finding Focus:** Applies the learned principles, building the capacity to pray with the mysteries of the Rosary, starting with one decade at a time.
 
-1. **Building Up the Decades:** Gradually increases the number of decades prayed, leading towards praying the full Rosary.
+5. **Building Up the Decades:** Gradually increases the number of decades prayed, leading towards praying the full Rosary.
 
-1. **Praying the Full Rosary:** The culmination of the program, focusing on receiving the graces of the full Rosary.
+6. **Praying the Full Rosary:** The culmination of the program, focusing on receiving the graces of the full Rosary.
 
 **Concluding Ritual:** The daily practice concludes with a structured sequence: the Sign of the Cross, the Our Father, three Hail Marys, the Glory Be, and another Sign of the Cross. This provides a consistent framework for ending the prayer time. The emphasis on expressing love to Jesus and Mary reinforces the relational aspect of prayer.
 
@@ -703,10 +701,10 @@ This reflection explores how to live out the prayer "Thy kingdom come, thy will 
 **Main Topics Discussed:**
 
 1. **The Nature of Children:** Children are presented as inherently "poor" – dependent, lacking knowledge and resources, and vulnerable. Crucially, in a healthy environment, they accept this dependence without shame or frustration, naturally turning to parents for all needs. Despite their neediness, they often exhibit joy and levity.
-1. **Childlike Humility as the Key:** This trusting dependence and acceptance of one's limitations ("poverty") is the essential characteristic for entering and experiencing the Kingdom of Heaven.
-1. **Experiencing the Kingdom Now:** The Kingdom isn't just a future reality. It is experienced _now_ when we acknowledge our dependence, limitations, and needs, and bring them directly to God the Father without shame, self-hatred, or resorting to anxious self-reliance. This act of trusting dependence meeting God's providence _is_ the Kingdom experience on earth.
-1. **Contrast with Adult Tendencies:** Adults often react to their inherent limitations with shame, frustration, and a drive for self-reliance, which hinders experiencing the peace of the Kingdom.
-1. **Trusting God's Will:** Praying "Thy will be done" mirrors the childlike trust that the Father knows best, loves us, and will provide what is truly needed, even if we don't know what that is (illustrated by the child-in-restaurant analogy). Jesus models this perfectly in Gethsemane.
+2. **Childlike Humility as the Key:** This trusting dependence and acceptance of one's limitations ("poverty") is the essential characteristic for entering and experiencing the Kingdom of Heaven.
+3. **Experiencing the Kingdom Now:** The Kingdom isn't just a future reality. It is experienced _now_ when we acknowledge our dependence, limitations, and needs, and bring them directly to God the Father without shame, self-hatred, or resorting to anxious self-reliance. This act of trusting dependence meeting God's providence _is_ the Kingdom experience on earth.
+4. **Contrast with Adult Tendencies:** Adults often react to their inherent limitations with shame, frustration, and a drive for self-reliance, which hinders experiencing the peace of the Kingdom.
+5. **Trusting God's Will:** Praying "Thy will be done" mirrors the childlike trust that the Father knows best, loves us, and will provide what is truly needed, even if we don't know what that is (illustrated by the child-in-restaurant analogy). Jesus models this perfectly in Gethsemane.
 
 **Key Takeaways:**
 
@@ -884,9 +882,9 @@ This text explores deepening one's relationship with Jesus and Mary through pray
 **Main Topics Discussed:**
 
 1. **The Opening of the Hail Mary:** Analysis of "Hail Mary, full of grace, the Lord is with thee."
-1. **Origin and Meaning:** These words are traced back to the Angel Gabriel's greeting at the Annunciation, interpreted as God's own greeting to Mary (citing Catechism 2676).
-1. **Repetition in Prayer:** Addressing the nature of repeating prayers like the Hail Mary, drawing on Pope John Paul II's perspective.
-1. **Application:** How to approach praying these specific words with renewed intention and love.
+2. **Origin and Meaning:** These words are traced back to the Angel Gabriel's greeting at the Annunciation, interpreted as God's own greeting to Mary (citing Catechism 2676).
+3. **Repetition in Prayer:** Addressing the nature of repeating prayers like the Hail Mary, drawing on Pope John Paul II's perspective.
+4. **Application:** How to approach praying these specific words with renewed intention and love.
 
 **Key Takeaways:**
 
@@ -924,9 +922,9 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 **Main Topics Discussed:**
 
 1. **Origin of the Prayer:** The phrase originates from the biblical event of the Visitation (Luke 1:39ff), where the pregnant Mary visits her relative Elizabeth.
-1. **The Visitation Context:** Upon hearing Mary's greeting, Elizabeth's unborn child (John the Baptist) leaps, and Elizabeth, filled with the Holy Spirit, proclaims these words.
-1. **Mary's Role:** Mary is presented as a powerful conduit of grace. Her greeting communicates the Holy Spirit, and her very presence sanctifyingly communicates Jesus, whom she carries. This highlights God's humility in becoming small enough to be carried by her.
-1. **Praying with Meaning:** The reflection contrasts mechanical repetition of the prayer with the way Elizabeth spoke – as a loud, joyous, Spirit-filled cry. It encourages emulating this genuine wonder and awe.
+2. **The Visitation Context:** Upon hearing Mary's greeting, Elizabeth's unborn child (John the Baptist) leaps, and Elizabeth, filled with the Holy Spirit, proclaims these words.
+3. **Mary's Role:** Mary is presented as a powerful conduit of grace. Her greeting communicates the Holy Spirit, and her very presence sanctifyingly communicates Jesus, whom she carries. This highlights God's humility in becoming small enough to be carried by her.
+4. **Praying with Meaning:** The reflection contrasts mechanical repetition of the prayer with the way Elizabeth spoke – as a loud, joyous, Spirit-filled cry. It encourages emulating this genuine wonder and awe.
 
 **Key Takeaways:**
 
@@ -962,11 +960,11 @@ This text explores how prayer and meditation deepen one's relationship with Jesu
 
 1. **Mary's Role as Intercessor:** The central theme is Mary's unique position and ability to intercede for believers with her Son, Jesus.
 
-1. **The Power of Relationship:** It draws a parallel between influence in earthly relationships ("who you know") and Mary's influence with Jesus due to their mother-son relationship.
+2. **The Power of Relationship:** It draws a parallel between influence in earthly relationships ("who you know") and Mary's influence with Jesus due to their mother-son relationship.
 
-1. **Biblical Foundation:** The relationship between King Solomon and his mother Bathsheba (1 Kings 2:19-20) serves as a key illustration.
+3. **Biblical Foundation:** The relationship between King Solomon and his mother Bathsheba (1 Kings 2:19-20) serves as a key illustration.
 
-1. **Confidence in Prayer:** Believers are encouraged to approach Mary confidently with their needs, trusting in her love and intercessory power.
+4. **Confidence in Prayer:** Believers are encouraged to approach Mary confidently with their needs, trusting in her love and intercessory power.
 
 **Key Takeaways:**
 
@@ -1014,9 +1012,9 @@ This text explores the nature of the "Glory Be" prayer, identifying it primarily
 **Main Topics Discussed:**
 
 1. **The "Glory Be" as Praise:** The prayer is presented as a quintessential example of praise, supported by scriptural references like Psalm 145 ("I will extol you my God and King...") and the Catechism (section 2649).
-1. **Definition of Praise:** Praise is defined as the form of prayer that most directly recognizes God _as God_. It is uniquely characterized as "entirely disinterested."
-1. **"Disinterested" Praise Explained:** This core concept means praise gives glory to God purely for His own sake – simply because He _is_ – rather than focusing on what He has done for us or what we need from Him.
-1. **Contrast with Other Prayer Forms:** Praise is distinguished from:
+2. **Definition of Praise:** Praise is defined as the form of prayer that most directly recognizes God _as God_. It is uniquely characterized as "entirely disinterested."
+3. **"Disinterested" Praise Explained:** This core concept means praise gives glory to God purely for His own sake – simply because He _is_ – rather than focusing on what He has done for us or what we need from Him.
+4. **Contrast with Other Prayer Forms:** Praise is distinguished from:
    - **Contrition:** Focuses on human failings and God's mercy.
    - **Petition:** Focuses on human dependence and needs presented to God.
    - **Thanksgiving:** Focuses on gratitude for God's specific actions.
@@ -1062,10 +1060,10 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 **Main Topics Discussed:**
 
 1. **Theological Foundation:** The teaching draws heavily on Scripture (Matthew 28:19 - baptizing in the Trinity's name; Psalm 36:9 - God as the fountain and source of light) and the Catechism's emphasis on the Holy Trinity as the central mystery and illuminating source of Christian faith.
-1. **The Sign of the Cross as Faith in Action:** Making the Sign is presented not merely as a ritual, but as a conscious act of faith. It's likened to opening one's eyes to perceive spiritual reality.
-1. **Analogy of Light and Sight:** The Holy Trinity is described as the fundamental "light." The grace of Baptism confers faith, which is likened to spiritual "sight," enabling believers to perceive this divine light.
-1. **Perception in God's Light:** Praying "in the name of the Father, Son, and Holy Spirit" isn't about activating God's light (which is always present), but about using our faith (sight) to see _within_ that divine light. This allows a clearer view of God, faith mysteries, Mary, saints, creation, others, and oneself – revealing both inherent dignity and areas needing conversion.
-1. **Vulnerability and Growth:** Stepping into this light through the Sign of the Cross is an act of courage and vulnerability. It involves leaving darkness or hiding, allowing God's light to reveal shortcomings but also to warm, purify, enlighten, strengthen, and encourage.
+2. **The Sign of the Cross as Faith in Action:** Making the Sign is presented not merely as a ritual, but as a conscious act of faith. It's likened to opening one's eyes to perceive spiritual reality.
+3. **Analogy of Light and Sight:** The Holy Trinity is described as the fundamental "light." The grace of Baptism confers faith, which is likened to spiritual "sight," enabling believers to perceive this divine light.
+4. **Perception in God's Light:** Praying "in the name of the Father, Son, and Holy Spirit" isn't about activating God's light (which is always present), but about using our faith (sight) to see _within_ that divine light. This allows a clearer view of God, faith mysteries, Mary, saints, creation, others, and oneself – revealing both inherent dignity and areas needing conversion.
+5. **Vulnerability and Growth:** Stepping into this light through the Sign of the Cross is an act of courage and vulnerability. It involves leaving darkness or hiding, allowing God's light to reveal shortcomings but also to warm, purify, enlighten, strengthen, and encourage.
 
 **Key Takeaways:**
 
@@ -1097,10 +1095,10 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 **Main Topics:**
 
 1. **Spiritual Nourishment:** The text reflects on the Hail Holy Queen prayer (_Salve Regina_), emphasizing its opening words: _"Hail Holy Queen, Mother of Mercy, our life, our sweetness, and our hope."_
-1. **Eucharistic Analogy:** Drawing from Matthew 26, Jesus’ gifts of bread and wine symbolize essential grace (_bread_) and joyful abundance (_wine_).
+2. **Eucharistic Analogy:** Drawing from Matthew 26, Jesus’ gifts of bread and wine symbolize essential grace (_bread_) and joyful abundance (_wine_).
    - _Bread_: Represents foundational grace for spiritual survival.
    - _Wine_: Symbolizes the "sweetness" of God’s love, enhancing life beyond necessities.
-1. **Mary’s Role:** The Blessed Mother is presented as a gift of "wine"—a source of spiritual sweetness and hope, deepening one’s relationship with God.
+3. **Mary’s Role:** The Blessed Mother is presented as a gift of "wine"—a source of spiritual sweetness and hope, deepening one’s relationship with God.
 
 **Key Takeaways:**
 
@@ -1133,11 +1131,11 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 
 1. **Prayer and Meditation:** Deepening one's relationship with Jesus and Mary through prayer, emphasizing their roles as sources of grace.
 
-1. **Mary’s Compassion:** Reflecting on John 19:26, Mary is portrayed as the "woman of Sorrows" who understands human suffering and serves as an intercessor.
+2. **Mary’s Compassion:** Reflecting on John 19:26, Mary is portrayed as the "woman of Sorrows" who understands human suffering and serves as an intercessor.
 
-1. **Suffering and Faith:** The "Valley of Tears" metaphor illustrates the shared human experience of hardship, with Jesus and Mary offering solace.
+3. **Suffering and Faith:** The "Valley of Tears" metaphor illustrates the shared human experience of hardship, with Jesus and Mary offering solace.
 
-1. **Devotional Practices:** Recitations of prayers like the _Our Father_, _Hail Mary_, and _Hail Holy Queen_ foster communal faith and perseverance.
+4. **Devotional Practices:** Recitations of prayers like the _Our Father_, _Hail Mary_, and _Hail Holy Queen_ foster communal faith and perseverance.
    **Key Takeaways:**
 
 - Mary’s suffering at the Cross and her witness to the Resurrection make her a compassionate figure for those enduring pain.
@@ -1255,8 +1253,8 @@ How we live here, what we do now matters. Let us not be afraid but Trust God. We
 **_Key Takeaways_**
 
 1. **Hope and Seriousness**: Authentic hope avoids flippancy but embraces sober reflection on eternal realities.
-1. **Salvation as a Shared Mission**: Individuals are called to repent and collaborate with God for others’ salvation, prioritizing eternal concerns over trivialities.
-1. **Avoiding Fear**: For those in grace, excessive fear of Hell is counterproductive; a right relationship with God fosters hope and trust.
+2. **Salvation as a Shared Mission**: Individuals are called to repent and collaborate with God for others’ salvation, prioritizing eternal concerns over trivialities.
+3. **Avoiding Fear**: For those in grace, excessive fear of Hell is counterproductive; a right relationship with God fosters hope and trust.
 
 **_Notable Insights_**
 
@@ -3462,12 +3460,12 @@ Let us remain awhile in this contemplation, beholding the innocent, scourged Lor
 Consider, if you will, that stark scene: the Crowning with Thorns, the third sorrowful mystery. To ponder it deeply is to seek a closer walk with Christ and His Mother, finding grace along the path.
 
 1. We might turn our minds, profitably, to the Angelic Doctor, St. Thomas Aquinas, that profound and saintly scholar of old, who guided this reflection.
-1. Aquinas fixes upon the crown, not as a symbol of tragic kingship, but of sheer, deliberate _indignity_. What is indignity? It is the calculated insult, the offering of contempt where honour is not merely due, but richly deserved.
-1. Those thorns, sharp and cruel, might be seen as the very 'prickles' of our own sins, or perhaps the curse upon the ground, now gathered and pressed upon the Head of Him who came to lift it.
-1. We have, perhaps, known something of this ourselves – either in receiving or, worse, in inflicting it. Think of a trust betrayed, a simple kindness met with a clever, wounding slight. It leaves a peculiar ache, a sense of profound wrongness, particularly when the one offended was utterly open and generous.
-1. Now, lift your gaze from such small, human follies to the Divine. He, who is the source of all being, all goodness, all trust, offers Himself entirely. And what is the return? A crown of thorns. Our sins, our self-absorption, our failure to respond with love and honour, are the very substance of that crown.
-1. This is the heart of the mystery: Love receiving indignity. To ponder it in prayer is to see the true nature of our rebellion and the depth of His sacrifice. It draws us closer to His wounded heart and to the heart of His Mother, who shared His suffering.
-1. Such meditation, woven with the simple, enduring threads of prayer (like the Hail Mary and Glory Be), becomes a channel of grace, deepening our bond with Christ and Mary, and teaching us the terrible cost of sin and the glorious power of the Love that bore it.
+2. Aquinas fixes upon the crown, not as a symbol of tragic kingship, but of sheer, deliberate _indignity_. What is indignity? It is the calculated insult, the offering of contempt where honour is not merely due, but richly deserved.
+3. Those thorns, sharp and cruel, might be seen as the very 'prickles' of our own sins, or perhaps the curse upon the ground, now gathered and pressed upon the Head of Him who came to lift it.
+4. We have, perhaps, known something of this ourselves – either in receiving or, worse, in inflicting it. Think of a trust betrayed, a simple kindness met with a clever, wounding slight. It leaves a peculiar ache, a sense of profound wrongness, particularly when the one offended was utterly open and generous.
+5. Now, lift your gaze from such small, human follies to the Divine. He, who is the source of all being, all goodness, all trust, offers Himself entirely. And what is the return? A crown of thorns. Our sins, our self-absorption, our failure to respond with love and honour, are the very substance of that crown.
+6. This is the heart of the mystery: Love receiving indignity. To ponder it in prayer is to see the true nature of our rebellion and the depth of His sacrifice. It draws us closer to His wounded heart and to the heart of His Mother, who shared His suffering.
+7. Such meditation, woven with the simple, enduring threads of prayer (like the Hail Mary and Glory Be), becomes a channel of grace, deepening our bond with Christ and Mary, and teaching us the terrible cost of sin and the glorious power of the Love that bore it.
 
 #### April 12,2025
 
@@ -4413,915 +4411,3 @@ RIAY November 2025
 ### December 2025
 
 RIAY December 2025
-
-## HOWTO
-
-<!-- markdownlint-disable MD033 -->
-
-<!-- toc -->
-
-- [Prerequisites](#prerequisites)
-  - [Environment variables](#environment-variables)
-  - [Configuration](#configuration)
-    - [General Settings](#general-settings)
-    - [Overlay Icon Configuration](#overlay-icon-configuration)
-    - [File Configuration](#file-configuration)
-    - [API Request Settings](#api-request-settings)
-    - [AI Model Settings](#ai-model-settings)
-    - [Content Documentation Settings](#content-documentation-settings)
-  - [Vale](#vale)
-- [Add the daily Youtube video](#add-the-daily-youtube-video)
-- [Add additional Youtube video to a day](#add-additional-youtube-video-to-a-day)
-- [Add today's sharing](#add-todays-sharing)
-- [Merge monthly markdown files into one large README](#merge-monthly-markdown-files-into-one-large-readme)
-- [Generate table of contents for markdown files](#generate-table-of-contents-for-markdown-files)
-- [Using the commands utility that accepts text commands in file `commands.txt`](#using-the-commands-utility-that-accepts-text-commands-in-file-commandstxt)
-
-<!-- tocstop -->
-
-### Prerequisites
-
-- [curl](https://curl.se/)
-- [gm](http://www.graphicsmagick.org/)
-- [m4](https://www.gnu.org/software/m4/m4.html)
-- [stitchmd](https://github.com/abhinav/stitchmd)
-- [markdown-toc-gen](https://github.com/thesilk-tux/markdown-toc-gen)
-- [mdformat](https://github.com/hukkin/mdformat)
-- [markdownlint](https://github.com/DavidAnson/markdownlint)
-- [vale](https://github.com/errata-ai/vale)
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
-- [exiftool](https://exiftool.org/)
-
-1. Create an empty `videos.txt` file under the root directory.
-1. Create a directory for each month of the year under the root directory.
-1. Add a `header.md` file under each monthly directory with the following content.
-   Example for January:
-   <pre><code>&lt;!-- toc --&gt;&lt;!-- tocstop --&gt;</code></pre>
-
-```markdown
-# January 2025
-
-RIAY January 2025
-```
-
-`markdown-toc-gen` won't generate the table of contents
-for the monthly markdown (in this case, `January.md`)
-without the mandatory `<-- toc -->` and `<!-- tocstop -->` comments header.
-
-You can replace the top-level markdown header
-
-```markdown
-# January 2025
-
-RIAY January 2025
-```
-
-with your own if you wish.
-
-Add a `compact.txt` file with the first line as `header.md` under each monthly directory.
-This ensures the presence of the header for each month's markdown.
-
-Note: You can do all this by simply executing the script `setup`.
-
-#### Environment variables
-
-1. Export an environment variable `GITHUB_USERNAME` by adding the following line to your `.bash_profile` file.
-
-1. Substitute your Github user id for `<userid>`.
-
-   ```bash
-   export GITHUB_USERNAME="<userid>"
-   ```
-
-1. Export environment variable `YOUTUBE_API_KEY` by adding the following line to `.bash_profile`.
-
-   ```bash
-   export YOUTUBE_API_KEY=<api_key>
-   ```
-
-   Substitute your Google API Key which can access YouTube Data API.
-   Set up your API key using instructions at <https://support.google.com/googleapi/answer/6158862?hl=en>
-
-1. Export environment variable `GEMINI_API_KEY` by adding the following line to `.bash_profile`.
-
-   ```bash
-   export GEMINI_API_KEY=<api_key>
-   ```
-
-   Substitute your Gemini API Key which can access YouTube Data API.
-   Set up your API key using instructions at <https://ai.google.dev/gemini-api/docs/api-key>
-
-1. Export environment variable `DEEPSEEK_API_KEY` by adding the following line to `.bash_profile`.
-
-   ```bash
-   export DEEPSEEK_API_KEY=<api_key>
-   ```
-
-   Substitute your DeepSeek API Key which can access YouTube Data API.
-   Set up your API key using instructions at <https://docs.aicontentlabs.com/articles/deepseek-api-key/>
-
-**Note:** You will need to set up either DeepSeek or Gemini API keys for AI-generation of podcast summaries.
-
-#### Configuration
-
-The configuration file `config.env` is located in the repo's root directory.
-
-It contains the following settings:
-
-##### General Settings
-
-```bash
-# Turn on or turn off logging
-LOGGING=true
-# The year in which the podcasts are being followed
-YEAR=2025
-```
-
-##### Overlay Icon Configuration
-
-```bash
-ICON_FILE="play-button.png"
-ICON_SIZE="256x256"
-ICON_OFFSET="+32+0"
-ICON_COMMENT="Play Icon Added"
-```
-
-##### File Configuration
-
-```bash
-COMPACT_FILE="compact.txt"
-VIDEOS_FILE="videos.txt"
-```
-
-##### API Request Settings
-
-```bash
-# Time between successive requests to the LLM models (seconds)
-GAP_BW_REQS=10
-# Maximum number of retries for a REST API call
-MAX_RETRIES=5
-# Initial retry delay (seconds) - increases exponentially
-INITIAL_RETRY_DELAY=2
-# Connection timeout for curl requests (seconds)
-CONNECT_TIMEOUT=30
-# Maximum time for curl operations (seconds)
-MAX_TIME=90
-```
-
-##### AI Model Settings
-
-```bash
-# Temperature for LLM responses (0 for deterministic output)
-TEMPERATURE=0
-# Supported Gemini models
-GEMINI_MODELS=(
-  "gemini-2.5-pro-exp-03-25"
-  "gemini-1.5-pro"
-  "gemini-2.5-flash-preview-04-17"
-  "gemini-2.0-flash"
-  "gemini-2.0-flash-exp"
-  "gemini-2.0-flash-lite"
-  "gemini-1.5-flash"
-  "gemini-1.5-flash-8B"
-)
-# Prompt for summarizing transcript chunks
-CHUNK_SUMMARY_PROMPT="Summarize this text, excluding plugs, branding, and promotions. Avoid mention of Day, podcast and Rosary in a Day:"
-# Prompt for final summary generation
-FINAL_SUMMARY_PROMPT="Condense the following using the writing style of CS Lewis in 500 words or less. Be concise and clear, suitable for someone who wants a quick overview. Start with a level three markdown header and annotate it as 'AI-Generated Summary:' followed by your generated title (no colons, proper grammar). Generate well-formatted and line-spaced markdown. Do not fence the markdown. Use lists instead of further sub-headings."
-```
-
-##### Content Documentation Settings
-
-```bash
-# List of files for generating documentation
-CONTENT_DOCS=(
-  "RIAY=start.md"
-  "January=January.md"
-  "February=February.md"
-  "March=March.md"
-  "April=April.md"
-  "May=May.md"
-  "June=June.md"
-  "July=July.md"
-  "August=August.md"
-  "September=September.md"
-  "October=October.md"
-  "November=November.md"
-  "December=December.md"
-  "HOWTO=HOWTO.md"
-  "SCRIPTS=SCRIPTS.md"
-)
-```
-
-The config values can be modified as per your preferences.
-
-#### Vale
-
-Initialize `vale` styles by executing the command `vale sync`. This should download the specified styles in `.vale.ini`.
-
-### Add the daily Youtube video
-
-Execute the script `addvideo` with the following parameters:
-
-- video id - the id of the Youtube video
-- caption or title (in double quotes)
-
-Example:
-
-```bash
-./addvideo 5I2BbalTOPo "Hagar and Ishmael"
-```
-
-Results:
-
-1. Computes the `day of year` from the length of the videos.txt file.
-   `day of year = (number of lines in videos.txt) + 1`
-   In this case, 10.
-1. Appends the Video id to the file `videos.txt` present in the root directory.
-1. Generates markdown file `Day010.md` in the `January` subdirectory.
-   1. This markdown file has a link to the Youtube video.
-   1. It also has AI-Generated summary of the podcast.
-1. Generates image file `Day010.jpg` in the `January/jpgs` directory.
-1. Appends `Day010.md` filename to the `January/compact.txt` file.
-1. Updates `January.md` file in the root directory with the contents of `Day010.md`.
-1. Updated files:
-   1. `./videos.txt`
-   1. `./January.md`
-   1. `./January/compact.txt`
-1. Created files:
-   1. `./January/Day010.md`
-   1. `./January/jpgs/Day010.jpg`
-
-### Add additional Youtube video to a day
-
-When you have to add an additional video to the markdown for that day, you can execute the script `addvideotoday` with the following parameters:
-
-- video id - the id of the Youtube video
-- day of year - the day of the year for which the video is to be added
-
-Example:
-
-```bash
-./addvideotoday 5I2BbalTOPo 21
-```
-
-Results:
-
-1. Updates markdown file `Day021.md` in the `January` subdirectory.
-   1. This markdown file has a link to the Youtube video.
-   1. It also has AI-Generated summary of the podcast.
-1. Generates image file `<videoid>.jpg` in the `January/jpgs` directory.
-1. Updates `January.md` file in the root directory with the contents of `Day021.md`.
-1. Updated files:
-   1. `January/Day021.md`
-   1. `./January.md`
-1. Created files:
-   1. `./January/jpgs/<videoid>.jpg`
-
-### Add today's sharing
-
-1. First, add today's video.
-1. Edit the generated `Dayxxx.md` file for today.
-1. Paste the sharing text into the file adding appropriate markdown headers as needed.
-1. Save the file.
-1. Execute script `genmonth` with the following parameters:
-
-- month index - 1 - 12
-
-- optional four digit year - 20XX
-
-  Example:
-
-  ```bash
-  ./genmonth 01 2025
-  OR
-
-  ./genmonth 01
-  # The year value will be picked from the environment variable YEAR
-  ```
-
-  Results:
-
-  Updates the `January.md` file with the sharing text added to the `Day010.md` file.
-
-You can add sharing to other days as well in a similar fashion.
-Don't forget to execute `genmonth` with the appropriate month index for that day.
-
-You can get the month index by executing the following bash command:
-
-```bash
-date --date="$(date --date='jan 1 + 30 days' '+%B %d,      %Y')" +%m
-```
-
-Decrement the day of year by 1 and substitute it in the command.
-The preceding gives the month index for day 31.
-
-### Merge monthly markdown files into one large README
-
-1. Edit the `stitch.md` file provided to include the markdown files you wish to merge.
-
-1. The file format follows:
-
-   ```markdown
-   # README
-
-   - [RIAY](start.md)
-   - [January](January.md)
-   - [February](February.md)
-   - [March](March.md)
-   - [April](April.md)
-   - [May](May.md)
-   - [June](June.md)
-   - [July](July.md)
-   - [August](August.md)
-   - [September](September.md)
-   - [October](October.md)
-   - [November](November.md)
-   - [December](December.md)
-   ```
-
-   Include or exclude any files you need or don't need.
-
-1. Execute the `stitch` script.
-
-```bash
-./stitch
-```
-
-Results:
-
-Generates README with all the contents of the listed markdown files in `stitch.md`.
-
-### Generate table of contents for markdown files
-
-Execute the `gentoc` script as follows:
-
-```bash
-./gentoc <path to markdown file>
-```
-
-Before executing the script, update the file and place the comment `<!-- toc -->` and `<!-- tocstop -->` to generate the table of contents inside these markers.
-
-Results:
-
-Generates the table of contents per the existing headings in the markdown file.
-
-### Using the commands utility that accepts text commands in file `commands.txt`
-
-1. Install ANTLR4
-
-Use [pyenv](https://github.com/pyenv/pyenv) to install and set up your Python3 environment.
-
-Example of setting up your Python and ANTLR4 environment
-
-```bash
-pyenv install 3.10
-pyenv global 3.10
-pip install antlr4-tools antlr4-python3-runtime python-dotenv
-```
-
-1. Add commands to the `commands.txt` file.
-
-Available commands:
-
-- addvideo
-- addvideotoday
-- addimgtoday
-- genmonth
-- lintall
-- stitch
-- gentoc
-
-**Note:** The `addvideotoday` and `addimgtoday` commands need the day of year to be a three digit number.
-Hence, 1 becomes 001, 20 becomes 020 and 99 is 099.
-
-For simplicity and consistency, the commands wrap their command line equivalents.
-
-1. Execute the commands.py script.
-
-```bash
-./commands.py
-```
-
-This executes the commands in order as placed in the `commands.txt`. If any command fails, the program outputs an error message for that command and executes all following commands.
-
-1. Example `commands.txt` file
-
-```text
-# example commands
-addvideo "abc123456" "Example video" # add example video
-addvideotoday "abc123456" 010 # add example video to day 10 markdown.
-genmonth 01 2025 # generate markdown for month January, 2025
-lintall # lint all the markdown files
-```
-
-The program ignores everything after the `#` symbol and treats it like a new line character.
-
-## Scripts
-
-This document describes all bash scripts in the project, their functionality, dependencies, environment variables, and called scripts.
-
-### Table of Contents
-
-1. [summarizevideo](#summarizevideo)
-1. [findsnippetdays](#findsnippetdays)
-1. [apply_overlayicon](#apply_overlayicon)
-1. [genoverlays](#genoverlays)
-1. [setupimgs](#setupimgs)
-1. [setup](#setup)
-1. [compact](#compact)
-1. [genmonth](#genmonth)
-1. [lintall](#lintall)
-1. [replaceemojis](#replaceemojis)
-1. [removeallsnippets](#removeallsnippets)
-1. [findsnippetfiles](#findsnippetfiles)
-1. [genmdfromvids](#genmdfromvids)
-1. [addsnippets](#addsnippets)
-1. [genvidthmd](#genvidthmd)
-1. [genoverlay](#genoverlay)
-1. [getgeminimodels](#getgeminimodels)
-1. [annotatejpg](#annotatejpg)
-1. [removesnippets](#removesnippets)
-1. [addvideotoday](#addvideotoday)
-1. [addsummariestodays](#addsummariestodays)
-1. [gentoc](#gentoc)
-1. [stitch](#stitch)
-1. [addimgtoday](#addimgtoday)
-1. [restoreemojis](#restoreemojis)
-1. [annotatedayjpgs](#annotatedayjpgs)
-1. [addvideo](#addvideo)
-1. [genindexrst](#genindexrst)
-1. [genstitchmd](#genstitchmd)
-
----
-
-### summarizevideo
-
-**Description**: Summarizes YouTube videos by extracting captions and using AI APIs (Gemini/DeepSeek) to generate markdown formatted summaries.
-**Dependencies**: jq, curl, yt-dlp, tee
-**Environment Variables**:
-
-- YOUTUBE_API_KEY
-- GEMINI_API_KEY
-- DEEPSEEK_API_KEY
-- VIDEOS_FILE
-- GAP_BW_REQS
-- TEMPERATURE
-- CHUNK_SUMMARY_PROMPT
-- FINAL_SUMMARY_PROMPT
-- LOGGING
-  **Called Scripts**:
-- require.sh
-- util.sh
-- curl.sh
-- youtube.sh
-- lockconfig.sh
-  **Called Functions**:
-- version
-- usage
-- get_day_index
-- check_dependencies
-- get_chunk_prompt
-- get_final_prompt
-- summarize_chunk_gemini
-- summarize_chunk_deepseek
-- summarize_chunk
-- final_summary_gemini
-- final_summary_deepseek
-- main
-
-### findsnippetdays
-
-**Description**: Finds and extracts day numbers from snippet files in month directories.
-**Dependencies**: sed, basename, grep, find, tr
-**Environment Variables**: None
-**Called Scripts**:
-
-- util.sh
-- color.sh
-- require.sh
-  **Called Functions**:
-- usage
-- version
-- main
-- extract_day_number
-
-### apply_overlayicon
-
-**Description**: Applies overlay icon to DayXXX.jpg files in specified directory.
-**Dependencies**: find, parallel, tee
-**Environment Variables**:
-
-- ICON_FILE
-- ICON_SIZE
-- ICON_OFFSET
-- ICON_COMMENT
-- LOGGING
-  **Called Scripts**:
-- lockconfig.sh
-  **Called Functions**:
-- version
-- usage
-- err
-- log
-- validate_environment
-- main
-
-### genoverlays
-
-**Description**: Processes video IDs from file and generates overlays.
-**Dependencies**: tee
-**Environment Variables**:
-
-- VIDEOS_FILE
-- LOGGING
-  **Called Scripts**:
-- lockconfig.sh
-- genoverlay
-  **Called Functions**:
-- usage
-- main
-
-### setupimgs
-
-**Description**: Processes and converts images in a directory, moves downloads to jpgs directory.
-**Dependencies**: gm, rm, mv
-**Environment Variables**: None
-**Called Scripts**:
-
-- require.sh
-  **Called Functions**:
-- usage
-- is_valid_dir
-- get_downloads_dir
-- main
-
-### setup
-
-**Description**: Creates monthly directories and files, videos file and header.md files.
-**Dependencies**: None
-**Environment Variables**:
-
-- YEAR
-- VIDEOS_FILE
-- COMPACT_FILE
-  **Called Scripts**:
-- lockconfig.sh
-  **Called Functions**:
-- version
-- backup_file
-- confirm_overwrite
-- setup_directories
-- create_header_file
-- main
-
-### compact
-
-**Description**: Compacts multiple markdown files into single output using m4 preprocessing.
-**Dependencies**: m4, mktemp, awk, rm
-**Environment Variables**:
-
-- COMPACT_FILE
-  **Called Scripts**:
-- lockconfig.sh
-- require.sh
-- vidmd.sh
-  **Called Functions**:
-- usage
-- is_valid_dir
-- main
-
-### genmonth
-
-**Description**: Generates monthly markdown file with video index and table of contents.
-**Dependencies**: date, markdown-toc
-**Environment Variables**: None
-**Called Scripts**:
-
-- require.sh
-- date.sh
-- lockconfig.sh
-- compact
-- gentoc
-  **Called Functions**:
-- version
-- usage
-- validate_inputs
-- generate_month_file
-- dry_run
-- main
-
-### lintall
-
-**Description**: Lints and formats all markdown files in project using markdownlint and mdformat.
-**Dependencies**: markdownlint, mdformat
-**Environment Variables**: None
-**Called Scripts**:
-
-- require.sh
-  **Called Functions**:
-- version
-- usage
-- main
-
-### replaceemojis
-
-**Description**: Replaces specific emoji characters in markdown files.
-**Dependencies**: None
-**Environment Variables**: None
-**Called Scripts**: None
-**Called Functions**:
-
-- version
-- usage
-- main
-
-### removeallsnippets
-
-**Description**: Removes all snippets by running removesnippets for each month (1-12).
-**Dependencies**: None
-**Environment Variables**: None
-**Called Scripts**:
-
-- removesnippets
-  **Called Functions**:
-- version
-- main
-
-### findsnippetfiles
-
-**Description**: Finds markdown files containing 'Snippet' in month directories.
-**Dependencies**: find, grep, sort
-**Environment Variables**: None
-**Called Scripts**:
-
-- require.sh
-  **Called Functions**:
-- check_requirements
-- main
-
-### genmdfromvids
-
-**Description**: Generates markdown files from video IDs with thumbnails and metadata.
-**Dependencies**: jq, curl, git
-**Environment Variables**:
-
-- YEAR
-- YOUTUBE_API_KEY
-  **Called Scripts**: None
-
-### addsnippets
-
-**Description**: Adds snippet images to markdown files and generates compact versions.
-**Dependencies**: date, markdown-toc-gen
-**Environment Variables**:
-
-- GITHUB_USERNAME
-- YEAR
-  **Called Scripts**:
-- require.sh
-- vidmd.sh
-- lockconfig.sh
-  **Called Functions**:
-- usage
-- main
-
-### genvidthmd
-
-**Description**: Generates markdown for embedding YouTube videos.
-**Dependencies**: curl
-**Environment Variables**: None
-**Called Scripts**: None
-
-### genoverlay
-
-**Description**: Generates overlay images for YouTube videos.
-**Dependencies**: curl, realpath
-**Environment Variables**:
-
-- YOUTUBE_API_KEY
-  **Called Scripts**:
-- require.sh
-- vidmd.sh
-- overlayicon
-  **Called Functions**:
-- usage
-- version
-- main
-
-### getgeminimodels
-
-**Description**: Fetches available Gemini models from API and saves to geminimodelids.txt.
-**Dependencies**: curl, jq
-**Environment Variables**:
-
-- GEMINI_API_KEY
-  **Called Scripts**: None
-  **Called Functions**:
-- get_gemini_models
-
-### annotatejpg
-
-**Description**: Adds metadata comments to JPG files.
-**Dependencies**: exiftool, file
-**Environment Variables**: None
-**Called Scripts**:
-
-- util.sh
-- require.sh
-  **Called Functions**:
-- version
-- usage
-- main
-
-### removesnippets
-
-**Description**: Removes snippet references from day markdown files.
-**Dependencies**: git, find, sed, grep, basename
-**Environment Variables**:
-
-- GITHUB_USERNAME
-  **Called Scripts**:
-- util.sh
-- require.sh
-- findsnippetfiles
-  **Called Functions**:
-- version
-- usage
-- get_findsnippetfiles_path
-- validate_month
-- month_number_to_name
-- get_repo_name
-- process_month_files
-- process_file
-- remove_snippet
-- verify_remaining_snippets
-- main
-
-### addvideotoday
-
-**Description**: Adds YouTube video metadata to daily markdown files.
-**Dependencies**: jq, curl, git
-**Environment Variables**:
-
-- YEAR
-- YOUTUBE_API_KEY
-  **Called Scripts**:
-- require.sh
-- util.sh
-- git.sh
-- lockconfig.sh
-- summarizevideo
-  **Called Functions**:
-- usage
-- version
-- validate_arguments
-- check_required_tools
-- fetch_video_metadata
-- extract_thumbnail_url
-- extract_video_title
-- download_thumbnail
-- backup_file
-- remove_existing_video_entry
-- append_video_info
-- main
-
-### addsummariestodays
-
-**Description**: Adds AI-generated summaries to day markdown files.
-**Dependencies**: None
-**Environment Variables**:
-
-- YEAR
-- VIDEOS_FILE
-  **Called Scripts**:
-- lockconfig.sh
-- summarizevideo
-  **Called Functions**:
-
-### gentoc
-
-**Description**: Generates and updates table of contents for Markdown files.
-**Dependencies**: markdown-toc-gen
-**Environment Variables**: None
-**Called Scripts**:
-
-- require.sh
-  **Called Functions**:
-- validate_input
-- generate_toc
-- version
-- usage
-- main
-
-### stitch
-
-**Description**: Generates README.md from stitch.md using stitchmd.
-**Dependencies**: stitchmd
-**Environment Variables**: None
-**Called Scripts**:
-
-- require.sh
-  **Called Functions**:
-- validate_input
-- generate_readme
-- main
-
-### addimgtoday
-
-**Description**: Adds image to day markdown file with caption.
-**Dependencies**: file, git
-**Environment Variables**:
-
-- YEAR
-  **Called Scripts**:
-- lockconfig.sh
-  **Called Functions**:
-- usage
-- version
-- append_image_markdown
-- main
-
-### restoreemojis
-
-**Description**: Replaces certain emojis in markdown files with alternatives.
-**Dependencies**: None
-**Environment Variables**: None
-**Called Scripts**: None
-**Called Functions**:
-
-- version
-- usage
-- main
-
-### annotatedayjpgs
-
-**Description**: Annotates DayXXX.jpg files in month directories with timestamp metadata.
-**Dependencies**: None
-**Environment Variables**: None
-**Called Scripts**:
-
-- color.sh
-- annotatejpg
-  **Called Functions**:
-- usage
-- version
-- cleanup
-- process_month
-- main
-
-### addvideo
-
-**Description**: Adds new videos to system by generating markdown and updating indexes.
-**Dependencies**: sed, basename, date, markdown-toc, tee
-**Environment Variables**:
-
-- YOUTUBE_API_KEY
-- GITHUB_USERNAME
-- YEAR
-- COMPACT_FILE
-- VIDEOS_FILE
-  **Called Scripts**:
-- require.sh
-- internet.sh
-- vidmd.sh
-- lockconfig.sh
-- genoverlay
-- genvidthmd
-- summarizevideo
-- compact
-  **Called Functions**:
-- version
-- usage
-- validate_inputs
-- generate_files
-- dry_run
-- main
-- checkinternet
-
-### genindexrst
-
-**Description**: Generates index.rst for Sphinx documentation.
-**Dependencies**: None
-**Environment Variables**:
-
-- PROJECT
-- YEAR
-  **Called Scripts**:
-- lockconfig.sh
-  **Called Functions**:
-- version
-- usage
-- main
-
-### genstitchmd
-
-**Description**: Generates stitch.md from CONTENT_DOCS.
-**Dependencies**: None
-**Environment Variables**: None
-**Called Scripts**:
-
-- lockconfig.sh
-  **Called Functions**:
-- version
-- main

@@ -13,5 +13,3 @@
 - [October](October.md)
 - [November](November.md)
 - [December](December.md)
-- [HOWTO](HOWTO.md)
-- [SCRIPTS](SCRIPTS.md)
