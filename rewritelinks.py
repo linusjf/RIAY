@@ -4,6 +4,7 @@
 import os
 import re
 import sys
+import argparse
 from pathlib import Path
 from typing import Match, Optional
 
@@ -13,6 +14,7 @@ from dotenv import load_dotenv
 DEFAULT_ENV_FILE = "config.env"
 GITHUB_URL_TEMPLATE = "https://raw.githubusercontent.com/{user}/{repo}/refs/heads/main/"
 RELATIVE_PREFIX = "/_static/"
+GH_MARKDOWN_PREFIX = "/"
 
 
 def get_github_base_url() -> str:
@@ -34,11 +36,12 @@ def get_github_base_url() -> str:
     return GITHUB_URL_TEMPLATE.format(user=user, repo=repo)
 
 
-def rewrite_links_in_file(md_file: Path) -> int:
+def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False) -> int:
     """Rewrite GitHub raw URLs to relative paths in a markdown file.
     
     Args:
         md_file: Path to markdown file to process
+        use_gh_markdown: If True, convert to GitHub markdown relative links
         
     Returns:
         int: Number of links modified (0 if none)
@@ -57,7 +60,8 @@ def rewrite_links_in_file(md_file: Path) -> int:
         nonlocal replacement_count
         replacement_count += 1
         file_path = match.group(1)
-        return f"{RELATIVE_PREFIX}{file_path}"
+        prefix = GH_MARKDOWN_PREFIX if use_gh_markdown else RELATIVE_PREFIX
+        return f"{prefix}{file_path}"
 
     modified_text = pattern.sub(make_relative, original_text)
 
@@ -77,16 +81,15 @@ def main() -> int:
     Returns:
         int: Exit code (0 for success)
     """
-    if len(sys.argv) < 2:
-        print(
-            "Usage: python rewritelinks.py file1.md file2.md ...",
-            file=sys.stderr
-        )
-        return 1
+    parser = argparse.ArgumentParser(description='Rewrite GitHub raw URLs in markdown files')
+    parser.add_argument('files', nargs='+', help='Markdown files to process')
+    parser.add_argument('--abs-to-gh-markdown', action='store_true',
+                       help='Convert absolute URLs to GitHub markdown relative links (default: convert to /_static/ paths)')
+    args = parser.parse_args()
 
     total_changes = 0
-    for file_path in sys.argv[1:]:
-        total_changes += rewrite_links_in_file(Path(file_path))
+    for file_path in args.files:
+        total_changes += rewrite_links_in_file(Path(file_path), args.abs_to_gh_markdown)
 
     if total_changes == 0:
         print("No links were modified in any files", file=sys.stdout)
