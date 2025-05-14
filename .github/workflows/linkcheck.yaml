@@ -8,7 +8,7 @@ on:
     branches: [main]
 
 env:
-  RELEVANT_FILES: "README.md index.rst conf.py .readthedocs.yaml **/*.jpg **/*.css"
+  RELEVANT_FILES: "README.md index.rst conf.py .readthedocs.yaml"
 
 jobs:
   check-content-changes:
@@ -26,8 +26,9 @@ jobs:
         id: check
         run: |
           if git rev-parse HEAD^ >/dev/null 2>&1; then
-            if ! git diff --quiet HEAD^ -- ${{ env.RELEVANT_FILES }} || \
-              git describe --exact-match > /dev/null 2>&1; then
+            if ! git diff --quiet HEAD^ -- ${{ env.RELEVANT_FILES }} \
+            $(git ls-files '**/*.jpg') || \
+              git describe --exact-match &> /dev/null; then
               echo "relevant_changed=true" >> $GITHUB_OUTPUT
             else
               echo "relevant_changed=false" >> $GITHUB_OUTPUT
