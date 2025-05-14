@@ -81,11 +81,26 @@ def main() -> int:
     Returns:
         int: Exit code (0 for success)
     """
-    parser = argparse.ArgumentParser(description='Rewrite GitHub raw URLs in markdown files')
+    parser = argparse.ArgumentParser(
+        description='Rewrite GitHub raw URLs in markdown files',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""Examples:
+  rewritelinks.py README.md
+  rewritelinks.py *.md --abs-to-gh-markdown
+  rewritelinks.py --help""")
     parser.add_argument('files', nargs='+', help='Markdown files to process')
     parser.add_argument('--abs-to-gh-markdown', action='store_true',
                        help='Convert absolute URLs to GitHub markdown relative links (default: convert to /_static/ paths)')
-    args = parser.parse_args()
+    
+    if len(sys.argv) == 1:
+        parser.print_help()
+        return 1
+
+    try:
+        args = parser.parse_args()
+    except argparse.ArgumentError:
+        parser.print_help()
+        return 1
 
     total_changes = 0
     for file_path in args.files:
