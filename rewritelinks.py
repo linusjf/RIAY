@@ -6,7 +6,7 @@ import re
 import sys
 import argparse
 from pathlib import Path
-from typing import Match, Optional
+from typing import Match
 
 from dotenv import load_dotenv
 
@@ -70,17 +70,21 @@ def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False, gh_to_rt
         replacement_count += 1
         return f"](/_static/{match.group(2)})"
 
+    def gh_to_rtd_naked(match: Match) -> str:
+        """Convert GitHub-style naked urls to RTD /_static/ links."""
+        nonlocal replacement_count
+        replacement_count += 1
+        return f"</_static/{match.group(2)}>"
+
     modified_text = original_text
 
     if gh_to_rtd:
         # Handle regular markdown links [text](/path)
-        pattern = re.compile(r'(\]\()/([^)]+)\)')
+        pattern = re.compile(r'(\]\()/(?!_static/)([^)]+)\)')
         modified_text = pattern.sub(gh_to_rtd_relative, modified_text)
-        #gh_link_pattern = re.compile(r'(\]\()/(?!_static/)([^)]+)\)')
-        #modified_text = gh_link_pattern.sub(lambda m: f"]('/_static/{m.group(2)}", modified_text)
         # Handle naked URLs </path>
-        #naked_url_pattern = re.compile(r'(<)/(?!_static/)([^>]+)(>)')
-        #modified_text = naked_url_pattern.sub(lambda m: f"</_static/{m.group(2)}>", modified_text)
+        pattern = re.compile(r'(<)/(?!_static/)([^>]+)(>)')
+        modified_text = pattern.sub(gh_to_rtd_naked, modified_text)
     else:
         modified_text = pattern.sub(make_relative, modified_text)
 
