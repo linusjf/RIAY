@@ -26,7 +26,7 @@ build:
         months="January.md February.md March.md April.md May.md June.md \
                 July.md August.md September.md October.md November.md \
                 December.md"
-        python rewritelinks.py start.md $months
+        python rewritelinks.py --gh-markdown-to-rtd start.md $months
 python:
   install:
     - requirements: requirements.txt
