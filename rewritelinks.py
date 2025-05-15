@@ -52,7 +52,7 @@ def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False, gh_to_rt
         return 0
 
     url_base = get_github_base_url()
-    pattern = re.compile(re.escape(url_base) + r"([^)]+)")
+    pattern = re.compile(re.escape(url_base) + r"([^)]+)"
     original_text = md_file.read_text()
     replacement_count = 0
 
@@ -68,20 +68,17 @@ def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False, gh_to_rt
         """Convert GitHub-style relative links to RTD /_static/ links."""
         nonlocal replacement_count
         replacement_count += 1
-        file_path = match.group(1)
-        if file_path.startswith('_static/'):
-            return match.group(0)
-        return f"/_static/{file_path}"
+        return f"/_static{match.group(1)}"
 
     modified_text = original_text
 
     if gh_to_rtd:
         # Handle regular markdown links [text](/path)
-        gh_link_pattern = re.compile(r'(\]\()/([^)]+)\)')
-        modified_text = gh_link_pattern.sub(gh_to_rtd_relative, modified_text)
+        gh_link_pattern = re.compile(r'(\]\()/(?!_static/)([^)]+)\)')
+        modified_text = gh_link_pattern.sub(lambda m: f"]('/_static{match.group(1)}", modified_text)
         # Handle naked URLs </path>
-        naked_url_pattern = re.compile(r'(<)/([^>]+)(>)')
-        modified_text = naked_url_pattern.sub(lambda m: f"<{RELATIVE_PREFIX}{m.group(2)}>", modified_text)
+        naked_url_pattern = re.compile(r'(<)/(?!_static/)([^>]+)(>)')
+        modified_text = naked_url_pattern.sub(lambda m: f"</_static{match.group(1)}>", modified_text)
     else:
         modified_text = pattern.sub(make_relative, modified_text)
 
