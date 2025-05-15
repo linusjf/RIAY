@@ -106,7 +106,7 @@ RIAY March 2025
 
 ### Effects of Sin
 
-[![Effects of Sin](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day060.jpg)](https://youtu.be/4acY2UUFnkM "Effects of Sin")
+[![Effects of Sin](/March/jpgs/Day060.jpg)](https://youtu.be/4acY2UUFnkM "Effects of Sin")
 
 ### AI-Generated Summary: The Weight of Sin and the Love that Bears It
 
@@ -122,7 +122,7 @@ RIAY March 2025
 
 ### You Are Beloved
 
-[![You Are Beloved](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day061.jpg)](https://youtu.be/DWAyh_NBxig "You Are Beloved")
+[![You Are Beloved](/March/jpgs/Day061.jpg)](https://youtu.be/DWAyh_NBxig "You Are Beloved")
 
 ### AI-Generated Summary: The Thorn-Crown, the Prodigal, and Our True Name
 
@@ -144,7 +144,7 @@ Through prayer, framed by the Sign of the Cross and the hallowed words of Our Fa
 
 ### He Meets Us
 
-[![He Meets Us](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day062.jpg)](https://youtu.be/hkBJF6EpEKs "He Meets Us")
+[![He Meets Us](/March/jpgs/Day062.jpg)](https://youtu.be/hkBJF6EpEKs "He Meets Us")
 
 ### AI-Generated Summary: On Prayer Burden and the Father's Delight
 
@@ -164,7 +164,7 @@ Let us consider, if you will, how prayer and quiet reflection might serve as a c
 
 ### Even Unto Death
 
-[![Even Unto Death](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day063.jpg)](https://youtu.be/jFRgcmuS2G8 "Even Unto Death")
+[![Even Unto Death](/March/jpgs/Day063.jpg)](https://youtu.be/jFRgcmuS2G8 "Even Unto Death")
 
 ### AI-Generated Summary The Cross and God's Astonishing Pursuit
 
@@ -189,7 +189,7 @@ So, the cross is not merely a historical event, but a perpetual revelation of Go
 
 ### Christ is Risen
 
-[![Christ is Risen](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day064.jpg)](https://youtu.be/ukldEFtB6sE "Christ is Risen")
+[![Christ is Risen](/March/jpgs/Day064.jpg)](https://youtu.be/ukldEFtB6sE "Christ is Risen")
 
 ### AI-Generated Summary: The Unconquerable Light of Easter
 
@@ -213,7 +213,7 @@ This hope is the foundation upon which we stand, and from which our prayers natu
 
 ### Returning Home
 
-[![Returning Home](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day065.jpg)](https://youtu.be/shHa5FsnPEM "Returning Home")
+[![Returning Home](/March/jpgs/Day065.jpg)](https://youtu.be/shHa5FsnPEM "Returning Home")
 
 ### AI-Generated Summary: The King's Return and Our New Access
 
@@ -236,7 +236,7 @@ So let us not view the Ascension as a farewell, but as the enthronement of our K
 
 ### Wait and Pray
 
-[![Wait and Pray](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day066.jpg)](https://youtu.be/MoGAbC67sWE "Wait and Pray")
+[![Wait and Pray](/March/jpgs/Day066.jpg)](https://youtu.be/MoGAbC67sWE "Wait and Pray")
 
 ### AI-Generated Summary: The Necessity of the Spirit
 
@@ -258,7 +258,7 @@ It would seem that the path deeper into the Divine embrace, and the source of mu
 
 ### He Has Promised
 
-[![He Has Promised](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day067.jpg)](https://youtu.be/krn_lVSmiWc "He Has Promised")
+[![He Has Promised](/March/jpgs/Day067.jpg)](https://youtu.be/krn_lVSmiWc "He Has Promised")
 
 ### AI-Generated Summary: The Sure Hope of Promises Fulfilled
 
@@ -278,7 +278,7 @@ Mary's blessedness, born of her belief, is not a private affair; it is a blessin
 
 ### Fancy Friends
 
-[![Fancy Friends](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day068.jpg)](https://youtu.be/hBRgXdvfCbU "Fancy Friends")
+[![Fancy Friends](/March/jpgs/Day068.jpg)](https://youtu.be/hBRgXdvfCbU "Fancy Friends")
 
 ### AI-Generated Summary: Mary Our Queen and Our Access
 
@@ -300,7 +300,7 @@ Let us rejoice in this good news! Our Lady, Queen of Heaven and Earth, loves us,
 
 ### Meditating With The Mysteries - Intro to Phase 3
 
-[![Meditating With The Mysteries - Intro to Phase 3](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/meditating.jpg)](https://youtu.be/IDrilE5sXE8 "Meditating With The Mysteries - Intro to Phase 3")
+[![Meditating With The Mysteries - Intro to Phase 3](/March/jpgs/meditating.jpg)](https://youtu.be/IDrilE5sXE8 "Meditating With The Mysteries - Intro to Phase 3")
 
 ### AI-Generated Summary: The Rosary A Path to Saving Mysteries
 
@@ -318,7 +318,7 @@ Let us rejoice in this good news! Our Lady, Queen of Heaven and Earth, loves us,
 
 ### Nothing is Impossible
 
-[![Nothing is Impossible](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day069.jpg)](https://youtu.be/TXCD4f66I6g "Nothing is Impossible")
+[![Nothing is Impossible](/March/jpgs/Day069.jpg)](https://youtu.be/TXCD4f66I6g "Nothing is Impossible")
 
 ### AI-Generated Summary The Practice of Holy Reading
 
@@ -341,7 +341,7 @@ Mary's 'yes' is our model. Troubled, questioning, yet ultimately trusting in God
 
 ### The Faith of Mary
 
-[![The Faith of Mary](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day070.jpg)](https://youtu.be/7HD7-y0NIBk "The Faith of Mary")
+[![The Faith of Mary](/March/jpgs/Day070.jpg)](https://youtu.be/7HD7-y0NIBk "The Faith of Mary")
 
 ### AI-Generated Summary: Pondering the Visitation
 
@@ -372,7 +372,7 @@ Let us, therefore, bring those places where belief is difficult to God, seeking 
 
 ### Behold God
 
-[![Behold God](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day071.jpg)](https://youtu.be/Kubhh7JFEwA "Behold God")
+[![Behold God](/March/jpgs/Day071.jpg)](https://youtu.be/Kubhh7JFEwA "Behold God")
 
 ### AI-Generated Summary The Manger and the Fearless Heart
 
@@ -394,7 +394,7 @@ We turn our minds to a quiet contemplation, a Lexio Divina upon the third Joyful
 
 ### You Don't Wait in Vain
 
-[![You Don't Wait in Vain](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day072.jpg)](https://youtu.be/xuih5Y-coWA "You Don't Wait in Vain")
+[![You Don't Wait in Vain](/March/jpgs/Day072.jpg)](https://youtu.be/xuih5Y-coWA "You Don't Wait in Vain")
 
 ### AI-Generated Summary: The Fruit of Patient Waiting
 
@@ -426,7 +426,7 @@ The plain fact is this: waiting upon God is never done alone, nor is it ever in 
 
 ### Seek Him
 
-[![Seek Him](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day073.jpg)](https://youtu.be/aHy3ZmgCEsM "Seek Him")
+[![Seek Him](/March/jpgs/Day073.jpg)](https://youtu.be/aHy3ZmgCEsM "Seek Him")
 
 ### AI-Generated Summary: The Boy in the Temple and the Nature of Seeking
 
@@ -445,7 +445,7 @@ Consider the peculiar incident of the Boy Jesus, at the tender age of twelve, be
 
 ### Beloved of the Father
 
-[![Beloved of the Father](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day074.jpg)](https://youtu.be/ByEx2pE3s0s "Beloved of the Father")
+[![Beloved of the Father](/March/jpgs/Day074.jpg)](https://youtu.be/ByEx2pE3s0s "Beloved of the Father")
 
 ### AI-Generated Summary: The First Light Baptism and Belonging
 
@@ -466,7 +466,7 @@ Herein lies a brief account of a reflection upon the Rosary, that venerable path
 
 ### Jesus and Mary See You
 
-[![Jesus and Mary See You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day075.jpg)](https://youtu.be/RXTdqCM-bZo "Jesus and Mary See You")
+[![Jesus and Mary See You](/March/jpgs/Day075.jpg)](https://youtu.be/RXTdqCM-bZo "Jesus and Mary See You")
 
 ### AI-Generated Summary: The Best Wine Last
 
@@ -506,7 +506,7 @@ Consider the simple, profound matter of prayer and meditation, how it draws one 
 
 ### The Shepherd is Shepherding
 
-[![The Shepherd is Shepherding](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day076.jpg)](https://youtu.be/OapnMaPfpOw "The Shepherd is Shepherding")
+[![The Shepherd is Shepherding](/March/jpgs/Day076.jpg)](https://youtu.be/OapnMaPfpOw "The Shepherd is Shepherding")
 
 ### AI-Generated Summary: The King Has Come
 
@@ -527,7 +527,7 @@ This Good News – that the King, the Shepherd, the Healer is present and active
 
 ### Have No Fear
 
-[![Have No Fear](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day077.jpg)](https://youtu.be/HlEfAuKfB80 "Have No Fear")
+[![Have No Fear](/March/jpgs/Day077.jpg)](https://youtu.be/HlEfAuKfB80 "Have No Fear")
 
 ### AI-Generated Summary: The Shining Face and Our Fears
 
@@ -550,7 +550,7 @@ This spiritual journey is often supported by the simple, profound rhythm of pray
 
 ### Given for You
 
-[![Given for You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day078.jpg)](https://youtu.be/57CqoTmAE9g "Given for You")
+[![Given for You](/March/jpgs/Day078.jpg)](https://youtu.be/57CqoTmAE9g "Given for You")
 
 ### AI-Generated Summary: His Body Given For You
 
@@ -569,7 +569,7 @@ Here is a brief contemplation on a profound mystery, aimed at deepening our walk
 
 ### Trust like Jesus
 
-[![Trust like Jesus](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day079.jpg)](https://youtu.be/LaPqd-5s4ZM "Trust like Jesus")
+[![Trust like Jesus](/March/jpgs/Day079.jpg)](https://youtu.be/LaPqd-5s4ZM "Trust like Jesus")
 
 ### AI-Generated Summary: The Garden of Trust
 
@@ -587,7 +587,7 @@ Consider, if you will, that most profound and sorrowful scene in the Garden of G
 
 ### His Blood For You
 
-[![His Blood For You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day080.jpg)](https://youtu.be/tO3inM38VZc "His Blood For You")
+[![His Blood For You](/March/jpgs/Day080.jpg)](https://youtu.be/tO3inM38VZc "His Blood For You")
 
 ### AI-Generated Summary: Beholding the Scourged King
 
@@ -606,7 +606,7 @@ One seeks, perhaps, a deeper draught from the wellspring of Faith, a truer conve
 
 ### Behold Your King
 
-[![Behold Your King](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day081.jpg)](https://youtu.be/iV-N20c3OGE "Behold Your King")
+[![Behold Your King](/March/jpgs/Day081.jpg)](https://youtu.be/iV-N20c3OGE "Behold Your King")
 
 ### AI-Generated Summary: A Meditation on the Mocked King
 
@@ -636,7 +636,7 @@ The aim is to see Jesus not merely as a historical figure, but as the living Kin
 
 ### Simon's Choice
 
-[![Simon's Choice](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day082.jpg)](https://youtu.be/vODOomIH5Sg "Simon's Choice")
+[![Simon's Choice](/March/jpgs/Day082.jpg)](https://youtu.be/vODOomIH5Sg "Simon's Choice")
 
 ### AI-Generated Summary: The Weight and the Will
 
@@ -656,7 +656,7 @@ A prayer rises then: for the grace to bear our own crosses in imitation of Him, 
 
 ### Father Forgive Them
 
-[![Father Forgive Them](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day083.jpg)](https://youtu.be/KGatDQdwv9w "Father Forgive Them")
+[![Father Forgive Them](/March/jpgs/Day083.jpg)](https://youtu.be/KGatDQdwv9w "Father Forgive Them")
 
 ### AI-Generated Summary: Encountering Mercy at Calvary
 
@@ -684,7 +684,7 @@ Let us consider the path laid out for prayer, beginning with the Rosary, that fa
 
 ### Do Not Be Afraid
 
-[![Do Not Be Afraid](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day084.jpg)](https://youtu.be/3TUyD_QbOnE "Do Not Be Afraid")
+[![Do Not Be Afraid](/March/jpgs/Day084.jpg)](https://youtu.be/3TUyD_QbOnE "Do Not Be Afraid")
 
 ### AI-Generated Summary: Hope and Courage from the Risen Lord
 
@@ -712,7 +712,7 @@ In this vital commerce with the Risen Lord, we seek and receive the hope, confid
 
 ### The Blessing Never Stops
 
-[![The Blessing Never Stops](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day085.jpg)](https://youtu.be/IbijJLg53O0 "The Blessing Never Stops")
+[![The Blessing Never Stops](/March/jpgs/Day085.jpg)](https://youtu.be/IbijJLg53O0 "The Blessing Never Stops")
 
 ### AI-Generated Summary: The Perpetual Blessing of the Ascended Lord
 
@@ -729,7 +729,7 @@ In this vital commerce with the Risen Lord, we seek and receive the hope, confid
 
 ### Filled with New Wine
 
-[![Filled with New Wine](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day086.jpg)](https://youtu.be/zJVuLwHF0I8 "Filled with New Wine")
+[![Filled with New Wine](/March/jpgs/Day086.jpg)](https://youtu.be/zJVuLwHF0I8 "Filled with New Wine")
 
 ### AI-Generated Summary: The Great Coming of the Spirit
 
@@ -766,7 +766,7 @@ We are invited, therefore, to seek this renewal, this filling, in our own lives.
 
 ### It's All True
 
-[![It's All True](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day087.jpg)](https://youtu.be/s6os8_azLQI "It's All True")
+[![It's All True](/March/jpgs/Day087.jpg)](https://youtu.be/s6os8_azLQI "It's All True")
 
 ### AI-Generated Summary The Hope Found in Mary's Assumption
 
@@ -798,7 +798,7 @@ Our prayer, then, becomes an act of receiving God's good news, responding with a
 
 ### The Road of Humility
 
-[![The Road of Humility](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day088.jpg)](https://youtu.be/uD_1kQlZ1vg "The Road of Humility")
+[![The Road of Humility](/March/jpgs/Day088.jpg)](https://youtu.be/uD_1kQlZ1vg "The Road of Humility")
 
 ### AI-Generated Summary: The Royal Road of Humility
 
@@ -821,7 +821,7 @@ To follow the path walked by the King and the Queen – the path of humility –
 
 ### Long Desired
 
-[![Long Desired](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day089.jpg)](https://youtu.be/bRkqNkKFAkQ "Long Desired")
+[![Long Desired](/March/jpgs/Day089.jpg)](https://youtu.be/bRkqNkKFAkQ "Long Desired")
 
 ### AI-Generated Summary: When the World Held Its Breath
 
@@ -848,7 +848,7 @@ This moment, as we reflect upon it, reminds us of humanity's deep, ancient longi
 
 ### Consoling Mother
 
-[![Consoling Mother](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/March/jpgs/Day090.jpg)](https://youtu.be/-ty2ZglS-x8 "Consoling Mother")
+[![Consoling Mother](/March/jpgs/Day090.jpg)](https://youtu.be/-ty2ZglS-x8 "Consoling Mother")
 
 ### AI-Generated Summary A Glimpse into Prayer with Mary
 

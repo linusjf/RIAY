@@ -102,7 +102,7 @@ RIAY February 2025
 
 ### A Total Offering
 
-[![A Total Offering](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day032.jpg)](https://youtu.be/CagK_uBu6LU "A Total Offering")
+[![A Total Offering](/February/jpgs/Day032.jpg)](https://youtu.be/CagK_uBu6LU "A Total Offering")
 
 ### Rosary in a year Day 32
 
@@ -131,7 +131,7 @@ Through prayer and meditation on such mysteries, we deepen our relationship with
 
 ### Lost and Found
 
-[![Lost and Found](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day033.jpg)](https://youtu.be/9bDTkqsM3Hc "Lost and Found")
+[![Lost and Found](/February/jpgs/Day033.jpg)](https://youtu.be/9bDTkqsM3Hc "Lost and Found")
 
 ### Rosary in a Year Day 33
 
@@ -160,7 +160,7 @@ Here is a glimpse into that singular moment when the Boy Jesus, at the threshold
 
 ### The Anointed One
 
-[![The Anointed One](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day034.jpg)](https://youtu.be/PPnhBgd_Ggs "The Anointed One")
+[![The Anointed One](/February/jpgs/Day034.jpg)](https://youtu.be/PPnhBgd_Ggs "The Anointed One")
 
 ### RIAY Luminous Mysteries - Day 34
 
@@ -194,7 +194,7 @@ Jesus by dying on the cross, going to the tomb and resurrecting, washed away our
 
 ### Divine Bridegroom
 
-[![Divine Bridegroom](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day035.jpg)](https://youtu.be/-jtqsyXYDwA "Divine Bridegroom")
+[![Divine Bridegroom](/February/jpgs/Day035.jpg)](https://youtu.be/-jtqsyXYDwA "Divine Bridegroom")
 
 ### Rosary in a Year Day 35
 
@@ -234,7 +234,7 @@ A central revelation at Cana is Jesus' identity as the Divine Bridegroom. This a
 
 ### The Kingdom and the Gospel
 
-[![The Kingdom and the Gospel](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day036.jpg)](https://youtu.be/q7g8Wwzzs3U "The Kingdom and the Gospel")
+[![The Kingdom and the Gospel](/February/jpgs/Day036.jpg)](https://youtu.be/q7g8Wwzzs3U "The Kingdom and the Gospel")
 
 ### RIAY Day 36 Nadya Baracho
 
@@ -260,7 +260,7 @@ Jesus's proclamation, then, is not just a prediction of a future state, but the 
 
 ### To Be Transfigured
 
-[![To Be Transfigured](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day037.jpg)](https://youtu.be/IB3oKZDyoM8 "To Be Transfigured")
+[![To Be Transfigured](/February/jpgs/Day037.jpg)](https://youtu.be/IB3oKZDyoM8 "To Be Transfigured")
 
 ### AI-Generated Summary: The Mountain of Light
 
@@ -279,7 +279,7 @@ For this arduous yet glorious path, we must ever seek the Holy Spirit's courage,
 
 ### Food for the Journey
 
-[![Food for the Journey](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day038.jpg)](https://youtu.be/5JaBXQcW0K4 "Food for the Journey")
+[![Food for the Journey](/February/jpgs/Day038.jpg)](https://youtu.be/5JaBXQcW0K4 "Food for the Journey")
 
 ### RIAY Day 38 Nadya Baracho
 
@@ -305,7 +305,7 @@ Let us ponder the fifth Luminous Mystery, that astonishing moment when Our Lord 
 
 ### In the Garden
 
-[![In the Garden](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day039.jpg)](https://youtu.be/sfspYnodC6Q "In the Garden")
+[![In the Garden](/February/jpgs/Day039.jpg)](https://youtu.be/sfspYnodC6Q "In the Garden")
 
 ### AI-Generated Summary: The Garden of Crushing and Obedience
 
@@ -327,7 +327,7 @@ So, when we find ourselves in our own gardens of anguish and difficulty, let us 
 
 ### Suffering Servant
 
-[![Suffering Servant](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day040.jpg)](https://youtu.be/AhFxUZeZK1s "Suffering Servant")
+[![Suffering Servant](/February/jpgs/Day040.jpg)](https://youtu.be/AhFxUZeZK1s "Suffering Servant")
 
 ### AI-Generated Summary: The Innocent Condemned and the Terrible Scourge
 
@@ -349,7 +349,7 @@ Thus, the horrific scourging is a key moment in Jesus's passion, where the innoc
 
 ### The Victorious King
 
-[![The Victorious King](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day041.jpg)](https://youtu.be/2fSlDxobHv8 "The Victorious King")
+[![The Victorious King](/February/jpgs/Day041.jpg)](https://youtu.be/2fSlDxobHv8 "The Victorious King")
 
 ### AI-Generated Summary The Crown of Thorns
 
@@ -376,7 +376,7 @@ So, let us indeed behold Him. Look upon the King in His thorny crown and worship
 
 ### Sent into Exile
 
-[![Sent into Exile](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day042.jpg)](https://youtu.be/BsXmaN4wt5M "Sent into Exile")
+[![Sent into Exile](/February/jpgs/Day042.jpg)](https://youtu.be/BsXmaN4wt5M "Sent into Exile")
 
 ### AI-Generated Summary: The Burden and the Scapegoat
 
@@ -397,7 +397,7 @@ Reflect on this sorrowful truth: the Creator, the Lord, the Light of the World, 
 
 ### The Veil is Torn
 
-[![The Veil is Torn](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day043.jpg)](https://youtu.be/RpK_72ah0R4 "The Veil is Torn")
+[![The Veil is Torn](/February/jpgs/Day043.jpg)](https://youtu.be/RpK_72ah0R4 "The Veil is Torn")
 
 ### AI-Generated Summary: The Great Exchange at Calvary
 
@@ -415,7 +415,7 @@ Thus, this terrible event reveals not mere suffering, but Love unto death. It is
 
 ### Glorified Reality
 
-[![Glorified Reality](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day044.jpg)](https://youtu.be/bOJeFZU-fyY "Glorified Reality")
+[![Glorified Reality](/February/jpgs/Day044.jpg)](https://youtu.be/bOJeFZU-fyY "Glorified Reality")
 
 ### AI-Generated Summary: The Dawn of New Creation
 
@@ -437,7 +437,7 @@ Herein we consider the first of the Glorious Mysteries, that astounding event kn
 
 ### He Parted from Them
 
-[![He Parted from Them](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day045.jpg)](https://youtu.be/ufgV6eyOopE "He Parted from Them")
+[![He Parted from Them](/February/jpgs/Day045.jpg)](https://youtu.be/ufgV6eyOopE "He Parted from Them")
 
 ### AI-Generated Summary: The King's Ascent and Our New Place
 
@@ -455,7 +455,7 @@ Think of it this way:
 
 ### Come Holy Spirit
 
-[![Come Holy Spirit](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day046.jpg)](https://youtu.be/W0_rEVsZ0G4 "Come Holy Spirit")
+[![Come Holy Spirit](/February/jpgs/Day046.jpg)](https://youtu.be/W0_rEVsZ0G4 "Come Holy Spirit")
 
 ### AI-Generated Summary: The Spirit's Descent A New Harvest
 
@@ -473,7 +473,7 @@ This same Spirit, this same power and fruitfulness, is offered still. If we desi
 
 ### Mary's Return Home
 
-[![Mary's Return Home](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day047.jpg)](https://youtu.be/DbDImWk1y4E "Mary's Return Home")
+[![Mary's Return Home](/February/jpgs/Day047.jpg)](https://youtu.be/DbDImWk1y4E "Mary's Return Home")
 
 ### AI-Generated Summary: The Ark Taken Home
 
@@ -491,7 +491,7 @@ Though formally defined in recent times, this belief is ancient, echoing through
 
 ### Mother and Queen
 
-[![Mother and Queen](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day048.jpg)](https://youtu.be/zjcZzil4Mfs "Mother and Queen")
+[![Mother and Queen](/February/jpgs/Day048.jpg)](https://youtu.be/zjcZzil4Mfs "Mother and Queen")
 
 ### AI-Generated Summary: Mary Our Queen and Intercessor
 
@@ -513,7 +513,7 @@ Such a practice often includes familiar prayers, like the Hail Mary, parts of th
 
 ### How Can This Be?
 
-[![How Can This Be?](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day049.jpg)](https://youtu.be/ZdOs23aM6tE "How Can This Be?")
+[![How Can This Be?](/February/jpgs/Day049.jpg)](https://youtu.be/ZdOs23aM6tE "How Can This Be?")
 
 ### AI-Generated Summary: A Simple Guide to Pondering the Rosary
 
@@ -539,7 +539,7 @@ And so, we are called to do likewise. When the events of our own lives present u
 
 ### Rejoice in the Beauty
 
-[![Rejoice in the Beauty](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day050.jpg)](https://youtu.be/maFcTvNPNJw "Rejoice in the Beauty")
+[![Rejoice in the Beauty](/February/jpgs/Day050.jpg)](https://youtu.be/maFcTvNPNJw "Rejoice in the Beauty")
 
 ### AI-Generated Summary: A Glimpse of Joy Made Song
 
@@ -565,7 +565,7 @@ And having pondered these things, we are led naturally into communal prayer, beg
 
 ### Moved With Awe
 
-[![Moved With Awe](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day051.jpg)](https://youtu.be/ObfPyKSPxrk "Moved With Awe")
+[![Moved With Awe](/February/jpgs/Day051.jpg)](https://youtu.be/ObfPyKSPxrk "Moved With Awe")
 
 ### AI-Generated Summary: Unexpected Gifts From Manger to Shelter
 
@@ -587,7 +587,7 @@ Let us consider a matter of profound import, woven from ancient prophecy and pre
 
 ### My Eyes Have Seen Salvation
 
-[![My Eyes Have Seen Salvation](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day052.jpg)](https://youtu.be/rYVyMTsCeDQ "My Eyes Have Seen Salvation")
+[![My Eyes Have Seen Salvation](/February/jpgs/Day052.jpg)](https://youtu.be/rYVyMTsCeDQ "My Eyes Have Seen Salvation")
 
 ### AI-Generated Summary: The Sight of Salvation
 
@@ -605,7 +605,7 @@ Here is a brief account drawn from the scripture and a modern echo of its truth:
 
 ### Our Perfect Director
 
-[![Our Perfect Director](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day053.jpg)](https://youtu.be/pbJIzB2vEzQ "Our Perfect Director")
+[![Our Perfect Director](/February/jpgs/Day053.jpg)](https://youtu.be/pbJIzB2vEzQ "Our Perfect Director")
 
 ### AI-Generated Summary: The Divine Director and Our Part
 
@@ -623,7 +623,7 @@ One is invited to consider how prayer and quiet reflection might draw us closer 
 
 ### My Beloved Son
 
-[![My Beloved Son](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day054.jpg)](https://youtu.be/aNLTmtYzma0 "My Beloved Son")
+[![My Beloved Son](/February/jpgs/Day054.jpg)](https://youtu.be/aNLTmtYzma0 "My Beloved Son")
 
 ### AI-Generated Summary: The Strength Found in Baptism
 
@@ -647,7 +647,7 @@ By thus returning to the grace of our initiation, we stand firm, equipped to fac
 
 ### Water Into Wine
 
-[![Water Into Wine](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day055.jpg)](https://youtu.be/o-KP7TP9JaY "Water Into Wine")
+[![Water Into Wine](/February/jpgs/Day055.jpg)](https://youtu.be/o-KP7TP9JaY "Water Into Wine")
 
 ### AI-Generated Summary: The First Sign and Mary's Unfolding Role
 
@@ -672,7 +672,7 @@ Mary stands before us as the perfect disciple – faithful, obedient, growing in
 
 ### Good News
 
-[![Good News](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day056.jpg)](https://youtu.be/rwSRDiElWMQ "Good News")
+[![Good News](/February/jpgs/Day056.jpg)](https://youtu.be/rwSRDiElWMQ "Good News")
 
 ### AI-Generated Summary: The Kingdom Arrives
 
@@ -689,7 +689,7 @@ Behold, Jesus steps into Galilee, and His message rings out: "The time is fulfil
 
 ### Let's Step Away
 
-[![Let's Step Away](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day057.jpg)](https://youtu.be/8AN6TrNBuUs "Let's Step Away")
+[![Let's Step Away](/February/jpgs/Day057.jpg)](https://youtu.be/8AN6TrNBuUs "Let's Step Away")
 
 ### AI-Generated Summary: Seeing by True Light
 
@@ -711,7 +711,7 @@ Just as one must leave the city's glare and ascend to a higher, darker place to 
 
 ### Creativity of Love
 
-[![Creativity of Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day058.jpg)](https://youtu.be/TFXuCOuK7LI "Creativity of Love")
+[![Creativity of Love](/February/jpgs/Day058.jpg)](https://youtu.be/TFXuCOuK7LI "Creativity of Love")
 
 ### AI-Generated Summary: The Ingenuity of Divine Love
 
@@ -727,7 +727,7 @@ Let us consider the matter of prayer, that quiet turning of the soul toward the 
 
 ### The Nature of Sin
 
-[![The Nature of Sin](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/February/jpgs/Day059.jpg)](https://youtu.be/dSOBgpW1kM4 "The Nature of Sin")
+[![The Nature of Sin](/February/jpgs/Day059.jpg)](https://youtu.be/dSOBgpW1kM4 "The Nature of Sin")
 
 ### AI-Generated Summary A Pondering on Pain and Prodigals
 

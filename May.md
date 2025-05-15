@@ -50,7 +50,7 @@
   - [AI-Generated Summary: The Mystery and Majesty of Christ’s Baptism in a 16th-Century Fresco](#ai-generated-summary-the-mystery-and-majesty-of-christs-baptism-in-a-16th-century-fresco)
 - [May 15,2025](#may-152025)
   - [Miracles of Love](#miracles-of-love)
-  - [AI-Generated Summary: Reflections on Carl Bloch’s _The Wedding at Cana_ and the Quiet Miracles of Christ](#ai-generated-summary-reflections-on-carl-blochs-the-wedding-at-cana-and-the-quiet-miracles-of-christ)
+  - [AI-Generated Summary: Reflections on Carl Bloch’s The Wedding at Cana and the Quiet Miracles of Christ](#ai-generated-summary-reflections-on-carl-blochs-the-wedding-at-cana-and-the-quiet-miracles-of-christ)
 
 <!-- tocstop -->
 
@@ -62,7 +62,7 @@ RIAY May 2025
 
 ### The Cost of Compromise
 
-[![The Cost of Compromise](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day121.jpg)](https://youtu.be/qJmcYkPMFbE "The Cost of Compromise")
+[![The Cost of Compromise](/May/jpgs/Day121.jpg)](https://youtu.be/qJmcYkPMFbE "The Cost of Compromise")
 
 ### AI-Generated Summary: The Terrible Price of Compromise
 
@@ -84,7 +84,7 @@ Let this reflection, then, serve not as condemnation, but as a bracing call. Let
 
 ### Trophy of Victory
 
-[![Trophy of Victory](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day122.jpg)](https://youtu.be/Pc612AjmefY "Trophy of Victory")
+[![Trophy of Victory](/May/jpgs/Day122.jpg)](https://youtu.be/Pc612AjmefY "Trophy of Victory")
 
 ### AI-Generated Summary: The Victory of the Cross in Suffering
 
@@ -110,7 +110,7 @@ In brief: the cross is both burden and beacon—a call to carry our trials with 
 
 ### She Magnifies Him
 
-[![She Magnifies Him](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day123.jpg)](https://youtu.be/t6Ezkng0Oi0 "She Magnifies Him")
+[![She Magnifies Him](/May/jpgs/Day123.jpg)](https://youtu.be/t6Ezkng0Oi0 "She Magnifies Him")
 
 ### AI-Generated Summary: A Meditation on Mary's Sorrow at the Cross
 
@@ -126,7 +126,7 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 
 ### Newness of Life
 
-[![Newness of Life](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day124.jpg)](https://youtu.be/Ag6z84FiECw "Newness of Life")
+[![Newness of Life](/May/jpgs/Day124.jpg)](https://youtu.be/Ag6z84FiECw "Newness of Life")
 
 ### AI-Generated Summary: Spiritual Renewal and the Power of Baptism in Christian Life
 
@@ -144,7 +144,7 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 
 ### Hold Fast to Christ
 
-[![Hold Fast to Christ](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day125.jpg)](https://youtu.be/nBEGxYpYNhU "Hold Fast to Christ")
+[![Hold Fast to Christ](/May/jpgs/Day125.jpg)](https://youtu.be/nBEGxYpYNhU "Hold Fast to Christ")
 
 ### AI-Generated Summary: The Path of Charity and Spiritual Ascent
 
@@ -182,7 +182,7 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 
 ### Fire of Love
 
-[![Fire of Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day126.jpg)](https://youtu.be/qxaYV7coMc0 "Fire of Love")
+[![Fire of Love](/May/jpgs/Day126.jpg)](https://youtu.be/qxaYV7coMc0 "Fire of Love")
 
 ### AI-Generated Summary: The Holy Spirit and the Fire of Divine Love
 
@@ -198,7 +198,7 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 
 ### Reunion into Heaven
 
-[![Reunion into Heaven](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day127.jpg)](https://youtu.be/6YEbCBh7tjg "Reunion into Heaven")
+[![Reunion into Heaven](/May/jpgs/Day127.jpg)](https://youtu.be/6YEbCBh7tjg "Reunion into Heaven")
 
 ### AI-Generated Summary: The Joy of Heavenly Reunion and Earthly Devotion
 
@@ -220,7 +220,7 @@ _Concision note: Lewis’s style favors clarity and vivid imagery, here applied 
 
 ### Queen of Angels
 
-[![Queen of Angels](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day128.jpg)](https://youtu.be/CFx5VMgBmZo "Queen of Angels")
+[![Queen of Angels](/May/jpgs/Day128.jpg)](https://youtu.be/CFx5VMgBmZo "Queen of Angels")
 
 ### AI-Generated Summary: Mary as Queen of Angels and Mother of Divine Grace
 
@@ -256,7 +256,7 @@ _Summary retains the theological depth and lyrical clarity characteristic of Lew
 
 ### A Disposition of Reverence
 
-[![A Disposition of Reverence](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day129.jpg)](https://youtu.be/jze1CWoM1C4 "A Disposition of Reverence")
+[![A Disposition of Reverence](/May/jpgs/Day129.jpg)](https://youtu.be/jze1CWoM1C4 "A Disposition of Reverence")
 
 ### AI-Generated Summary: Deepening Devotion Through Sacred Art and Prayer
 
@@ -300,7 +300,7 @@ Fra Angelico’s humility (as noted by Vasari) mirrors the text’s call to quie
 
 ### Joy in the Darkness
 
-[![Joy in the Darkness](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day130.jpg)](https://youtu.be/7dScG5-xco8 "Joy in the Darkness")
+[![Joy in the Darkness](/May/jpgs/Day130.jpg)](https://youtu.be/7dScG5-xco8 "Joy in the Darkness")
 
 ### AI-Generated Summary: Rembrandt’s The Visitation and the Divine Light of Shared Faith
 
@@ -341,7 +341,7 @@ In _The Visitation_, Rembrandt distills a moment where heaven touches earth, and
 
 ### Worship and Warmth
 
-[![Worship and Warmth](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day131.jpg)](https://youtu.be/Q9IPhitx20M "Worship and Warmth")
+[![Worship and Warmth](/May/jpgs/Day131.jpg)](https://youtu.be/Q9IPhitx20M "Worship and Warmth")
 
 ### AI-Generated Summary: A Meditation on Pellegrini’s Nativity and the Adoration of the Christ Child
 
@@ -367,7 +367,7 @@ _Conciseness note: Repetitive prayers and promotional phrasing omitted; focus re
 
 ### Eyes on Jesus
 
-[![Eyes on Jesus](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day132.jpg)](https://youtu.be/pyNEt5taMiY "Eyes on Jesus")
+[![Eyes on Jesus](/May/jpgs/Day132.jpg)](https://youtu.be/pyNEt5taMiY "Eyes on Jesus")
 
 ### AI-Generated Summary: A Reflection on Campy’s Fresco and the Devotion of Mary
 
@@ -394,7 +394,7 @@ _Blessed art thou among women... pray for us sinners._
 
 ### Respond with Grace
 
-[![Respond with Grace](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day133.jpg)](https://youtu.be/CMFHSTQH9y0 "Respond with Grace")
+[![Respond with Grace](/May/jpgs/Day133.jpg)](https://youtu.be/CMFHSTQH9y0 "Respond with Grace")
 
 ### AI-Generated Summary: A Mosaic of Divine Encounter and Human Response
 
@@ -418,7 +418,7 @@ _Key traits of Lewis’s style applied:_
 
 ### Shadow of the Cross
 
-[![Shadow of the Cross](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day134.jpg)](https://youtu.be/ImYrfQW_zMI "Shadow of the Cross")
+[![Shadow of the Cross](/May/jpgs/Day134.jpg)](https://youtu.be/ImYrfQW_zMI "Shadow of the Cross")
 
 ### AI-Generated Summary: The Mystery and Majesty of Christ’s Baptism in a 16th-Century Fresco
 
@@ -436,9 +436,9 @@ _Note: The summary adheres to Lewis’s style—lucid, rhythmic, and layered wit
 
 ### Miracles of Love
 
-[![Miracles of Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/May/jpgs/Day135.jpg)](https://youtu.be/lwBW25fFb2c "Miracles of Love")
+[![Miracles of Love](/May/jpgs/Day135.jpg)](https://youtu.be/lwBW25fFb2c "Miracles of Love")
 
-### AI-Generated Summary: Reflections on Carl Bloch’s _The Wedding at Cana_ and the Quiet Miracles of Christ
+### AI-Generated Summary: Reflections on Carl Bloch’s The Wedding at Cana and the Quiet Miracles of Christ
 
 Carl Bloch’s _The Wedding at Cana_ captures a moment of divine humility. Painted in the classical realism style, the scene unfolds beneath a grand archway, where servants gasp as water turns to wine in their pitchers. Yet the true focus lies elsewhere: Jesus sits quietly at the banquet table beside Mary, unnoticed by the bride and groom. His miracle is not for spectacle but for love—a theme woven through his acts of healing and provision.
 

@@ -103,7 +103,7 @@ RIAY April 2025
 
 ### Cause For Joy
 
-[![Cause For Joy](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day091.jpg)](https://youtu.be/Gq96TC-oQ60 "Cause For Joy")
+[![Cause For Joy](/April/jpgs/Day091.jpg)](https://youtu.be/Gq96TC-oQ60 "Cause For Joy")
 
 ### AI-Generated Summary: Reflecting on the Nativity's Joy with St Leo
 
@@ -125,7 +125,7 @@ Finally, we are gently led, hand-in-hand with Our Lady, to pray for the grace to
 
 ### Waiting in the Temple
 
-[![Waiting in the Temple](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day092.jpg)](https://youtu.be/U70TdxWN38A "Waiting in the Temple")
+[![Waiting in the Temple](/April/jpgs/Day092.jpg)](https://youtu.be/U70TdxWN38A "Waiting in the Temple")
 
 ### AI-Generated Summary: Waiting for the Light Simeon's Lesson
 
@@ -152,7 +152,7 @@ Let us be grateful for this shared journey and look forward to continuing it tog
 
 ### Look Like You Love Him
 
-[![Look Like You Love Him](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day093.jpg)](https://youtu.be/IZ6f66RmT4c "Look Like You Love Him")
+[![Look Like You Love Him](/April/jpgs/Day093.jpg)](https://youtu.be/IZ6f66RmT4c "Look Like You Love Him")
 
 ### AI-Generated Summary: The Arduous Hunt for the Hidden King
 
@@ -175,7 +175,7 @@ The call, then, is to answer that question with a resounding 'Yes' and to seek H
 
 ### No Doubt
 
-[![No Doubt](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day094.jpg)](https://youtu.be/udGTa5JC9Mw "No Doubt")
+[![No Doubt](/April/jpgs/Day094.jpg)](https://youtu.be/udGTa5JC9Mw "No Doubt")
 
 ### AI-Generated Summary: Faith's Certainty at the Jordan
 
@@ -201,7 +201,7 @@ Our fitting response is not hesitant questioning, but a full surrender: intellec
 
 ### Moms are Special
 
-[![Moms are Special](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day095.jpg)](https://youtu.be/XLos3uwj4Js "Moms are Special")
+[![Moms are Special](/April/jpgs/Day095.jpg)](https://youtu.be/XLos3uwj4Js "Moms are Special")
 
 ### AI-Generated Summary: The Mother's Plea at Cana
 
@@ -225,7 +225,7 @@ Thus, meditating on Cana through the Rosary allows us to glimpse the power of a 
 
 ### A New Love
 
-[![A New Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day096.jpg)](https://youtu.be/9Q_YnIxbPrg "A New Love")
+[![A New Love](/April/jpgs/Day096.jpg)](https://youtu.be/9Q_YnIxbPrg "A New Love")
 
 ### AI-Generated Summary: The Kingdom and the New Law of Love
 
@@ -243,7 +243,7 @@ Think of it thus: a new Kingdom requires a new law, and this law, unlike the old
 
 ### Climb the Mountain
 
-[![Climb the Mountain](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day097.jpg)](https://youtu.be/6sKvRFzo8vw "Climb the Mountain")
+[![Climb the Mountain](/April/jpgs/Day097.jpg)](https://youtu.be/6sKvRFzo8vw "Climb the Mountain")
 
 ### AI-Generated Summary A Gentle Ascent
 
@@ -268,7 +268,7 @@ And often, the most practical way to take that next step, right here and now, is
 
 ### An Abyss of Love
 
-[![An Abyss of Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day098.jpg)](https://youtu.be/lZlrhf3RAqI "An Abyss of Love")
+[![An Abyss of Love](/April/jpgs/Day098.jpg)](https://youtu.be/lZlrhf3RAqI "An Abyss of Love")
 
 ### AI-Generated Summary: The Abyss of Love and the Gift
 
@@ -286,7 +286,7 @@ The heart of our meditation rests upon words God spoke to her soul, revealing th
 
 ### Stay in Dialogue
 
-[![Stay in Dialogue](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day099.jpg)](https://youtu.be/j_SLDYjpCKc "Stay in Dialogue")
+[![Stay in Dialogue](/April/jpgs/Day099.jpg)](https://youtu.be/j_SLDYjpCKc "Stay in Dialogue")
 
 ### AI-Generated Summary: On Facing the Shadow
 
@@ -306,7 +306,7 @@ This is the lesson from Gethsemane and from the cliff edge alike: acknowledge th
 
 ### Always Her Son
 
-[![Always Her Son](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day100.jpg)](https://youtu.be/BCNG7KuVc3A "Always Her Son")
+[![Always Her Son](/April/jpgs/Day100.jpg)](https://youtu.be/BCNG7KuVc3A "Always Her Son")
 
 ### AI-Generated Summary: A Glimpse into the Scourging with St Bridget
 
@@ -336,7 +336,7 @@ Let us remain awhile in this contemplation, beholding the innocent, scourged Lor
 
 ### Glory and Indignity
 
-[![Glory and Indignity](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day101.jpg)](https://youtu.be/DMEabT65dsI "Glory and Indignity")
+[![Glory and Indignity](/April/jpgs/Day101.jpg)](https://youtu.be/DMEabT65dsI "Glory and Indignity")
 
 ### AI-Generated Summary: The Indignity of Thorns
 
@@ -354,7 +354,7 @@ Consider, if you will, that stark scene: the Crowning with Thorns, the third sor
 
 ### Carried with Love
 
-[![Carried with Love](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day102.jpg)](https://youtu.be/kqQa2SSSJnM "Carried with Love")
+[![Carried with Love](/April/jpgs/Day102.jpg)](https://youtu.be/kqQa2SSSJnM "Carried with Love")
 
 ### AI-Generated Summary: The Burden and the Throne
 
@@ -375,7 +375,7 @@ The session, after dwelling on this transforming truth, grounded itself in the f
 
 ### Pilgrimage of Faith
 
-[![Pilgrimage of Faith](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day103.jpg)](https://youtu.be/ZWCBK7gr0VU "Pilgrimage of Faith")
+[![Pilgrimage of Faith](/April/jpgs/Day103.jpg)](https://youtu.be/ZWCBK7gr0VU "Pilgrimage of Faith")
 
 ### AI-Generated Summary: Mary's Pilgrimage of Faith: Contemplating the Fifth Sorrowful Mystery
 
@@ -399,7 +399,7 @@ In essence, this meditation offers a profound reflection on the Fifth Sorrowful 
 
 ### Where is Your Sting?
 
-[![Where is Your Sting?](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day104.jpg)](https://youtu.be/VCzXwTJfet4 "Where is Your Sting?")
+[![Where is Your Sting?](/April/jpgs/Day104.jpg)](https://youtu.be/VCzXwTJfet4 "Where is Your Sting?")
 
 ### AI-Generated Summary: Homily on the Resurrection
 
@@ -432,7 +432,7 @@ Father Mark Mary guides listeners to apply the homily's teachings to their own l
 
 ### Love Draws Us Up
 
-[![Love Draws Us Up](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day105.jpg)](https://youtu.be/KhFM9KUA-PY "Love Draws Us Up")
+[![Love Draws Us Up](/April/jpgs/Day105.jpg)](https://youtu.be/KhFM9KUA-PY "Love Draws Us Up")
 
 ### AI-Generated Summary: The Ascension and the Longing for Heaven
 
@@ -442,7 +442,7 @@ Day 105 of the Rosary in a Year podcast focuses on the Second Glorious Mystery, 
 
 ### He Sends His Spirit
 
-[![He Sends His Spirit](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day106.jpg)](https://youtu.be/T3Fr93UZvgQ "He Sends His Spirit")
+[![He Sends His Spirit](/April/jpgs/Day106.jpg)](https://youtu.be/T3Fr93UZvgQ "He Sends His Spirit")
 
 ### AI-Generated Summary: The Hidden Power and Divinity of the Holy Spirit
 
@@ -457,7 +457,7 @@ This acknowledgment involves recognizing the Spirit's constant, often unseen, wo
 
 ### Beauty Which Never Fades
 
-[![Beauty Which Never Fades](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day107.jpg)](https://youtu.be/tT6OpDXTALQ "Beauty Which Never Fades")
+[![Beauty Which Never Fades](/April/jpgs/Day107.jpg)](https://youtu.be/tT6OpDXTALQ "Beauty Which Never Fades")
 
 ### AI-Generated Summary: Meditating on Mary's Assumption with Fulton Sheen
 
@@ -493,7 +493,7 @@ The session incorporated recitations of the Hail Mary and Glory Be prayers, conc
 
 ### Heights of Holiness
 
-[![Heights of Holiness](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day108.jpg)](https://youtu.be/uXvW2KhbtIk "Heights of Holiness")
+[![Heights of Holiness](/April/jpgs/Day108.jpg)](https://youtu.be/uXvW2KhbtIk "Heights of Holiness")
 
 ### AI-Generated Summary: Meditation on Mary's Queenship and Doing God's Will
 
@@ -530,7 +530,7 @@ The text concludes by mentioning the recitation of specific prayers like the Hai
 
 ### The Gift of Wonder
 
-[![The Gift of Wonder](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day109.jpg)](https://youtu.be/cDUm_kvTXv0 "The Gift of Wonder")
+[![The Gift of Wonder](/April/jpgs/Day109.jpg)](https://youtu.be/cDUm_kvTXv0 "The Gift of Wonder")
 
 ### AI-Generated Summary: The Wonder of the Annunciation
 
@@ -549,7 +549,7 @@ The text concludes by mentioning the recitation of specific prayers like the Hai
 
 ### Greater Seeks Lesser
 
-[![Greater Seeks Lesser](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day110.jpg)](https://youtu.be/IlTUSj4LF1s "Greater Seeks Lesser")
+[![Greater Seeks Lesser](/April/jpgs/Day110.jpg)](https://youtu.be/IlTUSj4LF1s "Greater Seeks Lesser")
 
 ### AI-Generated Summary: The Visitation, Humility, and the Pursuit of Grace
 
@@ -569,7 +569,7 @@ Woven throughout are the familiar refrains of the Hail Mary and Glory Be, culmin
 
 ### Manifest in Humility
 
-[![Manifest in Humility](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day111.jpg)](https://youtu.be/rT4GNSQ4fHo "Manifest in Humility")
+[![Manifest in Humility](/April/jpgs/Day111.jpg)](https://youtu.be/rT4GNSQ4fHo "Manifest in Humility")
 
 ### AI-Generated Summary: The Nativity's Astonishing Paradox
 
@@ -587,7 +587,7 @@ Let us ponder the Nativity, guided by the wisdom of St. Bernard. The heart of th
 
 ### All My Time is Free
 
-[![All My Time is Free](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day112.jpg)](https://youtu.be/n960q_PL9-M "All My Time is Free")
+[![All My Time is Free](/April/jpgs/Day112.jpg)](https://youtu.be/n960q_PL9-M "All My Time is Free")
 
 ### AI-Generated Summary: Mary's Renewed Fiat: A Sacrifice of Love
 
@@ -609,7 +609,7 @@ Yet, like Mary, we are called to seek wisdom, prudence, and courage, freely reaf
 
 ### Spoiler Alert
 
-[![Spoiler Alert](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day113.jpg)](https://youtu.be/bWAZ5VUU3sY "Spoiler Alert")
+[![Spoiler Alert](/April/jpgs/Day113.jpg)](https://youtu.be/bWAZ5VUU3sY "Spoiler Alert")
 
 ### AI-Generated Summary: The Boy in the Temple
 
@@ -627,7 +627,7 @@ St. Cyril emphasizes the unfolding nature of this revelation. Even Mary and Jose
 
 ### Baptized with Him
 
-[![Baptized with Him](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day114.jpg)](https://youtu.be/34FEBKz2nGY "Baptized with Him")
+[![Baptized with Him](/April/jpgs/Day114.jpg)](https://youtu.be/34FEBKz2nGY "Baptized with Him")
 
 ### AI-Generated Summary: The Opened Heavens and Our Way In
 
@@ -656,7 +656,7 @@ Let us continue this journey together, step by step. God bless you.
 
 ### Wedding of the Lamb
 
-[![Wedding of the Lamb](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day115.jpg)](https://youtu.be/ETjNvvTxQSQ "Wedding of the Lamb")
+[![Wedding of the Lamb](/April/jpgs/Day115.jpg)](https://youtu.be/ETjNvvTxQSQ "Wedding of the Lamb")
 
 ### AI-Generated Summary: Wedding Feast of The Divine Bridegroom
 
@@ -694,7 +694,7 @@ And so, when we pray – reciting the familiar words of the Our Father, the Hail
 
 ### Continued Through You
 
-[![Continued Through You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day116.jpg)](https://youtu.be/JQzrZo1nR1k "Continued Through You")
+[![Continued Through You](/April/jpgs/Day116.jpg)](https://youtu.be/JQzrZo1nR1k "Continued Through You")
 
 ### AI-Generated Summary: The Indwelling Kingdom and the Call to Conversion
 
@@ -712,7 +712,7 @@ Finally, as all earthly communions must end, so too does this prayer. Yet, the s
 
 ### Come Down, Peter
 
-[![Come Down, Peter](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day117.jpg)](https://youtu.be/aIykzO2OBvg "Come Down, Peter")
+[![Come Down, Peter](/April/jpgs/Day117.jpg)](https://youtu.be/aIykzO2OBvg "Come Down, Peter")
 
 ### AI-Generated Summary: The Transfiguration and the Call to Active Charity
 
@@ -732,7 +732,7 @@ Like Peter yearning for the mountaintop tranquility with Christ, we are often te
 
 ### Partake of God
 
-[![Partake of God](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day118.jpg)](https://youtu.be/p0XOixAacvA "Partake of God")
+[![Partake of God](/April/jpgs/Day118.jpg)](https://youtu.be/p0XOixAacvA "Partake of God")
 
 ### AI-Generated Summary: The Eucharist as Divine Gift and Transformation
 
@@ -748,7 +748,7 @@ We are called to praise Jesus for this extraordinary gift and to seek the grace 
 
 ### Till The End
 
-[![Till The End](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day119.jpg)](https://youtu.be/-_Wcmz3mmHE "Till The End")
+[![Till The End](/April/jpgs/Day119.jpg)](https://youtu.be/-_Wcmz3mmHE "Till The End")
 
 ### AI-Generated Summary: Love to the End: A Meditation on the Agony in the Garden
 
@@ -766,7 +766,7 @@ Finally, with a spirit of shared devotion, gratitude is expressed for the commun
 
 ### Be the One
 
-[![Be the One](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/April/jpgs/Day120.jpg)](https://youtu.be/hacnsn_onus "Be the One")
+[![Be the One](/April/jpgs/Day120.jpg)](https://youtu.be/hacnsn_onus "Be the One")
 
 ### AI-Generated Summary: The Deeper Scourging
 

@@ -36,11 +36,11 @@
 
 #### Rosary In a Year Prayer Plan
 
-[Rosary in a Year Prayer Plan](/Rosary_in_a_Year_Prayer_Plan.pdf)
+[Rosary in a Year Prayer Plan](Rosary_in_a_Year_Prayer_Plan.pdf)
 
 #### Preparing for Rosary In a Year Podcast
 
-[![Preparing for Rosary in a Year Podcast w/ Fr. Mark-Mary (+ Special Guest Fr. Mike Schmitz!)](/Podcast.jpg)](https://youtu.be/kTKyflR2H-Q "Preparing for Rosary in a Year Podcast w/ Fr. Mark-Mary (+ Special Guest Fr. Mike Schmitz!)")
+[![Preparing for Rosary in a Year Podcast w/ Fr. Mark-Mary (+ Special Guest Fr. Mike Schmitz!)](Podcast.jpg)](https://youtu.be/kTKyflR2H-Q "Preparing for Rosary in a Year Podcast w/ Fr. Mark-Mary (+ Special Guest Fr. Mike Schmitz!)")
 
 #### AI-Generated Summary: A Journey into Deeper Prayer
 
@@ -66,7 +66,7 @@ We give thanks for your presence on this path and look forward to praying with y
 
 #### The Rosary Has Changed History—And It Will Again
 
-[![The Rosary Has Changed History—And It Will Again](/History.jpg)](https://youtu.be/exy8-Ffbls4 "The Rosary Has Changed History — And It Will Again")
+[![The Rosary Has Changed History—And It Will Again](History.jpg)](https://youtu.be/exy8-Ffbls4 "The Rosary Has Changed History — And It Will Again")
 
 #### AI-Generated Summary The Rosary A Timeless Weapon
 
@@ -85,7 +85,7 @@ So, let us not underestimate the power of this quiet devotion. Let us take up th
 
 #### How to Pray the Rosary Like Never Before
 
-[![How to Pray the Rosary Like Never Before (+ NEW Podcast)](/HowToPray.jpg)](https://youtu.be/JjWRqYt1ljQ "How to Pray the Rosary Like Never Before (+ NEW Podcast)")
+[![How to Pray the Rosary Like Never Before (+ NEW Podcast)](HowToPray.jpg)](https://youtu.be/JjWRqYt1ljQ "How to Pray the Rosary Like Never Before (+ NEW Podcast)")
 
 #### AI-Generated Summary: The Pilgrim's Stumble and the Gentle Path
 
@@ -109,7 +109,7 @@ To aid pilgrims on this journey, a year-long program is announced for 2025. It i
 
 #### Forming the Relationship
 
-[![Forming The Relationship - Intro to Phase 1 of the Rosary in a Year Podcast](/forming.jpg)](https://youtu.be/785cmjJBqvI "Forming The Relationship - Intro to Phase 1 of the Rosary in a Year Podcast")
+[![Forming The Relationship - Intro to Phase 1 of the Rosary in a Year Podcast](forming.jpg)](https://youtu.be/785cmjJBqvI "Forming The Relationship - Intro to Phase 1 of the Rosary in a Year Podcast")
 
 #### AI-Generated Summary: The Practice of the Soul's Conversation
 
@@ -292,7 +292,7 @@ RIAY January 2025
 
 ##### Responding to God
 
-[![Responding to God](/January/jpgs/Day001.jpg)](https://youtu.be/PesisPSBosg "Responding to God")
+[![Responding to God](January/jpgs/Day001.jpg)](https://youtu.be/PesisPSBosg "Responding to God")
 
 ##### ROSARY IN A YEAR DAY 01 Michelle Jackson
 
@@ -354,7 +354,7 @@ While the provided text doesn't contain direct quotes, several insightful concep
 
 ##### The King Knows You
 
-[![The King Knows You](/January/jpgs/Day002.jpg)](https://youtu.be/lW9LA2uYhp0 "The King Knows You")
+[![The King Knows You](January/jpgs/Day002.jpg)](https://youtu.be/lW9LA2uYhp0 "The King Knows You")
 
 ##### ROSARY IN A YEAR DAY 02 Michelle Jackson
 
@@ -442,7 +442,7 @@ Notable insights from this segment include the reframing of litanies as poetic e
 
 ##### Heart of Jesus
 
-[![Heart of Jesus](/January/jpgs/Day003.jpg)](https://youtu.be/KiLJc32YPKg "Heart of Jesus")
+[![Heart of Jesus](January/jpgs/Day003.jpg)](https://youtu.be/KiLJc32YPKg "Heart of Jesus")
 
 ##### RIAY Day 3 Heart of Jesus Michael Eltham
 
@@ -492,7 +492,7 @@ Notable insights include the analogy of learning in a woodshop with Jesus, highl
 
 ##### Prayer With Mercy
 
-[![Prayer With Mercy](/January/jpgs/Day004.jpg)](https://youtu.be/ZeY21DCQZzI "Prayer With Mercy")
+[![Prayer With Mercy](January/jpgs/Day004.jpg)](https://youtu.be/ZeY21DCQZzI "Prayer With Mercy")
 
 ##### RIAY Day 4/ 04- 01- 2025
 
@@ -536,7 +536,7 @@ Mary, reflecting Jesus, the "sun of righteousness," is seen as the Mirror of Jus
 
 ##### A Garden of Rest
 
-[![A Garden of Rest](/January/jpgs/Day005.jpg)](https://youtu.be/IhrhpVelcbc "A Garden of Rest")
+[![A Garden of Rest](January/jpgs/Day005.jpg)](https://youtu.be/IhrhpVelcbc "A Garden of Rest")
 
 ##### ROSARY IN A YEAR DAY 5 - A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson
 
@@ -571,7 +571,7 @@ The reflection emphasizes the transformative power of the rosary, shifting it fr
 
 ##### Prayer is a Battle
 
-[![Prayer is a Battle](/January/jpgs/Day006.jpg)](https://youtu.be/UTyod-E1AHA "Prayer is a Battle")
+[![Prayer is a Battle](January/jpgs/Day006.jpg)](https://youtu.be/UTyod-E1AHA "Prayer is a Battle")
 
 ##### ROSARY IN A YEAR DAY 6 - PRAYER IS A BATTLE - Michelle Jackson
 
@@ -607,7 +607,7 @@ Prayer is not simply a passive reception of grace, but an active, determined str
 
 ##### Grace Will Overflow
 
-[![Grace Will Overflow](/January/jpgs/Day007.jpg)](https://youtu.be/Yz2_NEmpF-c "Grace Will Overflow")
+[![Grace Will Overflow](January/jpgs/Day007.jpg)](https://youtu.be/Yz2_NEmpF-c "Grace Will Overflow")
 
 ##### ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson
 
@@ -632,7 +632,7 @@ This episode explores the power of the rosary as a conduit of grace for personal
 
 ##### Biblical Roots of the Rosary
 
-[![Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast](/January/jpgs/biblicalroots.jpg)](https://youtu.be/8Vv86L0uhco "Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast")
+[![Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast](January/jpgs/biblicalroots.jpg)](https://youtu.be/8Vv86L0uhco "Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast")
 
 ##### AI-Generated Summary: Returning Home Through Scripture and Tradition
 
@@ -668,7 +668,7 @@ This testimony highlights how Scripture and Catholic tradition can work together
 
 ##### Our Father in Heaven
 
-[![Our Father in Heaven](/January/jpgs/Day008.jpg)](https://youtu.be/WOaecrQZS5s "Our Father in Heaven")
+[![Our Father in Heaven](January/jpgs/Day008.jpg)](https://youtu.be/WOaecrQZS5s "Our Father in Heaven")
 
 ##### ROSARY IN A YEAR DAY 08 - "OUR FATHER IN HEAVEN" Michelle Jackson
 
@@ -688,7 +688,7 @@ The episode includes the recitation of the Our Father, three Hail Marys, and the
 
 ##### Thy Will Be Done
 
-[![Thy Will Be Done](/January/jpgs/Day009.jpg)](https://youtu.be/gnkxlNFBGcs "Thy Will Be Done")
+[![Thy Will Be Done](January/jpgs/Day009.jpg)](https://youtu.be/gnkxlNFBGcs "Thy Will Be Done")
 
 ROSARY IN A YEAR Day 09 - "THY WILL BE DONE" Michelle Jackson
 
@@ -725,7 +725,7 @@ This reflection explores how to live out the prayer "Thy kingdom come, thy will 
 
 ##### Daily Bread
 
-[![Daily Bread](/January/jpgs/Day010.jpg)](https://youtu.be/5j0Q_eP-ec0 "Daily Bread")
+[![Daily Bread](January/jpgs/Day010.jpg)](https://youtu.be/5j0Q_eP-ec0 "Daily Bread")
 
 ##### ROSARY IN A YEAR DAY 10 - " DAILY BREAD" Michelle Jackson
 
@@ -770,7 +770,7 @@ Anxiety about the future is countered by understanding that God provides specifi
 
 ##### As We Forgive
 
-[![As We Forgive](/January/jpgs/Day011.jpg)](https://youtu.be/hSa8NhXUgws "As We Forgive")
+[![As We Forgive](January/jpgs/Day011.jpg)](https://youtu.be/hSa8NhXUgws "As We Forgive")
 
 ##### ROSARY IN A YEAR DAY 11 - "AS WE FORGIVE" Michelle Jackson
 
@@ -832,7 +832,7 @@ Forgiveness is often a "journey, not an instant switch," requiring daily relianc
 
 ##### Deliver Us From Evil
 
-[![Deliver Us From Evil](/January/jpgs/Day012.jpg)](https://youtu.be/wfZGUzggWT4 "Deliver Us From Evil")
+[![Deliver Us From Evil](January/jpgs/Day012.jpg)](https://youtu.be/wfZGUzggWT4 "Deliver Us From Evil")
 
 ##### ROSARY IN A YEAR DAY 12 - "DELIVER US FROM EVIL" Michelle Jackson
 
@@ -869,7 +869,7 @@ This text explores the path to a deeper relationship with God through prayer and
 
 ##### Full of Grace
 
-[![Full of Grace](/January/jpgs/Day013.jpg)](https://youtu.be/MIY3Xyn8ou0 "Full of Grace")
+[![Full of Grace](January/jpgs/Day013.jpg)](https://youtu.be/MIY3Xyn8ou0 "Full of Grace")
 
 ##### ROSARY IN A YEAR DAY 13 - "FULL OF GRACE" Michelle Jackson
 
@@ -905,11 +905,11 @@ The text also mentions the recitation of standard prayers (Our Father, Hail Mary
 
 ##### Blessed Are You
 
-[![Blessed Are You](/January/jpgs/Day014.jpg)](https://youtu.be/xqD3-dXtTFI "Blessed Are You")
+[![Blessed Are You](January/jpgs/Day014.jpg)](https://youtu.be/xqD3-dXtTFI "Blessed Are You")
 
 ##### Mary
 
-![Mary](/January/jpgs/IMG-20250114-WA0011.jpg)
+![Mary](January/jpgs/IMG-20250114-WA0011.jpg)
 
 ##### ROSARY IN A YEAR DAY 14 - "BLESSED ARE YOU" Michelle Jackson
 
@@ -938,7 +938,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -946,7 +946,7 @@ The original text also includes full recitations of the Our Father (conclusion),
 
 ##### Mother of God
 
-[![Mother of God](/January/jpgs/Day015.jpg)](https://youtu.be/mFtDsxE2q18 "Mother of God")
+[![Mother of God](January/jpgs/Day015.jpg)](https://youtu.be/mFtDsxE2q18 "Mother of God")
 
 ##### ROSARY IN A YEAR DAY 15 - "MOTHER OF GOD" Michelle Jackson
 
@@ -991,7 +991,7 @@ This text explores how prayer and meditation deepen one's relationship with Jesu
 
 ##### Glorify Him
 
-[![Glorify Him](/January/jpgs/Day016.jpg)](https://youtu.be/ynEX9kc4nv4 "Glorify Him")
+[![Glorify Him](January/jpgs/Day016.jpg)](https://youtu.be/ynEX9kc4nv4 "Glorify Him")
 
 ##### ROSARY IN A YEAR DAY 16 - "GLORIFY HIM" Michelle Jackson
 
@@ -1038,7 +1038,7 @@ The text frames this explanation within invocations to the Trinity and includes 
 
 ##### Turn On The Light
 
-[![Turn On The Light](/January/jpgs/Day017.jpg)](https://youtu.be/nHM8krUU1rk "Turn On The Light")
+[![Turn On The Light](January/jpgs/Day017.jpg)](https://youtu.be/nHM8krUU1rk "Turn On The Light")
 
 ##### ROSARY IN A YEAR DAY 17 - "Turn on the Light" Michelle Jackson
 
@@ -1084,7 +1084,7 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 
 ##### Our Sweetness, Our Hope
 
-[![Our Sweetness, Our Hope](/January/jpgs/Day018.jpg)](https://youtu.be/x6ZYspdYFi8 "Our Sweetness, Our Hope")
+[![Our Sweetness, Our Hope](January/jpgs/Day018.jpg)](https://youtu.be/x6ZYspdYFi8 "Our Sweetness, Our Hope")
 
 ##### ROSARY IN A YEAR DAY 18 - "OUR SWEETNESS, OUR HOPE" Michelle Jackson
 
@@ -1119,7 +1119,7 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 
 ##### Valley of Tears
 
-[![Valley of Tears](/January/jpgs/Day019.jpg)](https://youtu.be/BhYy9fcgha8 "Valley of Tears")
+[![Valley of Tears](January/jpgs/Day019.jpg)](https://youtu.be/BhYy9fcgha8 "Valley of Tears")
 
 ##### ROSARY IN A YEAR DAY 19 - "VALLEY OF TEARS" Michelle Jackson
 
@@ -1155,7 +1155,7 @@ _The 'Hail Holy Queen' prayer resonates deeply with those acquainted with suffer
 
 ##### Eyes of Mercy
 
-[![Eyes of Mercy](/January/jpgs/Day020.jpg)](https://youtu.be/Dr3bjvXMjmY "Eyes of Mercy")
+[![Eyes of Mercy](January/jpgs/Day020.jpg)](https://youtu.be/Dr3bjvXMjmY "Eyes of Mercy")
 
 ##### ROSARY IN A YEAR DAY 20 - "Eyes of Mercy" Michelle Jackson
 
@@ -1191,7 +1191,7 @@ This text reflects on prayer and scripture, focusing on the theme of humble yet 
 
 ##### Show Unto Us
 
-[![Show Unto Us](/January/jpgs/Day021.jpg)](https://youtu.be/fWi-63owEk0 "Show Unto Us")
+[![Show Unto Us](January/jpgs/Day021.jpg)](https://youtu.be/fWi-63owEk0 "Show Unto Us")
 
 ##### ROSARY IN A YEAR DAY 21b- "Show unto us" Michelle Jackson
 
@@ -1230,7 +1230,7 @@ The reflection highlights how Mary responds to human need with compassion, bring
 
 ##### Lead Souls to Heaven
 
-[![Lead Souls to Heaven](/January/jpgs/Day022.jpg)](https://youtu.be/U_nCAl0mzmA "Lead Souls to Heaven")
+[![Lead Souls to Heaven](January/jpgs/Day022.jpg)](https://youtu.be/U_nCAl0mzmA "Lead Souls to Heaven")
 
 ##### ROSARY IN A YEAR DAY 22 - "LEAD SOULS TO HEAVEN" Michelle Jackson
 
@@ -1270,7 +1270,7 @@ The text underscores a hopeful yet earnest approach to salvation, urging persona
 
 ##### Creator of Heaven and Earth
 
-[![Creator of Heaven and Earth](/January/jpgs/Day023.jpg)](https://youtu.be/uR-pRPrIh6Q "Creator of Heaven and Earth")
+[![Creator of Heaven and Earth](January/jpgs/Day023.jpg)](https://youtu.be/uR-pRPrIh6Q "Creator of Heaven and Earth")
 
 ##### ROSARY IN A YEAR DAY 23 - "CREATOR OF HEAVEN AND EARTH" Michelle Jackson
 
@@ -1292,7 +1292,7 @@ Thus, we are invited to recognise this life-giving power, to find awe in the maj
 
 ##### Still, Small Voice
 
-[![Still, Small Voice](/January/jpgs/Day024.jpg)](https://youtu.be/Ou4r9yu24pA "Still, Small Voice")
+[![Still, Small Voice](January/jpgs/Day024.jpg)](https://youtu.be/Ou4r9yu24pA "Still, Small Voice")
 
 ##### AI-Generated Summary: The Quiet Work of Grace
 
@@ -1306,7 +1306,7 @@ Thus, we are invited to recognise this life-giving power, to find awe in the maj
 
 ##### No Longer in Darkness
 
-[![No Longer in Darkness](/January/jpgs/Day025.jpg)](https://youtu.be/eJg24VMua_4 "No Longer in Darkness")
+[![No Longer in Darkness](January/jpgs/Day025.jpg)](https://youtu.be/eJg24VMua_4 "No Longer in Darkness")
 
 ##### AI-Generated Summary: A Franciscan Reflection on Prayer and the Passion
 
@@ -1325,7 +1325,7 @@ Key points and insights include:
 
 ##### The Room is Ours
 
-[![The Room is Ours](/January/jpgs/Day026.jpg)](https://youtu.be/UqLJqFHKtzw "The Room is Ours")
+[![The Room is Ours](January/jpgs/Day026.jpg)](https://youtu.be/UqLJqFHKtzw "The Room is Ours")
 
 ##### AI-Generated Summary: Reflections on Home in the Father's House
 
@@ -1344,7 +1344,7 @@ Herein are some reflections upon intentional prayer and the very foundations of 
 
 ##### The Spirit Prepares Us
 
-[![The Spirit Prepares Us](/January/jpgs/Day027.jpg)](https://youtu.be/sHVJdpXlRyc "The Spirit Prepares Us")
+[![The Spirit Prepares Us](January/jpgs/Day027.jpg)](https://youtu.be/sHVJdpXlRyc "The Spirit Prepares Us")
 
 ##### AI-Generated Summary: The Spirit's Gentle Work Within
 
@@ -1365,7 +1365,7 @@ Here are the main points and takeaways:
 
 ##### Be Joyful, Be Free
 
-[![Be Joyful, Be Free](/January/jpgs/Day028.jpg)](https://youtu.be/IeGsyy6vVBg "Be Joyful, Be Free")
+[![Be Joyful, Be Free](January/jpgs/Day028.jpg)](https://youtu.be/IeGsyy6vVBg "Be Joyful, Be Free")
 
 ##### AI-Generated Summary: On Believing You Are Forgiven
 
@@ -1388,7 +1388,7 @@ To believe in forgiveness is not merely to say the words, but to live as one who
 
 ##### Something Unexpected
 
-[![Something Unexpected](/January/jpgs/Day029.jpg)](https://youtu.be/JRBX1CIDyV4 "Something Unexpected")
+[![Something Unexpected](January/jpgs/Day029.jpg)](https://youtu.be/JRBX1CIDyV4 "Something Unexpected")
 
 ##### Rosary in a Year - Day 29 - Joyful Mysteries
 
@@ -1414,7 +1414,7 @@ Goa, India.
 
 ##### The New Ark
 
-[![The New Ark](/January/jpgs/Day030.jpg)](https://youtu.be/HJNDwboMJ-k "The New Ark")
+[![The New Ark](January/jpgs/Day030.jpg)](https://youtu.be/HJNDwboMJ-k "The New Ark")
 
 ##### Rosary in a Year - Day 30 - Joyful Mysteries
 
@@ -1450,7 +1450,7 @@ Perhaps we, who have God present in Jesus – in the Blessed Sacrament, in praye
 
 ##### No Other Savior
 
-[![No Other Savior](/January/jpgs/Day031.jpg)](https://youtu.be/CXk5WJ4OhqQ "No Other Savior")
+[![No Other Savior](January/jpgs/Day031.jpg)](https://youtu.be/CXk5WJ4OhqQ "No Other Savior")
 
 ##### Rosary in a Year Day 31
 
@@ -1591,7 +1591,7 @@ RIAY February 2025
 
 ##### A Total Offering
 
-[![A Total Offering](/February/jpgs/Day032.jpg)](https://youtu.be/CagK_uBu6LU "A Total Offering")
+[![A Total Offering](February/jpgs/Day032.jpg)](https://youtu.be/CagK_uBu6LU "A Total Offering")
 
 ##### Rosary in a year Day 32
 
@@ -1620,7 +1620,7 @@ Through prayer and meditation on such mysteries, we deepen our relationship with
 
 ##### Lost and Found
 
-[![Lost and Found](/February/jpgs/Day033.jpg)](https://youtu.be/9bDTkqsM3Hc "Lost and Found")
+[![Lost and Found](February/jpgs/Day033.jpg)](https://youtu.be/9bDTkqsM3Hc "Lost and Found")
 
 ##### Rosary in a Year Day 33
 
@@ -1649,7 +1649,7 @@ Here is a glimpse into that singular moment when the Boy Jesus, at the threshold
 
 ##### The Anointed One
 
-[![The Anointed One](/February/jpgs/Day034.jpg)](https://youtu.be/PPnhBgd_Ggs "The Anointed One")
+[![The Anointed One](February/jpgs/Day034.jpg)](https://youtu.be/PPnhBgd_Ggs "The Anointed One")
 
 ##### RIAY Luminous Mysteries - Day 34
 
@@ -1683,7 +1683,7 @@ Jesus by dying on the cross, going to the tomb and resurrecting, washed away our
 
 ##### Divine Bridegroom
 
-[![Divine Bridegroom](/February/jpgs/Day035.jpg)](https://youtu.be/-jtqsyXYDwA "Divine Bridegroom")
+[![Divine Bridegroom](February/jpgs/Day035.jpg)](https://youtu.be/-jtqsyXYDwA "Divine Bridegroom")
 
 ##### Rosary in a Year Day 35
 
@@ -1723,7 +1723,7 @@ A central revelation at Cana is Jesus' identity as the Divine Bridegroom. This a
 
 ##### The Kingdom and the Gospel
 
-[![The Kingdom and the Gospel](/February/jpgs/Day036.jpg)](https://youtu.be/q7g8Wwzzs3U "The Kingdom and the Gospel")
+[![The Kingdom and the Gospel](February/jpgs/Day036.jpg)](https://youtu.be/q7g8Wwzzs3U "The Kingdom and the Gospel")
 
 ##### RIAY Day 36 Nadya Baracho
 
@@ -1749,7 +1749,7 @@ Jesus's proclamation, then, is not just a prediction of a future state, but the 
 
 ##### To Be Transfigured
 
-[![To Be Transfigured](/February/jpgs/Day037.jpg)](https://youtu.be/IB3oKZDyoM8 "To Be Transfigured")
+[![To Be Transfigured](February/jpgs/Day037.jpg)](https://youtu.be/IB3oKZDyoM8 "To Be Transfigured")
 
 ##### AI-Generated Summary: The Mountain of Light
 
@@ -1768,7 +1768,7 @@ For this arduous yet glorious path, we must ever seek the Holy Spirit's courage,
 
 ##### Food for the Journey
 
-[![Food for the Journey](/February/jpgs/Day038.jpg)](https://youtu.be/5JaBXQcW0K4 "Food for the Journey")
+[![Food for the Journey](February/jpgs/Day038.jpg)](https://youtu.be/5JaBXQcW0K4 "Food for the Journey")
 
 ##### RIAY Day 38 Nadya Baracho
 
@@ -1794,7 +1794,7 @@ Let us ponder the fifth Luminous Mystery, that astonishing moment when Our Lord 
 
 ##### In the Garden
 
-[![In the Garden](/February/jpgs/Day039.jpg)](https://youtu.be/sfspYnodC6Q "In the Garden")
+[![In the Garden](February/jpgs/Day039.jpg)](https://youtu.be/sfspYnodC6Q "In the Garden")
 
 ##### AI-Generated Summary: The Garden of Crushing and Obedience
 
@@ -1816,7 +1816,7 @@ So, when we find ourselves in our own gardens of anguish and difficulty, let us 
 
 ##### Suffering Servant
 
-[![Suffering Servant](/February/jpgs/Day040.jpg)](https://youtu.be/AhFxUZeZK1s "Suffering Servant")
+[![Suffering Servant](February/jpgs/Day040.jpg)](https://youtu.be/AhFxUZeZK1s "Suffering Servant")
 
 ##### AI-Generated Summary: The Innocent Condemned and the Terrible Scourge
 
@@ -1838,7 +1838,7 @@ Thus, the horrific scourging is a key moment in Jesus's passion, where the innoc
 
 ##### The Victorious King
 
-[![The Victorious King](/February/jpgs/Day041.jpg)](https://youtu.be/2fSlDxobHv8 "The Victorious King")
+[![The Victorious King](February/jpgs/Day041.jpg)](https://youtu.be/2fSlDxobHv8 "The Victorious King")
 
 ##### AI-Generated Summary The Crown of Thorns
 
@@ -1865,7 +1865,7 @@ So, let us indeed behold Him. Look upon the King in His thorny crown and worship
 
 ##### Sent into Exile
 
-[![Sent into Exile](/February/jpgs/Day042.jpg)](https://youtu.be/BsXmaN4wt5M "Sent into Exile")
+[![Sent into Exile](February/jpgs/Day042.jpg)](https://youtu.be/BsXmaN4wt5M "Sent into Exile")
 
 ##### AI-Generated Summary: The Burden and the Scapegoat
 
@@ -1886,7 +1886,7 @@ Reflect on this sorrowful truth: the Creator, the Lord, the Light of the World, 
 
 ##### The Veil is Torn
 
-[![The Veil is Torn](/February/jpgs/Day043.jpg)](https://youtu.be/RpK_72ah0R4 "The Veil is Torn")
+[![The Veil is Torn](February/jpgs/Day043.jpg)](https://youtu.be/RpK_72ah0R4 "The Veil is Torn")
 
 ##### AI-Generated Summary: The Great Exchange at Calvary
 
@@ -1904,7 +1904,7 @@ Thus, this terrible event reveals not mere suffering, but Love unto death. It is
 
 ##### Glorified Reality
 
-[![Glorified Reality](/February/jpgs/Day044.jpg)](https://youtu.be/bOJeFZU-fyY "Glorified Reality")
+[![Glorified Reality](February/jpgs/Day044.jpg)](https://youtu.be/bOJeFZU-fyY "Glorified Reality")
 
 ##### AI-Generated Summary: The Dawn of New Creation
 
@@ -1926,7 +1926,7 @@ Herein we consider the first of the Glorious Mysteries, that astounding event kn
 
 ##### He Parted from Them
 
-[![He Parted from Them](/February/jpgs/Day045.jpg)](https://youtu.be/ufgV6eyOopE "He Parted from Them")
+[![He Parted from Them](February/jpgs/Day045.jpg)](https://youtu.be/ufgV6eyOopE "He Parted from Them")
 
 ##### AI-Generated Summary: The King's Ascent and Our New Place
 
@@ -1944,7 +1944,7 @@ Think of it this way:
 
 ##### Come Holy Spirit
 
-[![Come Holy Spirit](/February/jpgs/Day046.jpg)](https://youtu.be/W0_rEVsZ0G4 "Come Holy Spirit")
+[![Come Holy Spirit](February/jpgs/Day046.jpg)](https://youtu.be/W0_rEVsZ0G4 "Come Holy Spirit")
 
 ##### AI-Generated Summary: The Spirit's Descent A New Harvest
 
@@ -1962,7 +1962,7 @@ This same Spirit, this same power and fruitfulness, is offered still. If we desi
 
 ##### Mary's Return Home
 
-[![Mary's Return Home](/February/jpgs/Day047.jpg)](https://youtu.be/DbDImWk1y4E "Mary's Return Home")
+[![Mary's Return Home](February/jpgs/Day047.jpg)](https://youtu.be/DbDImWk1y4E "Mary's Return Home")
 
 ##### AI-Generated Summary: The Ark Taken Home
 
@@ -1980,7 +1980,7 @@ Though formally defined in recent times, this belief is ancient, echoing through
 
 ##### Mother and Queen
 
-[![Mother and Queen](/February/jpgs/Day048.jpg)](https://youtu.be/zjcZzil4Mfs "Mother and Queen")
+[![Mother and Queen](February/jpgs/Day048.jpg)](https://youtu.be/zjcZzil4Mfs "Mother and Queen")
 
 ##### AI-Generated Summary: Mary Our Queen and Intercessor
 
@@ -2002,7 +2002,7 @@ Such a practice often includes familiar prayers, like the Hail Mary, parts of th
 
 ##### How Can This Be?
 
-[![How Can This Be?](/February/jpgs/Day049.jpg)](https://youtu.be/ZdOs23aM6tE "How Can This Be?")
+[![How Can This Be?](February/jpgs/Day049.jpg)](https://youtu.be/ZdOs23aM6tE "How Can This Be?")
 
 ##### AI-Generated Summary: A Simple Guide to Pondering the Rosary
 
@@ -2028,7 +2028,7 @@ And so, we are called to do likewise. When the events of our own lives present u
 
 ##### Rejoice in the Beauty
 
-[![Rejoice in the Beauty](/February/jpgs/Day050.jpg)](https://youtu.be/maFcTvNPNJw "Rejoice in the Beauty")
+[![Rejoice in the Beauty](February/jpgs/Day050.jpg)](https://youtu.be/maFcTvNPNJw "Rejoice in the Beauty")
 
 ##### AI-Generated Summary: A Glimpse of Joy Made Song
 
@@ -2054,7 +2054,7 @@ And having pondered these things, we are led naturally into communal prayer, beg
 
 ##### Moved With Awe
 
-[![Moved With Awe](/February/jpgs/Day051.jpg)](https://youtu.be/ObfPyKSPxrk "Moved With Awe")
+[![Moved With Awe](February/jpgs/Day051.jpg)](https://youtu.be/ObfPyKSPxrk "Moved With Awe")
 
 ##### AI-Generated Summary: Unexpected Gifts From Manger to Shelter
 
@@ -2076,7 +2076,7 @@ Let us consider a matter of profound import, woven from ancient prophecy and pre
 
 ##### My Eyes Have Seen Salvation
 
-[![My Eyes Have Seen Salvation](/February/jpgs/Day052.jpg)](https://youtu.be/rYVyMTsCeDQ "My Eyes Have Seen Salvation")
+[![My Eyes Have Seen Salvation](February/jpgs/Day052.jpg)](https://youtu.be/rYVyMTsCeDQ "My Eyes Have Seen Salvation")
 
 ##### AI-Generated Summary: The Sight of Salvation
 
@@ -2094,7 +2094,7 @@ Here is a brief account drawn from the scripture and a modern echo of its truth:
 
 ##### Our Perfect Director
 
-[![Our Perfect Director](/February/jpgs/Day053.jpg)](https://youtu.be/pbJIzB2vEzQ "Our Perfect Director")
+[![Our Perfect Director](February/jpgs/Day053.jpg)](https://youtu.be/pbJIzB2vEzQ "Our Perfect Director")
 
 ##### AI-Generated Summary: The Divine Director and Our Part
 
@@ -2112,7 +2112,7 @@ One is invited to consider how prayer and quiet reflection might draw us closer 
 
 ##### My Beloved Son
 
-[![My Beloved Son](/February/jpgs/Day054.jpg)](https://youtu.be/aNLTmtYzma0 "My Beloved Son")
+[![My Beloved Son](February/jpgs/Day054.jpg)](https://youtu.be/aNLTmtYzma0 "My Beloved Son")
 
 ##### AI-Generated Summary: The Strength Found in Baptism
 
@@ -2136,7 +2136,7 @@ By thus returning to the grace of our initiation, we stand firm, equipped to fac
 
 ##### Water Into Wine
 
-[![Water Into Wine](/February/jpgs/Day055.jpg)](https://youtu.be/o-KP7TP9JaY "Water Into Wine")
+[![Water Into Wine](February/jpgs/Day055.jpg)](https://youtu.be/o-KP7TP9JaY "Water Into Wine")
 
 ##### AI-Generated Summary: The First Sign and Mary's Unfolding Role
 
@@ -2161,7 +2161,7 @@ Mary stands before us as the perfect disciple – faithful, obedient, growing in
 
 ##### Good News
 
-[![Good News](/February/jpgs/Day056.jpg)](https://youtu.be/rwSRDiElWMQ "Good News")
+[![Good News](February/jpgs/Day056.jpg)](https://youtu.be/rwSRDiElWMQ "Good News")
 
 ##### AI-Generated Summary: The Kingdom Arrives
 
@@ -2178,7 +2178,7 @@ Behold, Jesus steps into Galilee, and His message rings out: "The time is fulfil
 
 ##### Let's Step Away
 
-[![Let's Step Away](/February/jpgs/Day057.jpg)](https://youtu.be/8AN6TrNBuUs "Let's Step Away")
+[![Let's Step Away](February/jpgs/Day057.jpg)](https://youtu.be/8AN6TrNBuUs "Let's Step Away")
 
 ##### AI-Generated Summary: Seeing by True Light
 
@@ -2200,7 +2200,7 @@ Just as one must leave the city's glare and ascend to a higher, darker place to 
 
 ##### Creativity of Love
 
-[![Creativity of Love](/February/jpgs/Day058.jpg)](https://youtu.be/TFXuCOuK7LI "Creativity of Love")
+[![Creativity of Love](February/jpgs/Day058.jpg)](https://youtu.be/TFXuCOuK7LI "Creativity of Love")
 
 ##### AI-Generated Summary: The Ingenuity of Divine Love
 
@@ -2216,7 +2216,7 @@ Let us consider the matter of prayer, that quiet turning of the soul toward the 
 
 ##### The Nature of Sin
 
-[![The Nature of Sin](/February/jpgs/Day059.jpg)](https://youtu.be/dSOBgpW1kM4 "The Nature of Sin")
+[![The Nature of Sin](February/jpgs/Day059.jpg)](https://youtu.be/dSOBgpW1kM4 "The Nature of Sin")
 
 ##### AI-Generated Summary A Pondering on Pain and Prodigals
 
@@ -2350,7 +2350,7 @@ RIAY March 2025
 
 ##### Effects of Sin
 
-[![Effects of Sin](/March/jpgs/Day060.jpg)](https://youtu.be/4acY2UUFnkM "Effects of Sin")
+[![Effects of Sin](March/jpgs/Day060.jpg)](https://youtu.be/4acY2UUFnkM "Effects of Sin")
 
 ##### AI-Generated Summary: The Weight of Sin and the Love that Bears It
 
@@ -2366,7 +2366,7 @@ RIAY March 2025
 
 ##### You Are Beloved
 
-[![You Are Beloved](/March/jpgs/Day061.jpg)](https://youtu.be/DWAyh_NBxig "You Are Beloved")
+[![You Are Beloved](March/jpgs/Day061.jpg)](https://youtu.be/DWAyh_NBxig "You Are Beloved")
 
 ##### AI-Generated Summary: The Thorn-Crown, the Prodigal, and Our True Name
 
@@ -2388,7 +2388,7 @@ Through prayer, framed by the Sign of the Cross and the hallowed words of Our Fa
 
 ##### He Meets Us
 
-[![He Meets Us](/March/jpgs/Day062.jpg)](https://youtu.be/hkBJF6EpEKs "He Meets Us")
+[![He Meets Us](March/jpgs/Day062.jpg)](https://youtu.be/hkBJF6EpEKs "He Meets Us")
 
 ##### AI-Generated Summary: On Prayer Burden and the Father's Delight
 
@@ -2408,7 +2408,7 @@ Let us consider, if you will, how prayer and quiet reflection might serve as a c
 
 ##### Even Unto Death
 
-[![Even Unto Death](/March/jpgs/Day063.jpg)](https://youtu.be/jFRgcmuS2G8 "Even Unto Death")
+[![Even Unto Death](March/jpgs/Day063.jpg)](https://youtu.be/jFRgcmuS2G8 "Even Unto Death")
 
 ##### AI-Generated Summary The Cross and God's Astonishing Pursuit
 
@@ -2433,7 +2433,7 @@ So, the cross is not merely a historical event, but a perpetual revelation of Go
 
 ##### Christ is Risen
 
-[![Christ is Risen](/March/jpgs/Day064.jpg)](https://youtu.be/ukldEFtB6sE "Christ is Risen")
+[![Christ is Risen](March/jpgs/Day064.jpg)](https://youtu.be/ukldEFtB6sE "Christ is Risen")
 
 ##### AI-Generated Summary: The Unconquerable Light of Easter
 
@@ -2457,7 +2457,7 @@ This hope is the foundation upon which we stand, and from which our prayers natu
 
 ##### Returning Home
 
-[![Returning Home](/March/jpgs/Day065.jpg)](https://youtu.be/shHa5FsnPEM "Returning Home")
+[![Returning Home](March/jpgs/Day065.jpg)](https://youtu.be/shHa5FsnPEM "Returning Home")
 
 ##### AI-Generated Summary: The King's Return and Our New Access
 
@@ -2480,7 +2480,7 @@ So let us not view the Ascension as a farewell, but as the enthronement of our K
 
 ##### Wait and Pray
 
-[![Wait and Pray](/March/jpgs/Day066.jpg)](https://youtu.be/MoGAbC67sWE "Wait and Pray")
+[![Wait and Pray](March/jpgs/Day066.jpg)](https://youtu.be/MoGAbC67sWE "Wait and Pray")
 
 ##### AI-Generated Summary: The Necessity of the Spirit
 
@@ -2502,7 +2502,7 @@ It would seem that the path deeper into the Divine embrace, and the source of mu
 
 ##### He Has Promised
 
-[![He Has Promised](/March/jpgs/Day067.jpg)](https://youtu.be/krn_lVSmiWc "He Has Promised")
+[![He Has Promised](March/jpgs/Day067.jpg)](https://youtu.be/krn_lVSmiWc "He Has Promised")
 
 ##### AI-Generated Summary: The Sure Hope of Promises Fulfilled
 
@@ -2522,7 +2522,7 @@ Mary's blessedness, born of her belief, is not a private affair; it is a blessin
 
 ##### Fancy Friends
 
-[![Fancy Friends](/March/jpgs/Day068.jpg)](https://youtu.be/hBRgXdvfCbU "Fancy Friends")
+[![Fancy Friends](March/jpgs/Day068.jpg)](https://youtu.be/hBRgXdvfCbU "Fancy Friends")
 
 ##### AI-Generated Summary: Mary Our Queen and Our Access
 
@@ -2544,7 +2544,7 @@ Let us rejoice in this good news! Our Lady, Queen of Heaven and Earth, loves us,
 
 ##### Meditating With The Mysteries - Intro to Phase 3
 
-[![Meditating With The Mysteries - Intro to Phase 3](/March/jpgs/meditating.jpg)](https://youtu.be/IDrilE5sXE8 "Meditating With The Mysteries - Intro to Phase 3")
+[![Meditating With The Mysteries - Intro to Phase 3](March/jpgs/meditating.jpg)](https://youtu.be/IDrilE5sXE8 "Meditating With The Mysteries - Intro to Phase 3")
 
 ##### AI-Generated Summary: The Rosary A Path to Saving Mysteries
 
@@ -2562,7 +2562,7 @@ Let us rejoice in this good news! Our Lady, Queen of Heaven and Earth, loves us,
 
 ##### Nothing is Impossible
 
-[![Nothing is Impossible](/March/jpgs/Day069.jpg)](https://youtu.be/TXCD4f66I6g "Nothing is Impossible")
+[![Nothing is Impossible](March/jpgs/Day069.jpg)](https://youtu.be/TXCD4f66I6g "Nothing is Impossible")
 
 ##### AI-Generated Summary The Practice of Holy Reading
 
@@ -2585,7 +2585,7 @@ Mary's 'yes' is our model. Troubled, questioning, yet ultimately trusting in God
 
 ##### The Faith of Mary
 
-[![The Faith of Mary](/March/jpgs/Day070.jpg)](https://youtu.be/7HD7-y0NIBk "The Faith of Mary")
+[![The Faith of Mary](March/jpgs/Day070.jpg)](https://youtu.be/7HD7-y0NIBk "The Faith of Mary")
 
 ##### AI-Generated Summary: Pondering the Visitation
 
@@ -2616,7 +2616,7 @@ Let us, therefore, bring those places where belief is difficult to God, seeking 
 
 ##### Behold God
 
-[![Behold God](/March/jpgs/Day071.jpg)](https://youtu.be/Kubhh7JFEwA "Behold God")
+[![Behold God](March/jpgs/Day071.jpg)](https://youtu.be/Kubhh7JFEwA "Behold God")
 
 ##### AI-Generated Summary The Manger and the Fearless Heart
 
@@ -2638,7 +2638,7 @@ We turn our minds to a quiet contemplation, a Lexio Divina upon the third Joyful
 
 ##### You Don't Wait in Vain
 
-[![You Don't Wait in Vain](/March/jpgs/Day072.jpg)](https://youtu.be/xuih5Y-coWA "You Don't Wait in Vain")
+[![You Don't Wait in Vain](March/jpgs/Day072.jpg)](https://youtu.be/xuih5Y-coWA "You Don't Wait in Vain")
 
 ##### AI-Generated Summary: The Fruit of Patient Waiting
 
@@ -2670,7 +2670,7 @@ The plain fact is this: waiting upon God is never done alone, nor is it ever in 
 
 ##### Seek Him
 
-[![Seek Him](/March/jpgs/Day073.jpg)](https://youtu.be/aHy3ZmgCEsM "Seek Him")
+[![Seek Him](March/jpgs/Day073.jpg)](https://youtu.be/aHy3ZmgCEsM "Seek Him")
 
 ##### AI-Generated Summary: The Boy in the Temple and the Nature of Seeking
 
@@ -2689,7 +2689,7 @@ Consider the peculiar incident of the Boy Jesus, at the tender age of twelve, be
 
 ##### Beloved of the Father
 
-[![Beloved of the Father](/March/jpgs/Day074.jpg)](https://youtu.be/ByEx2pE3s0s "Beloved of the Father")
+[![Beloved of the Father](March/jpgs/Day074.jpg)](https://youtu.be/ByEx2pE3s0s "Beloved of the Father")
 
 ##### AI-Generated Summary: The First Light Baptism and Belonging
 
@@ -2710,7 +2710,7 @@ Herein lies a brief account of a reflection upon the Rosary, that venerable path
 
 ##### Jesus and Mary See You
 
-[![Jesus and Mary See You](/March/jpgs/Day075.jpg)](https://youtu.be/RXTdqCM-bZo "Jesus and Mary See You")
+[![Jesus and Mary See You](March/jpgs/Day075.jpg)](https://youtu.be/RXTdqCM-bZo "Jesus and Mary See You")
 
 ##### AI-Generated Summary: The Best Wine Last
 
@@ -2750,7 +2750,7 @@ Consider the simple, profound matter of prayer and meditation, how it draws one 
 
 ##### The Shepherd is Shepherding
 
-[![The Shepherd is Shepherding](/March/jpgs/Day076.jpg)](https://youtu.be/OapnMaPfpOw "The Shepherd is Shepherding")
+[![The Shepherd is Shepherding](March/jpgs/Day076.jpg)](https://youtu.be/OapnMaPfpOw "The Shepherd is Shepherding")
 
 ##### AI-Generated Summary: The King Has Come
 
@@ -2771,7 +2771,7 @@ This Good News – that the King, the Shepherd, the Healer is present and active
 
 ##### Have No Fear
 
-[![Have No Fear](/March/jpgs/Day077.jpg)](https://youtu.be/HlEfAuKfB80 "Have No Fear")
+[![Have No Fear](March/jpgs/Day077.jpg)](https://youtu.be/HlEfAuKfB80 "Have No Fear")
 
 ##### AI-Generated Summary: The Shining Face and Our Fears
 
@@ -2794,7 +2794,7 @@ This spiritual journey is often supported by the simple, profound rhythm of pray
 
 ##### Given for You
 
-[![Given for You](/March/jpgs/Day078.jpg)](https://youtu.be/57CqoTmAE9g "Given for You")
+[![Given for You](March/jpgs/Day078.jpg)](https://youtu.be/57CqoTmAE9g "Given for You")
 
 ##### AI-Generated Summary: His Body Given For You
 
@@ -2813,7 +2813,7 @@ Here is a brief contemplation on a profound mystery, aimed at deepening our walk
 
 ##### Trust like Jesus
 
-[![Trust like Jesus](/March/jpgs/Day079.jpg)](https://youtu.be/LaPqd-5s4ZM "Trust like Jesus")
+[![Trust like Jesus](March/jpgs/Day079.jpg)](https://youtu.be/LaPqd-5s4ZM "Trust like Jesus")
 
 ##### AI-Generated Summary: The Garden of Trust
 
@@ -2831,7 +2831,7 @@ Consider, if you will, that most profound and sorrowful scene in the Garden of G
 
 ##### His Blood For You
 
-[![His Blood For You](/March/jpgs/Day080.jpg)](https://youtu.be/tO3inM38VZc "His Blood For You")
+[![His Blood For You](March/jpgs/Day080.jpg)](https://youtu.be/tO3inM38VZc "His Blood For You")
 
 ##### AI-Generated Summary: Beholding the Scourged King
 
@@ -2850,7 +2850,7 @@ One seeks, perhaps, a deeper draught from the wellspring of Faith, a truer conve
 
 ##### Behold Your King
 
-[![Behold Your King](/March/jpgs/Day081.jpg)](https://youtu.be/iV-N20c3OGE "Behold Your King")
+[![Behold Your King](March/jpgs/Day081.jpg)](https://youtu.be/iV-N20c3OGE "Behold Your King")
 
 ##### AI-Generated Summary: A Meditation on the Mocked King
 
@@ -2880,7 +2880,7 @@ The aim is to see Jesus not merely as a historical figure, but as the living Kin
 
 ##### Simon's Choice
 
-[![Simon's Choice](/March/jpgs/Day082.jpg)](https://youtu.be/vODOomIH5Sg "Simon's Choice")
+[![Simon's Choice](March/jpgs/Day082.jpg)](https://youtu.be/vODOomIH5Sg "Simon's Choice")
 
 ##### AI-Generated Summary: The Weight and the Will
 
@@ -2900,7 +2900,7 @@ A prayer rises then: for the grace to bear our own crosses in imitation of Him, 
 
 ##### Father Forgive Them
 
-[![Father Forgive Them](/March/jpgs/Day083.jpg)](https://youtu.be/KGatDQdwv9w "Father Forgive Them")
+[![Father Forgive Them](March/jpgs/Day083.jpg)](https://youtu.be/KGatDQdwv9w "Father Forgive Them")
 
 ##### AI-Generated Summary: Encountering Mercy at Calvary
 
@@ -2928,7 +2928,7 @@ Let us consider the path laid out for prayer, beginning with the Rosary, that fa
 
 ##### Do Not Be Afraid
 
-[![Do Not Be Afraid](/March/jpgs/Day084.jpg)](https://youtu.be/3TUyD_QbOnE "Do Not Be Afraid")
+[![Do Not Be Afraid](March/jpgs/Day084.jpg)](https://youtu.be/3TUyD_QbOnE "Do Not Be Afraid")
 
 ##### AI-Generated Summary: Hope and Courage from the Risen Lord
 
@@ -2956,7 +2956,7 @@ In this vital commerce with the Risen Lord, we seek and receive the hope, confid
 
 ##### The Blessing Never Stops
 
-[![The Blessing Never Stops](/March/jpgs/Day085.jpg)](https://youtu.be/IbijJLg53O0 "The Blessing Never Stops")
+[![The Blessing Never Stops](March/jpgs/Day085.jpg)](https://youtu.be/IbijJLg53O0 "The Blessing Never Stops")
 
 ##### AI-Generated Summary: The Perpetual Blessing of the Ascended Lord
 
@@ -2973,7 +2973,7 @@ In this vital commerce with the Risen Lord, we seek and receive the hope, confid
 
 ##### Filled with New Wine
 
-[![Filled with New Wine](/March/jpgs/Day086.jpg)](https://youtu.be/zJVuLwHF0I8 "Filled with New Wine")
+[![Filled with New Wine](March/jpgs/Day086.jpg)](https://youtu.be/zJVuLwHF0I8 "Filled with New Wine")
 
 ##### AI-Generated Summary: The Great Coming of the Spirit
 
@@ -3010,7 +3010,7 @@ We are invited, therefore, to seek this renewal, this filling, in our own lives.
 
 ##### It's All True
 
-[![It's All True](/March/jpgs/Day087.jpg)](https://youtu.be/s6os8_azLQI "It's All True")
+[![It's All True](March/jpgs/Day087.jpg)](https://youtu.be/s6os8_azLQI "It's All True")
 
 ##### AI-Generated Summary The Hope Found in Mary's Assumption
 
@@ -3042,7 +3042,7 @@ Our prayer, then, becomes an act of receiving God's good news, responding with a
 
 ##### The Road of Humility
 
-[![The Road of Humility](/March/jpgs/Day088.jpg)](https://youtu.be/uD_1kQlZ1vg "The Road of Humility")
+[![The Road of Humility](March/jpgs/Day088.jpg)](https://youtu.be/uD_1kQlZ1vg "The Road of Humility")
 
 ##### AI-Generated Summary: The Royal Road of Humility
 
@@ -3065,7 +3065,7 @@ To follow the path walked by the King and the Queen – the path of humility –
 
 ##### Long Desired
 
-[![Long Desired](/March/jpgs/Day089.jpg)](https://youtu.be/bRkqNkKFAkQ "Long Desired")
+[![Long Desired](March/jpgs/Day089.jpg)](https://youtu.be/bRkqNkKFAkQ "Long Desired")
 
 ##### AI-Generated Summary: When the World Held Its Breath
 
@@ -3092,7 +3092,7 @@ This moment, as we reflect upon it, reminds us of humanity's deep, ancient longi
 
 ##### Consoling Mother
 
-[![Consoling Mother](/March/jpgs/Day090.jpg)](https://youtu.be/-ty2ZglS-x8 "Consoling Mother")
+[![Consoling Mother](March/jpgs/Day090.jpg)](https://youtu.be/-ty2ZglS-x8 "Consoling Mother")
 
 ##### AI-Generated Summary A Glimpse into Prayer with Mary
 
@@ -3220,7 +3220,7 @@ RIAY April 2025
 
 ##### Cause For Joy
 
-[![Cause For Joy](/April/jpgs/Day091.jpg)](https://youtu.be/Gq96TC-oQ60 "Cause For Joy")
+[![Cause For Joy](April/jpgs/Day091.jpg)](https://youtu.be/Gq96TC-oQ60 "Cause For Joy")
 
 ##### AI-Generated Summary: Reflecting on the Nativity's Joy with St Leo
 
@@ -3242,7 +3242,7 @@ Finally, we are gently led, hand-in-hand with Our Lady, to pray for the grace to
 
 ##### Waiting in the Temple
 
-[![Waiting in the Temple](/April/jpgs/Day092.jpg)](https://youtu.be/U70TdxWN38A "Waiting in the Temple")
+[![Waiting in the Temple](April/jpgs/Day092.jpg)](https://youtu.be/U70TdxWN38A "Waiting in the Temple")
 
 ##### AI-Generated Summary: Waiting for the Light Simeon's Lesson
 
@@ -3269,7 +3269,7 @@ Let us be grateful for this shared journey and look forward to continuing it tog
 
 ##### Look Like You Love Him
 
-[![Look Like You Love Him](/April/jpgs/Day093.jpg)](https://youtu.be/IZ6f66RmT4c "Look Like You Love Him")
+[![Look Like You Love Him](April/jpgs/Day093.jpg)](https://youtu.be/IZ6f66RmT4c "Look Like You Love Him")
 
 ##### AI-Generated Summary: The Arduous Hunt for the Hidden King
 
@@ -3292,7 +3292,7 @@ The call, then, is to answer that question with a resounding 'Yes' and to seek H
 
 ##### No Doubt
 
-[![No Doubt](/April/jpgs/Day094.jpg)](https://youtu.be/udGTa5JC9Mw "No Doubt")
+[![No Doubt](April/jpgs/Day094.jpg)](https://youtu.be/udGTa5JC9Mw "No Doubt")
 
 ##### AI-Generated Summary: Faith's Certainty at the Jordan
 
@@ -3318,7 +3318,7 @@ Our fitting response is not hesitant questioning, but a full surrender: intellec
 
 ##### Moms are Special
 
-[![Moms are Special](/April/jpgs/Day095.jpg)](https://youtu.be/XLos3uwj4Js "Moms are Special")
+[![Moms are Special](April/jpgs/Day095.jpg)](https://youtu.be/XLos3uwj4Js "Moms are Special")
 
 ##### AI-Generated Summary: The Mother's Plea at Cana
 
@@ -3342,7 +3342,7 @@ Thus, meditating on Cana through the Rosary allows us to glimpse the power of a 
 
 ##### A New Love
 
-[![A New Love](/April/jpgs/Day096.jpg)](https://youtu.be/9Q_YnIxbPrg "A New Love")
+[![A New Love](April/jpgs/Day096.jpg)](https://youtu.be/9Q_YnIxbPrg "A New Love")
 
 ##### AI-Generated Summary: The Kingdom and the New Law of Love
 
@@ -3360,7 +3360,7 @@ Think of it thus: a new Kingdom requires a new law, and this law, unlike the old
 
 ##### Climb the Mountain
 
-[![Climb the Mountain](/April/jpgs/Day097.jpg)](https://youtu.be/6sKvRFzo8vw "Climb the Mountain")
+[![Climb the Mountain](April/jpgs/Day097.jpg)](https://youtu.be/6sKvRFzo8vw "Climb the Mountain")
 
 ##### AI-Generated Summary A Gentle Ascent
 
@@ -3385,7 +3385,7 @@ And often, the most practical way to take that next step, right here and now, is
 
 ##### An Abyss of Love
 
-[![An Abyss of Love](/April/jpgs/Day098.jpg)](https://youtu.be/lZlrhf3RAqI "An Abyss of Love")
+[![An Abyss of Love](April/jpgs/Day098.jpg)](https://youtu.be/lZlrhf3RAqI "An Abyss of Love")
 
 ##### AI-Generated Summary: The Abyss of Love and the Gift
 
@@ -3403,7 +3403,7 @@ The heart of our meditation rests upon words God spoke to her soul, revealing th
 
 ##### Stay in Dialogue
 
-[![Stay in Dialogue](/April/jpgs/Day099.jpg)](https://youtu.be/j_SLDYjpCKc "Stay in Dialogue")
+[![Stay in Dialogue](April/jpgs/Day099.jpg)](https://youtu.be/j_SLDYjpCKc "Stay in Dialogue")
 
 ##### AI-Generated Summary: On Facing the Shadow
 
@@ -3423,7 +3423,7 @@ This is the lesson from Gethsemane and from the cliff edge alike: acknowledge th
 
 ##### Always Her Son
 
-[![Always Her Son](/April/jpgs/Day100.jpg)](https://youtu.be/BCNG7KuVc3A "Always Her Son")
+[![Always Her Son](April/jpgs/Day100.jpg)](https://youtu.be/BCNG7KuVc3A "Always Her Son")
 
 ##### AI-Generated Summary: A Glimpse into the Scourging with St Bridget
 
@@ -3453,7 +3453,7 @@ Let us remain awhile in this contemplation, beholding the innocent, scourged Lor
 
 ##### Glory and Indignity
 
-[![Glory and Indignity](/April/jpgs/Day101.jpg)](https://youtu.be/DMEabT65dsI "Glory and Indignity")
+[![Glory and Indignity](April/jpgs/Day101.jpg)](https://youtu.be/DMEabT65dsI "Glory and Indignity")
 
 ##### AI-Generated Summary: The Indignity of Thorns
 
@@ -3471,7 +3471,7 @@ Consider, if you will, that stark scene: the Crowning with Thorns, the third sor
 
 ##### Carried with Love
 
-[![Carried with Love](/April/jpgs/Day102.jpg)](https://youtu.be/kqQa2SSSJnM "Carried with Love")
+[![Carried with Love](April/jpgs/Day102.jpg)](https://youtu.be/kqQa2SSSJnM "Carried with Love")
 
 ##### AI-Generated Summary: The Burden and the Throne
 
@@ -3492,7 +3492,7 @@ The session, after dwelling on this transforming truth, grounded itself in the f
 
 ##### Pilgrimage of Faith
 
-[![Pilgrimage of Faith](/April/jpgs/Day103.jpg)](https://youtu.be/ZWCBK7gr0VU "Pilgrimage of Faith")
+[![Pilgrimage of Faith](April/jpgs/Day103.jpg)](https://youtu.be/ZWCBK7gr0VU "Pilgrimage of Faith")
 
 ##### AI-Generated Summary: Mary's Pilgrimage of Faith: Contemplating the Fifth Sorrowful Mystery
 
@@ -3516,7 +3516,7 @@ In essence, this meditation offers a profound reflection on the Fifth Sorrowful 
 
 ##### Where is Your Sting?
 
-[![Where is Your Sting?](/April/jpgs/Day104.jpg)](https://youtu.be/VCzXwTJfet4 "Where is Your Sting?")
+[![Where is Your Sting?](April/jpgs/Day104.jpg)](https://youtu.be/VCzXwTJfet4 "Where is Your Sting?")
 
 ##### AI-Generated Summary: Homily on the Resurrection
 
@@ -3549,7 +3549,7 @@ Father Mark Mary guides listeners to apply the homily's teachings to their own l
 
 ##### Love Draws Us Up
 
-[![Love Draws Us Up](/April/jpgs/Day105.jpg)](https://youtu.be/KhFM9KUA-PY "Love Draws Us Up")
+[![Love Draws Us Up](April/jpgs/Day105.jpg)](https://youtu.be/KhFM9KUA-PY "Love Draws Us Up")
 
 ##### AI-Generated Summary: The Ascension and the Longing for Heaven
 
@@ -3559,7 +3559,7 @@ Day 105 of the Rosary in a Year podcast focuses on the Second Glorious Mystery, 
 
 ##### He Sends His Spirit
 
-[![He Sends His Spirit](/April/jpgs/Day106.jpg)](https://youtu.be/T3Fr93UZvgQ "He Sends His Spirit")
+[![He Sends His Spirit](April/jpgs/Day106.jpg)](https://youtu.be/T3Fr93UZvgQ "He Sends His Spirit")
 
 ##### AI-Generated Summary: The Hidden Power and Divinity of the Holy Spirit
 
@@ -3574,7 +3574,7 @@ This acknowledgment involves recognizing the Spirit's constant, often unseen, wo
 
 ##### Beauty Which Never Fades
 
-[![Beauty Which Never Fades](/April/jpgs/Day107.jpg)](https://youtu.be/tT6OpDXTALQ "Beauty Which Never Fades")
+[![Beauty Which Never Fades](April/jpgs/Day107.jpg)](https://youtu.be/tT6OpDXTALQ "Beauty Which Never Fades")
 
 ##### AI-Generated Summary: Meditating on Mary's Assumption with Fulton Sheen
 
@@ -3610,7 +3610,7 @@ The session incorporated recitations of the Hail Mary and Glory Be prayers, conc
 
 ##### Heights of Holiness
 
-[![Heights of Holiness](/April/jpgs/Day108.jpg)](https://youtu.be/uXvW2KhbtIk "Heights of Holiness")
+[![Heights of Holiness](April/jpgs/Day108.jpg)](https://youtu.be/uXvW2KhbtIk "Heights of Holiness")
 
 ##### AI-Generated Summary: Meditation on Mary's Queenship and Doing God's Will
 
@@ -3647,7 +3647,7 @@ The text concludes by mentioning the recitation of specific prayers like the Hai
 
 ##### The Gift of Wonder
 
-[![The Gift of Wonder](/April/jpgs/Day109.jpg)](https://youtu.be/cDUm_kvTXv0 "The Gift of Wonder")
+[![The Gift of Wonder](April/jpgs/Day109.jpg)](https://youtu.be/cDUm_kvTXv0 "The Gift of Wonder")
 
 ##### AI-Generated Summary: The Wonder of the Annunciation
 
@@ -3666,7 +3666,7 @@ The text concludes by mentioning the recitation of specific prayers like the Hai
 
 ##### Greater Seeks Lesser
 
-[![Greater Seeks Lesser](/April/jpgs/Day110.jpg)](https://youtu.be/IlTUSj4LF1s "Greater Seeks Lesser")
+[![Greater Seeks Lesser](April/jpgs/Day110.jpg)](https://youtu.be/IlTUSj4LF1s "Greater Seeks Lesser")
 
 ##### AI-Generated Summary: The Visitation, Humility, and the Pursuit of Grace
 
@@ -3686,7 +3686,7 @@ Woven throughout are the familiar refrains of the Hail Mary and Glory Be, culmin
 
 ##### Manifest in Humility
 
-[![Manifest in Humility](/April/jpgs/Day111.jpg)](https://youtu.be/rT4GNSQ4fHo "Manifest in Humility")
+[![Manifest in Humility](April/jpgs/Day111.jpg)](https://youtu.be/rT4GNSQ4fHo "Manifest in Humility")
 
 ##### AI-Generated Summary: The Nativity's Astonishing Paradox
 
@@ -3704,7 +3704,7 @@ Let us ponder the Nativity, guided by the wisdom of St. Bernard. The heart of th
 
 ##### All My Time is Free
 
-[![All My Time is Free](/April/jpgs/Day112.jpg)](https://youtu.be/n960q_PL9-M "All My Time is Free")
+[![All My Time is Free](April/jpgs/Day112.jpg)](https://youtu.be/n960q_PL9-M "All My Time is Free")
 
 ##### AI-Generated Summary: Mary's Renewed Fiat: A Sacrifice of Love
 
@@ -3726,7 +3726,7 @@ Yet, like Mary, we are called to seek wisdom, prudence, and courage, freely reaf
 
 ##### Spoiler Alert
 
-[![Spoiler Alert](/April/jpgs/Day113.jpg)](https://youtu.be/bWAZ5VUU3sY "Spoiler Alert")
+[![Spoiler Alert](April/jpgs/Day113.jpg)](https://youtu.be/bWAZ5VUU3sY "Spoiler Alert")
 
 ##### AI-Generated Summary: The Boy in the Temple
 
@@ -3744,7 +3744,7 @@ St. Cyril emphasizes the unfolding nature of this revelation. Even Mary and Jose
 
 ##### Baptized with Him
 
-[![Baptized with Him](/April/jpgs/Day114.jpg)](https://youtu.be/34FEBKz2nGY "Baptized with Him")
+[![Baptized with Him](April/jpgs/Day114.jpg)](https://youtu.be/34FEBKz2nGY "Baptized with Him")
 
 ##### AI-Generated Summary: The Opened Heavens and Our Way In
 
@@ -3773,7 +3773,7 @@ Let us continue this journey together, step by step. God bless you.
 
 ##### Wedding of the Lamb
 
-[![Wedding of the Lamb](/April/jpgs/Day115.jpg)](https://youtu.be/ETjNvvTxQSQ "Wedding of the Lamb")
+[![Wedding of the Lamb](April/jpgs/Day115.jpg)](https://youtu.be/ETjNvvTxQSQ "Wedding of the Lamb")
 
 ##### AI-Generated Summary: Wedding Feast of The Divine Bridegroom
 
@@ -3811,7 +3811,7 @@ And so, when we pray – reciting the familiar words of the Our Father, the Hail
 
 ##### Continued Through You
 
-[![Continued Through You](/April/jpgs/Day116.jpg)](https://youtu.be/JQzrZo1nR1k "Continued Through You")
+[![Continued Through You](April/jpgs/Day116.jpg)](https://youtu.be/JQzrZo1nR1k "Continued Through You")
 
 ##### AI-Generated Summary: The Indwelling Kingdom and the Call to Conversion
 
@@ -3829,7 +3829,7 @@ Finally, as all earthly communions must end, so too does this prayer. Yet, the s
 
 ##### Come Down, Peter
 
-[![Come Down, Peter](/April/jpgs/Day117.jpg)](https://youtu.be/aIykzO2OBvg "Come Down, Peter")
+[![Come Down, Peter](April/jpgs/Day117.jpg)](https://youtu.be/aIykzO2OBvg "Come Down, Peter")
 
 ##### AI-Generated Summary: The Transfiguration and the Call to Active Charity
 
@@ -3849,7 +3849,7 @@ Like Peter yearning for the mountaintop tranquility with Christ, we are often te
 
 ##### Partake of God
 
-[![Partake of God](/April/jpgs/Day118.jpg)](https://youtu.be/p0XOixAacvA "Partake of God")
+[![Partake of God](April/jpgs/Day118.jpg)](https://youtu.be/p0XOixAacvA "Partake of God")
 
 ##### AI-Generated Summary: The Eucharist as Divine Gift and Transformation
 
@@ -3865,7 +3865,7 @@ We are called to praise Jesus for this extraordinary gift and to seek the grace 
 
 ##### Till The End
 
-[![Till The End](/April/jpgs/Day119.jpg)](https://youtu.be/-_Wcmz3mmHE "Till The End")
+[![Till The End](April/jpgs/Day119.jpg)](https://youtu.be/-_Wcmz3mmHE "Till The End")
 
 ##### AI-Generated Summary: Love to the End: A Meditation on the Agony in the Garden
 
@@ -3883,7 +3883,7 @@ Finally, with a spirit of shared devotion, gratitude is expressed for the commun
 
 ##### Be the One
 
-[![Be the One](/April/jpgs/Day120.jpg)](https://youtu.be/hacnsn_onus "Be the One")
+[![Be the One](April/jpgs/Day120.jpg)](https://youtu.be/hacnsn_onus "Be the One")
 
 ##### AI-Generated Summary: The Deeper Scourging
 
@@ -3963,7 +3963,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
   - [AI-Generated Summary: The Mystery and Majesty of Christ’s Baptism in a 16th-Century Fresco](#ai-generated-summary-the-mystery-and-majesty-of-christs-baptism-in-a-16th-century-fresco)
 - [May 15,2025](#may-152025)
   - [Miracles of Love](#miracles-of-love)
-  - [AI-Generated Summary: Reflections on Carl Bloch’s _The Wedding at Cana_ and the Quiet Miracles of Christ](#ai-generated-summary-reflections-on-carl-blochs-the-wedding-at-cana-and-the-quiet-miracles-of-christ)
+  - [AI-Generated Summary: Reflections on Carl Bloch’s The Wedding at Cana and the Quiet Miracles of Christ](#ai-generated-summary-reflections-on-carl-blochs-the-wedding-at-cana-and-the-quiet-miracles-of-christ)
 
 <!-- tocstop -->
 
@@ -3975,7 +3975,7 @@ RIAY May 2025
 
 ##### The Cost of Compromise
 
-[![The Cost of Compromise](/May/jpgs/Day121.jpg)](https://youtu.be/qJmcYkPMFbE "The Cost of Compromise")
+[![The Cost of Compromise](May/jpgs/Day121.jpg)](https://youtu.be/qJmcYkPMFbE "The Cost of Compromise")
 
 ##### AI-Generated Summary: The Terrible Price of Compromise
 
@@ -3997,7 +3997,7 @@ Let this reflection, then, serve not as condemnation, but as a bracing call. Let
 
 ##### Trophy of Victory
 
-[![Trophy of Victory](/May/jpgs/Day122.jpg)](https://youtu.be/Pc612AjmefY "Trophy of Victory")
+[![Trophy of Victory](May/jpgs/Day122.jpg)](https://youtu.be/Pc612AjmefY "Trophy of Victory")
 
 ##### AI-Generated Summary: The Victory of the Cross in Suffering
 
@@ -4023,7 +4023,7 @@ In brief: the cross is both burden and beacon—a call to carry our trials with 
 
 ##### She Magnifies Him
 
-[![She Magnifies Him](/May/jpgs/Day123.jpg)](https://youtu.be/t6Ezkng0Oi0 "She Magnifies Him")
+[![She Magnifies Him](May/jpgs/Day123.jpg)](https://youtu.be/t6Ezkng0Oi0 "She Magnifies Him")
 
 ##### AI-Generated Summary: A Meditation on Mary's Sorrow at the Cross
 
@@ -4039,7 +4039,7 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 
 ##### Newness of Life
 
-[![Newness of Life](/May/jpgs/Day124.jpg)](https://youtu.be/Ag6z84FiECw "Newness of Life")
+[![Newness of Life](May/jpgs/Day124.jpg)](https://youtu.be/Ag6z84FiECw "Newness of Life")
 
 ##### AI-Generated Summary: Spiritual Renewal and the Power of Baptism in Christian Life
 
@@ -4057,7 +4057,7 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 
 ##### Hold Fast to Christ
 
-[![Hold Fast to Christ](/May/jpgs/Day125.jpg)](https://youtu.be/nBEGxYpYNhU "Hold Fast to Christ")
+[![Hold Fast to Christ](May/jpgs/Day125.jpg)](https://youtu.be/nBEGxYpYNhU "Hold Fast to Christ")
 
 ##### AI-Generated Summary: The Path of Charity and Spiritual Ascent
 
@@ -4095,7 +4095,7 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 
 ##### Fire of Love
 
-[![Fire of Love](/May/jpgs/Day126.jpg)](https://youtu.be/qxaYV7coMc0 "Fire of Love")
+[![Fire of Love](May/jpgs/Day126.jpg)](https://youtu.be/qxaYV7coMc0 "Fire of Love")
 
 ##### AI-Generated Summary: The Holy Spirit and the Fire of Divine Love
 
@@ -4111,7 +4111,7 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 
 ##### Reunion into Heaven
 
-[![Reunion into Heaven](/May/jpgs/Day127.jpg)](https://youtu.be/6YEbCBh7tjg "Reunion into Heaven")
+[![Reunion into Heaven](May/jpgs/Day127.jpg)](https://youtu.be/6YEbCBh7tjg "Reunion into Heaven")
 
 ##### AI-Generated Summary: The Joy of Heavenly Reunion and Earthly Devotion
 
@@ -4133,7 +4133,7 @@ _Concision note: Lewis’s style favors clarity and vivid imagery, here applied 
 
 ##### Queen of Angels
 
-[![Queen of Angels](/May/jpgs/Day128.jpg)](https://youtu.be/CFx5VMgBmZo "Queen of Angels")
+[![Queen of Angels](May/jpgs/Day128.jpg)](https://youtu.be/CFx5VMgBmZo "Queen of Angels")
 
 ##### AI-Generated Summary: Mary as Queen of Angels and Mother of Divine Grace
 
@@ -4169,7 +4169,7 @@ _Summary retains the theological depth and lyrical clarity characteristic of Lew
 
 ##### A Disposition of Reverence
 
-[![A Disposition of Reverence](/May/jpgs/Day129.jpg)](https://youtu.be/jze1CWoM1C4 "A Disposition of Reverence")
+[![A Disposition of Reverence](May/jpgs/Day129.jpg)](https://youtu.be/jze1CWoM1C4 "A Disposition of Reverence")
 
 ##### AI-Generated Summary: Deepening Devotion Through Sacred Art and Prayer
 
@@ -4213,7 +4213,7 @@ Fra Angelico’s humility (as noted by Vasari) mirrors the text’s call to quie
 
 ##### Joy in the Darkness
 
-[![Joy in the Darkness](/May/jpgs/Day130.jpg)](https://youtu.be/7dScG5-xco8 "Joy in the Darkness")
+[![Joy in the Darkness](May/jpgs/Day130.jpg)](https://youtu.be/7dScG5-xco8 "Joy in the Darkness")
 
 ##### AI-Generated Summary: Rembrandt’s The Visitation and the Divine Light of Shared Faith
 
@@ -4254,7 +4254,7 @@ In _The Visitation_, Rembrandt distills a moment where heaven touches earth, and
 
 ##### Worship and Warmth
 
-[![Worship and Warmth](/May/jpgs/Day131.jpg)](https://youtu.be/Q9IPhitx20M "Worship and Warmth")
+[![Worship and Warmth](May/jpgs/Day131.jpg)](https://youtu.be/Q9IPhitx20M "Worship and Warmth")
 
 ##### AI-Generated Summary: A Meditation on Pellegrini’s Nativity and the Adoration of the Christ Child
 
@@ -4280,7 +4280,7 @@ _Conciseness note: Repetitive prayers and promotional phrasing omitted; focus re
 
 ##### Eyes on Jesus
 
-[![Eyes on Jesus](/May/jpgs/Day132.jpg)](https://youtu.be/pyNEt5taMiY "Eyes on Jesus")
+[![Eyes on Jesus](May/jpgs/Day132.jpg)](https://youtu.be/pyNEt5taMiY "Eyes on Jesus")
 
 ##### AI-Generated Summary: A Reflection on Campy’s Fresco and the Devotion of Mary
 
@@ -4307,7 +4307,7 @@ _Blessed art thou among women... pray for us sinners._
 
 ##### Respond with Grace
 
-[![Respond with Grace](/May/jpgs/Day133.jpg)](https://youtu.be/CMFHSTQH9y0 "Respond with Grace")
+[![Respond with Grace](May/jpgs/Day133.jpg)](https://youtu.be/CMFHSTQH9y0 "Respond with Grace")
 
 ##### AI-Generated Summary: A Mosaic of Divine Encounter and Human Response
 
@@ -4331,7 +4331,7 @@ _Key traits of Lewis’s style applied:_
 
 ##### Shadow of the Cross
 
-[![Shadow of the Cross](/May/jpgs/Day134.jpg)](https://youtu.be/ImYrfQW_zMI "Shadow of the Cross")
+[![Shadow of the Cross](May/jpgs/Day134.jpg)](https://youtu.be/ImYrfQW_zMI "Shadow of the Cross")
 
 ##### AI-Generated Summary: The Mystery and Majesty of Christ’s Baptism in a 16th-Century Fresco
 
@@ -4349,9 +4349,9 @@ _Note: The summary adheres to Lewis’s style—lucid, rhythmic, and layered wit
 
 ##### Miracles of Love
 
-[![Miracles of Love](/May/jpgs/Day135.jpg)](https://youtu.be/lwBW25fFb2c "Miracles of Love")
+[![Miracles of Love](May/jpgs/Day135.jpg)](https://youtu.be/lwBW25fFb2c "Miracles of Love")
 
-##### AI-Generated Summary: Reflections on Carl Bloch’s _The Wedding at Cana_ and the Quiet Miracles of Christ
+##### AI-Generated Summary: Reflections on Carl Bloch’s The Wedding at Cana and the Quiet Miracles of Christ
 
 Carl Bloch’s _The Wedding at Cana_ captures a moment of divine humility. Painted in the classical realism style, the scene unfolds beneath a grand archway, where servants gasp as water turns to wine in their pitchers. Yet the true focus lies elsewhere: Jesus sits quietly at the banquet table beside Mary, unnoticed by the bride and groom. His miracle is not for spectacle but for love—a theme woven through his acts of healing and provision.
 

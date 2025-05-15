@@ -20,11 +20,11 @@
 
 ### Rosary In a Year Prayer Plan
 
-[Rosary in a Year Prayer Plan](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/Rosary_in_a_Year_Prayer_Plan.pdf)
+[Rosary in a Year Prayer Plan](/Rosary_in_a_Year_Prayer_Plan.pdf)
 
 ### Preparing for Rosary In a Year Podcast
 
-[![Preparing for Rosary in a Year Podcast w/ Fr. Mark-Mary (+ Special Guest Fr. Mike Schmitz!)](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/Podcast.jpg)](https://youtu.be/kTKyflR2H-Q "Preparing for Rosary in a Year Podcast w/ Fr. Mark-Mary (+ Special Guest Fr. Mike Schmitz!)")
+[![Preparing for Rosary in a Year Podcast w/ Fr. Mark-Mary (+ Special Guest Fr. Mike Schmitz!)](/Podcast.jpg)](https://youtu.be/kTKyflR2H-Q "Preparing for Rosary in a Year Podcast w/ Fr. Mark-Mary (+ Special Guest Fr. Mike Schmitz!)")
 
 ### AI-Generated Summary: A Journey into Deeper Prayer
 
@@ -50,7 +50,7 @@ We give thanks for your presence on this path and look forward to praying with y
 
 ### The Rosary Has Changed History—And It Will Again
 
-[![The Rosary Has Changed History—And It Will Again](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/History.jpg)](https://youtu.be/exy8-Ffbls4 "The Rosary Has Changed History — And It Will Again")
+[![The Rosary Has Changed History—And It Will Again](/History.jpg)](https://youtu.be/exy8-Ffbls4 "The Rosary Has Changed History — And It Will Again")
 
 ### AI-Generated Summary The Rosary A Timeless Weapon
 
@@ -69,7 +69,7 @@ So, let us not underestimate the power of this quiet devotion. Let us take up th
 
 ### How to Pray the Rosary Like Never Before
 
-[![How to Pray the Rosary Like Never Before (+ NEW Podcast)](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/HowToPray.jpg)](https://youtu.be/JjWRqYt1ljQ "How to Pray the Rosary Like Never Before (+ NEW Podcast)")
+[![How to Pray the Rosary Like Never Before (+ NEW Podcast)](/HowToPray.jpg)](https://youtu.be/JjWRqYt1ljQ "How to Pray the Rosary Like Never Before (+ NEW Podcast)")
 
 ### AI-Generated Summary: The Pilgrim's Stumble and the Gentle Path
 
@@ -93,7 +93,7 @@ To aid pilgrims on this journey, a year-long program is announced for 2025. It i
 
 ### Forming the Relationship
 
-[![Forming The Relationship - Intro to Phase 1 of the Rosary in a Year Podcast](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/forming.jpg)](https://youtu.be/785cmjJBqvI "Forming The Relationship - Intro to Phase 1 of the Rosary in a Year Podcast")
+[![Forming The Relationship - Intro to Phase 1 of the Rosary in a Year Podcast](/forming.jpg)](https://youtu.be/785cmjJBqvI "Forming The Relationship - Intro to Phase 1 of the Rosary in a Year Podcast")
 
 ### AI-Generated Summary: The Practice of the Soul's Conversation
 

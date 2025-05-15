@@ -15,7 +15,7 @@ readonly ERR_INPUT_FILE=1
 readonly ERR_DEPENDENCY=2
 readonly ERR_GENERATION=3
 readonly ERR_INVALID_ARG=4
-readonly ERR_REWRITE_LINKS=5
+#readonly ERR_REWRITE_LINKS=5
 
 # Source lib/require.sh from same directory as script
 source "${SCRIPT_DIR}/lib/require.sh"
@@ -119,9 +119,9 @@ main() {
     exit ${ERR_GENERATION}
   fi
 
-  if ! ./rewritelinks.py --abs-to-gh-markdown -- README.md; then
-    exit ${ERR_REWRITE_LINKS}
-  fi
+  #  if ! ./rewritelinks.py --abs-to-gh-markdown -- README.md; then
+  #   exit ${ERR_REWRITE_LINKS}
+  #fi
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

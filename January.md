@@ -139,7 +139,7 @@ RIAY January 2025
 
 ### Responding to God
 
-[![Responding to God](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day001.jpg)](https://youtu.be/PesisPSBosg "Responding to God")
+[![Responding to God](/January/jpgs/Day001.jpg)](https://youtu.be/PesisPSBosg "Responding to God")
 
 ### ROSARY IN A YEAR DAY 01 Michelle Jackson
 
@@ -201,7 +201,7 @@ While the provided text doesn't contain direct quotes, several insightful concep
 
 ### The King Knows You
 
-[![The King Knows You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day002.jpg)](https://youtu.be/lW9LA2uYhp0 "The King Knows You")
+[![The King Knows You](/January/jpgs/Day002.jpg)](https://youtu.be/lW9LA2uYhp0 "The King Knows You")
 
 ### ROSARY IN A YEAR DAY 02 Michelle Jackson
 
@@ -289,7 +289,7 @@ Notable insights from this segment include the reframing of litanies as poetic e
 
 ### Heart of Jesus
 
-[![Heart of Jesus](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day003.jpg)](https://youtu.be/KiLJc32YPKg "Heart of Jesus")
+[![Heart of Jesus](/January/jpgs/Day003.jpg)](https://youtu.be/KiLJc32YPKg "Heart of Jesus")
 
 ### RIAY Day 3 Heart of Jesus Michael Eltham
 
@@ -339,7 +339,7 @@ Notable insights include the analogy of learning in a woodshop with Jesus, highl
 
 ### Prayer With Mercy
 
-[![Prayer With Mercy](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day004.jpg)](https://youtu.be/ZeY21DCQZzI "Prayer With Mercy")
+[![Prayer With Mercy](/January/jpgs/Day004.jpg)](https://youtu.be/ZeY21DCQZzI "Prayer With Mercy")
 
 ### RIAY Day 4/ 04- 01- 2025
 
@@ -383,7 +383,7 @@ Mary, reflecting Jesus, the "sun of righteousness," is seen as the Mirror of Jus
 
 ### A Garden of Rest
 
-[![A Garden of Rest](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day005.jpg)](https://youtu.be/IhrhpVelcbc "A Garden of Rest")
+[![A Garden of Rest](/January/jpgs/Day005.jpg)](https://youtu.be/IhrhpVelcbc "A Garden of Rest")
 
 ### ROSARY IN A YEAR DAY 5 - A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson
 
@@ -418,7 +418,7 @@ The reflection emphasizes the transformative power of the rosary, shifting it fr
 
 ### Prayer is a Battle
 
-[![Prayer is a Battle](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day006.jpg)](https://youtu.be/UTyod-E1AHA "Prayer is a Battle")
+[![Prayer is a Battle](/January/jpgs/Day006.jpg)](https://youtu.be/UTyod-E1AHA "Prayer is a Battle")
 
 ### ROSARY IN A YEAR DAY 6 - PRAYER IS A BATTLE - Michelle Jackson
 
@@ -454,7 +454,7 @@ Prayer is not simply a passive reception of grace, but an active, determined str
 
 ### Grace Will Overflow
 
-[![Grace Will Overflow](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day007.jpg)](https://youtu.be/Yz2_NEmpF-c "Grace Will Overflow")
+[![Grace Will Overflow](/January/jpgs/Day007.jpg)](https://youtu.be/Yz2_NEmpF-c "Grace Will Overflow")
 
 ### ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson
 
@@ -479,7 +479,7 @@ This episode explores the power of the rosary as a conduit of grace for personal
 
 ### Biblical Roots of the Rosary
 
-[![Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/biblicalroots.jpg)](https://youtu.be/8Vv86L0uhco "Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast")
+[![Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast](/January/jpgs/biblicalroots.jpg)](https://youtu.be/8Vv86L0uhco "Biblical Roots of the Rosary - Intro to Phase 2 of the Rosary in a Year Podcast")
 
 ### AI-Generated Summary: Returning Home Through Scripture and Tradition
 
@@ -515,7 +515,7 @@ This testimony highlights how Scripture and Catholic tradition can work together
 
 ### Our Father in Heaven
 
-[![Our Father in Heaven](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day008.jpg)](https://youtu.be/WOaecrQZS5s "Our Father in Heaven")
+[![Our Father in Heaven](/January/jpgs/Day008.jpg)](https://youtu.be/WOaecrQZS5s "Our Father in Heaven")
 
 ### ROSARY IN A YEAR DAY 08 - "OUR FATHER IN HEAVEN" Michelle Jackson
 
@@ -535,7 +535,7 @@ The episode includes the recitation of the Our Father, three Hail Marys, and the
 
 ### Thy Will Be Done
 
-[![Thy Will Be Done](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day009.jpg)](https://youtu.be/gnkxlNFBGcs "Thy Will Be Done")
+[![Thy Will Be Done](/January/jpgs/Day009.jpg)](https://youtu.be/gnkxlNFBGcs "Thy Will Be Done")
 
 ROSARY IN A YEAR Day 09 - "THY WILL BE DONE" Michelle Jackson
 
@@ -572,7 +572,7 @@ This reflection explores how to live out the prayer "Thy kingdom come, thy will 
 
 ### Daily Bread
 
-[![Daily Bread](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day010.jpg)](https://youtu.be/5j0Q_eP-ec0 "Daily Bread")
+[![Daily Bread](/January/jpgs/Day010.jpg)](https://youtu.be/5j0Q_eP-ec0 "Daily Bread")
 
 ### ROSARY IN A YEAR DAY 10 - " DAILY BREAD" Michelle Jackson
 
@@ -617,7 +617,7 @@ Anxiety about the future is countered by understanding that God provides specifi
 
 ### As We Forgive
 
-[![As We Forgive](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day011.jpg)](https://youtu.be/hSa8NhXUgws "As We Forgive")
+[![As We Forgive](/January/jpgs/Day011.jpg)](https://youtu.be/hSa8NhXUgws "As We Forgive")
 
 ### ROSARY IN A YEAR DAY 11 - "AS WE FORGIVE" Michelle Jackson
 
@@ -679,7 +679,7 @@ Forgiveness is often a "journey, not an instant switch," requiring daily relianc
 
 ### Deliver Us From Evil
 
-[![Deliver Us From Evil](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day012.jpg)](https://youtu.be/wfZGUzggWT4 "Deliver Us From Evil")
+[![Deliver Us From Evil](/January/jpgs/Day012.jpg)](https://youtu.be/wfZGUzggWT4 "Deliver Us From Evil")
 
 ### ROSARY IN A YEAR DAY 12 - "DELIVER US FROM EVIL" Michelle Jackson
 
@@ -716,7 +716,7 @@ This text explores the path to a deeper relationship with God through prayer and
 
 ### Full of Grace
 
-[![Full of Grace](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day013.jpg)](https://youtu.be/MIY3Xyn8ou0 "Full of Grace")
+[![Full of Grace](/January/jpgs/Day013.jpg)](https://youtu.be/MIY3Xyn8ou0 "Full of Grace")
 
 ### ROSARY IN A YEAR DAY 13 - "FULL OF GRACE" Michelle Jackson
 
@@ -752,11 +752,11 @@ The text also mentions the recitation of standard prayers (Our Father, Hail Mary
 
 ### Blessed Are You
 
-[![Blessed Are You](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day014.jpg)](https://youtu.be/xqD3-dXtTFI "Blessed Are You")
+[![Blessed Are You](/January/jpgs/Day014.jpg)](https://youtu.be/xqD3-dXtTFI "Blessed Are You")
 
 ### Mary
 
-![Mary](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/IMG-20250114-WA0011.jpg)
+![Mary](/January/jpgs/IMG-20250114-WA0011.jpg)
 
 ### ROSARY IN A YEAR DAY 14 - "BLESSED ARE YOU" Michelle Jackson
 
@@ -785,7 +785,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -793,7 +793,7 @@ The original text also includes full recitations of the Our Father (conclusion),
 
 ### Mother of God
 
-[![Mother of God](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day015.jpg)](https://youtu.be/mFtDsxE2q18 "Mother of God")
+[![Mother of God](/January/jpgs/Day015.jpg)](https://youtu.be/mFtDsxE2q18 "Mother of God")
 
 ### ROSARY IN A YEAR DAY 15 - "MOTHER OF GOD" Michelle Jackson
 
@@ -838,7 +838,7 @@ This text explores how prayer and meditation deepen one's relationship with Jesu
 
 ### Glorify Him
 
-[![Glorify Him](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day016.jpg)](https://youtu.be/ynEX9kc4nv4 "Glorify Him")
+[![Glorify Him](/January/jpgs/Day016.jpg)](https://youtu.be/ynEX9kc4nv4 "Glorify Him")
 
 ### ROSARY IN A YEAR DAY 16 - "GLORIFY HIM" Michelle Jackson
 
@@ -885,7 +885,7 @@ The text frames this explanation within invocations to the Trinity and includes 
 
 ### Turn On The Light
 
-[![Turn On The Light](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day017.jpg)](https://youtu.be/nHM8krUU1rk "Turn On The Light")
+[![Turn On The Light](/January/jpgs/Day017.jpg)](https://youtu.be/nHM8krUU1rk "Turn On The Light")
 
 ### ROSARY IN A YEAR DAY 17 - "Turn on the Light" Michelle Jackson
 
@@ -931,7 +931,7 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 
 ### Our Sweetness, Our Hope
 
-[![Our Sweetness, Our Hope](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day018.jpg)](https://youtu.be/x6ZYspdYFi8 "Our Sweetness, Our Hope")
+[![Our Sweetness, Our Hope](/January/jpgs/Day018.jpg)](https://youtu.be/x6ZYspdYFi8 "Our Sweetness, Our Hope")
 
 ### ROSARY IN A YEAR DAY 18 - "OUR SWEETNESS, OUR HOPE" Michelle Jackson
 
@@ -966,7 +966,7 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 
 ### Valley of Tears
 
-[![Valley of Tears](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day019.jpg)](https://youtu.be/BhYy9fcgha8 "Valley of Tears")
+[![Valley of Tears](/January/jpgs/Day019.jpg)](https://youtu.be/BhYy9fcgha8 "Valley of Tears")
 
 ### ROSARY IN A YEAR DAY 19 - "VALLEY OF TEARS" Michelle Jackson
 
@@ -1002,7 +1002,7 @@ _The 'Hail Holy Queen' prayer resonates deeply with those acquainted with suffer
 
 ### Eyes of Mercy
 
-[![Eyes of Mercy](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day020.jpg)](https://youtu.be/Dr3bjvXMjmY "Eyes of Mercy")
+[![Eyes of Mercy](/January/jpgs/Day020.jpg)](https://youtu.be/Dr3bjvXMjmY "Eyes of Mercy")
 
 ### ROSARY IN A YEAR DAY 20 - "Eyes of Mercy" Michelle Jackson
 
@@ -1038,7 +1038,7 @@ This text reflects on prayer and scripture, focusing on the theme of humble yet 
 
 ### Show Unto Us
 
-[![Show Unto Us](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day021.jpg)](https://youtu.be/fWi-63owEk0 "Show Unto Us")
+[![Show Unto Us](/January/jpgs/Day021.jpg)](https://youtu.be/fWi-63owEk0 "Show Unto Us")
 
 ### ROSARY IN A YEAR DAY 21b- "Show unto us" Michelle Jackson
 
@@ -1077,7 +1077,7 @@ The reflection highlights how Mary responds to human need with compassion, bring
 
 ### Lead Souls to Heaven
 
-[![Lead Souls to Heaven](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day022.jpg)](https://youtu.be/U_nCAl0mzmA "Lead Souls to Heaven")
+[![Lead Souls to Heaven](/January/jpgs/Day022.jpg)](https://youtu.be/U_nCAl0mzmA "Lead Souls to Heaven")
 
 ### ROSARY IN A YEAR DAY 22 - "LEAD SOULS TO HEAVEN" Michelle Jackson
 
@@ -1117,7 +1117,7 @@ The text underscores a hopeful yet earnest approach to salvation, urging persona
 
 ### Creator of Heaven and Earth
 
-[![Creator of Heaven and Earth](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day023.jpg)](https://youtu.be/uR-pRPrIh6Q "Creator of Heaven and Earth")
+[![Creator of Heaven and Earth](/January/jpgs/Day023.jpg)](https://youtu.be/uR-pRPrIh6Q "Creator of Heaven and Earth")
 
 ### ROSARY IN A YEAR DAY 23 - "CREATOR OF HEAVEN AND EARTH" Michelle Jackson
 
@@ -1139,7 +1139,7 @@ Thus, we are invited to recognise this life-giving power, to find awe in the maj
 
 ### Still, Small Voice
 
-[![Still, Small Voice](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day024.jpg)](https://youtu.be/Ou4r9yu24pA "Still, Small Voice")
+[![Still, Small Voice](/January/jpgs/Day024.jpg)](https://youtu.be/Ou4r9yu24pA "Still, Small Voice")
 
 ### AI-Generated Summary: The Quiet Work of Grace
 
@@ -1153,7 +1153,7 @@ Thus, we are invited to recognise this life-giving power, to find awe in the maj
 
 ### No Longer in Darkness
 
-[![No Longer in Darkness](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day025.jpg)](https://youtu.be/eJg24VMua_4 "No Longer in Darkness")
+[![No Longer in Darkness](/January/jpgs/Day025.jpg)](https://youtu.be/eJg24VMua_4 "No Longer in Darkness")
 
 ### AI-Generated Summary: A Franciscan Reflection on Prayer and the Passion
 
@@ -1172,7 +1172,7 @@ Key points and insights include:
 
 ### The Room is Ours
 
-[![The Room is Ours](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day026.jpg)](https://youtu.be/UqLJqFHKtzw "The Room is Ours")
+[![The Room is Ours](/January/jpgs/Day026.jpg)](https://youtu.be/UqLJqFHKtzw "The Room is Ours")
 
 ### AI-Generated Summary: Reflections on Home in the Father's House
 
@@ -1191,7 +1191,7 @@ Herein are some reflections upon intentional prayer and the very foundations of 
 
 ### The Spirit Prepares Us
 
-[![The Spirit Prepares Us](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day027.jpg)](https://youtu.be/sHVJdpXlRyc "The Spirit Prepares Us")
+[![The Spirit Prepares Us](/January/jpgs/Day027.jpg)](https://youtu.be/sHVJdpXlRyc "The Spirit Prepares Us")
 
 ### AI-Generated Summary: The Spirit's Gentle Work Within
 
@@ -1212,7 +1212,7 @@ Here are the main points and takeaways:
 
 ### Be Joyful, Be Free
 
-[![Be Joyful, Be Free](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day028.jpg)](https://youtu.be/IeGsyy6vVBg "Be Joyful, Be Free")
+[![Be Joyful, Be Free](/January/jpgs/Day028.jpg)](https://youtu.be/IeGsyy6vVBg "Be Joyful, Be Free")
 
 ### AI-Generated Summary: On Believing You Are Forgiven
 
@@ -1235,7 +1235,7 @@ To believe in forgiveness is not merely to say the words, but to live as one who
 
 ### Something Unexpected
 
-[![Something Unexpected](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day029.jpg)](https://youtu.be/JRBX1CIDyV4 "Something Unexpected")
+[![Something Unexpected](/January/jpgs/Day029.jpg)](https://youtu.be/JRBX1CIDyV4 "Something Unexpected")
 
 ### Rosary in a Year - Day 29 - Joyful Mysteries
 
@@ -1261,7 +1261,7 @@ Goa, India.
 
 ### The New Ark
 
-[![The New Ark](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day030.jpg)](https://youtu.be/HJNDwboMJ-k "The New Ark")
+[![The New Ark](/January/jpgs/Day030.jpg)](https://youtu.be/HJNDwboMJ-k "The New Ark")
 
 ### Rosary in a Year - Day 30 - Joyful Mysteries
 
@@ -1297,7 +1297,7 @@ Perhaps we, who have God present in Jesus – in the Blessed Sacrament, in praye
 
 ### No Other Savior
 
-[![No Other Savior](https://raw.githubusercontent.com/linusjf/RIAY/refs/heads/main/January/jpgs/Day031.jpg)](https://youtu.be/CXk5WJ4OhqQ "No Other Savior")
+[![No Other Savior](/January/jpgs/Day031.jpg)](https://youtu.be/CXk5WJ4OhqQ "No Other Savior")
 
 ### Rosary in a Year Day 31
 
