@@ -18,7 +18,6 @@ readonly E_THUMBNAIL_ERROR=8
 readonly E_METADATA_FETCH_FAILED=9
 readonly E_IMAGE_PROCESSING_FAILED=10
 readonly E_FILE_BACKUP_FAILED=11
-readonly E_GIT_REPO_NOT_FOUND=12
 readonly E_INVALID_VIDEO_ID=13
 readonly E_DIRECTORY_CREATION_FAILED=14
 
@@ -59,7 +58,6 @@ function usage() {
   >&"$output" printf "  %d - Failed to fetch video metadata\n" "$E_METADATA_FETCH_FAILED"
   >&"$output" printf "  %d - Image processing failed\n" "$E_IMAGE_PROCESSING_FAILED"
   >&"$output" printf "  %d - File backup failed\n" "$E_FILE_BACKUP_FAILED"
-  >&"$output" printf "  %d - Git repository not found\n" "$E_GIT_REPO_NOT_FOUND"
   >&"$output" printf "  %d - Invalid video ID format\n" "$E_INVALID_VIDEO_ID"
   >&"$output" printf "  %d - Failed to create directory\n" "$E_DIRECTORY_CREATION_FAILED"
   >&"$output" printf "\nExample: %s ABCDEF12345 42\n" "$(basename "$0")"
@@ -154,16 +152,15 @@ function remove_existing_video_entry() {
 function append_video_info() {
   local file_path=$1
   local title=$2
-  local github_repo=$3
-  local image_path=$4
-  local youtube_url=$5
-  local script_dir=$6
-  local video_id=$7
+  local image_path=$3
+  local youtube_url=$4
+  local script_dir=$5
+  local video_id=$6
 
   {
     printf "\n### %s\n\n" "$title"
-    printf "[![%s](https://raw.githubusercontent.com/%s/refs/heads/main/%s)](%s \"%s\")\n" \
-      "$title" "$github_repo" "$image_path" "$youtube_url" "$title"
+    printf "[![%s](/%s)](%s \"%s\")\n" \
+      "$title" "$image_path" "$youtube_url" "$title"
     echo
     "${script_dir}/summarizevideo" "$video_id"
   } >> "$file_path" || die "Failed to append video info" $E_FILE_BACKUP_FAILED
@@ -174,14 +171,13 @@ function main() {
   local video_id=$1
   local day_num=$2
   local script_dir month day_string markdown_file image_path
-  local api_key github_repo response thumbnail_url title youtube_url
+  local api_key response thumbnail_url title youtube_url
 
   require_vars YEAR YOUTUBE_API_KEY || exit $E_MISSING_ENV
 
   internet::checkinternet || exit $E_NO_INTERNET
 
   api_key="$YOUTUBE_API_KEY"
-  github_repo=$(git::get_github_repo) || exit $E_GIT_REPO_NOT_FOUND
 
   printf -v day_string "Day%03d" "$day_num"
   # shellcheck disable=SC2153
@@ -215,7 +211,7 @@ function main() {
       remove_existing_video_entry "$markdown_file" "$video_id" || exit $E_FILE_BACKUP_FAILED
     fi
 
-    append_video_info "$markdown_file" "$title" "$github_repo" \
+    append_video_info "$markdown_file" "$title" \
       "$image_path" "$youtube_url" "$SCRIPT_DIR" "$video_id" || exit $E_FILE_BACKUP_FAILED
 
     out "Appended video info to $markdown_file"

@@ -68,18 +68,15 @@ get_findsnippetfiles_path() {
 
 #######################################
 # Process files for a month
-# Globals: REPO_OWNER
 # Arguments:
 #   $1 - Month name
-#   $2 - GitHub repo name
 # Outputs: Processing info to STDOUT
 # Returns: none
 #######################################
 process_month_files() {
   local month="$1"
-  local repo="$2"
-  local base_snippet_no_suffix="^!\[Day PLACEHOLDER_DAY Snippet \]\(https://raw\.githubusercontent\.com/PLACEHOLDER_USERNAME/$repo/main/PLACEHOLDER_MONTH/jpgs/DayPLACEHOLDER_DAYSnippet\.jpg\)$"
-  local base_snippet_with_suffix="^!\[Day PLACEHOLDER_DAY Snippet PLACEHOLDER_SUFFIX\]\(https://raw\.githubusercontent\.com/PLACEHOLDER_USERNAME/$repo/main/PLACEHOLDER_MONTH/jpgs/DayPLACEHOLDER_DAYSnippetPLACEHOLDER_SUFFIX\.jpg\)$"
+  local base_snippet_no_suffix="^!\[Day PLACEHOLDER_DAY Snippet \]\(/PLACEHOLDER_MONTH/jpgs/DayPLACEHOLDER_DAYSnippet\.jpg\)$"
+  local base_snippet_with_suffix="^!\[Day PLACEHOLDER_DAY Snippet PLACEHOLDER_SUFFIX\]\(/PLACEHOLDER_MONTH/jpgs/DayPLACEHOLDER_DAYSnippetPLACEHOLDER_SUFFIX\.jpg\)$"
   local suffixes=("" "1" "2" "3" "4" "5" "6" "7" "8" "9")
 
   [[ -d "$month" ]] || return
@@ -98,7 +95,6 @@ process_month_files() {
 
 #######################################
 # Process a single file
-# Globals: REPO_OWNER
 # Arguments:
 #   $1 - File path
 #   $2 - Month name
@@ -116,10 +112,9 @@ process_file() {
   local found_and_deleted=false
 
   # Process snippet without suffix
-  local snippet_no_suffix=$(echo "$base_no_suffix" \
+  local snippet_no_suffix="$(echo "$base_no_suffix" \
     | sed "s/PLACEHOLDER_MONTH/$month/g" \
-    | sed "s/PLACEHOLDER_DAY/$day_number/g" \
-    | sed "s/PLACEHOLDER_USERNAME/$REPO_OWNER/g")
+    | sed "s/PLACEHOLDER_DAY/$day_number/g")"
 
   if grep -E "$snippet_no_suffix" "$file" > /dev/null; then
     out "Found snippet ${snippet_no_suffix} in: $file (Day: $day_number, Month: $month)"
@@ -135,7 +130,6 @@ process_file() {
       local snippet_with_suffix=$(echo "$base_with_suffix" \
         | sed "s/PLACEHOLDER_MONTH/$month/g" \
         | sed "s/PLACEHOLDER_DAY/$day_number/g" \
-        | sed "s/PLACEHOLDER_USERNAME/$REPO_OWNER/g" \
         | sed "s/PLACEHOLDER_SUFFIX/$suffix/g")
 
       if grep -E "$snippet_with_suffix" "$file" > /dev/null; then
@@ -190,7 +184,6 @@ verify_remaining_snippets() {
 
 #######################################
 # Main function
-# Globals: REPO_OWNER
 # Arguments:
 #   $@ - Command line arguments
 # Outputs: Processing info to STDOUT
@@ -215,16 +208,11 @@ main() {
 
   date::validatemonth "$1" || exit 1
 
-  [[ -n "${REPO_OWNER:-}" ]] \
-    || die "Error: REPO_OWNER environment variable not set"
-
   local month_num=$1
   local month
   month=$(date::monthfromnumber "$month_num")
-  local repo
-  repo=$(git::getroot)
 
-  process_month_files "$month" "$repo"
+  process_month_files "$month"
   verify_remaining_snippets "$month" || exit 1
 
   out "Scan and deletion process complete for $month."

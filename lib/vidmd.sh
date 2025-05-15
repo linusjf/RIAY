@@ -114,13 +114,11 @@ if ! declare -f vidmd::playiconurl > /dev/null; then
   # Returns: None (exits with status 1 on error)
   ######################################################################
   vidmd::playiconurl() {
-    local root doy_raw doy_padded month
-    root="$(git::getroot)"
+    local doy_raw doy_padded month
     doy_raw="$1"
     doy_padded="$(printf "%03d" "${doy_raw#0}")"
     month="$(date::mfromdoy "${doy_padded#0}")"
-    printf "https://raw.githubusercontent.com/%s/%s/refs/heads/main/%s/jpgs/Day%s.jpg\n" \
-      "${GITHUB_USERNAME}" "$root" "$month" "$doy_padded"
+    printf "/%s/jpgs/Day%s.jpg\n" "$month" "$doy_padded"
   }
   export -f vidmd::playiconurl
 fi

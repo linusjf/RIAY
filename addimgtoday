@@ -98,10 +98,6 @@ append_image_markdown() {
   local month=$(date -d "${YEAR}-01-01 +$((day_num - 1)) days" +"%B")
   local markdown_file="$month/${day_string}.md"
 
-  # Resolve GitHub repo
-  local github_repo
-  github_repo=$(git::get_github_repo)
-
   # Verify markdown file exists
   if [[ ! -f "$markdown_file" ]]; then
     err "Error: Markdown file '$markdown_file' does not exist."
@@ -113,7 +109,7 @@ append_image_markdown() {
     out ""
     out "### ${caption}"
     out ""
-    out "![${caption}](https://raw.githubusercontent.com/${github_repo}/refs/heads/main/${image_path})"
+    out "![${caption}](/${image_path})"
   } >> "$markdown_file"
 
   out "Appended image markdown to $markdown_file"

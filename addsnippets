@@ -58,7 +58,6 @@ main() {
 
   local oldmonth="$(date::mfromdoy "${1#0}")"
   local month=""
-  local root="$(git::getroot)"
 
   # Process each day of year
   for doy in "$@"; do
@@ -71,7 +70,7 @@ main() {
     for file in ./${fname}; do
       if [[ "${file}" =~ ${regexjpg} ]]; then
         local snippet="${BASH_REMATCH[1]}"
-        local url="https://raw.githubusercontent.com/${REPO_OWNER}/${root}/refs/heads/main/${month}/jpgs/Day$(printf "%d" "${doy#0}")Snippet${snippet}.jpg"
+        local url="/${month}/jpgs/Day$(printf "%d" "${doy#0}")Snippet${snippet}.jpg"
         local caption
         if [[ -n "$snippet" ]]; then
           caption="Day $(printf "%d" "${doy#0}") Snippet ${snippet}"
