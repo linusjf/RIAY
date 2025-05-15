@@ -36,12 +36,13 @@ def get_github_base_url() -> str:
     return GITHUB_URL_TEMPLATE.format(user=user, repo=repo)
 
 
-def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False) -> int:
+def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False, gh_to_rtd: bool = False) -> int:
     """Rewrite GitHub raw URLs to relative paths in a markdown file.
 
     Args:
         md_file: Path to markdown file to process
         use_gh_markdown: If True, convert to GitHub markdown relative links
+        gh_to_rtd: If True, convert GitHub markdown links to RTD /_static/ links
 
     Returns:
         int: Number of links modified (0 if none)
@@ -63,7 +64,26 @@ def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False) -> int:
         prefix = GH_MARKDOWN_PREFIX if use_gh_markdown else RELATIVE_PREFIX
         return f"{prefix}{file_path}"
 
-    modified_text = pattern.sub(make_relative, original_text)
+    def gh_to_rtd_relative(match: Match) -> str:
+        """Convert GitHub-style relative links to RTD /_static/ links."""
+        nonlocal replacement_count
+        replacement_count += 1
+        file_path = match.group(1)
+        if file_path.startswith('_static/'):
+            return match.group(0)
+        return f"/_static/{file_path}"
+
+    modified_text = original_text
+
+    if gh_to_rtd:
+        # Handle regular markdown links [text](/path)
+        gh_link_pattern = re.compile(r'(\]\()/([^)]+)\)')
+        modified_text = gh_link_pattern.sub(gh_to_rtd_relative, modified_text)
+        # Handle naked URLs </path>
+        naked_url_pattern = re.compile(r'(<)/([^>]+)(>)')
+        modified_text = naked_url_pattern.sub(lambda m: f"<{RELATIVE_PREFIX}{m.group(2)}>", modified_text)
+    else:
+        modified_text = pattern.sub(make_relative, modified_text)
 
     if replacement_count > 0:
         md_file.write_text(modified_text)
@@ -87,10 +107,13 @@ def main() -> int:
         epilog="""Examples:
   rewritelinks.py README.md
   rewritelinks.py --abs-to-gh-markdown -- *.md
+  rewritelinks.py --gh-markdown-to-rtd -- *.md
   rewritelinks.py --help""")
     parser.add_argument('files', nargs='+', help='Markdown files to process')
     parser.add_argument('--abs-to-gh-markdown', action='store_true',
                        help='Convert absolute URLs to GitHub markdown relative links (default: convert to /_static/ paths)')
+    parser.add_argument('--gh-markdown-to-rtd', action='store_true',
+                       help='Convert GitHub markdown relative links to ReadTheDocs /_static/ paths')
 
     if len(sys.argv) == 1:
         parser.print_help()
@@ -102,9 +125,17 @@ def main() -> int:
         parser.print_help()
         return 1
 
+    if args.abs_to_gh_markdown and args.gh_markdown_to_rtd:
+        print("Error: Cannot use both --abs-to-gh-markdown and --gh-markdown-to-rtd together", file=sys.stderr)
+        return 1
+
     total_changes = 0
     for file_path in args.files:
-        total_changes += rewrite_links_in_file(Path(file_path), args.abs_to_gh_markdown)
+        total_changes += rewrite_links_in_file(
+            Path(file_path),
+            args.abs_to_gh_markdown,
+            args.gh_markdown_to_rtd
+        )
 
     if total_changes == 0:
         print("No links were modified in any files", file=sys.stdout)
