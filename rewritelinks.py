@@ -113,7 +113,7 @@ def main() -> int:
     parser.add_argument('--abs-to-gh-markdown', action='store_true',
                        help='Convert absolute URLs to GitHub markdown relative links (default: convert to /_static/ paths)')
     parser.add_argument('--gh-markdown-to-rtd', action='store_true',
-                       help='Convert GitHub markdown relative links to ReadTheDocs /_static/ paths')
+                       help='Convert GitHub markdown relative links (starting with /) to ReadTheDocs /_static/ paths, except those already starting with /_static/')
 
     if len(sys.argv) == 1:
         parser.print_help()
