@@ -19,30 +19,30 @@ GH_MARKDOWN_PREFIX = "/"
 
 def get_github_base_url() -> str:
     """Construct the GitHub base URL from environment variables.
-    
+
     Returns:
         str: Formatted GitHub raw content base URL
     """
     load_dotenv(dotenv_path=DEFAULT_ENV_FILE)
-    
+
     user = os.getenv("REPO_OWNER", "")
     repo = os.getenv("REPO_NAME", "")
-    
+
     if not user or not repo:
         raise ValueError(
             "REPO_OWNER and REPO_NAME must be set in environment variables"
         )
-        
+
     return GITHUB_URL_TEMPLATE.format(user=user, repo=repo)
 
 
 def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False) -> int:
     """Rewrite GitHub raw URLs to relative paths in a markdown file.
-    
+
     Args:
         md_file: Path to markdown file to process
         use_gh_markdown: If True, convert to GitHub markdown relative links
-        
+
     Returns:
         int: Number of links modified (0 if none)
     """
@@ -77,7 +77,7 @@ def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False) -> int:
 
 def main() -> int:
     """Main entry point for the script.
-    
+
     Returns:
         int: Exit code (0 for success)
     """
@@ -86,12 +86,12 @@ def main() -> int:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""Examples:
   rewritelinks.py README.md
-  rewritelinks.py *.md --abs-to-gh-markdown
+  rewritelinks.py --abs-to-gh-markdown -- *.md
   rewritelinks.py --help""")
     parser.add_argument('files', nargs='+', help='Markdown files to process')
     parser.add_argument('--abs-to-gh-markdown', action='store_true',
                        help='Convert absolute URLs to GitHub markdown relative links (default: convert to /_static/ paths)')
-    
+
     if len(sys.argv) == 1:
         parser.print_help()
         return 1
@@ -108,7 +108,7 @@ def main() -> int:
 
     if total_changes == 0:
         print("No links were modified in any files", file=sys.stdout)
-        
+
     return 0
 
 

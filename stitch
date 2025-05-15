@@ -119,7 +119,7 @@ main() {
     exit ${ERR_GENERATION}
   fi
 
-  if ! ./rewritelinks.py --abs-to-gh-markdown README.md; then
+  if ! ./rewritelinks.py --abs-to-gh-markdown -- README.md; then
     exit ${ERR_REWRITE_LINKS}
   fi
 }
