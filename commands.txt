@@ -1,4 +1,4 @@
 # commands
-addvideo "lwBW25fFb2c" "Miracles of Love"
+addvideo "H7QrGtTRQgw" "We Must Receive"
 stitch
 lintall

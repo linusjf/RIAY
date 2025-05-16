@@ -540,7 +540,7 @@ Mary, reflecting Jesus, the "sun of righteousness," is seen as the Mirror of Jus
 
 ##### ROSARY IN A YEAR DAY 5 - A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson
 
-*Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 😢 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria*🌹
+\_Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 😢 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria_🌹
 
 ##### AI-Generated Summary: Mary, Mother Inviolate — Finding Peace in Mary's Rose Garden
 
@@ -611,7 +611,7 @@ Prayer is not simply a passive reception of grace, but an active, determined str
 
 ##### ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson
 
-*"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.😢 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria*🙏🏽
+\_"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.😢 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria_🙏🏽
 
 ##### AI-Generated Summary: The Rosary as a Source of Grace
 
@@ -938,7 +938,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3964,6 +3964,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 15,2025](#may-152025)
   - [Miracles of Love](#miracles-of-love)
   - [AI-Generated Summary: Reflections on Carl Bloch’s The Wedding at Cana and the Quiet Miracles of Christ](#ai-generated-summary-reflections-on-carl-blochs-the-wedding-at-cana-and-the-quiet-miracles-of-christ)
+- [May 16,2025](#may-162025)
+  - [We Must Receive](#we-must-receive)
+  - [AI-Generated Summary: James Tissot’s Healing of the Lepers at Capernaum and the Kingdom of God](#ai-generated-summary-james-tissots-healing-of-the-lepers-at-capernaum-and-the-kingdom-of-god)
 
 <!-- tocstop -->
 
@@ -4364,6 +4367,22 @@ Devotional prayers interspersed throughout the text—the _Our Father_, _Hail Ma
 In sum, Bloch’s masterpiece and the accompanying meditation reveal a Christ who transforms the ordinary with quiet power, asking not for admiration but offering love. The miracle at Cana, like all his works, whispers that divinity dwells among us, often unseen, always giving.
 
 _Note: This summary adheres to Lewis’s clarity and concision, blending analysis with a contemplative tone. Line spacing and markdown formatting ensure readability._
+
+#### May 16,2025
+
+##### We Must Receive
+
+[![We Must Receive](May/jpgs/Day136.jpg)](https://youtu.be/H7QrGtTRQgw "We Must Receive")
+
+##### AI-Generated Summary: James Tissot’s Healing of the Lepers at Capernaum and the Kingdom of God
+
+James Tissot, a French artist known for merging impressionism and realism, shifted from secular subjects to religious themes after his return to Catholicism. His painting _Healing of the Lepers at Capernaum_ captures a moment of divine intervention: a leper kneels on cobblestones, reaching toward a group that includes a figure in white—presumably Christ—touching a child’s head. Light falls on a nearby house, while shadows drape the street, visually underscoring the contrast between despair and hope, suffering and healing.
+
+The work reflects the biblical narrative where Christ heals ten lepers, yet only one returns to give thanks. This omission of gratitude becomes a parable of human frailty—divine grace is freely given, but it demands a response. The "kingdom of God" is not a static realm but God’s active presence: teaching, saving, and restoring. Tissot’s composition, with its interplay of light and shadow, mirrors this tension between divine offer and human reception.
+
+True faith, the passage argues, is more than passive belief; it requires worship, obedience, and trust. Gratitude is the heartbeat of repentance, a surrender to God’s guidance. The text closes with repeated prayers—the _Hail Mary_, invoking Mary’s intercession, and the _Glory Be_, praising the Trinity—emphasizing dependence on mercy and the communal nature of devotion.
+
+In sum, Tissot’s painting and the accompanying meditation weave art and theology into a call to action: to receive grace with humility, to repent with hope, and to answer divine light with human gratitude.
 
 ## June
 

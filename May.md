@@ -51,6 +51,9 @@
 - [May 15,2025](#may-152025)
   - [Miracles of Love](#miracles-of-love)
   - [AI-Generated Summary: Reflections on Carl Bloch’s The Wedding at Cana and the Quiet Miracles of Christ](#ai-generated-summary-reflections-on-carl-blochs-the-wedding-at-cana-and-the-quiet-miracles-of-christ)
+- [May 16,2025](#may-162025)
+  - [We Must Receive](#we-must-receive)
+  - [AI-Generated Summary: James Tissot’s Healing of the Lepers at Capernaum and the Kingdom of God](#ai-generated-summary-james-tissots-healing-of-the-lepers-at-capernaum-and-the-kingdom-of-god)
 
 <!-- tocstop -->
 
@@ -451,3 +454,19 @@ Devotional prayers interspersed throughout the text—the _Our Father_, _Hail Ma
 In sum, Bloch’s masterpiece and the accompanying meditation reveal a Christ who transforms the ordinary with quiet power, asking not for admiration but offering love. The miracle at Cana, like all his works, whispers that divinity dwells among us, often unseen, always giving.
 
 _Note: This summary adheres to Lewis’s clarity and concision, blending analysis with a contemplative tone. Line spacing and markdown formatting ensure readability._
+
+## May 16,2025
+
+### We Must Receive
+
+[![We Must Receive](/May/jpgs/Day136.jpg)](https://youtu.be/H7QrGtTRQgw "We Must Receive")
+
+### AI-Generated Summary: James Tissot’s Healing of the Lepers at Capernaum and the Kingdom of God
+
+James Tissot, a French artist known for merging impressionism and realism, shifted from secular subjects to religious themes after his return to Catholicism. His painting _Healing of the Lepers at Capernaum_ captures a moment of divine intervention: a leper kneels on cobblestones, reaching toward a group that includes a figure in white—presumably Christ—touching a child’s head. Light falls on a nearby house, while shadows drape the street, visually underscoring the contrast between despair and hope, suffering and healing.
+
+The work reflects the biblical narrative where Christ heals ten lepers, yet only one returns to give thanks. This omission of gratitude becomes a parable of human frailty—divine grace is freely given, but it demands a response. The "kingdom of God" is not a static realm but God’s active presence: teaching, saving, and restoring. Tissot’s composition, with its interplay of light and shadow, mirrors this tension between divine offer and human reception.
+
+True faith, the passage argues, is more than passive belief; it requires worship, obedience, and trust. Gratitude is the heartbeat of repentance, a surrender to God’s guidance. The text closes with repeated prayers—the _Hail Mary_, invoking Mary’s intercession, and the _Glory Be_, praising the Trinity—emphasizing dependence on mercy and the communal nature of devotion.
+
+In sum, Tissot’s painting and the accompanying meditation weave art and theology into a call to action: to receive grace with humility, to repent with hope, and to answer divine light with human gratitude.
