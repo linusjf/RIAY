@@ -78,12 +78,9 @@ function get_final_prompt() {
 
 function summarize_chunk_gemini() {
   local chunk="$1"
-  local prompt
-  prompt=$(get_chunk_prompt "$chunk")
-  local escaped_prompt
-  escaped_prompt=$(jq -Rs <<< "$prompt")
-  local payload
-  payload="$(jq -n --arg content "$escaped_prompt" --argjson temperature "${TEMPERATURE}" '{
+  local prompt="$(get_chunk_prompt "$chunk")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
+  local payload="$(jq -n --arg content "$escaped_prompt" --argjson temperature "${TEMPERATURE}" '{
   "contents": [{
     "parts": [{
       "text": $content
@@ -133,18 +130,16 @@ function summarize_chunk_gemini() {
 
 function summarize_chunk_deepseek() {
   local chunk="$1"
-  local prompt
-  prompt="$(get_chunk_prompt "$chunk")"
-  local escaped_prompt
-  escaped_prompt="$(jq -Rs <<< "$prompt")"
-  local payload
-  payload="$(jq -n --arg content "$escaped_prompt" --argjson temperature "$TEMPERATURE" \
+  local prompt="$(get_chunk_prompt "$chunk")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
+  local escaped_system_prompt="$(jr -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
+  local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --argjson temperature "$TEMPERATURE" \
     '{
   "model": "deepseek-chat",
   "messages": [
     {
       "role": "system",
-      "content": "You are a helpful assistant that summarizes content. Be concise, helpful."
+      "content": $system
     },
     {
       "role": "user",
@@ -197,12 +192,9 @@ function summarize_chunk() {
 
 function final_summary_gemini() {
   local input="$1"
-  local prompt
-  prompt=$(get_final_prompt "$input")
-  local escaped_prompt
-  escaped_prompt=$(jq -Rs <<< "$prompt")
-  local payload
-  payload=$(jq -n \
+  local prompt="$(get_final_prompt "$input")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
+  local payload="$(jq -n \
     --arg content "$escaped_prompt" \
     --argjson temperature "$TEMPERATURE" \
     '{
@@ -214,19 +206,19 @@ function final_summary_gemini() {
       "generationConfig": {
         "temperature": $temperature
       }
-    }')
+    }')"
 
   local response
 
   while [[ $CURRENT_MODEL_INDEX -lt "${#GEMINI_MODELS[@]}" ]]; do
     model="${GEMINI_MODELS["$CURRENT_MODEL_INDEX"]}"
-    response=$(
+    response="$(
       curl::safe_curl_request \
         "https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}" \
         "POST" \
         "Content-Type: application/json" \
         "$payload"
-    )
+    )"
 
     local res=$?
 
@@ -250,12 +242,11 @@ function final_summary_gemini() {
 
 function final_summary_deepseek() {
   local input="$1"
-  local prompt
-  prompt=$(get_final_prompt "$input")
-  local escaped_prompt
-  escaped_prompt=$(jq -Rs <<< "$prompt")
-  local payload
-  payload=$(jq -n \
+  local prompt="$(get_final_prompt "$input")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
+  local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
+  local payload="$(jq -n \
+    --arg system "$escaped_system_prompt" \
     --arg content "$escaped_prompt" \
     --argjson temperature "$TEMPERATURE" \
     '{
@@ -263,7 +254,7 @@ function final_summary_deepseek() {
       "messages": [
         {
           "role": "system",
-          "content": "You are a helpful assistant that summarizes content."
+          "content": $system
         },
         {
           "role": "user",
@@ -271,17 +262,16 @@ function final_summary_deepseek() {
         }
       ],
       "temperature": $temperature
-    }')
+    }')"
 
-  local response
-  response=$(
+  local response="$(
     curl::safe_curl_request \
       "https://api.deepseek.com/chat/completions" \
       "POST" \
       "Authorization: Bearer ${DEEPSEEK_API_KEY}
 Content-Type: application/json" \
       "$payload"
-  )
+  )"
 
   if ! echo "$response" | jq . > /dev/null 2>&1; then
     err "DeepSeek API returned invalid response"
