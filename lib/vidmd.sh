@@ -71,8 +71,15 @@ EOF
   export -f vidmd::usagevidmdloc
 fi
 
+######################################################################
+# Display usage information for generate video thumbnail markdown
+# Globals: None
+# Arguments: None
+# Outputs: Usage message to STDOUT
+# Returns: None (exits with status 1)
+######################################################################
 if ! declare -f vidmd::usagegenvidthmd > /dev/null; then
-  function vidmd::usagegenvidthmd() {
+  vidmd::usagegenvidthmd() {
     cat << EOF
 Usage: $0 vid vidurl caption [doy]
 Arguments:
@@ -84,9 +91,15 @@ EOF
     exit 1
   }
   export -f vidmd::usagegenvidthmd
-
 fi
 
+######################################################################
+# Display usage information for overlay image function
+# Globals: None
+# Arguments: None
+# Outputs: Usage message to STDOUT
+# Returns: None (exits with status 1)
+######################################################################
 if ! declare -f vidmd::usageoverlayimg > /dev/null; then
   vidmd::usageoverlayimg() {
     cat << EOF
@@ -215,8 +228,19 @@ if ! declare -f vidmd::validate_caption > /dev/null; then
   export -f vidmd::validate_caption
 fi
 
+######################################################################
+# Generate video thumbnail markdown with optional day-of-year support
+# Globals: None
+# Arguments:
+#   $1 - Video ID
+#   $2 - Video URL
+#   $3 - Caption
+#   $4 - (Optional) Day of year
+# Outputs: Generated markdown to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 if ! declare -f vidmd::genvidthmd > /dev/null; then
-  function vidmd::genvidthmd() {
+  vidmd::genvidthmd() {
     # Validate arguments
     if [[ $# -lt 3 ]]; then
       vidmd::usagegenvidthmd
@@ -245,7 +269,13 @@ if ! declare -f vidmd::genvidthmd > /dev/null; then
 fi
 
 ######################################################################
-# Check if file already has play icon comment
+# Check if file already has play icon comment in metadata
+# Globals:
+#   ICON_COMMENT - Expected comment value
+# Arguments:
+#   $1 - File path to check
+# Outputs: None
+# Returns: 0 if comment exists, 1 otherwise
 ######################################################################
 if ! declare -f vidmd::has_play_icon > /dev/null; then
   vidmd::has_play_icon() {
@@ -254,6 +284,15 @@ if ! declare -f vidmd::has_play_icon > /dev/null; then
   export -f vidmd::has_play_icon
 fi
 
+######################################################################
+# Add comment annotation to file metadata
+# Globals: None
+# Arguments:
+#   $1 - Comment text
+#   $2 - File path
+# Outputs: None
+# Returns: None (exits with status 1 on error)
+######################################################################
 if ! declare -f vidmd::annotate_file > /dev/null; then
   vidmd::annotate_file() {
     exiftool -overwrite_original -Comment="$1" "$2" &> /dev/null
@@ -261,9 +300,19 @@ if ! declare -f vidmd::annotate_file > /dev/null; then
   export -f vidmd::annotate_file
 fi
 
+######################################################################
+# Overlay play icon on an image file
+# Globals:
+#   ICON_FILE - Path to play icon image
+#   ICON_SIZE - Dimensions of icon
+#   ICON_OFFSET - Position offset for icon
+# Arguments:
+#   $1 - Path to image file
+# Outputs: None
+# Returns: None (exits with status 1 on error)
+######################################################################
 if ! declare -f vidmd::overlayicon > /dev/null; then
   vidmd::overlayicon() {
-
     # Validate arguments
     if [[ $# -ne 1 ]]; then
       die "Missing file argument"
@@ -317,9 +366,17 @@ if ! declare -f vidmd::overlayicon > /dev/null; then
   export -f vidmd::overlayicon
 fi
 
+######################################################################
+# Download and overlay play icon on YouTube thumbnail
+# Globals: None
+# Arguments:
+#   $1 - YouTube video ID
+#   $2 - Output file path
+# Outputs: None
+# Returns: None (exits with status 1 on error)
+######################################################################
 if ! declare -f vidmd::overlayimg > /dev/null; then
   vidmd::overlayimg() {
-
     # Validate arguments
     if [[ $# -ne 2 ]]; then
       vidmd::usageoverlayimg
