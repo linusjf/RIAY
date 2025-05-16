@@ -30,14 +30,14 @@ require_commands date cat curl gm mv grep mktemp exiftool dirname rm
 : ICON_OFFSET="${ICON_OFFSET:=+32+0}"
 : ICON_COMMENT="${ICON_COMMENT:=Play Icon Added}"
 
+######################################################################
+# Display usage information for standard video markdown
+# Globals: None
+# Arguments: None
+# Outputs: Usage message to STDOUT
+# Returns: None (exits with status 1)
+######################################################################
 if ! declare -f vidmd::usagevidmd > /dev/null; then
-  ######################################################################
-  # Display usage information for standard video markdown
-  # Globals: None
-  # Arguments: None
-  # Outputs: Usage message to STDOUT
-  # Returns: None (exits with status 1)
-  ######################################################################
   vidmd::usagevidmd() {
     cat << EOF
 Usage: $0 vidid vidurl caption
@@ -50,14 +50,14 @@ EOF
   export -f vidmd::usagevidmd
 fi
 
+######################################################################
+# Display usage information for localized video markdown
+# Globals: None
+# Arguments: None
+# Outputs: Usage message to STDOUT
+# Returns: None (exits with status 1)
+######################################################################
 if ! declare -f vidmd::usagevidmdloc > /dev/null; then
-  ######################################################################
-  # Display usage information for localized video markdown
-  # Globals: None
-  # Arguments: None
-  # Outputs: Usage message to STDOUT
-  # Returns: None (exits with status 1)
-  ######################################################################
   vidmd::usagevidmdloc() {
     cat << EOF
 Usage: $0 vidid vidurl caption doy
@@ -103,16 +103,16 @@ EOF
   export -f vidmd::usageoverlayimg
 fi
 
+######################################################################
+# Generate play icon URL for given day of year
+# Globals:
+#   GITHUB_USERNAME - GitHub username
+# Arguments:
+#   $1 - Day of year
+# Outputs: URL to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 if ! declare -f vidmd::playiconurl > /dev/null; then
-  ######################################################################
-  # Generate play icon URL for given day of year
-  # Globals:
-  #   GITHUB_USERNAME - GitHub username
-  # Arguments:
-  #   $1 - Day of year
-  # Outputs: URL to STDOUT
-  # Returns: None (exits with status 1 on error)
-  ######################################################################
   vidmd::playiconurl() {
     local doy_raw doy_padded month
     doy_raw="$1"
@@ -123,16 +123,16 @@ if ! declare -f vidmd::playiconurl > /dev/null; then
   export -f vidmd::playiconurl
 fi
 
+######################################################################
+# Download thumbnail for given video ID
+# Globals: None
+# Arguments:
+#   $1 - Video ID
+#   $2 - Output filename
+# Outputs: None
+# Returns: 1 if download fails
+######################################################################
 if ! declare -f vidmd::downloadthumbnail > /dev/null; then
-  ######################################################################
-  # Download thumbnail for given video ID
-  # Globals: None
-  # Arguments:
-  #   $1 - Video ID
-  #   $2 - Output filename
-  # Outputs: None
-  # Returns: 1 if download fails
-  ######################################################################
   vidmd::downloadthumbnail() {
     local url
     url="$(youtube::thumbnailurl "$1")" || return 1
@@ -141,38 +141,38 @@ if ! declare -f vidmd::downloadthumbnail > /dev/null; then
   export -f vidmd::downloadthumbnail
 fi
 
+######################################################################
+# Generate standard video markdown
+# Globals: None
+# Arguments:
+#   $1 - Video ID
+#   $2 - Video URL
+#   $3 - Caption
+# Outputs: Markdown to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 if ! declare -f vidmd::vidmd > /dev/null; then
-  ######################################################################
-  # Generate standard video markdown
-  # Globals: None
-  # Arguments:
-  #   $1 - Video ID
-  #   $2 - Video URL
-  #   $3 - Caption
-  # Outputs: Markdown to STDOUT
-  # Returns: None (exits with status 1 on error)
-  ######################################################################
   vidmd::vidmd() {
     [[ $# -lt 3 ]] && usagevidmd
-    local vidid="$1" vidurl="$2" caption="$3" imgurl
-    imgurl="$(youtube::thumbnailurl "$vidid")" || die "Error: Thumbnails unverifiable or absent"
+    local vidid="$1" vidurl="$2" caption="$3"
+    local imgurl="$(youtube::thumbnailurl "$vidid")" || die "Error: Thumbnails unverifiable or absent"
     printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
   }
   export -f vidmd::vidmd
 fi
 
+######################################################################
+# Generate localized video markdown with day-of-year thumbnail
+# Globals: None
+# Arguments:
+#   $1 - Video ID
+#   $2 - Video URL
+#   $3 - Caption
+#   $4 - Day of year
+# Outputs: Markdown to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 if ! declare -f vidmd::vidmdloc > /dev/null; then
-  ######################################################################
-  # Generate localized video markdown with day-of-year thumbnail
-  # Globals: None
-  # Arguments:
-  #   $1 - Video ID
-  #   $2 - Video URL
-  #   $3 - Caption
-  #   $4 - Day of year
-  # Outputs: Markdown to STDOUT
-  # Returns: None (exits with status 1 on error)
-  ######################################################################
   vidmd::vidmdloc() {
     [[ $# -lt 4 ]] && usagevidmdloc
     local vidid="$1" vidurl="$2" caption="$3" doy="$4" imgurl
@@ -182,16 +182,16 @@ if ! declare -f vidmd::vidmdloc > /dev/null; then
   export -f vidmd::vidmdloc
 fi
 
+######################################################################
+# Validate video ID format
+# Globals:
+#   VIDEO_ID_LENGTH - Expected video ID length
+# Arguments:
+#   $1 - Video ID
+# Outputs: Error message to STDERR if validation fails
+# Returns: None (exits with status 1 on error)
+######################################################################
 if ! declare -f vidmd::validate_vid > /dev/null; then
-  ######################################################################
-  # Validate video ID format
-  # Globals:
-  #   VIDEO_ID_LENGTH - Expected video ID length
-  # Arguments:
-  #   $1 - Video ID
-  # Outputs: Error message to STDERR if validation fails
-  # Returns: None (exits with status 1 on error)
-  ######################################################################
   vidmd::validate_vid() {
     [[ "$1" =~ ^[a-zA-Z0-9_-]{$VIDEO_ID_LENGTH}$ ]] || die "Invalid video ID $1. Expected $VIDEO_ID_LENGTH characters"
     validators::validate_input "$1" "$VIDEO_ID_LENGTH" "Video ID"
@@ -199,16 +199,16 @@ if ! declare -f vidmd::validate_vid > /dev/null; then
   export -f vidmd::validate_vid
 fi
 
+######################################################################
+# Validate caption length
+# Globals:
+#   MAX_CAPTION_LENGTH - Maximum allowed caption length
+# Arguments:
+#   $1 - Caption text
+# Outputs: Error message to STDERR if validation fails
+# Returns: None (exits with status 1 on error)
+######################################################################
 if ! declare -f vidmd::validate_caption > /dev/null; then
-  ######################################################################
-  # Validate caption length
-  # Globals:
-  #   MAX_CAPTION_LENGTH - Maximum allowed caption length
-  # Arguments:
-  #   $1 - Caption text
-  # Outputs: Error message to STDERR if validation fails
-  # Returns: None (exits with status 1 on error)
-  ######################################################################
   vidmd::validate_caption() {
     validators::validate_input "$1" "$MAX_CAPTION_LENGTH" "Caption"
   }
