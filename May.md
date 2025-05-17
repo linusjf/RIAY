@@ -389,13 +389,6 @@ In Campy’s art and the accompanying meditation, we find a call to mirror Mary�
 
 _Blessed art thou among women... pray for us sinners._
 
-**Notes on Style**:
-
-- Lewis’s clarity and conciseness are reflected in short, rhythmic sentences.
-- Theological depth is rendered accessible, avoiding abstraction.
-- The closing doxology mirrors Lewis’s habit of ending reflections with liturgical resonance.
-- Italics and blockquotes honor Lewis’s preference for textual emphasis.
-
 ## May 13,2025
 
 ### Respond with Grace
@@ -412,14 +405,6 @@ The passage then turns from art to exhortation. To seek Christ as Mary did—not
 
 In this mosaic and meditation alike, two truths emerge: Christ’s revelation divides hearts even as it unites them to Himself, and grace alone bends the knee in true worship. The prayers are not incantations but open hands—waiting to receive what Mary already grasped.
 
-_Key traits of Lewis’s style applied:_
-
-- **Concision with depth**: Each paragraph distills theology into imagery.
-- **Analogical language**: "Fracture like light through glass," "polishes the soul’s mirror."
-- **Direct address**: "To seek Christ as Mary did..." mirrors Lewis’s sermonic tone.
-- **Contrast**: Human skepticism vs. Mary’s faith echoes Lewis’s _The Great Divorce_.
-- **Rhythmic closure**: The ending mirrors Lewis’s habit of resolving meditations with a clarifying truth.
-
 ## May 14,2025
 
 ### Shadow of the Cross
@@ -435,8 +420,6 @@ This baptism is no ordinary rite. Unlike John’s earlier baptisms for repentanc
 The text reflects on the Jordan’s banks as a threshold where Christ’s trust in the Father is unveiled. His submission mirrors the believer’s journey: baptized into His death and resurrection, we too are called to carry the cross, anchored in our identity as God’s beloved. The passage closes with prayers—_Our Father_, _Hail Mary_, _Glory Be_—seeking grace to embrace this truth.
 
 In this fusion of art and devotion, the fresco whispers a timeless lesson: the path of glory is paved with humility, and the light of Christ outshines even the shadow of the cross.
-
-_Note: The summary adheres to Lewis’s style—lucid, rhythmic, and layered with theological depth—while condensing the original text’s essence. Word count: ~300 (expandable with further reflection if desired)._
 
 ## May 15,2025
 
@@ -455,8 +438,6 @@ The bond between Jesus and Mary is tenderly rendered. Their shared glance speaks
 Devotional prayers interspersed throughout the text—the _Our Father_, _Hail Mary_, and _Glory Be_—anchor the reflection in worship. They echo the painting’s themes: grace, intercession, and the quiet majesty of a God who serves.
 
 In sum, Bloch’s masterpiece and the accompanying meditation reveal a Christ who transforms the ordinary with quiet power, asking not for admiration but offering love. The miracle at Cana, like all his works, whispers that divinity dwells among us, often unseen, always giving.
-
-_Note: This summary adheres to Lewis’s clarity and concision, blending analysis with a contemplative tone. Line spacing and markdown formatting ensure readability._
 
 ## May 16,2025
 
@@ -489,5 +470,3 @@ Here, the Transfiguration is no mere event but a revelation: Christ, the _sun at
 The accompanying prayers—_Our Father_, _Hail Mary_, _Glory Be_—are not mere recitations but echoes of that moment on the mount. They are petitions for the very light the window depicts: forgiveness to cleanse, guidance to steady, and grace to transfigure our own shadows into clarity. The closing blessing is no formality but a whispered promise: that the same light which once dazzled the apostles still pierces the dimness of our world, if we have eyes to see.
 
 In this fusion of art and devotion, the window becomes more than decoration; it is a summons. Like the apostles, we are called to witness, to kneel, and—in time—to reflect.
-
-(Word count: 298—concise yet expansive in Lewis’s style: analogical, layered, and punctuated by theological clarity.)
