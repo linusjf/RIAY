@@ -220,8 +220,6 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 - **Prayer as the Soul’s Response**\
   Repeated prayers (“Hail Mary,” “Glory Be”) anchor the reflection, transforming longing into liturgy. The closing blessing underscores devotion as both personal and communal, a rhythm of love echoing heaven’s joy.
 
-_Concision note: Lewis’s style favors clarity and vivid imagery, here applied to intertwine theological grandeur with human tenderness._
-
 ## May 08,2025
 
 ### Queen of Angels
@@ -255,8 +253,6 @@ _Concision note: Lewis’s style favors clarity and vivid imagery, here applied 
 - **Practical Note**:
 
   - A reference to obtaining further materials is noted without promotional emphasis.
-
-_Summary retains the theological depth and lyrical clarity characteristic of Lewis, distilling Newman’s insights into concise, actionable points._
 
 ## May 09,2025
 
@@ -366,8 +362,6 @@ _In the name of the Father, the Son, and the Holy Spirit._
 - **Divine Humility**: The paradox of Christ’s majesty clothed in infancy.
 - **Sacred Symmetry**: Artistic composition as theological language.
 - **Invitation to Worship**: The Nativity as a model for Christian devotion.
-
-_Conciseness note: Repetitive prayers and promotional phrasing omitted; focus retained on thematic depth and Lewisian clarity._
 
 ## May 12,2025
 
