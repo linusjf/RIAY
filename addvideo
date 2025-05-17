@@ -124,7 +124,7 @@ generate_files() {
   # shellcheck disable=SC2153
   monthnumber="$(date::monthnumberfrommonth "${month}" "${YEAR}")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
-  summaryfname="${month}/Day$(printf "%03d" "${doy#0}")summary.txt"
+  summaryfname="${fname%%.*}Summary.txt"
   formatdt="$(date::datefromdoy "${doy#0}")"
 
   md="$(vidmd::genvidthmd "$vid" "$videourl" "$caption" "$doy")"

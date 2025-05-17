@@ -236,8 +236,11 @@ function append_summary() {
   local videoid="$2"
 
   log "Appending to ${filepath} (Day ${lineno}, ${videoid})"
-  printf "\n" >> "${filepath}"
-  "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >> "${filepath}"
+  {
+    printf "\n"
+    "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >| "${filepath%%.*}Summary.txt"
+    cat "${filepath%%.*}Summary.txt"
+  } >> "${filepath}"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
