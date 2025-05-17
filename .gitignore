@@ -16,3 +16,4 @@ fail*.json
 geminimodelids.txt
 venv/**
 .aider.chat.history.md
+!**/*summary.txt
