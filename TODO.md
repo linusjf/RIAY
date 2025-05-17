@@ -1,2 +1,3 @@
-1. ~~Convert absolute urls to relative in markdown. Convert these to relative for rtd. Finally, update scripts to generate relative links for markdown.~~
-1. Add code to use a local LLM. Mistral appears to be best candidate.
+1. Add code to use a local LLM.
+2. Add feature to generate images from summary.
+3. Add unit tests using BATS.
