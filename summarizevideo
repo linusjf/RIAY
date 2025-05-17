@@ -132,7 +132,7 @@ function summarize_chunk_deepseek() {
   local chunk="$1"
   local prompt="$(get_chunk_prompt "$chunk")"
   local escaped_prompt="$(jq -Rs <<< "$prompt")"
-  local escaped_system_prompt="$(jr -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
+  local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
   local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --argjson temperature "$TEMPERATURE" \
     '{
   "model": "deepseek-chat",

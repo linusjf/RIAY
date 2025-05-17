@@ -1,4 +1,4 @@
 # commands
-addvideo "H7QrGtTRQgw" "We Must Receive"
+addvideo "vpfrtxHcUto" "Medium Reveals Meaning"
 stitch
 lintall
