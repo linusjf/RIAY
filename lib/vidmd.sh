@@ -51,6 +51,26 @@ EOF
 fi
 
 ######################################################################
+# Display usage information for standard video markdown
+# Globals: None
+# Arguments: None
+# Outputs: Usage message to STDOUT
+# Returns: None (exits with status 1)
+######################################################################
+if ! declare -f vidmd::usagevideomarkdown > /dev/null; then
+  vidmd::usagevideomarkdown() {
+    cat << EOF
+Usage: $0 caption imgurl vidurl
+    caption - Video title (max $MAX_CAPTION_LENGTH chars)
+    imgurl  - Image to display for video link
+    vidurl  - Full video URL
+EOF
+    exit 1
+  }
+  export -f vidmd::usagevideomarkdown
+fi
+
+######################################################################
 # Display usage information for localized video markdown
 # Globals: None
 # Arguments: None
@@ -166,12 +186,31 @@ fi
 ######################################################################
 if ! declare -f vidmd::vidmd > /dev/null; then
   vidmd::vidmd() {
-    [[ $# -lt 3 ]] && usagevidmd
+    [[ $# -ne 3 ]] && usagevidmd
     local vidid="$1" vidurl="$2" caption="$3"
     local imgurl="$(youtube::thumbnailurl "$vidid")" || die "Error: Thumbnails unverifiable or absent"
-    printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
+    vidmd::videomarkdown "$caption" "$imgurl" "$vidurl"
   }
   export -f vidmd::vidmd
+fi
+
+######################################################################
+# Generate standard video markdown
+# Globals: None
+# Arguments:
+#   $1 - Video ID
+#   $2 - Video URL
+#   $3 - Caption
+# Outputs: Markdown to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
+if ! declare -f vidmd::videomarkdown > /dev/null; then
+  vidmd::videomarkdown() {
+    [[ $# -ne 3 ]] && usagevideomarkdown
+    local caption="$1" imgurl="$2" vidurl="$3"
+    printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
+  }
+  export -f vidmd::videomarkdown
 fi
 
 ######################################################################
