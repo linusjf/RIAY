@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+shopt -s inherit_errexit
+
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME="$(basename "$0")"
+
+# Source utility libraries
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/internet.sh"
+source "${SCRIPT_DIR}/lib/util.sh"
+source "${SCRIPT_DIR}/lib/curl.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+# Check if input file argument is provided
+if [ $# -eq 0 ]; then
+  echo "Error: No input file provided"
+  echo "Usage: $0 /path/to/DayXXXSummary.txt"
+  exit 1
+fi
+
+input_file="$1"
+output_file="${input_file/Summary.txt/ImagePrompt.json}"
+
+# Check if required environment variables are set
+if [ -z "$DEEPSEEK_API_KEY" ]; then
+  echo "Error: DEEPSEEK_API_KEY environment variable not set"
+  exit 1
+fi
+
+if [ -z "$SUMMARY_IMAGE_META_PROMPT" ]; then
+  echo "Error: SUMMARY_IMAGE_META_PROMPT environment variable not set"
+  exit 1
+fi
+
+# Read the summary content
+summary_content=$(<"$input_file")
+
+meta_prompt="$(jq -Rs <<<"$SUMMARY_IMAGE_META_PROMPT")"
+payload="$(jq -n --arg system "$meta_prompt" --arg content "$summary_content" --argjson temperature "$TEMPERATURE" \
+  '{
+  "model": "deepseek-chat",
+  "messages": [
+    {
+      "role": "system",
+      "content": $system
+    },
+    {
+      "role": "user",
+      "content": $content
+    }
+  ],
+  "temperature": $temperature
+}')"
+# Call DeepSeek API to generate the image prompt
+response="$(
+  curl::safe_curl_request \
+    "https://api.deepseek.com/chat/completions" \
+    "POST" \
+    "Authorization: Bearer ${DEEPSEEK_API_KEY}
+Content-Type: application/json" \
+    "$payload"
+)"
+
+# Extract the generated content from the response
+generated_content=$(echo "$response" | jq -r '.choices[0].message.content')
+
+# Save to JSON file
+echo "$generated_content" | sed -E '/^```(json)?[[:space:]]*$/d' >|"$output_file"
+
+echo "Image prompt generated and saved to $output_file"
