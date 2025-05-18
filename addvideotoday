@@ -159,8 +159,7 @@ function append_video_info() {
 
   {
     printf "\n### %s\n\n" "$title"
-    printf "[![%s](/%s)](%s \"%s\")\n" \
-      "$title" "$image_path" "$youtube_url" "$title"
+    vidmd::videomarkdown "$title" "/${image_path}" "$youtube_url"
     echo
     "${script_dir}/summarizevideo" "$video_id"
   } >> "$file_path" || die "Failed to append video info" $E_FILE_BACKUP_FAILED
