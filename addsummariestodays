@@ -238,8 +238,10 @@ function append_summary() {
   log "Appending to ${filepath} (Day ${lineno}, ${videoid})"
   {
     printf "\n"
-    "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >| "${filepath%%.*}Summary.txt"
-    cat "${filepath%%.*}Summary.txt"
+    summaryfname="${filepath%%.*}Summary.txt"
+    "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >| "$summaryfname"
+    "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" &> /dev/null
+    cat "$summaryfname"
   } >> "${filepath}"
 }
 
