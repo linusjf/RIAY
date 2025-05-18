@@ -938,7 +938,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3970,6 +3970,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 17,2025](#may-172025)
   - [Medium Reveals Meaning](#medium-reveals-meaning)
   - [AI-Generated Summary: The Radiance of Divine Light in the Transfiguration Window](#ai-generated-summary-the-radiance-of-divine-light-in-the-transfiguration-window)
+- [May 18,2025](#may-182025)
+  - [Rest in All Things](#rest-in-all-things)
+  - [AI-Generated Summary: The Divine Serenity in the Midst of Betrayal](#ai-generated-summary-the-divine-serenity-in-the-midst-of-betrayal)
 
 <!-- tocstop -->
 
@@ -4377,6 +4380,22 @@ Here, the Transfiguration is no mere event but a revelation: Christ, the _sun at
 The accompanying prayers—_Our Father_, _Hail Mary_, _Glory Be_—are not mere recitations but echoes of that moment on the mount. They are petitions for the very light the window depicts: forgiveness to cleanse, guidance to steady, and grace to transfigure our own shadows into clarity. The closing blessing is no formality but a whispered promise: that the same light which once dazzled the apostles still pierces the dimness of our world, if we have eyes to see.
 
 In this fusion of art and devotion, the window becomes more than decoration; it is a summons. Like the apostles, we are called to witness, to kneel, and—in time—to reflect.
+
+#### May 18,2025
+
+##### Rest in All Things
+
+[![Rest in All Things](May/jpgs/Day138.jpg)](https://youtu.be/y8hqDXNeKXE "Rest in All Things")
+
+##### AI-Generated Summary: The Divine Serenity in the Midst of Betrayal
+
+Here we see, dear reader, a moment both terrible and tender—the Last Supper, rendered in the patient art of mosaic, where the Lord sits at the center, calm as a stilled sea while the tempest of betrayal brews around Him. His disciples, like men caught in a gale, wear faces of confusion, sorrow, even guilt; yet He, knowing all, remains unmoved. Before Him lie the bread and wine, humble tokens of a covenant that would outlast empires.
+
+Consider His peace—not the absence of storm, but the mastery over it. As He once slept in the boat while waves threatened, so now He sits, sovereign over the dark currents of human treachery. The world may rage, but it cannot shake Him; death may loom, but it cannot claim Him. His serenity is no indifference, but the quiet of One who knows the Father’s will and walks it without flinching.
+
+And here lies our lesson: if He, facing the cross, could rest in trust, then why should we, in our lesser trials, fret like orphans? His authority is not diminished by our chaos, nor His love undone by our failures. Repent, believe, and take heart—for the same hands that broke the bread and bore the nails hold all things, even now.
+
+_Glory be to the Father, and to the Son, and to the Holy Spirit._
 
 ## June
 

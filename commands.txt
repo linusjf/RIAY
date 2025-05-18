@@ -1,4 +1,4 @@
 # commands
-addvideo "vpfrtxHcUto" "Medium Reveals Meaning"
+addvideo "y8hqDXNeKXE" "Rest in All Things"
 stitch
 lintall
