@@ -240,7 +240,7 @@ function append_summary() {
     printf "\n"
     summaryfname="${filepath%%.*}Summary.txt"
     "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >| "$summaryfname"
-    "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" &> /dev/null
+    "${SCRIPT_DIR}/generateimageprompt" "$summaryfname" &> /dev/null
     cat "$summaryfname"
   } >> "${filepath}"
 }
