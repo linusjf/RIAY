@@ -38,16 +38,16 @@ if ! declare -f date::validatemonth > /dev/null; then
   export -f date::validatemonth
 fi
 
+######################################################################
+# Validate day number for a given year
+# Globals: None
+# Arguments:
+#   $1 - Day number
+#   $2 - Year
+# Outputs: Error to STDERR if invalid
+# Returns: 0 if valid, 1 otherwise
+######################################################################
 if ! declare -f date::validate_daynumber > /dev/null; then
-  ######################################################################
-  # Validate day number for a given year
-  # Globals: None
-  # Arguments:
-  #   $1 - Day number
-  #   $2 - Year
-  # Outputs: Error to STDERR if invalid
-  # Returns: 0 if valid, 1 otherwise
-  ######################################################################
   date::validate_daynumber() {
     validators::validate_arg_count "$#" 2 || {
       err "Error: Two arguments 'doy' and 'year' expected"
@@ -73,15 +73,15 @@ if ! declare -f date::validate_daynumber > /dev/null; then
   export -f date::validate_daynumber
 fi
 
+######################################################################
+# Get month name from day of year
+# Globals: None
+# Arguments:
+#   $1 - Day of year
+# Outputs: Month name to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 if ! declare -f date::mfromdoy > /dev/null; then
-  ######################################################################
-  # Get month name from day of year
-  # Globals: None
-  # Arguments:
-  #   $1 - Day of year
-  # Outputs: Month name to STDOUT
-  # Returns: None (exits with status 1 on error)
-  ######################################################################
   date::mfromdoy() {
     validators::isnumeric "$1" || die "$1 is not numeric"
     local day
@@ -93,15 +93,15 @@ if ! declare -f date::mfromdoy > /dev/null; then
   export -f date::mfromdoy
 fi
 
+######################################################################
+# Get full date from day of year
+# Globals: None
+# Arguments:
+#   $1 - Day of year
+# Outputs: Formatted date to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 if ! declare -f date::datefromdoy > /dev/null; then
-  ######################################################################
-  # Get full date from day of year
-  # Globals: None
-  # Arguments:
-  #   $1 - Day of year
-  # Outputs: Formatted date to STDOUT
-  # Returns: None (exits with status 1 on error)
-  ######################################################################
   date::datefromdoy() {
     validators::isnumeric "$1" || die "$1 is not numeric"
     local day
@@ -113,15 +113,15 @@ if ! declare -f date::datefromdoy > /dev/null; then
   export -f date::datefromdoy
 fi
 
+######################################################################
+# Get month name from month number
+# Globals: None
+# Arguments:
+#   $1 - Month number (1-12)
+# Outputs: Month name to STDOUT
+# Returns: None (exits with status 1 on error)
+######################################################################
 if ! declare -f date::monthfromnumber > /dev/null; then
-  ######################################################################
-  # Get month name from month number
-  # Globals: None
-  # Arguments:
-  #   $1 - Month number (1-12)
-  # Outputs: Month name to STDOUT
-  # Returns: None (exits with status 1 on error)
-  ######################################################################
   date::monthfromnumber() {
     case $1 in
       [1-9] | 1[0-2]) date -d "${1}/01" +%B ;;
