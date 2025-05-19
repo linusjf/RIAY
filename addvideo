@@ -141,7 +141,7 @@ generate_files() {
     echo
     echo "$md"
     "${SCRIPT_DIR}/summarizevideo" -- "$vid" >| "$summaryfname"
-    "${SCRIPT_DIR}/generateimageprompt" "$summaryfname" &> /dev/null
+    "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" &> /dev/null
     cat "$summaryfname"
   } >| "$fname"
 
