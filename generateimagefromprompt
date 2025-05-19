@@ -3,6 +3,8 @@
 # Generate image from prompt using deepinfra API
 #
 # Usage: generateimagefromprompt /path/to/DayXXXImagePrompt.json
+#        or
+#        cat DayXXXImagePrompt.json | generateimagefromprompt
 # Output: Creates /path/to/jpgs/DayXXXSummary.jpg
 
 set -euo pipefail
@@ -27,7 +29,7 @@ function usage() {
   # Output: Usage message to STDOUT
   # Returns: 0
   cat <<EOF
-Usage: ${SCRIPT_NAME} [OPTIONS] INPUT_FILE
+Usage: ${SCRIPT_NAME} [OPTIONS] [INPUT_FILE]
 
 Options:
   -h, --help      Show this help message
@@ -35,10 +37,12 @@ Options:
   --verbose       Enable verbose output
 
 Arguments:
-  INPUT_FILE      Path to DayXXXImagePrompt.json file
+  INPUT_FILE      Path to DayXXXImagePrompt.json file (or read from stdin if not provided)
 
 Example:
   ${SCRIPT_NAME} ./data/Day001ImagePrompt.json
+  or
+  cat Day001ImagePrompt.json | ${SCRIPT_NAME}
 EOF
 }
 
@@ -92,21 +96,66 @@ function cleanup() {
   done
 }
 
+function read_input() {
+  # Read input from file or stdin
+  # Arguments: input_file (string) or empty for stdin
+  # Output: File content to STDOUT
+  # Returns: 0
+  local inputfile="$1"
+  if [[ -z "$inputfile" ]]; then
+    cat
+  else
+    cat "$inputfile"
+  fi
+}
+
+function get_output_dir() {
+  # Get output directory path
+  # Arguments: input_file (string) or empty for stdin
+  # Output: Directory path to STDOUT
+  # Returns: 0
+  local inputfile="$1"
+  if [[ -z "$inputfile" ]]; then
+    echo "jpgs"
+  else
+    echo "$(dirname "$inputfile")/jpgs"
+  fi
+}
+
+function get_filename_prefix() {
+  # Get filename prefix
+  # Arguments: input_file (string) or empty for stdin
+  # Output: Filename prefix to STDOUT
+  # Returns: 0
+  local inputfile="$1"
+  if [[ -z "$inputfile" ]]; then
+    echo "Day000"
+  else
+    echo "$(basename "$inputfile" | sed 's/ImagePrompt\.json//')"
+  fi
+}
+
 function main() {
   # Main execution function
   # Globals: SCRIPT_DIR
-  # Arguments: input_file (string)
+  # Arguments: input_file (string) or empty for stdin
   # Returns: 0 on success, non-zero on error
-  local inputfile="$1"
+  local inputfile="${1:-}"
   local pngfile jpgfile summaryjpg json prompt caption day_number jpgfileprefix
 
   # Initialize variables
   pngfile="$(mktemp --quiet -t tempXXX.png)"
-  jpgfileprefix="$(basename "$inputfile" | sed 's/ImagePrompt\.json//')"
-  json="$(cat "$inputfile")"
+  json="$(read_input "$inputfile")"
   prompt="$(echo "$json" | jq -r '.image_prompt')"
   caption="$(echo "$json" | jq -r '.caption')"
-  day_number="$(extract_day_number "$(basename "$inputfile")")"
+
+  if [[ -n "$inputfile" ]]; then
+    day_number="$(extract_day_number "$(basename "$inputfile")")"
+    jpgfileprefix="$(basename "$inputfile" | sed 's/ImagePrompt\.json//')"
+  else
+    day_number="000"
+    jpgfileprefix="Day000"
+  fi
 
   # Generate and process images
   generate_temp_image "$prompt" "$pngfile"
@@ -114,10 +163,11 @@ function main() {
   convert_to_jpg "$pngfile" "$jpgfile"
 
   # Create output directory if needed
-  mkdir -p "$(dirname "$inputfile")/jpgs"
+  output_dir="$(get_output_dir "$inputfile")"
+  mkdir -p "$output_dir"
 
   # Save final image
-  summaryjpg="$(dirname "$inputfile")/jpgs/${jpgfileprefix}Summary.jpg"
+  summaryjpg="${output_dir}/${jpgfileprefix}Summary.jpg"
   cp "$jpgfile" "$summaryjpg"
 
   # Add image to day
@@ -159,12 +209,6 @@ while [[ $# -gt 0 ]]; do
     ;;
   esac
 done
-
-# Validate arguments
-if [[ $# -lt 1 ]]; then
-  usage >&2
-  exit 1
-fi
 
 # Check required commands
 require_commands jq tee cat deepctl base64 sed mktemp cp gm dirname basename
