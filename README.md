@@ -3973,6 +3973,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 18,2025](#may-182025)
   - [Rest in All Things](#rest-in-all-things)
   - [AI-Generated Summary: The Divine Serenity in the Midst of Betrayal](#ai-generated-summary-the-divine-serenity-in-the-midst-of-betrayal)
+- [May 19,2025](#may-192025)
+  - [Gold in Our Halos](#gold-in-our-halos)
+  - [AI-Generated Summary: The Duality of Judas and the Mercy of Christ](#ai-generated-summary-the-duality-of-judas-and-the-mercy-of-christ)
 
 <!-- tocstop -->
 
@@ -4396,6 +4399,20 @@ Consider His peace—not the absence of storm, but the mastery over it. As He on
 And here lies our lesson: if He, facing the cross, could rest in trust, then why should we, in our lesser trials, fret like orphans? His authority is not diminished by our chaos, nor His love undone by our failures. Repent, believe, and take heart—for the same hands that broke the bread and bore the nails hold all things, even now.
 
 _Glory be to the Father, and to the Son, and to the Holy Spirit._
+
+#### May 19,2025
+
+##### Gold in Our Halos
+
+[![Gold in Our Halos](May/jpgs/Day139.jpg)](https://youtu.be/PvYnqnNA380 "Gold in Our Halos")
+
+##### AI-Generated Summary: The Duality of Judas and the Mercy of Christ
+
+Consider the painting by Masip, where our Lord kneels in Gethsemane, His sorrow etched with divine realism. An angel descends to strengthen Him, while His chosen three slumber, heavy with human frailty. Yet it is Judas who arrests the eye—his halo half gold, half black, as if the artist wished to show us that even in betrayal, the soul teeters between light and shadow. Here is a truth both terrible and tender: no man is beyond redemption until he refuses it.
+
+Peter, too, betrayed—yet he wept and was restored. Judas, though offered the same mercy, turned inward to despair. The lesson is plain as morning: God’s forgiveness waits, but we must open the door. Christ’s agony in the garden was not merely for nails and thorns, but for hearts that would rather perish than be pardoned.
+
+To the weary soul, this is your comfort: come as you are, but do not stay as you are. The prayers we repeat—the _Hail Mary_, the _Glory Be_—are not incantations but lifelines, thrown across the chasm of our failings. Mercy is always nearer than we dare hope.
 
 ## June
 
