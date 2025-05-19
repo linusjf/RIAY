@@ -88,16 +88,23 @@ function create_payload() {
 }
 
 function main() {
-  case "${1:-}" in
-    -h | --help) usage 0 ;;
-    -v | --version)
-      version
-      exit 0
-      ;;
-    *)
-      validate_input "$@"
-      ;;
-  esac
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      -h | --help) usage 0 ;;
+      -v | --version)
+        version
+        exit 0
+        ;;
+      --)
+        shift
+        break
+        ;;
+      -*) usage 1 ;;
+      *) break ;;
+    esac
+  done
+
+  validate_input "$@"
   local input_file="$1"
   local output_file
   local summary_content
