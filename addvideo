@@ -125,6 +125,7 @@ generate_files() {
   monthnumber="$(date::monthnumberfrommonth "${month}" "${YEAR}")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   summaryfname="${fname%%.*}Summary.txt"
+  summarypromptfname="${fname%%.*}ImagePrompt.json"
   formatdt="$(date::datefromdoy "${doy#0}")"
 
   md="$(vidmd::genvidthmd "$vid" "$videourl" "$caption" "$doy")"
@@ -141,7 +142,7 @@ generate_files() {
     echo
     echo "$md"
     "${SCRIPT_DIR}/summarizevideo" -- "$vid" >| "$summaryfname"
-    "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" &> /dev/null
+    "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname"
     cat "$summaryfname"
   } >| "$fname"
 

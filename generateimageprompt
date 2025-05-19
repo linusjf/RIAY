@@ -28,19 +28,19 @@ function usage() {
   cat >&$output_stream << EOF
 Usage: ${SCRIPT_NAME} INPUT_FILE
 
-Generates an image prompt JSON file from a text summary using DeepSeek API.
+Generates image prompt JSON from a text file usually a summary using DeepSeek API and outputs it to stdout.
 
 Arguments:
-  INPUT_FILE    Path to DayXXXSummary.txt file
+  INPUT_FILE    Path to input file
 
 Environment variables required:
   DEEPSEEK_API_KEY           API key for DeepSeek service
-  SUMMARY_IMAGE_META_PROMPT  System prompt for image generation
+  SUMMARY_IMAGE_META_PROMPT  System prompt for image prompt and caption generation
   TEMPERATURE                Creativity parameter (0-2)
 
 Examples:
-  ${SCRIPT_NAME} /path/to/Day123Summary.txt
-  DEEPSEEK_API_KEY=abc123 ${SCRIPT_NAME} Day456Summary.txt
+  ${SCRIPT_NAME} /path/to/input.txt
+  DEEPSEEK_API_KEY=abc123 ${SCRIPT_NAME} input.txt
 EOF
 
   exit "$exit_code"
@@ -55,11 +55,6 @@ function validate_input() {
   [[ -f "$1" ]] || die "Error: Input file '$1' not found"
   [[ -n "${DEEPSEEK_API_KEY:-}" ]] || die "Error: DEEPSEEK_API_KEY not set"
   [[ -n "${SUMMARY_IMAGE_META_PROMPT:-}" ]] || die "Error: SUMMARY_IMAGE_META_PROMPT not set"
-}
-
-function generate_output_filename() {
-  local input_file="$1"
-  printf "%s" "${input_file/Summary.txt/ImagePrompt.json}"
 }
 
 function create_payload() {
@@ -112,7 +107,6 @@ function main() {
   local response
   local generated_content
 
-  output_file="$(generate_output_filename "$input_file")"
   summary_content="$(< "$input_file")"
   payload="$(create_payload "$summary_content")"
 
@@ -126,9 +120,7 @@ Content-Type: application/json" \
   )"
 
   generated_content="$(echo "$response" | jq -r '.choices[0].message.content')"
-  echo "$generated_content" | sed -E '/^```(json)?[[:space:]]*$/d' >| "$output_file"
-
-  out "Image prompt generated and saved to $output_file"
+  echo "$generated_content" | sed -E '/^```(json)?[[:space:]]*$/d'
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

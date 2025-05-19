@@ -239,8 +239,9 @@ function append_summary() {
   {
     printf "\n"
     summaryfname="${filepath%%.*}Summary.txt"
+    summarypromptfname="${filepath%%.*}ImagePrompt.json"
     "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >| "$summaryfname"
-    "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" &> /dev/null
+    "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname"
     cat "$summaryfname"
   } >> "${filepath}"
 }
