@@ -161,6 +161,7 @@ function main() {
   generate_temp_image "$prompt" "$pngfile"
   jpgfile="${pngfile%%.*}.jpg"
   convert_to_jpg "$pngfile" "$jpgfile"
+  echo "$jpgfile"
 
   # Create output directory if needed
   output_dir="$(get_output_dir "$inputfile")"
