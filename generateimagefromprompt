@@ -5,7 +5,7 @@
 # Usage: generateimagefromprompt /path/to/DayXXXImagePrompt.json
 #        or
 #        cat DayXXXImagePrompt.json | generateimagefromprompt
-# Output: Creates /path/to/jpgs/DayXXXSummary.jpg
+# Output: Creates jpg image in temp directory and outputs its path to stdout
 
 set -euo pipefail
 shopt -s inherit_errexit
@@ -44,17 +44,6 @@ Example:
   or
   cat Day001ImagePrompt.json | ${SCRIPT_NAME}
 EOF
-}
-
-function extract_day_number() {
-  # Extract day number from filename
-  # Arguments: filename (string)
-  # Output: Day number (string) to STDOUT
-  # Returns: 0
-  local filename="$1"
-  local day_number
-  day_number="$(echo "$filename" | sed -E 's/^Day([0-9]{3})ImagePrompt\.json$/\1/')"
-  echo "$day_number"
 }
 
 function generate_temp_image() {
@@ -109,53 +98,18 @@ function read_input() {
   fi
 }
 
-function get_output_dir() {
-  # Get output directory path
-  # Arguments: input_file (string) or empty for stdin
-  # Output: Directory path to STDOUT
-  # Returns: 0
-  local inputfile="$1"
-  if [[ -z "$inputfile" ]]; then
-    echo "jpgs"
-  else
-    echo "$(dirname "$inputfile")/jpgs"
-  fi
-}
-
-function get_filename_prefix() {
-  # Get filename prefix
-  # Arguments: input_file (string) or empty for stdin
-  # Output: Filename prefix to STDOUT
-  # Returns: 0
-  local inputfile="$1"
-  if [[ -z "$inputfile" ]]; then
-    echo "Day000"
-  else
-    basename "$inputfile" | sed 's/ImagePrompt\.json//'
-  fi
-}
-
 function main() {
   # Main execution function
   # Globals: SCRIPT_DIR
   # Arguments: input_file (string) or empty for stdin
   # Returns: 0 on success, non-zero on error
   local inputfile="${1:-}"
-  local pngfile jpgfile summaryjpg json prompt caption day_number jpgfileprefix
+  local pngfile jpgfile json prompt
 
   # Initialize variables
   pngfile="$(mktemp --quiet -t tempXXX.png)"
   json="$(read_input "$inputfile")"
   prompt="$(echo "$json" | jq -r '.image_prompt')"
-  caption="$(echo "$json" | jq -r '.caption')"
-
-  if [[ -n "$inputfile" ]]; then
-    day_number="$(extract_day_number "$(basename "$inputfile")")"
-    jpgfileprefix="$(basename "$inputfile" | sed 's/ImagePrompt\.json//')"
-  else
-    day_number="000"
-    jpgfileprefix="Day000"
-  fi
 
   # Generate and process images
   generate_temp_image "$prompt" "$pngfile"
@@ -163,19 +117,8 @@ function main() {
   convert_to_jpg "$pngfile" "$jpgfile"
   echo "$jpgfile"
 
-  # Create output directory if needed
-  output_dir="$(get_output_dir "$inputfile")"
-  mkdir -p "$output_dir"
-
-  # Save final image
-  summaryjpg="${output_dir}/${jpgfileprefix}Summary.jpg"
-  cp "$jpgfile" "$summaryjpg"
-
-  # Add image to day
-  "${SCRIPT_DIR}/addimgtoday" "$summaryjpg" "$caption" "$day_number"
-
   # Clean up
-  cleanup "$pngfile" "$jpgfile"
+  cleanup "$pngfile"
 }
 
 ### Main Execution ###
