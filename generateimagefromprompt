@@ -2,9 +2,9 @@
 #
 # Generate image from prompt using deepinfra API
 #
-# Usage: generateimagefromprompt /path/to/DayXXXImagePrompt.json
+# Usage: generateimagefromprompt "prompt"
 #        or
-#        cat DayXXXImagePrompt.json | generateimagefromprompt
+#        cat "promptfile" | generateimagefromprompt
 # Output: Creates jpg image in temp directory and outputs its path to stdout
 
 set -euo pipefail
@@ -29,7 +29,7 @@ function usage() {
   # Output: Usage message to STDOUT
   # Returns: 0
   cat << EOF
-Usage: ${SCRIPT_NAME} [OPTIONS] [INPUT_FILE]
+Usage: ${SCRIPT_NAME} [OPTIONS] "prompt"
 
 Options:
   -h, --help      Show this help message
@@ -37,12 +37,12 @@ Options:
   --verbose       Enable verbose output
 
 Arguments:
-  INPUT_FILE      Path to json prompt file (or read from stdin if not provided)
+  prompt       prompt text (or read from stdin if not provided)
 
 Example:
-  ${SCRIPT_NAME} ./Day001ImagePrompt.json
+  ${SCRIPT_NAME} "prompt"
   or
-  cat Day001ImagePrompt.json | ${SCRIPT_NAME}
+  cat Day001ImagePrompt.json | jq -r ".image_prompt" | ${SCRIPT_NAME}
 EOF
 }
 
@@ -90,11 +90,11 @@ function read_input() {
   # Arguments: input_file (string) or empty for stdin
   # Output: File content to STDOUT
   # Returns: 0
-  local inputfile="$1"
-  if [[ -z "$inputfile" ]]; then
+  local input="$1"
+  if [[ -z "$input" ]]; then
     cat
   else
-    cat "$inputfile"
+    echo "$input"
   fi
 }
 
@@ -103,13 +103,12 @@ function main() {
   # Globals: SCRIPT_DIR
   # Arguments: input_file (string) or empty for stdin
   # Returns: 0 on success, non-zero on error
-  local inputfile="${1:-}"
-  local pngfile jpgfile json prompt
+  local input="${1:-}"
+  local pngfile jpgfile prompt
 
   # Initialize variables
   pngfile="$(mktemp --quiet -t tempXXX.png)"
-  json="$(read_input "$inputfile")"
-  prompt="$(echo "$json" | jq -r '.image_prompt')"
+  prompt="$(read_input "$input")"
 
   # Generate and process images
   generate_temp_image "$prompt" "$pngfile"
