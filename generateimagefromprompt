@@ -54,7 +54,7 @@ function generate_temp_image() {
   local prompt="$1"
   local output_file="$2"
 
-  deepctl infer -m "stabilityai/stable-diffusion-2-1" -i "prompt=${prompt}" \
+  deepctl infer -m "${IMAGE_GENERATION_MODEL}" -i "prompt=${prompt}" \
     | sed 's/data:image\/png;base64,//' \
     | jq -r '.images[0]' \
     | base64 --decode > "$output_file"
