@@ -212,7 +212,7 @@ function process_single_day() {
         ;;
     esac
   else
-    append_summary "${filepath}" "${videoid}"
+    append_summary "${filepath}" "${videoid}" "${lineno}"
   fi
 }
 
@@ -229,21 +229,36 @@ function backup_and_clean_file() {
     /^### / && in_block { in_block = 0 }
     !in_block
   ' "${filepath}" > "${tempfile}" && mv "${tempfile}" "${filepath}"
+  # delete ai generated image as well
+  awk '
+    /^### AI-Generated Image:/ { in_block = 1; next }
+    /^### / && in_block { in_block = 0 }
+    !in_block
+  ' "${filepath}" > "${tempfile}" && mv "${tempfile}" "${filepath}"
 }
 
 function append_summary() {
   local filepath="$1"
   local videoid="$2"
+  local doy="$3"
+  summaryfname="${filepath%%.*}Summary.txt"
+  summarypromptfname="${filepath%%.*}ImagePrompt.json"
 
   log "Appending to ${filepath} (Day ${lineno}, ${videoid})"
   {
     printf "\n"
-    summaryfname="${filepath%%.*}Summary.txt"
-    summarypromptfname="${filepath%%.*}ImagePrompt.json"
     "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >| "$summaryfname"
     "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname"
     cat "$summaryfname"
   } >> "${filepath}"
+  # generate image from summary prompt
+  json="$(cat "${summarypromptfname}")"
+  prompt="$(echo "$json" | jq -r '.image_prompt')"
+  caption="$(echo "$json" | jq -r '.caption')"
+  generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")"
+  jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg"
+  cp "$generatedimage" "$jpegfname" &> /dev/null
+  "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

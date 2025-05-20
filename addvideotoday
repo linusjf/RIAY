@@ -120,6 +120,7 @@ function remove_existing_video_entry() {
 
   tmp_file=$(mktemp) || die "Failed to create temporary file" $E_FILE_BACKUP_FAILED
 
+  # remove AI generated content
   awk -v vid="$video_id" '
   BEGIN { skip = 0 }
   {
@@ -137,7 +138,9 @@ function remove_existing_video_entry() {
       } else if ($0 ~ /^### AI-Generated Summary:/) {
         skip = 1
         next
-      }
+      } else if ($0 ~ /^### AI-Generated Image:/) {
+        skip = 1
+        next
     }
     if (index($0, vid)) {
       found = 1
@@ -154,22 +157,34 @@ function append_video_info() {
   local title=$2
   local image_path=$3
   local youtube_url=$4
-  local script_dir=$5
-  local video_id=$6
-
+  local video_id=$5
+  local doy=$6
+  summaryfname="${file_path%%.*}${video_id}Summary.txt"
+  summarypromptfname="${file_path%%.*}${video_id}ImagePrompt.json"
   {
     printf "\n### %s\n\n" "$title"
     vidmd::videomarkdown "$title" "/${image_path}" "$youtube_url"
     echo
-    "${script_dir}/summarizevideo" "$video_id"
+    "${SCRIPT_DIR}/summarizevideo" -- "$video_id" >| "$summaryfname"
+    "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname"
+    cat "$summaryfname"
   } >> "$file_path" || die "Failed to append video info" $E_FILE_BACKUP_FAILED
+  # generate image from summary prompt
+  json="$(cat "${summarypromptfname}")"
+  prompt="$(echo "$json" | jq -r '.image_prompt')"
+  caption="$(echo "$json" | jq -r '.caption')"
+  generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")"
+  jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")${video_id}Summary.jpg"
+  cp "$generatedimage" "$jpegfname" &> /dev/null
+  "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy"
+  rm -f "$generatedimage"
 }
 
 function main() {
   validate_arguments "$@"
   local video_id=$1
   local day_num=$2
-  local script_dir month day_string markdown_file image_path
+  local month day_string markdown_file image_path
   local api_key response thumbnail_url title youtube_url
 
   require_vars YEAR YOUTUBE_API_KEY || exit $E_MISSING_ENV
@@ -211,7 +226,7 @@ function main() {
     fi
 
     append_video_info "$markdown_file" "$title" \
-      "$image_path" "$youtube_url" "$SCRIPT_DIR" "$video_id" || exit $E_FILE_BACKUP_FAILED
+      "$image_path" "$youtube_url" "$video_id" "$day_num" || exit $E_FILE_BACKUP_FAILED
 
     out "Appended video info to $markdown_file"
   else
@@ -234,7 +249,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
       *) break ;;
     esac
   done
-  require_commands tee date jq curl git mv cp mktemp grep mkdir || exit $E_MISSING_TOOLS
+  require_commands tee date jq curl git mv rm cp mktemp grep mkdir || exit $E_MISSING_TOOLS
   if "$LOGGING"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
