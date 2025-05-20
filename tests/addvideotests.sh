@@ -8,6 +8,8 @@
 # @description :
 ######################################################################
 
+readonly ADDVIDEO_SCRIPT="${SCRIPT_DIR}/addvideo"
+
 print_header "Running addvideo sanity tests"
 
 print_header "Test 1: Version flag"

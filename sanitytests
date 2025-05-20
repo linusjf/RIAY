@@ -27,7 +27,6 @@ readonly TEST_COMPACT_DIR="test_compact_dir"
 readonly TEST_VIDEOS_FILE="$VIDEOS_FILE"
 
 # Script paths
-readonly ADDVIDEO_SCRIPT="${SCRIPT_DIR}/addvideo"
 readonly GENMONTH_SCRIPT="${SCRIPT_DIR}/genmonth"
 readonly GENTOC_SCRIPT="${SCRIPT_DIR}/gentoc"
 readonly STITCH_SCRIPT="${SCRIPT_DIR}/stitch"
