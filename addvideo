@@ -146,6 +146,15 @@ generate_files() {
     cat "$summaryfname"
   } >| "$fname"
 
+  # generate image from summary prompt
+  json="$(cat "${summarypromptfname}")"
+  prompt="$(echo "$json" | jq -r '.image_prompt')"
+  caption="$(echo "$json" | jq -r '.caption')"
+  generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")"
+  jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg"
+  cp "$generatedimage" "$jpegfname" &> /dev/null
+  "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy"
+
   if ! cp "${month}/${COMPACT_FILE}" "${month}/${COMPACT_FILE}.bak"; then
     echo "Warning: Failed to backup compact file" >&2
   fi
