@@ -1,4 +1,4 @@
 # commands
-addvideo "PvYnqnNA380" "Gold in Our Halos"
+addvideo "VZwpLgo7TWo" "His Glory Remains"
 stitch
 lintall

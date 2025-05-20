@@ -3976,6 +3976,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 19,2025](#may-192025)
   - [Gold in Our Halos](#gold-in-our-halos)
   - [AI-Generated Summary: The Duality of Judas and the Mercy of Christ](#ai-generated-summary-the-duality-of-judas-and-the-mercy-of-christ)
+- [May 20,2025](#may-202025)
+  - [His Glory Remains](#his-glory-remains)
+  - [AI-Generated Summary: The Unyielding Love of Christ in Art and Spirit](#ai-generated-summary-the-unyielding-love-of-christ-in-art-and-spirit)
 
 <!-- tocstop -->
 
@@ -4413,6 +4416,20 @@ Consider the painting by Masip, where our Lord kneels in Gethsemane, His sorrow 
 Peter, too, betrayed—yet he wept and was restored. Judas, though offered the same mercy, turned inward to despair. The lesson is plain as morning: God’s forgiveness waits, but we must open the door. Christ’s agony in the garden was not merely for nails and thorns, but for hearts that would rather perish than be pardoned.
 
 To the weary soul, this is your comfort: come as you are, but do not stay as you are. The prayers we repeat—the _Hail Mary_, the _Glory Be_—are not incantations but lifelines, thrown across the chasm of our failings. Mercy is always nearer than we dare hope.
+
+#### May 20,2025
+
+##### His Glory Remains
+
+[![His Glory Remains](May/jpgs/Day140.jpg)](https://youtu.be/VZwpLgo7TWo "His Glory Remains")
+
+##### AI-Generated Summary: The Unyielding Love of Christ in Art and Spirit
+
+Behold the fresco—a work of Florentine hands, yet wrought in Rome—where the Son of God stands bound, haloed in gold, while men prepare their scourges. Here is innocence encircled by cruelty, holiness met with hatred. The artist, with a brush both tender and unflinching, captures the moment before the lash falls: the white cloth yet unstained, the body unbroken, the face serene. Yet we know what follows—the blood, the wounds, the mockery. And still, His glory is not diminished.
+
+This is the mystery: that He who could summon legions of angels submits to the whip; that He whose word upholds the universe endures the fury of sinners. St. Paul speaks truly—neither pain, nor death, nor any power of hell can sever us from the love made manifest in that scourged flesh. Christ is no passive victim, but a warrior who fights for souls, whose wounds are the price of our ransom. Let the heart take courage: you are known, you are sought, you are loved by Him who conquered all.
+
+As the prayers rise—_Hail Mary_, _Glory Be_—they are but echoes of the greater truth: here is love that will not let us go.
 
 ## June
 
