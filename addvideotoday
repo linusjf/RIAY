@@ -136,7 +136,11 @@ function remove_existing_video_entry() {
   # remove AI generated content
   {
     awk -v vid="$video_id" '
-{
+    BEGIN {
+      found = 0
+      skip = 0
+    }
+  {
   if (!found && index($0, vid)) {
     found = 1
     next
