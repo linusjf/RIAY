@@ -42,7 +42,7 @@ trap trap_exit EXIT
 
 trap_exit() {
   local exitcode="$?"
-  echo "Exiting..."
+  >&2 echo "Exiting..."
   exit $exitcode
 }
 
@@ -134,35 +134,41 @@ function remove_existing_video_entry() {
   tmp_file=$(mktemp) || die "Failed to create temporary file" $E_FILE_BACKUP_FAILED
 
   # remove AI generated content
-  awk -v vid="$video_id" '
-  BEGIN { skip = 0 }
   {
-    if (skip) {
-      if ($0 ~ /^### /) {
-        skip = 0
-        print
-      }
-      next
-    }
-    if (found) {
-      found = 0
-      if ($0 ~ /^[[:space:]]*$/) {
-        next
-      } else if ($0 ~ /^### AI-Generated Summary:/) {
-        skip = 1
-        next
-      } else if ($0 ~ /^### AI-Generated Image:/) {
-        skip = 1
-        next
-      }
-    }
-    if (index($0, vid)) {
-      found = 1
-      next
-    }
-    print
-  }' "$file_path" > "$tmp_file" || return $E_FILE_BACKUP_FAILED
+    awk -v vid="$video_id" '
+{
+  if (!found && index($0, vid)) {
+    found = 1
+    next
+  }
 
+  if (!found) {
+    print
+    next
+  }
+
+  if (skip) {
+    if ($0 ~ /^### / && $0 ~ !/^### AI-Generated Image/) {
+      skip = 0
+      print
+    }
+    next
+  }
+
+  if ($0 ~ /^### AI-Generated Summary/ || $0 ~ /^### AI-Generated Image/) {
+    skip = 1
+    next
+  }
+
+  print
+}' "$file_path" | awk '
+  /^### / { last = NR }
+  { lines[NR] = $0 }
+  END {
+    for (i = 1; i < last; i++) print lines[i]
+  }
+'
+  } > "$tmp_file" || return $E_FILE_BACKUP_FAILED
   mv "$tmp_file" "$file_path" || return $E_FILE_BACKUP_FAILED
 }
 
