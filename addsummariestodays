@@ -253,8 +253,8 @@ function append_summary() {
   } >> "${filepath}"
   # generate image from summary prompt
   json="$(cat "${summarypromptfname}")"
-  prompt="$(echo "$json" | jq -r '.image_prompt')"
-  caption="$(echo "$json" | jq -r '.caption' | sed 's/\.//g')"
+  prompt="$(imageprompt::get_prompt "$json")"
+  caption="$(imageprompt::get_caption "$json")"
   generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")"
   jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg"
   cp "$generatedimage" "$jpegfname" &> /dev/null
@@ -272,6 +272,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   source "${SCRIPT_DIR}/lib/internet.sh"
   source "${SCRIPT_DIR}/lib/util.sh"
   source "${SCRIPT_DIR}/lib/require.sh"
+  source "${SCRIPT_DIR}/lib/imageprompt.sh"
   source "${SCRIPT_DIR}/lib/lockconfig.sh"
   lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 

@@ -30,6 +30,7 @@ source "${SCRIPT_DIR}/lib/git.sh" || exit 1
 source "${SCRIPT_DIR}/lib/youtube.sh" || exit 1
 source "${SCRIPT_DIR}/lib/vidmd.sh" || exit 1
 source "${SCRIPT_DIR}/lib/date.sh" || exit 1
+source "${SCRIPT_DIR}/lib/imageprompt.sh" || exit 1
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
@@ -171,8 +172,8 @@ function append_video_info() {
   } >> "$file_path" || die "Failed to append video info" $E_FILE_BACKUP_FAILED
   # generate image from summary prompt
   json="$(cat "${summarypromptfname}")"
-  prompt="$(echo "$json" | jq -r '.image_prompt')"
-  caption="$(echo "$json" | jq -r '.caption' | sed 's/\.//g')"
+  prompt="$(imageprompt::get_prompt "$json")"
+  caption="$(imageprompt::get_caption "$json")"
   generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")"
   jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")${video_id}Summary.jpg"
   cp "$generatedimage" "$jpegfname" &> /dev/null
