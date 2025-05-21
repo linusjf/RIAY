@@ -3942,6 +3942,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 18,2025](#may-182025)
   - [Rest in All Things](#rest-in-all-things)
   - [AI-Generated Summary: The Divine Serenity in the Midst of Betrayal](#ai-generated-summary-the-divine-serenity-in-the-midst-of-betrayal)
+  - [AI-Generated Image: The Last Supper in mosaic: Christ's divine serenity amidst the storm of betrayal](#ai-generated-image-the-last-supper-in-mosaic-christs-divine-serenity-amidst-the-storm-of-betrayal)
 - [May 19,2025](#may-192025)
   - [Gold in Our Halos](#gold-in-our-halos)
   - [AI-Generated Summary: The Duality of Judas and the Mercy of Christ](#ai-generated-summary-the-duality-of-judas-and-the-mercy-of-christ)
@@ -4376,6 +4377,10 @@ Consider His peace—not the absence of storm, but the mastery over it. As He on
 And here lies our lesson: if He, facing the cross, could rest in trust, then why should we, in our lesser trials, fret like orphans? His authority is not diminished by our chaos, nor His love undone by our failures. Repent, believe, and take heart—for the same hands that broke the bread and bore the nails hold all things, even now.
 
 _Glory be to the Father, and to the Son, and to the Holy Spirit._
+
+##### AI-Generated Image: The Last Supper in mosaic: Christ's divine serenity amidst the storm of betrayal
+
+![AI-Generated Image: The Last Supper in mosaic: Christ's divine serenity amidst the storm of betrayal](May/jpgs/Day138Summary.jpg)
 
 #### May 19,2025
 
