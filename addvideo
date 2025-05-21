@@ -141,19 +141,20 @@ generate_files() {
     echo "### $caption"
     echo
     echo "$md"
-    "${SCRIPT_DIR}/summarizevideo" -- "$vid" >| "$summaryfname"
-    "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname"
-    cat "$summaryfname"
+    "${SCRIPT_DIR}/summarizevideo" -- "$vid" >| "$summaryfname" \
+      && "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname" \
+      && cat "$summaryfname"
   } >| "$fname"
 
   # generate image from summary prompt
-  json="$(cat "${summarypromptfname}")"
-  prompt="$(imageprompt::get_prompt "$json")"
-  caption="$(imageprompt::get_caption "$json")"
-  generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")"
-  jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg"
-  cp "$generatedimage" "$jpegfname" &> /dev/null
-  "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy"
+  json="$(cat "${summarypromptfname}")" \
+    && prompt="$(imageprompt::get_prompt "$json")" \
+    && caption="$(imageprompt::get_caption "$json")" \
+    && generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")" \
+    && jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg" \
+    && cp "$generatedimage" "$jpegfname" &> /dev/null \
+    && "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy" \
+    && rm -f "$generatedimage"
 
   if ! cp "${month}/${COMPACT_FILE}" "${month}/${COMPACT_FILE}.bak"; then
     echo "Warning: Failed to backup compact file" >&2

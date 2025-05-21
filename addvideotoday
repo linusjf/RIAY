@@ -169,19 +169,19 @@ function append_video_info() {
     printf "\n### %s\n\n" "$title"
     vidmd::videomarkdown "$title" "/${image_path}" "$youtube_url"
     echo
-    "${SCRIPT_DIR}/summarizevideo" -- "$video_id" >| "$summaryfname"
-    "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname"
-    cat "$summaryfname"
+    "${SCRIPT_DIR}/summarizevideo" -- "$video_id" >| "$summaryfname" \
+      && "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname" \
+      && cat "$summaryfname"
   } >> "$file_path" || die "Failed to append video info" $E_FILE_BACKUP_FAILED
   # generate image from summary prompt
-  json="$(cat "${summarypromptfname}")"
-  prompt="$(imageprompt::get_prompt "$json")"
-  caption="$(imageprompt::get_caption "$json")"
-  generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")"
-  jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")${video_id}Summary.jpg"
-  cp "$generatedimage" "$jpegfname" &> /dev/null
-  "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy"
-  rm -f "$generatedimage"
+  json="$(cat "${summarypromptfname}")" \
+    && prompt="$(imageprompt::get_prompt "$json")" \
+    && caption="$(imageprompt::get_caption "$json")" \
+    && generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")" \
+    && jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")${video_id}Summary.jpg" \
+    && cp "$generatedimage" "$jpegfname" &> /dev/null \
+    && "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy" \
+    && rm -f "$generatedimage"
 }
 
 function main() {
