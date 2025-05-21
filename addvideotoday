@@ -172,7 +172,7 @@ function append_video_info() {
   # generate image from summary prompt
   json="$(cat "${summarypromptfname}")"
   prompt="$(echo "$json" | jq -r '.image_prompt')"
-  caption="$(echo "$json" | jq -r '.caption')"
+  caption="$(echo "$json" | jq -r '.caption' | sed 's/\.//g')"
   generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")"
   jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")${video_id}Summary.jpg"
   cp "$generatedimage" "$jpegfname" &> /dev/null
