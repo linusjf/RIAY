@@ -156,7 +156,8 @@ All the WhatsApp groups are closed for 2025, if anyone wants to follow the progr
 - [January 01,2025](#january-012025)
   - [Responding to God](#responding-to-god)
   - [ROSARY IN A YEAR DAY 01 Michelle Jackson](#rosary-in-a-year-day-01-michelle-jackson)
-  - [AI-Generated Summary: A Year-Long Journey to Deeper Prayer Through the Rosary](#ai-generated-summary-a-year-long-journey-to-deeper-prayer-through-the-rosary)
+  - [AI-Generated Summary: The Gentle Art of Divine Conversation](#ai-generated-summary-the-gentle-art-of-divine-conversation)
+  - [AI-Generated Image: A soul in quiet prayer, where heaven meets the heart in stillness](#ai-generated-image-a-soul-in-quiet-prayer-where-heaven-meets-the-heart-in-stillness)
 - [January 02,2025](#january-022025)
   - [The King Knows You](#the-king-knows-you)
   - [ROSARY IN A YEAR DAY 02 Michelle Jackson](#rosary-in-a-year-day-02-michelle-jackson)
@@ -304,51 +305,17 @@ Most importantly it's raising our heart and mind to God by making an act of Fait
 We need to practice His presence by recognising His presence, He's always there.\*
 We need to give our all when we pray it's not one sided it's a relationship, we need to listen after we speak. Thank you Lord for this relationship you give us through prayer🙏
 
-##### AI-Generated Summary: A Year-Long Journey to Deeper Prayer Through the Rosary
+##### AI-Generated Summary: The Gentle Art of Divine Conversation
 
-This summary provides an overview of a year-long program designed to deepen prayer through the Rosary. The program emphasizes understanding the theological underpinnings of the Rosary and cultivating a deeper relationship with the Trinity and the Blessed Mother.
+To pray is not to batter heaven with words, but to open the soul’s door to the One who stands always knocking. Begin simply, as a child learns to walk—one step, then another. A single decade of prayer, offered with the heart’s attention, is worth more than a torrent of hurried words. For prayer is not arithmetic; it is the lifting of the mind and heart to God, a quiet recognition that He is here, nearer than our own breath.
 
-**Main Topics:**
+Before you speak, pause. Let the soul grow still, as a pool settles to reflect the sky. Breathe deeply, gaze upon sacred art, or let Scripture whisper to you—not as a task, but as a friend’s voice across a shared silence. God does not demand eloquence; He asks only that you come, as you are, and receive His presence. This is the dance of prayer: at first, your steps may falter, your rhythm feel unnatural. Yet grace moves with you, and in time, what was effort becomes as natural as breathing.
 
-- **Structured Prayer Program:** The program is divided into six phases, guiding participants through a progressive journey of prayer.
-- **Theological Foundation:** It emphasizes understanding the biblical roots of the prayers and their application to daily life.
-- **Engaging with Scripture and Tradition:** The program incorporates lectio divina, writings of the Saints, and sacred art to enrich prayer.
-- **Practicing the Presence of God:** This is a core element, emphasizing the importance of acknowledging God's presence before, during, and after prayer.
-- **Gradual Progression with the Rosary:** Participants gradually increase the number of decades they pray, culminating in praying the full Rosary.
-- **Developing a Relationship with Jesus and Mary:** The program encourages a personal connection with Jesus and Mary, fostering love and devotion.
+Offer Him your fears, your hopes, your tangled desires—not as one casting a letter into the void, but as a child placing a gift into a Father’s hands. Then wait. For prayer is not monologue, but dialogue; He speaks in the stillness, in the sudden peace that comes unbidden, in the quiet shaping of the heart. End as you began: in love, in trust, in the ancient words that have carried saints before you. Thus, the soul grows deep, and heaven draws near.
 
-**Key Takeaways:**
+##### AI-Generated Image: A soul in quiet prayer, where heaven meets the heart in stillness
 
-- **Prayer as Dialogue:** Prayer is not a monologue but a dialogue with God, requiring us to acknowledge and receive His presence.
-- **Importance of Preparation:** Before engaging in formal prayer, it's crucial to create space and prepare our hearts and minds to receive God's presence. This can involve practices like deep breathing, visualizing sacred spaces, or reflecting on scripture.
-- **Raising the Mind and Heart to God:** This involves offering our whole selves to God – our joys, sorrows, hopes, and fears – and receiving His love and grace in return.
-- **The Rosary as a Journey:** Learning to pray the Rosary is a process that requires patience and practice. Over time, it becomes a source of grace and power.
-- **Practical Application:** The program provides concrete techniques and examples to help individuals cultivate a deeper prayer life, such as using the Sign of the Cross, incorporating sacred art, and reflecting on specific scriptural passages.
-
-**Notable Insights and Quotes:**
-
-While the provided text doesn't contain direct quotes, several insightful concepts emerge:
-
-- **"Waiting for God to connect":** The analogy of waiting for someone to answer the phone before speaking emphasizes the importance of acknowledging God's presence before launching into prayer. This highlights the shift from monologue to dialogue.
-- **"Receiving God's presence":** The text emphasizes that God is always present; we need to actively receive His presence. This underscores the importance of intentionality and receptivity in prayer.
-- **"Prayer as a movement of the will":** While prayer can evoke emotions, it's fundamentally an act of the will, a conscious decision to turn towards God.
-- **"Learning to pray is like learning to dance":** This analogy captures the initial awkwardness and the eventual grace and rhythm that develop with practice.
-
-**Detailed Breakdown of the Six Phases:**
-
-1. **Forming the Relationship:** Focuses on the foundational elements of prayer, learning to raise the mind and heart to God.
-
-1. **The Biblical Roots:** Explores the scriptural basis of the prayers, deepening understanding and connecting them to daily life.
-
-1. **Meditating on the Mysteries:** Introduces lectio divina and engages with the writings of the Saints and sacred art as aids to prayer.
-
-1. **Finding Focus:** Applies the learned principles, building the capacity to pray with the mysteries of the Rosary, starting with one decade at a time.
-
-1. **Building Up the Decades:** Gradually increases the number of decades prayed, leading towards praying the full Rosary.
-
-1. **Praying the Full Rosary:** The culmination of the program, focusing on receiving the graces of the full Rosary.
-
-**Concluding Ritual:** The daily practice concludes with a structured sequence: the Sign of the Cross, the Our Father, three Hail Marys, the Glory Be, and another Sign of the Cross. This provides a consistent framework for ending the prayer time. The emphasis on expressing love to Jesus and Mary reinforces the relational aspect of prayer.
+![AI-Generated Image: A soul in quiet prayer, where heaven meets the heart in stillness](January/jpgs/Day001Summary.jpg)
 
 #### January 02,2025
 
@@ -540,7 +507,7 @@ Mary, reflecting Jesus, the "sun of righteousness," is seen as the Mirror of Jus
 
 ##### ROSARY IN A YEAR DAY 5 - A GARDEN OF REST ( MARY, MOTHER INVIOLATE) Michelle Jackson
 
-\_Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 😢 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria_🌹
+*Woaw that was a beautiful Walk, a safe place, a locked garden where the world can't get it. Walking in this garden with Mamma is so beautiful, this is such a big garden with so many varieties of Roses and they are so fragrant, our rosaries are not prayers to be completed but it's a mystical garden, where we speak to mamma tell her how we weary, what burdens we bear, how hard life is and when we feel all discouraged she speaks so warmly so lovingly she says " am I not here? I who am your mother, what more does a child need 😢 so True! So many roses to offer her for Jesus , she takes us along this garden through all those mysteries, and they are so beautiful so deep so meaningful so true something one can experience if one desires it genuinely. With Mary the battle ground of life is transformed into a garden enclosed. I love that. May all who pray the rosary experience its sweetness. Amen, Ave Maria*🌹
 
 ##### AI-Generated Summary: Mary, Mother Inviolate — Finding Peace in Mary's Rose Garden
 
@@ -611,7 +578,7 @@ Prayer is not simply a passive reception of grace, but an active, determined str
 
 ##### ROSARY IN A YEAR DAY 07 - "GRACE WILL OVERFLOW" - Michelle Jackson
 
-\_"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.😢 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria_🙏🏽
+*"The Rosary is a source of Grace", as in the words of Mother Teresa - "Not all of us can do great things, but we can all do small things with great love" we may not be heroic in changing the world and setting new records but with prayers have an imoact, prayers can go where we can't. The Rosary truly purifies and sanctifies us and brings us immense graces when we commit ourselves to spend time with Jesus and Mamma Mary. Today will be 7 days i started praying the 4 Rosaries and i must testify the number of graces I receive through them.😢 So many signal graces so many blessings and so much of Joy praying them. Let us commit ourselves to pray the Rosary for our families and the whole world to be sanctified, and that we all come to Jesus through Mary. The world needs grace, the world needs Jesu, and this much we can do by praying the Rosary and offering them through our Lady to Jesus. Nothing is lost when given to God. The sacrifice we make and must make will bring us fruit. Ave Maria*🙏🏽
 
 ##### AI-Generated Summary: The Rosary as a Source of Grace
 
