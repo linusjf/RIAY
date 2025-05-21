@@ -21,6 +21,7 @@ readonly E_THUMBNAIL_ERROR=8
 readonly E_METADATA_FETCH_FAILED=9
 readonly E_IMAGE_PROCESSING_FAILED=10
 readonly E_FILE_BACKUP_FAILED=11
+readonly E_FILE_GENERATION_FAILED=12
 readonly E_INVALID_VIDEO_ID=13
 readonly E_DIRECTORY_CREATION_FAILED=14
 
@@ -36,6 +37,14 @@ source "${SCRIPT_DIR}/lib/date.sh" || exit 1
 source "${SCRIPT_DIR}/lib/imageprompt.sh" || exit 1
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+
+trap trap_exit EXIT
+
+trap_exit() {
+  local exitcode="$?"
+  echo "Exiting..."
+  exit $exitcode
+}
 
 function usage() {
   local exit_code=${1:-0}
@@ -171,7 +180,7 @@ function append_video_info() {
     echo
     "${SCRIPT_DIR}/summarizevideo" -- "$video_id" >| "$summaryfname" \
       && "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname" \
-      && cat "$summaryfname"
+      && cat "$summaryfname" || exit $E_FILE_GENERATION_FAILED
   } >> "$file_path" || die "Failed to append video info" $E_FILE_BACKUP_FAILED
   # generate image from summary prompt
   json="$(cat "${summarypromptfname}")" \
@@ -181,7 +190,8 @@ function append_video_info() {
     && jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")${video_id}Summary.jpg" \
     && cp "$generatedimage" "$jpegfname" &> /dev/null \
     && "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy" \
-    && rm -f "$generatedimage"
+    && rm -f "$generatedimage" || exit $E_FILE_GENERATION_FAILED
+
 }
 
 function main() {

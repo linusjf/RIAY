@@ -17,6 +17,15 @@ readonly E_NO_INTERNET=4
 readonly E_MISSING_VIDEOS_FILE=5
 readonly E_INVALID_AI_HANDLING=6
 readonly E_MISSING_FILE=7
+readonly E_FILE_GENERATION_FAILED=8
+
+trap trap_exit EXIT
+
+function trap_exit() {
+  local exitcode="$?"
+  echo "Exiting..."
+  exit $exitcode
+}
 
 function usage() {
   cat << EOF
@@ -248,7 +257,7 @@ function append_summary() {
     printf "\n"
     "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >| "$summaryfname" \
       && "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname" \
-      && cat "$summaryfname"
+      && cat "$summaryfname" || exit $E_FILE_GENERATION_FAILED
   } >> "${filepath}"
   # generate image from summary prompt
   json="$(cat "${summarypromptfname}")" \
@@ -258,7 +267,7 @@ function append_summary() {
     && jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg" \
     && cp "$generatedimage" "$jpegfname" &> /dev/null \
     && "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy" \
-    && rm -f "$generatedimage"
+    && rm -f "$generatedimage" || exit $E_FILE_GENERATION_FAILED
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
