@@ -70,7 +70,7 @@
 - [May 21,2025](#may-212025)
   - [Render Unto God](#render-unto-god)
   - [AI-Generated Summary: The Suffering King and the Call to Repentance](#ai-generated-summary-the-suffering-king-and-the-call-to-repentance)
-  - [AI-Generated Image: The Suffering King: A divine paradox of strength in weakness, mercy in suffering](#ai-generated-image-the-suffering-king-a-divine-paradox-of-strength-in-weakness-mercy-in-suffering)
+  - [AI-Generated Image: The Suffering King: A mirror of our sins and a call to repentance](#ai-generated-image-the-suffering-king-a-mirror-of-our-sins-and-a-call-to-repentance)
 
 <!-- tocstop -->
 
@@ -537,12 +537,14 @@ Let us then, with the Blessed Mother, say, _Hail Mary, full of grace_, and with 
 
 ### AI-Generated Summary: The Suffering King and the Call to Repentance
 
-Behold Titian’s _Christ Crowned with Thorns_, where the Eternal King bows beneath the cruelty of men. Five figures press the thorny circlet upon His brow, their hands rough with malice, while He, robed in rose like the dawn of mercy, endures in silence. The artist, drawing from the grandeur of ancient marbles—the _Laocoön_ in its agony, the _Belvedere Torso_ in its strength—shows us a divine paradox: the Almighty made weak, the Creator subjected to His creatures. Behind Him, cold and unmoved, looms the bust of Tiberius, a hollow sovereign of passing empires, blind to the true King standing in his very shadow.
+Behold Titian’s _Christ Crowned with Thorns_, where the divine meets the cruelty of men. Here stands our Lord, robed in rose, His body noble as the sculpted heroes of old, yet bowed under the mockery of those who know not what they do. Behind Him, cold and unfeeling, looms the bust of Tiberius—earthly power, blind to the true King who suffers before it.
 
-Here is no mere spectacle of suffering, but a mirror for the soul. That wooden pole, deepening the thorns, asks each of us: _Have I, too, pressed them deeper?_ Have I, through indifference, through love of lesser things, through hardness of heart, added to His pain? The soldiers’ mockery is but the outward shape of every sin—the pride that scorns humility, the violence that rejects love. To sin is to take our place among those soldiers, to strike the One who bears all blows for our sake.
+See how the thorns are pressed deeper by a wooden pole, a small but piercing detail. It is not merely a painting of long-past violence; it is a mirror. In every act of indifference, in every preference for the world’s empty crowns over His love, in every distrust of His mercy—we too press the thorns upon His brow. The soldiers’ hands are ours.
 
-Yet this painting is not despair, but an invitation. Let it stir in us a sorrow deeper than fear, a repentance that turns not only from sin but toward the Love that suffers for us. Pray, then, for grace to see our failings clearly and to resist temptation’s lures. Seek the Mother’s intercession, that her _Fiat_ may echo in our hearts, and lift all praise to the Father, the Son, and the Spirit, one God eternal. For in the end, only the humble shall reign with Him who wore the thorns—the true Crown of Glory.
+Yet here also is grace, if we will have it. To sorrow for our sins is to share in His suffering rightly, not as tormentors but as penitents. Let us ask, then, for the tears that cleanse and the strength to turn away when temptation whispers. For only by kneeling before the crucified can we rise unshackled.
 
-### AI-Generated Image: The Suffering King: A divine paradox of strength in weakness, mercy in suffering
+_Hail Mary, full of grace... Glory be to the Father..._ So we pray, again and again, that our hearts may learn what our lips repeat. And may He, who bore the thorns for love of us, grant us peace. Amen.
 
-![AI-Generated Image: The Suffering King: A divine paradox of strength in weakness, mercy in suffering](/May/jpgs/Day141Summary.jpg)
+### AI-Generated Image: The Suffering King: A mirror of our sins and a call to repentance
+
+![AI-Generated Image: The Suffering King: A mirror of our sins and a call to repentance](/May/jpgs/Day141Summary.jpg)
