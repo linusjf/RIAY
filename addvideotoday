@@ -154,6 +154,7 @@ function remove_existing_video_entry() {
       } else if ($0 ~ /^### AI-Generated Image:/) {
         skip = 1
         next
+      }
     }
     if (index($0, vid)) {
       found = 1
