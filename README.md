@@ -156,8 +156,8 @@ All the WhatsApp groups are closed for 2025, if anyone wants to follow the progr
 - [January 01,2025](#january-012025)
   - [Responding to God](#responding-to-god)
   - [ROSARY IN A YEAR DAY 01 Michelle Jackson](#rosary-in-a-year-day-01-michelle-jackson)
-  - [AI-Generated Summary: The Gentle Art of Divine Conversation](#ai-generated-summary-the-gentle-art-of-divine-conversation)
-  - [AI-Generated Image: A soul in quiet prayer, where heaven meets the heart in stillness](#ai-generated-image-a-soul-in-quiet-prayer-where-heaven-meets-the-heart-in-stillness)
+  - [AI-Generated Summary: The Sacred Dance of Prayer](#ai-generated-summary-the-sacred-dance-of-prayer)
+  - [AI-Generated Image: A sacred dance of prayer, where stillness meets surrender and grace unfolds like a whispered verse](#ai-generated-image-a-sacred-dance-of-prayer-where-stillness-meets-surrender-and-grace-unfolds-like-a-whispered-verse)
 - [January 02,2025](#january-022025)
   - [The King Knows You](#the-king-knows-you)
   - [ROSARY IN A YEAR DAY 02 Michelle Jackson](#rosary-in-a-year-day-02-michelle-jackson)
@@ -305,17 +305,19 @@ Most importantly it's raising our heart and mind to God by making an act of Fait
 We need to practice His presence by recognising His presence, He's always there.\*
 We need to give our all when we pray it's not one sided it's a relationship, we need to listen after we speak. Thank you Lord for this relationship you give us through prayer🙏
 
-##### AI-Generated Summary: The Gentle Art of Divine Conversation
+##### AI-Generated Summary: The Sacred Dance of Prayer
 
-To pray is not to batter heaven with words, but to open the soul’s door to the One who stands always knocking. Begin simply, as a child learns to walk—one step, then another. A single decade of prayer, offered with the heart’s attention, is worth more than a torrent of hurried words. For prayer is not arithmetic; it is the lifting of the mind and heart to God, a quiet recognition that He is here, nearer than our own breath.
+To pray is not merely to speak, but to listen; not to perform, but to surrender. Begin as you would with a dear friend—by quieting the restless mind and acknowledging the One who is already near. Let your first act be stillness: a breath, a glance upon sacred art, a whispered verse. For God does not wait beyond some distant gate; He is here, and to raise the heart to Him is but to wake to what is ever true.
 
-Before you speak, pause. Let the soul grow still, as a pool settles to reflect the sky. Breathe deeply, gaze upon sacred art, or let Scripture whisper to you—not as a task, but as a friend’s voice across a shared silence. God does not demand eloquence; He asks only that you come, as you are, and receive His presence. This is the dance of prayer: at first, your steps may falter, your rhythm feel unnatural. Yet grace moves with you, and in time, what was effort becomes as natural as breathing.
+Consider the Rosary not as a task to be completed, but as a path to be walked, step by step. Begin with a single decade, as a child learns to walk before he runs. Let each bead be a meeting place where love is given and received. In time, what once felt halting—like the first uncertain steps of a dance—will become a rhythm of grace.
 
-Offer Him your fears, your hopes, your tangled desires—not as one casting a letter into the void, but as a child placing a gift into a Father’s hands. Then wait. For prayer is not monologue, but dialogue; He speaks in the stillness, in the sudden peace that comes unbidden, in the quiet shaping of the heart. End as you began: in love, in trust, in the ancient words that have carried saints before you. Thus, the soul grows deep, and heaven draws near.
+Prayer is, at its heart, an act of faith: to offer up our tangled hopes and hidden fears, and in return, to receive the peace that the world cannot give. Do not be troubled if it feels strange at first. Even the saints began as beginners. Persist, and you will find what all the saints have known—that in the quiet surrender of prayer, the soul is met, held, and transformed by Love Himself.
 
-##### AI-Generated Image: A soul in quiet prayer, where heaven meets the heart in stillness
+And so we lift our hearts, not alone, but as children of Mary, who teaches us to say with her, _"Be it done unto me according to Thy word."_ For in the end, prayer is not our work, but His—a gift already given, waiting only to be unwrapped.
 
-![AI-Generated Image: A soul in quiet prayer, where heaven meets the heart in stillness](January/jpgs/Day001Summary.jpg)
+##### AI-Generated Image: A sacred dance of prayer, where stillness meets surrender and grace unfolds like a whispered verse
+
+![AI-Generated Image: A sacred dance of prayer, where stillness meets surrender and grace unfolds like a whispered verse](January/jpgs/Day001Summary.jpg)
 
 #### January 02,2025
 

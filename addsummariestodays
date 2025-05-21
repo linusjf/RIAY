@@ -23,7 +23,7 @@ trap trap_exit EXIT
 
 function trap_exit() {
   local exitcode="$?"
-  echo "Exiting..."
+  >&2 echo "Exiting..."
   exit $exitcode
 }
 
@@ -257,7 +257,10 @@ function append_summary() {
     printf "\n"
     "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >| "$summaryfname" \
       && "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname" \
-      && cat "$summaryfname" || exit $E_FILE_GENERATION_FAILED
+      && cat "$summaryfname" || {
+      >&2 "exit code: $?"
+      exit $E_FILE_GENERATION_FAILED
+    }
   } >> "${filepath}"
   # generate image from summary prompt
   json="$(cat "${summarypromptfname}")" \
