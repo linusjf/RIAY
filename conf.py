@@ -48,6 +48,7 @@ exclude_patterns = [
     "README.md",
     "Conventions/*.md",
     ".aider.chat*",
+    "TODO.md"
 ]
 
 suppress_warnings = [
