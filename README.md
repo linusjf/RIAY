@@ -3980,6 +3980,10 @@ We are thus presented with a choice. Will we be like those who turned away, forg
   - [His Glory Remains](#his-glory-remains)
   - [AI-Generated Summary: The Unconquerable Love in the Scourging of Christ](#ai-generated-summary-the-unconquerable-love-in-the-scourging-of-christ)
   - [AI-Generated Image: The unbroken Christ before the scourge, His halo a quiet defiance against the gathering cruelty](#ai-generated-image-the-unbroken-christ-before-the-scourge-his-halo-a-quiet-defiance-against-the-gathering-cruelty)
+- [May 21,2025](#may-212025)
+  - [Render Unto God](#render-unto-god)
+  - [AI-Generated Summary: The Suffering King and the Call to Repentance](#ai-generated-summary-the-suffering-king-and-the-call-to-repentance)
+  - [AI-Generated Image: The Suffering King: A divine paradox of strength in weakness, mercy in suffering](#ai-generated-image-the-suffering-king-a-divine-paradox-of-strength-in-weakness-mercy-in-suffering)
 
 <!-- tocstop -->
 
@@ -4437,6 +4441,24 @@ Let us then, with the Blessed Mother, say, _Hail Mary, full of grace_, and with 
 ##### AI-Generated Image: The unbroken Christ before the scourge, His halo a quiet defiance against the gathering cruelty
 
 ![AI-Generated Image: The unbroken Christ before the scourge, His halo a quiet defiance against the gathering cruelty](May/jpgs/Day140Summary.jpg)
+
+#### May 21,2025
+
+##### Render Unto God
+
+[![Render Unto God](May/jpgs/Day141.jpg)](https://youtu.be/uMDw4zIhook "Render Unto God")
+
+##### AI-Generated Summary: The Suffering King and the Call to Repentance
+
+Behold Titian’s _Christ Crowned with Thorns_, where the Eternal King bows beneath the cruelty of men. Five figures press the thorny circlet upon His brow, their hands rough with malice, while He, robed in rose like the dawn of mercy, endures in silence. The artist, drawing from the grandeur of ancient marbles—the _Laocoön_ in its agony, the _Belvedere Torso_ in its strength—shows us a divine paradox: the Almighty made weak, the Creator subjected to His creatures. Behind Him, cold and unmoved, looms the bust of Tiberius, a hollow sovereign of passing empires, blind to the true King standing in his very shadow.
+
+Here is no mere spectacle of suffering, but a mirror for the soul. That wooden pole, deepening the thorns, asks each of us: _Have I, too, pressed them deeper?_ Have I, through indifference, through love of lesser things, through hardness of heart, added to His pain? The soldiers’ mockery is but the outward shape of every sin—the pride that scorns humility, the violence that rejects love. To sin is to take our place among those soldiers, to strike the One who bears all blows for our sake.
+
+Yet this painting is not despair, but an invitation. Let it stir in us a sorrow deeper than fear, a repentance that turns not only from sin but toward the Love that suffers for us. Pray, then, for grace to see our failings clearly and to resist temptation’s lures. Seek the Mother’s intercession, that her _Fiat_ may echo in our hearts, and lift all praise to the Father, the Son, and the Spirit, one God eternal. For in the end, only the humble shall reign with Him who wore the thorns—the true Crown of Glory.
+
+##### AI-Generated Image: The Suffering King: A divine paradox of strength in weakness, mercy in suffering
+
+![AI-Generated Image: The Suffering King: A divine paradox of strength in weakness, mercy in suffering](May/jpgs/Day141Summary.jpg)
 
 ## June
 

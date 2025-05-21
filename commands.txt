@@ -1,4 +1,4 @@
 # commands
-addvideo "VZwpLgo7TWo" "His Glory Remains"
+addvideo "uMDw4zIhook" "Render Unto God"
 stitch
 lintall
