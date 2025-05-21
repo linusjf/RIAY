@@ -938,7 +938,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3978,7 +3978,8 @@ We are thus presented with a choice. Will we be like those who turned away, forg
   - [AI-Generated Summary: The Duality of Judas and the Mercy of Christ](#ai-generated-summary-the-duality-of-judas-and-the-mercy-of-christ)
 - [May 20,2025](#may-202025)
   - [His Glory Remains](#his-glory-remains)
-  - [AI-Generated Summary: The Unyielding Love of Christ in Art and Spirit](#ai-generated-summary-the-unyielding-love-of-christ-in-art-and-spirit)
+  - [AI-Generated Summary: The Unconquerable Love in the Scourging of Christ](#ai-generated-summary-the-unconquerable-love-in-the-scourging-of-christ)
+  - [AI-Generated Image: The unbroken Christ before the scourge, His halo a quiet defiance against the gathering cruelty](#ai-generated-image-the-unbroken-christ-before-the-scourge-his-halo-a-quiet-defiance-against-the-gathering-cruelty)
 
 <!-- tocstop -->
 
@@ -4423,13 +4424,19 @@ To the weary soul, this is your comfort: come as you are, but do not stay as you
 
 [![His Glory Remains](May/jpgs/Day140.jpg)](https://youtu.be/VZwpLgo7TWo "His Glory Remains")
 
-##### AI-Generated Summary: The Unyielding Love of Christ in Art and Spirit
+##### AI-Generated Summary: The Unconquerable Love in the Scourging of Christ
 
-Behold the fresco—a work of Florentine hands, yet wrought in Rome—where the Son of God stands bound, haloed in gold, while men prepare their scourges. Here is innocence encircled by cruelty, holiness met with hatred. The artist, with a brush both tender and unflinching, captures the moment before the lash falls: the white cloth yet unstained, the body unbroken, the face serene. Yet we know what follows—the blood, the wounds, the mockery. And still, His glory is not diminished.
+Behold a fresco, wrought by the hand of Augustinino Gian Pelli, where our Lord stands bound to the pillar, His body yet unbroken, His halo a quiet defiance against the gathering cruelty. The artist, a Florentine laboring in Rome, has fixed in pigment that dreadful moment before the lash falls—the soldiers coiled like serpents, the onlookers half-turned away, as men often do when faced with the suffering they will not stay.
 
-This is the mystery: that He who could summon legions of angels submits to the whip; that He whose word upholds the universe endures the fury of sinners. St. Paul speaks truly—neither pain, nor death, nor any power of hell can sever us from the love made manifest in that scourged flesh. Christ is no passive victim, but a warrior who fights for souls, whose wounds are the price of our ransom. Let the heart take courage: you are known, you are sought, you are loved by Him who conquered all.
+Here is the Lamb, whole and holy, wrapped in the white of innocence, His flesh soon to be torn asunder. Yet mark this: though the scourge will strip Him of comeliness, it cannot strip Him of glory. Pilate, that vacillating judge, will afterward display Him to the mob, thinking their rage might be satisfied with broken skin and spilt blood. But the world’s hatred is never so easily spent. They cry for the cross, blind to the radiance that no brutality can dim.
 
-As the prayers rise—_Hail Mary_, _Glory Be_—they are but echoes of the greater truth: here is love that will not let us go.
+And here lies the great mystery—that in His wounds, we see our healing; in His weakness, our strength. As St. Paul writes, neither anguish nor peril, neither the lash nor the nail, can sever us from the love of God. For Christ, even in His Passion, is still the Way, the Truth, and the Life. His love is a fortress that no assault of sin or death can overthrow.
+
+Let us then, with the Blessed Mother, say, _Hail Mary, full of grace_, and with the Church, _Glory be to the Father_, for in these sorrows we find the very heart of joy.
+
+##### AI-Generated Image: The unbroken Christ before the scourge, His halo a quiet defiance against the gathering cruelty
+
+![AI-Generated Image: The unbroken Christ before the scourge, His halo a quiet defiance against the gathering cruelty](May/jpgs/Day140Summary.jpg)
 
 ## June
 
