@@ -22,6 +22,13 @@ readonly EXIT_OVERLAY_FAILED=6
 readonly EXIT_FILE_GENERATION_FAILED=7
 readonly EXIT_VIDEO_EXISTS=8
 
+trap trap_exit EXIT
+
+trap_exit() {
+  local exitcode="$?"
+  echo "Exiting..."
+  exit $exitcode
+}
 ######################################################################
 # Functions
 ######################################################################
@@ -135,6 +142,7 @@ generate_files() {
   fi
 
   {
+    set -e
     echo
     echo "## $formatdt"
     echo
@@ -143,7 +151,7 @@ generate_files() {
     echo "$md"
     "${SCRIPT_DIR}/summarizevideo" -- "$vid" >| "$summaryfname" \
       && "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname" \
-      && cat "$summaryfname"
+      && cat "$summaryfname" || exit $EXIT_FILE_GENERATION_FAILED
   } >| "$fname"
 
   # generate image from summary prompt
@@ -154,7 +162,7 @@ generate_files() {
     && jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg" \
     && cp "$generatedimage" "$jpegfname" &> /dev/null \
     && "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy" \
-    && rm -f "$generatedimage"
+    && rm -f "$generatedimage" || exit $EXIT_FILE_GENERATION_FAILED
 
   if ! cp "${month}/${COMPACT_FILE}" "${month}/${COMPACT_FILE}.bak"; then
     echo "Warning: Failed to backup compact file" >&2
