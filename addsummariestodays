@@ -3,9 +3,8 @@
 # Script to add AI-generated summaries to daily markdown files for a range of days
 # Usage: addsummariestodays <startday> <endday>
 
-set -o errexit
-set -o nounset
-set -o pipefail
+set -eEuo pipefail
+shopt -s inherit_errexit
 
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"

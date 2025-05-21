@@ -3,6 +3,9 @@
 # Script to add YouTube video metadata to daily markdown files
 # Usage: addvideotoday <video_id> <day_number>
 
+set -eEuo pipefail
+shopt -s inherit_errexit
+
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
