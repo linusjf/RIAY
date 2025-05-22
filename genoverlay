@@ -73,7 +73,7 @@ main() {
     usage 1
   fi
 
-  month="$(date::mfromdoy "${doy#0}")"
+  month="$(date::mfromdoy "${doy#0}" "$YEAR")"
   doy_padded="$(printf "%03d" "${doy#0}")"
   dir="${month}/jpgs"
   relfile="${dir}/Day${doy_padded}.jpg"

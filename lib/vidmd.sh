@@ -80,11 +80,12 @@ fi
 if ! declare -f vidmd::usagevidmdloc > /dev/null; then
   vidmd::usagevidmdloc() {
     cat << EOF
-Usage: $0 vidid vidurl caption doy
+Usage: $0 vidid vidurl caption doy [year]
     vidid   - YouTube video ID (11 characters)
     vidurl  - Full video URL
     caption - Video title (max $MAX_CAPTION_LENGTH chars)
     doy     - Day of year (1-366)
+    year - 4 digit year - optional
 EOF
     exit 1
   }
@@ -101,12 +102,13 @@ fi
 if ! declare -f vidmd::usagegenvidthmd > /dev/null; then
   vidmd::usagegenvidthmd() {
     cat << EOF
-Usage: $0 vid vidurl caption [doy]
+Usage: $0 vid vidurl caption [doy] [year]
 Arguments:
   vid      - YouTube video ID
   vidurl   - YouTube video URL
   caption  - Video title
   doy      - (Optional) Day of the year (numeric)
+  year      - (Optional) Year (numeric)
 EOF
     exit 1
   }
@@ -149,7 +151,7 @@ if ! declare -f vidmd::playiconurl > /dev/null; then
   vidmd::playiconurl() {
     local doy_raw doy_padded month
     doy_raw="$1"
-    year="$2"
+    year=${2:-$(date +%Y)}
     doy_padded="$(printf "%03d" "${doy_raw#0}")"
     month="$(date::mfromdoy "${doy_padded#0}" "$year")"
     printf "/%s/jpgs/Day%s.jpg\n" "$month" "$doy_padded"
@@ -227,9 +229,9 @@ fi
 ######################################################################
 if ! declare -f vidmd::vidmdloc > /dev/null; then
   vidmd::vidmdloc() {
-    [[ $# -lt 4 ]] && usagevidmdloc
-    local vidid="$1" vidurl="$2" caption="$3" doy="$4" imgurl
-    imgurl="$(vidmd::playiconurl "${doy#0}")"
+    [[ $# -lt 5 ]] && usagevidmdloc
+    local vidid="$1" vidurl="$2" caption="$3" doy="$4" year="${5:-$(date +%Y)}" imgurl
+    imgurl="$(vidmd::playiconurl "${doy#0}" "$year")"
     printf '[![%s](%s)](%s "%s")\n' "$caption" "$imgurl" "$vidurl" "$caption"
   }
   export -f vidmd::vidmdloc
@@ -289,6 +291,7 @@ if ! declare -f vidmd::genvidthmd > /dev/null; then
     local vidurl="$2"
     local caption="$3"
     local doy="${4:-}"
+    local year="${5:-$(date +%Y)}"
 
     # Validate video URL format
     if [[ ! "$vidurl" =~ ^https?:// ]]; then
@@ -300,7 +303,7 @@ if ! declare -f vidmd::genvidthmd > /dev/null; then
       if ! validators::isnumeric "$doy"; then
         die "Error: 'doy' must be a numeric value"
       fi
-      vidmd::vidmdloc "$vid" "$vidurl" "$caption" "$doy"
+      vidmd::vidmdloc "$vid" "$vidurl" "$caption" "$doy" "$year"
     else
       vidmd::vidmd "$vid" "$vidurl" "$caption"
     fi
