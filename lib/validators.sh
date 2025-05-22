@@ -80,12 +80,37 @@ if ! declare -f validators::validate_arg_count > /dev/null; then
   # Returns: exits with status 1 on invalid input
   ######################################################################
   function validators::validate_arg_count() {
-    local actual="$1" expected="$2" message="${3:-Incorrect number of arguments}"
-    if [[ "$actual" -ne "$expected" ]]; then
-      err "Error: $message (expected $expected, got $actual)"
-      return 1
+    local actual="$1"
+    shift
+    local args=("$@")
+    local len=${#args[@]}
+
+    if ((len == 0)); then
+      echo "No arguments provided."
+      exit 1
     fi
-    return 0
+
+    local last="${args[-1]}"
+    local message
+
+    # Check if the last argument is numeric using a regex
+    if [[ "$last" =~ ^-?[0-9]+([.][0-9]+)?$ ]]; then
+      # Last argument is numeric, keep all
+      filtered_args=("${args[@]}")
+      message="Incorrect number of arguments"
+    else
+      # Last argument is not numeric, omit it
+      filtered_args=("${args[@]:0:len-1}")
+      message="$last"
+    fi
+
+    for expected in "${filtered_args[@]}"; do
+      if [[ "$actual" -eq "$expected" ]]; then
+        return 0
+      fi
+    done
+    err "Error: $message (expected argument count: ${filtered_args[*]}, got $actual)"
+    return 1
   }
 fi
 
