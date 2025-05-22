@@ -42,7 +42,6 @@ trap trap_exit EXIT
 
 trap_exit() {
   local exitcode="$?"
-  >&2 echo "Exiting..."
   exit $exitcode
 }
 
@@ -205,7 +204,6 @@ function append_video_info() {
       && "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy" \
       && rm -f "$generatedimage" || exit $E_FILE_GENERATION_FAILED
   fi
-
 }
 
 function main() {

@@ -16,7 +16,7 @@ fi
 
 source "${SCRIPT_DIR}/lib/require.sh"
 
-require_commands realpath
+require_commands realpath pwd
 
 if ! declare -f files::get_relative_path > /dev/null; then
   files::get_relative_path() {
