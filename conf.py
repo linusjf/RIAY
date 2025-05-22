@@ -103,7 +103,7 @@ epub_exclude_files = ["_static/*.pdf"]
 
 # -- Options for linkcheck
 # seconds
-linkcheck_timeout = 15
+linkcheck_timeout = 20
 
 linkcheck_anchors = False
 
