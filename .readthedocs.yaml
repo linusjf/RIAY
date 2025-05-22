@@ -7,18 +7,6 @@ build:
   tools:
     python: "3.13"
   jobs:
-    post_checkout:
-      - |
-        # Skip build if only non-visible files changed
-        if git rev-parse HEAD^ >/dev/null 2>&1; then
-          changed_files="README.md index.rst conf.py .readthedocs.yaml"
-          jpg_files=$(git ls-files | grep -E '\.jpe?g$')
-          if git diff --quiet HEAD^ -- $changed_files $jpg_files \
-            && ! git tag --points-at HEAD | grep . >/dev/null; then
-            echo "No change in visible artifacts or new version. Exiting."
-            exit 183
-          fi
-         fi
     pre_install:
       - python strip_toc.py
       - python copytostatic.py
