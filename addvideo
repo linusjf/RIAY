@@ -39,7 +39,7 @@ trap_exit() {
 # Returns: exits with status 1
 usage() {
   exitcode="${1:-0}"
-  cat <<EOF
+  cat << EOF
 Usage: ${0##*/} [-n|--dry-run] [-d|--debug] [-v|--version] vid caption
 
 Add a new video to the system by generating markdown and updating indexes.
@@ -126,8 +126,8 @@ generate_files() {
   local videourl="https://youtu.be/${vid}"
   local month fname formatdt md
 
-  month="$(date::mfromdoy "${doy#0}" "$YEAR")"
   # shellcheck disable=SC2153
+  month="$(date::mfromdoy "${doy#0}" "$YEAR")"
   monthnumber="$(date::monthnumberfrommonth "${month}" "${YEAR}")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   summaryfname="${fname%%.*}Summary.txt"
@@ -148,31 +148,31 @@ generate_files() {
     echo "### $caption"
     echo
     echo "$md"
-    "${SCRIPT_DIR}/summarizevideo" -- "$vid" >|"$summaryfname" &&
-      "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >|"$summarypromptfname" &&
-      cat "$summaryfname" || exit $EXIT_FILE_GENERATION_FAILED
-  } >|"$fname"
+    "${SCRIPT_DIR}/summarizevideo" -- "$vid" >| "$summaryfname" \
+      && "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname" \
+      && cat "$summaryfname" || exit $EXIT_FILE_GENERATION_FAILED
+  } >| "$fname"
 
   if "$AUTO_GENERATE_IMAGES"; then
     # generate image from summary prompt
-    json="$(cat "${summarypromptfname}")" &&
-      prompt="$(imageprompt::get_prompt "$json")" &&
-      caption="$(imageprompt::get_caption "$json")" &&
-      generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")" &&
-      jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg" &&
-      cp "$generatedimage" "$jpegfname" &>/dev/null &&
-      "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy" &&
-      rm -f "$generatedimage" || exit $EXIT_FILE_GENERATION_FAILED
+    json="$(cat "${summarypromptfname}")" \
+      && prompt="$(imageprompt::get_prompt "$json")" \
+      && caption="$(imageprompt::get_caption "$json")" \
+      && generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")" \
+      && jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg" \
+      && cp "$generatedimage" "$jpegfname" &> /dev/null \
+      && "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy" \
+      && rm -f "$generatedimage" || exit $EXIT_FILE_GENERATION_FAILED
   fi
 
   if ! cp "${month}/${COMPACT_FILE}" "${month}/${COMPACT_FILE}.bak"; then
     echo "Warning: Failed to backup compact file" >&2
   fi
 
-  basename -- "$fname" >>"${month}/${COMPACT_FILE}"
+  basename -- "$fname" >> "${month}/${COMPACT_FILE}"
 
   if "${SCRIPT_DIR}/genmonth" "$monthnumber" "$YEAR"; then
-    printf "%s\n" "$vid" >>"$VIDEOS_FILE"
+    printf "%s\n" "$vid" >> "$VIDEOS_FILE"
     echo "Successfully added video $vid"
     return $EXIT_SUCCESS
   else
@@ -198,7 +198,7 @@ dry_run() {
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   formatdt="$(date::datefromdoy "${doy#0}" "$YEAR")"
 
-  cat <<EOF
+  cat << EOF
 === DRY RUN SIMULATION ===
 Video Details:
 - ID: $vid
@@ -245,22 +245,22 @@ main() {
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -n | --dry-run)
-      dry_run=true
-      shift
-      ;;
-    -d | --debug)
-      debug=true
-      shift
-      ;;
-    -v | --version)
-      version
-      exit $EXIT_SUCCESS
-      ;;
-    -h | --help)
-      usage
-      ;;
-    *) break ;;
+      -n | --dry-run)
+        dry_run=true
+        shift
+        ;;
+      -d | --debug)
+        debug=true
+        shift
+        ;;
+      -v | --version)
+        version
+        exit $EXIT_SUCCESS
+        ;;
+      -h | --help)
+        usage
+        ;;
+      *) break ;;
     esac
   done
 
@@ -281,7 +281,7 @@ main() {
   fi
 
   local doy
-  doy=$(("$(wc -l <"$VIDEOS_FILE")" + 1))
+  doy=$(("$(wc -l < "$VIDEOS_FILE")" + 1))
 
   if $dry_run; then
     dry_run "$vid" "$caption" "$doy"
@@ -302,7 +302,7 @@ main() {
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   # Resolve script directory
-  if command -v realpath >/dev/null 2>&1; then
+  if command -v realpath > /dev/null 2>&1; then
     readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else
     readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
