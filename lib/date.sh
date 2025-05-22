@@ -43,29 +43,31 @@ fi
 # Globals: None
 # Arguments:
 #   $1 - Day number
-#   $2 - Year
+#   $2 - Year (optional, defaults to current year)
 # Outputs: Error to STDERR if invalid
 # Returns: 0 if valid, 1 otherwise
 ######################################################################
 if ! declare -f date::validate_daynumber > /dev/null; then
   date::validate_daynumber() {
-    validators::validate_arg_count "$#" 2 || {
-      err "Error: Two arguments 'doy' and 'year' expected"
+    validators::validate_arg_count "$#" 1 2 || {
+      err "Error: One or two arguments 'doy' and optional 'year' expected"
       return 1
     }
     validators::isnumeric "$1" || {
       err "Error: Day number must be numeric"
       return 1
     }
-    validators::isnumeric "$2" || {
+
+    local year=${2:-$(date +%Y)}
+    validators::isnumeric "$year" || {
       err "Error: Year must be numeric"
       return 1
     }
 
     local max_days
-    max_days=$(date::daycount "$2")
+    max_days=$(date::daycount "$year")
     [[ $1 -ge 1 && $1 -le $max_days ]] || {
-      err "Error: Day number must be between 1 and $max_days for year $2"
+      err "Error: Day number must be between 1 and $max_days for year $year"
       return 1
     }
     return 0
@@ -78,19 +80,19 @@ fi
 # Globals: None
 # Arguments:
 #   $1 - Day of year
-#   $2 - Year (4 digits)
+#   $2 - Year (optional, defaults to current year)
 # Outputs: Month name to STDOUT
 # Returns: None (exits with status 1 on error)
 ######################################################################
 if ! declare -f date::mfromdoy > /dev/null; then
   date::mfromdoy() {
-    validators::validate_arg_count "$#" 2 || die "Two arguments 'doy' and 'year' expected"
+    validators::validate_arg_count "$#" 1 2 || die "One or two arguments 'doy' and optional 'year' expected"
     validators::isnumeric "$1" || die "$1 is not numeric"
-    validators::isnumeric "$2" || die "$2 is not numeric"
     
     local day year max_days
     day=$((10#$1))
-    year=$2
+    year=${2:-$(date +%Y)}
+    validators::isnumeric "$year" || die "$year is not numeric"
     max_days=$(date::daycount "$year")
     
     [[ $day -ge 1 && $day -le $max_days ]] || die "Day of year must be between 1 and $max_days for year $year"
@@ -104,19 +106,19 @@ fi
 # Globals: None
 # Arguments:
 #   $1 - Day of year
-#   $2 - Year (4 digits)
+#   $2 - Year (optional, defaults to current year)
 # Outputs: Formatted date to STDOUT
 # Returns: None (exits with status 1 on error)
 ######################################################################
 if ! declare -f date::datefromdoy > /dev/null; then
   date::datefromdoy() {
-    validators::validate_arg_count "$#" 2 || die "Two arguments 'doy' and 'year' expected"
+    validators::validate_arg_count "$#" 1 2 || die "One or two arguments 'doy' and optional 'year' expected"
     validators::isnumeric "$1" || die "$1 is not numeric"
-    validators::isnumeric "$2" || die "$2 is not numeric"
     
     local day year max_days
     day=$((10#$1))
-    year=$2
+    year=${2:-$(date +%Y)}
+    validators::isnumeric "$year" || die "$year is not numeric"
     max_days=$(date::daycount "$year")
     
     [[ $day -ge 1 && $day -le $max_days ]] || die "Day of year must be between 1 and $max_days for year $year"
@@ -147,7 +149,7 @@ fi
 if ! declare -f date::monthnumberfrommonth > /dev/null; then
   date::monthnumberfrommonth() {
     month_name="$1"
-    year="$2"
+    year="${2:-$(date +%Y)}"
     month_number=$(date -d "1 $month_name $year" +"%m")
     echo "$month_number"
   }
@@ -156,7 +158,7 @@ fi
 
 if ! declare -f date::isleapyear > /dev/null; then
   date::isleapyear() {
-    year="$1"
+    year="${1:-$(date +%Y)}"
 
     ((year % 4 == 0 && year % 100 != 0)) \
       || ((year % 400 == 0))
@@ -166,7 +168,7 @@ fi
 
 if ! declare -f date::daycount > /dev/null; then
   date::daycount() {
-    year="$1"
+    year="${1:-$(date +%Y)}"
     # Check if year is a leap year
     if date::isleapyear "$year"; then
       echo 366
