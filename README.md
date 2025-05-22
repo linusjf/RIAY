@@ -3954,6 +3954,10 @@ We are thus presented with a choice. Will we be like those who turned away, forg
   - [Render Unto God](#render-unto-god)
   - [AI-Generated Summary: The Suffering King and the Call to Repentance](#ai-generated-summary-the-suffering-king-and-the-call-to-repentance)
   - [AI-Generated Image: The Suffering King: A mirror of our sins and a call to repentance](#ai-generated-image-the-suffering-king-a-mirror-of-our-sins-and-a-call-to-repentance)
+- [May 22,2025](#may-222025)
+  - [Truly the Son of God](#truly-the-son-of-god)
+  - [AI-Generated Summary: The Weight of the Cross and the Witness of the Heart](#ai-generated-summary-the-weight-of-the-cross-and-the-witness-of-the-heart)
+  - [AI-Generated Image: A timeless scene of Christ carrying the cross, surrounded by a diverse crowd reflecting humanity's varied responses to the sacred](#ai-generated-image-a-timeless-scene-of-christ-carrying-the-cross-surrounded-by-a-diverse-crowd-reflecting-humanitys-varied-responses-to-the-sacred)
 
 <!-- tocstop -->
 
@@ -4435,6 +4439,28 @@ _Hail Mary, full of grace... Glory be to the Father..._ So we pray, again and ag
 ##### AI-Generated Image: The Suffering King: A mirror of our sins and a call to repentance
 
 ![AI-Generated Image: The Suffering King: A mirror of our sins and a call to repentance](May/jpgs/Day141Summary.jpg)
+
+#### May 22,2025
+
+##### Truly the Son of God
+
+[![Truly the Son of God](May/jpgs/Day142.jpg)](https://youtu.be/Pnt1_TeSZso "Truly the Son of God")
+
+##### AI-Generated Summary: The Weight of the Cross and the Witness of the Heart
+
+Consider, dear reader, a scene both ancient and ever-new: the Son of God, bowed beneath the weight of the cross, surrounded by a throng of faces—some weeping, some mocking, many merely curious. So too does Brahl’s brush capture this moment in 1564, clothing Roman soldiers in the garb of his own age, as if to whisper that every generation stands in that crowd.
+
+And do we not still? Each year, a procession winds through city streets, the cross borne aloft by faithful hands, while bystanders pause—some crossing themselves, others turning away, a few hurling sharp words into the air. The indifferent, the scornful, the reverent: all are there, as they were on the road to Calvary.
+
+Here lies the question pressed upon us: When we behold the sacred, do we see with the centurion’s awakening heart, or with the hardness of those who passed by? The story is familiar, yet it demands to be encountered afresh, as if we were those Roman guards, ignorant of the Man’s name, yet pierced by the weight of His silence.
+
+Let us then pray—not as recitation, but as a laying bare of the soul: _Forgive us our trespasses. Thy will be done. Pray for us sinners now._ For in the end, it is not the crowd’s noise, but the quiet witness of the heart, that answers the cross.
+
+_Glory be to the Father, and to the Son, and to the Holy Spirit. Amen._
+
+##### AI-Generated Image: A timeless scene of Christ carrying the cross, surrounded by a diverse crowd reflecting humanity's varied responses to the sacred
+
+![AI-Generated Image: A timeless scene of Christ carrying the cross, surrounded by a diverse crowd reflecting humanity's varied responses to the sacred](May/jpgs/Day142Summary.jpg)
 
 ## June
 
