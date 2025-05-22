@@ -132,7 +132,7 @@ generate_files() {
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
   summaryfname="${fname%%.*}Summary.txt"
   summarypromptfname="${fname%%.*}ImagePrompt.json"
-  formatdt="$(date::datefromdoy "${doy#0}")"
+  formatdt="$(date::datefromdoy "${doy#0}" "$YEAR")"
 
   md="$(vidmd::genvidthmd "$vid" "$videourl" "$caption" "$doy" "$YEAR")"
 
@@ -196,7 +196,7 @@ dry_run() {
 
   month="$(date::mfromdoy "${doy#0}" "$YEAR")"
   fname="${month}/Day$(printf "%03d" "${doy#0}").md"
-  formatdt="$(date::datefromdoy "${doy#0}")"
+  formatdt="$(date::datefromdoy "${doy#0}" "$YEAR")"
 
   cat <<EOF
 === DRY RUN SIMULATION ===
