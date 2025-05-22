@@ -104,17 +104,23 @@ fi
 # Globals: None
 # Arguments:
 #   $1 - Day of year
+#   $2 - Year (4 digits)
 # Outputs: Formatted date to STDOUT
 # Returns: None (exits with status 1 on error)
 ######################################################################
 if ! declare -f date::datefromdoy > /dev/null; then
   date::datefromdoy() {
+    validators::validate_arg_count "$#" 2 || die "Two arguments 'doy' and 'year' expected"
     validators::isnumeric "$1" || die "$1 is not numeric"
-    local day
-    # convert number to base ten
-    day=$((${1}))
-    [[ $day -ge 1 && $day -le 366 ]] || die "Day of year must be between 1 and 366"
-    date --date="jan 1 + $((day - 1)) days" "+%B %d,%Y"
+    validators::isnumeric "$2" || die "$2 is not numeric"
+    
+    local day year max_days
+    day=$((10#$1))
+    year=$2
+    max_days=$(date::daycount "$year")
+    
+    [[ $day -ge 1 && $day -le $max_days ]] || die "Day of year must be between 1 and $max_days for year $year"
+    date --date="jan 1 $year + $((day - 1)) days" "+%B %d, %Y"
   }
   export -f date::datefromdoy
 fi
