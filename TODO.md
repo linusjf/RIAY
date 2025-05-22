@@ -1,3 +1,5 @@
+# TODOs
+
 ## Features
 
 1. Use a local LLM.
@@ -6,4 +8,5 @@
 
 ## Bugs/Issues
 
-1.
+1. Refactor sanitytests
+2. Identify and refactor scripts to clean up intermediate, temporary and backup files created on normal exit and error.
