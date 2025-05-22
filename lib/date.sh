@@ -49,7 +49,7 @@ fi
 ######################################################################
 if ! declare -f date::validate_daynumber > /dev/null; then
   date::validate_daynumber() {
-    validators::validate_arg_count "$#" 1 2 || {
+    validators::validate_arg_count "$#" 1 || validators::validate_arg_count "$#" 2 || {
       err "Error: One or two arguments 'doy' and optional 'year' expected"
       return 1
     }
