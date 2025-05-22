@@ -86,15 +86,15 @@ fi
 ######################################################################
 if ! declare -f date::mfromdoy > /dev/null; then
   date::mfromdoy() {
-    validators::validate_arg_count "$#" 1 2 || die "One or two arguments 'doy' and optional 'year' expected"
+    validators::validate_arg_count "$#" 1 || validators::validate_arg_count "$#" 2 || die "One or two arguments 'doy' and optional 'year' expected"
     validators::isnumeric "$1" || die "$1 is not numeric"
-    
+
     local day year max_days
     day=$((10#$1))
     year=${2:-$(date +%Y)}
     validators::isnumeric "$year" || die "$year is not numeric"
     max_days=$(date::daycount "$year")
-    
+
     [[ $day -ge 1 && $day -le $max_days ]] || die "Day of year must be between 1 and $max_days for year $year"
     date --date="jan 1 $year + $((day - 1)) days" +%B
   }
@@ -112,15 +112,15 @@ fi
 ######################################################################
 if ! declare -f date::datefromdoy > /dev/null; then
   date::datefromdoy() {
-    validators::validate_arg_count "$#" 1 2 || die "One or two arguments 'doy' and optional 'year' expected"
+    validators::validate_arg_count "$#" 1 || validators::validate_arg_count "$#" 2 || die "One or two arguments 'doy' and optional 'year' expected"
     validators::isnumeric "$1" || die "$1 is not numeric"
-    
+
     local day year max_days
     day=$((10#$1))
     year=${2:-$(date +%Y)}
     validators::isnumeric "$year" || die "$year is not numeric"
     max_days=$(date::daycount "$year")
-    
+
     [[ $day -ge 1 && $day -le $max_days ]] || die "Day of year must be between 1 and $max_days for year $year"
     date --date="jan 1 $year + $((day - 1)) days" "+%B %d, %Y"
   }
