@@ -149,8 +149,9 @@ if ! declare -f vidmd::playiconurl > /dev/null; then
   vidmd::playiconurl() {
     local doy_raw doy_padded month
     doy_raw="$1"
+    year="$2"
     doy_padded="$(printf "%03d" "${doy_raw#0}")"
-    month="$(date::mfromdoy "${doy_padded#0}")"
+    month="$(date::mfromdoy "${doy_padded#0}" "$year")"
     printf "/%s/jpgs/Day%s.jpg\n" "$month" "$doy_padded"
   }
   export -f vidmd::playiconurl
