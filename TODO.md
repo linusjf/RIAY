@@ -1,3 +1,5 @@
+# TODOs
+
 ## Features
 
 1. Use a local LLM.
@@ -6,4 +8,4 @@
 
 ## Bugs/Issues
 
-1.
+1. Refactor sanitytests
