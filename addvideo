@@ -26,7 +26,6 @@ trap trap_exit EXIT
 
 trap_exit() {
   local exitcode="$?"
-  echo "Exiting..."
   exit $exitcode
 }
 ######################################################################
@@ -154,15 +153,17 @@ generate_files() {
       && cat "$summaryfname" || exit $EXIT_FILE_GENERATION_FAILED
   } >| "$fname"
 
-  # generate image from summary prompt
-  json="$(cat "${summarypromptfname}")" \
-    && prompt="$(imageprompt::get_prompt "$json")" \
-    && caption="$(imageprompt::get_caption "$json")" \
-    && generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")" \
-    && jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg" \
-    && cp "$generatedimage" "$jpegfname" &> /dev/null \
-    && "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy" \
-    && rm -f "$generatedimage" || exit $EXIT_FILE_GENERATION_FAILED
+  if "$AUTO_GENERATE_IMAGES"; then
+    # generate image from summary prompt
+    json="$(cat "${summarypromptfname}")" \
+      && prompt="$(imageprompt::get_prompt "$json")" \
+      && caption="$(imageprompt::get_caption "$json")" \
+      && generatedimage="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")" \
+      && jpegfname="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg" \
+      && cp "$generatedimage" "$jpegfname" &> /dev/null \
+      && "${SCRIPT_DIR}/addimgtoday" "$jpegfname" "AI-Generated Image: ${caption}" "$doy" \
+      && rm -f "$generatedimage" || exit $EXIT_FILE_GENERATION_FAILED
+  fi
 
   if ! cp "${month}/${COMPACT_FILE}" "${month}/${COMPACT_FILE}.bak"; then
     echo "Warning: Failed to backup compact file" >&2
