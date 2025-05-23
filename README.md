@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3961,6 +3961,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 23, 2025](#may-23-2025)
   - [Fulfillment of the Promise](#fulfillment-of-the-promise)
   - [AI-Generated Summary: The Rainbow and the Cross](#ai-generated-summary-the-rainbow-and-the-cross)
+  - [AI-Generated Image: A radiant rainbow arcs over the Crucified Christ, merging divine promise with ultimate sacrifice as light pierces the storm-darkened sky](#ai-generated-image-a-radiant-rainbow-arcs-over-the-crucified-christ-merging-divine-promise-with-ultimate-sacrifice-as-light-pierces-the-storm-darkened-sky)
 
 <!-- tocstop -->
 
@@ -4480,6 +4481,10 @@ Two thieves flank Him: one bathed in the light of repentance, the other lost in 
 Here is the paradox of the Cross: in suffering, victory; in death, life; in darkest grief, the dawn of unending joy. The rainbow, once a sign of God’s promise to Noah, now crowns the Crucified, declaring that no storm lasts forever, no night is without morning. Let those who suffer take heart—the arms that stretched to complete the bow of heaven’s covenant will one day wipe away every tear.
 
 And so we pray, not as those without hope, but as children who know their Father keeps His word. _Hail Mary, full of grace... Glory be to the Father..._ For in the end, all shall be well, and all shall be well, and every manner of thing shall be well.
+
+##### AI-Generated Image: A radiant rainbow arcs over the Crucified Christ, merging divine promise with ultimate sacrifice as light pierces the storm-darkened sky
+
+![AI-Generated Image: A radiant rainbow arcs over the Crucified Christ, merging divine promise with ultimate sacrifice as light pierces the storm-darkened sky](May/jpgs/Day143Summary.jpg)
 
 ## June
 
