@@ -1,20 +1,58 @@
 #!/usr/bin/env bash
 
-jsoninputfile="$1"
+prompt="$1"
 
-response=$(curl --request POST \
+escaped_prompt="$(jq -Rs <<< "$prompt")"
+
+payload="$(jq -n --arg prompt "$escaped_prompt" '{
+     "prompt": $prompt
+   }')"
+
+response="$(curl --request POST \
   --url https://queue.fal.run/fal-ai/janus \
   --header "Authorization: Key $FALAI_KEY" \
   --header "Content-Type: application/json" \
-  --data '{
-     "prompt": "beautiful girl, inside a house"
-   }')
-REQUEST_ID=$(echo "$response" | grep -o '"request_id": *"[^"]*"' | sed 's/"request_id": *//; s/"//g')
+  --data "$payload")"
+REQUEST_ID="$(echo "$response" | grep -o '"request_id": *"[^"]*"' | sed 's/"request_id": *//; s/"//g')"
 
-curl --request GET \
-  --url "https://queue.fal.run/fal-ai/janus/requests/${REQUEST_ID}/status" \
-  --header "Authorization: Key $FALAI_KEY"
+# How often to poll (in seconds)
+POLL_INTERVAL=5
+# Maximum number of attempts before exiting
+MAX_RETRIES=60
 
-curl --request GET \
-  --url "https://queue.fal.run/fal-ai/janus/requests/${REQUEST_ID}" \
-  --header "Authorization: Key $FALAI_KEY"
+echo "Polling status for request ID: $REQUEST_ID"
+attempt=1
+
+while [ $attempt -le $MAX_RETRIES ]; do
+  echo "Attempt $attempt of $MAX_RETRIES..."
+
+  # Make the GET request and capture the status using jq
+  response="$(curl --request GET \
+    --url "https://queue.fal.run/fal-ai/janus/requests/${REQUEST_ID}/status" \
+    --header "Authorization: Key $FALAI_KEY")"
+  status=$(echo "$response" | jq -r '.status')
+
+  echo "Current status: $status"
+
+  if [ "$status" == "COMPLETED" ]; then
+    echo "✅ Request completed!"
+    response="$(curl --request GET \
+      --url "https://queue.fal.run/fal-ai/janus/requests/${REQUEST_ID}" \
+      --header "Authorization: Key $FALAI_KEY")"
+    response_url=$(echo "$response" | jq -r '.response_url')
+    echo "You can download the result here: $response_url"
+    exit 0
+  elif [ "$status" == "IN_PROGRESS" ] || [ "$status" == "IN_QUEUE" ]; then
+    echo "⏳ Still processing... waiting $POLL_INTERVAL seconds..."
+  else
+    echo "❌ Unexpected status or error: $status"
+    echo "$response"
+    exit 1
+  fi
+
+  ((attempt++))
+  sleep $POLL_INTERVAL
+done
+
+echo "⚠️ Timed out after $MAX_RETRIES attempts. Please try again later."
+exit 1
