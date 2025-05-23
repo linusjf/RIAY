@@ -22,6 +22,7 @@ readonly EXIT_FILE_COPY_ERROR=7
 readonly EXIT_ADD_IMAGE_ERROR=8
 readonly EXIT_CLEANUP_ERROR=9
 readonly EXIT_REQUIREMENTS_ERROR=10
+readonly EXIT_INVALID_JSON=11
 
 ######################################################################
 # Functions
@@ -51,10 +52,18 @@ Exit Codes:
   8  - Failed to add image to daily log
   9  - Failed to remove temporary image file
   10 - Missing requirements
+  11 - Invalid JSON format or missing required fields
 
 Examples:
   ${SCRIPT_NAME} summary_prompt.json 123
 EOF
+}
+
+validate_json() {
+  local json="$1"
+  if ! jq -e '.caption and .image_prompt' <<<"$json" >/dev/null 2>&1; then
+    die "Invalid JSON format - must contain both .caption and .image_prompt fields" $EXIT_INVALID_JSON
+  fi
 }
 
 trap_exit() {
@@ -68,6 +77,7 @@ main() {
   local month generated_image jpeg_filename prompt caption json
 
   json="$(cat "${summary_prompt_fname}")" || die "Failed to read ${summary_prompt_fname}" $EXIT_FILE_READ_ERROR
+  validate_json "$json"
   prompt="$(imageprompt::get_prompt "$json")" || die "Failed to get image prompt" $EXIT_PROMPT_ERROR
   caption="$(imageprompt::get_caption "$json")" || die "Failed to get caption" $EXIT_CAPTION_ERROR
 
@@ -111,7 +121,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   source "${SCRIPT_DIR}/lib/lockconfig.sh" || exit $EXIT_REQUIREMENTS_ERROR
 
   require_vars DEEPINFRA_TOKEN YEAR || exit $EXIT_REQUIREMENTS_ERROR
-  require_commands sed basename date tee mv wc cat cp || exit $EXIT_REQUIREMENTS_ERROR
+  require_commands sed basename date tee mv wc cat cp jq || exit $EXIT_REQUIREMENTS_ERROR
 
   lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env" || exit $EXIT_REQUIREMENTS_ERROR
 
