@@ -64,6 +64,9 @@ validate_json() {
   if ! jq -e '.caption and .image_prompt' <<<"$json" >/dev/null 2>&1; then
     die "Invalid JSON format - must contain both .caption and .image_prompt fields" $EXIT_INVALID_JSON
   fi
+  if jq -e '.caption == "" or .image_prompt == ""' <<<"$json" >/dev/null 2>&1; then
+    die "Invalid JSON content - .caption and .image_prompt must not be empty" $EXIT_INVALID_JSON
+  fi
 }
 
 trap_exit() {
