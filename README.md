@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3958,6 +3958,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
   - [Truly the Son of God](#truly-the-son-of-god)
   - [AI-Generated Summary: The Weight of the Cross and the Witness of the Heart](#ai-generated-summary-the-weight-of-the-cross-and-the-witness-of-the-heart)
   - [AI-Generated Image: A timeless scene of Christ carrying the cross, surrounded by a diverse crowd reflecting humanity's varied responses to the sacred](#ai-generated-image-a-timeless-scene-of-christ-carrying-the-cross-surrounded-by-a-diverse-crowd-reflecting-humanitys-varied-responses-to-the-sacred)
+- [May 23, 2025](#may-23-2025)
+  - [Fulfillment of the Promise](#fulfillment-of-the-promise)
+  - [AI-Generated Summary: The Rainbow and the Cross](#ai-generated-summary-the-rainbow-and-the-cross)
 
 <!-- tocstop -->
 
@@ -4461,6 +4464,22 @@ _Glory be to the Father, and to the Son, and to the Holy Spirit. Amen._
 ##### AI-Generated Image: A timeless scene of Christ carrying the cross, surrounded by a diverse crowd reflecting humanity's varied responses to the sacred
 
 ![AI-Generated Image: A timeless scene of Christ carrying the cross, surrounded by a diverse crowd reflecting humanity's varied responses to the sacred](May/jpgs/Day142Summary.jpg)
+
+#### May 23, 2025
+
+##### Fulfillment of the Promise
+
+[![Fulfillment of the Promise](May/jpgs/Day143.jpg)](https://youtu.be/a_x7JWYzGUU "Fulfillment of the Promise")
+
+##### AI-Generated Summary: The Rainbow and the Cross
+
+Behold a vision of the Cross, painted not with the harsh strokes of despair, but with the tender hues of hope. There hangs the Saviour, His arms outstretched as if to gather all the world’s sorrows into Himself, while behind Him arcs a rainbow—God’s ancient pledge of mercy, now fulfilled in this greater covenant of blood and love. The sky is dark with the storm of sin, yet golden light breaks through, and angels hover near, witnesses to the divine drama unfolding.
+
+Two thieves flank Him: one bathed in the light of repentance, the other lost in shadow—a stark reminder that even at the hour of death, the choice between heaven and hell remains. Below, the faithful weep: His mother, the beloved disciple, the mourning women. And round about, the world looks on—some in mockery, some in awe, all caught in the moment where eternity pierces time.
+
+Here is the paradox of the Cross: in suffering, victory; in death, life; in darkest grief, the dawn of unending joy. The rainbow, once a sign of God’s promise to Noah, now crowns the Crucified, declaring that no storm lasts forever, no night is without morning. Let those who suffer take heart—the arms that stretched to complete the bow of heaven’s covenant will one day wipe away every tear.
+
+And so we pray, not as those without hope, but as children who know their Father keeps His word. _Hail Mary, full of grace... Glory be to the Father..._ For in the end, all shall be well, and all shall be well, and every manner of thing shall be well.
 
 ## June
 
