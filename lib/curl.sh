@@ -213,7 +213,6 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
         if [[ $status_code -eq 408 ]] || [[ $status_code -eq 429 ]]; then
           local retry_after=$(echo "$response_headers" | grep -i '^retry-after:' | cut -d' ' -f2- | tr -d '\r')
           if [[ -n "$retry_after" ]]; then
-            delay="$retry_after"
             >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (Retry-After header value, attempt $retry_count/$max_retries)"
           elif [[ $status_code -eq 429 ]]; then
             >&2 echo "Request failed with status 429 (Too Many Requests) but no Retry-After header provided, aborting..."
@@ -225,8 +224,12 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
           >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$max_retries)"
         fi
 
-        sleep "$delay"
-        delay=$((delay * 2))
+        if [[ -n "$retry_after" ]]; then
+          sleep "$retry_after"
+        else
+          sleep "$delay"
+          delay=$((delay * 2))
+        fi
       fi
     done
 
