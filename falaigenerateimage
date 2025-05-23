@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+jsoninputfile="$1"
+
+response=$(curl --request POST \
+  --url https://queue.fal.run/fal-ai/janus \
+  --header "Authorization: Key $FALAI_KEY" \
+  --header "Content-Type: application/json" \
+  --data '{
+     "prompt": "beautiful girl, inside a house"
+   }')
+REQUEST_ID=$(echo "$response" | grep -o '"request_id": *"[^"]*"' | sed 's/"request_id": *//; s/"//g')
+
+curl --request GET \
+  --url "https://queue.fal.run/fal-ai/janus/requests/${REQUEST_ID}/status" \
+  --header "Authorization: Key $FALAI_KEY"
+
+curl --request GET \
+  --url "https://queue.fal.run/fal-ai/janus/requests/${REQUEST_ID}" \
+  --header "Authorization: Key $FALAI_KEY"
