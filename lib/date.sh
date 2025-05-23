@@ -49,7 +49,7 @@ fi
 ######################################################################
 if ! declare -f date::validate_daynumber > /dev/null; then
   date::validate_daynumber() {
-    validators::validate_arg_count "$#" 1 || validators::validate_arg_count "$#" 2 || {
+    validators::validate_arg_count "$#" 1 2 || {
       err "Error: One or two arguments 'doy' and optional 'year' expected"
       return 1
     }
@@ -86,7 +86,7 @@ fi
 ######################################################################
 if ! declare -f date::mfromdoy > /dev/null; then
   date::mfromdoy() {
-    validators::validate_arg_count "$#" 1 || validators::validate_arg_count "$#" 2 || die "One or two arguments 'doy' and optional 'year' expected"
+    validators::validate_arg_count "$#" 1 2 || die "One or two arguments 'doy' and optional 'year' expected"
     validators::isnumeric "$1" || die "$1 is not numeric"
 
     local day year max_days
@@ -112,7 +112,7 @@ fi
 ######################################################################
 if ! declare -f date::datefromdoy > /dev/null; then
   date::datefromdoy() {
-    validators::validate_arg_count "$#" 1 || validators::validate_arg_count "$#" 2 || die "One or two arguments 'doy' and optional 'year' expected"
+    validators::validate_arg_count "$#" 1 2 || die "One or two arguments 'doy' and optional 'year' expected"
     validators::isnumeric "$1" || die "$1 is not numeric"
 
     local day year max_days
