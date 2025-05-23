@@ -1,0 +1,131 @@
+#!/usr/bin/env bash
+
+# Generate and add an AI-generated summary image for a given day of year
+# Uses DEEPINFRA_TOKEN to generate images via AI
+# Creates image file in month directory and adds reference to daily log
+
+set -eEuo pipefail
+shopt -s inherit_errexit
+
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME="$(basename "$0")"
+
+# Exit code definitions
+readonly EXIT_SUCCESS=0
+readonly EXIT_INVALID_ARGS=1
+readonly EXIT_FILE_READ_ERROR=2
+readonly EXIT_PROMPT_ERROR=3
+readonly EXIT_CAPTION_ERROR=4
+readonly EXIT_DATE_ERROR=5
+readonly EXIT_IMAGE_GEN_ERROR=6
+readonly EXIT_FILE_COPY_ERROR=7
+readonly EXIT_ADD_IMAGE_ERROR=8
+readonly EXIT_CLEANUP_ERROR=9
+readonly EXIT_REQUIREMENTS_ERROR=10
+
+######################################################################
+# Functions
+######################################################################
+
+version() {
+  printf "%s\n" "$VERSION"
+}
+
+usage() {
+  cat <<EOF
+Usage: ${SCRIPT_NAME} [options] <summary_prompt_file> <day_of_year>
+
+Options:
+  -v, --version    Show version information
+  -h, --help       Show this help message
+
+Exit Codes:
+  0  - Success
+  1  - Invalid arguments
+  2  - Failed to read summary prompt file
+  3  - Failed to get image prompt
+  4  - Failed to get caption
+  5  - Failed to get month from DOY
+  6  - Image generation failed
+  7  - Failed to copy image to destination
+  8  - Failed to add image to daily log
+  9  - Failed to remove temporary image file
+  10 - Missing requirements
+
+Examples:
+  ${SCRIPT_NAME} summary_prompt.json 123
+EOF
+}
+
+trap_exit() {
+  local exitcode=$?
+  exit $exitcode
+}
+
+main() {
+  local summary_prompt_fname="$1"
+  local doy="$2"
+  local month generated_image jpeg_filename prompt caption json
+
+  json="$(cat "${summary_prompt_fname}")" || die "Failed to read ${summary_prompt_fname}" $EXIT_FILE_READ_ERROR
+  prompt="$(imageprompt::get_prompt "$json")" || die "Failed to get image prompt" $EXIT_PROMPT_ERROR
+  caption="$(imageprompt::get_caption "$json")" || die "Failed to get caption" $EXIT_CAPTION_ERROR
+
+  month="$(date::mfromdoy "$doy" "$YEAR")" || die "Failed to get month from DOY" $EXIT_DATE_ERROR
+  generated_image="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")" || die "Image generation failed" $EXIT_IMAGE_GEN_ERROR
+
+  jpeg_filename="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg"
+  cp "$generated_image" "$jpeg_filename" || die "Failed to copy image to ${jpeg_filename}" $EXIT_FILE_COPY_ERROR
+
+  "${SCRIPT_DIR}/addimgtoday" "$jpeg_filename" "AI-Generated Image: ${caption}" "$doy" || die "Failed to add image to daily log" $EXIT_ADD_IMAGE_ERROR
+
+  rm -f "$generated_image" || warn "Failed to remove temporary image file" $EXIT_CLEANUP_ERROR
+}
+
+######################################################################
+# Main script execution
+######################################################################
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  case "${1:-}" in
+  -v | --version)
+    version
+    exit $EXIT_SUCCESS
+    ;;
+  -h | --help)
+    usage
+    exit $EXIT_SUCCESS
+    ;;
+  esac
+
+  if command -v realpath >/dev/null 2>&1; then
+    readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+  else
+    readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
+  fi
+
+  source "${SCRIPT_DIR}/lib/require.sh" || exit $EXIT_REQUIREMENTS_ERROR
+  source "${SCRIPT_DIR}/lib/internet.sh" || exit $EXIT_REQUIREMENTS_ERROR
+  source "${SCRIPT_DIR}/lib/imageprompt.sh" || exit $EXIT_REQUIREMENTS_ERROR
+  source "${SCRIPT_DIR}/lib/date.sh" || exit $EXIT_REQUIREMENTS_ERROR
+  source "${SCRIPT_DIR}/lib/lockconfig.sh" || exit $EXIT_REQUIREMENTS_ERROR
+
+  require_vars DEEPINFRA_TOKEN YEAR || exit $EXIT_REQUIREMENTS_ERROR
+  require_commands sed basename date tee mv wc cat cp || exit $EXIT_REQUIREMENTS_ERROR
+
+  lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env" || exit $EXIT_REQUIREMENTS_ERROR
+
+  if [[ "$#" -ne 2 ]]; then
+    usage >&2
+    exit $EXIT_INVALID_ARGS
+  fi
+
+  if "${LOGGING:-false}"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
+fi
