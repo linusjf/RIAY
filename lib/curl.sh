@@ -156,6 +156,7 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
     local method="${2:-GET}"
     local headers="${3:-}"
     local data="${4:-}"
+    local max_retries="${5:-$CURL_MAX_RETRIES}"
     local output_file
     output_file=$(mktemp)
 
@@ -164,7 +165,7 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
     local status_code=0
     local response=""
 
-    while [[ $retry_count -lt ${CURL_MAX_RETRIES} ]]; do
+    while [[ $retry_count -lt ${max_retries} ]]; do
       status_code=0
       response=""
 
@@ -201,7 +202,7 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
       fi
 
       retry_count=$((retry_count + 1))
-      if [[ $retry_count -lt $CURL_MAX_RETRIES ]]; then
+      if [[ $retry_count -lt $max_retries ]]; then
         curl::save_failed_response "$data" "$response" "$(basename "$url")"
 
         if [[ $status_code -ge 400 ]] && [[ $status_code -lt 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]]; then
@@ -213,15 +214,15 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
           local retry_after=$(echo "$response_headers" | grep -i '^retry-after:' | cut -d' ' -f2- | tr -d '\r')
           if [[ -n "$retry_after" ]]; then
             delay="$retry_after"
-            >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (Retry-After header value, attempt $retry_count/$MAX_RETRIES)"
+            >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (Retry-After header value, attempt $retry_count/$max_retries)"
           elif [[ $status_code -eq 429 ]]; then
             >&2 echo "Request failed with status 429 (Too Many Requests) but no Retry-After header provided, aborting..."
             return 2
           else
-            >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
+            >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$max_retries)"
           fi
         else
-          >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$MAX_RETRIES)"
+          >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$max_retries)"
         fi
 
         sleep "$delay"
@@ -241,7 +242,7 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
 
     curl::save_failed_response "$data" "$response" "$(basename "$url")"
     rm -f "$output_file"
-    err "Request failed after $MAX_RETRIES attempts. Last status code: $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}"
+    err "Request failed after $max_retries attempts. Last status code: $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}"
     return 2
   }
   export -f curl::safe_curl_request
