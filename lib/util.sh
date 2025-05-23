@@ -32,6 +32,18 @@ if ! declare -f err > /dev/null; then
   export -f err
 fi
 
+if ! declare -f warn > /dev/null; then
+  #######################################
+  # Print message to STDERR
+  # Globals: none
+  # Arguments: message
+  # Outputs: message to STDERR
+  # Returns: none
+  #######################################
+  warn() { err "$*"; }
+  export -f warn
+fi
+
 if ! declare -f die > /dev/null; then
   #######################################
   # Print fatal message to STDERR and exit

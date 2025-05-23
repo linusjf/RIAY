@@ -84,6 +84,7 @@ main() {
   prompt="$(imageprompt::get_prompt "$json")" || die "Failed to get image prompt" $EXIT_PROMPT_ERROR
   caption="$(imageprompt::get_caption "$json")" || die "Failed to get caption" $EXIT_CAPTION_ERROR
 
+  # shellcheck disable=SC2153
   month="$(date::mfromdoy "$doy" "$YEAR")" || die "Failed to get month from DOY" $EXIT_DATE_ERROR
   generated_image="$("${SCRIPT_DIR}/generateimagefromprompt" "$prompt")" || die "Image generation failed" $EXIT_IMAGE_GEN_ERROR
 
@@ -92,7 +93,7 @@ main() {
 
   "${SCRIPT_DIR}/addimgtoday" "$jpeg_filename" "AI-Generated Image: ${caption}" "$doy" || die "Failed to add image to daily log" $EXIT_ADD_IMAGE_ERROR
 
-  rm -f "$generated_image" || warn "Failed to remove temporary image file" $EXIT_CLEANUP_ERROR
+  rm -f "$generated_image" || warn "Failed to remove temporary image file"
 }
 
 ######################################################################
