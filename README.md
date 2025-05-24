@@ -3918,6 +3918,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
     - [Theological and Emotional Depth](#theological-and-emotional-depth)
     - [Reflections on the Scene](#reflections-on-the-scene)
     - [Connection to Prayer](#connection-to-prayer)
+  - [Rembrandt's The Visitation](#rembrandts-the-visitation)
 - [May 11,2025](#may-112025)
   - [Worship and Warmth](#worship-and-warmth)
   - [AI-Generated Summary: A Meditation on Pellegrini’s Nativity and the Adoration of the Christ Child](#ai-generated-summary-a-meditation-on-pellegrinis-nativity-and-the-adoration-of-the-christ-child)
@@ -4255,6 +4256,10 @@ The repeated "Hail Mary" and "Glory Be" prayers in the original text echo the pa
 - Trust in God’s eternal light ("Glory be to the Father, and to the Son...").
 
 In _The Visitation_, Rembrandt distills a moment where heaven touches earth, and two women—illuminated by faith—become vessels of grace. The artwork, like the prayers it inspires, reminds us that divine companionship transforms uncertainty into hope.
+
+##### Rembrandt's The Visitation
+
+![Rembrandt's The Visitation](May/jpgs/TheVisitation.jpg)
 
 #### May 11,2025
 
