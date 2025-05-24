@@ -3957,7 +3957,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 22,2025](#may-222025)
   - [Truly the Son of God](#truly-the-son-of-god)
   - [AI-Generated Summary: The Weight of the Cross and the Witness of the Heart](#ai-generated-summary-the-weight-of-the-cross-and-the-witness-of-the-heart)
-  - [AI-Generated Image: A timeless scene of Christ carrying the cross, surrounded by a diverse crowd reflecting humanity's varied responses to the sacred](#ai-generated-image-a-timeless-scene-of-christ-carrying-the-cross-surrounded-by-a-diverse-crowd-reflecting-humanitys-varied-responses-to-the-sacred)
+  - [Pieter Bruegel the Elder’s The Procession to Calvary (1564)](#pieter-bruegel-the-elders-the-procession-to-calvary-1564)
 - [May 23, 2025](#may-23-2025)
   - [Fulfillment of the Promise](#fulfillment-of-the-promise)
   - [AI-Generated Summary: The Rainbow and the Cross](#ai-generated-summary-the-rainbow-and-the-cross)
@@ -4466,9 +4466,10 @@ Let us then pray—not as recitation, but as a laying bare of the soul: _Forgive
 
 _Glory be to the Father, and to the Son, and to the Holy Spirit. Amen._
 
-##### AI-Generated Image: A timeless scene of Christ carrying the cross, surrounded by a diverse crowd reflecting humanity's varied responses to the sacred
+##### Pieter Bruegel the Elder’s The Procession to Calvary (1564)
 
-![AI-Generated Image: A timeless scene of Christ carrying the cross, surrounded by a diverse crowd reflecting humanity's varied responses to the sacred](May/jpgs/Day142Summary.jpg)
+![Pieter Bruegel the Elder’s The Procession to Calvary (1564)
+](May/jpgs/Calvary.jpg)
 
 #### May 23, 2025
 
