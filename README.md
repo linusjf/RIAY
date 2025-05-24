@@ -3939,6 +3939,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 17,2025](#may-172025)
   - [Medium Reveals Meaning](#medium-reveals-meaning)
   - [AI-Generated Summary: The Radiance of Divine Light in the Transfiguration Window](#ai-generated-summary-the-radiance-of-divine-light-in-the-transfiguration-window)
+  - [Transfiguration in Vienna’s Votive Church](#transfiguration-in-viennas-votive-church)
 - [May 18,2025](#may-182025)
   - [Rest in All Things](#rest-in-all-things)
   - [AI-Generated Summary: The Divine Serenity in the Midst of Betrayal](#ai-generated-summary-the-divine-serenity-in-the-midst-of-betrayal)
@@ -4374,6 +4375,10 @@ Here, the Transfiguration is no mere event but a revelation: Christ, the _sun at
 The accompanying prayers—_Our Father_, _Hail Mary_, _Glory Be_—are not mere recitations but echoes of that moment on the mount. They are petitions for the very light the window depicts: forgiveness to cleanse, guidance to steady, and grace to transfigure our own shadows into clarity. The closing blessing is no formality but a whispered promise: that the same light which once dazzled the apostles still pierces the dimness of our world, if we have eyes to see.
 
 In this fusion of art and devotion, the window becomes more than decoration; it is a summons. Like the apostles, we are called to witness, to kneel, and—in time—to reflect.
+
+##### Transfiguration in Vienna’s Votive Church
+
+![Transfiguration in Vienna’s Votive Church](May/jpgs/Transfiguration.jpg)
 
 #### May 18,2025
 
