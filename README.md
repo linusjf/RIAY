@@ -3936,6 +3936,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 16,2025](#may-162025)
   - [We Must Receive](#we-must-receive)
   - [AI-Generated Summary: James Tissot’s Healing of the Lepers at Capernaum and the Kingdom of God](#ai-generated-summary-james-tissots-healing-of-the-lepers-at-capernaum-and-the-kingdom-of-god)
+  - [James Tissot’s Healing of the Lepers at Capernaum](#james-tissots-healing-of-the-lepers-at-capernaum)
 - [May 17,2025](#may-172025)
   - [Medium Reveals Meaning](#medium-reveals-meaning)
   - [AI-Generated Summary: The Radiance of Divine Light in the Transfiguration Window](#ai-generated-summary-the-radiance-of-divine-light-in-the-transfiguration-window)
@@ -4359,6 +4360,10 @@ The work reflects the biblical narrative where Christ heals ten lepers, yet only
 True faith, the passage argues, is more than passive belief; it requires worship, obedience, and trust. Gratitude is the heartbeat of repentance, a surrender to God’s guidance. The text closes with repeated prayers—the _Hail Mary_, invoking Mary’s intercession, and the _Glory Be_, praising the Trinity—emphasizing dependence on mercy and the communal nature of devotion.
 
 In sum, Tissot’s painting and the accompanying meditation weave art and theology into a call to action: to receive grace with humility, to repent with hope, and to answer divine light with human gratitude.
+
+##### James Tissot’s Healing of the Lepers at Capernaum
+
+![James Tissot’s Healing of the Lepers at Capernaum](May/jpgs/healingofthelepers.jpg)
 
 #### May 17,2025
 
