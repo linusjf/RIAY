@@ -60,7 +60,7 @@
 - [May 18,2025](#may-182025)
   - [Rest in All Things](#rest-in-all-things)
   - [AI-Generated Summary: The Divine Serenity in the Midst of Betrayal](#ai-generated-summary-the-divine-serenity-in-the-midst-of-betrayal)
-  - [AI-Generated Image: The Last Supper in mosaic: Christ's divine serenity amidst the storm of betrayal](#ai-generated-image-the-last-supper-in-mosaic-christs-divine-serenity-amidst-the-storm-of-betrayal)
+  - [The Last Supper mosaic in the Monreale Cathedral in Sicily, Italy](#the-last-supper-mosaic-in-the-monreale-cathedral-in-sicily-italy)
 - [May 19,2025](#may-192025)
   - [Gold in Our Halos](#gold-in-our-halos)
   - [AI-Generated Summary: The Duality of Judas and the Mercy of Christ](#ai-generated-summary-the-duality-of-judas-and-the-mercy-of-christ)
@@ -509,9 +509,9 @@ And here lies our lesson: if He, facing the cross, could rest in trust, then why
 
 _Glory be to the Father, and to the Son, and to the Holy Spirit._
 
-### AI-Generated Image: The Last Supper in mosaic: Christ's divine serenity amidst the storm of betrayal
+### The Last Supper mosaic in the Monreale Cathedral in Sicily, Italy
 
-![AI-Generated Image: The Last Supper in mosaic: Christ's divine serenity amidst the storm of betrayal](/May/jpgs/Day138Summary.jpg)
+![The Last Supper mosaic in the Monreale Cathedral in Sicily, Italy](/May/jpgs/LastSupperMosaic.jpg)
 
 ## May 19,2025
 
