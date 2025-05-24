@@ -29,6 +29,7 @@
   - [AI-Generated Summary: Deepening Devotion Through Sacred Art and Prayer](#ai-generated-summary-deepening-devotion-through-sacred-art-and-prayer)
     - [Key Insights](#key-insights)
     - [Closing Devotions](#closing-devotions)
+  - [Fra Angelico’s Annunciation (mid-1430s)](#fra-angelicos-annunciation-mid-1430s)
 - [May 10,2025](#may-102025)
   - [Joy in the Darkness](#joy-in-the-darkness)
   - [AI-Generated Summary: Rembrandt’s The Visitation and the Divine Light of Shared Faith](#ai-generated-summary-rembrandts-the-visitation-and-the-divine-light-of-shared-faith)
@@ -333,6 +334,10 @@ The text explores how prayer, meditation, and sacred art can deepen one’s spir
 - A farewell blessing, expressing gratitude and hope.
 
 Fra Angelico’s humility (as noted by Vasari) mirrors the text’s call to quiet devotion—a harmony of art, prayer, and surrender.
+
+### Fra Angelico’s Annunciation (mid-1430s)
+
+![Fra Angelico’s Annunciation (mid-1430s)](/May/jpgs/Annunciation.jpg)
 
 ## May 10,2025
 
