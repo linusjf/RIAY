@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3962,6 +3962,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
   - [Fulfillment of the Promise](#fulfillment-of-the-promise)
   - [AI-Generated Summary: The Rainbow and the Cross](#ai-generated-summary-the-rainbow-and-the-cross)
   - [AI-Generated Image: A radiant rainbow arcs over the Crucified Christ, merging divine promise with ultimate sacrifice as light pierces the storm-darkened sky](#ai-generated-image-a-radiant-rainbow-arcs-over-the-crucified-christ-merging-divine-promise-with-ultimate-sacrifice-as-light-pierces-the-storm-darkened-sky)
+- [May 24, 2025](#may-24-2025)
+  - [Done in Secret](#done-in-secret)
+  - [AI-Generated Summary: The Divine Gaze and the Sealed Tomb](#ai-generated-summary-the-divine-gaze-and-the-sealed-tomb)
 
 <!-- tocstop -->
 
@@ -4485,6 +4488,24 @@ And so we pray, not as those without hope, but as children who know their Father
 ##### AI-Generated Image: A radiant rainbow arcs over the Crucified Christ, merging divine promise with ultimate sacrifice as light pierces the storm-darkened sky
 
 ![AI-Generated Image: A radiant rainbow arcs over the Crucified Christ, merging divine promise with ultimate sacrifice as light pierces the storm-darkened sky](May/jpgs/Day143Summary.jpg)
+
+#### May 24, 2025
+
+##### Done in Secret
+
+[![Done in Secret](May/jpgs/Day144.jpg)](https://youtu.be/ta0uqFrZ8mo "Done in Secret")
+
+##### AI-Generated Summary: The Divine Gaze and the Sealed Tomb
+
+Consider, dear reader, how the painter Carracci has captured that moment of unearthly dawn—the risen Christ, radiant, His eyes lifted not to the astonished soldiers nor even to the adoring angels, but to the Father. The tomb lies sealed behind Him, as if to remind us that the greatest of miracles often happen unseen, in the hidden places where the world does not think to look.
+
+So too did our Lord live: His whole life a steady gaze upon the Father, His prayers whispered in solitude, His trust unshaken even when the cup of suffering was pressed to His lips. And what followed? The stone rolled away not by human hands, the graveclothes left folded, the soldiers struck dumb—not as spectacle, but as quiet vindication of a life lived in perfect obedience.
+
+This is the pattern set before us. To pray in secret, to act without demand for earthly praise, to fix our eyes, like Carracci’s Christ, on what is above. For the Father who sees in secret does not forget. He answers not with perishable rewards, but with the gift of Himself—the Spirit’s grace, the hope of resurrection, and the joy of a will surrendered to Love’s design.
+
+Let us then, with Mary, say again the old prayers, not as incantations, but as steady steps toward that same gaze. _Hail Mary, full of grace… Glory be to the Father…_ For in them we rehearse the posture of eternity: hands open, head bowed, eyes lifted—waiting for the dawn.
+
+God bless you.
 
 ## June
 
