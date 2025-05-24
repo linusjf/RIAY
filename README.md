@@ -3961,7 +3961,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 23, 2025](#may-23-2025)
   - [Fulfillment of the Promise](#fulfillment-of-the-promise)
   - [AI-Generated Summary: The Rainbow and the Cross](#ai-generated-summary-the-rainbow-and-the-cross)
-  - [AI-Generated Image: A radiant rainbow arcs over the Crucified Christ, merging divine promise with ultimate sacrifice as light pierces the storm-darkened sky](#ai-generated-image-a-radiant-rainbow-arcs-over-the-crucified-christ-merging-divine-promise-with-ultimate-sacrifice-as-light-pierces-the-storm-darkened-sky)
+  - [The Triumph at Calvary Rainbow Fades into Clouds Jesus Christ Crucified Painting By George Inness](#the-triumph-at-calvary-rainbow-fades-into-clouds-jesus-christ-crucified-painting-by-george-inness)
 - [May 24, 2025](#may-24-2025)
   - [Done in Secret](#done-in-secret)
   - [AI-Generated Summary: The Divine Gaze and the Sealed Tomb](#ai-generated-summary-the-divine-gaze-and-the-sealed-tomb)
@@ -4486,9 +4486,9 @@ Here is the paradox of the Cross: in suffering, victory; in death, life; in dark
 
 And so we pray, not as those without hope, but as children who know their Father keeps His word. _Hail Mary, full of grace... Glory be to the Father..._ For in the end, all shall be well, and all shall be well, and every manner of thing shall be well.
 
-##### AI-Generated Image: A radiant rainbow arcs over the Crucified Christ, merging divine promise with ultimate sacrifice as light pierces the storm-darkened sky
+##### The Triumph at Calvary Rainbow Fades into Clouds Jesus Christ Crucified Painting By George Inness
 
-![AI-Generated Image: A radiant rainbow arcs over the Crucified Christ, merging divine promise with ultimate sacrifice as light pierces the storm-darkened sky](May/jpgs/Day143Summary.jpg)
+![The Triumph at Calvary Rainbow Fades into Clouds Jesus Christ Crucified Painting By George Inness](May/jpgs/Crucifixion.jpg)
 
 #### May 24, 2025
 
