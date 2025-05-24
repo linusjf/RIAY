@@ -48,6 +48,7 @@
 - [May 14,2025](#may-142025)
   - [Shadow of the Cross](#shadow-of-the-cross)
   - [AI-Generated Summary: The Mystery and Majesty of Christ’s Baptism in a 16th-Century Fresco](#ai-generated-summary-the-mystery-and-majesty-of-christs-baptism-in-a-16th-century-fresco)
+  - [An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto](#an-unknown-artists-fresco-baptism-of-christ-in-paduas-church-of-san-benedetto)
 - [May 15,2025](#may-152025)
   - [Miracles of Love](#miracles-of-love)
   - [AI-Generated Summary: Reflections on Carl Bloch’s The Wedding at Cana and the Quiet Miracles of Christ](#ai-generated-summary-reflections-on-carl-blochs-the-wedding-at-cana-and-the-quiet-miracles-of-christ)
@@ -445,6 +446,10 @@ This baptism is no ordinary rite. Unlike John’s earlier baptisms for repentanc
 The text reflects on the Jordan’s banks as a threshold where Christ’s trust in the Father is unveiled. His submission mirrors the believer’s journey: baptized into His death and resurrection, we too are called to carry the cross, anchored in our identity as God’s beloved. The passage closes with prayers—_Our Father_, _Hail Mary_, _Glory Be_—seeking grace to embrace this truth.
 
 In this fusion of art and devotion, the fresco whispers a timeless lesson: the path of glory is paved with humility, and the light of Christ outshines even the shadow of the cross.
+
+### An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto
+
+![An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto](/May/jpgs/BaptismofChrist.jpg)
 
 ## May 15,2025
 
