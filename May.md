@@ -67,7 +67,7 @@
 - [May 20,2025](#may-202025)
   - [His Glory Remains](#his-glory-remains)
   - [AI-Generated Summary: The Unconquerable Love in the Scourging of Christ](#ai-generated-summary-the-unconquerable-love-in-the-scourging-of-christ)
-  - [AI-Generated Image: The unbroken Christ before the scourge, His halo a quiet defiance against the gathering cruelty](#ai-generated-image-the-unbroken-christ-before-the-scourge-his-halo-a-quiet-defiance-against-the-gathering-cruelty)
+  - [Giovanni Antonio Bazzi known as Sodoma, Christ at the Column (c. 1510-1515; detached fresco, 140 x 101 cm; Siena, Pinacoteca Nazionale)](#giovanni-antonio-bazzi-known-as-sodoma-christ-at-the-column-c-1510-1515-detached-fresco-140-x-101-cm-siena-pinacoteca-nazionale)
 - [May 21,2025](#may-212025)
   - [Render Unto God](#render-unto-god)
   - [AI-Generated Summary: The Suffering King and the Call to Repentance](#ai-generated-summary-the-suffering-king-and-the-call-to-repentance)
@@ -542,9 +542,9 @@ And here lies the great mystery—that in His wounds, we see our healing; in His
 
 Let us then, with the Blessed Mother, say, _Hail Mary, full of grace_, and with the Church, _Glory be to the Father_, for in these sorrows we find the very heart of joy.
 
-### AI-Generated Image: The unbroken Christ before the scourge, His halo a quiet defiance against the gathering cruelty
+### Giovanni Antonio Bazzi known as Sodoma, Christ at the Column (c. 1510-1515; detached fresco, 140 x 101 cm; Siena, Pinacoteca Nazionale)
 
-![AI-Generated Image: The unbroken Christ before the scourge, His halo a quiet defiance against the gathering cruelty](/May/jpgs/Day140Summary.jpg)
+![Giovanni Antonio Bazzi known as Sodoma, Christ at the Column (c. 1510-1515; detached fresco, 140 x 101 cm; Siena, Pinacoteca Nazionale)](/May/jpgs/Colonna.jpg)
 
 ## May 21,2025
 
