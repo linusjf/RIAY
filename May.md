@@ -71,7 +71,7 @@
 - [May 21,2025](#may-212025)
   - [Render Unto God](#render-unto-god)
   - [AI-Generated Summary: The Suffering King and the Call to Repentance](#ai-generated-summary-the-suffering-king-and-the-call-to-repentance)
-  - [AI-Generated Image: The Suffering King: A mirror of our sins and a call to repentance](#ai-generated-image-the-suffering-king-a-mirror-of-our-sins-and-a-call-to-repentance)
+  - [Titian’s Christ Crowned with Thorns (c. 1542–1543)](#titians-christ-crowned-with-thorns-c-15421543)
 - [May 22,2025](#may-222025)
   - [Truly the Son of God](#truly-the-son-of-god)
   - [AI-Generated Summary: The Weight of the Cross and the Witness of the Heart](#ai-generated-summary-the-weight-of-the-cross-and-the-witness-of-the-heart)
@@ -562,9 +562,9 @@ Yet here also is grace, if we will have it. To sorrow for our sins is to share i
 
 _Hail Mary, full of grace... Glory be to the Father..._ So we pray, again and again, that our hearts may learn what our lips repeat. And may He, who bore the thorns for love of us, grant us peace. Amen.
 
-### AI-Generated Image: The Suffering King: A mirror of our sins and a call to repentance
+### Titian’s Christ Crowned with Thorns (c. 1542–1543)
 
-![AI-Generated Image: The Suffering King: A mirror of our sins and a call to repentance](/May/jpgs/Day141Summary.jpg)
+![Titian’s Christ Crowned with Thorns (c. 1542–1543)](/May/jpgs/CrowningwithThorns.jpg)
 
 ## May 22,2025
 
