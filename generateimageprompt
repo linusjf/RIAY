@@ -3,6 +3,8 @@
 # Generate image prompts from text summaries using DeepSeek API
 #
 # Usage: generateimageprompt /path/to/DayXXXSummary.txt
+#        or
+#        cat summary.txt | generateimageprompt
 # Output: Creates /path/to/DayXXXImagePrompt.json
 
 set -euo pipefail
@@ -26,12 +28,13 @@ function usage() {
   [[ $exit_code -eq 0 ]] && output_stream=1 || output_stream=2
 
   cat >&$output_stream << EOF
-Usage: ${SCRIPT_NAME} INPUT_FILE
+Usage: ${SCRIPT_NAME} [INPUT_FILE]
 
 Generates image prompt JSON from a text file usually a summary using DeepSeek API and outputs it to stdout.
+If no INPUT_FILE is provided, reads from stdin.
 
 Arguments:
-  INPUT_FILE    Path to input file
+  INPUT_FILE    Path to input file (optional, defaults to stdin)
 
 Environment variables required:
   DEEPSEEK_API_KEY           API key for DeepSeek service
@@ -40,7 +43,8 @@ Environment variables required:
 
 Examples:
   ${SCRIPT_NAME} /path/to/input.txt
-  DEEPSEEK_API_KEY=abc123 ${SCRIPT_NAME} input.txt
+  cat input.txt | ${SCRIPT_NAME}
+  DEEPSEEK_API_KEY=abc123 ${SCRIPT_NAME} < input.txt
 EOF
 
   exit "$exit_code"
@@ -51,8 +55,6 @@ function version() {
 }
 
 function validate_input() {
-  [[ $# -eq 0 ]] && die "Error: No input file provided"
-  [[ -f "$1" ]] || die "Error: Input file '$1' not found"
   [[ -n "${DEEPSEEK_API_KEY:-}" ]] || die "Error: DEEPSEEK_API_KEY not set"
   [[ -n "${SUMMARY_IMAGE_META_PROMPT:-}" ]] || die "Error: SUMMARY_IMAGE_META_PROMPT not set"
 }
@@ -99,15 +101,19 @@ function main() {
     esac
   done
 
-  validate_input "$@"
-  local input_file="$1"
-  local output_file
+  validate_input
   local summary_content
   local payload
   local response
   local generated_content
 
-  summary_content="$(< "$input_file")"
+  if [[ $# -gt 0 ]]; then
+    [[ -f "$1" ]] || die "Error: Input file '$1' not found"
+    summary_content="$(< "$1")"
+  else
+    summary_content="$(cat -)"
+  fi
+
   payload="$(create_payload "$summary_content")"
 
   response="$(
