@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3924,6 +3924,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 12,2025](#may-122025)
   - [Eyes on Jesus](#eyes-on-jesus)
   - [AI-Generated Summary: A Reflection on Campy’s Fresco and the Devotion of Mary](#ai-generated-summary-a-reflection-on-campys-fresco-and-the-devotion-of-mary)
+  - [Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)](#fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547)
 - [May 13,2025](#may-132025)
   - [Respond with Grace](#respond-with-grace)
   - [AI-Generated Summary: A Mosaic of Divine Encounter and Human Response](#ai-generated-summary-a-mosaic-of-divine-encounter-and-human-response)
@@ -4297,6 +4298,10 @@ The text weaves prayers of gratitude and submission—_Our Father_, _Hail Mary_�
 In Campy’s art and the accompanying meditation, we find a call to mirror Mary’s offering: to hold fast to faith, not as escape, but as the lens through which all life is rightly seen.
 
 _Blessed art thou among women... pray for us sinners._
+
+##### Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)
+
+![Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)](May/jpgs/PresentationinTemple.jpg)
 
 #### May 13,2025
 
