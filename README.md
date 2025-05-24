@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3911,6 +3911,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
   - [AI-Generated Summary: Deepening Devotion Through Sacred Art and Prayer](#ai-generated-summary-deepening-devotion-through-sacred-art-and-prayer)
     - [Key Insights](#key-insights)
     - [Closing Devotions](#closing-devotions)
+  - [Fra Angelico’s Annunciation (mid-1430s)](#fra-angelicos-annunciation-mid-1430s)
 - [May 10,2025](#may-102025)
   - [Joy in the Darkness](#joy-in-the-darkness)
   - [AI-Generated Summary: Rembrandt’s The Visitation and the Divine Light of Shared Faith](#ai-generated-summary-rembrandts-the-visitation-and-the-divine-light-of-shared-faith)
@@ -3918,12 +3919,15 @@ We are thus presented with a choice. Will we be like those who turned away, forg
     - [Theological and Emotional Depth](#theological-and-emotional-depth)
     - [Reflections on the Scene](#reflections-on-the-scene)
     - [Connection to Prayer](#connection-to-prayer)
+  - [Rembrandt's The Visitation](#rembrandts-the-visitation)
 - [May 11,2025](#may-112025)
   - [Worship and Warmth](#worship-and-warmth)
   - [AI-Generated Summary: A Meditation on Pellegrini’s Nativity and the Adoration of the Christ Child](#ai-generated-summary-a-meditation-on-pellegrinis-nativity-and-the-adoration-of-the-christ-child)
+  - [Giovanni Antonio Pellegrini's The Nativity](#giovanni-antonio-pellegrinis-the-nativity)
 - [May 12,2025](#may-122025)
   - [Eyes on Jesus](#eyes-on-jesus)
   - [AI-Generated Summary: A Reflection on Campy’s Fresco and the Devotion of Mary](#ai-generated-summary-a-reflection-on-campys-fresco-and-the-devotion-of-mary)
+  - [Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)](#fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547)
 - [May 13,2025](#may-132025)
   - [Respond with Grace](#respond-with-grace)
   - [AI-Generated Summary: A Mosaic of Divine Encounter and Human Response](#ai-generated-summary-a-mosaic-of-divine-encounter-and-human-response)
@@ -4213,6 +4217,10 @@ The text explores how prayer, meditation, and sacred art can deepen one’s spir
 
 Fra Angelico’s humility (as noted by Vasari) mirrors the text’s call to quiet devotion—a harmony of art, prayer, and surrender.
 
+##### Fra Angelico’s Annunciation (mid-1430s)
+
+![Fra Angelico’s Annunciation (mid-1430s)](May/jpgs/Annunciation.jpg)
+
 #### May 10,2025
 
 ##### Joy in the Darkness
@@ -4254,6 +4262,10 @@ The repeated "Hail Mary" and "Glory Be" prayers in the original text echo the pa
 
 In _The Visitation_, Rembrandt distills a moment where heaven touches earth, and two women—illuminated by faith—become vessels of grace. The artwork, like the prayers it inspires, reminds us that divine companionship transforms uncertainty into hope.
 
+##### Rembrandt's The Visitation
+
+![Rembrandt's The Visitation](May/jpgs/TheVisitation.jpg)
+
 #### May 11,2025
 
 ##### Worship and Warmth
@@ -4278,6 +4290,10 @@ _In the name of the Father, the Son, and the Holy Spirit._
 - **Sacred Symmetry**: Artistic composition as theological language.
 - **Invitation to Worship**: The Nativity as a model for Christian devotion.
 
+##### Giovanni Antonio Pellegrini's The Nativity
+
+![Giovanni Antonio Pellegrini's The Nativity](May/jpgs/Nativity.jpg)
+
 #### May 12,2025
 
 ##### Eyes on Jesus
@@ -4297,6 +4313,10 @@ The text weaves prayers of gratitude and submission—_Our Father_, _Hail Mary_�
 In Campy’s art and the accompanying meditation, we find a call to mirror Mary’s offering: to hold fast to faith, not as escape, but as the lens through which all life is rightly seen.
 
 _Blessed art thou among women... pray for us sinners._
+
+##### Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)
+
+![Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)](May/jpgs/PresentationinTemple.jpg)
 
 #### May 13,2025
 
