@@ -3942,7 +3942,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 18,2025](#may-182025)
   - [Rest in All Things](#rest-in-all-things)
   - [AI-Generated Summary: The Divine Serenity in the Midst of Betrayal](#ai-generated-summary-the-divine-serenity-in-the-midst-of-betrayal)
-  - [The Last Supper mosaic in the Monreale Cathedral in Sicily, Italy](#the-last-supper-mosaic-in-the-monreale-cathedral-in-sicily-italy)
+  - [Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"](#giacomo-raffaelli-1753-1836--an-italian-mosaicist-created-a-life-sized-mosaic-copy-of-leonardo-da-vincis-the-last-supper)
 - [May 19,2025](#may-192025)
   - [Gold in Our Halos](#gold-in-our-halos)
   - [AI-Generated Summary: The Duality of Judas and the Mercy of Christ](#ai-generated-summary-the-duality-of-judas-and-the-mercy-of-christ)
@@ -4391,9 +4391,9 @@ And here lies our lesson: if He, facing the cross, could rest in trust, then why
 
 _Glory be to the Father, and to the Son, and to the Holy Spirit._
 
-##### The Last Supper mosaic in the Monreale Cathedral in Sicily, Italy
+##### Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"
 
-![The Last Supper mosaic in the Monreale Cathedral in Sicily, Italy](May/jpgs/LastSupperMosaic.jpg)
+![Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"](May/jpgs/LastSupperMosaic.jpg)
 
 #### May 19,2025
 
