@@ -39,6 +39,7 @@
 - [May 11,2025](#may-112025)
   - [Worship and Warmth](#worship-and-warmth)
   - [AI-Generated Summary: A Meditation on Pellegrini’s Nativity and the Adoration of the Christ Child](#ai-generated-summary-a-meditation-on-pellegrinis-nativity-and-the-adoration-of-the-christ-child)
+  - [Giovanni Antonio Pellegrini's The Nativity](#giovanni-antonio-pellegrinis-the-nativity)
 - [May 12,2025](#may-122025)
   - [Eyes on Jesus](#eyes-on-jesus)
   - [AI-Generated Summary: A Reflection on Campy’s Fresco and the Devotion of Mary](#ai-generated-summary-a-reflection-on-campys-fresco-and-the-devotion-of-mary)
@@ -396,6 +397,10 @@ _In the name of the Father, the Son, and the Holy Spirit._
 - **Divine Humility**: The paradox of Christ’s majesty clothed in infancy.
 - **Sacred Symmetry**: Artistic composition as theological language.
 - **Invitation to Worship**: The Nativity as a model for Christian devotion.
+
+### Giovanni Antonio Pellegrini's The Nativity
+
+![Giovanni Antonio Pellegrini's The Nativity](/May/jpgs/Nativity.jpg)
 
 ## May 12,2025
 
