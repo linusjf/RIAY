@@ -51,6 +51,7 @@
 - [May 15,2025](#may-152025)
   - [Miracles of Love](#miracles-of-love)
   - [AI-Generated Summary: Reflections on Carl Bloch’s The Wedding at Cana and the Quiet Miracles of Christ](#ai-generated-summary-reflections-on-carl-blochs-the-wedding-at-cana-and-the-quiet-miracles-of-christ)
+  - [Carl Bloch’s The Wedding at Cana](#carl-blochs-the-wedding-at-cana)
 - [May 16,2025](#may-162025)
   - [We Must Receive](#we-must-receive)
   - [AI-Generated Summary: James Tissot’s Healing of the Lepers at Capernaum and the Kingdom of God](#ai-generated-summary-james-tissots-healing-of-the-lepers-at-capernaum-and-the-kingdom-of-god)
@@ -462,6 +463,10 @@ The bond between Jesus and Mary is tenderly rendered. Their shared glance speaks
 Devotional prayers interspersed throughout the text—the _Our Father_, _Hail Mary_, and _Glory Be_—anchor the reflection in worship. They echo the painting’s themes: grace, intercession, and the quiet majesty of a God who serves.
 
 In sum, Bloch’s masterpiece and the accompanying meditation reveal a Christ who transforms the ordinary with quiet power, asking not for admiration but offering love. The miracle at Cana, like all his works, whispers that divinity dwells among us, often unseen, always giving.
+
+### Carl Bloch’s The Wedding at Cana
+
+![Carl Bloch’s The Wedding at Cana](/May/jpgs/WeddingatCana.jpg)
 
 ## May 16,2025
 
