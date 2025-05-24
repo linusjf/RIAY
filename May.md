@@ -45,6 +45,7 @@
 - [May 13,2025](#may-132025)
   - [Respond with Grace](#respond-with-grace)
   - [AI-Generated Summary: A Mosaic of Divine Encounter and Human Response](#ai-generated-summary-a-mosaic-of-divine-encounter-and-human-response)
+  - [Finding of Jesus in the Temple](#finding-of-jesus-in-the-temple)
 - [May 14,2025](#may-142025)
   - [Shadow of the Cross](#shadow-of-the-cross)
   - [AI-Generated Summary: The Mystery and Majesty of Christ’s Baptism in a 16th-Century Fresco](#ai-generated-summary-the-mystery-and-majesty-of-christs-baptism-in-a-16th-century-fresco)
@@ -430,6 +431,10 @@ Here, human responses fracture like light through glass: some marvel, others bri
 The passage then turns from art to exhortation. To seek Christ as Mary did—not by labor alone, but by grace—is the summons. A prayer pleads for the Spirit’s aid to emulate her faith, followed by the rhythmic cadence of _Hail Marys_, as if each repetition polishes the soul’s mirror to reflect His light more clearly. The _Glory Be_ crowns these devotions, a brief blaze of praise to the Triune God.
 
 In this mosaic and meditation alike, two truths emerge: Christ’s revelation divides hearts even as it unites them to Himself, and grace alone bends the knee in true worship. The prayers are not incantations but open hands—waiting to receive what Mary already grasped.
+
+### Finding of Jesus in the Temple
+
+![Finding of Jesus in the Temple](/May/jpgs/LostandFound.jpg)
 
 ## May 14,2025
 
