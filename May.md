@@ -83,6 +83,7 @@
 - [May 24, 2025](#may-24-2025)
   - [Done in Secret](#done-in-secret)
   - [AI-Generated Summary: The Divine Gaze and the Sealed Tomb](#ai-generated-summary-the-divine-gaze-and-the-sealed-tomb)
+  - [AI-Generated Image: The risen Christ in radiant dawn, His gaze lifted to the Father, the sealed tomb a silent witness to unseen miracles](#ai-generated-image-the-risen-christ-in-radiant-dawn-his-gaze-lifted-to-the-father-the-sealed-tomb-a-silent-witness-to-unseen-miracles)
 
 <!-- tocstop -->
 
@@ -624,3 +625,7 @@ This is the pattern set before us. To pray in secret, to act without demand for 
 Let us then, with Mary, say again the old prayers, not as incantations, but as steady steps toward that same gaze. _Hail Mary, full of grace… Glory be to the Father…_ For in them we rehearse the posture of eternity: hands open, head bowed, eyes lifted—waiting for the dawn.
 
 God bless you.
+
+### AI-Generated Image: The risen Christ in radiant dawn, His gaze lifted to the Father, the sealed tomb a silent witness to unseen miracles
+
+![AI-Generated Image: The risen Christ in radiant dawn, His gaze lifted to the Father, the sealed tomb a silent witness to unseen miracles](/May/jpgs/Day144Summary.jpg)
