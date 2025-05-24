@@ -85,7 +85,7 @@
 - [May 23, 2025](#may-23-2025)
   - [Fulfillment of the Promise](#fulfillment-of-the-promise)
   - [AI-Generated Summary: The Rainbow and the Cross](#ai-generated-summary-the-rainbow-and-the-cross)
-  - [The Triumph at Calvary Rainbow Fades into Clouds Jesus Christ Crucified Painting By George Inness](#the-triumph-at-calvary-rainbow-fades-into-clouds-jesus-christ-crucified-painting-by-george-inness)
+  - [The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)](#the-fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852)
 - [May 24, 2025](#may-24-2025)
   - [Done in Secret](#done-in-secret)
   - [AI-Generated Summary: The Divine Gaze and the Sealed Tomb](#ai-generated-summary-the-divine-gaze-and-the-sealed-tomb)
@@ -635,9 +635,9 @@ Here is the paradox of the Cross: in suffering, victory; in death, life; in dark
 
 And so we pray, not as those without hope, but as children who know their Father keeps His word. _Hail Mary, full of grace... Glory be to the Father..._ For in the end, all shall be well, and all shall be well, and every manner of thing shall be well.
 
-### The Triumph at Calvary Rainbow Fades into Clouds Jesus Christ Crucified Painting By George Inness
+### The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)
 
-![The Triumph at Calvary Rainbow Fades into Clouds Jesus Christ Crucified Painting By George Inness](/May/jpgs/Crucifixion.jpg)
+![The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)](/May/jpgs/Crucifixion.jpg)
 
 ## May 24, 2025
 
