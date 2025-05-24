@@ -156,7 +156,7 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
     local method="${2:-GET}"
     local headers="${3:-}"
     local data="${4:-}"
-    local max_retries="${5:-$CURL_MAX_RETRIES}"
+    local max_retries="${5:-${CURL_MAX_RETRIES}}"
     local output_file
     output_file=$(mktemp)
 
