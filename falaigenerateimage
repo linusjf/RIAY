@@ -2,7 +2,7 @@
 
 prompt="$1"
 
-escaped_prompt="$(jq -Rs <<< "$prompt")"
+escaped_prompt="$(jq -Rs <<<"$prompt")"
 
 payload="$(jq -n --arg prompt "$escaped_prompt" '{
      "prompt": $prompt
@@ -19,6 +19,7 @@ REQUEST_ID="$(echo "$response" | grep -o '"request_id": *"[^"]*"' | sed 's/"requ
 POLL_INTERVAL=5
 # Maximum number of attempts before exiting
 MAX_RETRIES=60
+REQUEST_SUCCEEDED=false
 
 echo "Polling status for request ID: $REQUEST_ID"
 attempt=1
@@ -36,12 +37,8 @@ while [ $attempt -le $MAX_RETRIES ]; do
 
   if [ "$status" == "COMPLETED" ]; then
     echo "✅ Request completed!"
-    response="$(curl --request GET \
-      --url "https://queue.fal.run/fal-ai/janus/requests/${REQUEST_ID}" \
-      --header "Authorization: Key $FALAI_KEY")"
-    response_url=$(echo "$response" | jq -r '.response_url')
-    echo "You can download the result here: $response_url"
-    exit 0
+    REQUEST_SUCCEEDED=true
+    break
   elif [ "$status" == "IN_PROGRESS" ] || [ "$status" == "IN_QUEUE" ]; then
     echo "⏳ Still processing... waiting $POLL_INTERVAL seconds..."
   else
@@ -54,5 +51,23 @@ while [ $attempt -le $MAX_RETRIES ]; do
   sleep $POLL_INTERVAL
 done
 
-echo "⚠️ Timed out after $MAX_RETRIES attempts. Please try again later."
-exit 1
+if ! "$REQUEST_SUCCEEDED"; then
+  echo "⚠️ Timed out after $MAX_RETRIES attempts. Please try again later."
+  exit 1
+fi
+
+# Get the final response with image URL
+response="$(curl --request GET \
+  --url "https://queue.fal.run/fal-ai/janus/requests/${REQUEST_ID}" \
+  --header "Authorization: Key $FALAI_KEY")"
+response_url=$(echo "$response" | jq -r '.response_url')
+
+# Generate a filename based on prompt (first 20 chars, sanitized)
+filename=$(echo "$prompt" | head -c 20 | tr -cd '[:alnum:]-_ ' | tr ' ' '_')
+filename="${filename}.png"
+
+echo "Downloading image to: $filename"
+curl -o "$filename" "$response_url"
+
+echo "✅ Image downloaded successfully to: $filename"
+exit 0
