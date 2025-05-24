@@ -83,7 +83,7 @@
 - [May 24, 2025](#may-24-2025)
   - [Done in Secret](#done-in-secret)
   - [AI-Generated Summary: The Divine Gaze and the Sealed Tomb](#ai-generated-summary-the-divine-gaze-and-the-sealed-tomb)
-  - [AI-Generated Image: The risen Christ in radiant dawn, His gaze lifted to the Father, the sealed tomb a silent witness to unseen miracles](#ai-generated-image-the-risen-christ-in-radiant-dawn-his-gaze-lifted-to-the-father-the-sealed-tomb-a-silent-witness-to-unseen-miracles)
+  - [Resurrection (1593) by Annibale Carracci](#resurrection-1593-by-annibale-carracci)
 
 <!-- tocstop -->
 
@@ -626,6 +626,6 @@ Let us then, with Mary, say again the old prayers, not as incantations, but as s
 
 God bless you.
 
-### AI-Generated Image: The risen Christ in radiant dawn, His gaze lifted to the Father, the sealed tomb a silent witness to unseen miracles
+### Resurrection (1593) by Annibale Carracci
 
-![AI-Generated Image: The risen Christ in radiant dawn, His gaze lifted to the Father, the sealed tomb a silent witness to unseen miracles](/May/jpgs/Day144Summary.jpg)
+![Resurrection (1593) by Annibale Carracci](/May/jpgs/Resurrection.jpg)

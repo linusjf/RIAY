@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3965,7 +3965,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 24, 2025](#may-24-2025)
   - [Done in Secret](#done-in-secret)
   - [AI-Generated Summary: The Divine Gaze and the Sealed Tomb](#ai-generated-summary-the-divine-gaze-and-the-sealed-tomb)
-  - [AI-Generated Image: The risen Christ in radiant dawn, His gaze lifted to the Father, the sealed tomb a silent witness to unseen miracles](#ai-generated-image-the-risen-christ-in-radiant-dawn-his-gaze-lifted-to-the-father-the-sealed-tomb-a-silent-witness-to-unseen-miracles)
+  - [Resurrection (1593) by Annibale Carracci](#resurrection-1593-by-annibale-carracci)
 
 <!-- tocstop -->
 
@@ -4508,9 +4508,9 @@ Let us then, with Mary, say again the old prayers, not as incantations, but as s
 
 God bless you.
 
-##### AI-Generated Image: The risen Christ in radiant dawn, His gaze lifted to the Father, the sealed tomb a silent witness to unseen miracles
+##### Resurrection (1593) by Annibale Carracci
 
-![AI-Generated Image: The risen Christ in radiant dawn, His gaze lifted to the Father, the sealed tomb a silent witness to unseen miracles](May/jpgs/Day144Summary.jpg)
+![Resurrection (1593) by Annibale Carracci](May/jpgs/Resurrection.jpg)
 
 ## June
 
