@@ -3946,6 +3946,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 19,2025](#may-192025)
   - [Gold in Our Halos](#gold-in-our-halos)
   - [AI-Generated Summary: The Duality of Judas and the Mercy of Christ](#ai-generated-summary-the-duality-of-judas-and-the-mercy-of-christ)
+  - [Agony in the Garden by Vicente Masip, also known as Vicente Juan Masip](#agony-in-the-garden-by-vicente-masip-also-known-as-vicente-juan-masip)
 - [May 20,2025](#may-202025)
   - [His Glory Remains](#his-glory-remains)
   - [AI-Generated Summary: The Unconquerable Love in the Scourging of Christ](#ai-generated-summary-the-unconquerable-love-in-the-scourging-of-christ)
@@ -4407,6 +4408,10 @@ Consider the painting by Masip, where our Lord kneels in Gethsemane, His sorrow 
 Peter, too, betrayed—yet he wept and was restored. Judas, though offered the same mercy, turned inward to despair. The lesson is plain as morning: God’s forgiveness waits, but we must open the door. Christ’s agony in the garden was not merely for nails and thorns, but for hearts that would rather perish than be pardoned.
 
 To the weary soul, this is your comfort: come as you are, but do not stay as you are. The prayers we repeat—the _Hail Mary_, the _Glory Be_—are not incantations but lifelines, thrown across the chasm of our failings. Mercy is always nearer than we dare hope.
+
+##### Agony in the Garden by Vicente Masip, also known as Vicente Juan Masip
+
+![Agony in the Garden by Vicente Masip, also known as Vicente Juan Masip](May/jpgs/AgonyintheGarden.jpg)
 
 #### May 20,2025
 
