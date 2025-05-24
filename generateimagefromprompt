@@ -112,7 +112,7 @@ function main() {
 
   # Generate and process images
   generate_temp_image "$prompt" "$pngfile"
-  jpgfile="${pngfile%%.*}.jpg"
+  jpgfile="${pngfile%.*}.jpg"
   convert_to_jpg "$pngfile" "$jpgfile"
   echo "$jpgfile"
 
