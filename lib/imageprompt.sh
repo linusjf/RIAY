@@ -17,7 +17,7 @@ if [[ -z "${SCRIPT_DIR:-}" ]]; then
 fi
 source "${SCRIPT_DIR}/lib/require.sh"
 
-require_commands date cat curl gm mv grep mktemp exiftool dirname rm
+require_commands jq sed
 
 if ! declare -f imageprompt::get_caption > /dev/null; then
   function imageprompt::get_caption() {
