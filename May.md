@@ -97,6 +97,7 @@
 - [May 25, 2025](#may-25-2025)
   - [He Must Increase](#he-must-increase)
   - [AI-Generated Summary: The Humble King's Way](#ai-generated-summary-the-humble-kings-way)
+  - [Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice](#crossing-ascension-cupola-1175-1200-mosaic-basilica-di-san-marco-venice)
 
 <!-- tocstop -->
 
@@ -699,3 +700,7 @@ In this sacred art, we see a truth as old as the Gospel: the path to glory winds
 This is the royal road, dear reader: to lay aside our strivings for honor, wealth, or mastery, and instead take up the quiet, often painful work of trust. Prayer, sacrifice, and charity are its markers; obedience to Truth, its compass. For only when we surrender our anxious grip on life do we find it—life abundant, life eternal.
 
 Let us then pray, as the saints have taught us: _Hail Mary, full of grace..._ and _Glory be to the Father..._—words that weave humility into praise, and praise into joy. Farewell, and may you walk this road with courage.
+
+### Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice
+
+![Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice](/May/jpgs/Ascension.jpg)
