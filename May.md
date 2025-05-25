@@ -94,6 +94,9 @@
   - [Done in Secret](#done-in-secret)
   - [AI-Generated Summary: The Divine Gaze and the Sealed Tomb](#ai-generated-summary-the-divine-gaze-and-the-sealed-tomb)
   - [Resurrection (1593) by Annibale Carracci](#resurrection-1593-by-annibale-carracci)
+- [May 25, 2025](#may-25-2025)
+  - [He Must Increase](#he-must-increase)
+  - [AI-Generated Summary: The Humble King's Way](#ai-generated-summary-the-humble-kings-way)
 
 <!-- tocstop -->
 
@@ -680,3 +683,19 @@ God bless you.
 ### Resurrection (1593) by Annibale Carracci
 
 ![Resurrection (1593) by Annibale Carracci](/May/jpgs/Resurrection.jpg)
+
+## May 25, 2025
+
+### He Must Increase
+
+[![He Must Increase](/May/jpgs/Day145.jpg)](https://youtu.be/T0_LPac45Gk "He Must Increase")
+
+### AI-Generated Summary: The Humble King's Way
+
+Imagine, if you will, a great and ancient basilica, its walls and ceilings aglow with mosaics crafted over eight hundred years by hands both skilled and devout. Here, Byzantine masters first laid their golden tesserae, later joined by Florentine and Venetian artists, each adding to the splendor that points not to themselves, but to Him who sits enthroned above—Christ, cloaked in celestial blue, bearing the wood of the cross, attended by angels.
+
+In this sacred art, we see a truth as old as the Gospel: the path to glory winds downward first. The Baptist kneels, declaring, _He must increase, but I must decrease._ The Blessed Mother bows, her _Magnificat_ echoing heaven’s paradox—_He has put down the mighty and exalted the lowly._ And Christ Himself, though equal to God, _emptied Himself_, as St. Paul tells us, descending to the depths of mortal shame that we might rise with Him.
+
+This is the royal road, dear reader: to lay aside our strivings for honor, wealth, or mastery, and instead take up the quiet, often painful work of trust. Prayer, sacrifice, and charity are its markers; obedience to Truth, its compass. For only when we surrender our anxious grip on life do we find it—life abundant, life eternal.
+
+Let us then pray, as the saints have taught us: _Hail Mary, full of grace..._ and _Glory be to the Father..._—words that weave humility into praise, and praise into joy. Farewell, and may you walk this road with courage.
