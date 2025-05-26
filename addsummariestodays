@@ -50,6 +50,7 @@ Exit Codes:
   ${E_MISSING_VIDEOS_FILE} - Videos file not found
   ${E_INVALID_AI_HANDLING} - Invalid AI handling mode
   ${E_MISSING_FILE} - Markdown file not found
+  ${E_FILE_GENERATION_FAILED} - File generation failed
 
 Examples:
   ${SCRIPT_NAME} 1 10                     # Process days 1 through 10
