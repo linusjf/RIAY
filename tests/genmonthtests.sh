@@ -10,6 +10,9 @@
 
 readonly GENMONTH_SCRIPT="${SCRIPT_DIR}/genmonth"
 
+readonly TEST_MONTH=1
+readonly TEST_YEAR=2023
+
 print_header "Running genmonth sanity tests"
 
 print_header "Test 6: Version flag"
