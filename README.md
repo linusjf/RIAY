@@ -3983,6 +3983,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 26, 2025](#may-26-2025)
   - [My Soul Thirsts](#my-soul-thirsts)
   - [AI-Generated Summary: The Composure of Grace and the Folly of First Frights](#ai-generated-summary-the-composure-of-grace-and-the-folly-of-first-frights)
+  - [“Pentecost” by Jean Restout II (1692–1768)](#pentecost-by-jean-restout-ii-16921768)
 
 <!-- tocstop -->
 
@@ -4605,6 +4606,10 @@ So it is with all things: the farmer hears thunder and thinks of ripe fields, wh
 Let us not mistake her calm for coldness. No—her stillness was the fruit of longing fulfilled, as the deer pants not for the brook’s noise but its waters. If we would face the Spirit’s fire unshaken, we must first learn to hunger for it. Pray, then, not as those who fear the answer, but as those who know the Giver. _Come, Holy Spirit_—but come to hearts already waiting.
 
 _Our Father... Hail Mary... Glory be..._ Thus we end as we began: in petition, in praise, in the old and good words that steady us like a well-worn path. Go in peace, but go alert—lest you mistake God’s thunder for mere noise.
+
+##### “Pentecost” by Jean Restout II (1692–1768)
+
+![“Pentecost” by Jean Restout II (1692–1768)](May/jpgs/Pentecost.jpg)
 
 ## June
 
