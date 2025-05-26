@@ -27,7 +27,6 @@ readonly TEST_COMPACT_DIR="test_compact_dir"
 readonly TEST_VIDEOS_FILE="$VIDEOS_FILE"
 
 # Script paths
-readonly GENTOC_SCRIPT="${SCRIPT_DIR}/gentoc"
 readonly STITCH_SCRIPT="${SCRIPT_DIR}/stitch"
 readonly LINTALL_SCRIPT="${SCRIPT_DIR}/lintall"
 readonly ADDVIDEOTODAY_SCRIPT="${SCRIPT_DIR}/addvideotoday"
@@ -165,18 +164,6 @@ print_test_summary() {
     printf "\n\033[32mAll tests passed!\033[0m\n"
     return 0
   fi
-}
-
-create_test_md() {
-  cat << EOF > "${TEST_MD_FILE}"
-# Test Document
-
-## Section 1
-Content
-
-## Section 2
-More content
-EOF
 }
 
 create_test_stitch() {
@@ -364,28 +351,7 @@ run_all_tests() {
 
   source "${SCRIPT_DIR}/tests/genmonthtests.sh"
 
-  print_header "Running gentoc sanity tests"
-
-  print_header "Test 12: Version flag"
-  run_test 12 "Should show version with -v" 0 "${GENTOC_SCRIPT}" -v
-  run_test 12 "Should show version with --version" 0 "${GENTOC_SCRIPT}" --version
-
-  print_header "Test 13: Help/usage"
-  run_test 13 "Should show usage with no args" 1 "${GENTOC_SCRIPT}" || true
-  run_test 13 "Should show usage with -h" 0 "${GENTOC_SCRIPT}" -h
-  run_test 13 "Should show usage with --help" 0 "${GENTOC_SCRIPT}" --help
-
-  print_header "Test 14: Debug mode"
-  run_test 14 "Should enable debug with -d" 2 "${GENTOC_SCRIPT}" -d "${TEST_MD_FILE}" || true
-  run_test 14 "Should enable debug with --debug" 2 "${GENTOC_SCRIPT}" --debug "${TEST_MD_FILE}" || true
-
-  print_header "Test 15: Invalid inputs"
-  run_test 15 "Should reject missing file argument" 1 "${GENTOC_SCRIPT}" || true
-  run_test 15 "Should reject non-existent file" 2 "${GENTOC_SCRIPT}" nonexistent.md || true
-
-  print_header "Test 16: TOC generation"
-  create_test_md
-  run_test 16 "Should generate TOC for valid file" 0 "${GENTOC_SCRIPT}" "${TEST_MD_FILE}"
+  source "${SCRIPT_DIR}/tests/gentoctests.sh"
 
   print_header "Running stitch sanity tests"
 
