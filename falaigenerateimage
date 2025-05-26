@@ -69,7 +69,7 @@ function poll_status() {
       ;;
     "IN_PROGRESS" | "IN_QUEUE")
       if [[ "${VERBOSE:-false}" == "true" ]]; then
-        printf "\r⏳ Polling status (attempt %d/%d)" "$attempt" "$MAX_RETRIES"
+        printf "\r⏳ Polling status for request_id %s: (attempt %d/%d)" "$request_id" "$attempt" "$MAX_RETRIES"
       fi
       sleep "$POLL_INTERVAL"
       ((attempt++))
@@ -112,11 +112,7 @@ function read_input() {
   local input="$1"
   local content
   if [[ -z "$input" ]]; then
-    content="$(
-      cat <<EOF
-$(</dev/stdin)
-EOF
-    )"
+    content="$(cat)"
     echo "$content"
   else
     echo "$input"
@@ -134,7 +130,7 @@ function main() {
   trap cleanup EXIT
 
   if [[ "${VERBOSE:-false}" == "true" ]]; then
-    printf "Generating image for prompt: %s\n" "$prompt"
+    printf "\nGenerating image for prompt: %s\n" "$prompt"
   fi
 
   request_id="$(generate_image "$prompt")"
