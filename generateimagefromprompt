@@ -35,6 +35,7 @@ Options:
   -h, --help      Show this help message
   -v, --version   Show version information
   --verbose       Enable verbose output
+  --              End of options (treat remaining arguments as prompt)
 
 Arguments:
   prompt       prompt text (or read from stdin if not provided)
@@ -154,6 +155,10 @@ while [[ $# -gt 0 ]]; do
   --verbose)
     export VERBOSE=true
     shift
+    ;;
+  --)
+    shift
+    break
     ;;
   *)
     break
