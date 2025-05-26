@@ -98,6 +98,9 @@
   - [He Must Increase](#he-must-increase)
   - [AI-Generated Summary: The Humble King's Way](#ai-generated-summary-the-humble-kings-way)
   - [Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice](#crossing-ascension-cupola-1175-1200-mosaic-basilica-di-san-marco-venice)
+- [May 26, 2025](#may-26-2025)
+  - [My Soul Thirsts](#my-soul-thirsts)
+  - [AI-Generated Summary: The Composure of Grace and the Folly of First Frights](#ai-generated-summary-the-composure-of-grace-and-the-folly-of-first-frights)
 
 <!-- tocstop -->
 
@@ -704,3 +707,19 @@ Let us then pray, as the saints have taught us: _Hail Mary, full of grace..._ an
 ### Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice
 
 ![Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice](/May/jpgs/Ascension.jpg)
+
+## May 26, 2025
+
+### My Soul Thirsts
+
+[![My Soul Thirsts](/May/jpgs/Day146.jpg)](https://youtu.be/45cxSQtkurc "My Soul Thirsts")
+
+### AI-Generated Summary: The Composure of Grace and the Folly of First Frights
+
+Consider how the untried soul trembles before what the seasoned heart receives with quiet joy. In Resto’s _Pentecost_, the disciples startle like children at a sudden noise, their faces alight with fear or wonder at the Spirit’s descent. Yet Mary stands unmoved—not for lack of awe, but because she has long known the divine whisper. She is no stranger to the fire that now dances upon her brow; was she not once overshadowed by the same Spirit? The novice flinches at the unfamiliar, but the practiced hand discerns the master’s touch.
+
+So it is with all things: the farmer hears thunder and thinks of ripe fields, while the child hides beneath the bed. The parent, weathered by nights of fevers and false alarms, knows true danger from mere discomfort. Why, then, should we marvel that Mary, who had carried Heaven within her, did not quail when Heaven came again in flame? She had thirsted for righteousness, and now she drank deeply. The disciples, new to such wonders, could but gasp.
+
+Let us not mistake her calm for coldness. No—her stillness was the fruit of longing fulfilled, as the deer pants not for the brook’s noise but its waters. If we would face the Spirit’s fire unshaken, we must first learn to hunger for it. Pray, then, not as those who fear the answer, but as those who know the Giver. _Come, Holy Spirit_—but come to hearts already waiting.
+
+_Our Father... Hail Mary... Glory be..._ Thus we end as we began: in petition, in praise, in the old and good words that steady us like a well-worn path. Go in peace, but go alert—lest you mistake God’s thunder for mere noise.
