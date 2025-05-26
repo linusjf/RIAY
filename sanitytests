@@ -18,7 +18,6 @@ source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 readonly TEST_MONTH=1
 readonly TEST_YEAR=2023
-readonly TEST_MD_FILE="test_toc.md"
 readonly TEST_STITCH_FILE="test_stitch.md"
 readonly TEST_STITCH_CONTENT="stitch.md"
 readonly TEST_PLAYLIST_FILE="test_playlist.txt"

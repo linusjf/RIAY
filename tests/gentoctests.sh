@@ -9,6 +9,7 @@
 ######################################################################
 
 readonly GENTOC_SCRIPT="${SCRIPT_DIR}/gentoc"
+readonly TEST_MD_FILE="test_toc.md"
 
 create_test_md() {
   cat << EOF > "${TEST_MD_FILE}"
