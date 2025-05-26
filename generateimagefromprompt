@@ -86,13 +86,11 @@ function cleanup() {
 }
 
 function read_input() {
-  # Read input from file or stdin
-  # Arguments: input_file (string) or empty for stdin
-  # Output: File content to STDOUT
-  # Returns: 0
   local input="$1"
+  local content
   if [[ -z "$input" ]]; then
-    cat
+    content="$(cat)"
+    echo "$content"
   else
     echo "$input"
   fi
