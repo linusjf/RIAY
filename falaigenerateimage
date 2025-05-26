@@ -63,11 +63,9 @@ EOF
 
 function generate_image() {
   local prompt="$1"
-  local escaped_prompt payload response request_id
+  local payload response request_id
 
-  escaped_prompt="$(jq -Rs <<< "$prompt")" || die "Failed to escape prompt" 4
-
-  payload="$(jq -n --arg prompt "$escaped_prompt" '{
+  payload="$(jq -n --arg prompt "$prompt" '{
     "prompt": $prompt
   }')" || die "Failed to create payload" 4
 
