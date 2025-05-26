@@ -8,5 +8,5 @@
 
 ## Bugs/Issues
 
-1. Refactor sanitytests
 1. Identify and refactor scripts to clean up intermediate, temporary and backup files created on normal exit and error.
+2. Identify cause of intermittent failure in summarizevideo.
