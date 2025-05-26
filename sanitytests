@@ -24,7 +24,6 @@ readonly TEST_COMPACT_DIR="test_compact_dir"
 readonly TEST_VIDEOS_FILE="$VIDEOS_FILE"
 
 # Script paths
-readonly LINTALL_SCRIPT="${SCRIPT_DIR}/lintall"
 readonly ADDVIDEOTODAY_SCRIPT="${SCRIPT_DIR}/addvideotoday"
 readonly ADDIMGTODAY_SCRIPT="${SCRIPT_DIR}/addimgtoday"
 readonly CLEANUP_SCRIPT="${SCRIPT_DIR}/cleanup"
@@ -316,25 +315,7 @@ run_all_tests() {
 
   source "${SCRIPT_DIR}/tests/stitchtests.sh"
 
-  print_header "Running lintall sanity tests"
-
-  print_header "Test 24: Version flag"
-  run_test 24 "Should have a version flag" 0 "${LINTALL_SCRIPT}" --version || true
-
-  print_header "Test 25: Help/usage"
-  run_test 25 "Should show usage with -h" 0 "${LINTALL_SCRIPT}" -h
-  run_test 25 "Should show usage with --help" 0 "${LINTALL_SCRIPT}" --help
-
-  print_header "Test 26: Debug mode"
-  run_test 26 "Should enable debug with -d" 0 "${LINTALL_SCRIPT}" -d || true
-  run_test 26 "Should enable debug with --debug" 0 "${LINTALL_SCRIPT}" --debug || true
-
-  print_header "Test 27: Verbose mode"
-  run_test 27 "Should enable verbose with -v" 0 "${LINTALL_SCRIPT}" -v || true
-  run_test 27 "Should enable verbose with --verbose" 0 "${LINTALL_SCRIPT}" --verbose || true
-
-  print_header "Test 28: Basic execution"
-  run_test 28 "Should run successfully" 0 "${LINTALL_SCRIPT}"
+  source "${SCRIPT_DIR}/tests/lintalltests.sh"
 
   print_header "Running addvideotoday sanity tests"
 
