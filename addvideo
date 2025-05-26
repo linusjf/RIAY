@@ -150,7 +150,10 @@ generate_files() {
     echo "$md"
     "${SCRIPT_DIR}/summarizevideo" -- "$vid" >| "$summaryfname" \
       && "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname" \
-      && cat "$summaryfname" || exit $EXIT_FILE_GENERATION_FAILED
+      && cat "$summaryfname" || {
+      >&2 echo $?
+      exit $EXIT_FILE_GENERATION_FAILED
+    }
   } >| "$fname"
 
   if "$AUTO_GENERATE_IMAGES"; then
