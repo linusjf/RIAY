@@ -314,6 +314,8 @@ run_all_tests() {
 
   source "${SCRIPT_DIR}/tests/gentoctests.sh"
 
+  source "${SCRIPT_DIR}/tests/stitchtests.sh"
+
   print_header "Running lintall sanity tests"
 
   print_header "Test 24: Version flag"
