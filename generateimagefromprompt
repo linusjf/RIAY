@@ -28,7 +28,7 @@ function usage() {
   # Globals: SCRIPT_NAME
   # Output: Usage message to STDOUT
   # Returns: 0
-  cat << EOF
+  cat <<EOF
 Usage: ${SCRIPT_NAME} [OPTIONS] "prompt"
 
 Options:
@@ -54,10 +54,10 @@ function generate_temp_image() {
   local prompt="$1"
   local output_file="$2"
 
-  deepctl infer -m "${IMAGE_GENERATION_MODEL}" -i "prompt=${prompt}" \
-    | sed 's/data:image\/png;base64,//' \
-    | jq -r '.images[0]' \
-    | base64 --decode > "$output_file"
+  deepctl infer -m "${IMAGE_GENERATION_MODEL}" -i "prompt=${prompt}" |
+    sed 's/data:image\/png;base64,//' |
+    jq -r '.images[0]' |
+    base64 --decode >"$output_file"
 }
 
 function convert_to_jpg() {
@@ -87,12 +87,15 @@ function cleanup() {
 
 function read_input() {
   local input="$1"
-  local content
-  if [[ -z "$input" ]]; then
-    content="$(cat)"
-    echo "$content"
-  else
+  if [[ -n "$input" ]]; then
     echo "$input"
+  elif [[ ! -t 0 ]]; then
+    # Not interactive; input is piped
+    cat
+  else
+    # Interactive shell; prompt user for input
+    read -rp "Enter prompt: " prompt
+    echo "$prompt"
   fi
 }
 
@@ -108,6 +111,13 @@ function main() {
   pngfile="$(mktemp --quiet -t tempXXX.png)"
   prompt="$(read_input "$input")"
 
+  # Show feedback that prompt was received
+  if [[ "${VERBOSE:-false}" == "true" ]]; then
+    printf "Received prompt: %s\n" "$prompt"
+  else
+    printf "Processing prompt...\n"
+  fi
+
   # Generate and process images
   generate_temp_image "$prompt" "$pngfile"
   jpgfile="${pngfile%.*}.jpg"
@@ -121,7 +131,7 @@ function main() {
 ### Main Execution ###
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
@@ -133,21 +143,21 @@ lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 # Parse command line options
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    -h | --help)
-      usage
-      exit 0
-      ;;
-    -v | --version)
-      version
-      exit 0
-      ;;
-    --verbose)
-      export VERBOSE=true
-      shift
-      ;;
-    *)
-      break
-      ;;
+  -h | --help)
+    usage
+    exit 0
+    ;;
+  -v | --version)
+    version
+    exit 0
+    ;;
+  --verbose)
+    export VERBOSE=true
+    shift
+    ;;
+  *)
+    break
+    ;;
   esac
 done
 
