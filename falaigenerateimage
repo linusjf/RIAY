@@ -30,7 +30,7 @@ function generate_image() {
   local prompt="$1"
   local escaped_prompt payload response request_id
 
-  escaped_prompt="$(jq -Rs <<<"$prompt")" || die "Failed to escape prompt"
+  escaped_prompt="$(jq -Rs <<< "$prompt")" || die "Failed to escape prompt"
 
   payload="$(jq -n --arg prompt "$escaped_prompt" '{
     "prompt": $prompt
@@ -40,10 +40,10 @@ function generate_image() {
     --url https://queue.fal.run/fal-ai/janus \
     --header "Authorization: Key $FALAI_KEY" \
     --header "Content-Type: application/json" \
-    --data "$payload" 2>/dev/null)" || die "Failed to submit request"
+    --data "$payload" 2> /dev/null)" || die "Failed to submit request"
 
-  request_id="$(echo "$response" | jq -r '.request_id')" ||
-    die "Failed to parse request ID"
+  request_id="$(echo "$response" | jq -r '.request_id')" \
+    || die "Failed to parse request ID"
 
   printf "%s\n" "$request_id"
 }
@@ -56,27 +56,27 @@ function poll_status() {
   while ((attempt <= MAX_RETRIES)); do
     response="$(curl --request GET \
       --url "https://queue.fal.run/fal-ai/janus/requests/${request_id}/status" \
-      --header "Authorization: Key $FALAI_KEY" 2>/dev/null)" ||
-      die "Failed to check status"
+      --header "Authorization: Key $FALAI_KEY" 2> /dev/null)" \
+      || die "Failed to check status"
 
-    status="$(echo "$response" | jq -r '.status')" ||
-      die "Failed to parse status"
+    status="$(echo "$response" | jq -r '.status')" \
+      || die "Failed to parse status"
 
     case "$status" in
-    "COMPLETED")
-      printf "\n"
-      return 0
-      ;;
-    "IN_PROGRESS" | "IN_QUEUE")
-      if [[ "${VERBOSE:-false}" == "true" ]]; then
-        printf "\r⏳ Polling status for request_id %s: (attempt %d/%d)" "$request_id" "$attempt" "$MAX_RETRIES"
-      fi
-      sleep "$POLL_INTERVAL"
-      ((attempt++))
-      ;;
-    *)
-      die "Unexpected status: $status"
-      ;;
+      "COMPLETED")
+        printf "\n"
+        return 0
+        ;;
+      "IN_PROGRESS" | "IN_QUEUE")
+        if [[ "${VERBOSE:-false}" == "true" ]]; then
+          printf "\r⏳ Polling status for request_id %s: (attempt %d/%d)" "$request_id" "$attempt" "$MAX_RETRIES"
+        fi
+        sleep "$POLL_INTERVAL"
+        ((attempt++))
+        ;;
+      *)
+        die "Unexpected status: $status"
+        ;;
     esac
   done
 
@@ -89,33 +89,36 @@ function download_image() {
 
   response="$(curl --request GET \
     --url "https://queue.fal.run/fal-ai/janus/requests/${request_id}" \
-    --header "Authorization: Key $FALAI_KEY" 2>/dev/null)" ||
-    die "Failed to get final response"
+    --header "Authorization: Key $FALAI_KEY" 2> /dev/null)" \
+    || die "Failed to get final response"
 
-  response_url="$(echo "$response" | jq -r '.images[0].url')" ||
-    die "Failed to parse response URL"
+  response_url="$(echo "$response" | jq -r '.images[0].url')" \
+    || die "Failed to parse response URL"
 
-  temp_file="$(mktemp --quiet -t tempXXX.png)" ||
-    die "Failed to create temp file"
+  temp_file="$(mktemp --quiet -t tempXXX.png)" \
+    || die "Failed to create temp file"
 
-  curl -s -o "$temp_file" "$response_url" ||
-    die "Failed to download image"
+  curl -s -o "$temp_file" "$response_url" \
+    || die "Failed to download image"
 
   jpg_file="${temp_file%.*}.jpg"
-  gm convert "$temp_file" "$jpg_file" ||
-    die "Failed to convert image to JPG"
+  gm convert "$temp_file" "$jpg_file" \
+    || die "Failed to convert image to JPG"
 
   printf "%s\n" "$jpg_file"
 }
 
 function read_input() {
   local input="$1"
-  local content
-  if [[ -z "$input" ]]; then
-    content="$(cat)"
-    echo "$content"
-  else
+  if [[ -n "$input" ]]; then
     echo "$input"
+  elif [[ ! -t 0 ]]; then
+    # Not interactive; input is piped
+    cat
+  else
+    # Interactive shell; prompt user for input
+    read -rp "Enter prompt: " prompt
+    echo "$prompt"
   fi
 }
 
@@ -141,7 +144,7 @@ function main() {
 }
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
@@ -152,19 +155,19 @@ require_commands jq tee cat sed mktemp cp gm dirname basename
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-  -v | --version)
-    version
-    exit 0
-    ;;
-  -h | --help)
-    printf "Usage: %s \"prompt text\"\n" "$(basename "$0")"
-    exit 0
-    ;;
-  --verbose)
-    VERBOSE=true
-    shift
-    ;;
-  *) break ;;
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -h | --help)
+      printf "Usage: %s \"prompt text\"\n" "$(basename "$0")"
+      exit 0
+      ;;
+    --verbose)
+      VERBOSE=true
+      shift
+      ;;
+    *) break ;;
   esac
 done
 
