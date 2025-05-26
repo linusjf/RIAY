@@ -1,73 +1,184 @@
 #!/usr/bin/env bash
+#
+# Generate images using FAL AI's Janus API
+#
+# Usage: falaigenerateimage "prompt text"
+# Output: Path to generated JPG image
+#
+# Dependencies: jq, curl, gm (GraphicsMagick)
+# Requires FALAI_KEY environment variable set
 
-prompt="$1"
+set -euo pipefail
+shopt -s inherit_errexit
 
-escaped_prompt="$(jq -Rs <<< "$prompt")"
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME="$(basename "$0")"
+readonly POLL_INTERVAL=5
+readonly MAX_RETRIES=60
 
-payload="$(jq -n --arg prompt "$escaped_prompt" '{
-     "prompt": $prompt
-   }')"
+function version() {
+  printf "%s\n" "$VERSION"
+}
 
-response="$(curl --request POST \
-  --url https://queue.fal.run/fal-ai/janus \
-  --header "Authorization: Key $FALAI_KEY" \
-  --header "Content-Type: application/json" \
-  --data "$payload")"
-REQUEST_ID="$(echo "$response" | grep -o '"request_id": *"[^"]*"' | sed 's/"request_id": *//; s/"//g')"
+function cleanup() {
+  if [[ -n "${temp_file:-}" ]]; then
+    rm -f "$temp_file"
+  fi
+}
 
-# How often to poll (in seconds)
-POLL_INTERVAL=5
-# Maximum number of attempts before exiting
-MAX_RETRIES=60
-REQUEST_SUCCEEDED=false
+function generate_image() {
+  local prompt="$1"
+  local escaped_prompt payload response request_id
 
-echo "Polling status for request ID: $REQUEST_ID"
-attempt=1
+  escaped_prompt="$(jq -Rs <<<"$prompt")" || die "Failed to escape prompt"
 
-while [ $attempt -le $MAX_RETRIES ]; do
-  echo "Attempt $attempt of $MAX_RETRIES..."
+  payload="$(jq -n --arg prompt "$escaped_prompt" '{
+    "prompt": $prompt
+  }')" || die "Failed to create payload"
 
-  # Make the GET request and capture the status using jq
+  response="$(curl --request POST \
+    --url https://queue.fal.run/fal-ai/janus \
+    --header "Authorization: Key $FALAI_KEY" \
+    --header "Content-Type: application/json" \
+    --data "$payload" 2>/dev/null)" || die "Failed to submit request"
+
+  request_id="$(echo "$response" | jq -r '.request_id')" ||
+    die "Failed to parse request ID"
+
+  printf "%s\n" "$request_id"
+}
+
+function poll_status() {
+  local request_id="$1"
+  local attempt=1
+  local status response
+
+  while ((attempt <= MAX_RETRIES)); do
+    response="$(curl --request GET \
+      --url "https://queue.fal.run/fal-ai/janus/requests/${request_id}/status" \
+      --header "Authorization: Key $FALAI_KEY" 2>/dev/null)" ||
+      die "Failed to check status"
+
+    status="$(echo "$response" | jq -r '.status')" ||
+      die "Failed to parse status"
+
+    case "$status" in
+    "COMPLETED")
+      printf "\n"
+      return 0
+      ;;
+    "IN_PROGRESS" | "IN_QUEUE")
+      if [[ "${VERBOSE:-false}" == "true" ]]; then
+        printf "\r⏳ Polling status (attempt %d/%d)" "$attempt" "$MAX_RETRIES"
+      fi
+      sleep "$POLL_INTERVAL"
+      ((attempt++))
+      ;;
+    *)
+      die "Unexpected status: $status"
+      ;;
+    esac
+  done
+
+  return 1
+}
+
+function download_image() {
+  local request_id="$1"
+  local response response_url
+
   response="$(curl --request GET \
-    --url "https://queue.fal.run/fal-ai/janus/requests/${REQUEST_ID}/status" \
-    --header "Authorization: Key $FALAI_KEY")"
-  status=$(echo "$response" | jq -r '.status')
+    --url "https://queue.fal.run/fal-ai/janus/requests/${request_id}" \
+    --header "Authorization: Key $FALAI_KEY" 2>/dev/null)" ||
+    die "Failed to get final response"
 
-  echo "Current status: $status"
+  response_url="$(echo "$response" | jq -r '.images[0].url')" ||
+    die "Failed to parse response URL"
 
-  if [ "$status" == "COMPLETED" ]; then
-    echo "✅ Request completed!"
-    REQUEST_SUCCEEDED=true
-    break
-  elif [ "$status" == "IN_PROGRESS" ] || [ "$status" == "IN_QUEUE" ]; then
-    echo "⏳ Still processing... waiting $POLL_INTERVAL seconds..."
+  temp_file="$(mktemp --quiet -t tempXXX.png)" ||
+    die "Failed to create temp file"
+
+  curl -s -o "$temp_file" "$response_url" ||
+    die "Failed to download image"
+
+  jpg_file="${temp_file%.*}.jpg"
+  gm convert "$temp_file" "$jpg_file" ||
+    die "Failed to convert image to JPG"
+
+  printf "%s\n" "$jpg_file"
+}
+
+function read_input() {
+  local input="$1"
+  local content
+  if [[ -z "$input" ]]; then
+    content="$(
+      cat <<EOF
+$(</dev/stdin)
+EOF
+    )"
+    echo "$content"
   else
-    echo "❌ Unexpected status or error: $status"
-    echo "$response"
-    exit 1
+    echo "$input"
+  fi
+}
+
+function main() {
+  local input="${1:-}"
+  prompt="$(read_input "$input")"
+  local request_id output_file
+
+  [[ -z "$FALAI_KEY" ]] && die "FALAI_KEY environment variable not set"
+  [[ -z "$prompt" ]] && die "Please provide a prompt"
+
+  trap cleanup EXIT
+
+  if [[ "${VERBOSE:-false}" == "true" ]]; then
+    printf "Generating image for prompt: %s\n" "$prompt"
   fi
 
-  ((attempt++))
-  sleep $POLL_INTERVAL
+  request_id="$(generate_image "$prompt")"
+  poll_status "$request_id" || die "Timed out after $MAX_RETRIES attempts"
+  output_file="$(download_image "$request_id")"
+
+  printf "\n✅ Image generated successfully: %s\n" "$output_file"
+}
+
+# Source utility libraries
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/internet.sh"
+source "${SCRIPT_DIR}/lib/util.sh"
+source "${SCRIPT_DIR}/lib/curl.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+require_commands jq tee cat sed mktemp cp gm dirname basename
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  -v | --version)
+    version
+    exit 0
+    ;;
+  -h | --help)
+    printf "Usage: %s \"prompt text\"\n" "$(basename "$0")"
+    exit 0
+    ;;
+  --verbose)
+    VERBOSE=true
+    shift
+    ;;
+  *) break ;;
+  esac
 done
 
-if ! "$REQUEST_SUCCEEDED"; then
-  echo "⚠️ Timed out after $MAX_RETRIES attempts. Please try again later."
-  exit 1
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  if "${LOGGING:-false}"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
 fi
-
-# Get the final response with image URL
-response="$(curl --request GET \
-  --url "https://queue.fal.run/fal-ai/janus/requests/${REQUEST_ID}" \
-  --header "Authorization: Key $FALAI_KEY")"
-response_url=$(echo "$response" | jq -r '.response_url')
-
-filename="$(mktemp --quiet -t tempXXX.png)"
-
-echo "Downloading image to: $filename"
-curl -o "$filename" "$response_url"
-
-jpgfile="${filename%.*}.jpg"
-gm convert "$filename" "$jpgfile"
-echo "✅ Image downloaded successfully to: $jpgfile"
-exit 0
