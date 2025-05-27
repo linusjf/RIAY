@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+videos=(PesisPSBosg
+  lW9LA2uYhp0
+  KiLJc32YPKg
+  ZeY21DCQZzI
+  IhrhpVelcbc)
+
+{
+  for video in "${videos[@]}"; do
+    bash -x ./summarizevideo "$video" || exit
+  done
+} >| testsummary.txt
+
+exit 0

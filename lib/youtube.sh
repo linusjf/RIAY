@@ -17,6 +17,13 @@ fi
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/curl.sh"
 
+require_commands curl grep jq yt-dlp sed
+require_vars YOUTUBE_API_KEY
+
+: "${YT_DLP_RETRIES:=10}"
+: "${YT_DLP_FRAGMENT_RETRIES:=10}"
+: "${YT_DLP_SOCKET_TIMEOUT:=30}"
+
 if ! declare -p youtube__THUMBNAIL_SIZES &> /dev/null; then
   # array of youtube thumbnail sizes in descending order. Not all may be available.
   # cycle through the sizes to pick the largest
@@ -33,7 +40,6 @@ fi
 
 if ! declare -f youtube::thumbnailurl > /dev/null; then
   function youtube::thumbnailurl() {
-    require_commands curl grep
     local vid="$1"
     local api_url="https://www.googleapis.com/youtube/v3/videos?id=$vid&key=$YOUTUBE_API_KEY&part=snippet&fields=items(snippet(thumbnails(<size>(url))))"
     for size in "${youtube__THUMBNAIL_SIZES[@]}"; do
@@ -52,9 +58,6 @@ fi
 
 if ! declare -f youtube::get_video_title > /dev/null; then
   function youtube::get_video_title() {
-    require_commands jq
-    require_vars YOUTUBE_API_KEY
-
     local video_id="$1"
     local response
     response="$(curl::safe_curl_request "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${video_id}&key=${YOUTUBE_API_KEY}")"
@@ -70,18 +73,27 @@ if ! declare -f youtube::get_video_title > /dev/null; then
   export -f youtube::get_video_title
 fi
 
+if ! declare -f youtube::get_list_of_captions > /dev/null; then
+  function youtube::get_list_of_captions() {
+    local video_id="$1"
+    yt-dlp --skip-download --list-subs "https://www.youtube.com/watch?v=${video_id}" 2> /dev/null
+  }
+fi
+
 if ! declare -f youtube::download_captions > /dev/null; then
   function youtube::download_captions() {
-    require_commands yt-dlp
-
     local video_id="$1"
     local prefix="$2"
     rm -f -- "${prefix}${video_id}.*"
     yt-dlp \
+      --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
       --write-auto-sub \
       --sub-lang "en" \
       --skip-download \
       --sub-format "vtt" \
+      --retries "$YT_DLP_RETRIES" \
+      --fragment-retries "$YT_DLP_FRAGMENT_RETRIES" \
+      --user-agent "Mozilla/5.0" \
       -o "${prefix}${video_id}.%(ext)s" \
       "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1
   }
@@ -90,8 +102,6 @@ fi
 
 if ! declare -f youtube::extract_text_from_vtt > /dev/null; then
   function youtube::extract_text_from_vtt() {
-    require_commands jq grep sed
-
     local vtt_file="$1"
     local res
     res="$(grep -vE '^[0-9]+$|^[0-9]{2}:' -- "$vtt_file" \

@@ -10,7 +10,7 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
@@ -34,7 +34,7 @@ function usage() {
     output=2
   fi
 
-  >&"$output" cat <<EOF
+  >&"$output" cat << EOF
 Usage: ${SCRIPT_NAME} [OPTIONS] <youtube-video-id>
 
 Options:
@@ -62,7 +62,7 @@ function get_day_index() {
       return 0
     fi
     ((index++))
-  done <"${SCRIPT_DIR}/${VIDEOS_FILE}"
+  done < "${SCRIPT_DIR}/${VIDEOS_FILE}"
   return 1
 }
 
@@ -79,7 +79,7 @@ function get_final_prompt() {
 function summarize_chunk_gemini() {
   local chunk="$1"
   local prompt="$(get_chunk_prompt "$chunk")"
-  local escaped_prompt="$(jq -Rs <<<"$prompt")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
   local payload="$(jq -n --arg content "$escaped_prompt" --argjson temperature "${TEMPERATURE}" '{
   "contents": [{
     "parts": [{
@@ -116,7 +116,7 @@ function summarize_chunk_gemini() {
         return 1
       fi
 
-      if ! echo "$response" | jq . >/dev/null 2>&1; then
+      if ! echo "$response" | jq . > /dev/null 2>&1; then
         err "Gemini API returned invalid response"
         return 1
       fi
@@ -131,8 +131,8 @@ function summarize_chunk_gemini() {
 function summarize_chunk_deepseek() {
   local chunk="$1"
   local prompt="$(get_chunk_prompt "$chunk")"
-  local escaped_prompt="$(jq -Rs <<<"$prompt")"
-  local escaped_system_prompt="$(jq -Rs <<<"$SYSTEM_SUMMARY_PROMPT")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
+  local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
   local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --argjson temperature "$TEMPERATURE" \
     '{
   "model": "deepseek-chat",
@@ -158,7 +158,7 @@ function summarize_chunk_deepseek() {
       "$payload"
   )"
 
-  if ! echo "$response" | jq . >/dev/null 2>&1; then
+  if ! echo "$response" | jq . > /dev/null 2>&1; then
     err "DeepSeek API returned invalid response"
     return 1
   fi
@@ -192,7 +192,7 @@ function summarize_chunk() {
 function final_summary_gemini() {
   local input="$1"
   local prompt="$(get_final_prompt "$input")"
-  local escaped_prompt="$(jq -Rs <<<"$prompt")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
   local payload="$(jq -n \
     --arg content "$escaped_prompt" \
     --argjson temperature "$TEMPERATURE" \
@@ -228,7 +228,7 @@ function final_summary_gemini() {
       fi
       continue
     else
-      if ! echo "$response" | jq . >/dev/null 2>&1; then
+      if ! echo "$response" | jq . > /dev/null 2>&1; then
         err "Gemini API returned invalid response"
         return 1
       fi
@@ -242,8 +242,8 @@ function final_summary_gemini() {
 function final_summary_deepseek() {
   local input="$1"
   local prompt="$(get_final_prompt "$input")"
-  local escaped_prompt="$(jq -Rs <<<"$prompt")"
-  local escaped_system_prompt="$(jq -Rs <<<"$SYSTEM_SUMMARY_PROMPT")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
+  local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
   local payload="$(jq -n \
     --arg system "$escaped_system_prompt" \
     --arg content "$escaped_prompt" \
@@ -271,7 +271,7 @@ function final_summary_deepseek() {
       "$payload"
   )"
 
-  if ! echo "$response" | jq . >/dev/null 2>&1; then
+  if ! echo "$response" | jq . > /dev/null 2>&1; then
     err "DeepSeek API returned invalid response"
     return 1
   fi
@@ -286,33 +286,33 @@ function main() {
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -c | --caption-only)
-      caption_only=true
-      shift
-      ;;
-    -d | --debug)
-      set -x
-      shift
-      ;;
-    -p | --prepend-day-index)
-      prepend_day_index=true
-      shift
-      ;;
-    --version)
-      version
-      exit 0
-      ;;
-    --verbose)
-      verbose=true
-      shift
-      ;;
-    --help) usage 0 ;;
-    --)
-      shift
-      break
-      ;;
-    -*) usage 1 ;;
-    *) break ;;
+      -c | --caption-only)
+        caption_only=true
+        shift
+        ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      -p | --prepend-day-index)
+        prepend_day_index=true
+        shift
+        ;;
+      --version)
+        version
+        exit 0
+        ;;
+      --verbose)
+        verbose=true
+        shift
+        ;;
+      --help) usage 0 ;;
+      --)
+        shift
+        break
+        ;;
+      -*) usage 1 ;;
+      *) break ;;
     esac
   done
 
@@ -350,6 +350,12 @@ function main() {
     >&2 echo "Video title retrieved"
   fi
 
+  subtitles_list="$(youtube::get_list_of_captions "$VIDEO_ID")"
+
+  if ! echo "$subtitles_list" | grep -qE 'en\s'; then
+    die "Error: No captions in English available"
+  fi
+
   youtube::download_captions "$VIDEO_ID" "$FILE_PREFIX"
   if [[ ! -f "${FILE_PREFIX}${VIDEO_ID}.en.vtt" ]]; then
     die "Error: Subtitle file not found"
@@ -371,7 +377,7 @@ function main() {
   fi
 
   if "$caption_only"; then
-    echo "$TRANSCRIPT" >"${FILE_PREFIX}${VIDEO_ID}.en.txt"
+    echo "$TRANSCRIPT" > "${FILE_PREFIX}${VIDEO_ID}.en.txt"
     exit 0
   fi
 
