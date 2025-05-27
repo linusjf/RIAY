@@ -7,7 +7,6 @@
 #   -h, --help      Show this help message and exit
 #   -v, --version   Show version information and exit
 #   --verbose       Enable verbose output
-#   --              End of options (treat remaining arguments as prompt)
 #
 # Exit codes:
 #   0 - Success
@@ -44,7 +43,6 @@ Options:
   -h, --help      Show this help message and exit
   -v, --version   Show version information and exit
   --verbose       Enable verbose output
-  --              End of options (treat remaining arguments as prompt)
 
 Exit codes:
   0 - Success
@@ -63,17 +61,19 @@ EOF
 
 function generate_image() {
   local prompt="$1"
-  local payload response request_id
+  local escaped_prompt payload response request_id
 
-  payload="$(jq -n --arg prompt "$prompt" '{
+  escaped_prompt="$(jq -Rs <<< "$prompt")" || die "Failed to escape prompt" 4
+
+  payload="$(jq -n --arg prompt "$escaped_prompt" '{
     "prompt": $prompt
   }')" || die "Failed to create payload" 4
 
-  response="$(curl::safe_curl_request \
-    "https://queue.fal.run/fal-ai/janus" \
-    "POST" \
-    "Authorization: Key $FALAI_KEY" \
-    "$payload")" || die "Failed to submit request" 4
+  response="$(curl --request POST \
+    --url https://queue.fal.run/fal-ai/janus \
+    --header "Authorization: Key $FALAI_KEY" \
+    --header "Content-Type: application/json" \
+    --data "$payload" 2> /dev/null)" || die "Failed to submit request" 4
 
   request_id="$(echo "$response" | jq -r '.request_id')" \
     || die "Failed to parse request ID" 4
@@ -87,10 +87,9 @@ function poll_status() {
   local status response
 
   while ((attempt <= MAX_RETRIES)); do
-    response="$(curl::safe_curl_request \
-      "https://queue.fal.run/fal-ai/janus/requests/${request_id}/status" \
-      "GET" \
-      "Authorization: Key $FALAI_KEY")" \
+    response="$(curl --request GET \
+      --url "https://queue.fal.run/fal-ai/janus/requests/${request_id}/status" \
+      --header "Authorization: Key $FALAI_KEY" 2> /dev/null)" \
       || die "Failed to check status" 4
 
     status="$(echo "$response" | jq -r '.status')" \
@@ -121,14 +120,13 @@ function download_image() {
   local request_id="$1"
   local response response_url
 
-  response="$(curl::safe_curl_request \
-    "https://queue.fal.run/fal-ai/janus/requests/${request_id}" \
-    "GET" \
-    "Authorization: Key $FALAI_KEY")" \
+  response="$(curl --request GET \
+    --url "https://queue.fal.run/fal-ai/janus/requests/${request_id}" \
+    --header "Authorization: Key $FALAI_KEY" 2> /dev/null)" \
     || die "Failed to get final response" 4
 
   response_url="$(echo "$response" | jq -r '.images[0].url')" \
-    || die "Failed to parse image URL" 6
+    || die "Failed to parse response URL" 6
 
   temp_file="$(mktemp --quiet -t tempXXX.png)" \
     || die "Failed to create temp file" 6
@@ -199,10 +197,6 @@ while [[ $# -gt 0 ]]; do
     --verbose)
       VERBOSE=true
       shift
-      ;;
-    --)
-      shift
-      break
       ;;
     *) break ;;
   esac
