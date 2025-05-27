@@ -6,10 +6,10 @@ set -o nounset
 set -o pipefail
 
 if [[ -z "${SCRIPT_DIR:-}" ]]; then
-  if command -v realpath > /dev/null 2>&1; then
+  if command -v realpath >/dev/null 2>&1; then
     readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else
-    readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
+    readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &>/dev/null && pwd -P)"
   fi
 fi
 
@@ -21,7 +21,7 @@ require_commands curl sed cat rm date head tail basename mktemp grep cut tr
 : "${CURL_CONNECT_TIMEOUT:=30}"
 : "${CURL_MAX_TIME:=90}"
 
-if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
+if ! declare -p curl__HTTP_STATUS_CODES &>/dev/null; then
   declare -A curl__HTTP_STATUS_CODES=(
     [000]="No Response - Unable to connect/Network error"
     [100]="Continue"
@@ -122,7 +122,7 @@ if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
   )
 fi
 
-if ! declare -f curl::redact_keys > /dev/null; then
+if ! declare -f curl::redact_keys >/dev/null; then
   function curl::redact_keys() {
     local input="$1"
     echo "$input" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g'
@@ -130,7 +130,7 @@ if ! declare -f curl::redact_keys > /dev/null; then
   export -f curl::redact_keys
 fi
 
-if ! declare -f curl::save_failed_response > /dev/null; then
+if ! declare -f curl::save_failed_response >/dev/null; then
   function curl::save_failed_response() {
     local data="$1"
     local response="$2"
@@ -145,13 +145,13 @@ if ! declare -f curl::save_failed_response > /dev/null; then
     {
       curl::redact_keys "$data"
       curl::redact_keys "$response"
-    } >> "$filename"
+    } >>"$filename"
     err "Saved failed response to $filename (API keys redacted)"
   }
   export -f curl::save_failed_response
 fi
 
-if ! declare -f curl::safe_curl_request > /dev/null; then
+if ! declare -f curl::safe_curl_request >/dev/null; then
   function curl::safe_curl_request() {
     local url="$1"
     local method="${2:-GET}"
@@ -182,7 +182,15 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
       )
 
       [[ "$method" == "POST" ]] && curl_cmd+=(-X "POST")
-      [[ -n "$headers" ]] && curl_cmd+=(-H "$headers")
+
+      if [[ -n "$headers" ]]; then
+        # Use `eval` to properly split the quoted string into array elements
+        eval "local header_array=($headers)"
+        for header in "${header_array[@]}"; do
+          curl_cmd+=(-H "$header")
+        done
+      fi
+
       [[ -n "$data" ]] && curl_cmd+=(-d "$data")
       curl_cmd+=("$url")
 
@@ -224,7 +232,7 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
           >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$CURL_MAX_RETRIES)"
         fi
 
-        if [[ -n "$retry_after" ]]; then
+        if [[ -n "${retry_after:-}" ]]; then
           sleep "$retry_after"
         else
           sleep "$delay"
