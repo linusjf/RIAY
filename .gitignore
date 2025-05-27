@@ -17,3 +17,4 @@ geminimodelids.txt
 venv/**
 .aider.chat.history.md
 !**/*Summary.txt
+testsummary.txt
