@@ -10,4 +10,3 @@
 
 1. Identify and refactor scripts to clean up intermediate, temporary and backup files created on normal exit and error.
 1. Identify cause of intermittent failure in summarizevideo.
-1. Modify safe_curl_request to accept multiple headers.
