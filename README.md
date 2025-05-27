@@ -3987,7 +3987,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 27, 2025](#may-27-2025)
   - [Fullness of Victory](#fullness-of-victory)
   - [AI-Generated Summary: The Divine Tapestry of Mary's Triumph](#ai-generated-summary-the-divine-tapestry-of-marys-triumph)
-  - [The Assumption of Virgin Mary in the main cupola in Chiesa di Santa Maria del Orto by 1706 by Giuseppe and Andrea Orazi 1706](#the-assumption-of-virgin-mary-in-the-main-cupola-in-chiesa-di-santa-maria-del-orto-by-1706-by-giuseppe-and-andrea-orazi-1706)
+  - [The Assumption of Virgin Mary in the main cupola in Chiesa di Santa Maria del Orto by Giuseppe and Andrea Orazi 1706](#the-assumption-of-virgin-mary-in-the-main-cupola-in-chiesa-di-santa-maria-del-orto-by-giuseppe-and-andrea-orazi-1706)
 
 <!-- tocstop -->
 
@@ -4631,7 +4631,7 @@ And what response does such a vision demand? The ancient prayers rise unbidden: 
 
 _Peace be to you, in the Name of the Father, and of the Son, and of the Holy Ghost. Amen._
 
-##### The Assumption of Virgin Mary in the main cupola in Chiesa di Santa Maria del Orto by 1706 by Giuseppe and Andrea Orazi 1706
+##### The Assumption of Virgin Mary in the main cupola in Chiesa di Santa Maria del Orto by Giuseppe and Andrea Orazi 1706
 
 ![The Assumption of Virgin Mary in the main cupola in Chiesa di Santa Maria del Orto by Giuseppe and Andrea Orazi 1706](May/jpgs/Assumption.jpg)
 
