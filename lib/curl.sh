@@ -182,6 +182,7 @@ if ! declare -f curl::safe_curl_download > /dev/null; then
 
       if [[ -n "$headers" ]]; then
         eval "local header_array=($headers)"
+        # shellcheck disable=SC2154
         for header in "${header_array[@]}"; do
           curl_cmd+=(-H "$header")
         done

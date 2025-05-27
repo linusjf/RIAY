@@ -36,7 +36,7 @@ function version() {
 }
 
 function usage() {
-  cat <<EOF
+  cat << EOF
 Usage: $SCRIPT_NAME [OPTIONS] "prompt text"
 
 Options:
@@ -63,7 +63,7 @@ function generate_image() {
   local prompt="$1"
   local escaped_prompt payload response request_id
 
-  escaped_prompt="$(jq -Rs <<<"$prompt")" || die "Failed to escape prompt" 4
+  escaped_prompt="$(jq -Rs <<< "$prompt")" || die "Failed to escape prompt" 4
 
   payload="$(jq -n --arg prompt "$escaped_prompt" '{
     "prompt": $prompt
@@ -77,8 +77,8 @@ function generate_image() {
       "$payload"
   )" || die "Failed to submit request" 4
 
-  request_id="$(echo "$response" | jq -r '.request_id')" ||
-    die "Failed to parse request ID" 4
+  request_id="$(echo "$response" | jq -r '.request_id')" \
+    || die "Failed to parse request ID" 4
 
   printf "%s\n" "$request_id"
 }
@@ -94,27 +94,27 @@ function poll_status() {
         "https://queue.fal.run/fal-ai/janus/requests/${request_id}/status" \
         "GET" \
         "'Authorization: Key $FALAI_KEY'"
-    )" ||
-      die "Failed to check status" 4
+    )" \
+      || die "Failed to check status" 4
 
-    status="$(echo "$response" | jq -r '.status')" ||
-      die "Failed to parse status" 4
+    status="$(echo "$response" | jq -r '.status')" \
+      || die "Failed to parse status" 4
 
     case "$status" in
-    "COMPLETED")
-      printf "\n"
-      return 0
-      ;;
-    "IN_PROGRESS" | "IN_QUEUE")
-      if [[ "${VERBOSE:-false}" == "true" ]]; then
-        printf "\r⏳ Polling status for request_id %s: (attempt %d/%d)" "$request_id" "$attempt" "$MAX_RETRIES"
-      fi
-      sleep "$POLL_INTERVAL"
-      ((attempt++))
-      ;;
-    *)
-      die "Unexpected status: $status" 4
-      ;;
+      "COMPLETED")
+        printf "\n"
+        return 0
+        ;;
+      "IN_PROGRESS" | "IN_QUEUE")
+        if [[ "${VERBOSE:-false}" == "true" ]]; then
+          printf "\r⏳ Polling status for request_id %s: (attempt %d/%d)" "$request_id" "$attempt" "$MAX_RETRIES"
+        fi
+        sleep "$POLL_INTERVAL"
+        ((attempt++))
+        ;;
+      *)
+        die "Unexpected status: $status" 4
+        ;;
     esac
   done
 
@@ -132,17 +132,17 @@ function download_image() {
       "'Authorization: Key $FALAI_KEY'"
   )" || die "Failed to get final response" 4
 
-  response_url="$(echo "$response" | jq -r '.images[0].url')" ||
-    die "Failed to parse response URL" 6
+  response_url="$(echo "$response" | jq -r '.images[0].url')" \
+    || die "Failed to parse response URL" 6
 
-  temp_file="$(mktemp --quiet -t tempXXX.png)" ||
-    die "Failed to create temp file" 6
-  curl -s -o "$temp_file" "$response_url" ||
-    die "Failed to download image" 6
+  temp_file="$(mktemp --quiet -t tempXXX.png)" \
+    || die "Failed to create temp file" 6
+  curl::safe_curl_download "$response_url" "$temp_file" \
+    || die "Failed to download image" 6
 
   jpg_file="${temp_file%.*}.jpg"
-  gm convert "$temp_file" "$jpg_file" ||
-    die "Failed to convert image to JPG" 6
+  gm convert "$temp_file" "$jpg_file" \
+    || die "Failed to convert image to JPG" 6
 
   rm -f "$temp_file"
   printf "%s\n" "$jpg_file"
@@ -182,7 +182,7 @@ function main() {
 }
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
@@ -193,19 +193,19 @@ require_commands jq tee cat sed mktemp cp gm dirname basename
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-  -v | --version)
-    version
-    exit 0
-    ;;
-  -h | --help)
-    usage
-    exit 0
-    ;;
-  --verbose)
-    VERBOSE=true
-    shift
-    ;;
-  *) break ;;
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -h | --help)
+      usage
+      exit 0
+      ;;
+    --verbose)
+      VERBOSE=true
+      shift
+      ;;
+    *) break ;;
   esac
 done
 
