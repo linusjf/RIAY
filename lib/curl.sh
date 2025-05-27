@@ -151,6 +151,103 @@ if ! declare -f curl::save_failed_response > /dev/null; then
   export -f curl::save_failed_response
 fi
 
+if ! declare -f curl::safe_curl_download > /dev/null; then
+  function curl::safe_curl_download() {
+    local url="$1"
+    local output_path="$2"
+    local method="${3:-GET}"
+    local headers="${4:-}"
+    local data="${5:-}"
+
+    local retry_count=0
+    local delay=${CURL_INITIAL_RETRY_DELAY}
+    local status_code=0
+
+    while [[ $retry_count -lt ${CURL_MAX_RETRIES} ]]; do
+      status_code=0
+
+      local curl_cmd=(
+        curl
+        --show-error
+        --connect-timeout "${CURL_CONNECT_TIMEOUT}"
+        --max-time "${CURL_MAX_TIME}"
+        --fail-with-body
+        --silent
+        --write-out "%{http_code}"
+        -D /dev/stdout
+        -o "$output_path"
+      )
+
+      [[ "$method" != "GET" ]] && curl_cmd+=(-X "$method")
+
+      if [[ -n "$headers" ]]; then
+        eval "local header_array=($headers)"
+        for header in "${header_array[@]}"; do
+          curl_cmd+=(-H "$header")
+        done
+      fi
+
+      [[ -n "$data" ]] && curl_cmd+=(-d "$data")
+      curl_cmd+=("$url")
+
+      [[ "${verbose:-false}" == "true" ]] && >&2 echo "Making $method download request to $(curl::redact_keys "$url")"
+
+      local curl_output
+      curl_output="$("${curl_cmd[@]}" 2>&1 || true)"
+      status_code=$(echo "$curl_output" | tail -n 1)
+      local response_headers=$(echo "$curl_output" | head -n -1)
+
+      if [[ $status_code -ge 200 && $status_code -lt 300 ]]; then
+        [[ "${verbose:-false}" == "true" ]] && >&2 echo "Download from $(curl::redact_keys "$url") succeeded with status $status_code : ${curl__HTTP_STATUS_CODES[$status_code]}"
+        return 0
+      fi
+
+      retry_count=$((retry_count + 1))
+      if [[ $retry_count -lt $CURL_MAX_RETRIES ]]; then
+        if [[ $status_code -ge 400 ]] && [[ $status_code -lt 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]]; then
+          >&2 echo "Download failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, no retries..."
+          return 2
+        fi
+
+        if [[ $status_code -eq 408 ]] || [[ $status_code -eq 429 ]]; then
+          local retry_after=$(echo "$response_headers" | grep -i '^retry-after:' | cut -d' ' -f2- | tr -d '\r')
+          if [[ -n "$retry_after" ]]; then
+            >&2 echo "Download failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (Retry-After header value, attempt $retry_count/$CURL_MAX_RETRIES)"
+          elif [[ $status_code -eq 429 ]]; then
+            >&2 echo "Download failed with status 429 (Too Many Requests) but no Retry-After header provided, aborting..."
+            return 2
+          else
+            >&2 echo "Download failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$CURL_MAX_RETRIES)"
+          fi
+        else
+          >&2 echo "Download failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$CURL_MAX_RETRIES)"
+        fi
+
+        if [[ -n "${retry_after:-}" ]]; then
+          sleep "$retry_after"
+        else
+          sleep "$delay"
+          delay=$((delay * 2))
+        fi
+      fi
+    done
+
+    >&2 echo "CURL VERBOSE OUTPUT:"
+    curl -v "$url" \
+      -X "$method" \
+      ${headers:+-H "$headers"} \
+      ${data:+-d "$data"} \
+      --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
+      --max-time "${CURL_MAX_TIME}" \
+      --show-error \
+      >&2
+
+    err "Download failed after $CURL_MAX_RETRIES attempts. Last status code: $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}"
+    return 2
+  }
+  export -f curl::safe_curl_download
+fi
+
 if ! declare -f curl::safe_curl_request > /dev/null; then
   function curl::safe_curl_request() {
     local url="$1"
@@ -184,9 +281,7 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
       [[ "$method" == "POST" ]] && curl_cmd+=(-X "POST")
 
       if [[ -n "$headers" ]]; then
-        # Use `eval` to properly split the quoted string into array elements
         eval "local header_array=($headers)"
-        # shellcheck disable=SC2154
         for header in "${header_array[@]}"; do
           curl_cmd+=(-H "$header")
         done
