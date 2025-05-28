@@ -356,7 +356,10 @@ function main() {
     die "Error: No captions in English available"
   fi
 
-  youtube::download_captions "$VIDEO_ID" "$FILE_PREFIX"
+  if ! youtube::download_captions "$VIDEO_ID" "$FILE_PREFIX"; then
+    die "Error: Download captions failed or aborted"
+  fi
+
   if [[ ! -f "${FILE_PREFIX}${VIDEO_ID}.en.vtt" ]]; then
     die "Error: Subtitle file not found"
   fi
