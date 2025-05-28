@@ -80,6 +80,8 @@ function main() {
   internet::checkinternet || exit 1
   local VIDEO_ID="$1"
   local FILE_PREFIX=""
+  local language="en"
+  local subtitle_format="vtt"
 
   require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR
 
@@ -97,23 +99,23 @@ function main() {
     >&2 echo "Video title retrieved: $VIDEO_TITLE"
   fi
 
-  if ! youtube::has_captions_in_language "$VIDEO_ID" "en"; then
+  if ! youtube::has_captions_in_language "$VIDEO_ID" "$language"; then
     die "Error: No captions in English available"
   fi
 
-  if ! youtube::download_captions "$VIDEO_ID" "$FILE_PREFIX" "$CAPTIONS_OUTPUT_DIR"; then
-    die "Error: Download captions failed or aborted"
+  if ! captions_file="$(youtube::download_captions "$VIDEO_ID" "$FILE_PREFIX" "$CAPTIONS_OUTPUT_DIR" "$language" "$subtitle_format")"; then
+    die "Error: Download captions file ${captions_file} failed or aborted"
   fi
 
-  if [[ ! -f "${CAPTIONS_OUTPUT_DIR}/${FILE_PREFIX}${VIDEO_ID}.en.vtt" ]]; then
-    die "Error: Subtitle file not found. Not downloaded?"
+  if [[ ! -f "$captions_file" ]]; then
+    die "Error: Subtitle file ${captions_file} not found. Not downloaded?"
   fi
 
   if $verbose; then
-    >&2 echo "Captions downloaded successfully to ${CAPTIONS_OUTPUT_DIR}/${FILE_PREFIX}${VIDEO_ID}.en.vtt"
+    >&2 echo "Captions downloaded successfully to ${captions_file}"
   fi
 
-  echo "${CAPTIONS_OUTPUT_DIR}/${FILE_PREFIX}${VIDEO_ID}.en.vtt"
+  echo "$captions_file"
   exit 0
 }
 

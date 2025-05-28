@@ -93,24 +93,42 @@ if ! declare -f youtube::has_captions_in_language > /dev/null; then
   export -f youtube::has_captions_in_language
 fi
 
+if ! declare -f youtube::construct_file_name > /dev/null; then
+  function youtube::construct_file_name() {
+    local video_id="$1"
+    local ext="$2"
+    local language="$3"
+    file_name="$(
+      yt-dlp --write-auto-sub --skip-download --sub-lang "$language" --sub-format "$ext" --simulate --print filename \
+        -o "%(id)s.%(language)s.%(ext)s" "https://youtu.be/${video_id}" 2> /dev/null
+    )"
+    local file="${file_name%.*}.${ext}"
+    echo "$file"
+  }
+fi
+
 if ! declare -f youtube::download_captions > /dev/null; then
   function youtube::download_captions() {
     local video_id="$1"
     local prefix="$2"
     local output_dir="${3:-.}"
+    local language="${4:-en}"
+    local ext="${5:-vtt}"
 
+    local output_file="${output_dir}/${prefix}$(youtube::construct_file_name "$video_id" "$ext" "$language")"
     validators::is_valid_dir "$output_dir" \
       && rm -f -- "${output_dir}/${prefix}${video_id}.*" \
       && yt-dlp \
         --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
         --write-auto-sub \
-        --sub-lang "en" \
+        --sub-lang "$language" \
         --skip-download \
-        --sub-format "vtt" \
+        --sub-format "$ext" \
         --retries "$YT_DLP_RETRIES" \
         --user-agent "Mozilla/5.0" \
-        -o "${output_dir}/${prefix}${video_id}.%(ext)s" \
-        "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1
+        -o "${output_file%%.*}" \
+        "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1 \
+      && echo "$output_file"
   }
   export -f youtube::download_captions
 fi

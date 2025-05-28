@@ -15,7 +15,7 @@
 
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME=$(basename "$0")
-readonly TEMP_FILES_PATTERN=(./*.vtt ./*.en.txt ./*.log ./failed*.json)
+readonly TEMP_FILES_PATTERN=(./*.log ./failed*.json)
 readonly BACKUP_FILES_PATTERN=(./*~ ./*.bak* ./**/*.bak* ./*.backup ./*.swp ./.DS_Store ./*.tmp ./*.temp)
 
 # Source utility functions
