@@ -74,11 +74,24 @@ if ! declare -f youtube::get_video_title > /dev/null; then
   export -f youtube::get_video_title
 fi
 
-if ! declare -f youtube::get_list_of_captions > /dev/null; then
-  function youtube::get_list_of_captions() {
+if ! declare -f youtube::get_caption_languages > /dev/null; then
+  function youtube::get_caption_languages() {
     local video_id="$1"
-    yt-dlp --skip-download --list-subs "https://www.youtube.com/watch?v=${video_id}" 2> /dev/null
+    yt-dlp --dump-json --skip-download "https://www.youtube.com/watch?v=${video_id}" 2> /dev/null \
+      | jq -r '[.subtitles, .automatic_captions] | map(keys) | add | unique | .[]'
   }
+  export -f youtube::get_caption_languages
+fi
+
+if ! declare -f youtube::has_captions_in_language > /dev/null; then
+  function youtube::has_captions_in_language() {
+    local video_id="$1"
+    local language="$2"
+    readarray -t languages < <(yt-dlp --dump-json --skip-download "https://www.youtube.com/watch?v=${video_id}" 2> /dev/null \
+      | jq -r "[.subtitles, .automatic_captions] | map(keys) | add | unique | .[] | select(test(\"^${language}\"))")
+    [[ ${#languages[@]} -gt 0 ]]
+  }
+  export -f youtube::has_captions_in_language
 fi
 
 if ! declare -f youtube::download_captions > /dev/null; then

@@ -343,9 +343,7 @@ function main() {
     >&2 echo "Video title retrieved"
   fi
 
-  subtitles_list="$(youtube::get_list_of_captions "$VIDEO_ID")"
-
-  if ! echo "$subtitles_list" | grep -qE 'en\s'; then
+  if ! youtube::has_captions_in_language "$VIDEO_ID" "en"; then
     die "Error: No captions in English available"
   fi
 
