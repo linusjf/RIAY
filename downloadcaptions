@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Downloads YouTube video captions without summarization
+# Downloads YouTube video captions
 
 set -euo pipefail
 shopt -s inherit_errexit
@@ -36,7 +36,6 @@ Usage: ${SCRIPT_NAME} [OPTIONS] <youtube-video-id>
 Options:
   -d, --debug             Enable debug output
   --verbose               Enable verbose output
-  -p, --prepend-day-index Prepend day index from "${VIDEOS_FILE}" to output files
   --version               Show version information
   --help                  Show this help message
 
@@ -47,31 +46,13 @@ EOF
   exit "$exit_code"
 }
 
-function get_day_index() {
-  local video_id="$1"
-  local index=0
-  while IFS= read -r line; do
-    if [[ "$line" == "$video_id" ]]; then
-      printf "Day%03d-" "$((index + 1))"
-      return 0
-    fi
-    ((index++))
-  done < "${SCRIPT_DIR}/${VIDEOS_FILE}"
-  return 1
-}
-
 function main() {
   local verbose=false
-  local prepend_day_index=false
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
       -d | --debug)
         set -x
-        shift
-        ;;
-      -p | --prepend-day-index)
-        prepend_day_index=true
         shift
         ;;
       --version)
@@ -99,13 +80,6 @@ function main() {
   internet::checkinternet || exit 1
   local VIDEO_ID="$1"
   local FILE_PREFIX=""
-
-  if $prepend_day_index; then
-    FILE_PREFIX="$(get_day_index "$VIDEO_ID" || true)"
-    if [[ -z "$FILE_PREFIX" ]]; then
-      die "Error: Video ID $VIDEO_ID not found in ${VIDEOS_FILE}"
-    fi
-  fi
 
   require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR
 
@@ -139,6 +113,7 @@ function main() {
     >&2 echo "Captions downloaded successfully to ${CAPTIONS_OUTPUT_DIR}/${FILE_PREFIX}${VIDEO_ID}.en.vtt"
   fi
 
+  echo "${CAPTIONS_OUTPUT_DIR}/${FILE_PREFIX}${VIDEO_ID}.en.vtt"
   exit 0
 }
 
