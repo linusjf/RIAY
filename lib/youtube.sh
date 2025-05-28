@@ -16,6 +16,7 @@ fi
 
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/curl.sh"
+source "${SCRIPT_DIR}/lib/validators.sh"
 
 require_commands curl grep jq yt-dlp sed
 require_vars YOUTUBE_API_KEY
@@ -84,18 +85,21 @@ if ! declare -f youtube::download_captions > /dev/null; then
   function youtube::download_captions() {
     local video_id="$1"
     local prefix="$2"
-    rm -f -- "${prefix}${video_id}.*"
-    yt-dlp \
-      --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
-      --write-auto-sub \
-      --sub-lang "en" \
-      --skip-download \
-      --sub-format "vtt" \
-      --retries "$YT_DLP_RETRIES" \
-      --fragment-retries "$YT_DLP_FRAGMENT_RETRIES" \
-      --user-agent "Mozilla/5.0" \
-      -o "${prefix}${video_id}.%(ext)s" \
-      "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1
+    local output_dir="$3:-."
+
+    validators::is_valid_dir "$output_dir" \
+      && rm -f -- "${output_dir}/${prefix}${video_id}.*" \
+      && yt-dlp \
+        --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
+        --write-auto-sub \
+        --sub-lang "en" \
+        --skip-download \
+        --sub-format "vtt" \
+        --retries "$YT_DLP_RETRIES" \
+        --fragment-retries "$YT_DLP_FRAGMENT_RETRIES" \
+        --user-agent "Mozilla/5.0" \
+        -o "${output_dir}/${prefix}${video_id}.%(ext)s" \
+        "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1
   }
   export -f youtube::download_captions
 fi

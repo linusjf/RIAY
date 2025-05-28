@@ -38,7 +38,6 @@ function usage() {
 Usage: ${SCRIPT_NAME} [OPTIONS] <youtube-video-id>
 
 Options:
-  -c, --caption-only      Extract captions only without summarization
   -d, --debug             Enable debug output
   --verbose               Enable verbose output
   -p, --prepend-day-index Prepend day index from "${VIDEOS_FILE}" to output files
@@ -47,7 +46,6 @@ Options:
 
 Examples:
   ${SCRIPT_NAME} dQw4w9WgXcQ
-  ${SCRIPT_NAME} --caption-only dQw4w9WgXcQ > captions.txt
 EOF
 
   exit "$exit_code"
@@ -280,16 +278,11 @@ function final_summary_deepseek() {
 }
 
 function main() {
-  local caption_only=false
   local verbose=false
   local prepend_day_index=false
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -c | --caption-only)
-        caption_only=true
-        shift
-        ;;
       -d | --debug)
         set -x
         shift
@@ -331,7 +324,7 @@ function main() {
     fi
   fi
 
-  require_vars YOUTUBE_API_KEY
+  require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR
   if [[ -z "${GEMINI_API_KEY:-}" && -z "${DEEPSEEK_API_KEY:-}" ]]; then
     die "Error: At least one of GEMINI_API_KEY or DEEPSEEK_API_KEY environment variables must be set"
   fi
@@ -356,11 +349,11 @@ function main() {
     die "Error: No captions in English available"
   fi
 
-  if ! youtube::download_captions "$VIDEO_ID" "$FILE_PREFIX"; then
+  if ! youtube::download_captions "$VIDEO_ID" "$FILE_PREFIX" "$CAPTIONS_OUTPUT_DIR"; then
     die "Error: Download captions failed or aborted"
   fi
 
-  if [[ ! -f "${FILE_PREFIX}${VIDEO_ID}.en.vtt" ]]; then
+  if [[ ! -f "${CAPTIONS_OUTPUT_DIR}/${FILE_PREFIX}${VIDEO_ID}.en.vtt" ]]; then
     die "Error: Subtitle file not found"
   fi
 
@@ -369,7 +362,7 @@ function main() {
   fi
 
   local TRANSCRIPT
-  TRANSCRIPT=$(youtube::extract_text_from_vtt "${FILE_PREFIX}${VIDEO_ID}.en.vtt")
+  TRANSCRIPT=$(youtube::extract_text_from_vtt "${CAPTIONS_OUTPUT_DIR}/${FILE_PREFIX}${VIDEO_ID}.en.vtt")
 
   if [[ -z "$TRANSCRIPT" ]]; then
     die "Error: Transcript conversion failed"
@@ -379,10 +372,7 @@ function main() {
     >&2 echo "Transcript extracted (length: ${#TRANSCRIPT} chars)"
   fi
 
-  if "$caption_only"; then
-    echo "$TRANSCRIPT" > "${FILE_PREFIX}${VIDEO_ID}.en.txt"
-    exit 0
-  fi
+  echo "$TRANSCRIPT" >| "${CAPTIONS_OUTPUT_DIR}/${FILE_PREFIX}${VIDEO_ID}.en.txt"
 
   local CHUNK_SIZE=8000
   local TOTAL_LEN=${#TRANSCRIPT}
@@ -435,7 +425,7 @@ function main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require_commands date jq curl yt-dlp tee cat
+  require_commands date jq tee cat
   if "$LOGGING"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
