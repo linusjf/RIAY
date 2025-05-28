@@ -106,6 +106,10 @@
   - [Fullness of Victory](#fullness-of-victory)
   - [AI-Generated Summary: The Divine Tapestry of Mary's Triumph](#ai-generated-summary-the-divine-tapestry-of-marys-triumph)
   - [The Assumption of Virgin Mary in the main cupola in Chiesa di Santa Maria del Orto by Giuseppe and Andrea Orazi 1706](#the-assumption-of-virgin-mary-in-the-main-cupola-in-chiesa-di-santa-maria-del-orto-by-giuseppe-and-andrea-orazi-1706)
+- [May 28, 2025](#may-28-2025)
+  - [Daughter, Mother, Spouse](#daughter-mother-spouse)
+  - [AI-Generated Summary: The Divine Coronation and the Love That Crowns Us All](#ai-generated-summary-the-divine-coronation-and-the-love-that-crowns-us-all)
+  - [Coronation of the Virgin, a painting on oil on canvas of the Holy Trinity crowning the Blessed Virgin Mary, at the Museo del Prado](#coronation-of-the-virgin-a-painting-on-oil-on-canvas-of-the-holy-trinity-crowning-the-blessed-virgin-mary-at-the-museo-del-prado)
 
 <!-- tocstop -->
 
@@ -752,3 +756,19 @@ _Peace be to you, in the Name of the Father, and of the Son, and of the Holy Gho
 ### The Assumption of Virgin Mary in the main cupola in Chiesa di Santa Maria del Orto by Giuseppe and Andrea Orazi 1706
 
 ![The Assumption of Virgin Mary in the main cupola in Chiesa di Santa Maria del Orto by Giuseppe and Andrea Orazi 1706](/May/jpgs/Assumption.jpg)
+
+## May 28, 2025
+
+### Daughter, Mother, Spouse
+
+[![Daughter, Mother, Spouse](/May/jpgs/Day148.jpg)](https://youtu.be/p9NiuLezJqc "Daughter, Mother, Spouse")
+
+### AI-Generated Summary: The Divine Coronation and the Love That Crowns Us All
+
+Consider Velázquez’s _The Coronation of the Virgin_—a vision not merely of paint and light, but of heaven’s own joy. Here, the humble Mary, robed in purple and blue, sits amid clouds and cherubs, while above her, the Father and the Son place upon her head a crown of roses. Between them hovers the Spirit, a dove alight with radiance, pouring forth glory upon her. This is no mere ceremony; it is the consummation of love, where Mary—daughter, mother, and spouse—is drawn into the very heart of the Trinity.
+
+As at Christ’s baptism, so here: the heavens open, the divine Persons rejoice, and love is proclaimed. Yet this moment is hers alone, a unique union with God. And though we are not called to her singular dignity, we are invited—through baptism—into that same divine embrace. What then shall we do, beholding such love? We pray, as the Church has always prayed: _Hail Mary, full of grace… Glory be to the Father…_ For in these words, we too are crowned—not with roses, but with the promise of His eternal joy.
+
+### Coronation of the Virgin, a painting on oil on canvas of the Holy Trinity crowning the Blessed Virgin Mary, at the Museo del Prado
+
+![Coronation of the Virgin, a painting on oil on canvas by Diego Velázquez of the Holy Trinity crowning the Blessed Virgin Mary, at the Museo del Prado](/May/jpgs/Coronation.jpg)
