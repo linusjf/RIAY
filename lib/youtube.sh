@@ -22,7 +22,6 @@ require_commands curl grep jq yt-dlp sed
 require_vars YOUTUBE_API_KEY
 
 : "${YT_DLP_RETRIES:=10}"
-: "${YT_DLP_FRAGMENT_RETRIES:=10}"
 : "${YT_DLP_SOCKET_TIMEOUT:=30}"
 
 if ! declare -p youtube__THUMBNAIL_SIZES &> /dev/null; then
@@ -109,7 +108,6 @@ if ! declare -f youtube::download_captions > /dev/null; then
         --skip-download \
         --sub-format "vtt" \
         --retries "$YT_DLP_RETRIES" \
-        --fragment-retries "$YT_DLP_FRAGMENT_RETRIES" \
         --user-agent "Mozilla/5.0" \
         -o "${output_dir}/${prefix}${video_id}.%(ext)s" \
         "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1
