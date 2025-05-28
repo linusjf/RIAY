@@ -132,7 +132,7 @@ function main() {
   fi
 
   if [[ ! -f "${CAPTIONS_OUTPUT_DIR}/${FILE_PREFIX}${VIDEO_ID}.en.vtt" ]]; then
-    die "Error: Subtitle file not found"
+    die "Error: Subtitle file not found. Not downloaded?"
   fi
 
   if $verbose; then

@@ -108,7 +108,7 @@ function main() {
     output_file="${input_file%.*}.txt"
   fi
 
-  echo "$captions" > "$output_file"
+  echo "$captions" >| "$output_file"
   if $verbose; then
     >&2 echo "Captions saved to: $output_file"
   fi
