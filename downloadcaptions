@@ -1,0 +1,155 @@
+#!/usr/bin/env bash
+# Downloads YouTube video captions without summarization
+
+set -euo pipefail
+shopt -s inherit_errexit
+
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME="$(basename "$0")"
+
+# Source utility libraries
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/internet.sh"
+source "${SCRIPT_DIR}/lib/util.sh"
+source "${SCRIPT_DIR}/lib/curl.sh"
+source "${SCRIPT_DIR}/lib/youtube.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+
+function version() {
+  printf "%s\n" "$VERSION"
+}
+
+function usage() {
+  local exit_code=${1:-0}
+  local output=${exit_code:-1}
+  if [[ $exit_code -eq 0 ]]; then
+    output=1
+  else
+    output=2
+  fi
+
+  >&"$output" cat << EOF
+Usage: ${SCRIPT_NAME} [OPTIONS] <youtube-video-id>
+
+Options:
+  -d, --debug             Enable debug output
+  --verbose               Enable verbose output
+  -p, --prepend-day-index Prepend day index from "${VIDEOS_FILE}" to output files
+  --version               Show version information
+  --help                  Show this help message
+
+Examples:
+  ${SCRIPT_NAME} dQw4w9WgXcQ
+EOF
+
+  exit "$exit_code"
+}
+
+function get_day_index() {
+  local video_id="$1"
+  local index=0
+  while IFS= read -r line; do
+    if [[ "$line" == "$video_id" ]]; then
+      printf "Day%03d-" "$((index + 1))"
+      return 0
+    fi
+    ((index++))
+  done < "${SCRIPT_DIR}/${VIDEOS_FILE}"
+  return 1
+}
+
+function main() {
+  local verbose=false
+  local prepend_day_index=false
+
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      -p | --prepend-day-index)
+        prepend_day_index=true
+        shift
+        ;;
+      --version)
+        version
+        exit 0
+        ;;
+      --verbose)
+        verbose=true
+        shift
+        ;;
+      --help) usage 0 ;;
+      --)
+        shift
+        break
+        ;;
+      -*) usage 1 ;;
+      *) break ;;
+    esac
+  done
+
+  if [[ $# -eq 0 ]]; then
+    usage 1
+  fi
+
+  internet::checkinternet || exit 1
+  local VIDEO_ID="$1"
+  local FILE_PREFIX=""
+
+  if $prepend_day_index; then
+    FILE_PREFIX="$(get_day_index "$VIDEO_ID" || true)"
+    if [[ -z "$FILE_PREFIX" ]]; then
+      die "Error: Video ID $VIDEO_ID not found in ${VIDEOS_FILE}"
+    fi
+  fi
+
+  require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR
+
+  if $verbose; then
+    >&2 echo "Starting processing for video ID $VIDEO_ID"
+  fi
+
+  local VIDEO_TITLE
+  VIDEO_TITLE="$(youtube::get_video_title "$VIDEO_ID" || return 1)"
+  if [[ "$VIDEO_TITLE" == null ]]; then
+    die "Error: Could not fetch video title"
+  fi
+
+  if $verbose; then
+    >&2 echo "Video title retrieved: $VIDEO_TITLE"
+  fi
+
+  if ! youtube::has_captions_in_language "$VIDEO_ID" "en"; then
+    die "Error: No captions in English available"
+  fi
+
+  if ! youtube::download_captions "$VIDEO_ID" "$FILE_PREFIX" "$CAPTIONS_OUTPUT_DIR"; then
+    die "Error: Download captions failed or aborted"
+  fi
+
+  if [[ ! -f "${CAPTIONS_OUTPUT_DIR}/${FILE_PREFIX}${VIDEO_ID}.en.vtt" ]]; then
+    die "Error: Subtitle file not found"
+  fi
+
+  if $verbose; then
+    >&2 echo "Captions downloaded successfully to ${CAPTIONS_OUTPUT_DIR}/${FILE_PREFIX}${VIDEO_ID}.en.vtt"
+  fi
+
+  exit 0
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands date
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
+fi
