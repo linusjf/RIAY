@@ -85,7 +85,7 @@ if ! declare -f youtube::download_captions > /dev/null; then
   function youtube::download_captions() {
     local video_id="$1"
     local prefix="$2"
-    local output_dir="$3:-."
+    local output_dir="${3:-.}"
 
     validators::is_valid_dir "$output_dir" \
       && rm -f -- "${output_dir}/${prefix}${video_id}.*" \
