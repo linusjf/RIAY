@@ -1,0 +1,127 @@
+#!/usr/bin/env bash
+# Extracts captions from YouTube VTT files without summarization
+
+set -euo pipefail
+shopt -s inherit_errexit
+
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME="$(basename "$0")"
+
+# Source utility libraries
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/util.sh"
+source "${SCRIPT_DIR}/lib/youtube.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+
+function version() {
+  printf "%s\n" "$VERSION"
+}
+
+function usage() {
+  local exit_code=${1:-0}
+  local output=${exit_code:-1}
+  if [[ $exit_code -eq 0 ]]; then
+    output=1
+  else
+    output=2
+  fi
+
+  >&"$output" cat <<EOF
+Usage: ${SCRIPT_NAME} [OPTIONS] <input.vtt>
+
+Options:
+  -d, --debug             Enable debug output
+  --verbose               Enable verbose output
+  -o, --output <file>     Output file (default: stdout)
+  --version               Show version information
+  --help                  Show this help message
+
+Examples:
+  ${SCRIPT_NAME} captions.en.vtt
+  ${SCRIPT_NAME} -o output.txt captions.en.vtt
+EOF
+
+  exit "$exit_code"
+}
+
+function main() {
+  local verbose=false
+  local output_file=""
+
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    -o | --output)
+      output_file="$2"
+      shift 2
+      ;;
+    --version)
+      version
+      exit 0
+      ;;
+    --verbose)
+      verbose=true
+      shift
+      ;;
+    --help) usage 0 ;;
+    --)
+      shift
+      break
+      ;;
+    -*) usage 1 ;;
+    *) break ;;
+    esac
+  done
+
+  if [[ $# -eq 0 ]]; then
+    usage 1
+  fi
+
+  local input_file="$1"
+  require_commands jq sed
+
+  if $verbose; then
+    >&2 echo "Processing input file: $input_file"
+  fi
+
+  if [[ ! -f "$input_file" ]]; then
+    die "Error: Input file '$input_file' does not exist"
+  fi
+
+  local captions
+  captions=$(youtube::extract_text_from_vtt "$input_file")
+
+  if [[ -z "$captions" ]]; then
+    die "Error: Failed to extract captions from '$input_file'"
+  fi
+
+  if $verbose; then
+    >&2 echo "Successfully extracted captions (length: ${#captions} chars)"
+  fi
+
+  if [[ -n "$output_file" ]]; then
+    echo "$captions" > "$output_file"
+    if $verbose; then
+      >&2 echo "Captions saved to: $output_file"
+    fi
+  else
+    echo "$captions"
+  fi
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands date tee
+  if "$LOGGING"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
+fi
