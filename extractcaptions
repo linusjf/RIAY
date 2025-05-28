@@ -34,7 +34,7 @@ Usage: ${SCRIPT_NAME} [OPTIONS] <input.vtt>
 Options:
   -d, --debug             Enable debug output
   --verbose               Enable verbose output
-  -o, --output <file>     Output file (default: stdout)
+  -o, --output <file>     Output file (default: <input>.txt)
   --version               Show version information
   --help                  Show this help message
 
@@ -104,13 +104,13 @@ function main() {
     >&2 echo "Successfully extracted captions (length: ${#captions} chars)"
   fi
 
-  if [[ -n "$output_file" ]]; then
-    echo "$captions" > "$output_file"
-    if $verbose; then
-      >&2 echo "Captions saved to: $output_file"
-    fi
-  else
-    echo "$captions"
+  if [[ -z "$output_file" ]]; then
+    output_file="${input_file%.*}.txt"
+  fi
+
+  echo "$captions" > "$output_file"
+  if $verbose; then
+    >&2 echo "Captions saved to: $output_file"
   fi
 }
 
