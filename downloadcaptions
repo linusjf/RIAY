@@ -8,7 +8,7 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
@@ -30,7 +30,7 @@ function usage() {
     output=2
   fi
 
-  >&"$output" cat <<EOF
+  >&"$output" cat << EOF
 Usage: ${SCRIPT_NAME} [OPTIONS] <youtube-video-id>
 
 Options:
@@ -56,7 +56,7 @@ function get_day_index() {
       return 0
     fi
     ((index++))
-  done <"${SCRIPT_DIR}/${VIDEOS_FILE}"
+  done < "${SCRIPT_DIR}/${VIDEOS_FILE}"
   return 1
 }
 
@@ -66,29 +66,29 @@ function main() {
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -d | --debug)
-      set -x
-      shift
-      ;;
-    -p | --prepend-day-index)
-      prepend_day_index=true
-      shift
-      ;;
-    --version)
-      version
-      exit 0
-      ;;
-    --verbose)
-      verbose=true
-      shift
-      ;;
-    --help) usage 0 ;;
-    --)
-      shift
-      break
-      ;;
-    -*) usage 1 ;;
-    *) break ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      -p | --prepend-day-index)
+        prepend_day_index=true
+        shift
+        ;;
+      --version)
+        version
+        exit 0
+        ;;
+      --verbose)
+        verbose=true
+        shift
+        ;;
+      --help) usage 0 ;;
+      --)
+        shift
+        break
+        ;;
+      -*) usage 1 ;;
+      *) break ;;
     esac
   done
 

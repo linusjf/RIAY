@@ -28,7 +28,7 @@ function usage() {
     output=2
   fi
 
-  >&"$output" cat <<EOF
+  >&"$output" cat << EOF
 Usage: ${SCRIPT_NAME} [OPTIONS] <input.vtt>
 
 Options:
@@ -52,29 +52,29 @@ function main() {
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -d | --debug)
-      set -x
-      shift
-      ;;
-    -o | --output)
-      output_file="$2"
-      shift 2
-      ;;
-    --version)
-      version
-      exit 0
-      ;;
-    --verbose)
-      verbose=true
-      shift
-      ;;
-    --help) usage 0 ;;
-    --)
-      shift
-      break
-      ;;
-    -*) usage 1 ;;
-    *) break ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      -o | --output)
+        output_file="$2"
+        shift 2
+        ;;
+      --version)
+        version
+        exit 0
+        ;;
+      --verbose)
+        verbose=true
+        shift
+        ;;
+      --help) usage 0 ;;
+      --)
+        shift
+        break
+        ;;
+      -*) usage 1 ;;
+      *) break ;;
     esac
   done
 
