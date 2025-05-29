@@ -151,6 +151,53 @@ if ! declare -f curl::save_failed_response > /dev/null; then
   export -f curl::save_failed_response
 fi
 
+if ! declare -f curl::should_retry > /dev/null; then
+  function curl::should_retry() {
+    local status_code="$1"
+    [[ $status_code -ge 500 ]] || 
+    [[ $status_code -eq 408 ]] || 
+    [[ $status_code -eq 429 ]] || 
+    [[ $status_code -eq 0 ]]
+  }
+  export -f curl::should_retry
+fi
+
+if ! declare -f curl::handle_retry > /dev/null; then
+  function curl::handle_retry() {
+    local status_code="$1"
+    local retry_count="$2"
+    local delay="$3"
+    local response_headers="$4"
+    local url="$5"
+
+    if [[ $status_code -ge 400 ]] && [[ $status_code -lt 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]]; then
+      >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, no retries..."
+      return 1
+    fi
+
+    if [[ $status_code -eq 408 ]] || [[ $status_code -eq 429 ]]; then
+      local retry_after=$(echo "$response_headers" | grep -i '^retry-after:' | cut -d' ' -f2- | tr -d '\r')
+      if [[ -n "$retry_after" ]]; then
+        >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (Retry-After header value, attempt $retry_count/$CURL_MAX_RETRIES)"
+      elif [[ $status_code -eq 429 ]]; then
+        >&2 echo "Request failed with status 429 (Too Many Requests) but no Retry-After header provided, aborting..."
+        return 1
+      else
+        >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$CURL_MAX_RETRIES)"
+      fi
+    else
+      >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$CURL_MAX_RETRIES)"
+    fi
+
+    if [[ -n "${retry_after:-}" ]]; then
+      sleep "$retry_after"
+    else
+      sleep "$delay"
+    fi
+  }
+  export -f curl::handle_retry
+fi
+
 if ! declare -f curl::safe_curl_download > /dev/null; then
   function curl::safe_curl_download() {
     local url="$1"
@@ -205,31 +252,14 @@ if ! declare -f curl::safe_curl_download > /dev/null; then
 
       retry_count=$((retry_count + 1))
       if [[ $retry_count -lt $CURL_MAX_RETRIES ]]; then
-        if [[ $status_code -ge 400 ]] && [[ $status_code -lt 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]]; then
-          >&2 echo "Download failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, no retries..."
+        if ! curl::should_retry "$status_code"; then
           return 2
         fi
 
-        if [[ $status_code -eq 408 ]] || [[ $status_code -eq 429 ]]; then
-          local retry_after=$(echo "$response_headers" | grep -i '^retry-after:' | cut -d' ' -f2- | tr -d '\r')
-          if [[ -n "$retry_after" ]]; then
-            >&2 echo "Download failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (Retry-After header value, attempt $retry_count/$CURL_MAX_RETRIES)"
-          elif [[ $status_code -eq 429 ]]; then
-            >&2 echo "Download failed with status 429 (Too Many Requests) but no Retry-After header provided, aborting..."
-            return 2
-          else
-            >&2 echo "Download failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$CURL_MAX_RETRIES)"
-          fi
-        else
-          >&2 echo "Download failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$CURL_MAX_RETRIES)"
+        if ! curl::handle_retry "$status_code" "$retry_count" "$delay" "$response_headers" "$url"; then
+          return 2
         fi
-
-        if [[ -n "${retry_after:-}" ]]; then
-          sleep "$retry_after"
-        else
-          sleep "$delay"
-          delay=$((delay * 2))
-        fi
+        delay=$((delay * 2))
       fi
     done
 
@@ -310,31 +340,14 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
       if [[ $retry_count -lt $CURL_MAX_RETRIES ]]; then
         curl::save_failed_response "$data" "$response" "$(basename "$url")"
 
-        if [[ $status_code -ge 400 ]] && [[ $status_code -lt 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]]; then
-          >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, no retries..."
+        if ! curl::should_retry "$status_code"; then
           return 2
         fi
 
-        if [[ $status_code -eq 408 ]] || [[ $status_code -eq 429 ]]; then
-          local retry_after=$(echo "$response_headers" | grep -i '^retry-after:' | cut -d' ' -f2- | tr -d '\r')
-          if [[ -n "$retry_after" ]]; then
-            >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (Retry-After header value, attempt $retry_count/$CURL_MAX_RETRIES)"
-          elif [[ $status_code -eq 429 ]]; then
-            >&2 echo "Request failed with status 429 (Too Many Requests) but no Retry-After header provided, aborting..."
-            return 2
-          else
-            >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$CURL_MAX_RETRIES)"
-          fi
-        else
-          >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$CURL_MAX_RETRIES)"
+        if ! curl::handle_retry "$status_code" "$retry_count" "$delay" "$response_headers" "$url"; then
+          return 2
         fi
-
-        if [[ -n "${retry_after:-}" ]]; then
-          sleep "$retry_after"
-        else
-          sleep "$delay"
-          delay=$((delay * 2))
-        fi
+        delay=$((delay * 2))
       fi
     done
 
