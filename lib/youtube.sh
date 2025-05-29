@@ -125,6 +125,7 @@ if ! declare -f youtube::download_captions > /dev/null; then
         --skip-download \
         --sub-format "$ext" \
         --retries "$YT_DLP_RETRIES" \
+        --retry-sleep http:exp=1:300:2 \
         --user-agent "Mozilla/5.0" \
         -o "${output_file%%.*}" \
         "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1 \
