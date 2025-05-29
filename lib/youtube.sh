@@ -73,6 +73,14 @@ if ! declare -f youtube::get_video_title > /dev/null; then
   export -f youtube::get_video_title
 fi
 
+if ! declare -f youtube::get_subtitles_table > /dev/null; then
+  function youtube::get_subtitles_table() {
+    local video_id="$1"
+    yt-dlp --print subtitles_table --list-subs "$video_id" | sed '${/^NA$/d;}'
+  }
+  export -f youtube::get_subtitles_table
+fi
+
 if ! declare -f youtube::get_caption_languages > /dev/null; then
   function youtube::get_caption_languages() {
     local video_id="$1"
