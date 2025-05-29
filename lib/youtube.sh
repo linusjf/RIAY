@@ -119,7 +119,7 @@ if ! declare -f youtube::download_captions > /dev/null; then
     validators::is_valid_dir "$output_dir" \
       && rm -f -- "${output_dir}/${prefix}${video_id}.*" \
       && yt-dlp \
-        --verbose -U \
+        --verbose \
         --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
         --write-auto-sub \
         --sub-lang "$language" \
