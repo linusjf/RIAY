@@ -7,6 +7,16 @@ shopt -s inherit_errexit
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
+# Exit codes
+readonly EXIT_SUCCESS=0
+readonly EXIT_GENERAL_ERROR=1
+readonly EXIT_NO_INTERNET=2
+readonly EXIT_NO_VIDEO_ID=3
+readonly EXIT_NO_TITLE=4
+readonly EXIT_NO_CAPTIONS=5
+readonly EXIT_DOWNLOAD_FAILED=6
+readonly EXIT_FILE_NOT_FOUND=7
+
 # Source utility libraries
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
@@ -57,27 +67,27 @@ function main() {
         ;;
       --version)
         version
-        exit 0
+        exit $EXIT_SUCCESS
         ;;
       --verbose)
         verbose=true
         shift
         ;;
-      --help) usage 0 ;;
+      --help) usage $EXIT_SUCCESS ;;
       --)
         shift
         break
         ;;
-      -*) usage 1 ;;
+      -*) usage $EXIT_GENERAL_ERROR ;;
       *) break ;;
     esac
   done
 
   if [[ $# -eq 0 ]]; then
-    usage 1
+    usage $EXIT_NO_VIDEO_ID
   fi
 
-  internet::checkinternet || exit 1
+  internet::checkinternet || exit $EXIT_NO_INTERNET
   local VIDEO_ID="$1"
   local FILE_PREFIX=""
   local language="en"
@@ -90,9 +100,9 @@ function main() {
   fi
 
   local VIDEO_TITLE
-  VIDEO_TITLE="$(youtube::get_video_title "$VIDEO_ID" || return 1)"
+  VIDEO_TITLE="$(youtube::get_video_title "$VIDEO_ID" || exit $EXIT_NO_TITLE)"
   if [[ "$VIDEO_TITLE" == null ]]; then
-    die "Error: Could not fetch video title"
+    die "Error: Could not fetch video title" $EXIT_NO_TITLE
   fi
 
   if $verbose; then
@@ -100,15 +110,15 @@ function main() {
   fi
 
   if ! youtube::has_captions_in_language "$VIDEO_ID" "$language"; then
-    die "Error: No captions in English available"
+    die "Error: No captions in English available" $EXIT_NO_CAPTIONS
   fi
 
   if ! captions_file="$(youtube::download_captions "$VIDEO_ID" "$FILE_PREFIX" "$CAPTIONS_OUTPUT_DIR" "$language" "$subtitle_format")"; then
-    die "Error: Download captions file ${captions_file} failed or aborted"
+    die "Error: Download captions file ${captions_file} failed or aborted" $EXIT_DOWNLOAD_FAILED
   fi
 
   if [[ ! -f "$captions_file" ]]; then
-    die "Error: Subtitle file ${captions_file} not found. Not downloaded?"
+    die "Error: Subtitle file ${captions_file} not found. Not downloaded?" $EXIT_FILE_NOT_FOUND
   fi
 
   if $verbose; then
@@ -116,7 +126,7 @@ function main() {
   fi
 
   echo "$captions_file"
-  exit 0
+  exit $EXIT_SUCCESS
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
