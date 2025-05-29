@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+shopt -s inherit_errexit
+
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME="$(basename "$0")"
+
+# Source utility libraries
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/util.sh"
+source "${SCRIPT_DIR}/lib/curl.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+
+curl::safe_curl_request "https://mock.codes/500"

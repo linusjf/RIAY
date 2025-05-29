@@ -18,6 +18,8 @@ require_commands curl sed cat rm date head tail basename mktemp grep cut tr
 
 : "${CURL_MAX_RETRIES:=3}"
 : "${CURL_INITIAL_RETRY_DELAY:=1}"
+: "${CURL_MAX_RETRY_DELAY:=100}"
+: "${CURL_RETRY_EXP_BASE:=2}"
 : "${CURL_CONNECT_TIMEOUT:=30}"
 : "${CURL_MAX_TIME:=90}"
 
@@ -154,10 +156,10 @@ fi
 if ! declare -f curl::should_retry > /dev/null; then
   function curl::should_retry() {
     local status_code="$1"
-    [[ $status_code -ge 500 ]] || 
-    [[ $status_code -eq 408 ]] || 
-    [[ $status_code -eq 429 ]] || 
-    [[ $status_code -eq 0 ]]
+    [[ $status_code -ge 500 ]] \
+      || [[ $status_code -eq 408 ]] \
+      || [[ $status_code -eq 429 ]] \
+      || [[ $status_code -eq 0 ]]
   }
   export -f curl::should_retry
 fi
@@ -178,7 +180,7 @@ if ! declare -f curl::handle_retry > /dev/null; then
     if [[ $status_code -eq 408 ]] || [[ $status_code -eq 429 ]]; then
       local retry_after=$(echo "$response_headers" | grep -i '^retry-after:' | cut -d' ' -f2- | tr -d '\r')
       if [[ -n "$retry_after" ]]; then
-        >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (Retry-After header value, attempt $retry_count/$CURL_MAX_RETRIES)"
+        >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $retry_after seconds (Retry-After header value, attempt $retry_count/$CURL_MAX_RETRIES)"
       elif [[ $status_code -eq 429 ]]; then
         >&2 echo "Request failed with status 429 (Too Many Requests) but no Retry-After header provided, aborting..."
         return 1
@@ -189,11 +191,7 @@ if ! declare -f curl::handle_retry > /dev/null; then
       >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $delay seconds (attempt $retry_count/$CURL_MAX_RETRIES)"
     fi
 
-    if [[ -n "${retry_after:-}" ]]; then
-      sleep "$retry_after"
-    else
-      sleep "$delay"
-    fi
+    sleep "${retry_after:-${delay}}"
   }
   export -f curl::handle_retry
 fi
@@ -256,10 +254,11 @@ if ! declare -f curl::safe_curl_download > /dev/null; then
           return 2
         fi
 
-        if ! curl::handle_retry "$status_code" "$retry_count" "$delay" "$response_headers" "$url"; then
+        if ! curl::handle_retry "$status_code" $((retry_count + 1)) "$delay" "$response_headers" "$url"; then
           return 2
         fi
-        delay=$((delay * 2))
+        delay=$((delay * CURL_RETRY_EXP_BASE))
+        delay=$((delay < CURL_MAX_RETRY_DELAY ? delay : CURL_MAX_RETRY_DELAY))
       fi
     done
 
@@ -344,10 +343,11 @@ if ! declare -f curl::safe_curl_request > /dev/null; then
           return 2
         fi
 
-        if ! curl::handle_retry "$status_code" "$retry_count" "$delay" "$response_headers" "$url"; then
+        if ! curl::handle_retry "$status_code" $((retry_count + 1)) "$delay" "$response_headers" "$url"; then
           return 2
         fi
-        delay=$((delay * 2))
+        delay=$((delay * CURL_RETRY_EXP_BASE))
+        delay=$((delay < CURL_MAX_RETRY_DELAY ? delay : CURL_MAX_RETRY_DELAY))
       fi
     done
 
