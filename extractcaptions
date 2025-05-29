@@ -7,6 +7,12 @@ shopt -s inherit_errexit
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
+# Exit codes
+readonly EXIT_SUCCESS=0
+readonly EXIT_ARG_ERROR=1
+readonly EXIT_INPUT_ERROR=2
+readonly EXIT_EXTRACTION_ERROR=3
+
 # Source utility libraries
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
@@ -20,9 +26,9 @@ function version() {
 }
 
 function usage() {
-  local exit_code=${1:-0}
+  local exit_code=${1:-$EXIT_ARG_ERROR}
   local output=${exit_code:-1}
-  if [[ $exit_code -eq 0 ]]; then
+  if [[ $exit_code -eq $EXIT_SUCCESS ]]; then
     output=1
   else
     output=2
@@ -62,24 +68,24 @@ function main() {
         ;;
       --version)
         version
-        exit 0
+        exit $EXIT_SUCCESS
         ;;
       --verbose)
         verbose=true
         shift
         ;;
-      --help) usage 0 ;;
+      --help) usage $EXIT_SUCCESS ;;
       --)
         shift
         break
         ;;
-      -*) usage 1 ;;
+      -*) usage $EXIT_ARG_ERROR ;;
       *) break ;;
     esac
   done
 
   if [[ $# -eq 0 ]]; then
-    usage 1
+    usage $EXIT_ARG_ERROR
   fi
 
   local input_file="$1"
@@ -89,14 +95,14 @@ function main() {
   fi
 
   if [[ ! -f "$input_file" ]]; then
-    die "Error: Input file '$input_file' does not exist"
+    die "Error: Input file '$input_file' does not exist" $EXIT_INPUT_ERROR
   fi
 
   local captions
   captions=$(youtube::extract_text_from_vtt "$input_file")
 
   if [[ -z "$captions" ]]; then
-    die "Error: Failed to extract captions from '$input_file'"
+    die "Error: Failed to extract captions from '$input_file'" $EXIT_EXTRACTION_ERROR
   fi
 
   if $verbose; then
@@ -112,6 +118,8 @@ function main() {
   if $verbose; then
     >&2 echo "Captions saved to: $output_file"
   fi
+
+  exit $EXIT_SUCCESS
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
