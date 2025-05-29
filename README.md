@@ -3992,6 +3992,10 @@ We are thus presented with a choice. Will we be like those who turned away, forg
   - [Daughter, Mother, Spouse](#daughter-mother-spouse)
   - [AI-Generated Summary: The Divine Coronation and the Love That Crowns Us All](#ai-generated-summary-the-divine-coronation-and-the-love-that-crowns-us-all)
   - [Coronation of the Virgin, a painting on oil on canvas of the Holy Trinity crowning the Blessed Virgin Mary, at the Museo del Prado](#coronation-of-the-virgin-a-painting-on-oil-on-canvas-of-the-holy-trinity-crowning-the-blessed-virgin-mary-at-the-museo-del-prado)
+- [May 29, 2025](#may-29-2025)
+  - [Littleness Before the Lord](#littleness-before-the-lord)
+  - [AI-Generated Summary: The Humble Light of the Annunciation](#ai-generated-summary-the-humble-light-of-the-annunciation)
+  - [The Annunciation, an 1898 painting by African-American painter Henry Ossawa Tanner](#the-annunciation-an-1898-painting-by-african-american-painter-henry-ossawa-tanner)
 
 <!-- tocstop -->
 
@@ -4654,6 +4658,24 @@ As at Christ’s baptism, so here: the heavens open, the divine Persons rejoice,
 ##### Coronation of the Virgin, a painting on oil on canvas of the Holy Trinity crowning the Blessed Virgin Mary, at the Museo del Prado
 
 ![Coronation of the Virgin, a painting on oil on canvas by Diego Velázquez of the Holy Trinity crowning the Blessed Virgin Mary, at the Museo del Prado](May/jpgs/Coronation.jpg)
+
+#### May 29, 2025
+
+##### Littleness Before the Lord
+
+[![Littleness Before the Lord](May/jpgs/Day149.jpg)](https://youtu.be/3O_wm3LBVgc "Littleness Before the Lord")
+
+##### AI-Generated Summary: The Humble Light of the Annunciation
+
+Consider, dear reader, the quiet power of Henry Tanner’s _Annunciation_. Here is no queenly Mary enthroned in gold, but a young woman—barefoot, perched on an unmade bed, her face alight with wonder and fear as the divine message pierces her humble room. The artist shows us not majesty, but humanity: the trembling hands, the startled gaze, the raw surrender of a soul who knows herself small yet says, _Be it done unto me_.
+
+How unlike our proud strivings! We fret over our inadequacies, as if strength were ours to manufacture. But Tanner’s Mary reminds us that heaven’s work is done not by the mighty, but by the willing. The light that floods her plain chamber does not scorn its simplicity; it hallows it. So too with us: our weakness, acknowledged, becomes the vessel for grace.
+
+And mark how her prayer—_Hail Mary, full of grace_—echoes through ages, a testament that the lowly are lifted not by their own merit, but by the One who fills empty hands. The glory is ever His; our part is only to kneel, to receive, to trust. For in the end, all true greatness begins where self-sufficiency ends.
+
+##### The Annunciation, an 1898 painting by African-American painter Henry Ossawa Tanner
+
+![The Annunciation, an 1898 painting by African-American painter Henry Ossawa Tanner](May/jpgs/HenryTannerAnnunciation.jpg)
 
 ## June
 
