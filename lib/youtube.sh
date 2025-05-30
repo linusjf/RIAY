@@ -18,7 +18,7 @@ source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/curl.sh"
 source "${SCRIPT_DIR}/lib/validators.sh"
 
-require_commands curl grep jq yt-dlp sed
+require_commands curl grep jq yt-dlp sed mkdir
 require_vars YOUTUBE_API_KEY
 
 : "${YT_DLP_RETRIES:=10}"
@@ -124,21 +124,22 @@ if ! declare -f youtube::download_captions > /dev/null; then
     local ext="${5:-vtt}"
 
     local output_file="${output_dir}/${prefix}$(youtube::construct_file_name "$video_id" "$ext" "$language")"
-    validators::is_valid_dir "$output_dir" \
-      && rm -f -- "${output_dir}/${prefix}${video_id}.*" \
-      && yt-dlp \
-        --verbose \
-        --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
-        --write-auto-sub \
-        --sub-lang "$language" \
-        --skip-download \
-        --sub-format "$ext" \
-        --retries "$YT_DLP_RETRIES" \
-        --retry-sleep exp=1:300:2 \
-        --user-agent "Mozilla/5.0" \
-        -o "${output_file%%.*}" \
-        "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1 \
-      && echo "$output_file"
+    mkdir -p "$output_dir"
+    validators::is_valid_dir "$output_dir" || return
+    rm -f -- "${output_dir}/${prefix}${video_id}.*"
+    yt-dlp \
+      --verbose \
+      --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
+      --write-auto-sub \
+      --sub-lang "$language" \
+      --skip-download \
+      --sub-format "$ext" \
+      --retries "$YT_DLP_RETRIES" \
+      --retry-sleep exp=1:300:2 \
+      --user-agent "Mozilla/5.0" \
+      -o "${output_file%%.*}" \
+      "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1
+    echo "$output_file"
   }
   export -f youtube::download_captions
 fi
