@@ -124,8 +124,10 @@ if ! declare -f youtube::download_captions > /dev/null; then
     local ext="${5:-vtt}"
 
     local output_file="${output_dir}/${prefix}$(youtube::construct_file_name "$video_id" "$ext" "$language")"
-    mkdir -p "$output_dir"
-    validators::is_valid_dir "$output_dir" || return
+    if ! validators::dir_exists "$output_dir" && ! mkdir -p "$output_dir"; then
+      return
+    fi
+    validators::dir_writable "$output_dir" || return
     rm -f -- "${output_dir}/${prefix}${video_id}.*"
     yt-dlp \
       --verbose \

@@ -114,7 +114,7 @@ main() {
   local downloads_dir
   downloads_dir="$(get_downloads_dir)"
 
-  if ! validators::is_valid_dir "${dir}"; then
+  if ! validators::dir_exists "${dir}"; then
     die "Invalid directory: ${dir}"
   fi
 
