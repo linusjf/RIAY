@@ -108,7 +108,7 @@ if ! declare -f youtube::construct_file_name > /dev/null; then
     local language="$3"
     file_name="$(
       yt-dlp --write-auto-sub --skip-download --sub-lang "$language" --sub-format "$ext" --simulate --print filename \
-        -o "%(id)s.%(language)s.%(ext)s" "https://youtu.be/${video_id}" 2> /dev/null
+        -o "%(id)s.${language}.%(ext)s" "https://youtu.be/${video_id}" 2> /dev/null
     )"
     local file="${file_name%.*}.${ext}"
     echo "$file"

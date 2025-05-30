@@ -91,8 +91,6 @@ function main() {
   local FILE_PREFIX=""
   local language="en"
   local subtitle_format="vtt"
-  local max_tries=3
-  local count=0
 
   require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR
 
@@ -114,11 +112,9 @@ function main() {
     die "Error: No captions in English available" $EXIT_NO_CAPTIONS
   fi
 
-  while [[ $count -lt $max_tries ]]; do
-    captions_file="$(youtube::download_captions "$VIDEO_ID" "$FILE_PREFIX" "$CAPTIONS_OUTPUT_DIR" "$language" "$subtitle_format")" && break
-    count=$((count + 1))
-    sleep 10
-  done
+  if ! captions_file="$(youtube::download_captions "$VIDEO_ID" "$FILE_PREFIX" "$CAPTIONS_OUTPUT_DIR" "$language" "$subtitle_format")"; then
+    die "Error: Download captions file ${captions_file} failed or aborted" $EXIT_DOWNLOAD_FAILED
+  fi
 
   if [[ -n "$captions_file" ]] && [[ ! -f "$captions_file" ]]; then
     die "Error: Subtitle file ${captions_file} not found. Not downloaded?" $EXIT_FILE_NOT_FOUND
