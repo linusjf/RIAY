@@ -440,6 +440,8 @@ _In the name of the Father, the Son, and the Holy Spirit._
 
 ![Giovanni Antonio Pellegrini's The Nativity](/May/jpgs/Nativity.jpg)
 
+Source: <https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg>
+
 ## May 12,2025
 
 ### Eyes on Jesus
