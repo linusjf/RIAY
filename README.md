@@ -3931,7 +3931,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 13,2025](#may-132025)
   - [Respond with Grace](#respond-with-grace)
   - [AI-Generated Summary: A Mosaic of Divine Encounter and Human Response](#ai-generated-summary-a-mosaic-of-divine-encounter-and-human-response)
-  - [Finding of Jesus in the Temple](#finding-of-jesus-in-the-temple)
+  - [Finding of Jesus in the Temple mosaic from Lourdes Basilica, France](#finding-of-jesus-in-the-temple-mosaic-from-lourdes-basilica-france)
 - [May 14,2025](#may-142025)
   - [Shadow of the Cross](#shadow-of-the-cross)
   - [AI-Generated Summary: The Mystery and Majesty of Christ’s Baptism in a 16th-Century Fresco](#ai-generated-summary-the-mystery-and-majesty-of-christs-baptism-in-a-16th-century-fresco)
@@ -4366,9 +4366,11 @@ The passage then turns from art to exhortation. To seek Christ as Mary did—not
 
 In this mosaic and meditation alike, two truths emerge: Christ’s revelation divides hearts even as it unites them to Himself, and grace alone bends the knee in true worship. The prayers are not incantations but open hands—waiting to receive what Mary already grasped.
 
-##### Finding of Jesus in the Temple
+##### Finding of Jesus in the Temple mosaic from Lourdes Basilica, France
 
-![Finding of Jesus in the Temple](May/jpgs/LostandFound.jpg)
+![Finding of Jesus in the Temple mosaic from Lourdes Basilica, France](May/jpgs/LostandFound.jpg)
+
+Source: <https://thumbs.dreamstime.com/b/mosaic-jesus-lost-found-temple-rosary-basilica-lourdes-78705042.jpg>
 
 #### May 14,2025
 
