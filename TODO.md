@@ -13,4 +13,4 @@
 ## Exploratory tasks
 
 1. Explore Whisper AI to transscribe videos. Local and cloud.
-2. Explore using ChatGPT to generate images since this is the best at generating realistic images from intricate prompts.
+1. Explore using ChatGPT to generate images since this is the best at generating realistic images from intricate prompts.

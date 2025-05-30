@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -3996,6 +3996,9 @@ We are thus presented with a choice. Will we be like those who turned away, forg
   - [Littleness Before the Lord](#littleness-before-the-lord)
   - [AI-Generated Summary: The Humble Light of the Annunciation](#ai-generated-summary-the-humble-light-of-the-annunciation)
   - [The Annunciation, an 1898 painting by African-American painter Henry Ossawa Tanner](#the-annunciation-an-1898-painting-by-african-american-painter-henry-ossawa-tanner)
+- [May 30, 2025](#may-30-2025)
+  - [God Will Provide](#god-will-provide)
+  - [AI-Generated Summary: The Quiet Majesty of the Visitation](#ai-generated-summary-the-quiet-majesty-of-the-visitation)
 
 <!-- tocstop -->
 
@@ -4676,6 +4679,20 @@ And mark how her prayer—_Hail Mary, full of grace_—echoes through ages, a te
 ##### The Annunciation, an 1898 painting by African-American painter Henry Ossawa Tanner
 
 ![The Annunciation, an 1898 painting by African-American painter Henry Ossawa Tanner](May/jpgs/HenryTannerAnnunciation.jpg)
+
+#### May 30, 2025
+
+##### God Will Provide
+
+[![God Will Provide](May/jpgs/Day150.jpg)](https://youtu.be/hhhtl1irZl4 "God Will Provide")
+
+##### AI-Generated Summary: The Quiet Majesty of the Visitation
+
+Consider, if you will, Maldelli’s tender rendering of that sacred moment when Mary, heavy with the Child who would bear the weight of the world, journeys to Elizabeth. The artist clothes her in hues of rose and teal, her eyes lifted as if already tracing the arc of His destiny. Beside her, Elizabeth bends in awe, while Joseph and Zachariah stand as silent sentinels—Joseph, that most humble of guardians, a shadow of the Father’s own steadfast love.
+
+The Gospel does not say Joseph accompanied her, yet reason whispers he must have. For what faithful steward, entrusted with so precious a charge, would let her wander alone? Here is a truth often overlooked: God’s providence moves not only through the miraculous but through the quiet hands of those who shield and serve. Joseph, in his unassuming vigilance, becomes a mirror of divine care.
+
+Let us then pause, as the painting bids us, to honor such hidden faithfulness. Pray with the _Hail Mary_, that ancient echo of Gabriel’s greeting, and the _Glory Be_, where all grace finds its source. And in our own seasons of frailty, may we, like Mary, find a Joseph—some mortal instrument of Heaven’s kindness—to walk beside us.
 
 ## June
 
