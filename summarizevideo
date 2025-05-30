@@ -294,7 +294,7 @@ function main() {
     usage 1
   fi
 
-  require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR
+  require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR DEEPSEEK_MODEL
   if [[ -z "${GEMINI_API_KEY:-}" && -z "${DEEPSEEK_API_KEY:-}" ]]; then
     die "Error: At least one of GEMINI_API_KEY or DEEPSEEK_API_KEY environment variables must be set"
   fi
