@@ -510,6 +510,8 @@ In this fusion of art and devotion, the fresco whispers a timeless lesson: the p
 
 ![An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto](/May/jpgs/BaptismofChrist.jpg)
 
+Source: <https://www.istockphoto.com/vector/padua-baptism-of-christ-in-church-san-benedetto-vecchio-gm517403261-48689476>
+
 ## May 15,2025
 
 ### Miracles of Love
