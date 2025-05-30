@@ -4348,6 +4348,8 @@ _Blessed art thou among women... pray for us sinners._
 
 ![Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)](May/jpgs/PresentationinTemple.jpg)
 
+Source: <https://stock.adobe.com/in/images/cremona-italy-may-24-2016-the-fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547/113785168>
+
 #### May 13,2025
 
 ##### Respond with Grace
