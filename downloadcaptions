@@ -15,7 +15,6 @@ readonly EXIT_NO_VIDEO_ID=3
 readonly EXIT_NO_TITLE=4
 readonly EXIT_NO_CAPTIONS=5
 readonly EXIT_DOWNLOAD_FAILED=6
-readonly EXIT_FILE_NOT_FOUND=7
 
 # Source utility libraries
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
@@ -117,11 +116,11 @@ function main() {
   while [[ $count -lt $max_tries ]]; do
     captions_file="$(youtube::download_captions "$VIDEO_ID" "$FILE_PREFIX" "$CAPTIONS_OUTPUT_DIR" "$language" "$subtitle_format")" && break
     count=$((count + 1))
-    sleep 10
+    sleep $((10 * count))
   done
 
   if [[ -n "$captions_file" ]] && [[ ! -f "$captions_file" ]]; then
-    die "Error: Subtitle file ${captions_file} not found. Not downloaded?" $EXIT_FILE_NOT_FOUND
+    die "Error: Subtitle file ${captions_file} not found. Not downloaded?" $EXIT_DOWNLOAD_FAILED
   fi
 
   if $verbose; then
