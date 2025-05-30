@@ -117,6 +117,7 @@
 - [May 30, 2025](#may-30-2025)
   - [God Will Provide](#god-will-provide)
   - [AI-Generated Summary: The Quiet Majesty of the Visitation](#ai-generated-summary-the-quiet-majesty-of-the-visitation)
+  - [The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)](#the-painting-of-visitation-in-the-church-chiesa-dei-santi-severino-e-sossio-by-federico-maldarelli-1889)
 
 <!-- tocstop -->
 
@@ -811,3 +812,7 @@ Consider, if you will, Maldelli’s tender rendering of that sacred moment when 
 The Gospel does not say Joseph accompanied her, yet reason whispers he must have. For what faithful steward, entrusted with so precious a charge, would let her wander alone? Here is a truth often overlooked: God’s providence moves not only through the miraculous but through the quiet hands of those who shield and serve. Joseph, in his unassuming vigilance, becomes a mirror of divine care.
 
 Let us then pause, as the painting bids us, to honor such hidden faithfulness. Pray with the _Hail Mary_, that ancient echo of Gabriel’s greeting, and the _Glory Be_, where all grace finds its source. And in our own seasons of frailty, may we, like Mary, find a Joseph—some mortal instrument of Heaven’s kindness—to walk beside us.
+
+### The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)
+
+![The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)](/May/jpgs/MaldarelliVisitation.jpg)
