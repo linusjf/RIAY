@@ -16,3 +16,5 @@ venv/**
 .aider.chat.history.md
 !**/*Summary.txt
 testsummary.txt
+**/*.vtt
+**/*.en.txt
