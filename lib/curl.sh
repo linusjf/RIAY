@@ -156,7 +156,10 @@ fi
 if ! declare -f curl::should_retry > /dev/null; then
   function curl::should_retry() {
     local status_code="$1"
-    [[ $status_code -ge 500 ]] \
+    [[ $status_code -eq 500 ]] \
+      || [[ $status_code -eq 502 ]] \
+      || [[ $status_code -eq 503 ]] \
+      || [[ $status_code -eq 504 ]] \
       || [[ $status_code -eq 408 ]] \
       || [[ $status_code -eq 429 ]] \
       || [[ $status_code -eq 0 ]]
