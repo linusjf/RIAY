@@ -410,6 +410,8 @@ In _The Visitation_, Rembrandt distills a moment where heaven touches earth, and
 
 ![Rembrandt's The Visitation](/May/jpgs/TheVisitation.jpg)
 
+Source: <https://live.staticflickr.com/65535/48379549666_845e30610d_z.jpg>
+
 ## May 11,2025
 
 ### Worship and Warmth
