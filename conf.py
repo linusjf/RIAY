@@ -113,6 +113,7 @@ linkcheck_ignore = [
     r"http://localhost:\d+/",  # Ignore local dev servers
     r"https://example\.com/redirect",  # Ignore known redirect
     r"https://www.gnu.org/software/m4/m4.html",
+    r"https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg"
 ]
 
 linkcheck_ignore_redirects = True
