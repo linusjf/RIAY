@@ -11,8 +11,6 @@ source "${SCRIPT_DIR}/lib/curl.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
-curl::safe_curl_request "https://mock.codes/500" || true
-curl::safe_curl_request "https://mock.codes/501" || true
-curl::safe_curl_request "https://mock.codes/502" || true
-curl::safe_curl_request "https://mock.codes/503" || true
-curl::safe_curl_request "https://mock.codes/504" || true
+code=$1
+
+curl::safe_curl_request "https://mock.codes/${code}" || true

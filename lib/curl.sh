@@ -156,7 +156,7 @@ fi
 if ! declare -f curl::should_retry > /dev/null; then
   function curl::should_retry() {
     local status_code="$1"
-    retry_status_codes=(0 408 429 500 502 503 504)
+    retry_status_codes=(408 429 500 502 503 504)
     for _ in "${retry_status_codes[@]}"; do
       if [[ $status_code -eq _ ]]; then
         return 0
