@@ -71,7 +71,7 @@ function generate_image() {
 
   response="$(
     curl::safe_curl_request \
-      "https://queue.fal.run/fal-ai/janus" \
+      "https://queue.fal.run/fal-ai/${FALAI_IMAGE_GENERATION_MODEL}" \
       "POST" \
       "'Authorization: Key $FALAI_KEY' 'Content-Type: application/json'" \
       "$payload"
@@ -91,7 +91,7 @@ function poll_status() {
   while ((attempt <= MAX_RETRIES)); do
     response="$(
       curl::safe_curl_request \
-        "https://queue.fal.run/fal-ai/janus/requests/${request_id}/status" \
+        "https://queue.fal.run/fal-ai/${FALAI_IMAGE_GENERATION_MODEL}/requests/${request_id}/status" \
         "GET" \
         "'Authorization: Key $FALAI_KEY'"
     )" \
@@ -127,7 +127,7 @@ function download_image() {
 
   response="$(
     curl::safe_curl_request \
-      "https://queue.fal.run/fal-ai/janus/requests/${request_id}" \
+      "https://queue.fal.run/fal-ai/${FALAI_IMAGE_GENERATION_MODEL}/requests/${request_id}" \
       "GET" \
       "'Authorization: Key $FALAI_KEY'"
   )" || die "Failed to get final response" 4
