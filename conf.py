@@ -114,7 +114,6 @@ linkcheck_ignore = [
     r"https://example\.com/redirect",  # Ignore known redirect
     r"https://www.gnu.org/software/m4/m4.html",
     r"https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg",
-    r"https://en.wikipedia.org/wiki/File:Gerard_van_Honthorst/_-_Adoration_of_the_Shepherds_(1622).jpg"
 ]
 
 linkcheck_ignore_redirects = True
