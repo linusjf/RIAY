@@ -2,9 +2,9 @@
 #
 # Generate image from prompt using deepinfra API
 #
-# Usage: generateimagefromprompt "prompt"
+# Usage: deepinfragenerateimage "prompt"
 #        or
-#        cat "promptfile" | generateimagefromprompt
+#        cat "promptfile" | deepinfragenerateimage
 # Output: Creates jpg image in temp directory and outputs its path to stdout
 
 set -euo pipefail
@@ -28,7 +28,7 @@ function usage() {
   # Globals: SCRIPT_NAME
   # Output: Usage message to STDOUT
   # Returns: 0
-  cat <<EOF
+  cat << EOF
 Usage: ${SCRIPT_NAME} [OPTIONS] "prompt"
 
 Options:
@@ -55,10 +55,10 @@ function generate_temp_image() {
   local prompt="$1"
   local output_file="$2"
 
-  deepctl infer -m "${IMAGE_GENERATION_MODEL}" -i "prompt=${prompt}" |
-    sed 's/data:image\/png;base64,//' |
-    jq -r '.images[0]' |
-    base64 --decode >"$output_file"
+  deepctl infer -m "${IMAGE_GENERATION_MODEL}" -i "prompt=${prompt}" \
+    | sed 's/data:image\/png;base64,//' \
+    | jq -r '.images[0]' \
+    | base64 --decode > "$output_file"
 }
 
 function convert_to_jpg() {
@@ -132,7 +132,7 @@ function main() {
 ### Main Execution ###
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
@@ -144,25 +144,25 @@ lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 # Parse command line options
 while [[ $# -gt 0 ]]; do
   case "$1" in
-  -h | --help)
-    usage
-    exit 0
-    ;;
-  -v | --version)
-    version
-    exit 0
-    ;;
-  --verbose)
-    export VERBOSE=true
-    shift
-    ;;
-  --)
-    shift
-    break
-    ;;
-  *)
-    break
-    ;;
+    -h | --help)
+      usage
+      exit 0
+      ;;
+    -v | --version)
+      version
+      exit 0
+      ;;
+    --verbose)
+      export VERBOSE=true
+      shift
+      ;;
+    --)
+      shift
+      break
+      ;;
+    *)
+      break
+      ;;
   esac
 done
 
