@@ -138,7 +138,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   $debug && set -x
 
   require_commands date tee cat curl realpath mkdir
-  if "$LOGGING"; then
+  if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

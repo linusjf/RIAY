@@ -323,7 +323,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   require_vars YOUTUBE_API_KEY REPO_OWNER YEAR
   require_commands sed basename date tee mv date wc cat cp
 
-  if "$LOGGING"; then
+  if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

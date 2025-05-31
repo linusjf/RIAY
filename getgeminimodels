@@ -116,7 +116,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   internet::checkinternet || exit 3
   require_commands grep sed sort jq || exit 2
 
-  if "$LOGGING"; then
+  if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

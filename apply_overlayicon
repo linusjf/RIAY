@@ -76,7 +76,7 @@ done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   validate_environment || exit 1
-  if "$LOGGING"; then
+  if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

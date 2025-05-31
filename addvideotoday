@@ -270,7 +270,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     esac
   done
   require_commands tee date jq curl git mv rm cp mktemp grep mkdir || exit $E_MISSING_TOOLS
-  if "$LOGGING"; then
+  if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

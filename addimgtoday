@@ -203,7 +203,7 @@ main() {
 # Call the main function if the script is executed directly
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   require_commands tee date cat realpath
-  if "$LOGGING"; then
+  if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
