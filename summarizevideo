@@ -117,9 +117,9 @@ function summarize_chunk_deepseek() {
   local prompt="$(get_chunk_prompt "$chunk")"
   local escaped_prompt="$(jq -Rs <<< "$prompt")"
   local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
-  local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --argjson temperature "$TEMPERATURE" \
+  local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --arg model "${DEEPSEEK_MODEL}" --argjson temperature "$TEMPERATURE" \
     '{
-  "model": "deepseek-chat",
+  "model": $model,
   "messages": [
     {
       "role": "system",
@@ -228,12 +228,14 @@ function final_summary_deepseek() {
   local prompt="$(get_final_prompt "$input")"
   local escaped_prompt="$(jq -Rs <<< "$prompt")"
   local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
-  local payload="$(jq -n \
-    --arg system "$escaped_system_prompt" \
-    --arg content "$escaped_prompt" \
-    --argjson temperature "$TEMPERATURE" \
-    '{
-      "model": "deepseek-chat",
+  local payload="$(
+    jq -n \
+      --arg system "$escaped_system_prompt" \
+      --arg content "$escaped_prompt" \
+      --arg model "$DEEPSEEK_MODEL" \
+      --argjson temperature "$TEMPERATURE" \
+      '{
+      "model": $model,
       "messages": [
         {
           "role": "system",
@@ -245,7 +247,8 @@ function final_summary_deepseek() {
         }
       ],
       "temperature": $temperature
-    }')"
+    }'
+  )"
 
   local response="$(
     curl::safe_curl_request \
@@ -376,7 +379,7 @@ function main() {
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   require_commands date jq tee cat
-  if "$LOGGING"; then
+  if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
       main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)

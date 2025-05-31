@@ -68,9 +68,10 @@ function create_payload() {
   jq -n \
     --arg system "$meta_prompt" \
     --arg content "$summary_content" \
+    --arg model "$DEEPSEEK_MODEL" \
     --argjson temperature "${TEMPERATURE:-1}" \
     '{
-      "model": "deepseek-chat",
+      "model": $model,
       "messages": [
         {
           "role": "system",
