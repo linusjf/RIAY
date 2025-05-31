@@ -602,7 +602,7 @@ To the weary soul, this is your comfort: come as you are, but do not stay as you
 
 ### Agony in the Garden by Vicente Masip, also known as Vicente Juan Masip
 
-![Agony in the Garden by Vicente Masip, also known as Vicente Juan Masip](/May/jpgs/AgonyintheGarden.jpg)
+[![Agony in the Garden by Vicente Masip, also known as Vicente Juan Masip](/May/jpgs/AgonyintheGarden.jpg)](https://www.museodelprado.es/en/the-collection/art-work/agony-in-the-garden/323edcfd-701e-403f-b27a-9c9d5c656e58 "Agony in the Garden by Vicente Masip, also known as Vicente Juan Masip")
 
 ## May 20,2025
 
