@@ -841,4 +841,4 @@ Farewell, and may His peace attend you.
 
 ### Gerard van Honthorst - Adoration of the Shepherds (1622)
 
-[![Gerard van Honthorst - Adoration of the Shepherds (1622)](/May/jpgs/AdorationShepherds.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_%281622%29.jpg/960px-Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_%281622%29.jpg%3E "Gerard van Honthorst - Adoration of the Shepherds (1622)")
+[![Gerard van Honthorst - Adoration of the Shepherds (1622)](/May/jpgs/AdorationShepherds.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_%281622%29.jpg/960px-Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_%281622%29.jpg "Gerard van Honthorst - Adoration of the Shepherds (1622)")
