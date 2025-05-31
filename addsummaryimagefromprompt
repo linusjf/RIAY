@@ -20,7 +20,6 @@ readonly EXIT_DATE_ERROR=5
 readonly EXIT_IMAGE_GEN_ERROR=6
 readonly EXIT_FILE_COPY_ERROR=7
 readonly EXIT_ADD_IMAGE_ERROR=8
-readonly EXIT_CLEANUP_ERROR=9
 readonly EXIT_REQUIREMENTS_ERROR=10
 readonly EXIT_INVALID_JSON=11
 
@@ -33,7 +32,7 @@ version() {
 }
 
 usage() {
-  cat <<EOF
+  cat << EOF
 Usage: ${SCRIPT_NAME} [options] <summary_prompt_file> <day_of_year>
 
 Options:
@@ -61,10 +60,10 @@ EOF
 
 validate_json() {
   local json="$1"
-  if ! jq -e '.caption and .image_prompt' <<<"$json" >/dev/null 2>&1; then
+  if ! jq -e '.caption and .image_prompt' <<< "$json" > /dev/null 2>&1; then
     die "Invalid JSON format - must contain both .caption and .image_prompt fields" $EXIT_INVALID_JSON
   fi
-  if jq -e '.caption == "" or .image_prompt == ""' <<<"$json" >/dev/null 2>&1; then
+  if jq -e '.caption == "" or .image_prompt == ""' <<< "$json" > /dev/null 2>&1; then
     die "Invalid JSON content - .caption and .image_prompt must not be empty" $EXIT_INVALID_JSON
   fi
 }
@@ -102,17 +101,17 @@ main() {
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   case "${1:-}" in
-  -v | --version)
-    version
-    exit $EXIT_SUCCESS
-    ;;
-  -h | --help)
-    usage
-    exit $EXIT_SUCCESS
-    ;;
+    -v | --version)
+      version
+      exit $EXIT_SUCCESS
+      ;;
+    -h | --help)
+      usage
+      exit $EXIT_SUCCESS
+      ;;
   esac
 
-  if command -v realpath >/dev/null 2>&1; then
+  if command -v realpath > /dev/null 2>&1; then
     readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else
     readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
