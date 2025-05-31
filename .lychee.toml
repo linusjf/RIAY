@@ -88,7 +88,8 @@ exclude = [
   "https://example.com",
   "https://localhost:.*",
   "https://www.gnu.org/software/m4/m4.html",
-"https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg"
+"https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg",
+"https://en.wikipedia.org/wiki/File:Gerard_van_Honthorst/_-_Adoration_of_the_Shepherds_(1622).jpg"
 ]
 
 # Exclude these filesystem paths from getting checked.
