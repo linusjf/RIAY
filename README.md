@@ -4247,9 +4247,7 @@ Fra Angelico’s humility (as noted by Vasari) mirrors the text’s call to quie
 
 ##### Fra Angelico’s Annunciation (mid-1430s)
 
-![Fra Angelico’s Annunciation (mid-1430s)](May/jpgs/Annunciation.jpg)
-
-Source: <https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg/>
+[![Fra Angelico’s Annunciation (mid-1430s)](May/jpgs/Annunciation.jpg)](https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg "Fra Angelico’s Annunciation (mid-1430s)")
 
 #### May 10,2025
 
@@ -4294,9 +4292,7 @@ In _The Visitation_, Rembrandt distills a moment where heaven touches earth, and
 
 ##### Rembrandt's The Visitation
 
-![Rembrandt's The Visitation](May/jpgs/TheVisitation.jpg)
-
-Source: <https://live.staticflickr.com/65535/48379549666_845e30610d_z.jpg>
+[![Rembrandt's The Visitation](May/jpgs/TheVisitation.jpg)](https://live.staticflickr.com/65535/48379549666_845e30610d_z.jpg "Rembrandt's The Visitation")
 
 #### May 11,2025
 
