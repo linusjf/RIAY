@@ -262,7 +262,7 @@ function append_summary() {
       exit $E_FILE_GENERATION_FAILED
     }
   } >> "${filepath}"
-  if "$AUTO_GENERATE_IMAGES"; then
+  if "${AUTO_GENERATE_IMAGES:-false}"; then
     # generate image from summary prompt
     "${SCRIPT_DIR}/addsummaryimagefromprompt" "$summarypromptfname" "$doy" \
       || exit $E_FILE_GENERATION_FAILED
