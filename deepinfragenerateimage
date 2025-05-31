@@ -55,7 +55,7 @@ function generate_temp_image() {
   local prompt="$1"
   local output_file="$2"
 
-  deepctl infer -m "${IMAGE_GENERATION_MODEL}" -i "prompt=${prompt}" \
+  deepctl infer -m "${DEEPINFRA_IMAGE_GENERATION_MODEL}" -i "prompt=${prompt}" \
     | sed 's/data:image\/png;base64,//' \
     | jq -r '.images[0]' \
     | base64 --decode > "$output_file"
@@ -168,6 +168,7 @@ done
 
 # Check required commands
 require_commands jq tee cat deepctl base64 sed mktemp cp gm dirname basename
+require_vars DEEPINFRA_IMAGE_GENERATION_MODEL
 
 # Execute main function with logging if enabled
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
