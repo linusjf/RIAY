@@ -801,7 +801,7 @@ And mark how her prayer—_Hail Mary, full of grace_—echoes through ages, a te
 
 ### The Annunciation, an 1898 painting by African-American painter Henry Ossawa Tanner
 
-![The Annunciation, an 1898 painting by African-American painter Henry Ossawa Tanner](/May/jpgs/HenryTannerAnnunciation.jpg)
+[![The Annunciation, an 1898 painting by African-American painter Henry Ossawa Tanner](/May/jpgs/HenryTannerAnnunciation.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/The_Annunciation%2C_Philadelphia_Museum_of_Art%2C_W1899-1-1-pma%2C_by_Henry_Ossawa_Tanner.jpg/960px-The_Annunciation%2C_Philadelphia_Museum_of_Art%2C_W1899-1-1-pma%2C_by_Henry_Ossawa_Tanner.jpg "The Annunciation, an 1898 painting by African-American painter Henry Ossawa Tanner")
 
 ## May 30, 2025
 
