@@ -104,8 +104,8 @@ fi
 if ! declare -f youtube::construct_file_name > /dev/null; then
   function youtube::construct_file_name() {
     local video_id="$1"
-    local ext="$2"
-    local language="$3"
+    local language="$2"
+    local ext="$3"
     file_name="$(
       yt-dlp --write-auto-sub --skip-download --sub-lang "$language" --sub-format "$ext" --simulate --print filename \
         -o "%(id)s.${language}.%(ext)s" "https://youtu.be/${video_id}" 2> /dev/null
@@ -123,7 +123,7 @@ if ! declare -f youtube::download_captions > /dev/null; then
     local language="${4:-en}"
     local ext="${5:-vtt}"
 
-    local output_file="${output_dir}/${prefix}$(youtube::construct_file_name "$video_id" "$ext" "$language")"
+    local output_file="${output_dir}/${prefix}$(youtube::construct_file_name "$video_id" "$language" "$ext")"
     if ! validators::dir_exists "$output_dir" && ! mkdir -p "$output_dir"; then
       return
     fi
