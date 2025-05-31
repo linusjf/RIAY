@@ -118,6 +118,10 @@
   - [God Will Provide](#god-will-provide)
   - [AI-Generated Summary: The Quiet Majesty of the Visitation](#ai-generated-summary-the-quiet-majesty-of-the-visitation)
   - [The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)](#the-painting-of-visitation-in-the-church-chiesa-dei-santi-severino-e-sossio-by-federico-maldarelli-1889)
+- [May 31, 2025](#may-31-2025)
+  - [St. Joseph's Protection](#st-josephs-protection)
+  - [AI-Generated Summary: The Quiet Strength of Saint Joseph](#ai-generated-summary-the-quiet-strength-of-saint-joseph)
+  - [Gerard van Honthorst - Adoration of the Shepherds (1622)](#gerard-van-honthorst---adoration-of-the-shepherds-1622)
 
 <!-- tocstop -->
 
@@ -828,3 +832,27 @@ Let us then pause, as the painting bids us, to honor such hidden faithfulness. P
 ### The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)
 
 ![The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)](/May/jpgs/MaldarelliVisitation.jpg)
+
+## May 31, 2025
+
+### St. Joseph's Protection
+
+[![St. Joseph's Protection](/May/jpgs/Day151.jpg)](https://youtu.be/aEdg0GdNGOc "St. Joseph's Protection")
+
+### AI-Generated Summary: The Quiet Strength of Saint Joseph
+
+Consider, dear reader, how the light falls upon the Child in that humble manger—painted by Honthorst with such tender skill—yet how much darker the scene would be without the steadfast figure of Joseph standing guard. Here is no mere bystander, but a man through whose quiet obedience Heaven’s work is done. The shepherds kneel, the Mother gazes, but it is Joseph who has made the space for adoration, his strength a shelter for the sacred.
+
+How fitting that God, who chose a virgin’s womb for His coming, should also choose a carpenter’s care to shield it. Mary, young and weary, finds in Joseph not a lord but a guardian, his faithfulness the wall that lets her rest, his presence the peace that invites the shepherds near. And when they depart, praising God, do they not unknowingly praise Joseph too—this man who asked for no glory, yet without whom glory could not have been received?
+
+See, then, the glance exchanged between these two: Mary and Joseph, bound not by flesh but by a love divine, their hearts brimming with gratitude—for the Child, for each other, for the angel’s word that knit their lives together. In such moments, Heaven touches earth, and the ordinary becomes a vessel of grace. Let us, with them, offer our own prayers, that we too might learn to serve in silence, and so make room for the Light.
+
+_Hail Mary, full of grace..._\
+_Glory be to the Father..._\
+Farewell, and may His peace attend you.
+
+### Gerard van Honthorst - Adoration of the Shepherds (1622)
+
+![Gerard van Honthorst - Adoration of the Shepherds (1622)](/May/jpgs/AdorationShepherds.jpg)
+
+Source: <https://en.wikipedia.org/wiki/File:Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_(1622).jpg>
