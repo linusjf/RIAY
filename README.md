@@ -4406,7 +4406,7 @@ In sum, Bloch’s masterpiece and the accompanying meditation reveal a Christ wh
 
 ##### Carl Bloch’s The Wedding at Cana
 
-![Carl Bloch’s The Wedding at Cana](May/jpgs/WeddingatCana.jpg)
+[![Carl Bloch’s The Wedding at Cana](May/jpgs/WeddingatCana.jpg)](https://carlbloch.org/media//b/a/base_41135642.jpg?width=600 "Carl Bloch’s The Wedding at Cana")
 
 #### May 16,2025
 
@@ -4426,7 +4426,7 @@ In sum, Tissot’s painting and the accompanying meditation weave art and theolo
 
 ##### James Tissot’s Healing of the Lepers at Capernaum
 
-![James Tissot’s Healing of the Lepers at Capernaum](May/jpgs/healingofthelepers.jpg)
+[![James Tissot’s Healing of the Lepers at Capernaum](May/jpgs/healingofthelepers.jpg)](https://www.alamy.com/healing-of-the-lepers-at-capernaum-1894-by-james-tissot-image557924107.html "James Tissot’s Healing of the Lepers at Capernaum")
 
 #### May 17,2025
 
@@ -4446,7 +4446,7 @@ In this fusion of art and devotion, the window becomes more than decoration; it 
 
 ##### Transfiguration in Vienna’s Votive Church
 
-![Transfiguration in Vienna’s Votive Church](May/jpgs/Transfiguration.jpg)
+[![Transfiguration in Vienna’s Votive Church](May/jpgs/Transfiguration.jpg)](https://in.pinterest.com/pin/305822630958390299/ "Transfiguration in Vienna’s Votive Church")
 
 #### May 18,2025
 
