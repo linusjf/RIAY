@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -4735,9 +4735,7 @@ Farewell, and may His peace attend you.
 
 ##### Gerard van Honthorst - Adoration of the Shepherds (1622)
 
-![Gerard van Honthorst - Adoration of the Shepherds (1622)](May/jpgs/AdorationShepherds.jpg)
-
-Source: <https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_%281622%29.jpg/960px-Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_%281622%29.jpg>
+[![Gerard van Honthorst - Adoration of the Shepherds (1622)](May/jpgs/AdorationShepherds.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_%281622%29.jpg/960px-Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_%281622%29.jpg%3E "Gerard van Honthorst - Adoration of the Shepherds (1622)")
 
 ## June
 
