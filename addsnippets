@@ -8,7 +8,7 @@ shopt -s inherit_errexit
 
 readonly SUCCESS=0
 readonly SCRIPT_NAME="$(basename "$0")"
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 # Source required libraries
 source "${SCRIPT_DIR}/lib/date.sh"
 source "${SCRIPT_DIR}/lib/validators.sh"
@@ -24,7 +24,7 @@ lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 # Returns: None (exits script)
 ######################################################################
 usage() {
-  cat <<EOF
+  cat << EOF
 Usage: ${0##*/} [-d|--debug] [doy ... doy]
   doy - day of year (must be integer)
 Options:
@@ -56,6 +56,7 @@ main() {
     fi
   done
 
+  # shellcheck disable=SC2153
   local oldmonth="$(date::mfromdoy "${1#0}" "$YEAR")"
   local month=""
 
@@ -84,7 +85,7 @@ main() {
           echo "${header}"
           echo ""
           echo "${md}"
-        } >>"${mdfile}"
+        } >> "${mdfile}"
       fi
     done
     shopt -u nullglob globstar
@@ -103,13 +104,13 @@ main() {
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-  -d | --debug)
-    set -x
-    shift
-    ;;
-  *)
-    break
-    ;;
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *)
+      break
+      ;;
   esac
 done
 
