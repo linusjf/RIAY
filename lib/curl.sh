@@ -156,13 +156,13 @@ fi
 if ! declare -f curl::should_retry > /dev/null; then
   function curl::should_retry() {
     local status_code="$1"
-    [[ $status_code -eq 500 ]] \
-      || [[ $status_code -eq 502 ]] \
-      || [[ $status_code -eq 503 ]] \
-      || [[ $status_code -eq 504 ]] \
-      || [[ $status_code -eq 408 ]] \
-      || [[ $status_code -eq 429 ]] \
-      || [[ $status_code -eq 0 ]]
+    retry_status_codes=(0 408 429 500 502 503 504)
+    for _ in "${retry_status_codes[@]}"; do
+      if [[ $status_code -eq _ ]]; then
+        return 0
+      fi
+    done
+    return 1
   }
   export -f curl::should_retry
 fi
@@ -175,7 +175,7 @@ if ! declare -f curl::handle_retry > /dev/null; then
     local response_headers="$4"
     local url="$5"
 
-    if [[ $status_code -ge 400 ]] && [[ $status_code -lt 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]]; then
+    if [[ $status_code -ge 400 ]] && [[ $status_code -le 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]]; then
       >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, no retries..."
       return 1
     fi
