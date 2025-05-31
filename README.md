@@ -4364,9 +4364,7 @@ In this mosaic and meditation alike, two truths emerge: Christ’s revelation di
 
 ##### Finding of Jesus in the Temple mosaic from Lourdes Basilica, France
 
-![Finding of Jesus in the Temple mosaic from Lourdes Basilica, France](May/jpgs/LostandFound.jpg)
-
-Source: <https://thumbs.dreamstime.com/b/mosaic-jesus-lost-found-temple-rosary-basilica-lourdes-78705042.jpg>
+[![Finding of Jesus in the Temple mosaic from Lourdes Basilica, France](May/jpgs/LostandFound.jpg)](https://thumbs.dreamstime.com/b/mosaic-jesus-lost-found-temple-rosary-basilica-lourdes-78705042.jpg "Finding of Jesus in the Temple mosaic from Lourdes Basilica, France")
 
 #### May 14,2025
 
@@ -4386,9 +4384,7 @@ In this fusion of art and devotion, the fresco whispers a timeless lesson: the p
 
 ##### An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto
 
-![An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto](May/jpgs/BaptismofChrist.jpg)
-
-Source: <https://www.istockphoto.com/vector/padua-baptism-of-christ-in-church-san-benedetto-vecchio-gm517403261-48689476>
+[![An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto](May/jpgs/BaptismofChrist.jpg)](https://www.istockphoto.com/vector/padua-baptism-of-christ-in-church-san-benedetto-vecchio-gm517403261-48689476 "An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto")
 
 #### May 15,2025
 
