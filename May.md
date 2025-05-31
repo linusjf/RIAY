@@ -438,9 +438,7 @@ _In the name of the Father, the Son, and the Holy Spirit._
 
 ### Giovanni Antonio Pellegrini's The Nativity
 
-![Giovanni Antonio Pellegrini's The Nativity](/May/jpgs/Nativity.jpg)
-
-Source: <https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg>
+[![Giovanni Antonio Pellegrini's The Nativity](/May/jpgs/Nativity.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Giovanni Antonio Pellegrini's The Nativity")
 
 ## May 12,2025
 
@@ -464,9 +462,7 @@ _Blessed art thou among women... pray for us sinners._
 
 ### Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)
 
-![Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)](/May/jpgs/PresentationinTemple.jpg)
-
-Source: <https://stock.adobe.com/in/images/cremona-italy-may-24-2016-the-fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547/113785168>
+[![Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)](/May/jpgs/PresentationinTemple.jpg)](https://stock.adobe.com/in/images/cremona-italy-may-24-2016-the-fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547/113785168 "Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)")
 
 ## May 13,2025
 
