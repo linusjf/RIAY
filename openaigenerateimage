@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+# Usage: ./openaigenerateimage "your prompt here"
+
+# Check for dependencies
+command -v curl > /dev/null 2>&1 || {
+  echo >&2 "curl is required but not installed."
+  exit 1
+}
+command -v jq > /dev/null 2>&1 || {
+  echo >&2 "jq is required but not installed."
+  exit 1
+}
+command -v gm > /dev/null 2>&1 || {
+  echo >&2 "GraphicsMagick (gm) is required but not installed."
+  exit 1
+}
+
+# Prompt
+PROMPT="$1"
+if [ -z "$PROMPT" ]; then
+  echo "Usage: $0 \"Your image prompt\""
+  exit 1
+fi
+
+# API Key
+if [ -z "$OPENAI_API_KEY" ]; then
+  echo "Please set your OpenAI API key in the OPENAI_API_KEY environment variable."
+  exit 1
+fi
+
+# Temp filenames
+TIMESTAMP=$(date +%s)
+PNG_PATH="/tmp/image_${TIMESTAMP}.png"
+JPG_PATH="/tmp/image_${TIMESTAMP}.jpg"
+
+# Call OpenAI API
+RESPONSE=$(curl -sS https://api.openai.com/v1/images/generations \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -d "{
+        \"prompt\": \"$PROMPT\",
+        \"n\": 1,
+        \"size\": \"1024x1024\",
+        \"response_format\": \"url\"
+      }")
+
+# Extract image URL
+IMAGE_URL=$(echo "$RESPONSE" | jq -r '.data[0].url')
+
+# Download PNG image
+if [ "$IMAGE_URL" != "null" ]; then
+  curl -s "$IMAGE_URL" -o "$PNG_PATH"
+
+  # Convert to JPEG using GraphicsMagick
+  gm convert "$PNG_PATH" "$JPG_PATH"
+
+  # Clean up PNG
+  rm -f "$PNG_PATH"
+
+  # Output JPEG path
+  echo "$JPG_PATH"
+else
+  echo "Failed to generate image. Response:"
+  echo "$RESPONSE"
+  exit 1
+fi
