@@ -4589,7 +4589,7 @@ God bless you.
 
 ##### Resurrection (1593) by Annibale Carracci
 
-![Resurrection (1593) by Annibale Carracci](May/jpgs/Resurrection.jpg)
+[![Resurrection (1593) by Annibale Carracci](May/jpgs/Resurrection.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg/960px-Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg "Resurrection (1593) by Annibale Carracci")
 
 #### May 25, 2025
 
