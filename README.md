@@ -4700,7 +4700,7 @@ Let us then pause, as the painting bids us, to honor such hidden faithfulness. P
 
 ##### The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)
 
-![The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)](May/jpgs/MaldarelliVisitation.jpg)
+[![The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)](May/jpgs/MaldarelliVisitation.jpg)](https://stock.adobe.com/nz/images/naples-italy-april-21-2023-the-painting-of-visitation-in-the-church-chiesa-dei-santi-severino-e-sossio-by-federico-maldarelli-1889/614877275 "The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)")
 
 #### May 31, 2025
 
