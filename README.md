@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -4728,11 +4728,31 @@ Farewell, and may His peace attend you.
 
 <!-- toc -->
 
+- [June 01, 2025](#june-01-2025)
+  - [St. Joseph's Offering](#st-josephs-offering)
+  - [AI-Generated Summary: The Quiet Sacrifice of St. Joseph](#ai-generated-summary-the-quiet-sacrifice-of-st-joseph)
+
 <!-- tocstop -->
 
 ### June 2025
 
 RIAY June 2025
+
+#### June 01, 2025
+
+##### St. Joseph's Offering
+
+[![St. Joseph's Offering](June/jpgs/Day152.jpg)](https://youtu.be/iasMreMMfDU "St. Joseph's Offering")
+
+##### AI-Generated Summary: The Quiet Sacrifice of St. Joseph
+
+Behold the scene: a painting, rich with solemnity, where the infant Christ is presented in the Temple. Mary, tender yet resolute, offers her Son to aged Simeon, whose prophetic words pierce the heart like a sword. And there stands Joseph—faithful, watchful, bearing the weight of a sorrow not yet come.
+
+For though he is guardian, protector, a shield against harm, he cannot spare his beloved from the grief foretold. Yet he does not turn away. In that moment, Joseph shares in the mystery of suffering, his love steadfast even as the shadow of the Cross falls upon them. His sacrifice is quiet, unnoticed by the world, but no less real than the offering of the Lamb he now carries in his arms.
+
+And so we see that true devotion is not in grand gestures, but in the daily surrender to God’s will—in the patient bearing of sorrows we cannot prevent, in the love that endures even when all seems lost. Joseph, silent and strong, teaches us this: that to love is to consent to suffer, and in that suffering, to find the deepest peace.
+
+_Glory be to the Father, and to the Son, and to the Holy Spirit._
 
 ## July
 
