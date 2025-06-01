@@ -4754,6 +4754,8 @@ And so we see that true devotion is not in grand gestures, but in the daily surr
 
 _Glory be to the Father, and to the Son, and to the Holy Spirit._
 
+[![The painting of Presentation of Jesus in the Temple in church kostel Svatého Havla by unknown baroque artist](June/jpgs/PraguePresentation.jpg)](https://as2.ftcdn.net/jpg/02/34/87/33/1000_F_234873301_FgABd7WONbY9DLBAR8ugRz4iDElboWDu.jpg "The painting of Presentation of Jesus in the Temple in church kostel Svatého Havla by unknown baroque artist")
+
 ## July
 
 <!-- toc -->
