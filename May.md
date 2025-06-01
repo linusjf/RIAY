@@ -622,7 +622,7 @@ Let us then, with the Blessed Mother, say, _Hail Mary, full of grace_, and with 
 
 ### Giovanni Antonio Bazzi known as Sodoma, Christ at the Column (c. 1510-1515; detached fresco, 140 x 101 cm; Siena, Pinacoteca Nazionale)
 
-![Giovanni Antonio Bazzi known as Sodoma, Christ at the Column (c. 1510-1515; detached fresco, 140 x 101 cm; Siena, Pinacoteca Nazionale)](/May/jpgs/Colonna.jpg)
+[![Giovanni Antonio Bazzi known as Sodoma, Christ at the Column (c. 1510-1515; detached fresco, 140 x 101 cm; Siena, Pinacoteca Nazionale)](/May/jpgs/Colonna.jpg)](https://cdn.finestresullarte.info/rivista/immagini/2022/2055/giovanni-antonio-bazzi-sodoma-cristo-alla-colonna.jpg "Giovanni Antonio Bazzi known as Sodoma, Christ at the Column (c. 1510-1515; detached fresco, 140 x 101 cm; Siena, Pinacoteca Nazionale)")
 
 ## May 21,2025
 
