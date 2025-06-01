@@ -86,15 +86,6 @@ Note: You can do all this by simply executing the script `setup`.
    Substitute your Google API Key which can access YouTube Data API.
    Set up your API key using instructions at <https://support.google.com/googleapi/answer/6158862?hl=en>
 
-1. Export environment variable `GEMINI_API_KEY` by adding the following line to `.bash_profile`.
-
-   ```bash
-   export GEMINI_API_KEY=<api_key>
-   ```
-
-   Substitute your Gemini API Key which can access YouTube Data API.
-   Set up your API key using instructions at <https://ai.google.dev/gemini-api/docs/api-key>
-
 1. Export environment variable `DEEPSEEK_API_KEY` by adding the following line to `.bash_profile`.
 
    ```bash
@@ -158,16 +149,6 @@ MAX_TIME=90
 # Temperature for LLM responses (0 for deterministic output)
 TEMPERATURE=0
 # Supported Gemini models
-GEMINI_MODELS=(
-  "gemini-2.5-pro-exp-03-25"
-  "gemini-1.5-pro"
-  "gemini-2.5-flash-preview-04-17"
-  "gemini-2.0-flash"
-  "gemini-2.0-flash-exp"
-  "gemini-2.0-flash-lite"
-  "gemini-1.5-flash"
-  "gemini-1.5-flash-8B"
-)
 # Prompt for summarizing transcript chunks
 CHUNK_SUMMARY_PROMPT="Summarize this text, excluding plugs, branding, and promotions. Avoid mention of Day, podcast and Rosary in a Day:"
 # Prompt for final summary generation
