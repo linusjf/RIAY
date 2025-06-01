@@ -4629,7 +4629,7 @@ _Our Father... Hail Mary... Glory be..._ Thus we end as we began: in petition, i
 
 ##### “Pentecost” by Jean Restout II (1692–1768)
 
-![“Pentecost” by Jean Restout II (1692–1768)](May/jpgs/Pentecost.jpg)
+[![“Pentecost” by Jean Restout II (1692–1768)](May/jpgs/Pentecost.jpg)](https://www.catholicdigest.com/wp-content/uploads/2018/05/Jean_II_Restout_-_Pentec%C3%B4te.jpg "“Pentecost” by Jean Restout II (1692–1768)")
 
 #### May 27, 2025
 
