@@ -19,8 +19,6 @@ source "${SCRIPT_DIR}/lib/youtube.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
-declare -i CURRENT_MODEL_INDEX=0
-
 function version() {
   printf "%s\n" "$VERSION"
 }
@@ -58,58 +56,6 @@ function get_chunk_prompt() {
 function get_final_prompt() {
   local input="$1"
   printf "%s\n\n%s\n" "${FINAL_SUMMARY_PROMPT}" "${input}"
-}
-
-function summarize_chunk_gemini() {
-  local chunk="$1"
-  local prompt="$(get_chunk_prompt "$chunk")"
-  local escaped_prompt="$(jq -Rs <<< "$prompt")"
-  local payload="$(jq -n --arg content "$escaped_prompt" --argjson temperature "${TEMPERATURE}" '{
-  "contents": [{
-    "parts": [{
-      "text": $content
-    }]
-  }],
-  "generationConfig": {
-    "temperature": $temperature
-  }
-}')"
-
-  local response
-  while [[ $CURRENT_MODEL_INDEX -lt "${#GEMINI_MODELS[@]}" ]]; do
-    model="${GEMINI_MODELS["$CURRENT_MODEL_INDEX"]}"
-
-    response="$(
-      curl::safe_curl_request \
-        "https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}" \
-        "POST" \
-        "'Content-Type: application/json'" \
-        "$payload"
-    )"
-
-    local res=$?
-    if [[ "$res" -eq 2 ]]; then
-      CURRENT_MODEL_INDEX=$((CURRENT_MODEL_INDEX + 1))
-      if $verbose && [[ $CURRENT_MODEL_INDEX -lt "${#GEMINI_MODELS[@]}" ]]; then
-        >&2 echo "Moving to model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}"
-      fi
-      continue
-    else
-      if [[ "$response" == null* ]]; then
-        err "Gemini API returned invalid response"
-        return 1
-      fi
-
-      if ! echo "$response" | jq . > /dev/null 2>&1; then
-        err "Gemini API returned invalid response"
-        return 1
-      fi
-
-      SUMMARIZED_CHUNK="$(echo "$response" | jq -r '.candidates[0].content.parts[0].text')"
-      return
-    fi
-  done
-  [[ -n "${SUMMARIZED_CHUNK:-}" ]]
 }
 
 function summarize_chunk_deepseek() {
@@ -152,13 +98,6 @@ function summarize_chunk_deepseek() {
 
 function summarize_chunk() {
   local chunk="$1"
-  if [[ "$CURRENT_MODEL_INDEX" -lt "${#GEMINI_MODELS[@]}" ]]; then
-    if [[ -n "${GEMINI_API_KEY:-}" ]]; then
-      if summarize_chunk_gemini "$chunk"; then
-        return 0
-      fi
-    fi
-  fi
 
   if $verbose; then
     >&2 echo "Trying Deep Seek Chat..."
@@ -171,56 +110,6 @@ function summarize_chunk() {
 
   err "Failed to summarize chunk (no working APIs available)"
   return 1
-}
-
-function final_summary_gemini() {
-  local input="$1"
-  local prompt="$(get_final_prompt "$input")"
-  local escaped_prompt="$(jq -Rs <<< "$prompt")"
-  local payload="$(jq -n \
-    --arg content "$escaped_prompt" \
-    --argjson temperature "$TEMPERATURE" \
-    '{
-      "contents": [{
-        "parts": [{
-          "text": $content
-        }]
-      }],
-      "generationConfig": {
-        "temperature": $temperature
-      }
-    }')"
-
-  local response
-
-  while [[ $CURRENT_MODEL_INDEX -lt "${#GEMINI_MODELS[@]}" ]]; do
-    model="${GEMINI_MODELS["$CURRENT_MODEL_INDEX"]}"
-    response="$(
-      curl::safe_curl_request \
-        "https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}" \
-        "POST" \
-        "'Content-Type: application/json'" \
-        "$payload"
-    )"
-
-    local res=$?
-
-    if [[ "$res" -eq 2 ]]; then
-      CURRENT_MODEL_INDEX=$((CURRENT_MODEL_INDEX + 1))
-      if $verbose && [[ $CURRENT_MODEL_INDEX -lt "${#GEMINI_MODELS[@]}" ]]; then
-        >&2 echo "Moving to model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}"
-      fi
-      continue
-    else
-      if ! echo "$response" | jq . > /dev/null 2>&1; then
-        err "Gemini API returned invalid response"
-        return 1
-      fi
-
-      FINAL_SUMMARY="$(echo "$response" | jq -r '.candidates[0].content.parts[0].text')"
-      return
-    fi
-  done
 }
 
 function final_summary_deepseek() {
@@ -298,8 +187,8 @@ function main() {
   fi
 
   require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR DEEPSEEK_MODEL
-  if [[ -z "${GEMINI_API_KEY:-}" && -z "${DEEPSEEK_API_KEY:-}" ]]; then
-    die "Error: At least one of GEMINI_API_KEY or DEEPSEEK_API_KEY environment variables must be set"
+  if [[ -z "${DEEPSEEK_API_KEY:-}" ]]; then
+    die "Error: DEEPSEEK_API_KEY environment variable must be set"
   fi
 
   local VIDEO_ID="$1"
@@ -338,9 +227,6 @@ function main() {
     >&2 echo "Split transcript into ${#CHUNKS[@]} chunks"
   fi
 
-  if $verbose && [[ "${#GEMINI_MODELS[@]}" -gt 0 ]]; then
-    >&2 echo "Starting with model ${GEMINI_MODELS[$CURRENT_MODEL_INDEX]}"
-  fi
   local INTERMEDIATE_SUMMARIES=()
   for chunk in "${CHUNKS[@]}"; do
     local SUMMARIZED_CHUNK
@@ -358,13 +244,8 @@ function main() {
   FINAL_INPUT=$(printf "%s\n\n" "${INTERMEDIATE_SUMMARIES[@]}")
 
   local FINAL_SUMMARY=""
-  if [[ -n "${GEMINI_API_KEY:-}" ]]; then
-    final_summary_gemini "$FINAL_INPUT"
-  fi
 
-  if [[ (-z "$FINAL_SUMMARY" || -z "${GEMINI_API_KEY:-}") && -n "${DEEPSEEK_API_KEY:-}" ]]; then
-    final_summary_deepseek "$FINAL_INPUT"
-  fi
+  final_summary_deepseek "$FINAL_INPUT"
 
   if [[ -z "$FINAL_SUMMARY" ]]; then
     die "ERROR: Failed to generate final summary (no working API available)"
