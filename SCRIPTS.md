@@ -43,7 +43,6 @@ This document describes all bash scripts in the project, their functionality, de
 **Environment Variables**:
 
 - YOUTUBE_API_KEY
-- GEMINI_API_KEY
 - DEEPSEEK_API_KEY
 - VIDEOS_FILE
 - GAP_BW_REQS
@@ -64,10 +63,8 @@ This document describes all bash scripts in the project, their functionality, de
 - check_dependencies
 - get_chunk_prompt
 - get_final_prompt
-- summarize_chunk_gemini
 - summarize_chunk_deepseek
 - summarize_chunk
-- final_summary_gemini
 - final_summary_deepseek
 - main
 
@@ -289,17 +286,6 @@ This document describes all bash scripts in the project, their functionality, de
 - usage
 - version
 - main
-
-## getgeminimodels
-
-**Description**: Fetches available Gemini models from API and saves to geminimodelids.txt.\
-**Dependencies**: curl, jq\
-**Environment Variables**:
-
-- GEMINI_API_KEY\
-  **Called Scripts**: None\
-  **Called Functions**:
-- get_gemini_models
 
 ## annotatejpg
 
