@@ -4524,7 +4524,7 @@ _Hail Mary, full of grace... Glory be to the Father..._ So we pray, again and ag
 
 ##### Titian’s Christ Crowned with Thorns (c. 1542–1543)
 
-![Titian’s Christ Crowned with Thorns (c. 1542–1543)](May/jpgs/CrowningwithThorns.jpg)
+[![Titian’s Christ Crowned with Thorns (c. 1542–1543)](May/jpgs/CrowningwithThorns.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Titian_-_Crowning_with_Thorns_-_WGA22806.jpg/960px-Titian_-_Crowning_with_Thorns_-_WGA22806.jpg "Titian’s Christ Crowned with Thorns (c. 1542–1543)")
 
 #### May 22,2025
 
