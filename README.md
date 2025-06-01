@@ -4546,8 +4546,7 @@ _Glory be to the Father, and to the Son, and to the Holy Spirit. Amen._
 
 ##### Pieter Bruegel the Elder’s The Procession to Calvary (1564)
 
-![Pieter Bruegel the Elder’s The Procession to Calvary (1564)
-](May/jpgs/Calvary.jpg)
+[![Pieter Bruegel the Elder’s The Procession to Calvary (1564)](May/jpgs/Calvary.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pieter_Bruegel_d._%C3%84._007.jpg/960px-Pieter_Bruegel_d._%C3%84._007.jpg "Pieter Bruegel the Elder’s The Procession to Calvary (1564)")
 
 #### May 23, 2025
 
