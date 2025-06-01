@@ -20,7 +20,6 @@ This document describes all bash scripts in the project, their functionality, de
 1. [addsnippets](#addsnippets)
 1. [genvidthmd](#genvidthmd)
 1. [genoverlay](#genoverlay)
-1. [getgeminimodels](#getgeminimodels)
 1. [annotatejpg](#annotatejpg)
 1. [removesnippets](#removesnippets)
 1. [addvideotoday](#addvideotoday)
