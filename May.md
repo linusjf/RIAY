@@ -727,7 +727,7 @@ Let us then pray, as the saints have taught us: _Hail Mary, full of grace..._ an
 
 ### Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice
 
-![Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice](/May/jpgs/Ascension.jpg)
+[![Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice](/May/jpgs/Ascension.jpg)](https://www.wga.hu/support/viewer_m/z.html "Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice")
 
 ## May 26, 2025
 
