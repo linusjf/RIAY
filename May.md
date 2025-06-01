@@ -685,7 +685,7 @@ And so we pray, not as those without hope, but as children who know their Father
 
 ### The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)
 
-![The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)](/May/jpgs/Crucifixion.jpg)
+[![The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)](/May/jpgs/Crucifixion.jpg)](https://c7.alamy.com/comp/2GRFXKA/rome-italy-august-28-2021-the-fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-2GRFXKA.jpg "The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)")
 
 ## May 24, 2025
 
