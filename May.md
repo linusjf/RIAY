@@ -584,7 +584,7 @@ _Glory be to the Father, and to the Son, and to the Holy Spirit._
 
 ### Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"
 
-[![Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"](/May/jpgs/LastSupperMosaic.jpg)](<https://www.istockphoto.com/photo/vienna-mosaic-of-last-supper-by-giacomo-raffaelli-gm160585076-22954759> 'Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"')
+[![Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"](/May/jpgs/LastSupperMosaic.jpg)](https://www.istockphoto.com/photo/vienna-mosaic-of-last-supper-by-giacomo-raffaelli-gm160585076-22954759 "Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's The Last Supper")
 
 ## May 19,2025
 
