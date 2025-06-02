@@ -6,6 +6,7 @@
 - [June 02, 2025](#june-02-2025)
   - [From St.Joseph to Jesus](#from-stjoseph-to-jesus)
   - [AI-Generated Summary: The Quiet Passing of a Guardian and the Unbroken Chain of Love](#ai-generated-summary-the-quiet-passing-of-a-guardian-and-the-unbroken-chain-of-love)
+  - [Jesus, at 12, teaching in the Temple](#jesus-at-12-teaching-in-the-temple)
 
 <!-- tocstop -->
 
@@ -46,3 +47,7 @@ Yet mark this well: when Joseph departs, the Father’s provision does not falte
 At Cana, the last thread of ordinary shelter is loosed. Mary, with a mother’s discernment, brings the need for wine to her son, not to command but to release. Her quiet plea is the final surrender of maternal claim, that He might step forth into the harvest of His mission. And so the guardian becomes the guarded; the teacher, the disciple. Even in the sword-pierced joy of her faithfulness, we find the unfailing truth: love never abdicates, though its forms may change.
 
 _Glory be to the Father, who ordains each season of care; to the Son, who fulfills every duty with divine tenderness; and to the Spirit, who weaves these bonds beyond the unraveling of death. Amen._
+
+### Jesus, at 12, teaching in the Temple
+
+[![Jesus, at 12, teaching in the Temple](/June/jpgs/BrusselsFindingJesus.jpg)](https://thumbs.dreamstime.com/b/brussels-jesus-age-12-teaching-temple-27777664.jpg "Jesus, at 12, teaching in the Temple")
