@@ -38,6 +38,9 @@ Arguments:
 
 Environment variables required:
   DEEPSEEK_API_KEY           API key for DeepSeek service
+  DEEPSEEK_MODEL             DeepSeek model
+  DEEPSEEK_BASE_URL             DeepSeek base url
+  DEEPSEEK_CHAT_ENDPOINT      Deepseek chat endpoint
   SUMMARY_IMAGE_META_PROMPT  System prompt for image prompt and caption generation
   TEMPERATURE                Creativity parameter (0-2)
 
@@ -52,12 +55,6 @@ EOF
 
 function version() {
   printf "%s\n" "$VERSION"
-}
-
-function validate_input() {
-  [[ -n "${DEEPSEEK_API_KEY:-}" ]] || die "Error: DEEPSEEK_API_KEY not set"
-  [[ -n "${DEEPSEEK_MODEL:-}" ]] || die "Error: DEEPSEEK_MODEL not set"
-  [[ -n "${SUMMARY_IMAGE_META_PROMPT:-}" ]] || die "Error: SUMMARY_IMAGE_META_PROMPT not set"
 }
 
 function create_payload() {
@@ -103,7 +100,6 @@ function main() {
     esac
   done
 
-  validate_input
   local summary_content
   local payload
   local response
@@ -120,7 +116,7 @@ function main() {
 
   response="$(
     curl::safe_curl_request \
-      "https://api.deepseek.com/chat/completions" \
+      "${DEEPSEEK_BASE_URL}${DEEPSEEK_CHAT_ENDPOINT}" \
       "POST" \
       "'Authorization: Bearer ${DEEPSEEK_API_KEY}' 'Content-Type: application/json'" \
       "$payload"
@@ -132,6 +128,7 @@ function main() {
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   require_commands jq tee cat
+  require_vars DEEPSEEK_MODEL DEEPSEEK_API_KEY DEEPSEEK_BASE_URL DEEPSEEK_CHAT_ENDPOINT
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
