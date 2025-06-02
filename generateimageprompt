@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Generate image prompts from text summaries using DeepSeek API
+# Generate image prompts from text summaries using Text LLM APIs
 #
 # Usage: generateimageprompt /path/to/DayXXXSummary.txt
 #        or
@@ -30,7 +30,7 @@ function usage() {
   cat >&$output_stream << EOF
 Usage: ${SCRIPT_NAME} [INPUT_FILE]
 
-Generates image prompt JSON from a text file usually a summary using DeepSeek API and outputs it to stdout.
+Generates image prompt JSON from a text file usually a summary using Text LLM APIs and outputs it to stdout.
 If no INPUT_FILE is provided, reads from stdin.
 
 Arguments:

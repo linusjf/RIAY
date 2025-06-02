@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Summarizes YouTube videos by extracting captions and using AI APIs to generate summaries
-# Supports Gemini and DeepSeek APIs with automatic fallback
 # Outputs markdown formatted summary
 
 set -euo pipefail
@@ -97,7 +96,7 @@ function summarize_chunk_deepseek() {
   )"
 
   if ! echo "$response" | jq . > /dev/null 2>&1; then
-    err "DeepSeek API returned invalid response"
+    err "Text LLM API returned invalid response"
     return 1
   fi
 
@@ -156,7 +155,7 @@ function final_summary_deepseek() {
   )"
 
   if ! echo "$response" | jq . > /dev/null 2>&1; then
-    err "DeepSeek API returned invalid response"
+    err "Text LLM API returned invalid response"
     return 1
   fi
 
