@@ -65,7 +65,7 @@ function get_final_prompt() {
   printf "%s\n\n%s\n" "${FINAL_SUMMARY_PROMPT}" "${input}"
 }
 
-function summarize_chunk_deepseek() {
+function summarize_chunk_llm() {
   local chunk="$1"
   local prompt="$(get_chunk_prompt "$chunk")"
   local escaped_prompt="$(jq -Rs <<< "$prompt")"
@@ -106,11 +106,8 @@ function summarize_chunk_deepseek() {
 function summarize_chunk() {
   local chunk="$1"
 
-  if $verbose; then
-    >&2 echo "Trying Deep Seek Chat..."
-  fi
   if [[ -n "${TEXT_LLM_API_KEY:-}" ]]; then
-    if summarize_chunk_deepseek "$chunk"; then
+    if summarize_chunk_llm "$chunk"; then
       return 0
     fi
   fi
@@ -119,7 +116,7 @@ function summarize_chunk() {
   return 1
 }
 
-function final_summary_deepseek() {
+function final_summary() {
   local input="$1"
   local prompt="$(get_final_prompt "$input")"
   local escaped_prompt="$(jq -Rs <<< "$prompt")"
@@ -249,7 +246,7 @@ function main() {
 
   local FINAL_SUMMARY=""
 
-  final_summary_deepseek "$FINAL_INPUT"
+  final_summary "$FINAL_INPUT"
 
   if [[ -z "$FINAL_SUMMARY" ]]; then
     die "ERROR: Failed to generate final summary (no working API available)"
