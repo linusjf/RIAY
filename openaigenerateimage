@@ -31,8 +31,8 @@ fi
 
 # Temp filenames
 TIMESTAMP=$(date +%s)
-PNG_PATH="/tmp/image_${TIMESTAMP}.png"
-JPG_PATH="/tmp/image_${TIMESTAMP}.jpg"
+PNG_PATH="${PREFIX:-}/tmp/image_${TIMESTAMP}.png"
+JPG_PATH="${PREFIX:-}/tmp/image_${TIMESTAMP}.jpg"
 
 # Call OpenAI API
 RESPONSE=$(curl -sS https://api.openai.com/v1/images/generations \
