@@ -37,17 +37,17 @@ Arguments:
   INPUT_FILE    Path to input file (optional, defaults to stdin)
 
 Environment variables required:
-  DEEPSEEK_API_KEY           API key for DeepSeek service
-  DEEPSEEK_MODEL             DeepSeek model
-  DEEPSEEK_BASE_URL             DeepSeek base url
-  DEEPSEEK_CHAT_ENDPOINT      Deepseek chat endpoint
+  TEXT_LLM_API_KEY           API key for LLM service
+  TEXT_LLM_MODEL             text llm model
+  TEXT_LLM_BASE_URL           text llm base url
+  TEXT_LLM_CHAT_ENDPOINT      text llm chat endpoint
   SUMMARY_IMAGE_META_PROMPT  System prompt for image prompt and caption generation
   TEMPERATURE                Creativity parameter (0-2)
 
 Examples:
   ${SCRIPT_NAME} /path/to/input.txt
   cat input.txt | ${SCRIPT_NAME}
-  DEEPSEEK_API_KEY=abc123 ${SCRIPT_NAME} < input.txt
+  TEXT_LLM_API_KEY=abc123 ${SCRIPT_NAME} < input.txt
 EOF
 
   exit "$exit_code"
@@ -65,7 +65,7 @@ function create_payload() {
   jq -n \
     --arg system "$meta_prompt" \
     --arg content "$summary_content" \
-    --arg model "$DEEPSEEK_MODEL" \
+    --arg model "$TEXT_LLM_MODEL" \
     --argjson temperature "${TEMPERATURE:-1}" \
     '{
       "model": $model,
@@ -116,9 +116,9 @@ function main() {
 
   response="$(
     curl::safe_curl_request \
-      "${DEEPSEEK_BASE_URL}${DEEPSEEK_CHAT_ENDPOINT}" \
+      "${TEXT_LLM_BASE_URL}${TEXT_LLM_CHAT_ENDPOINT}" \
       "POST" \
-      "'Authorization: Bearer ${DEEPSEEK_API_KEY}' 'Content-Type: application/json'" \
+      "'Authorization: Bearer ${TEXT_LLM_API_KEY}' 'Content-Type: application/json'" \
       "$payload"
   )"
 
@@ -128,7 +128,7 @@ function main() {
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   require_commands jq tee cat
-  require_vars DEEPSEEK_MODEL DEEPSEEK_API_KEY DEEPSEEK_BASE_URL DEEPSEEK_CHAT_ENDPOINT
+  require_vars TEXT_LLM_MODEL TEXT_LLM_API_KEY TEXT_LLM_BASE_URL TEXT_LLM_CHAT_ENDPOINT
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {

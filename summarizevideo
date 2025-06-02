@@ -42,10 +42,10 @@ Options:
   --help                  Show this help message
 
 Environment variables required:
-  DEEPSEEK_API_KEY           API key for DeepSeek service
-  DEEPSEEK_MODEL             DeepSeek model
-  DEEPSEEK_BASE_URL             DeepSeek base url
-  DEEPSEEK_CHAT_ENDPOINT      Deepseek chat endpoint
+  TEXT_LLM_API_KEY           API key for LLM service
+  TEXT_LLM_MODEL             text llm model
+  TEXT_LLM_BASE_URL           text llm base url
+  TEXT_LLM_CHAT_ENDPOINT      text llm chat endpoint
   SUMMARY_IMAGE_META_PROMPT  System prompt for image prompt and caption generation
   TEMPERATURE                Creativity parameter (0-2)
 
@@ -71,7 +71,7 @@ function summarize_chunk_deepseek() {
   local prompt="$(get_chunk_prompt "$chunk")"
   local escaped_prompt="$(jq -Rs <<< "$prompt")"
   local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
-  local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --arg model "${DEEPSEEK_MODEL}" --argjson temperature "$TEMPERATURE" \
+  local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --arg model "${TEXT_LLM_MODEL}" --argjson temperature "$TEMPERATURE" \
     '{
   "model": $model,
   "messages": [
@@ -90,9 +90,9 @@ function summarize_chunk_deepseek() {
   local response
   response="$(
     curl::safe_curl_request \
-      "${DEEPSEEK_BASE_URL}${DEEPSEEK_CHAT_ENDPOINT}" \
+      "${TEXT_LLM_BASE_URL}${TEXT_LLM_CHAT_ENDPOINT}" \
       "POST" \
-      "'Authorization: Bearer ${DEEPSEEK_API_KEY}' 'Content-Type: application/json'" \
+      "'Authorization: Bearer ${TEXT_LLM_API_KEY}' 'Content-Type: application/json'" \
       "$payload"
   )"
 
@@ -110,7 +110,7 @@ function summarize_chunk() {
   if $verbose; then
     >&2 echo "Trying Deep Seek Chat..."
   fi
-  if [[ -n "${DEEPSEEK_API_KEY:-}" ]]; then
+  if [[ -n "${TEXT_LLM_API_KEY:-}" ]]; then
     if summarize_chunk_deepseek "$chunk"; then
       return 0
     fi
@@ -129,7 +129,7 @@ function final_summary_deepseek() {
     jq -n \
       --arg system "$escaped_system_prompt" \
       --arg content "$escaped_prompt" \
-      --arg model "$DEEPSEEK_MODEL" \
+      --arg model "$TEXT_LLM_MODEL" \
       --argjson temperature "$TEMPERATURE" \
       '{
       "model": $model,
@@ -149,9 +149,9 @@ function final_summary_deepseek() {
 
   local response="$(
     curl::safe_curl_request \
-      "${DEEPSEEK_BASE_URL}${DEEPSEEK_CHAT_ENDPOINT}" \
+      "${TEXT_LLM_BASE_URL}${TEXT_LLM_CHAT_ENDPOINT}" \
       "POST" \
-      "'Authorization: Bearer ${DEEPSEEK_API_KEY}' 'Content-Type: application/json'" \
+      "'Authorization: Bearer ${TEXT_LLM_API_KEY}' 'Content-Type: application/json'" \
       "$payload"
   )"
 
@@ -194,7 +194,7 @@ function main() {
     usage 1
   fi
 
-  require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR DEEPSEEK_MODEL DEEPSEEK_API_KEY DEEPSEEK_BASE_URL DEEPSEEK_CHAT_ENDPOINT
+  require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR TEXT_LLM_MODEL TEXT_LLM_API_KEY TEXT_LLM_BASE_URL TEXT_LLM_CHAT_ENDPOINT
 
   local VIDEO_ID="$1"
 
