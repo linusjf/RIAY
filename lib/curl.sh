@@ -141,7 +141,8 @@ if ! declare -f curl::save_failed_response > /dev/null; then
     timestamp=$(date -u +"%Y%m%d_%H%M%S")
 
     local sanitized_endpoint=$(echo "$endpoint" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g' | sed 's/[^a-zA-Z0-9_-]/_/g')
-    local curltempdir="$(mktemp --directory -t "safe_curl_${timestamp}_XXX")"
+    local curltempdir="${PREFIX}/tmp/safe_curl"
+    mkdir -p "$curltempdir"
     local filename="${curltempdir}/failed_response_${sanitized_endpoint}_${timestamp}.json"
 
     {
