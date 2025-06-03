@@ -2,7 +2,6 @@
 
 ## Features
 
-1. Use a local LLM.
 1. Add script addsummaryimagestodays.
 1. Add unit tests using BATS.
 
@@ -13,4 +12,3 @@
 ## Exploratory tasks
 
 1. Explore Whisper AI to transscribe videos. Local and cloud.
-1. Explore using ChatGPT to generate images since this is the best at generating realistic images from intricate prompts.
