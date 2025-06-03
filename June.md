@@ -7,6 +7,10 @@
   - [From St.Joseph to Jesus](#from-stjoseph-to-jesus)
   - [AI-Generated Summary: The Quiet Passing of a Guardian and the Unbroken Chain of Love](#ai-generated-summary-the-quiet-passing-of-a-guardian-and-the-unbroken-chain-of-love)
   - [Jesus, at 12, teaching in the Temple](#jesus-at-12-teaching-in-the-temple)
+- [June 03, 2025](#june-03-2025)
+  - [I Am Not Worthy](#i-am-not-worthy)
+  - [AI-Generated Summary: The Humble Majesty of Divine Obedience](#ai-generated-summary-the-humble-majesty-of-divine-obedience)
+  - [The Baptism of Christ by Leonardo Da Vinci created in the studio of Andrea del Verrochio around 1475](#the-baptism-of-christ-by-leonardo-da-vinci-created-in-the-studio-of-andrea-del-verrochio-around-1475)
 
 <!-- tocstop -->
 
@@ -51,3 +55,21 @@ _Glory be to the Father, who ordains each season of care; to the Son, who fulfil
 ### Jesus, at 12, teaching in the Temple
 
 [![Jesus, at 12, teaching in the Temple](/June/jpgs/BrusselsFindingJesus.jpg)](https://thumbs.dreamstime.com/b/brussels-jesus-age-12-teaching-temple-27777664.jpg "Jesus, at 12, teaching in the Temple")
+
+## June 03, 2025
+
+### I Am Not Worthy
+
+[![I Am Not Worthy](/June/jpgs/Day154.jpg)](https://youtu.be/TvjnJFERSSY "I Am Not Worthy")
+
+### AI-Generated Summary: The Humble Majesty of Divine Obedience
+
+Here we behold a scene both tender and mighty: the Son of God, sinless yet submitting to the waters, and His herald John, trembling at the weight of his task. In this sacred moment, as in the Annunciation, humility is the threshold of glory. The dove descends not upon the proud, but upon the obedient—those who, like Mary, whisper _fiat_, or like John, yield despite their unworthiness.
+
+Christ’s baptism reveals a paradox: the Almighty kneels, the Sinless One is washed, and in this act, righteousness is fulfilled. The Spirit descends where hearts are lowly, not where crowns are grasped. So too must we learn that true confidence springs not from self-assertion, but from surrender. To obey is not to cower; it is to stand firm in the current of God’s will, knowing that the humble hand receiving the dove is mightier than the clenched fist of kings.
+
+Let us then pray—not as those bargaining with heaven, but as children trusting a Father. For the same Spirit that hovered over Jordan waits to hallow the willing heart. _Our Father... Hail Mary..._ Thus ends our meditation, but not our calling.
+
+### The Baptism of Christ by Leonardo Da Vinci created in the studio of Andrea del Verrochio around 1475
+
+[![The Baptism of Christ by Leonardo Da Vinci created in the studio of Andrea del Verrochio around 1475](/June/jpgs/Baptism.jpg)](https://reconquest.net/wp-content/uploads/2017/12/the_baptism_of_christ_verrocchio__leonardo.jpg "The Baptism of Christ by Leonardo Da Vinci created in the studio of Andrea del Verrochio around 1475")
