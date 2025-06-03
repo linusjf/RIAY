@@ -7,8 +7,6 @@
 
 ## Bugs/Issues
 
-1. Identify and refactor scripts to clean up intermediate, temporary and backup files created on normal exit and error.
-
 ## Exploratory tasks
 
 1. Explore Whisper AI to transcribe videos. Local and cloud.
