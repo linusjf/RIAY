@@ -171,6 +171,7 @@ cleanup() {
   fi
   if [[ -n "${orig_branch:-}" ]]; then
     print_header "Cleaning up..."
+    git reset --hard HEAD~1
     git checkout "$orig_branch"
     git branch -D "testing"
     git restore .
@@ -240,6 +241,9 @@ setup_test_environment() {
   stash_id="stash-$(date +%Y%m%d%H%M%S): sanity tests"
   git stash push -m "$stash_id"
   git checkout -b "testing"
+  cp test_config.env config.env
+  git add config.env
+  git commit -m "Temp: switch to test config"
 }
 
 run_all_tests() {
