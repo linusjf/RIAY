@@ -11,4 +11,4 @@
 
 ## Exploratory tasks
 
-1. Explore Whisper AI to transscribe videos. Local and cloud.
+1. Explore Whisper AI to transcribe videos. Local and cloud.
