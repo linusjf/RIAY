@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# Exit on errors
+set -e
+
+# Check dependencies
+for cmd in yt-dlp curl; do
+  if ! command -v "$cmd" > /dev/null; then
+    echo "Error: $cmd is not installed" >&2
+    exit 1
+  fi
+done
+
+# Check API key
+if [[ -z "$OPENAI_API_KEY" ]]; then
+  echo "Error: Please set your OpenAI API key as OPENAI_API_KEY" >&2
+  exit 1
+fi
+
+# Check for input
+if [[ -z "$1" ]]; then
+  echo "Usage: $0 <youtube_video_id>" >&2
+  exit 1
+fi
+
+VIDEO_ID="$1"
+YOUTUBE_URL="https://www.youtube.com/watch?v=$VIDEO_ID"
+OUTPUT_FILE="${VIDEO_ID}.en.txt"
+TMP_DIR=$(mktemp -d)
+AUDIO_FILE="$TMP_DIR/audio.m4a"
+
+# Download best audio stream (m4a avoids ffmpeg)
+echo "Downloading audio for video ID: $VIDEO_ID..."
+yt-dlp -f 'bestaudio[ext=m4a]' -o "$AUDIO_FILE" "$YOUTUBE_URL"
+
+# Transcribe via Whisper
+echo "Transcribing with Whisper..."
+curl https://api.openai.com/v1/audio/transcriptions \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -H "Content-Type: multipart/form-data" \
+  -F file=@"$AUDIO_FILE" \
+  -F model="whisper-1" \
+  -F response_format="text" \
+  --silent \
+  --show-error \
+  -o "$OUTPUT_FILE"
+
+echo "Transcription saved to: $OUTPUT_FILE"
