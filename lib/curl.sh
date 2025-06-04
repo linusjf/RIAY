@@ -14,6 +14,7 @@ if [[ -z "${SCRIPT_DIR:-}" ]]; then
 fi
 
 source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/files.sh"
 require_commands curl sed cat rm date head tail basename mktemp grep cut tr
 
 : "${CURL_MAX_RETRIES:=3}"
@@ -141,7 +142,7 @@ if ! declare -f curl::save_failed_response > /dev/null; then
     timestamp=$(date -u +"%Y%m%d_%H%M%S")
 
     local sanitized_endpoint=$(echo "$endpoint" | sed -E 's/(key=|Bearer )[^&"\}]*/REDACTED/g' | sed 's/[^a-zA-Z0-9_-]/_/g')
-    local curltempdir="${PREFIX}/tmp/safe_curl"
+    local curltempdir=$"$(files::get_temp_dir)/safe_curl"
     mkdir -p "$curltempdir"
     local filename="${curltempdir}/failed_response_${sanitized_endpoint}_${timestamp}.json"
 

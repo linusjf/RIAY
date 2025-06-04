@@ -40,3 +40,18 @@ if ! declare -f files::get_relative_path > /dev/null; then
   }
   export -f files::get_relative_path
 fi
+
+if ! declare -f files::get_temp_dir > /dev/null; then
+  files::get_temp_dir() {
+    if [ -n "$TMPDIR" ] && [ -d "$TMPDIR" ]; then
+      echo "$TMPDIR"
+    elif [ -d /data/data/com.termux/files/usr/tmp ]; then # Termux tmp
+      echo "/data/data/com.termux/files/usr/tmp"
+    elif [ -d /data/local/tmp ]; then # Android tmp
+      echo "/data/local/tmp"
+    else
+      echo "/tmp"
+    fi
+  }
+  export -f files::get_temp_dir
+fi
