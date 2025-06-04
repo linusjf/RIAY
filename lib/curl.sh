@@ -15,7 +15,7 @@ fi
 
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/files.sh"
-require_commands curl sed cat rm date head tail basename mktemp grep cut tr
+require_commands curl sed cat rm date head tail basename mktemp grep cut tr mkdir
 
 : "${CURL_MAX_RETRIES:=3}"
 : "${CURL_INITIAL_RETRY_DELAY:=1}"
