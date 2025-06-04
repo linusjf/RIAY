@@ -38,6 +38,23 @@ if ! declare -p youtube__THUMBNAIL_SIZES &> /dev/null; then
   )
 fi
 
+if ! declare -f youtube::download_audio > /dev/null; then
+  function youtube::download_audio() {
+    local video_id="$1"
+    local output_file="${2:-}"
+    local format="${3:-bestaudio[ext=m4a]}"
+    local youtube_url="https://www.youtube.com/watch?v=${video_id}"
+
+    if [[ -n "${output_file}" ]]; then
+      yt-dlp -f "${format}" -o "${output_file}" "${youtube_url}"
+      printf "%s" "${output_file}"
+    else
+      yt-dlp -f "${format}" -O "${youtube_url}"
+    fi
+  }
+  export -f youtube::download_audio
+fi
+
 if ! declare -f youtube::thumbnailurl > /dev/null; then
   function youtube::thumbnailurl() {
     local vid="$1"
@@ -54,7 +71,7 @@ if ! declare -f youtube::thumbnailurl > /dev/null; then
     return 1
   }
   export -f youtube::thumbnailurl
-fi
+}
 
 if ! declare -f youtube::get_video_title > /dev/null; then
   function youtube::get_video_title() {
@@ -71,7 +88,7 @@ if ! declare -f youtube::get_video_title > /dev/null; then
     echo "$response" | jq -r '.items[0].snippet.title'
   }
   export -f youtube::get_video_title
-fi
+}
 
 if ! declare -f youtube::get_subtitles_table > /dev/null; then
   function youtube::get_subtitles_table() {
@@ -79,7 +96,7 @@ if ! declare -f youtube::get_subtitles_table > /dev/null; then
     yt-dlp --print subtitles_table --list-subs "$video_id" | sed '${/^NA$/d;}'
   }
   export -f youtube::get_subtitles_table
-fi
+}
 
 if ! declare -f youtube::get_caption_languages > /dev/null; then
   function youtube::get_caption_languages() {
@@ -88,7 +105,7 @@ if ! declare -f youtube::get_caption_languages > /dev/null; then
       | jq -r '[.subtitles, .automatic_captions] | map(keys) | add | unique | .[]'
   }
   export -f youtube::get_caption_languages
-fi
+}
 
 if ! declare -f youtube::has_captions_in_language > /dev/null; then
   function youtube::has_captions_in_language() {
@@ -99,7 +116,7 @@ if ! declare -f youtube::has_captions_in_language > /dev/null; then
     [[ ${#languages[@]} -gt 0 ]]
   }
   export -f youtube::has_captions_in_language
-fi
+}
 
 if ! declare -f youtube::construct_file_name > /dev/null; then
   function youtube::construct_file_name() {

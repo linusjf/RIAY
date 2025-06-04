@@ -14,6 +14,7 @@ readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/curl.sh"
 source "${SCRIPT_DIR}/lib/files.sh"
+source "${SCRIPT_DIR}/lib/youtube.sh"
 
 # Initialize variables
 verbose=false
@@ -87,27 +88,6 @@ function parse_args() {
   fi
 }
 
-function download_audio() {
-  local youtube_url="https://www.youtube.com/watch?v=${video_id}"
-  local audio_file="${tmp_dir}/audio.m4a"
-
-  ${verbose} && log "Downloading audio for video ID: ${video_id}"
-  yt-dlp -f 'bestaudio[ext=m4a]' -o "${audio_file}" "${youtube_url}"
-  printf "%s" "${audio_file}"
-}
-
-function transcribe_audio() {
-  local audio_file="$1"
-
-  ${verbose} && log "Transcribing with Whisper..."
-  curl::safe_curl_request \
-    "https://api.openai.com/v1/audio/transcriptions" \
-    "POST" \
-    "Authorization: Bearer ${OPENAI_API_KEY}" \
-    "" \
-    "-F file=@\"${audio_file}\" -F model=\"whisper-1\" -F response_format=\"text\""
-}
-
 function main() {
   parse_args "$@"
 
@@ -117,8 +97,9 @@ function main() {
 
   ${debug} && set -x
 
-  local audio_file
-  audio_file=$(download_audio)
+  local audio_file="${tmp_dir}/audio.m4a"
+  ${verbose} && log "Downloading audio for video ID: ${video_id}"
+  youtube::download_audio "${video_id}" "${audio_file}"
 
   transcribe_audio "${audio_file}" >"${output_file}"
 
