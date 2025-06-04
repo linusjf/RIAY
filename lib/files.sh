@@ -55,3 +55,15 @@ if ! declare -f files::get_temp_dir > /dev/null; then
   }
   export -f files::get_temp_dir
 fi
+
+if ! declare -f files::safe_remove_dir > /dev/null; then
+  files::safe_remove_dir() {
+    local dir="$1"
+    
+    # Only remove if directory exists and is under temporary directory
+    if [[ -d "$dir" ]] && [[ "$dir" == "$(files::get_temp_dir)"* ]]; then
+      rm -rf "$dir"
+    fi
+  }
+  export -f files::safe_remove_dir
+fi
