@@ -55,6 +55,15 @@ EOF
   exit "${exit_code}"
 }
 
+function dryrun() {
+  log "DRY RUN: Would process video ID: ${video_id}"
+  log "DRY RUN: Would create output file: ${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
+  log "DRY RUN: Would download audio to temporary directory"
+  log "DRY RUN: Would transcribe audio using Whisper API"
+  log "DRY RUN: Would save transcription to ${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
+  log "DRY RUN: Would clean up temporary files"
+}
+
 function parse_args() {
   while (($# > 0)); do
     case "$1" in
@@ -90,6 +99,11 @@ function parse_args() {
 
 function main() {
   parse_args "$@"
+
+  if ${dry_run}; then
+    dryrun
+    exit 0
+  fi
 
   trap cleanup EXIT
   tmp_dir=$(files::get_temp_dir)
