@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -4739,6 +4739,9 @@ Farewell, and may His peace attend you.
   - [I Am Not Worthy](#i-am-not-worthy)
   - [AI-Generated Summary: The Humble Majesty of Divine Obedience](#ai-generated-summary-the-humble-majesty-of-divine-obedience)
   - [The Baptism of Christ by Leonardo Da Vinci created in the studio of Andrea del Verrochio around 1475](#the-baptism-of-christ-by-leonardo-da-vinci-created-in-the-studio-of-andrea-del-verrochio-around-1475)
+- [June 04, 2025](#june-04-2025)
+  - [More than Meets the Eye](#more-than-meets-the-eye)
+  - [AI-Generated Summary: The Many-Layered Workings of Divine Love](#ai-generated-summary-the-many-layered-workings-of-divine-love)
 
 <!-- tocstop -->
 
@@ -4801,6 +4804,22 @@ Let us then pray—not as those bargaining with heaven, but as children trusting
 ##### The Baptism of Christ by Leonardo Da Vinci created in the studio of Andrea del Verrochio around 1475
 
 [![The Baptism of Christ by Leonardo Da Vinci created in the studio of Andrea del Verrochio around 1475](June/jpgs/Baptism.jpg)](https://reconquest.net/wp-content/uploads/2017/12/the_baptism_of_christ_verrocchio__leonardo.jpg "The Baptism of Christ by Leonardo Da Vinci created in the studio of Andrea del Verrochio around 1475")
+
+#### June 04, 2025
+
+##### More than Meets the Eye
+
+[![More than Meets the Eye](June/jpgs/Day155.jpg)](https://youtu.be/jvgiOvCjtVM "More than Meets the Eye")
+
+##### AI-Generated Summary: The Many-Layered Workings of Divine Love
+
+Consider, if you will, how the Master’s hand moves not in single strokes but in rich, interwoven threads. At Cana, as Gerard David’s brush so tenderly captured, our Lord did not merely replenish wine; He hallowed joy itself, unveiled His glory, and whispered of the greater marriage feast to come. The miracle was a sign, yes, but also a gift—a foretaste of the Kingdom where all thirst is quenched.
+
+So it is with all His works. When He called the fishermen, He was both summoning laborers and Himself the first Fisher, drawing souls with divine patience. Each healing was a mending of body and a parable of the soul’s renewal—for what are straightened limbs if not emblems of hearts unbound? Even now, in the quiet sacraments, He acts thus: marriage is at once a human joy and a sacred echo of His love for us.
+
+Do not suppose, then, that God is ever at cross-purposes. What seems to us distraction is but the finite mind straining to grasp the infinite. In every duty—be it parenting, toil, or the humblest daily task—He is at work, turning the ordinary into the extraordinary, if only we have eyes to see. The monotony you dread may yet be the very path He has chosen to shape your soul.
+
+Let us then pray with glad confidence, as children who know their Father attends to all things—great and small—with equal care. For in His economy, nothing is wasted, and every act, rightly received, becomes a stepping-stone to Him.
 
 ## July
 
