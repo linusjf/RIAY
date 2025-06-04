@@ -10,7 +10,7 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/curl.sh"
 source "${SCRIPT_DIR}/lib/files.sh"
@@ -37,7 +37,7 @@ function usage() {
   local output_stream=1
   ((exit_code != 0)) && output_stream=2
 
-  cat >&"${output_stream}" <<EOF
+  cat >&"${output_stream}" << EOF
 Usage: ${SCRIPT_NAME} [OPTIONS] <youtube_video_id>
 
 Options:
@@ -67,26 +67,26 @@ function dryrun() {
 function parse_args() {
   while (($# > 0)); do
     case "$1" in
-    -h | --help) usage 0 ;;
-    -v | --verbose) verbose=true ;;
-    -d | --debug) debug=true ;;
-    -n | --dry-run) dry_run=true ;;
-    --version)
-      version
-      exit 0
-      ;;
-    -*)
-      err "Unknown option: $1"
-      usage 1
-      ;;
-    *)
-      if [[ -z "${video_id}" ]]; then
-        video_id="$1"
-      else
-        err "Too many arguments"
+      -h | --help) usage 0 ;;
+      -v | --verbose) verbose=true ;;
+      -d | --debug) debug=true ;;
+      -n | --dry-run) dry_run=true ;;
+      --version)
+        version
+        exit 0
+        ;;
+      -*)
+        err "Unknown option: $1"
         usage 1
-      fi
-      ;;
+        ;;
+      *)
+        if [[ -z "${video_id}" ]]; then
+          video_id="$1"
+        else
+          err "Too many arguments"
+          usage 1
+        fi
+        ;;
     esac
     shift
   done
@@ -106,16 +106,16 @@ function main() {
   fi
 
   trap cleanup EXIT
-  tmp_dir=$(files::get_temp_dir)
+  tmp_dir="$(files::create_temp_dir "${SCRIPT_NAME}")"
   output_file="${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
 
   ${debug} && set -x
 
-  local audio_file="${tmp_dir}/audio.m4a"
+  local audio_file="${tmp_dir}/${video_id}.m4a"
   ${verbose} && log "Downloading audio for video ID: ${video_id}"
   youtube::download_audio "${video_id}" "${audio_file}"
 
-  transcribe_audio "${audio_file}" >"${output_file}"
+  transcribe_audio "${audio_file}" > "${output_file}"
 
   ${verbose} && log "Transcription saved to: ${output_file}"
 }
