@@ -34,7 +34,7 @@ function version() {
 function usage() {
   local exit_code=${1:-0}
   local output_stream=1
-  (( exit_code != 0 )) && output_stream=2
+  ((exit_code != 0)) && output_stream=2
 
   cat >&"${output_stream}" <<EOF
 Usage: ${SCRIPT_NAME} [OPTIONS] <youtube_video_id>
@@ -55,25 +55,28 @@ EOF
 }
 
 function parse_args() {
-  while (( $# > 0 )); do
+  while (($# > 0)); do
     case "$1" in
-      -h|--help)    usage 0 ;;
-      -v|--verbose) verbose=true ;;
-      -d|--debug)   debug=true ;;
-      -n|--dry-run) dry_run=true ;;
-      --version)    version; exit 0 ;;
-      -*)
-        err "Unknown option: $1"
+    -h | --help) usage 0 ;;
+    -v | --verbose) verbose=true ;;
+    -d | --debug) debug=true ;;
+    -n | --dry-run) dry_run=true ;;
+    --version)
+      version
+      exit 0
+      ;;
+    -*)
+      err "Unknown option: $1"
+      usage 1
+      ;;
+    *)
+      if [[ -z "${video_id}" ]]; then
+        video_id="$1"
+      else
+        err "Too many arguments"
         usage 1
-        ;;
-      *)
-        if [[ -z "${video_id}" ]]; then
-          video_id="$1"
-        else
-          err "Too many arguments"
-          usage 1
-        fi
-        ;;
+      fi
+      ;;
     esac
     shift
   done
@@ -82,11 +85,6 @@ function parse_args() {
     err "YouTube video ID is required"
     usage 1
   fi
-}
-
-function check_dependencies() {
-  require_commands yt-dlp curl
-  require_vars OPENAI_API_KEY
 }
 
 function download_audio() {
@@ -100,7 +98,7 @@ function download_audio() {
 
 function transcribe_audio() {
   local audio_file="$1"
-  
+
   ${verbose} && log "Transcribing with Whisper..."
   curl::safe_curl_request \
     "https://api.openai.com/v1/audio/transcriptions" \
@@ -112,22 +110,30 @@ function transcribe_audio() {
 
 function main() {
   parse_args "$@"
-  check_dependencies
 
   trap cleanup EXIT
   tmp_dir=$(files::get_temp_dir)
-  output_file="${video_id}.en.txt"
+  output_file="${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
 
   ${debug} && set -x
 
   local audio_file
   audio_file=$(download_audio)
 
-  transcribe_audio "${audio_file}" > "${output_file}"
+  transcribe_audio "${audio_file}" >"${output_file}"
 
   ${verbose} && log "Transcription saved to: ${output_file}"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  main "$@"
+  require_commands date tee
+  require_vars OPENAI_API_KEY CAPTIONS_OUTPUT_DIR
+  if "${LOGGING:-false}"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
 fi
