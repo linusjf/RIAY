@@ -56,6 +56,17 @@ if ! declare -f files::get_temp_dir > /dev/null; then
   export -f files::get_temp_dir
 fi
 
+if ! declare -f files::create_temp_dir > /dev/null; then
+  files::create_temp_dir() {
+    local dir_name="$1"
+    local temp_dir="$(files::get_temp_dir)/$dir_name"
+    
+    mkdir -p "$temp_dir"
+    echo "$temp_dir"
+  }
+  export -f files::create_temp_dir
+fi
+
 if ! declare -f files::safe_remove_dir > /dev/null; then
   files::safe_remove_dir() {
     local dir="$1"
