@@ -12,11 +12,8 @@ readonly SCRIPT_NAME="$(basename "$0")"
 # Source utility libraries
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
-source "${SCRIPT_DIR}/lib/internet.sh"
-source "${SCRIPT_DIR}/lib/util.sh"
 source "${SCRIPT_DIR}/lib/curl.sh"
-source "${SCRIPT_DIR}/lib/youtube.sh"
-source "${SCRIPT_DIR}/lib/lockconfig.sh"
+source "${SCRIPT_DIR}/lib/files.sh"
 
 # Initialize variables
 verbose=false
@@ -27,9 +24,7 @@ output_file=""
 tmp_dir=""
 
 function cleanup() {
-  if [[ -n "${tmp_dir}" && -d "${tmp_dir}" ]]; then
-    rm -rf "${tmp_dir}"
-  fi
+  files::safe_remove_dir "${tmp_dir}"
 }
 
 function version() {
@@ -90,20 +85,8 @@ function parse_args() {
 }
 
 function check_dependencies() {
-  local missing=()
-  for cmd in yt-dlp curl; do
-    if ! command -v "${cmd}" >/dev/null; then
-      missing+=("${cmd}")
-    fi
-  done
-
-  if (( ${#missing[@]} > 0 )); then
-    die "Missing dependencies: ${missing[*]}"
-  fi
-
-  if [[ -z "${OPENAI_API_KEY:-}" ]]; then
-    die "Please set your OpenAI API key as OPENAI_API_KEY"
-  fi
+  require_commands yt-dlp curl
+  require_vars OPENAI_API_KEY
 }
 
 function download_audio() {
@@ -119,14 +102,12 @@ function transcribe_audio() {
   local audio_file="$1"
   
   ${verbose} && log "Transcribing with Whisper..."
-  curl https://api.openai.com/v1/audio/transcriptions \
-    -H "Authorization: Bearer ${OPENAI_API_KEY}" \
-    -H "Content-Type: multipart/form-data" \
-    -F file=@"${audio_file}" \
-    -F model="whisper-1" \
-    -F response_format="text" \
-    --silent \
-    --show-error
+  curl::safe_curl_request \
+    "https://api.openai.com/v1/audio/transcriptions" \
+    "POST" \
+    "Authorization: Bearer ${OPENAI_API_KEY}" \
+    "" \
+    "-F file=@\"${audio_file}\" -F model=\"whisper-1\" -F response_format=\"text\""
 }
 
 function main() {
@@ -134,7 +115,7 @@ function main() {
   check_dependencies
 
   trap cleanup EXIT
-  tmp_dir=$(mktemp -d)
+  tmp_dir=$(files::get_temp_dir)
   output_file="${video_id}.en.txt"
 
   ${debug} && set -x
