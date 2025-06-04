@@ -7,18 +7,18 @@
 set -euo pipefail
 shopt -s inherit_errexit
 if [[ -z "${SCRIPT_DIR:-""}" ]]; then
-  if command -v realpath > /dev/null 2>&1; then
+  if command -v realpath >/dev/null 2>&1; then
     SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else
-    SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
+    SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &>/dev/null && pwd -P)"
   fi
 fi
 
 source "${SCRIPT_DIR}/lib/require.sh"
 
-require_commands realpath pwd
+require_commands realpath pwd mkdir
 
-if ! declare -f files::get_relative_path > /dev/null; then
+if ! declare -f files::get_relative_path >/dev/null; then
   files::get_relative_path() {
     local input_path="$1"
 
@@ -41,7 +41,7 @@ if ! declare -f files::get_relative_path > /dev/null; then
   export -f files::get_relative_path
 fi
 
-if ! declare -f files::get_temp_dir > /dev/null; then
+if ! declare -f files::get_temp_dir >/dev/null; then
   files::get_temp_dir() {
     if [ -n "$TMPDIR" ] && [ -d "$TMPDIR" ]; then
       echo "$TMPDIR"
@@ -56,23 +56,24 @@ if ! declare -f files::get_temp_dir > /dev/null; then
   export -f files::get_temp_dir
 fi
 
-if ! declare -f files::create_temp_dir > /dev/null; then
+if ! declare -f files::create_temp_dir >/dev/null; then
   files::create_temp_dir() {
     local dir_name="$1"
     local temp_dir="$(files::get_temp_dir)/$dir_name"
-    
+
     mkdir -p "$temp_dir"
     echo "$temp_dir"
   }
   export -f files::create_temp_dir
 fi
 
-if ! declare -f files::safe_remove_dir > /dev/null; then
+if ! declare -f files::safe_remove_dir >/dev/null; then
   files::safe_remove_dir() {
     local dir="$1"
-    
-    # Only remove if directory exists and is under temporary directory
-    if [[ -d "$dir" ]] && [[ "$dir" == "$(files::get_temp_dir)"* ]]; then
+    local temp_dir="$(files::get_temp_dir)"
+
+    # Only remove if directory exists, is under temporary directory, and isn't the temp directory itself
+    if [[ -d "$dir" ]] && [[ "$dir" == "$temp_dir"* ]] && [[ "$dir" != "$temp_dir" ]]; then
       rm -rf "$dir"
     fi
   }
