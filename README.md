@@ -4746,6 +4746,7 @@ Farewell, and may His peace attend you.
 - [June 05, 2025](#june-05-2025)
   - [I Do Not Condemn You](#i-do-not-condemn-you)
   - [AI-Generated Summary: The Mercy That Silences Stones](#ai-generated-summary-the-mercy-that-silences-stones)
+  - [The Adulterous Woman by Lorenzo Lotto](#the-adulterous-woman-by-lorenzo-lotto)
 
 <!-- tocstop -->
 
@@ -4842,6 +4843,10 @@ Behold a scene both ancient and ever-new: a woman, trembling in her shame, encir
 To the woman, He speaks neither soft indulgence nor harsh rebuke, but a command that is itself a gift: "Go, and sin no more." Here is the marvel—He sees her wholly, loves her truly, and will not leave her as she was. The same gaze that scattered her enemies now kindles in her a new life.
 
 And what of us? We stand in that crowd, stones half-lifted in our hands. Will we, too, hear the voice that strips us bare yet clothes us in grace? For this is the mystery of His mercy: it forgives the past to free us for the future. Let us then lay down our judgments, that we may take up His compassion.
+
+##### The Adulterous Woman by Lorenzo Lotto
+
+[![The Adulterous Woman by Lorenzo Lotto](June/jpgs/AdulterousWoman.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Lorenzo_Lotto_-_The_adulterous_woman_-_Louvre.JPG/960px-Lorenzo_Lotto_-_The_adulterous_woman_-_Louvre.JPG "The Adulterous Woman by Lorenzo Lotto")
 
 ## July
 
