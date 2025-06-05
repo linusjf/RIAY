@@ -194,6 +194,23 @@ if ! declare -f youtube::check_video_exists > /dev/null; then
   export -f youtube::check_video_exists
 fi
 
+if ! declare -f youtube::has_audio_format > /dev/null; then
+  # Check if YouTube video has a certain audio format
+  # Globals: none
+  # Arguments: video_id
+  #            audio_format
+  # Outputs: none
+  # Returns: 0 if audio format exists, 1 otherwise
+  youtube::has_audio_format() {
+    local video_id="$1"
+    local format="$2"
+
+    yt-dlp -F "https://www.youtube.com/watch?v=$video_id" 2> /dev/null \
+      | grep -E "audio only.*$format" > /dev/null
+  }
+  export -f youtube::has_audio_format
+fi
+
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main() {
     echo "This is a library of functions and not meant to be executed directly" >&2
