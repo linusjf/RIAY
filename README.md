@@ -4743,6 +4743,9 @@ Farewell, and may His peace attend you.
   - [More than Meets the Eye](#more-than-meets-the-eye)
   - [AI-Generated Summary: The Many-Layered Workings of Divine Love](#ai-generated-summary-the-many-layered-workings-of-divine-love)
   - [Gerard David's The Marriage at Cana](#gerard-davids-the-marriage-at-cana)
+- [June 05, 2025](#june-05-2025)
+  - [I Do Not Condemn You](#i-do-not-condemn-you)
+  - [AI-Generated Summary: The Mercy That Silences Stones](#ai-generated-summary-the-mercy-that-silences-stones)
 
 <!-- tocstop -->
 
@@ -4825,6 +4828,20 @@ Let us then pray with glad confidence, as children who know their Father attends
 ##### Gerard David's The Marriage at Cana
 
 [![Gerard David's The Marriage at Cana](June/jpgs/MarriageCana.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Gerard_David_-_The_Marriage_at_Cana.jpg/960px-Gerard_David_-_The_Marriage_at_Cana.jpg "Gerard David's The Marriage at Cana")
+
+#### June 05, 2025
+
+##### I Do Not Condemn You
+
+[![I Do Not Condemn You](June/jpgs/Day156.jpg)](https://youtu.be/2rBVgCGRC8o "I Do Not Condemn You")
+
+##### AI-Generated Summary: The Mercy That Silences Stones
+
+Behold a scene both ancient and ever-new: a woman, trembling in her shame, encircled by men whose hands clutch stones and whose hearts seethe with wrath. Yet at the center stands One who writes in the dust—not in condemnation, but as if tracing the fragile lines of every human soul. "Let him who is without sin," He says, and the words fall like a hammer upon their pride. One by one, the stones drop, the accusers slink away, and only Mercy remains.
+
+To the woman, He speaks neither soft indulgence nor harsh rebuke, but a command that is itself a gift: "Go, and sin no more." Here is the marvel—He sees her wholly, loves her truly, and will not leave her as she was. The same gaze that scattered her enemies now kindles in her a new life.
+
+And what of us? We stand in that crowd, stones half-lifted in our hands. Will we, too, hear the voice that strips us bare yet clothes us in grace? For this is the mystery of His mercy: it forgives the past to free us for the future. Let us then lay down our judgments, that we may take up His compassion.
 
 ## July
 
