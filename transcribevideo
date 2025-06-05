@@ -100,7 +100,13 @@ function parse_args() {
 function transcribe_audio() {
   local audio_file="$1"
   # Implementation of audio transcription would go here
-  echo "Transcription for ${audio_file}"
+  ${verbose} && log "Transcribing with Whisper..."
+  curl::safe_curl_request \
+    "https://api.openai.com/v1/audio/transcriptions" \
+    "POST" \
+    "Authorization: Bearer ${OPENAI_API_KEY}" \
+    "" \
+    "-F file=@\"${audio_file}\" -F model=\"whisper-1\" -F response_format=\"text\""
 }
 
 function main() {

@@ -42,14 +42,19 @@ if ! declare -f youtube::download_audio > /dev/null; then
   function youtube::download_audio() {
     local video_id="$1"
     local output_file="${2:-}"
-    local format="${3:-bestaudio[ext=m4a]}"
+    local ext="${3:-webm}" # Default to webm if not specified
+    local format="bestaudio[ext=${ext}]"
     local youtube_url="https://www.youtube.com/watch?v=${video_id}"
 
-    if [[ -n "${output_file}" ]]; then
-      yt-dlp -f "${format}" -o "${output_file}" "${youtube_url}"
-      printf "%s" "${output_file}"
+    # If output_file is not provided, use videoid.ext
+    if [[ -z "${output_file}" ]]; then
+      output_file="${video_id}.${ext}"
+    fi
+
+    if yt-dlp -f "${format}" -o "${output_file}" "${youtube_url}"; then
+      printf "%s\n" "${output_file}"
     else
-      yt-dlp -f "${format}" -O "${youtube_url}"
+      return 1
     fi
   }
   export -f youtube::download_audio
