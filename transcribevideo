@@ -97,6 +97,12 @@ function parse_args() {
   fi
 }
 
+function transcribe_audio() {
+  local audio_file="$1"
+  # Implementation of audio transcription would go here
+  echo "Transcription for ${audio_file}"
+}
+
 function main() {
   parse_args "$@"
 
@@ -113,7 +119,7 @@ function main() {
 
   local audio_file="${tmp_dir}/${video_id}.m4a"
   ${verbose} && log "Downloading audio for video ID: ${video_id}"
-  youtube::download_audio "${video_id}" "${audio_file}"
+  youtube::download_audio "${video_id}" "${audio_file}" "m4a"
 
   transcribe_audio "${audio_file}" > "${output_file}"
 
