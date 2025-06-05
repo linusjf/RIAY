@@ -59,7 +59,7 @@ function dryrun() {
   log "DRY RUN: Would process video ID: ${video_id}"
   log "DRY RUN: Would create output file: ${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
   log "DRY RUN: Would download audio to temporary directory"
-  log "DRY RUN: Would transcribe audio using Whisper API"
+  log "DRY RUN: Would transcribe and/or translate audio using Whisper API"
   log "DRY RUN: Would save transcription to ${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
   log "DRY RUN: Would clean up temporary files"
 }
@@ -99,9 +99,10 @@ function parse_args() {
 
 function transcribe_audio() {
   local audio_file="$1"
-  ${verbose} && log "Transcribing with Whisper..."
+  ${verbose} && log "Transcribing and/or translating with Whisper..."
+  # use translations end-point so that if in different language it is translated to English
   curl::safe_curl_request \
-    "https://api.openai.com/v1/audio/transcriptions" \
+    "https://api.openai.com/v1/audio/translations" \
     "POST" \
     "Authorization: Bearer ${OPENAI_API_KEY}" \
     "" \
