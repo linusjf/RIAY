@@ -4747,6 +4747,9 @@ Farewell, and may His peace attend you.
   - [I Do Not Condemn You](#i-do-not-condemn-you)
   - [AI-Generated Summary: The Mercy That Silences Stones](#ai-generated-summary-the-mercy-that-silences-stones)
   - [The Adulterous Woman by Lorenzo Lotto](#the-adulterous-woman-by-lorenzo-lotto)
+- [June 06, 2025](#june-06-2025)
+  - [We Have Authority](#we-have-authority)
+  - [AI-Generated Summary: The Divine and the Human in Raphael’s Vision](#ai-generated-summary-the-divine-and-the-human-in-raphaels-vision)
 
 <!-- tocstop -->
 
@@ -4847,6 +4850,24 @@ And what of us? We stand in that crowd, stones half-lifted in our hands. Will we
 ##### The Adulterous Woman by Lorenzo Lotto
 
 [![The Adulterous Woman by Lorenzo Lotto](June/jpgs/AdulterousWoman.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Lorenzo_Lotto_-_The_adulterous_woman_-_Louvre.JPG/960px-Lorenzo_Lotto_-_The_adulterous_woman_-_Louvre.JPG "The Adulterous Woman by Lorenzo Lotto")
+
+#### June 06, 2025
+
+##### We Have Authority
+
+[![We Have Authority](June/jpgs/Day157.jpg)](https://youtu.be/MipwiRQb1dk "We Have Authority")
+
+##### AI-Generated Summary: The Divine and the Human in Raphael’s Vision
+
+Behold Raphael’s _The Transfiguration_, where heaven’s glory and earth’s frailty meet. Above, Christ stands radiant, bathed in uncreated light, flanked by Moses and Elijah—the Law and the Prophets bowing to their fulfillment. Below, the disciples stagger, their faces alight with awe or shadowed by confusion, while a boy writhes, gripped by forces darker than they dare name. Here is the paradox of our condition: the divine splendor above, the human tumult below.
+
+Mark well the contrast. The disciples, though chosen, falter; their faith is thin as morning mist. They cannot cast out the demon, not for lack of power given, but for lack of trust in the Giver. Yet the father, desperate as he is, still pleads—and Christ, who rebukes weak faith, rewards even the mustard seed of it. Raphael, that wise painter, shows us the two scenes as one: the mountain’s light and the valley’s struggle are bound together. The same Lord who shines in glory stoops to heal the broken.
+
+And so the lesson stands plain: faith is not a feeling, nor a merit, but a fixing of the eyes upon Him who has all authority. The disciples’ failure lies not in their weakness, but in forgetting whose strength upholds them. We, like they, are called not to measure our might, but to act in the certainty of His. Let the demon-possessed boy remind us—our despair is but the shadow that flees when His face is turned upon it.
+
+Thus, the painting whispers and the Scripture shouts: _Look up_. The same Christ who transfigured the mountain transfigures the heart. Pray, then, not as those who grope in doubt, but as those who know the hand that holds them. And if your faith is small, ask—as the father did—for it to be made great. For He who commands the demons will not despise the trembling voice that calls on Him.
+
+_Glory be to the Father, and to the Son, and to the Holy Spirit._ Amen.
 
 ## July
 

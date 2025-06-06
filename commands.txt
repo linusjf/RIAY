@@ -1,4 +1,4 @@
 # commands
-addvideo "2rBVgCGRC8o" "I Do Not Condemn You"
+addvideo "MipwiRQb1dk" "We Have Authority"
 stitch
 lintall
