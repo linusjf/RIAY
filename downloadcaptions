@@ -90,7 +90,7 @@ function main() {
   local FILE_PREFIX=""
   local language="en"
   local subtitle_format="vtt"
-  local max_tries=3
+  local max_tries=5
   local count=0
 
   require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR
@@ -118,7 +118,7 @@ function main() {
       break
     fi
     count=$((count + 1))
-    [[ $count -lt $max_tries ]] && sleep $((10 * count)) || break
+    [[ $count -lt $max_tries ]] && sleep $((2 * count)) || break
   done
 
   if [[ -z "$captions_file" ]] || [[ ! -f "$captions_file" ]]; then
