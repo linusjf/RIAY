@@ -22,6 +22,7 @@
 - [June 06, 2025](#june-06-2025)
   - [We Have Authority](#we-have-authority)
   - [AI-Generated Summary: The Divine and the Human in Raphael’s Vision](#ai-generated-summary-the-divine-and-the-human-in-raphaels-vision)
+  - [Raphael's The Transfiguration](#raphaels-the-transfiguration)
 
 <!-- tocstop -->
 
@@ -140,3 +141,7 @@ And so the lesson stands plain: faith is not a feeling, nor a merit, but a fixin
 Thus, the painting whispers and the Scripture shouts: _Look up_. The same Christ who transfigured the mountain transfigures the heart. Pray, then, not as those who grope in doubt, but as those who know the hand that holds them. And if your faith is small, ask—as the father did—for it to be made great. For He who commands the demons will not despise the trembling voice that calls on Him.
 
 _Glory be to the Father, and to the Son, and to the Holy Spirit._ Amen.
+
+### Raphael's The Transfiguration
+
+[![Raphael's The Transfiguration](/June/jpgs/TransfigurationRaphael.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Transfiguration_Raphael.jpg/960px-Transfiguration_Raphael.jpg "Raphael's The Transfiguration")
