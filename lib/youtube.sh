@@ -51,7 +51,12 @@ if ! declare -f youtube::download_audio > /dev/null; then
       output_file="${video_id}.${ext}"
     fi
 
-    if yt-dlp -f "${format}" -o "${output_file}" "${youtube_url}"; then
+    if yt-dlp --verbose \
+      --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
+      --retries "$YT_DLP_RETRIES" \
+      --retry-sleep exp=1:300:2 \
+      --user-agent "Mozilla/5.0" \
+      -f "${format}" -o "${output_file}" "${youtube_url}"; then
       printf "%s\n" "${output_file}"
     else
       return 1
