@@ -59,7 +59,7 @@ function dryrun() {
   log "DRY RUN: Would process video ID: ${video_id}"
   log "DRY RUN: Would create output file: ${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
   log "DRY RUN: Would download audio to temporary directory"
-  log "DRY RUN: Would transcribe audio using Whisper API"
+  log "DRY RUN: Would transcribe and/or translate audio using Whisper API"
   log "DRY RUN: Would save transcription to ${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
   log "DRY RUN: Would clean up temporary files"
 }
@@ -97,6 +97,18 @@ function parse_args() {
   fi
 }
 
+function transcribe_audio() {
+  local audio_file="$1"
+  ${verbose} && log "Transcribing and/or translating with Whisper..."
+  # use translations end-point so that if in different language it is translated to English
+  curl::safe_curl_request \
+    "https://api.openai.com/v1/audio/translations" \
+    "POST" \
+    "Authorization: Bearer ${OPENAI_API_KEY}" \
+    "" \
+    "-F file=@\"${audio_file}\" -F model=\"whisper-1\" -F response_format=\"text\""
+}
+
 function main() {
   parse_args "$@"
 
@@ -111,9 +123,9 @@ function main() {
 
   ${debug} && set -x
 
-  local audio_file="${tmp_dir}/${video_id}.m4a"
+  local audio_file="${tmp_dir}/${video_id}.webm"
   ${verbose} && log "Downloading audio for video ID: ${video_id}"
-  youtube::download_audio "${video_id}" "${audio_file}"
+  youtube::download_audio "${video_id}" "${audio_file}" "webm"
 
   transcribe_audio "${audio_file}" > "${output_file}"
 
