@@ -18,3 +18,5 @@ venv/**
 testsummary.txt
 **/*.vtt
 **/*.en.txt
+*.webm
+*.m4a
