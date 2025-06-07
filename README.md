@@ -4754,6 +4754,7 @@ Farewell, and may His peace attend you.
 - [June 07, 2025](#june-07-2025)
   - [Wash All of Me](#wash-all-of-me)
   - [AI-Generated Summary: The Sacred Feast and the Heart's Surrender](#ai-generated-summary-the-sacred-feast-and-the-hearts-surrender)
+  - [The Last Supper by Juan de Juanes](#the-last-supper-by-juan-de-juanes)
 
 <!-- tocstop -->
 
@@ -4890,6 +4891,10 @@ Behold the painter’s hand, guided by devotion, capturing that solemn hour when
 The true disciple, like those at the table, must respond with the surrender of Francis—kneeling not only in body but in soul, withholding nothing. For as the Lord washed dusty feet, so He now cleanses the inward man, if we will receive Him. This is the divine exchange: our emptiness for His fullness, our sin for His mercy. The Eucharist is the school where pride is unlearned and adoration becomes our native tongue.
 
 Let us then, with the saints, pray without ceasing. The "Hail Mary" rises as a fragrant offering, and the "Glory Be" echoes the song of heaven. In such prayers, the soul stretches toward its home, and every blessing—given or received—becomes a foretaste of the eternal feast.
+
+##### The Last Supper by Juan de Juanes
+
+[![The Last Supper by Juan de Juanes](June/jpgs/JuandeJuanesLastSupper.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/%C3%9Altima_Cena_-_Juan_de_Juanes.jpg/960px-%C3%9Altima_Cena_-_Juan_de_Juanes.jpg "The Last Supper by Juan de Juanes")
 
 ## July
 
