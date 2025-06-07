@@ -23,6 +23,9 @@
   - [We Have Authority](#we-have-authority)
   - [AI-Generated Summary: The Divine and the Human in Raphael’s Vision](#ai-generated-summary-the-divine-and-the-human-in-raphaels-vision)
   - [Raphael's The Transfiguration](#raphaels-the-transfiguration)
+- [June 07, 2025](#june-07-2025)
+  - [Wash All of Me](#wash-all-of-me)
+  - [AI-Generated Summary: The Sacred Feast and the Heart's Surrender](#ai-generated-summary-the-sacred-feast-and-the-hearts-surrender)
 
 <!-- tocstop -->
 
@@ -145,3 +148,17 @@ _Glory be to the Father, and to the Son, and to the Holy Spirit._ Amen.
 ### Raphael's The Transfiguration
 
 [![Raphael's The Transfiguration](/June/jpgs/TransfigurationRaphael.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Transfiguration_Raphael.jpg/960px-Transfiguration_Raphael.jpg "Raphael's The Transfiguration")
+
+## June 07, 2025
+
+### Wash All of Me
+
+[![Wash All of Me](/June/jpgs/Day158.jpg)](https://youtu.be/Behrk6OVzfc "Wash All of Me")
+
+### AI-Generated Summary: The Sacred Feast and the Heart's Surrender
+
+Behold the painter’s hand, guided by devotion, capturing that solemn hour when the Bread of Life was broken among His own. Juan de Juanes, a man of Valencia, has set before us the Lord at table, clad in indigo and crimson, the host lifted high while the disciples gaze upon Him—not with curiosity, but with the awe of men who sense eternity pressing into time. Here is no mere remembrance, but the very mystery of Love made visible: Christ, in unfathomable humility, offering His flesh as our food and His blood as our drink.
+
+The true disciple, like those at the table, must respond with the surrender of Francis—kneeling not only in body but in soul, withholding nothing. For as the Lord washed dusty feet, so He now cleanses the inward man, if we will receive Him. This is the divine exchange: our emptiness for His fullness, our sin for His mercy. The Eucharist is the school where pride is unlearned and adoration becomes our native tongue.
+
+Let us then, with the saints, pray without ceasing. The "Hail Mary" rises as a fragrant offering, and the "Glory Be" echoes the song of heaven. In such prayers, the soul stretches toward its home, and every blessing—given or received—becomes a foretaste of the eternal feast.
