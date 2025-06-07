@@ -8,6 +8,8 @@ shopt -s inherit_errexit
 
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
+readonly WEBM="webm"
+readonly M4A="m4a"
 
 # Source utility libraries
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
@@ -123,9 +125,15 @@ function main() {
 
   ${debug} && set -x
 
-  local audio_file="${tmp_dir}/${video_id}.webm"
+  local audio_file=""
   ${verbose} && log "Downloading audio for video ID: ${video_id}"
-  youtube::download_audio "${video_id}" "${audio_file}" "webm"
+  if youtube::has_audio_format "$video_id" "$WEBM"; then
+    audio_file="${tmp_dir}/${video_id}.${WEBM}"
+    youtube::download_audio "${video_id}" "${audio_file}" "$WEBM"
+  elif youtube::has_audio_format "$video_id" "$M4A"; then
+    audio_file="${tmp_dir}/${video_id}.${M4A}"
+    youtube::download_audio "${video_id}" "${audio_file}" "$M4A"
+  fi
 
   transcribe_audio "${audio_file}" > "${output_file}"
 
@@ -133,7 +141,7 @@ function main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require_commands date tee
+  require_commands date tee cat
   require_vars OPENAI_API_KEY CAPTIONS_OUTPUT_DIR
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
