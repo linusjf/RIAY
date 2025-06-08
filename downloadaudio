@@ -102,7 +102,7 @@ function main() {
   local temp_dir_created=false
 
   if [[ -z "$output_file" ]]; then
-    output_file="$(create_temp_dir)/${video_id}.mp4"
+    output_file="$(create_temp_dir)/$(youtube::bestaudio_filename "$video_id")"
     temp_dir_created=true
   fi
 
@@ -121,6 +121,7 @@ function main() {
       printf "Successfully downloaded audio to: %s\n" "$output_file" >&2
     fi
   fi
+  printf "%s\n" "$output_file"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

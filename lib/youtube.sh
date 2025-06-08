@@ -220,7 +220,7 @@ if ! declare youtube::download_bestaudio > /dev/null; then
         --no-part \
         --retry-sleep exp=1:300:2 \
         --user-agent "Mozilla/5.0" \
-        -o "$file_name" \
+        -o "${file_name}" \
         "https://www.youtube.com/watch?v=${video_id}" > /dev/null
   }
   export -f youtube::download_bestaudio
