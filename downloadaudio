@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Download audio from YouTube videos
+# Download audio from YouTube videos and save to specified output file
+# Supports verbose output and color formatting when appropriate
 
 set -euo pipefail
 shopt -s inherit_errexit
@@ -9,35 +10,117 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/youtube.sh"
 
-function usage() {
-  cat >&2 << EOF
-Usage: ${SCRIPT_NAME} <youtube_video_id> <output_file>
+function version() {
+  printf "%s\n" "$VERSION"
+}
 
-Downloads audio from a YouTube video and saves it to the specified output file.
+function usage() {
+  cat >&2 <<EOF
+Usage: ${SCRIPT_NAME} [OPTIONS] <youtube_video_id> [output_file]
+
+Description:
+  Downloads audio from a YouTube video. If output_file is not provided,
+  creates a temp directory and saves the file there.
+
+Options:
+  -v, --verbose    Enable verbose output
+  -q, --quiet      Suppress non-error output
+  --version        Show version information
+  -h, --help       Show this help message
 
 Arguments:
   youtube_video_id  The YouTube video ID to download
-  output_file       Path to save the downloaded audio file
+  output_file       Optional path to save the downloaded audio file
 
 Examples:
   ${SCRIPT_NAME} dQw4w9WgXcQ /tmp/audio.mp4
+  ${SCRIPT_NAME} -v dQw4w9WgXcQ
 EOF
-  exit 1
+  exit "${1:-0}"
+}
+
+function cleanup() {
+  if [[ -n "${TEMP_DIR-}" ]] && [[ -d "${TEMP_DIR}" ]]; then
+    rm -rf "${TEMP_DIR}"
+  fi
+}
+
+function create_temp_dir() {
+  TEMP_DIR=$(mktemp -d -t "${SCRIPT_NAME}.XXXXXX")
+  echo "${TEMP_DIR}"
 }
 
 function main() {
-  if [[ $# -ne 2 ]]; then
-    usage
+  local verbose=false
+  local quiet=false
+
+  # Parse options
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+    -v | --verbose)
+      verbose=true
+      shift
+      ;;
+    -q | --quiet)
+      quiet=true
+      shift
+      ;;
+    --version)
+      version
+      exit 0
+      ;;
+    -h | --help)
+      usage 0
+      ;;
+    --)
+      shift
+      break
+      ;;
+    -*)
+      printf "Error: Unknown option: %s\n" "$1" >&2
+      usage 1
+      ;;
+    *)
+      break
+      ;;
+    esac
+  done
+
+  if [[ $# -lt 1 ]]; then
+    printf "Error: Missing required video ID argument\n" >&2
+    usage 1
   fi
 
+  trap cleanup EXIT
+
   local video_id="$1"
-  local output_file="$2"
+  local output_file="${2:-}"
+  local temp_dir_created=false
+
+  if [[ -z "$output_file" ]]; then
+    output_file="$(create_temp_dir)/${video_id}.mp4"
+    temp_dir_created=true
+  fi
+
+  if [[ "$verbose" = true ]]; then
+    printf "Downloading audio for video ID: %s\n" "$video_id" >&2
+    printf "Saving to: %s\n" "$output_file" >&2
+    set -x
+  fi
 
   youtube::download_bestaudio "${video_id}" "${output_file}"
+
+  if [[ "$quiet" = false ]]; then
+    if [[ "$temp_dir_created" = true ]]; then
+      printf "Successfully downloaded audio to temporary location: %s\n" "$output_file" >&2
+    else
+      printf "Successfully downloaded audio to: %s\n" "$output_file" >&2
+    fi
+  fi
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
