@@ -30,6 +30,7 @@
 - [June 08, 2025](#june-08-2025)
   - [Surrender Your Suffering](#surrender-your-suffering)
   - [AI-Generated Summary: The Weight of Surrender and the Light of Redemption](#ai-generated-summary-the-weight-of-surrender-and-the-light-of-redemption)
+  - [The Prayer of Jesus in Gethsemane by Alessandro Maganza](#the-prayer-of-jesus-in-gethsemane-by-alessandro-maganza)
 
 <!-- tocstop -->
 
@@ -186,3 +187,7 @@ The painter, skilled in the language of contrast, draws our gaze not to the slum
 And what of us, dear reader? We are bid to follow where He has gone before—to lay down our sins, our fears, our very selves, as a patient yields to the surgeon’s hand. For only in surrender is there true alignment; only in relinquishment is there redemption. The prayers woven through this meditation—the _Ave Maria_, the _Gloria Patri_—are not mere recitations but echoes of that primal yielding, rehearsals for the day when all knees shall bow and all hearts confess.
 
 So let us pray, not as those who bargain, but as those who trust: _Thy will be done_. For in that submission lies our freedom, and in that darkness, His unyielding light.
+
+### The Prayer of Jesus in Gethsemane by Alessandro Maganza
+
+[![The Prayer of Jesus in Gethsemane by Alessandro Maganza](/June/jpgs/Gethsemane.jpg)](https://www.istockphoto.com/vector/jesus-in-the-garden-of-gethsemane-woodcut-1837-gm1598733202-530007576 "The Prayer of Jesus in Gethsemane by Alessandro Maganza")
