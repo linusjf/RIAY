@@ -9,7 +9,7 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
@@ -31,7 +31,7 @@ function usage() {
     output=2
   fi
 
-  >&"$output" cat <<EOF
+  >&"$output" cat << EOF
 Usage: ${SCRIPT_NAME} [OPTIONS] <youtube-video-id>
 
 Options:
@@ -68,8 +68,8 @@ function get_final_prompt() {
 function summarize_chunk_llm() {
   local chunk="$1"
   local prompt="$(get_chunk_prompt "$chunk")"
-  local escaped_prompt="$(jq -Rs <<<"$prompt")"
-  local escaped_system_prompt="$(jq -Rs <<<"$SYSTEM_SUMMARY_PROMPT")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
+  local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
   local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --arg model "${TEXT_LLM_MODEL}" --argjson temperature "$TEMPERATURE" \
     '{
   "model": $model,
@@ -95,7 +95,7 @@ function summarize_chunk_llm() {
       "$payload"
   )"
 
-  if ! echo "$response" | jq . >/dev/null 2>&1; then
+  if ! echo "$response" | jq . > /dev/null 2>&1; then
     err "Text LLM API returned invalid response"
     return 1
   fi
@@ -119,8 +119,8 @@ function summarize_chunk() {
 function final_summary() {
   local input="$1"
   local prompt="$(get_final_prompt "$input")"
-  local escaped_prompt="$(jq -Rs <<<"$prompt")"
-  local escaped_system_prompt="$(jq -Rs <<<"$SYSTEM_SUMMARY_PROMPT")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
+  local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
   local payload="$(
     jq -n \
       --arg system "$escaped_system_prompt" \
@@ -151,7 +151,7 @@ function final_summary() {
       "$payload"
   )"
 
-  if ! echo "$response" | jq . >/dev/null 2>&1; then
+  if ! echo "$response" | jq . > /dev/null 2>&1; then
     err "Text LLM API returned invalid response"
     return 1
   fi
@@ -164,25 +164,25 @@ function main() {
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -d | --debug)
-      set -x
-      shift
-      ;;
-    --version)
-      version
-      exit 0
-      ;;
-    --verbose)
-      verbose=true
-      shift
-      ;;
-    --help) usage 0 ;;
-    --)
-      shift
-      break
-      ;;
-    -*) usage 1 ;;
-    *) break ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      --version)
+        version
+        exit 0
+        ;;
+      --verbose)
+        verbose=true
+        shift
+        ;;
+      --help) usage 0 ;;
+      --)
+        shift
+        break
+        ;;
+      -*) usage 1 ;;
+      *) break ;;
     esac
   done
 
@@ -190,24 +190,29 @@ function main() {
     usage 1
   fi
 
-  require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR TEXT_LLM_MODEL TEXT_LLM_API_KEY TEXT_LLM_BASE_URL TEXT_LLM_CHAT_ENDPOINT
+  require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR TEXT_LLM_MODEL TEXT_LLM_API_KEY TEXT_LLM_BASE_URL TEXT_LLM_CHAT_ENDPOINT TRANSCRIBE_VIDEOS
 
   local VIDEO_ID="$1"
+  local captions_file="${CAPTIONS_OUTPUT_DIR}/${VIDEO_ID}.en.txt"
 
-  if ! vtt_file="$("${SCRIPT_DIR}/downloadcaptions" "$VIDEO_ID")"; then
-    die "Error downloading captions for ${VIDEO_ID}"
-  fi
-
-  if [[ ! -f "$vtt_file" ]]; then
-    die "Error: Subtitle file ${vtt_file} not found"
-  fi
-
-  if ! cleaned_captions_file="$("${SCRIPT_DIR}/extractcaptions" "$vtt_file")"; then
-    die "Error extracting captions from ${vtt_file}"
+  if "${TRANSCRIBE_VIDEOS:-false}"; then
+    if ! "${SCRIPT_DIR}/transcribevideo" "$VIDEO_ID" "$captions_file"; then
+      die "Error transcribing captions for ${VIDEO_ID}"
+    fi
+  else
+    if ! vtt_file="$("${SCRIPT_DIR}/downloadcaptions" "$VIDEO_ID")"; then
+      die "Error downloading captions for ${VIDEO_ID}"
+    fi
+    if [[ ! -f "$vtt_file" ]]; then
+      die "Error: Subtitle file ${vtt_file} not found"
+    fi
+    if ! captions_file="$("${SCRIPT_DIR}/extractcaptions" "$vtt_file")"; then
+      die "Error extracting captions from ${vtt_file}"
+    fi
   fi
 
   local TRANSCRIPT
-  TRANSCRIPT="$(cat "$cleaned_captions_file")"
+  TRANSCRIPT="$(cat "$captions_file")"
 
   if [[ -z "$TRANSCRIPT" ]]; then
     die "Error: Transcript conversion failed"
