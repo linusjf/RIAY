@@ -195,7 +195,7 @@ if ! declare -f youtube::has_audio_format > /dev/null; then
   export -f youtube::has_audio_format
 fi
 
-if ! declare youtube::bestaudio_filename > /dev/null; then
+if ! declare -f youtube::bestaudio_filename > /dev/null; then
   youtube::bestaudio_filename() {
     local video_id="$1"
     local filename_format="${2:-"%(id)s.%(ext)s"}"
@@ -204,7 +204,7 @@ if ! declare youtube::bestaudio_filename > /dev/null; then
   export -f youtube::bestaudio_filename
 fi
 
-if ! declare youtube::download_bestaudio > /dev/null; then
+if ! declare -f youtube::download_bestaudio > /dev/null; then
   youtube::download_bestaudio() {
     local video_id="$1"
     local file_name="${2:-"%(id)s.%(ext)s"}"
@@ -221,7 +221,7 @@ if ! declare youtube::download_bestaudio > /dev/null; then
         --retry-sleep exp=1:300:2 \
         --user-agent "Mozilla/5.0" \
         -o "${file_name}" \
-        "https://www.youtube.com/watch?v=${video_id}" > /dev/null
+        "https://www.youtube.com/watch?v=${video_id}" &> /dev/null
   }
   export -f youtube::download_bestaudio
 fi

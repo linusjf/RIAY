@@ -7,10 +7,10 @@
 set -euo pipefail
 shopt -s inherit_errexit
 if [[ -z "${SCRIPT_DIR:-""}" ]]; then
-  if command -v realpath >/dev/null 2>&1; then
+  if command -v realpath > /dev/null 2>&1; then
     SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else
-    SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &>/dev/null && pwd -P)"
+    SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
   fi
 fi
 
@@ -18,7 +18,7 @@ source "${SCRIPT_DIR}/lib/require.sh"
 
 require_commands realpath pwd mkdir
 
-if ! declare -f files::get_relative_path >/dev/null; then
+if ! declare -f files::get_relative_path > /dev/null; then
   files::get_relative_path() {
     local input_path="$1"
 
@@ -41,10 +41,10 @@ if ! declare -f files::get_relative_path >/dev/null; then
   export -f files::get_relative_path
 fi
 
-if ! declare -f files::get_temp_dir >/dev/null; then
+if ! declare -f files::get_temp_dir > /dev/null; then
   files::get_temp_dir() {
-    if [ -n "$TMPDIR" ] && [ -d "$TMPDIR" ]; then
-      echo "$TMPDIR"
+    if [ -n "${TEMP_DIR:-}" ] && [ -d "${TEMP_DIR}" ]; then
+      echo "$TEMP_DIR"
     elif [ -d /data/data/com.termux/files/usr/tmp ]; then # Termux tmp
       echo "/data/data/com.termux/files/usr/tmp"
     elif [ -d /data/local/tmp ]; then # Android tmp
@@ -56,7 +56,7 @@ if ! declare -f files::get_temp_dir >/dev/null; then
   export -f files::get_temp_dir
 fi
 
-if ! declare -f files::create_temp_dir >/dev/null; then
+if ! declare -f files::create_temp_dir > /dev/null; then
   files::create_temp_dir() {
     local dir_name="$1"
     local temp_dir="$(files::get_temp_dir)/$dir_name"
@@ -67,7 +67,7 @@ if ! declare -f files::create_temp_dir >/dev/null; then
   export -f files::create_temp_dir
 fi
 
-if ! declare -f files::safe_remove_dir >/dev/null; then
+if ! declare -f files::safe_remove_dir > /dev/null; then
   files::safe_remove_dir() {
     local dir="$1"
     local temp_dir="$(files::get_temp_dir)"

@@ -14,6 +14,8 @@ readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/curl.sh"
 source "${SCRIPT_DIR}/lib/files.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 # Initialize variables
 verbose=false
@@ -123,8 +125,7 @@ function main() {
   ${debug} && set -x
 
   ${verbose} && log "Downloading audio for video ID: ${video_id}"
-  local audio_file="${tmp_dir}/audio.mp4" \
-    && "${SCRIPT_DIR}/downloadaudio" "${video_id}" "${audio_file}" \
+  local audio_file="$("${SCRIPT_DIR}/downloadaudio" "${video_id}")" \
     && transcribe_audio "${audio_file}" > "${output_file}"
   if ${verbose}; then
     log "Transcription saved to: ${output_file}"

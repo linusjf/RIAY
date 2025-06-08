@@ -10,7 +10,7 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/youtube.sh"
 
@@ -19,7 +19,7 @@ function version() {
 }
 
 function usage() {
-  cat >&2 <<EOF
+  cat >&2 << EOF
 Usage: ${SCRIPT_NAME} [OPTIONS] <youtube_video_id> [output_file]
 
 Description:
@@ -43,12 +43,6 @@ EOF
   exit "${1:-0}"
 }
 
-function cleanup() {
-  if [[ -n "${TEMP_DIR-}" ]] && [[ -d "${TEMP_DIR}" ]]; then
-    rm -rf "${TEMP_DIR}"
-  fi
-}
-
 function create_temp_dir() {
   TEMP_DIR=$(mktemp -d -t "${SCRIPT_NAME}.XXXXXX")
   echo "${TEMP_DIR}"
@@ -61,32 +55,32 @@ function main() {
   # Parse options
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -v | --verbose)
-      verbose=true
-      shift
-      ;;
-    -q | --quiet)
-      quiet=true
-      shift
-      ;;
-    --version)
-      version
-      exit 0
-      ;;
-    -h | --help)
-      usage 0
-      ;;
-    --)
-      shift
-      break
-      ;;
-    -*)
-      printf "Error: Unknown option: %s\n" "$1" >&2
-      usage 1
-      ;;
-    *)
-      break
-      ;;
+      -v | --verbose)
+        verbose=true
+        shift
+        ;;
+      -q | --quiet)
+        quiet=true
+        shift
+        ;;
+      --version)
+        version
+        exit 0
+        ;;
+      -h | --help)
+        usage 0
+        ;;
+      --)
+        shift
+        break
+        ;;
+      -*)
+        printf "Error: Unknown option: %s\n" "$1" >&2
+        usage 1
+        ;;
+      *)
+        break
+        ;;
     esac
   done
 
@@ -94,8 +88,6 @@ function main() {
     printf "Error: Missing required video ID argument\n" >&2
     usage 1
   fi
-
-  trap cleanup EXIT
 
   local video_id="$1"
   local output_file="${2:-}"
