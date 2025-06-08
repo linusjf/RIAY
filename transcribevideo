@@ -8,8 +8,6 @@ shopt -s inherit_errexit
 
 readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
-readonly WEBM="webm"
-readonly M4A="m4a"
 
 # Source utility libraries
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
@@ -125,19 +123,13 @@ function main() {
 
   ${debug} && set -x
 
-  local audio_file=""
   ${verbose} && log "Downloading audio for video ID: ${video_id}"
-  if youtube::has_audio_format "$video_id" "$WEBM"; then
-    audio_file="${tmp_dir}/${video_id}.${WEBM}"
-    youtube::download_audio "${video_id}" "${audio_file}" "$WEBM"
-  elif youtube::has_audio_format "$video_id" "$M4A"; then
-    audio_file="${tmp_dir}/${video_id}.${M4A}"
-    youtube::download_audio "${video_id}" "${audio_file}" "$M4A"
+  local audio_file="${tmp_dir}/$(youtube::bestaudio_filename "$video_id")" \
+    && youtube::download_bestaudio "${video_id}" "${audio_file}" \
+    && transcribe_audio "${audio_file}" > "${output_file}"
+  if ${verbose}; then
+    log "Transcription saved to: ${output_file}"
   fi
-
-  transcribe_audio "${audio_file}" > "${output_file}"
-
-  ${verbose} && log "Transcription saved to: ${output_file}"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

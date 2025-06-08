@@ -23,6 +23,7 @@ require_vars YOUTUBE_API_KEY
 
 : "${YT_DLP_RETRIES:=10}"
 : "${YT_DLP_SOCKET_TIMEOUT:=30}"
+: "${YT_DLP_CONCURRENT_FRAGMENTS:=5}"
 
 if ! declare -p youtube__THUMBNAIL_SIZES &> /dev/null; then
   # array of youtube thumbnail sizes in descending order. Not all may be available.
@@ -36,33 +37,6 @@ if ! declare -p youtube__THUMBNAIL_SIZES &> /dev/null; then
     "medium"
     "default"
   )
-fi
-
-if ! declare -f youtube::download_audio > /dev/null; then
-  function youtube::download_audio() {
-    local video_id="$1"
-    local output_file="${2:-}"
-    local ext="${3:-webm}" # Default to webm if not specified
-    local format="bestaudio[ext=${ext}]"
-    local youtube_url="https://www.youtube.com/watch?v=${video_id}"
-
-    # If output_file is not provided, use videoid.ext
-    if [[ -z "${output_file}" ]]; then
-      output_file="${video_id}.${ext}"
-    fi
-
-    if yt-dlp --verbose \
-      --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
-      --retries "$YT_DLP_RETRIES" \
-      --retry-sleep exp=1:300:2 \
-      --user-agent "Mozilla/5.0" \
-      -f "${format}" -o "${output_file}" "${youtube_url}"; then
-      printf "%s\n" "${output_file}"
-    else
-      return 1
-    fi
-  }
-  export -f youtube::download_audio
 fi
 
 if ! declare -f youtube::thumbnailurl > /dev/null; then
@@ -219,6 +193,37 @@ if ! declare -f youtube::has_audio_format > /dev/null; then
       | grep -E "audio only.*$format" > /dev/null
   }
   export -f youtube::has_audio_format
+fi
+
+if ! declare youtube::bestaudio_filename > /dev/null; then
+  youtube::bestaudio_filename() {
+    local video_id="$1"
+    local filename_format="${2:-"%(id)s.%(ext)s"}"
+    yt-dlp --get-filename -f bestaudio -o "$filename_format" "https://www.youtube.com/watch?v=$video_id"
+  }
+  export -f youtube::bestaudio_filename
+fi
+
+if ! declare youtube::download_bestaudio > /dev/null; then
+  youtube::download_bestaudio() {
+    local video_id="$1"
+    local file_name="${2:-"%(id)s.%(ext)s"}"
+    if [[ "$file_name" == %* ]]; then
+      file_name="$(youtube::bestaudio_filename "$video_id" "$file_name")"
+    fi
+    rm -f "$file_name" \
+      && yt-dlp -f bestaudio \
+        --retries "$YT_DLP_RETRIES" \
+        --fragment-retries "$YT_DLP_RETRIES" \
+        --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
+        --concurrent-fragments "$YT_DLP_CONCURRENT_FRAGMENTS" \
+        --no-part \
+        --retry-sleep exp=1:300:2 \
+        --user-agent "Mozilla/5.0" \
+        -o "$file_name" \
+        "https://www.youtube.com/watch?v=${video_id}" > /dev/null
+  }
+  export -f youtube::download_bestaudio
 fi
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
