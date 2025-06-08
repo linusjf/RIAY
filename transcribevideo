@@ -102,12 +102,14 @@ function transcribe_audio() {
   local audio_file="$1"
   ${verbose} && log "Transcribing and/or translating with Whisper..."
   # use translations end-point so that if in different language it is translated to English
-  curl::safe_curl_request \
-    "https://api.openai.com/v1/audio/translations" \
-    "POST" \
-    "Authorization: Bearer ${OPENAI_API_KEY}" \
-    "" \
-    "-F file=@\"${audio_file}\" -F model=\"whisper-1\" -F response_format=\"text\""
+
+  curl --request POST \
+    --url https://api.openai.com/v1/audio/translations \
+    --header "Authorization: Bearer $OPENAI_API_KEY" \
+    --header 'Content-Type: multipart/form-data' \
+    --form file=@"${audio_file}" \
+    --form model=whisper-1 \
+    --form response_format=text
 }
 
 function main() {
