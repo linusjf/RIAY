@@ -4755,6 +4755,9 @@ Farewell, and may His peace attend you.
   - [Wash All of Me](#wash-all-of-me)
   - [AI-Generated Summary: The Sacred Feast and the Heart's Surrender](#ai-generated-summary-the-sacred-feast-and-the-hearts-surrender)
   - [The Last Supper by Juan de Juanes](#the-last-supper-by-juan-de-juanes)
+- [June 08, 2025](#june-08-2025)
+  - [Surrender Your Suffering](#surrender-your-suffering)
+  - [AI-Generated Summary: The Weight of Surrender and the Light of Redemption](#ai-generated-summary-the-weight-of-surrender-and-the-light-of-redemption)
 
 <!-- tocstop -->
 
@@ -4895,6 +4898,22 @@ Let us then, with the saints, pray without ceasing. The "Hail Mary" rises as a f
 ##### The Last Supper by Juan de Juanes
 
 [![The Last Supper by Juan de Juanes](June/jpgs/JuandeJuanesLastSupper.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/%C3%9Altima_Cena_-_Juan_de_Juanes.jpg/960px-%C3%9Altima_Cena_-_Juan_de_Juanes.jpg "The Last Supper by Juan de Juanes")
+
+#### June 08, 2025
+
+##### Surrender Your Suffering
+
+[![Surrender Your Suffering](June/jpgs/Day159.jpg)](https://youtu.be/wzZcA4jm-24 "Surrender Your Suffering")
+
+##### AI-Generated Summary: The Weight of Surrender and the Light of Redemption
+
+Behold a scene both solemn and radiant: the Son of Man kneels in the garden, His human frame bowed beneath the weight of the world’s sorrow, while His disciples—youth and elder alike—succumb to sleep, their spirits willing but flesh weak. Above Him, an angel descends, bearing the cup of suffering, its rim aflame with divine purpose. Here, in the tension of shadows and light, we glimpse the very heart of Mannerist art—where proportion bends to passion, and stillness trembles with impending sacrifice.
+
+The painter, skilled in the language of contrast, draws our gaze not to the slumbering forms, nor even to the approaching soldiers half-hidden in gloom, but to the One who kneels in surrender. Every line, every fold of cloth, every blade of grass points toward Him, as all things must, for He is the still center round which the cosmos turns. This is the moment where darkness is not merely resisted but taken into Himself, where agony is transmuted into glory.
+
+And what of us, dear reader? We are bid to follow where He has gone before—to lay down our sins, our fears, our very selves, as a patient yields to the surgeon’s hand. For only in surrender is there true alignment; only in relinquishment is there redemption. The prayers woven through this meditation—the _Ave Maria_, the _Gloria Patri_—are not mere recitations but echoes of that primal yielding, rehearsals for the day when all knees shall bow and all hearts confess.
+
+So let us pray, not as those who bargain, but as those who trust: _Thy will be done_. For in that submission lies our freedom, and in that darkness, His unyielding light.
 
 ## July
 

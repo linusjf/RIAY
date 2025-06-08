@@ -1,4 +1,4 @@
 # commands
-addvideo "Behrk6OVzfc" "Wash All of Me"
+addvideo "wzZcA4jm-24" "Surrender Your Suffering"
 stitch
 lintall
