@@ -23,6 +23,7 @@ debug=false
 dry_run=false
 video_id=""
 output_file=""
+custom_output=false
 tmp_dir=""
 
 function cleanup() {
@@ -46,11 +47,12 @@ Options:
   -v, --verbose   Enable verbose output
   -d, --debug     Enable debug mode (sets -x)
   -n, --dry-run   Run without making any changes
+  -o, --output    Specify custom output file path
   --version       Show version information and exit
 
 Examples:
   ${SCRIPT_NAME} dQw4w9WgXcQ
-  ${SCRIPT_NAME} -v dQw4w9WgXcQ
+  ${SCRIPT_NAME} -v dQw4w9WgXcQ -o custom_output.txt
 EOF
 
   exit "${exit_code}"
@@ -58,10 +60,13 @@ EOF
 
 function dryrun() {
   log "DRY RUN: Would process video ID: ${video_id}"
-  log "DRY RUN: Would create output file: ${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
+  if ${custom_output}; then
+    log "DRY RUN: Would create output file: ${output_file}"
+  else
+    log "DRY RUN: Would create output file: ${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
+  fi
   log "DRY RUN: Would download audio using downloadaudio script"
   log "DRY RUN: Would transcribe and/or translate audio using Whisper API"
-  log "DRY RUN: Would save transcription to ${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
   log "DRY RUN: Would clean up temporary files"
 }
 
@@ -72,6 +77,11 @@ function parse_args() {
       -v | --verbose) verbose=true ;;
       -d | --debug) debug=true ;;
       -n | --dry-run) dry_run=true ;;
+      -o | --output)
+        shift
+        output_file="$1"
+        custom_output=true
+        ;;
       --version)
         version
         exit 0
@@ -95,6 +105,10 @@ function parse_args() {
   if [[ -z "${video_id}" ]]; then
     err "YouTube video ID is required"
     usage 1
+  fi
+
+  if ! ${custom_output}; then
+    output_file="${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
   fi
 }
 
@@ -122,7 +136,6 @@ function main() {
 
   trap cleanup EXIT
   tmp_dir="$(files::create_temp_dir "${SCRIPT_NAME}")"
-  output_file="${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
 
   ${debug} && set -x
 
