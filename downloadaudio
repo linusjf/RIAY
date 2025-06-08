@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# Download audio from YouTube videos
+
+set -euo pipefail
+shopt -s inherit_errexit
+
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME="$(basename "$0")"
+
+# Source utility libraries
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/youtube.sh"
+
+function usage() {
+  cat >&2 << EOF
+Usage: ${SCRIPT_NAME} <youtube_video_id> <output_file>
+
+Downloads audio from a YouTube video and saves it to the specified output file.
+
+Arguments:
+  youtube_video_id  The YouTube video ID to download
+  output_file       Path to save the downloaded audio file
+
+Examples:
+  ${SCRIPT_NAME} dQw4w9WgXcQ /tmp/audio.mp4
+EOF
+  exit 1
+}
+
+function main() {
+  if [[ $# -ne 2 ]]; then
+    usage
+  fi
+
+  local video_id="$1"
+  local output_file="$2"
+
+  youtube::download_bestaudio "${video_id}" "${output_file}"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
+fi
