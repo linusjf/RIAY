@@ -4918,7 +4918,7 @@ So let us pray, not as those who bargain, but as those who trust: _Thy will be d
 
 ##### The Prayer of Jesus in Gethsemane by Alessandro Maganza
 
-[![The Prayer of Jesus in Gethsemane by Alessandro Maganza](June/jpgs/Gethsemane.jpg)](https://www.istockphoto.com/vector/jesus-in-the-garden-of-gethsemane-woodcut-1837-gm1598733202-530007576 "The Prayer of Jesus in Gethsemane by Alessandro Maganza")
+[![The Prayer of Jesus in Gethsemane by Alessandro Maganza](June/jpgs/Gethsemane.jpg)](https://www.istockphoto.com/photo/vicenza-the-painting-of-prayer-of-jesus-in-gethsemane-garden-in-the-cathedral-by-gm1922845709-555481794 "The Prayer of Jesus in Gethsemane by Alessandro Maganza")
 
 ## July
 
