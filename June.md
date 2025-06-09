@@ -31,6 +31,9 @@
   - [Surrender Your Suffering](#surrender-your-suffering)
   - [AI-Generated Summary: The Weight of Surrender and the Light of Redemption](#ai-generated-summary-the-weight-of-surrender-and-the-light-of-redemption)
   - [The Prayer of Jesus in Gethsemane by Alessandro Maganza](#the-prayer-of-jesus-in-gethsemane-by-alessandro-maganza)
+- [June 09, 2025](#june-09-2025)
+  - [Choose Your Side](#choose-your-side)
+  - [AI-Generated Summary: The Divine Drama in Caravaggio's Light and Shadow](#ai-generated-summary-the-divine-drama-in-caravaggios-light-and-shadow)
 
 <!-- tocstop -->
 
@@ -191,3 +194,19 @@ So let us pray, not as those who bargain, but as those who trust: _Thy will be d
 ### The Prayer of Jesus in Gethsemane by Alessandro Maganza
 
 [![The Prayer of Jesus in Gethsemane by Alessandro Maganza](/June/jpgs/Gethsemane.jpg)](https://www.istockphoto.com/photo/vicenza-the-painting-of-prayer-of-jesus-in-gethsemane-garden-in-the-cathedral-by-gm1922845709-555481794 "The Prayer of Jesus in Gethsemane by Alessandro Maganza")
+
+## June 09, 2025
+
+### Choose Your Side
+
+[![Choose Your Side](/June/jpgs/Day160.jpg)](https://youtu.be/8cloiAaablc "Choose Your Side")
+
+### AI-Generated Summary: The Divine Drama in Caravaggio's Light and Shadow
+
+Behold Caravaggio’s _The Flagellation of Christ_, where light and darkness wage their ancient war upon the canvas. Here, in the year 1607, a master’s hand has captured not merely a scene, but the very essence of human cruelty and divine submission. Christ, bound to the column, stands luminous—His suffering etched in muscle and shadow, while three tormentors encircle Him like embodiments of sin itself.
+
+The first strikes with a hatred that twists the soul; the second, half-turned away, lends his strength to evil yet dares not meet its gaze—a portrait of the cowardice that sustains wickedness. But the third is most terrible: he calculates, he prepares, he chooses. Here is rebellion in its purest form—not the sin of the weak, but of the willful.
+
+Caravaggio’s brush does not flinch. His chiaroscuro lays bare the battle we all know: the pride that strikes, the indifference that permits, the cold intellect that justifies. Yet in the center, undimmed, is Light—the courage of the Lamb, silent before His shearers. This is no mere painting; it is a mirror for the soul, a call to repentance, a summons to step from shadow into grace.
+
+And so the prayers rise—_Hail Mary, Glory Be_—not as empty words, but as echoes of that same light, pleading for the strength to choose it. For the drama on that canvas is ours as well: every day, we stand with the soldiers or with Christ. Let us then pray, and choose wisely.

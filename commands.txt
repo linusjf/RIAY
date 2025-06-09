@@ -1,4 +1,4 @@
 # commands
-addvideo "wzZcA4jm-24" "Surrender Your Suffering"
+addvideo "8cloiAaablc" "Choose Your Side"
 stitch
 lintall
