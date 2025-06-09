@@ -177,12 +177,12 @@ if ! declare -f curl::handle_retry > /dev/null; then
     local response_headers="$4"
     local url="$5"
 
-    if [[ $status_code -ge 400 ]] && [[ $status_code -le 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]]; then
+    if [[ $status_code -ge 400 ]] && [[ $status_code -le 500 ]] && [[ $status_code -ne 408 ]] && [[ $status_code -ne 429 ]] && [[ $status_code -ne 503 ]]; then
       >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, no retries..."
       return 1
     fi
 
-    if [[ $status_code -eq 408 ]] || [[ $status_code -eq 429 ]]; then
+    if [[ $status_code -eq 408 ]] || [[ $status_code -eq 429 ]] || [[ $status_code -eq 503 ]]; then
       local retry_after=$(echo "$response_headers" | grep -i '^retry-after:' | cut -d' ' -f2- | tr -d '\r')
       if [[ -n "$retry_after" ]]; then
         >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $retry_after seconds (Retry-After header value, attempt $retry_count/$CURL_MAX_RETRIES)"
