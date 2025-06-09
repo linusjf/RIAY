@@ -115,15 +115,14 @@ function parse_args() {
 function transcribe_audio() {
   local audio_file="$1"
   ${verbose} && log "Transcribing and/or translating with Whisper..."
-  # use translations end-point so that if in different language it is translated to English
 
   curl --request POST \
-    --url https://api.openai.com/v1/audio/translations \
-    --header "Authorization: Bearer $OPENAI_API_KEY" \
+    --url "${ASR_LLM_BASE_URL}${ASR_LLM_ENDPOINT}" \
+    --header "Authorization: Bearer ${ASR_LLM_API_KEY}" \
     --header 'Content-Type: multipart/form-data' \
     --form file=@"${audio_file}" \
-    --form model=whisper-1 \
-    --form response_format=text
+    --form model="${ASR_LLM_MODEL}" \
+    --form response_format=text 2> /dev/null || return 1
 }
 
 function main() {
@@ -149,7 +148,7 @@ function main() {
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   require_commands date tee cat curl
-  require_vars OPENAI_API_KEY CAPTIONS_OUTPUT_DIR
+  require_vars OPENAI_API_KEY CAPTIONS_OUTPUT_DIR ASR_LLM_API_KEY ASR_LLM_BASE_URL ASR_LLM_ENDPOINT ASR_LLM_MODEL
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
