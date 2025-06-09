@@ -4762,6 +4762,7 @@ Farewell, and may His peace attend you.
 - [June 09, 2025](#june-09-2025)
   - [Choose Your Side](#choose-your-side)
   - [AI-Generated Summary: The Divine Drama in Caravaggio's Light and Shadow](#ai-generated-summary-the-divine-drama-in-caravaggios-light-and-shadow)
+  - [The Flagellation of Christ: Painting by Caravaggio](#the-flagellation-of-christ-painting-by-caravaggio)
 
 <!-- tocstop -->
 
@@ -4938,6 +4939,10 @@ The first strikes with a hatred that twists the soul; the second, half-turned aw
 Caravaggio’s brush does not flinch. His chiaroscuro lays bare the battle we all know: the pride that strikes, the indifference that permits, the cold intellect that justifies. Yet in the center, undimmed, is Light—the courage of the Lamb, silent before His shearers. This is no mere painting; it is a mirror for the soul, a call to repentance, a summons to step from shadow into grace.
 
 And so the prayers rise—_Hail Mary, Glory Be_—not as empty words, but as echoes of that same light, pleading for the strength to choose it. For the drama on that canvas is ours as well: every day, we stand with the soldiers or with Christ. Let us then pray, and choose wisely.
+
+##### The Flagellation of Christ: Painting by Caravaggio
+
+[![The Flagellation of Christ: Painting by Caravaggio](June/jpgs/Flagellation.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/The_Flagellation_of_Christ-Caravaggio_%281607%29.jpg/960px-The_Flagellation_of_Christ-Caravaggio_%281607%29.jpg "The Flagellation of Christ: Painting by Caravaggio")
 
 ## July
 
