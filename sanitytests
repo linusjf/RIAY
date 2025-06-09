@@ -112,7 +112,7 @@ run_test() {
   "$@" &> /dev/null || actual_exit=$?
 
   git restore .
-  git clean -fd
+  git clean -fd &> /dev/null
 
   if [[ "$actual_exit" -eq "$expected_exit" ]]; then
     printf "\033[32mPASS\033[0m\n"
