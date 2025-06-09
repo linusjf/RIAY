@@ -454,9 +454,14 @@ fi
 if ! declare -f curl::request > /dev/null; then
   function curl::request() {
     local url="$1"
-    local method="${2:-GET}"
-    local headers="${3:-}"
-    local data="${4:-}"
+    shift
+
+    local method="GET"
+    if [[ "$1" =~ ^(GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)$ ]]; then
+      method="$1"
+      shift
+    fi
+
     local output_file
     output_file=$(mktemp)
 
@@ -481,16 +486,8 @@ if ! declare -f curl::request > /dev/null; then
         -o "$output_file"
       )
 
-      [[ "$method" == "POST" ]] && curl_cmd+=(-X "POST")
-
-      if [[ -n "$headers" ]]; then
-        eval "local header_array=($headers)"
-        for header in "${header_array[@]}"; do
-          curl_cmd+=(-H "$header")
-        done
-      fi
-
-      [[ -n "$data" ]] && curl_cmd+=(-d "$data")
+      curl_cmd+=("$@")
+      curl_cmd+=(--request "$method")
       curl_cmd+=("$url")
 
       [[ "${verbose:-false}" == "true" ]] && >&2 echo "Making $method request to $(curl::redact_keys "$url")"
@@ -525,13 +522,13 @@ if ! declare -f curl::request > /dev/null; then
     done
 
     >&2 echo "CURL VERBOSE OUTPUT:"
-    curl -v "$url" \
-      -X "$method" \
-      ${headers:+-H "$headers"} \
-      ${data:+-d "$data"} \
+    curl -v \
+      --request "$method" \
+      "$@" \
       --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
       --max-time "${CURL_MAX_TIME}" \
       --show-error \
+      "$url" \
       >&2
 
     curl::save_failed_response "$data" "$response" "$(basename "$url")"
