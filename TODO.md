@@ -8,9 +8,8 @@
 ## Bugs/Issues
 
 1. safe_curl
-   1.1. retry_header for http status code 503
-   1.2. handle multiple headers better
-   1.3. handle form data parameters in POST method
+   1.1. handle multiple headers better
+   1.2. handle form data parameters in POST method
 
 ## Exploratory tasks
 
