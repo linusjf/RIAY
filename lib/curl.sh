@@ -469,6 +469,7 @@ if ! declare -f curl::request > /dev/null; then
     local delay=${CURL_INITIAL_RETRY_DELAY}
     local status_code=0
     local response=""
+    local redacted_command=""
 
     while [[ $retry_count -lt ${CURL_MAX_RETRIES} ]]; do
       status_code=0
@@ -489,6 +490,7 @@ if ! declare -f curl::request > /dev/null; then
       curl_cmd+=("$@")
       curl_cmd+=(--request "$method")
       curl_cmd+=("$url")
+      redacted_command="$(curl::redact_keys "${curl_cmd[*]}")"
 
       [[ "${verbose:-false}" == "true" ]] && >&2 echo "Making $method request to $(curl::redact_keys "$url")"
 
@@ -507,7 +509,7 @@ if ! declare -f curl::request > /dev/null; then
 
       retry_count=$((retry_count + 1))
       if [[ $retry_count -lt $CURL_MAX_RETRIES ]]; then
-        curl::save_failed_response "$data" "$response" "$(basename "$url")"
+        curl::save_failed_response "$redacted_command" "$response" "$(basename "$url")"
 
         if ! curl::should_retry "$status_code"; then
           return 2
@@ -531,7 +533,7 @@ if ! declare -f curl::request > /dev/null; then
       "$url" \
       >&2
 
-    curl::save_failed_response "$data" "$response" "$(basename "$url")"
+    curl::save_failed_response "$redacted_command" "$response" "$(basename "$url")"
     rm -f "$output_file"
     err "Request failed after $CURL_MAX_RETRIES attempts. Last status code: $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}"
     return 2

@@ -134,7 +134,7 @@ if ! declare -f youtube::download_captions > /dev/null; then
       --sub-format "$ext" \
       --retries "$YT_DLP_RETRIES" \
       --retry-sleep exp=1:300:2 \
-      --user-agent "Mozilla/5.0" \
+      --user-agent "com.google.android.youtube/17.31.35 (Linux; U; Android 11)" \
       -o "${output_file%%.*}" \
       "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1
     echo "$output_file"
@@ -219,7 +219,7 @@ if ! declare -f youtube::download_bestaudio > /dev/null; then
         --concurrent-fragments "$YT_DLP_CONCURRENT_FRAGMENTS" \
         --no-part \
         --retry-sleep exp=1:300:2 \
-        --user-agent "Mozilla/5.0" \
+        --user-agent "com.google.android.youtube/17.31.35 (Linux; U; Android 11)" \
         -o "${file_name}" \
         "https://www.youtube.com/watch?v=${video_id}" &> /dev/null
   }
