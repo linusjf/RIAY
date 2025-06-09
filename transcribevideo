@@ -18,16 +18,16 @@ source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 # Initialize variables
-verbose=false
-debug=false
-dry_run=false
-video_id=""
-output_file=""
-custom_output=false
-tmp_dir=""
+VERBOSE=false
+DEBUG=false
+DRY_RUN=false
+VIDEO_ID=""
+OUTPUT_FILE=""
+CUSTOM_OUTPUT=false
+TMP_DIR=""
 
 function cleanup() {
-  files::safe_remove_dir "${tmp_dir}"
+  files::safe_remove_dir "${TMP_DIR}"
 }
 
 function version() {
@@ -59,11 +59,11 @@ EOF
 }
 
 function dryrun() {
-  log "DRY RUN: Would process video ID: ${video_id}"
-  if ${custom_output}; then
-    log "DRY RUN: Would create output file: ${output_file}"
+  log "DRY RUN: Would process video ID: ${VIDEO_ID}"
+  if ${CUSTOM_OUTPUT}; then
+    log "DRY RUN: Would create output file: ${OUTPUT_FILE}"
   else
-    log "DRY RUN: Would create output file: ${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
+    log "DRY RUN: Would create output file: ${CAPTIONS_OUTPUT_DIR}/${VIDEO_ID}.en.txt"
   fi
   log "DRY RUN: Would download audio using downloadaudio script"
   log "DRY RUN: Would transcribe and/or translate audio using Whisper API"
@@ -74,13 +74,13 @@ function parse_args() {
   while (($# > 0)); do
     case "$1" in
       -h | --help) usage 0 ;;
-      -v | --verbose) verbose=true ;;
-      -d | --debug) debug=true ;;
-      -n | --dry-run) dry_run=true ;;
+      -v | --verbose) VERBOSE=true ;;
+      -d | --debug) DEBUG=true ;;
+      -n | --dry-run) DRY_RUN=true ;;
       -o | --output)
         shift
-        output_file="$1"
-        custom_output=true
+        OUTPUT_FILE="$1"
+        CUSTOM_OUTPUT=true
         ;;
       --version)
         version
@@ -91,8 +91,8 @@ function parse_args() {
         usage 1
         ;;
       *)
-        if [[ -z "${video_id}" ]]; then
-          video_id="$1"
+        if [[ -z "${VIDEO_ID}" ]]; then
+          VIDEO_ID="$1"
         else
           err "Too many arguments"
           usage 1
@@ -102,19 +102,19 @@ function parse_args() {
     shift
   done
 
-  if [[ -z "${video_id}" ]]; then
+  if [[ -z "${VIDEO_ID}" ]]; then
     err "YouTube video ID is required"
     usage 1
   fi
 
-  if ! ${custom_output}; then
-    output_file="${CAPTIONS_OUTPUT_DIR}/${video_id}.en.txt"
+  if ! ${CUSTOM_OUTPUT}; then
+    OUTPUT_FILE="${CAPTIONS_OUTPUT_DIR}/${VIDEO_ID}.en.txt"
   fi
 }
 
 function transcribe_audio() {
   local audio_file="$1"
-  ${verbose} && log "Transcribing and/or translating with Whisper..."
+  ${VERBOSE} && log "Transcribing and/or translating with Whisper..."
 
   curl --request POST \
     --url "${ASR_LLM_BASE_URL}${ASR_LLM_ENDPOINT}" \
@@ -128,21 +128,21 @@ function transcribe_audio() {
 function main() {
   parse_args "$@"
 
-  if ${dry_run}; then
+  if ${DRY_RUN}; then
     dryrun
     exit 0
   fi
 
   trap cleanup EXIT
-  tmp_dir="$(files::create_temp_dir "${SCRIPT_NAME}")"
+  TMP_DIR="$(files::create_temp_dir "${SCRIPT_NAME}")"
 
-  ${debug} && set -x
+  ${DEBUG} && set -x
 
-  ${verbose} && log "Downloading audio for video ID: ${video_id}"
-  local audio_file="$("${SCRIPT_DIR}/downloadaudio" "${video_id}")" \
-    && transcribe_audio "${audio_file}" > "${output_file}"
-  if ${verbose}; then
-    log "Transcription saved to: ${output_file}"
+  ${VERBOSE} && log "Downloading audio for video ID: ${VIDEO_ID}"
+  local audio_file="$("${SCRIPT_DIR}/downloadaudio" "${VIDEO_ID}")" \
+    && transcribe_audio "${audio_file}" > "${OUTPUT_FILE}"
+  if ${VERBOSE}; then
+    log "Transcription saved to: ${OUTPUT_FILE}"
   fi
 }
 
