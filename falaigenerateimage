@@ -138,7 +138,7 @@ function download_image() {
 
   temp_file="$(mktemp --quiet -t tempXXX.png)" \
     || die "Failed to create temp file" 6
-  curl::safe_curl_download "$response_url" "$temp_file" \
+  curl::download "$response_url" "$temp_file" \
     || die "Failed to download image" 6
 
   jpg_file="${temp_file%.*}.jpg"

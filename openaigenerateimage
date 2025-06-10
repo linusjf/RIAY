@@ -83,7 +83,7 @@ function generate_image() {
   fi
 
   log "Downloading image from: ${image_url}"
-  curl::safe_curl_download "${image_url}" "${output_path}" || exit $EXIT_DOWNLOAD_FAILURE
+  curl::download "${image_url}" "${output_path}" || exit $EXIT_DOWNLOAD_FAILURE
 
   printf "%s\n" "${output_path}"
 }
