@@ -1,4 +1,4 @@
 # commands
-addvideo "8cloiAaablc" "Choose Your Side"
+addvideo "88cqc2fVeQk" "Sharing Eternal Victory"
 stitch
 lintall

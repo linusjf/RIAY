@@ -35,6 +35,9 @@
   - [Choose Your Side](#choose-your-side)
   - [AI-Generated Summary: The Divine Drama in Caravaggio's Light and Shadow](#ai-generated-summary-the-divine-drama-in-caravaggios-light-and-shadow)
   - [The Flagellation of Christ: Painting by Caravaggio](#the-flagellation-of-christ-painting-by-caravaggio)
+- [June 10, 2025](#june-10-2025)
+  - [Sharing Eternal Victory](#sharing-eternal-victory)
+  - [AI-Generated Summary: The Silent Majesty of Suffering and the Call to Behold](#ai-generated-summary-the-silent-majesty-of-suffering-and-the-call-to-behold)
 
 <!-- tocstop -->
 
@@ -215,3 +218,17 @@ And so the prayers rise—_Hail Mary, Glory Be_—not as empty words, but as ech
 ### The Flagellation of Christ: Painting by Caravaggio
 
 [![The Flagellation of Christ: Painting by Caravaggio](/June/jpgs/Flagellation.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/The_Flagellation_of_Christ-Caravaggio_%281607%29.jpg/960px-The_Flagellation_of_Christ-Caravaggio_%281607%29.jpg "The Flagellation of Christ: Painting by Caravaggio")
+
+## June 10, 2025
+
+### Sharing Eternal Victory
+
+[![Sharing Eternal Victory](/June/jpgs/Day161.jpg)](https://youtu.be/88cqc2fVeQk "Sharing Eternal Victory")
+
+### AI-Generated Summary: The Silent Majesty of Suffering and the Call to Behold
+
+Here we see a masterwork of Caravaggio, _Ecce Homo_, where the divine and the human meet in a moment of terrible beauty. Christ stands bound, crowned with thorns, His face a quiet sea amidst the storm of mockery. The painter, with his unflinching eye, shows us not only the cruelty of men but the flicker of pity in their hearts—even Pilate hesitates, caught between duty and dread. The old man’s gesture, _Behold the man_, is not merely historical; it is an eternal summons to every soul.
+
+This is no distant spectacle, but a mirror held to our own hearts. Do we, like the bystander, glimpse the truth too late? Or do we, in seeing His suffering, recognize the weight of our own failings? The thorns, the blood, the silent endurance—these are not just marks of pain, but the very instruments of our redemption. To behold Him is to be called to repentance, to kneel not in despair, but in hope, for His sacrifice is the light that pierces the darkest guilt.
+
+And so we pray, not as isolated souls, but as a body united in grace. The _Our Father_, the _Hail Mary_—these are not empty words, but the breath of a shared faith, the rope that binds us to mercy. For in His wounds, we find our healing; in His resurrection, our victory. Let us then, with sober hearts, behold the man—and in beholding, be transformed.
