@@ -20,3 +20,5 @@ testsummary.txt
 **/*.en.txt
 *.webm
 *.m4a
+*.txt
+*.wav
