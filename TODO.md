@@ -7,10 +7,6 @@
 
 ## Bugs/Issues
 
-1. safe_curl
-   1.1. handle multiple headers better
-   1.2. handle form data parameters in POST method
-
 ## Exploratory tasks
 
 1. Explore Whisper AI to transcribe videos. Local and cloud.
