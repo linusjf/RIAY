@@ -39,6 +39,7 @@
   - [Sharing Eternal Victory](#sharing-eternal-victory)
   - [AI-Generated Summary: The Silent Majesty of Suffering and the Call to Behold](#ai-generated-summary-the-silent-majesty-of-suffering-and-the-call-to-behold)
   - [Caravaggio's Ecce Homo - Behold The Man](#caravaggios-ecce-homo---behold-the-man)
+  - [The Lost Caravaggio - Ecce Homo](#the-lost-caravaggio---ecce-homo)
 
 <!-- tocstop -->
 
@@ -237,3 +238,7 @@ And so we pray, not as isolated souls, but as a body united in grace. The _Our F
 ### Caravaggio's Ecce Homo - Behold The Man
 
 [![Caravaggio's Ecce Homo - Behold The Man](/June/jpgs/EcceHomo.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Caravaggio_%28Michelangelo_Merisi%29_-_Ecce_Homo_-_Google_Art_Project.jpg/960px-Caravaggio_%28Michelangelo_Merisi%29_-_Ecce_Homo_-_Google_Art_Project.jpg "Caravaggio's Ecce Homo - Behold The Man")
+
+### The Lost Caravaggio - Ecce Homo
+
+[![The Lost Caravaggio - Ecce Homo](/June/jpgs/EcceHomoTheLostOne.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Ecce_homo%28Caravaggio%29.jpg/500px-Ecce_homo%28Caravaggio%29.jpg "The Lost Caravaggio - Ecce Homo")
