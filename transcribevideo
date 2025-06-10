@@ -174,7 +174,7 @@ function main() {
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   require_commands date tee cat
-  require_vars OPENAI_API_KEY CAPTIONS_OUTPUT_DIR ASR_LLM_API_KEY ASR_LLM_BASE_URL ASR_LLM_ENDPOINT ASR_LLM_MODEL ASR_LOCAL_MODEL
+  require_vars OPENAI_API_KEY CAPTIONS_OUTPUT_DIR ASR_LLM_API_KEY ASR_LLM_BASE_URL ASR_LLM_ENDPOINT ASR_LLM_MODEL ASR_LOCAL_MODEL TRANSCRIBE_LOCALLY
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
