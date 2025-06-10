@@ -457,7 +457,7 @@ if ! declare -f curl::request > /dev/null; then
     shift
 
     local method="GET"
-    if [[ "$1" =~ ^(GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)$ ]]; then
+    if [[ "${1:-}" =~ ^(GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)$ ]]; then
       method="$1"
       shift
     fi

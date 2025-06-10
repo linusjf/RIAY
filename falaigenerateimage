@@ -70,11 +70,12 @@ function generate_image() {
   }')" || die "Failed to create payload" 4
 
   response="$(
-    curl::safe_curl_request \
+    curl::request \
       "https://queue.fal.run/fal-ai/${FALAI_IMAGE_GENERATION_MODEL}" \
       "POST" \
-      "'Authorization: Key $FALAI_KEY' 'Content-Type: application/json'" \
-      "$payload"
+      --header "Authorization: Key ${FALAI_KEY}" \
+      --header "Content-Type: application/json" \
+      --data "$payload"
   )" || die "Failed to submit request" 4
 
   request_id="$(echo "$response" | jq -r '.request_id')" \
@@ -90,10 +91,10 @@ function poll_status() {
 
   while ((attempt <= MAX_RETRIES)); do
     response="$(
-      curl::safe_curl_request \
+      curl::request \
         "https://queue.fal.run/fal-ai/${FALAI_IMAGE_GENERATION_MODEL}/requests/${request_id}/status" \
         "GET" \
-        "'Authorization: Key $FALAI_KEY'"
+        --header "Authorization: Key ${FALAI_KEY}"
     )" \
       || die "Failed to check status" 4
 
@@ -126,10 +127,10 @@ function download_image() {
   local response response_url
 
   response="$(
-    curl::safe_curl_request \
+    curl::request \
       "https://queue.fal.run/fal-ai/${FALAI_IMAGE_GENERATION_MODEL}/requests/${request_id}" \
       "GET" \
-      "'Authorization: Key $FALAI_KEY'"
+      --header "Authorization: Key ${FALAI_KEY}"
   )" || die "Failed to get final response" 4
 
   response_url="$(echo "$response" | jq -r '.images[0].url')" \

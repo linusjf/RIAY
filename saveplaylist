@@ -79,7 +79,7 @@ check_playlist_exists() {
   fi
 
   local response
-  if ! response="$(curl::safe_curl_request "$url" "GET")"; then
+  if ! response="$(curl::request "$url" "GET")"; then
     err "Error: Failed to check playlist existence."
     return $EXIT_API_REQUEST_FAILED
   fi
@@ -112,9 +112,9 @@ save_playlist() {
       out "Fetching URL: $url"
     fi
 
-    # Fetch the response using safe_curl_request
+    # Fetch the response using curl::request
     local response
-    if ! response="$(curl::safe_curl_request "$url" "GET")"; then
+    if ! response="$(curl::request "$url" "GET")"; then
       err "Error: Failed to fetch playlist data."
       return $EXIT_API_REQUEST_FAILED
     fi

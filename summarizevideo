@@ -88,11 +88,12 @@ function summarize_chunk_llm() {
 
   local response
   response="$(
-    curl::safe_curl_request \
+    curl::request \
       "${TEXT_LLM_BASE_URL}${TEXT_LLM_CHAT_ENDPOINT}" \
       "POST" \
-      "'Authorization: Bearer ${TEXT_LLM_API_KEY}' 'Content-Type: application/json'" \
-      "$payload"
+      --header "Authorization: Bearer ${TEXT_LLM_API_KEY}" \
+      --header "Content-Type: application/json" \
+      --data "$payload"
   )"
 
   if ! echo "$response" | jq . > /dev/null 2>&1; then
@@ -144,11 +145,12 @@ function final_summary() {
   )"
 
   local response="$(
-    curl::safe_curl_request \
+    curl::request \
       "${TEXT_LLM_BASE_URL}${TEXT_LLM_CHAT_ENDPOINT}" \
       "POST" \
-      "'Authorization: Bearer ${TEXT_LLM_API_KEY}' 'Content-Type: application/json'" \
-      "$payload"
+      --header "Authorization: Bearer ${TEXT_LLM_API_KEY}" \
+      --header "Content-Type: application/json" \
+      --data "$payload"
   )"
 
   if ! echo "$response" | jq . > /dev/null 2>&1; then

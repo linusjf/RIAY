@@ -115,11 +115,12 @@ function main() {
   payload="$(create_payload "$summary_content")"
 
   response="$(
-    curl::safe_curl_request \
+    curl::request \
       "${TEXT_LLM_BASE_URL}${TEXT_LLM_CHAT_ENDPOINT}" \
       "POST" \
-      "'Authorization: Bearer ${TEXT_LLM_API_KEY}' 'Content-Type: application/json'" \
-      "$payload"
+      --header "Authorization: Bearer ${TEXT_LLM_API_KEY}" \
+      --header "Content-Type: application/json" \
+      --data "$payload"
   )"
 
   generated_content="$(echo "$response" | jq -r '.choices[0].message.content')"

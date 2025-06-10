@@ -13,4 +13,4 @@ lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
 code=$1
 
-curl::safe_curl_request "https://mock.codes/${code}" || true
+curl::request "https://httpstat.us/${code}" || true
