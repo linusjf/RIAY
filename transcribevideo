@@ -114,7 +114,7 @@ function parse_args() {
 
 function transcribe_audio() {
   local audio_file="$1"
-  ${VERBOSE} && log "Transcribing and/or translating with Whisper..."
+  ${VERBOSE} && log "Transcribing with Whisper..."
 
   curl::request "${ASR_LLM_BASE_URL}${ASR_LLM_ENDPOINT}" \
     "POST" \
@@ -147,7 +147,7 @@ function main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require_commands date tee cat curl
+  require_commands date tee cat
   require_vars OPENAI_API_KEY CAPTIONS_OUTPUT_DIR ASR_LLM_API_KEY ASR_LLM_BASE_URL ASR_LLM_ENDPOINT ASR_LLM_MODEL
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
