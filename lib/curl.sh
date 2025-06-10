@@ -281,10 +281,14 @@ fi
 if ! declare -f curl::download > /dev/null; then
   function curl::download() {
     local url="$1"
-    local output_path="$2"
-    local method="${3:-GET}"
-    local headers="${4:-}"
-    local data="${5:-}"
+    shift
+    local output_path="$1"
+    shift
+    local method="GET"
+    if [[ "${1:-}" =~ ^(GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)$ ]]; then
+      method="$1"
+      shift
+    fi
 
     local retry_count=0
     local delay=${CURL_INITIAL_RETRY_DELAY}
@@ -305,18 +309,10 @@ if ! declare -f curl::download > /dev/null; then
         -o "$output_path"
       )
 
-      [[ "$method" != "GET" ]] && curl_cmd+=(-X "$method")
-
-      if [[ -n "$headers" ]]; then
-        eval "local header_array=($headers)"
-        # shellcheck disable=SC2154
-        for header in "${header_array[@]}"; do
-          curl_cmd+=(-H "$header")
-        done
-      fi
-
-      [[ -n "$data" ]] && curl_cmd+=(-d "$data")
+      curl_cmd+=("$@")
+      curl_cmd+=(--request "$method")
       curl_cmd+=("$url")
+      redacted_command="$(curl::redact_keys "${curl_cmd[*]}")"
 
       [[ "${verbose:-false}" == "true" ]] && >&2 echo "Making $method download request to $(curl::redact_keys "$url")"
 
@@ -345,110 +341,19 @@ if ! declare -f curl::download > /dev/null; then
     done
 
     >&2 echo "CURL VERBOSE OUTPUT:"
-    curl -v "$url" \
-      -X "$method" \
-      ${headers:+-H "$headers"} \
-      ${data:+-d "$data"} \
+    curl -v \
+      --request "$method" \
+      "$@" \
       --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
       --max-time "${CURL_MAX_TIME}" \
       --show-error \
+      "$url" \
       >&2
 
     err "Download failed after $CURL_MAX_RETRIES attempts. Last status code: $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}"
     return 2
   }
   export -f curl::download
-fi
-
-if ! declare -f curl::safe_curl_request > /dev/null; then
-  function curl::safe_curl_request() {
-    local url="$1"
-    local method="${2:-GET}"
-    local headers="${3:-}"
-    local data="${4:-}"
-    local output_file
-    output_file=$(mktemp)
-
-    local retry_count=0
-    local delay=${CURL_INITIAL_RETRY_DELAY}
-    local status_code=0
-    local response=""
-
-    while [[ $retry_count -lt ${CURL_MAX_RETRIES} ]]; do
-      status_code=0
-      response=""
-
-      local curl_cmd=(
-        curl
-        --show-error
-        --connect-timeout "${CURL_CONNECT_TIMEOUT}"
-        --max-time "${CURL_MAX_TIME}"
-        --fail-with-body
-        --silent
-        --write-out "%{http_code}"
-        -D /dev/stdout
-        -o "$output_file"
-      )
-
-      [[ "$method" == "POST" ]] && curl_cmd+=(-X "POST")
-
-      if [[ -n "$headers" ]]; then
-        eval "local header_array=($headers)"
-        for header in "${header_array[@]}"; do
-          curl_cmd+=(-H "$header")
-        done
-      fi
-
-      [[ -n "$data" ]] && curl_cmd+=(-d "$data")
-      curl_cmd+=("$url")
-
-      [[ "${verbose:-false}" == "true" ]] && >&2 echo "Making $method request to $(curl::redact_keys "$url")"
-
-      local curl_output
-      curl_output="$("${curl_cmd[@]}" 2>&1 || true)"
-      status_code=$(echo "$curl_output" | tail -n 1)
-      response="$(cat "$output_file" || true)"
-      local response_headers=$(echo "$curl_output" | head -n -1)
-
-      if [[ $status_code -ge 200 && $status_code -lt 300 ]]; then
-        [[ "${verbose:-false}" == "true" ]] && >&2 echo "Request to $(curl::redact_keys "$url") succeeded with status $status_code : ${curl__HTTP_STATUS_CODES[$status_code]}"
-        echo "$response"
-        rm -f "$output_file"
-        return 0
-      fi
-
-      retry_count=$((retry_count + 1))
-      if [[ $retry_count -lt $CURL_MAX_RETRIES ]]; then
-        curl::save_failed_response "$data" "$response" "$(basename "$url")"
-
-        if ! curl::should_retry "$status_code"; then
-          return 2
-        fi
-
-        if ! curl::handle_retry "$status_code" $((retry_count + 1)) "$delay" "$response_headers" "$url"; then
-          return 2
-        fi
-        delay=$((delay * CURL_RETRY_EXP_BASE))
-        delay=$((delay < CURL_MAX_RETRY_DELAY ? delay : CURL_MAX_RETRY_DELAY))
-      fi
-    done
-
-    >&2 echo "CURL VERBOSE OUTPUT:"
-    curl -v "$url" \
-      -X "$method" \
-      ${headers:+-H "$headers"} \
-      ${data:+-d "$data"} \
-      --connect-timeout "${CURL_CONNECT_TIMEOUT}" \
-      --max-time "${CURL_MAX_TIME}" \
-      --show-error \
-      >&2
-
-    curl::save_failed_response "$data" "$response" "$(basename "$url")"
-    rm -f "$output_file"
-    err "Request failed after $CURL_MAX_RETRIES attempts. Last status code: $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}"
-    return 2
-  }
-  export -f curl::safe_curl_request
 fi
 
 if ! declare -f curl::request > /dev/null; then
