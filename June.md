@@ -38,7 +38,7 @@
 - [June 10, 2025](#june-10-2025)
   - [Sharing Eternal Victory](#sharing-eternal-victory)
   - [AI-Generated Summary: The Silent Majesty of Suffering and the Call to Behold](#ai-generated-summary-the-silent-majesty-of-suffering-and-the-call-to-behold)
-  - [Carvaggio's Ecce Homo](#carvaggios-ecce-homo)
+  - [Caravaggio's Ecce Homo](#caravaggios-ecce-homo)
 
 <!-- tocstop -->
 
@@ -234,6 +234,6 @@ This is no distant spectacle, but a mirror held to our own hearts. Do we, like t
 
 And so we pray, not as isolated souls, but as a body united in grace. The _Our Father_, the _Hail Mary_—these are not empty words, but the breath of a shared faith, the rope that binds us to mercy. For in His wounds, we find our healing; in His resurrection, our victory. Let us then, with sober hearts, behold the man—and in beholding, be transformed.
 
-### Carvaggio's Ecce Homo
+### Caravaggio's Ecce Homo
 
-[![Carvaggio's Ecce Homo](/June/jpgs/EcceHomo.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Caravaggio_%28Michelangelo_Merisi%29_-_Ecce_Homo_-_Google_Art_Project.jpg/960px-Caravaggio_%28Michelangelo_Merisi%29_-_Ecce_Homo_-_Google_Art_Project.jpg "Carvaggio's Ecce Homo")
+[![Caravaggio's Ecce Homo](/June/jpgs/EcceHomo.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Caravaggio_%28Michelangelo_Merisi%29_-_Ecce_Homo_-_Google_Art_Project.jpg/960px-Caravaggio_%28Michelangelo_Merisi%29_-_Ecce_Homo_-_Google_Art_Project.jpg "Carvaggio's Ecce Homo")
