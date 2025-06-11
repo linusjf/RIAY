@@ -18,13 +18,27 @@ if ! declare -f require_commands > /dev/null; then
   #######################################
   require_commands() {
     for cmd in "$@"; do
-      if ! command -v "$cmd" > /dev/null 2>&1; then
-        err "Required command not found: $cmd"
+      if ! command_available "$cmd"; then
+        err "Required command not available: $cmd"
         exit 127
       fi
     done
   }
   export -f require_commands
+fi
+
+if ! declare -f command_available > /dev/null; then
+  #######################################
+  # Check if command is available
+  # Globals: none
+  # Arguments: command name
+  # Outputs: None
+  # Returns: exits with status 127 if command not found
+  #######################################
+  command_available() {
+    command -v "$1" &> /dev/null
+  }
+  export -f command_available
 fi
 
 if ! declare -f require_vars > /dev/null; then
