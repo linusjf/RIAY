@@ -44,7 +44,8 @@ EOF
 }
 
 function create_temp_dir() {
-  TEMP_DIR=$(mktemp -d -t "${SCRIPT_NAME}.XXXXXX")
+  local timestamp=$(date +"%Y%m%d_%H%M%S")
+  TEMP_DIR=$(mktemp -d -t "${SCRIPT_NAME}_${timestamp}.XXXXXX")
   echo "${TEMP_DIR}"
 }
 
