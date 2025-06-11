@@ -1,4 +1,4 @@
 # commands
-addvideo "88cqc2fVeQk" "Sharing Eternal Victory"
+addvideo "AULh_RGsXCE" "Carrying the Cross Together"
 stitch
 lintall

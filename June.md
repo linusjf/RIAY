@@ -40,6 +40,10 @@
   - [AI-Generated Summary: The Silent Majesty of Suffering and the Call to Behold](#ai-generated-summary-the-silent-majesty-of-suffering-and-the-call-to-behold)
   - [Caravaggio's Ecce Homo - Behold The Man](#caravaggios-ecce-homo---behold-the-man)
   - [The Lost Caravaggio - Ecce Homo](#the-lost-caravaggio---ecce-homo)
+- [June 11, 2025](#june-11-2025)
+  - [Carrying the Cross Together](#carrying-the-cross-together)
+  - [AI-Generated Summary: The Weight and the Lightness of the Cross](#ai-generated-summary-the-weight-and-the-lightness-of-the-cross)
+  - [Christ carrying the Cross (1605) by Orazio Gentileschi](#christ-carrying-the-cross-1605-by-orazio-gentileschi)
 
 <!-- tocstop -->
 
@@ -242,3 +246,23 @@ And so we pray, not as isolated souls, but as a body united in grace. The _Our F
 ### The Lost Caravaggio - Ecce Homo
 
 [![The Lost Caravaggio - Ecce Homo](/June/jpgs/EcceHomoTheLostOne.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Ecce_homo%28Caravaggio%29.jpg/500px-Ecce_homo%28Caravaggio%29.jpg "The Lost Caravaggio - Ecce Homo")
+
+## June 11, 2025
+
+### Carrying the Cross Together
+
+[![Carrying the Cross Together](/June/jpgs/Day162.jpg)](https://youtu.be/AULh_RGsXCE "Carrying the Cross Together")
+
+### AI-Generated Summary: The Weight and the Lightness of the Cross
+
+Consider, dear reader, the paradox so vividly captured in Gentileschi’s _Christ Carrying the Cross_: here is the Son of God, bowed beneath the crushing weight of wood and sin, yet His face betrays not despair, but a quiet, unshakable resolve. The artist, with his Caravaggesque mastery of light and shadow, shows us not only the agony of the cross but the strange, sustaining peace beneath it.
+
+Two women stand near—one radiant with devotion, the other shrouded in grief—reminding us that suffering is never borne alone. And though Simon strains beside Him, we sense the deeper truth: this burden, though real, is not the final word. For Christ Himself spoke of a yoke that is easy, a load that is light—not because the cross is featherlight, but because He carries it with us, and we with Him.
+
+Herein lies the mystery: the rest He promises is not freedom from weight, but a strength within it. The world sees only the sweat, the splinters, the stumbling; faith sees further. It knows that behind every Gethsemane lies a resurrection, and that the hands which bear the cross are the same that will cast it aside in triumph.
+
+So let us pray, as the saints have prayed—_Our Father_, _Hail Mary_—not to escape the weight, but to find, as He did, the lightness of trust in the Father’s will. For in that surrender, even the heaviest cross becomes a gateway to joy.
+
+### Christ carrying the Cross (1605) by Orazio Gentileschi
+
+[![Christ carrying the Cross (1605) by Orazio Gentileschi](/June/jpgs/christcarryingthecross.jpg)](https://www.artchive.com/wp-content/uploads/2024/08/christ-carrying-the-cross-orazio-gentileschi-1605.jpg "Christ carrying the Cross (1605) by Orazio Gentileschi")
