@@ -199,7 +199,7 @@ if ! declare -f youtube::bestaudio_filename > /dev/null; then
   youtube::bestaudio_filename() {
     local video_id="$1"
     local filename_format="${2:-"%(id)s.%(ext)s"}"
-    yt-dlp --get-filename -f bestaudio -o "$filename_format" "https://www.youtube.com/watch?v=$video_id"
+    yt-dlp --get-filename -f bestaudio -o "$filename_format" "https://www.youtube.com/watch?v=$video_id" 2> /dev/null
   }
   export -f youtube::bestaudio_filename
 fi
