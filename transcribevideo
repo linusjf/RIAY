@@ -132,7 +132,9 @@ function transcribe_via_webservice() {
 function transcribe_locally() {
   local audio_file="$1"
   whisper --task transcribe --model "${ASR_LOCAL_MODEL:-small}" --output_format txt --language en "$audio_file" &> /dev/null || return 1
-  cat "${audio_file%.*}.txt"
+  # since transcript is saved in current directory
+  local file_name="$(basename "$audio_file")"
+  cat "${file_name%.*}.txt"
 }
 
 function transcribe_audio() {

@@ -212,7 +212,7 @@ if ! declare -f youtube::download_bestaudio > /dev/null; then
       file_name="$(youtube::bestaudio_filename "$video_id" "$file_name")"
     fi
     rm -f "$file_name" \
-      && yt-dlp -f bestaudio \
+      && yt-dlp -f "bestaudio[ext=m4a]/bestaudio[ext=webm]/bestaudio" \
         --retries "$YT_DLP_RETRIES" \
         --fragment-retries "$YT_DLP_RETRIES" \
         --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
