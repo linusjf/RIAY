@@ -24,11 +24,6 @@ DRY_RUN=false
 VIDEO_ID=""
 OUTPUT_FILE=""
 CUSTOM_OUTPUT=false
-TMP_DIR=""
-
-function cleanup() {
-  files::safe_remove_dir "${TMP_DIR}"
-}
 
 function version() {
   printf "%s\n" "${VERSION}"
@@ -160,9 +155,6 @@ function main() {
     dryrun
     exit 0
   fi
-
-  trap cleanup EXIT
-  TMP_DIR="$(files::create_temp_dir "${SCRIPT_NAME}")"
 
   ${DEBUG} && set -x
 
