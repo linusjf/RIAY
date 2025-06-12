@@ -145,7 +145,7 @@ function transcribe_audio() {
       >&2 echo "Transcribing locally... This may take longer than usual..."
       transcribe_locally "$audio_file"
     else
-      >&2 echo "ffmpeg and whisper not installed locally. Trying webservice instead..."
+      >&2 echo "ffmpeg and/or whisper not available. Trying webservice instead..."
       transcribe_via_webservice "$audio_file"
     fi
   else
