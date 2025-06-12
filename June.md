@@ -47,6 +47,7 @@
 - [June 12, 2025](#june-12-2025)
   - [Through His Eyes](#through-his-eyes)
   - [AI-Generated Summary: The View from the Cross](#ai-generated-summary-the-view-from-the-cross)
+  - [James Tissot's What Our Lord Saw From The Cross](#james-tissots-what-our-lord-saw-from-the-cross)
 
 <!-- tocstop -->
 
@@ -289,3 +290,7 @@ Let us then pray, not as those who repeat empty words, but as those who kneel in
 _Our Father... Hail Mary... Glory be..._
 
 Go in peace, and may the grace of that holy gaze attend you always.
+
+### James Tissot's What Our Lord Saw From The Cross
+
+[![James Tissot's What Our Lord Saw From The Cross](June/jpgs/viewfromcross.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg/960px-Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg "James Tissot's What Our Lord Saw From The Cross")
