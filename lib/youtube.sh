@@ -25,6 +25,11 @@ require_vars YOUTUBE_API_KEY
 : "${YT_DLP_SOCKET_TIMEOUT:=30}"
 : "${YT_DLP_CONCURRENT_FRAGMENTS:=5}"
 
+if ! declare -p youtube__BESTAUDIO_FORMAT &> /dev/null; then
+  # best audio format to be passed to yt-dlp when downloading audio
+  readonly youtube__BESTAUDIO_FORMAT="bestaudio[ext=m4a]/bestaudio[ext=webm]/bestaudio"
+fi
+
 if ! declare -p youtube__THUMBNAIL_SIZES &> /dev/null; then
   # array of youtube thumbnail sizes in descending order. Not all may be available.
   # cycle through the sizes to pick the largest
@@ -199,7 +204,7 @@ if ! declare -f youtube::bestaudio_filename > /dev/null; then
   youtube::bestaudio_filename() {
     local video_id="$1"
     local filename_format="${2:-"%(id)s.%(ext)s"}"
-    yt-dlp --get-filename -f "bestaudio[ext=m4a]/bestaudio[ext=webm]/bestaudio" -o "$filename_format" "https://www.youtube.com/watch?v=$video_id" 2> /dev/null
+    yt-dlp --get-filename -f "$youtube__BESTAUDIO_FORMAT" -o "$filename_format" "https://www.youtube.com/watch?v=$video_id" 2> /dev/null
   }
   export -f youtube::bestaudio_filename
 fi
@@ -212,7 +217,7 @@ if ! declare -f youtube::download_bestaudio > /dev/null; then
       file_name="$(youtube::bestaudio_filename "$video_id" "$file_name")"
     fi
     rm -f "$file_name" \
-      && yt-dlp -f "bestaudio[ext=m4a]/bestaudio[ext=webm]/bestaudio" \
+      && yt-dlp -f "$youtube__BESTAUDIO_FORMAT" \
         --retries "$YT_DLP_RETRIES" \
         --fragment-retries "$YT_DLP_RETRIES" \
         --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
