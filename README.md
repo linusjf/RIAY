@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -4772,6 +4772,9 @@ Farewell, and may His peace attend you.
   - [Carrying the Cross Together](#carrying-the-cross-together)
   - [AI-Generated Summary: The Weight and the Lightness of the Cross](#ai-generated-summary-the-weight-and-the-lightness-of-the-cross)
   - [Christ carrying the Cross (1605) by Orazio Gentileschi](#christ-carrying-the-cross-1605-by-orazio-gentileschi)
+- [June 12, 2025](#june-12-2025)
+  - [Through His Eyes](#through-his-eyes)
+  - [AI-Generated Summary: The View from the Cross](#ai-generated-summary-the-view-from-the-cross)
 
 <!-- tocstop -->
 
@@ -4994,6 +4997,26 @@ So let us pray, as the saints have prayed—_Our Father_, _Hail Mary_—not to e
 ##### Christ carrying the Cross (1605) by Orazio Gentileschi
 
 [![Christ carrying the Cross (1605) by Orazio Gentileschi](June/jpgs/christcarryingthecross.jpg)](https://www.artchive.com/wp-content/uploads/2024/08/christ-carrying-the-cross-orazio-gentileschi-1605.jpg "Christ carrying the Cross (1605) by Orazio Gentileschi")
+
+#### June 12, 2025
+
+##### Through His Eyes
+
+[![Through His Eyes](June/jpgs/Day163.jpg)](https://youtu.be/huOrcv8uKOA "Through His Eyes")
+
+##### AI-Generated Summary: The View from the Cross
+
+Imagine, if you will, the scene at Calvary not as we so often see it—framed by artists at a safe distance—but as the Lord Himself beheld it in those final hours: a sea of faces, some twisted in mockery, others slack with indifference, and a few, dear few, wet with tears. Tissot’s painting, though but shadows of the reality, gives us this very perspective—the God who hung there, wounded and weary, gazing upon a world that knew Him not.
+
+Here is the bitter paradox of Love incarnate: the Creator, pierced by the cruelty of His creatures, yet fixing His eyes most tenderly on those who loved Him in return—His mother, the beloved disciple, the Magdalene. Does it not strike you as strange that the same heart which grieves over the hardness of men is the very heart that overflows with mercy for them?
+
+And now, dear friend, consider where you would have stood that day. Would you have been among the scoffers, the passive onlookers, or the weeping few at the cross’s foot? For this is no mere historical exercise; it is the question of every age and every soul. Christ’s sacrifice, once offered, remains eternally present, and our response to it—be it cold neglect or adoring love—shapes not only our destiny but the very quality of our days here and now.
+
+Let us then pray, not as those who repeat empty words, but as those who kneel in the shadow of the cross, daring to look up into the face of Him who first looked upon us with such unutterable love.
+
+_Our Father... Hail Mary... Glory be..._
+
+Go in peace, and may the grace of that holy gaze attend you always.
 
 ## July
 
