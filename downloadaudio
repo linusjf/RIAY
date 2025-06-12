@@ -65,7 +65,7 @@ function download_audio() {
     else
       output_file="$(youtube::download_audio_as_wav "${video_id}")"
     fi
-  elif "$ffmpeg_installed" && "$whisper_installed" && ! "${TRANSCRIBE_LOCALLY}"; then
+  elif "$ffmpeg_installed" && ! "${TRANSCRIBE_LOCALLY}"; then
     >&2 echo "Downloading audio as flac to optimize whisper web service"
     if [[ -n "$output_file" ]]; then
       output_file="$(youtube::download_audio_as_flac "${video_id}" "${output_file}")"
