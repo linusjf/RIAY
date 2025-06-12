@@ -7,6 +7,8 @@
 
 ## Bugs/Issues
 
+1. File name for best audio always returns mp4 extension. Fix so that file name matches output file format.
+
 ## Exploratory tasks
 
-1. Explore Whisper AI to transcribe videos. Local and cloud.
+1. Explore faster-whisper
