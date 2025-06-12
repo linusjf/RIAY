@@ -221,7 +221,8 @@ if ! declare -f youtube::download_bestaudio > /dev/null; then
         --retry-sleep exp=1:300:2 \
         --user-agent "com.google.android.youtube/17.31.35 (Linux; U; Android 11)" \
         -o "${file_name}" \
-        "https://www.youtube.com/watch?v=${video_id}" &> /dev/null
+        "https://www.youtube.com/watch?v=${video_id}" &> /dev/null \
+      && printf "%s\n" "$file_name"
   }
   export -f youtube::download_bestaudio
 fi

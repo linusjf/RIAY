@@ -43,12 +43,6 @@ EOF
   exit "${1:-0}"
 }
 
-function create_temp_dir() {
-  local timestamp=$(date +"%Y%m%d_%H%M%S")
-  TEMP_DIR=$(mktemp -d -t "${SCRIPT_NAME}_${timestamp}.XXXXXX")
-  echo "${TEMP_DIR}"
-}
-
 function main() {
   local verbose=false
   local quiet=false
@@ -92,27 +86,20 @@ function main() {
 
   local video_id="$1"
   local output_file="${2:-}"
-  local temp_dir_created=false
-
-  if [[ -z "$output_file" ]]; then
-    output_file="$(create_temp_dir)/$(youtube::bestaudio_filename "$video_id")"
-    temp_dir_created=true
-  fi
 
   if [[ "$verbose" = true ]]; then
     printf "Downloading audio for video ID: %s\n" "$video_id" >&2
-    printf "Saving to: %s\n" "$output_file" >&2
     set -x
   fi
 
-  youtube::download_bestaudio "${video_id}" "${output_file}"
+  if [[ -n "$output_file" ]]; then
+    output_file="$(youtube::download_bestaudio "${video_id}" "${output_file}")"
+  else
+    output_file="$(youtube::download_bestaudio "${video_id}")"
+  fi
 
   if [[ "$quiet" = false ]]; then
-    if [[ "$temp_dir_created" = true ]]; then
-      printf "Successfully downloaded audio to temporary location: %s\n" "$output_file" >&2
-    else
-      printf "Successfully downloaded audio to: %s\n" "$output_file" >&2
-    fi
+    printf "Successfully downloaded audio to: %s\n" "$output_file" >&2
   fi
   printf "%s\n" "$output_file"
 }
