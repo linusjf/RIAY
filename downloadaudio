@@ -13,6 +13,11 @@ readonly SCRIPT_NAME="$(basename "$0")"
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/youtube.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+
+ffmpeg_installed=false
+whisper_installed=false
 
 function version() {
   printf "%s\n" "$VERSION"
@@ -43,18 +48,39 @@ EOF
   exit "${1:-0}"
 }
 
-function check_local_prerequisites() {
-  is_command_available ffmpeg && is_command_available whisper
-}
-
 function download_audio() {
+  local video_id="$1"
+  local output_file="${2:-}"
   ${verbose} && log "Downloading with yt-dlp..."
-  if check_local_prerequisites; then
-    >&2 echo "Downloading audio as wav to optimize whisper"
-  else
-    >&2 echo "ffmpeg and whisper not installed locally. Trying webservice instead..."
-    >&2 echo "Downloading audio as flac to optimize whisper"
+  if is_command_available ffmpeg; then
+    ffmpeg_installed=true
   fi
+  if is_command_available whisper; then
+    whisper_installed=true
+  fi
+  if "$ffmpeg_installed" && "$whisper_installed" && "${TRANSCRIBE_LOCALLY}"; then
+    >&2 echo "Downloading audio as wav to optimize local whisper"
+    if [[ -n "$output_file" ]]; then
+      output_file="$(youtube::download_audio_as_wav "${video_id}" "${output_file}")"
+    else
+      output_file="$(youtube::download_audio_as_wav "${video_id}")"
+    fi
+  elif "$ffmpeg_installed" && "$whisper_installed" && ! "${TRANSCRIBE_LOCALLY}"; then
+    >&2 echo "Downloading audio as flac to optimize whisper web service"
+    if [[ -n "$output_file" ]]; then
+      output_file="$(youtube::download_audio_as_flac "${video_id}" "${output_file}")"
+    else
+      output_file="$(youtube::download_audio_as_flac "${video_id}")"
+    fi
+  else
+    >&2 echo "Downloading audio as best audio that doesn't need ffmpeg as a dependency..."
+    if [[ -n "$output_file" ]]; then
+      output_file="$(youtube::download_bestaudio "${video_id}" "${output_file}")"
+    else
+      output_file="$(youtube::download_bestaudio "${video_id}")"
+    fi
+  fi
+  printf "%s\n" "$output_file"
 }
 
 function main() {
@@ -106,11 +132,7 @@ function main() {
     set -x
   fi
 
-  if [[ -n "$output_file" ]]; then
-    output_file="$(youtube::download_bestaudio "${video_id}" "${output_file}")"
-  else
-    output_file="$(youtube::download_bestaudio "${video_id}")"
-  fi
+  output_file="$(download_audio "${video_id}" "$output_file")"
 
   if [[ "$quiet" = false ]]; then
     printf "Successfully downloaded audio to: %s\n" "$output_file" >&2

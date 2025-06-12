@@ -239,14 +239,7 @@ if ! declare -f youtube::download_audio_as_flac > /dev/null; then
       local file_name="${2:-"%(id)s.%(ext)s"}"
       local url="https://www.youtube.com/watch?v=${video_id}"
       if [[ "$file_name" == %* ]]; then
-        file_name="$(yt-dlp --get-filename \
-          -f bestaudio \
-          --extract-audio \
-          --audio-format flac \
-          --audio-quality 0 \
-          --postprocessor-args "-ar 16000 -ac 1" \
-          -o "$file_name" \
-          "$url")"
+        file_name="${video_id}.flac"
       fi
       rm -f "$file_name" \
         && yt-dlp -f bestaudio \
@@ -279,14 +272,7 @@ if ! declare -f youtube::download_audio_as_wav > /dev/null; then
       local file_name="${2:-"%(id)s.%(ext)s"}"
       local url="https://www.youtube.com/watch?v=${video_id}"
       if [[ "$file_name" == %* ]]; then
-        file_name="$(yt-dlp --get-filename \
-          -f bestaudio \
-          --extract-audio \
-          --audio-format wav \
-          --audio-quality 0 \
-          --postprocessor-args "-ar 16000 -ac 1" \
-          -o "$file_name" \
-          "$url")"
+        file_name="${video_id}.wav"
       fi
       rm -f "$file_name" \
         && yt-dlp -f bestaudio \
