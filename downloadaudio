@@ -43,6 +43,20 @@ EOF
   exit "${1:-0}"
 }
 
+function check_local_prerequisites() {
+  is_command_available ffmpeg && is_command_available whisper
+}
+
+function download_audio() {
+  ${verbose} && log "Downloading with yt-dlp..."
+  if check_local_prerequisites; then
+    >&2 echo "Downloading audio as wav to optimize whisper"
+  else
+    >&2 echo "ffmpeg and whisper not installed locally. Trying webservice instead..."
+    >&2 echo "Downloading audio as flac to optimize whisper"
+  fi
+}
+
 function main() {
   local verbose=false
   local quiet=false
