@@ -232,6 +232,86 @@ if ! declare -f youtube::download_bestaudio > /dev/null; then
   export -f youtube::download_bestaudio
 fi
 
+if ! declare -f youtube::download_audio_as_flac > /dev/null; then
+  youtube::download_audio_as_flac() {
+    if is_command_available "ffmpeg"; then
+      local video_id="$1"
+      local file_name="${2:-"%(id)s.%(ext)s"}"
+      local url="https://www.youtube.com/watch?v=${video_id}"
+      if [[ "$file_name" == %* ]]; then
+        file_name="$(yt-dlp --get-filename \
+          -f bestaudio \
+          --extract-audio \
+          --audio-format flac \
+          --audio-quality 0 \
+          --postprocessor-args "-ar 16000 -ac 1" \
+          -o "$file_name" \
+          "$url")"
+      fi
+      rm -f "$file_name" \
+        && yt-dlp -f bestaudio \
+          --extract-audio \
+          --audio-format flac \
+          --audio-quality 0 \
+          --postprocessor-args "-ar 16000 -ac 1" \
+          --retries "$YT_DLP_RETRIES" \
+          --fragment-retries "$YT_DLP_RETRIES" \
+          --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
+          --concurrent-fragments "$YT_DLP_CONCURRENT_FRAGMENTS" \
+          --no-part \
+          --retry-sleep exp=1:300:2 \
+          --user-agent "com.google.android.youtube/17.31.35 (Linux; U; Android 11)" \
+          -o "${file_name}" \
+          "$url" &> /dev/null \
+        && printf "%s\n" "$file_name"
+    else
+      >&2 echo "This function requires command ffmpeg to be available for yt-dlp to convert audio to flac format."
+      return 1
+    fi
+  }
+  export -f youtube::download_audio_as_flac
+fi
+
+if ! declare -f youtube::download_audio_as_wav > /dev/null; then
+  youtube::download_audio_as_wav() {
+    if is_command_available "ffmpeg"; then
+      local video_id="$1"
+      local file_name="${2:-"%(id)s.%(ext)s"}"
+      local url="https://www.youtube.com/watch?v=${video_id}"
+      if [[ "$file_name" == %* ]]; then
+        file_name="$(yt-dlp --get-filename \
+          -f bestaudio \
+          --extract-audio \
+          --audio-format wav \
+          --audio-quality 0 \
+          --postprocessor-args "-ar 16000 -ac 1" \
+          -o "$file_name" \
+          "$url")"
+      fi
+      rm -f "$file_name" \
+        && yt-dlp -f bestaudio \
+          --extract-audio \
+          --audio-format wav \
+          --audio-quality 0 \
+          --postprocessor-args "-ar 16000 -ac 1" \
+          --retries "$YT_DLP_RETRIES" \
+          --fragment-retries "$YT_DLP_RETRIES" \
+          --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
+          --concurrent-fragments "$YT_DLP_CONCURRENT_FRAGMENTS" \
+          --no-part \
+          --retry-sleep exp=1:300:2 \
+          --user-agent "com.google.android.youtube/17.31.35 (Linux; U; Android 11)" \
+          -o "${file_name}" \
+          "$url" &> /dev/null \
+        && printf "%s\n" "$file_name"
+    else
+      >&2 echo "This function requires command ffmpeg to be available for yt-dlp to convert audio to wav format."
+      return 1
+    fi
+  }
+  export -f youtube::download_audio_as_wav
+fi
+
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main() {
     echo "This is a library of functions and not meant to be executed directly" >&2
