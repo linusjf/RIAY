@@ -7,10 +7,14 @@ faster-whisper implementation of OpenAI's Whisper model.
 
 import sys
 import argparse
+import os
+from dotenv import load_dotenv
 from faster_whisper import WhisperModel
 
 
-MODEL_SIZE = "base"
+# Load environment variables from config.env
+load_dotenv('config.env')
+MODEL_SIZE = os.getenv('ASR_LOCAL_MODEL', 'base')
 BEAM_SIZE = 5
 
 
