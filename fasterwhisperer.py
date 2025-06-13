@@ -5,11 +5,12 @@ This module provides functionality to transcribe audio files using the
 faster-whisper implementation of OpenAI's Whisper model.
 """
 
+import sys
 import argparse
 from faster_whisper import WhisperModel
 
 
-MODEL_SIZE = "tiny"
+MODEL_SIZE = "small"
 BEAM_SIZE = 5
 
 
@@ -17,8 +18,8 @@ def transcribe_audio(
     audio_file: str,
     model_size: str = MODEL_SIZE,
     beam_size: int = BEAM_SIZE,
-    device: str = "cuda",
-    compute_type: str = "float16",
+    device: str = "cpu",
+    compute_type: str = "int8",
 ) -> None:
     """Transcribe audio file using faster-whisper model.
 
@@ -34,12 +35,11 @@ def transcribe_audio(
 
     print(
         "Detected language '%s' with probability %f"
-        % (info.language, info.language_probability)
-    )
+        % (info.language, info.language_probability), file=sys.stderr, flush=True)
 
     for segment in segments:
-        print(segment.text)
-
+        print(segment.text, end='', flush=True)
+    print("")
 
 def main() -> None:
     """Run main transcription function."""
