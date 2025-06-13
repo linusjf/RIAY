@@ -200,34 +200,24 @@ if ! declare -f youtube::has_audio_format > /dev/null; then
   export -f youtube::has_audio_format
 fi
 
-if ! declare -f youtube::bestaudio_filename > /dev/null; then
-  youtube::bestaudio_filename() {
-    local video_id="$1"
-    local filename_format="${2:-"%(id)s.%(ext)s"}"
-    yt-dlp --get-filename -f "$youtube__BESTAUDIO_FORMAT" -o "$filename_format" "https://www.youtube.com/watch?v=$video_id" 2> /dev/null
-  }
-  export -f youtube::bestaudio_filename
-fi
-
 if ! declare -f youtube::download_bestaudio > /dev/null; then
   youtube::download_bestaudio() {
     local video_id="$1"
-    local file_name="${2:-"%(id)s.%(ext)s"}"
-    if [[ "$file_name" == %* ]]; then
-      file_name="$(youtube::bestaudio_filename "$video_id" "$file_name")"
+    local file_name="${2:-}"
+    if [[ -n "$file_name" ]]; then
+      rm -f "$file_name"
     fi
-    rm -f "$file_name" \
-      && yt-dlp -f "$youtube__BESTAUDIO_FORMAT" \
-        --retries "$YT_DLP_RETRIES" \
-        --fragment-retries "$YT_DLP_RETRIES" \
-        --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
-        --concurrent-fragments "$YT_DLP_CONCURRENT_FRAGMENTS" \
-        --no-part \
-        --retry-sleep exp=1:300:2 \
-        --user-agent "com.google.android.youtube/17.31.35 (Linux; U; Android 11)" \
-        -o "${file_name}" \
-        "https://www.youtube.com/watch?v=${video_id}" &> /dev/null \
-      && printf "%s\n" "$file_name"
+    file_name="$(yt-dlp -f "$youtube__BESTAUDIO_FORMAT" \
+      --retries "$YT_DLP_RETRIES" \
+      --fragment-retries "$YT_DLP_RETRIES" \
+      --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
+      --concurrent-fragments "$YT_DLP_CONCURRENT_FRAGMENTS" \
+      --no-part \
+      --retry-sleep exp=1:300:2 \
+      --user-agent "com.google.android.youtube/17.31.35 (Linux; U; Android 11)" \
+      -o "${file_name:-%(id)s.%(ext)s}" \
+      "https://www.youtube.com/watch?v=${video_id}" 2> /dev/null | grep 'Destination' | sed 's/^.*[:] //g')" || return 1
+    printf "%s\n" "$file_name"
   }
   export -f youtube::download_bestaudio
 fi
