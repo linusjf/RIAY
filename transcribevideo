@@ -126,10 +126,14 @@ function transcribe_via_webservice() {
 
 function transcribe_locally() {
   local audio_file="$1"
-  whisper --task transcribe --model "${ASR_LOCAL_MODEL:-small}" --output_format txt --language en "$audio_file" &> /dev/null || return 1
-  # since transcript is saved in current directory
-  local file_name="$(basename "$audio_file")"
-  cat "${file_name%.*}.txt"
+  if "${USE_FASTER_WHISPER:-false}"; then
+    ./fasterwhisperer.py "$audio_file"
+  else
+    whisper --task transcribe --model "${ASR_LOCAL_MODEL:-base}" --output_format txt --language en "$audio_file" &> /dev/null || return 1
+    # since transcript is saved in current directory
+    local file_name="$(basename "$audio_file")"
+    cat "${file_name%.*}.txt"
+  fi
 }
 
 function transcribe_audio() {
