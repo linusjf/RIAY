@@ -9,7 +9,7 @@ import argparse
 from faster_whisper import WhisperModel
 
 
-MODEL_SIZE = "large-v3"
+MODEL_SIZE = "tiny"
 BEAM_SIZE = 5
 
 
@@ -45,9 +45,11 @@ def main() -> None:
     """Run main transcription function."""
     parser = argparse.ArgumentParser(description='Transcribe audio files using faster-whisper')
     parser.add_argument('audio_file', help='Path to audio file to transcribe')
+    parser.add_argument('--model-size', default=MODEL_SIZE,
+                       help=f'Size of whisper model to use (default: {MODEL_SIZE})')
     args = parser.parse_args()
-    
-    transcribe_audio(args.audio_file)
+
+    transcribe_audio(args.audio_file, model_size=args.model_size)
 
 
 if __name__ == "__main__":
