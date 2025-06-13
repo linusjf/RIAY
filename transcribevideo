@@ -140,8 +140,13 @@ function transcribe_audio() {
       >&2 echo "Transcribing locally... This may take longer than usual..."
       transcribe_locally "$audio_file"
     else
-      >&2 echo "ffmpeg and/or whisper not available. Trying webservice instead..."
-      transcribe_via_webservice "$audio_file"
+      if "${ENABLE_FAILOVER_MODE:-true}"; then
+        >&2 echo "ffmpeg and/or whisper not available. Trying webservice instead..."
+        transcribe_via_webservice "$audio_file"
+      else
+        >&2 echo "ffmpeg and/or whisper not available. Exiting..."
+        return
+      fi
     fi
   else
     transcribe_via_webservice "$audio_file"
@@ -160,7 +165,7 @@ function main() {
 
   ${VERBOSE} && log "Downloading audio for video ID: ${VIDEO_ID}"
   local audio_file="$("${SCRIPT_DIR}/downloadaudio" "${VIDEO_ID}")" \
-    && transcribe_audio "${audio_file}" > "${OUTPUT_FILE}"
+    && transcribe_audio "${audio_file}" > "${OUTPUT_FILE}" || return 1
   if ${VERBOSE}; then
     log "Transcription saved to: ${OUTPUT_FILE}"
   fi
@@ -168,7 +173,8 @@ function main() {
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   require_commands date tee cat
-  require_vars OPENAI_API_KEY CAPTIONS_OUTPUT_DIR ASR_LLM_API_KEY ASR_LLM_BASE_URL ASR_LLM_ENDPOINT ASR_LLM_MODEL ASR_LOCAL_MODEL TRANSCRIBE_LOCALLY
+  require_vars OPENAI_API_KEY CAPTIONS_OUTPUT_DIR ASR_LLM_API_KEY ASR_LLM_BASE_URL ASR_LLM_ENDPOINT ASR_LLM_MODEL ASR_LOCAL_MODEL \
+    TRANSCRIBE_LOCALLY ENABLE_FAILOVER_MODE
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
