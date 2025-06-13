@@ -48,6 +48,10 @@
   - [Through His Eyes](#through-his-eyes)
   - [AI-Generated Summary: The View from the Cross](#ai-generated-summary-the-view-from-the-cross)
   - [James Tissot's What Our Lord Saw From The Cross](#james-tissots-what-our-lord-saw-from-the-cross)
+- [June 13, 2025](#june-13-2025)
+  - [Guided by His Hands](#guided-by-his-hands)
+  - [AI-Generated Summary: The Mercy of the Risen Lord and the Faith of St. Thomas](#ai-generated-summary-the-mercy-of-the-risen-lord-and-the-faith-of-st-thomas)
+  - [Caravaggio's The Incredulity of St. Thomas](#caravaggios-the-incredulity-of-st-thomas)
 
 <!-- tocstop -->
 
@@ -294,3 +298,23 @@ Go in peace, and may the grace of that holy gaze attend you always.
 ### James Tissot's What Our Lord Saw From The Cross
 
 [![James Tissot's What Our Lord Saw From The Cross](June/jpgs/viewfromcross.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg/960px-Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg "James Tissot's What Our Lord Saw From The Cross")
+
+## June 13, 2025
+
+### Guided by His Hands
+
+[![Guided by His Hands](/June/jpgs/Day164.jpg)](https://youtu.be/g6d8Kt9WP0s "Guided by His Hands")
+
+### AI-Generated Summary: The Mercy of the Risen Lord and the Faith of St. Thomas
+
+Consider Caravaggio’s _The Incredulity of St. Thomas_, where the resurrected Christ, with gentle firmness, guides the trembling hand of His disciple to the wound in His side. Here we see not a rebuke for doubt, but a divine condescension—a Lord who meets His servant in the very place of his uncertainty. Thomas, far from a mere skeptic, embodies the hunger of every soul that longs not for abstract proofs, but for the living God.
+
+And how does Christ answer? Not with scorn, but with mercy. He offers His wounds as the seal of His love, inviting Thomas—and all who come after—to touch and believe. Here is the heart of the matter: faith is not a cold assent, but an encounter with the One who bore our sorrows. The resurrection is not a doctrine to be debated, but a reality to be lived—does your life bear its mark?
+
+Let us then pray for grace to seek Him as Thomas did, not shrinking from our need, but bringing it to the feet of Him who welcomes all. And as we do, may we find, as Thomas did, that our faltering faith is met with a love that will not let us go.
+
+_Hail Mary, full of grace… Glory be to the Father…_ So we pray, asking the saints to intercede, and so we part, blessed in the name of Him who is our peace.
+
+### Caravaggio's The Incredulity of St. Thomas
+
+[![Caravaggio's The Incredulity of St. Thomas](/June/jpgs/incredulity.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Der_ungl%C3%A4ubige_Thomas_-_Michelangelo_Merisi%2C_named_Caravaggio.jpg/960px-Der_ungl%C3%A4ubige_Thomas_-_Michelangelo_Merisi%2C_named_Caravaggio.jpg "Caravaggio's The Incredulity of St. Thomas")

@@ -1,4 +1,4 @@
 # commands
-addvideo "huOrcv8uKOA" "Through His Eyes"
+addvideo "g6d8Kt9WP0s" "Guided by His Hands"
 stitch
 lintall
