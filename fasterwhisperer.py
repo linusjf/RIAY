@@ -10,7 +10,7 @@ import argparse
 from faster_whisper import WhisperModel
 
 
-MODEL_SIZE = "small"
+MODEL_SIZE = "base"
 BEAM_SIZE = 5
 
 
