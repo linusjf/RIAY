@@ -203,13 +203,17 @@ function main() {
     fi
   else
     if ! vtt_file="$("${SCRIPT_DIR}/downloadcaptions" "$VIDEO_ID")"; then
-      die "Error downloading captions for ${VIDEO_ID}"
-    fi
-    if [[ ! -f "$vtt_file" ]]; then
-      die "Error: Subtitle file ${vtt_file} not found"
-    fi
-    if ! captions_file="$("${SCRIPT_DIR}/extractcaptions" "$vtt_file")"; then
-      die "Error extracting captions from ${vtt_file}"
+      if "${ENABLE_FAILOVER_MODE:-true}"; then
+        if ! "${SCRIPT_DIR}/transcribevideo" "$VIDEO_ID" -o "$captions_file"; then
+          die "Error transcribing captions for ${VIDEO_ID}"
+        fi
+      else
+        die "Error downloading captions for ${VIDEO_ID}"
+      fi
+    else
+      if ! captions_file="$("${SCRIPT_DIR}/extractcaptions" "$vtt_file")"; then
+        die "Error extracting captions from ${vtt_file}"
+      fi
     fi
   fi
 
