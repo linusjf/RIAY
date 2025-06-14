@@ -16,7 +16,7 @@ from faster_whisper import WhisperModel
 load_dotenv('config.env')
 MODEL_SIZE = os.getenv('ASR_LOCAL_MODEL', 'base')
 BEAM_SIZE = int(os.getenv('ASR_BEAM_SIZE', 3))
-
+ASR_INITIAL_PROMPT= os.getenv('ASR_INITIAL_PROMPT', '')
 
 def transcribe_audio(
     audio_file: str,
@@ -35,7 +35,7 @@ def transcribe_audio(
         compute_type: Compute type for model ('float16', 'int8_float16', etc.).
     """
     model = WhisperModel(model_size, device=device, compute_type=compute_type)
-    segments, info = model.transcribe(audio_file, beam_size=beam_size)
+    segments, info = model.transcribe(audio_file, beam_size=beam_size, initial_prompt=ASR_INITIAL_PROMPT)
 
     print(
         "Detected language '%s' with probability %f"
