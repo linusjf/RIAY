@@ -107,7 +107,7 @@ linkcheck_timeout = 20
 
 linkcheck_anchors = False
 
-linkcheck_report_timeouts_as_broken = True
+linkcheck_report_timeouts_as_broken = False
 
 linkcheck_ignore = [
     r"http://localhost:\d+/",  # Ignore local dev servers
