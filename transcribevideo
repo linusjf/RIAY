@@ -121,7 +121,8 @@ function transcribe_via_webservice() {
     --header 'Content-Type: multipart/form-data' \
     --form file=@"${audio_file}" \
     --form model="${ASR_LLM_MODEL}" \
-    --form response_format=text || return 1
+    --form response_format=text \
+    --form prompt="${ASR_INITIAL_PROMPT:-}" || return 1
 }
 
 function transcribe_locally() {
@@ -129,7 +130,8 @@ function transcribe_locally() {
   if "${USE_FASTER_WHISPER:-false}"; then
     ./fasterwhisperer.py "$audio_file"
   else
-    whisper --task transcribe --model "${ASR_LOCAL_MODEL:-base}" --output_format txt --language en "$audio_file" &> /dev/null || return 1
+    whisper --task transcribe --model "${ASR_LOCAL_MODEL:-base}" --output_format txt --language en \
+      --initial-prompt "${ASR_INITIAL_PROMPT:-}" --beam-size "${ASR_BEAM_SIZE:-5}" "$audio_file" &> /dev/null || return 1
     # since transcript is saved in current directory
     local file_name="$(basename "$audio_file")"
     cat "${file_name%.*}.txt"
@@ -178,7 +180,7 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   require_commands date tee cat
   require_vars OPENAI_API_KEY CAPTIONS_OUTPUT_DIR ASR_LLM_API_KEY ASR_LLM_BASE_URL ASR_LLM_ENDPOINT ASR_LLM_MODEL ASR_LOCAL_MODEL \
-    TRANSCRIBE_LOCALLY ENABLE_FAILOVER_MODE
+    TRANSCRIBE_LOCALLY ENABLE_FAILOVER_MODE ASR_INITIAL_PROMPT ASR_BEAM_SIZE
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
