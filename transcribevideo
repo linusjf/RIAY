@@ -105,6 +105,8 @@ function parse_args() {
   if ! ${CUSTOM_OUTPUT}; then
     OUTPUT_FILE="${CAPTIONS_OUTPUT_DIR}/${VIDEO_ID}.en.txt"
   fi
+  # force creation of directory if it does not exist
+  mkdir -p "$(dirname "${OUTPUT_FILE}")"
 }
 
 function check_local_prerequisites() {
@@ -178,7 +180,7 @@ function main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require_commands date tee cat
+  require_commands date tee cat mkdir dirname
   require_vars OPENAI_API_KEY CAPTIONS_OUTPUT_DIR ASR_LLM_API_KEY ASR_LLM_BASE_URL ASR_LLM_ENDPOINT ASR_LLM_MODEL ASR_LOCAL_MODEL \
     TRANSCRIBE_LOCALLY ENABLE_FAILOVER_MODE ASR_INITIAL_PROMPT ASR_BEAM_SIZE
   if "${LOGGING:-false}"; then
