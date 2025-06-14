@@ -258,7 +258,7 @@ function append_summary() {
     "${SCRIPT_DIR}/summarizevideo" -- "${videoid}" >| "$summaryfname" \
       && "${SCRIPT_DIR}/generateimageprompt" -- "$summaryfname" >| "$summarypromptfname" \
       && cat "$summaryfname" || {
-      >&2 "exit code: $?"
+      >&2 echo "exit code: $?"
       exit $E_FILE_GENERATION_FAILED
     }
   } >> "${filepath}"
