@@ -52,6 +52,10 @@
   - [Guided by His Hands](#guided-by-his-hands)
   - [AI-Generated Summary: The Mercy of the Risen Lord and the Faith of St. Thomas](#ai-generated-summary-the-mercy-of-the-risen-lord-and-the-faith-of-st-thomas)
   - [Caravaggio's The Incredulity of St. Thomas](#caravaggios-the-incredulity-of-st-thomas)
+- [June 14, 2025](#june-14-2025)
+  - [Following in His Footsteps](#following-in-his-footsteps)
+  - [AI-Generated Summary: The Footprints of the Ascended Lord](#ai-generated-summary-the-footprints-of-the-ascended-lord)
+  - [Ascension of the Lord by Bernardino Gandino](#ascension-of-the-lord-by-bernardino-gandino)
 
 <!-- tocstop -->
 
@@ -318,3 +322,21 @@ _Hail Mary, full of grace… Glory be to the Father…_ So we pray, asking the s
 ### Caravaggio's The Incredulity of St. Thomas
 
 [![Caravaggio's The Incredulity of St. Thomas](/June/jpgs/incredulity.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Der_ungl%C3%A4ubige_Thomas_-_Michelangelo_Merisi%2C_named_Caravaggio.jpg/960px-Der_ungl%C3%A4ubige_Thomas_-_Michelangelo_Merisi%2C_named_Caravaggio.jpg "Caravaggio's The Incredulity of St. Thomas")
+
+## June 14, 2025
+
+### Following in His Footsteps
+
+[![Following in His Footsteps](/June/jpgs/Day165.jpg)](https://youtu.be/iC6Ym9cG9uk "Following in His Footsteps")
+
+### AI-Generated Summary: The Footprints of the Ascended Lord
+
+Consider, dear reader, that wondrous moment when our Lord, having conquered death, ascended into heaven—a scene captured with radiant solemnity by Gandino’s brush. There He rises, bathed in light, while His mother and apostles gaze upward, their hearts torn between sorrow and joy. And there, upon the stone, remain His footprints—not as a relic of absence, but as a promise: though He departs, He leaves behind the path we are to follow.
+
+St. Francis, that most ardent imitator of Christ, understood this well. To walk in His steps is not merely to admire them from afar, but to press our own feet into the dust He trod—through prayer, through sacrament, through humble obedience to His Church. The Ascension is no mere departure; it is an invitation. As He rose, so too must we lift our hearts, our minds, our very lives toward heaven, where He reigns.
+
+Let us then, with renewed devotion, take up this daily pilgrimage. For the footprints on the stone are but the beginning; the true path leads ever upward, to where He waits.
+
+### Ascension of the Lord by Bernardino Gandino
+
+[![Ascension of the Lord by Bernardino Gandino](/June/jpgs/ascensionofthelord.jpg)](https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Ascension of the Lord by Bernardino Gandino")
