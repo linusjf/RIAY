@@ -15,7 +15,7 @@ from faster_whisper import WhisperModel
 # Load environment variables from config.env
 load_dotenv('config.env')
 MODEL_SIZE = os.getenv('ASR_LOCAL_MODEL', 'base')
-BEAM_SIZE = 3
+BEAM_SIZE = int(os.getenv('ASR_BEAM_SIZE', 3))
 
 
 def transcribe_audio(
