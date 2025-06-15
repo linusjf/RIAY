@@ -137,7 +137,7 @@ function transcribe_locally() {
     if python::is_package_installed "$FASTER_WHISPER"; then
       ./fasterwhisperer.py "$audio_file"
     else
-      log "Python package ${FASTER_WHISPER} and its dependencies not available. Exiting transcribe_locally..."
+      err "Python package ${FASTER_WHISPER} and its dependencies not available. Exiting transcribe_locally..."
       return
     fi
   else
@@ -148,7 +148,7 @@ function transcribe_locally() {
       local file_name="$(basename "$audio_file")"
       cat "${file_name%.*}.txt"
     else
-      log "ffmpeg and/or whisper not available. Exiting transcribe_locally..."
+      err "ffmpeg and/or whisper not available. Exiting transcribe_locally..."
       return
     fi
   fi
@@ -158,13 +158,13 @@ function transcribe_audio() {
   local audio_file="$1"
   ${VERBOSE} && log "Transcribing with Whisper..."
   if ${TRANSCRIBE_LOCALLY:-false}; then
-    log "Transcribing locally... This may take longer than usual..."
+    err "Transcribing locally... This may take longer than usual..."
     if ! transcribe_locally "$audio_file"; then
       if "${ENABLE_FAILOVER_MODE:-true}"; then
-        log "ffmpeg, whisper or faster-whisper not available. Trying webservice instead..."
+        err "ffmpeg, whisper or faster-whisper not available. Trying webservice instead..."
         transcribe_via_webservice "$audio_file"
       else
-        log "ffmpeg, whisper or faster-whisper not available. Exiting..."
+        err "ffmpeg, whisper or faster-whisper not available. Exiting..."
         return
       fi
     fi
