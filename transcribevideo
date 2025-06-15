@@ -137,14 +137,20 @@ function transcribe_locally() {
     if python::is_package_installed "$FASTER_WHISPER"; then
       ./fasterwhisperer.py "$audio_file"
     else
-      die "Python package ${FASTER_WHISPER} and its dependencies not available. Exiting..."
+      log "Python package ${FASTER_WHISPER} and its dependencies not available. Exiting transcribe_locally..."
+      return
     fi
   else
-    whisper --task transcribe --model "${ASR_LOCAL_MODEL:-base}" --output_format txt --language en \
-      --initial-prompt "${ASR_INITIAL_PROMPT:-}" --beam-size "${ASR_BEAM_SIZE:-5}" "$audio_file" &> /dev/null || return 1
-    # since transcript is saved in current directory
-    local file_name="$(basename "$audio_file")"
-    cat "${file_name%.*}.txt"
+    if check_local_prerequisites; then
+      whisper --task transcribe --model "${ASR_LOCAL_MODEL:-base}" --output_format txt --language en \
+        --initial-prompt "${ASR_INITIAL_PROMPT:-}" --beam-size "${ASR_BEAM_SIZE:-5}" "$audio_file" &> /dev/null || return 1
+      # since transcript is saved in current directory
+      local file_name="$(basename "$audio_file")"
+      cat "${file_name%.*}.txt"
+    else
+      log "ffmpeg and/or whisper not available. Exiting transcribe_locally..."
+      return
+    fi
   fi
 }
 
@@ -152,15 +158,13 @@ function transcribe_audio() {
   local audio_file="$1"
   ${VERBOSE} && log "Transcribing with Whisper..."
   if ${TRANSCRIBE_LOCALLY:-false}; then
-    if check_local_prerequisites; then
-      log "Transcribing locally... This may take longer than usual..."
-      transcribe_locally "$audio_file"
-    else
+    log "Transcribing locally... This may take longer than usual..."
+    if ! transcribe_locally "$audio_file"; then
       if "${ENABLE_FAILOVER_MODE:-true}"; then
-        log "ffmpeg and/or whisper not available. Trying webservice instead..."
+        log "ffmpeg, whisper or faster-whisper not available. Trying webservice instead..."
         transcribe_via_webservice "$audio_file"
       else
-        log "ffmpeg and/or whisper not available. Exiting transcribe_audio function..."
+        log "ffmpeg, whisper or faster-whisper not available. Exiting..."
         return
       fi
     fi
