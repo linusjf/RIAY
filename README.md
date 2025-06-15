@@ -4784,6 +4784,10 @@ Farewell, and may His peace attend you.
   - [Following in His Footsteps](#following-in-his-footsteps)
   - [AI-Generated Summary: The Footprints of the Ascended Lord](#ai-generated-summary-the-footprints-of-the-ascended-lord)
   - [Ascension of the Lord by Bernardino Gandino](#ascension-of-the-lord-by-bernardino-gandino)
+- [June 15, 2025](#june-15-2025)
+  - [Ordinary, Yet Called](#ordinary-yet-called)
+  - [AI-Generated Summary: The Spirit's Fire and the Making of Saints](#ai-generated-summary-the-spirits-fire-and-the-making-of-saints)
+  - [Pentecost by Titian](#pentecost-by-titian)
 
 <!-- tocstop -->
 
@@ -5068,6 +5072,24 @@ Let us then, with renewed devotion, take up this daily pilgrimage. For the footp
 ##### Ascension of the Lord by Bernardino Gandino
 
 [![Ascension of the Lord by Bernardino Gandino](June/jpgs/ascensionofthelord.jpg)](https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Ascension of the Lord by Bernardino Gandino")
+
+#### June 15, 2025
+
+##### Ordinary, Yet Called
+
+[![Ordinary, Yet Called](June/jpgs/Day166.jpg)](https://youtu.be/WRnyhIp28EY "Ordinary, Yet Called")
+
+##### AI-Generated Summary: The Spirit's Fire and the Making of Saints
+
+Consider, dear reader, how the Divine Artist chooses the frailest of brushes to paint His masterworks. In Titian’s vision of Pentecost, we see not angels or seraphs, but ordinary men—flawed, fearful, and forgetful—suddenly ablaze with the uncreated Light. Chief among them, Simon, the fisherman who once denied his Lord, now stands as Peter, the rock, his voice piercing hearts like a sword. Here lies the great paradox: the Spirit does not wait for our perfection, but perfects us by His coming.
+
+What was true for Peter is true for every soul. Your weaknesses are not obstacles but the very material grace transforms. The same fire that fell upon the Apostles seeks to kindle your own heart, not for your sake alone, but for the world He means to reach through you. Surrender, then, your anxious calculations. The Spirit who shaped the cosmos from chaos can surely shape a saint from your humble yes.
+
+And so we end as we began: with a painting, a prayer, and the quiet certainty that He who began this good work in you will bring it to completion.
+
+##### Pentecost by Titian
+
+[![Pentecost by Titian](June/jpgs/PentecostTitian.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Pentecost%2C_by_Titian_%281546%29_-_Santa_Maria_della_Salute_-_Venice_2016.jpg/960px-Pentecost%2C_by_Titian_%281546%29_-_Santa_Maria_della_Salute_-_Venice_2016.jpg "Pentecost by Titian")
 
 ## July
 

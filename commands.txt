@@ -1,4 +1,4 @@
 # commands
-addvideo "iC6Ym9cG9uk" "Following in His Footsteps"
+addvideo "WRnyhIp28EY" "Ordinary, Yet Called"
 stitch
 lintall
