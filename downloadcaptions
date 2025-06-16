@@ -56,6 +56,8 @@ EOF
 
 function main() {
   local verbose=false
+  local start_time
+  start_time=$(date +%s)
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -124,6 +126,11 @@ function main() {
   if [[ -z "$captions_file" ]] || [[ ! -f "$captions_file" ]]; then
     die "Error: Subtitle file ${captions_file} not found. Not downloaded?" $EXIT_DOWNLOAD_FAILED
   fi
+
+  local end_time
+  end_time=$(date +%s)
+  local duration=$((end_time - start_time))
+  >&2 echo "Download completed in ${duration} seconds"
 
   if $verbose; then
     >&2 echo "Captions downloaded successfully to ${captions_file}"
