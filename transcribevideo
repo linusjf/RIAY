@@ -143,7 +143,7 @@ function transcribe_locally() {
   else
     if check_local_prerequisites; then
       whisper --task transcribe --model "${ASR_LOCAL_MODEL:-base}" --output_format txt --language en \
-        --initial_prompt "${ASR_INITIAL_PROMPT:-}" --beam_size "${ASR_BEAM_SIZE:-5}" "$audio_file" &> /dev/null || return 1
+        --initial_prompt "${ASR_INITIAL_PROMPT:-}" --carry_initial_prompt "${ASR_CARRY_INITIAL_PROMPT:-false}" --beam_size "${ASR_BEAM_SIZE:-5}" "$audio_file" &> /dev/null || return 1
       # since transcript is saved in current directory
       local file_name="$(basename "$audio_file")"
       cat "${file_name%.*}.txt"
@@ -158,7 +158,7 @@ function transcribe_audio() {
   local audio_file="$1"
   ${VERBOSE} && log "Transcribing with Whisper..."
   local start_time=$(date +%s)
-  
+
   if ${TRANSCRIBE_LOCALLY:-false}; then
     err "Transcribing locally... This may take longer than usual..."
     if ! transcribe_locally "$audio_file"; then
