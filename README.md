@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -4788,6 +4788,10 @@ Farewell, and may His peace attend you.
   - [Ordinary, Yet Called](#ordinary-yet-called)
   - [AI-Generated Summary: The Spirit's Fire and the Making of Saints](#ai-generated-summary-the-spirits-fire-and-the-making-of-saints)
   - [Pentecost by Titian](#pentecost-by-titian)
+- [June 16, 2025](#june-16-2025)
+  - [Glory Awaits the Faithful](#glory-awaits-the-faithful)
+  - [AI-Generated Summary: The Triumph of Mary and the Faithful](#ai-generated-summary-the-triumph-of-mary-and-the-faithful)
+  - [Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)](#fresco-of-assumption-of-our-lady-in-the-vision-of-st-bonaventure-in-the-church-chiesa-di-santa-lucia-del-gonfalone-by-cesare-mariani-1863)
 
 <!-- tocstop -->
 
@@ -5090,6 +5094,26 @@ And so we end as we began: with a painting, a prayer, and the quiet certainty th
 ##### Pentecost by Titian
 
 [![Pentecost by Titian](June/jpgs/PentecostTitian.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Pentecost%2C_by_Titian_%281546%29_-_Santa_Maria_della_Salute_-_Venice_2016.jpg/960px-Pentecost%2C_by_Titian_%281546%29_-_Santa_Maria_della_Salute_-_Venice_2016.jpg "Pentecost by Titian")
+
+#### June 16, 2025
+
+##### Glory Awaits the Faithful
+
+[![Glory Awaits the Faithful](June/jpgs/Day167.jpg)](https://youtu.be/xjYDuSIxQJo "Glory Awaits the Faithful")
+
+##### AI-Generated Summary: The Triumph of Mary and the Faithful
+
+Behold the fresco of Marani, where heaven and earth meet in radiant splendor. There the Blessed Virgin ascends, robed in red and blue, borne aloft by angels against a sky of gold. Below, kings and popes, maidens and knights, all gaze upward in awe or press forward as if drawn by her very presence. Here is no mere painting, but a window into the eternal—where Mary, assumed in glory, becomes both sign and promise to those who follow.
+
+Does not this scene whisper of Elijah’s fiery chariot? Yet here the victory is sweeter, for it is not a prophet alone, but the Mother of the Lord who is lifted beyond death’s reach. The figures beneath her—some named, some mysterious—stand as witnesses to this truth: that what was granted to her is the hope of all who are washed in the Lamb’s blood and keep their garments white.
+
+Let the world rage as it will; the fresco declares a quieter, surer truth. Evil is already conquered, and the faithful, though they may seem to falter now, shall share in Christ’s triumph. Fix your eyes, then, not on the shadows of this age, but on the golden dawn beyond it. For if even the brush of a 19th-century artist can capture such glory, how much more shall the reality exceed it?
+
+And so we bless one another and press on, remembering that every earthly beauty—even this painted sky—is but a foretaste of what awaits those who endure.
+
+##### Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)
+
+[![Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)](June/jpgs/Assumption.jpg)](https://as2.ftcdn.net/jpg/04/64/38/29/1000_F_464382946_EIK0RNI7i73omFzvLLXqQafxXBkZxLZB.jpg "Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)")
 
 ## July
 

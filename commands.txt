@@ -1,4 +1,4 @@
 # commands
-addvideo "WRnyhIp28EY" "Ordinary, Yet Called"
+addvideo "xjYDuSIxQJo" "Glory Awaits the Faithful"
 stitch
 lintall
