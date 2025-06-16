@@ -36,6 +36,10 @@ def transcribe_audio(
         compute_type: Compute type for model ('float16', 'int8_float16', etc.).
     """
     model = WhisperModel(model_size, device=device, compute_type=compute_type)
+    print(
+        "Executing faster-whisper with device '%s' and compute type '%s'"
+        % (device, compute_type), file=sys.stderr, flush=True)
+
     segments, info = model.transcribe(audio_file, beam_size=beam_size, initial_prompt=ASR_INITIAL_PROMPT)
 
     print(
