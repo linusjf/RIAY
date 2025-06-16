@@ -8,5 +8,3 @@
 ## Bugs/Issues
 
 ## Exploratory tasks
-
-1. Optimize local transcribe to use CUDA if GPUs available.
