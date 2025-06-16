@@ -18,6 +18,7 @@ load_dotenv('config.env')
 MODEL_SIZE = os.getenv('ASR_LOCAL_MODEL', 'base')
 BEAM_SIZE = int(os.getenv('ASR_BEAM_SIZE', 3))
 ASR_INITIAL_PROMPT= os.getenv('ASR_INITIAL_PROMPT', '')
+ASR_CARRY_INITIAL_PROMPT= bool(os.getenv('ASR_CARRY_INITIAL_PROMPT', False))
 
 def transcribe_audio(
     audio_file: str,
@@ -40,7 +41,7 @@ def transcribe_audio(
         "Executing faster-whisper with device '%s' and compute type '%s' with device name %s"
         % (device, compute_type, torch.cuda.get_device_name(0)), file=sys.stderr, flush=True)
 
-    segments, info = model.transcribe(audio_file, beam_size=beam_size, initial_prompt=ASR_INITIAL_PROMPT)
+    segments, info = model.transcribe(audio_file, beam_size=beam_size, initial_prompt=ASR_INITIAL_PROMPT, condition_on_previous_text=ASR_CARRY_INITIAL_PROMPT)
 
     print(
         "Detected language '%s' with probability %f"
