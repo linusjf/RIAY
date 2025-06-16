@@ -240,6 +240,7 @@ function main() {
   fi
 
   local INTERMEDIATE_SUMMARIES=()
+  local start_time=$(date +%s)
   for chunk in "${CHUNKS[@]}"; do
     local SUMMARIZED_CHUNK
     summarize_chunk "$chunk"
@@ -259,6 +260,9 @@ function main() {
 
   final_summary "$FINAL_INPUT"
 
+  local end_time=$(date +%s)
+  local elapsed_time=$((end_time - start_time))
+
   if [[ -z "$FINAL_SUMMARY" ]]; then
     die "ERROR: Failed to generate final summary (no working API available)"
   fi
@@ -267,6 +271,7 @@ function main() {
     >&2 echo "Final summary generated successfully"
   fi
 
+  >&2 echo "Summarization completed in ${elapsed_time} seconds"
   echo -e "${FINAL_SUMMARY}" | sed -E '/^```(markdown)?[[:space:]]*$/d'
 }
 
