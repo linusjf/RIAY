@@ -143,7 +143,7 @@ function transcribe_locally() {
   else
     if check_local_prerequisites; then
       whisper --task transcribe --model "${ASR_LOCAL_MODEL:-base}" --output_format txt --language en \
-        --initial-prompt "${ASR_INITIAL_PROMPT:-}" --beam-size "${ASR_BEAM_SIZE:-5}" "$audio_file" &> /dev/null || return 1
+        --initial_prompt "${ASR_INITIAL_PROMPT:-}" --beam_size "${ASR_BEAM_SIZE:-5}" "$audio_file" &> /dev/null || return 1
       # since transcript is saved in current directory
       local file_name="$(basename "$audio_file")"
       cat "${file_name%.*}.txt"
@@ -164,7 +164,7 @@ function transcribe_audio() {
         err "ffmpeg, whisper or faster-whisper not available or failed. Trying webservice instead..."
         # compress wav to flac for webservice if ffmpeg available
         flac_audio="${audio_file%.*}.flac"
-        ffmpeg -i "$audio_file" -compression_level 8 "$flac_audio"
+        ffmpeg -i "$audio_file" -compression_level 8 "$flac_audio" 2> /dev/null
         audio_file="$flac_audio"
         transcribe_via_webservice "$audio_file"
       else
