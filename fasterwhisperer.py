@@ -9,6 +9,7 @@ import sys
 import argparse
 import os
 from dotenv import load_dotenv
+import torch
 from faster_whisper import WhisperModel
 
 
@@ -52,8 +53,9 @@ def main() -> None:
     parser.add_argument('--model-size', default=MODEL_SIZE,
                        help=f'Size of whisper model to use (default: {MODEL_SIZE})')
     args = parser.parse_args()
-
-    transcribe_audio(args.audio_file, model_size=args.model_size)
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    compute_type = "float16" if device == "cuda" else "int8"
+    transcribe_audio(args.audio_file, model_size=args.model_size, device=device, compute_type=compute_type)
 
 
 if __name__ == "__main__":
