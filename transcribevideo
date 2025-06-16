@@ -161,10 +161,14 @@ function transcribe_audio() {
     err "Transcribing locally... This may take longer than usual..."
     if ! transcribe_locally "$audio_file"; then
       if "${ENABLE_FAILOVER_MODE:-true}"; then
-        err "ffmpeg, whisper or faster-whisper not available. Trying webservice instead..."
+        err "ffmpeg, whisper or faster-whisper not available or failed. Trying webservice instead..."
+        # compress wav to flac for webservice if ffmpeg available
+        flac_audio="${audio_file%.*}.flac"
+        ffmpeg -i "$audio_file" -compression_level 8 "$flac_audio"
+        audio_file="$flac_audio"
         transcribe_via_webservice "$audio_file"
       else
-        err "ffmpeg, whisper or faster-whisper not available. Exiting..."
+        err "ffmpeg, whisper or faster-whisper not available or failed. Exiting..."
         return
       fi
     fi
