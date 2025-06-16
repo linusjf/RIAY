@@ -37,8 +37,8 @@ def transcribe_audio(
     """
     model = WhisperModel(model_size, device=device, compute_type=compute_type)
     print(
-        "Executing faster-whisper with device '%s' and compute type '%s'"
-        % (device, compute_type), file=sys.stderr, flush=True)
+        "Executing faster-whisper with device '%s' and compute type '%s' with device name %s"
+        % (device, compute_type, torch.cuda.get_device_name(0)), file=sys.stderr, flush=True)
 
     segments, info = model.transcribe(audio_file, beam_size=beam_size, initial_prompt=ASR_INITIAL_PROMPT)
 
