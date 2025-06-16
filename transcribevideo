@@ -157,6 +157,8 @@ function transcribe_locally() {
 function transcribe_audio() {
   local audio_file="$1"
   ${VERBOSE} && log "Transcribing with Whisper..."
+  local start_time=$(date +%s)
+  
   if ${TRANSCRIBE_LOCALLY:-false}; then
     err "Transcribing locally... This may take longer than usual..."
     if ! transcribe_locally "$audio_file"; then
@@ -175,6 +177,10 @@ function transcribe_audio() {
   else
     transcribe_via_webservice "$audio_file"
   fi
+
+  local end_time=$(date +%s)
+  local duration=$((end_time - start_time))
+  err "Transcription completed in $duration seconds"
 }
 
 function main() {
