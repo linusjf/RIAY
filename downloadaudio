@@ -49,6 +49,7 @@ EOF
 }
 
 function download_audio() {
+  local start_time=$(date +%s.%N)
   local video_id="$1"
   local output_file="${2:-}"
   ${verbose} && log "Downloading with yt-dlp..."
@@ -80,6 +81,9 @@ function download_audio() {
       output_file="$(youtube::download_bestaudio "${video_id}")"
     fi
   fi
+  local end_time=$(date +%s.%N)
+  local elapsed_time=$(echo "$end_time - $start_time" | bc)
+  >&2 printf "Download completed in %.2f seconds\n" "$elapsed_time"
   printf "%s\n" "$output_file"
 }
 
