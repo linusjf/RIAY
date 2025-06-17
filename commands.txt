@@ -1,4 +1,4 @@
 # commands
-addvideo "xjYDuSIxQJo" "Glory Awaits the Faithful"
+addvideo "jg4JKxHAzwM" "Our Shared Inheritance"
 stitch
 lintall

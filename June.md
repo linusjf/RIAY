@@ -64,6 +64,10 @@
   - [Glory Awaits the Faithful](#glory-awaits-the-faithful)
   - [AI-Generated Summary: The Triumph of Mary and the Faithful](#ai-generated-summary-the-triumph-of-mary-and-the-faithful)
   - [Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)](#fresco-of-assumption-of-our-lady-in-the-vision-of-st-bonaventure-in-the-church-chiesa-di-santa-lucia-del-gonfalone-by-cesare-mariani-1863)
+- [June 17, 2025](#june-17-2025)
+  - [Our Shared Inheritance](#our-shared-inheritance)
+  - [AI-Generated Summary: The Crown of Earthly Sorrow and Heavenly Joy](#ai-generated-summary-the-crown-of-earthly-sorrow-and-heavenly-joy)
+  - [Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)](#coronation-of-the-virgin-fresco-by-giuseppe-mattia-borgnis-1701-1761coronation-of-the-virgin-fresco-by-giuseppe-mattia-borgnis-1701-1761)
 
 <!-- tocstop -->
 
@@ -386,3 +390,21 @@ And so we bless one another and press on, remembering that every earthly beauty�
 ### Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)
 
 [![Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)](/June/jpgs/Assumption.jpg)](https://as2.ftcdn.net/jpg/04/64/38/29/1000_F_464382946_EIK0RNI7i73omFzvLLXqQafxXBkZxLZB.jpg "Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)")
+
+## June 17, 2025
+
+### Our Shared Inheritance
+
+[![Our Shared Inheritance](/June/jpgs/Day168.jpg)](https://youtu.be/jg4JKxHAzwM "Our Shared Inheritance")
+
+### AI-Generated Summary: The Crown of Earthly Sorrow and Heavenly Joy
+
+Consider, dear reader, the fresco of Mary’s coronation—a vision of divine order where the Trinity bestows glory upon her who was once a lowly maiden. The artist, Borginis, a humble man himself, has captured not merely a scene but a truth: that holiness is woven through suffering, and sorrow is but the shadow of coming joy.
+
+See there, among the saints, Joseph—the quiet guardian who bore the weight of prophecy, who trembled at Simeon’s words yet stood firm in faith. His earthly labors ended, he now beholds the fulfillment of all things: Mary crowned, not in spite of her sorrows, but because of them. So too John the Baptist, who faced the sword yet now shares in the triumph of Christ.
+
+This is the way of heaven: the meek inherit, the mourners are comforted, the promises whispered in darkness blaze forth in light. Our present trials are real, yet they are not final. Fix your eyes, then, not on the tears of the road but on the joy awaiting at journey’s end—where every vow is kept, and every faithful heart finds its rest in glory.
+
+### Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)
+
+[![Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)](/June/jpgs/Coronation.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.8926670.7055475/763119.jpg "Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)")
