@@ -13,6 +13,7 @@ readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null &&
 source "${SCRIPT_DIR}/lib/date.sh"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
+source "${SCRIPT_DIR}/lib/color.sh"
 
 # Configuration
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
@@ -109,7 +110,9 @@ run_test() {
   printf "  %-50s" "${description}..."
 
   local actual_exit=0
+  local start_time=$(date +%s.%N)
   "$@" &> /dev/null || actual_exit=$?
+  local end_time=$(date +%s.%N)
 
   git restore .
   git clean -fd &> /dev/null
@@ -126,6 +129,8 @@ run_test() {
     fi
     return 1
   fi
+  local elapsed_time=$(echo "$end_time - $start_time" | bc)
+  >&2 printf "Completed in %.2f seconds\n" "$elapsed_time"
 }
 
 print_test_summary() {
