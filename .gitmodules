@@ -2,3 +2,12 @@
 	path = Conventions
 	url = ssh://git@github.com/linusjf/Conventions
 	branch = main
+[submodule "test/bats"]
+	path = test/bats
+	url = ssh://git@github.com/bats-core/bats-core
+[submodule "test/test_helper/bats-support"]
+	path = test/test_helper/bats-support
+	url = ssh://git@github.com/bats-core/bats-support
+[submodule "test/test_helper/bats-assert"]
+	path = test/test_helper/bats-assert
+	url = ssh://git@github.com/bats-core/bats-assert
