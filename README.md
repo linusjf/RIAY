@@ -4795,7 +4795,7 @@ Farewell, and may His peace attend you.
 - [June 17, 2025](#june-17-2025)
   - [Our Shared Inheritance](#our-shared-inheritance)
   - [AI-Generated Summary: The Crown of Earthly Sorrow and Heavenly Joy](#ai-generated-summary-the-crown-of-earthly-sorrow-and-heavenly-joy)
-  - [Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)](#coronation-of-the-virgin-fresco-by-giuseppe-mattia-borgnis-1701-1761coronation-of-the-virgin-fresco-by-giuseppe-mattia-borgnis-1701-1761)
+  - [Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)](#coronation-of-the-virgin-fresco-by-giuseppe-mattia-borgnis-1701-1761)
 
 <!-- tocstop -->
 
@@ -5133,9 +5133,9 @@ See there, among the saints, Joseph—the quiet guardian who bore the weight of 
 
 This is the way of heaven: the meek inherit, the mourners are comforted, the promises whispered in darkness blaze forth in light. Our present trials are real, yet they are not final. Fix your eyes, then, not on the tears of the road but on the joy awaiting at journey’s end—where every vow is kept, and every faithful heart finds its rest in glory.
 
-##### Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)
+##### Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)
 
-[![Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)](June/jpgs/Coronation.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.8926670.7055475/763119.jpg "Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)")
+[![Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis](June/jpgs/Coronation.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.8926670.7055475/763119.jpg "Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis")
 
 ## July
 
