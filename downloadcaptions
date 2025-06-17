@@ -130,7 +130,7 @@ function main() {
   local end_time
   end_time=$(date +%s)
   local duration=$((end_time - start_time))
-  >&2 echo "Download completed in ${duration} seconds"
+  >&2 echo "Download captions completed in ${duration} seconds"
 
   if $verbose; then
     >&2 echo "Captions downloaded successfully to ${captions_file}"
