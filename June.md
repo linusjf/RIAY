@@ -68,6 +68,9 @@
   - [Our Shared Inheritance](#our-shared-inheritance)
   - [AI-Generated Summary: The Crown of Earthly Sorrow and Heavenly Joy](#ai-generated-summary-the-crown-of-earthly-sorrow-and-heavenly-joy)
   - [Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)](#coronation-of-the-virgin-fresco-by-giuseppe-mattia-borgnis-1701-1761)
+- [June 18, 2025](#june-18-2025)
+  - [The Faithful 'Yes'](#the-faithful-yes)
+  - [AI-Generated Summary: The Divine Tapestry in Van Eyck’s Annunciation](#ai-generated-summary-the-divine-tapestry-in-van-eycks-annunciation)
 
 <!-- tocstop -->
 
@@ -408,3 +411,17 @@ This is the way of heaven: the meek inherit, the mourners are comforted, the pro
 ### Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)
 
 [![Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis](/June/jpgs/Coronation.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.8926670.7055475/763119.jpg "Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis")
+
+## June 18, 2025
+
+### The Faithful 'Yes'
+
+[![The Faithful 'Yes'](/June/jpgs/Day169.jpg)](https://youtu.be/IlVOeE-Z1Po "The Faithful 'Yes'")
+
+### AI-Generated Summary: The Divine Tapestry in Van Eyck’s Annunciation
+
+Consider, dear reader, how Jan van Eyck’s _The Annunciation_ weaves earthly artistry with heavenly truth. The very stones of its architecture speak: the Romanesque arches above, sturdy and ancient, yield to the Gothic below, as if the old covenant itself bows to the new. Here is the silent drama of prophecy fulfilled, where shadows retreat before the coming Light.
+
+Upon the floor, the tiles recount old victories—David’s stone, Samson’s strength—yet these are but whispers of the greater conquest to come. In Mary’s humble _fiat_, evil meets its doom, though the world sees only a maiden’s quiet surrender. Her words, inverted to mortal eyes, rise straight to Heaven, a reminder that true dialogue with the Divine often turns worldly logic upside down.
+
+So too must we learn to trust, not when the path is clear, but when it seems most shrouded. Every circumstance, be it trial or joy, is either an offering laid at His feet or an invitation to draw nearer. The world may mistake obedience for folly, but the faithful know: to lose oneself in His will is to find the only victory that endures. Let us then, like Mary, answer with courage, and hold fast to the hope that He who began this good work will see it through.
