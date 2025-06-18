@@ -130,7 +130,7 @@ if ! declare -f youtube::download_captions > /dev/null; then
     fi
     validators::dir_writable "$output_dir" || return
     rm -f -- "${output_dir}/${prefix}${video_id}.*"
-    yt-dlp \
+    output="$(yt-dlp \
       --verbose \
       --socket-timeout "$YT_DLP_SOCKET_TIMEOUT" \
       --write-auto-sub \
@@ -141,7 +141,8 @@ if ! declare -f youtube::download_captions > /dev/null; then
       --retry-sleep exp=1:300:2 \
       --user-agent "com.google.android.youtube/17.31.35 (Linux; U; Android 11)" \
       -o "${output_file%%.*}" \
-      "https://www.youtube.com/watch?v=${video_id}" > /dev/null 2>&1
+      "https://www.youtube.com/watch?v=${video_id}" 2> /dev/null)"
+    >&2 echo "$output"
     echo "$output_file"
   }
   export -f youtube::download_captions
