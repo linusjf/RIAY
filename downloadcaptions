@@ -98,7 +98,7 @@ function main() {
   require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR
 
   if $verbose; then
-    >&2 echo "Starting processing for video ID $VIDEO_ID"
+    >&2 echo "Starting processing for video $VIDEO_ID"
   fi
 
   local VIDEO_TITLE
@@ -112,7 +112,7 @@ function main() {
   fi
 
   if ! youtube::has_captions_in_language "$VIDEO_ID" "$language"; then
-    die "Error: No captions in English available" $EXIT_NO_CAPTIONS
+    die "Error: No captions in English available for ${VIDEO_ID}" $EXIT_NO_CAPTIONS
   fi
 
   while true; do
@@ -121,10 +121,11 @@ function main() {
     fi
     count=$((count + 1))
     [[ $count -lt $max_tries ]] && sleep $((2 * count)) || break
+    >&2 echo "retrying downloading captions for ${VIDEO_ID}..."
   done
 
   if [[ -z "$captions_file" ]] || [[ ! -f "$captions_file" ]]; then
-    die "Error: Subtitle file ${captions_file} not found. Not downloaded?" $EXIT_DOWNLOAD_FAILED
+    die "Error: Subtitle file ${captions_file} not found. Downloading captions failed..." $EXIT_DOWNLOAD_FAILED
   fi
 
   local end_time
