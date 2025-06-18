@@ -4799,6 +4799,7 @@ Farewell, and may His peace attend you.
 - [June 18, 2025](#june-18-2025)
   - [The Faithful 'Yes'](#the-faithful-yes)
   - [AI-Generated Summary: The Divine Tapestry in Van Eyck’s Annunciation](#ai-generated-summary-the-divine-tapestry-in-van-eycks-annunciation)
+  - [Annunciation, an oil painting by the Early Netherlandish master Jan van Eyck](#annunciation-an-oil-painting-by-the-early-netherlandish-master-jan-van-eyck)
 
 <!-- tocstop -->
 
@@ -5153,6 +5154,12 @@ Consider, dear reader, how Jan van Eyck’s _The Annunciation_ weaves earthly ar
 Upon the floor, the tiles recount old victories—David’s stone, Samson’s strength—yet these are but whispers of the greater conquest to come. In Mary’s humble _fiat_, evil meets its doom, though the world sees only a maiden’s quiet surrender. Her words, inverted to mortal eyes, rise straight to Heaven, a reminder that true dialogue with the Divine often turns worldly logic upside down.
 
 So too must we learn to trust, not when the path is clear, but when it seems most shrouded. Every circumstance, be it trial or joy, is either an offering laid at His feet or an invitation to draw nearer. The world may mistake obedience for folly, but the faithful know: to lose oneself in His will is to find the only victory that endures. Let us then, like Mary, answer with courage, and hold fast to the hope that He who began this good work will see it through.
+
+##### Annunciation, an oil painting by the Early Netherlandish master Jan van Eyck
+
+[![Annunciation, an oil painting by the Early Netherlandish master Jan van Eyck
+](June/jpgs/Annunciation.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Annunciation_-_Jan_van_Eyck_-_1434_-_NG_Wash_DC.jpg/330px-Annunciation_-_Jan_van_Eyck_-_1434_-_NG_Wash_DC.jpg "Annunciation, an oil painting by the Early Netherlandish master Jan van Eyck
+")
 
 ## July
 
