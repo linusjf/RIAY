@@ -47,7 +47,11 @@ def save_image(url: str, filename: str) -> bool:
         if response.status_code == 200:
             with open(filename, "wb") as file:
                 file.write(response.content)
-            print(f"✅ Saved: {filename}")
+            # Save URL to companion file
+            url_filename = os.path.splitext(filename)[0] + ".url"
+            with open(url_filename, "w") as url_file:
+                url_file.write(url)
+            print(f"✅ Saved: {filename} (source URL saved to {url_filename})")
             return True
         print(f"❌ Failed to download: {url}")
     except Exception as error:
