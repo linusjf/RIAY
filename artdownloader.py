@@ -18,6 +18,8 @@ This script searches for artwork images from multiple sources including:
 """
 import os
 import sys
+from PIL import Image
+from io import BytesIO
 
 import requests
 from duckduckgo_search import DDGS
@@ -30,7 +32,17 @@ METMUSEUM_SEARCH_URL = "https://collectionapi.metmuseum.org/public/collection/v1
 METMUSEUM_OBJECT_URL = "https://collectionapi.metmuseum.org/public/collection/v1/objects"
 HARVARD_API_URL = "https://api.harvardartmuseums.org/object"
 HARVARD_API_KEY = os.getenv("HARVARD_ART_MUSEUMS_API_KEY", "")
+COLOR_DIVERSITY_THRESHOLD = 50  # Lower values likely indicate sepia/monochrome
 
+def is_color_image(img):
+    """Check for RGB image with enough color diversity."""
+    if set(('R', 'G', 'B')).issubset(img.getbands()):
+        # Resize small to speed up analysis
+        small = img.resize((64, 64))
+        colors = small.getcolors(maxcolors=1000000)
+        if colors and len(colors) >= COLOR_DIVERSITY_THRESHOLD:
+            return True
+    return False
 
 def save_image(url: str, filename: str) -> bool:
     """Save an image from URL to local file.
@@ -154,18 +166,22 @@ def download_from_harvard(query: str, api_key: str = HARVARD_API_KEY) -> bool:
         "apikey": api_key,
         "q": query,
         "hasimage": 1,
-        "size": 1
+        "keyword": query,
+        "title": query,
+        "size": 10
     }
     response = requests.get(HARVARD_API_URL, params=params)
     response = response.json()
     records = response.get("records", [])
     if records and "primaryimageurl" in records[0]:
         img_url = records[0]["primaryimageurl"]
-        filename = os.path.join(
+        img = Image.open(BytesIO(requests.get(img_url).content))
+        if is_color_image(img):
+            filename = os.path.join(
             SAVE_DIR,
             f"{query.replace(' ', '_')}_harvard.jpg"
-        )
-        return save_image(img_url, filename)
+            )
+            return save_image(img_url, filename)
     return False
 
 
