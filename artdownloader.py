@@ -30,7 +30,6 @@ METMUSEUM_SEARCH_URL = "https://collectionapi.metmuseum.org/public/collection/v1
 METMUSEUM_OBJECT_URL = "https://collectionapi.metmuseum.org/public/collection/v1/objects"
 HARVARD_API_URL = "https://api.harvardartmuseums.org/object"
 HARVARD_API_KEY = os.getenv("HARVARD_ART_MUSEUMS_API_KEY", "")
-print(HARVARD_API_KEY)
 
 
 def save_image(url: str, filename: str) -> bool:
@@ -154,7 +153,6 @@ def download_from_harvard(query: str, api_key: str = HARVARD_API_KEY) -> bool:
         "size": 1
     }
     response = requests.get(HARVARD_API_URL, params=params)
-    print(response)
     response = response.json()
     records = response.get("records", [])
     if records and "primaryimageurl" in records[0]:
