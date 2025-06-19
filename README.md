@@ -4800,6 +4800,10 @@ Farewell, and may His peace attend you.
   - [The Faithful 'Yes'](#the-faithful-yes)
   - [AI-Generated Summary: The Divine Tapestry in Van Eyck’s Annunciation](#ai-generated-summary-the-divine-tapestry-in-van-eycks-annunciation)
   - [Annunciation, an oil painting by the Early Netherlandish master Jan van Eyck](#annunciation-an-oil-painting-by-the-early-netherlandish-master-jan-van-eyck)
+- [June 19, 2025](#june-19-2025)
+  - [Grit and Grace](#grit-and-grace)
+  - [AI-Generated Summary: The Steadfast Love of Mary’s Journey](#ai-generated-summary-the-steadfast-love-of-marys-journey)
+  - [Basilica of the Visitation in Ein Karem, a village in the hill country of Judea where John the Baptist was born](#basilica-of-the-visitation-in-ein-karem-a-village-in-the-hill-country-of-judea-where-john-the-baptist-was-born)
 
 <!-- tocstop -->
 
@@ -5160,6 +5164,28 @@ So too must we learn to trust, not when the path is clear, but when it seems mos
 [![Annunciation, an oil painting by the Early Netherlandish master Jan van Eyck
 ](June/jpgs/Annunciation.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Annunciation_-_Jan_van_Eyck_-_1434_-_NG_Wash_DC.jpg/330px-Annunciation_-_Jan_van_Eyck_-_1434_-_NG_Wash_DC.jpg "Annunciation, an oil painting by the Early Netherlandish master Jan van Eyck
 ")
+
+#### June 19, 2025
+
+##### Grit and Grace
+
+[![Grit and Grace](June/jpgs/Day170.jpg)](https://youtu.be/ZJwO3y7Fi-Y "Grit and Grace")
+
+##### AI-Generated Summary: The Steadfast Love of Mary’s Journey
+
+Consider the mosaic of the Visitation, where Mary, young and bearing the weight of divine mystery, rides through the harsh hills between Nazareth and Ein Karem. Angels attend her, some walking beside the humble donkey, others aloft as silent witnesses. Elizabeth waits in the distance, her posture alight with expectation. Here is no mere decoration, but a window into the soul’s labor: love in motion, steadfast and uncomplaining.
+
+The artist, Barluti, has captured not only the sacred moment but the very essence of virtue—firm, disciplined, enduring. Mary’s journey was no trifling errand; seventy miles of rugged terrain, a vulnerable woman with heaven’s promise as her compass. Yet vulnerability is not fragility. Hers was the strength of those who, though tender as a flower, are rooted deep in obedience. The world mistakes meekness for weakness, but heaven knows better. Hers was the grit of saints, the perseverance that does not flag when the road is long.
+
+Virtue, as the wise tell us, is no fleeting impulse but a habit of the soul, a will trained to love when weariness whispers retreat. Mary’s journey was an ultramarathon of the spirit, each mile a surrender, each step a yes repeated. And what drove her? Not the hunger for praise, nor the thrill of triumph, but love—love that seeks not its own, love that pours itself out because it cannot do otherwise.
+
+So too must we walk, not in grand gestures that fade like morning mist, but in the quiet, daily offering of ourselves. Grace perfects nature, but only where nature has first bent its knee in willing labor. Let us then take courage from her example, and pray for the fortitude to love as she loved: not for reward, but because Love Himself first loved us.
+
+_Glory be to the Father, and to the Son, and to the Holy Spirit._
+
+##### Basilica of the Visitation in Ein Karem, a village in the hill country of Judea where John the Baptist was born
+
+[![Basilica of the Visitation in Ein Karem, a village in the hill country of Judea where John the Baptist was born](June/jpgs/marygreetseliz.jpg)](https://www.crossroadsinitiative.com/wp-content/uploads/2016/01/mary-greets-eliz-painting.jpg "Basilica of the Visitation in Ein Karem, a village in the hill country of Judea where John the Baptist was born")
 
 ## July
 
