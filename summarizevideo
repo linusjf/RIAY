@@ -271,7 +271,7 @@ function main() {
     >&2 echo "Final summary generated successfully"
   fi
 
-  >&2 echo "Summarization completed in ${elapsed_time} seconds"
+  >&2 echo "Summarized captions in ${elapsed_time} seconds"
   echo -e "${FINAL_SUMMARY}" | sed -E '/^```(markdown)?[[:space:]]*$/d'
 }
 

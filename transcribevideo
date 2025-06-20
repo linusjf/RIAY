@@ -180,7 +180,7 @@ function transcribe_audio() {
 
   local end_time=$(date +%s)
   local duration=$((end_time - start_time))
-  err "Transcription completed in $duration seconds"
+  err "Transcribed video in $duration seconds"
 }
 
 function main() {

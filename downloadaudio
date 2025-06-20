@@ -83,7 +83,7 @@ function download_audio() {
   fi
   local end_time=$(date +%s.%N)
   local elapsed_time=$(echo "$end_time - $start_time" | bc)
-  >&2 printf "Download audio completed in %.2f seconds\n" "$elapsed_time"
+  >&2 printf "Downloaded audio in %.2f seconds\n" "$elapsed_time"
   printf "%s\n" "$output_file"
 }
 
