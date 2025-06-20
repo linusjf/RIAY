@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -4804,6 +4804,9 @@ Farewell, and may His peace attend you.
   - [Grit and Grace](#grit-and-grace)
   - [AI-Generated Summary: The Steadfast Love of Mary’s Journey](#ai-generated-summary-the-steadfast-love-of-marys-journey)
   - [Basilica of the Visitation in Ein Karem, a village in the hill country of Judea where John the Baptist was born](#basilica-of-the-visitation-in-ein-karem-a-village-in-the-hill-country-of-judea-where-john-the-baptist-was-born)
+- [June 20, 2025](#june-20-2025)
+  - [Worship the Newborn King](#worship-the-newborn-king)
+  - [AI-Generated Summary: The Humble Majesty of Caravaggio’s Lost Nativity](#ai-generated-summary-the-humble-majesty-of-caravaggios-lost-nativity)
 
 <!-- tocstop -->
 
@@ -5186,6 +5189,20 @@ _Glory be to the Father, and to the Son, and to the Holy Spirit._
 ##### Basilica of the Visitation in Ein Karem, a village in the hill country of Judea where John the Baptist was born
 
 [![Basilica of the Visitation in Ein Karem, a village in the hill country of Judea where John the Baptist was born](June/jpgs/marygreetseliz.jpg)](https://www.crossroadsinitiative.com/wp-content/uploads/2016/01/mary-greets-eliz-painting.jpg "Basilica of the Visitation in Ein Karem, a village in the hill country of Judea where John the Baptist was born")
+
+#### June 20, 2025
+
+##### Worship the Newborn King
+
+[![Worship the Newborn King](June/jpgs/Day171.jpg)](https://youtu.be/7lKfOVf12Qg "Worship the Newborn King")
+
+##### AI-Generated Summary: The Humble Majesty of Caravaggio’s Lost Nativity
+
+Consider, if you will, a painting—now vanished, stolen from the world’s sight—where light and shadow conspire to reveal a truth too often forgotten. Caravaggio, that master of stark realism, once depicted the birth of our Lord not in regal splendor, but in a barn’s quiet obscurity. The Virgin gazes upon her child; St. Francis and St. Lawrence kneel in awe, their lives of poverty and service now bending toward the poverty of God Himself. An angel descends, not with fanfare, but as a whisper, pointing to the infant who is both Maker and made.
+
+Here lies the divine paradox: the One who is Beauty, Strength, and Eternal Life lies swaddled in straw. St. Francis knew this well—his _Praises of God_ exalts the Almighty’s majesty, yet it is that very majesty which makes the manger so staggering. For how could He who is Sufficiency become needful? How could the Refuge of all souls have no roof but a stable’s beams? The prayer of the saints, like Caravaggio’s brush, directs us not to marvels afar, but to the near, the lowly, the human face of Love.
+
+And so we are left with this: to see in Mary’s child the fullness of God’s humility, and in His humility, the fullness of His power. Let us pray for grace to kneel with Francis and Lawrence, to adore not merely the idea of Incarnation, but the dusty, radiant fact of it. For in that stable, eternity entered time, and the shadows of a fallen world were pierced by uncreated Light.
 
 ## July
 

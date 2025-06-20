@@ -97,7 +97,7 @@ main() {
   if ((verbose)); then
     echo "Running markdown linter..."
   fi
-  if ! markdownlint --fix --ignore venv -- **/*.md; then
+  if ! markdownlint --fix --ignore venv --ignore test -- **/*.md; then
     die "markdownlint failed" "${ERROR_MARKDOWNLINT_FAILED}"
   fi
 
