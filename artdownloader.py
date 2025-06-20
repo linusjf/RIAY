@@ -27,7 +27,8 @@ from duckduckgo_search import DDGS
 
 # Constants
 SAVE_DIR = "downloads"
-WIKIMEDIA_API_URL = "https://en.wikipedia.org/w/api.php"
+WIKIMEDIA_SEARCH_API_URL = "https://api.wikimedia.org/core/v1/commons/search/page"
+WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
 METMUSEUM_SEARCH_URL = "https://collectionapi.metmuseum.org/public/collection/v1/search"
 METMUSEUM_OBJECT_URL = "https://collectionapi.metmuseum.org/public/collection/v1/objects"
 HARVARD_API_URL = "https://api.harvardartmuseums.org/object"
@@ -106,22 +107,19 @@ def download_from_wikimedia(query: str) -> bool:
     """
     print(f"\n🔍 Wikimedia Commons search for: {query}")
     params = {
-        "action": "query",
-        "format": "json",
-        "prop": "pageimages",
-        "piprop": "original",
-        "titles": query
+        "q": query
     }
-    response = requests.get(WIKIMEDIA_API_URL, params=params).json()
-    pages = response.get("query", {}).get("pages", {})
-    for page in pages.values():
-        image_url = page.get("original", {}).get("source")
-        if image_url:
-            filename = os.path.join(
+    response = requests.get(WIKIMEDIA_SEARCH_API_URL, params=params).json()
+    pages = response.get("pages", [])
+    for page in pages:
+        file = page.get("key")
+        file_response = requests.get(WIKIMEDIA_FILE_API_URL + "/" + file,headers={'User-Agent': 'ArtDownloader/1.0'}).json()
+        image_url = file_response.get("original").get("url")
+        filename = os.path.join(
                 SAVE_DIR,
                 f"{query.replace(' ', '_')}_wikimedia.jpg"
             )
-            return save_image(image_url, filename)
+        return save_image(image_url, filename)
     return False
 
 
@@ -173,13 +171,15 @@ def download_from_harvard(query: str, api_key: str = HARVARD_API_KEY) -> bool:
     response = requests.get(HARVARD_API_URL, params=params)
     response = response.json()
     records = response.get("records", [])
-    if records and "primaryimageurl" in records[0]:
-        img_url = records[0]["primaryimageurl"]
+    if not records:
+        return False
+    for record in records:
+        img_url = record["primaryimageurl"]
         img = Image.open(BytesIO(requests.get(img_url).content))
         if is_color_image(img):
             filename = os.path.join(
-            SAVE_DIR,
-            f"{query.replace(' ', '_')}_harvard.jpg"
+                SAVE_DIR,
+                f"{query.replace(' ', '_')}_harvard.jpg"
             )
             return save_image(img_url, filename)
     return False
