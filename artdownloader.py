@@ -137,19 +137,21 @@ def download_from_metmuseum(query: str) -> bool:
         bool: True if download succeeded, False otherwise
     """
     print(f"\n🔍 The Met Museum search for: {query}")
-    params = {"q": query, "hasImages": "true"}
+    params = {"q": query, "hasImages": "true", "title": query, "tags": "true", "artistOrCulture": "true"}
     response = requests.get(METMUSEUM_SEARCH_URL, params=params).json()
     object_ids = response.get("objectIDs", [])
     if object_ids:
-        object_url = f"{METMUSEUM_OBJECT_URL}/{object_ids[0]}"
-        data = requests.get(object_url).json()
-        img_url = data.get("primaryImage")
-        if img_url:
-            filename = os.path.join(
-                SAVE_DIR,
-                f"{query.replace(' ', '_')}_met.jpg"
-            )
-            return save_image(img_url, filename)
+        for object_id in object_ids:
+            object_url = f"{METMUSEUM_OBJECT_URL}/{object_id}"
+            data = requests.get(object_url).json()
+            img_url = data.get("primaryImage")
+            if img_url:
+                filename = os.path.join(
+                   SAVE_DIR,
+                   f"{query.replace(' ', '_')}_met.jpg"
+                )
+                if save_image(img_url, filename):
+                    return True
     return False
 
 
