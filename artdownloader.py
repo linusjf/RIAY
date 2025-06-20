@@ -33,17 +33,7 @@ METMUSEUM_SEARCH_URL = "https://collectionapi.metmuseum.org/public/collection/v1
 METMUSEUM_OBJECT_URL = "https://collectionapi.metmuseum.org/public/collection/v1/objects"
 HARVARD_API_URL = "https://api.harvardartmuseums.org/object"
 HARVARD_API_KEY = os.getenv("HARVARD_ART_MUSEUMS_API_KEY", "")
-COLOR_DIVERSITY_THRESHOLD = 50  # Lower values likely indicate sepia/monochrome
 
-def is_color_image(img):
-    """Check for RGB image with enough color diversity."""
-    if set(('R', 'G', 'B')).issubset(img.getbands()):
-        # Resize small to speed up analysis
-        small = img.resize((64, 64))
-        colors = small.getcolors(maxcolors=1000000)
-        if colors and len(colors) >= COLOR_DIVERSITY_THRESHOLD:
-            return True
-    return False
 
 def save_image(url: str, filename: str) -> bool:
     """Save an image from URL to local file.
@@ -83,16 +73,17 @@ def download_from_duckduckgo(query: str) -> bool:
     """
     print(f"\n🔍 DuckDuckGo search for: {query}")
     with DDGS() as ddgs:
-        results = ddgs.images(query, max_results=1)
-        results = iter(results)
-        image = next(results, None)
-        if image:
+        results = ddgs.images(keywords=query, max_results=10)
+        if not results:
+            return False
+        for image in results:
             url = image["image"]
             filename = os.path.join(
                 SAVE_DIR,
                 f"{query.replace(' ', '_')}_duckduckgo.jpg"
             )
-            return save_image(url, filename)
+            if save_image(url, filename):
+                return True
     return False
 
 
@@ -137,7 +128,7 @@ def download_from_metmuseum(query: str) -> bool:
         bool: True if download succeeded, False otherwise
     """
     print(f"\n🔍 The Met Museum search for: {query}")
-    params = {"q": query, "hasImages": "true", "title": query, "tags": "true", "artistOrCulture": "true"}
+    params = {"q": query, "hasImages": "true", "title": query}
     response = requests.get(METMUSEUM_SEARCH_URL, params=params).json()
     object_ids = response.get("objectIDs", [])
     if object_ids:
@@ -181,13 +172,12 @@ def download_from_harvard(query: str, api_key: str = HARVARD_API_KEY) -> bool:
         return False
     for record in records:
         img_url = record["primaryimageurl"]
-        img = Image.open(BytesIO(requests.get(img_url).content))
-        if is_color_image(img):
-            filename = os.path.join(
-                SAVE_DIR,
-                f"{query.replace(' ', '_')}_harvard.jpg"
-            )
-            return save_image(img_url, filename)
+        filename = os.path.join(
+                   SAVE_DIR,
+                   f"{query.replace(' ', '_')}_harvard.jpg"
+                )
+        if save_image(img_url, filename):
+            return True
     return False
 
 
