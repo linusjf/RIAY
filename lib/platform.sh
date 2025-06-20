@@ -26,7 +26,7 @@ require_commands grep
 
 if ! declare -f platform::is_WSL > /dev/null; then
   function platform::is_WSL() {
-    grep -qEi "(Microsoft|WSL)" /proc/version
+    [[ -e /proc/version ]] && [[ -r /proc/version ]] && grep -qEi "(Microsoft|WSL)" /proc/version
   }
   export -f platform::is_WSL
 fi
