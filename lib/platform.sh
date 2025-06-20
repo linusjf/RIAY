@@ -37,3 +37,24 @@ if ! declare -f platform::is_termux > /dev/null; then
   }
   export -f platform::is_termux
 fi
+
+if ! declare -f platform::is_arch_linux > /dev/null; then
+  function platform::is_arch_linux() {
+    [[ -f /etc/os-release ]] && grep -q '^ID=arch' /etc/os-release
+  }
+  export -f platform::is_arch_linux
+fi
+
+if ! declare -f platform::is_ubuntu > /dev/null; then
+  function platform::is_ubuntu() {
+    [[ -f /etc/os-release ]] && grep -q '^ID=ubuntu' /etc/os-release
+  }
+  export -f platform::is_ubuntu
+fi
+
+if ! declare -f platform::is_ubuntu_based > /dev/null; then
+  function platform::is_ubuntu_based() {
+    [[ -f /etc/os-release ]] && grep -qi 'ubuntu' /etc/os-release
+  }
+  export -f platform::is_ubuntu_based
+fi
