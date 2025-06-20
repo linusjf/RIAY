@@ -79,6 +79,7 @@
 - [June 20, 2025](#june-20-2025)
   - [Worship the Newborn King](#worship-the-newborn-king)
   - [AI-Generated Summary: The Humble Majesty of Caravaggio’s Lost Nativity](#ai-generated-summary-the-humble-majesty-of-caravaggios-lost-nativity)
+  - [Nativity with St. Francis and St. Lawrence by Caravaggio](#nativity-with-st-francis-and-st-lawrence-by-caravaggio)
 
 <!-- tocstop -->
 
@@ -475,3 +476,7 @@ Consider, if you will, a painting—now vanished, stolen from the world’s sigh
 Here lies the divine paradox: the One who is Beauty, Strength, and Eternal Life lies swaddled in straw. St. Francis knew this well—his _Praises of God_ exalts the Almighty’s majesty, yet it is that very majesty which makes the manger so staggering. For how could He who is Sufficiency become needful? How could the Refuge of all souls have no roof but a stable’s beams? The prayer of the saints, like Caravaggio’s brush, directs us not to marvels afar, but to the near, the lowly, the human face of Love.
 
 And so we are left with this: to see in Mary’s child the fullness of God’s humility, and in His humility, the fullness of His power. Let us pray for grace to kneel with Francis and Lawrence, to adore not merely the idea of Incarnation, but the dusty, radiant fact of it. For in that stable, eternity entered time, and the shadows of a fallen world were pierced by uncreated Light.
+
+### Nativity with St. Francis and St. Lawrence by Caravaggio
+
+[![Nativity with St. Francis and St. Lawrence by Caravaggio](/June/jpgs/CaravaggioNativity.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Caravaggio-Nativity%281600%29.jpg/960px-Caravaggio-Nativity%281600%29.jpg "Nativity with St. Francis and St. Lawrence by Caravaggio")
