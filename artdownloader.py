@@ -1,41 +1,39 @@
 #!/usr/bin/env python
-"""
-Download artwork images from various sources.
+"""Download artwork images from various sources.
 
 This script searches for artwork images from multiple sources including:
 - DuckDuckGo
 - Wikimedia Commons
 - The Met Museum
 - Harvard Art Museums
-
-######################################################################
-# @author      : Linus Fernandes (linusfernandes at gmail dot com)
-# @file        : artdownloader
-# @created     : Thursday Jun 19, 2025 14:03:26 IST
-# @description : Artwork image downloader
-# -*- coding: utf-8 -*-'
-######################################################################
 """
+
 import os
 import sys
-from PIL import Image
 from io import BytesIO
 
+from PIL import Image
 import requests
 from duckduckgo_search import DDGS
 
 
 # Constants
 SAVE_DIR = "downloads"
-WIKIMEDIA_SEARCH_API_URL = "https://api.wikimedia.org/core/v1/commons/search/page"
+WIKIMEDIA_SEARCH_API_URL = (
+    "https://api.wikimedia.org/core/v1/commons/search/page"
+)
 WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
-METMUSEUM_SEARCH_URL = "https://collectionapi.metmuseum.org/public/collection/v1/search"
-METMUSEUM_OBJECT_URL = "https://collectionapi.metmuseum.org/public/collection/v1/objects"
+METMUSEUM_SEARCH_URL = (
+    "https://collectionapi.metmuseum.org/public/collection/v1/search"
+)
+METMUSEUM_OBJECT_URL = (
+    "https://collectionapi.metmuseum.org/public/collection/v1/objects"
+)
 HARVARD_API_URL = "https://api.harvardartmuseums.org/object"
 HARVARD_API_KEY = os.getenv("HARVARD_ART_MUSEUMS_API_KEY", "")
 
 
-def save_image(url: str, filename: str) -> bool:
+def save_image(url, filename):
     """Save an image from URL to local file.
 
     Args:
@@ -62,7 +60,7 @@ def save_image(url: str, filename: str) -> bool:
     return False
 
 
-def download_from_duckduckgo(query: str) -> bool:
+def download_from_duckduckgo(query):
     """Download image from DuckDuckGo search.
 
     Args:
@@ -87,7 +85,7 @@ def download_from_duckduckgo(query: str) -> bool:
     return False
 
 
-def download_from_wikimedia(query: str) -> bool:
+def download_from_wikimedia(query):
     """Download image from Wikimedia Commons.
 
     Args:
@@ -97,28 +95,37 @@ def download_from_wikimedia(query: str) -> bool:
         bool: True if download succeeded, False otherwise
     """
     print(f"\n🔍 Wikimedia Commons search for: {query}")
-    params = {
-        "q": query
-    }
-    response = requests.get(WIKIMEDIA_SEARCH_API_URL, params=params).json()
+    params = {"q": query}
+    response = requests.get(
+        WIKIMEDIA_SEARCH_API_URL,
+        params=params
+    ).json()
     pages = response.get("pages", [])
     for page in pages:
         file = page.get("key")
         if not file:
             continue
-        file_response = requests.get(WIKIMEDIA_FILE_API_URL + "/" + file,headers={'User-Agent': 'ArtDownloader/1.0'}).json()
+        file_response = requests.get(
+            WIKIMEDIA_FILE_API_URL + "/" + file,
+            headers={'User-Agent': 'ArtDownloader/1.0'}
+        ).json()
         original = file_response.get("original")
         if original and "url" in original:
             image_url = original.get("url")
             if image_url.lower().endswith(('.jpg', '.jpeg')):
-                    safe_query = "".join(c if c.isalnum() or c in "_-" else "_" for c in query)
-                    filename = os.path.join(SAVE_DIR, f"{safe_query}_wikimedia.jpg")
-                    if save_image(image_url, filename):
-                        return True
+                safe_query = "".join(
+                    c if c.isalnum() or c in "_-" else "_" for c in query
+                )
+                filename = os.path.join(
+                    SAVE_DIR,
+                    f"{safe_query}_wikimedia.jpg"
+                )
+                if save_image(image_url, filename):
+                    return True
     return False
 
 
-def download_from_metmuseum(query: str) -> bool:
+def download_from_metmuseum(query):
     """Download image from The Met Museum.
 
     Args:
@@ -138,20 +145,20 @@ def download_from_metmuseum(query: str) -> bool:
             img_url = data.get("primaryImage")
             if img_url:
                 filename = os.path.join(
-                   SAVE_DIR,
-                   f"{query.replace(' ', '_')}_met.jpg"
+                    SAVE_DIR,
+                    f"{query.replace(' ', '_')}_met.jpg"
                 )
                 if save_image(img_url, filename):
                     return True
     return False
 
 
-def download_from_harvard(query: str, api_key: str = HARVARD_API_KEY) -> bool:
+def download_from_harvard(query, api_key=HARVARD_API_KEY):
     """Download image from Harvard Art Museums.
 
     Args:
         query: Search query string
-        api_key: API key for Harvard Art Museums (default: DEMO_API_KEY)
+        api_key: API key for Harvard Art Museums
 
     Returns:
         bool: True if download succeeded, False otherwise
@@ -173,15 +180,15 @@ def download_from_harvard(query: str, api_key: str = HARVARD_API_KEY) -> bool:
     for record in records:
         img_url = record["primaryimageurl"]
         filename = os.path.join(
-                   SAVE_DIR,
-                   f"{query.replace(' ', '_')}_harvard.jpg"
-                )
+            SAVE_DIR,
+            f"{query.replace(' ', '_')}_harvard.jpg"
+        )
         if save_image(img_url, filename):
             return True
     return False
 
 
-def download_all(query: str) -> None:
+def download_all(query):
     """Download images from all available sources.
 
     Args:
@@ -193,7 +200,7 @@ def download_all(query: str) -> None:
     download_from_harvard(query)
 
 
-def main() -> None:
+def main():
     """Main entry point for the script."""
     if len(sys.argv) < 2:
         print("Usage: python artdownloader.py <artwork_name>")
