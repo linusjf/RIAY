@@ -113,13 +113,17 @@ def download_from_wikimedia(query: str) -> bool:
     pages = response.get("pages", [])
     for page in pages:
         file = page.get("key")
+        if not file:
+            continue
         file_response = requests.get(WIKIMEDIA_FILE_API_URL + "/" + file,headers={'User-Agent': 'ArtDownloader/1.0'}).json()
-        image_url = file_response.get("original").get("url")
-        filename = os.path.join(
-                SAVE_DIR,
-                f"{query.replace(' ', '_')}_wikimedia.jpg"
-            )
-        return save_image(image_url, filename)
+        original = file_response.get("original")
+        if original and "url" in original:
+            image_url = original.get("url")
+            if image_url.lower().endswith(('.jpg', '.jpeg')):
+                    safe_query = "".join(c if c.isalnum() or c in "_-" else "_" for c in query)
+                    filename = os.path.join(SAVE_DIR, f"{safe_query}_wikimedia.jpg")
+                    if save_image(image_url, filename):
+                        return True
     return False
 
 
