@@ -14,6 +14,30 @@ from PIL import Image
 import requests
 from duckduckgo_search import DDGS
 
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+def create_session_with_retries(
+    retries=3,
+    backoff_factor=0.5,
+    status_forcelist=(500, 502, 503, 504),
+    session=None
+):
+    session = session or requests.Session()
+    retry = Retry(
+        total=retries,
+        read=retries,
+        connect=retries,
+        backoff_factor=backoff_factor,
+        status_forcelist=status_forcelist,
+        allowed_methods=["HEAD", "GET", "OPTIONS"]  # or Retry.DEFAULT_METHOD_WHITELIST
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    return session
+
+
 
 # Constants
 SAVE_DIR = "downloads"
@@ -34,10 +58,11 @@ def save_image(url, filename):
         bool: True if download succeeded, False otherwise
     """
     try:
+        session = create_session_with_retries()
         headers = {
     "User-Agent": "Mozilla/5.0 (compatible; ImageDownloaderBot/1.0; +https://github.com/linusjf/RIAY/bot-info)"
 }
-        response = requests.get(url, headers=headers, timeout=30, stream=True)
+        response = session.get(url, headers=headers, stream=True)
         if response.status_code == 200:
             with open(filename, "wb") as f:
                 for chunk in response.iter_content(chunk_size=8192):
