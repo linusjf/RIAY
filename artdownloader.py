@@ -20,7 +20,7 @@ from urllib3.util.retry import Retry
 def create_session_with_retries(
     retries=3,
     backoff_factor=0.5,
-    status_forcelist=(500, 502, 503, 504),
+    status_forcelist=(408, 429, 500, 502, 503, 504),
     session=None
 ):
     session = session or requests.Session()
@@ -28,9 +28,12 @@ def create_session_with_retries(
         total=retries,
         read=retries,
         connect=retries,
+        status=retries,
         backoff_factor=backoff_factor,
         status_forcelist=status_forcelist,
-        allowed_methods=["HEAD", "GET", "OPTIONS"]  # or Retry.DEFAULT_METHOD_WHITELIST
+        raise_on_status=False,  # Important if you want to handle it yourself
+        respect_retry_after_header=True,
+        allowed_methods=["HEAD", "GET", "OPTIONS"]
     )
     adapter = HTTPAdapter(max_retries=retry)
     session.mount("http://", adapter)
