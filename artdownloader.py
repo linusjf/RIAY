@@ -34,10 +34,15 @@ def save_image(url, filename):
         bool: True if download succeeded, False otherwise
     """
     try:
-        response = requests.get(url, timeout=10)
+        headers = {
+    "User-Agent": "Mozilla/5.0 (compatible; ImageDownloaderBot/1.0; +https://github.com/linusjf/RIAY/bot-info)"
+}
+        response = requests.get(url, headers=headers, timeout=30, stream=True)
         if response.status_code == 200:
-            with open(filename, "wb") as file:
-                file.write(response.content)
+            with open(filename, "wb") as f:
+                for chunk in response.iter_content(chunk_size=8192):
+                    if chunk:
+                        f.write(chunk)
             # Save URL to companion file
             url_filename = os.path.splitext(filename)[0] + ".url"
             with open(url_filename, "w") as url_file:
@@ -97,7 +102,7 @@ def download_from_wikimedia(query):
             continue
         file_response = requests.get(
             WIKIMEDIA_FILE_API_URL + "/" + file,
-            headers={'User-Agent': 'ArtDownloader/1.0'}
+            headers={'User-Agent': 'Mozilla/5.0'}
         ).json()
         original = file_response.get("original")
         if original and "url" in original:
