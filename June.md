@@ -80,6 +80,10 @@
   - [Worship the Newborn King](#worship-the-newborn-king)
   - [AI-Generated Summary: The Humble Majesty of Caravaggio’s Lost Nativity](#ai-generated-summary-the-humble-majesty-of-caravaggios-lost-nativity)
   - [Nativity with St. Francis and St. Lawrence by Caravaggio](#nativity-with-st-francis-and-st-lawrence-by-caravaggio)
+- [June 21, 2025](#june-21-2025)
+  - [Heart of Prayer](#heart-of-prayer)
+  - [AI-Generated Summary: The Light and the Song](#ai-generated-summary-the-light-and-the-song)
+  - [Simeon's Song of Praise by Arent de Gelder](#simeons-song-of-praise-by-arent-de-gelder)
 
 <!-- tocstop -->
 
@@ -480,3 +484,21 @@ And so we are left with this: to see in Mary’s child the fullness of God’s h
 ### Nativity with St. Francis and St. Lawrence by Caravaggio
 
 [![Nativity with St. Francis and St. Lawrence by Caravaggio](/June/jpgs/CaravaggioNativity.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Caravaggio-Nativity%281600%29.jpg/960px-Caravaggio-Nativity%281600%29.jpg "Nativity with St. Francis and St. Lawrence by Caravaggio")
+
+## June 21, 2025
+
+### Heart of Prayer
+
+[![Heart of Prayer](/June/jpgs/Day172.jpg)](https://youtu.be/0ZqNiS7vYIQ "Heart of Prayer")
+
+### AI-Generated Summary: The Light and the Song
+
+Behold _Simeon’s Song of Praise_ by Arent de Gelder, a pupil of Rembrandt, where light and shadow dance as if heaven itself leaned near. The old priest Simeon, robed in solemn vestments, lifts the Child—not merely an infant, but the Light of the World—whose radiance spills upon his weathered face. Mary stands by, her hands folded, her gaze inward, as one who treasures mysteries in her heart. The darkness around them is not empty; it is a canvas for revelation.
+
+Here is the paradox of joy and sorrow: Simeon sings while foreseeing the sword that will pierce Mary’s soul. Yet neither turns away. Mary’s prayer is no mere recitation; it is the quiet, ceaseless turning of a soul toward its Maker. The painting whispers that to hold the divine is to be both illuminated and undone.
+
+And what of us? We are called to walk as Mary did—not in strength of our own, but in the steady light of Him who first kindled it. To rejoice, to ponder, to suffer, yet always to cling. For in that clinging, even shadows become holy.
+
+### Simeon's Song of Praise by Arent de Gelder
+
+[![Simeon's Song of Praise by Arent de Gelder](June/jpgs/SimeonSong.jpg)](https://upload.wikimedia.org/wikipedia/commons/d/dc/Aert_de_Gelder_-_Het_loflied_van_Simeon.jpg "Simeon's Song of Praise by Arent de Gelder")
