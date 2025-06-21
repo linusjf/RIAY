@@ -109,17 +109,20 @@ def download_from_duckduckgo(query):
     """
     print(f"\n🔍 DuckDuckGo search for: {query}")
     with DDGS() as ddgs:
-        results = ddgs.images(keywords=query, max_results=10)
-        if not results:
-            return False
-        for image in results:
-            url = image["image"]
-            filename = os.path.join(
-                SAVE_DIR,
-                f"{query.replace(' ', '_')}_duckduckgo.jpg"
-            )
-            if save_image(url, filename):
-                return True
+        try:
+            results = ddgs.images(keywords=query, max_results=10)
+            if not results:
+                return False
+            for image in results:
+                url = image["image"]
+                filename = os.path.join(
+                    SAVE_DIR,
+                    f"{query.replace(' ', '_')}_duckduckgo.jpg"
+                )
+                if save_image(url, filename):
+                    return True
+        except Exception as error:
+            print(f"❌ Error: {error}")
     return False
 
 
@@ -134,32 +137,36 @@ def download_from_wikimedia(query):
     """
     print(f"\n🔍 Wikimedia Commons search for: {query}")
     params = {"q": query}
-    response = requests.get(
-        WIKIMEDIA_SEARCH_API_URL,
-        params=params
-    ).json()
-    pages = response.get("pages", [])
-    for page in pages:
-        file = page.get("key")
-        if not file:
-            continue
-        file_response = requests.get(
-            WIKIMEDIA_FILE_API_URL + "/" + file,
-            headers={'User-Agent': 'Mozilla/5.0'}
+    try:
+        response = requests.get(
+            WIKIMEDIA_SEARCH_API_URL,
+            params=params
         ).json()
-        original = file_response.get("original")
-        if original and "url" in original:
-            image_url = original.get("url")
-            if image_url.lower().endswith(('.jpg', '.jpeg')):
-                safe_query = "".join(
-                    c if c.isalnum() or c in "_-" else "_" for c in query
-                )
-                filename = os.path.join(
-                    SAVE_DIR,
-                    f"{safe_query}_wikimedia.jpg"
-                )
-                if save_image(image_url, filename):
-                    return True
+        pages = response.get("pages", [])
+        for page in pages:
+            file = page.get("key")
+            if not file:
+                continue
+            file_response = requests.get(
+                WIKIMEDIA_FILE_API_URL + "/" + file,
+                headers={'User-Agent': 'Mozilla/5.0'}
+            ).json()
+            original = file_response.get("original")
+            if original and "url" in original:
+                image_url = original.get("url")
+                if image_url.lower().endswith(('.jpg', '.jpeg')):
+                    safe_query = "".join(
+                       c if c.isalnum() or c in "_-" else "_" for c in query
+                    )
+                    filename = os.path.join(
+                        SAVE_DIR,
+                        f"{safe_query}_wikimedia.jpg"
+                    )
+                    if save_image(image_url, filename):
+                        return True
+    except Exception as error:
+        print(f"❌ Error: {error}")
+
     return False
 
 
@@ -169,8 +176,10 @@ def download_all(query):
     Args:
         query: Search query string
     """
-    download_from_duckduckgo(query)
-    download_from_wikimedia(query)
+    downloaded = download_from_duckduckgo(query)
+    downloaded = downloaded or download_from_wikimedia(query)
+    return downloaded
+
 
 
 def main():
@@ -181,7 +190,10 @@ def main():
 
     os.makedirs(SAVE_DIR, exist_ok=True)
     art_title = " ".join(sys.argv[1:])
-    download_all(art_title)
+    if download_all(art_title):
+        sys.exit(0)
+    else:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
