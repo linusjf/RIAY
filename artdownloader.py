@@ -131,11 +131,12 @@ def save_image(url, filename):
     return False
 
 
-def download_from_duckduckgo(query):
+def download_from_duckduckgo(query, filename_base):
     """Download image from DuckDuckGo search.
 
     Args:
         query: Search query string
+        filename_base: Base filename to use for saving
 
     Returns:
         bool: True if download succeeded, False otherwise
@@ -150,7 +151,7 @@ def download_from_duckduckgo(query):
                 url = image["image"]
                 filename = os.path.join(
                     SAVE_DIR,
-                    f"{query.replace(' ', '_')}_duckduckgo.jpg"
+                    f"{filename_base}_duckduckgo.jpg"
                 )
                 if save_image(url, filename):
                     return True
@@ -159,11 +160,12 @@ def download_from_duckduckgo(query):
     return False
 
 
-def download_from_wikimedia(query):
+def download_from_wikimedia(query, filename_base):
     """Download image from Wikimedia Commons.
 
     Args:
         query: Search query string
+        filename_base: Base filename to use for saving
 
     Returns:
         bool: True if download succeeded, False otherwise
@@ -188,12 +190,9 @@ def download_from_wikimedia(query):
             if original and "url" in original:
                 image_url = original.get("url")
                 if image_url.lower().endswith(('.jpg', '.jpeg', '.png')):
-                    safe_query = "".join(
-                        c if c.isalnum() or c in "_-" else "_" for c in query
-                    )
                     filename = os.path.join(
                         SAVE_DIR,
-                        f"{safe_query}_wikimedia.jpg"
+                        f"{filename_base}_wikimedia.jpg"
                     )
                     if save_image(image_url, filename):
                         return True
@@ -203,29 +202,40 @@ def download_from_wikimedia(query):
     return False
 
 
-def download_all(query):
+def download_all(query, filename_base=None):
     """Download images from all available sources.
 
     Args:
         query: Search query string
+        filename_base: Optional base filename to use for saving
 
     Returns:
         bool: True if any download succeeded, False otherwise
     """
-    downloaded_duckduckgo = download_from_duckduckgo(query)
-    downloaded_wikimedia = download_from_wikimedia(query)
+    if filename_base is None:
+        filename_base = query.replace(' ', '_')
+    downloaded_duckduckgo = download_from_duckduckgo(query, filename_base)
+    downloaded_wikimedia = download_from_wikimedia(query, filename_base)
     return (downloaded_duckduckgo or downloaded_wikimedia)
 
 
 def main():
     """Main entry point for the script."""
     if len(sys.argv) < 2:
-        print("Usage: python artdownloader.py <artwork_name>")
+        print("Usage: python artdownloader.py <artwork_name> [filename_base]")
+        print("  artwork_name: Name of artwork to search for")
+        print("  filename_base: Optional base filename for saved images (without extension)")
         sys.exit(1)
 
     os.makedirs(SAVE_DIR, exist_ok=True)
-    art_title = " ".join(sys.argv[1:])
-    if download_all(art_title):
+    if len(sys.argv) > 2:
+        art_title = " ".join(sys.argv[1:-1])
+        filename_base = sys.argv[-1]
+    else:
+        art_title = " ".join(sys.argv[1:])
+        filename_base = None
+        
+    if download_all(art_title, filename_base):
         sys.exit(0)
     else:
         sys.exit(1)
