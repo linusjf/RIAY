@@ -7,18 +7,18 @@ This script searches for artwork images from multiple sources including:
 """
 
 import os
+import random
 import sys
 import time
 from io import BytesIO
-from dotenv import load_dotenv
 
-from PIL import Image
 import requests
-import random
+from dotenv import load_dotenv
+from PIL import Image
 from duckduckgo_search import DDGS
-
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+
 
 # Load environment variables from config.env
 load_dotenv('config.env')
@@ -37,6 +37,17 @@ def create_session_with_retries(
     status_forcelist=(408, 429, 500, 502, 503, 504),
     session=None
 ):
+    """Create a requests session with retry logic.
+
+    Args:
+        retries: Maximum number of retries
+        backoff_factor: Backoff factor for retries
+        status_forcelist: HTTP status codes to force retry on
+        session: Existing session to modify (optional)
+
+    Returns:
+        requests.Session: Configured session with retry logic
+    """
     session = session or requests.Session()
     retry = Retry(
         total=retries,
@@ -45,7 +56,7 @@ def create_session_with_retries(
         status=retries,
         backoff_factor=backoff_factor,
         status_forcelist=status_forcelist,
-        raise_on_status=False,  # Important if you want to handle it yourself
+        raise_on_status=False,
         respect_retry_after_header=True,
         allowed_methods=["HEAD", "GET", "OPTIONS"]
     )
@@ -54,7 +65,18 @@ def create_session_with_retries(
     session.mount("https://", adapter)
     return session
 
+
 def exponential_backoff_with_jitter(base=1.0, cap=60.0, attempt=1):
+    """Calculate exponential backoff with jitter.
+
+    Args:
+        base: Base backoff time in seconds
+        cap: Maximum backoff time in seconds
+        attempt: Current attempt number
+
+    Returns:
+        float: Time to wait in seconds
+    """
     backoff = min(cap, base * (2 ** attempt))
     jitter = random.uniform(0, backoff)
     return jitter
@@ -73,8 +95,11 @@ def save_image(url, filename):
     try:
         session = create_session_with_retries()
         headers = {
-    "User-Agent": "Mozilla/5.0 (compatible; ImageDownloaderBot/1.0; +https://github.com/linusjf/RIAY/bot-info)"
-}
+            "User-Agent": (
+                "Mozilla/5.0 (compatible; ImageDownloaderBot/1.0; "
+                "+https://github.com/linusjf/RIAY/bot-info)"
+            )
+        }
         attempt = 0
         while attempt < 5:
             response = session.get(url, headers=headers, stream=True)
@@ -90,7 +115,10 @@ def save_image(url, filename):
                 return True
             elif response.status_code in {408, 429, 500, 502, 503, 504}:
                 wait = exponential_backoff_with_jitter(base=2, cap=60, attempt=attempt)
-                print(f"⚠️ Retry {attempt+1}: HTTP {response.status_code}, waiting {wait:.2f}s...")
+                print(
+                    f"⚠️ Retry {attempt + 1}: HTTP {response.status_code}, "
+                    f"waiting {wait:.2f}s..."
+                )
                 time.sleep(wait)
                 attempt += 1
             else:
@@ -161,7 +189,7 @@ def download_from_wikimedia(query):
                 image_url = original.get("url")
                 if image_url.lower().endswith(('.jpg', '.jpeg', '.png')):
                     safe_query = "".join(
-                       c if c.isalnum() or c in "_-" else "_" for c in query
+                        c if c.isalnum() or c in "_-" else "_" for c in query
                     )
                     filename = os.path.join(
                         SAVE_DIR,
@@ -180,11 +208,13 @@ def download_all(query):
 
     Args:
         query: Search query string
+
+    Returns:
+        bool: True if any download succeeded, False otherwise
     """
     downloaded_duckduckgo = download_from_duckduckgo(query)
     downloaded_wikimedia = download_from_wikimedia(query)
     return (downloaded_duckduckgo or downloaded_wikimedia)
-
 
 
 def main():
