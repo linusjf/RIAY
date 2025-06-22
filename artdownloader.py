@@ -176,9 +176,9 @@ def download_all(query):
     Args:
         query: Search query string
     """
-    downloaded = download_from_duckduckgo(query)
-    downloaded = downloaded or download_from_wikimedia(query)
-    return downloaded
+    downloaded_duckduckgo = download_from_duckduckgo(query)
+    downloaded_wikimedia = download_from_wikimedia(query)
+    return downloaded_duckduckgo or downloaded_wikimedia
 
 
 

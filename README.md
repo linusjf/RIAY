@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -4812,6 +4812,10 @@ Farewell, and may His peace attend you.
   - [Heart of Prayer](#heart-of-prayer)
   - [AI-Generated Summary: The Light and the Song](#ai-generated-summary-the-light-and-the-song)
   - [Simeon's Song of Praise by Arent de Gelder](#simeons-song-of-praise-by-arent-de-gelder)
+- [June 22, 2025](#june-22-2025)
+  - [Rooted in Identity](#rooted-in-identity)
+  - [AI-Generated Summary: The Meekness of the Boy Christ and the Courage of Knowing](#ai-generated-summary-the-meekness-of-the-boy-christ-and-the-courage-of-knowing)
+  - [Finding of the Savior in the Temple by William Holman Hunt](#finding-of-the-savior-in-the-temple-by-william-holman-hunt)
 
 <!-- tocstop -->
 
@@ -5230,6 +5234,26 @@ And what of us? We are called to walk as Mary did—not in strength of our own, 
 ##### Simeon's Song of Praise by Arent de Gelder
 
 [![Simeon's Song of Praise by Arent de Gelder](June/jpgs/SimeonSong.jpg)](https://upload.wikimedia.org/wikipedia/commons/d/dc/Aert_de_Gelder_-_Het_loflied_van_Simeon.jpg "Simeon's Song of Praise by Arent de Gelder")
+
+#### June 22, 2025
+
+##### Rooted in Identity
+
+[![Rooted in Identity](June/jpgs/Day173.jpg)](https://youtu.be/FVihTltSZDI "Rooted in Identity")
+
+##### AI-Generated Summary: The Meekness of the Boy Christ and the Courage of Knowing
+
+Consider, dear reader, the painting by William Holman Hunt, _The Finding of the Savior in the Temple_. Here, the young Jesus stands serene amidst the learned men of Jerusalem, His bare feet upon the temple’s patterned stones, His mother whispering near. The Pharisees, clad in embroidered robes, debate with furrowed brows, yet the Child speaks with a quiet authority that needs no raised voice.
+
+How unlike our own trembling hearts! At twelve, many of us quake at the mere thought of standing before others—recalling, perhaps, some schoolroom recitation where our knees shook like reeds in the wind. But the Boy Christ, though meek, was never timid. His confidence flowed not from arrogance, but from the sure knowledge of who He was: the beloved Son, sent to do the Father’s will.
+
+Here lies the secret of true meekness—not weakness, but strength held gently. It is the freedom of a child who, trusting his father’s word, declines the forbidden film without fuss, and finds his friends follow willingly. It is the quiet voice that refuses gossip in the workplace, not from fear of man, but from love of truth.
+
+Let us then ask for grace to walk as He walked: unshaken by scorn, unswayed by praise, rooted in the love that casts out fear. For only when we know whose we are can we stand, like the Boy in the temple, both humble and bold.
+
+##### Finding of the Savior in the Temple by William Holman Hunt
+
+[![Finding of the Savior in the Temple by William Holman Hunt](June/jpgs/WilliamHolmanHuntFinding.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/William_Holman_Hunt_-_The_Finding_of_the_Saviour_in_the_Temple_-_Google_Art_Project.jpg/1024px-William_Holman_Hunt_-_The_Finding_of_the_Saviour_in_the_Temple_-_Google_Art_Project.jpg "Finding of the Savior in the Temple by William Holman Hunt")
 
 ## July
 
