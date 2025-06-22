@@ -1,0 +1,118 @@
+#!/usr/bin/env bash
+
+# Usage: embedarttoday <day_number>
+
+set -eEuo pipefail
+shopt -s inherit_errexit
+
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME="$(basename "$0")"
+
+# Error codes
+readonly E_INVALID_ARGS=1
+readonly E_INVALID_DAY=2
+readonly E_MISSING_TOOLS=3
+readonly E_NO_INTERNET=4
+readonly E_MISSING_ENV=5
+readonly E_MISSING_FILE=6
+
+# Load required libraries
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "${SCRIPT_DIR}/lib/require.sh" || exit 1
+source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
+source "${SCRIPT_DIR}/lib/util.sh" || exit 1
+source "${SCRIPT_DIR}/lib/git.sh" || exit 1
+source "${SCRIPT_DIR}/lib/youtube.sh" || exit 1
+source "${SCRIPT_DIR}/lib/vidmd.sh" || exit 1
+source "${SCRIPT_DIR}/lib/date.sh" || exit 1
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+
+trap trap_exit EXIT
+
+trap_exit() {
+  local exitcode="$?"
+  exit $exitcode
+}
+
+function usage() {
+  local exit_code=${1:-0}
+  local output
+  if [ "$exit_code" -eq 0 ]; then
+    output=1
+  else
+    output=2
+  fi
+
+  >&"$output" printf "Usage: %s <day_number>\n" "$(basename "$0")"
+  >&"$output" printf "Embeds artwork image in content for the day.\n"
+  >&"$output" printf "  <day_number> The day number (1-366).\n\n"
+  >&"$output" printf "Exit codes:\n"
+  >&"$output" printf "  %d - Invalid arguments\n" "$E_INVALID_ARGS"
+  >&"$output" printf "  %d - Invalid day number\n" "$E_INVALID_DAY"
+  >&"$output" printf "  %d - Missing required tools\n" "$E_MISSING_TOOLS"
+  >&"$output" printf "  %d - No internet connection\n" "$E_NO_INTERNET"
+  >&"$output" printf "  %d - Missing required environment variables\n" "$E_MISSING_ENV"
+  >&"$output" printf "  %d - Summary file not found\n" "$E_MISSING_FILE"
+  >&"$output" printf "\nExample: %s 42\n" "$(basename "$0")"
+  exit "$exit_code"
+}
+
+function version() {
+  printf "%s\n" "$VERSION"
+}
+
+function validate_arguments() {
+  if ! validators::validate_arg_count "$#" 1; then
+    usage $E_INVALID_ARGS
+  fi
+
+  # shellcheck disable=SC2153
+  if ! date::validate_daynumber "$1" "$YEAR"; then
+    usage $E_INVALID_DAY
+  fi
+}
+
+function main() {
+  validate_arguments "$@"
+  local day_num=$1
+  local month day_string summary_file
+
+  require_vars YEAR || exit $E_MISSING_ENV
+
+  internet::checkinternet || exit $E_NO_INTERNET
+  printf -v day_string "Day%03d" "$day_num"
+  # shellcheck disable=SC2153
+  month=$(date -d "${YEAR}-01-01 +$((day_num - 1)) days" +"%B")
+
+  summary_file="$month/${day_string}Summary.txt"
+  if [ ! -f "$summary_file" ]; then
+    die "Error: Summary file $summary_file does not exist" $E_MISSING_FILE
+  fi
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -h | --help) usage 0 ;;
+      -v | --version)
+        version
+        exit 0
+        ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      *) break ;;
+    esac
+  done
+  require_commands tee date jq cp || exit $E_MISSING_TOOLS
+  if "${LOGGING:-false}"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
+fi
