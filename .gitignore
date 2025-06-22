@@ -24,4 +24,4 @@ testsummary.txt
 *.wav
 *.flac
 *.mp4
-downloads/**
+*downloads/**
