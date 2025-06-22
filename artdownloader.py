@@ -34,7 +34,7 @@ WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
 def create_session_with_retries(
     retries=5,
     backoff_factor=1,
-    status_forcelist=(408, 429, 500, 502, 503, 504),
+    status_forcelist=(403,408, 429, 500, 502, 503, 504),
     session=None
 ):
     """Create a requests session with retry logic.
@@ -234,7 +234,7 @@ def main():
     else:
         art_title = " ".join(sys.argv[1:])
         filename_base = None
-        
+
     if download_all(art_title, filename_base):
         sys.exit(0)
     else:
