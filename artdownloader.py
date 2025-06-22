@@ -10,6 +10,7 @@ import os
 import sys
 import time
 from io import BytesIO
+from dotenv import load_dotenv
 
 from PIL import Image
 import requests
@@ -18,6 +19,17 @@ from duckduckgo_search import DDGS
 
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+
+# Load environment variables from config.env
+load_dotenv('config.env')
+
+# Constants
+SAVE_DIR = os.getenv('ART_DOWNLOADER_DIR', 'artdownloads')
+WIKIMEDIA_SEARCH_API_URL = (
+    "https://api.wikimedia.org/core/v1/commons/search/page"
+)
+WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
+
 
 def create_session_with_retries(
     retries=5,
@@ -46,13 +58,6 @@ def exponential_backoff_with_jitter(base=1.0, cap=60.0, attempt=1):
     backoff = min(cap, base * (2 ** attempt))
     jitter = random.uniform(0, backoff)
     return jitter
-
-# Constants
-SAVE_DIR = "downloads"
-WIKIMEDIA_SEARCH_API_URL = (
-    "https://api.wikimedia.org/core/v1/commons/search/page"
-)
-WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
 
 
 def save_image(url, filename):
@@ -154,7 +159,7 @@ def download_from_wikimedia(query):
             original = file_response.get("original")
             if original and "url" in original:
                 image_url = original.get("url")
-                if image_url.lower().endswith(('.jpg', '.jpeg')):
+                if image_url.lower().endswith(('.jpg', '.jpeg', '.png')):
                     safe_query = "".join(
                        c if c.isalnum() or c in "_-" else "_" for c in query
                     )
@@ -178,7 +183,7 @@ def download_all(query):
     """
     downloaded_duckduckgo = download_from_duckduckgo(query)
     downloaded_wikimedia = download_from_wikimedia(query)
-    return downloaded_duckduckgo or downloaded_wikimedia
+    return (downloaded_duckduckgo or downloaded_wikimedia)
 
 
 
