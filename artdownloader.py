@@ -4,18 +4,48 @@
 This script searches for artwork images from multiple sources including:
 - DuckDuckGo
 - Wikimedia Commons
-- The Met Museum
-- Harvard Art Museums
 """
 
 import os
 import sys
+import time
 from io import BytesIO
 
 from PIL import Image
 import requests
+import random
 from duckduckgo_search import DDGS
 
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+def create_session_with_retries(
+    retries=5,
+    backoff_factor=1,
+    status_forcelist=(408, 429, 500, 502, 503, 504),
+    session=None
+):
+    session = session or requests.Session()
+    retry = Retry(
+        total=retries,
+        read=retries,
+        connect=retries,
+        status=retries,
+        backoff_factor=backoff_factor,
+        status_forcelist=status_forcelist,
+        raise_on_status=False,  # Important if you want to handle it yourself
+        respect_retry_after_header=True,
+        allowed_methods=["HEAD", "GET", "OPTIONS"]
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    return session
+
+def exponential_backoff_with_jitter(base=1.0, cap=60.0, attempt=1):
+    backoff = min(cap, base * (2 ** attempt))
+    jitter = random.uniform(0, backoff)
+    return jitter
 
 # Constants
 SAVE_DIR = "downloads"
@@ -23,14 +53,6 @@ WIKIMEDIA_SEARCH_API_URL = (
     "https://api.wikimedia.org/core/v1/commons/search/page"
 )
 WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
-METMUSEUM_SEARCH_URL = (
-    "https://collectionapi.metmuseum.org/public/collection/v1/search"
-)
-METMUSEUM_OBJECT_URL = (
-    "https://collectionapi.metmuseum.org/public/collection/v1/objects"
-)
-HARVARD_API_URL = "https://api.harvardartmuseums.org/object"
-HARVARD_API_KEY = os.getenv("HARVARD_ART_MUSEUMS_API_KEY", "")
 
 
 def save_image(url, filename):
@@ -44,16 +66,32 @@ def save_image(url, filename):
         bool: True if download succeeded, False otherwise
     """
     try:
-        response = requests.get(url, timeout=10)
-        if response.status_code == 200:
-            with open(filename, "wb") as file:
-                file.write(response.content)
-            # Save URL to companion file
-            url_filename = os.path.splitext(filename)[0] + ".url"
-            with open(url_filename, "w") as url_file:
-                url_file.write(url)
-            print(f"✅ Saved: {filename} (source URL saved to {url_filename})")
-            return True
+        session = create_session_with_retries()
+        headers = {
+    "User-Agent": "Mozilla/5.0 (compatible; ImageDownloaderBot/1.0; +https://github.com/linusjf/RIAY/bot-info)"
+}
+        attempt = 0
+        while attempt < 5:
+            response = session.get(url, headers=headers, stream=True)
+            if response.status_code == 200:
+                with open(filename, "wb") as f:
+                    for chunk in response.iter_content(8192):
+                        f.write(chunk)
+                # Save URL to companion file
+                url_filename = os.path.splitext(filename)[0] + ".url"
+                with open(url_filename, "w") as url_file:
+                    url_file.write(url)
+                print(f"✅ Saved: {filename} (source URL saved to {url_filename})")
+                return True
+            elif response.status_code in {408, 429, 500, 502, 503, 504}:
+                wait = exponential_backoff_with_jitter(base=2, cap=60, attempt=attempt)
+                print(f"⚠️ Retry {attempt+1}: HTTP {response.status_code}, waiting {wait:.2f}s...")
+                time.sleep(wait)
+                attempt += 1
+            else:
+                print(f"❌ Failed with status: {response.status_code}")
+                break
+        print("❗ Download failed after retries.")
         print(f"❌ Failed to download: {url}")
     except Exception as error:
         print(f"❌ Error: {error}")
@@ -71,17 +109,20 @@ def download_from_duckduckgo(query):
     """
     print(f"\n🔍 DuckDuckGo search for: {query}")
     with DDGS() as ddgs:
-        results = ddgs.images(keywords=query, max_results=10)
-        if not results:
-            return False
-        for image in results:
-            url = image["image"]
-            filename = os.path.join(
-                SAVE_DIR,
-                f"{query.replace(' ', '_')}_duckduckgo.jpg"
-            )
-            if save_image(url, filename):
-                return True
+        try:
+            results = ddgs.images(keywords=query, max_results=10)
+            if not results:
+                return False
+            for image in results:
+                url = image["image"]
+                filename = os.path.join(
+                    SAVE_DIR,
+                    f"{query.replace(' ', '_')}_duckduckgo.jpg"
+                )
+                if save_image(url, filename):
+                    return True
+        except Exception as error:
+            print(f"❌ Error: {error}")
     return False
 
 
@@ -96,95 +137,36 @@ def download_from_wikimedia(query):
     """
     print(f"\n🔍 Wikimedia Commons search for: {query}")
     params = {"q": query}
-    response = requests.get(
-        WIKIMEDIA_SEARCH_API_URL,
-        params=params
-    ).json()
-    pages = response.get("pages", [])
-    for page in pages:
-        file = page.get("key")
-        if not file:
-            continue
-        file_response = requests.get(
-            WIKIMEDIA_FILE_API_URL + "/" + file,
-            headers={'User-Agent': 'ArtDownloader/1.0'}
+    try:
+        response = requests.get(
+            WIKIMEDIA_SEARCH_API_URL,
+            params=params
         ).json()
-        original = file_response.get("original")
-        if original and "url" in original:
-            image_url = original.get("url")
-            if image_url.lower().endswith(('.jpg', '.jpeg')):
-                safe_query = "".join(
-                    c if c.isalnum() or c in "_-" else "_" for c in query
-                )
-                filename = os.path.join(
-                    SAVE_DIR,
-                    f"{safe_query}_wikimedia.jpg"
-                )
-                if save_image(image_url, filename):
-                    return True
-    return False
+        pages = response.get("pages", [])
+        for page in pages:
+            file = page.get("key")
+            if not file:
+                continue
+            file_response = requests.get(
+                WIKIMEDIA_FILE_API_URL + "/" + file,
+                headers={'User-Agent': 'Mozilla/5.0'}
+            ).json()
+            original = file_response.get("original")
+            if original and "url" in original:
+                image_url = original.get("url")
+                if image_url.lower().endswith(('.jpg', '.jpeg')):
+                    safe_query = "".join(
+                       c if c.isalnum() or c in "_-" else "_" for c in query
+                    )
+                    filename = os.path.join(
+                        SAVE_DIR,
+                        f"{safe_query}_wikimedia.jpg"
+                    )
+                    if save_image(image_url, filename):
+                        return True
+    except Exception as error:
+        print(f"❌ Error: {error}")
 
-
-def download_from_metmuseum(query):
-    """Download image from The Met Museum.
-
-    Args:
-        query: Search query string
-
-    Returns:
-        bool: True if download succeeded, False otherwise
-    """
-    print(f"\n🔍 The Met Museum search for: {query}")
-    params = {"q": query, "hasImages": "true", "title": query}
-    response = requests.get(METMUSEUM_SEARCH_URL, params=params).json()
-    object_ids = response.get("objectIDs", [])
-    if object_ids:
-        for object_id in object_ids:
-            object_url = f"{METMUSEUM_OBJECT_URL}/{object_id}"
-            data = requests.get(object_url).json()
-            img_url = data.get("primaryImage")
-            if img_url:
-                filename = os.path.join(
-                    SAVE_DIR,
-                    f"{query.replace(' ', '_')}_met.jpg"
-                )
-                if save_image(img_url, filename):
-                    return True
-    return False
-
-
-def download_from_harvard(query, api_key=HARVARD_API_KEY):
-    """Download image from Harvard Art Museums.
-
-    Args:
-        query: Search query string
-        api_key: API key for Harvard Art Museums
-
-    Returns:
-        bool: True if download succeeded, False otherwise
-    """
-    print(f"\n🔍 Harvard Art Museums search for: {query}")
-    params = {
-        "apikey": api_key,
-        "q": query,
-        "hasimage": 1,
-        "keyword": query,
-        "title": query,
-        "size": 10
-    }
-    response = requests.get(HARVARD_API_URL, params=params)
-    response = response.json()
-    records = response.get("records", [])
-    if not records:
-        return False
-    for record in records:
-        img_url = record["primaryimageurl"]
-        filename = os.path.join(
-            SAVE_DIR,
-            f"{query.replace(' ', '_')}_harvard.jpg"
-        )
-        if save_image(img_url, filename):
-            return True
     return False
 
 
@@ -194,10 +176,10 @@ def download_all(query):
     Args:
         query: Search query string
     """
-    download_from_duckduckgo(query)
-    download_from_wikimedia(query)
-    download_from_metmuseum(query)
-    download_from_harvard(query)
+    downloaded = download_from_duckduckgo(query)
+    downloaded = downloaded or download_from_wikimedia(query)
+    return downloaded
+
 
 
 def main():
@@ -208,7 +190,10 @@ def main():
 
     os.makedirs(SAVE_DIR, exist_ok=True)
     art_title = " ".join(sys.argv[1:])
-    download_all(art_title)
+    if download_all(art_title):
+        sys.exit(0)
+    else:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
