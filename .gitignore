@@ -25,3 +25,4 @@ testsummary.txt
 *.flac
 *.mp4
 *downloads/**
+!**/Day*Summary.txt
