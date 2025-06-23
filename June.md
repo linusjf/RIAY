@@ -88,6 +88,10 @@
   - [Rooted in Identity](#rooted-in-identity)
   - [AI-Generated Summary: The Meekness of the Boy Christ and the Courage of Knowing](#ai-generated-summary-the-meekness-of-the-boy-christ-and-the-courage-of-knowing)
   - [Finding of the Savior in the Temple by William Holman Hunt](#finding-of-the-savior-in-the-temple-by-william-holman-hunt)
+- [June 23, 2025](#june-23-2025)
+  - [Living Our Baptism](#living-our-baptism)
+  - [AI-Generated Summary: The Humble Herald and the Divine Dawn](#ai-generated-summary-the-humble-herald-and-the-divine-dawn)
+  - [Apparition of the Messiah, an oil painting on canvas, measuring 540 cm × 750 cm, by Russian painter Alexander Andreyevich Ivanov (1806–1858)](#apparition-of-the-messiah-an-oil-painting-on-canvas-measuring-540-cm--750-cm-by-russian-painter-alexander-andreyevich-ivanov-18061858)
 
 <!-- tocstop -->
 
@@ -526,3 +530,21 @@ Let us then ask for grace to walk as He walked: unshaken by scorn, unswayed by p
 ### Finding of the Savior in the Temple by William Holman Hunt
 
 [![Finding of the Savior in the Temple by William Holman Hunt](/June/jpgs/WilliamHolmanHuntFinding.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/William_Holman_Hunt_-_The_Finding_of_the_Saviour_in_the_Temple_-_Google_Art_Project.jpg/1024px-William_Holman_Hunt_-_The_Finding_of_the_Saviour_in_the_Temple_-_Google_Art_Project.jpg "Finding of the Savior in the Temple by William Holman Hunt")
+
+## June 23, 2025
+
+### Living Our Baptism
+
+[![Living Our Baptism](/June/jpgs/Day174.jpg)](https://youtu.be/kfLrbSzpSFY "Living Our Baptism")
+
+### AI-Generated Summary: The Humble Herald and the Divine Dawn
+
+Consider, dear reader, the painter Ivanov’s labor of twenty years—_The Appearance of Christ Before the People_—a canvas where neoclassical precision and romantic fervor meet. There stands John the Baptist, clad in camel’s hair, his sun-worn hand outstretched toward the distant figure of Christ, who emerges from the wilderness in a cloak of blue and tunic of red, humble yet radiant. About them, a throng gathers: disciples, seekers, even the artist himself and his friend Gogol, their faces alight with wonder, doubt, or trembling hope. The river curves like grace itself around the rocks, its waters stirred by those stepping forward to be cleansed.
+
+John’s voice echoes the Scripture: _"Behold, the Lamb of God!"_ He is no Messiah, only a herald—a man who knew his place and kept it, who rejoiced to decrease that Christ might increase. Unlike Saul, who clung to a fading crown, John surrendered his followers freely, pointing them to the One whose sandals he felt unworthy to untie. Here is the model of every true servant: obedience without envy, witness without self-seeking, a life poured out so others might find the Source.
+
+And what of us? Does our own baptismal calling mirror his? Do we, in word and deed, direct souls toward the Light, or do we obscure Him with our own shadow? Where we have succeeded, let us give thanks; where we have faltered, let us seek mercy and rise again. For the world still waits, whether it knows it or not, for those who will proclaim—with their lives as much as their lips—_"He must increase, but I must decrease."_
+
+### Apparition of the Messiah, an oil painting on canvas, measuring 540 cm × 750 cm, by Russian painter Alexander Andreyevich Ivanov (1806–1858)
+
+[![Apparition of the Messiah, an oil painting on canvas, measuring 540 cm × 750 cm, by Russian painter Alexander Andreyevich Ivanov (1806–1858)](/June/jpgs/Apparition.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg/960px-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg "Apparition of the Messiah, an oil painting on canvas, measuring 540 cm × 750 cm, by Russian painter Alexander Andreyevich Ivanov (1806–1858)")
