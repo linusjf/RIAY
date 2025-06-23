@@ -89,6 +89,10 @@ function main() {
   if [ ! -f "$summary_file" ]; then
     die "Error: Summary file $summary_file does not exist" $E_MISSING_FILE
   fi
+  art_details="$("${SCRIPT_DIR}/extractartdetails" "$summary_file")"
+  details="$(echo "$art_details" | jq '.details' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
+  filename="$(echo "$art_details" | jq '.filename' | sed 's/"//g')"
+  "${SCRIPT_DIR}/artdownloader.py" "$details" "$filename"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
