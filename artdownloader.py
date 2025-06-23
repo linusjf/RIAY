@@ -340,7 +340,7 @@ def download_from_google(query, filename_base):
         print(f"❌ Error: {error}")
     return False
 
-def download_all(query, filename_base=None, title=None, artist=None, year=None, medium=None, subject=None):
+def download_all(query, filename_base="", title="", artist="", year="", medium="", subject=""):
     """Download images from all available sources.
 
     Args:
@@ -357,7 +357,7 @@ def download_all(query, filename_base=None, title=None, artist=None, year=None, 
     """
     if filename_base is None:
         filename_base = query.replace(' ', '_')
-    
+
     # Build enhanced query with additional metadata
     enhanced_query = query
     if artist:
@@ -372,7 +372,7 @@ def download_all(query, filename_base=None, title=None, artist=None, year=None, 
         enhanced_query += f" {subject}"
 
     print(f"\n🔍 Searching with enhanced query: {enhanced_query}")
-    
+
     downloaded_duckduckgo = download_from_duckduckgo(enhanced_query, filename_base)
     downloaded_wikimedia = download_from_wikimedia(enhanced_query, filename_base)
     downloaded_wikimedia_search = download_from_wikimedia_search(enhanced_query, filename_base)
@@ -383,13 +383,13 @@ def main():
     """Main entry point for the script."""
     parser = argparse.ArgumentParser(description='Download artwork images from various sources.')
     parser.add_argument('query', nargs='?', help='Name of artwork to search for')
-    parser.add_argument('--title', help='Title of the artwork')
-    parser.add_argument('--artist', help='Artist name')
-    parser.add_argument('--year', help='Year of creation')
-    parser.add_argument('--medium', help='Art medium (e.g., oil painting, sculpture)')
-    parser.add_argument('--subject', help='Art subject matter')
-    parser.add_argument('--filename', help='Base filename for saved images (without extension)')
-    
+    parser.add_argument('--title', help='Title of the artwork', default="")
+    parser.add_argument('--artist', help='Artist name', default="")
+    parser.add_argument('--year', help='Year of creation',default="")
+    parser.add_argument('--medium', help='Art medium (e.g., oil painting, sculpture)', default="")
+    parser.add_argument('--subject', help='Art subject matter', default="")
+    parser.add_argument('--filename', help='Base filename for saved images (without extension)', default="")
+
     args = parser.parse_args()
 
     if not args.query and not any([args.title, args.artist, args.year, args.medium, args.subject]):
@@ -397,11 +397,11 @@ def main():
         sys.exit(1)
 
     os.makedirs(SAVE_DIR, exist_ok=True)
-    
+
     query = args.query if args.query else ""
     if args.title and args.title not in query:
         query = f"{query} {args.title}".strip()
-    
+
     success = download_all(
         query=query,
         filename_base=args.filename,
@@ -411,7 +411,7 @@ def main():
         medium=args.medium,
         subject=args.subject
     )
-    
+
     sys.exit(0 if success else 1)
 
 if __name__ == "__main__":

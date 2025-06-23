@@ -90,9 +90,14 @@ function main() {
     die "Error: Summary file $summary_file does not exist" $E_MISSING_FILE
   fi
   art_details="$("${SCRIPT_DIR}/extractartdetails" "$summary_file")"
-  details="$(echo "$art_details" | jq '.details' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
+  title="$(echo "$art_details" | jq '.details.title' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
+  artist="$(echo "$art_details" | jq '.details.artist' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  year="$(echo "$art_details" | jq '.details.year' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  medium="$(echo "$art_details" | jq '.details.medium' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  subject="$(echo "$art_details" | jq '.details.subject' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   filename="$(echo "$art_details" | jq '.filename' | sed 's/"//g')"
-  "${SCRIPT_DIR}/artdownloader.py" "$details" "$filename"
+  "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --year "${year:-}" \
+    --medium "${medium:-}" --subject "${subject:-}"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
