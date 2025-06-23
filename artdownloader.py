@@ -10,6 +10,8 @@ import os
 import random
 import sys
 import time
+import re
+import argparse
 from io import BytesIO
 
 import requests
@@ -22,9 +24,22 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from serpapi import BingSearch, GoogleSearch
 
-# Replace with your own API key
+def parse_bash_array(file_path, var_name):
+    with open(file_path, 'r') as f:
+        content = f.read()
 
+    # Match array definition like: VAR=( "a" "b" "c" )
+    pattern = re.compile(rf'{var_name}\s*=\s*\((.*?)\)', re.DOTALL)
+    match = pattern.search(content)
+    if not match:
+        return []
 
+    array_body = match.group(1)
+    # Extract all quoted strings
+    values = re.findall(r'"(.*?)"', array_body)
+    return values
+
+STOCK_PHOTO_SITES = parse_bash_array('config.env', 'STOCK_PHOTO_SITES')
 # Load environment variables from config.env
 load_dotenv('config.env')
 
@@ -165,12 +180,13 @@ def download_from_duckduckgo(query, filename_base):
             return False
         for image in results:
             url = image["image"]
-            filename = os.path.join(
-                SAVE_DIR,
-                f"{filename_base}_duckduckgo.jpg"
-            )
-            if save_image(url, filename):
-                return True
+            if not any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
+                filename = os.path.join(
+                    SAVE_DIR,
+                    f"{filename_base}_duckduckgo.jpg"
+                )
+                if save_image(url, filename):
+                    return True
     except Exception as error:
         print(f"❌ Error: {error}")
     return False
@@ -229,7 +245,7 @@ def download_from_wikimedia_search(query, filename_base):
                     imageinfo = page.get("imageinfo")
                     if imageinfo:
                         image_url = imageinfo[0].get("url")
-                        if image_url:
+                        if image_url and not any(val.lower() in image_url.lower() for val in STOCK_PHOTO_SITES):
                             filename = os.path.join(SAVE_DIR, f"{filename_base}_wikimedia_search.jpg")
                             return save_image(image_url, filename)
 
@@ -270,7 +286,7 @@ def download_from_wikimedia(query, filename_base):
             original = file_response.get("original")
             if original and "url" in original:
                 image_url = original.get("url")
-                if image_url.lower().endswith(('.jpg', '.jpeg')):
+                if image_url.lower().endswith(('.jpg', '.jpeg')) and not any(val.lower() in image_url.lower() for val in STOCK_PHOTO_SITES):
                     filename = os.path.join(
                         SAVE_DIR,
                         f"{filename_base}_wikimedia.jpg"
@@ -312,7 +328,7 @@ def download_from_google(query, filename_base):
             url = image.get("original")
             if not url:
                 continue
-            if url.lower().endswith(('.jpg', '.jpeg')):
+            if url.lower().endswith(('.jpg', '.jpeg')) and not any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
                 filename = os.path.join(
                     SAVE_DIR,
                     f"{filename_base}_google.jpg"
@@ -324,47 +340,79 @@ def download_from_google(query, filename_base):
         print(f"❌ Error: {error}")
     return False
 
-def download_all(query, filename_base=None):
+def download_all(query, filename_base=None, title=None, artist=None, year=None, medium=None, subject=None):
     """Download images from all available sources.
 
     Args:
         query: Search query string
         filename_base: Optional base filename to use for saving
+        title: Artwork title
+        artist: Artist name
+        year: Creation year
+        medium: Art medium
+        subject: Art subject
 
     Returns:
         bool: True if any download succeeded, False otherwise
     """
     if filename_base is None:
         filename_base = query.replace(' ', '_')
-    downloaded_duckduckgo = download_from_duckduckgo(query, filename_base)
-    downloaded_wikimedia = download_from_wikimedia(query, filename_base)
-    downloaded_wikimedia_search = download_from_wikimedia_search(query, filename_base)
-    downloaded_google = download_from_google(query, filename_base)
+    
+    # Build enhanced query with additional metadata
+    enhanced_query = query
+    if artist:
+        enhanced_query += f" by {artist}"
+    if title and title not in query:
+        enhanced_query += f" {title}"
+    if year:
+        enhanced_query += f" {year}"
+    if medium:
+        enhanced_query += f" {medium}"
+    if subject:
+        enhanced_query += f" {subject}"
+
+    print(f"\n🔍 Searching with enhanced query: {enhanced_query}")
+    
+    downloaded_duckduckgo = download_from_duckduckgo(enhanced_query, filename_base)
+    downloaded_wikimedia = download_from_wikimedia(enhanced_query, filename_base)
+    downloaded_wikimedia_search = download_from_wikimedia_search(enhanced_query, filename_base)
+    downloaded_google = download_from_google(enhanced_query, filename_base)
     return (downloaded_duckduckgo or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
-
-
 
 def main():
     """Main entry point for the script."""
-    if len(sys.argv) < 2:
-        print("Usage: python artdownloader.py <artwork_name> [filename_base]")
-        print("  artwork_name: Name of artwork to search for")
-        print("  filename_base: Optional base filename for saved images (without extension)")
+    parser = argparse.ArgumentParser(description='Download artwork images from various sources.')
+    parser.add_argument('query', nargs='?', help='Name of artwork to search for')
+    parser.add_argument('--title', help='Title of the artwork')
+    parser.add_argument('--artist', help='Artist name')
+    parser.add_argument('--year', help='Year of creation')
+    parser.add_argument('--medium', help='Art medium (e.g., oil painting, sculpture)')
+    parser.add_argument('--subject', help='Art subject matter')
+    parser.add_argument('--filename', help='Base filename for saved images (without extension)')
+    
+    args = parser.parse_args()
+
+    if not args.query and not any([args.title, args.artist, args.year, args.medium, args.subject]):
+        parser.print_help()
         sys.exit(1)
 
     os.makedirs(SAVE_DIR, exist_ok=True)
-    if len(sys.argv) > 2:
-        art_title = " ".join(sys.argv[1:-1])
-        filename_base = sys.argv[-1]
-    else:
-        art_title = " ".join(sys.argv[1:])
-        filename_base = None
-
-    if download_all(art_title, filename_base):
-        sys.exit(0)
-    else:
-        sys.exit(1)
-
+    
+    query = args.query if args.query else ""
+    if args.title and args.title not in query:
+        query = f"{query} {args.title}".strip()
+    
+    success = download_all(
+        query=query,
+        filename_base=args.filename,
+        title=args.title,
+        artist=args.artist,
+        year=args.year,
+        medium=args.medium,
+        subject=args.subject
+    )
+    
+    sys.exit(0 if success else 1)
 
 if __name__ == "__main__":
     main()
