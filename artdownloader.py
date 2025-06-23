@@ -18,6 +18,9 @@ from PIL import Image
 from duckduckgo_search import DDGS
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+from serpapi import BingSearch, GoogleSearch
+
+# Replace with your own API key
 
 
 # Load environment variables from config.env
@@ -25,6 +28,8 @@ load_dotenv('config.env')
 
 # Constants
 SAVE_DIR = os.getenv('ART_DOWNLOADER_DIR', 'artdownloads')
+SERPAPI_API_KEY = os.getenv("SERP_API_KEY", "")
+
 WIKIMEDIA_SEARCH_API_URL = (
     "https://api.wikimedia.org/core/v1/commons/search/page"
 )
@@ -144,7 +149,7 @@ def download_from_duckduckgo(query, filename_base):
     print(f"\n🔍 DuckDuckGo search for: {query}")
     with DDGS() as ddgs:
         try:
-            results = ddgs.images(keywords=query, max_results=10)
+            results = ddgs.images(query, max_results=10)
             if not results:
                 return False
             for image in results:
@@ -189,7 +194,7 @@ def download_from_wikimedia(query, filename_base):
             original = file_response.get("original")
             if original and "url" in original:
                 image_url = original.get("url")
-                if image_url.lower().endswith(('.jpg', '.jpeg', '.png')):
+                if image_url.lower().endswith(('.jpg', '.jpeg')):
                     filename = os.path.join(
                         SAVE_DIR,
                         f"{filename_base}_wikimedia.jpg"
@@ -201,6 +206,44 @@ def download_from_wikimedia(query, filename_base):
 
     return False
 
+def download_from_google(query, filename_base):
+    """Download image from Google Images via SerpAPI.
+
+    Args:
+        query: Search query string
+        filename_base: Base filename to use for saving
+
+    Returns:
+        bool: True if download succeeded, False otherwise
+    """
+    print(f"\n🔍 Google search for: {query}")
+    try:
+        params = {
+            "q": query,
+            "tbm": "isch",
+            "api_key": SERPAPI_API_KEY,
+        }
+        search = GoogleSearch(params)
+        results = search.get_dict()
+        images = results.get("images_results", [])
+        if not images:
+            return False
+
+        for image in images:
+            url = image.get("original")
+            if not url:
+                continue
+            if url.lower().endswith(('.jpg', '.jpeg')):
+                filename = os.path.join(
+                    SAVE_DIR,
+                    f"{filename_base}_google.jpg"
+                )
+                if save_image(url, filename):
+                    return True
+
+    except Exception as error:
+        print(f"❌ Error: {error}")
+    return False
 
 def download_all(query, filename_base=None):
     """Download images from all available sources.
@@ -216,7 +259,8 @@ def download_all(query, filename_base=None):
         filename_base = query.replace(' ', '_')
     downloaded_duckduckgo = download_from_duckduckgo(query, filename_base)
     downloaded_wikimedia = download_from_wikimedia(query, filename_base)
-    return (downloaded_duckduckgo or downloaded_wikimedia)
+    downloaded_google = download_from_google(query, filename_base)
+    return (downloaded_duckduckgo or downloaded_wikimedia or downloaded_google)
 
 
 def main():
