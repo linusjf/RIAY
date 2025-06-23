@@ -16,6 +16,8 @@ import requests
 from dotenv import load_dotenv
 from PIL import Image
 from duckduckgo_search import DDGS
+from duckduckgo_search.exceptions import RatelimitException
+from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from serpapi import BingSearch, GoogleSearch
@@ -135,6 +137,15 @@ def save_image(url, filename):
         print(f"❌ Error: {error}")
     return False
 
+# Retry on rate limit with exponential backoff
+@retry(
+    retry=retry_if_exception_type(RatelimitException),
+    wait=wait_exponential(min=1, max=10),
+    stop=stop_after_attempt(5),
+)
+def search_duckduckgo_images(query, max_results=10):
+    with DDGS() as ddgs:
+        return ddgs.images(query, max_results=max_results)
 
 def download_from_duckduckgo(query, filename_base):
     """Download image from DuckDuckGo search.
@@ -147,23 +158,85 @@ def download_from_duckduckgo(query, filename_base):
         bool: True if download succeeded, False otherwise
     """
     print(f"\n🔍 DuckDuckGo search for: {query}")
-    with DDGS() as ddgs:
-        try:
-            results = ddgs.images(query, max_results=10)
-            if not results:
-                return False
-            for image in results:
-                url = image["image"]
-                filename = os.path.join(
-                    SAVE_DIR,
-                    f"{filename_base}_duckduckgo.jpg"
-                )
-                if save_image(url, filename):
-                    return True
-        except Exception as error:
-            print(f"❌ Error: {error}")
+    try:
+        results = search_duckduckgo_images(query, max_results=10)
+        if not results:
+            print("❌ No matching images found.")
+            return False
+        for image in results:
+            url = image["image"]
+            filename = os.path.join(
+                SAVE_DIR,
+                f"{filename_base}_duckduckgo.jpg"
+            )
+            if save_image(url, filename):
+                return True
+    except Exception as error:
+        print(f"❌ Error: {error}")
     return False
 
+def download_from_wikimedia_search(query, filename_base):
+    """
+    Search Wikimedia Commons for an image by query and download the top result.
+
+    Args:
+        query (str): Search term (e.g., 'Mona Lisa')
+        filename_base (str): Base name for saving the file
+
+    Returns:
+        bool: True if download succeeded, False otherwise
+    """
+    print(f"\n🔍 Searching Wikimedia for: {query}")
+    search_endpoint = "https://commons.wikimedia.org/w/api.php"
+    search_params = {
+        "action": "query",
+        "format": "json",
+        "list": "search",
+        "srsearch": query,
+        "srnamespace": 6,  # File namespace only
+        "srlimit": 10
+    }
+
+    try:
+        # Step 1: Search
+        resp = requests.get(search_endpoint, params=search_params, timeout=30)
+        resp.raise_for_status()
+        search_data = resp.json()
+        search_results = search_data.get("query", {}).get("search", [])
+
+        if not search_results:
+            print("❌ No matching images found.")
+            return False
+
+        for result in search_results:
+            title = result["title"]
+            if title.lower().endswith(('.jpg', '.jpeg')):
+                # Step 2: Get image info
+                info_params = {
+                    "action": "query",
+                    "titles": title,
+                    "prop": "imageinfo",
+                    "iiprop": "url",
+                    "format": "json"
+                }
+
+                info_resp = requests.get(search_endpoint, params=info_params, timeout=10)
+                info_resp.raise_for_status()
+                info_data = info_resp.json()
+                pages = info_data.get("query", {}).get("pages", {})
+
+                for page in pages.values():
+                    imageinfo = page.get("imageinfo")
+                    if imageinfo:
+                        image_url = imageinfo[0].get("url")
+                        if image_url:
+                            filename = os.path.join(SAVE_DIR, f"{filename_base}_wikimedia_search.jpg")
+                            return save_image(image_url, filename)
+
+    except Exception as e:
+        print(f"❌ Error: {e}")
+
+    return False
 
 def download_from_wikimedia(query, filename_base):
     """Download image from Wikimedia Commons.
@@ -183,6 +256,9 @@ def download_from_wikimedia(query, filename_base):
             params=params
         ).json()
         pages = response.get("pages", [])
+        if not pages:
+            print("❌ No matching images found.")
+            return False
         for page in pages:
             file = page.get("key")
             if not file:
@@ -225,6 +301,9 @@ def download_from_google(query, filename_base):
         }
         search = GoogleSearch(params)
         results = search.get_dict()
+        if not results:
+            print("❌ No matching images found.")
+            return False
         images = results.get("images_results", [])
         if not images:
             return False
@@ -259,8 +338,10 @@ def download_all(query, filename_base=None):
         filename_base = query.replace(' ', '_')
     downloaded_duckduckgo = download_from_duckduckgo(query, filename_base)
     downloaded_wikimedia = download_from_wikimedia(query, filename_base)
+    downloaded_wikimedia_search = download_from_wikimedia_search(query, filename_base)
     downloaded_google = download_from_google(query, filename_base)
-    return (downloaded_duckduckgo or downloaded_wikimedia or downloaded_google)
+    return (downloaded_duckduckgo or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
+
 
 
 def main():
