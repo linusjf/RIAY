@@ -340,7 +340,7 @@ def download_from_google(query, filename_base):
         print(f"❌ Error: {error}")
     return False
 
-def download_all(query, filename_base="", title="", artist="", year="", medium="", subject=""):
+def download_all(query, filename_base=None, title=None, artist=None, year=None, medium=None, subject=None):
     """Download images from all available sources.
 
     Args:
@@ -383,12 +383,12 @@ def main():
     """Main entry point for the script."""
     parser = argparse.ArgumentParser(description='Download artwork images from various sources.')
     parser.add_argument('query', nargs='?', help='Name of artwork to search for')
-    parser.add_argument('--title', help='Title of the artwork', default="")
-    parser.add_argument('--artist', help='Artist name', default="")
-    parser.add_argument('--year', help='Year of creation',default="")
-    parser.add_argument('--medium', help='Art medium (e.g., oil painting, sculpture)', default="")
-    parser.add_argument('--subject', help='Art subject matter', default="")
-    parser.add_argument('--filename', help='Base filename for saved images (without extension)', default="")
+    parser.add_argument('--title', help='Title of the artwork')
+    parser.add_argument('--artist', help='Artist name')
+    parser.add_argument('--year', help='Year of creation')
+    parser.add_argument('--medium', help='Art medium (e.g., oil painting, sculpture)')
+    parser.add_argument('--subject', help='Art subject matter')
+    parser.add_argument('--filename', help='Base filename for saved images (without extension)')
 
     args = parser.parse_args()
 
