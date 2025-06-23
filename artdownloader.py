@@ -245,7 +245,7 @@ def download_from_wikimedia_search(query, filename_base):
                     imageinfo = page.get("imageinfo")
                     if imageinfo:
                         image_url = imageinfo[0].get("url")
-                        if image_url and not any(val.lower() in image_url.lower() for val in STOCK_PHOTO_SITES):
+                        if image_url:
                             filename = os.path.join(SAVE_DIR, f"{filename_base}_wikimedia_search.jpg")
                             return save_image(image_url, filename)
 
@@ -286,7 +286,7 @@ def download_from_wikimedia(query, filename_base):
             original = file_response.get("original")
             if original and "url" in original:
                 image_url = original.get("url")
-                if image_url.lower().endswith(('.jpg', '.jpeg')) and not any(val.lower() in image_url.lower() for val in STOCK_PHOTO_SITES):
+                if image_url.lower().endswith(('.jpg', '.jpeg')):
                     filename = os.path.join(
                         SAVE_DIR,
                         f"{filename_base}_wikimedia.jpg"
