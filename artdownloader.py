@@ -371,11 +371,18 @@ def download_all(query, filename_base=None, title=None, artist=None, year=None, 
     if subject:
         enhanced_query += f" {subject}"
 
+    # Wikimedia-specific query (only title and artist)
+    wikimedia_query = query
+    if artist:
+        wikimedia_query += f" by {artist}"
+    if title and title not in query:
+        wikimedia_query += f" {title}"
+
     print(f"\n🔍 Searching with enhanced query: {enhanced_query}")
 
     downloaded_duckduckgo = download_from_duckduckgo(enhanced_query, filename_base)
-    downloaded_wikimedia = download_from_wikimedia(enhanced_query, filename_base)
-    downloaded_wikimedia_search = download_from_wikimedia_search(enhanced_query, filename_base)
+    downloaded_wikimedia = download_from_wikimedia(wikimedia_query, filename_base)
+    downloaded_wikimedia_search = download_from_wikimedia_search(wikimedia_query, filename_base)
     downloaded_google = download_from_google(enhanced_query, filename_base)
     return (downloaded_duckduckgo or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
 
