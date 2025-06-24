@@ -180,7 +180,7 @@ def download_from_duckduckgo(query, filename_base):
             return False
         for image in results:
             url = image["image"]
-            if not any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
+            if not any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES) and url.lower().endswith(('.jpg', '.jpeg')):
                 filename = os.path.join(
                     SAVE_DIR,
                     f"{filename_base}_duckduckgo.jpg"
