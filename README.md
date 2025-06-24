@@ -4820,6 +4820,10 @@ Farewell, and may His peace attend you.
   - [Living Our Baptism](#living-our-baptism)
   - [AI-Generated Summary: The Humble Herald and the Divine Dawn](#ai-generated-summary-the-humble-herald-and-the-divine-dawn)
   - [Apparition of the Messiah, an oil painting on canvas, measuring 540 cm × 750 cm, by Russian painter Alexander Andreyevich Ivanov (1806–1858)](#apparition-of-the-messiah-an-oil-painting-on-canvas-measuring-540-cm--750-cm-by-russian-painter-alexander-andreyevich-ivanov-18061858)
+- [June 24, 2025](#june-24-2025)
+  - [Calling Through The Noise](#calling-through-the-noise)
+  - [AI-Generated Summary: The Weight of the World and the Wine of Grace](#ai-generated-summary-the-weight-of-the-world-and-the-wine-of-grace)
+  - [Wedding at Cana by Paolo Veronese](#wedding-at-cana-by-paolo-veronese)
 
 <!-- tocstop -->
 
@@ -5276,6 +5280,24 @@ And what of us? Does our own baptismal calling mirror his? Do we, in word and de
 ##### Apparition of the Messiah, an oil painting on canvas, measuring 540 cm × 750 cm, by Russian painter Alexander Andreyevich Ivanov (1806–1858)
 
 [![Apparition of the Messiah, an oil painting on canvas, measuring 540 cm × 750 cm, by Russian painter Alexander Andreyevich Ivanov (1806–1858)](June/jpgs/Apparition.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg/960px-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg "Apparition of the Messiah, an oil painting on canvas, measuring 540 cm × 750 cm, by Russian painter Alexander Andreyevich Ivanov (1806–1858)")
+
+#### June 24, 2025
+
+##### Calling Through The Noise
+
+[![Calling Through The Noise](June/jpgs/Day175.jpg)](https://youtu.be/xPmE6Ghyb-w "Calling Through The Noise")
+
+##### AI-Generated Summary: The Weight of the World and the Wine of Grace
+
+Consider Veronese’s _The Wedding at Cana_, a lavish feast where a hundred souls revel, yet only two—the bride and Christ—meet our gaze. They seem to look past us, as if drawn to the _Mona Lisa_ on the far wall, while the true miracle (water becoming wine) humbly unfolds in the corner. So it is with our own sight: we fixate on lesser wonders, blind to the quiet glory at hand.
+
+And what of _Atlas_, that titan of stone, forever bowed beneath the heavens? From St. Patrick’s altar, one sees him straining, a mirror of our own weary attempts to bear life’s weight alone. But here is the truth: Atlas’ burden was a punishment, not a calling. The world was never ours to carry. At Cana, when the wine ran dry—as our own strength always does—Christ provided not merely enough, but abundantly.
+
+Yet how often we turn away, preferring our futile toil to His easy yoke! The orphan spirit whispers that we are alone, but the Bridegroom stands at the center of the feast, holding all things together. Surrender your load to Him; He who turned water into wine can surely turn your labor into rest. The myth of Atlas is but a shadow; the substance is Christ, who lifts the weight we were never meant to bear.
+
+##### Wedding at Cana by Paolo Veronese
+
+[![Wedding at Cana by Paolo Veronese](June/jpgs/weddingatcanaveronese.jpg)](http://andantemoderato.com/wp-content/uploads/2015/06/Paolo-Veronese-The-Wedding-at-Cana-1024x696.jpg "Wedding at Cana by Paolo Veronese")
 
 ## July
 

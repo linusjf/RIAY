@@ -22,7 +22,7 @@ from duckduckgo_search.exceptions import RatelimitException
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from serpapi import BingSearch, GoogleSearch
+from serpapi import GoogleSearch
 
 def parse_bash_array(file_path, var_name):
     with open(file_path, 'r') as f:
