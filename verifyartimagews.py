@@ -18,10 +18,13 @@ from io import BytesIO
 import base64
 import json
 from fuzzywuzzy import fuzz
+import os
 
-# Replace with your DeepInfra API key or use an environment variable
-DEEPINFRA_API_KEY = "your_deepinfra_api_key"
-HEADERS = {"Authorization": f"Bearer {DEEPINFRA_API_KEY}"}
+# Read API key from environment variable
+DEEPINFRA_TOKEN = os.getenv("DEEPINFRA_TOKEN")
+if not DEEPINFRA_TOKEN:
+    raise ValueError("DEEPINFRA_TOKEN environment variable not set")
+HEADERS = {"Authorization": f"Bearer {DEEPINFRA_TOKEN}"}
 
 # DeepInfra model endpoints
 BLIP_URL = "https://api.deepinfra.com/v1/inference/Salesforce/blip-image-captioning-base"
