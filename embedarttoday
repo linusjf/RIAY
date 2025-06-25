@@ -139,6 +139,54 @@ function select_best_unverified_image() {
   echo "$best_image"
 }
 
+function generate_markdown() {
+  local title="$1"
+  local artist="$2"
+  local image_path="$3"
+  local source_url="$4"
+  local month="$5"
+  local day_num="$6"
+
+  # Generate header
+  local header
+  if [[ -n "$artist" ]]; then
+    header="### $title by $artist"
+  else
+    header="### $title"
+  fi
+
+  # Generate caption
+  local caption
+  if [[ -n "$artist" ]]; then
+    caption="$title by $artist"
+  else
+    caption="$title"
+  fi
+
+  # Generate video markdown
+  local video_md
+  video_md=$(vidmd::videomarkdown "$caption" "$image_path" "$source_url")
+
+  # Combine into final markdown
+  printf "%s\n\n%s\n" "$header" "$video_md"
+}
+
+function append_to_day_file() {
+  local day_num="$1"
+  local content="$2"
+  local month="$3"
+
+  printf -v day_string "Day%03d" "$day_num"
+  local day_file="$month/${day_string}.md"
+
+  if [[ ! -f "$day_file" ]]; then
+    die "Error: Day file $day_file does not exist" $E_MISSING_FILE
+  fi
+
+  echo "$content" >> "$day_file"
+  echo "📝 Appended artwork to: $day_file"
+}
+
 function main() {
   validate_arguments "$@"
   local day_num=$1
@@ -196,6 +244,11 @@ function main() {
     echo "$source_url" > "$target_dir/${filename}.url"
     echo "📝 Saved source URL to: $target_dir/${filename}.url"
   fi
+
+  # Generate and append markdown
+  local markdown_content
+  markdown_content=$(generate_markdown "$title" "$artist" "$target_file" "$source_url" "$month" "$day_num")
+  append_to_day_file "$day_num" "$markdown_content" "$month"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
