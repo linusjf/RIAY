@@ -18,7 +18,7 @@ readonly E_MISSING_FILE=6
 readonly E_VERIFICATION_FAILED=7
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -121,7 +121,7 @@ function verify_images() {
 function select_best_unverified_image() {
   local filename="$1"
   local best_image=""
-  
+
   # Check in order of preference
   for source in wikimedia wikimedia_search google duckduckgo; do
     local candidate="${ART_DOWNLOADER_DIR}/${filename}_${source}.jpg"
@@ -133,14 +133,7 @@ function select_best_unverified_image() {
   done
 
   if [[ -z "$best_image" ]]; then
-    # Fallback to any matching image if none found in preferred sources
-    local fallback_candidate=$(ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg 2>/dev/null | head -n 1)
-    if [[ -n "$fallback_candidate" ]]; then
-      best_image="$fallback_candidate"
-      echo "⚠️ Using fallback image: ${best_image}"
-    else
-      die "Error: No suitable image found" $E_MISSING_FILE
-    fi
+    die "Error: No suitable image found" $E_MISSING_FILE
   fi
 
   echo "$best_image"
@@ -180,6 +173,29 @@ function main() {
     best_image=$(select_best_unverified_image "$filename")
   fi
   echo "Selected image: $best_image"
+
+  # Get source URL from companion .url file
+  local url_file="${best_image%.*}.url"
+  local source_url=""
+  if [[ -f "$url_file" ]]; then
+    source_url=$(cat "$url_file")
+    echo "📌 Source URL: $source_url"
+  else
+    echo "⚠️ No companion URL file found for $best_image"
+  fi
+
+  # Copy image to month/jpgs directory without source suffix
+  local target_dir="$month/jpgs"
+  mkdir -p "$target_dir"
+  local target_file="$target_dir/${filename}.jpg"
+  cp "$best_image" "$target_file"
+  echo "📁 Copied image to: $target_file"
+
+  # Also copy URL file if it exists
+  if [[ -n "$source_url" ]]; then
+    echo "$source_url" > "$target_dir/${filename}.url"
+    echo "📝 Saved source URL to: $target_dir/${filename}.url"
+  fi
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
