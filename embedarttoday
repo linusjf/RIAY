@@ -80,6 +80,10 @@ function verify_images() {
   declare -A verified_files=()
   local best_file=""
   local best_score=0
+  local verifier="verifyartimagews.py"
+  if ${VERIFY_ART_LOCALLY}; then
+    verifier="verifyartimage.py"
+  fi
 
   if [ ${#files[@]} -eq 0 ]; then
     echo "⚠️ No image files found to verify"
@@ -88,7 +92,7 @@ function verify_images() {
 
   for file in "${files[@]}"; do
     echo "🔍 Verifying image: $file"
-    if result=$("${SCRIPT_DIR}/verifyartimage.py" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" --year "${year:-}" --medium "${medium:-}"); then
+    if result=$("${SCRIPT_DIR}/${verifier}" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" --year "${year:-}" --medium "${medium:-}"); then
       score=$(echo "$result" | jq -r '.clip_score')
       verified_files["$file"]=$score
       echo "✅ Verification passed for: $file (score: $score)"
@@ -104,7 +108,7 @@ function verify_images() {
   # Find the file with highest score
   for file in "${!verified_files[@]}"; do
     score=${verified_files[$file]}
-    if (( $(echo "$score > $best_score" | bc -l) )); then
+    if (($(echo "$score > $best_score" | bc -l))); then
       best_score=$score
       best_file=$file
     fi
@@ -119,7 +123,7 @@ function main() {
   local day_num=$1
   local month day_string summary_file
 
-  require_vars YEAR ART_DOWNLOADER_DIR || exit $E_MISSING_ENV
+  require_vars YEAR ART_DOWNLOADER_DIR VERIFY_ART_LOCALLY VERIFY_ART_IMAGES || exit $E_MISSING_ENV
 
   internet::checkinternet || exit $E_NO_INTERNET
   printf -v day_string "Day%03d" "$day_num"
@@ -139,11 +143,13 @@ function main() {
   filename="$(echo "$art_details" | jq '.filename' | sed 's/"//g')"
   "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --year "${year:-}" \
     --medium "${medium:-}" --subject "${subject:-}"
-  
-  # Capture ls output into array and verify each file
-  mapfile -t image_files < <(ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg 2>/dev/null || true)
-  best_image=$(verify_images "${image_files[@]}")
-  echo "Selected image: $best_image"
+
+  if "${VERIFY_ART_IMAGES:-false}"; then
+    # Capture ls output into array and verify each file
+    mapfile -t image_files < <(ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg 2>/dev/null || true)
+    best_image=$(verify_images "${image_files[@]}")
+    echo "Selected image: $best_image"
+  fi
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
