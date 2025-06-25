@@ -98,7 +98,7 @@ function main() {
   filename="$(echo "$art_details" | jq '.filename' | sed 's/"//g')"
   "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --year "${year:-}" \
     --medium "${medium:-}" --subject "${subject:-}"
-  ls "${ART_DOWNLOADER_DIR}/{$filename}*.jpg"
+  ls "${ART_DOWNLOADER_DIR}/${filename}*.jpg"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

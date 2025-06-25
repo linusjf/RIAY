@@ -66,7 +66,7 @@ function create_payload() {
     --arg system "$meta_prompt" \
     --arg content "$summary_content" \
     --arg model "$TEXT_LLM_MODEL" \
-    --argjson temperature "${TEMPERATURE:-1}" \
+    --argjson temperature 0 \
     '{
       "model": $model,
       "messages": [
