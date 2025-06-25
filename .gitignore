@@ -26,3 +26,4 @@ testsummary.txt
 *.mp4
 *downloads/**
 !**/Day*Summary.txt
+*.url

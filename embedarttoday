@@ -86,7 +86,7 @@ function verify_images() {
   fi
 
   if [ ${#files[@]} -eq 0 ]; then
-    echo "⚠️ No image files found to verify"
+    err "⚠️ No image files found to verify"
     return 0
   fi
 
@@ -95,9 +95,9 @@ function verify_images() {
     if result=$("${SCRIPT_DIR}/${verifier}" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" --year "${year:-}" --medium "${medium:-}"); then
       score=$(echo "$result" | jq -r '.clip_score')
       verified_files["$file"]=$score
-      echo "✅ Verification passed for: $file (score: $score)"
+      err "✅ Verification passed for: $file (score: $score)"
     else
-      echo "❌ Verification failed for: $file"
+      err "❌ Verification failed for: $file"
     fi
   done
 
@@ -114,7 +114,7 @@ function verify_images() {
     fi
   done
 
-  echo "🏆 Best image: $best_file (score: $best_score)"
+  err "🏆 Best image: $best_file (score: $best_score)"
   echo "$best_file"
 }
 
@@ -127,7 +127,7 @@ function select_best_unverified_image() {
     local candidate="${ART_DOWNLOADER_DIR}/${filename}_${source}.jpg"
     if [[ -f "$candidate" ]]; then
       best_image="$candidate"
-      echo "✅ Found image from ${source}: ${best_image}"
+      err "✅ Found image from ${source}: ${best_image}"
       break
     fi
   done
@@ -168,7 +168,7 @@ function generate_markdown() {
   video_md=$(vidmd::videomarkdown "$caption" "$image_path" "$source_url")
 
   # Combine into final markdown
-  printf "%s\n\n%s\n" "$header" "$video_md"
+  printf "\n%s\n\n%s\n" "$header" "$video_md"
 }
 
 function append_to_day_file() {
@@ -183,7 +183,7 @@ function append_to_day_file() {
     die "Error: Day file $day_file does not exist" $E_MISSING_FILE
   fi
 
-  echo "$content" >> "$day_file"
+  echo "$content" >>"$day_file"
   echo "📝 Appended artwork to: $day_file"
 }
 
@@ -241,7 +241,7 @@ function main() {
 
   # Also copy URL file if it exists
   if [[ -n "$source_url" ]]; then
-    echo "$source_url" > "$target_dir/${filename}.url"
+    echo "$source_url" >"$target_dir/${filename}.url"
     echo "📝 Saved source URL to: $target_dir/${filename}.url"
   fi
 
