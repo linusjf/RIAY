@@ -18,7 +18,7 @@ readonly E_MISSING_FILE=6
 readonly E_VERIFICATION_FAILED=7
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -183,7 +183,7 @@ function append_to_day_file() {
     die "Error: Day file $day_file does not exist" $E_MISSING_FILE
   fi
 
-  echo "$content" >>"$day_file"
+  echo "$content" >> "$day_file"
   echo "📝 Appended artwork to: $day_file"
 }
 
@@ -215,8 +215,8 @@ function main() {
 
   if "${VERIFY_ART_IMAGES:-false}"; then
     # Capture ls output into array and verify each file
-    # shellcheck ignore=SC2086
-    mapfile -t image_files < <(ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg 2>/dev/null || true)
+    # shellcheck disable=SC2086
+    mapfile -t image_files < <(ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg 2> /dev/null || true)
     best_image=$(verify_images "${image_files[@]}")
   else
     best_image=$(select_best_unverified_image "$filename")
@@ -242,7 +242,7 @@ function main() {
 
   # Also copy URL file if it exists
   if [[ -n "$source_url" ]]; then
-    echo "$source_url" >"$target_dir/${filename}.url"
+    echo "$source_url" > "$target_dir/${filename}.url"
     echo "📝 Saved source URL to: $target_dir/${filename}.url"
   fi
 
@@ -255,16 +255,16 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -h | --help) usage 0 ;;
-    -v | --version)
-      version
-      exit 0
-      ;;
-    -d | --debug)
-      set -x
-      shift
-      ;;
-    *) break ;;
+      -h | --help) usage 0 ;;
+      -v | --version)
+        version
+        exit 0
+        ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      *) break ;;
     esac
   done
   require_commands tee date jq cp ls bc || exit $E_MISSING_TOOLS

@@ -156,7 +156,7 @@ generate_files() {
     }
   } >| "$fname"
 
-  "${SCRIPT_DIR}/embedarttoday" "$doy"
+  "${SCRIPT_DIR}/embedarttoday" "$doy" || true
 
   if "${AUTO_GENERATE_IMAGES:-false}"; then
     # generate image from summary prompt
