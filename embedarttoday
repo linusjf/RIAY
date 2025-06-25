@@ -18,7 +18,7 @@ readonly E_MISSING_FILE=6
 readonly E_VERIFICATION_FAILED=7
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -118,6 +118,34 @@ function verify_images() {
   echo "$best_file"
 }
 
+function select_best_unverified_image() {
+  local filename="$1"
+  local best_image=""
+  
+  # Check in order of preference
+  for source in wikimedia wikimedia_search google duckduckgo; do
+    local candidate="${ART_DOWNLOADER_DIR}/${filename}_${source}.jpg"
+    if [[ -f "$candidate" ]]; then
+      best_image="$candidate"
+      echo "✅ Found image from ${source}: ${best_image}"
+      break
+    fi
+  done
+
+  if [[ -z "$best_image" ]]; then
+    # Fallback to any matching image if none found in preferred sources
+    local fallback_candidate=$(ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg 2>/dev/null | head -n 1)
+    if [[ -n "$fallback_candidate" ]]; then
+      best_image="$fallback_candidate"
+      echo "⚠️ Using fallback image: ${best_image}"
+    else
+      die "Error: No suitable image found" $E_MISSING_FILE
+    fi
+  fi
+
+  echo "$best_image"
+}
+
 function main() {
   validate_arguments "$@"
   local day_num=$1
@@ -148,8 +176,10 @@ function main() {
     # Capture ls output into array and verify each file
     mapfile -t image_files < <(ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg 2>/dev/null || true)
     best_image=$(verify_images "${image_files[@]}")
-    echo "Selected image: $best_image"
+  else
+    best_image=$(select_best_unverified_image "$filename")
   fi
+  echo "Selected image: $best_image"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
