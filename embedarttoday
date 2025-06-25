@@ -15,6 +15,7 @@ readonly E_MISSING_TOOLS=3
 readonly E_NO_INTERNET=4
 readonly E_MISSING_ENV=5
 readonly E_MISSING_FILE=6
+readonly E_VERIFICATION_FAILED=7
 
 # Load required libraries
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
@@ -54,6 +55,7 @@ function usage() {
   >&"$output" printf "  %d - No internet connection\n" "$E_NO_INTERNET"
   >&"$output" printf "  %d - Missing required environment variables\n" "$E_MISSING_ENV"
   >&"$output" printf "  %d - Summary file not found\n" "$E_MISSING_FILE"
+  >&"$output" printf "  %d - Image verification failed\n" "$E_VERIFICATION_FAILED"
   >&"$output" printf "\nExample: %s 42\n" "$(basename "$0")"
   exit "$exit_code"
 }
@@ -70,6 +72,25 @@ function validate_arguments() {
   # shellcheck disable=SC2153
   if ! date::validate_daynumber "$1" "$YEAR"; then
     usage $E_INVALID_DAY
+  fi
+}
+
+function verify_images() {
+  local files=("$@")
+  local any_verified=false
+
+  for file in "${files[@]}"; do
+    echo "🔍 Verifying image: $file"
+    if "${SCRIPT_DIR}/verifyartimage.py" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" --year "${year:-}" --medium "${medium:-}"; then
+      any_verified=true
+      echo "✅ Verification passed for: $file"
+    else
+      echo "❌ Verification failed for: $file"
+    fi
+  done
+
+  if ! $any_verified; then
+    die "Error: No images passed verification" $E_VERIFICATION_FAILED
   fi
 }
 
@@ -98,7 +119,10 @@ function main() {
   filename="$(echo "$art_details" | jq '.filename' | sed 's/"//g')"
   "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --year "${year:-}" \
     --medium "${medium:-}" --subject "${subject:-}"
-  ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg
+  
+  # Capture ls output into array and verify each file
+  mapfile -t image_files < <(ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg)
+  verify_images "${image_files[@]}"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
