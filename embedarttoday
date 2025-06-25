@@ -215,6 +215,7 @@ function main() {
 
   if "${VERIFY_ART_IMAGES:-false}"; then
     # Capture ls output into array and verify each file
+    # shellcheck ignore=SC2086
     mapfile -t image_files < <(ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg 2>/dev/null || true)
     best_image=$(verify_images "${image_files[@]}")
   else
