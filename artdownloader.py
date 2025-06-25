@@ -24,6 +24,9 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from serpapi import GoogleSearch
 
+# Global list to track downloaded URLs
+DOWNLOADED_URLS = []
+
 def parse_bash_array(file_path, var_name):
     with open(file_path, 'r') as f:
         content = f.read()
@@ -114,6 +117,10 @@ def save_image(url, filename):
     Returns:
         bool: True if download succeeded, False otherwise
     """
+    if url in DOWNLOADED_URLS:
+        print(f"⏩ Skipping already downloaded URL: {url}")
+        return False
+
     try:
         session = create_session_with_retries()
         headers = {
@@ -133,6 +140,7 @@ def save_image(url, filename):
                 url_filename = os.path.splitext(filename)[0] + ".url"
                 with open(url_filename, "w") as url_file:
                     url_file.write(url)
+                DOWNLOADED_URLS.append(url)
                 print(f"✅ Saved: {filename} (source URL saved to {url_filename})")
                 return True
             elif response.status_code in {408, 429, 500, 502, 503, 504}:
