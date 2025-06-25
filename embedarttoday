@@ -79,6 +79,11 @@ function verify_images() {
   local files=("$@")
   local any_verified=false
 
+  if [ ${#files[@]} -eq 0 ]; then
+    echo "⚠️ No image files found to verify"
+    return 0
+  fi
+
   for file in "${files[@]}"; do
     echo "🔍 Verifying image: $file"
     if "${SCRIPT_DIR}/verifyartimage.py" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" --year "${year:-}" --medium "${medium:-}"; then
@@ -121,7 +126,7 @@ function main() {
     --medium "${medium:-}" --subject "${subject:-}"
   
   # Capture ls output into array and verify each file
-  mapfile -t image_files < <(ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg)
+  mapfile -t image_files < <(ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg 2>/dev/null || true)
   verify_images "${image_files[@]}"
 }
 
