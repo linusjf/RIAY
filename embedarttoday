@@ -78,7 +78,7 @@ function main() {
   local day_num=$1
   local month day_string summary_file
 
-  require_vars YEAR || exit $E_MISSING_ENV
+  require_vars YEAR ART_DOWNLOADER_DIR || exit $E_MISSING_ENV
 
   internet::checkinternet || exit $E_NO_INTERNET
   printf -v day_string "Day%03d" "$day_num"
@@ -98,6 +98,7 @@ function main() {
   filename="$(echo "$art_details" | jq '.filename' | sed 's/"//g')"
   "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --year "${year:-}" \
     --medium "${medium:-}" --subject "${subject:-}"
+  ls "${ART_DOWNLOADER_DIR}/*.jpg"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
@@ -115,7 +116,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
       *) break ;;
     esac
   done
-  require_commands tee date jq cp || exit $E_MISSING_TOOLS
+  require_commands tee date jq cp ls || exit $E_MISSING_TOOLS
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {

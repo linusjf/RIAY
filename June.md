@@ -96,6 +96,10 @@
   - [Calling Through The Noise](#calling-through-the-noise)
   - [AI-Generated Summary: The Weight of the World and the Wine of Grace](#ai-generated-summary-the-weight-of-the-world-and-the-wine-of-grace)
   - [Wedding at Cana by Paolo Veronese](#wedding-at-cana-by-paolo-veronese)
+- [June 25, 2025](#june-25-2025)
+  - [Jesus is in the Boat](#jesus-is-in-the-boat)
+  - [AI-Generated Summary: The Storm and the Stillness](#ai-generated-summary-the-storm-and-the-stillness)
+  - [Christ in the Storm on the Sea of Galilee, a 1633 oil-on-canvas painting by the Dutch Golden Age painter Rembrandt van Rijn](#christ-in-the-storm-on-the-sea-of-galilee-a-1633-oil-on-canvas-painting-by-the-dutch-golden-age-painter-rembrandt-van-rijn)
 
 <!-- tocstop -->
 
@@ -570,3 +574,21 @@ Yet how often we turn away, preferring our futile toil to His easy yoke! The orp
 ### Wedding at Cana by Paolo Veronese
 
 [![Wedding at Cana by Paolo Veronese](June/jpgs/weddingatcanaveronese.jpg)](http://andantemoderato.com/wp-content/uploads/2015/06/Paolo-Veronese-The-Wedding-at-Cana-1024x696.jpg "Wedding at Cana by Paolo Veronese")
+
+## June 25, 2025
+
+### Jesus is in the Boat
+
+[![Jesus is in the Boat](/June/jpgs/Day176.jpg)](https://youtu.be/g1JMiEanCBI "Jesus is in the Boat")
+
+### AI-Generated Summary: The Storm and the Stillness
+
+Consider the tempest—how it tosses the little boat, how the waves rise like hungry beasts, and how the hearts of men falter. Rembrandt, that master of shadow and light, has shown us the scene: the disciples laboring in terror, some straining at the oars, others clutching the rails, all but forgetting the One who sleeps in the stern. Yet when He wakes, the winds obey, and the sea grows still as a child hushed by its mother’s voice.
+
+Here is the mystery: the storm was real, the danger great, but their fear was needless. For the Lord of the winds was in the boat with them. So it is with us. The world rages, the waves of trouble mount, and we—like those first followers—cry out in our frailty, _Do you not care?_ Yet He does care, and He is never late, though He may seem to slumber. The lesson is plain, though hard to learn: trust is not a pretty sentiment, but the only reasonable response to Him who made the sea and rules it still.
+
+The Church, like that storm-tossed vessel, will not sink, for Christ is in her. And what is asked of us? Not that we deny the storm, but that we fix our eyes upon the Master of it. To fret is human; to believe is divine. Let us then, when the gales blow hardest, do the one thing needful—turn to Him, and find our peace in His command.
+
+### Christ in the Storm on the Sea of Galilee, a 1633 oil-on-canvas painting by the Dutch Golden Age painter Rembrandt van Rijn
+
+[![Christ in the Storm on the Sea of Galilee, a 1633 oil-on-canvas painting by the Dutch Golden Age painter Rembrandt van Rijn](/June/jpgs/stormsea1633rembrandt.jpg)](https://upload.wikimedia.org/wikipedia/commons/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg "Christ in the Storm on the Sea of Galilee, a 1633 oil-on-canvas painting by the Dutch Golden Age painter Rembrandt van Rijn")
