@@ -68,8 +68,8 @@ def compute_match_terms(caption, metadata_terms):
 def main():
     parser = argparse.ArgumentParser(description="Verify if an image matches artwork metadata using DeepInfra-hosted models.")
     parser.add_argument("--image", required=True, help="Path to the image file")
-    parser.add_argument("--title", help="Title of the artwork")
-    parser.add_argument("--artist", help="Artist of the artwork")
+    parser.add_argument("--title", required=True, help="Title of the artwork")
+    parser.add_argument("--artist", required=True, help="Artist of the artwork")
     parser.add_argument("--subject", help="Subject of the artwork")
     parser.add_argument("--year", help="Year of the artwork")
     parser.add_argument("--medium", help="Medium of the artwork")
