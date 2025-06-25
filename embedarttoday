@@ -17,7 +17,7 @@ readonly E_MISSING_ENV=5
 readonly E_MISSING_FILE=6
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -98,22 +98,22 @@ function main() {
   filename="$(echo "$art_details" | jq '.filename' | sed 's/"//g')"
   "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --year "${year:-}" \
     --medium "${medium:-}" --subject "${subject:-}"
-  ls "${ART_DOWNLOADER_DIR}/${filename}*.jpg"
+  ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -h | --help) usage 0 ;;
-      -v | --version)
-        version
-        exit 0
-        ;;
-      -d | --debug)
-        set -x
-        shift
-        ;;
-      *) break ;;
+    -h | --help) usage 0 ;;
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *) break ;;
     esac
   done
   require_commands tee date jq cp ls || exit $E_MISSING_TOOLS
