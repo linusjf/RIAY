@@ -1,0 +1,136 @@
+#!/usr/bin/env bash
+#
+# Image classification script
+# Analyzes an image file and classifies it as monochrome, grayscale, sepia, or full color
+#
+# Usage: classifyimage <image-file>
+# Output: Classification result with emoji indicator
+# Returns: 0 on success, 1 on error
+
+set -o nounset
+set -o errexit
+
+readonly SCRIPT_NAME=$(basename "$0")
+readonly VERSION="1.0.0"
+# source utility functions
+if command -v realpath >/dev/null 2>&1; then
+  script_dir="$(dirname "$(realpath "$0")")"
+else
+  script_dir="$(cd -- "$(dirname -- "$0")" &>/dev/null && pwd -p)"
+fi
+source "$script_dir/lib/require.sh"
+source "$script_dir/lib/util.sh"
+source "${script_dir}/lib/lockconfig.sh"
+lockconfig::lock_config_vars "${script_dir}/config.env"
+
+function version() {
+  printf "%s\n" "$VERSION"
+}
+
+function usage() {
+  cat <<EOF
+Usage: $SCRIPT_NAME [OPTIONS] <image-file>
+
+Analyzes an image file and classifies it as:
+- Monochrome (black & white)
+- Grayscale 
+- Sepia tone
+- Full color
+
+Options:
+  -h, --help      Show this help message and exit
+  -v, --version   Show version information and exit
+
+Examples:
+  $SCRIPT_NAME image.jpg
+  $SCRIPT_NAME /path/to/image.png
+EOF
+}
+
+function classify_image() {
+  local image="$1"
+  local channels count avg_color r_hex g_hex b_hex r g b rg_diff gb_diff
+
+  # Step 1: Check if it's truly grayscale
+  channels=$(gm identify -format "%[channels]" "$image" 2>/dev/null || true)
+
+  if [[ "${channels}" == "gray" ]]; then
+    # Possibly monochrome?
+    count=$(gm convert "$image" -colorspace gray -depth 8 -format "%c" histogram:info: | wc -l)
+    if [[ "${count}" -le 2 ]]; then
+      printf "🖤 Monochrome (black & white)\n"
+    else
+      printf "⚫ Grayscale\n"
+    fi
+    return 0
+  fi
+
+  # Step 2: Try downsampling to 1x1 and checking RGB value for approximate color tone
+  avg_color=$(gm convert "$image" -resize 1x1\! txt:- | grep -oE '#[0-9A-Fa-f]{6}' || true)
+
+  if [[ -z "${avg_color}" ]]; then
+    die "❓ Could not determine average color."
+  fi
+
+  # Extract RGB components
+  r_hex=${avg_color:1:2}
+  g_hex=${avg_color:3:2}
+  b_hex=${avg_color:5:2}
+
+  r=$((16#${r_hex}))
+  g=$((16#${g_hex}))
+  b=$((16#${b_hex}))
+
+  printf "🔎 Avg RGB: R=%d G=%d B=%d\n" "${r}" "${g}" "${b}"
+
+  # Step 3: Classification rules
+  rg_diff=$((r > g ? r - g : g - r))
+  gb_diff=$((g > b ? g - b : b - g))
+
+  if [[ "${rg_diff}" -lt 5 && "${gb_diff}" -lt 5 ]]; then
+    printf "⚫ Visually Grayscale (but encoded RGB)\n"
+  elif [[ "${r}" -gt "${g}" && "${g}" -gt "${b}" && $((r - b)) -gt 30 ]]; then
+    printf "🤎 Sepia tone likely\n"
+  else
+    printf "🌈 Full color\n"
+  fi
+}
+
+function main() {
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -h|--help)
+        usage
+        exit 0
+        ;;
+      -v|--version)
+        version
+        exit 0
+        ;;
+      -*)
+        die "❌ Unknown option: $1"
+        ;;
+      *)
+        break
+        ;;
+    esac
+    shift
+  done
+
+  if [[ $# -eq 0 ]]; then
+    usage
+    die "❌ Missing image file argument"
+  fi
+
+  local image="$1"
+
+  if [[ ! -f "${image}" ]]; then
+    die "❌ File not found: ${image}"
+  fi
+
+  classify_image "${image}"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  main "$@"
+fi
