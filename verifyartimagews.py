@@ -17,7 +17,9 @@ import argparse
 import requests
 from PIL import Image
 import base64
-from openai import ChatCompletion
+from openai import OpenAI
+
+client = OpenAI()
 import json
 from io import BytesIO
 from fuzzywuzzy import fuzz
@@ -49,8 +51,7 @@ def generate_caption(image_path):
     print("🖼️ Generating caption...", file=sys.stderr)
     base64_image = encode_image_to_base64(image_path)
 
-    response = ChatCompletion.create(
-    model="gpt-4-vision-preview",
+    response = client.chat.completions.create(model="gpt-4o",
     messages=[
         {
             "role": "user",
@@ -82,7 +83,7 @@ def compute_match_terms(caption, metadata_terms):
     return matched
 
 def main():
-    parser = argparse.ArgumentParser(description="Verify if an image matches artwork metadata using Hugging Face hosted models.")
+    parser = argparse.ArgumentParser(description="Verify if an image matches artwork metadata using hosted models.")
     parser.add_argument("--image", required=True, help="Path to the image file")
     parser.add_argument("--title", required=True, help="Title of the artwork")
     parser.add_argument("--artist", required=True, help="Artist of the artwork")

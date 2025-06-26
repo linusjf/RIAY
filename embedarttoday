@@ -248,35 +248,41 @@ function main() {
   else
     best_image=$(select_best_unverified_image "${color_files[@]}")
   fi
-  echo "Selected image: $best_image"
+  if [[ -n "${best_image:-}" ]]; then
+    echo "Selected image: $best_image"
 
-  # Get source URL from companion .url file
-  local url_file="${best_image%.*}.url"
-  local source_url=""
-  if [[ -f "$url_file" ]]; then
-    source_url=$(cat "$url_file")
-    echo "📌 Source URL: $source_url"
+    # Get source URL from companion .url file
+    local url_file="${best_image%.*}.url"
+    local source_url=""
+    if [[ -f "$url_file" ]]; then
+      source_url=$(cat "$url_file")
+      echo "📌 Source URL: $source_url"
+    else
+      err "⚠️ No companion URL file found for $best_image"
+    fi
+
+    # Copy image to month/jpgs directory without source suffix
+    local target_dir="$month/jpgs"
+    mkdir -p "$target_dir"
+    local target_file="$target_dir/${filename}.jpg"
+    cp "$best_image" "$target_file"
+    echo "📁 Copied image to: $target_file"
+
+    # Also copy URL file if it exists
+    if [[ -n "$source_url" ]]; then
+      echo "$source_url" > "$target_dir/${filename}.url"
+      echo "📝 Saved source URL to: $target_dir/${filename}.url"
+    fi
+
+    # Generate and append markdown
+    local markdown_content
+    markdown_content=$(generate_markdown "$title" "$artist" "$target_file" "$source_url" "$month" "$day_num")
+    append_to_day_file "$day_num" "$markdown_content" "$month"
+    return 0
   else
-    echo "⚠️ No companion URL file found for $best_image"
+    err "❌ No satisfactory images found via search. Check directory ${ART_DOWNLOADER_DIR} for jpeg images beginning with ${filename}..."
+    return $E_NO_COLOR_IMAGES
   fi
-
-  # Copy image to month/jpgs directory without source suffix
-  local target_dir="$month/jpgs"
-  mkdir -p "$target_dir"
-  local target_file="$target_dir/${filename}.jpg"
-  cp "$best_image" "$target_file"
-  echo "📁 Copied image to: $target_file"
-
-  # Also copy URL file if it exists
-  if [[ -n "$source_url" ]]; then
-    echo "$source_url" > "$target_dir/${filename}.url"
-    echo "📝 Saved source URL to: $target_dir/${filename}.url"
-  fi
-
-  # Generate and append markdown
-  local markdown_content
-  markdown_content=$(generate_markdown "$title" "$artist" "$target_file" "$source_url" "$month" "$day_num")
-  append_to_day_file "$day_num" "$markdown_content" "$month"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
