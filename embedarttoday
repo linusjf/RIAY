@@ -16,6 +16,7 @@ readonly E_NO_INTERNET=4
 readonly E_MISSING_ENV=5
 readonly E_MISSING_FILE=6
 readonly E_VERIFICATION_FAILED=7
+readonly E_NO_COLOR_IMAGES=8
 
 # Load required libraries
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
@@ -56,6 +57,7 @@ function usage() {
   >&"$output" printf "  %d - Missing required environment variables\n" "$E_MISSING_ENV"
   >&"$output" printf "  %d - Summary file not found\n" "$E_MISSING_FILE"
   >&"$output" printf "  %d - Image verification failed\n" "$E_VERIFICATION_FAILED"
+  >&"$output" printf "  %d - No full color images found\n" "$E_NO_COLOR_IMAGES"
   >&"$output" printf "\nExample: %s 42\n" "$(basename "$0")"
   exit "$exit_code"
 }
@@ -73,6 +75,29 @@ function validate_arguments() {
   if ! date::validate_daynumber "$1" "$YEAR"; then
     usage $E_INVALID_DAY
   fi
+}
+
+function filter_color_images() {
+  local files=("$@")
+  local color_files=()
+  
+  for file in "${files[@]}"; do
+    echo "🎨 Checking color profile: $file"
+    classification=$("${SCRIPT_DIR}/classifyimage" "$file")
+    if [[ "$classification" == *"Full color"* || "$classification" == *"Visually Grayscale"* ]]; then
+      echo "✅ Accepted: $file ($classification)"
+      color_files+=("$file")
+    else
+      echo "❌ Rejected: $file ($classification)"
+    fi
+  done
+
+  if [ ${#color_files[@]} -eq 0 ]; then
+    err "⚠️ No full color images found"
+    return $E_NO_COLOR_IMAGES
+  fi
+
+  echo "${color_files[@]}"
 }
 
 function verify_images() {
@@ -126,14 +151,17 @@ function select_best_unverified_image() {
   for source in wikimedia wikimedia_search google duckduckgo; do
     local candidate="${ART_DOWNLOADER_DIR}/${filename}_${source}.jpg"
     if [[ -f "$candidate" ]]; then
-      best_image="$candidate"
-      err "✅ Found image from ${source}: ${best_image}"
-      break
+      classification=$("${SCRIPT_DIR}/classifyimage" "$candidate")
+      if [[ "$classification" == *"Full color"* || "$classification" == *"Visually Grayscale"* ]]; then
+        best_image="$candidate"
+        err "✅ Found color image from ${source}: ${best_image}"
+        break
+      fi
     fi
   done
 
   if [[ -z "$best_image" ]]; then
-    die "Error: No suitable image found" $E_MISSING_FILE
+    die "Error: No suitable color image found" $E_NO_COLOR_IMAGES
   fi
 
   echo "$best_image"
@@ -217,7 +245,12 @@ function main() {
     # Capture ls output into array and verify each file
     # shellcheck disable=SC2086
     mapfile -t image_files < <(ls ${ART_DOWNLOADER_DIR}/${filename}*.jpg 2> /dev/null || true)
-    best_image=$(verify_images "${image_files[@]}")
+    # Filter for color images first
+    color_files=$(filter_color_images "${image_files[@]}")
+    if [ $? -eq $E_NO_COLOR_IMAGES ]; then
+      die "Error: No full color images found" $E_NO_COLOR_IMAGES
+    fi
+    best_image=$(verify_images "${color_files[@]}")
   else
     best_image=$(select_best_unverified_image "$filename")
   fi
