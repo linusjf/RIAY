@@ -106,7 +106,9 @@ def main():
         # Compute cosine similarity
         similarity = cosine_similarity(vec1, vec2)
         print(f"Cosine similarity: {similarity:.4f}", file=sys.stderr)
-        is_likely_match = similarity > 0.7
+        # Compute matched terms
+        matched_terms = compute_match_terms(caption, metadata_terms)
+        is_likely_match = similarity > 0.7 and len(matched_terms) > 2
         print(f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}", file=sys.stderr)
 
         sys.exit(0 if is_likely_match else 1)
