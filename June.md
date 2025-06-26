@@ -100,6 +100,10 @@
   - [Jesus is in the Boat](#jesus-is-in-the-boat)
   - [AI-Generated Summary: The Storm and the Stillness](#ai-generated-summary-the-storm-and-the-stillness)
   - [Christ in the Storm on the Sea of Galilee, a 1633 oil-on-canvas painting by the Dutch Golden Age painter Rembrandt van Rijn](#christ-in-the-storm-on-the-sea-of-galilee-a-1633-oil-on-canvas-painting-by-the-dutch-golden-age-painter-rembrandt-van-rijn)
+- [June 26, 2025](#june-26-2025)
+  - [Earthen Vessels](#earthen-vessels)
+  - [AI-Generated Summary: The Radiant Mystery of the Transfiguration](#ai-generated-summary-the-radiant-mystery-of-the-transfiguration)
+  - [The Savior’s Transfiguration by Theophanes the Greek](#the-saviors-transfiguration-by-theophanes-the-greek)
 
 <!-- tocstop -->
 
@@ -592,3 +596,21 @@ The Church, like that storm-tossed vessel, will not sink, for Christ is in her. 
 ### Christ in the Storm on the Sea of Galilee, a 1633 oil-on-canvas painting by the Dutch Golden Age painter Rembrandt van Rijn
 
 [![Christ in the Storm on the Sea of Galilee, a 1633 oil-on-canvas painting by the Dutch Golden Age painter Rembrandt van Rijn](/June/jpgs/stormsea1633rembrandt.jpg)](https://upload.wikimedia.org/wikipedia/commons/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg "Christ in the Storm on the Sea of Galilee, a 1633 oil-on-canvas painting by the Dutch Golden Age painter Rembrandt van Rijn")
+
+## June 26, 2025
+
+### Earthen Vessels
+
+[![Earthen Vessels](/June/jpgs/Day177.jpg)](https://youtu.be/TZWu8mQuDKo "Earthen Vessels")
+
+### AI-Generated Summary: The Radiant Mystery of the Transfiguration
+
+Consider, dear reader, an icon not as mere pigment on wood, but as a window flung open to eternity. _The Savior’s Transfiguration_, ascribed to Theophanes the Greek, is such a window—a silent sermon in gold and azure. Here, Christ stands bathed in uncreated light, His garments whiter than any fuller could bleach them, while Moses and Elijah, those ancient witnesses to God’s glory, flank Him like living pillars. Below, the disciples shield their eyes, save one who dares gaze upward, his darkened robes pierced by that pale, celestial radiance.
+
+The icon’s genius lies not in its adherence to earthly perspective, but in its reversal of it: the lines converge not upon the viewer’s eye, but upon the divine reality behind the veil. This is no painter’s fancy, but theology in line and hue—a confession that the Word became flesh and dwelt among us, full of grace and truth.
+
+Yet mark how the glory of Tabor casts its light on human frailty. Peter, who beheld this very vision, would soon deny his Lord thrice before the cock crew. Here lies a comfort and a caution: comfort, for even the most radiant moments of faith may be followed by stumbling; caution, for without vigilance and prayer, we too may falter. But take heart—the same Lord who shone upon the mountain extends mercy in the valley. Our transformation, like Peter’s, is a slow turning, a lifelong yes whispered amidst many noes. Let the icon’s light kindle in you not despair at weakness, but hunger for the grace that transfigures all it touches.
+
+### The Savior’s Transfiguration by Theophanes the Greek
+
+[![The Savior’s Transfiguration by Theophanes the Greek](June/jpgs/saviorstransfigtheophanes.jpg)](https://upload.wikimedia.org/wikipedia/commons/e/e4/Spas_na_Ilyine_-_Patriarch_Seth.jpg "The Savior’s Transfiguration by Theophanes the Greek")
