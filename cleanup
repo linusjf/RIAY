@@ -18,16 +18,16 @@ readonly SCRIPT_NAME=$(basename "$0")
 readonly TEMP_FILES_PATTERN=(./**/*.vtt ./**/*.en.txt ./*.log ./failed*.json)
 readonly BACKUP_FILES_PATTERN=(./*~ ./*.bak* ./**/*.bak* ./*.backup ./*.swp ./.DS_Store ./*.tmp ./*.temp)
 
-# Source utility functions
+# source utility functions
 if command -v realpath > /dev/null 2>&1; then
-  SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+  script_dir="$(dirname "$(realpath "$0")")"
 else
-  SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -P)"
+  script_dir="$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd -p)"
 fi
-source "$SCRIPT_DIR/lib/require.sh"
-source "$SCRIPT_DIR/lib/util.sh"
-source "${SCRIPT_DIR}/lib/lockconfig.sh"
-lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+source "$script_dir/lib/require.sh"
+source "$script_dir/lib/util.sh"
+source "${script_dir}/lib/lockconfig.sh"
+lockconfig::lock_config_vars "${script_dir}/config.env"
 
 # Global flags
 verbose=false
