@@ -11,27 +11,32 @@ Verifyartimagews using Hugging Face API and upgraded models.
 # -*- coding: utf-8 -*-'
 ######################################################################
 """
+import numpy as np
 import sys
 import argparse
 import requests
 from PIL import Image
 import base64
+from openai import ChatCompletion
 import json
 from io import BytesIO
 from fuzzywuzzy import fuzz
 import os
 
-# Hugging Face API token from environment
-HF_TOKEN = os.getenv("HF_TOKEN")
-if not HF_TOKEN:
-    raise ValueError("HF_TOKEN environment variable not set")
-HEADERS = {
-    "Authorization": f"Bearer {HF_TOKEN}"
-}
+DEEPINFRA_API_KEY = os.getenv("DEEPINFRA_TOKEN")
+if not DEEPINFRA_API_KEY:
+    raise ValueError("DEEPINFRA_TOKEN environment variable not set")
+headers = {"Authorization": f"Bearer {DEEPINFRA_API_KEY}"}
 
-# Hugging Face model endpoints
-BLIP_URL = "https://api-inference.huggingface.co/models/nlpconnect/vit-gpt2-image-captioning"
-CLIP_URL = "https://api-inference.huggingface.co/models/laion/CLIP-ViT-H-14-laion2B-s32B-b79K"
+CLIP_URL = "https://api.deepinfra.com/v1/inference/thenlper/gte-large"
+
+def get_embedding(text):
+    response = requests.post(CLIP_URL, headers=headers, json={"inputs": text})
+    response.raise_for_status()
+    return np.array(response.json()[0])
+
+def cosine_similarity(vec1, vec2):
+    return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
 
 def image_to_bytes(image_path):
     with open(image_path, "rb") as f:
@@ -42,49 +47,28 @@ def encode_image_to_base64(image_path):
 
 def generate_caption(image_path):
     print("🖼️ Generating caption...", file=sys.stderr)
-    image_bytes = image_to_bytes(image_path)
+    base64_image = encode_image_to_base64(image_path)
 
-    payload = {
-        "inputs": {
-            "image": base64.b64encode(image_bytes).decode("utf-8"),
-            "prompt": "Describe the artwork in detail."
-        },
-        "parameters": {"max_new_tokens": 50}
-    }
-
-    response = requests.post(BLIP_URL, headers=HEADERS, json=payload)
+    response = ChatCompletion.create(
+    model="gpt-4-vision-preview",
+    messages=[
+        {
+            "role": "user",
+            "content": [
+                {"type": "text", "text": "Describe and interpret this painting in detail."},
+                {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"}}
+            ]
+        }
+    ],
+    max_tokens=1000)
+    caption = response.choices[0].message["content"]
     if response.status_code != 200:
         raise Exception(f"BLIP2 request failed: {response.text}")
 
-    output = response.json()
-    if isinstance(output, dict) and "error" in output:
-        raise Exception(f"BLIP2 error: {output['error']}")
-
-    caption = output[0].get("generated_text", "").strip()
-    token_usage = response.headers.get("x-compute-time", "unknown")
     print(f"🔍 Caption: {caption}", file=sys.stderr)
-    print(f"📊 Caption token usage: ~{token_usage} seconds compute time", file=sys.stderr)
+    print(f"🔍 Token usage: {response.usage}", file=sys.stderr)
+    print(caption)
     return caption
-
-def clip_similarity(image_path, text):
-    print(f"📐 Calculating similarity score for: {text}", file=sys.stderr)
-    image_base64 = encode_image_to_base64(image_path)
-
-    response = requests.post(
-        CLIP_URL,
-        headers=HEADERS,
-        json={"inputs": {"image": image_base64, "text": [text]}}
-    )
-    if response.status_code != 200:
-        raise Exception(f"CLIP request failed: {response.text}")
-
-    result = response.json()
-    if isinstance(result, dict) and "error" in result:
-        raise Exception(f"CLIP error: {result['error']}")
-
-    score = result["logits_per_image"][0][0]
-    print(f"📊 CLIP similarity score: {score:.3f}", file=sys.stderr)
-    return score
 
 def compute_match_terms(caption, metadata_terms):
     print("🧠 Checking for matching terms...", file=sys.stderr)
@@ -114,20 +98,17 @@ def main():
 
     try:
         caption = generate_caption(args.image)
-        clip_score = clip_similarity(args.image, metadata_text)
-        match_terms = compute_match_terms(caption, metadata_terms)
 
-        is_likely_match = clip_score > 0.7 and len(match_terms) >= 2
+        # Get embeddings from DeepInfra
+        vec1 = get_embedding(metadata_text)
+        vec2 = get_embedding(caption)
+
+        # Compute cosine similarity
+        similarity = cosine_similarity(vec1, vec2)
+        print(f"Cosine similarity: {similarity:.4f}", file=sys.stderr)
+        is_likely_match = similarity > 0.7
         print(f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}", file=sys.stderr)
 
-        result = {
-            "caption": caption,
-            "clip_score": round(clip_score, 3),
-            "match_terms": match_terms,
-            "is_likely_match": is_likely_match
-        }
-
-        print(json.dumps(result, indent=2))
         sys.exit(0 if is_likely_match else 1)
 
     except Exception as e:
