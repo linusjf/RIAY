@@ -5341,7 +5341,7 @@ Yet mark how the glory of Tabor casts its light on human frailty. Peter, who beh
 
 ##### The Savior’s Transfiguration by Theophanes the Greek
 
-[![The Savior’s Transfiguration by Theophanes the Greek](June/jpgs/saviorstransfigtheophanes.jpg)](https://upload.wikimedia.org/wikipedia/commons/e/e4/Spas_na_Ilyine_-_Patriarch_Seth.jpg "The Savior’s Transfiguration by Theophanes the Greek")
+[![The Savior’s Transfiguration by Theophanes the Greek](June/jpgs/saviorstransfigtheophanes.jpg)](http://www.ellenwhite.info/images/chapt-illus/EW/RH-Transfiguration.jpg "The Savior’s Transfiguration by Theophanes the Greek")
 
 ## July
 
