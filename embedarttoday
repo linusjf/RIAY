@@ -153,7 +153,8 @@ function select_best_unverified_image() {
       if [[ "${file}" == *"${source}" ]]; then
         best_image="$file"
         err "✅ Found color image from ${source}: ${best_image}"
-        break
+        echo "$best_image"
+        return 0
       fi
     done
   done
@@ -161,8 +162,6 @@ function select_best_unverified_image() {
   if [[ -z "$best_image" ]]; then
     die "Error: No suitable color image found" $E_NO_COLOR_IMAGES
   fi
-
-  echo "$best_image"
 }
 
 function generate_markdown() {
