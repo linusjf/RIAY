@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -5361,7 +5361,7 @@ Here is love burning in the heart of Christ, love His followers do not yet under
 
 ##### Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner
 
-[![Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner](June/jpgs/christdiscipleshenrytanner.jpg)](https://i.pinimg.com/originals/82/08/1f/82081fe7da22dfe01271edcd76558551.jpg "Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner")
+[![Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner](June/jpgs/christdiscipleshenrytanner.jpg)](https://upload.wikimedia.org/wikipedia/commons/a/ae/Christ_and_the_Disciples_Before_the_Last_Supper_by_Henry_Ossawa_Tanner.jpg "Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner")
 
 ## July
 
