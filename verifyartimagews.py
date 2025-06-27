@@ -19,16 +19,22 @@ from PIL import Image
 import base64
 from openai import OpenAI
 
-client = OpenAI()
 import json
 from io import BytesIO
 from fuzzywuzzy import fuzz
 import os
 
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if not OPENAI_API_KEY:
+    raise ValueError("DEEPINFRA_TOKEN environment variable not set")
 DEEPINFRA_API_KEY = os.getenv("DEEPINFRA_TOKEN")
 if not DEEPINFRA_API_KEY:
     raise ValueError("DEEPINFRA_TOKEN environment variable not set")
 headers = {"Authorization": f"Bearer {DEEPINFRA_API_KEY}"}
+
+client = OpenAI(
+    api_key=OPENAI_API_KEY,
+)
 
 CLIP_URL = "https://api.deepinfra.com/v1/inference/thenlper/gte-large"
 
@@ -50,21 +56,18 @@ def encode_image_to_base64(image_path):
 def generate_caption(image_path):
     print("🖼️ Generating caption...", file=sys.stderr)
     base64_image = encode_image_to_base64(image_path)
-
-    response = client.chat.completions.create(model="gpt-4o",
-    messages=[
-        {
-            "role": "user",
+    prompt = "Describe and interpret this image in detail."
+    response = client.responses.create(
+    model="gpt-4o-mini",
+    input=[ {"role": "user",
             "content": [
-                {"type": "text", "text": "Describe and interpret this painting in detail."},
-                {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"}}
-            ]
+                {"type": "input_text", "text": prompt},
+                {"type": "input_image", "image_url": f"data:image/jpeg;base64,{base64_image}"},
+            ],
         }
-    ],
-    max_tokens=1000)
-    caption = response.choices[0].message["content"]
-    if response.status_code != 200:
-        raise Exception(f"BLIP2 request failed: {response.text}")
+           ]
+    )
+    caption = response.output_text
 
     print(f"🔍 Caption: {caption}", file=sys.stderr)
     print(f"🔍 Token usage: {response.usage}", file=sys.stderr)
@@ -108,9 +111,16 @@ def main():
         similarity = cosine_similarity(vec1, vec2)
         print(f"Cosine similarity: {similarity:.4f}", file=sys.stderr)
         # Compute matched terms
-        matched_terms = compute_match_terms(caption, metadata_terms)
-        is_likely_match = similarity > 0.7 and len(matched_terms) > 2
+        match_terms = compute_match_terms(caption, metadata_terms)
+        is_likely_match = similarity > 0.7 and len(match_terms) > 2
         print(f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}", file=sys.stderr)
+        result = {
+            "caption": caption,
+            "cosine_score": round(similarity, 3),
+            "match_terms": match_terms,
+            "is_likely_match": is_likely_match
+        }
+        print(json.dumps(result, indent=2))
 
         sys.exit(0 if is_likely_match else 1)
 
