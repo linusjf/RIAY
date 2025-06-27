@@ -104,6 +104,10 @@
   - [Earthen Vessels](#earthen-vessels)
   - [AI-Generated Summary: The Radiant Mystery of the Transfiguration](#ai-generated-summary-the-radiant-mystery-of-the-transfiguration)
   - [The Savior’s Transfiguration by Theophanes the Greek](#the-saviors-transfiguration-by-theophanes-the-greek)
+- [June 27, 2025](#june-27-2025)
+  - [Open the Door](#open-the-door)
+  - [AI-Generated Summary: The Quiet Love Before the Supper](#ai-generated-summary-the-quiet-love-before-the-supper)
+  - [Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner](#christ-and-the-disciples-before-the-last-supper-by-henry-ossawa-tanner)
 
 <!-- tocstop -->
 
@@ -614,3 +618,19 @@ Yet mark how the glory of Tabor casts its light on human frailty. Peter, who beh
 ### The Savior’s Transfiguration by Theophanes the Greek
 
 [![The Savior’s Transfiguration by Theophanes the Greek](June/jpgs/transfiguration.jpg)](https://classicaliconography.org/wp-content/uploads/2023/08/Transfiguration_by_Feofan_Grek_from_Spaso-Preobrazhensky_Cathedral_in_Pereslavl-Zalessky_15th_c_Tretyakov_gallery-e1691500465284.jpeg "The Savior’s Transfiguration by Theophanes the Greek")
+
+## June 27, 2025
+
+### Open the Door
+
+[![Open the Door](/June/jpgs/Day178.jpg)](https://youtu.be/lm2UWdr5PwY "Open the Door")
+
+### AI-Generated Summary: The Quiet Love Before the Supper
+
+In Henry Ossawa Tanner’s _Christ and the Disciples Before the Last Supper_, we see a moment hushed with divine intention. The street is dark, the air thick with unspoken sorrow and love. There stands the Lord, clad in white, staff in hand, facing His disciples—one pleading, one waiting—while shadowed figures linger near the door. Tanner, that master of light and longing, captures not the glory of the Transfiguration, but the deeper glory of humility: God soon to give Himself as bread and wine.
+
+Here is love burning in the heart of Christ, love His followers do not yet understand. They stand at the threshold, as we so often do, unaware of the gift before them. Yet we, unlike children ignorant of a parent’s care, may choose to step into that light—to receive, to abide, to return again and again to the Supper where He offers all. "Take and eat," He says, not as a distant king, but as the Bridegroom whose love is fiercer than death. Let us then approach, not as strangers, but as those who know the voice that calls them.
+
+### Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner
+
+[![Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner](June/jpgs/christdiscipleshenrytanner.jpg)](https://i.pinimg.com/originals/82/08/1f/82081fe7da22dfe01271edcd76558551.jpg "Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner")
