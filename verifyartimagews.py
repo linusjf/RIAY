@@ -17,6 +17,7 @@ import json
 import os
 import sys
 from io import BytesIO
+from dotenv import load_dotenv
 
 import numpy as np
 import requests
@@ -25,6 +26,8 @@ from openai import OpenAI
 from PIL import Image
 
 
+# Load environment variables from config.env
+load_dotenv('config.env')
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     raise ValueError("DEEPINFRA_TOKEN environment variable not set")

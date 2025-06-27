@@ -214,7 +214,7 @@ function main() {
   local day_num=$1
   local month day_string summary_file
 
-  require_vars YEAR ART_DOWNLOADER_DIR VERIFY_ART_LOCALLY VERIFY_ART_IMAGES || exit $E_MISSING_ENV
+  require_vars YEAR ART_DOWNLOADER_DIR VERIFY_ART_IMAGES || exit $E_MISSING_ENV
 
   internet::checkinternet || exit $E_NO_INTERNET
   printf -v day_string "Day%03d" "$day_num"
