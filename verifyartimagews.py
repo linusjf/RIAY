@@ -11,7 +11,6 @@ Verifyartimagews using Hugging Face API and upgraded models.
 # -*- coding: utf-8 -*-'
 ######################################################################
 """
-import numpy as np
 import sys
 import argparse
 import requests
@@ -23,6 +22,7 @@ import json
 from io import BytesIO
 from fuzzywuzzy import fuzz
 import os
+import numpy as np
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
@@ -36,12 +36,18 @@ client = OpenAI(
     api_key=OPENAI_API_KEY,
 )
 
-CLIP_URL = "https://api.deepinfra.com/v1/inference/thenlper/gte-large"
+deepinfra_client = OpenAI(
+api_key=DEEPINFRA_API_KEY,
+    base_url="https://api.deepinfra.com/v1/openai",
+)
+
 
 def get_embedding(text):
-    response = requests.post(CLIP_URL, headers=headers, json={"inputs": text})
-    response.raise_for_status()
-    return np.array(response.json()[0])
+    embeddings = deepinfra_client.embeddings.create(
+        model="thenlper/gte-large",
+        input=text,
+        encoding_format="float")
+    return np.array(embeddings.data[0].embedding)
 
 def cosine_similarity(vec1, vec2):
     return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
