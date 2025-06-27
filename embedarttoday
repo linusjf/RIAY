@@ -116,11 +116,11 @@ function verify_images() {
   for file in "${files[@]}"; do
     echo "🔍 Verifying image: $file"
     if result=$("${SCRIPT_DIR}/${verifier}" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" --year "${year:-}" --medium "${medium:-}"); then
-      score=$(echo "$result" | jq -r '.cosine_score')
-      verified_files["$file"]=$score
-      err "✅ Verification passed for: $file (score: $score)"
+      score="$(echo "$result" | jq -r '.cosine_score')"
+      verified_files["$file"]="$score"
+      err "✅ Verification passed for: ${file} (score: ${score})"
     else
-      err "❌ Verification failed for: $file"
+      err "❌ Verification failed for: ${file}"
     fi
   done
 

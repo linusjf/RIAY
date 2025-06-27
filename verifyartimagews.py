@@ -21,7 +21,6 @@ from dotenv import load_dotenv
 
 import numpy as np
 import requests
-from fuzzywuzzy import fuzz
 from openai import OpenAI
 from PIL import Image
 
@@ -69,7 +68,7 @@ def encode_image_to_base64(image_path):
     return base64.b64encode(image_to_bytes(image_path)).decode("utf-8")
 
 
-def generate_caption(image_path):
+def generate_caption(image_path, artdescription):
     """Generate caption for given image using OpenAI."""
     print("🖼️ Generating caption...", file=sys.stderr)
     base64_image = encode_image_to_base64(image_path)
@@ -79,7 +78,7 @@ def generate_caption(image_path):
         input=[{
             "role": "user",
             "content": [
-                {"type": "input_text", "text": prompt},
+                {"type": "input_text", "text": prompt + "\n\n" + artdescription},
                 {
                     "type": "input_image",
                     "image_url": f"data:image/jpeg;base64,{base64_image}"
@@ -91,21 +90,9 @@ def generate_caption(image_path):
 
     print(f"🔍 Caption: {caption}", file=sys.stderr)
     print(f"🔍 Token usage: {response.usage}", file=sys.stderr)
-    print(caption)
     return caption
 
 
-def compute_match_terms(caption, metadata_terms):
-    """Compute matching terms between caption and metadata."""
-    print("🧠 Checking for matching terms...", file=sys.stderr)
-    matched = []
-    for term in metadata_terms:
-        score = fuzz.partial_ratio(term.lower(), caption.lower())
-        print(f"  🔎 Comparing '{term}' (score: {score})", file=sys.stderr)
-        if score > 70:
-            matched.append(term)
-    print(f"✅ Matched terms: {matched}", file=sys.stderr)
-    return matched
 
 
 def main():
@@ -132,13 +119,13 @@ def main():
         args.title, args.artist, args.subject, args.year, args.medium
     ]))
     metadata_terms = list(filter(None, [
-        args.title, args.artist, args.subject
+        args.title, args.artist, args.year, args.medium, args.subject
     ]))
     print(f"📋 Metadata text: {metadata_text}", file=sys.stderr)
     print(f"📋 Metadata terms: {metadata_terms}", file=sys.stderr)
 
     try:
-        caption = generate_caption(args.image)
+        caption = generate_caption(args.image, metadata_text)
 
         # Get embeddings from DeepInfra
         vec1 = get_embedding(metadata_text)
@@ -147,9 +134,7 @@ def main():
         # Compute cosine similarity
         similarity = cosine_similarity(vec1, vec2)
         print(f"Cosine similarity: {similarity:.4f}", file=sys.stderr)
-        # Compute matched terms
-        match_terms = compute_match_terms(caption, metadata_terms)
-        is_likely_match = similarity > 0.7 and len(match_terms) > 2
+        is_likely_match = similarity > 0.7
         print(
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
             file=sys.stderr
@@ -157,8 +142,7 @@ def main():
         result = {
             "caption": caption,
             "cosine_score": round(similarity, 3),
-            "match_terms": match_terms,
-            "is_likely_match": is_likely_match
+            "is_likely_match": True if is_likely_match else False
         }
         print(json.dumps(result, indent=2))
 
