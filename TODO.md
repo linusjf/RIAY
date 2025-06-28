@@ -7,6 +7,6 @@
 
 ## Bugs/Issues
 
-## Exploratory tasks
+1. Use values from chatgpt image recognition to embed into markdown.
 
-1. Find image recognition hosts for generating captions and checking similarity of vector embeddings
+## Exploratory tasks
