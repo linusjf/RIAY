@@ -96,7 +96,7 @@ def convert_to_jpeg(input_path):
 def create_session_with_retries(
     retries=5,
     backoff_factor=1,
-    status_forcelist=(403,408, 429, 500, 502, 503, 504),
+    status_forcelist=(403,408,429,500,502,503,504),
     session=None
 ):
     """Create a requests session with retry logic."""
