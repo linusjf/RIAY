@@ -127,44 +127,25 @@ function filter_sepia_images() {
   fi
 }
 
-function verify_images() {
-  local files=("$@")
-  declare -A verified_files=()
-  local best_file=""
-  local best_score=0
+function verify_image() {
+  local file="${1:-}"
   local verifier="verifyartimagews.py"
 
-  if [ ${#files[@]} -eq 0 ]; then
+  if [ -z "${file:-}" ]; then
     err "⚠️ No image files found to verify"
-    return 0
+    return 1
   fi
 
-  for file in "${files[@]}"; do
-    echo "🔍 Verifying image: $file"
-    if result=$("${SCRIPT_DIR}/${verifier}" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" --year "${year:-}" --medium "${medium:-}"); then
-      score="$(echo "$result" | jq -r '.cosine_score')"
-      verified_files["$file"]="$score"
-      err "✅ Verification passed for: ${file} (score: ${score})"
-    else
-      err "❌ Verification failed for: ${file}"
-    fi
-  done
-
-  if [ ${#verified_files[@]} -eq 0 ]; then
-    die "Error: No images passed verification" $E_VERIFICATION_FAILED
+  echo "🔍 Verifying image: $file"
+  if result=$("${SCRIPT_DIR}/${verifier}" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" --year "${year:-}" --medium "${medium:-}"); then
+    score="$(echo "$result" | jq -r '.cosine_score')"
+    err "✅ Verification passed for: ${file} (score: ${score})"
+  else
+    err "❌ Verification failed for: ${file}"
   fi
 
-  # Find the file with highest score
-  for file in "${!verified_files[@]}"; do
-    score=${verified_files[$file]}
-    if (($(echo "$score > $best_score" | bc -l))); then
-      best_score=$score
-      best_file=$file
-    fi
-  done
-
-  err "🏆 Best image: $best_file (score: $best_score)"
-  echo "$best_file"
+  err "🏆 Best image: $file (score: $score)"
+  echo "$file"
 }
 
 function select_best_unverified_image() {
@@ -278,7 +259,7 @@ function main() {
   if [[ -n "${best_image:-}" ]]; then
     echo "Selected image: $best_image"
     if "${VERIFY_ART_IMAGES:-false}"; then
-      if verify_images "${best_image}"; then
+      if verify_image "${best_image}"; then
         echo "${best_image} verified."
       fi
     fi
