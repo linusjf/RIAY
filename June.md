@@ -108,6 +108,9 @@
   - [Open the Door](#open-the-door)
   - [AI-Generated Summary: The Quiet Love Before the Supper](#ai-generated-summary-the-quiet-love-before-the-supper)
   - [Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner](#christ-and-the-disciples-before-the-last-supper-by-henry-ossawa-tanner)
+- [June 28, 2025](#june-28-2025)
+  - [Discouragement, Distraction, Despair](#discouragement-distraction-despair)
+  - [AI-Generated Summary: The Betrayal and the Human Heart](#ai-generated-summary-the-betrayal-and-the-human-heart)
 
 <!-- tocstop -->
 
@@ -634,3 +637,17 @@ Here is love burning in the heart of Christ, love His followers do not yet under
 ### Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner
 
 [![Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner](June/jpgs/christdiscipleshenrytanner.jpg)](https://upload.wikimedia.org/wikipedia/commons/a/ae/Christ_and_the_Disciples_Before_the_Last_Supper_by_Henry_Ossawa_Tanner.jpg "Christ and the Disciples Before the Last Supper by Henry Ossawa Tanner")
+
+## June 28, 2025
+
+### Discouragement, Distraction, Despair
+
+[![Discouragement, Distraction, Despair](/June/jpgs/Day179.jpg)](https://youtu.be/Ul_pX57VwWE "Discouragement, Distraction, Despair")
+
+### AI-Generated Summary: The Betrayal and the Human Heart
+
+Consider Giotto’s _The Arrest of Christ, Kiss of Judas_, where the traitor steps forward in his yellow cloak, lips poised for that dreadful kiss, while Christ meets his gaze with sorrowful stillness. The crowd writhes with torches and sticks, Peter’s knife flashes in anger, and the midnight sky presses down upon them all. Here, Giotto—that father of the Renaissance—paints not merely a scene, but the very anatomy of betrayal: its intimacy, its violence, its terrible ordinariness.
+
+Yet the greater lesson lies not in Judas alone, but in the quiet whisper that says, _There, but for the grace of God, go I._ Augustine reminds us that the worst of sins are not the deeds of monsters, but the choices of men like ourselves—men who first grew discouraged, then distracted, then despairing. Judas, too, once loved and followed; his fall began not with a kiss, but with small resentments, with eyes turned from the sacred to the ledger, until even the perfume anointing Christ seemed waste to him.
+
+But take heart. If Judas’s story unsettles, it is only to show us our own frailty—and the mercy that waits to restore even the most broken of hearts. For Christ seeks not the perfect, but the penitent; not the strong, but those who know their need of Him. Let us then examine our own hearts, not in fear, but in hope, for He is ever near to those who call upon Him.
