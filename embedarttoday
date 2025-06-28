@@ -129,7 +129,7 @@ function filter_sepia_images() {
 
 function verify_image() {
   local file="${1:-}"
-  local verifier="verifyartimagews.py"
+  local verifier="verifyartimage.py"
 
   if [ -z "${file:-}" ]; then
     err "⚠️ No image files found to verify"
