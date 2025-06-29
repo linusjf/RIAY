@@ -220,12 +220,10 @@ function main() {
       if jsonresult="$(verify_image "${best_image}")"; then
         echo "${best_image} verified."
         echo "$jsonresult"
+        caption="$(echo "$jsonresult" | jq '.caption')"
       fi
     fi
 
-    if [[ -n "${jsonresult:-}" ]]; then
-      caption="$(echo "$jsonresult" | jq '.caption')"
-    fi
     # Get source URL from companion .url file
     local url_file="${best_image%.*}.url"
     local source_url=""
