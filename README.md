@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -4840,6 +4840,9 @@ Farewell, and may His peace attend you.
   - [Discouragement, Distraction, Despair](#discouragement-distraction-despair)
   - [AI-Generated Summary: The Betrayal and the Human Heart](#ai-generated-summary-the-betrayal-and-the-human-heart)
   - [The Arrest of Christ Kiss of Judas by Giotto](#the-arrest-of-christ-kiss-of-judas-by-giotto)
+- [June 29, 2025](#june-29-2025)
+  - [The God Who Bleeds](#the-god-who-bleeds)
+  - [AI-Generated Summary: The Unseen Depth of Suffering and Love](#ai-generated-summary-the-unseen-depth-of-suffering-and-love)
 
 <!-- tocstop -->
 
@@ -5384,6 +5387,22 @@ But take heart. If Judas’s story unsettles, it is only to show us our own frai
 ##### The Arrest of Christ Kiss of Judas by Giotto
 
 [![The Arrest of Christ Kiss of Judas by Giotto](June/jpgs/arrestofchristgiotto.jpg)](https://upload.wikimedia.org/wikipedia/commons/e/ef/Giotto_-_Scrovegni_-_-31-_-_Kiss_of_Judas.jpg "The Arrest of Christ Kiss of Judas by Giotto")
+
+#### June 29, 2025
+
+##### The God Who Bleeds
+
+[![The God Who Bleeds](June/jpgs/Day180.jpg)](https://youtu.be/GjtG2a9_aEM "The God Who Bleeds")
+
+##### AI-Generated Summary: The Unseen Depth of Suffering and Love
+
+Consider Bouguereau’s _The Flagellation of Our Lord Jesus Christ_—a work of piercing beauty and sorrow. Here, the divine is bound, His body luminous yet wounded, His gaze turned heavenward as men prepare to scourge Him. The crowd watches, some with indifference, others with cruelty, while a child, innocent and uncomprehending, is lifted high—a stark contrast to the brutality below.
+
+Bouguereau, a master of his craft, renders the scene with such precision that one might be tempted to admire only the skill of the hand, the play of light, the composition. But this is a pitfall, for the true weight of the painting lies not in its technique but in its terrible truth: the Son of God, enduring suffering for love of us.
+
+Do we not often approach sacred things thus—dissecting the vessel while ignoring the wine within? We critique the homily’s delivery but miss its call to repentance; we analyze the brushstrokes but evade the question they pose: _Who is this Man, and why does He suffer so?_ The answer, if we dare receive it, is both dreadful and glorious: He does it to bring us home.
+
+Here, then, is the challenge. Before this image, let us not merely observe, but kneel. Let us ask, in the quiet of our hearts, where we withhold trust, where we resist surrender. For if He endured the lash to claim us, shall we not yield to His love? The painting is not merely art—it is an invitation. Will we accept it?
 
 ## July
 
