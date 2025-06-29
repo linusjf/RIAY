@@ -10,3 +10,5 @@
 1. Use values from chatgpt image recognition to embed into markdown.
 
 ## Exploratory tasks
+
+1. Explore alternate , more economical but possibly less accurate verification process using Google Lens search.
