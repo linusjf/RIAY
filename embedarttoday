@@ -17,8 +17,7 @@ readonly E_MISSING_ENV=5
 readonly E_MISSING_FILE=6
 readonly E_VERIFICATION_FAILED=7
 readonly E_NO_COLOR_IMAGES=8
-readonly E_NO_SEPIA_IMAGES=9
-readonly E_NO_SATISFACTORY_IMAGES=10
+readonly E_NO_SATISFACTORY_IMAGES=9
 
 # Load required libraries
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
@@ -59,7 +58,8 @@ function usage() {
   >&"$output" printf "  %d - Missing required environment variables\n" "$E_MISSING_ENV"
   >&"$output" printf "  %d - Summary file not found\n" "$E_MISSING_FILE"
   >&"$output" printf "  %d - Image verification failed\n" "$E_VERIFICATION_FAILED"
-  >&"$output" printf "  %d - No full color images found\n" "$E_NO_COLOR_IMAGES"
+  >&"$output" printf "  %d - No color images found\n" "$E_NO_COLOR_IMAGES"
+  >&"$output" printf "  %d - No satisfactory images found\n" "$E_NO_SATISFACTORY_IMAGES"
   >&"$output" printf "\nExample: %s 42\n" "$(basename "$0")"
   exit "$exit_code"
 }
@@ -86,7 +86,7 @@ function filter_color_images() {
   for file in "${files[@]}"; do
     err "🎨 Checking color profile: $file"
     classification=$("${SCRIPT_DIR}/classifyimage" "$file")
-    if [[ "$classification" == *"Full color"* ]]; then
+    if [[ "$classification" == *"Full color"* ]] || [[ "$classification" == *"Sepia"* ]]; then
       err "✅ Accepted: $file ($classification)"
       echo "$file"
       color_files_found=true
@@ -98,32 +98,8 @@ function filter_color_images() {
   if "${color_files_found}"; then
     return 0
   else
-    err "⚠️ No full color images found"
+    err "⚠️ No color images found"
     return $E_NO_COLOR_IMAGES
-  fi
-}
-
-function filter_sepia_images() {
-  local files=("$@")
-  local sepia_files_found=false
-
-  for file in "${files[@]}"; do
-    err "🎨 Checking color profile: $file"
-    classification=$("${SCRIPT_DIR}/classifyimage" "$file")
-    if [[ "$classification" == *"Sepia"* ]]; then
-      err "✅ Accepted: $file ($classification)"
-      echo "$file"
-      sepia_files_found=true
-    else
-      err "❌ Rejected: $file ($classification)"
-    fi
-  done
-
-  if "${sepia_files_found}"; then
-    return 0
-  else
-    err "⚠️ No sepia images found"
-    return $E_NO_SEPIA_IMAGES
   fi
 }
 
@@ -245,13 +221,9 @@ function main() {
   # Filter for color images first
   # shellcheck disable=SC2086
   mapfile -t color_files < <(filter_color_images ${ART_DOWNLOADER_DIR}/${filename}*.jpg)
-  # shellcheck disable=SC2086
-  mapfile -t sepia_files < <(filter_sepia_images ${ART_DOWNLOADER_DIR}/${filename}*.jpg)
 
   if [[ ${#color_files[@]} -gt 0 ]]; then
     best_image="$(select_best_unverified_image "${color_files[@]}")"
-  elif [[ ${#sepia_files[@]} -gt 0 ]]; then
-    best_image="$(select_best_unverified_image "${sepia_files[@]}")"
   else
     return $E_NO_SATISFACTORY_IMAGES
   fi
