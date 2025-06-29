@@ -139,12 +139,11 @@ def main():
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
             file=sys.stderr
         )
-        result = {
-            "caption": caption,
-            "cosine_score": round(similarity, 3),
-            "is_likely_match": True if is_likely_match else False
-        }
-        print(json.dumps(result, indent=2))
+        data = json.loads(caption)
+        data["cosine_score"] = round(similarity, 3)
+        data["is_likely_match"] = True if is_likely_match else False
+        result = json.dumps(data, indent=2)
+        print(result)
 
         sys.exit(0 if is_likely_match else 1)
 
