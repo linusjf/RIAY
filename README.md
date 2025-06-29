@@ -5407,7 +5407,7 @@ Here, then, is the challenge. Before this image, let us not merely observe, but 
 
 ##### The Flagellation of Our Lord Jesus Christ by Bouguereau
 
-[![The Flagellation of Our Lord Jesus Christ by Bouguereau](June/jpgs/flagellationbouguereau.jpg)](https://www.impressusart.com/wp-content/uploads/2020/11/GC-M-FC-BO.jpg "The Flagellation of Our Lord Jesus Christ by Bouguereau")
+[![The Flagellation of Our Lord Jesus Christ by Bouguereau](June/jpgs/flagellationbouguereau.jpg)](https://upload.wikimedia.org/wikipedia/commons/5/56/William-Adolphe_Bouguereau_%281825-1905%29_-_The_Flagellation_of_Our_Lord_Jesus_Christ_%281880%29.jpg "The Flagellation of Our Lord Jesus Christ by Bouguereau")
 
 ## July
 
