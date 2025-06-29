@@ -115,6 +115,7 @@
 - [June 29, 2025](#june-29-2025)
   - [The God Who Bleeds](#the-god-who-bleeds)
   - [AI-Generated Summary: The Unseen Depth of Suffering and Love](#ai-generated-summary-the-unseen-depth-of-suffering-and-love)
+  - [The Flagellation of Our Lord Jesus Christ by Bouguereau](#the-flagellation-of-our-lord-jesus-christ-by-bouguereau)
 
 <!-- tocstop -->
 
@@ -675,3 +676,7 @@ Bouguereau, a master of his craft, renders the scene with such precision that on
 Do we not often approach sacred things thus—dissecting the vessel while ignoring the wine within? We critique the homily’s delivery but miss its call to repentance; we analyze the brushstrokes but evade the question they pose: _Who is this Man, and why does He suffer so?_ The answer, if we dare receive it, is both dreadful and glorious: He does it to bring us home.
 
 Here, then, is the challenge. Before this image, let us not merely observe, but kneel. Let us ask, in the quiet of our hearts, where we withhold trust, where we resist surrender. For if He endured the lash to claim us, shall we not yield to His love? The painting is not merely art—it is an invitation. Will we accept it?
+
+### The Flagellation of Our Lord Jesus Christ by Bouguereau
+
+[![The Flagellation of Our Lord Jesus Christ by Bouguereau](June/jpgs/flagellationbouguereau.jpg)](https://www.impressusart.com/wp-content/uploads/2020/11/GC-M-FC-BO.jpg "The Flagellation of Our Lord Jesus Christ by Bouguereau")
