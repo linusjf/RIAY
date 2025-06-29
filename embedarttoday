@@ -121,7 +121,7 @@ function verify_image() {
   fi
 
   err "🏆 Best image: $file (score: $score)"
-  echo "$file"
+  echo "$result" | jq --arg k "filename" --arg v "$file" '. + {($k):($v)}'
 }
 
 function select_best_unverified_image() {
@@ -215,6 +215,7 @@ function main() {
   medium="$(echo "$art_details" | jq '.details.medium' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   subject="$(echo "$art_details" | jq '.details.subject' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   filename="$(echo "$art_details" | jq '.filename' | sed 's/"//g')"
+  caption="$(echo "$art_details" | jq '.caption' | sed 's/\.//g' | sed 's/null//g')"
   "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --year "${year:-}" \
     --medium "${medium:-}" --subject "${subject:-}"
 
@@ -228,11 +229,13 @@ function main() {
     return $E_NO_SATISFACTORY_IMAGES
   fi
 
+  local jsonresult
   if [[ -n "${best_image:-}" ]]; then
     echo "Selected image: $best_image"
     if "${VERIFY_ART_IMAGES:-false}"; then
-      if verify_image "${best_image}"; then
+      if jsonresult="$(verify_image "${best_image}")"; then
         echo "${best_image} verified."
+        echo "$jsonresult"
       fi
     fi
 
