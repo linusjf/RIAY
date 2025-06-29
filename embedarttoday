@@ -20,7 +20,7 @@ readonly E_NO_COLOR_IMAGES=8
 readonly E_NO_SATISFACTORY_IMAGES=9
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -145,28 +145,11 @@ function select_best_unverified_image() {
 }
 
 function generate_markdown() {
-  local title="$1"
-  local artist="$2"
-  local image_path="$3"
-  local source_url="$4"
-  local month="$5"
-  local day_num="$6"
-
-  # Generate header
-  local header
-  if [[ -n "$artist" ]]; then
-    header="### $title by $artist"
-  else
-    header="### $title"
-  fi
-
-  # Generate caption
-  local caption
-  if [[ -n "$artist" ]]; then
-    caption="$title by $artist"
-  else
-    caption="$title"
-  fi
+  local caption="$1"
+  local image_path="$2"
+  local source_url="$3"
+  local month="$4"
+  local day_num="$5"
 
   # Generate video markdown
   local video_md
@@ -188,7 +171,7 @@ function append_to_day_file() {
     die "Error: Day file $day_file does not exist" $E_MISSING_FILE
   fi
 
-  echo "$content" >> "$day_file"
+  echo "$content" >>"$day_file"
   echo "📝 Appended artwork to: $day_file"
 }
 
@@ -239,6 +222,9 @@ function main() {
       fi
     fi
 
+    if [[ -n "${jsonresult:-}" ]]; then
+      caption="$(echo "$jsonresult" | jq '.caption')"
+    fi
     # Get source URL from companion .url file
     local url_file="${best_image%.*}.url"
     local source_url=""
@@ -258,13 +244,13 @@ function main() {
 
     # Also copy URL file if it exists
     if [[ -n "$source_url" ]]; then
-      echo "$source_url" > "$target_dir/${filename}.url"
+      echo "$source_url" >"$target_dir/${filename}.url"
       echo "📝 Saved source URL to: $target_dir/${filename}.url"
     fi
 
     # Generate and append markdown
     local markdown_content
-    markdown_content=$(generate_markdown "$title" "$artist" "$target_file" "$source_url" "$month" "$day_num")
+    markdown_content=$(generate_markdown "$caption" "$target_file" "$source_url" "$month" "$day_num")
     append_to_day_file "$day_num" "$markdown_content" "$month"
     return 0
   else
@@ -276,16 +262,16 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -h | --help) usage 0 ;;
-      -v | --version)
-        version
-        exit 0
-        ;;
-      -d | --debug)
-        set -x
-        shift
-        ;;
-      *) break ;;
+    -h | --help) usage 0 ;;
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *) break ;;
     esac
   done
   require_commands tee date jq cp ls bc || exit $E_MISSING_TOOLS
