@@ -23,6 +23,7 @@ import numpy as np
 import requests
 from openai import OpenAI
 from PIL import Image
+from fuzzywuzzy import fuzz
 
 
 # Load environment variables from config.env
@@ -41,6 +42,16 @@ deepinfra_client = OpenAI(
     base_url="https://api.deepinfra.com/v1/openai",
 )
 
+def compute_match_terms(description_terms, metadata_terms):
+    print("🧠 Checking for matching terms...", file=sys.stderr)
+    matched = []
+    for term_a, term_b in zip(description_terms,metadata_terms):
+        score = fuzz.partial_ratio(term_a.lower(), term_b.lower())
+        print(f"  🔎 Comparing '{term_b}' (score: {score})", file=sys.stderr)
+        if score > 70:
+            matched.append(term_b)
+    print(f"✅ Matched terms: {matched}", file=sys.stderr)
+    return matched
 
 def get_embedding(text):
     """Get text embedding using deepinfra client."""
@@ -128,10 +139,15 @@ def main():
         image_description = generate_image_description(args.image, metadata_text)
 
         data = json.loads(image_description)
-        image_description_text = ", ".join(filter(None, [
-        data['title'], data['artist'], data['description'], data['year'], data['medium']]))
+        image_description_terms = [data['title'], data['artist'], data['year'], data['medium'], data['description']]
+        image_description_text = ", ".join(filter(None, image_description_terms))
         print(
-            image_description_text,
+            f"Image description : {image_description_text}",
+            file=sys.stderr
+        )
+
+        print(
+            "Obtaining vector embeddings...",
             file=sys.stderr
         )
         # Get embeddings from DeepInfra
@@ -139,15 +155,23 @@ def main():
         vec2 = get_embedding(image_description_text)
 
         # Compute cosine similarity
+        print(
+            "Computing cosine similarity...",
+            file=sys.stderr
+        )
         similarity = cosine_similarity(vec1, vec2)
         print(f"Cosine similarity: {similarity:.4f}", file=sys.stderr)
-        is_likely_match = similarity > 0.7
+        data["cosine_score"] = round(similarity, 3)
+
+        print("🧠 Checking for matching terms...", file=sys.stderr)
+        match_terms = compute_match_terms(image_description_terms, metadata_terms)
+        is_likely_match = similarity > 0.7 and len(match_terms) > 2
         print(
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
             file=sys.stderr
         )
-        data["cosine_score"] = round(similarity, 3)
         data["is_likely_match"] = True if is_likely_match else False
+        data["matched_terms"] = match_terms
         result = json.dumps(data, indent=2)
         print(result)
 
