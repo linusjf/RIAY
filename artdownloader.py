@@ -4,6 +4,7 @@
 This script searches for artwork images from multiple sources including:
 - DuckDuckGo
 - Wikimedia Commons
+- Google
 """
 
 import os
