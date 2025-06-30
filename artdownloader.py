@@ -25,9 +25,18 @@ from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_excep
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from serpapi import GoogleSearch
+from fuzzywuzzy import fuzz
 
 # Global list to track downloaded URLs
 DOWNLOADED_URLS = []
+
+def strip_span_tags_but_keep_contents(text):
+    # Remove opening <span ...> tag
+    text = re.sub(r'<span[^>]*?>', '', text)
+    # Remove closing </span> tag
+    text = re.sub(r'</span>', '', text)
+    return text
+
 
 def parse_bash_array(file_path, var_name):
     with open(file_path, 'r') as f:
@@ -301,6 +310,52 @@ def download_from_wikimedia_search(query, filename_base):
 
     return False
 
+def download_image_from_wikipedia_article(query, filename_base):
+    """Download the first usable image from a Wikipedia article (full API pipeline).
+
+    Args:
+        query: Search query string (Wikipedia article title)
+        filename_base: Base filename to use for saving
+
+    Returns:
+        bool: True if download succeeded, False otherwise
+    """
+    print(f"\n🔍 Fetching all images from Wikipedia article: {query}")
+    try:
+        # Step 1: Get the first page that fits the query
+        params = {
+            "limit": 10,
+            "q": query
+        }
+        response = requests.get("https://api.wikimedia.org/core/v1/wikipedia/en/search/page", params=params)
+        image_data = response.json()
+        print(response.json())
+
+        pages = image_data.get("query", {}).get("pages", {})
+        images = []
+        selected_title = {"title": ""}
+        best_score = 0
+        for page in pages.values():
+            key = page.get("key", "")
+            title = page.get("title", "")
+            excerpt = strip_span_tags_but_keep_contents(page.get("excerpt", ""))
+            description = page.get("description", "")
+            page_meta_data = " ".join([key, title, excerpt, description])
+            score = fuzz.partial_ratio(query.lower(), page_meta_data.lower())
+            if score > best_score:
+                best_score = score
+                selected_title["title"] = title
+
+        title = selected_title["title"]
+        print(f"Selected title {title} with score: {best_score}")
+
+
+    except Exception as error:
+        print(f"❌ Error: {error}")
+
+    return False
+
+
 def download_from_wikimedia(query, filename_base):
     """Download image from Wikimedia Commons.
 
@@ -425,11 +480,14 @@ def download_all(query, filename_base=None, title=None, artist=None, year=None, 
     if title and title not in query:
         wikimedia_query += f" {title}"
 
+    print(f"\n🔍 Searching with simple query: {wikimedia_query}")
+
+    downloaded_wikimedia_search = download_from_wikimedia_search(wikimedia_query, filename_base)
+    downloaded_wikimedia = download_from_wikimedia(wikimedia_query, filename_base)
+
     print(f"\n🔍 Searching with enhanced query: {enhanced_query}")
 
     downloaded_duckduckgo = download_from_duckduckgo(enhanced_query, filename_base)
-    downloaded_wikimedia = download_from_wikimedia(wikimedia_query, filename_base)
-    downloaded_wikimedia_search = download_from_wikimedia_search(wikimedia_query, filename_base)
     downloaded_google = download_from_google(enhanced_query, filename_base)
     return (downloaded_duckduckgo or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
 
