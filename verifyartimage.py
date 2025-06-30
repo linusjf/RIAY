@@ -79,7 +79,7 @@ def encode_image_to_base64(image_path):
     return base64.b64encode(image_to_bytes(image_path)).decode("utf-8")
 
 
-def generate_image_description(image_path, artdescription):
+def generate_image_description(image_path):
     """Generate image description for given image using OpenAI's gpt-4o-mini."""
     print("🖼️ Generating image description...", file=sys.stderr)
     base64_image = encode_image_to_base64(image_path)
@@ -136,7 +136,7 @@ def main():
     print(f"📋 Metadata terms: {metadata_terms}", file=sys.stderr)
 
     try:
-        image_description = generate_image_description(args.image, metadata_text)
+        image_description = generate_image_description(args.image)
 
         data = json.loads(image_description)
         image_description_terms = [data['title'], data['artist'], data['year'], data['medium'], data['description']]
