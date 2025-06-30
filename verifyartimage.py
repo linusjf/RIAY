@@ -89,7 +89,7 @@ def generate_image_description(image_path, artdescription):
         input=[{
             "role": "user",
             "content": [
-                {"type": "input_text", "text": prompt + "\n\n" + artdescription},
+                {"type": "input_text", "text": prompt},
                 {
                     "type": "input_image",
                     "image_url": f"data:image/jpeg;base64,{base64_image}"
