@@ -7,7 +7,9 @@
 
 ## Bugs/Issues
 
-1. Use values from chatgpt image recognition to embed into markdown.
+1. Extract values from verifier response, concatenate them and then pass to vector embedders instead of full json object.
+2. Re-add checks for terms but use semantic vector embeddings instead of fuzzywuzzy levenshtein similarity for each term. (overkill?)
+3. Add another search for wikipedia images but this time from wikipedia pages since wikimedia image search is not returning correct images as per description. Don't know the reason, perhaps this data is not available to wikimedia api or labelling is incorrect or research needed for parameters making search more specific. Wikipedia pages search is suggested as an alternative online.
 
 ## Exploratory tasks
 
