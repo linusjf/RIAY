@@ -85,7 +85,7 @@ def generate_image_description(image_path, artdescription):
     base64_image = encode_image_to_base64(image_path)
     prompt = os.getenv("ART_METADATA_PROMPT", "Describe and interpret this image in detail.")
     response = client.responses.create(
-        model="gpt-4o-mini",
+        model="gpt-4o",
         input=[{
             "role": "user",
             "content": [
