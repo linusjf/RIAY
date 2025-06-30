@@ -20,7 +20,7 @@ readonly E_NO_COLOR_IMAGES=8
 readonly E_NO_SATISFACTORY_IMAGES=9
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -172,7 +172,7 @@ function append_to_day_file() {
     die "Error: Day file $day_file does not exist" $E_MISSING_FILE
   fi
 
-  echo "$content" >> "$day_file"
+  echo "$content" >>"$day_file"
   echo "📝 Appended artwork to: $day_file"
 }
 
@@ -181,7 +181,7 @@ function main() {
   local day_num=$1
   local month day_string summary_file
 
-  require_vars YEAR ART_DOWNLOADER_DIR VERIFY_ART_IMAGES || exit $E_MISSING_ENV
+  require_vars YEAR ART_DOWNLOADER_DIR VERIFY_ART_IMAGES IMAGE_CONTENT_VALIDATION || exit $E_MISSING_ENV
 
   internet::checkinternet || exit $E_NO_INTERNET
   printf -v day_string "Day%03d" "$day_num"
@@ -214,6 +214,12 @@ function main() {
   fi
 
   local jsonresult
+  local generate_markdown=true
+  if [[ "${IMAGE_CONTENT_VALIDATION:-"lenient"}" == lenient ]]; then
+    generate_markdown=true
+  else
+    generate_markdown=false
+  fi
   if [[ -n "${best_image:-}" ]]; then
     echo "Selected image: $best_image"
     if "${VERIFY_ART_IMAGES:-false}"; then
@@ -231,34 +237,38 @@ function main() {
       fi
     fi
 
-    # Get source URL from companion .url file
-    local url_file="${best_image%.*}.url"
-    local source_url=""
-    if [[ -f "$url_file" ]]; then
-      source_url=$(cat "$url_file")
-      echo "📌 Source URL: $source_url"
+    if generate_markdown; then
+      # Get source URL from companion .url file
+      local url_file="${best_image%.*}.url"
+      local source_url=""
+      if [[ -f "$url_file" ]]; then
+        source_url=$(cat "$url_file")
+        echo "📌 Source URL: $source_url"
+      else
+        err "⚠️ No companion URL file found for $best_image"
+      fi
+
+      # Copy image to month/jpgs directory without source suffix
+      local target_dir="$month/jpgs"
+      mkdir -p "$target_dir"
+      local target_file="$target_dir/${filename}.jpg"
+      cp "$best_image" "$target_file"
+      echo "📁 Copied image to: $target_file"
+
+      # Also copy URL file if it exists
+      if [[ -n "$source_url" ]]; then
+        echo "$source_url" >"$target_dir/${filename}.url"
+        echo "📝 Saved source URL to: $target_dir/${filename}.url"
+      fi
+
+      # Generate and append markdown
+      local markdown_content
+      markdown_content=$(generate_markdown "$caption" "$target_file" "$source_url" "$month" "$day_num")
+      append_to_day_file "$day_num" "$markdown_content" "$month"
+      return 0
     else
-      err "⚠️ No companion URL file found for $best_image"
+      err "Image content validation policy is set to strict. No markdown will be generated."
     fi
-
-    # Copy image to month/jpgs directory without source suffix
-    local target_dir="$month/jpgs"
-    mkdir -p "$target_dir"
-    local target_file="$target_dir/${filename}.jpg"
-    cp "$best_image" "$target_file"
-    echo "📁 Copied image to: $target_file"
-
-    # Also copy URL file if it exists
-    if [[ -n "$source_url" ]]; then
-      echo "$source_url" > "$target_dir/${filename}.url"
-      echo "📝 Saved source URL to: $target_dir/${filename}.url"
-    fi
-
-    # Generate and append markdown
-    local markdown_content
-    markdown_content=$(generate_markdown "$caption" "$target_file" "$source_url" "$month" "$day_num")
-    append_to_day_file "$day_num" "$markdown_content" "$month"
-    return 0
   else
     err "❌ No satisfactory images found via search. Check directory ${ART_DOWNLOADER_DIR} for jpeg images beginning with ${filename}..."
     return $E_NO_SATISFACTORY_IMAGES
@@ -268,16 +278,16 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -h | --help) usage 0 ;;
-      -v | --version)
-        version
-        exit 0
-        ;;
-      -d | --debug)
-        set -x
-        shift
-        ;;
-      *) break ;;
+    -h | --help) usage 0 ;;
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *) break ;;
     esac
   done
   require_commands tee date jq cp ls bc || exit $E_MISSING_TOOLS
