@@ -332,8 +332,7 @@ def download_image_from_wikipedia_article(query, filename_base):
         print(response.json())
 
         pages = image_data.get("query", {}).get("pages", {})
-        images = []
-        selected_title = {"title": ""}
+        selected_title = ""
         best_score = 0
         for page in pages.values():
             key = page.get("key", "")
@@ -344,10 +343,9 @@ def download_image_from_wikipedia_article(query, filename_base):
             score = fuzz.partial_ratio(query.lower(), page_meta_data.lower())
             if score > best_score:
                 best_score = score
-                selected_title["title"] = title
+                selected_title = title
 
-        title = selected_title["title"]
-        print(f"Selected title {title} with score: {best_score}")
+        print(f"Selected title {selected_title} with score: {best_score}")
 
 
     except Exception as error:
