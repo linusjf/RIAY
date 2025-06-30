@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 """
-Verifyartimagews.
-Verifyartimagews using Hugging Face API and upgraded models.
+Verifyartimage.
+Verifyartimage using chatgpt gpt-4o-mini and semantic vector embedding models.
 
 ######################################################################
 # @author      : Linus Fernandes (linusfernandes at gmail dot com)
-# @file        : verifyartimagews
+# @file        : verifyartimage
 # @created     : Wednesday Jun 25, 2025 12:45:50 IST
 # @description :
 # -*- coding: utf-8 -*-'
@@ -127,6 +127,10 @@ def main():
     try:
         caption = generate_caption(args.image, metadata_text)
 
+        print(
+            caption,
+            file=sys.stderr
+        )
         # Get embeddings from DeepInfra
         vec1 = get_embedding(metadata_text)
         vec2 = get_embedding(caption)
