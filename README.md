@@ -4847,7 +4847,7 @@ Farewell, and may His peace attend you.
 - [June 30, 2025](#june-30-2025)
   - [Grace Amid Thorns](#grace-amid-thorns)
   - [AI-Generated Summary: The Paradox of Power in Van Dyck's Crowning with Thorns](#ai-generated-summary-the-paradox-of-power-in-van-dycks-crowning-with-thorns)
-  - ["Van Dyck's _The Crowning with Thorns_ (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph"](#van-dycks-the-crowning-with-thorns-early-17th-century-a-baroque-depiction-of-christs-suffering-and-paradoxical-triumph)
+  - [Van Dyck's The Crowning with Thorns (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph](#van-dycks-the-crowning-with-thorns-early-17th-century-a-baroque-depiction-of-christs-suffering-and-paradoxical-triumph)
 
 <!-- tocstop -->
 
@@ -5427,9 +5427,9 @@ Observe the faces: wrath and pity peer through the cell window; a dog barks, bli
 
 This is no mere depiction of suffering, but a window into its strange redemption. Pain, as the Holy Father reminds us, is not the end but a path—clearing the way for grace, drawing us nearer to Him who wore the thorns. In Christ’s submission, we find sovereignty; in His wounds, our healing. The painting, like the Gospel, whispers that what the world calls defeat is, in truth, victory.
 
-##### "Van Dyck's _The Crowning with Thorns_ (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph"
+##### Van Dyck's The Crowning with Thorns (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph
 
-\[!["Van Dyck's The Crowning with Thorns (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph"](June/jpgs/crowningthornsdyck17th.jpg)\](<https://upload.wikimedia.org/wikipedia/commons/7/79/Sir_Anthony_van_Dyck_and_Attributed_to_Lucas_Emil_Vorsterman%2C_Christ_Crowned_with_Thorns%2C_probably_1630%2C_NGA_30736.jpg> ""Van Dyck's _The Crowning with Thorns_ (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph"")
+[!["Van Dyck's The Crowning with Thorns (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph"](June/jpgs/crowningthornsdyck17th.jpg)](https://upload.wikimedia.org/wikipedia/commons/7/79/Sir_Anthony_van_Dyck_and_Attributed_to_Lucas_Emil_Vorsterman%2C_Christ_Crowned_with_Thorns%2C_probably_1630%2C_NGA_30736.jpg "Van Dyck's _The Crowning with Thorns_ (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph")
 
 ## July
 
