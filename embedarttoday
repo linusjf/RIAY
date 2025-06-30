@@ -220,6 +220,14 @@ function main() {
       if jsonresult="$(verify_image "${best_image}")"; then
         echo "${best_image} verified."
         caption="$(echo "$jsonresult" | jq '.caption' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+        local image_color="$(echo "$jsonresult" | jq '.image_color')"
+        if [[ "$image_color" == *Grayscale* ]] || [[ "$image_color" == *Black-and-white* ]]; then
+          err "Image color is ${image_color}. Check other downloaded images for colored versions."
+        fi
+        local watermarked="$(echo "$jsonresult" | jq '.watermarked')"
+        if [[ "$watermarked" == y* ]] || [[ "$watermarked" == Y* ]]; then
+          err "Image is watermarked. Check other downloaded images for non-watermarked versions. If the image source is a stock photos website, add the domain to the list of stock photo sites in the configuration."
+        fi
       fi
     fi
 
