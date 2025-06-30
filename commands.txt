@@ -1,4 +1,4 @@
 # commands
-addvideo "GjtG2a9_aEM" "The God Who Bleeds"
+addvideo "KxjaIDrqcQg" "Grace Amid Thorns"
 stitch
 lintall

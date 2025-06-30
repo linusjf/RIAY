@@ -116,6 +116,10 @@
   - [The God Who Bleeds](#the-god-who-bleeds)
   - [AI-Generated Summary: The Unseen Depth of Suffering and Love](#ai-generated-summary-the-unseen-depth-of-suffering-and-love)
   - [The Flagellation of Our Lord Jesus Christ by Bouguereau](#the-flagellation-of-our-lord-jesus-christ-by-bouguereau)
+- [June 30, 2025](#june-30-2025)
+  - [Grace Amid Thorns](#grace-amid-thorns)
+  - [AI-Generated Summary: The Paradox of Power in Van Dyck's Crowning with Thorns](#ai-generated-summary-the-paradox-of-power-in-van-dycks-crowning-with-thorns)
+  - ["Van Dyck's _The Crowning with Thorns_ (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph"](#van-dycks-the-crowning-with-thorns-early-17th-century-a-baroque-depiction-of-christs-suffering-and-paradoxical-triumph)
 
 <!-- tocstop -->
 
@@ -680,3 +684,21 @@ Here, then, is the challenge. Before this image, let us not merely observe, but 
 ### The Flagellation of Our Lord Jesus Christ by Bouguereau
 
 [![The Flagellation of Our Lord Jesus Christ by Bouguereau](June/jpgs/flagellationbouguereau.jpg)](https://upload.wikimedia.org/wikipedia/commons/5/56/William-Adolphe_Bouguereau_%281825-1905%29_-_The_Flagellation_of_Our_Lord_Jesus_Christ_%281880%29.jpg "The Flagellation of Our Lord Jesus Christ by Bouguereau")
+
+## June 30, 2025
+
+### Grace Amid Thorns
+
+[![Grace Amid Thorns](/June/jpgs/Day181.jpg)](https://youtu.be/KxjaIDrqcQg "Grace Amid Thorns")
+
+### AI-Generated Summary: The Paradox of Power in Van Dyck's Crowning with Thorns
+
+Consider Sir Anthony van Dyck’s _The Crowning with Thorns_, painted when the artist was scarcely more than a youth, yet bearing the weight of a master’s hand. Here we see Christ, bound and bleeding, His body a testament to cruelty, while a soldier presses the thorned crown upon His head. The scene thrums with Baroque vigor—diagonal lines, shadow and light, the axe and the twisted vines—all conspiring to show not defeat, but a hidden triumph.
+
+Observe the faces: wrath and pity peer through the cell window; a dog barks, blind to the sacred drama; a man in red robes watches, perhaps Pilate himself, who thought he held power, yet stood before the true King. Here lies the paradox—the One who seems weakest is strongest, the mocked is the enthroned. As St. Paul writes, the foolishness of God is wiser than men, and the weakness of God stronger.
+
+This is no mere depiction of suffering, but a window into its strange redemption. Pain, as the Holy Father reminds us, is not the end but a path—clearing the way for grace, drawing us nearer to Him who wore the thorns. In Christ’s submission, we find sovereignty; in His wounds, our healing. The painting, like the Gospel, whispers that what the world calls defeat is, in truth, victory.
+
+### "Van Dyck's _The Crowning with Thorns_ (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph"
+
+\[!["Van Dyck's The Crowning with Thorns (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph"](June/jpgs/crowningthornsdyck17th.jpg)\](<https://upload.wikimedia.org/wikipedia/commons/7/79/Sir_Anthony_van_Dyck_and_Attributed_to_Lucas_Emil_Vorsterman%2C_Christ_Crowned_with_Thorns%2C_probably_1630%2C_NGA_30736.jpg> ""Van Dyck's _The Crowning with Thorns_ (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph"")
