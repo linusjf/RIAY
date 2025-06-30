@@ -68,9 +68,9 @@ def encode_image_to_base64(image_path):
     return base64.b64encode(image_to_bytes(image_path)).decode("utf-8")
 
 
-def generate_caption(image_path, artdescription):
-    """Generate caption for given image using OpenAI."""
-    print("🖼️ Generating caption...", file=sys.stderr)
+def generate_image_description(image_path, artdescription):
+    """Generate image description for given image using OpenAI's gpt-4o-mini."""
+    print("🖼️ Generating image description...", file=sys.stderr)
     base64_image = encode_image_to_base64(image_path)
     prompt = os.getenv("ART_METADATA_PROMPT", "Describe and interpret this image in detail.")
     response = client.responses.create(
@@ -86,11 +86,11 @@ def generate_caption(image_path, artdescription):
             ],
         }]
     )
-    caption = response.output_text
+    image_description = response.output_text
 
-    print(f"🔍 Caption: {caption}", file=sys.stderr)
+    print(f"🔍 Image Description: {image_description}", file=sys.stderr)
     print(f"🔍 Token usage: {response.usage}", file=sys.stderr)
-    return caption
+    return image_description
 
 
 
@@ -125,15 +125,18 @@ def main():
     print(f"📋 Metadata terms: {metadata_terms}", file=sys.stderr)
 
     try:
-        caption = generate_caption(args.image, metadata_text)
+        image_description = generate_image_description(args.image, metadata_text)
 
+        data = json.loads(image_description)
+        image_description_text = ", ".join(filter(None, [
+        data['title'], data['artist'], data['description'], data['year'], data['medium']]))
         print(
-            caption,
+            image_description_text,
             file=sys.stderr
         )
         # Get embeddings from DeepInfra
         vec1 = get_embedding(metadata_text)
-        vec2 = get_embedding(caption)
+        vec2 = get_embedding(image_description_text)
 
         # Compute cosine similarity
         similarity = cosine_similarity(vec1, vec2)
@@ -143,7 +146,6 @@ def main():
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
             file=sys.stderr
         )
-        data = json.loads(caption)
         data["cosine_score"] = round(similarity, 3)
         data["is_likely_match"] = True if is_likely_match else False
         result = json.dumps(data, indent=2)
