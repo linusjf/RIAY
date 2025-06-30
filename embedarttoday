@@ -112,7 +112,7 @@ function verify_image() {
     return 1
   fi
 
-  echo "🔍 Verifying image: $file"
+  err "🔍 Verifying image: $file"
   if result=$("${SCRIPT_DIR}/${verifier}" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" --year "${year:-}" --medium "${medium:-}"); then
     score="$(echo "$result" | jq -r '.cosine_score')"
     err "✅ Verification passed for: ${file} (score: ${score})"
@@ -219,8 +219,7 @@ function main() {
     if "${VERIFY_ART_IMAGES:-false}"; then
       if jsonresult="$(verify_image "${best_image}")"; then
         echo "${best_image} verified."
-        echo "$jsonresult"
-        caption="$(echo "$jsonresult" | jq '.caption')"
+        caption="$(echo "$jsonresult" | jq '.caption' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
       fi
     fi
 
