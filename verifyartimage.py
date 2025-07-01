@@ -144,7 +144,7 @@ def main():
 
         print("🧠 Checking for matching terms...", file=sys.stderr)
         match_terms = compute_match_terms(image_description_terms, metadata_terms)
-        is_likely_match = similarity > 0.7 and len(match_terms) > len(match_terms)/2
+        is_likely_match = similarity > 0.7 and len(match_terms) > (len(match_terms)//2)
         print(
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
             file=sys.stderr

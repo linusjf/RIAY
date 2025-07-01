@@ -35,7 +35,7 @@ def compute_match_terms(description_terms, metadata_terms):
     matched = []
     for term_a, term_b in zip(description_terms,metadata_terms):
         score = fuzz.partial_ratio(term_a.lower(), term_b.lower())
-        print(f"  🔎 Comparing '{term_b}' (score: {score})", file=sys.stderr)
+        print(f"  🔎 Comparing '{term_a}' to '{term_b}' (score: {score})", file=sys.stderr)
         if score > 70:
             matched.append(f"{term_a} , {term_b}")
     print(f"✅ Matched terms: {matched}", file=sys.stderr)
