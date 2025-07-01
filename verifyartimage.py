@@ -23,7 +23,7 @@ import numpy as np
 import requests
 from openai import OpenAI
 from PIL import Image
-from fuzzywuzzy import fuzz
+from simtools import compute_match_terms, get_embedding, cosine_similarity
 
 
 # Load environment variables from config.env
@@ -41,32 +41,6 @@ deepinfra_client = OpenAI(
     api_key=DEEPINFRA_API_KEY,
     base_url="https://api.deepinfra.com/v1/openai",
 )
-
-def compute_match_terms(description_terms, metadata_terms):
-    print("🧠 Checking for matching terms...", file=sys.stderr)
-    matched = []
-    for term_a, term_b in zip(description_terms,metadata_terms):
-        score = fuzz.partial_ratio(term_a.lower(), term_b.lower())
-        print(f"  🔎 Comparing '{term_b}' (score: {score})", file=sys.stderr)
-        if score > 70:
-            matched.append(f"{term_a} , {term_b}")
-    print(f"✅ Matched terms: {matched}", file=sys.stderr)
-    return matched
-
-def get_embedding(text):
-    """Get text embedding using deepinfra client."""
-    embeddings = deepinfra_client.embeddings.create(
-        model="thenlper/gte-large",
-        input=text,
-        encoding_format="float"
-    )
-    return np.array(embeddings.data[0].embedding)
-
-
-def cosine_similarity(vec1, vec2):
-    """Calculate cosine similarity between two vectors."""
-    return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
-
 
 def image_to_bytes(image_path):
     """Read image file as bytes."""
@@ -102,9 +76,6 @@ def generate_image_description(image_path):
     print(f"🔍 Image Description: {image_description}", file=sys.stderr)
     print(f"🔍 Token usage: {response.usage}", file=sys.stderr)
     return image_description
-
-
-
 
 def main():
     """Main function to verify image matches artwork metadata."""
