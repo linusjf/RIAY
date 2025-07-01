@@ -238,8 +238,8 @@ function main() {
     fi
 
     if "$generate_markdown"; then
-      # Get source URL from companion .url file
-      local url_file="${best_image%.*}.url"
+      # Get source URL from companion .url.txt file
+      local url_file="${best_image%.*}.url.txt"
       local source_url=""
       if [[ -f "$url_file" ]]; then
         source_url=$(cat "$url_file")

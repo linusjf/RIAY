@@ -173,7 +173,7 @@ def save_image(url, filename):
                         f.write(chunk)
 
                 # Save URL to companion file
-                url_filename = os.path.splitext(temp_filename)[0] + ".url"
+                url_filename = os.path.splitext(temp_filename)[0] + ".url.txt"
                 with open(url_filename, "w") as url_file:
                     url_file.write(url)
                 DOWNLOADED_URLS.append(url)
