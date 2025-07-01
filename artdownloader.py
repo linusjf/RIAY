@@ -252,7 +252,7 @@ def download_from_duckduckgo(query, filename_base):
             return False
         for image in results:
             url = image["image"]
-            if not any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES) and url.lower().endswith(('.jpg', '.jpeg')):
+            if not any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
                 filename = os.path.join(
                     SAVE_DIR,
                     f"{filename_base}_duckduckgo.jpg"
@@ -416,12 +416,11 @@ def download_from_wikimedia(query, filename_base):
             original = file_response.get("original")
             if original and "url" in original:
                 image_url = original.get("url")
-                if image_url.lower().endswith(('.jpg', '.jpeg')):
-                    filename = os.path.join(
+                filename = os.path.join(
                         SAVE_DIR,
                         f"{filename_base}_wikimedia.jpg"
-                    )
-                    if save_image(image_url, filename):
+                )
+                if save_image(image_url, filename):
                         return True
     except Exception as error:
         print(f"❌ Error: {error}")
@@ -458,7 +457,7 @@ def download_from_google(query, filename_base):
             url = image.get("original")
             if not url:
                 continue
-            if url.lower().endswith(('.jpg', '.jpeg')) and not any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
+            if not any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
                 filename = os.path.join(
                     SAVE_DIR,
                     f"{filename_base}_google.jpg"
