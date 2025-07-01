@@ -351,9 +351,9 @@ def download_image_from_wikipedia_article(query, detailed_query, filename_base):
     """
     print(f"\n🔍 Fetching all images from Wikipedia article: {query}")
     try:
-        # Step 1: Get the first page that fits the query
+        # Step 1: Get the first n pages that fits the query
         params = {
-            "limit": 10,
+            "limit": 5,
             "q": query
         }
         response = requests.get("https://api.wikimedia.org/core/v1/wikipedia/en/search/page", params=params)
