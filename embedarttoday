@@ -257,8 +257,8 @@ function main() {
 
       # Also copy URL file if it exists
       if [[ -n "$source_url" ]]; then
-        echo "$source_url" > "$target_dir/${filename}.url"
-        echo "📝 Saved source URL to: $target_dir/${filename}.url"
+        echo "$source_url" > "$target_dir/${filename}.url.txt"
+        echo "📝 Saved source URL to: $target_dir/${filename}.url.txt"
       fi
 
       # Generate and append markdown
