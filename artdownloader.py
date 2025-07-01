@@ -15,6 +15,7 @@ import re
 import argparse
 import subprocess
 from io import BytesIO
+import shutil
 
 import requests
 from dotenv import load_dotenv
@@ -136,8 +137,22 @@ def exponential_backoff_with_jitter(base=1.0, cap=60.0, attempt=1):
 def save_image(url, filename):
     """Save an image from URL to local file."""
     if url in DOWNLOADED_URLS:
-        print(f"⏩ Skipping already downloaded URL: {url} (saved as {DOWNLOADED_URLS[url]})")
-        return False
+        print(f"⏩ URL already downloaded: {url}")
+        existing_file = DOWNLOADED_URLS[url]
+        try:
+            # Copy the existing file to new filename
+            shutil.copy2(existing_file, filename)
+            # Copy the URL file as well
+            existing_url_file = os.path.splitext(existing_file)[0] + ".url.txt"
+            new_url_file = os.path.splitext(filename)[0] + ".url.txt"
+            if os.path.exists(existing_url_file):
+                shutil.copy2(existing_url_file, new_url_file)
+            print(f"✅ Copied existing file: {existing_file} -> {filename}")
+            DOWNLOADED_URLS[url] = filename
+            return True
+        except Exception as e:
+            print(f"❌ Error copying existing file: {e}")
+            return False
 
     try:
         session = create_session_with_retries()
