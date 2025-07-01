@@ -27,8 +27,8 @@ from urllib3.util.retry import Retry
 from serpapi import GoogleSearch
 from fuzzywuzzy import fuzz
 
-# Global list to track downloaded URLs
-DOWNLOADED_URLS = []
+# Global dictionary to track downloaded URLs and their saved filenames
+DOWNLOADED_URLS = {}
 
 def strip_span_tags_but_keep_contents(text):
     # Remove opening <span ...> tag
@@ -136,7 +136,7 @@ def exponential_backoff_with_jitter(base=1.0, cap=60.0, attempt=1):
 def save_image(url, filename):
     """Save an image from URL to local file."""
     if url in DOWNLOADED_URLS:
-        print(f"⏩ Skipping already downloaded URL: {url}")
+        print(f"⏩ Skipping already downloaded URL: {url} (saved as {DOWNLOADED_URLS[url]})")
         return False
 
     try:
@@ -176,13 +176,14 @@ def save_image(url, filename):
                 url_filename = os.path.splitext(temp_filename)[0] + ".url.txt"
                 with open(url_filename, "w") as url_file:
                     url_file.write(url)
-                DOWNLOADED_URLS.append(url)
+                DOWNLOADED_URLS[url] = temp_filename
 
                 # Convert to JPEG if not already
                 if ext.lower() not in ('.jpg', '.jpeg'):
                     jpeg_path = convert_to_jpeg(temp_filename)
                     if jpeg_path:
                         print(f"✅ Saved: {jpeg_path} (source URL saved to {url_filename})")
+                        DOWNLOADED_URLS[url] = jpeg_path
                         return True
                     else:
                         print(f"⚠️ Saved original format: {temp_filename}")
@@ -487,7 +488,7 @@ def download_all(query, filename_base=None, title=None, artist=None, year=None, 
 
     # Wikimedia-specific query (only title and artist)
     wikimedia_query = query
-    if artist:
+    if artist and artist not in query:
         wikimedia_query += f" by {artist}"
     if title and title not in query:
         wikimedia_query += f" {title}"
@@ -526,6 +527,8 @@ def main():
     query = args.query if args.query else ""
     if args.title and args.title not in query:
         query = f"{query} {args.title}".strip()
+    if args.artist and args.artist not in query:
+        query = f"{query} {args.artist}".strip()
 
     success = download_all(
         query=query,
