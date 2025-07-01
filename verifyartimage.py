@@ -115,9 +115,9 @@ def main():
     metadata_text = ", ".join(filter(None, [
         args.title, args.artist, args.subject, args.year, args.medium
     ]))
-    metadata_terms = list(filter(None, [
-        args.title, args.artist, args.year, args.medium, args.subject
-    ]))
+    metadata_terms = [
+        args.title, args.artist
+    ]
     print(f"📋 Metadata text: {metadata_text}", file=sys.stderr)
     print(f"📋 Metadata terms: {metadata_terms}", file=sys.stderr)
 
@@ -131,8 +131,10 @@ def main():
             sys.exit(1)
 
         data = json.loads(image_description)
-        image_description_terms = [data['title'], data['artist'], data['year'], data['medium'], data['description']]
-        image_description_text = ", ".join(filter(None, image_description_terms))
+        image_description_terms = [data['title'], data['artist']]
+        image_description_text = ", ".join(filter(None, [
+        data['title'], data['artist'], data['year'], data['medium'], data['description']
+    ]))
         print(
             f"Image description : {image_description_text}",
             file=sys.stderr
@@ -157,7 +159,7 @@ def main():
 
         print("🧠 Checking for matching terms...", file=sys.stderr)
         match_terms = compute_match_terms(image_description_terms, metadata_terms)
-        is_likely_match = similarity > 0.7 and len(match_terms) > (len(metadata_terms)//2)
+        is_likely_match = similarity > 0.7 and len(match_terms) == (len(metadata_terms))
         print(
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
             file=sys.stderr
