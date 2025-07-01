@@ -284,7 +284,7 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
         "list": "search",
         "srsearch": query,
         "srnamespace": 6,  # File namespace only
-        "srlimit": 10
+        "srlimit": 5
     }
 
     try:
