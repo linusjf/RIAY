@@ -701,4 +701,4 @@ This is no mere depiction of suffering, but a window into its strange redemption
 
 ### Van Dyck's The Crowning with Thorns (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph
 
-[!["Van Dyck's The Crowning with Thorns (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph"](June/jpgs/crowningthornsdyck17th.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Anthonis_van_Dyck_004.jpg/960px-Anthonis_van_Dyck_004.jpg "Van Dyck's _The Crowning with Thorns_ (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph")
+[![Van Dyck's The Crowning with Thorns (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph](June/jpgs/crowningthornsvandyck17th.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Anthonis_van_Dyck_004.jpg/960px-Anthonis_van_Dyck_004.jpg "Van Dyck's _The Crowning with Thorns_ (early 17th century), a Baroque depiction of Christ's suffering and paradoxical triumph")
