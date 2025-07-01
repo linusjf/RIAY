@@ -111,6 +111,7 @@ function verify_image() {
     err "⚠️ No image files found to verify"
     return 1
   fi
+  local score=0
 
   err "🔍 Verifying image: $file"
   if result=$("${SCRIPT_DIR}/${verifier}" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" --year "${year:-}" --medium "${medium:-}"); then
@@ -128,7 +129,7 @@ function select_best_unverified_image() {
   local files=("$@")
   local best_image=""
 
-  for source in wikipedia.jpg wikimedia_search.jpg wikimedia.jpg google.jpg duckduckgo.jpg; do
+  for source in wikimedia.jpg wikimedia_search.jpg google.jpg duckduckgo.jpg wikipedia.jpg; do
     for file in "${files[@]}"; do
       if [[ "${file}" == *"${source}" ]]; then
         best_image="$file"

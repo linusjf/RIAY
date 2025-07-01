@@ -11,6 +11,8 @@ Contains functions for text matching and semantic similarity.
 # -*- coding: utf-8 -*-'
 ######################################################################
 """
+import sys
+import os
 import numpy as np
 from fuzzywuzzy import fuzz
 from openai import OpenAI

@@ -16,6 +16,7 @@ import base64
 import json
 import os
 import sys
+import re
 from io import BytesIO
 from dotenv import load_dotenv
 
@@ -51,6 +52,13 @@ def image_to_bytes(image_path):
 def encode_image_to_base64(image_path):
     """Encode image to base64 string."""
     return base64.b64encode(image_to_bytes(image_path)).decode("utf-8")
+
+def strip_code_guards(text):
+    # Remove code block guards like ```json ... ```
+    text = re.sub(r'```(?:\w+\n)?(.*?)```', r'\1', text, flags=re.DOTALL)
+    # Remove inline backticks
+    text = re.sub(r'`([^`]*)`', r'\1', text)
+    return text.strip()
 
 
 def generate_image_description(image_path):
@@ -107,7 +115,7 @@ def main():
     print(f"📋 Metadata terms: {metadata_terms}", file=sys.stderr)
 
     try:
-        image_description = generate_image_description(args.image)
+        image_description = strip_code_guards(generate_image_description(args.image))
 
         data = json.loads(image_description)
         image_description_terms = [data['title'], data['artist'], data['year'], data['medium'], data['description']]
@@ -136,7 +144,7 @@ def main():
 
         print("🧠 Checking for matching terms...", file=sys.stderr)
         match_terms = compute_match_terms(image_description_terms, metadata_terms)
-        is_likely_match = similarity > 0.7 and len(match_terms) > 2
+        is_likely_match = similarity > 0.7 and len(match_terms) > len(match_terms)/2
         print(
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
             file=sys.stderr
