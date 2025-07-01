@@ -128,7 +128,7 @@ function select_best_unverified_image() {
   local files=("$@")
   local best_image=""
 
-  for source in wikimedia.jpg wikimedia_search.jpg google.jpg duckduckgo.jpg; do
+  for source in wikipedia.jpg wikimedia_search.jpg wikimedia.jpg google.jpg duckduckgo.jpg; do
     for file in "${files[@]}"; do
       if [[ "${file}" == *"${source}" ]]; then
         best_image="$file"

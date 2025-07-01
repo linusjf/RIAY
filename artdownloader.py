@@ -247,13 +247,15 @@ def download_from_duckduckgo(query, filename_base):
         print(f"❌ Error: {error}")
     return False
 
-def download_from_wikimedia_search(query, filename_base):
+def download_from_wikimedia_search(query,detailed_query, filename_base, source="wikimedia_search"):
     """
     Search Wikimedia Commons for an image by query and download the top result.
 
     Args:
         query (str): Search term (e.g., 'Mona Lisa')
+        detailed_query (str): Detailed search terms
         filename_base (str): Base name for saving the file
+        source (str): search source
 
     Returns:
         bool: True if download succeeded, False otherwise
@@ -280,41 +282,53 @@ def download_from_wikimedia_search(query, filename_base):
             print("❌ No matching images found.")
             return False
 
+        selected_result = {}
+        best_score = 0
+
         for result in search_results:
             title = result["title"]
-            if title.lower().endswith(('.jpg', '.jpeg')):
-                # Step 2: Get image info
-                info_params = {
-                    "action": "query",
-                    "titles": title,
-                    "prop": "imageinfo",
-                    "iiprop": "url",
-                    "format": "json"
-                }
+            snippet = strip_span_tags_but_keep_contents(result["snippet"])
+            result_meta_data = " ".join([title, snippet])
+            score = fuzz.partial_ratio(detailed_query.lower(), result_meta_data.lower())
+            if score > best_score:
+                best_score = score
+                selected_result = result
 
-                info_resp = requests.get(search_endpoint, params=info_params, timeout=10)
-                info_resp.raise_for_status()
-                info_data = info_resp.json()
-                pages = info_data.get("query", {}).get("pages", {})
+        selected_title = selected_result["title"]
+        print(f"Selected title {selected_title} with score: {best_score}")
+        # Step 2: Get image info
+        info_params = {
+            "action": "query",
+            "titles": selected_title,
+            "prop": "imageinfo",
+            "iiprop": "url",
+            "format": "json"
+        }
 
-                for page in pages.values():
-                    imageinfo = page.get("imageinfo")
-                    if imageinfo:
-                        image_url = imageinfo[0].get("url")
-                        if image_url:
-                            filename = os.path.join(SAVE_DIR, f"{filename_base}_wikimedia_search.jpg")
-                            return save_image(image_url, filename)
+        info_resp = requests.get(search_endpoint, params=info_params, timeout=10)
+        info_resp.raise_for_status()
+        info_data = info_resp.json()
+        pages = info_data.get("query", {}).get("pages", {})
+
+        for page in pages.values():
+            imageinfo = page.get("imageinfo")
+            if imageinfo:
+                image_url = imageinfo[0].get("url")
+                if image_url:
+                    filename = os.path.join(SAVE_DIR, f"{filename_base}_{source}.jpg")
+                    return save_image(image_url, filename)
 
     except Exception as e:
         print(f"❌ Error: {e}")
 
     return False
 
-def download_image_from_wikipedia_article(query, filename_base):
+def download_image_from_wikipedia_article(query, detailed_query, filename_base):
     """Download the first usable image from a Wikipedia article (full API pipeline).
 
     Args:
         query: Search query string (Wikipedia article title)
+        detailed_query: longer detailed query
         filename_base: Base filename to use for saving
 
     Returns:
@@ -329,24 +343,24 @@ def download_image_from_wikipedia_article(query, filename_base):
         }
         response = requests.get("https://api.wikimedia.org/core/v1/wikipedia/en/search/page", params=params)
         image_data = response.json()
-        print(response.json())
 
-        pages = image_data.get("query", {}).get("pages", {})
+        pages = image_data.get("pages", {})
         selected_title = ""
         best_score = 0
-        for page in pages.values():
+        for page in pages:
             key = page.get("key", "")
             title = page.get("title", "")
             excerpt = strip_span_tags_but_keep_contents(page.get("excerpt", ""))
             description = page.get("description", "")
             page_meta_data = " ".join([key, title, excerpt, description])
-            score = fuzz.partial_ratio(query.lower(), page_meta_data.lower())
+            score = fuzz.partial_ratio(detailed_query.lower(), page_meta_data.lower())
             if score > best_score:
                 best_score = score
                 selected_title = title
 
         print(f"Selected title {selected_title} with score: {best_score}")
 
+        return download_from_wikimedia_search(selected_title,detailed_query, filename_base, "wikipedia" )
 
     except Exception as error:
         print(f"❌ Error: {error}")
@@ -480,14 +494,15 @@ def download_all(query, filename_base=None, title=None, artist=None, year=None, 
 
     print(f"\n🔍 Searching with simple query: {wikimedia_query}")
 
-    downloaded_wikimedia_search = download_from_wikimedia_search(wikimedia_query, filename_base)
+    downloaded_wikipedia_search = download_image_from_wikipedia_article(wikimedia_query, enhanced_query, filename_base)
+    downloaded_wikimedia_search = download_from_wikimedia_search(wikimedia_query, enhanced_query, filename_base)
     downloaded_wikimedia = download_from_wikimedia(wikimedia_query, filename_base)
 
     print(f"\n🔍 Searching with enhanced query: {enhanced_query}")
 
     downloaded_duckduckgo = download_from_duckduckgo(enhanced_query, filename_base)
     downloaded_google = download_from_google(enhanced_query, filename_base)
-    return (downloaded_duckduckgo or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
+    return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
 
 def main():
     """Main entry point for the script."""
