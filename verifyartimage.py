@@ -85,6 +85,13 @@ def generate_image_description(image_path):
     print(f"🔍 Token usage: {response.usage}", file=sys.stderr)
     return image_description
 
+def is_json_string(s):
+    try:
+        json.loads(s)
+        return True
+    except (ValueError, TypeError):
+        return False
+
 def main():
     """Main function to verify image matches artwork metadata."""
     parser = argparse.ArgumentParser(
@@ -116,6 +123,12 @@ def main():
 
     try:
         image_description = strip_code_guards(generate_image_description(args.image))
+        if not is_json_string(image_description):
+            print(
+            f"Error in generating image description from image : {image_description}",
+            file=sys.stderr
+            )
+            sys.exit(1)
 
         data = json.loads(image_description)
         image_description_terms = [data['title'], data['artist'], data['year'], data['medium'], data['description']]
