@@ -27,3 +27,4 @@ testsummary.txt
 *downloads/**
 !**/Day*Summary.txt
 *.url
+*.url.txt
