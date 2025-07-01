@@ -1,4 +1,4 @@
 # commands
-addvideo "KxjaIDrqcQg" "Grace Amid Thorns"
+addvideo "vX-xc_BEaFc" "Shared Sacrifice"
 stitch
 lintall
