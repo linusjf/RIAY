@@ -288,7 +288,6 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
     }
 
     try:
-        # Step 1: Search
         resp = requests.get(search_endpoint, params=search_params, timeout=30)
         resp.raise_for_status()
         search_data = resp.json()
@@ -489,7 +488,7 @@ def download_all(query, filename_base=None, title=None, artist=None, year=None, 
 
     # Build enhanced query with additional metadata
     enhanced_query = query
-    if artist:
+    if artist and artist not in query:
         enhanced_query += f" by {artist}"
     if title and title not in query:
         enhanced_query += f" {title}"
@@ -507,13 +506,13 @@ def download_all(query, filename_base=None, title=None, artist=None, year=None, 
     if title and title not in query:
         wikimedia_query += f" {title}"
 
-    print(f"\n🔍 Searching with simple query: {wikimedia_query}")
+    print(f"\n🔍 Searching wikis with simple query: {wikimedia_query}")
 
     downloaded_wikipedia_search = download_image_from_wikipedia_article(wikimedia_query, enhanced_query, filename_base)
     downloaded_wikimedia_search = download_from_wikimedia_search(wikimedia_query, enhanced_query, filename_base)
     downloaded_wikimedia = download_from_wikimedia(wikimedia_query, filename_base)
 
-    print(f"\n🔍 Searching with enhanced query: {enhanced_query}")
+    print(f"\n🔍 Searching google and duckduckgo with enhanced query: {enhanced_query}")
 
     downloaded_duckduckgo = download_from_duckduckgo(enhanced_query, filename_base)
     downloaded_google = download_from_google(enhanced_query, filename_base)
