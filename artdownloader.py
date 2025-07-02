@@ -29,6 +29,7 @@ from serpapi import GoogleSearch
 from fuzzywuzzy import fuzz
 from bashhelper import parse_bash_array
 from htmlhelper import strip_span_tags_but_keep_contents
+from converterhelper import convert_to_jpeg
 
 # Global dictionary to track downloaded URLs and their saved filenames
 DOWNLOADED_URLS = {}
@@ -47,41 +48,6 @@ WIKIMEDIA_SEARCH_API_URL = (
 WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
 
 SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
-
-def convert_to_jpeg(input_path):
-    """Convert image to JPEG using GraphicsMagick.
-
-    Args:
-        input_path: Path to input image file
-
-    Returns:
-        str: Path to converted JPEG file or None if conversion failed
-    """
-    try:
-        base_name = os.path.splitext(input_path)[0]
-        output_path = f"{base_name}.jpg"
-
-        # Check if GraphicsMagick is available
-        if subprocess.run(["gm", "version"], capture_output=True).returncode != 0:
-            print("⚠️ GraphicsMagick (gm) not found, skipping conversion")
-            return None
-
-        result = subprocess.run(
-            ["gm", "convert", input_path, output_path],
-            capture_output=True
-        )
-
-        if result.returncode == 0:
-            print(f"✅ Converted to JPEG: {output_path}")
-            # Remove original file if conversion succeeded
-            os.remove(input_path)
-            return output_path
-        else:
-            print(f"❌ Conversion failed: {result.stderr.decode().strip()}")
-            return None
-    except Exception as e:
-        print(f"❌ Conversion error: {e}")
-        return None
 
 def create_session_with_retries(
     retries=5,
