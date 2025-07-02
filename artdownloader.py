@@ -38,23 +38,6 @@ def strip_span_tags_but_keep_contents(text):
     text = re.sub(r'</span>', '', text)
     return text
 
-
-def parse_bash_array(file_path, var_name):
-    with open(file_path, 'r') as f:
-        content = f.read()
-
-    # Match array definition like: VAR=( "a" "b" "c" )
-    pattern = re.compile(rf'{var_name}\s*=\s*\((.*?)\)', re.DOTALL)
-    match = pattern.search(content)
-    if not match:
-        return []
-
-    array_body = match.group(1)
-    # Extract all quoted strings
-    values = re.findall(r'"(.*?)"', array_body)
-    return values
-
-STOCK_PHOTO_SITES = parse_bash_array('config.env', 'STOCK_PHOTO_SITES')
 # Load environment variables from config.env
 load_dotenv('config.env')
 
