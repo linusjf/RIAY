@@ -425,9 +425,9 @@ def download_all(query, filename_base=None, title=None, artist=None, location=No
         wikimedia_query += f" by {artist}"
     if title and title not in query:
         wikimedia_query += f" {title}"
-    if date and date not in query and not date == 'Not specified':
+    if date and date not in query:
         wikimedia_query += f" {date}"
-    if location and location not in query and not location == 'Not specified':
+    if location and location not in query:
         wikimedia_query += f" {location}"
 
     print(f"\n🔍 Searching wikis with simple query: {wikimedia_query}")
