@@ -4,6 +4,10 @@
   - [Shared Sacrifice](#shared-sacrifice)
   - [AI-Generated Summary: The Weight of the Cross and the Willing Heart](#ai-generated-summary-the-weight-of-the-cross-and-the-willing-heart)
   - [Raphael's Christ Falls on the Way to Calvary, a painting depicting Christ stumbling under the cross with Mary and a crowd witnessing](#raphaels-christ-falls-on-the-way-to-calvary-a-painting-depicting-christ-stumbling-under-the-cross-with-mary-and-a-crowd-witnessing)
+- [July 02, 2025](#july-02-2025)
+  - [Love Poured Out](#love-poured-out)
+  - [AI-Generated Summary: The Sorrow and the Glory in Rubens' Descent](#ai-generated-summary-the-sorrow-and-the-glory-in-rubens-descent)
+  - [The Descent from the Cross by Rubens, 1612-1614, oil on wood: A dynamic, dramatic depiction of Christ's descent](#the-descent-from-the-cross-by-rubens-1612-1614-oil-on-wood-a-dynamic-dramatic-depiction-of-christs-descent)
 
 <!-- tocstop -->
 
@@ -28,3 +32,23 @@ Pope John Paul II once spoke of Mary’s _fiat_ at the cross, her active partici
 ### Raphael's Christ Falls on the Way to Calvary, a painting depicting Christ stumbling under the cross with Mary and a crowd witnessing
 
 [![Raphael's Christ Falls on the Way to Calvary, a painting depicting Christ stumbling under the cross with Mary and a crowd witnessing](July/jpgs/christfallswaycalvaryraphael.jpg)](https://upload.wikimedia.org/wikipedia/commons/4/44/Raffaello_Sanzio_-_Christ_Falls_on_the_Way_to_Calvary_-_WGA18828.jpg "Raphael's Christ Falls on the Way to Calvary, a painting depicting Christ stumbling under the cross with Mary and a crowd witnessing")
+
+## July 02, 2025
+
+### Love Poured Out
+
+[![Love Poured Out](/July/jpgs/Day183.jpg)](https://youtu.be/M6NMqwXEO7s "Love Poured Out")
+
+### AI-Generated Summary: The Sorrow and the Glory in Rubens' Descent
+
+Consider, dear reader, _The Descent from the Cross_ by Peter Paul Rubens—a masterwork where agony and reverence meet. Painted in 1617, it is Baroque in spirit: a tempest of emotion, yet ordered by a classical restraint. The sky broods navy; the cross looms heavy; and there, pale as moonlight, lies the body of Christ, lowered with trembling care by those who loved Him. His wounds weep; His flesh is drained of life. The Virgin, robed in sorrow’s blue, stretches trembling hands toward her Son—her grief quiet, yet deeper than the sea.
+
+Rubens, that Flemish giant, knew well how light and shadow might preach. Here, chiaroscuro carves the scene with divine drama, each fold of cloth, each anguished face, a testament to the weight of love’s sacrifice. Yet observe: though the painting spares us not the horror of the Cross, it does not wallow. Even in death, there is dignity; in Mary’s gaze, a hope that pierces the dark.
+
+And what of the saints’ whispers woven through these reflections? Bernard speaks of Christ the Bridegroom, His blood our dowry; Bonaventure, of the heart pierced wide for the soul’s rest. This is the paradox: that suffering so brutal should birth mercy so boundless. The artist shows us the wound, yes, but also the love that bled from it—a love no grave could hold.
+
+So let the painting speak: in every shadow, a promise; in every tear, a dawn unseen. For if Mary, with her Son cold in her arms, could yet trust, then surely we, in lesser griefs, may take heart. The Cross is not the end—only the harrowing path by which Love climbs back to reclaim us.
+
+### The Descent from the Cross by Rubens, 1612-1614, oil on wood: A dynamic, dramatic depiction of Christ's descent
+
+[![The Descent from the Cross by Rubens, 1612-1614, oil on wood: A dynamic, dramatic depiction of Christ's descent](July/jpgs/descentrubens1617.jpg)](https://upload.wikimedia.org/wikipedia/commons/8/8e/The_Descent_from_the_Cross_by_Peter_Paul_Rubens_inside_the_Cathedral_of_Our_Lady_in_Antwerp.jpg "The Descent from the Cross by Rubens, 1612-1614, oil on wood: A dynamic, dramatic depiction of Christ's descent")
