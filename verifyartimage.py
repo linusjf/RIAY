@@ -107,13 +107,14 @@ def main():
         "--artist", required=True, help="Artist of the artwork"
     )
     parser.add_argument("--subject", help="Subject of the artwork")
-    parser.add_argument("--year", help="Year of the artwork")
+    parser.add_argument("--period", help="Period of the artwork")
+    parser.add_argument("--style", help="Style of the artwork")
     parser.add_argument("--medium", help="Medium of the artwork")
 
     args = parser.parse_args()
 
     metadata_text = ", ".join(filter(None, [
-        args.title, args.artist, args.subject, args.year, args.medium
+        args.title, args.artist, args.subject, args.period, args.style, args.medium
     ]))
     metadata_terms = [
         args.title, args.artist
@@ -133,7 +134,7 @@ def main():
         data = json.loads(image_description)
         image_description_terms = [data['title'], data['artist']]
         image_description_text = ", ".join(filter(None, [
-        data['title'], data['artist'], data['year'], data['medium'], data['description']
+        data['title'], data['artist'], data['period'], data['style'], data['medium'], data['description']
     ]))
         print(
             f"Image description : {image_description_text}",

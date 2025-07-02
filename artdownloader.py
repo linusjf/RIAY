@@ -468,7 +468,7 @@ def download_from_google(query, filename_base):
         print(f"❌ Error: {error}")
     return False
 
-def download_all(query, filename_base=None, title=None, artist=None, year=None, medium=None, subject=None):
+def download_all(query, filename_base=None, title=None, artist=None, period=None, style=None, medium=None, subject=None):
     """Download images from all available sources.
 
     Args:
@@ -476,7 +476,8 @@ def download_all(query, filename_base=None, title=None, artist=None, year=None, 
         filename_base: Optional base filename to use for saving
         title: Artwork title
         artist: Artist name
-        year: Creation year
+        period: Creation period
+        style: Artistic style
         medium: Art medium
         subject: Art subject
 
@@ -492,8 +493,10 @@ def download_all(query, filename_base=None, title=None, artist=None, year=None, 
         enhanced_query += f" by {artist}"
     if title and title not in query:
         enhanced_query += f" {title}"
-    if year:
-        enhanced_query += f" {year}"
+    if period:
+        enhanced_query += f" {period}"
+    if style:
+        enhanced_query += f" {style}"
     if medium:
         enhanced_query += f" {medium}"
     if subject:
@@ -524,7 +527,8 @@ def main():
     parser.add_argument('query', nargs='?', help='Name of artwork to search for')
     parser.add_argument('--title', help='Title of the artwork')
     parser.add_argument('--artist', help='Artist name')
-    parser.add_argument('--year', help='Year of creation')
+    parser.add_argument('--period', help='the time period including year')
+    parser.add_argument('--style', help='the artistic style')
     parser.add_argument('--medium', help='Art medium (e.g., oil painting, sculpture)')
     parser.add_argument('--subject', help='Art subject matter')
     parser.add_argument('--filename', help='Base filename for saved images (without extension)')
@@ -548,7 +552,8 @@ def main():
         filename_base=args.filename,
         title=args.title,
         artist=args.artist,
-        year=args.year,
+        period=args.period,
+        style=args.style,
         medium=args.medium,
         subject=args.subject
     )
