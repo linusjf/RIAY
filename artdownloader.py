@@ -27,6 +27,7 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from serpapi import GoogleSearch
 from fuzzywuzzy import fuzz
+from bashhelper import parse_bash_array
 
 # Global dictionary to track downloaded URLs and their saved filenames
 DOWNLOADED_URLS = {}
@@ -38,6 +39,7 @@ def strip_span_tags_but_keep_contents(text):
     text = re.sub(r'</span>', '', text)
     return text
 
+STOCK_PHOTO_SITES = parse_bash_array('config.env', 'STOCK_PHOTO_SITES')
 # Load environment variables from config.env
 load_dotenv('config.env')
 
