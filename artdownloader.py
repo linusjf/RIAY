@@ -468,7 +468,7 @@ def download_from_google(query, filename_base):
         print(f"❌ Error: {error}")
     return False
 
-def download_all(query, filename_base=None, title=None, artist=None, period=None, style=None, medium=None, subject=None):
+def download_all(query, filename_base=None, title=None, artist=None, location=None, date=None, style=None, medium=None, subject=None):
     """Download images from all available sources.
 
     Args:
@@ -476,7 +476,8 @@ def download_all(query, filename_base=None, title=None, artist=None, period=None
         filename_base: Optional base filename to use for saving
         title: Artwork title
         artist: Artist name
-        period: Creation period
+        location: current location of artwork
+        date: Year , decade or century of creation
         style: Artistic style
         medium: Art medium
         subject: Art subject
@@ -493,8 +494,10 @@ def download_all(query, filename_base=None, title=None, artist=None, period=None
         enhanced_query += f" by {artist}"
     if title and title not in query:
         enhanced_query += f" {title}"
-    if period:
-        enhanced_query += f" {period}"
+    if location:
+        enhanced_query += f" {location}"
+    if date:
+        enhanced_query += f" {date}"
     if style:
         enhanced_query += f" {style}"
     if medium:
@@ -502,12 +505,16 @@ def download_all(query, filename_base=None, title=None, artist=None, period=None
     if subject:
         enhanced_query += f" {subject}"
 
-    # Wikimedia-specific query (only title and artist)
+    # Wikimedia-specific query (only title, artist, date and location)
     wikimedia_query = query
     if artist and artist not in query:
         wikimedia_query += f" by {artist}"
     if title and title not in query:
         wikimedia_query += f" {title}"
+    if date and date not in query and not date == 'Not specified':
+        wikimedia_query += f" {date}"
+    if location and location not in query and not location == 'Not specified':
+        wikimedia_query += f" {location}"
 
     print(f"\n🔍 Searching wikis with simple query: {wikimedia_query}")
 
@@ -527,7 +534,8 @@ def main():
     parser.add_argument('query', nargs='?', help='Name of artwork to search for')
     parser.add_argument('--title', help='Title of the artwork')
     parser.add_argument('--artist', help='Artist name')
-    parser.add_argument('--period', help='the time period including year')
+    parser.add_argument('--location', help='current location of artwork')
+    parser.add_argument('--date', help='the year and/or century of creation')
     parser.add_argument('--style', help='the artistic style')
     parser.add_argument('--medium', help='Art medium (e.g., oil painting, sculpture)')
     parser.add_argument('--subject', help='Art subject matter')
@@ -535,7 +543,7 @@ def main():
 
     args = parser.parse_args()
 
-    if not args.query and not any([args.title, args.artist, args.year, args.medium, args.subject]):
+    if not args.query and not any([args.title, args.artist, args.location, args.style, args.medium, args.subject]):
         parser.print_help()
         sys.exit(1)
 
@@ -552,7 +560,8 @@ def main():
         filename_base=args.filename,
         title=args.title,
         artist=args.artist,
-        period=args.period,
+        location=args.location,
+        date=args.date,
         style=args.style,
         medium=args.medium,
         subject=args.subject

@@ -115,7 +115,7 @@ function verify_image() {
 
   err "🔍 Verifying image: $file"
   if result=$("${SCRIPT_DIR}/${verifier}" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" \
-    --period "${period:-}" --style "${style:-}" --medium "${medium:-}"); then
+    --location "${location:-}" --style "${style:-}" --medium "${medium:-}" --date "${date:-}"); then
     score="$(echo "$result" | jq -r '.cosine_score')"
     err "✅ Verification passed for: ${file} (score: ${score})"
   else
@@ -197,14 +197,15 @@ function main() {
   art_details="$("${SCRIPT_DIR}/extractartdetails" "$summary_file")"
   title="$(echo "$art_details" | jq '.details.title' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
   artist="$(echo "$art_details" | jq '.details.artist' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
-  period="$(echo "$art_details" | jq '.details.period' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  location="$(echo "$art_details" | jq '.details.location' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  date="$(echo "$art_details" | jq '.details.date' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   style="$(echo "$art_details" | jq '.details.style' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   medium="$(echo "$art_details" | jq '.details.medium' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   subject="$(echo "$art_details" | jq '.details.subject' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   filename="$(echo "$art_details" | jq '.filename' | sed 's/"//g')"
   caption="$(echo "$art_details" | jq '.caption' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
-  "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --period "${period:-}" \
-    --medium "${medium:-}" --subject "${subject:-}" --style "${style:-}"
+  "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --location "${location:-}" \
+    --medium "${medium:-}" --subject "${subject:-}" --style "${style:-}" --date "${date:-}"
 
   # Filter for color images first
   # shellcheck disable=SC2086
