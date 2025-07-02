@@ -114,7 +114,8 @@ function verify_image() {
   local score=0
 
   err "🔍 Verifying image: $file"
-  if result=$("${SCRIPT_DIR}/${verifier}" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" --year "${year:-}" --medium "${medium:-}"); then
+  if result=$("${SCRIPT_DIR}/${verifier}" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" \
+    --period "${period:-}" --style "${style:-}" --medium "${medium:-}"); then
     score="$(echo "$result" | jq -r '.cosine_score')"
     err "✅ Verification passed for: ${file} (score: ${score})"
   else
@@ -129,7 +130,7 @@ function select_best_unverified_image() {
   local files=("$@")
   local best_image=""
 
-  for source in wikimedia.jpg wikimedia_search.jpg google.jpg duckduckgo.jpg wikipedia.jpg; do
+  for source in wikimedia_search.jpg wikimedia.jpg google.jpg duckduckgo.jpg wikipedia.jpg; do
     for file in "${files[@]}"; do
       if [[ "${file}" == *"${source}" ]]; then
         best_image="$file"
@@ -196,13 +197,14 @@ function main() {
   art_details="$("${SCRIPT_DIR}/extractartdetails" "$summary_file")"
   title="$(echo "$art_details" | jq '.details.title' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
   artist="$(echo "$art_details" | jq '.details.artist' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
-  year="$(echo "$art_details" | jq '.details.year' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  period="$(echo "$art_details" | jq '.details.period' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  style="$(echo "$art_details" | jq '.details.style' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   medium="$(echo "$art_details" | jq '.details.medium' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   subject="$(echo "$art_details" | jq '.details.subject' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   filename="$(echo "$art_details" | jq '.filename' | sed 's/"//g')"
   caption="$(echo "$art_details" | jq '.caption' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
-  "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --year "${year:-}" \
-    --medium "${medium:-}" --subject "${subject:-}"
+  "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --period "${period:-}" \
+    --medium "${medium:-}" --subject "${subject:-}" --style "${style:-}"
 
   # Filter for color images first
   # shellcheck disable=SC2086
