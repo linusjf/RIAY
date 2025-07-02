@@ -85,7 +85,7 @@ function filter_color_images() {
 
   for file in "${files[@]}"; do
     err "🎨 Checking color profile: $file"
-    classification=$("${SCRIPT_DIR}/classifyimage" "$file")
+    classification=$("${SCRIPT_DIR}/classifyimage.py" "$file")
     if [[ "$classification" == *"Full color"* ]] || [[ "$classification" == *"Sepia"* ]]; then
       err "✅ Accepted: $file ($classification)"
       echo "$file"
