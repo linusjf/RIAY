@@ -7,7 +7,7 @@
 - [July 02, 2025](#july-02-2025)
   - [Love Poured Out](#love-poured-out)
   - [AI-Generated Summary: The Sorrow and the Glory in Rubens' Descent](#ai-generated-summary-the-sorrow-and-the-glory-in-rubens-descent)
-  - [The Descent from the Cross by Rubens, 1612-1614, oil on wood: A dynamic, dramatic depiction of Christ's descent](#the-descent-from-the-cross-by-rubens-1612-1614-oil-on-wood-a-dynamic-dramatic-depiction-of-christs-descent)
+  - [The Descent from the Cross (1616-1617) by Rubens: A dynamic, dramatic depiction of Christ's descent](#the-descent-from-the-cross-1616-1617-by-rubens-a-dynamic-dramatic-depiction-of-christs-descent)
 
 <!-- tocstop -->
 
@@ -49,6 +49,6 @@ And what of the saints’ whispers woven through these reflections? Bernard spea
 
 So let the painting speak: in every shadow, a promise; in every tear, a dawn unseen. For if Mary, with her Son cold in her arms, could yet trust, then surely we, in lesser griefs, may take heart. The Cross is not the end—only the harrowing path by which Love climbs back to reclaim us.
 
-### The Descent from the Cross by Rubens, 1612-1614, oil on wood: A dynamic, dramatic depiction of Christ's descent
+### The Descent from the Cross (1616-1617) by Rubens: A dynamic, dramatic depiction of Christ's descent
 
-[![The Descent from the Cross by Rubens, 1612-1614, oil on wood: A dynamic, dramatic depiction of Christ's descent](July/jpgs/descentrubens1617.jpg)](https://upload.wikimedia.org/wikipedia/commons/8/8e/The_Descent_from_the_Cross_by_Peter_Paul_Rubens_inside_the_Cathedral_of_Our_Lady_in_Antwerp.jpg "The Descent from the Cross by Rubens, 1612-1614, oil on wood: A dynamic, dramatic depiction of Christ's descent")
+[![The Descent from the Cross (1616-1617) by Rubens: A dynamic, dramatic depiction of Christ's descent](July/jpgs/descentrubens1617.jpg)](https://upload.wikimedia.org/wikipedia/commons/0/0f/Peter_Paul_Rubens_-_Descent_from_the_cross_%281617%29.jpg "The Descent from the Cross (1616-1617) by Rubens: A dynamic, dramatic depiction of Christ's descent")
