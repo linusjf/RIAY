@@ -118,7 +118,7 @@ def main():
         args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium
     ]))
     metadata_terms = [
-        args.title, args.artist
+        args.title, args.artist, args.date
     ]
     print(f"📋 Metadata text: {metadata_text}", file=sys.stderr)
     print(f"📋 Metadata terms: {metadata_terms}", file=sys.stderr)
@@ -133,7 +133,7 @@ def main():
             sys.exit(1)
 
         data = json.loads(image_description)
-        image_description_terms = [data['title'], data['artist']]
+        image_description_terms = [data['title'], data['artist'], data['date']]
         image_description_text = ", ".join(filter(None, [
         data['title'], data['artist'], data['location'], data['date'] , data['style'], data['medium'], data['description']
     ]))
