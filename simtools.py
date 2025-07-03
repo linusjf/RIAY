@@ -83,6 +83,32 @@ def compute_match_terms(description_terms, metadata_terms, mode=MatchMode.FUZZY)
     print(f"✅ Matched terms: {matched}", file=sys.stderr)
     return matched
 
+def compute_match_dicts(dict1, dict2, mode=MatchMode.FUZZY):
+    """Compute matching between values in two dictionaries.
+    
+    Args:
+        dict1: First dictionary to compare
+        dict2: Second dictionary to compare
+        mode: MatchMode enum value (FUZZY or COSINE)
+    """
+    print("🧠 Checking for matching dictionary values...", file=sys.stderr)
+    
+    matched = []
+    
+    for key, value1 in dict1.items():
+        if key not in dict2:
+            print(f"  ⚠️ Key '{key}' not found in second dictionary", file=sys.stderr)
+            continue
+            
+        value2 = dict2[key]
+        score = compare_terms(value1, value2, mode)
+        if ((mode == MatchMode.FUZZY and score >= 70) or 
+            (mode == MatchMode.COSINE and score >= 0.7)):
+            matched.append(f"{key}: {value1} , {value2}")
+    
+    print(f"✅ Matched dictionary values: {matched}", file=sys.stderr)
+    return matched
+
 def get_embedding(text):
     """Get text embedding using deepinfra client."""
     embeddings = deepinfra_client.embeddings.create(
