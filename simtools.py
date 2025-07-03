@@ -14,6 +14,7 @@ Contains functions for text matching and semantic similarity.
 import sys
 import os
 import numpy as np
+from enum import Enum, auto
 from fuzzywuzzy import fuzz
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -29,24 +30,28 @@ deepinfra_client = OpenAI(
     base_url="https://api.deepinfra.com/v1/openai",
 )
 
-def compute_match_terms(description_terms, metadata_terms, mode="fuzzy"):
+class MatchMode(Enum):
+    FUZZY = auto()
+    COSINE = auto()
+
+def compute_match_terms(description_terms, metadata_terms, mode=MatchMode.FUZZY):
     """Compute matching between terms from description and metadata.
     
     Args:
         description_terms: List of terms from description
         metadata_terms: List of terms from metadata
-        mode: Either "fuzzy" for fuzzy string matching or "cosine" for semantic similarity
+        mode: MatchMode enum value (FUZZY or COSINE)
     """
     print("🧠 Checking for matching terms...", file=sys.stderr)
     matched = []
     
-    if mode == "fuzzy":
+    if mode == MatchMode.FUZZY:
         for term_a, term_b in zip(description_terms, metadata_terms):
             score = fuzz.partial_ratio(term_a.lower(), term_b.lower())
             print(f"  🔎 Comparing '{term_a}' to '{term_b}' (score: {score})", file=sys.stderr)
             if score >= 70:
                 matched.append(f"{term_a} , {term_b}")
-    elif mode == "cosine":
+    elif mode == MatchMode.COSINE:
         for term_a, term_b in zip(description_terms, metadata_terms):
             vec1 = get_embedding(term_a)
             vec2 = get_embedding(term_b)
@@ -55,7 +60,7 @@ def compute_match_terms(description_terms, metadata_terms, mode="fuzzy"):
             if score >= 0.7:
                 matched.append(f"{term_a} , {term_b}")
     else:
-        raise ValueError("Invalid mode. Must be either 'fuzzy' or 'cosine'")
+        raise ValueError(f"Invalid mode. Must be either {MatchMode.FUZZY} or {MatchMode.COSINE}")
     
     print(f"✅ Matched terms: {matched}", file=sys.stderr)
     return matched
