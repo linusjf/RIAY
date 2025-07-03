@@ -7,7 +7,8 @@
 
 ## Bugs/Issues
 
-1. Add another search for wikipedia images but this time from wikipedia pages since wikimedia image search is not returning correct images as per description. Don't know the reason, perhaps this data is not available to wikimedia api or labelling is incorrect or research needed for parameters making search more specific. Wikipedia pages search is suggested as an alternative online.
+1. Fine tune wikipedia and wikimedia_search using additional parameters.
+2. Modify matching terms in verifyartimage.py to match only if terms are available.
 
 ## Exploratory tasks
 
