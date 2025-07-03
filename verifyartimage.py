@@ -147,7 +147,9 @@ def main():
 
         print("🧠 Checking for matching terms...", file=sys.stderr)
         match_terms = compute_match_dicts(metadata_dict, image_description_dict,MatchMode.COSINE)
-        is_likely_match = similarity > 0.7 and len(match_terms) >= (len(metadata_dict))//2
+        # Truthy values only
+        non_empty_count = len([v for v in metadata_dict.values() if v])
+        is_likely_match = similarity > 0.7 and len(match_terms) >= non_empty_count//2
         print(
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
             file=sys.stderr
