@@ -47,12 +47,18 @@ def compute_match_terms(description_terms, metadata_terms, mode=MatchMode.FUZZY)
     
     if mode == MatchMode.FUZZY:
         for term_a, term_b in zip(description_terms, metadata_terms):
+            if not term_a or not term_b:
+                print(f"  ⚠️ Skipping comparison - empty term: '{term_a}' vs '{term_b}'", file=sys.stderr)
+                continue
             score = fuzz.partial_ratio(term_a.lower(), term_b.lower())
             print(f"  🔎 Comparing '{term_a}' to '{term_b}' (score: {score})", file=sys.stderr)
             if score >= 70:
                 matched.append(f"{term_a} , {term_b}")
     elif mode == MatchMode.COSINE:
         for term_a, term_b in zip(description_terms, metadata_terms):
+            if not term_a or not term_b:
+                print(f"  ⚠️ Skipping comparison - empty term: '{term_a}' vs '{term_b}'", file=sys.stderr)
+                continue
             vec1 = get_embedding(term_a)
             vec2 = get_embedding(term_b)
             score = cosine_similarity(vec1, vec2)
