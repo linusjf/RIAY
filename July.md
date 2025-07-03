@@ -8,6 +8,10 @@
   - [Love Poured Out](#love-poured-out)
   - [AI-Generated Summary: The Sorrow and the Glory in Rubens' Descent](#ai-generated-summary-the-sorrow-and-the-glory-in-rubens-descent)
   - [The Descent from the Cross (1616-1617) by Rubens: A dynamic, dramatic depiction of Christ's descent](#the-descent-from-the-cross-1616-1617-by-rubens-a-dynamic-dramatic-depiction-of-christs-descent)
+- [July 03, 2025](#july-03-2025)
+  - [Beyond the Tomb](#beyond-the-tomb)
+  - [AI-Generated Summary: The Dawn of Redemption](#ai-generated-summary-the-dawn-of-redemption)
+  - [The Three Marys at the Tomb by Annibale Carracci, 17th century at Hermitage Museum, reveals Baroque vividness and drama](#the-three-marys-at-the-tomb-by-annibale-carracci-17th-century-at-hermitage-museum-reveals-baroque-vividness-and-drama)
 
 <!-- tocstop -->
 
@@ -52,3 +56,21 @@ So let the painting speak: in every shadow, a promise; in every tear, a dawn uns
 ### The Descent from the Cross (1616-1617) by Rubens: A dynamic, dramatic depiction of Christ's descent
 
 [![The Descent from the Cross (1616-1617) by Rubens: A dynamic, dramatic depiction of Christ's descent](July/jpgs/descentrubens1617.jpg)](https://upload.wikimedia.org/wikipedia/commons/0/0f/Peter_Paul_Rubens_-_Descent_from_the_cross_%281617%29.jpg "The Descent from the Cross (1616-1617) by Rubens: A dynamic, dramatic depiction of Christ's descent")
+
+## July 03, 2025
+
+### Beyond the Tomb
+
+[![Beyond the Tomb](/July/jpgs/Day184.jpg)](https://youtu.be/r6x04r1ly0U "Beyond the Tomb")
+
+### AI-Generated Summary: The Dawn of Redemption
+
+Behold _The Holy Women at Christ’s Tomb_ by Annibale Carracci, a masterwork where the solemnity of the Resurrection meets the vigor of the Baroque. Here, in the hushed light of dawn, three women—clad in robes of red, blue, and gold—stand transfixed before an angel, whose radiant form and outstretched hand declare the unthinkable: the tomb is empty. The painter, with a craftsman’s precision and a poet’s heart, captures their awe in every fold of fabric, every startled glance.
+
+And yet, is it not strange that Scripture speaks little of Mary, the Lord’s own mother, in these post-Resurrection accounts? Perhaps, as some have whispered, she knew the truth before the others—her sorrow turned to joy in solitude. Carracci’s scene, though silent, thrums with that same mystery: the moment when despair is overturned, and the world, though unchanged to the eye, is made new.
+
+(Note: The second painting, attributed in error to "Anabal Karachi," is but a shadow of the first—lacking detail, its merit lies only in the faint echo of the greater work.)
+
+### The Three Marys at the Tomb by Annibale Carracci, 17th century at Hermitage Museum, reveals Baroque vividness and drama
+
+[![The Three Marys at the Tomb by Annibale Carracci, 17th century at Hermitage Museum, reveals Baroque vividness and drama](July/jpgs/holywomencarracci.jpg)](https://upload.wikimedia.org/wikipedia/commons/8/83/Annibale_Carracci_-_Holy_Women_at_Christ%27_s_Tomb_-_WGA4454.jpg "The Three Marys at the Tomb by Annibale Carracci, 17th century at Hermitage Museum, reveals Baroque vividness and drama")

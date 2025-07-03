@@ -8,7 +8,7 @@
 ## Bugs/Issues
 
 1. Fine tune wikipedia and wikimedia_search using additional parameters.
-2. Modify matching terms in verifyartimage.py to match only if terms are available.
+1. Modify matching terms in verifyartimage.py to match only if terms are available.
 
 ## Exploratory tasks
 
