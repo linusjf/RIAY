@@ -24,7 +24,7 @@ import numpy as np
 import requests
 from openai import OpenAI
 from PIL import Image
-from simtools import compute_match_terms, get_embedding, cosine_similarity
+from simtools import compare_terms, compute_match_dicts, get_embedding, cosine_similarity, MatchMode
 
 
 # Load environment variables from config.env
@@ -117,11 +117,9 @@ def main():
     metadata_text = ", ".join(filter(None, [
         args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium
     ]))
-    metadata_terms = [
-        args.title, args.artist, args.date
-    ]
+    metadata_dict = vars(args)
     print(f"📋 Metadata text: {metadata_text}", file=sys.stderr)
-    print(f"📋 Metadata terms: {metadata_terms}", file=sys.stderr)
+    print(f"📋 Metadata dict: {metadata_dict}", file=sys.stderr)
 
     try:
         image_description = strip_code_guards(generate_image_description(args.image))
@@ -133,7 +131,8 @@ def main():
             sys.exit(1)
 
         data = json.loads(image_description)
-        image_description_terms = [data['title'], data['artist'], data['date']]
+        data['subject'] = data['description']
+        image_description_dict = data
         image_description_text = ", ".join(filter(None, [
         data['title'], data['artist'], data['location'], data['date'] , data['style'], data['medium'], data['description']
     ]))
@@ -142,26 +141,13 @@ def main():
             file=sys.stderr
         )
 
-        print(
-            "Obtaining vector embeddings...",
-            file=sys.stderr
-        )
-        # Get embeddings from DeepInfra
-        vec1 = get_embedding(metadata_text)
-        vec2 = get_embedding(image_description_text)
-
-        # Compute cosine similarity
-        print(
-            "Computing cosine similarity...",
-            file=sys.stderr
-        )
-        similarity = cosine_similarity(vec1, vec2)
+        similarity = compare_terms(metadata_text, image_description_text,MatchMode.COSINE)
         print(f"Cosine similarity: {similarity:.4f}", file=sys.stderr)
         data["cosine_score"] = round(similarity, 3)
 
         print("🧠 Checking for matching terms...", file=sys.stderr)
-        match_terms = compute_match_terms(image_description_terms, metadata_terms)
-        is_likely_match = similarity > 0.7 and len(match_terms) == (len(metadata_terms))
+        match_terms = compute_match_dicts(metadata_dict, image_description_dict,MatchMode.COSINE)
+        is_likely_match = similarity > 0.7 and len(match_terms) >= (len(metadata_dict))//2
         print(
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
             file=sys.stderr
