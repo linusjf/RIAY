@@ -34,6 +34,30 @@ class MatchMode(Enum):
     FUZZY = auto()
     COSINE = auto()
 
+def compare_terms(term_a, term_b, mode):
+    """Compare two terms using the specified mode and return match score.
+    
+    Args:
+        term_a: First term to compare
+        term_b: Second term to compare
+        mode: MatchMode enum value (FUZZY or COSINE)
+    """
+    if not term_a or not term_b:
+        print(f"  ⚠️ Skipping comparison - empty term: '{term_a}' vs '{term_b}'", file=sys.stderr)
+        return 0
+    
+    if mode == MatchMode.FUZZY:
+        score = fuzz.partial_ratio(term_a.lower(), term_b.lower())
+    elif mode == MatchMode.COSINE:
+        vec1 = get_embedding(term_a)
+        vec2 = get_embedding(term_b)
+        score = cosine_similarity(vec1, vec2)
+    else:
+        raise ValueError(f"Invalid mode. Must be either {MatchMode.FUZZY} or {MatchMode.COSINE}")
+    
+    print(f"  🔎 Comparing '{term_a}' to '{term_b}' (score: {score})", file=sys.stderr)
+    return score
+
 def compute_match_terms(description_terms, metadata_terms, mode=MatchMode.FUZZY):
     """Compute matching between terms from description and metadata.
     
@@ -45,28 +69,11 @@ def compute_match_terms(description_terms, metadata_terms, mode=MatchMode.FUZZY)
     print("🧠 Checking for matching terms...", file=sys.stderr)
     matched = []
     
-    if mode == MatchMode.FUZZY:
-        for term_a, term_b in zip(description_terms, metadata_terms):
-            if not term_a or not term_b:
-                print(f"  ⚠️ Skipping comparison - empty term: '{term_a}' vs '{term_b}'", file=sys.stderr)
-                continue
-            score = fuzz.partial_ratio(term_a.lower(), term_b.lower())
-            print(f"  🔎 Comparing '{term_a}' to '{term_b}' (score: {score})", file=sys.stderr)
-            if score >= 70:
-                matched.append(f"{term_a} , {term_b}")
-    elif mode == MatchMode.COSINE:
-        for term_a, term_b in zip(description_terms, metadata_terms):
-            if not term_a or not term_b:
-                print(f"  ⚠️ Skipping comparison - empty term: '{term_a}' vs '{term_b}'", file=sys.stderr)
-                continue
-            vec1 = get_embedding(term_a)
-            vec2 = get_embedding(term_b)
-            score = cosine_similarity(vec1, vec2)
-            print(f"  🔎 Comparing '{term_a}' to '{term_b}' (score: {score})", file=sys.stderr)
-            if score >= 0.7:
-                matched.append(f"{term_a} , {term_b}")
-    else:
-        raise ValueError(f"Invalid mode. Must be either {MatchMode.FUZZY} or {MatchMode.COSINE}")
+    for term_a, term_b in zip(description_terms, metadata_terms):
+        score = compare_terms(term_a, term_b, mode)
+        if ((mode == MatchMode.FUZZY and score >= 70) or 
+            (mode == MatchMode.COSINE and score >= 0.7)):
+            matched.append(f"{term_a} , {term_b}")
     
     print(f"✅ Matched terms: {matched}", file=sys.stderr)
     return matched
