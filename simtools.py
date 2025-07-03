@@ -67,6 +67,11 @@ def compute_match_terms(description_terms, metadata_terms, mode=MatchMode.FUZZY)
         mode: MatchMode enum value (FUZZY or COSINE)
     """
     print("🧠 Checking for matching terms...", file=sys.stderr)
+    
+    if len(description_terms) != len(metadata_terms):
+        print(f"⚠️ Warning: Term arrays have different lengths ({len(description_terms)} vs {len(metadata_terms)})", file=sys.stderr)
+        return []
+    
     matched = []
     
     for term_a, term_b in zip(description_terms, metadata_terms):
