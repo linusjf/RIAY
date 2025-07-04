@@ -146,16 +146,16 @@ def main():
         data["cosine_score"] = round(similarity, 3)
 
         print("🧠 Checking for matching terms...", file=sys.stderr)
-        match_terms = compute_match_dicts(metadata_dict, image_description_dict,MatchMode.COSINE)
-        # Truthy values only
+        matched, mismatched = compute_match_dicts(metadata_dict, image_description_dict,MatchMode.COSINE)
         non_empty_count = len([v for v in metadata_dict.values() if v])
-        is_likely_match = similarity > 0.7 and len(match_terms) >= non_empty_count//2
+        is_likely_match = similarity > 0.7 and len(matched) >= non_empty_count//2
         print(
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
             file=sys.stderr
         )
         data["is_likely_match"] = True if is_likely_match else False
-        data["matched_terms"] = match_terms
+        data["matched_terms"] = matched
+        data["mismatched_terms"] = mismatched
         result = json.dumps(data, indent=2)
         print(result)
 
