@@ -65,23 +65,29 @@ def compute_match_terms(description_terms, metadata_terms, mode=MatchMode.FUZZY)
         description_terms: List of terms from description
         metadata_terms: List of terms from metadata
         mode: MatchMode enum value (FUZZY or COSINE)
+    
+    Returns:
+        Tuple of (matched_terms, mismatched_terms)
     """
     print("🧠 Checking for matching terms...", file=sys.stderr)
     
     if len(description_terms) != len(metadata_terms):
         print(f"⚠️ Warning: Term arrays have different lengths ({len(description_terms)} vs {len(metadata_terms)})", file=sys.stderr)
-        return []
+        return ([], [])
     
     matched = []
+    mismatched = []
     
     for term_a, term_b in zip(description_terms, metadata_terms):
         score = compare_terms(term_a, term_b, mode)
         if ((mode == MatchMode.FUZZY and score >= 70) or 
             (mode == MatchMode.COSINE and score >= 0.7)):
             matched.append(f"{term_a} , {term_b}")
+        else:
+            mismatched.append(f"{term_a} , {term_b}")
     
     print(f"✅ Matched terms: {matched}", file=sys.stderr)
-    return matched
+    return (matched, mismatched)
 
 def compute_match_dicts(dict1, dict2, mode=MatchMode.FUZZY):
     """Compute matching between values in two dictionaries.
@@ -90,14 +96,19 @@ def compute_match_dicts(dict1, dict2, mode=MatchMode.FUZZY):
         dict1: First dictionary to compare
         dict2: Second dictionary to compare
         mode: MatchMode enum value (FUZZY or COSINE)
+    
+    Returns:
+        Tuple of (matched_items, mismatched_items)
     """
     print("🧠 Checking for matching dictionary values...", file=sys.stderr)
     
     matched = []
+    mismatched = []
     
     for key, value1 in dict1.items():
         if key not in dict2:
             print(f"  ⚠️ Key '{key}' not found in second dictionary", file=sys.stderr)
+            mismatched.append(f"{key}: {value1} , <missing>")
             continue
             
         value2 = dict2[key]
@@ -105,9 +116,11 @@ def compute_match_dicts(dict1, dict2, mode=MatchMode.FUZZY):
         if ((mode == MatchMode.FUZZY and score >= 70) or 
             (mode == MatchMode.COSINE and score >= 0.7)):
             matched.append(f"{key}: {value1} , {value2}")
+        else:
+            mismatched.append(f"{key}: {value1} , {value2}")
     
     print(f"✅ Matched dictionary values: {matched}", file=sys.stderr)
-    return matched
+    return (matched, mismatched)
 
 def get_embedding(text):
     """Get text embedding using deepinfra client."""
