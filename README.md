@@ -5447,6 +5447,10 @@ This is no mere depiction of suffering, but a window into its strange redemption
   - [Beyond the Tomb](#beyond-the-tomb)
   - [AI-Generated Summary: The Dawn of Redemption](#ai-generated-summary-the-dawn-of-redemption)
   - [The Three Marys at the Tomb by Annibale Carracci, 17th century at Hermitage Museum, reveals Baroque vividness and drama](#the-three-marys-at-the-tomb-by-annibale-carracci-17th-century-at-hermitage-museum-reveals-baroque-vividness-and-drama)
+- [July 04, 2025](#july-04-2025)
+  - [Proclaiming Christ](#proclaiming-christ)
+  - [AI-Generated Summary: The Divine Commission and the Art of Witness](#ai-generated-summary-the-divine-commission-and-the-art-of-witness)
+  - [Christ Taking Leave of the Apostles by Duccio, 14th century, Museo dell'Opera, tempera on wood, Gothic details](#christ-taking-leave-of-the-apostles-by-duccio-14th-century-museo-dellopera-tempera-on-wood-gothic-details)
 
 <!-- tocstop -->
 
@@ -5509,6 +5513,22 @@ And yet, is it not strange that Scripture speaks little of Mary, the Lord’s ow
 ##### The Three Marys at the Tomb by Annibale Carracci, 17th century at Hermitage Museum, reveals Baroque vividness and drama
 
 [![The Three Marys at the Tomb by Annibale Carracci, 17th century at Hermitage Museum, reveals Baroque vividness and drama](July/jpgs/holywomencarracci.jpg)](https://upload.wikimedia.org/wikipedia/commons/8/83/Annibale_Carracci_-_Holy_Women_at_Christ%27_s_Tomb_-_WGA4454.jpg "The Three Marys at the Tomb by Annibale Carracci, 17th century at Hermitage Museum, reveals Baroque vividness and drama")
+
+#### July 04, 2025
+
+##### Proclaiming Christ
+
+[![Proclaiming Christ](July/jpgs/Day185.jpg)](https://youtu.be/5KB8Kn__c70 "Proclaiming Christ")
+
+##### AI-Generated Summary: The Divine Commission and the Art of Witness
+
+Behold Duccio’s _Appearance on the Mountain in Galilee_, where the risen Christ, clad in crimson and blue, stands upon a golden hill, His hands aloft in blessing and command. The apostles, each face a story of awe, gather on the rough slope below—youth beside elder, all knit by wonder. Here is Byzantium’s glory softened by Gothic tenderness, a meeting of heaven’s gold and earth’s muted tones. The mountain, though stylized, hints at depth, as if the very ground strains to bear the weight of this moment: the Master’s charge to carry His word to all nations.
+
+Yet the painting is but a shadow of the truth it points to—that every believer, then and now, is called to the same sacred work. To know Christ is to make Him known; to love Him is to speak of Him. When last did your lips shape His name for another’s sake? To the lapsed, the weary, the doubting? Take heart: the same Lord who stood on that mountain walks with you still, His presence your courage, His Spirit your words. Pray for the readiness of a disciple, that when the moment comes, you may say, like Peter, _"Lord, You know I love You,"_ and go.
+
+##### Christ Taking Leave of the Apostles by Duccio, 14th century, Museo dell'Opera, tempera on wood, Gothic details
+
+[![Christ Taking Leave of the Apostles by Duccio, 14th century, Museo dell'Opera, tempera on wood, Gothic details](July/jpgs/appearancemountainduccio.jpg)](https://upload.wikimedia.org/wikipedia/commons/e/e1/Duccio_di_Buoninsegna_-_Appearance_on_the_Mountain_in_Galilee_-_WGA06737.jpg "Christ Taking Leave of the Apostles by Duccio, 14th century, Museo dell'Opera, tempera on wood, Gothic details")
 
 ## August
 
