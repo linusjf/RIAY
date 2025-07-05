@@ -221,7 +221,7 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
             titlesnippet = strip_span_tags_but_keep_contents(result["titlesnippet"])
             snippet = strip_span_tags_but_keep_contents(result["snippet"])
             result_meta_data = " ".join([title, titlesnippet, snippet])
-            score = compare_terms(detailed_query.lower(), result_meta_data.lower(),MatchMode.COSINE)
+            score = compare_terms(detailed_query.lower(), result_meta_data.lower(), MatchMode.HYBRID)
             if score > best_score:
                 best_score = score
                 selected_result = result
@@ -285,7 +285,7 @@ def download_image_from_wikipedia_article(query, detailed_query, filename_base):
             excerpt = strip_span_tags_but_keep_contents(page.get("excerpt", ""))
             description = page.get("description", "")
             page_meta_data = " ".join([key, title, excerpt, description])
-            score = compare_terms(detailed_query.lower(), page_meta_data.lower(), MatchMode.COSINE)
+            score = compare_terms(detailed_query.lower(), page_meta_data.lower(), MatchMode.HYBRID)
             if score > best_score:
                 best_score = score
                 selected_title = title

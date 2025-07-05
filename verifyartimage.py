@@ -118,6 +118,9 @@ def main():
         args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium
     ]))
     metadata_dict = vars(args)
+    keys_to_remove = ['image']
+    filtered = {k: v for k, v in metadata_dict.items() if k not in keys_to_remove}
+    metadata_dict = filtered
     print(f"📋 Metadata text: {metadata_text}", file=sys.stderr)
     print(f"📋 Metadata dict: {metadata_dict}", file=sys.stderr)
 
@@ -141,14 +144,14 @@ def main():
             file=sys.stderr
         )
 
-        similarity = compare_terms(metadata_text, image_description_text,MatchMode.COSINE)
-        print(f"Cosine similarity: {similarity:.4f}", file=sys.stderr)
-        data["cosine_score"] = round(similarity, 3)
+        similarity = compare_terms(metadata_text, image_description_text,MatchMode.HYBRID)
+        print(f"Similarity: {similarity:.4f}", file=sys.stderr)
+        data["similarity_score"] = round(similarity, 3)
 
         print("🧠 Checking for matching terms...", file=sys.stderr)
-        matched, mismatched = compute_match_dicts(metadata_dict, image_description_dict,MatchMode.COSINE)
+        matched, mismatched = compute_match_dicts(metadata_dict, image_description_dict,MatchMode.HYBRID)
         non_empty_count = len([v for v in metadata_dict.values() if v])
-        is_likely_match = similarity > 0.7 and len(matched) >= non_empty_count//2
+        is_likely_match = similarity >= 50.0 and len(matched) >= non_empty_count//2
         print(
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
             file=sys.stderr
