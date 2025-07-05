@@ -27,6 +27,8 @@ from simtools import compare_terms, MatchMode
 
 # Global dictionary to track downloaded URLs and their saved filenames
 DOWNLOADED_URLS = {}
+# Global list to track found stock photo URLs
+FOUND_STOCK_PHOTOS = []
 
 STOCK_PHOTO_SITES = parse_bash_array('config.env', 'STOCK_PHOTO_SITES')
 # Load environment variables from config.env
@@ -161,13 +163,15 @@ def download_from_duckduckgo(query, filename_base):
             return False
         for image in results:
             url = image["image"]
-            if not any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
-                filename = os.path.join(
-                    SAVE_DIR,
-                    f"{filename_base}_duckduckgo.jpg"
-                )
-                if save_image(url, filename):
-                    return True
+            if any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
+                FOUND_STOCK_PHOTOS.append(url)
+                continue
+            filename = os.path.join(
+                SAVE_DIR,
+                f"{filename_base}_duckduckgo.jpg"
+            )
+            if save_image(url, filename):
+                return True
     except Exception as error:
         print(f"❌ Error: {error}")
     return False
@@ -367,13 +371,15 @@ def download_from_google(query, filename_base):
             url = image.get("original")
             if not url:
                 continue
-            if not any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
-                filename = os.path.join(
-                    SAVE_DIR,
-                    f"{filename_base}_google.jpg"
-                )
-                if save_image(url, filename):
-                    return True
+            if any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
+                FOUND_STOCK_PHOTOS.append(url)
+                continue
+            filename = os.path.join(
+                SAVE_DIR,
+                f"{filename_base}_google.jpg"
+            )
+            if save_image(url, filename):
+                return True
 
     except Exception as error:
         print(f"❌ Error: {error}")
@@ -481,6 +487,12 @@ def main():
     print("\nDownloaded images: ")
     for v in DOWNLOADED_URLS.values():
         print(v)
+    
+    if FOUND_STOCK_PHOTOS:
+        print("\nFound stock photos (not downloaded):")
+        for url in FOUND_STOCK_PHOTOS:
+            print(url)
+
     sys.exit(0 if success else 1)
 
 if __name__ == "__main__":
