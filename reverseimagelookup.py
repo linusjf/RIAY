@@ -61,17 +61,31 @@ def reverse_image_search(image_url):
 def main():
     global IMAGE_SOURCE_URL
     parser = argparse.ArgumentParser(description='Perform reverse image search using SerpAPI')
-    parser.add_argument('image_path', help='Path to the image file to search')
+    parser.add_argument(
+        "--image", required=True, help="Path to the image file"
+    )
+    parser.add_argument(
+        "--title", required=True, help="Title of the artwork"
+    )
+    parser.add_argument(
+        "--artist", required=True, help="Artist of the artwork"
+    )
+    parser.add_argument("--subject", help="Subject of the artwork")
+    parser.add_argument("--location", help="Current location of artwork")
+    parser.add_argument("--date", help="Date when artwork was created")
+    parser.add_argument("--style", help="Style of the artwork")
+    parser.add_argument("--medium", help="Medium of the artwork")
+
     args = parser.parse_args()
-    
+
     # Check for corresponding url.txt file
-    url_file = os.path.splitext(args.image_path)[0] + '.url.txt'
+    url_file = os.path.splitext(args.image)[0] + '.url.txt'
     if os.path.exists(url_file):
         with open(url_file, 'r') as f:
             IMAGE_SOURCE_URL = f.read().strip()
             print(f"Found source URL: {IMAGE_SOURCE_URL}", file=sys.stderr)
 
-    image_url, delete_url, image_id = upload_to_imgbb(args.image_path)
+    image_url, delete_url, image_id = upload_to_imgbb(args.image)
     print(f"image url: {image_url}", file=sys.stderr)
     print(f"delete url: {delete_url}",file=sys.stderr)
     print(f"image id: {image_id}",file=sys.stderr)
