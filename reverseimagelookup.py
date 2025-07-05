@@ -17,9 +17,9 @@ import argparse
 
 def reverse_image_search(image_path):
     url = "https://serpapi.com/search"
-    api_key = os.getenv("SERPAPI_API_KEY")
+    api_key = os.getenv("SERP_API_KEY")
     if not api_key:
-        raise ValueError("SERPAPI_API_KEY environment variable not set")
+        raise ValueError("SERP_API_KEY environment variable not set")
 
     with open(image_path, "rb") as image_file:
         files = {
