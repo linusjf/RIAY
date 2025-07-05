@@ -10,47 +10,76 @@ Reverseimagelookup.
 # -*- coding: utf-8 -*-'
 ######################################################################
 """
+import sys
 import os
 import requests
-import json
 import argparse
+from serpapi import GoogleSearch
 
-def reverse_image_search(image_path):
-    url = "https://serpapi.com/search"
-    api_key = os.getenv("SERP_API_KEY")
-    if not api_key:
-        raise ValueError("SERP_API_KEY environment variable not set")
+SERP_API_KEY = os.getenv("SERP_API_KEY")
+if not SERP_API_KEY:
+    raise ValueError("SERP_API_KEY environment variable not set")
 
-    with open(image_path, "rb") as image_file:
-        files = {
-            'image': (image_path, image_file, 'image/jpeg')
-        }
+# Get your API key from https://api.imgbb.com/
+IMGBB_API_KEY = os.getenv("IMGBB_API_KEY")
+if not IMGBB_API_KEY:
+    raise ValueError("IMGBB_API_KEY environment variable not set")
 
-        params = {
-            "engine": "google_lens",
-            "api_key": api_key
-        }
+IMAGE_SOURCE_URL = None
 
-        print("Uploading image to SerpApi...")
-        response = requests.post(url, params=params, files=files)
-
+def upload_to_imgbb(image_path):
+    with open(image_path, "rb") as f:
+        response = requests.post(
+            "https://api.imgbb.com/1/upload",
+            data={"key": IMGBB_API_KEY},
+            files={"image": f}
+        )
     if response.status_code == 200:
-        data = response.json()
-        if 'visual_matches' in data:
-            print("\n🔍 Visual Matches:")
-            for match in data['visual_matches'][:5]:  # Top 5 matches
-                print(f"- Title: {match.get('title')}")
-                print(f"  Link: {match.get('link')}")
-        else:
-            print("No visual matches found.")
+        json_data = response.json()["data"]
+        print(json_data,file=sys.stderr)
+        return (json_data["url"], json_data["delete_url"], json_data["id"])
     else:
-        print("Request failed:", response.status_code, response.text)
+        raise Exception(f"Upload failed: {response.status_code} {response.text}")
+
+
+def reverse_image_search(image_url):
+    params = {
+        "engine": "google_lens",
+        "api_key": SERP_API_KEY,
+        "url": image_url
+    }
+    search = GoogleSearch(params)
+    results = search.get_dict()
+    visual_matches = results["visual_matches"][0:5]
+    for image_info in visual_matches:
+        title = image_info["title"]
+        link = image_info["link"]
+        source = image_info["source"]
+        url = image_info["image"]
+
 
 def main():
+    global IMAGE_SOURCE_URL
     parser = argparse.ArgumentParser(description='Perform reverse image search using SerpAPI')
     parser.add_argument('image_path', help='Path to the image file to search')
     args = parser.parse_args()
-    reverse_image_search(args.image_path)
+    
+    # Check for corresponding url.txt file
+    url_file = os.path.splitext(args.image_path)[0] + '.url.txt'
+    if os.path.exists(url_file):
+        with open(url_file, 'r') as f:
+            IMAGE_SOURCE_URL = f.read().strip()
+            print(f"Found source URL: {IMAGE_SOURCE_URL}", file=sys.stderr)
+
+    image_url, delete_url, image_id = upload_to_imgbb(args.image_path)
+    print(f"image url: {image_url}", file=sys.stderr)
+    print(f"delete url: {delete_url}",file=sys.stderr)
+    print(f"image id: {image_id}",file=sys.stderr)
+
+    reverse_image_search(image_url)
+    print(f"Try deleting {image_url} in a browser using {delete_url}.", file=sys.stderr)
+    sys.exit(0)
+
 
 if __name__ == '__main__':
     main()
