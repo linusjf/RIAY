@@ -13,6 +13,7 @@ Reverseimagelookup.
 import os
 import requests
 import json
+import argparse
 
 def reverse_image_search(image_path):
     url = "https://serpapi.com/search"
@@ -45,5 +46,11 @@ def reverse_image_search(image_path):
     else:
         print("Request failed:", response.status_code, response.text)
 
-# Example usage
-reverse_image_search("path/to/image.jpg")
+def main():
+    parser = argparse.ArgumentParser(description='Perform reverse image search using SerpAPI')
+    parser.add_argument('image_path', help='Path to the image file to search')
+    args = parser.parse_args()
+    reverse_image_search(args.image_path)
+
+if __name__ == '__main__':
+    main()
