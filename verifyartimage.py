@@ -17,31 +17,19 @@ import json
 import os
 import sys
 import re
-from io import BytesIO
 from dotenv import load_dotenv
 
-import numpy as np
-import requests
 from openai import OpenAI
-from PIL import Image
-from simtools import compare_terms, compute_match_dicts, get_embedding, cosine_similarity, MatchMode
-
+from simtools import compare_terms, compute_match_dicts, MatchMode
 
 # Load environment variables from config.env
 load_dotenv('config.env')
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
-    raise ValueError("DEEPINFRA_TOKEN environment variable not set")
-DEEPINFRA_API_KEY = os.getenv("DEEPINFRA_TOKEN")
-if not DEEPINFRA_API_KEY:
-    raise ValueError("DEEPINFRA_TOKEN environment variable not set")
+    raise ValueError("OPENAI_API_KEY environment variable not set")
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-deepinfra_client = OpenAI(
-    api_key=DEEPINFRA_API_KEY,
-    base_url="https://api.deepinfra.com/v1/openai",
-)
 
 def image_to_bytes(image_path):
     """Read image file as bytes."""
@@ -137,8 +125,7 @@ def main():
         data['subject'] = data['description']
         image_description_dict = data
         image_description_text = ", ".join(filter(None, [
-        data['title'], data['artist'], data['location'], data['date'] , data['style'], data['medium'], data['description']
-    ]))
+        data['title'], data['artist'], data['location'], data['date'] , data['style'], data['medium'], data['description']]))
         print(
             f"Image description : {image_description_text}",
             file=sys.stderr
@@ -151,7 +138,6 @@ def main():
         print("🧠 Checking for matching terms...", file=sys.stderr)
         matched, mismatched = compute_match_dicts(metadata_dict, image_description_dict,MatchMode.HYBRID)
         non_empty_count = len([v for v in metadata_dict.values() if v])
-        print(f"non-empty count: {non_empty_count}", file=sys.stderr )
         is_likely_match = cosine_score >= 0.7 and len(matched) >= non_empty_count//2
         print(
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
