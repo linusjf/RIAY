@@ -1,4 +1,4 @@
 # commands
-addvideo "5KB8Kn__c70" "Proclaiming Christ"
+addvideo "FlkOQ-TxUuI" "Power From On High"
 stitch
 lintall

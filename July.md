@@ -16,6 +16,10 @@
   - [Proclaiming Christ](#proclaiming-christ)
   - [AI-Generated Summary: The Divine Commission and the Art of Witness](#ai-generated-summary-the-divine-commission-and-the-art-of-witness)
   - [Christ Taking Leave of the Apostles by Duccio, 14th century, Museo dell'Opera, tempera on wood, Gothic details](#christ-taking-leave-of-the-apostles-by-duccio-14th-century-museo-dellopera-tempera-on-wood-gothic-details)
+- [July 05, 2025](#july-05-2025)
+  - [Power From On High](#power-from-on-high)
+  - [AI-Generated Summary: The Divine Gift and the Art of Waiting](#ai-generated-summary-the-divine-gift-and-the-art-of-waiting)
+  - [Pentecost by unknown artist, 17th century, at The Met, captures dramatic Baroque biblical scene in ink](#pentecost-by-unknown-artist-17th-century-at-the-met-captures-dramatic-baroque-biblical-scene-in-ink)
 
 <!-- tocstop -->
 
@@ -94,3 +98,19 @@ Yet the painting is but a shadow of the truth it points to—that every believer
 ### Christ Taking Leave of the Apostles by Duccio, 14th century, Museo dell'Opera, tempera on wood, Gothic details
 
 [![Christ Taking Leave of the Apostles by Duccio, 14th century, Museo dell'Opera, tempera on wood, Gothic details](July/jpgs/appearancemountainduccio.jpg)](https://upload.wikimedia.org/wikipedia/commons/e/e1/Duccio_di_Buoninsegna_-_Appearance_on_the_Mountain_in_Galilee_-_WGA06737.jpg "Christ Taking Leave of the Apostles by Duccio, 14th century, Museo dell'Opera, tempera on wood, Gothic details")
+
+## July 05, 2025
+
+### Power From On High
+
+[![Power From On High](/July/jpgs/Day186.jpg)](https://youtu.be/FlkOQ-TxUuI "Power From On High")
+
+### AI-Generated Summary: The Divine Gift and the Art of Waiting
+
+Consider, dear reader, how the world prizes power seized by force—the clenched fist, the towering edifice, the self-made triumph. Yet Heaven’s economy operates otherwise. True power descends as a gift, like the tongues of flame at Pentecost, alighting only on those who wait with open hands. Simone Peterzano’s _Pentecost_ captures this mystery: the Virgin, still and expectant, bathed in golden light; the disciples, their faces upturned as the Dove’s radiance pierces the dark. Here is Mannerist drama indeed—not of human striving, but divine generosity.
+
+Lent teaches us to labor; Easter, to receive. The world clamors for control, but the Christian kneels, knowing that every true strength—like those painted flames above each head—comes not by our cunning, but by grace. To wait is not idleness; it is the soul’s posture before the Giver of all good things.
+
+### Pentecost by unknown artist, 17th century, at The Met, captures dramatic Baroque biblical scene in ink
+
+[![Pentecost by unknown artist, 17th century, at The Met, captures dramatic Baroque biblical scene in ink](July/jpgs/pentecostsimonepeterzano.jpg)](<https://www.meisterdrucke.us/kunstwerke/500px/Simone_Peterzano_-_Study_for_the_Pentecost_-_(MeisterDrucke-1295971).jpg> "Pentecost by unknown artist, 17th century, at The Met, captures dramatic Baroque biblical scene in ink")
