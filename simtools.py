@@ -34,9 +34,9 @@ class MatchMode(Enum):
     FUZZY = auto()
     COSINE = auto()
 
-def compare_terms(term_a, term_b, mode):
+def compare_terms(term_a, term_b, mode=MatchMode.FUZZY):
     """Compare two terms using the specified mode and return match score.
-    
+
     Args:
         term_a: First term to compare
         term_b: Second term to compare
@@ -45,7 +45,7 @@ def compare_terms(term_a, term_b, mode):
     if not term_a or not term_b:
         print(f"  ⚠️ Skipping comparison - empty term: '{term_a}' vs '{term_b}'", file=sys.stderr)
         return 0
-    
+
     if mode == MatchMode.FUZZY:
         score = fuzz.partial_ratio(term_a.lower(), term_b.lower())
     elif mode == MatchMode.COSINE:
@@ -54,71 +54,71 @@ def compare_terms(term_a, term_b, mode):
         score = cosine_similarity(vec1, vec2)
     else:
         raise ValueError(f"Invalid mode. Must be either {MatchMode.FUZZY} or {MatchMode.COSINE}")
-    
+
     print(f"  🔎 Comparing '{term_a}' to '{term_b}' (score: {score})", file=sys.stderr)
     return score
 
 def compute_match_terms(description_terms, metadata_terms, mode=MatchMode.FUZZY):
     """Compute matching between terms from description and metadata.
-    
+
     Args:
         description_terms: List of terms from description
         metadata_terms: List of terms from metadata
         mode: MatchMode enum value (FUZZY or COSINE)
-    
+
     Returns:
         Tuple of (matched_terms, mismatched_terms)
     """
     print("🧠 Checking for matching terms...", file=sys.stderr)
-    
+
     if len(description_terms) != len(metadata_terms):
         print(f"⚠️ Warning: Term arrays have different lengths ({len(description_terms)} vs {len(metadata_terms)})", file=sys.stderr)
         return ([], [])
-    
+
     matched = []
     mismatched = []
-    
+
     for term_a, term_b in zip(description_terms, metadata_terms):
         score = compare_terms(term_a, term_b, mode)
-        if ((mode == MatchMode.FUZZY and score >= 70) or 
+        if ((mode == MatchMode.FUZZY and score >= 70) or
             (mode == MatchMode.COSINE and score >= 0.7)):
             matched.append(f"{term_a} , {term_b}")
         else:
             mismatched.append(f"{term_a} , {term_b}")
-    
+
     print(f"✅ Matched terms: {matched}", file=sys.stderr)
     return (matched, mismatched)
 
 def compute_match_dicts(dict1, dict2, mode=MatchMode.FUZZY):
     """Compute matching between values in two dictionaries.
-    
+
     Args:
         dict1: First dictionary to compare
         dict2: Second dictionary to compare
         mode: MatchMode enum value (FUZZY or COSINE)
-    
+
     Returns:
         Tuple of (matched_items, mismatched_items)
     """
     print("🧠 Checking for matching dictionary values...", file=sys.stderr)
-    
+
     matched = []
     mismatched = []
-    
+
     for key, value1 in dict1.items():
         if key not in dict2:
             print(f"  ⚠️ Key '{key}' not found in second dictionary", file=sys.stderr)
             mismatched.append(f"{key}: {value1} , <missing>")
             continue
-            
+
         value2 = dict2[key]
         score = compare_terms(value1, value2, mode)
-        if ((mode == MatchMode.FUZZY and score >= 70) or 
+        if ((mode == MatchMode.FUZZY and score >= 70) or
             (mode == MatchMode.COSINE and score >= 0.7)):
             matched.append(f"{key}: {value1} , {value2}")
         else:
             mismatched.append(f"{key}: {value1} , {value2}")
-    
+
     print(f"✅ Matched dictionary values: {matched}", file=sys.stderr)
     return (matched, mismatched)
 

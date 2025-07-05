@@ -29,6 +29,7 @@ from bashhelper import parse_bash_array
 from htmlhelper import strip_span_tags_but_keep_contents
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
+from simtools import compare_terms, MatchMode
 
 # Global dictionary to track downloaded URLs and their saved filenames
 DOWNLOADED_URLS = {}
@@ -198,7 +199,8 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
         "list": "search",
         "srsearch": query,
         "srnamespace": 6,  # File namespace only
-        "srlimit": 5
+        "srlimit": 5,
+        "srprop": "size|wordcount|timestamp|snippet|titlesnippet"
     }
 
     try:
@@ -216,9 +218,10 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
 
         for result in search_results:
             title = result["title"]
+            titlesnippet = strip_span_tags_but_keep_contents(result["titlesnippet"])
             snippet = strip_span_tags_but_keep_contents(result["snippet"])
-            result_meta_data = " ".join([title, snippet])
-            score = fuzz.partial_ratio(detailed_query.lower(), result_meta_data.lower())
+            result_meta_data = " ".join([title, titlesnippet, snippet])
+            score = compare_terms(detailed_query.lower(), result_meta_data.lower(),MatchMode.COSINE)
             if score > best_score:
                 best_score = score
                 selected_result = result
@@ -282,7 +285,7 @@ def download_image_from_wikipedia_article(query, detailed_query, filename_base):
             excerpt = strip_span_tags_but_keep_contents(page.get("excerpt", ""))
             description = page.get("description", "")
             page_meta_data = " ".join([key, title, excerpt, description])
-            score = fuzz.partial_ratio(detailed_query.lower(), page_meta_data.lower())
+            score = compare_terms(detailed_query.lower(), page_meta_data.lower(), MatchMode.COSINE)
             if score > best_score:
                 best_score = score
                 selected_title = title
@@ -481,6 +484,9 @@ def main():
         subject=args.subject
     )
 
+    print("\nDownloaded images: ")
+    for v in DOWNLOADED_URLS.values():
+        print(v)
     sys.exit(0 if success else 1)
 
 if __name__ == "__main__":
