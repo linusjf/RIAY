@@ -15,6 +15,7 @@ import os
 import requests
 import argparse
 from serpapi import GoogleSearch
+from simtools import compare_terms, MatchMode
 
 SERP_API_KEY = os.getenv("SERP_API_KEY")
 if not SERP_API_KEY:
@@ -42,7 +43,7 @@ def upload_to_imgbb(image_path):
         raise Exception(f"Upload failed: {response.status_code} {response.text}")
 
 
-def reverse_image_search(image_url):
+def reverse_image_search(image_url, metadata_text):
     params = {
         "engine": "google_lens",
         "api_key": SERP_API_KEY,
@@ -51,11 +52,22 @@ def reverse_image_search(image_url):
     search = GoogleSearch(params)
     results = search.get_dict()
     visual_matches = results["visual_matches"][0:5]
+    best_score = 0.0
+    best_match = {}
     for image_info in visual_matches:
         title = image_info["title"]
         link = image_info["link"]
         source = image_info["source"]
         url = image_info["image"]
+        match_text = ", ".join(filter(None, [
+        title, link, source, url
+        ]))
+        score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
+        if score > best_score:
+            best_score = score
+            best_match = image_info
+
+    print(best_match)
 
 
 def main():
@@ -90,7 +102,11 @@ def main():
     print(f"delete url: {delete_url}",file=sys.stderr)
     print(f"image id: {image_id}",file=sys.stderr)
 
-    reverse_image_search(image_url)
+    metadata_text = ", ".join(filter(None, [
+        args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium, IMAGE_SOURCE_URL
+    ]))
+
+    reverse_image_search(image_url, metadata_text)
     print(f"Try deleting {image_url} in a browser using {delete_url}.", file=sys.stderr)
     sys.exit(0)
 
