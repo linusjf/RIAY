@@ -39,6 +39,7 @@ deepinfra_client = OpenAI(
 class MatchMode(Enum):
     FUZZY = auto()
     COSINE = auto()
+    HYBRID = auto()
 
 def compare_terms(term_a, term_b, mode=MatchMode.FUZZY):
     """Compare two terms using the specified mode and return match score.
@@ -46,7 +47,7 @@ def compare_terms(term_a, term_b, mode=MatchMode.FUZZY):
     Args:
         term_a: First term to compare
         term_b: Second term to compare
-        mode: MatchMode enum value (FUZZY or COSINE)
+        mode: MatchMode enum value (FUZZY, COSINE or HYBRID)
     """
     if not term_a or not term_b:
         print(f"  ⚠️ Skipping comparison - empty term: '{term_a}' vs '{term_b}'", file=sys.stderr)
@@ -58,8 +59,14 @@ def compare_terms(term_a, term_b, mode=MatchMode.FUZZY):
         vec1 = get_embedding(term_a)
         vec2 = get_embedding(term_b)
         score = cosine_similarity(vec1, vec2)
+    elif mode == MatchMode.HYBRID:
+        fuzzy_score = fuzz.partial_ratio(term_a.lower(), term_b.lower()) / 100
+        vec1 = get_embedding(term_a)
+        vec2 = get_embedding(term_b)
+        cosine_score = cosine_similarity(vec1, vec2)
+        score = fuzzy_score * cosine_score * 100  # Scale back to 0-100 range
     else:
-        raise ValueError(f"Invalid mode. Must be either {MatchMode.FUZZY} or {MatchMode.COSINE}")
+        raise ValueError(f"Invalid mode. Must be one of {MatchMode.FUZZY}, {MatchMode.COSINE}, or {MatchMode.HYBRID}")
 
     print(f"  🔎 Comparing '{term_a}' to '{term_b}' (score: {score})", file=sys.stderr)
     return score
@@ -70,7 +77,7 @@ def compute_match_terms(description_terms, metadata_terms, mode=MatchMode.FUZZY)
     Args:
         description_terms: List of terms from description
         metadata_terms: List of terms from metadata
-        mode: MatchMode enum value (FUZZY or COSINE)
+        mode: MatchMode enum value (FUZZY, COSINE or HYBRID)
 
     Returns:
         Tuple of (matched_terms, mismatched_terms)
@@ -87,7 +94,8 @@ def compute_match_terms(description_terms, metadata_terms, mode=MatchMode.FUZZY)
     for term_a, term_b in zip(description_terms, metadata_terms):
         score = compare_terms(term_a, term_b, mode)
         if ((mode == MatchMode.FUZZY and score >= 70) or
-            (mode == MatchMode.COSINE and score >= 0.7)):
+            (mode == MatchMode.COSINE and score >= 0.7) or
+            (mode == MatchMode.HYBRID and score >= 50)):
             matched.append(f"{term_a} , {term_b}")
         else:
             mismatched.append(f"{term_a} , {term_b}")
@@ -101,7 +109,7 @@ def compute_match_dicts(dict1, dict2, mode=MatchMode.FUZZY):
     Args:
         dict1: First dictionary to compare
         dict2: Second dictionary to compare
-        mode: MatchMode enum value (FUZZY or COSINE)
+        mode: MatchMode enum value (FUZZY, COSINE or HYBRID)
 
     Returns:
         Tuple of (matched_items, mismatched_items)
@@ -120,7 +128,8 @@ def compute_match_dicts(dict1, dict2, mode=MatchMode.FUZZY):
         value2 = dict2[key]
         score = compare_terms(value1, value2, mode)
         if ((mode == MatchMode.FUZZY and score >= 70) or
-            (mode == MatchMode.COSINE and score >= 0.7)):
+            (mode == MatchMode.COSINE and score >= 0.7) or
+            (mode == MatchMode.HYBRID and score >= 50)):
             matched.append(f"{key}: {value1} , {value2}")
         else:
             mismatched.append(f"{key}: {value1} , {value2}")
