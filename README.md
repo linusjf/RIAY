@@ -5454,7 +5454,7 @@ This is no mere depiction of suffering, but a window into its strange redemption
 - [July 05, 2025](#july-05-2025)
   - [Power From On High](#power-from-on-high)
   - [AI-Generated Summary: The Divine Gift and the Art of Waiting](#ai-generated-summary-the-divine-gift-and-the-art-of-waiting)
-  - [Pentecost by unknown artist, 17th century, at The Met, captures dramatic Baroque biblical scene in ink](#pentecost-by-unknown-artist-17th-century-at-the-met-captures-dramatic-baroque-biblical-scene-in-ink)
+  - [Pentecost by Simone Peterzano, 17th century](#pentecost-by-simone-peterzano-17th-century)
 
 <!-- tocstop -->
 
@@ -5546,9 +5546,9 @@ Consider, dear reader, how the world prizes power seized by force—the clenched
 
 Lent teaches us to labor; Easter, to receive. The world clamors for control, but the Christian kneels, knowing that every true strength—like those painted flames above each head—comes not by our cunning, but by grace. To wait is not idleness; it is the soul’s posture before the Giver of all good things.
 
-##### Pentecost by unknown artist, 17th century, at The Met, captures dramatic Baroque biblical scene in ink
+##### Pentecost by Simone Peterzano, 17th century
 
-[![Pentecost by unknown artist, 17th century, at The Met, captures dramatic Baroque biblical scene in ink](July/jpgs/pentecostsimonepeterzano.jpg)](<https://www.meisterdrucke.us/kunstwerke/500px/Simone_Peterzano_-_Study_for_the_Pentecost_-_(MeisterDrucke-1295971).jpg> "Pentecost by unknown artist, 17th century, at The Met, captures dramatic Baroque biblical scene in ink")
+[![Pentecost by Simone Peterzano, 17th century](July/jpgs/pentecostsimonepeterzano.jpg)](<https://www.meisterdrucke.us/kunstwerke/500px/Simone_Peterzano_-_Study_for_the_Pentecost_-_(MeisterDrucke-1295971).jpg> "Pentecost by Simone Peterzano, 17th century")
 
 ## August
 
