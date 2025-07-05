@@ -8,23 +8,17 @@ This script searches for artwork images from multiple sources including:
 """
 
 import os
-import random
 import sys
 import time
-import re
 import argparse
-import subprocess
-from io import BytesIO
 import shutil
 
 import requests
 from dotenv import load_dotenv
-from PIL import Image
 from duckduckgo_search import DDGS
 from duckduckgo_search.exceptions import RatelimitException
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 from serpapi import GoogleSearch
-from fuzzywuzzy import fuzz
 from bashhelper import parse_bash_array
 from htmlhelper import strip_span_tags_but_keep_contents
 from converterhelper import convert_to_jpeg
