@@ -151,6 +151,7 @@ def main():
         print("🧠 Checking for matching terms...", file=sys.stderr)
         matched, mismatched = compute_match_dicts(metadata_dict, image_description_dict,MatchMode.HYBRID)
         non_empty_count = len([v for v in metadata_dict.values() if v])
+        print("non-empty count: {non_empty_count}", file=sys.stderr )
         is_likely_match = similarity >= 50.0 and len(matched) >= non_empty_count//2
         print(
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",

@@ -122,7 +122,7 @@ function verify_image() {
     err "❌ Verification failed for: ${file}"
   fi
 
-  err "🏆 Best image: $file (score: $score)"
+  err "🏆 Best image: $file (score: ${score:-})"
   echo "$result" | jq --arg k "filename" --arg v "$file" '. + {($k):($v)}'
 }
 
