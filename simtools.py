@@ -21,9 +21,12 @@ from dotenv import load_dotenv
 
 # Load environment variables from config.env
 load_dotenv('config.env')
-DEEPINFRA_API_KEY = os.getenv("DEEPINFRA_TOKEN")
+DEEPINFRA_API_KEY = os.getenv("DEEPINFRA_TOKEN", "")
 if not DEEPINFRA_API_KEY:
     raise ValueError("DEEPINFRA_TOKEN environment variable not set")
+VECTOR_EMBEDDINGS_MODEL = os.getenv("VECTOR_EMBEDDINGS_MODEL", "")
+if not VECTOR_EMBEDDINGS_MODEL:
+    raise ValueError("VECTOR_EMBEDDINGS_MODEL environment variable not set")
 
 deepinfra_client = OpenAI(
     api_key=DEEPINFRA_API_KEY,
@@ -125,7 +128,7 @@ def compute_match_dicts(dict1, dict2, mode=MatchMode.FUZZY):
 def get_embedding(text):
     """Get text embedding using deepinfra client."""
     embeddings = deepinfra_client.embeddings.create(
-        model="thenlper/gte-large",
+        model=VECTOR_EMBEDDINGS_MODEL,
         input=text,
         encoding_format="float"
     )
