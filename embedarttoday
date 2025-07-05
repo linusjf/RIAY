@@ -116,7 +116,7 @@ function verify_image() {
   err "🔍 Verifying image: $file"
   if result=$("${SCRIPT_DIR}/${verifier}" --image "$file" --title "${title:-}" --artist "${artist:-}" --subject "${subject:-}" \
     --location "${location:-}" --style "${style:-}" --medium "${medium:-}" --date "${date:-}"); then
-    score="$(echo "$result" | jq -r '.similarity_score')"
+    score="$(echo "$result" | jq -r '.cosine_score')"
     err "✅ Verification passed for: ${file} (score: ${score})"
   else
     err "❌ Verification failed for: ${file}"

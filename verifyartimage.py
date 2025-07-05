@@ -144,15 +144,15 @@ def main():
             file=sys.stderr
         )
 
-        similarity = compare_terms(metadata_text, image_description_text,MatchMode.HYBRID)
-        print(f"Similarity: {similarity:.4f}", file=sys.stderr)
-        data["similarity_score"] = round(similarity, 3)
+        cosine_score = compare_terms(metadata_text, image_description_text,MatchMode.COSINE)
+        print(f"Similarity: {cosine_score:.4f}", file=sys.stderr)
+        data["cosine_score"] = round(cosine_score, 3)
 
         print("🧠 Checking for matching terms...", file=sys.stderr)
         matched, mismatched = compute_match_dicts(metadata_dict, image_description_dict,MatchMode.HYBRID)
         non_empty_count = len([v for v in metadata_dict.values() if v])
-        print("non-empty count: {non_empty_count}", file=sys.stderr )
-        is_likely_match = similarity >= 50.0 and len(matched) >= non_empty_count//2
+        print(f"non-empty count: {non_empty_count}", file=sys.stderr )
+        is_likely_match = cosine_score >= 0.7 and len(matched) >= non_empty_count//2
         print(
             f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}",
             file=sys.stderr
