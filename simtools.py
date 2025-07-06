@@ -22,11 +22,11 @@ from dotenv import load_dotenv
 VECTOR_EMBEDDINGS_MODEL_API_KEY = None
 # Load environment variables from config.env
 load_dotenv('config.env')
-API_KEY_NAME= os.getenv(os.getenv("VECTOR_EMBEDDINGS_MODEL_API_KEY", ""))
+API_KEY_NAME= str(os.getenv("VECTOR_EMBEDDINGS_MODEL_API_KEY", ""))
 if not API_KEY_NAME:
     raise ValueError("VECTOR_EMBEDDINGS_MODEL_API_KEY environment variable not set")
 else:
-    VECTOR_EMBEDDINGS_MODEL_API_KEY = os.getenv(os.getenv(API_KEY_NAME[1:], ""))
+    VECTOR_EMBEDDINGS_MODEL_API_KEY = os.getenv(API_KEY_NAME[1:], "")
     if not VECTOR_EMBEDDINGS_MODEL_API_KEY:
         raise ValueError("VECTOR_EMBEDDINGS_MODEL_API_KEY environment variable not set")
 
