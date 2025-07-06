@@ -211,47 +211,54 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
             print("❌ No matching images found.")
             return False
 
-        selected_result = {}
-        best_score = 0
-
+        qualifying_results = []
         for result in search_results:
             title = result["title"]
             titlesnippet = strip_span_tags_but_keep_contents(result["titlesnippet"])
             snippet = strip_span_tags_but_keep_contents(result["snippet"])
             result_meta_data = " ".join([title, titlesnippet, snippet])
             score = compare_terms(detailed_query.lower(), result_meta_data.lower(), MatchMode.HYBRID)
-            if score > best_score:
-                best_score = score
-                selected_result = result
+            if score >= 50.0:
+                qualifying_results.append((result, score))
 
-        selected_title = selected_result["title"]
-        print(f"Selected title {selected_title} with score: {best_score}")
-        # Step 2: Get image info
-        info_params = {
-            "action": "query",
-            "titles": selected_title,
-            "prop": "imageinfo",
-            "iiprop": "url",
-            "format": "json"
-        }
+        if not qualifying_results:
+            print("❌ No qualifying results found (score >= 50.0)")
+            return False
 
-        info_resp = requests.get(search_endpoint, params=info_params, timeout=10)
-        info_resp.raise_for_status()
-        info_data = info_resp.json()
-        pages = info_data.get("query", {}).get("pages", {})
+        success = False
+        for idx, (result, score) in enumerate(qualifying_results):
+            selected_title = result["title"]
+            print(f"Selected title {selected_title} with score: {score}")
+            
+            # Get image info
+            info_params = {
+                "action": "query",
+                "titles": selected_title,
+                "prop": "imageinfo",
+                "iiprop": "url",
+                "format": "json"
+            }
 
-        for page in pages.values():
-            imageinfo = page.get("imageinfo")
-            if imageinfo:
-                image_url = imageinfo[0].get("url")
-                if image_url:
-                    filename = os.path.join(SAVE_DIR, f"{filename_base}_{source}.jpg")
-                    return save_image(image_url, filename)
+            info_resp = requests.get(search_endpoint, params=info_params, timeout=10)
+            info_resp.raise_for_status()
+            info_data = info_resp.json()
+            pages = info_data.get("query", {}).get("pages", {})
+
+            for page in pages.values():
+                imageinfo = page.get("imageinfo")
+                if imageinfo:
+                    image_url = imageinfo[0].get("url")
+                    if image_url:
+                        unique_filename = f"{filename_base}_{source}_{idx+1}"
+                        filename = os.path.join(SAVE_DIR, f"{unique_filename}.jpg")
+                        if save_image(image_url, filename):
+                            success = True
+
+        return success
 
     except Exception as e:
         print(f"❌ Error: {e}")
-
-    return False
+        return False
 
 def download_image_from_wikipedia_article(query, detailed_query, filename_base):
     """Download the first usable image from a Wikipedia article (full API pipeline).
@@ -276,7 +283,7 @@ def download_image_from_wikipedia_article(query, detailed_query, filename_base):
 
         pages = image_data.get("pages", [])
         qualifying_pages = []
-        
+
         for idx, page in enumerate(pages):
             key = page.get("key", "")
             title = page.get("title", "")
@@ -284,7 +291,7 @@ def download_image_from_wikipedia_article(query, detailed_query, filename_base):
             description = page.get("description", "")
             page_meta_data = " ".join([key, title, excerpt, description])
             score = compare_terms(detailed_query.lower(), page_meta_data.lower(), MatchMode.HYBRID)
-            
+
             if score >= 50.0:
                 print(f"✅ Qualified page {idx+1}: {title} (score: {score:.1f})")
                 qualifying_pages.append((title, score))
@@ -299,7 +306,7 @@ def download_image_from_wikipedia_article(query, detailed_query, filename_base):
         success = False
         for idx, (title, score) in enumerate(qualifying_pages):
             print(f"\n📥 Downloading image for qualified page {idx+1}: {title}")
-            unique_filename = f"{filename_base}_wikipedia_{idx+1}"
+            unique_filename = f"{filename_base}_{idx+1}"
             if download_from_wikimedia_search(title, detailed_query, unique_filename, "wikipedia"):
                 success = True
 
@@ -498,7 +505,7 @@ def main():
     print("\nDownloaded images: ")
     for v in DOWNLOADED_URLS.values():
         print(v)
-    
+
     if FOUND_STOCK_PHOTOS:
         print("\nFound stock photos (not downloaded):")
         for url in FOUND_STOCK_PHOTOS:
