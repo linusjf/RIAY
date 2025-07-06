@@ -229,7 +229,7 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
         for idx, (result, score) in enumerate(qualifying_results):
             selected_title = result["title"]
             print(f"Selected title {selected_title} with score: {score}")
-            
+
             # Get image info
             info_params = {
                 "action": "query",
@@ -316,7 +316,7 @@ def download_image_from_wikipedia_article(query, detailed_query, filename_base):
         print(f"❌ Error: {error}")
         return False
 
-def download_from_wikimedia(query, filename_base):
+def download_from_wikimedia(query, enhanced_query, filename_base):
     """Download image from Wikimedia Commons.
 
     Args:
@@ -334,13 +334,34 @@ def download_from_wikimedia(query, filename_base):
             params=params
         ).json()
         pages = response.get("pages", [])
+        qualifying_pages = []
         if not pages:
             print("❌ No matching images found.")
             return False
-        for page in pages:
+        for idx, page in enumerate(pages[0:5]):
             file = page.get("key")
-            if not file:
-                continue
+            key = page.get("key", "")
+            title = page.get("title", "")
+            excerpt = strip_span_tags_but_keep_contents(page.get("excerpt", ""))
+            description = page.get("description", "")
+            page_meta_data = " ".join(str(p) for p in [key, title, excerpt, description] if p is not None)
+            score = compare_terms(enhanced_query.lower(), page_meta_data.lower(), MatchMode.HYBRID)
+
+            if score >= 50.0:
+                print(f"✅ Qualified file {idx+1}: {file} (score: {score:.1f})")
+                qualifying_pages.append((file, score))
+            else:
+                print(f"❌ Excluded file {idx+1}: {file} (score: {score:.1f})")
+
+        if not qualifying_pages:
+            print("❌ No qualifying files found (score >= 50.0)")
+            return False
+
+        # Download images for all qualifying pages
+        success = False
+        for idx, (file, score) in enumerate(qualifying_pages):
+            print(f"\n📥 Downloading image for qualified file {idx+1}: {file}")
+            unique_filename = f"{filename_base}_{idx+1}"
             file_response = requests.get(
                 WIKIMEDIA_FILE_API_URL + "/" + file,
                 headers={'User-Agent': 'Mozilla/5.0'}
@@ -350,10 +371,13 @@ def download_from_wikimedia(query, filename_base):
                 image_url = original.get("url")
                 filename = os.path.join(
                         SAVE_DIR,
-                        f"{filename_base}_wikimedia.jpg"
+                        f"{unique_filename}_wikimedia.jpg"
                 )
                 if save_image(image_url, filename):
-                        return True
+                        success = True
+
+        return success
+
     except Exception as error:
         print(f"❌ Error: {error}")
 
@@ -455,7 +479,7 @@ def download_all(query, filename_base=None, title=None, artist=None, location=No
 
     downloaded_wikipedia_search = download_image_from_wikipedia_article(wikimedia_query, enhanced_query, filename_base)
     downloaded_wikimedia_search = download_from_wikimedia_search(wikimedia_query, enhanced_query, filename_base)
-    downloaded_wikimedia = download_from_wikimedia(wikimedia_query, filename_base)
+    downloaded_wikimedia = download_from_wikimedia(wikimedia_query, enhanced_query, filename_base)
 
     print(f"\n🔍 Searching google and duckduckgo with enhanced query: {enhanced_query}")
 
