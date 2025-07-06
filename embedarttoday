@@ -20,7 +20,7 @@ readonly E_NO_COLOR_IMAGES=8
 readonly E_NO_SATISFACTORY_IMAGES=9
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -152,25 +152,22 @@ function generate_markdown() {
   local source_url="$3"
   local month="$4"
   local day_num="$5"
-  local stock_photos=("$6")
+  shift 5
+  local stock_photos=("$@")
 
   header="### ${caption}"
   # Generate video markdown
   local video_md
   video_md=$(vidmd::videomarkdown "$caption" "$image_path" "$source_url")
 
-  # Combine into final markdown
-  local markdown_content="\n${header}\n\n${video_md}"
-
+  printf "\n%s\n\n%s" "$header" "$video_md"
   # Add stock photo links if any
   if [[ ${#stock_photos[@]} -gt 0 ]]; then
-    markdown_content+="\n\n### Stock Photo Links\n"
+    printf "\n\n%s\n\n" "### Stock Photo Links"
     for url in "${stock_photos[@]}"; do
-      markdown_content+="* ${url}\n"
+      printf "%s\n" "1. <${url}>"
     done
   fi
-
-  printf "%s" "$markdown_content"
 }
 
 function append_to_day_file() {
@@ -185,7 +182,7 @@ function append_to_day_file() {
     die "Error: Day file $day_file does not exist" $E_MISSING_FILE
   fi
 
-  echo "$content" >> "$day_file"
+  echo "$content" >>"$day_file"
   echo "📝 Appended artwork to: $day_file"
 }
 
@@ -219,20 +216,16 @@ function main() {
 
   # Run artdownloader and capture output to get stock photo URLs
   local downloader_output
-  downloader_output=$("${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --location "${location:-}" \
-    --medium "${medium:-}" --subject "${subject:-}" --style "${style:-}" --date "${date:-}")
+  downloader_output="$("${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --location "${location:-}" \
+    --medium "${medium:-}" --subject "${subject:-}" --style "${style:-}" --date "${date:-}")"
 
   # Extract stock photo URLs from output
-  while IFS= read -r line; do
-    if [[ "$line" == *"Found stock photos (not downloaded):"* ]]; then
-      while IFS= read -r url_line; do
-        if [[ "$url_line" == http* ]]; then
-          stock_photos+=("$url_line")
-        fi
-      done <<< "$downloader_output"
-    fi
-  done <<< "$downloader_output"
+  mapfile -t stock_photos < <(echo "$downloader_output" | awk '
+  /Found stock photos \(not downloaded\):/ { in_block = 1; next }
+  in_block && /^http/ { print }
+  in_block && !/^http/ { in_block = 0 }')
 
+  printf "%s\n" "${stock_photos[@]}"
   # Filter for color images first
   # shellcheck disable=SC2086
   mapfile -t color_files < <(filter_color_images ${ART_DOWNLOADER_DIR}/${filename}*.jpg)
@@ -287,13 +280,13 @@ function main() {
 
       # Also copy URL file if it exists
       if [[ -n "$source_url" ]]; then
-        echo "$source_url" > "$target_dir/${filename}.url.txt"
+        echo "$source_url" >"$target_dir/${filename}.url.txt"
         echo "📝 Saved source URL to: $target_dir/${filename}.url.txt"
       fi
 
       # Generate and append markdown
       local markdown_content
-      markdown_content=$(generate_markdown "$caption" "$target_file" "$source_url" "$month" "$day_num" "${stock_photos[@]}")
+      markdown_content="$(generate_markdown "$caption" "$target_file" "$source_url" "$month" "$day_num" "${stock_photos[@]}")"
       append_to_day_file "$day_num" "$markdown_content" "$month"
       return 0
     else
@@ -308,16 +301,16 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -h | --help) usage 0 ;;
-      -v | --version)
-        version
-        exit 0
-        ;;
-      -d | --debug)
-        set -x
-        shift
-        ;;
-      *) break ;;
+    -h | --help) usage 0 ;;
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *) break ;;
     esac
   done
   require_commands tee date jq cp ls bc || exit $E_MISSING_TOOLS
