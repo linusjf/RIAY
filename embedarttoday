@@ -152,6 +152,7 @@ function generate_markdown() {
   local source_url="$3"
   local month="$4"
   local day_num="$5"
+  local stock_photos=("$6")
 
   header="### ${caption}"
   # Generate video markdown
@@ -159,7 +160,17 @@ function generate_markdown() {
   video_md=$(vidmd::videomarkdown "$caption" "$image_path" "$source_url")
 
   # Combine into final markdown
-  printf "\n%s\n\n%s\n" "$header" "$video_md"
+  local markdown_content="\n${header}\n\n${video_md}"
+
+  # Add stock photo links if any
+  if [[ ${#stock_photos[@]} -gt 0 ]]; then
+    markdown_content+="\n\n### Stock Photo Links\n"
+    for url in "${stock_photos[@]}"; do
+      markdown_content+="* ${url}\n"
+    done
+  fi
+
+  printf "%s" "$markdown_content"
 }
 
 function append_to_day_file() {
@@ -182,6 +193,7 @@ function main() {
   validate_arguments "$@"
   local day_num=$1
   local month day_string summary_file
+  local stock_photos=()
 
   require_vars YEAR ART_DOWNLOADER_DIR VERIFY_ART_IMAGES IMAGE_CONTENT_VALIDATION || exit $E_MISSING_ENV
 
@@ -204,8 +216,22 @@ function main() {
   subject="$(echo "$art_details" | jq '.details.subject' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   filename="$(echo "$art_details" | jq '.filename' | sed 's/"//g')"
   caption="$(echo "$art_details" | jq '.caption' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
-  "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --location "${location:-}" \
-    --medium "${medium:-}" --subject "${subject:-}" --style "${style:-}" --date "${date:-}"
+
+  # Run artdownloader and capture output to get stock photo URLs
+  local downloader_output
+  downloader_output=$("${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --location "${location:-}" \
+    --medium "${medium:-}" --subject "${subject:-}" --style "${style:-}" --date "${date:-}")
+
+  # Extract stock photo URLs from output
+  while IFS= read -r line; do
+    if [[ "$line" == *"Found stock photos (not downloaded):"* ]]; then
+      while IFS= read -r url_line; do
+        if [[ "$url_line" == http* ]]; then
+          stock_photos+=("$url_line")
+        fi
+      done <<< "$downloader_output"
+    fi
+  done <<< "$downloader_output"
 
   # Filter for color images first
   # shellcheck disable=SC2086
@@ -267,7 +293,7 @@ function main() {
 
       # Generate and append markdown
       local markdown_content
-      markdown_content=$(generate_markdown "$caption" "$target_file" "$source_url" "$month" "$day_num")
+      markdown_content=$(generate_markdown "$caption" "$target_file" "$source_url" "$month" "$day_num" "${stock_photos[@]}")
       append_to_day_file "$day_num" "$markdown_content" "$month"
       return 0
     else
