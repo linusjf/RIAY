@@ -48,7 +48,7 @@ SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
 def save_image(url, filename):
     """Save an image from URL to local file."""
     if url in DOWNLOADED_URLS:
-        print(f"⏩ URL already downloaded: {url}")
+        print(f"⏩ URL already downloaded: {url}", file=sys.stderr)
         existing_file = DOWNLOADED_URLS[url]
         try:
             # Copy the existing file to new filename
@@ -58,11 +58,11 @@ def save_image(url, filename):
             new_url_file = os.path.splitext(filename)[0] + ".url.txt"
             if os.path.exists(existing_url_file):
                 shutil.copy2(existing_url_file, new_url_file)
-            print(f"✅ Copied existing file: {existing_file} -> {filename}")
+            print(f"✅ Copied existing file: {existing_file} -> {filename}", file=sys.stderr)
             DOWNLOADED_URLS[url] = filename
             return True
         except Exception as e:
-            print(f"❌ Error copying existing file: {e}")
+            print(f"❌ Error copying existing file: {e}", file=sys.stderr)
             return False
 
     try:
@@ -108,14 +108,14 @@ def save_image(url, filename):
                 if ext.lower() not in ('.jpg', '.jpeg'):
                     jpeg_path = convert_to_jpeg(temp_filename)
                     if jpeg_path:
-                        print(f"✅ Saved: {jpeg_path} (source URL saved to {url_filename})")
+                        print(f"✅ Saved: {jpeg_path} (source URL saved to {url_filename})", file=sys.stderr)
                         DOWNLOADED_URLS[url] = jpeg_path
                         return True
                     else:
-                        print(f"⚠️ Saved original format: {temp_filename}")
+                        print(f"⚠️ Saved original format: {temp_filename}", file=sys.stderr)
                         return True
                 else:
-                    print(f"✅ Saved: {temp_filename} (source URL saved to {url_filename})")
+                    print(f"✅ Saved: {temp_filename} (source URL saved to {url_filename})", file=sys.stderr)
                     return True
 
             elif response.status_code in {408, 429, 500, 502, 503, 504}:
@@ -127,12 +127,12 @@ def save_image(url, filename):
                 time.sleep(wait)
                 attempt += 1
             else:
-                print(f"❌ Failed with status: {response.status_code}")
+                print(f"❌ Failed with status: {response.status_code}", file=sys.stderr)
                 break
-        print("❗ Download failed after retries.")
-        print(f"❌ Failed to download: {url}")
+        print("❗ Download failed after retries.", file=sys.stderr)
+        print(f"❌ Failed to download: {url}", file=sys.stderr)
     except Exception as error:
-        print(f"❌ Error: {error}")
+        print(f"❌ Error: {error}", file=sys.stderr)
     return False
 
 # Retry on rate limit with exponential backoff
@@ -159,7 +159,7 @@ def download_from_duckduckgo(query, filename_base):
     try:
         results = search_duckduckgo_images(query, max_results=10)
         if not results:
-            print("❌ No matching images found.")
+            print("❌ No matching images found.",file=sys.stderr)
             return False
         for image in results:
             url = image["image"]
@@ -173,7 +173,7 @@ def download_from_duckduckgo(query, filename_base):
             if save_image(url, filename):
                 return True
     except Exception as error:
-        print(f"❌ Error: {error}")
+        print(f"❌ Error: {error}", file=sys.stderr)
     return False
 
 def download_from_wikimedia_search(query,detailed_query, filename_base, source="wikimedia_search"):
@@ -189,7 +189,7 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
     Returns:
         bool: True if download succeeded, False otherwise
     """
-    print(f"\n🔍 Searching Wikimedia for: {query}")
+    print(f"\n🔍 Searching Wikimedia for: {query}", file=sys.stderr)
     search_endpoint = "https://commons.wikimedia.org/w/api.php"
     search_params = {
         "action": "query",
@@ -208,7 +208,7 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
         search_results = search_data.get("query", {}).get("search", [])
 
         if not search_results:
-            print("❌ No matching images found.")
+            print("❌ No matching images found.", file=sys.stderr)
             return False
 
         qualifying_results = []
@@ -222,13 +222,13 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
                 qualifying_results.append((result, score))
 
         if not qualifying_results:
-            print("❌ No qualifying results found (score >= 50.0)")
+            print("❌ No qualifying results found (score >= 50.0)", file=sys.stderr)
             return False
 
         success = False
         for idx, (result, score) in enumerate(qualifying_results):
             selected_title = result["title"]
-            print(f"Selected title {selected_title} with score: {score}")
+            print(f"Selected title {selected_title} with score: {score}", file=sys.stderr)
 
             # Get image info
             info_params = {
@@ -257,7 +257,7 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
         return success
 
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f"❌ Error: {e}", file=sys.stderr)
         return False
 
 def download_image_from_wikipedia_article(query, detailed_query, filename_base):
@@ -271,7 +271,7 @@ def download_image_from_wikipedia_article(query, detailed_query, filename_base):
     Returns:
         bool: True if any download succeeded, False otherwise
     """
-    print(f"\n🔍 Fetching all images from Wikipedia article: {query}")
+    print(f"\n🔍 Fetching all images from Wikipedia article: {query}", file=sys.stderr)
     try:
         # Step 1: Get the first n pages that fits the query
         params = {
@@ -293,19 +293,19 @@ def download_image_from_wikipedia_article(query, detailed_query, filename_base):
             score = compare_terms(detailed_query.lower(), page_meta_data.lower(), MatchMode.HYBRID)
 
             if score >= 50.0:
-                print(f"✅ Qualified page {idx+1}: {title} (score: {score:.1f})")
+                print(f"✅ Qualified page {idx+1}: {title} (score: {score:.1f})", file=sys.stderr)
                 qualifying_pages.append((title, score))
             else:
                 print(f"❌ Excluded page {idx+1}: {title} (score: {score:.1f})")
 
         if not qualifying_pages:
-            print("❌ No qualifying pages found (score >= 50.0)")
+            print("❌ No qualifying pages found (score >= 50.0)", file=sys.stderr)
             return False
 
         # Download images for all qualifying pages
         success = False
         for idx, (title, score) in enumerate(qualifying_pages):
-            print(f"\n📥 Downloading image for qualified page {idx+1}: {title}")
+            print(f"\n📥 Downloading image for qualified page {idx+1}: {title}", file=sys.stderr)
             unique_filename = f"{filename_base}_{idx+1}"
             if download_from_wikimedia_search(title, detailed_query, unique_filename, "wikipedia"):
                 success = True
@@ -313,7 +313,7 @@ def download_image_from_wikipedia_article(query, detailed_query, filename_base):
         return success
 
     except Exception as error:
-        print(f"❌ Error: {error}")
+        print(f"❌ Error: {error}", file=sys.stderr)
         return False
 
 def download_from_wikimedia(query, enhanced_query, filename_base):
@@ -326,7 +326,7 @@ def download_from_wikimedia(query, enhanced_query, filename_base):
     Returns:
         bool: True if download succeeded, False otherwise
     """
-    print(f"\n🔍 Wikimedia Commons search for: {query}")
+    print(f"\n🔍 Wikimedia Commons search for: {query}", file=sys.stderr)
     params = {"q": query}
     try:
         response = requests.get(
@@ -336,7 +336,7 @@ def download_from_wikimedia(query, enhanced_query, filename_base):
         pages = response.get("pages", [])
         qualifying_pages = []
         if not pages:
-            print("❌ No matching images found.")
+            print("❌ No matching images found.", file=sys.stderr)
             return False
         for idx, page in enumerate(pages[0:5]):
             file = page.get("key")
@@ -348,19 +348,19 @@ def download_from_wikimedia(query, enhanced_query, filename_base):
             score = compare_terms(enhanced_query.lower(), page_meta_data.lower(), MatchMode.HYBRID)
 
             if score >= 50.0:
-                print(f"✅ Qualified file {idx+1}: {file} (score: {score:.1f})")
+                print(f"✅ Qualified file {idx+1}: {file} (score: {score:.1f})", file=sys.stderr)
                 qualifying_pages.append((file, score))
             else:
-                print(f"❌ Excluded file {idx+1}: {file} (score: {score:.1f})")
+                print(f"❌ Excluded file {idx+1}: {file} (score: {score:.1f})", file=sys.stderr)
 
         if not qualifying_pages:
-            print("❌ No qualifying files found (score >= 50.0)")
+            print("❌ No qualifying files found (score >= 50.0)", file=sys.stderr)
             return False
 
         # Download images for all qualifying pages
         success = False
         for idx, (file, score) in enumerate(qualifying_pages):
-            print(f"\n📥 Downloading image for qualified file {idx+1}: {file}")
+            print(f"\n📥 Downloading image for qualified file {idx+1}: {file}", file=sys.stderr)
             unique_filename = f"{filename_base}_{idx+1}"
             file_response = requests.get(
                 WIKIMEDIA_FILE_API_URL + "/" + file,
@@ -379,7 +379,7 @@ def download_from_wikimedia(query, enhanced_query, filename_base):
         return success
 
     except Exception as error:
-        print(f"❌ Error: {error}")
+        print(f"❌ Error: {error}", file=sys.stderr)
 
     return False
 
@@ -393,7 +393,7 @@ def download_from_google(query, filename_base):
     Returns:
         bool: True if download succeeded, False otherwise
     """
-    print(f"\n🔍 Google search for: {query}")
+    print(f"\n🔍 Google search for: {query}", file=sys.stderr)
     try:
         params = {
             "q": query,
@@ -403,7 +403,7 @@ def download_from_google(query, filename_base):
         search = GoogleSearch(params)
         results = search.get_dict()
         if not results:
-            print("❌ No matching images found.")
+            print("❌ No matching images found.", file=sys.stderr)
             return False
         images = results.get("images_results", [])
         if not images:
@@ -424,7 +424,7 @@ def download_from_google(query, filename_base):
                 return True
 
     except Exception as error:
-        print(f"❌ Error: {error}")
+        print(f"❌ Error: {error}", file=sys.stderr)
     return False
 
 def download_all(query, filename_base=None, title=None, artist=None, location=None, date=None, style=None, medium=None, subject=None):
@@ -475,13 +475,13 @@ def download_all(query, filename_base=None, title=None, artist=None, location=No
     if location and location not in query:
         wikimedia_query += f" {location}"
 
-    print(f"\n🔍 Searching wikis with simple query: {wikimedia_query}")
+    print(f"\n🔍 Searching wikis with simple query: {wikimedia_query}", file=sys.stderr)
 
     downloaded_wikipedia_search = download_image_from_wikipedia_article(wikimedia_query, enhanced_query, filename_base)
     downloaded_wikimedia_search = download_from_wikimedia_search(wikimedia_query, enhanced_query, filename_base)
     downloaded_wikimedia = download_from_wikimedia(wikimedia_query, enhanced_query, filename_base)
 
-    print(f"\n🔍 Searching google and duckduckgo with enhanced query: {enhanced_query}")
+    print(f"\n🔍 Searching google and duckduckgo with enhanced query: {enhanced_query}", file=sys.stderr)
 
     downloaded_duckduckgo = download_from_duckduckgo(enhanced_query, filename_base)
     downloaded_google = download_from_google(enhanced_query, filename_base)
