@@ -249,7 +249,7 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
                 if imageinfo:
                     image_url = imageinfo[0].get("url")
                     if image_url:
-                        unique_filename = f"{filename_base}_{source}_{idx+1}"
+                        unique_filename = f"{filename_base}_{idx+1}_{source}"
                         filename = os.path.join(SAVE_DIR, f"{unique_filename}.jpg")
                         if save_image(image_url, filename):
                             success = True
