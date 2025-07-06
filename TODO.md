@@ -7,7 +7,7 @@
 
 ## Bugs/Issues
 
-1. Fine tune wikipedia and wikimedia_search using additional parameters.
+1. Add section in markdown for stock photo links, if found.
 
 ## Exploratory tasks
 
