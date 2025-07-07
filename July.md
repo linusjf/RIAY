@@ -27,6 +27,7 @@
 - [July 07, 2025](#july-07-2025)
   - [Gifts for Mary](#gifts-for-mary)
   - [AI-Generated Summary: The Celestial Coronation and the Quiet Heart](#ai-generated-summary-the-celestial-coronation-and-the-quiet-heart)
+  - [Mary, Help of Christians by Giuseppe Rollini: Stock Photo Links](#mary-help-of-christians-by-giuseppe-rollini-stock-photo-links)
 
 <!-- tocstop -->
 
@@ -155,3 +156,8 @@ Behold a vision of heavenly splendor, where the Mother of God is enthroned in gl
 Here, saints and angels gather as witnesses: Joseph, pure as the lily he bears; martyrs and confessors from every age; and above them all, the Eternal Father, His light uncreated, the Dove hovering at His breast. The clouds glow as if lit from within, and the procession stretches beyond sight, a reminder that this glory is but a glimpse of what awaits the faithful.
 
 Yet let us not mistake spectacle for substance. The true lesson lies not merely in the painting’s majesty, but in the quiet heart that gazes upon it—a heart at rest in gratitude, turning from the noise of the world to the beauty that points beyond itself. For in such moments, we are given a foretaste of that eternal communion where every saint, every soul, finds its home.
+
+### Mary, Help of Christians by Giuseppe Rollini: Stock Photo Links
+
+1. <https://thumbs.dreamstime.com/b/turin-italy-march-detail-fresco-mary-help-christians-cupola-church-basilica-maria-ausiliatrice-giuseppe-rollini-96756309.jpg>
+1. <https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/seville-the-fresco-of-coronation-of-virgin-mary-jozef-sedmak.jpg>
