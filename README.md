@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -5462,7 +5462,7 @@ This is no mere depiction of suffering, but a window into its strange redemption
 - [July 07, 2025](#july-07-2025)
   - [Gifts for Mary](#gifts-for-mary)
   - [AI-Generated Summary: The Celestial Coronation and the Quiet Heart](#ai-generated-summary-the-celestial-coronation-and-the-quiet-heart)
-  - [Mary, Help of Christians by Giuseppe Rollini: Stock Photo Links](#mary-help-of-christians-by-giuseppe-rollini-stock-photo-links)
+  - [Mary, Help of Christians by Giuseppe Rollini (Stock Image)](#mary-help-of-christians-by-giuseppe-rollini-stock-image)
 
 <!-- tocstop -->
 
@@ -5592,10 +5592,9 @@ Here, saints and angels gather as witnesses: Joseph, pure as the lily he bears; 
 
 Yet let us not mistake spectacle for substance. The true lesson lies not merely in the painting’s majesty, but in the quiet heart that gazes upon it—a heart at rest in gratitude, turning from the noise of the world to the beauty that points beyond itself. For in such moments, we are given a foretaste of that eternal communion where every saint, every soul, finds its home.
 
-##### Mary, Help of Christians by Giuseppe Rollini: Stock Photo Links
+##### Mary, Help of Christians by Giuseppe Rollini (Stock Image)
 
-1. <https://thumbs.dreamstime.com/b/turin-italy-march-detail-fresco-mary-help-christians-cupola-church-basilica-maria-ausiliatrice-giuseppe-rollini-96756309.jpg>
-1. <https://c8.alamy.com/comp/JBNNMG/turin-italy-march-15-2017-the-detail-of-fresco-mary-help-of-christians-JBNNMG.jpg>
+[![Mary, Help of Christians by Giuseppe Rollini](July/jpgs/maryhelpofchristiansrolini.jpg)](https://c8.alamy.com/comp/JBNNMG/turin-italy-march-15-2017-the-detail-of-fresco-mary-help-of-christians-JBNNMG.jpg "Mary, Help of Christians by Giuseppe Rollini")
 
 ## August
 
