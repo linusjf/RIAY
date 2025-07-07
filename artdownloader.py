@@ -21,7 +21,7 @@ from duckduckgo_search.exceptions import RatelimitException
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 from serpapi import GoogleSearch
 from bashhelper import parse_bash_array
-from htmlhelper import strip_span_tags_but_keep_contents
+from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
 from simtools import compare_terms, MatchMode
@@ -51,16 +51,6 @@ WIKIMEDIA_SEARCH_API_URL = (
 WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
 
 SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
-
-def clean_filename_text(url: str) -> str:
-    # Extract the filename part from the URL
-    filename = url.rsplit('/', 1)[-1]
-    # Remove extension
-    filename = filename.rsplit('.', 1)[0]
-    # Remove non-alphabet characters, replace with space
-    cleaned = re.sub(r'[^A-Za-z]+', ' ', filename)
-    # Strip leading/trailing whitespace and normalize spaces
-    return cleaned.strip()
 
 def save_image(url, filename):
     """Save an image from URL to local file."""
