@@ -49,11 +49,12 @@ def strip_code_guards(text):
     return text.strip()
 
 
-def generate_image_description(image_path):
+def generate_image_description(args):
     """Generate image description for given image using OpenAI's gpt-4o-mini."""
     print("🖼️ Generating image description...", file=sys.stderr)
-    base64_image = encode_image_to_base64(image_path)
+    base64_image = encode_image_to_base64(args.image)
     prompt = os.getenv("ART_METADATA_PROMPT", "Describe and interpret this image in detail.")
+    prompt.replace("{}", args.subject)
     response = client.responses.create(
         model="gpt-4o",
         input=[{
@@ -113,7 +114,7 @@ def main():
     print(f"📋 Metadata dict: {metadata_dict}", file=sys.stderr)
 
     try:
-        image_description = strip_code_guards(generate_image_description(args.image))
+        image_description = strip_code_guards(generate_image_description(args))
         if not is_json_string(image_description):
             print(
             f"Error in generating image description from image : {image_description}",
