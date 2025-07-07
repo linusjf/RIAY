@@ -160,4 +160,4 @@ Yet let us not mistake spectacle for substance. The true lesson lies not merely 
 ### Mary, Help of Christians by Giuseppe Rollini: Stock Photo Links
 
 1. <https://thumbs.dreamstime.com/b/turin-italy-march-detail-fresco-mary-help-christians-cupola-church-basilica-maria-ausiliatrice-giuseppe-rollini-96756309.jpg>
-1. <https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/seville-the-fresco-of-coronation-of-virgin-mary-jozef-sedmak.jpg>
+1. <https://c8.alamy.com/comp/JBNNMG/turin-italy-march-15-2017-the-detail-of-fresco-mary-help-of-christians-JBNNMG.jpg>
