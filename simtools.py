@@ -28,7 +28,7 @@ if not API_KEY_NAME:
 else:
     VECTOR_EMBEDDINGS_MODEL_API_KEY = os.getenv(API_KEY_NAME[1:], "")
     if not VECTOR_EMBEDDINGS_MODEL_API_KEY:
-        raise ValueError("VECTOR_EMBEDDINGS_MODEL_API_KEY environment variable not set")
+        raise ValueError(f"{VECTOR_EMBEDDINGS_MODEL_API_KEY} environment variable not set")
 
 VECTOR_EMBEDDINGS_BASE_URL = os.getenv("VECTOR_EMBEDDINGS_BASE_URL", "")
 if not VECTOR_EMBEDDINGS_BASE_URL:
