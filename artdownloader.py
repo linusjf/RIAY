@@ -32,6 +32,10 @@ DOWNLOADED_URLS = {}
 FOUND_STOCK_PHOTOS = []
 # Global list to track Wikipedia images and their scores
 WIKIPEDIA_IMAGES = []
+# Global list to track Google search results (url, file, score)
+GOOGLE_IMAGES = []
+# Global list to track DuckDuckGo search results (url, file, score)
+DUCKDUCKGO_IMAGES = []
 
 STOCK_PHOTO_SITES = parse_bash_array('config.env', 'STOCK_PHOTO_SITES')
 # Load environment variables from config.env
@@ -192,12 +196,14 @@ def download_from_duckduckgo(query, filename_base):
             url = result["image"]
             if any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
                 FOUND_STOCK_PHOTOS.append(url)
+                DUCKDUCKGO_IMAGES.append((url, "", score))
                 continue
             filename = os.path.join(
                   SAVE_DIR,
                 f"{filename_base}_{idx+1}_duckduckgo.jpg"
             )
             if save_image(url, filename):
+                DUCKDUCKGO_IMAGES.append((url, filename, score))
                 success = True
 
         return success
@@ -282,8 +288,7 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
                         unique_filename = f"{filename_base}_{idx+1}_{source}"
                         filename = os.path.join(SAVE_DIR, f"{unique_filename}.jpg")
                         if save_image(image_url, filename):
-                            if source == "wikipedia":
-                                WIKIPEDIA_IMAGES.append((filename, score))
+                            WIKIPEDIA_IMAGES.append((filename, score))
                             success = True
 
         return success
@@ -466,6 +471,7 @@ def download_from_google(query, filename_base):
         for idx, (url, score) in enumerate(qualifying_pages):
             if any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
                 FOUND_STOCK_PHOTOS.append(url)
+                GOOGLE_IMAGES.append((url, "", score))
                 continue
             print(f"\n📥 Downloading image for qualified image {idx+1}: {url}", file=sys.stderr)
             unique_filename = f"{filename_base}_{idx+1}"
@@ -474,6 +480,7 @@ def download_from_google(query, filename_base):
                 f"{unique_filename}_google.jpg"
             )
             if save_image(url, filename):
+                GOOGLE_IMAGES.append((url, filename, score))
                 success = True
 
         return success
@@ -594,11 +601,32 @@ def main():
         print("\nWikipedia images with scores:")
         for filepath, score in WIKIPEDIA_IMAGES:
             print(f"{filepath} (score: {score:.1f})")
-        
+
         # Find and print the best Wikipedia image
         best_wikipedia = max(WIKIPEDIA_IMAGES, key=lambda x: x[1], default=None)
         if best_wikipedia:
             print(f"\n⭐ Best Wikipedia image: {best_wikipedia[0]} (score: {best_wikipedia[1]:.1f})")
+
+    if not WIKIPEDIA_IMAGES:
+        # Combine all search results
+        all_results = DUCKDUCKGO_IMAGES + GOOGLE_IMAGES
+        if all_results:
+            print("\nAll search results (url, file, score):")
+            for url, file, score in all_results:
+                print(f"{url} -> {file} (score: {score:.1f})")
+
+            # Find the best result (highest score)
+            best_result = max(all_results, key=lambda x: x[2], default=None)
+            if best_result:
+                url, file, score = best_result
+                print(f"\n⭐ Best available image: {url} (score: {score:.1f})")
+                
+                # If we have a URL but no file, download it now
+                if url and not file:
+                    filename = os.path.join(SAVE_DIR, f"best_result_{query.replace(' ', '_')}.jpg")
+                    if save_image(url, filename):
+                        print(f"✅ Downloaded best result: {filename}")
+                        print(f"\n⭐ Best available image (downloaded): {filename}")
 
     sys.exit(0 if success else 1)
 
