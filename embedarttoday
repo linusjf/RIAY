@@ -163,7 +163,7 @@ function generate_markdown() {
   printf "\n%s\n\n%s" "$header" "$video_md"
   # Add stock photo links if any
   if [[ ${#stock_photos[@]} -gt 0 ]]; then
-    printf "\n\n%s\n\n" "### Stock Photo Links"
+    printf "\n\n%s\n\n" "### ${caption}: Stock Photo Links"
     for url in "${stock_photos[@]}"; do
       printf "%s\n" "1. <${url}>"
     done
