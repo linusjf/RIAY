@@ -30,6 +30,8 @@ from simtools import compare_terms, MatchMode
 DOWNLOADED_URLS = {}
 # Global list to track found stock photo URLs
 FOUND_STOCK_PHOTOS = []
+# Global list to track Wikipedia images and their scores
+WIKIPEDIA_IMAGES = []
 
 STOCK_PHOTO_SITES = parse_bash_array('config.env', 'STOCK_PHOTO_SITES')
 # Load environment variables from config.env
@@ -280,6 +282,8 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
                         unique_filename = f"{filename_base}_{idx+1}_{source}"
                         filename = os.path.join(SAVE_DIR, f"{unique_filename}.jpg")
                         if save_image(image_url, filename):
+                            if source == "wikipedia":
+                                WIKIPEDIA_IMAGES.append((filename, score))
                             success = True
 
         return success
@@ -584,6 +588,16 @@ def main():
         print("\nFound stock photos (not downloaded):")
         for url in FOUND_STOCK_PHOTOS:
             print(url)
+
+    if WIKIPEDIA_IMAGES:
+        print("\nWikipedia images with scores:")
+        for filepath, score in WIKIPEDIA_IMAGES:
+            print(f"{filepath} (score: {score:.1f})")
+        
+        # Find and print the best Wikipedia image
+        best_wikipedia = max(WIKIPEDIA_IMAGES, key=lambda x: x[1], default=None)
+        if best_wikipedia:
+            print(f"\n⭐ Best Wikipedia image: {best_wikipedia[0]} (score: {best_wikipedia[1]:.1f})")
 
     sys.exit(0 if success else 1)
 
