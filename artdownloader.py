@@ -330,10 +330,10 @@ def download_image_from_wikipedia_article(query, detailed_query, filename_base):
             score = compare_terms(detailed_query.lower(), page_meta_data.lower(), MatchMode.HYBRID)
 
             if score >= 50.0:
-                print(f"✅ Qualified page {idx+1}: {title} (score: {score:.1f})", file=sys.stderr)
+                print(f"✅ Qualified page {idx+1}: {title} (score: {score:.3f})", file=sys.stderr)
                 qualifying_pages.append((title, score))
             else:
-                print(f"❌ Excluded page {idx+1}: {title} (score: {score:.1f})")
+                print(f"❌ Excluded page {idx+1}: {title} (score: {score:.3f})")
 
         if not qualifying_pages:
             print("❌ No qualifying pages found (score >= 50.0)", file=sys.stderr)
@@ -385,10 +385,10 @@ def download_from_wikimedia(query, enhanced_query, filename_base):
             score = compare_terms(enhanced_query.lower(), page_meta_data.lower(), MatchMode.HYBRID)
 
             if score >= 50.0:
-                print(f"✅ Qualified file {idx+1}: {file} (score: {score:.1f})", file=sys.stderr)
+                print(f"✅ Qualified file {idx+1}: {file} (score: {score:.3f})", file=sys.stderr)
                 qualifying_pages.append((file, score))
             else:
-                print(f"❌ Excluded file {idx+1}: {file} (score: {score:.1f})", file=sys.stderr)
+                print(f"❌ Excluded file {idx+1}: {file} (score: {score:.3f})", file=sys.stderr)
 
         if not qualifying_pages:
             print("❌ No qualifying files found (score >= 50.0)", file=sys.stderr)
@@ -457,10 +457,10 @@ def download_from_google(query, filename_base):
             score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.COSINE)
 
             if score >= 0.7:
-                print(f"✅ Qualified image {idx+1}: {url} (score: {score:.1f})", file=sys.stderr)
+                print(f"✅ Qualified image {idx+1}: {url} (score: {score:.3f})", file=sys.stderr)
                 qualifying_pages.append((url, score))
             else:
-                print(f"❌ Excluded file {idx+1}: {url} (score: {score:.1f})", file=sys.stderr)
+                print(f"❌ Excluded file {idx+1}: {url} (score: {score:.3f})", file=sys.stderr)
 
         if not qualifying_pages:
             print("❌ No qualifying images found (score >= 50.0)", file=sys.stderr)
@@ -600,12 +600,12 @@ def main():
     if WIKIPEDIA_IMAGES:
         print("\nWikipedia images with scores:")
         for filepath, score in WIKIPEDIA_IMAGES:
-            print(f"{filepath} (score: {score:.1f})")
+            print(f"{filepath} (score: {score:.3f})")
 
         # Find and print the best Wikipedia image
         best_wikipedia = max(WIKIPEDIA_IMAGES, key=lambda x: x[1], default=None)
         if best_wikipedia:
-            print(f"\n⭐ Best Wikipedia image: {best_wikipedia[0]} (score: {best_wikipedia[1]:.1f})")
+            print(f"\n⭐ Best Wikipedia image: {best_wikipedia[0]} (score: {best_wikipedia[1]:.3f})")
 
     if not WIKIPEDIA_IMAGES:
         # Combine all search results
@@ -613,7 +613,7 @@ def main():
         if all_results:
             print("\nAll search results (url, file, score):")
             for url, file, score in all_results:
-                print(f"{url} -> {file} (score: {score:.1f})")
+                print(f"{url} -> {file} (score: {score:.3f})")
 
             # Find the best result (highest score)
             best_result = max(all_results, key=lambda x: x[2], default=None)
@@ -625,7 +625,7 @@ def main():
                     if save_image(url, filename):
                         print(f"✅ Downloaded best result: {filename}")
                         file = filename
-                print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.1f})")
+                print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
 
 
     sys.exit(0 if success else 1)

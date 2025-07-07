@@ -219,6 +219,7 @@ function main() {
   downloader_output="$("${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --location "${location:-}" \
     --medium "${medium:-}" --subject "${subject:-}" --style "${style:-}" --date "${date:-}")"
 
+  printf "%s\n" "$downloader_output"
   # Extract stock photo URLs from output
   mapfile -t stock_photos < <(echo "$downloader_output" | awk '
   /Found stock photos \(not downloaded\):/ { in_block = 1; next }
