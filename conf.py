@@ -115,7 +115,8 @@ linkcheck_ignore = [
     r"https://www.gnu.org/software/m4/m4.html",
     r"https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg",
   r"https://www.museodelprado.es/en/the-collection/art-work/agony-in-the-garden/323edcfd-701e-403f-b27a-9c9d5c656e58",
-    r"https://www.dreamstime.com/stock-photo-rome-italy-fresco-assumption-virgin-mary-main-cupola-chiesa-di-santa-maria-del-orto-march-giuseppe-image68702725"
+    r"https://www.dreamstime.com/stock-photo-rome-italy-fresco-assumption-virgin-mary-main-cupola-chiesa-di-santa-maria-del-orto-march-giuseppe-image68702725",
+    r"https://carlbloch.org/media//b/a/base_41135642.jpg?width=600"
 ]
 
 linkcheck_ignore_redirects = True
