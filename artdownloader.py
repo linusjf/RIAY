@@ -161,17 +161,34 @@ def download_from_duckduckgo(query, filename_base):
         if not results:
             print("❌ No matching images found.",file=sys.stderr)
             return False
-        for image in results:
+        qualifying_results = []
+        for image in results[0:5]:
             url = image["image"]
+            title = image["title"]
+            image_meta_data = " ".join([title, url])
+            score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.HYBRID)
+            if score >= 50.0:
+                qualifying_results.append((image, score))
+
+        if not qualifying_results:
+            print("❌ No qualifying results found (score >= 50.0)", file=sys.stderr)
+            return False
+
+        success = False
+        for idx, (result, score) in enumerate(qualifying_results):
+            url = result["image"]
             if any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
                 FOUND_STOCK_PHOTOS.append(url)
                 continue
             filename = os.path.join(
-                SAVE_DIR,
-                f"{filename_base}_duckduckgo.jpg"
+                  SAVE_DIR,
+                f"{filename_base}_{idx+1}_duckduckgo.jpg"
             )
             if save_image(url, filename):
-                return True
+                success = True
+
+        return success
+
     except Exception as error:
         print(f"❌ Error: {error}", file=sys.stderr)
     return False
@@ -409,19 +426,41 @@ def download_from_google(query, filename_base):
         if not images:
             return False
 
-        for image in images:
+        qualifying_pages = []
+        for idx, image in enumerate(images[0:5]):
+            title = image.get("title")
             url = image.get("original")
             if not url:
                 continue
+            image_meta_data = " ".join(str(p) for p in [title, url] if p is not None)
+            score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.HYBRID)
+
+            if score >= 50.0:
+                print(f"✅ Qualified image {idx+1}: {url} (score: {score:.1f})", file=sys.stderr)
+                qualifying_pages.append((url, score))
+            else:
+                print(f"❌ Excluded file {idx+1}: {url} (score: {score:.1f})", file=sys.stderr)
+
+        if not qualifying_pages:
+            print("❌ No qualifying images found (score >= 50.0)", file=sys.stderr)
+            return False
+
+        # Download images for all qualifying pages
+        success = False
+        for idx, (url, score) in enumerate(qualifying_pages):
             if any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
                 FOUND_STOCK_PHOTOS.append(url)
                 continue
+            print(f"\n📥 Downloading image for qualified image {idx+1}: {url}", file=sys.stderr)
+            unique_filename = f"{filename_base}_{idx+1}"
             filename = os.path.join(
                 SAVE_DIR,
-                f"{filename_base}_google.jpg"
+                f"{unique_filename}_google.jpg"
             )
             if save_image(url, filename):
-                return True
+                success = True
+
+        return success
 
     except Exception as error:
         print(f"❌ Error: {error}", file=sys.stderr)
