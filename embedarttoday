@@ -20,7 +20,7 @@ readonly E_NO_COLOR_IMAGES=8
 readonly E_NO_SATISFACTORY_IMAGES=9
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -106,20 +106,16 @@ function filter_color_images() {
 function parse_artdownloader_output() {
   local output="$1"
   local best_selected_image=""
-  local best_score=0
-  
+  local _best_score=0
+
   # Parse the output to find the best image
   while IFS= read -r line; do
     if [[ "$line" == *"⭐ Best available image (downloaded):"* ]]; then
       best_selected_image=$(echo "$line" | awk -F': ' '{print $2}' | awk '{print $1}')
-      best_score=$(echo "$line" | grep -oP '(?<=score: )\d+\.\d+')
+      _best_score=$(echo "$line" | grep -oP '(?<=score: )\d+\.\d+')
     elif [[ "$line" == *"⭐ Best Wikipedia image:"* ]]; then
-      local candidate=$(echo "$line" | awk -F': ' '{print $2}' | awk '{print $1}')
-      local candidate_score=$(echo "$line" | grep -oP '(?<=score: )\d+\.\d+')
-      if (( $(echo "$candidate_score > $best_score" | bc -l) )); then
-        best_selected_image="$candidate"
-        best_score="$candidate_score"
-      fi
+      best_selected_image=$(echo "$line" | awk -F': ' '{print $2}' | awk '{print $1}')
+      _best_score=$(echo "$line" | grep -oP '(?<=score: )\d+\.\d+')
     fi
   done <<< "$output"
 
@@ -175,22 +171,18 @@ function generate_markdown() {
   local source_url="$3"
   local month="$4"
   local day_num="$5"
-  shift 5
-  local stock_photos=("$@")
+  local is_stock_image="$6"
 
-  header="### ${caption}"
+  if "$is_stock_image"; then
+    header="### ${caption} (Stock Image)"
+  else
+    header="### ${caption}"
+  fi
   # Generate video markdown
   local video_md
   video_md=$(vidmd::videomarkdown "$caption" "$image_path" "$source_url")
 
   printf "\n%s\n\n%s" "$header" "$video_md"
-  # Add stock photo links if any
-  if [[ ${#stock_photos[@]} -gt 0 ]]; then
-    printf "\n\n%s\n\n" "### ${caption}: Stock Photo Links"
-    for url in "${stock_photos[@]}"; do
-      printf "%s\n" "1. <${url}>"
-    done
-  fi
 }
 
 function append_to_day_file() {
@@ -205,7 +197,7 @@ function append_to_day_file() {
     die "Error: Day file $day_file does not exist" $E_MISSING_FILE
   fi
 
-  echo "$content" >>"$day_file"
+  echo "$content" >> "$day_file"
   echo "📝 Appended artwork to: $day_file"
 }
 
@@ -213,7 +205,6 @@ function main() {
   validate_arguments "$@"
   local day_num=$1
   local month day_string summary_file
-  local stock_photos=()
 
   require_vars YEAR ART_DOWNLOADER_DIR VERIFY_ART_IMAGES IMAGE_CONTENT_VALIDATION || exit $E_MISSING_ENV
 
@@ -246,6 +237,10 @@ function main() {
 
   # Parse the output to find the best image
   best_selected_image=$(parse_artdownloader_output "$downloader_output")
+  local is_stock_image=false
+  if [[ "$best_selected_image" == *"best_result"* ]]; then
+    is_stock_image=true
+  fi
 
   local jsonresult
   local generate_markdown=true
@@ -291,13 +286,13 @@ function main() {
 
       # Also copy URL file if it exists
       if [[ -n "$source_url" ]]; then
-        echo "$source_url" >"$target_dir/${filename}.url.txt"
+        echo "$source_url" > "$target_dir/${filename}.url.txt"
         echo "📝 Saved source URL to: $target_dir/${filename}.url.txt"
       fi
 
       # Generate and append markdown
       local markdown_content
-      markdown_content="$(generate_markdown "$caption" "$target_file" "$source_url" "$month" "$day_num" "${stock_photos[@]}")"
+      markdown_content="$(generate_markdown "$caption" "$target_file" "$source_url" "$month" "$day_num" "$is_stock_image")"
       append_to_day_file "$day_num" "$markdown_content" "$month"
       return 0
     else
@@ -312,16 +307,16 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -h | --help) usage 0 ;;
-    -v | --version)
-      version
-      exit 0
-      ;;
-    -d | --debug)
-      set -x
-      shift
-      ;;
-    *) break ;;
+      -h | --help) usage 0 ;;
+      -v | --version)
+        version
+        exit 0
+        ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      *) break ;;
     esac
   done
   require_commands tee date jq cp ls bc || exit $E_MISSING_TOOLS
