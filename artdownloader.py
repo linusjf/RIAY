@@ -14,6 +14,7 @@ import argparse
 import shutil
 
 import requests
+import re
 from dotenv import load_dotenv
 from duckduckgo_search import DDGS
 from duckduckgo_search.exceptions import RatelimitException
@@ -44,6 +45,16 @@ WIKIMEDIA_SEARCH_API_URL = (
 WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
 
 SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
+
+def clean_filename_text(url: str) -> str:
+    # Extract the filename part from the URL
+    filename = url.rsplit('/', 1)[-1]
+    # Remove extension
+    filename = filename.rsplit('.', 1)[0]
+    # Remove non-alphabet characters, replace with space
+    cleaned = re.sub(r'[^A-Za-z]+', ' ', filename)
+    # Strip leading/trailing whitespace and normalize spaces
+    return cleaned.strip()
 
 def save_image(url, filename):
     """Save an image from URL to local file."""
@@ -165,9 +176,9 @@ def download_from_duckduckgo(query, filename_base):
         for image in results[0:5]:
             url = image["image"]
             title = image["title"]
-            image_meta_data = " ".join([title, url])
-            score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.HYBRID)
-            if score >= 50.0:
+            image_meta_data = " ".join([title, clean_filename_text(url)])
+            score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.COSINE)
+            if score >= 0.7:
                 qualifying_results.append((image, score))
 
         if not qualifying_results:
@@ -432,10 +443,10 @@ def download_from_google(query, filename_base):
             url = image.get("original")
             if not url:
                 continue
-            image_meta_data = " ".join(str(p) for p in [title, url] if p is not None)
-            score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.HYBRID)
+            image_meta_data = " ".join(str(p) for p in [title, clean_filename_text(url)] if p is not None)
+            score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.COSINE)
 
-            if score >= 50.0:
+            if score >= 0.7:
                 print(f"✅ Qualified image {idx+1}: {url} (score: {score:.1f})", file=sys.stderr)
                 qualifying_pages.append((url, score))
             else:
