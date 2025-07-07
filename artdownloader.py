@@ -619,14 +619,14 @@ def main():
             best_result = max(all_results, key=lambda x: x[2], default=None)
             if best_result:
                 url, file, score = best_result
-                print(f"\n⭐ Best available image: {url} (score: {score:.1f})")
-                
                 # If we have a URL but no file, download it now
                 if url and not file:
                     filename = os.path.join(SAVE_DIR, f"best_result_{query.replace(' ', '_')}.jpg")
                     if save_image(url, filename):
                         print(f"✅ Downloaded best result: {filename}")
-                        print(f"\n⭐ Best available image (downloaded): {filename}")
+                        file = filename
+                print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.1f})")
+
 
     sys.exit(0 if success else 1)
 
