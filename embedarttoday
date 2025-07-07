@@ -20,7 +20,7 @@ readonly E_NO_COLOR_IMAGES=8
 readonly E_NO_SATISFACTORY_IMAGES=9
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -103,6 +103,29 @@ function filter_color_images() {
   fi
 }
 
+function parse_artdownloader_output() {
+  local output="$1"
+  local best_selected_image=""
+  local best_score=0
+  
+  # Parse the output to find the best image
+  while IFS= read -r line; do
+    if [[ "$line" == *"⭐ Best available image (downloaded):"* ]]; then
+      best_selected_image=$(echo "$line" | awk -F': ' '{print $2}' | awk '{print $1}')
+      best_score=$(echo "$line" | grep -oP '(?<=score: )\d+\.\d+')
+    elif [[ "$line" == *"⭐ Best Wikipedia image:"* ]]; then
+      local candidate=$(echo "$line" | awk -F': ' '{print $2}' | awk '{print $1}')
+      local candidate_score=$(echo "$line" | grep -oP '(?<=score: )\d+\.\d+')
+      if (( $(echo "$candidate_score > $best_score" | bc -l) )); then
+        best_selected_image="$candidate"
+        best_score="$candidate_score"
+      fi
+    fi
+  done <<< "$output"
+
+  echo "$best_selected_image"
+}
+
 function verify_image() {
   local file="${1:-}"
   local verifier="verifyartimage.py"
@@ -182,7 +205,7 @@ function append_to_day_file() {
     die "Error: Day file $day_file does not exist" $E_MISSING_FILE
   fi
 
-  echo "$content" >> "$day_file"
+  echo "$content" >>"$day_file"
   echo "📝 Appended artwork to: $day_file"
 }
 
@@ -220,21 +243,9 @@ function main() {
     --medium "${medium:-}" --subject "${subject:-}" --style "${style:-}" --date "${date:-}")"
 
   printf "%s\n" "$downloader_output"
-  # Extract stock photo URLs from output
-  mapfile -t stock_photos < <(echo "$downloader_output" | awk '
-  /Found stock photos \(not downloaded\):/ { in_block = 1; next }
-  in_block && /^http/ { print }
-  in_block && !/^http/ { in_block = 0 }')
 
-  # Filter for color images first
-  # shellcheck disable=SC2086
-  mapfile -t color_files < <(filter_color_images ${ART_DOWNLOADER_DIR}/${filename}*.jpg)
-
-  if [[ ${#color_files[@]} -gt 0 ]]; then
-    best_image="$(select_best_unverified_image "${color_files[@]}")"
-  else
-    return $E_NO_SATISFACTORY_IMAGES
-  fi
+  # Parse the output to find the best image
+  best_selected_image=$(parse_artdownloader_output "$downloader_output")
 
   local jsonresult
   local generate_markdown=true
@@ -243,11 +254,11 @@ function main() {
   else
     generate_markdown=false
   fi
-  if [[ -n "${best_image:-}" ]]; then
-    echo "Selected image: $best_image"
+  if [[ -n "${best_selected_image:-}" ]]; then
+    echo "Selected image: $best_selected_image"
     if "${VERIFY_ART_IMAGES:-false}"; then
-      if jsonresult="$(verify_image "${best_image}")"; then
-        echo "${best_image} verified."
+      if jsonresult="$(verify_image "${best_selected_image}")"; then
+        echo "${best_selected_image} verified."
         caption="$(echo "$jsonresult" | jq '.caption' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
         local image_color="$(echo "$jsonresult" | jq '.image_color')"
         if [[ "$image_color" == *Grayscale* ]] || [[ "$image_color" == *Black-and-white* ]] || [[ "$image_color" == *Sepia* ]]; then
@@ -262,25 +273,25 @@ function main() {
 
     if "$generate_markdown"; then
       # Get source URL from companion .url.txt file
-      local url_file="${best_image%.*}.url.txt"
+      local url_file="${best_selected_image%.*}.url.txt"
       local source_url=""
       if [[ -f "$url_file" ]]; then
         source_url=$(cat "$url_file")
         echo "📌 Source URL: $source_url"
       else
-        err "⚠️ No companion URL file found for $best_image"
+        err "⚠️ No companion URL file found for $best_selected_image"
       fi
 
       # Copy image to month/jpgs directory without source suffix
       local target_dir="$month/jpgs"
       mkdir -p "$target_dir"
       local target_file="$target_dir/${filename}.jpg"
-      cp "$best_image" "$target_file"
+      cp "$best_selected_image" "$target_file"
       echo "📁 Copied image to: $target_file"
 
       # Also copy URL file if it exists
       if [[ -n "$source_url" ]]; then
-        echo "$source_url" > "$target_dir/${filename}.url.txt"
+        echo "$source_url" >"$target_dir/${filename}.url.txt"
         echo "📝 Saved source URL to: $target_dir/${filename}.url.txt"
       fi
 
@@ -301,16 +312,16 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -h | --help) usage 0 ;;
-      -v | --version)
-        version
-        exit 0
-        ;;
-      -d | --debug)
-        set -x
-        shift
-        ;;
-      *) break ;;
+    -h | --help) usage 0 ;;
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *) break ;;
     esac
   done
   require_commands tee date jq cp ls bc || exit $E_MISSING_TOOLS
