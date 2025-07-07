@@ -255,15 +255,15 @@ function main() {
       if jsonresult="$(verify_image "${best_selected_image}")"; then
         echo "${best_selected_image} verified."
         caption="$(echo "$jsonresult" | jq '.caption' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
-        local image_color="$(echo "$jsonresult" | jq '.image_color')"
-        if [[ "$image_color" == *Grayscale* ]] || [[ "$image_color" == *Black-and-white* ]] || [[ "$image_color" == *Sepia* ]]; then
-          err "WARNING: Image color is ${image_color}. Check other downloaded images for colored versions. Colored versions may not be available."
-        fi
-        local watermarked="$(echo "$jsonresult" | jq '.watermarked')"
-        if [[ "$watermarked" == y* ]] || [[ "$watermarked" == Y* ]]; then
-          err "WARNING: Image is watermarked. Check other downloaded images for non-watermarked versions. If the image source is a stock photos website, add the domain to the list of stock photo sites in the configuration."
-          is_stock_image=true
-        fi
+      fi
+      local image_color="$(echo "$jsonresult" | jq '.image_color')"
+      if [[ "$image_color" == *Grayscale* ]] || [[ "$image_color" == *Black-and-white* ]] || [[ "$image_color" == *Sepia* ]]; then
+        err "WARNING: Image color is ${image_color}. Check other downloaded images for colored versions. Colored versions may not be available."
+      fi
+      local watermarked="$(echo "$jsonresult" | jq '.watermarked')"
+      if [[ "$watermarked" == y* ]] || [[ "$watermarked" == Y* ]]; then
+        err "WARNING: Image is watermarked. Check other downloaded images for non-watermarked versions. If the image source is a stock photos website, add the domain to the list of stock photo sites in the configuration."
+        is_stock_image=true
       fi
     fi
 
