@@ -54,7 +54,7 @@ def generate_image_description(args):
     print("🖼️ Generating image description...", file=sys.stderr)
     base64_image = encode_image_to_base64(args.image)
     prompt = os.getenv("ART_METADATA_PROMPT", "Describe and interpret this image in detail.")
-    prompt.replace("{}", args.subject)
+    prompt = prompt.replace("{}", args.subject)
     response = client.responses.create(
         model="gpt-4o",
         input=[{
