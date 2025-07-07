@@ -406,7 +406,8 @@ def download_from_wikimedia(query, enhanced_query, filename_base):
                         f"{unique_filename}_wikimedia.jpg"
                 )
                 if save_image(image_url, filename):
-                        success = True
+                    WIKIPEDIA_IMAGES.append((filename, score))
+                    success = True
 
         return success
 
