@@ -3971,7 +3971,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 23, 2025](#may-23-2025)
   - [Fulfillment of the Promise](#fulfillment-of-the-promise)
   - [AI-Generated Summary: The Rainbow and the Cross](#ai-generated-summary-the-rainbow-and-the-cross)
-  - [The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)](#the-fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852)
+  - [The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852) (Stock Image)](#the-fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-stock-image)
 - [May 24, 2025](#may-24-2025)
   - [Done in Secret](#done-in-secret)
   - [AI-Generated Summary: The Divine Gaze and the Sealed Tomb](#ai-generated-summary-the-divine-gaze-and-the-sealed-tomb)
@@ -3999,7 +3999,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 30, 2025](#may-30-2025)
   - [God Will Provide](#god-will-provide)
   - [AI-Generated Summary: The Quiet Majesty of the Visitation](#ai-generated-summary-the-quiet-majesty-of-the-visitation)
-  - [The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)](#the-painting-of-visitation-in-the-church-chiesa-dei-santi-severino-e-sossio-by-federico-maldarelli-1889)
+  - [The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889) (Stock Image)](#the-painting-of-visitation-in-the-church-chiesa-dei-santi-severino-e-sossio-by-federico-maldarelli-1889-stock-image)
 - [May 31, 2025](#may-31-2025)
   - [St. Joseph's Protection](#st-josephs-protection)
   - [AI-Generated Summary: The Quiet Strength of Saint Joseph](#ai-generated-summary-the-quiet-strength-of-saint-joseph)
@@ -4564,7 +4564,7 @@ Here is the paradox of the Cross: in suffering, victory; in death, life; in dark
 
 And so we pray, not as those without hope, but as children who know their Father keeps His word. _Hail Mary, full of grace... Glory be to the Father..._ For in the end, all shall be well, and all shall be well, and every manner of thing shall be well.
 
-##### The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)
+##### The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852) (Stock Image)
 
 [![The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)](May/jpgs/Crucifixion.jpg)](https://c7.alamy.com/comp/2GRFXKA/rome-italy-august-28-2021-the-fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-2GRFXKA.jpg "The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)")
 
@@ -4698,7 +4698,7 @@ The Gospel does not say Joseph accompanied her, yet reason whispers he must have
 
 Let us then pause, as the painting bids us, to honor such hidden faithfulness. Pray with the _Hail Mary_, that ancient echo of Gabriel’s greeting, and the _Glory Be_, where all grace finds its source. And in our own seasons of frailty, may we, like Mary, find a Joseph—some mortal instrument of Heaven’s kindness—to walk beside us.
 
-##### The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)
+##### The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889) (Stock Image)
 
 [![The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)](May/jpgs/MaldarelliVisitation.jpg)](https://stock.adobe.com/nz/images/naples-italy-april-21-2023-the-painting-of-visitation-in-the-church-chiesa-dei-santi-severino-e-sossio-by-federico-maldarelli-1889/614877275 "The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889)")
 
