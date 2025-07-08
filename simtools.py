@@ -19,9 +19,13 @@ from fuzzywuzzy import fuzz
 from openai import OpenAI
 from dotenv import load_dotenv
 
-VECTOR_EMBEDDINGS_MODEL_API_KEY = None
 # Load environment variables from config.env
-load_dotenv('config.env')
+# This gets the path of THIS file, no matter how it's imported
+base_dir = os.path.dirname(os.path.abspath(__file__))
+dotenv_path = os.path.join(base_dir, "config.env")
+load_dotenv(dotenv_path=dotenv_path)
+
+VECTOR_EMBEDDINGS_MODEL_API_KEY = None
 API_KEY_NAME= str(os.getenv("VECTOR_EMBEDDINGS_MODEL_API_KEY", ""))
 if not API_KEY_NAME:
     raise ValueError("VECTOR_EMBEDDINGS_MODEL_API_KEY environment variable not set")
