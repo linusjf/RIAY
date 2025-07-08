@@ -29,6 +29,8 @@
   - [AI-Generated Summary: The Celestial Coronation and the Quiet Heart](#ai-generated-summary-the-celestial-coronation-and-the-quiet-heart)
   - [Mary, Help of Christians by Giuseppe Rollini (Stock Image)](#mary-help-of-christians-by-giuseppe-rollini-stock-image)
 - [July 08, 2025](#july-08-2025)
+  - [Bonus: Introduction to Phase Four: “Finding Focus” — The Rosary in a Year (with Fr. Mark-Mary Ames)](#bonus-introduction-to-phase-four-finding-focus--the-rosary-in-a-year-with-fr-mark-mary-ames)
+  - [AI-Generated Summary: The Quiet Work of Prayer](#ai-generated-summary-the-quiet-work-of-prayer)
   - [Beginning Our Meditation](#beginning-our-meditation)
   - [AI-Generated Summary: The Humble Astonishment of the Annunciation](#ai-generated-summary-the-humble-astonishment-of-the-annunciation)
   - [The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace](#the-annunciation-by-fra-angelico-1440s-at-san-marco-florence-a-serene-fresco-masterpiece-of-divine-grace)
@@ -166,6 +168,20 @@ Yet let us not mistake spectacle for substance. The true lesson lies not merely 
 [![Mary, Help of Christians by Giuseppe Rollini](July/jpgs/maryhelpofchristiansrolini.jpg)](https://c8.alamy.com/comp/JBNNMG/turin-italy-march-15-2017-the-detail-of-fresco-mary-help-of-christians-JBNNMG.jpg "Mary, Help of Christians by Giuseppe Rollini")
 
 ## July 08, 2025
+
+### Bonus: Introduction to Phase Four: “Finding Focus” — The Rosary in a Year (with Fr. Mark-Mary Ames)
+
+[![Bonus: Introduction to Phase Four: “Finding Focus” — The Rosary in a Year (with Fr. Mark-Mary Ames)](/July/jpgs/Hp4VQq3YlWc.jpg)](https://youtu.be/Hp4VQq3YlWc "Bonus: Introduction to Phase Four: “Finding Focus” — The Rosary in a Year (with Fr. Mark-Mary Ames)")
+
+### AI-Generated Summary: The Quiet Work of Prayer
+
+You will find, dear reader, that the soul’s conversation with Heaven is not measured in words but in weight—the weight of love, of longing, of quiet surrender. The world, with its clamor and haste, would have us believe that prayer is but another task to be checked off, like the counting of beads without the heart’s attendance. But this is folly. Even the briefest lifting of the mind to God, if done with a child’s trust, is worth more than a thousand rote repetitions.
+
+Commitment, you see, is the scaffold, but devotion is the life within it. A man may vow himself to duty, yet without love, it becomes a chain. But when love is the keeper of the vow—ah, then the yoke is easy. So it is with prayer. The saints whisper to us across the ages: let your words be few, but let your heart be vast. Enter the stillness where God waits, not as a taskmaster, but as the One who says, "Come to Me."
+
+And if distractions come (as they will), do not fret. Bring them, too, into your offering. For the God who made the world delights in the small, the stumbling, the sincere. A mother does not scorn her child’s fumbling gift; neither does Heaven despise the heart that tries.
+
+Here, then, is the secret: to pray is not to perform, but to be present—to take all that you are, all that burdens or delights you, and lay it gently in the hands that hold the stars.
 
 ### Beginning Our Meditation
 
