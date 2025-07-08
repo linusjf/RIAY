@@ -30,7 +30,7 @@
 - [June 08, 2025](#june-08-2025)
   - [Surrender Your Suffering](#surrender-your-suffering)
   - [AI-Generated Summary: The Weight of Surrender and the Light of Redemption](#ai-generated-summary-the-weight-of-surrender-and-the-light-of-redemption)
-  - [The Prayer of Jesus in Gethsemane by Alessandro Maganza](#the-prayer-of-jesus-in-gethsemane-by-alessandro-maganza)
+  - [The Prayer of Jesus in Gethsemane by Alessandro Maganza (Stock Image)](#the-prayer-of-jesus-in-gethsemane-by-alessandro-maganza-stock-image)
 - [June 09, 2025](#june-09-2025)
   - [Choose Your Side](#choose-your-side)
   - [AI-Generated Summary: The Divine Drama in Caravaggio's Light and Shadow](#ai-generated-summary-the-divine-drama-in-caravaggios-light-and-shadow)
@@ -55,7 +55,7 @@
 - [June 14, 2025](#june-14-2025)
   - [Following in His Footsteps](#following-in-his-footsteps)
   - [AI-Generated Summary: The Footprints of the Ascended Lord](#ai-generated-summary-the-footprints-of-the-ascended-lord)
-  - [Ascension of the Lord by Bernardino Gandino](#ascension-of-the-lord-by-bernardino-gandino)
+  - [Ascension of the Lord by Bernardino Gandino (Stock Image)](#ascension-of-the-lord-by-bernardino-gandino-stock-image)
 - [June 15, 2025](#june-15-2025)
   - [Ordinary, Yet Called](#ordinary-yet-called)
   - [AI-Generated Summary: The Spirit's Fire and the Making of Saints](#ai-generated-summary-the-spirits-fire-and-the-making-of-saints)
@@ -63,11 +63,11 @@
 - [June 16, 2025](#june-16-2025)
   - [Glory Awaits the Faithful](#glory-awaits-the-faithful)
   - [AI-Generated Summary: The Triumph of Mary and the Faithful](#ai-generated-summary-the-triumph-of-mary-and-the-faithful)
-  - [Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)](#fresco-of-assumption-of-our-lady-in-the-vision-of-st-bonaventure-in-the-church-chiesa-di-santa-lucia-del-gonfalone-by-cesare-mariani-1863)
+  - [Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863) (Stock Image)](#fresco-of-assumption-of-our-lady-in-the-vision-of-st-bonaventure-in-the-church-chiesa-di-santa-lucia-del-gonfalone-by-cesare-mariani-1863-stock-image)
 - [June 17, 2025](#june-17-2025)
   - [Our Shared Inheritance](#our-shared-inheritance)
   - [AI-Generated Summary: The Crown of Earthly Sorrow and Heavenly Joy](#ai-generated-summary-the-crown-of-earthly-sorrow-and-heavenly-joy)
-  - [Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)](#coronation-of-the-virgin-fresco-by-giuseppe-mattia-borgnis-1701-1761)
+  - [Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761) (Stock Image)](#coronation-of-the-virgin-fresco-by-giuseppe-mattia-borgnis-1701-1761-stock-image)
 - [June 18, 2025](#june-18-2025)
   - [The Faithful 'Yes'](#the-faithful-yes)
   - [AI-Generated Summary: The Divine Tapestry in Van Eyck’s Annunciation](#ai-generated-summary-the-divine-tapestry-in-van-eycks-annunciation)
@@ -277,7 +277,7 @@ And what of us, dear reader? We are bid to follow where He has gone before—to 
 
 So let us pray, not as those who bargain, but as those who trust: _Thy will be done_. For in that submission lies our freedom, and in that darkness, His unyielding light.
 
-### The Prayer of Jesus in Gethsemane by Alessandro Maganza
+### The Prayer of Jesus in Gethsemane by Alessandro Maganza (Stock Image)
 
 [![The Prayer of Jesus in Gethsemane by Alessandro Maganza](/June/jpgs/Gethsemane.jpg)](https://www.istockphoto.com/photo/vicenza-the-painting-of-prayer-of-jesus-in-gethsemane-garden-in-the-cathedral-by-gm1922845709-555481794 "The Prayer of Jesus in Gethsemane by Alessandro Maganza")
 
@@ -401,7 +401,7 @@ St. Francis, that most ardent imitator of Christ, understood this well. To walk 
 
 Let us then, with renewed devotion, take up this daily pilgrimage. For the footprints on the stone are but the beginning; the true path leads ever upward, to where He waits.
 
-### Ascension of the Lord by Bernardino Gandino
+### Ascension of the Lord by Bernardino Gandino (Stock Image)
 
 [![Ascension of the Lord by Bernardino Gandino](/June/jpgs/ascensionofthelord.jpg)](https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Ascension of the Lord by Bernardino Gandino")
 
@@ -439,7 +439,7 @@ Let the world rage as it will; the fresco declares a quieter, surer truth. Evil 
 
 And so we bless one another and press on, remembering that every earthly beauty—even this painted sky—is but a foretaste of what awaits those who endure.
 
-### Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)
+### Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863) (Stock Image)
 
 [![Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)](/June/jpgs/Assumption.jpg)](https://as2.ftcdn.net/jpg/04/64/38/29/1000_F_464382946_EIK0RNI7i73omFzvLLXqQafxXBkZxLZB.jpg "Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)")
 
@@ -457,7 +457,7 @@ See there, among the saints, Joseph—the quiet guardian who bore the weight of 
 
 This is the way of heaven: the meek inherit, the mourners are comforted, the promises whispered in darkness blaze forth in light. Our present trials are real, yet they are not final. Fix your eyes, then, not on the tears of the road but on the joy awaiting at journey’s end—where every vow is kept, and every faithful heart finds its rest in glory.
 
-### Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)
+### Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761) (Stock Image)
 
 [![Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis](/June/jpgs/Coronation.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.8926670.7055475/763119.jpg "Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis")
 

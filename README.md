@@ -3923,19 +3923,19 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 11,2025](#may-112025)
   - [Worship and Warmth](#worship-and-warmth)
   - [AI-Generated Summary: A Meditation on Pellegrini’s Nativity and the Adoration of the Christ Child](#ai-generated-summary-a-meditation-on-pellegrinis-nativity-and-the-adoration-of-the-christ-child)
-  - [Giovanni Antonio Pellegrini's The Nativity](#giovanni-antonio-pellegrinis-the-nativity)
+  - [Giovanni Antonio Pellegrini's The Nativity (Stock Image)](#giovanni-antonio-pellegrinis-the-nativity-stock-image)
 - [May 12,2025](#may-122025)
   - [Eyes on Jesus](#eyes-on-jesus)
   - [AI-Generated Summary: A Reflection on Campy’s Fresco and the Devotion of Mary](#ai-generated-summary-a-reflection-on-campys-fresco-and-the-devotion-of-mary)
-  - [Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)](#fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547)
+  - [Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547) (Stock Image)](#fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547-stock-image)
 - [May 13,2025](#may-132025)
   - [Respond with Grace](#respond-with-grace)
   - [AI-Generated Summary: A Mosaic of Divine Encounter and Human Response](#ai-generated-summary-a-mosaic-of-divine-encounter-and-human-response)
-  - [Finding of Jesus in the Temple mosaic from Lourdes Basilica, France](#finding-of-jesus-in-the-temple-mosaic-from-lourdes-basilica-france)
+  - [Finding of Jesus in the Temple mosaic from Lourdes Basilica, France (Stock Image)](#finding-of-jesus-in-the-temple-mosaic-from-lourdes-basilica-france-stock-image)
 - [May 14,2025](#may-142025)
   - [Shadow of the Cross](#shadow-of-the-cross)
   - [AI-Generated Summary: The Mystery and Majesty of Christ’s Baptism in a 16th-Century Fresco](#ai-generated-summary-the-mystery-and-majesty-of-christs-baptism-in-a-16th-century-fresco)
-  - [An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto](#an-unknown-artists-fresco-baptism-of-christ-in-paduas-church-of-san-benedetto)
+  - [An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto (Stock Image)](#an-unknown-artists-fresco-baptism-of-christ-in-paduas-church-of-san-benedetto-stock-image)
 - [May 15,2025](#may-152025)
   - [Miracles of Love](#miracles-of-love)
   - [AI-Generated Summary: Reflections on Carl Bloch’s The Wedding at Cana and the Quiet Miracles of Christ](#ai-generated-summary-reflections-on-carl-blochs-the-wedding-at-cana-and-the-quiet-miracles-of-christ)
@@ -3943,7 +3943,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 16,2025](#may-162025)
   - [We Must Receive](#we-must-receive)
   - [AI-Generated Summary: James Tissot’s Healing of the Lepers at Capernaum and the Kingdom of God](#ai-generated-summary-james-tissots-healing-of-the-lepers-at-capernaum-and-the-kingdom-of-god)
-  - [James Tissot’s Healing of the Lepers at Capernaum](#james-tissots-healing-of-the-lepers-at-capernaum)
+  - [James Tissot’s Healing of the Lepers at Capernaum (Stock Image)](#james-tissots-healing-of-the-lepers-at-capernaum-stock-image)
 - [May 17,2025](#may-172025)
   - [Medium Reveals Meaning](#medium-reveals-meaning)
   - [AI-Generated Summary: The Radiance of Divine Light in the Transfiguration Window](#ai-generated-summary-the-radiance-of-divine-light-in-the-transfiguration-window)
@@ -3951,7 +3951,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 - [May 18,2025](#may-182025)
   - [Rest in All Things](#rest-in-all-things)
   - [AI-Generated Summary: The Divine Serenity in the Midst of Betrayal](#ai-generated-summary-the-divine-serenity-in-the-midst-of-betrayal)
-  - [Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"](#giacomo-raffaelli-1753-1836--an-italian-mosaicist-created-a-life-sized-mosaic-copy-of-leonardo-da-vincis-the-last-supper)
+  - [Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper" (Stock Image)](#giacomo-raffaelli-1753-1836--an-italian-mosaicist-created-a-life-sized-mosaic-copy-of-leonardo-da-vincis-the-last-supper-stock-image)
 - [May 19,2025](#may-192025)
   - [Gold in Our Halos](#gold-in-our-halos)
   - [AI-Generated Summary: The Duality of Judas and the Mercy of Christ](#ai-generated-summary-the-duality-of-judas-and-the-mercy-of-christ)
@@ -4318,7 +4318,7 @@ _In the name of the Father, the Son, and the Holy Spirit._
 - **Sacred Symmetry**: Artistic composition as theological language.
 - **Invitation to Worship**: The Nativity as a model for Christian devotion.
 
-##### Giovanni Antonio Pellegrini's The Nativity
+##### Giovanni Antonio Pellegrini's The Nativity (Stock Image)
 
 [![Giovanni Antonio Pellegrini's The Nativity](May/jpgs/Nativity.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Giovanni Antonio Pellegrini's The Nativity")
 
@@ -4342,7 +4342,7 @@ In Campy’s art and the accompanying meditation, we find a call to mirror Mary�
 
 _Blessed art thou among women... pray for us sinners._
 
-##### Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)
+##### Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547) (Stock Image)
 
 [![Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)](May/jpgs/PresentationinTemple.jpg)](https://stock.adobe.com/in/images/cremona-italy-may-24-2016-the-fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547/113785168 "Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)")
 
@@ -4362,7 +4362,7 @@ The passage then turns from art to exhortation. To seek Christ as Mary did—not
 
 In this mosaic and meditation alike, two truths emerge: Christ’s revelation divides hearts even as it unites them to Himself, and grace alone bends the knee in true worship. The prayers are not incantations but open hands—waiting to receive what Mary already grasped.
 
-##### Finding of Jesus in the Temple mosaic from Lourdes Basilica, France
+##### Finding of Jesus in the Temple mosaic from Lourdes Basilica, France (Stock Image)
 
 [![Finding of Jesus in the Temple mosaic from Lourdes Basilica, France](May/jpgs/LostandFound.jpg)](https://thumbs.dreamstime.com/b/mosaic-jesus-lost-found-temple-rosary-basilica-lourdes-78705042.jpg "Finding of Jesus in the Temple mosaic from Lourdes Basilica, France")
 
@@ -4382,7 +4382,7 @@ The text reflects on the Jordan’s banks as a threshold where Christ’s trust 
 
 In this fusion of art and devotion, the fresco whispers a timeless lesson: the path of glory is paved with humility, and the light of Christ outshines even the shadow of the cross.
 
-##### An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto
+##### An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto (Stock Image)
 
 [![An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto](May/jpgs/BaptismofChrist.jpg)](https://www.istockphoto.com/vector/padua-baptism-of-christ-in-church-san-benedetto-vecchio-gm517403261-48689476 "An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto")
 
@@ -4424,7 +4424,7 @@ True faith, the passage argues, is more than passive belief; it requires worship
 
 In sum, Tissot’s painting and the accompanying meditation weave art and theology into a call to action: to receive grace with humility, to repent with hope, and to answer divine light with human gratitude.
 
-##### James Tissot’s Healing of the Lepers at Capernaum
+##### James Tissot’s Healing of the Lepers at Capernaum (Stock Image)
 
 [![James Tissot’s Healing of the Lepers at Capernaum](May/jpgs/healingofthelepers.jpg)](https://www.alamy.com/healing-of-the-lepers-at-capernaum-1894-by-james-tissot-image557924107.html "James Tissot’s Healing of the Lepers at Capernaum")
 
@@ -4464,7 +4464,7 @@ And here lies our lesson: if He, facing the cross, could rest in trust, then why
 
 _Glory be to the Father, and to the Son, and to the Holy Spirit._
 
-##### Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"
+##### Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper" (Stock Image)
 
 [![Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"](May/jpgs/LastSupperMosaic.jpg)](https://www.istockphoto.com/photo/vienna-mosaic-of-last-supper-by-giacomo-raffaelli-gm160585076-22954759 "Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's The Last Supper")
 
@@ -4758,7 +4758,7 @@ Farewell, and may His peace attend you.
 - [June 08, 2025](#june-08-2025)
   - [Surrender Your Suffering](#surrender-your-suffering)
   - [AI-Generated Summary: The Weight of Surrender and the Light of Redemption](#ai-generated-summary-the-weight-of-surrender-and-the-light-of-redemption)
-  - [The Prayer of Jesus in Gethsemane by Alessandro Maganza](#the-prayer-of-jesus-in-gethsemane-by-alessandro-maganza)
+  - [The Prayer of Jesus in Gethsemane by Alessandro Maganza (Stock Image)](#the-prayer-of-jesus-in-gethsemane-by-alessandro-maganza-stock-image)
 - [June 09, 2025](#june-09-2025)
   - [Choose Your Side](#choose-your-side)
   - [AI-Generated Summary: The Divine Drama in Caravaggio's Light and Shadow](#ai-generated-summary-the-divine-drama-in-caravaggios-light-and-shadow)
@@ -4783,7 +4783,7 @@ Farewell, and may His peace attend you.
 - [June 14, 2025](#june-14-2025)
   - [Following in His Footsteps](#following-in-his-footsteps)
   - [AI-Generated Summary: The Footprints of the Ascended Lord](#ai-generated-summary-the-footprints-of-the-ascended-lord)
-  - [Ascension of the Lord by Bernardino Gandino](#ascension-of-the-lord-by-bernardino-gandino)
+  - [Ascension of the Lord by Bernardino Gandino (Stock Image)](#ascension-of-the-lord-by-bernardino-gandino-stock-image)
 - [June 15, 2025](#june-15-2025)
   - [Ordinary, Yet Called](#ordinary-yet-called)
   - [AI-Generated Summary: The Spirit's Fire and the Making of Saints](#ai-generated-summary-the-spirits-fire-and-the-making-of-saints)
@@ -4791,11 +4791,11 @@ Farewell, and may His peace attend you.
 - [June 16, 2025](#june-16-2025)
   - [Glory Awaits the Faithful](#glory-awaits-the-faithful)
   - [AI-Generated Summary: The Triumph of Mary and the Faithful](#ai-generated-summary-the-triumph-of-mary-and-the-faithful)
-  - [Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)](#fresco-of-assumption-of-our-lady-in-the-vision-of-st-bonaventure-in-the-church-chiesa-di-santa-lucia-del-gonfalone-by-cesare-mariani-1863)
+  - [Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863) (Stock Image)](#fresco-of-assumption-of-our-lady-in-the-vision-of-st-bonaventure-in-the-church-chiesa-di-santa-lucia-del-gonfalone-by-cesare-mariani-1863-stock-image)
 - [June 17, 2025](#june-17-2025)
   - [Our Shared Inheritance](#our-shared-inheritance)
   - [AI-Generated Summary: The Crown of Earthly Sorrow and Heavenly Joy](#ai-generated-summary-the-crown-of-earthly-sorrow-and-heavenly-joy)
-  - [Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)](#coronation-of-the-virgin-fresco-by-giuseppe-mattia-borgnis-1701-1761)
+  - [Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761) (Stock Image)](#coronation-of-the-virgin-fresco-by-giuseppe-mattia-borgnis-1701-1761-stock-image)
 - [June 18, 2025](#june-18-2025)
   - [The Faithful 'Yes'](#the-faithful-yes)
   - [AI-Generated Summary: The Divine Tapestry in Van Eyck’s Annunciation](#ai-generated-summary-the-divine-tapestry-in-van-eycks-annunciation)
@@ -5005,7 +5005,7 @@ And what of us, dear reader? We are bid to follow where He has gone before—to 
 
 So let us pray, not as those who bargain, but as those who trust: _Thy will be done_. For in that submission lies our freedom, and in that darkness, His unyielding light.
 
-##### The Prayer of Jesus in Gethsemane by Alessandro Maganza
+##### The Prayer of Jesus in Gethsemane by Alessandro Maganza (Stock Image)
 
 [![The Prayer of Jesus in Gethsemane by Alessandro Maganza](June/jpgs/Gethsemane.jpg)](https://www.istockphoto.com/photo/vicenza-the-painting-of-prayer-of-jesus-in-gethsemane-garden-in-the-cathedral-by-gm1922845709-555481794 "The Prayer of Jesus in Gethsemane by Alessandro Maganza")
 
@@ -5129,7 +5129,7 @@ St. Francis, that most ardent imitator of Christ, understood this well. To walk 
 
 Let us then, with renewed devotion, take up this daily pilgrimage. For the footprints on the stone are but the beginning; the true path leads ever upward, to where He waits.
 
-##### Ascension of the Lord by Bernardino Gandino
+##### Ascension of the Lord by Bernardino Gandino (Stock Image)
 
 [![Ascension of the Lord by Bernardino Gandino](June/jpgs/ascensionofthelord.jpg)](https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Ascension of the Lord by Bernardino Gandino")
 
@@ -5167,7 +5167,7 @@ Let the world rage as it will; the fresco declares a quieter, surer truth. Evil 
 
 And so we bless one another and press on, remembering that every earthly beauty—even this painted sky—is but a foretaste of what awaits those who endure.
 
-##### Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)
+##### Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863) (Stock Image)
 
 [![Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)](June/jpgs/Assumption.jpg)](https://as2.ftcdn.net/jpg/04/64/38/29/1000_F_464382946_EIK0RNI7i73omFzvLLXqQafxXBkZxLZB.jpg "Fresco of Assumption of Our Lady in the Vision of St Bonaventure in the church Chiesa di Santa Lucia del Gonfalone by Cesare Mariani (1863)")
 
@@ -5185,7 +5185,7 @@ See there, among the saints, Joseph—the quiet guardian who bore the weight of 
 
 This is the way of heaven: the meek inherit, the mourners are comforted, the promises whispered in darkness blaze forth in light. Our present trials are real, yet they are not final. Fix your eyes, then, not on the tears of the road but on the joy awaiting at journey’s end—where every vow is kept, and every faithful heart finds its rest in glory.
 
-##### Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761)
+##### Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis (1701-1761) (Stock Image)
 
 [![Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis](June/jpgs/Coronation.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.8926670.7055475/763119.jpg "Coronation of the Virgin, fresco by Giuseppe Mattia Borgnis")
 

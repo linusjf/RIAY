@@ -41,19 +41,19 @@
 - [May 11,2025](#may-112025)
   - [Worship and Warmth](#worship-and-warmth)
   - [AI-Generated Summary: A Meditation on Pellegrini’s Nativity and the Adoration of the Christ Child](#ai-generated-summary-a-meditation-on-pellegrinis-nativity-and-the-adoration-of-the-christ-child)
-  - [Giovanni Antonio Pellegrini's The Nativity](#giovanni-antonio-pellegrinis-the-nativity)
+  - [Giovanni Antonio Pellegrini's The Nativity (Stock Image)](#giovanni-antonio-pellegrinis-the-nativity-stock-image)
 - [May 12,2025](#may-122025)
   - [Eyes on Jesus](#eyes-on-jesus)
   - [AI-Generated Summary: A Reflection on Campy’s Fresco and the Devotion of Mary](#ai-generated-summary-a-reflection-on-campys-fresco-and-the-devotion-of-mary)
-  - [Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)](#fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547)
+  - [Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547) (Stock Image)](#fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547-stock-image)
 - [May 13,2025](#may-132025)
   - [Respond with Grace](#respond-with-grace)
   - [AI-Generated Summary: A Mosaic of Divine Encounter and Human Response](#ai-generated-summary-a-mosaic-of-divine-encounter-and-human-response)
-  - [Finding of Jesus in the Temple mosaic from Lourdes Basilica, France](#finding-of-jesus-in-the-temple-mosaic-from-lourdes-basilica-france)
+  - [Finding of Jesus in the Temple mosaic from Lourdes Basilica, France (Stock Image)](#finding-of-jesus-in-the-temple-mosaic-from-lourdes-basilica-france-stock-image)
 - [May 14,2025](#may-142025)
   - [Shadow of the Cross](#shadow-of-the-cross)
   - [AI-Generated Summary: The Mystery and Majesty of Christ’s Baptism in a 16th-Century Fresco](#ai-generated-summary-the-mystery-and-majesty-of-christs-baptism-in-a-16th-century-fresco)
-  - [An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto](#an-unknown-artists-fresco-baptism-of-christ-in-paduas-church-of-san-benedetto)
+  - [An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto (Stock Image)](#an-unknown-artists-fresco-baptism-of-christ-in-paduas-church-of-san-benedetto-stock-image)
 - [May 15,2025](#may-152025)
   - [Miracles of Love](#miracles-of-love)
   - [AI-Generated Summary: Reflections on Carl Bloch’s The Wedding at Cana and the Quiet Miracles of Christ](#ai-generated-summary-reflections-on-carl-blochs-the-wedding-at-cana-and-the-quiet-miracles-of-christ)
@@ -61,7 +61,7 @@
 - [May 16,2025](#may-162025)
   - [We Must Receive](#we-must-receive)
   - [AI-Generated Summary: James Tissot’s Healing of the Lepers at Capernaum and the Kingdom of God](#ai-generated-summary-james-tissots-healing-of-the-lepers-at-capernaum-and-the-kingdom-of-god)
-  - [James Tissot’s Healing of the Lepers at Capernaum](#james-tissots-healing-of-the-lepers-at-capernaum)
+  - [James Tissot’s Healing of the Lepers at Capernaum (Stock Image)](#james-tissots-healing-of-the-lepers-at-capernaum-stock-image)
 - [May 17,2025](#may-172025)
   - [Medium Reveals Meaning](#medium-reveals-meaning)
   - [AI-Generated Summary: The Radiance of Divine Light in the Transfiguration Window](#ai-generated-summary-the-radiance-of-divine-light-in-the-transfiguration-window)
@@ -69,7 +69,7 @@
 - [May 18,2025](#may-182025)
   - [Rest in All Things](#rest-in-all-things)
   - [AI-Generated Summary: The Divine Serenity in the Midst of Betrayal](#ai-generated-summary-the-divine-serenity-in-the-midst-of-betrayal)
-  - [Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"](#giacomo-raffaelli-1753-1836--an-italian-mosaicist-created-a-life-sized-mosaic-copy-of-leonardo-da-vincis-the-last-supper)
+  - [Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper" (Stock Image)](#giacomo-raffaelli-1753-1836--an-italian-mosaicist-created-a-life-sized-mosaic-copy-of-leonardo-da-vincis-the-last-supper-stock-image)
 - [May 19,2025](#may-192025)
   - [Gold in Our Halos](#gold-in-our-halos)
   - [AI-Generated Summary: The Duality of Judas and the Mercy of Christ](#ai-generated-summary-the-duality-of-judas-and-the-mercy-of-christ)
@@ -436,7 +436,7 @@ _In the name of the Father, the Son, and the Holy Spirit._
 - **Sacred Symmetry**: Artistic composition as theological language.
 - **Invitation to Worship**: The Nativity as a model for Christian devotion.
 
-### Giovanni Antonio Pellegrini's The Nativity
+### Giovanni Antonio Pellegrini's The Nativity (Stock Image)
 
 [![Giovanni Antonio Pellegrini's The Nativity](/May/jpgs/Nativity.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Giovanni Antonio Pellegrini's The Nativity")
 
@@ -460,7 +460,7 @@ In Campy’s art and the accompanying meditation, we find a call to mirror Mary�
 
 _Blessed art thou among women... pray for us sinners._
 
-### Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)
+### Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547) (Stock Image)
 
 [![Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)](/May/jpgs/PresentationinTemple.jpg)](https://stock.adobe.com/in/images/cremona-italy-may-24-2016-the-fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547/113785168 "Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547)")
 
@@ -480,7 +480,7 @@ The passage then turns from art to exhortation. To seek Christ as Mary did—not
 
 In this mosaic and meditation alike, two truths emerge: Christ’s revelation divides hearts even as it unites them to Himself, and grace alone bends the knee in true worship. The prayers are not incantations but open hands—waiting to receive what Mary already grasped.
 
-### Finding of Jesus in the Temple mosaic from Lourdes Basilica, France
+### Finding of Jesus in the Temple mosaic from Lourdes Basilica, France (Stock Image)
 
 [![Finding of Jesus in the Temple mosaic from Lourdes Basilica, France](/May/jpgs/LostandFound.jpg)](https://thumbs.dreamstime.com/b/mosaic-jesus-lost-found-temple-rosary-basilica-lourdes-78705042.jpg "Finding of Jesus in the Temple mosaic from Lourdes Basilica, France")
 
@@ -500,7 +500,7 @@ The text reflects on the Jordan’s banks as a threshold where Christ’s trust 
 
 In this fusion of art and devotion, the fresco whispers a timeless lesson: the path of glory is paved with humility, and the light of Christ outshines even the shadow of the cross.
 
-### An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto
+### An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto (Stock Image)
 
 [![An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto](/May/jpgs/BaptismofChrist.jpg)](https://www.istockphoto.com/vector/padua-baptism-of-christ-in-church-san-benedetto-vecchio-gm517403261-48689476 "An unknown artist’s fresco, Baptism of Christ, in Padua’s church of San Benedetto")
 
@@ -542,7 +542,7 @@ True faith, the passage argues, is more than passive belief; it requires worship
 
 In sum, Tissot’s painting and the accompanying meditation weave art and theology into a call to action: to receive grace with humility, to repent with hope, and to answer divine light with human gratitude.
 
-### James Tissot’s Healing of the Lepers at Capernaum
+### James Tissot’s Healing of the Lepers at Capernaum (Stock Image)
 
 [![James Tissot’s Healing of the Lepers at Capernaum](/May/jpgs/healingofthelepers.jpg)](https://www.alamy.com/healing-of-the-lepers-at-capernaum-1894-by-james-tissot-image557924107.html "James Tissot’s Healing of the Lepers at Capernaum")
 
@@ -582,7 +582,7 @@ And here lies our lesson: if He, facing the cross, could rest in trust, then why
 
 _Glory be to the Father, and to the Son, and to the Holy Spirit._
 
-### Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"
+### Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper" (Stock Image)
 
 [![Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper"](/May/jpgs/LastSupperMosaic.jpg)](https://www.istockphoto.com/photo/vienna-mosaic-of-last-supper-by-giacomo-raffaelli-gm160585076-22954759 "Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's The Last Supper")
 
