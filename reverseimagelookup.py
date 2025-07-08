@@ -14,9 +14,15 @@ import sys
 import os
 import requests
 import argparse
+from dotenv import load_dotenv
 from serpapi import GoogleSearch
 from simtools import compare_terms, MatchMode
+from htmlhelper import clean_filename_text
+from bashhelper import parse_bash_array
 
+STOCK_PHOTO_SITES = parse_bash_array('config.env', 'STOCK_PHOTO_SITES')
+# Load environment variables from config.env
+load_dotenv('config.env')
 SERP_API_KEY = os.getenv("SERP_API_KEY")
 if not SERP_API_KEY:
     raise ValueError("SERP_API_KEY environment variable not set")
@@ -37,7 +43,6 @@ def upload_to_imgbb(image_path):
         )
     if response.status_code == 200:
         json_data = response.json()["data"]
-        print(json_data,file=sys.stderr)
         return (json_data["url"], json_data["delete_url"], json_data["id"])
     else:
         raise Exception(f"Upload failed: {response.status_code} {response.text}")
@@ -60,7 +65,7 @@ def reverse_image_search(image_url, metadata_text):
         source = image_info["source"]
         url = image_info["image"]
         match_text = ", ".join(filter(None, [
-        title, link, source, url
+        title, clean_filename_text(link), source, clean_filename_text(url)
         ]))
         score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
         if score > best_score:
@@ -103,7 +108,7 @@ def main():
     print(f"image id: {image_id}",file=sys.stderr)
 
     metadata_text = ", ".join(filter(None, [
-        args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium, IMAGE_SOURCE_URL
+        args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium, clean_filename_text(IMAGE_SOURCE_URL)
     ]))
 
     reverse_image_search(image_url, metadata_text)

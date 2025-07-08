@@ -19,7 +19,7 @@
 - [July 05, 2025](#july-05-2025)
   - [Power From On High](#power-from-on-high)
   - [AI-Generated Summary: The Divine Gift and the Art of Waiting](#ai-generated-summary-the-divine-gift-and-the-art-of-waiting)
-  - [Pentecost by Simone Peterzano, 16th century](#pentecost-by-simone-peterzano-16th-century)
+  - [Simone Peterzano's Pentecost depicts the Virgin and disciples receiving the Holy Spirit in Mannerist style (Stock Image)](#simone-peterzanos-pentecost-depicts-the-virgin-and-disciples-receiving-the-holy-spirit-in-mannerist-style-stock-image)
 - [July 06, 2025](#july-06-2025)
   - [God is Never Outdone](#god-is-never-outdone)
   - [AI-Generated Summary: The Divine Exchange Between Mother and Son](#ai-generated-summary-the-divine-exchange-between-mother-and-son)
@@ -125,9 +125,9 @@ Consider, dear reader, how the world prizes power seized by force—the clenched
 
 Lent teaches us to labor; Easter, to receive. The world clamors for control, but the Christian kneels, knowing that every true strength—like those painted flames above each head—comes not by our cunning, but by grace. To wait is not idleness; it is the soul’s posture before the Giver of all good things.
 
-### Pentecost by Simone Peterzano, 16th century
+### Simone Peterzano's Pentecost depicts the Virgin and disciples receiving the Holy Spirit in Mannerist style (Stock Image)
 
-[![Pentecost by Simone Peterzano, 16th century](July/jpgs/pentecostsimonepeterzano.jpg)](<https://www.meisterdrucke.us/kunstwerke/500px/Simone_Peterzano_-_Study_for_the_Pentecost_-_(MeisterDrucke-1295971).jpg> "Pentecost by Simone Peterzano, 16th century")
+[![Simone Peterzano's Pentecost depicts the Virgin and disciples receiving the Holy Spirit in Mannerist style](July/jpgs/pentecostsimonepeterzano.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.12926920.7055475/2959742.jpg "Simone Peterzano's Pentecost depicts the Virgin and disciples receiving the Holy Spirit in Mannerist style")
 
 ## July 06, 2025
 
