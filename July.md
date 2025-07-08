@@ -23,7 +23,7 @@
 - [July 06, 2025](#july-06-2025)
   - [God is Never Outdone](#god-is-never-outdone)
   - [AI-Generated Summary: The Divine Exchange Between Mother and Son](#ai-generated-summary-the-divine-exchange-between-mother-and-son)
-  - [The Divine Exchange Between Mother and Son: Stock Photo Links](#the-divine-exchange-between-mother-and-son-stock-photo-links)
+  - [The Divine Exchange Between Mother and Son (Stock Photo)](#the-divine-exchange-between-mother-and-son-stock-photo)
 - [July 07, 2025](#july-07-2025)
   - [Gifts for Mary](#gifts-for-mary)
   - [AI-Generated Summary: The Celestial Coronation and the Quiet Heart](#ai-generated-summary-the-celestial-coronation-and-the-quiet-heart)
@@ -143,11 +143,9 @@ Now mark the deeper truth: as Mary once clothed the Christ-child in swaddling ba
 
 This is the law of Heaven’s economy: give all, receive more. Mary gave her Son the humble service of a mother; He gives her the splendor of a queen. And so it is with all who follow Him—what we surrender, He transfigures; what we offer in love, He crowns with eternity. The Assumption is but the firstfruits of a harvest meant for us all.
 
-### The Divine Exchange Between Mother and Son: Stock Photo Links
+### The Divine Exchange Between Mother and Son (Stock Photo)
 
-1. <https://c8.alamy.com/comp/PR002K/stained-glass-window-depicting-the-assumption-of-mary-in-the-cathedral-of-burgos-castille-spain-PR002K.jpg>
-1. <https://c8.alamy.com/comp/2NDK7JG/stained-glass-window-depicting-the-assumption-of-mary-cathedral-of-saint-mary-of-burgos-unesco-world-heritage-site-burgos-castile-and-len-spain-2NDK7JG.jpg>
-1. <https://c8.alamy.com/comp/ECWWE9/stained-glass-window-depicting-the-assumption-of-mary-in-the-cathedral-ECWWE9.jpg>
+[![The Divine Exchange Between Mother and Son](/July/jpgs/cathedralburgos.jpg)](https://c8.alamy.com/comp/PR002K/stained-glass-window-depicting-the-assumption-of-mary-in-the-cathedral-of-burgos-castille-spain-PR002K.jpg "The Divine Exchange Between Mother and Son")
 
 ## July 07, 2025
 
