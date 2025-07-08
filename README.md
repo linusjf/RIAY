@@ -5466,6 +5466,7 @@ This is no mere depiction of suffering, but a window into its strange redemption
 - [July 08, 2025](#july-08-2025)
   - [Beginning Our Meditation](#beginning-our-meditation)
   - [AI-Generated Summary: The Humble Astonishment of the Annunciation](#ai-generated-summary-the-humble-astonishment-of-the-annunciation)
+  - [The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace](#the-annunciation-by-fra-angelico-1440s-at-san-marco-florence-a-serene-fresco-masterpiece-of-divine-grace)
 
 <!-- tocstop -->
 
@@ -5612,6 +5613,10 @@ Consider, dear reader, the scene so tenderly rendered by Fra Angelico: a young m
 Gabriel’s reply—_“Nothing is impossible with God”_—is the thread that stitches heaven to earth. In that fresco at San Marco, we see it: humility meeting grace, the divine condescension that bends low to lift us high. The Annunciation is not merely a past event, but an eternal truth—that God still enters the ordinary, if we, like Mary, have the courage to say _“Let it be.”_
 
 And so the Incarnation begins, not with fanfare, but with a whisper, a surrender, a joy that would undo the world’s sorrow.
+
+##### The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace
+
+[![The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace](July/jpgs/annunciationfraangelico.jpg)](https://upload.wikimedia.org/wikipedia/commons/8/86/Fra_Angelico%2C_The_Annunciation%2C_ca._1443%3B_Convent_of_San_Marco%2C_Florence_%282%29.jpg "The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace")
 
 ## August
 
