@@ -243,6 +243,7 @@ function main() {
   local is_stock_image=false
   if [[ "$best_selected_image" == *"best_result"* ]]; then
     is_stock_image=true
+    err "WARNING: The selected image ${best_selected_image} is from a stock image site. Check the ${ART_DOWNLOADER_DIR} directory for alternate (not watermarked) images."
   fi
 
   local jsonresult

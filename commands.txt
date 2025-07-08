@@ -1,4 +1,4 @@
 # commands
-addvideo "TBRq6exgAq0" "Beginning Our Meditation"
+addvideo "XKg7YILYBkc" "The Audacity of Christian Art"
 stitch
 lintall

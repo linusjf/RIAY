@@ -25,14 +25,9 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 dotenv_path = os.path.join(base_dir, "config.env")
 load_dotenv(dotenv_path=dotenv_path)
 
-VECTOR_EMBEDDINGS_MODEL_API_KEY = None
-API_KEY_NAME= str(os.getenv("VECTOR_EMBEDDINGS_MODEL_API_KEY", ""))
-if not API_KEY_NAME:
+VECTOR_EMBEDDINGS_MODEL_API_KEY = os.getenv("VECTOR_EMBEDDINGS_MODEL_API_KEY")
+if not VECTOR_EMBEDDINGS_MODEL_API_KEY:
     raise ValueError("VECTOR_EMBEDDINGS_MODEL_API_KEY environment variable not set")
-else:
-    VECTOR_EMBEDDINGS_MODEL_API_KEY = os.getenv(API_KEY_NAME[1:], "")
-    if not VECTOR_EMBEDDINGS_MODEL_API_KEY:
-        raise ValueError(f"{VECTOR_EMBEDDINGS_MODEL_API_KEY} environment variable not set")
 
 VECTOR_EMBEDDINGS_BASE_URL = os.getenv("VECTOR_EMBEDDINGS_BASE_URL", "")
 if not VECTOR_EMBEDDINGS_BASE_URL:
