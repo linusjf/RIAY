@@ -605,18 +605,30 @@ def main():
             for url, file, score in all_results:
                 print(f"{url} -> {file} (score: {score:.3f})")
 
-            # Find the best result (highest score)
-            best_result = max(all_results, key=lambda x: x[2], default=None)
+            # Sort results by score (highest first)
+            sorted_results = sorted(all_results, key=lambda x: x[2], reverse=True)
+            
+            # Try each result in order until we successfully download one
+            best_result = None
+            for url, file, score in sorted_results:
+                # Skip stock photos
+                if any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
+                    continue
+                    
+                # If we already have the file, use it
+                if file and os.path.exists(file):
+                    best_result = (url, file, score)
+                    break
+                
+                # Try to download if we don't have the file
+                filename = os.path.join(SAVE_DIR, f"best_result_{query.replace(' ', '_')}.jpg")
+                if save_image(url, filename):
+                    best_result = (url, filename, score)
+                    break
+
             if best_result:
                 url, file, score = best_result
-                # If we have a URL but no file, download it now
-                if url and not file:
-                    filename = os.path.join(SAVE_DIR, f"best_result_{query.replace(' ', '_')}.jpg")
-                    if save_image(url, filename):
-                        print(f"✅ Downloaded best result: {filename}")
-                        file = filename
                 print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
-
 
     sys.exit(0 if success else 1)
 
