@@ -18,12 +18,13 @@ from enum import Enum, auto
 from fuzzywuzzy import fuzz
 from openai import OpenAI
 from dotenv import load_dotenv
+from bashhelper import load_dotenv_with_system_interpolation
 
 # Load environment variables from config.env
 # This gets the path of THIS file, no matter how it's imported
 base_dir = os.path.dirname(os.path.abspath(__file__))
 dotenv_path = os.path.join(base_dir, "config.env")
-load_dotenv(dotenv_path=dotenv_path)
+load_dotenv_with_system_interpolation(dotenv_path=dotenv_path, override=True)
 
 VECTOR_EMBEDDINGS_MODEL_API_KEY = os.getenv("VECTOR_EMBEDDINGS_MODEL_API_KEY")
 if not VECTOR_EMBEDDINGS_MODEL_API_KEY:

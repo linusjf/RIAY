@@ -172,7 +172,7 @@ def download_from_duckduckgo(query, filename_base):
         for image in results[0:5]:
             url = image["image"]
             title = image["title"]
-            image_meta_data = " ".join([title, clean_filename_text(url)])
+            image_meta_data = " ".join(str(p) for p in [title, clean_filename_text(url)] if p is not None)
             score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.COSINE)
             if score >= 0.7:
                 qualifying_results.append((image, score))
@@ -242,7 +242,7 @@ def download_from_wikimedia_search(query,detailed_query, filename_base, source="
             title = result["title"]
             titlesnippet = strip_span_tags_but_keep_contents(result["titlesnippet"])
             snippet = strip_span_tags_but_keep_contents(result["snippet"])
-            result_meta_data = " ".join([title, titlesnippet, snippet])
+            result_meta_data = " ".join(str(p) for p in [title, titlesnippet, snippet] if p is not None)
             score = compare_terms(detailed_query.lower(), result_meta_data.lower(), MatchMode.HYBRID)
             if score >= 50.0:
                 qualifying_results.append((result, score))
@@ -316,7 +316,7 @@ def download_image_from_wikipedia_article(query, detailed_query, filename_base):
             title = page.get("title", "")
             excerpt = strip_span_tags_but_keep_contents(page.get("excerpt", ""))
             description = page.get("description", "")
-            page_meta_data = " ".join([key, title, excerpt, description])
+            page_meta_data = " ".join(str(p) for p in [key, title, excerpt, description] if p is not None)
             score = compare_terms(detailed_query.lower(), page_meta_data.lower(), MatchMode.HYBRID)
 
             if score >= 50.0:
