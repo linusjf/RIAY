@@ -34,6 +34,10 @@
   - [Beginning Our Meditation](#beginning-our-meditation)
   - [AI-Generated Summary: The Humble Astonishment of the Annunciation](#ai-generated-summary-the-humble-astonishment-of-the-annunciation)
   - [The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace](#the-annunciation-by-fra-angelico-1440s-at-san-marco-florence-a-serene-fresco-masterpiece-of-divine-grace)
+- [July 09, 2025](#july-09-2025)
+  - [Returning to the Visitation](#returning-to-the-visitation)
+  - [AI-Generated Summary: The New Ark and the Song of Joy](#ai-generated-summary-the-new-ark-and-the-song-of-joy)
+  - [Mary's Magnificat](#marys-magnificat)
 
 <!-- tocstop -->
 
@@ -196,3 +200,57 @@ And so the Incarnation begins, not with fanfare, but with a whisper, a surrender
 ### The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace
 
 [![The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace](July/jpgs/annunciationfraangelico.jpg)](https://upload.wikimedia.org/wikipedia/commons/8/86/Fra_Angelico%2C_The_Annunciation%2C_ca._1443%3B_Convent_of_San_Marco%2C_Florence_%282%29.jpg "The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace")
+
+## July 09, 2025
+
+### Returning to the Visitation
+
+[![Returning to the Visitation](/July/jpgs/Day190.jpg)](https://youtu.be/KA6ymeuRV1M "Returning to the Visitation")
+
+### AI-Generated Summary: The New Ark and the Song of Joy
+
+Consider, dear reader, how Mary, bearing the Eternal Word within her, becomes the true Ark of the Covenant—not of stone and gold, but of flesh and devotion. As the Ark once carried the presence of God to Israel, so Mary carries Christ into the world, a living sanctuary.
+
+In the Visitation, we see this mystery unfold with radiant simplicity. Mary, having received the angel’s tidings, hastens to Elizabeth, and at their meeting, joy overflows into poetry. Words alone could not suffice; the soul must sing. Thus, the Magnificat springs forth, not as mere speech, but as a hymn—proof that the deepest truths demand the elevation of song.
+
+Here, too, we learn of Mary’s charity. St. Alphonsus reminds us that her journey to Elizabeth was no small act, but a labor of love, a mother’s kindness extended before she had yet held her own Child. And so, in our own need, we may rightly echo St. Mother Teresa’s plea: _"Mary, be a mother to me now."_ For she who bore the Savior does not cease to bear us to Him.
+
+### Mary's Magnificat
+
+The Prayer Of Mary
+
+My soul proclaims the greatness of the Lord,
+my spirit rejoices in God my Savior
+for he has looked with favor on his lowly servant.
+From this day all generations will call me blessed:
+the Almighty has done great things for me,
+and holy is his Name.
+
+He has mercy on those who fear him
+in every generation.
+He has shown the strength of his arm,
+he has scattered the proud in their conceit.
+
+He has cast down the mighty from their thrones,
+and has lifted up the lowly.
+He has filled the hungry with good things,
+and the rich he has sent away empty.
+
+He has come to the help of his servant Israel
+for he remembered his promise of mercy,
+the promise he made to our fathers,
+to Abraham and his children forever.
+
+(Lk 1: 46-55)
+
+Magnificat anima mea Dominum;
+Et exultavit spiritus meus in Deo salutari meo,
+Quia respexit humilitatem ancillae suae; ecce enim ex hoc beatam me dicent omnes generationes.
+Quia fecit mihi magna qui potens est, et sanctum nomen ejus, Et misericordia ejus a progenie in progenies timentibus eum.
+Fecit potentiam brachio suo;
+Dispersit superbos mente cordis sui.
+Deposuit potentes de sede, et exaltavit humiles.
+Esurientes implevit bonis, et divites dimisit inanes.
+Sucepit Israel, puerum suum, recordatus misericordiae suae, Sicut locutus est ad patres nostros, Abraham et semeni ejus in saecula.
+
+Source: [The Magnificat](https://www.ewtn.com/catholicism/devotions/magnificat-392)
