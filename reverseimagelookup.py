@@ -20,6 +20,7 @@ from simtools import compare_terms, MatchMode
 from htmlhelper import clean_filename_text
 from bashhelper import parse_bash_array
 from urllib.parse import urlparse
+from pathlib import Path
 
 STOCK_PHOTO_SITES = parse_bash_array('config.env', 'STOCK_PHOTO_SITES')
 # Load environment variables from config.env
@@ -62,9 +63,8 @@ def reverse_image_search(image_url, metadata_text):
     search = GoogleSearch(params)
     results = search.get_dict()
     visual_matches = results["visual_matches"][0:5]
-    print(visual_matches, file=sys.stderr)
     best_score = 0.0
-    best_match = {}
+    best_url = ""
     for image_info in visual_matches:
         title = image_info["title"]
         link = image_info["link"]
@@ -91,16 +91,26 @@ def reverse_image_search(image_url, metadata_text):
         score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
         if score > best_score:
             best_score = score
-            best_match = image_info
+            best_url = url
 
-    print(best_match)
+    print(best_url)
+
+
+def validate_image_path(path):
+    """Validate that the path exists and is a file."""
+    path_obj = Path(path)
+    if not path_obj.exists():
+        raise argparse.ArgumentTypeError(f"File '{path}' does not exist")
+    if not path_obj.is_file():
+        raise argparse.ArgumentTypeError(f"'{path}' is not a file")
+    return path
 
 
 def main():
     global IMAGE_SOURCE_URL
     parser = argparse.ArgumentParser(description='Perform reverse image search using SerpAPI')
     parser.add_argument(
-        "--image", required=True, help="Path to the image file"
+        "--image", required=True, type=validate_image_path, help="Path to the image file"
     )
     parser.add_argument(
         "--title", required=True, help="Title of the artwork"
@@ -124,16 +134,15 @@ def main():
             print(f"Found source URL: {IMAGE_SOURCE_URL}", file=sys.stderr)
 
     image_url, delete_url, image_id = upload_to_imgbb(args.image)
-    print(f"image url: {image_url}", file=sys.stderr)
-    print(f"delete url: {delete_url}",file=sys.stderr)
-    print(f"image id: {image_id}",file=sys.stderr)
 
     metadata_text = ", ".join(filter(None, [
         args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium, clean_filename_text(IMAGE_SOURCE_URL)
     ]))
 
-    reverse_image_search(image_url, metadata_text)
+    best_url = reverse_image_search(image_url, metadata_text)
+
     print(f"Try deleting {image_url} in a browser using {delete_url}.", file=sys.stderr)
+
     sys.exit(0)
 
 
