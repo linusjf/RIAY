@@ -63,8 +63,7 @@ def reverse_image_search(image_url, metadata_text):
     search = GoogleSearch(params)
     results = search.get_dict()
     visual_matches = results["visual_matches"][0:5]
-    best_score = 0.0
-    best_url = ""
+    qualifying_urls = []
     for image_info in visual_matches:
         title = image_info["title"]
         link = image_info["link"]
@@ -89,11 +88,12 @@ def reverse_image_search(image_url, metadata_text):
             title, clean_filename_text(link), source, clean_filename_text(url)
         ]))
         score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
-        if score > best_score:
-            best_score = score
-            best_url = url
+        if score > 0.7:  # Only include URLs that meet the minimum score threshold
+            qualifying_urls.append((url, score))
 
-    print(best_url)
+    # Sort by score in descending order
+    qualifying_urls.sort(key=lambda x: x[1], reverse=True)
+    return qualifying_urls
 
 
 def validate_image_path(path):
@@ -139,9 +139,16 @@ def main():
         args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium, clean_filename_text(IMAGE_SOURCE_URL)
     ]))
 
-    best_url = reverse_image_search(image_url, metadata_text)
+    qualifying_urls = reverse_image_search(image_url, metadata_text)
 
-    print(f"Try deleting {image_url} in a browser using {delete_url}.", file=sys.stderr)
+    if qualifying_urls:
+        print("\nQualifying URLs (sorted by score):")
+        for url, score in qualifying_urls:
+            print(f"{url} (score: {score:.3f})")
+    else:
+        print("No qualifying URLs found")
+
+    print(f"\nTry deleting {image_url} in a browser using {delete_url}.", file=sys.stderr)
 
     sys.exit(0)
 
