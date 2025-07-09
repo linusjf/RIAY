@@ -106,10 +106,10 @@ def validate_image_path(path):
     return path
 
 
-def reverse_image_lookup(image_path, title, artist, subject=None, location=None, 
+def reverse_image_lookup(image_path, title, artist, subject=None, location=None,
                         date=None, style=None, medium=None, source_url=None):
     """Perform reverse image lookup with provided parameters.
-    
+
     Args:
         image_path: Path to the image file
         title: Title of the artwork
@@ -120,7 +120,7 @@ def reverse_image_lookup(image_path, title, artist, subject=None, location=None,
         style: Style of the artwork (optional)
         medium: Medium of the artwork (optional)
         source_url: Source URL of the image (optional)
-    
+
     Returns:
         tuple: (list of qualifying URLs, delete_url from imgbb)
     """
@@ -135,10 +135,10 @@ def reverse_image_lookup(image_path, title, artist, subject=None, location=None,
                 IMAGE_SOURCE_URL = f.read().strip()
                 print(f"Found source URL: {IMAGE_SOURCE_URL}", file=sys.stderr)
 
-    image_url, delete_url, image_id = upload_to_imgbb(image_path)
+    image_url, delete_url, _ = upload_to_imgbb(image_path)
 
     metadata_text = ", ".join(filter(None, [
-        title, artist, subject, location, date, style, medium, 
+        title, artist, subject, location, date, style, medium,
         clean_filename_text(IMAGE_SOURCE_URL)
     ]))
 
