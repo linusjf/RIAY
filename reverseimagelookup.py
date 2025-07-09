@@ -33,6 +33,9 @@ IMGBB_API_KEY = os.getenv("IMGBB_API_KEY")
 if not IMGBB_API_KEY:
     raise ValueError("IMGBB_API_KEY environment variable not set")
 
+MIN_IMAGE_WIDTH = 350
+MIN_IMAGE_HEIGHT = 480
+
 IMAGE_SOURCE_URL = None
 
 def upload_to_imgbb(image_path):
@@ -67,6 +70,8 @@ def reverse_image_search(image_url, metadata_text):
         link = image_info["link"]
         source = image_info["source"]
         url = image_info["image"]
+        image_width = image_info["image_width"]
+        image_height = image_info["image_height"]
 
         # Skip PDF links
         if link.lower().endswith('.pdf'):
@@ -76,6 +81,8 @@ def reverse_image_search(image_url, metadata_text):
         parsed_url = urlparse(link)
         domain = parsed_url.netloc.lower()
         if any(stock_domain.lower() in domain for stock_domain in STOCK_PHOTO_SITES):
+            continue
+        if (int(image_width) < MIN_IMAGE_WIDTH or int(image_height) < MIN_IMAGE_HEIGHT):
             continue
 
         match_text = ", ".join(filter(None, [
