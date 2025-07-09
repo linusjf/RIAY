@@ -19,6 +19,7 @@ from serpapi import GoogleSearch
 from simtools import compare_terms, MatchMode
 from htmlhelper import clean_filename_text
 from bashhelper import parse_bash_array
+from urllib.parse import urlparse
 
 STOCK_PHOTO_SITES = parse_bash_array('config.env', 'STOCK_PHOTO_SITES')
 # Load environment variables from config.env
@@ -52,11 +53,13 @@ def reverse_image_search(image_url, metadata_text):
     params = {
         "engine": "google_lens",
         "api_key": SERP_API_KEY,
-        "url": image_url
+        "url": image_url,
+        "type": "visual_matches"
     }
     search = GoogleSearch(params)
     results = search.get_dict()
     visual_matches = results["visual_matches"][0:5]
+    print(visual_matches, file=sys.stderr)
     best_score = 0.0
     best_match = {}
     for image_info in visual_matches:
@@ -64,8 +67,19 @@ def reverse_image_search(image_url, metadata_text):
         link = image_info["link"]
         source = image_info["source"]
         url = image_info["image"]
+
+        # Skip PDF links
+        if link.lower().endswith('.pdf'):
+            continue
+
+        # Skip stock photo sites
+        parsed_url = urlparse(link)
+        domain = parsed_url.netloc.lower()
+        if any(stock_domain.lower() in domain for stock_domain in STOCK_PHOTO_SITES):
+            continue
+
         match_text = ", ".join(filter(None, [
-        title, clean_filename_text(link), source, clean_filename_text(url)
+            title, clean_filename_text(link), source, clean_filename_text(url)
         ]))
         score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
         if score > best_score:
