@@ -124,7 +124,13 @@ function main() {
   )"
 
   generated_content="$(echo "$response" | jq -r '.choices[0].message.content')"
-  echo "$generated_content" | sed -E '/^```(json)?[[:space:]]*$/d'
+  generated_content="$(echo "$generated_content" | sed -E '/^```(json)?[[:space:]]*$/d')"
+  echo "$generated_content"
+  if jq -e 'type == "object" and length == 0' <<< "$generated_content" > /dev/null; then
+    return 1
+  else
+    return 0
+  fi
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
