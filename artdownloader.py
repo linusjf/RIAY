@@ -25,6 +25,7 @@ from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
 from simtools import compare_terms, MatchMode
+from reverseimagelookup import reverse_image_lookup
 
 # Global dictionary to track downloaded URLs and their saved filenames
 DOWNLOADED_URLS = {}
