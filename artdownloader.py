@@ -55,25 +55,26 @@ SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
 
 def download_from_googlelens(qualified_urls, filename_base):
     """Download images from Google Lens reverse image search results.
-    
+
     Args:
         qualified_urls: List of (url, score) tuples from reverse_image_lookup_url
         filename_base: Base filename to use for saving
-        
+
     Returns:
         str: Path to successfully downloaded file, or None if none succeeded
+        score: score of the url
     """
     if not qualified_urls:
         return None
-        
+
     for idx, (url, score) in enumerate(qualified_urls):
         filename = os.path.join(
             SAVE_DIR,
             f"{filename_base}_{idx+1}_googlelens.jpg"
         )
         if save_image(url, filename):
-            return filename
-    return None
+            return filename, score
+    return (None, None)
 
 def save_image(url, filename):
     """Save an image from URL to local file."""
@@ -648,7 +649,19 @@ def main():
 
             if best_result:
                 url, file, score = best_result
-                print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
+                if file.startswith("best_result_"):
+                    qualified_urls = reverse_image_lookup_url(url, args.title, args.artist, args.subject, args.location, args.date,args.style, args.medium)
+                    if qualified_urls:
+                        best_qualified_result  = download_from_googlelens(qualified_urls=qualified_urls,filename_base=args.filename)
+                        if best_qualified_result:
+                            filepath, url_score = best_qualified_result
+                            print(f"\n⭐ Best available image (downloaded): {filepath} (score: {url_score:.3f})")
+                        else:
+                            print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
+                    else:
+                        print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
+                else:
+                    print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
 
     end_time = time.time()
     elapsed_time = end_time - start_time
