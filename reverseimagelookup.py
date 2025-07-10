@@ -77,6 +77,7 @@ def reverse_image_search(image_url, metadata_text):
         # Skip stock photo sites
         parsed_url = urlparse(link)
         domain = parsed_url.netloc.lower()
+        print(f"domain: {domain}", file=sys.stderr)
         if any(stock_domain.lower() in domain for stock_domain in STOCK_PHOTO_SITES):
             continue
         if (int(image_width) < MIN_IMAGE_WIDTH or int(image_height) < MIN_IMAGE_HEIGHT):

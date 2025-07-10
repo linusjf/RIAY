@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -5710,7 +5710,7 @@ Let us then, like Joseph and Mary in Pellegrini’s painting, adore with quiet w
 
 ##### Baroque Nativity scene by Pellegrini, depicting divine joy with mother and child (Stock Image)
 
-[![Baroque Nativity scene by Pellegrini, depicting divine joy with mother and child](July/jpgs/pellegrininativity.jpg)](https://i.etsystatic.com/42858293/r/il/2e6d5c/5592438708/il_570xN.5592438708_nj5l.jpg "Baroque Nativity scene by Pellegrini, depicting divine joy with mother and child")
+[![Baroque Nativity scene by Pellegrini, depicting divine joy with mother and child](July/jpgs/viennanativitypelligrini.jpg)](https://thumbs.dreamstime.com/b/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-50084160.jpg "Baroque Nativity scene by Pellegrini, depicting divine joy with mother and child")
 
 ## August
 
