@@ -630,7 +630,7 @@ def main():
 
     end_time = time.time()
     elapsed_time = end_time - start_time
-    print(f"\n⏱️ Execution time: {elapsed_time:.2f} seconds", file=sys.stderr)
+    print(f"\n⏱️ Downloaded art images in {elapsed_time:.2f} seconds", file=sys.stderr)
 
     sys.exit(0 if success else 1)
 
