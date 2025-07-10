@@ -153,13 +153,13 @@ def main():
         print(result)
 
         execution_time = time.time() - start_time
-        print(f"⏱️ Execution time: {execution_time:.2f} seconds", file=sys.stderr)
+        print(f"⏱️ Verified image in {execution_time:.2f} seconds", file=sys.stderr)
 
         sys.exit(0 if is_likely_match else 1)
 
     except Exception as error:
         execution_time = time.time() - start_time
-        print(f"⏱️ Execution time: {execution_time:.2f} seconds", file=sys.stderr)
+        print(f"⏱️ Verified image failed: {execution_time:.2f} seconds", file=sys.stderr)
         print(f"❌ Error: {error}", file=sys.stderr)
         sys.exit(2)
 
