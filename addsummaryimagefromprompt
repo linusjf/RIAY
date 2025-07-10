@@ -70,6 +70,9 @@ validate_json() {
 
 trap_exit() {
   local exitcode=$?
+  local end_time=$(date +%s)
+  local duration=$((end_time - start_time))
+  echo "Execution time: ${duration} seconds" >&2
   exit $exitcode
 }
 
@@ -133,6 +136,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     exit $EXIT_INVALID_ARGS
   fi
 
+  readonly start_time=$(date +%s)
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
