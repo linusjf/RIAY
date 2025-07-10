@@ -302,7 +302,7 @@ function main() {
         local markdown_content
         markdown_content="$(generate_markdown "$caption" "$target_file" "$source_url" "$month" "$day_num" "$is_stock_image")"
         append_to_day_file "$day_num" "$markdown_content" "$month"
-        "${SCRIPT_DIR}/genmonth" "$month" && "${SCRIPT_DIR}/stitch"
+        "${SCRIPT_DIR}/genmonth" "$(date::monthnumberfrommonth "$month")" && "${SCRIPT_DIR}/stitch"
         local end_time=$(date +%s)
         local runtime=$((end_time - start_time))
         err "Embedded art in ${runtime} seconds"
