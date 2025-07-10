@@ -542,6 +542,7 @@ def download_all(query, filename_base=None, title=None, artist=None, location=No
 
 def main():
     """Main entry point for the script."""
+    start_time = time.time()
     parser = argparse.ArgumentParser(description='Download artwork images from various sources.')
     parser.add_argument('query', nargs='?', help='Name of artwork to search for')
     parser.add_argument('--title', help='Title of the artwork')
@@ -626,6 +627,10 @@ def main():
             if best_result:
                 url, file, score = best_result
                 print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
+
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"\n⏱️ Execution time: {elapsed_time:.2f} seconds", file=sys.stderr)
 
     sys.exit(0 if success else 1)
 
