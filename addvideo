@@ -171,6 +171,7 @@ generate_files() {
   basename -- "$fname" >> "${month}/${COMPACT_FILE}"
 
   if "${SCRIPT_DIR}/genmonth" "$monthnumber" "$YEAR"; then
+    "${SCRIPT_DIR}/stitch"
     printf "%s\n" "$vid" >> "$VIDEOS_FILE"
     echo "Successfully added video $vid"
     return $EXIT_SUCCESS

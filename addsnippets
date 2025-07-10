@@ -100,6 +100,7 @@ main() {
 
   # Generate final compact version
   "${SCRIPT_DIR}/genmonth" "$(date::monthnumberfrommonth "${oldmonth}" "${YEAR}")"
+  "${SCRIPT_DIR}/stitch"
 }
 
 while [[ $# -gt 0 ]]; do
