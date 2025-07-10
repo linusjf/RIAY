@@ -17,6 +17,7 @@ import json
 import os
 import sys
 import re
+import time
 from dotenv import load_dotenv
 
 from openai import OpenAI
@@ -83,6 +84,7 @@ def is_json_string(s):
 
 def main():
     """Main function to verify image matches artwork metadata."""
+    start_time = time.time()
     parser = argparse.ArgumentParser(
         description="Verify if an image matches artwork metadata using hosted models."
     )
@@ -150,9 +152,14 @@ def main():
         result = json.dumps(data, indent=2)
         print(result)
 
+        execution_time = time.time() - start_time
+        print(f"⏱️ Execution time: {execution_time:.2f} seconds", file=sys.stderr)
+
         sys.exit(0 if is_likely_match else 1)
 
     except Exception as error:
+        execution_time = time.time() - start_time
+        print(f"⏱️ Execution time: {execution_time:.2f} seconds", file=sys.stderr)
         print(f"❌ Error: {error}", file=sys.stderr)
         sys.exit(2)
 
