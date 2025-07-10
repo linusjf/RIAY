@@ -146,6 +146,36 @@ def reverse_image_lookup(image_path, title, artist, subject=None, location=None,
     return qualifying_urls, delete_url
 
 
+def reverse_image_lookup_url(image_url, title, artist, subject=None, location=None,
+                            date=None, style=None, medium=None, source_url=None):
+    """Perform reverse image lookup with provided parameters using a direct image URL.
+
+    Args:
+        image_url: URL of the image file
+        title: Title of the artwork
+        artist: Artist of the artwork
+        subject: Subject of the artwork (optional)
+        location: Current location of artwork (optional)
+        date: Date when artwork was created (optional)
+        style: Style of the artwork (optional)
+        medium: Medium of the artwork (optional)
+        source_url: Source URL of the image (optional)
+
+    Returns:
+        tuple: (list of qualifying URLs, None since no imgbb upload was done)
+    """
+    global IMAGE_SOURCE_URL
+    IMAGE_SOURCE_URL = source_url
+
+    metadata_text = ", ".join(filter(None, [
+        title, artist, subject, location, date, style, medium,
+        clean_filename_text(IMAGE_SOURCE_URL)
+    ]))
+
+    qualifying_urls = reverse_image_search(image_url, metadata_text)
+    return qualifying_urls, None
+
+
 def main():
     parser = argparse.ArgumentParser(description='Perform reverse image search using SerpAPI')
     parser.add_argument(
