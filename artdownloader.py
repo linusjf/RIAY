@@ -25,7 +25,7 @@ from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
 from simtools import compare_terms, MatchMode
-from reverseimagelookup import reverse_image_lookup
+from reverseimagelookup import reverse_image_lookup_url
 
 # Global dictionary to track downloaded URLs and their saved filenames
 DOWNLOADED_URLS = {}
@@ -52,6 +52,28 @@ WIKIMEDIA_SEARCH_API_URL = (
 WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
 
 SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
+
+def download_from_googlelens(qualified_urls, filename_base):
+    """Download images from Google Lens reverse image search results.
+    
+    Args:
+        qualified_urls: List of (url, score) tuples from reverse_image_lookup_url
+        filename_base: Base filename to use for saving
+        
+    Returns:
+        str: Path to successfully downloaded file, or None if none succeeded
+    """
+    if not qualified_urls:
+        return None
+        
+    for idx, (url, score) in enumerate(qualified_urls):
+        filename = os.path.join(
+            SAVE_DIR,
+            f"{filename_base}_{idx+1}_googlelens.jpg"
+        )
+        if save_image(url, filename):
+            return filename
+    return None
 
 def save_image(url, filename):
     """Save an image from URL to local file."""
