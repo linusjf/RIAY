@@ -37,8 +37,6 @@ if not IMGBB_API_KEY:
 MIN_IMAGE_WIDTH = 350
 MIN_IMAGE_HEIGHT = 480
 
-IMAGE_SOURCE_URL = None
-
 def upload_to_imgbb(image_path):
     with open(image_path, "rb") as f:
         response = requests.post(
@@ -48,7 +46,7 @@ def upload_to_imgbb(image_path):
         )
     if response.status_code == 200:
         json_data = response.json()["data"]
-        return (json_data["url"], json_data["delete_url"], json_data["id"])
+        return (json_data["url"], json_data["delete_url"])
     else:
         raise Exception(f"Upload failed: {response.status_code} {response.text}")
 
@@ -107,7 +105,7 @@ def validate_image_path(path):
 
 
 def reverse_image_lookup(image_path, title, artist, subject=None, location=None,
-                        date=None, style=None, medium=None, source_url=None):
+                        date=None, style=None, medium=None):
     """Perform reverse image lookup with provided parameters.
 
     Args:
@@ -124,30 +122,14 @@ def reverse_image_lookup(image_path, title, artist, subject=None, location=None,
     Returns:
         tuple: (list of qualifying URLs, delete_url from imgbb)
     """
-    global IMAGE_SOURCE_URL
-    IMAGE_SOURCE_URL = source_url
 
-    # Check for corresponding url.txt file if no source_url provided
-    if not source_url:
-        url_file = os.path.splitext(image_path)[0] + '.url.txt'
-        if os.path.exists(url_file):
-            with open(url_file, 'r') as f:
-                IMAGE_SOURCE_URL = f.read().strip()
-                print(f"Found source URL: {IMAGE_SOURCE_URL}", file=sys.stderr)
-
-    image_url, delete_url, _ = upload_to_imgbb(image_path)
-
-    metadata_text = ", ".join(filter(None, [
-        title, artist, subject, location, date, style, medium,
-        clean_filename_text(IMAGE_SOURCE_URL)
-    ]))
-
-    qualifying_urls = reverse_image_search(image_url, metadata_text)
+    image_url, delete_url = upload_to_imgbb(image_path)
+    qualifying_urls = reverse_image_lookup_url(image_url,title, artist,subject, location, date,style, medium )
     return qualifying_urls, delete_url
 
 
 def reverse_image_lookup_url(image_url, title, artist, subject=None, location=None,
-                            date=None, style=None, medium=None, source_url=None):
+                            date=None, style=None, medium=None):
     """Perform reverse image lookup with provided parameters using a direct image URL.
 
     Args:
@@ -159,21 +141,18 @@ def reverse_image_lookup_url(image_url, title, artist, subject=None, location=No
         date: Date when artwork was created (optional)
         style: Style of the artwork (optional)
         medium: Medium of the artwork (optional)
-        source_url: Source URL of the image (optional)
 
     Returns:
         tuple: (list of qualifying URLs, None since no imgbb upload was done)
     """
-    global IMAGE_SOURCE_URL
-    IMAGE_SOURCE_URL = source_url
 
     metadata_text = ", ".join(filter(None, [
         title, artist, subject, location, date, style, medium,
-        clean_filename_text(IMAGE_SOURCE_URL)
+        clean_filename_text(image_url)
     ]))
 
     qualifying_urls = reverse_image_search(image_url, metadata_text)
-    return qualifying_urls, None
+    return qualifying_urls
 
 
 def main():
@@ -195,16 +174,38 @@ def main():
 
     args = parser.parse_args()
 
-    qualifying_urls, delete_url = reverse_image_lookup(
-        image_path=args.image,
-        title=args.title,
-        artist=args.artist,
-        subject=args.subject,
-        location=args.location,
-        date=args.date,
-        style=args.style,
-        medium=args.medium
-    )
+    source_url = None
+    # Check for corresponding url.txt file if no source_url provided
+    url_file = os.path.splitext(args.image)[0] + '.url.txt'
+    if os.path.exists(url_file):
+        with open(url_file, 'r') as f:
+            source_url = f.read().strip()
+            print(f"Found source URL: {source_url}", file=sys.stderr)
+
+    qualifying_urls = []
+    delete_url = None
+    if source_url:
+        qualifying_urls = reverse_image_lookup_url(
+            image_url=source_url,
+            title=args.title,
+            artist=args.artist,
+            subject=args.subject,
+            location=args.location,
+            date=args.date,
+            style=args.style,
+            medium=args.medium
+        )
+    else:
+        qualifying_urls, delete_url = reverse_image_lookup(
+            image_path=args.image_file,
+            title=args.title,
+            artist=args.artist,
+            subject=args.subject,
+            location=args.location,
+            date=args.date,
+            style=args.style,
+            medium=args.medium
+        )
 
     if qualifying_urls:
         print("\nQualifying URLs (sorted by score):")
@@ -213,7 +214,8 @@ def main():
     else:
         print("No qualifying URLs found")
 
-    print(f"\nTry deleting {delete_url} in a browser.", file=sys.stderr)
+    if delete_url:
+        print(f"\nTry deleting {delete_url} in a browser.", file=sys.stderr)
 
     sys.exit(0)
 
