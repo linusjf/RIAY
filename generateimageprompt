@@ -84,6 +84,9 @@ function create_payload() {
 }
 
 function main() {
+  local start_time
+  start_time=$(date +%s.%N)
+
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       -h | --help) usage 0 ;;
@@ -125,10 +128,16 @@ function main() {
 
   generated_content="$(echo "$response" | jq -r '.choices[0].message.content')"
   echo "$generated_content" | sed -E '/^```(json)?[[:space:]]*$/d'
+
+  local end_time
+  end_time=$(date +%s.%N)
+  local elapsed_time
+  elapsed_time=$(echo "$end_time - $start_time" | bc)
+  printf "Execution time: %.2f seconds\n" "$elapsed_time" >&2
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require_commands jq tee cat
+  require_commands jq tee cat bc
   require_vars TEXT_LLM_MODEL TEXT_LLM_API_KEY TEXT_LLM_BASE_URL TEXT_LLM_CHAT_ENDPOINT
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
