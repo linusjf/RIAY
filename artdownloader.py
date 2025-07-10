@@ -649,7 +649,7 @@ def main():
 
             if best_result:
                 url, file, score = best_result
-                if file.startswith("best_result_"):
+                if "best_result_" in file:
                     qualified_urls = reverse_image_lookup_url(url, args.title, args.artist, args.subject, args.location, args.date,args.style, args.medium)
                     if qualified_urls:
                         best_qualified_result  = download_from_googlelens(qualified_urls=qualified_urls,filename_base=args.filename)
