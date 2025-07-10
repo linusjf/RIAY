@@ -90,6 +90,7 @@ function generate_image() {
 
 function main() {
   local prompt=""
+  local start_time=$(date +%s.%N)
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -114,6 +115,9 @@ function main() {
   fi
 
   generate_image "${prompt}"
+  local end_time=$(date +%s.%N)
+  local elapsed=$(echo "$end_time - $start_time" | bc)
+  printf "Execution time: %.2f seconds\n" "$elapsed" >&2
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
