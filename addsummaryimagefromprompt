@@ -72,7 +72,7 @@ trap_exit() {
   local exitcode=$?
   local end_time=$(date +%s)
   local duration=$((end_time - start_time))
-  echo "Execution time: ${duration} seconds" >&2
+  echo "Generated image from summary in ${duration} seconds" >&2
   exit $exitcode
 }
 
