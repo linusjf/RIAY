@@ -63,9 +63,6 @@ function generate_image() {
           \"prompt\": \"${prompt}\",
           \"n\": 1,
           \"size\": \"1024x1024\",
-          \"quality\": \"low\",
-          \"output_format\": \"jpeg\",
-          \"output_compression\": 50,
           \"response_format\": \"url\"
         }"
 
