@@ -305,7 +305,7 @@ function main() {
         "${SCRIPT_DIR}/genmonth" "$month" && "${SCRIPT_DIR}/stitch"
         local end_time=$(date +%s)
         local runtime=$((end_time - start_time))
-        err "⏱️ Script execution time: ${runtime} seconds"
+        err "Embedded art in ${runtime} seconds"
         return 0
       else
         err "Image content validation policy is set to strict. No markdown will be generated."
