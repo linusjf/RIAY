@@ -198,7 +198,7 @@ def main():
         )
     else:
         qualifying_urls, delete_url = reverse_image_lookup(
-            image_path=args.image_file,
+            image_path=args.image,
             title=args.title,
             artist=args.artist,
             subject=args.subject,

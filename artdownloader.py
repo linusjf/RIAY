@@ -20,6 +20,7 @@ from duckduckgo_search import DDGS
 from duckduckgo_search.exceptions import RatelimitException
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 from serpapi import GoogleSearch
+from urllib.parse import urlparse
 from bashhelper import parse_bash_array
 from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text
 from converterhelper import convert_to_jpeg
@@ -208,7 +209,9 @@ def download_from_duckduckgo(query, filename_base):
         success = False
         for idx, (result, score) in enumerate(qualifying_results):
             url = result["image"]
-            if any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
+            parsed_url = urlparse(url)
+            domain = parsed_url.netloc.lower()
+            if any(stock_domain.lower() in domain for stock_domain in STOCK_PHOTO_SITES):
                 FOUND_STOCK_PHOTOS.append(url)
                 DUCKDUCKGO_IMAGES.append((url, "", score))
                 continue
@@ -483,7 +486,9 @@ def download_from_google(query, filename_base):
         # Download images for all qualifying pages
         success = False
         for idx, (url, score) in enumerate(qualifying_pages):
-            if any(val.lower() in url.lower() for val in STOCK_PHOTO_SITES):
+            parsed_url = urlparse(url)
+            domain = parsed_url.netloc.lower()
+            if any(stock_domain.lower() in domain for stock_domain in STOCK_PHOTO_SITES):
                 FOUND_STOCK_PHOTOS.append(url)
                 GOOGLE_IMAGES.append((url, "", score))
                 continue
