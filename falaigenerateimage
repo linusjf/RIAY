@@ -164,6 +164,7 @@ function read_input() {
 }
 
 function main() {
+  local start_time=$(date +%s)
   local input="${1:-}"
   prompt="$(read_input "$input")"
   local request_id output_file
@@ -179,7 +180,10 @@ function main() {
   poll_status "$request_id" || die "Timed out after $MAX_RETRIES attempts" 5
   output_file="$(download_image "$request_id")"
 
-  printf "\n✅ Image generated successfully: %s\n" "$output_file"
+  local end_time=$(date +%s)
+  local elapsed=$((end_time - start_time))
+  printf "\n✅ Image generated successfully: %s\n" "$output_file" >&1
+  printf "Image generated using %s in %d seconds.\n" "$SCRIPT_NAME" "$elapsed" >&2
 }
 
 # Source utility libraries
