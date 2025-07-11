@@ -28,7 +28,7 @@ trap_exit() {
   local exitcode="$?"
   local end_time=$(date +%s)
   local duration=$((end_time - start_time))
-  echo "Image generated using ${SCRIPT_NAME} in ${duration} seconds." >&2
+  echo "Added video in ${duration} seconds." >&2
   exit $exitcode
 }
 
