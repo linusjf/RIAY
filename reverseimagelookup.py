@@ -26,7 +26,7 @@ SERP_API_KEY_VAR = "SERP_API_KEY"
 IMGBB_API_KEY_VAR = "IMGBB_API_KEY"
 
 IMGBB_UPLOAD_URL = "https://api.imgbb.com/1/upload"
-IMAGE_FILE_EXTENSION = '.url.txt'
+IMAGE_URL_FILE_EXTENSION = '.url.txt'
 
 MIN_IMAGE_WIDTH = 350
 MIN_IMAGE_HEIGHT = 480
@@ -72,7 +72,7 @@ def verify_image_against_metadata(image_url, metadata_text):
     results = search.get_dict()
     visual_matches = results["visual_matches"][0:REQUIRED_MATCH_COUNT]
     match_count = 0
-    
+
     for image_info in visual_matches:
         title = image_info["title"]
         link = image_info["link"]
@@ -105,7 +105,7 @@ def reverse_image_search(image_url, metadata_text):
     results = search.get_dict()
     visual_matches = results["visual_matches"][0:5]
     qualifying_urls = []
-    
+
     for image_info in visual_matches:
         title = image_info["title"]
         link = image_info["link"]
@@ -217,7 +217,7 @@ def main():
     """Main entry point for the script."""
     start_time = time.time()
     script_name = os.path.basename(__file__)
-    
+
     parser = argparse.ArgumentParser(
         description='Perform reverse image search using SerpAPI'
     )
@@ -262,7 +262,7 @@ def main():
 
     source_url = None
     # Check for corresponding url.txt file if no source_url provided
-    url_file = os.path.splitext(args.image)[0] + IMAGE_FILE_EXTENSION
+    url_file = os.path.splitext(args.image)[0] + IMAGE_URL_FILE_EXTENSION
     if os.path.exists(url_file):
         with open(url_file, 'r', encoding='utf-8') as file:
             source_url = file.read().strip()
@@ -287,14 +287,14 @@ def main():
             f"Delete uploaded image in the browser using {delete_url}",
             file=sys.stderr
         )
-    
+
     result = verify_image_against_metadata(source_url, metadata_text)
     elapsed_time = time.time() - start_time
     print(
         f"Verified image {args.image} in {elapsed_time:.2f} seconds using {script_name}",
         file=sys.stderr
     )
-    
+
     sys.exit(0 if result else 1)
 
 
