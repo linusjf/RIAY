@@ -8,6 +8,7 @@ faster-whisper implementation of OpenAI's Whisper model.
 import sys
 import argparse
 import os
+import time
 from dotenv import load_dotenv
 import torch
 from faster_whisper import WhisperModel
@@ -36,6 +37,7 @@ def transcribe_audio(
         device: Device to run model on ('cuda' or 'cpu').
         compute_type: Compute type for model ('float16', 'int8_float16', etc.).
     """
+    start_time = time.time()
     model = WhisperModel(model_size, device=device, compute_type=compute_type)
     print(
         "Executing faster-whisper with device '%s' and compute type '%s' with device name %s"
@@ -50,6 +52,9 @@ def transcribe_audio(
     for segment in segments:
         print(segment.text, end='', flush=True)
     print("")
+    
+    end_time = time.time()
+    print(f"Execution time: {end_time - start_time:.2f} seconds", file=sys.stderr, flush=True)
 
 def main() -> None:
     """Run main transcription function."""
