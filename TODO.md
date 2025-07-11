@@ -8,5 +8,3 @@
 ## Bugs/Issues
 
 ## Exploratory tasks
-
-1. Explore alternate , more economical but possibly less accurate verification process using Google Lens search.
