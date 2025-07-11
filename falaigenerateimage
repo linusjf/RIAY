@@ -182,7 +182,8 @@ function main() {
 
   local end_time=$(date +%s)
   local elapsed=$((end_time - start_time))
-  printf "\n✅ Image generated successfully: %s\n" "$output_file" >&1
+  echo "$output_file"
+  printf "\n✅ Image generated successfully: %s\n" "$output_file" >&2
   printf "Image generated using %s in %d seconds.\n" "$SCRIPT_NAME" "$elapsed" >&2
 }
 
