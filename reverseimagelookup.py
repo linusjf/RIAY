@@ -72,6 +72,7 @@ def verify_image_against_metadata(image_url, metadata_text):
         score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
         if score > 0.7:  # Only count URLs that meet the minimum score threshold
             match_count = match_count + 1
+            print(f"Matched: {image_url} —> {url}", file=sys.stderr)
 
     return True if match_count == 5 else False
 
