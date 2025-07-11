@@ -5477,6 +5477,10 @@ This is no mere depiction of suffering, but a window into its strange redemption
   - [Unworthy Yet Welcomed](#unworthy-yet-welcomed)
   - [AI-Generated Summary: The Timeless Joy of the Nativity](#ai-generated-summary-the-timeless-joy-of-the-nativity)
   - [Baroque Nativity scene by Pellegrini, depicting divine joy with mother and child (Stock Image)](#baroque-nativity-scene-by-pellegrini-depicting-divine-joy-with-mother-and-child-stock-image)
+- [July 11, 2025](#july-11-2025)
+  - [A Renewed 'Yes'](#a-renewed-yes)
+  - [AI-Generated Summary: The Stillness in the Storm](#ai-generated-summary-the-stillness-in-the-storm)
+  - [Fresco of Virgin Mary holding the Child Jesus with Simeon in a temple scene](#fresco-of-virgin-mary-holding-the-child-jesus-with-simeon-in-a-temple-scene)
 
 <!-- tocstop -->
 
@@ -5711,6 +5715,24 @@ Let us then, like Joseph and Mary in Pellegrini’s painting, adore with quiet w
 ##### Baroque Nativity scene by Pellegrini, depicting divine joy with mother and child (Stock Image)
 
 [![Baroque Nativity scene by Pellegrini, depicting divine joy with mother and child](July/jpgs/viennanativitypelligrini.jpg)](https://thumbs.dreamstime.com/b/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-50084160.jpg "Baroque Nativity scene by Pellegrini, depicting divine joy with mother and child")
+
+#### July 11, 2025
+
+##### A Renewed 'Yes'
+
+[![A Renewed 'Yes'](July/jpgs/Day192.jpg)](https://youtu.be/3Tlgd63nYyM "A Renewed 'Yes'")
+
+##### AI-Generated Summary: The Stillness in the Storm
+
+Imagine, if you will, a scene of holy tumult—the temple alive with motion, voices clashing like waves, and Simeon, the aged prophet, leaning back as if the weight of revelation has overcome him. Yet amid this whirlwind stands the Virgin, her eyes fixed unwaveringly upon the Child in her arms. Here is the very picture of devotion: where others are tossed by distraction, she is anchored in love.
+
+This fresco, though the artist’s hand is not named for us, captures a truth as old as the Fall and as fresh as grace—that freedom lies not in the absence of burden, but in the willing embrace of it. Mary’s _fiat_ echoes still, a quiet thunder in the soul: "All my time is free," as the saint once said, for what is given freely to God is never lost. The world may rush and clamor, but love, if it is love indeed, chooses its chains and in them finds wings.
+
+So it is with all sacred art: it does not merely depict, but invites. Look again at Mary’s stillness, and you will see the heart of the mystery—that He whom the heavens could not contain was placed into human hands, not by force, but because Love Himself willed it so.
+
+##### Fresco of Virgin Mary holding the Child Jesus with Simeon in a temple scene
+
+[![Fresco of Virgin Mary holding the Child Jesus with Simeon in a temple scene](July/jpgs/stillnessstormfresco.jpg)](https://www.repro-tableaux.com/kunst/fra_angelico/Simeon-with-the-Christ-Child.jpg "Fresco of Virgin Mary holding the Child Jesus with Simeon in a temple scene")
 
 ## August
 
