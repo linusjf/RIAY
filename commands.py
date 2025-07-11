@@ -1,5 +1,9 @@
 #!/usr/bin/env python
-"""Main command processor for ANTLR-generated command parser."""
+"""Main command processor for ANTLR-generated command parser.
+
+This module implements a listener for processing commands parsed by ANTLR.
+It executes corresponding actions based on the parsed command syntax.
+"""
 
 import logging
 import os
@@ -20,7 +24,7 @@ from commandsverbosestrategy import CommandsVerboseStrategy
 class Commands(commandsListener):
     """Listener implementation for processing commands."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize the command processor."""
         self.cwd = str(Path.cwd())
         self.exitcode = 0
@@ -44,7 +48,7 @@ class Commands(commandsListener):
     def enterAddimgtoday(self, ctx: commandsParser.AddimgtodayContext) -> None:
         """Process Addimgtoday command."""
         image_path = ctx.imagepath().getText().strip('"')
-        caption = ctx.caption().getText().strip('""')
+        caption = ctx.caption().getText().strip('"')
         day_of_year = int(ctx.dayofyear().getText())
         rule_name = self._get_rule_name(ctx)
         msg = f"Adding image '{image_path}' to day {day_of_year} with caption '{caption}'."
@@ -80,7 +84,14 @@ class Commands(commandsListener):
         self._execute_command([rule_name, path_to_md])
 
     def _get_rule_name(self, ctx) -> str:
-        """Get the name of the current rule being processed."""
+        """Get the name of the current rule being processed.
+        
+        Args:
+            ctx: The parser rule context
+            
+        Returns:
+            The name of the rule as a string
+        """
         rule_index = ctx.getRuleIndex()
         return ctx.parser.ruleNames[rule_index]
 
