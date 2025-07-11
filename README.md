@@ -5480,7 +5480,7 @@ This is no mere depiction of suffering, but a window into its strange redemption
 - [July 11, 2025](#july-11-2025)
   - [A Renewed 'Yes'](#a-renewed-yes)
   - [AI-Generated Summary: The Stillness in the Storm](#ai-generated-summary-the-stillness-in-the-storm)
-  - [Fresco of Virgin Mary holding the Child Jesus with Simeon in a temple scene](#fresco-of-virgin-mary-holding-the-child-jesus-with-simeon-in-a-temple-scene)
+  - [Fra Angelico's Simeon with the Child Jesus: Temple scene](#fra-angelicos-simeon-with-the-child-jesus-temple-scene)
 
 <!-- tocstop -->
 
@@ -5730,9 +5730,9 @@ This fresco, though the artist’s hand is not named for us, captures a truth as
 
 So it is with all sacred art: it does not merely depict, but invites. Look again at Mary’s stillness, and you will see the heart of the mystery—that He whom the heavens could not contain was placed into human hands, not by force, but because Love Himself willed it so.
 
-##### Fresco of Virgin Mary holding the Child Jesus with Simeon in a temple scene
+##### Fra Angelico's Simeon with the Child Jesus: Temple scene
 
-[![Fresco of Virgin Mary holding the Child Jesus with Simeon in a temple scene](July/jpgs/stillnessstormfresco.jpg)](https://www.repro-tableaux.com/kunst/fra_angelico/Simeon-with-the-Christ-Child.jpg "Fresco of Virgin Mary holding the Child Jesus with Simeon in a temple scene")
+[![Fra Angelico's Simeon with the Child Jesus: Temple scene](July/jpgs/stillnessstormfresco.jpg)](https://www.repro-tableaux.com/kunst/fra_angelico/Simeon-with-the-Christ-Child.jpg "Fra Angelico's Simeon with the Child Jesus: Temple scene")
 
 ## August
 
