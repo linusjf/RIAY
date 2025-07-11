@@ -1,20 +1,24 @@
-import re
+"""Utilities for working with bash configuration files and environment variables."""
+
 import os
+import re
+from typing import Dict, List
+
 from dotenv import dotenv_values
 
 
-def parse_bash_array(file_path, var_name):
+def parse_bash_array(file_path: str, var_name: str) -> List[str]:
     """Parse a bash array from a file and return its values as a Python list.
 
     Args:
-        file_path: Path to the bash file
-        var_name: Name of the array variable to parse
+        file_path: Path to the bash file containing the array definition.
+        var_name: Name of the array variable to parse.
 
     Returns:
-        list: The array values or empty list if not found
+        List of string values from the array, or empty list if not found.
     """
-    with open(file_path, 'r') as f:
-        content = f.read()
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
 
     # Match array definition like: VAR=( "a" "b" "c" )
     pattern = re.compile(rf'{var_name}\s*=\s*\((.*?)\)', re.DOTALL)
@@ -24,28 +28,31 @@ def parse_bash_array(file_path, var_name):
 
     array_body = match.group(1)
     # Extract all quoted strings
-    values = re.findall(r'"(.*?)"', array_body)
-    return values
+    return re.findall(r'"(.*?)"', array_body)
 
-def load_dotenv_with_system_interpolation(dotenv_path=".env", override=False):
-    """
-    Load a dotenv file, expanding references to existing environment variables.
+
+def load_dotenv_with_system_interpolation(
+    dotenv_path: str = ".env",
+    override: bool = False
+) -> Dict[str, str]:
+    """Load .env file with expansion of existing environment variables.
 
     Args:
-        dotenv_path (str): Path to the .env file (default: ".env").
-        override (bool): Whether to override existing os.environ values.
+        dotenv_path: Path to the .env file (default: ".env").
+        override: Whether to override existing os.environ values.
 
     Returns:
-        dict: The interpolated key-value pairs (with non-None values only).
+        Dictionary of interpolated key-value pairs (non-None values only).
     """
     raw_env = dotenv_values(dotenv_path)
-
     interpolated = {
-        k: os.path.expandvars(v) for k, v in raw_env.items() if v is not None
+        key: os.path.expandvars(value)
+        for key, value in raw_env.items()
+        if value is not None
     }
 
-    for k, v in interpolated.items():
-        if override or k not in os.environ:
-            os.environ[k] = v  # ✅ v is guaranteed to be a str
+    for key, value in interpolated.items():
+        if override or key not in os.environ:
+            os.environ[key] = value
 
     return interpolated
