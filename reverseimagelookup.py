@@ -1,56 +1,67 @@
 #!/usr/bin/env python
-"""
-Reverseimagelookup.
+"""Perform reverse image lookup using SerpAPI and imgbb APIs.
 
-######################################################################
-# @author      : Linus Fernandes (linusfernandes at gmail dot com)
-# @file        : reverseimagelookup
-# @created     : Saturday Jul 05, 2025 17:07:38 IST
-# @description :
-# -*- coding: utf-8 -*-'
-######################################################################
+This script allows users to perform reverse image searches and verify images
+against metadata using Google Lens via SerpAPI and imgbb for image hosting.
 """
-import sys
-import os
-import requests
+
 import argparse
+import os
+import sys
 import time
-from dotenv import load_dotenv
-from serpapi import GoogleSearch
-from simtools import compare_terms, MatchMode
-from htmlhelper import clean_filename_text, extract_domain_from_url
-from bashhelper import parse_bash_array
 from pathlib import Path
 
-STOCK_PHOTO_SITES = parse_bash_array('config.env', 'STOCK_PHOTO_SITES')
-# Load environment variables from config.env
-load_dotenv('config.env')
-SERP_API_KEY = os.getenv("SERP_API_KEY")
-if not SERP_API_KEY:
-    raise ValueError("SERP_API_KEY environment variable not set")
+import requests
+from dotenv import load_dotenv
+from serpapi import GoogleSearch
 
-# Get your API key from https://api.imgbb.com/
-IMGBB_API_KEY = os.getenv("IMGBB_API_KEY")
-if not IMGBB_API_KEY:
-    raise ValueError("IMGBB_API_KEY environment variable not set")
+from bashhelper import parse_bash_array
+from htmlhelper import clean_filename_text, extract_domain_from_url
+from simtools import compare_terms, MatchMode
+
+# Constants
+CONFIG_FILE = 'config.env'
+STOCK_PHOTO_SITES_VAR = 'STOCK_PHOTO_SITES'
+SERP_API_KEY_VAR = "SERP_API_KEY"
+IMGBB_API_KEY_VAR = "IMGBB_API_KEY"
+
+IMGBB_UPLOAD_URL = "https://api.imgbb.com/1/upload"
+IMAGE_FILE_EXTENSION = '.url.txt'
 
 MIN_IMAGE_WIDTH = 350
 MIN_IMAGE_HEIGHT = 480
+MATCH_SCORE_THRESHOLD = 0.7
+REQUIRED_MATCH_COUNT = 5
+
+STOCK_PHOTO_SITES = parse_bash_array(CONFIG_FILE, STOCK_PHOTO_SITES_VAR)
+
+# Load environment variables from config.env
+load_dotenv(CONFIG_FILE)
+SERP_API_KEY = os.getenv(SERP_API_KEY_VAR)
+if not SERP_API_KEY:
+    raise ValueError(f"{SERP_API_KEY_VAR} environment variable not set")
+
+IMGBB_API_KEY = os.getenv(IMGBB_API_KEY_VAR)
+if not IMGBB_API_KEY:
+    raise ValueError(f"{IMGBB_API_KEY_VAR} environment variable not set")
+
 
 def upload_to_imgbb(image_path):
-    with open(image_path, "rb") as f:
+    """Upload image to imgbb and return URL and delete URL."""
+    with open(image_path, "rb") as file:
         response = requests.post(
-            "https://api.imgbb.com/1/upload",
+            IMGBB_UPLOAD_URL,
             data={"key": IMGBB_API_KEY},
-            files={"image": f}
+            files={"image": file}
         )
     if response.status_code == 200:
         json_data = response.json()["data"]
         return (json_data["url"], json_data["delete_url"])
-    else:
-        raise Exception(f"Upload failed: {response.status_code} {response.text}")
+    raise Exception(f"Upload failed: {response.status_code} {response.text}")
+
 
 def verify_image_against_metadata(image_url, metadata_text):
+    """Verify if image matches metadata using Google Lens."""
     params = {
         "engine": "google_lens",
         "api_key": SERP_API_KEY,
@@ -59,8 +70,9 @@ def verify_image_against_metadata(image_url, metadata_text):
     }
     search = GoogleSearch(params)
     results = search.get_dict()
-    visual_matches = results["visual_matches"][0:5]
-    match_count=0
+    visual_matches = results["visual_matches"][0:REQUIRED_MATCH_COUNT]
+    match_count = 0
+    
     for image_info in visual_matches:
         title = image_info["title"]
         link = image_info["link"]
@@ -68,17 +80,21 @@ def verify_image_against_metadata(image_url, metadata_text):
         url = image_info["image"]
 
         match_text = ", ".join(filter(None, [
-            title, clean_filename_text(link), source, clean_filename_text(url)
+            title,
+            clean_filename_text(link),
+            source,
+            clean_filename_text(url)
         ]))
         score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
-        if score > 0.7:  # Only count URLs that meet the minimum score threshold
-            match_count = match_count + 1
+        if score > MATCH_SCORE_THRESHOLD:
+            match_count += 1
             print(f"Matched: {image_url} —> {url}", file=sys.stderr)
 
-    return True if match_count == 5 else False
+    return match_count == REQUIRED_MATCH_COUNT
 
 
 def reverse_image_search(image_url, metadata_text):
+    """Perform reverse image search and return qualifying URLs."""
     params = {
         "engine": "google_lens",
         "api_key": SERP_API_KEY,
@@ -89,6 +105,7 @@ def reverse_image_search(image_url, metadata_text):
     results = search.get_dict()
     visual_matches = results["visual_matches"][0:5]
     qualifying_urls = []
+    
     for image_info in visual_matches:
         title = image_info["title"]
         link = image_info["link"]
@@ -109,10 +126,13 @@ def reverse_image_search(image_url, metadata_text):
             continue
 
         match_text = ", ".join(filter(None, [
-            title, clean_filename_text(link), source, clean_filename_text(url)
+            title,
+            clean_filename_text(link),
+            source,
+            clean_filename_text(url)
         ]))
         score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
-        if score > 0.7:  # Only include URLs that meet the minimum score threshold
+        if score > MATCH_SCORE_THRESHOLD:
             qualifying_urls.append((url, score))
 
     # Sort by score in descending order
@@ -143,20 +163,27 @@ def reverse_image_lookup(image_path, title, artist, subject=None, location=None,
         date: Date when artwork was created (optional)
         style: Style of the artwork (optional)
         medium: Medium of the artwork (optional)
-        source_url: Source URL of the image (optional)
 
     Returns:
         tuple: (list of qualifying URLs, delete_url from imgbb)
     """
-
     image_url, delete_url = upload_to_imgbb(image_path)
-    qualifying_urls = reverse_image_lookup_url(image_url,title, artist,subject, location, date,style, medium )
+    qualifying_urls = reverse_image_lookup_url(
+        image_url,
+        title,
+        artist,
+        subject,
+        location,
+        date,
+        style,
+        medium
+    )
     return qualifying_urls, delete_url
 
 
-def reverse_image_lookup_url(image_url, title, artist, subject=None, location=None,
-                            date=None, style=None, medium=None):
-    """Perform reverse image lookup with provided parameters using a direct image URL.
+def reverse_image_lookup_url(image_url, title, artist, subject=None,
+                            location=None, date=None, style=None, medium=None):
+    """Perform reverse image lookup using a direct image URL.
 
     Args:
         image_url: URL of the image file
@@ -171,9 +198,14 @@ def reverse_image_lookup_url(image_url, title, artist, subject=None, location=No
     Returns:
         tuple: (list of qualifying URLs, None since no imgbb upload was done)
     """
-
     metadata_text = ", ".join(filter(None, [
-        title, artist, subject, location, date, style, medium,
+        title,
+        artist,
+        subject,
+        location,
+        date,
+        style,
+        medium,
         clean_filename_text(image_url)
     ]))
 
@@ -182,33 +214,58 @@ def reverse_image_lookup_url(image_url, title, artist, subject=None, location=No
 
 
 def main():
+    """Main entry point for the script."""
     start_time = time.time()
     script_name = os.path.basename(__file__)
     
-    parser = argparse.ArgumentParser(description='Perform reverse image search using SerpAPI')
-    parser.add_argument(
-        "--image", required=True, type=validate_image_path, help="Path to the image file"
+    parser = argparse.ArgumentParser(
+        description='Perform reverse image search using SerpAPI'
     )
     parser.add_argument(
-        "--title", required=True, help="Title of the artwork"
+        "--image",
+        required=True,
+        type=validate_image_path,
+        help="Path to the image file"
     )
     parser.add_argument(
-        "--artist", required=True, help="Artist of the artwork"
+        "--title",
+        required=True,
+        help="Title of the artwork"
     )
-    parser.add_argument("--subject", help="Subject of the artwork")
-    parser.add_argument("--location", help="Current location of artwork")
-    parser.add_argument("--date", help="Date when artwork was created")
-    parser.add_argument("--style", help="Style of the artwork")
-    parser.add_argument("--medium", help="Medium of the artwork")
+    parser.add_argument(
+        "--artist",
+        required=True,
+        help="Artist of the artwork"
+    )
+    parser.add_argument(
+        "--subject",
+        help="Subject of the artwork"
+    )
+    parser.add_argument(
+        "--location",
+        help="Current location of artwork"
+    )
+    parser.add_argument(
+        "--date",
+        help="Date when artwork was created"
+    )
+    parser.add_argument(
+        "--style",
+        help="Style of the artwork"
+    )
+    parser.add_argument(
+        "--medium",
+        help="Medium of the artwork"
+    )
 
     args = parser.parse_args()
 
     source_url = None
     # Check for corresponding url.txt file if no source_url provided
-    url_file = os.path.splitext(args.image)[0] + '.url.txt'
+    url_file = os.path.splitext(args.image)[0] + IMAGE_FILE_EXTENSION
     if os.path.exists(url_file):
-        with open(url_file, 'r') as f:
-            source_url = f.read().strip()
+        with open(url_file, 'r', encoding='utf-8') as file:
+            source_url = file.read().strip()
             print(f"Found source URL: {source_url}", file=sys.stderr)
 
     delete_url = None
@@ -216,19 +273,29 @@ def main():
         source_url, delete_url = upload_to_imgbb(args.image)
 
     metadata_text = ", ".join(filter(None, [
-        args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium,
+        args.title,
+        args.artist,
+        args.subject,
+        args.location,
+        args.date,
+        args.style,
+        args.medium,
         clean_filename_text(source_url)
     ]))
     if delete_url:
-        print(f"Delete uploaded image in the browser using {delete_url}", file=sys.stderr)
+        print(
+            f"Delete uploaded image in the browser using {delete_url}",
+            file=sys.stderr
+        )
     
     result = verify_image_against_metadata(source_url, metadata_text)
     elapsed_time = time.time() - start_time
-    print(f"Verified image {args.image} in {elapsed_time:.2f} seconds using {script_name}", file=sys.stderr)
+    print(
+        f"Verified image {args.image} in {elapsed_time:.2f} seconds using {script_name}",
+        file=sys.stderr
+    )
     
-    if result:
-        sys.exit(0)
-    sys.exit(1)
+    sys.exit(0 if result else 1)
 
 
 if __name__ == '__main__':
