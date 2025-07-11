@@ -49,6 +49,32 @@ def upload_to_imgbb(image_path):
     else:
         raise Exception(f"Upload failed: {response.status_code} {response.text}")
 
+def verify_image_against_metadata(image_url, metadata_text):
+    params = {
+        "engine": "google_lens",
+        "api_key": SERP_API_KEY,
+        "url": image_url,
+        "type": "visual_matches"
+    }
+    search = GoogleSearch(params)
+    results = search.get_dict()
+    visual_matches = results["visual_matches"][0:5]
+    match_count=0
+    for image_info in visual_matches:
+        title = image_info["title"]
+        link = image_info["link"]
+        source = image_info["source"]
+        url = image_info["image"]
+
+        match_text = ", ".join(filter(None, [
+            title, clean_filename_text(link), source, clean_filename_text(url)
+        ]))
+        score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
+        if score > 0.7:  # Only count URLs that meet the minimum score threshold
+            match_count = match_count + 1
+
+    return True if match_count == 5 else False
+
 
 def reverse_image_search(image_url, metadata_text):
     params = {
@@ -180,42 +206,19 @@ def main():
             source_url = f.read().strip()
             print(f"Found source URL: {source_url}", file=sys.stderr)
 
-    qualifying_urls = []
     delete_url = None
-    if source_url:
-        qualifying_urls = reverse_image_lookup_url(
-            image_url=source_url,
-            title=args.title,
-            artist=args.artist,
-            subject=args.subject,
-            location=args.location,
-            date=args.date,
-            style=args.style,
-            medium=args.medium
-        )
-    else:
-        qualifying_urls, delete_url = reverse_image_lookup(
-            image_path=args.image,
-            title=args.title,
-            artist=args.artist,
-            subject=args.subject,
-            location=args.location,
-            date=args.date,
-            style=args.style,
-            medium=args.medium
-        )
+    if not source_url:
+        source_url, delete_url = upload_to_imgbb(args.image)
 
-    if qualifying_urls:
-        print("\nQualifying URLs (sorted by score):")
-        for url, score in qualifying_urls:
-            print(f"{url} (score: {score:.3f})")
-    else:
-        print("No qualifying URLs found")
-
+    metadata_text = ", ".join(filter(None, [
+        args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium,
+        clean_filename_text(source_url)
+    ]))
     if delete_url:
-        print(f"\nTry deleting {delete_url} in a browser.", file=sys.stderr)
-
-    sys.exit(0)
+        print(f"Delete uploaded image in the browser using {delete_url}", file=sys.stderr)
+    if verify_image_against_metadata(source_url, metadata_text):
+        sys.exit(0)
+    sys.exit(1)
 
 
 if __name__ == '__main__':
