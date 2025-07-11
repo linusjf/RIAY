@@ -80,30 +80,6 @@ function validate_arguments() {
   fi
 }
 
-function filter_color_images() {
-  local files=("$@")
-  local color_files_found=false
-
-  for file in "${files[@]}"; do
-    err "🎨 Checking color profile: $file"
-    classification=$("${SCRIPT_DIR}/classifyimage.py" "$file")
-    if [[ "$classification" == *"Full color"* ]] || [[ "$classification" == *"Sepia"* ]]; then
-      err "✅ Accepted: $file ($classification)"
-      echo "$file"
-      color_files_found=true
-    else
-      err "❌ Rejected: $file ($classification)"
-    fi
-  done
-
-  if "${color_files_found}"; then
-    return 0
-  else
-    err "⚠️ No color images found"
-    return $E_NO_COLOR_IMAGES
-  fi
-}
-
 function parse_artdownloader_output() {
   local output="$1"
   local best_selected_image=""
@@ -147,26 +123,6 @@ function verify_image() {
   err "🏆 Best image: $file (score: ${score:-})"
   echo "$result" | jq --arg k "filename" --arg v "$file" '. + {($k):($v)}'
   return "$exitcode"
-}
-
-function select_best_unverified_image() {
-  local files=("$@")
-  local best_image=""
-
-  for source in wikimedia_search.jpg wikimedia.jpg google.jpg duckduckgo.jpg wikipedia.jpg; do
-    for file in "${files[@]}"; do
-      if [[ "${file}" == *"${source}" ]]; then
-        best_image="$file"
-        err "✅ Found color image from ${source}: ${best_image}"
-        echo "$best_image"
-        return 0
-      fi
-    done
-  done
-
-  if [[ -z "$best_image" ]]; then
-    die "Error: No suitable color image found" $E_NO_COLOR_IMAGES
-  fi
 }
 
 function generate_markdown() {
