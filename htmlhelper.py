@@ -1,11 +1,12 @@
 import re
+from urllib.parse import urlparse
 
 def strip_span_tags_but_keep_contents(text):
     """Remove HTML span tags while preserving their contents.
-    
+
     Args:
         text: String containing HTML with span tags
-        
+
     Returns:
         String with span tags removed but contents preserved
     """
@@ -17,10 +18,10 @@ def strip_span_tags_but_keep_contents(text):
 
 def clean_filename_text(url):
     """Clean text from URLs to create safe filenames.
-    
+
     Args:
         url: URL string to extract filename from
-        
+
     Returns:
         Cleaned string with only alphabetic characters and spaces
     """
@@ -32,3 +33,20 @@ def clean_filename_text(url):
     cleaned = re.sub(r'[^A-Za-z]+', ' ', filename)
     # Strip leading/trailing whitespace and normalize spaces
     return cleaned.strip()
+
+def extract_domain_from_url(url):
+    """Extract domain from url.
+
+    Args:
+        url: URL string to extract domain from
+
+    Returns:
+        Domain
+    """
+
+    if not url:
+        return None
+
+    parsed_url = urlparse(url)
+    domain = parsed_url.netloc.lower()
+    return domain

@@ -20,9 +20,8 @@ from duckduckgo_search import DDGS
 from duckduckgo_search.exceptions import RatelimitException
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 from serpapi import GoogleSearch
-from urllib.parse import urlparse
 from bashhelper import parse_bash_array
-from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text
+from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, extract_domain_from_url
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
 from simtools import compare_terms, MatchMode
@@ -209,8 +208,7 @@ def download_from_duckduckgo(query, filename_base):
         success = False
         for idx, (result, score) in enumerate(qualifying_results):
             url = result["image"]
-            parsed_url = urlparse(url)
-            domain = parsed_url.netloc.lower()
+            domain = extract_domain_from_url(url)
             if any(stock_domain.lower() in domain for stock_domain in STOCK_PHOTO_SITES):
                 FOUND_STOCK_PHOTOS.append(url)
                 DUCKDUCKGO_IMAGES.append((url, "", score))
@@ -486,8 +484,7 @@ def download_from_google(query, filename_base):
         # Download images for all qualifying pages
         success = False
         for idx, (url, score) in enumerate(qualifying_pages):
-            parsed_url = urlparse(url)
-            domain = parsed_url.netloc.lower()
+            domain = extract_domain_from_url(url)
             if any(stock_domain.lower() in domain for stock_domain in STOCK_PHOTO_SITES):
                 FOUND_STOCK_PHOTOS.append(url)
                 GOOGLE_IMAGES.append((url, "", score))

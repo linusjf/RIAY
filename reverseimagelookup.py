@@ -17,9 +17,8 @@ import argparse
 from dotenv import load_dotenv
 from serpapi import GoogleSearch
 from simtools import compare_terms, MatchMode
-from htmlhelper import clean_filename_text
+from htmlhelper import clean_filename_text, extract_domain_from_url
 from bashhelper import parse_bash_array
-from urllib.parse import urlparse
 from pathlib import Path
 
 STOCK_PHOTO_SITES = parse_bash_array('config.env', 'STOCK_PHOTO_SITES')
@@ -75,9 +74,7 @@ def reverse_image_search(image_url, metadata_text):
             continue
 
         # Skip stock photo sites
-        parsed_url = urlparse(link)
-        domain = parsed_url.netloc.lower()
-        print(f"domain: {domain}", file=sys.stderr)
+        domain = extract_domain_from_url(link)
         if any(stock_domain.lower() in domain for stock_domain in STOCK_PHOTO_SITES):
             continue
         if (int(image_width) < MIN_IMAGE_WIDTH or int(image_height) < MIN_IMAGE_HEIGHT):
