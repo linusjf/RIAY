@@ -14,6 +14,7 @@ import sys
 import os
 import requests
 import argparse
+import time
 from dotenv import load_dotenv
 from serpapi import GoogleSearch
 from simtools import compare_terms, MatchMode
@@ -181,6 +182,9 @@ def reverse_image_lookup_url(image_url, title, artist, subject=None, location=No
 
 
 def main():
+    start_time = time.time()
+    script_name = os.path.basename(__file__)
+    
     parser = argparse.ArgumentParser(description='Perform reverse image search using SerpAPI')
     parser.add_argument(
         "--image", required=True, type=validate_image_path, help="Path to the image file"
@@ -217,7 +221,12 @@ def main():
     ]))
     if delete_url:
         print(f"Delete uploaded image in the browser using {delete_url}", file=sys.stderr)
-    if verify_image_against_metadata(source_url, metadata_text):
+    
+    result = verify_image_against_metadata(source_url, metadata_text)
+    elapsed_time = time.time() - start_time
+    print(f"Verified image {args.image} in {elapsed_time:.2f} seconds using {script_name}", file=sys.stderr)
+    
+    if result:
         sys.exit(0)
     sys.exit(1)
 
