@@ -21,7 +21,7 @@ readonly E_NO_SATISFACTORY_IMAGES=7
 readonly E_NO_ART_REFERENCED=8
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -68,6 +68,7 @@ function validate_arguments() {
     usage $E_INVALID_ARGS
   fi
 
+  # shellcheck disable=SC2153
   if ! date::validate_daynumber "$1" "$YEAR"; then
     usage $E_INVALID_DAY
   fi
@@ -86,7 +87,7 @@ function parse_artdownloader_output() {
       best_selected_image=$(echo "$line" | awk -F': ' '{print $2}' | awk '{print $1}')
       _best_score=$(echo "$line" | grep -oP '(?<=score: )\d+\.\d+')
     fi
-  done <<<"$output"
+  done <<< "$output"
 
   echo "$best_selected_image"
 }
@@ -150,7 +151,7 @@ function append_to_day_file() {
     die "Day file $day_file does not exist" $E_MISSING_FILE
   fi
 
-  echo "$content" >>"$day_file"
+  echo "$content" >> "$day_file"
   err "Appended artwork to: $day_file"
 }
 
@@ -245,7 +246,7 @@ function main() {
         cp "$best_selected_image" "$target_file"
 
         if [[ -n "$source_url" ]]; then
-          echo "$source_url" >"$target_dir/${filename}.url.txt"
+          echo "$source_url" > "$target_dir/${filename}.url.txt"
         fi
 
         local markdown_content
@@ -277,16 +278,16 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -h | --help) usage 0 ;;
-    -v | --version)
-      version
-      exit 0
-      ;;
-    -d | --debug)
-      set -x
-      shift
-      ;;
-    *) break ;;
+      -h | --help) usage 0 ;;
+      -v | --version)
+        version
+        exit 0
+        ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      *) break ;;
     esac
   done
 
