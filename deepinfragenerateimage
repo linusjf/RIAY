@@ -132,7 +132,7 @@ function main() {
   # Calculate and output execution time
   local end_time=$(date +%s.%N)
   local elapsed=$(echo "$end_time - $start_time" | bc)
-  printf "Execution time: %.2f seconds\n" "$elapsed" >&2
+  printf "Generated image using %s in %.2f seconds\n" "$SCRIPT_NAME" "$elapsed" >&2
 }
 
 ### Main Execution ###
