@@ -670,10 +670,10 @@ This reflection explores how to live out the prayer "Thy kingdom come, thy will 
 **Main Topics Discussed:**
 
 1. **The Nature of Children:** Children are presented as inherently "poor" – dependent, lacking knowledge and resources, and vulnerable. Crucially, in a healthy environment, they accept this dependence without shame or frustration, naturally turning to parents for all needs. Despite their neediness, they often exhibit joy and levity.
-1. **Childlike Humility as the Key:** This trusting dependence and acceptance of one's limitations ("poverty") is the essential characteristic for entering and experiencing the Kingdom of Heaven.
-1. **Experiencing the Kingdom Now:** The Kingdom isn't just a future reality. It is experienced _now_ when we acknowledge our dependence, limitations, and needs, and bring them directly to God the Father without shame, self-hatred, or resorting to anxious self-reliance. This act of trusting dependence meeting God's providence _is_ the Kingdom experience on earth.
-1. **Contrast with Adult Tendencies:** Adults often react to their inherent limitations with shame, frustration, and a drive for self-reliance, which hinders experiencing the peace of the Kingdom.
-1. **Trusting God's Will:** Praying "Thy will be done" mirrors the childlike trust that the Father knows best, loves us, and will provide what is truly needed, even if we don't know what that is (illustrated by the child-in-restaurant analogy). Jesus models this perfectly in Gethsemane.
+2. **Childlike Humility as the Key:** This trusting dependence and acceptance of one's limitations ("poverty") is the essential characteristic for entering and experiencing the Kingdom of Heaven.
+3. **Experiencing the Kingdom Now:** The Kingdom isn't just a future reality. It is experienced _now_ when we acknowledge our dependence, limitations, and needs, and bring them directly to God the Father without shame, self-hatred, or resorting to anxious self-reliance. This act of trusting dependence meeting God's providence _is_ the Kingdom experience on earth.
+4. **Contrast with Adult Tendencies:** Adults often react to their inherent limitations with shame, frustration, and a drive for self-reliance, which hinders experiencing the peace of the Kingdom.
+5. **Trusting God's Will:** Praying "Thy will be done" mirrors the childlike trust that the Father knows best, loves us, and will provide what is truly needed, even if we don't know what that is (illustrated by the child-in-restaurant analogy). Jesus models this perfectly in Gethsemane.
 
 **Key Takeaways:**
 
@@ -851,9 +851,9 @@ This text explores deepening one's relationship with Jesus and Mary through pray
 **Main Topics Discussed:**
 
 1. **The Opening of the Hail Mary:** Analysis of "Hail Mary, full of grace, the Lord is with thee."
-1. **Origin and Meaning:** These words are traced back to the Angel Gabriel's greeting at the Annunciation, interpreted as God's own greeting to Mary (citing Catechism 2676).
-1. **Repetition in Prayer:** Addressing the nature of repeating prayers like the Hail Mary, drawing on Pope John Paul II's perspective.
-1. **Application:** How to approach praying these specific words with renewed intention and love.
+2. **Origin and Meaning:** These words are traced back to the Angel Gabriel's greeting at the Annunciation, interpreted as God's own greeting to Mary (citing Catechism 2676).
+3. **Repetition in Prayer:** Addressing the nature of repeating prayers like the Hail Mary, drawing on Pope John Paul II's perspective.
+4. **Application:** How to approach praying these specific words with renewed intention and love.
 
 **Key Takeaways:**
 
@@ -891,9 +891,9 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 **Main Topics Discussed:**
 
 1. **Origin of the Prayer:** The phrase originates from the biblical event of the Visitation (Luke 1:39ff), where the pregnant Mary visits her relative Elizabeth.
-1. **The Visitation Context:** Upon hearing Mary's greeting, Elizabeth's unborn child (John the Baptist) leaps, and Elizabeth, filled with the Holy Spirit, proclaims these words.
-1. **Mary's Role:** Mary is presented as a powerful conduit of grace. Her greeting communicates the Holy Spirit, and her very presence sanctifyingly communicates Jesus, whom she carries. This highlights God's humility in becoming small enough to be carried by her.
-1. **Praying with Meaning:** The reflection contrasts mechanical repetition of the prayer with the way Elizabeth spoke – as a loud, joyous, Spirit-filled cry. It encourages emulating this genuine wonder and awe.
+2. **The Visitation Context:** Upon hearing Mary's greeting, Elizabeth's unborn child (John the Baptist) leaps, and Elizabeth, filled with the Holy Spirit, proclaims these words.
+3. **Mary's Role:** Mary is presented as a powerful conduit of grace. Her greeting communicates the Holy Spirit, and her very presence sanctifyingly communicates Jesus, whom she carries. This highlights God's humility in becoming small enough to be carried by her.
+4. **Praying with Meaning:** The reflection contrasts mechanical repetition of the prayer with the way Elizabeth spoke – as a loud, joyous, Spirit-filled cry. It encourages emulating this genuine wonder and awe.
 
 **Key Takeaways:**
 
@@ -929,11 +929,11 @@ This text explores how prayer and meditation deepen one's relationship with Jesu
 
 1. **Mary's Role as Intercessor:** The central theme is Mary's unique position and ability to intercede for believers with her Son, Jesus.
 
-1. **The Power of Relationship:** It draws a parallel between influence in earthly relationships ("who you know") and Mary's influence with Jesus due to their mother-son relationship.
+2. **The Power of Relationship:** It draws a parallel between influence in earthly relationships ("who you know") and Mary's influence with Jesus due to their mother-son relationship.
 
-1. **Biblical Foundation:** The relationship between King Solomon and his mother Bathsheba (1 Kings 2:19-20) serves as a key illustration.
+3. **Biblical Foundation:** The relationship between King Solomon and his mother Bathsheba (1 Kings 2:19-20) serves as a key illustration.
 
-1. **Confidence in Prayer:** Believers are encouraged to approach Mary confidently with their needs, trusting in her love and intercessory power.
+4. **Confidence in Prayer:** Believers are encouraged to approach Mary confidently with their needs, trusting in her love and intercessory power.
 
 **Key Takeaways:**
 
@@ -981,9 +981,9 @@ This text explores the nature of the "Glory Be" prayer, identifying it primarily
 **Main Topics Discussed:**
 
 1. **The "Glory Be" as Praise:** The prayer is presented as a quintessential example of praise, supported by scriptural references like Psalm 145 ("I will extol you my God and King...") and the Catechism (section 2649).
-1. **Definition of Praise:** Praise is defined as the form of prayer that most directly recognizes God _as God_. It is uniquely characterized as "entirely disinterested."
-1. **"Disinterested" Praise Explained:** This core concept means praise gives glory to God purely for His own sake – simply because He _is_ – rather than focusing on what He has done for us or what we need from Him.
-1. **Contrast with Other Prayer Forms:** Praise is distinguished from:
+2. **Definition of Praise:** Praise is defined as the form of prayer that most directly recognizes God _as God_. It is uniquely characterized as "entirely disinterested."
+3. **"Disinterested" Praise Explained:** This core concept means praise gives glory to God purely for His own sake – simply because He _is_ – rather than focusing on what He has done for us or what we need from Him.
+4. **Contrast with Other Prayer Forms:** Praise is distinguished from:
    - **Contrition:** Focuses on human failings and God's mercy.
    - **Petition:** Focuses on human dependence and needs presented to God.
    - **Thanksgiving:** Focuses on gratitude for God's specific actions.
@@ -1029,10 +1029,10 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 **Main Topics Discussed:**
 
 1. **Theological Foundation:** The teaching draws heavily on Scripture (Matthew 28:19 - baptizing in the Trinity's name; Psalm 36:9 - God as the fountain and source of light) and the Catechism's emphasis on the Holy Trinity as the central mystery and illuminating source of Christian faith.
-1. **The Sign of the Cross as Faith in Action:** Making the Sign is presented not merely as a ritual, but as a conscious act of faith. It's likened to opening one's eyes to perceive spiritual reality.
-1. **Analogy of Light and Sight:** The Holy Trinity is described as the fundamental "light." The grace of Baptism confers faith, which is likened to spiritual "sight," enabling believers to perceive this divine light.
-1. **Perception in God's Light:** Praying "in the name of the Father, Son, and Holy Spirit" isn't about activating God's light (which is always present), but about using our faith (sight) to see _within_ that divine light. This allows a clearer view of God, faith mysteries, Mary, saints, creation, others, and oneself – revealing both inherent dignity and areas needing conversion.
-1. **Vulnerability and Growth:** Stepping into this light through the Sign of the Cross is an act of courage and vulnerability. It involves leaving darkness or hiding, allowing God's light to reveal shortcomings but also to warm, purify, enlighten, strengthen, and encourage.
+2. **The Sign of the Cross as Faith in Action:** Making the Sign is presented not merely as a ritual, but as a conscious act of faith. It's likened to opening one's eyes to perceive spiritual reality.
+3. **Analogy of Light and Sight:** The Holy Trinity is described as the fundamental "light." The grace of Baptism confers faith, which is likened to spiritual "sight," enabling believers to perceive this divine light.
+4. **Perception in God's Light:** Praying "in the name of the Father, Son, and Holy Spirit" isn't about activating God's light (which is always present), but about using our faith (sight) to see _within_ that divine light. This allows a clearer view of God, faith mysteries, Mary, saints, creation, others, and oneself – revealing both inherent dignity and areas needing conversion.
+5. **Vulnerability and Growth:** Stepping into this light through the Sign of the Cross is an act of courage and vulnerability. It involves leaving darkness or hiding, allowing God's light to reveal shortcomings but also to warm, purify, enlighten, strengthen, and encourage.
 
 **Key Takeaways:**
 
@@ -1064,10 +1064,10 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 **Main Topics:**
 
 1. **Spiritual Nourishment:** The text reflects on the Hail Holy Queen prayer (_Salve Regina_), emphasizing its opening words: _"Hail Holy Queen, Mother of Mercy, our life, our sweetness, and our hope."_
-1. **Eucharistic Analogy:** Drawing from Matthew 26, Jesus’ gifts of bread and wine symbolize essential grace (_bread_) and joyful abundance (_wine_).
+2. **Eucharistic Analogy:** Drawing from Matthew 26, Jesus’ gifts of bread and wine symbolize essential grace (_bread_) and joyful abundance (_wine_).
    - _Bread_: Represents foundational grace for spiritual survival.
    - _Wine_: Symbolizes the "sweetness" of God’s love, enhancing life beyond necessities.
-1. **Mary’s Role:** The Blessed Mother is presented as a gift of "wine"—a source of spiritual sweetness and hope, deepening one’s relationship with God.
+3. **Mary’s Role:** The Blessed Mother is presented as a gift of "wine"—a source of spiritual sweetness and hope, deepening one’s relationship with God.
 
 **Key Takeaways:**
 
@@ -1100,11 +1100,11 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 
 1. **Prayer and Meditation:** Deepening one's relationship with Jesus and Mary through prayer, emphasizing their roles as sources of grace.
 
-1. **Mary’s Compassion:** Reflecting on John 19:26, Mary is portrayed as the "woman of Sorrows" who understands human suffering and serves as an intercessor.
+2. **Mary’s Compassion:** Reflecting on John 19:26, Mary is portrayed as the "woman of Sorrows" who understands human suffering and serves as an intercessor.
 
-1. **Suffering and Faith:** The "Valley of Tears" metaphor illustrates the shared human experience of hardship, with Jesus and Mary offering solace.
+3. **Suffering and Faith:** The "Valley of Tears" metaphor illustrates the shared human experience of hardship, with Jesus and Mary offering solace.
 
-1. **Devotional Practices:** Recitations of prayers like the _Our Father_, _Hail Mary_, and _Hail Holy Queen_ foster communal faith and perseverance.
+4. **Devotional Practices:** Recitations of prayers like the _Our Father_, _Hail Mary_, and _Hail Holy Queen_ foster communal faith and perseverance.
    **Key Takeaways:**
 
 - Mary’s suffering at the Cross and her witness to the Resurrection make her a compassionate figure for those enduring pain.
@@ -1222,8 +1222,8 @@ How we live here, what we do now matters. Let us not be afraid but Trust God. We
 **_Key Takeaways_**
 
 1. **Hope and Seriousness**: Authentic hope avoids flippancy but embraces sober reflection on eternal realities.
-1. **Salvation as a Shared Mission**: Individuals are called to repent and collaborate with God for others’ salvation, prioritizing eternal concerns over trivialities.
-1. **Avoiding Fear**: For those in grace, excessive fear of Hell is counterproductive; a right relationship with God fosters hope and trust.
+2. **Salvation as a Shared Mission**: Individuals are called to repent and collaborate with God for others’ salvation, prioritizing eternal concerns over trivialities.
+3. **Avoiding Fear**: For those in grace, excessive fear of Hell is counterproductive; a right relationship with God fosters hope and trust.
 
 **_Notable Insights_**
 
@@ -3429,12 +3429,12 @@ Let us remain awhile in this contemplation, beholding the innocent, scourged Lor
 Consider, if you will, that stark scene: the Crowning with Thorns, the third sorrowful mystery. To ponder it deeply is to seek a closer walk with Christ and His Mother, finding grace along the path.
 
 1. We might turn our minds, profitably, to the Angelic Doctor, St. Thomas Aquinas, that profound and saintly scholar of old, who guided this reflection.
-1. Aquinas fixes upon the crown, not as a symbol of tragic kingship, but of sheer, deliberate _indignity_. What is indignity? It is the calculated insult, the offering of contempt where honour is not merely due, but richly deserved.
-1. Those thorns, sharp and cruel, might be seen as the very 'prickles' of our own sins, or perhaps the curse upon the ground, now gathered and pressed upon the Head of Him who came to lift it.
-1. We have, perhaps, known something of this ourselves – either in receiving or, worse, in inflicting it. Think of a trust betrayed, a simple kindness met with a clever, wounding slight. It leaves a peculiar ache, a sense of profound wrongness, particularly when the one offended was utterly open and generous.
-1. Now, lift your gaze from such small, human follies to the Divine. He, who is the source of all being, all goodness, all trust, offers Himself entirely. And what is the return? A crown of thorns. Our sins, our self-absorption, our failure to respond with love and honour, are the very substance of that crown.
-1. This is the heart of the mystery: Love receiving indignity. To ponder it in prayer is to see the true nature of our rebellion and the depth of His sacrifice. It draws us closer to His wounded heart and to the heart of His Mother, who shared His suffering.
-1. Such meditation, woven with the simple, enduring threads of prayer (like the Hail Mary and Glory Be), becomes a channel of grace, deepening our bond with Christ and Mary, and teaching us the terrible cost of sin and the glorious power of the Love that bore it.
+2. Aquinas fixes upon the crown, not as a symbol of tragic kingship, but of sheer, deliberate _indignity_. What is indignity? It is the calculated insult, the offering of contempt where honour is not merely due, but richly deserved.
+3. Those thorns, sharp and cruel, might be seen as the very 'prickles' of our own sins, or perhaps the curse upon the ground, now gathered and pressed upon the Head of Him who came to lift it.
+4. We have, perhaps, known something of this ourselves – either in receiving or, worse, in inflicting it. Think of a trust betrayed, a simple kindness met with a clever, wounding slight. It leaves a peculiar ache, a sense of profound wrongness, particularly when the one offended was utterly open and generous.
+5. Now, lift your gaze from such small, human follies to the Divine. He, who is the source of all being, all goodness, all trust, offers Himself entirely. And what is the return? A crown of thorns. Our sins, our self-absorption, our failure to respond with love and honour, are the very substance of that crown.
+6. This is the heart of the mystery: Love receiving indignity. To ponder it in prayer is to see the true nature of our rebellion and the depth of His sacrifice. It draws us closer to His wounded heart and to the heart of His Mother, who shared His suffering.
+7. Such meditation, woven with the simple, enduring threads of prayer (like the Hail Mary and Glory Be), becomes a channel of grace, deepening our bond with Christ and Mary, and teaching us the terrible cost of sin and the glorious power of the Love that bore it.
 
 #### April 12,2025
 
@@ -5732,7 +5732,7 @@ So it is with all sacred art: it does not merely depict, but invites. Look again
 
 ##### Fra Angelico's Simeon with the Child Jesus: Temple scene
 
-[![Fra Angelico's Simeon with the Child Jesus: Temple scene](July/jpgs/stillnessstormfresco.jpg)](https://www.repro-tableaux.com/kunst/fra_angelico/Simeon-with-the-Christ-Child.jpg "Fra Angelico's Simeon with the Child Jesus: Temple scene")
+[![Fra Angelico's Simeon with the Child Jesus: Temple scene](July/jpgs/stillnessstormfresco.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Presentation_of_Jesus_at_the_Temple_by_Fra_Angelico_%28San_Marco_Cell_10%29.jpg/500px-Presentation_of_Jesus_at_the_Temple_by_Fra_Angelico_%28San_Marco_Cell_10%29.jpg "Fra Angelico's Simeon with the Child Jesus: Temple scene")
 
 ## August
 
