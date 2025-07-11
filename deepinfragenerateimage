@@ -107,6 +107,7 @@ function main() {
   # Returns: 0 on success, non-zero on error
   local input="${1:-}"
   local pngfile jpgfile prompt
+  local start_time=$(date +%s.%N)
 
   # Initialize variables
   pngfile="$(mktemp --quiet -t tempXXX.png)"
@@ -127,6 +128,11 @@ function main() {
 
   # Clean up
   cleanup "$pngfile"
+
+  # Calculate and output execution time
+  local end_time=$(date +%s.%N)
+  local elapsed=$(echo "$end_time - $start_time" | bc)
+  printf "Execution time: %.2f seconds\n" "$elapsed" >&2
 }
 
 ### Main Execution ###
@@ -167,7 +173,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Check required commands
-require_commands jq tee cat deepctl base64 sed mktemp cp gm dirname basename
+require_commands jq tee cat deepctl base64 sed mktemp cp gm dirname basename bc
 require_vars DEEPINFRA_IMAGE_GENERATION_MODEL
 
 # Execute main function with logging if enabled
