@@ -2,18 +2,20 @@
 """Remove table of contents blocks from markdown files.
 
 This script scans markdown files and removes any blocks delimited by
-'<!-- toc -->' and '<!-- tocstop -->' comments.
+'<!-- toc -->' and '<!-- tocstop -->' comments. The changes are made
+in-place to the files.
 """
 
 import re
 from pathlib import Path
-from typing import Iterator
+from typing import Iterator, Optional
+
 
 TOC_START_MARKER = "<!-- toc -->"
 TOC_END_MARKER = "<!-- tocstop -->"
 TOC_PATTERN = re.compile(
     rf"{re.escape(TOC_START_MARKER)}.*?{re.escape(TOC_END_MARKER)}",
-    flags=re.DOTALL
+    flags=re.DOTALL,
 )
 
 
@@ -36,7 +38,7 @@ def strip_toc_from_file(file_path: Path) -> bool:
         file_path: Path to markdown file to process
         
     Returns:
-        bool: True if changes were made, False otherwise
+        True if changes were made, False otherwise
     """
     original_text = file_path.read_text(encoding="utf-8")
     new_text = TOC_PATTERN.sub("", original_text)
@@ -54,7 +56,7 @@ def strip_toc_blocks(directory: str = ".") -> int:
         directory: Root directory to search for markdown files
         
     Returns:
-        int: Number of files modified
+        Number of files modified
     """
     modified_count = 0
     
