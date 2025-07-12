@@ -71,7 +71,7 @@ def verify_image_against_metadata(image_url, metadata_text):
     search = GoogleSearch(params)
     results = search.get_dict()
     visual_matches = results["visual_matches"][0:REQUIRED_MATCH_COUNT]
-    
+
     if not visual_matches:
         return 0.0
 
@@ -119,7 +119,7 @@ def reverse_image_search(image_url, metadata_text):
 
         # Skip stock photo sites
         domain = extract_domain_from_url(link)
-        if any(stock_domain.lower() in domain for stock_domain in STOCK_PHOTO_SITES):
+        if domain and any(stock_domain.lower() in domain for stock_domain in STOCK_PHOTO_SITES):
             continue
         if (int(image_width) < MIN_IMAGE_WIDTH or int(image_height) < MIN_IMAGE_HEIGHT):
             continue
@@ -288,7 +288,7 @@ def main():
         )
 
     score = verify_image_against_metadata(source_url, metadata_text)
-    print(f"Cosine similarity score: {score:.4f}", file=sys.stderr)
+    print(f"{score:.4f}")
     result = score >= MATCH_SCORE_THRESHOLD
     elapsed_time = time.time() - start_time
     print(
