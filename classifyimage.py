@@ -9,9 +9,6 @@ Classifyimage.
 # @description :
 # -*- coding: utf-8 -*-'
 ######################################################################
-"""
-#!/usr/bin/env python3
-"""
 Image classification script
 Analyzes an image file and classifies it as monochrome, grayscale, sepia, or full color
 
@@ -25,6 +22,7 @@ import sys
 from pathlib import Path
 from PIL import Image
 import numpy as np
+import json
 
 
 VERSION = "1.0.0"
@@ -51,7 +49,7 @@ def is_grayscale(image: Image.Image) -> bool:
     rgb = image.convert("RGB")
     data = np.array(rgb)
     r, g, b = data[..., 0], data[..., 1], data[..., 2]
-    return np.all(r == g) and np.all(g == b)
+    return bool(np.all(r == g) and np.all(g == b))
 
 
 def average_rgb(image: Image.Image):
@@ -82,18 +80,20 @@ def classify_image(image_path: str) -> dict:
         else:
             result["classification"] = "grayscale"
     else:
-        r, g, b = average_rgb(img)
-        result["average_rgb"] = {"r": r, "g": g, "b": b}
-        
-        rg_diff = abs(r - g)
-        gb_diff = abs(g - b)
+        avg_color = average_rgb(img)
+        if isinstance(avg_color, tuple) and len(avg_color) == 3:
+            r, g, b =  avg_color
+            result["average_rgb"] = {"r": r, "g": g, "b": b}
 
-        if rg_diff < 5 and gb_diff < 5:
-            result["classification"] = "grayscale"
-        elif r > g > b and (r - b) > 30:
-            result["classification"] = "sepia"
-        else:
-            result["classification"] = "color"
+            rg_diff = abs(r - g)
+            gb_diff = abs(g - b)
+
+            if rg_diff < 5 and gb_diff < 5:
+                result["classification"] = "grayscale"
+            elif r > g > b and (r - b) > 30:
+                result["classification"] = "sepia"
+            else:
+                result["classification"] = "color"
 
     return result
 

@@ -17,7 +17,7 @@ from serpapi import GoogleSearch
 
 from bashhelper import parse_bash_array
 from htmlhelper import clean_filename_text, extract_domain_from_url
-from simtools import compare_terms, MatchMode
+from simtools import compare_terms, MatchMode, THRESHOLDS
 
 # Constants
 CONFIG_FILE = 'config.env'
@@ -30,9 +30,7 @@ IMAGE_URL_FILE_EXTENSION = '.url.txt'
 
 MIN_IMAGE_WIDTH = 350
 MIN_IMAGE_HEIGHT = 480
-MATCH_SCORE_THRESHOLD = 0.7
 REQUIRED_MATCH_COUNT = 5
-
 STOCK_PHOTO_SITES = parse_bash_array(CONFIG_FILE, STOCK_PHOTO_SITES_VAR)
 
 # Load environment variables from config.env
@@ -131,7 +129,7 @@ def reverse_image_search(image_url, metadata_text):
             clean_filename_text(url)
         ]))
         score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
-        if score > MATCH_SCORE_THRESHOLD:
+        if score > THRESHOLDS["cosine"]:
             qualifying_urls.append((url, score))
 
     # Sort by score in descending order
@@ -301,7 +299,7 @@ def main():
 
     score = verify_image_against_metadata(source_url, metadata_text)
     print(f"{score:.4f}")
-    result = score >= MATCH_SCORE_THRESHOLD
+    result = score >= THRESHOLDS["cosine"]
     elapsed_time = time.time() - start_time
     print(
         f"Verified image {args.image} in {elapsed_time:.2f} seconds using {script_name}",
