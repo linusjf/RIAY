@@ -203,8 +203,8 @@ def get_metadata_text(title, artist, subject=None, location=None, date=None, sty
     ]))
 
 
-def run_reverse_lookup(image, title, artist, subject=None, location=None,date=None, style=None,medium=None):
-    """Core reverse lookup functionality extracted from main().
+def match_reverse_lookup(image, title, artist, subject=None, location=None,date=None, style=None,medium=None):
+    """Core reverse lookup functionality.
 
     Args:
         args: Namespace object containing command line arguments
@@ -283,7 +283,7 @@ def main():
     start_time = time.time()
     script_name = os.path.basename(__file__)
     args = parser.parse_args()
-    score = run_reverse_lookup(args.image, args.title,args.artist, args.subject, args.location, args.date, args.style,args.medium)
+    score = match_reverse_lookup(args.image, args.title,args.artist, args.subject, args.location, args.date, args.style,args.medium)
     elapsed_time = time.time() - start_time
     print(
         f"Verified image {args.image} in {elapsed_time:.2f} seconds using {script_name}",
