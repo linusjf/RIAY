@@ -5,11 +5,13 @@ import numpy as np
 from PIL import Image
 import argparse
 import os
+import re
 
 def detect_text_regions(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     # Use Tesseract OCR to extract text
     text = pytesseract.image_to_string(gray)
+    text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces/newlines/tabs with single space
     return text.strip()
 
 def edge_density(image):
