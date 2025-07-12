@@ -212,6 +212,19 @@ def reverse_image_lookup_url(image_url, title, artist, subject=None,
     return qualifying_urls
 
 
+def get_metadata_text(title, artist, subject=None, location=None, date=None, style=None, medium=None):
+    """Create metadata text string from parameters."""
+    return ", ".join(filter(None, [
+        title,
+        artist,
+        subject,
+        location,
+        date,
+        style,
+        medium
+    ]))
+
+
 def main():
     """Main entry point for the script."""
     start_time = time.time()
@@ -271,16 +284,15 @@ def main():
     if not source_url:
         source_url, delete_url = upload_to_imgbb(args.image)
 
-    metadata_text = ", ".join(filter(None, [
+    metadata_text = get_metadata_text(
         args.title,
         args.artist,
         args.subject,
         args.location,
         args.date,
         args.style,
-        args.medium,
-        clean_filename_text(source_url)
-    ]))
+        args.medium
+    )
     if delete_url:
         print(
             f"Delete uploaded image in the browser using {delete_url}",

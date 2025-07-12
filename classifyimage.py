@@ -60,35 +60,42 @@ def average_rgb(image: Image.Image):
     return img.getpixel((0, 0))
 
 
-def classify_image(image_path: str):
+def classify_image(image_path: str) -> dict:
+    """Classify image and return results as dictionary."""
     try:
         img = Image.open(image_path)
     except Exception as e:
-        print(f"❌ Error: Unable to open image '{image_path}': {e}", file=sys.stderr)
-        sys.exit(1)
+        return {"error": f"Unable to open image: {e}"}
 
-    # Step 1: Check for grayscale or monochrome
+    result = {
+        "classification": "unknown",
+        "is_monochrome": False,
+        "is_grayscale": False,
+        "average_rgb": None
+    }
+
     if is_grayscale(img):
+        result["is_grayscale"] = True
         if is_monochrome(img):
-            print("🖤 Monochrome")
+            result["classification"] = "monochrome"
+            result["is_monochrome"] = True
         else:
-            print("⚫ Grayscale")
-        return
-
-    # Step 2: Get average color
-    r, g, b = average_rgb(img)
-    print(f"🔎 Avg RGB: R={r} G={g} B={b}", file=sys.stderr)
-
-    # Step 3: Heuristics for sepia or full color
-    rg_diff = abs(r - g)
-    gb_diff = abs(g - b)
-
-    if rg_diff < 5 and gb_diff < 5:
-        print("⚫ Grayscale")
-    elif r > g > b and (r - b) > 30:
-        print("🤎 Sepia")
+            result["classification"] = "grayscale"
     else:
-        print("🌈 Color")
+        r, g, b = average_rgb(img)
+        result["average_rgb"] = {"r": r, "g": g, "b": b}
+        
+        rg_diff = abs(r - g)
+        gb_diff = abs(g - b)
+
+        if rg_diff < 5 and gb_diff < 5:
+            result["classification"] = "grayscale"
+        elif r > g > b and (r - b) > 30:
+            result["classification"] = "sepia"
+        else:
+            result["classification"] = "color"
+
+    return result
 
 
 def main():
@@ -99,7 +106,8 @@ def main():
         print(f"❌ File not found: {image_path}", file=sys.stderr)
         sys.exit(1)
 
-    classify_image(image_path)
+    result = classify_image(image_path)
+    print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":
