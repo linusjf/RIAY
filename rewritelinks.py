@@ -6,7 +6,7 @@ import re
 import sys
 import argparse
 from pathlib import Path
-from typing import Match
+from typing import Match, Optional
 
 from dotenv import load_dotenv
 
@@ -17,23 +17,65 @@ RELATIVE_PREFIX = "/_static/"
 GH_MARKDOWN_PREFIX = "/"
 
 
-def get_github_base_url() -> str:
-    """Construct the GitHub base URL from environment variables.
+class LinkRewriter:
+    """Handles link rewriting operations with configurable behavior."""
+    
+    def __init__(self, use_gh_markdown: bool = False, gh_to_rtd: bool = False):
+        self.use_gh_markdown = use_gh_markdown
+        self.gh_to_rtd = gh_to_rtd
+        self.replacement_count = 0
+        self.url_base: Optional[str] = None
 
-    Returns:
-        str: Formatted GitHub raw content base URL
-    """
-    load_dotenv(dotenv_path=DEFAULT_ENV_FILE)
+    def get_github_base_url(self) -> str:
+        """Construct the GitHub base URL from environment variables.
 
-    user = os.getenv("REPO_OWNER", "")
-    repo = os.getenv("REPO_NAME", "")
+        Returns:
+            str: Formatted GitHub raw content base URL
+        """
+        load_dotenv(dotenv_path=DEFAULT_ENV_FILE)
 
-    if not user or not repo:
-        raise ValueError(
-            "REPO_OWNER and REPO_NAME must be set in environment variables"
-        )
+        user = os.getenv("REPO_OWNER", "")
+        repo = os.getenv("REPO_NAME", "")
 
-    return GITHUB_URL_TEMPLATE.format(user=user, repo=repo)
+        if not user or not repo:
+            raise ValueError(
+                "REPO_OWNER and REPO_NAME must be set in environment variables"
+            )
+
+        return GITHUB_URL_TEMPLATE.format(user=user, repo=repo)
+
+    def make_relative(self, match: Match) -> str:
+        """Create relative path from matched URL."""
+        self.replacement_count += 1
+        file_path = match.group(1)
+        prefix = GH_MARKDOWN_PREFIX if self.use_gh_markdown else RELATIVE_PREFIX
+        return f"{prefix}{file_path}"
+
+    def gh_to_rtd_relative(self, match: Match) -> str:
+        """Convert GitHub-style relative links to RTD /_static/ links."""
+        self.replacement_count += 1
+        return f"](/_static/{match.group(2)})"
+
+    def gh_to_rtd_naked(self, match: Match) -> str:
+        """Convert GitHub-style naked urls to RTD /_static/ links."""
+        self.replacement_count += 1
+        return f"</_static/{match.group(2)}>"
+
+    def rewrite_links(self, text: str) -> str:
+        """Apply the appropriate link rewriting based on configuration."""
+        if self.gh_to_rtd:
+            # Handle regular markdown links [text](/path)
+            pattern = re.compile(r'(\]\()/(?!_static/)([^)]+)\)')
+            text = pattern.sub(self.gh_to_rtd_relative, text)
+            # Handle naked URLs </path>
+            pattern = re.compile(r'(<)/(?!_static/)([^>]+)(>)')
+            text = pattern.sub(self.gh_to_rtd_naked, text)
+        else:
+            if not self.url_base:
+                self.url_base = self.get_github_base_url()
+            pattern = re.compile(re.escape(self.url_base) + r"([^)]+)")
+            text = pattern.sub(self.make_relative, text)
+        return text
 
 
 def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False, gh_to_rtd: bool = False) -> int:
@@ -51,51 +93,18 @@ def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False, gh_to_rt
         print(f"Error: File not found - {md_file}", file=sys.stderr)
         return 0
 
-    url_base = get_github_base_url()
-    pattern = re.compile(re.escape(url_base) + r"([^)]+)")
+    rewriter = LinkRewriter(use_gh_markdown, gh_to_rtd)
     original_text = md_file.read_text()
-    replacement_count = 0
+    modified_text = rewriter.rewrite_links(original_text)
 
-    def make_relative(match: Match) -> str:
-        """Create relative path from matched URL."""
-        nonlocal replacement_count
-        replacement_count += 1
-        file_path = match.group(1)
-        prefix = GH_MARKDOWN_PREFIX if use_gh_markdown else RELATIVE_PREFIX
-        return f"{prefix}{file_path}"
-
-    def gh_to_rtd_relative(match: Match) -> str:
-        """Convert GitHub-style relative links to RTD /_static/ links."""
-        nonlocal replacement_count
-        replacement_count += 1
-        return f"](/_static/{match.group(2)})"
-
-    def gh_to_rtd_naked(match: Match) -> str:
-        """Convert GitHub-style naked urls to RTD /_static/ links."""
-        nonlocal replacement_count
-        replacement_count += 1
-        return f"</_static/{match.group(2)}>"
-
-    modified_text = original_text
-
-    if gh_to_rtd:
-        # Handle regular markdown links [text](/path)
-        pattern = re.compile(r'(\]\()/(?!_static/)([^)]+)\)')
-        modified_text = pattern.sub(gh_to_rtd_relative, modified_text)
-        # Handle naked URLs </path>
-        pattern = re.compile(r'(<)/(?!_static/)([^>]+)(>)')
-        modified_text = pattern.sub(gh_to_rtd_naked, modified_text)
-    else:
-        modified_text = pattern.sub(make_relative, modified_text)
-
-    if replacement_count > 0:
+    if rewriter.replacement_count > 0:
         md_file.write_text(modified_text)
         print(
-            f"Updated {md_file}: {replacement_count} link(s) modified",
+            f"Updated {md_file}: {rewriter.replacement_count} link(s) modified",
             file=sys.stdout
         )
 
-    return replacement_count
+    return rewriter.replacement_count
 
 
 def main() -> int:
