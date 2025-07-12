@@ -66,7 +66,7 @@ def classify_image(image_path: str) -> dict:
         return {"error": f"Unable to open image: {e}"}
 
     result = {
-        "classification": "unknown",
+        "image_color": "unknown",
         "is_monochrome": False,
         "is_grayscale": False,
         "average_rgb": None
@@ -75,10 +75,10 @@ def classify_image(image_path: str) -> dict:
     if is_grayscale(img):
         result["is_grayscale"] = True
         if is_monochrome(img):
-            result["classification"] = "monochrome"
+            result["image_color"] = "Monochrome"
             result["is_monochrome"] = True
         else:
-            result["classification"] = "grayscale"
+            result["image_color"] = "Grayscale"
     else:
         avg_color = average_rgb(img)
         if isinstance(avg_color, tuple) and len(avg_color) == 3:
@@ -89,11 +89,11 @@ def classify_image(image_path: str) -> dict:
             gb_diff = abs(g - b)
 
             if rg_diff < 5 and gb_diff < 5:
-                result["classification"] = "grayscale"
+                result["image_color"] = "Grayscale"
             elif r > g > b and (r - b) > 30:
-                result["classification"] = "sepia"
+                result["image_color"] = "Sepia"
             else:
-                result["classification"] = "color"
+                result["image_color"] = "Color"
 
     return result
 

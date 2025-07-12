@@ -114,7 +114,7 @@ def detect_watermark(
     high_freq = freq_energy > freq_threshold
 
     return {
-        "watermarked": has_text or high_edges or high_freq,
+        "watermarked": "Yes" if (has_text or high_edges or high_freq) else "No",
         "watermarks": text,
         "edge_density": edge_density,
         "frequency_energy": freq_energy
