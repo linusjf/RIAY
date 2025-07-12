@@ -203,11 +203,59 @@ def get_metadata_text(title, artist, subject=None, location=None, date=None, sty
     ]))
 
 
-def main():
-    """Main entry point for the script."""
+def run_reverse_lookup(args):
+    """Core reverse lookup functionality extracted from main().
+    
+    Args:
+        args: Namespace object containing command line arguments
+        
+    Returns:
+        tuple: (score, elapsed_time, result)
+    """
     start_time = time.time()
     script_name = os.path.basename(__file__)
 
+    source_url = None
+    # Check for corresponding url.txt file if no source_url provided
+    url_file = os.path.splitext(args.image)[0] + IMAGE_URL_FILE_EXTENSION
+    if os.path.exists(url_file):
+        with open(url_file, 'r', encoding='utf-8') as file:
+            source_url = file.read().strip()
+            print(f"Found source URL: {source_url}", file=sys.stderr)
+
+    delete_url = None
+    if not source_url:
+        source_url, delete_url = upload_to_imgbb(args.image)
+
+    metadata_text = get_metadata_text(
+        args.title,
+        args.artist,
+        args.subject,
+        args.location,
+        args.date,
+        args.style,
+        args.medium
+    )
+    if delete_url:
+        print(
+            f"Delete uploaded image in the browser using {delete_url}",
+            file=sys.stderr
+        )
+
+    score = verify_image_against_metadata(source_url, metadata_text)
+    print(f"{score:.4f}")
+    result = score >= THRESHOLDS["cosine"]
+    elapsed_time = time.time() - start_time
+    print(
+        f"Verified image {args.image} in {elapsed_time:.2f} seconds using {script_name}",
+        file=sys.stderr
+    )
+
+    return score, elapsed_time, result
+
+
+def main():
+    """Main entry point for the script."""
     parser = argparse.ArgumentParser(
         description='Perform reverse image search using SerpAPI'
     )
@@ -249,43 +297,7 @@ def main():
     )
 
     args = parser.parse_args()
-
-    source_url = None
-    # Check for corresponding url.txt file if no source_url provided
-    url_file = os.path.splitext(args.image)[0] + IMAGE_URL_FILE_EXTENSION
-    if os.path.exists(url_file):
-        with open(url_file, 'r', encoding='utf-8') as file:
-            source_url = file.read().strip()
-            print(f"Found source URL: {source_url}", file=sys.stderr)
-
-    delete_url = None
-    if not source_url:
-        source_url, delete_url = upload_to_imgbb(args.image)
-
-    metadata_text = get_metadata_text(
-        args.title,
-        args.artist,
-        args.subject,
-        args.location,
-        args.date,
-        args.style,
-        args.medium
-    )
-    if delete_url:
-        print(
-            f"Delete uploaded image in the browser using {delete_url}",
-            file=sys.stderr
-        )
-
-    score = verify_image_against_metadata(source_url, metadata_text)
-    print(f"{score:.4f}")
-    result = score >= THRESHOLDS["cosine"]
-    elapsed_time = time.time() - start_time
-    print(
-        f"Verified image {args.image} in {elapsed_time:.2f} seconds using {script_name}",
-        file=sys.stderr
-    )
-
+    score, elapsed_time, result = run_reverse_lookup(args)
     sys.exit(0 if result else 1)
 
 
