@@ -4881,7 +4881,7 @@ _Glory be to the Father, and to the Son, and to the Holy Spirit._
 
 ##### AI-Generated Summary: The Quiet Passing of a Guardian and the Unbroken Chain of Love
 
-Behold the boy Christ in the temple, seated not as a pupil but as the very source of wisdom, His young face alight with the authority of eternity. The scholars lean in—some marveling, some troubled—while His mother and foster father stand at the threshold, their plain garments a silent testament to the humility of those chosen to nurture divinity. Here, Joseph’s earthly stewardship nears its end; hereafter, the sacred record falls silent concerning him, as shadows lengthen over a carpenter’s quiet life in Nazareth.
+Behold the boy Christ in the temple, seated not as a pupil but as the very source of wisdom. The painting found in St. Nicholas Church, Brussels depicts his young face alight with the authority of eternity. The scholars lean in—some marveling, some troubled—while His mother and foster father stand at the threshold, their plain garments a silent testament to the humility of those chosen to nurture divinity. Here, Joseph’s earthly stewardship nears its end; hereafter, the sacred record falls silent concerning him, as shadows lengthen over a carpenter’s quiet life in Nazareth.
 
 Yet mark this well: when Joseph departs, the Father’s provision does not falter. The son, now grown, assumes with glad solemnity the care of His mother, as a vine naturally bears the fruit of its own nurturing. In this we see a mystery—that He who upheld the universe with a word should honor the bonds of kinship with such tender constancy.
 
