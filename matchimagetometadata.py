@@ -11,12 +11,8 @@ from pathlib import Path
 
 from classifyimage import classify_image
 from detectwatermark import detect_watermark
-from reverseimagelookup import (
-    reverse_image_lookup,
-    get_metadata_text,
-    verify_image_against_metadata
-)
-
+from reverseimagelookup import match_reverse_lookup
+from simtools import THRESHOLDS
 
 def parse_arguments():
     """Parse command line arguments."""
@@ -52,22 +48,11 @@ def main():
     try:
         # 1. Classify the image
         classification = classify_image(image_path)
-        
+
         # 2. Detect watermarks
         watermark = detect_watermark(image_path)
-        
-        # 3. Perform reverse image lookup
-        metadata_text = get_metadata_text(
-            args.title,
-            args.artist,
-            args.subject,
-            args.location,
-            args.date,
-            args.style,
-            args.medium
-        )
-        
-        reverse_lookup_urls, _ = reverse_image_lookup(
+
+        score = match_reverse_lookup(
             image_path,
             args.title,
             args.artist,
@@ -77,33 +62,15 @@ def main():
             args.style,
             args.medium
         )
-        
-        verification_score = verify_image_against_metadata(
-            reverse_lookup_urls[0][0] if reverse_lookup_urls else "",
-            metadata_text
-        )
 
         # Combine all results
-        result = {
-            "classification": classification,
-            "watermark_detection": watermark,
-            "reverse_image_lookup": {
-                "matches": reverse_lookup_urls,
-                "verification_score": verification_score
-            },
-            "metadata": {
-                "title": args.title,
-                "artist": args.artist,
-                "subject": args.subject,
-                "location": args.location,
-                "date": args.date,
-                "style": args.style,
-                "medium": args.medium
-            }
-        }
+        result = classification | watermark
+        result["cosine_score"] = score
 
         print(json.dumps(result, indent=2))
-        sys.exit(0)
+        if score >= THRESHOLDS["cosine"]:
+            sys.exit(0)
+        sys.exit(1)
 
     except Exception as e:
         print(json.dumps({"error": str(e)}))
