@@ -47,11 +47,11 @@ def get_github_base_url() -> str:
 
 def make_relative(match: Match, replacement_count: int) -> tuple[str, int]:
     """Create relative path from matched URL.
-    
+
     Args:
         match: Regex match object
         replacement_count: Current count of replacements
-        
+
     Returns:
         tuple: (replacement string, updated replacement count)
     """
@@ -62,11 +62,11 @@ def make_relative(match: Match, replacement_count: int) -> tuple[str, int]:
 
 def gh_to_rtd_relative(match: Match, replacement_count: int) -> tuple[str, int]:
     """Convert GitHub-style relative links to RTD /_static/ links.
-    
+
     Args:
         match: Regex match object
         replacement_count: Current count of replacements
-        
+
     Returns:
         tuple: (replacement string, updated replacement count)
     """
@@ -76,11 +76,11 @@ def gh_to_rtd_relative(match: Match, replacement_count: int) -> tuple[str, int]:
 
 def gh_to_rtd_naked(match: Match, replacement_count: int) -> tuple[str, int]:
     """Convert GitHub-style naked urls to RTD /_static/ links.
-    
+
     Args:
         match: Regex match object
         replacement_count: Current count of replacements
-        
+
     Returns:
         tuple: (replacement string, updated replacement count)
     """
@@ -144,10 +144,10 @@ def rewrite_links_in_file(
 
 def parse_args() -> argparse.Namespace:
     """Parse and validate command line arguments.
-    
+
     Returns:
         argparse.Namespace: Parsed arguments
-        
+
     Raises:
         SystemExit: If arguments are invalid
     """
@@ -205,7 +205,7 @@ def main() -> int:
         total_changes += rewrite_links_in_file(
             Path(file_path),
             args.abs_to_gh_markdown,
-            args.gh_to_rtd
+            args.gh_markdown_to_rtd
         )
 
     if total_changes == 0:
