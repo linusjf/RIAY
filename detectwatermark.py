@@ -22,10 +22,10 @@ CANNY_THRESHOLDS = (100, 200)
 
 def detect_text_regions(image: np.ndarray) -> str:
     """Detect and extract text from image using OCR.
-    
+
     Args:
         image: Input image in BGR format
-        
+
     Returns:
         Extracted text with collapsed whitespace
     """
@@ -36,10 +36,10 @@ def detect_text_regions(image: np.ndarray) -> str:
 
 def calculate_edge_density(image: np.ndarray) -> float:
     """Calculate edge density using Canny edge detection.
-    
+
     Args:
         image: Input image in BGR format
-        
+
     Returns:
         Ratio of edge pixels to total pixels
     """
@@ -51,11 +51,11 @@ def calculate_edge_density(image: np.ndarray) -> float:
 
 def calculate_frequency_energy(image: np.ndarray, radius: int = FFT_RADIUS) -> float:
     """Calculate high frequency energy using FFT.
-    
+
     Args:
         image: Input image in BGR format
         radius: Radius for high-pass filter
-        
+
     Returns:
         Normalized high frequency energy
     """
@@ -67,7 +67,7 @@ def calculate_frequency_energy(image: np.ndarray, radius: int = FFT_RADIUS) -> f
     center_row, center_col = rows // 2, cols // 2
 
     mask = np.ones((rows, cols), np.uint8)
-    mask[center_row - radius:center_row + radius, 
+    mask[center_row - radius:center_row + radius,
          center_col - radius:center_col + radius] = 0
 
     high_freq = fft_shift * mask
@@ -83,16 +83,16 @@ def detect_watermark(
     freq_threshold: float = DEFAULT_FREQ_THRESHOLD
 ) -> Dict[str, Union[bool, str, float]]:
     """Detect watermark in image using multiple techniques.
-    
+
     Args:
         image_path: Path to image file
         text_threshold: Minimum text length to consider watermarked
         edge_threshold: Edge density threshold
         freq_threshold: Frequency energy threshold
-        
+
     Returns:
         Dictionary containing detection results and metrics
-        
+
     Raises:
         FileNotFoundError: If image file doesn't exist
         ValueError: If image cannot be read
@@ -115,7 +115,7 @@ def detect_watermark(
 
     return {
         "watermarked": has_text or high_edges or high_freq,
-        "text": text,
+        "watermarks": text,
         "edge_density": edge_density,
         "frequency_energy": freq_energy
     }
