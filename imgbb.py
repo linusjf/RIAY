@@ -1,7 +1,6 @@
 """Image upload functionality for imgbb.com API."""
 
 import os
-from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
@@ -27,13 +26,13 @@ class ImgBBUploader:
 
     def upload_image(self, image_path: str) -> tuple[str, str]:
         """Upload image to imgbb and return URL and delete URL.
-        
+
         Args:
             image_path: Path to the image file to upload
-            
+
         Returns:
             tuple: (image_url, delete_url)
-            
+
         Raises:
             Exception: If upload fails
         """
@@ -43,20 +42,20 @@ class ImgBBUploader:
                 data={"key": self.api_key},
                 files={"image": file}
             )
-        
+
         if response.status_code == 200:
             json_data = response.json()["data"]
             return (json_data["url"], json_data["delete_url"])
-        
+
         raise Exception(f"Upload failed: {response.status_code} {response.text}")
 
 
 def upload_to_imgbb(image_path: str) -> tuple[str, str]:
     """Convenience function for direct upload without class instantiation.
-    
+
     Args:
         image_path: Path to the image file to upload
-        
+
     Returns:
         tuple: (image_url, delete_url)
     """
