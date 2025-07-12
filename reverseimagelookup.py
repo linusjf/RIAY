@@ -71,27 +71,25 @@ def verify_image_against_metadata(image_url, metadata_text):
     search = GoogleSearch(params)
     results = search.get_dict()
     visual_matches = results["visual_matches"][0:REQUIRED_MATCH_COUNT]
-    scores = []
+    
+    if not visual_matches:
+        return 0.0
 
-    for image_info in visual_matches:
-        title = image_info["title"]
-        link = image_info["link"]
-        source = image_info["source"]
-        url = image_info["image"]
+    first_match = visual_matches[0]
+    title = first_match["title"]
+    link = first_match["link"]
+    source = first_match["source"]
+    url = first_match["image"]
 
-        match_text = ", ".join(filter(None, [
-            title,
-            clean_filename_text(link),
-            source,
-            clean_filename_text(url)
-        ]))
-        score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
-        scores.append(score)
-        print(f"Matched: {image_url} —> {url}", file=sys.stderr)
-
-    avg_score = sum(scores) / len(scores) if scores else 0
-    print(avg_score)  # Output only the average score to stdout
-    return avg_score >= MATCH_SCORE_THRESHOLD
+    match_text = ", ".join(filter(None, [
+        title,
+        clean_filename_text(link),
+        source,
+        clean_filename_text(url)
+    ]))
+    score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
+    print(f"Matched: {image_url} —> {url}", file=sys.stderr)
+    return score
 
 
 def reverse_image_search(image_url, metadata_text):
@@ -289,7 +287,9 @@ def main():
             file=sys.stderr
         )
 
-    result = verify_image_against_metadata(source_url, metadata_text)
+    score = verify_image_against_metadata(source_url, metadata_text)
+    print(f"Cosine similarity score: {score:.4f}", file=sys.stderr)
+    result = score >= MATCH_SCORE_THRESHOLD
     elapsed_time = time.time() - start_time
     print(
         f"Verified image {args.image} in {elapsed_time:.2f} seconds using {script_name}",
