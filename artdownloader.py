@@ -45,6 +45,7 @@ load_dotenv('config.env')
 # Constants
 SAVE_DIR = os.getenv('ART_DOWNLOADER_DIR', 'artdownloads')
 SERPAPI_API_KEY = os.getenv("SERP_API_KEY", "")
+FIND_ALTERNATE_IMAGES = bool(os.getenv("FIND_ALTERNATE_IMAGES", False))
 
 WIKIMEDIA_SEARCH_API_URL = (
     "https://api.wikimedia.org/core/v1/commons/search/page"
