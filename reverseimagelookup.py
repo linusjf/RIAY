@@ -71,7 +71,7 @@ def verify_image_against_metadata(image_url, metadata_text):
     search = GoogleSearch(params)
     results = search.get_dict()
     visual_matches = results["visual_matches"][0:REQUIRED_MATCH_COUNT]
-    match_count = 0
+    scores = []
 
     for image_info in visual_matches:
         title = image_info["title"]
@@ -86,11 +86,12 @@ def verify_image_against_metadata(image_url, metadata_text):
             clean_filename_text(url)
         ]))
         score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
-        if score > MATCH_SCORE_THRESHOLD:
-            match_count += 1
-            print(f"Matched: {image_url} —> {url}", file=sys.stderr)
+        scores.append(score)
+        print(f"Matched: {image_url} —> {url}", file=sys.stderr)
 
-    return match_count == REQUIRED_MATCH_COUNT
+    avg_score = sum(scores) / len(scores) if scores else 0
+    print(avg_score)  # Output only the average score to stdout
+    return avg_score >= MATCH_SCORE_THRESHOLD
 
 
 def reverse_image_search(image_url, metadata_text):
