@@ -2,6 +2,7 @@
 
 import os
 import requests
+import sys
 from dotenv import load_dotenv
 
 # Constants
@@ -60,4 +61,10 @@ def upload_to_imgbb(image_path: str) -> tuple[str, str]:
         tuple: (image_url, delete_url)
     """
     uploader = ImgBBUploader()
-    return uploader.upload_image(image_path)
+    image_url, delete_url = uploader.upload_image(image_path)
+    if delete_url:
+        print(
+            f"Delete uploaded image in the browser using {delete_url}",
+            file=sys.stderr
+        )
+    return image_url, delete_url
