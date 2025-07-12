@@ -46,6 +46,10 @@
   - [A Renewed 'Yes'](#a-renewed-yes)
   - [AI-Generated Summary: The Stillness in the Storm](#ai-generated-summary-the-stillness-in-the-storm)
   - [Fra Angelico's Simeon with the Child Jesus: Temple scene](#fra-angelicos-simeon-with-the-child-jesus-temple-scene)
+- [July 12, 2025](#july-12-2025)
+  - [Faith in the Silence](#faith-in-the-silence)
+  - [AI-Generated Summary: The Divine Pursuit in the Temple](#ai-generated-summary-the-divine-pursuit-in-the-temple)
+  - [Baroque painting in Brussels depicts Mary and Joseph in the temple with relief and awe](#baroque-painting-in-brussels-depicts-mary-and-joseph-in-the-temple-with-relief-and-awe)
 
 <!-- tocstop -->
 
@@ -298,3 +302,21 @@ So it is with all sacred art: it does not merely depict, but invites. Look again
 ### Fra Angelico's Simeon with the Child Jesus: Temple scene
 
 [![Fra Angelico's Simeon with the Child Jesus: Temple scene](July/jpgs/stillnessstormfresco.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Presentation_of_Jesus_at_the_Temple_by_Fra_Angelico_%28San_Marco_Cell_10%29.jpg/500px-Presentation_of_Jesus_at_the_Temple_by_Fra_Angelico_%28San_Marco_Cell_10%29.jpg "Fra Angelico's Simeon with the Child Jesus: Temple scene")
+
+## July 12, 2025
+
+### Faith in the Silence
+
+[![Faith in the Silence](/July/jpgs/Day193.jpg)](https://youtu.be/kAnZR_hds7I "Faith in the Silence")
+
+### AI-Generated Summary: The Divine Pursuit in the Temple
+
+Consider, dear reader, the scene in that ancient temple—a boy of twelve seated among the learned, asking and answering with a wisdom beyond His years. His parents, faithful yet perplexed, search for Him with that peculiar ache known only to those who love deeply. When at last they find Him, His reply—"Did you not know I must be about My Father’s business?"—pierces their hearts like a sword, yet also plants a seed of understanding. Mary, ever the model of trust, does not rebel but treasures these things in her heart, as one who knows that every sorrow is but a step in the great dance of Providence.
+
+Augustine reminds us that God’s silence is never absence, but an invitation to seek Him more ardently. So too in this mystery: what seems loss is but the prelude to a deeper finding. The old order shifts—Joseph, that quiet guardian, steps back as the true Father’s care is revealed. Mary, though no longer sheltered by Joseph’s hand, is never forsaken, for the same love that led her to the stable now leads her toward the cross.
+
+And if you should see that Baroque painting in Brussels—Mary and Joseph amid the temple’s shadows, their faces alight with mingled relief and awe—remember this: the God who seemed lost was always near, and every seeking heart will find Him in the end.
+
+### Baroque painting in Brussels depicts Mary and Joseph in the temple with relief and awe
+
+[![Baroque painting in Brussels depicts Mary and Joseph in the temple with relief and awe](July/jpgs/divinepursuittemple.jpg)](https://i.ytimg.com/vi/I9ms9NM2hwc/maxresdefault.jpg "Baroque painting in Brussels depicts Mary and Joseph in the temple with relief and awe")

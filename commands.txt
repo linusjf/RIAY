@@ -1,4 +1,4 @@
 # commands
-addvideo "nGUX5oLSA9o" "Time and eternity: Yesterday, today and always"
+addvideo "kAnZR_hds7I" "Faith in the Silence"
 stitch
 lintall
