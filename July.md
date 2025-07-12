@@ -49,7 +49,7 @@
 - [July 12, 2025](#july-12-2025)
   - [Faith in the Silence](#faith-in-the-silence)
   - [AI-Generated Summary: The Divine Pursuit in the Temple](#ai-generated-summary-the-divine-pursuit-in-the-temple)
-  - [Baroque painting in Brussels depicts Mary and Joseph in the temple with relief and awe](#baroque-painting-in-brussels-depicts-mary-and-joseph-in-the-temple-with-relief-and-awe)
+  - [Jesus teaching in the temple as a 12-year-old](#jesus-teaching-in-the-temple-as-a-12-year-old)
 
 <!-- tocstop -->
 
@@ -317,6 +317,6 @@ Augustine reminds us that God’s silence is never absence, but an invitation to
 
 And if you should see that Baroque painting in Brussels—Mary and Joseph amid the temple’s shadows, their faces alight with mingled relief and awe—remember this: the God who seemed lost was always near, and every seeking heart will find Him in the end.
 
-### Baroque painting in Brussels depicts Mary and Joseph in the temple with relief and awe
+### Jesus teaching in the temple as a 12-year-old
 
-[![Baroque painting in Brussels depicts Mary and Joseph in the temple with relief and awe](July/jpgs/divinepursuittemple.jpg)](https://i.ytimg.com/vi/I9ms9NM2hwc/maxresdefault.jpg "Baroque painting in Brussels depicts Mary and Joseph in the temple with relief and awe")
+[![Jesus teaching in the temple as a 12-year-old](July/jpgs/divinepursuittemple.jpg)](https://i.ytimg.com/vi/I9ms9NM2hwc/maxresdefault.jpg "Jesus teaching in the temple as a 12-year-old")
