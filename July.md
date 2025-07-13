@@ -50,6 +50,10 @@
   - [Faith in the Silence](#faith-in-the-silence)
   - [AI-Generated Summary: The Divine Pursuit in the Temple](#ai-generated-summary-the-divine-pursuit-in-the-temple)
   - [Jesus teaching in the temple as a 12-year-old](#jesus-teaching-in-the-temple-as-a-12-year-old)
+- [July 13, 2025](#july-13-2025)
+  - [Beloved Sons and Daughters](#beloved-sons-and-daughters)
+  - [AI-Generated Summary: The Sacred Waters and the Beloved Son](#ai-generated-summary-the-sacred-waters-and-the-beloved-son)
+  - [Fresco in Padua depicting the Baptism of Christ with hidden nails and thorns](#fresco-in-padua-depicting-the-baptism-of-christ-with-hidden-nails-and-thorns)
 
 <!-- tocstop -->
 
@@ -320,3 +324,21 @@ And if you should see that Baroque painting in Brussels—Mary and Joseph amid t
 ### Jesus teaching in the temple as a 12-year-old
 
 [![Jesus teaching in the temple as a 12-year-old](July/jpgs/divinepursuittemple.jpg)](https://i.ytimg.com/vi/I9ms9NM2hwc/maxresdefault.jpg "Jesus teaching in the temple as a 12-year-old")
+
+## July 13, 2025
+
+### Beloved Sons and Daughters
+
+[![Beloved Sons and Daughters](/July/jpgs/Day194.jpg)](https://youtu.be/qL9DRPoASfE "Beloved Sons and Daughters")
+
+### AI-Generated Summary: The Sacred Waters and the Beloved Son
+
+Baptism, dear reader, is no mere ritual; it is the river where heaven meets earth, as it did when our Lord stood in the Jordan. There, the Father’s voice broke through the clouds, declaring Him the Beloved—a truth not for Him alone, but for all who follow. For if we are baptized, we too are named _beloved_, and this is no fleeting comfort, but the very armor we must wear before stepping into the wilderness of this world.
+
+Consider the fresco in Padua, where the artist—wise as the old painters often were—has hidden nails and thorns amid the waters, whispering of the cross even in the moment of blessing. Light and shadow dance there, as they must in every Christian life: the light of the Father’s favor, the shadow of the trial to come. Yet the light prevails, for resurrection is the end of the story.
+
+To be baptized is to be given a name, a home, a certainty: _You are mine_. And with that certainty, we may face all things—not because the road is easy, but because we know whose children we are.
+
+### Fresco in Padua depicting the Baptism of Christ with hidden nails and thorns
+
+[![Fresco in Padua depicting the Baptism of Christ with hidden nails and thorns](July/jpgs/baptismfrescopadua.jpg)](https://cdn11.bigcommerce.com/s-r3utmtjwwz/images/stencil/1280x1280/products/16766/64162/the-christ-in-glory-with-sts.-peter-and-paul_paolo-veronese__38136__96402.1625196152.jpg?c=2 "Fresco in Padua depicting the Baptism of Christ with hidden nails and thorns")
