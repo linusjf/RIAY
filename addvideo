@@ -160,8 +160,9 @@ generate_files() {
     }
   } >| "$fname"
 
-  "${SCRIPT_DIR}/embedarttoday" "$doy" || true
-
+  if "${DOWNLOAD_ART:-false}"; then
+    "${SCRIPT_DIR}/embedarttoday" "$doy" || true
+  fi
   if "${AUTO_GENERATE_IMAGES:-false}"; then
     # generate image from summary prompt
     "{SCRIPT_DIR}/addsummaryimagefromprompt" "$summarypromptfname" "$doy" \
