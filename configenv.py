@@ -12,22 +12,23 @@ Configenv.
 """
 import os
 import re
+from typing import Dict, Any, Union, List
 
 class ConfigEnv:
     BOOL_TRUE = {"true", "1", "yes", "on"}
     BOOL_FALSE = {"false", "0", "no", "off"}
     _instance = None
 
-    def __new__(cls, filepath='config.env', override=False):
+    def __new__(cls, filepath: str = 'config.env', override: bool = False):
         if cls._instance is None:
             cls._instance = super(ConfigEnv, cls).__new__(cls)
-            cls._instance.filepath = filepath
-            cls._instance.vars = {}
-            cls._instance.override = override
+            cls._instance.filepath: str = filepath
+            cls._instance.vars: Dict[str, Any] = {}
+            cls._instance.override: bool = override
             cls._instance._load_env()
         return cls._instance
 
-    def _coerce_type(self, value):
+    def _coerce_type(self, value: str) -> Union[bool, int, float, str, List[Any]]:
         value = value.strip()
 
         # Bash-style array
@@ -46,10 +47,10 @@ class ConfigEnv:
             return float(value)
         return value
 
-    def _expand_value(self, value):
+    def _expand_value(self, value: str) -> str:
         return os.path.expandvars(value)
 
-    def _load_env(self):
+    def _load_env(self) -> None:
         if not os.path.exists(self.filepath):
             raise FileNotFoundError(f"{self.filepath} not found.")
 
@@ -117,19 +118,19 @@ class ConfigEnv:
 
             i += 1
 
-    def get(self, key, default=None):
+    def get(self, key: str, default: Any = None) -> Any:
         return self.vars.get(key, default)
 
-    def as_dict(self):
+    def as_dict(self) -> Dict[str, Any]:
         return dict(self.vars)
 
-    def __getitem__(self, key):
+    def __getitem__(self, key: str) -> Any:
         return self.vars[key]
 
-    def __contains__(self, key):
+    def __contains__(self, key: str) -> bool:
         return key in self.vars
 
-def main():
+def main() -> None:
     config = ConfigEnv("config.env")
     for k, v in config.as_dict().items():
         print(f"{k:<25} = {repr(v)}  # type: {type(v).__name__}")
