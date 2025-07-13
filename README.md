@@ -5488,7 +5488,7 @@ This is no mere depiction of suffering, but a window into its strange redemption
 - [July 13, 2025](#july-13-2025)
   - [Beloved Sons and Daughters](#beloved-sons-and-daughters)
   - [AI-Generated Summary: The Sacred Waters and the Beloved Son](#ai-generated-summary-the-sacred-waters-and-the-beloved-son)
-  - [Fresco depicting the Baptism of Christ](#fresco-depicting-the-baptism-of-christ)
+  - [Fresco depicting the Baptism of Christ (Stock Image)](#fresco-depicting-the-baptism-of-christ-stock-image)
 
 <!-- tocstop -->
 
@@ -5774,7 +5774,7 @@ Consider the fresco in Padua, where the artist—wise as the old painters often 
 
 To be baptized is to be given a name, a home, a certainty: _You are mine_. And with that certainty, we may face all things—not because the road is easy, but because we know whose children we are.
 
-##### Fresco depicting the Baptism of Christ
+##### Fresco depicting the Baptism of Christ (Stock Image)
 
 [![Fresco depicting the Baptism of Christ](July/jpgs/baptismfrescopadua.jpg)](https://thumbs.dreamstime.com/b/padua-paint-baptism-christ-scene-church-san-benedetto-vecchio-saint-benedict-th-century-italy-september-pain-45199595.jpg "Fresco depicting the Baptism of Christ")
 
