@@ -56,3 +56,6 @@ def load_dotenv_with_system_interpolation(
             os.environ[key] = value
 
     return interpolated
+
+def str_to_bool(value: str) -> bool:
+    return value.lower() in ("1", "true", "yes", "on")
