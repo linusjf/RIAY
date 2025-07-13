@@ -22,11 +22,14 @@ class ConfigEnv:
     def __new__(cls, filepath: str = 'config.env', override: bool = False):
         if cls._instance is None:
             cls._instance = super(ConfigEnv, cls).__new__(cls)
-            cls._instance.filepath: str = filepath
-            cls._instance.vars: Dict[str, Any] = {}
-            cls._instance.override: bool = override
-            cls._instance._load_env()
+            cls._instance.__init__(filepath, override)
         return cls._instance
+
+    def __init__(self, filepath: str = 'config.env', override: bool = False) -> None:
+        self.filepath: str = filepath
+        self.vars: Dict[str, Any] = {}
+        self.override: bool = override
+        self._load_env()
 
     def _coerce_type(self, value: str) -> Union[bool, int, float, str, List[Any]]:
         value = value.strip()
