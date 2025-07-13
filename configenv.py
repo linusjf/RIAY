@@ -16,12 +16,16 @@ import re
 class ConfigEnv:
     BOOL_TRUE = {"true", "1", "yes", "on"}
     BOOL_FALSE = {"false", "0", "no", "off"}
+    _instance = None
 
-    def __init__(self, filepath='config.env', override=False):
-        self.filepath = filepath
-        self.vars = {}
-        self.override = override
-        self._load_env()
+    def __new__(cls, filepath='config.env', override=False):
+        if cls._instance is None:
+            cls._instance = super(ConfigEnv, cls).__new__(cls)
+            cls._instance.filepath = filepath
+            cls._instance.vars = {}
+            cls._instance.override = override
+            cls._instance._load_env()
+        return cls._instance
 
     def _coerce_type(self, value):
         value = value.strip()
