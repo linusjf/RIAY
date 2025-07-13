@@ -7,6 +7,40 @@ from typing import Dict, List
 from dotenv import dotenv_values
 
 
+def read_bash_file_content(file_path: str) -> str:
+    """Read the content of a bash file into a string.
+
+    Args:
+        file_path: Path to the bash file to read.
+
+    Returns:
+        String content of the file.
+    """
+    with open(file_path, 'r', encoding='utf-8') as file:
+        return file.read()
+
+
+def parse_bash_array_from_content(content: str, var_name: str) -> List[str]:
+    """Parse a bash array from string content and return its values as a Python list.
+
+    Args:
+        content: String content containing the bash array definition.
+        var_name: Name of the array variable to parse.
+
+    Returns:
+        List of string values from the array, or empty list if not found.
+    """
+    # Match array definition like: VAR=( "a" "b" "c" )
+    pattern = re.compile(rf'{var_name}\s*=\s*\((.*?)\)', re.DOTALL)
+    match = pattern.search(content)
+    if not match:
+        return []
+
+    array_body = match.group(1)
+    # Extract all quoted strings
+    return re.findall(r'"(.*?)"', array_body)
+
+
 def parse_bash_array(file_path: str, var_name: str) -> List[str]:
     """Parse a bash array from a file and return its values as a Python list.
 
@@ -17,18 +51,8 @@ def parse_bash_array(file_path: str, var_name: str) -> List[str]:
     Returns:
         List of string values from the array, or empty list if not found.
     """
-    with open(file_path, 'r', encoding='utf-8') as file:
-        content = file.read()
-
-    # Match array definition like: VAR=( "a" "b" "c" )
-    pattern = re.compile(rf'{var_name}\s*=\s*\((.*?)\)', re.DOTALL)
-    match = pattern.search(content)
-    if not match:
-        return []
-
-    array_body = match.group(1)
-    # Extract all quoted strings
-    return re.findall(r'"(.*?)"', array_body)
+    content = read_bash_file_content(file_path)
+    return parse_bash_array_from_content(content, var_name)
 
 
 def load_dotenv_with_system_interpolation(
