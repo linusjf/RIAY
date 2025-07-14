@@ -19,10 +19,10 @@ class ConfigEnv:
     BOOL_FALSE = {"false", "0", "no", "off"}
     _instance = None
 
-    def __new__(cls, filepath: str = 'config.env', override: bool = False):
+    def __new__(cls, filepath: str = 'config.env', override: bool = False, include_os_env: bool=False):
         if cls._instance is None:
             cls._instance = super(ConfigEnv, cls).__new__(cls)
-            cls._instance.__init__(filepath, override)
+            cls._instance.__init__(filepath, override, include_os_env)
         return cls._instance
 
     def __init__(self, filepath: str = 'config.env', override: bool = False, include_os_env: bool=False) -> None:

@@ -10,7 +10,7 @@ IMGBB_API_KEY_VAR = "IMGBB_API_KEY"
 IMGBB_UPLOAD_URL = "https://api.imgbb.com/1/upload"
 
 # Load environment variables using ConfigEnv
-config = ConfigEnv(CONFIG_FILE)
+config = ConfigEnv(filepath=CONFIG_FILE,include_os_env=True)
 IMGBB_API_KEY = config.get(IMGBB_API_KEY_VAR)
 if not IMGBB_API_KEY:
     raise ValueError(f"{IMGBB_API_KEY_VAR} environment variable not set")

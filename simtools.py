@@ -48,7 +48,7 @@ THRESHOLDS = {
 # This gets the path of THIS file, no matter how it's imported
 base_dir = os.path.dirname(os.path.abspath(__file__))
 dotenv_path = os.path.join(base_dir, "config.env")
-config  = ConfigEnv(dotenv_path)
+config  = ConfigEnv(dotenv_path, include_os_env=True)
 
 VECTOR_EMBEDDINGS_MODEL_API_KEY = config.get("VECTOR_EMBEDDINGS_MODEL_API_KEY")
 if not VECTOR_EMBEDDINGS_MODEL_API_KEY:
