@@ -12,7 +12,7 @@ import time
 from pathlib import Path
 
 import requests
-from dotenv import load_dotenv
+from configenv import ConfigEnv
 from serpapi import GoogleSearch
 
 from bashhelper import parse_bash_array
@@ -25,13 +25,13 @@ CONFIG_FILE = 'config.env'
 STOCK_PHOTO_SITES_VAR = 'STOCK_PHOTO_SITES'
 SERP_API_KEY_VAR = "SERP_API_KEY"
 
-# Load environment variables from config.env
-load_dotenv(CONFIG_FILE)
-SERP_API_KEY = os.getenv(SERP_API_KEY_VAR)
+# Load environment variables using ConfigEnv
+config = ConfigEnv(CONFIG_FILE)
+SERP_API_KEY = config[SERP_API_KEY_VAR]
 if not SERP_API_KEY:
     raise ValueError(f"{SERP_API_KEY_VAR} environment variable not set")
 
-STOCK_PHOTO_SITES = parse_bash_array(CONFIG_FILE, STOCK_PHOTO_SITES_VAR)
+STOCK_PHOTO_SITES = config[STOCK_PHOTO_SITES_VAR]
 
 MIN_IMAGE_WIDTH = 350
 MIN_IMAGE_HEIGHT = 480
