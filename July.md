@@ -57,6 +57,7 @@
 - [July 14, 2025](#july-14-2025)
   - [New Wine, New Life](#new-wine-new-life)
   - [AI-Generated Summary: The Divine Bridegroom and the Miracle at Cana](#ai-generated-summary-the-divine-bridegroom-and-the-miracle-at-cana)
+  - [Carl Bloch's The Wedding at Cana depicts the miracle of turning water into wine](#carl-blochs-the-wedding-at-cana-depicts-the-miracle-of-turning-water-into-wine)
 
 <!-- tocstop -->
 
@@ -357,3 +358,7 @@ To be baptized is to be given a name, a home, a certainty: _You are mine_. And w
 Consider, dear reader, the scene at Cana—a humble wedding, the wine exhausted, the hosts dismayed. Here, the Maker of all things steps quietly into human need, turning water into wine not with fanfare, but as a husband provides for his beloved: unseen, yet abundantly. This is no mere wonder, but a sign—a foretaste of the new creation, where joy flows unending from the hand of Christ, the true Bridegroom.
 
 Carl Bloch’s _The Wedding at Cana_ captures this mystery with fitting subtlety: the Savior’s gesture is gentle, his power veiled, as all great love ever is. The jars, once empty, brim with the richness of grace, for He who fashioned the vine delights to give good gifts. Let us learn from Mary’s wisdom: "Do whatever He tells you." In obedience, as in that Galilean feast, the ordinary becomes radiant with His presence.
+
+### Carl Bloch's The Wedding at Cana depicts the miracle of turning water into wine
+
+[![Carl Bloch's The Wedding at Cana depicts the miracle of turning water into wine](July/jpgs/weddingatcanacarlbloch.jpg)](https://mdl.artvee.com/sftb/301322rg.jpg "Carl Bloch's The Wedding at Cana depicts the miracle of turning water into wine")
