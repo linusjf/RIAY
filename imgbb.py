@@ -3,16 +3,16 @@
 import os
 import requests
 import sys
-from dotenv import load_dotenv
+from configenv import ConfigEnv
 
 # Constants
 CONFIG_FILE = 'config.env'
 IMGBB_API_KEY_VAR = "IMGBB_API_KEY"
 IMGBB_UPLOAD_URL = "https://api.imgbb.com/1/upload"
 
-# Load environment variables from config.env
-load_dotenv(CONFIG_FILE)
-IMGBB_API_KEY = os.getenv(IMGBB_API_KEY_VAR)
+# Load environment variables using ConfigEnv
+config = ConfigEnv(CONFIG_FILE)
+IMGBB_API_KEY = config.get(IMGBB_API_KEY_VAR)
 if not IMGBB_API_KEY:
     raise ValueError(f"{IMGBB_API_KEY_VAR} environment variable not set")
 
