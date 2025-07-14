@@ -1,6 +1,5 @@
 """Image upload functionality for imgbb.com API."""
 
-import os
 import requests
 import sys
 from configenv import ConfigEnv
