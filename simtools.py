@@ -17,8 +17,7 @@ import numpy as np
 from enum import Enum, auto
 from fuzzywuzzy import fuzz
 from openai import OpenAI
-from dotenv import load_dotenv
-from bashhelper import load_dotenv_with_system_interpolation
+from configenv import ConfigEnv
 
 # Constants
 ERROR_MESSAGES = {
@@ -49,16 +48,16 @@ THRESHOLDS = {
 # This gets the path of THIS file, no matter how it's imported
 base_dir = os.path.dirname(os.path.abspath(__file__))
 dotenv_path = os.path.join(base_dir, "config.env")
-load_dotenv_with_system_interpolation(dotenv_path=dotenv_path, override=True)
+config  = ConfigEnv(dotenv_path)
 
-VECTOR_EMBEDDINGS_MODEL_API_KEY = os.getenv("VECTOR_EMBEDDINGS_MODEL_API_KEY")
+VECTOR_EMBEDDINGS_MODEL_API_KEY = config.get("VECTOR_EMBEDDINGS_MODEL_API_KEY")
 if not VECTOR_EMBEDDINGS_MODEL_API_KEY:
     raise ValueError(ERROR_MESSAGES["missing_api_key"])
 
-VECTOR_EMBEDDINGS_BASE_URL = os.getenv("VECTOR_EMBEDDINGS_BASE_URL", "")
+VECTOR_EMBEDDINGS_BASE_URL = config.get("VECTOR_EMBEDDINGS_BASE_URL")
 if not VECTOR_EMBEDDINGS_BASE_URL:
     raise ValueError(ERROR_MESSAGES["missing_base_url"])
-VECTOR_EMBEDDINGS_MODEL = os.getenv("VECTOR_EMBEDDINGS_MODEL", "")
+VECTOR_EMBEDDINGS_MODEL = config.get("VECTOR_EMBEDDINGS_MODEL")
 if not VECTOR_EMBEDDINGS_MODEL:
     raise ValueError(ERROR_MESSAGES["missing_model"])
 
