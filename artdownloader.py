@@ -20,7 +20,7 @@ from duckduckgo_search import DDGS
 from duckduckgo_search.exceptions import RatelimitException
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 from serpapi import GoogleSearch
-from bashhelper import parse_bash_array
+from bashhelper import parse_bash_array, str_to_bool
 from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, extract_domain_from_url
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
@@ -45,7 +45,7 @@ load_dotenv('config.env')
 # Constants
 SAVE_DIR = os.getenv('ART_DOWNLOADER_DIR', 'artdownloads')
 SERPAPI_API_KEY = os.getenv("SERP_API_KEY", "")
-FIND_ALTERNATE_IMAGES = bool(os.getenv("FIND_ALTERNATE_IMAGES", False))
+FIND_ALTERNATE_IMAGES = str_to_bool(os.getenv("FIND_ALTERNATE_IMAGES", "false"))
 
 WIKIMEDIA_SEARCH_API_URL = (
     "https://api.wikimedia.org/core/v1/commons/search/page"
@@ -645,7 +645,7 @@ def main():
                     break
 
                 # Try to download if we don't have the file
-                filename = os.path.join(SAVE_DIR, f"best_result_{query.replace(' ', '_')}.jpg")
+                filename = os.path.join(SAVE_DIR, f"best_result_{args.filename}.jpg")
                 if save_image(url, filename):
                     best_result = (url, filename, score)
                     break
