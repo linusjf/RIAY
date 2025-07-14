@@ -6,22 +6,20 @@ faster-whisper implementation of OpenAI's Whisper model.
 """
 
 import argparse
-import os
 import sys
 import time
-from typing import Optional
 
-from dotenv import load_dotenv
 import torch
 from faster_whisper import WhisperModel
 
+from configenv import ConfigEnv
 
 # Load environment variables from config.env
-load_dotenv('config.env')
-MODEL_SIZE = os.getenv('ASR_LOCAL_MODEL', 'base')
-BEAM_SIZE = int(os.getenv('ASR_BEAM_SIZE', '3'))
-ASR_INITIAL_PROMPT = os.getenv('ASR_INITIAL_PROMPT', '')
-ASR_CARRY_INITIAL_PROMPT = bool(os.getenv('ASR_CARRY_INITIAL_PROMPT', 'False'))
+config = ConfigEnv('config.env')
+MODEL_SIZE = config.get('ASR_LOCAL_MODEL')
+BEAM_SIZE = config.get('ASR_BEAM_SIZE')
+ASR_INITIAL_PROMPT = config.get('ASR_INITIAL_PROMPT')
+ASR_CARRY_INITIAL_PROMPT = config.get('ASR_CARRY_INITIAL_PROMPT')
 
 
 def transcribe_audio(
@@ -42,7 +40,7 @@ def transcribe_audio(
     """
     start_time = time.time()
     model = WhisperModel(model_size, device=device, compute_type=compute_type)
-    
+
     print(
         f"Executing faster-whisper with device '{device}' and compute type '{compute_type}' "
         f"with device name {torch.cuda.get_device_name(0)}",
@@ -77,7 +75,7 @@ def transcribe_audio(
 
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments.
-    
+
     Returns:
         Parsed arguments namespace.
     """
