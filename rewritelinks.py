@@ -8,7 +8,7 @@ import argparse
 from pathlib import Path
 from typing import Match, Optional
 
-from dotenv import load_dotenv
+from configenv import ConfigEnv
 
 
 DEFAULT_ENV_FILE = "config.env"
@@ -25,6 +25,7 @@ class LinkRewriter:
         self.gh_to_rtd = gh_to_rtd
         self.replacement_count = 0
         self.url_base: Optional[str] = None
+        self.config = ConfigEnv(DEFAULT_ENV_FILE)
 
     def get_github_base_url(self) -> str:
         """Construct the GitHub base URL from environment variables.
@@ -32,10 +33,8 @@ class LinkRewriter:
         Returns:
             str: Formatted GitHub raw content base URL
         """
-        load_dotenv(dotenv_path=DEFAULT_ENV_FILE)
-
-        user = os.getenv("REPO_OWNER", "")
-        repo = os.getenv("REPO_NAME", "")
+        user = self.config.get("REPO_OWNER", "")
+        repo = self.config.get("REPO_NAME", "")
 
         if not user or not repo:
             raise ValueError(
