@@ -25,9 +25,9 @@ class ConfigEnv:
             cls._instance.__init__(filepath, override)
         return cls._instance
 
-    def __init__(self, filepath: str = 'config.env', override: bool = False) -> None:
+    def __init__(self, filepath: str = 'config.env', override: bool = False, include_os_env: bool=False) -> None:
         self.filepath: str = filepath
-        self.vars: Dict[str, Any] = {}
+        self.vars: Dict[str, Any] = dict(os.environ) if include_os_env else {}
         self.override: bool = override
         self._load_env()
 
