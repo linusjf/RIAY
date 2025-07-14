@@ -15,13 +15,13 @@ import sys
 import time
 from typing import Dict, List, Optional, Tuple, Union
 
-from dotenv import load_dotenv
+from configenv import ConfigEnv
 from openai import OpenAI
 from simtools import MatchMode, compare_terms, compute_match_dicts
 
-# Load environment variables from config.env
-load_dotenv('config.env')
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# Initialize ConfigEnv
+config = ConfigEnv('config.env', include_os_env=True)
+OPENAI_API_KEY = config.get("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     raise ValueError("OPENAI_API_KEY environment variable not set")
 
@@ -97,7 +97,7 @@ def generate_image_description(image_path: str, subject: Optional[str] = None) -
     """
     print("🖼️ Generating image description...", file=sys.stderr)
     base64_image = encode_image_to_base64(image_path)
-    prompt = os.getenv("ART_METADATA_PROMPT", "Describe and interpret this image in detail.")
+    prompt = config.get("ART_METADATA_PROMPT", "Describe and interpret this image in detail.")
     
     if subject:
         prompt = prompt.replace("{}", subject)
