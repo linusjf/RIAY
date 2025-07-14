@@ -151,7 +151,7 @@ class ConfigEnv:
         return key in self.vars
 
 def main() -> None:
-    config = ConfigEnv("config.env")
+    config = ConfigEnv("config.env", include_os_env=True)
     for k, v in config.as_dict().items():
         print(f"{k:<25} = {repr(v)}  # type: {type(v).__name__}")
 
