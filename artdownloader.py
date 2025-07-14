@@ -20,7 +20,6 @@ from duckduckgo_search import DDGS
 from duckduckgo_search.exceptions import RatelimitException
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 from serpapi import GoogleSearch
-from bashhelper import str_to_bool
 from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, extract_domain_from_url
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
