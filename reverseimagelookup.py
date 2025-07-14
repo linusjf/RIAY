@@ -11,11 +11,9 @@ import sys
 import time
 from pathlib import Path
 
-import requests
 from configenv import ConfigEnv
 from serpapi import GoogleSearch
 
-from bashhelper import parse_bash_array
 from htmlhelper import clean_filename_text, extract_domain_from_url
 from simtools import compare_terms, MatchMode, THRESHOLDS
 from imgbb import upload_to_imgbb
