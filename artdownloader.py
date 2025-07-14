@@ -20,12 +20,13 @@ from duckduckgo_search import DDGS
 from duckduckgo_search.exceptions import RatelimitException
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 from serpapi import GoogleSearch
-from bashhelper import parse_bash_array, str_to_bool
+from bashhelper import str_to_bool
 from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, extract_domain_from_url
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
 from simtools import compare_terms, MatchMode
 from reverseimagelookup import reverse_image_lookup_url
+from configenv import ConfigEnv
 
 # Global dictionary to track downloaded URLs and their saved filenames
 DOWNLOADED_URLS = {}
@@ -38,19 +39,12 @@ GOOGLE_IMAGES = []
 # Global list to track DuckDuckGo search results (url, file, score)
 DUCKDUCKGO_IMAGES = []
 
-STOCK_PHOTO_SITES = parse_bash_array('config.env', 'STOCK_PHOTO_SITES')
-# Load environment variables from config.env
-load_dotenv('config.env')
-
-# Constants
-SAVE_DIR = os.getenv('ART_DOWNLOADER_DIR', 'artdownloads')
-SERPAPI_API_KEY = os.getenv("SERP_API_KEY", "")
-FIND_ALTERNATE_IMAGES = str_to_bool(os.getenv("FIND_ALTERNATE_IMAGES", "false"))
-
-WIKIMEDIA_SEARCH_API_URL = (
-    "https://api.wikimedia.org/core/v1/commons/search/page"
-)
-WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
+# Initialize ConfigEnv
+config = ConfigEnv()
+STOCK_PHOTO_SITES = config.get('STOCK_PHOTO_SITES', [])
+FIND_ALTERNATE_IMAGES = config.get('FIND_ALTERNATE_IMAGES', False)
+SERPAPI_API_KEY = config.get('SERP_API_KEY', "")
+SAVE_DIR = config.get('ART_DOWNLOADER_DIR', 'artdownloads')
 
 SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
 
