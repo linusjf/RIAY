@@ -27,17 +27,34 @@ class ConfigEnv:
 
     def __init__(self, filepath: str = 'config.env', override: bool = False, include_os_env: bool=False) -> None:
         self.filepath: str = filepath
+        self.types = self._load_types(filepath+".types")
         self.vars: Dict[str, Any] = dict(os.environ) if include_os_env else {}
         self.override: bool = override
         self._load_env()
 
-    def _coerce_type(self, value: str) -> Union[bool, int, float, str, List[Any]]:
+    def _load_types(self, types_path):
+        if os.path.exists(types_path):
+            import json
+            with open(types_path) as f:
+                json_obj = json.load(f)
+                return json_obj
+        return {}
+
+    def _coerce_type(self, value: str, key: str) -> Union[bool, int, float, str, List[Any]]:
         value = value.strip()
 
         # Bash-style array
         if value.startswith('(') and value.endswith(')'):
             inner = value[1:-1].strip()
-            return [self._coerce_type(v.strip('"').strip("'")) for v in inner.split()]
+            return [self._coerce_type(v.strip('"').strip("'"), key) for v in inner.split()]
+
+        explicit_type = self.types.get(key)
+        if explicit_type == "bool":
+            return value.lower() in self.BOOL_TRUE
+        if explicit_type == "int":
+            return int(value)
+        if explicit_type == "float":
+            return float(value)
 
         lower = value.lower()
         if lower in self.BOOL_TRUE:
@@ -85,7 +102,7 @@ class ConfigEnv:
                         break
                     item_line = item_line.strip('"').strip("'")
                     if item_line:
-                        array_items.append(self._coerce_type(item_line))
+                        array_items.append(self._coerce_type(item_line, key))
                     i += 1
                 self.vars[key] = array_items
                 if self.override or key not in os.environ:
@@ -114,7 +131,7 @@ class ConfigEnv:
 
             # Expand env vars and coerce
             value = self._expand_value(value)
-            coerced = self._coerce_type(value)
+            coerced = self._coerce_type(value, key)
             self.vars[key] = coerced
             if self.override or key not in os.environ:
                 os.environ[key] = str(coerced)
