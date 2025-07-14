@@ -12,13 +12,13 @@ import sys
 from pathlib import Path
 
 from antlr4 import CommonTokenStream, FileStream, ParseTreeWalker
-from dotenv import load_dotenv
 
 from commandsLexer import commandsLexer
 from commandsParser import commandsParser
 from commandsListener import commandsListener
 from commandsverboselistener import CommandsVerboseListener
 from commandsverbosestrategy import CommandsVerboseStrategy
+from configenv import ConfigEnv
 
 
 class Commands(commandsListener):
@@ -28,6 +28,7 @@ class Commands(commandsListener):
         """Initialize the command processor."""
         self.cwd = str(Path.cwd())
         self.exitcode = 0
+        self.config = ConfigEnv("config.env")
 
     def enterAddvideo(self, ctx: commandsParser.AddvideoContext) -> None:
         """Process Addvideo command."""
@@ -59,7 +60,7 @@ class Commands(commandsListener):
         """Process Genmonth command."""
         rule_name = self._get_rule_name(ctx)
         month = ctx.month().getText()
-        year = str(os.getenv("YEAR"))
+        year = str(self.config.get("YEAR"))
         if ctx.year() is not None:
             year = ctx.year().getText()
         print(f"Generating month {month} for year {year}.")
@@ -85,10 +86,10 @@ class Commands(commandsListener):
 
     def _get_rule_name(self, ctx) -> str:
         """Get the name of the current rule being processed.
-        
+
         Args:
             ctx: The parser rule context
-            
+
         Returns:
             The name of the rule as a string
         """
@@ -119,7 +120,6 @@ class Commands(commandsListener):
 
 def main() -> None:
     """Main entry point for command processing."""
-    load_dotenv(dotenv_path="config.env")
     input_stream = FileStream("commands.txt")
     lexer = commandsLexer(input_stream)
     lexer.removeErrorListeners()
