@@ -54,7 +54,7 @@ def main():
         watermark = detector.detect(image_path)
 
         # 3. Perform reverse image lookup
-        lookup = ReverseImageLookup()
+        lookup = ReverseImageLookup(ReverseImageLookup.SEARCH_API.ZENSERP_API)
         score = lookup.match_reverse_lookup(
             image_path,
             args.title,

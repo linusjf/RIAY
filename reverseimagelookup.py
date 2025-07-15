@@ -6,10 +6,13 @@ against metadata using Google Lens via SerpAPI and imgbb for image hosting.
 """
 
 import argparse
+from enum import Enum, auto
 import os
 import sys
 import time
+import json
 from pathlib import Path
+import requests
 
 from configenv import ConfigEnv
 from serpapi import GoogleSearch
@@ -20,56 +23,98 @@ from imgbb import upload_to_imgbb
 
 class ReverseImageLookup:
     """Class for performing reverse image lookups using SerpAPI and imgbb."""
-    
+
+    class SEARCH_API(Enum):
+        SERP_API = auto(),
+        ZENSERP_API = auto()
+
     # Constants
     CONFIG_FILE = 'config.env'
     STOCK_PHOTO_SITES_VAR = 'STOCK_PHOTO_SITES'
     SERP_API_KEY_VAR = "SERP_API_KEY"
+    ZENSERP_API_KEY_VAR = "ZENSERP_API_KEY"
+    ZENSERP_API_ENDPOINT = "https://app.zenserp.com/api/v2/search"
     IMAGE_URL_FILE_EXTENSION = '.url.txt'
     MIN_IMAGE_WIDTH = 350
     MIN_IMAGE_HEIGHT = 480
     REQUIRED_MATCH_COUNT = 5
 
-    def __init__(self):
+    def __init__(self, search_api=SEARCH_API.SERP_API):
         """Initialize the reverse image lookup service."""
         # Load environment variables using ConfigEnv
         self.config = ConfigEnv(self.CONFIG_FILE, include_os_env=True)
         self.SERP_API_KEY = self.config[self.SERP_API_KEY_VAR]
         if not self.SERP_API_KEY:
             raise ValueError(f"{self.SERP_API_KEY_VAR} environment variable not set")
-        
+        self.ZENSERP_API_KEY = self.config[self.ZENSERP_API_KEY_VAR]
+        if not self.ZENSERP_API_KEY:
+            raise ValueError(f"{self.ZENSERP_API_KEY_VAR} environment variable not set")
+        self.search_api = search_api
         self.STOCK_PHOTO_SITES = self.config[self.STOCK_PHOTO_SITES_VAR]
 
     def verify_image_against_metadata(self, image_url, metadata_text):
-        """Verify if image matches metadata using Google Lens."""
-        params = {
-            "engine": "google_lens",
-            "api_key": self.SERP_API_KEY,
-            "url": image_url,
-            "type": "visual_matches"
-        }
-        search = GoogleSearch(params)
-        results = search.get_dict()
-        visual_matches = results["visual_matches"][0:self.REQUIRED_MATCH_COUNT]
+        if self.search_api == self.SEARCH_API.SERP_API:
+            """Verify if image matches metadata using Google Lens."""
+            params = {
+                "engine": "google_lens",
+                "api_key": self.SERP_API_KEY,
+                "url": image_url,
+                "type": "visual_matches"
+            }
+            search = GoogleSearch(params)
+            results = search.get_dict()
+            visual_matches = results["visual_matches"][0:self.REQUIRED_MATCH_COUNT]
 
-        if not visual_matches:
-            return 0.0
+            if not visual_matches:
+                return 0.0
 
-        first_match = visual_matches[0]
-        title = first_match["title"]
-        link = first_match["link"]
-        source = first_match["source"]
-        url = first_match["image"]
+            first_match = visual_matches[0]
+            title = first_match["title"]
+            link = first_match["link"]
+            source = first_match["source"]
+            url = first_match["image"]
 
-        match_text = ", ".join(filter(None, [
-            title,
-            clean_filename_text(link),
-            source,
-            clean_filename_text(url)
-        ]))
-        score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
-        print(f"Matched: {image_url} —> {url}", file=sys.stderr)
-        return score
+            match_text = ", ".join(filter(None, [
+                title,
+                clean_filename_text(link),
+                source,
+                clean_filename_text(url)
+            ]))
+            score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
+            print(f"Matched: {image_url} —> {url}", file=sys.stderr)
+            return score
+        elif self.search_api == self.SEARCH_API.ZENSERP_API:
+            headers = {
+                "apikey": self.ZENSERP_API_KEY}
+
+            params = (
+                ("image_url",image_url),
+            );
+
+            response = requests.get(self.ZENSERP_API_ENDPOINT, headers=headers, params=params);
+            json_response = response.text
+            data = json.loads(json_response)
+            print(data, file=sys.stderr)
+            reverse_image_results = data["reverse_image_results"]
+            if not reverse_image_results:
+                return 0.0
+            organic_results = reverse_image_results.get("organic")
+            if not organic_results:
+                return 0.0
+            first_match = organic_results[0]
+            title = first_match["title"]
+            url = first_match["url"]
+            destination = first_match["destination"]
+            description = first_match["description"]
+            match_text = ", ".join(filter(None, [
+                title,
+                clean_filename_text(url),
+                destination,
+                description
+            ]))
+            score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
+            print(f"Matched: {image_url} —> {url}", file=sys.stderr)
+            return score
 
     def reverse_image_search(self, image_url, metadata_text):
         """Perform reverse image search and return qualifying URLs."""
@@ -279,19 +324,19 @@ def main():
     start_time = time.time()
     script_name = os.path.basename(__file__)
     args = parser.parse_args()
-    
+
     lookup = ReverseImageLookup()
     score = lookup.match_reverse_lookup(
-        args.image, 
+        args.image,
         args.title,
-        args.artist, 
-        args.subject, 
-        args.location, 
-        args.date, 
+        args.artist,
+        args.subject,
+        args.location,
+        args.date,
         args.style,
         args.medium
     )
-    
+
     elapsed_time = time.time() - start_time
     print(
         f"Verified image {args.image} in {elapsed_time:.2f} seconds using {script_name}",
