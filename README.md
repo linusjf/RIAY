@@ -907,7 +907,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -5493,6 +5493,9 @@ This is no mere depiction of suffering, but a window into its strange redemption
   - [New Wine, New Life](#new-wine-new-life)
   - [AI-Generated Summary: The Divine Bridegroom and the Miracle at Cana](#ai-generated-summary-the-divine-bridegroom-and-the-miracle-at-cana)
   - [Carl Bloch's The Wedding at Cana depicts the miracle of turning water into wine](#carl-blochs-the-wedding-at-cana-depicts-the-miracle-of-turning-water-into-wine)
+- [July 15, 2025](#july-15-2025)
+  - [Invited to the Kingdom](#invited-to-the-kingdom)
+  - [AI-Generated Summary: The Kingdom and the Storm](#ai-generated-summary-the-kingdom-and-the-storm)
 
 <!-- tocstop -->
 
@@ -5797,6 +5800,18 @@ Carl Bloch’s _The Wedding at Cana_ captures this mystery with fitting subtlety
 ##### Carl Bloch's The Wedding at Cana depicts the miracle of turning water into wine
 
 [![Carl Bloch's The Wedding at Cana depicts the miracle of turning water into wine](July/jpgs/weddingatcanacarlbloch.jpg)](https://mdl.artvee.com/sftb/301322rg.jpg "Carl Bloch's The Wedding at Cana depicts the miracle of turning water into wine")
+
+#### July 15, 2025
+
+##### Invited to the Kingdom
+
+[![Invited to the Kingdom](July/jpgs/Day196.jpg)](https://youtu.be/JcacJxA8kBM "Invited to the Kingdom")
+
+##### AI-Generated Summary: The Kingdom and the Storm
+
+The kingdom of God is not a distant hope but a present reality embodied in Christ Himself, who comes to us as guide, teacher, and healer. To enter this kingdom, we must turn from ourselves and place our faith in Him—not as a mere teacher of virtues, but as the very source of life and grace. For as Augustine wisely saw, the old law, given in fear, could only bind; but Christ, in love, sets us free, and by His Spirit, we are empowered to live as we were meant to live—not by our own striving, but by His life within us.
+
+Consider Rembrandt’s _Christ in the Storm on the Sea of Galilee_: the waves rage, the disciples tremble, yet there sits the Lord, sovereign even in the tempest. How like us they are—frightened, doubting whether He cares, whether He can save. But the storm is no less real for His presence; it is His presence that makes all the difference. He does not promise calm seas, but He does command our trust. When the winds howl, we must learn to fix our eyes not on the waves, but on Him who rules them. For He who stilled the storm then is the same yesterday, today, and forever.
 
 ## August
 
