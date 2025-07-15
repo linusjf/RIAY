@@ -2,14 +2,13 @@
 """
 Verify if an image matches artwork metadata using OpenAI's GPT-4 and semantic vector embedding models.
 
-This module provides ArtworkVerifier class that compares an image's generated description 
+This module provides ArtworkVerifier class that compares an image's generated description
 with provided artwork metadata to determine if they likely represent the same artwork.
 """
 
 import argparse
 import base64
 import json
-import os
 import re
 import sys
 import time
@@ -25,7 +24,7 @@ class ArtworkVerifier:
 
     def __init__(self, config_path: str = 'config.env'):
         """Initialize the verifier with configuration.
-        
+
         Args:
             config_path: Path to configuration file.
         """
@@ -232,7 +231,7 @@ def main() -> None:
     """Main function to verify image matches artwork metadata."""
     verifier = ArtworkVerifier()
     args = verifier.parse_arguments()
-    
+
     try:
         result = verifier.verify(args)
         print(json.dumps(result, indent=2))
