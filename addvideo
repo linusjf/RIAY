@@ -160,7 +160,7 @@ generate_files() {
     }
   } >| "$fname"
 
-  if "${DOWNLOAD_ART:-false}"; then
+  if "${AUTO_DOWNLOAD_ART:-false}"; then
     "${SCRIPT_DIR}/embedarttoday" "$doy" || true
   fi
   if "${AUTO_GENERATE_IMAGES:-false}"; then
@@ -322,7 +322,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   source "${SCRIPT_DIR}/lib/lockconfig.sh"
   lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
   # Check requirements
-  require_vars YOUTUBE_API_KEY REPO_OWNER YEAR
+  require_vars YOUTUBE_API_KEY REPO_OWNER YEAR AUTO_DOWNLOAD_ART
   require_commands sed basename date tee mv date wc cat cp
 
   # Start timer
