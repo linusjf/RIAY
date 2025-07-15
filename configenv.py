@@ -12,18 +12,20 @@ Configenv.
 """
 import os
 import re
-from typing import Dict, Any, Union, List
+from typing import Dict, Any, Union, List, Tuple
 
 class ConfigEnv:
     BOOL_TRUE = {"true", "1", "yes", "on"}
     BOOL_FALSE = {"false", "0", "no", "off"}
-    _instance = None
+    _instances = {}
 
     def __new__(cls, filepath: str = 'config.env', override: bool = False, include_os_env: bool=False):
-        if cls._instance is None:
-            cls._instance = super(ConfigEnv, cls).__new__(cls)
-            cls._instance.__init__(filepath, override, include_os_env)
-        return cls._instance
+        key = (filepath, override, include_os_env)
+        if key not in cls._instances:
+            instance = super(ConfigEnv, cls).__new__(cls)
+            instance.__init__(*key)
+            cls._instances[key] = instance
+        return cls._instances[key]
 
     def __init__(self, filepath: str = 'config.env', override: bool = False, include_os_env: bool=False) -> None:
         self._filepath: str = filepath
