@@ -45,9 +45,8 @@ FIND_ALTERNATE_IMAGES = config.get('FIND_ALTERNATE_IMAGES', False)
 SERPAPI_API_KEY = config.get('SERP_API_KEY', "")
 SAVE_DIR = config.get('ART_DOWNLOADER_DIR', 'artdownloads')
 
-WIKIMEDIA_SEARCH_API_URL = (
-    "https://api.wikimedia.org/core/v1/commons/search/page"
-)
+WIKIMEDIA_SEARCH_API_URL = "https://api.wikimedia.org/core/v1/commons/search/page"
+WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
 SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
 
 def download_from_googlelens(qualified_urls, filename_base):
@@ -560,6 +559,7 @@ def download_all(query, filename_base=None, title=None, artist=None, location=No
 
     downloaded_duckduckgo = download_from_duckduckgo(enhanced_query, filename_base)
     downloaded_google = download_from_google(enhanced_query, filename_base)
+
     return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
 
 def main():
