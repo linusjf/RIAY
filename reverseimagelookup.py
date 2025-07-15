@@ -89,12 +89,12 @@ class ReverseImageLookup:
 
             params = (
                 ("image_url",image_url),
+                ("hl", "en")
             );
 
             response = requests.get(self.ZENSERP_API_ENDPOINT, headers=headers, params=params);
             json_response = response.text
             data = json.loads(json_response)
-            print(data, file=sys.stderr)
             reverse_image_results = data["reverse_image_results"]
             if not reverse_image_results:
                 return 0.0
