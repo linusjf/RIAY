@@ -15,7 +15,6 @@ import shutil
 
 import requests
 import re
-from dotenv import load_dotenv
 from duckduckgo_search import DDGS
 from duckduckgo_search.exceptions import RatelimitException
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
@@ -48,6 +47,7 @@ class ArtDownloader:
         self.style = None
         self.medium = None
         self.subject = None
+        self.filename_base = None
 
         # Populate from params dictionary if provided
         if params:
@@ -58,6 +58,7 @@ class ArtDownloader:
             self.style = params.get('style')
             self.medium = params.get('medium')
             self.subject = params.get('subject')
+            self.filename_base = params.get('filename')
 
         self.WIKIMEDIA_SEARCH_API_URL = "https://api.wikimedia.org/core/v1/commons/search/page"
         self.WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
@@ -454,49 +455,50 @@ class ArtDownloader:
                 return filename, score
         return (None, None)
 
-    def download_all(self, query, filename_base=None, title=None, artist=None, location=None, date=None, style=None, medium=None, subject=None):
+    def download_all(self, query):
         """Download images from all available sources."""
-        if filename_base is None:
-            filename_base = query.replace(' ', '_')
+        if self.filename_base is None:
+            self.filename_base = query.replace(' ', '_')
 
         enhanced_query = query
-        if artist and artist not in query:
-            enhanced_query += f" by {artist}"
-        if title and title not in query:
-            enhanced_query += f" {title}"
-        if location:
-            enhanced_query += f" {location}"
-        if date:
-            enhanced_query += f" {date}"
-        if style:
-            enhanced_query += f" {style}"
-        if medium:
-            enhanced_query += f" {medium}"
-        if subject:
-            enhanced_query += f" {subject}"
+        if self.artist and self.artist not in query:
+            enhanced_query += f" by {self.artist}"
+        if self.title and self.title not in query:
+            enhanced_query += f" {self.title}"
+        if self.location:
+            enhanced_query += f" {self.location}"
+        if self.date:
+            enhanced_query += f" {self.date}"
+        if self.style:
+            enhanced_query += f" {self.style}"
+        if self.medium:
+            enhanced_query += f" {self.medium}"
+        if self.subject:
+            enhanced_query += f" {self.subject}"
 
         wikimedia_query = query
-        if artist and artist not in query:
-            wikimedia_query += f" by {artist}"
-        if title and title not in query:
-            wikimedia_query += f" {title}"
-        if date and date not in query:
-            wikimedia_query += f" {date}"
-        if location and location not in query:
-            wikimedia_query += f" {location}"
+        if self.artist and self.artist not in query:
+            wikimedia_query += f" by {self.artist}"
+        if self.title and self.title not in query:
+            wikimedia_query += f" {self.title}"
+        if self.date and self.date not in query:
+            wikimedia_query += f" {self.date}"
+        if self.location and self.location not in query:
+            wikimedia_query += f" {self.location}"
 
         print(f"\n🔍 Searching wikis with simple query: {wikimedia_query}", file=sys.stderr)
 
-        downloaded_wikipedia_search = self.download_image_from_wikipedia_article(wikimedia_query, enhanced_query, filename_base)
-        downloaded_wikimedia_search = self.download_from_wikimedia_search(wikimedia_query, enhanced_query, filename_base)
-        downloaded_wikimedia = self.download_from_wikimedia(wikimedia_query, enhanced_query, filename_base)
+        downloaded_wikipedia_search = self.download_image_from_wikipedia_article(wikimedia_query, enhanced_query, self.filename_base)
+        downloaded_wikimedia_search = self.download_from_wikimedia_search(wikimedia_query, enhanced_query, self.filename_base)
+        downloaded_wikimedia = self.download_from_wikimedia(wikimedia_query, enhanced_query, self.filename_base)
 
         print(f"\n🔍 Searching google and duckduckgo with enhanced query: {enhanced_query}", file=sys.stderr)
 
-        downloaded_duckduckgo = self.download_from_duckduckgo(enhanced_query, filename_base)
-        downloaded_google = self.download_from_google(enhanced_query, filename_base)
+        downloaded_duckduckgo = self.download_from_duckduckgo(enhanced_query, self.filename_base)
+        downloaded_google = self.download_from_google(enhanced_query, self.filename_base)
 
         return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
+
 
     def print_results(self):
         """Print summary of downloaded images and results."""
@@ -533,7 +535,7 @@ class ArtDownloader:
                         best_result = (url, file, score)
                         break
 
-                    filename = os.path.join(self.SAVE_DIR, f"best_result_{filename_base}.jpg")
+                    filename = os.path.join(self.SAVE_DIR, f"best_result_{self.filename_base}.jpg")
                     if self.save_image(url, filename):
                         best_result = (url, filename, score)
                         break
@@ -543,7 +545,7 @@ class ArtDownloader:
                     if "best_result_" in file and self.FIND_ALTERNATE_IMAGES:
                         qualified_urls = reverse_image_lookup_url(url, self.title, self.artist, self.subject, self.location, self.date, self.style, self.medium)
                         if qualified_urls:
-                            best_qualified_result = self.download_from_googlelens(qualified_urls=qualified_urls, filename_base=filename_base)
+                            best_qualified_result = self.download_from_googlelens(qualified_urls=qualified_urls, filename_base=self.filename_base)
                             if best_qualified_result:
                                 filepath, url_score = best_qualified_result
                                 print(f"\n⭐ Best available image (downloaded): {filepath} (score: {url_score:.3f})")
@@ -585,14 +587,6 @@ def main():
 
     success = downloader.download_all(
         query=query,
-        filename_base=args.filename,
-        title=args.title,
-        artist=args.artist,
-        location=args.location,
-        date=args.date,
-        style=args.style,
-        medium=args.medium,
-        subject=args.subject
     )
 
     downloader.print_results()
