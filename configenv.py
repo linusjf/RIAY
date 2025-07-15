@@ -26,10 +26,10 @@ class ConfigEnv:
         return cls._instance
 
     def __init__(self, filepath: str = 'config.env', override: bool = False, include_os_env: bool=False) -> None:
-        self.filepath: str = filepath
-        self.types = self._load_types(filepath+".types")
-        self.vars: Dict[str, Any] = dict(os.environ) if include_os_env else {}
-        self.override: bool = override
+        self._filepath: str = filepath
+        self._types = self._load_types(filepath+".types")
+        self._vars: Dict[str, Any] = dict(os.environ) if include_os_env else {}
+        self._override: bool = override
         self._load_env()
 
     def _load_types(self, types_path):
@@ -48,7 +48,7 @@ class ConfigEnv:
             inner = value[1:-1].strip()
             return [self._coerce_type(v.strip('"').strip("'"), key) for v in inner.split()]
 
-        explicit_type = self.types.get(key)
+        explicit_type = self._types.get(key)
         if explicit_type == "bool":
             return value.lower() in self.BOOL_TRUE
         if explicit_type == "int":
@@ -71,10 +71,10 @@ class ConfigEnv:
         return os.path.expandvars(value)
 
     def _load_env(self) -> None:
-        if not os.path.exists(self.filepath):
-            raise FileNotFoundError(f"{self.filepath} not found.")
+        if not os.path.exists(self._filepath):
+            raise FileNotFoundError(f"{self._filepath} not found.")
 
-        with open(self.filepath, 'r') as f:
+        with open(self._filepath, 'r') as f:
             lines = f.readlines()
 
         i = 0
@@ -104,8 +104,8 @@ class ConfigEnv:
                     if item_line:
                         array_items.append(self._coerce_type(item_line, key))
                     i += 1
-                self.vars[key] = array_items
-                if self.override or key not in os.environ:
+                self._vars[key] = array_items
+                if self._override or key not in os.environ:
                     os.environ[key] = ','.join(map(str, array_items))
                 i += 1
                 continue
@@ -132,23 +132,27 @@ class ConfigEnv:
             # Expand env vars and coerce
             value = self._expand_value(value)
             coerced = self._coerce_type(value, key)
-            self.vars[key] = coerced
-            if self.override or key not in os.environ:
+            self._vars[key] = coerced
+            if self._override or key not in os.environ:
                 os.environ[key] = str(coerced)
 
             i += 1
 
+    @property
+    def vars(self) -> Dict[str, Any]:
+        return dict(self._vars)
+
     def get(self, key: str, default: Any = None) -> Any:
-        return self.vars.get(key, default)
+        return self._vars.get(key, default)
 
     def as_dict(self) -> Dict[str, Any]:
-        return dict(self.vars)
+        return dict(self._vars)
 
     def __getitem__(self, key: str) -> Any:
-        return self.vars[key]
+        return self._vars[key]
 
     def __contains__(self, key: str) -> bool:
-        return key in self.vars
+        return key in self._vars
 
 def main() -> None:
     config = ConfigEnv("config.env", include_os_env=True)
