@@ -98,7 +98,7 @@ def generate_image_description(image_path: str, subject: Optional[str] = None) -
     print("🖼️ Generating image description...", file=sys.stderr)
     base64_image = encode_image_to_base64(image_path)
     prompt = config.get("ART_METADATA_PROMPT", "Describe and interpret this image in detail.")
-    
+
     if subject:
         prompt = prompt.replace("{}", subject)
 
@@ -160,10 +160,10 @@ def create_metadata_text(args: argparse.Namespace) -> Tuple[str, Dict[str, str]]
     metadata_text = ", ".join(filter(None, [
         args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium
     ]))
-    
+
     metadata_dict = vars(args)
     metadata_dict = {k: v for k, v in metadata_dict.items() if k != 'image'}
-    
+
     print(f"📋 Metadata text: {metadata_text}", file=sys.stderr)
     print(f"📋 Metadata dict: {metadata_dict}", file=sys.stderr)
     return metadata_text, metadata_dict
@@ -198,7 +198,7 @@ def main() -> None:
         image_description = generate_image_description(args.image, args.subject)
         image_data = process_image_description(image_description)
 
-        image_description_text = ", ".join(filter(None, [
+        image_description_text = ", ".join(str(x) for x in [
             image_data['title'],
             image_data['artist'],
             image_data['location'],
@@ -206,7 +206,7 @@ def main() -> None:
             image_data['style'],
             image_data['medium'],
             image_data['description']
-        ]))
+        ] if x)
         print(f"Image description: {image_description_text}", file=sys.stderr)
 
         cosine_score = compare_terms(metadata_text, image_description_text, MatchMode.COSINE)
@@ -217,12 +217,12 @@ def main() -> None:
         matched, mismatched = compute_match_dicts(metadata_dict, image_data, MatchMode.HYBRID)
         non_empty_count = len([v for v in metadata_dict.values() if v])
         is_likely_match = cosine_score >= 0.7 and len(matched) >= non_empty_count // 2
-        
+
         print(f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}", file=sys.stderr)
         image_data["is_likely_match"] = is_likely_match
-        image_data["matched_terms"] = matched
-        image_data["mismatched_terms"] = mismatched
-        
+        image_data["matched_terms"] = str(matched)
+        image_data["mismatched_terms"] = str(mismatched)
+
         print(json.dumps(image_data, indent=2))
         execution_time = time.time() - start_time
         print(f"⏱️ Verified image in {execution_time:.2f} seconds", file=sys.stderr)
