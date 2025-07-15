@@ -15,6 +15,7 @@ import time
 import argparse
 from typing import Optional, Dict, Any
 import requests
+from configenv import ConfigEnv
 
 VERSION = "1.0.0"
 SCRIPT_NAME = os.path.basename(__file__)
@@ -39,19 +40,20 @@ def parse_args() -> argparse.Namespace:
 
 def create_payload(summary_content: str) -> Dict[str, Any]:
     """Create the API request payload"""
+    config = ConfigEnv()
     return {
-        "model": os.environ["TEXT_LLM_MODEL"],
+        "model": config["TEXT_LLM_MODEL"],
         "messages": [
             {
                 "role": "system",
-                "content": os.environ["CAPTION_PROMPT"]
+                "content": config["CAPTION_PROMPT"]
             },
             {
                 "role": "user",
                 "content": summary_content
             }
         ],
-        "temperature": float(os.environ.get("TEMPERATURE", 1))
+        "temperature": float(config.get("TEMPERATURE", 1))
     }
 
 def get_summary_content(args: argparse.Namespace) -> str:
@@ -67,7 +69,10 @@ def main() -> None:
     """Main function"""
     start_time = time.time()
 
-    # Check required environment variables
+    # Load configuration
+    config = ConfigEnv()
+
+    # Check required configuration values
     required_vars = [
         "TEXT_LLM_MODEL",
         "TEXT_LLM_API_KEY",
@@ -76,8 +81,8 @@ def main() -> None:
         "CAPTION_PROMPT"
     ]
     for var in required_vars:
-        if var not in os.environ:
-            print(f"Error: Missing required environment variable: {var}", file=sys.stderr)
+        if var not in config:
+            print(f"Error: Missing required configuration variable: {var}", file=sys.stderr)
             sys.exit(1)
 
     args = parse_args()
@@ -85,13 +90,13 @@ def main() -> None:
 
     payload = create_payload(summary_content)
     headers = {
-        "Authorization": f"Bearer {os.environ['TEXT_LLM_API_KEY']}",
+        "Authorization": f"Bearer {config['TEXT_LLM_API_KEY']}",
         "Content-Type": "application/json"
     }
 
     try:
         response = requests.post(
-            f"{os.environ['TEXT_LLM_BASE_URL']}{os.environ['TEXT_LLM_CHAT_ENDPOINT']}",
+            f"{config['TEXT_LLM_BASE_URL']}{config['TEXT_LLM_CHAT_ENDPOINT']}",
             headers=headers,
             json=payload,
             timeout=30
