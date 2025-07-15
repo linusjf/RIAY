@@ -61,6 +61,7 @@
 - [July 15, 2025](#july-15-2025)
   - [Invited to the Kingdom](#invited-to-the-kingdom)
   - [AI-Generated Summary: The Kingdom and the Storm](#ai-generated-summary-the-kingdom-and-the-storm)
+  - [Rembrandt's Christ in the Storm on the Sea of Galilee depicts a biblical scene of Christ calming the storm](#rembrandts-christ-in-the-storm-on-the-sea-of-galilee-depicts-a-biblical-scene-of-christ-calming-the-storm)
 
 <!-- tocstop -->
 
@@ -377,3 +378,7 @@ Carl Bloch’s _The Wedding at Cana_ captures this mystery with fitting subtlety
 The kingdom of God is not a distant hope but a present reality embodied in Christ Himself, who comes to us as guide, teacher, and healer. To enter this kingdom, we must turn from ourselves and place our faith in Him—not as a mere teacher of virtues, but as the very source of life and grace. For as Augustine wisely saw, the old law, given in fear, could only bind; but Christ, in love, sets us free, and by His Spirit, we are empowered to live as we were meant to live—not by our own striving, but by His life within us.
 
 Consider Rembrandt’s _Christ in the Storm on the Sea of Galilee_: the waves rage, the disciples tremble, yet there sits the Lord, sovereign even in the tempest. How like us they are—frightened, doubting whether He cares, whether He can save. But the storm is no less real for His presence; it is His presence that makes all the difference. He does not promise calm seas, but He does command our trust. When the winds howl, we must learn to fix our eyes not on the waves, but on Him who rules them. For He who stilled the storm then is the same yesterday, today, and forever.
+
+### Rembrandt's Christ in the Storm on the Sea of Galilee depicts a biblical scene of Christ calming the storm
+
+[![Rembrandt's Christ in the Storm on the Sea of Galilee depicts a biblical scene of Christ calming the storm](July/jpgs/christstormrembrandt.jpg)](https://upload.wikimedia.org/wikipedia/commons/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg "Rembrandt's Christ in the Storm on the Sea of Galilee depicts a biblical scene of Christ calming the storm")

@@ -24,7 +24,7 @@ STOCK_PHOTO_SITES_VAR = 'STOCK_PHOTO_SITES'
 SERP_API_KEY_VAR = "SERP_API_KEY"
 
 # Load environment variables using ConfigEnv
-config = ConfigEnv(CONFIG_FILE)
+config = ConfigEnv(CONFIG_FILE,include_os_env=True)
 SERP_API_KEY = config[SERP_API_KEY_VAR]
 if not SERP_API_KEY:
     raise ValueError(f"{SERP_API_KEY_VAR} environment variable not set")
