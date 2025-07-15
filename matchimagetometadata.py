@@ -10,7 +10,7 @@ from pathlib import Path
 
 from classifyimage import ImageClassifier
 from detectwatermark import WatermarkDetector
-from reverseimagelookup import match_reverse_lookup
+from reverseimagelookup import ReverseImageLookup
 from simtools import THRESHOLDS
 
 def parse_arguments():
@@ -53,7 +53,9 @@ def main():
         detector = WatermarkDetector()
         watermark = detector.detect(image_path)
 
-        score = match_reverse_lookup(
+        # 3. Perform reverse image lookup
+        lookup = ReverseImageLookup()
+        score = lookup.match_reverse_lookup(
             image_path,
             args.title,
             args.artist,
