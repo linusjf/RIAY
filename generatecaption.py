@@ -65,13 +65,10 @@ def get_summary_content(args: argparse.Namespace) -> str:
     print("Error: No input text provided", file=sys.stderr)
     sys.exit(1)
 
-def main() -> None:
-    """Main function"""
-    start_time = time.time()
-
-    # Load configuration
+def generate_caption(summary_content: str) -> str:
+    """Generate caption from input text"""
     config = ConfigEnv()
-
+    
     # Check required configuration values
     required_vars = [
         "TEXT_LLM_MODEL",
@@ -84,9 +81,6 @@ def main() -> None:
         if var not in config:
             print(f"Error: Missing required configuration variable: {var}", file=sys.stderr)
             sys.exit(1)
-
-    args = parse_args()
-    summary_content = get_summary_content(args)
 
     payload = create_payload(summary_content)
     headers = {
@@ -105,12 +99,21 @@ def main() -> None:
         generated_content = response.json()["choices"][0]["message"]["content"]
         
         # Remove markdown code block markers if present
-        cleaned_content = generated_content.replace("```json", "").replace("```", "").strip()
-        print(cleaned_content)
+        return generated_content.replace("```json", "").replace("```", "").strip()
 
     except requests.exceptions.RequestException as e:
         print(f"API request failed: {e}", file=sys.stderr)
         sys.exit(1)
+
+def main() -> None:
+    """Main function"""
+    start_time = time.time()
+
+    args = parse_args()
+    summary_content = get_summary_content(args)
+    
+    caption = generate_caption(summary_content)
+    print(caption)
 
     elapsed_time = time.time() - start_time
     print(f"Generated caption in {elapsed_time:.2f} seconds", file=sys.stderr)
