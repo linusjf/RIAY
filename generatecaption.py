@@ -1,0 +1,150 @@
+#!/usr/bin/env bash
+#
+# Generate captions from text summaries using Text LLM APIs
+#
+# Usage: generatecaption /path/to/DayXXXSummary.txt
+#        or
+#        cat summary.txt | generatecaption
+# Output: Creates /path/to/DayXXXCaption.json
+
+set -euo pipefail
+shopt -s inherit_errexit
+
+readonly VERSION="1.0.0"
+readonly SCRIPT_NAME="$(basename "$0")"
+
+# Source utility libraries
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+source "${SCRIPT_DIR}/lib/require.sh"
+source "${SCRIPT_DIR}/lib/internet.sh"
+source "${SCRIPT_DIR}/lib/util.sh"
+source "${SCRIPT_DIR}/lib/curl.sh"
+source "${SCRIPT_DIR}/lib/lockconfig.sh"
+lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+
+function usage() {
+  local exit_code=${1:-0}
+  local output_stream
+  [[ $exit_code -eq 0 ]] && output_stream=1 || output_stream=2
+
+  cat >&$output_stream << EOF
+Usage: ${SCRIPT_NAME} [INPUT_FILE]
+
+Generates caption JSON from a text file usually a summary using Text LLM APIs and outputs it to stdout.
+If no INPUT_FILE is provided, reads from stdin.
+
+Arguments:
+  INPUT_FILE    Path to input file (optional, defaults to stdin)
+
+Environment variables required:
+  TEXT_LLM_API_KEY           API key for LLM service
+  TEXT_LLM_MODEL             text llm model
+  TEXT_LLM_BASE_URL           text llm base url
+  TEXT_LLM_CHAT_ENDPOINT      text llm chat endpoint
+  CAPTION_PROMPT             System prompt for caption generation
+  TEMPERATURE                Creativity parameter (0-2)
+
+Examples:
+  ${SCRIPT_NAME} /path/to/input.txt
+  cat input.txt | ${SCRIPT_NAME}
+  TEXT_LLM_API_KEY=abc123 ${SCRIPT_NAME} < input.txt
+EOF
+
+  exit "$exit_code"
+}
+
+function version() {
+  printf "%s\n" "$VERSION"
+}
+
+function create_payload() {
+  local summary_content="$1"
+  local meta_prompt
+  meta_prompt="$(jq -Rs <<< "$CAPTION_PROMPT")"
+
+  jq -n \
+    --arg system "$meta_prompt" \
+    --arg content "$summary_content" \
+    --arg model "$TEXT_LLM_MODEL" \
+    --argjson temperature "${TEMPERATURE:-1}" \
+    '{
+      "model": $model,
+      "messages": [
+        {
+          "role": "system",
+          "content": $system
+        },
+        {
+          "role": "user",
+          "content": $content
+        }
+      ],
+      "temperature": $temperature
+    }'
+}
+
+function main() {
+  local start_time
+  start_time=$(date +%s.%N)
+
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      -h | --help) usage 0 ;;
+      -v | --version)
+        version
+        exit 0
+        ;;
+      --)
+        shift
+        break
+        ;;
+      -*) usage 1 ;;
+      *) break ;;
+    esac
+  done
+
+  local summary_content
+  local payload
+  local response
+  local generated_content
+
+  if [[ $# -gt 0 ]]; then
+    [[ -f "$1" ]] || die "Error: Input file '$1' not found"
+    summary_content="$(< "$1")"
+  else
+    summary_content="$(cat -)"
+  fi
+
+  payload="$(create_payload "$summary_content")"
+
+  response="$(
+    curl::request \
+      "${TEXT_LLM_BASE_URL}${TEXT_LLM_CHAT_ENDPOINT}" \
+      "POST" \
+      --header "Authorization: Bearer ${TEXT_LLM_API_KEY}" \
+      --header "Content-Type: application/json" \
+      --data "$payload"
+  )"
+
+  generated_content="$(echo "$response" | jq -r '.choices[0].message.content')"
+  echo "$generated_content" | sed -E '/^```(json)?[[:space:]]*$/d'
+
+  local end_time
+  end_time=$(date +%s.%N)
+  local elapsed_time
+  elapsed_time=$(echo "$end_time - $start_time" | bc)
+  printf "Generated caption in %.2f seconds\n" "$elapsed_time" >&2
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  require_commands jq tee cat bc
+  require_vars TEXT_LLM_MODEL TEXT_LLM_API_KEY TEXT_LLM_BASE_URL TEXT_LLM_CHAT_ENDPOINT
+  if "${LOGGING:-false}"; then
+    timestamp=$(date +"%Y%m%d_%H%M%S")
+    {
+      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
+    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
+  else
+    main "$@"
+  fi
+fi
