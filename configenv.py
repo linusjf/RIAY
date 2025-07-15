@@ -20,10 +20,11 @@ class ConfigEnv:
     _instances = {}
 
     def __new__(cls, filepath: str = 'config.env', override: bool = False, include_os_env: bool=False):
-        key = (filepath, override, include_os_env)
+        abs_path = os.path.abspath(filepath)
+        key = (abs_path, override, include_os_env)
         if key not in cls._instances:
             instance = super(ConfigEnv, cls).__new__(cls)
-            instance.__init__(*key)
+            instance.__init__(abs_path, override, include_os_env)
             cls._instances[key] = instance
         return cls._instances[key]
 
