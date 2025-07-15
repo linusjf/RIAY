@@ -104,17 +104,7 @@ def generate_image_description(image_path: str, subject: Optional[str] = None) -
 
     response = CLIENT.responses.create(
         model="gpt-4o",
-        input=[{
-            "role": "user",
-            "content": [
-                {"type": "input_text", "text": prompt},
-                {
-                    "type": "input_image",
-                    "image_url": f"data:image/jpeg;base64,{base64_image}"
-                },
-            ],
-        }]
-    )
+        input=[{"role": "user", "content": [{"type": "input_text", "text": prompt},{"type": "input_image","image_url": f"data:image/jpeg;base64,{base64_image}"},],}])
 
     image_description = response.output_text
     print(f"🔍 Image Description: {image_description}", file=sys.stderr)
