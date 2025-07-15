@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 from classifyimage import classify_image
-from detectwatermark import detect_watermark
+from detectwatermark import WatermarkDetector
 from reverseimagelookup import match_reverse_lookup
 from simtools import THRESHOLDS
 
@@ -48,8 +48,9 @@ def main():
         # 1. Classify the image
         classification = classify_image(image_path)
 
-        # 2. Detect watermarks
-        watermark = detect_watermark(image_path)
+        # 2. Detect watermarks using WatermarkDetector
+        detector = WatermarkDetector()
+        watermark = detector.detect(image_path)
 
         score = match_reverse_lookup(
             image_path,
