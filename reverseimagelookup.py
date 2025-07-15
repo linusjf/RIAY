@@ -51,6 +51,7 @@ class ReverseImageLookup:
             raise ValueError(f"{self.ZENSERP_API_KEY_VAR} environment variable not set")
         self.search_api = search_api
         self.STOCK_PHOTO_SITES = self.config[self.STOCK_PHOTO_SITES_VAR]
+        self.match_text = None
 
     def verify_image_against_metadata(self, image_url, metadata_text):
         if self.search_api == self.SEARCH_API.SERP_API:
@@ -74,13 +75,13 @@ class ReverseImageLookup:
             source = first_match["source"]
             url = first_match["image"]
 
-            match_text = ", ".join(filter(None, [
+            self.match_text = ", ".join(filter(None, [
                 title,
                 clean_filename_text(link),
                 source,
                 clean_filename_text(url)
             ]))
-            score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
+            score = compare_terms(metadata_text, self.match_text, MatchMode.COSINE)
             print(f"Matched: {image_url} —> {url}", file=sys.stderr)
             return score
         elif self.search_api == self.SEARCH_API.ZENSERP_API:
@@ -106,13 +107,13 @@ class ReverseImageLookup:
             url = first_match["url"]
             destination = first_match["destination"]
             description = first_match["description"]
-            match_text = ", ".join(filter(None, [
+            self.match_text = ", ".join(filter(None, [
                 title,
                 clean_filename_text(url),
                 destination,
                 description
             ]))
-            score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
+            score = compare_terms(metadata_text, self.match_text, MatchMode.COSINE)
             print(f"Matched: {image_url} —> {url}", file=sys.stderr)
             return score
 

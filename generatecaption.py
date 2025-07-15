@@ -12,6 +12,7 @@ import os
 import sys
 import time
 import argparse
+import json
 from typing import Dict, Any
 import requests
 from configenv import ConfigEnv
@@ -21,7 +22,7 @@ SCRIPT_NAME = os.path.basename(__file__)
 
 class CaptionGenerator:
     """Class for generating captions from text using LLM APIs"""
-    
+
     def __init__(self):
         self.config = ConfigEnv(include_os_env=True)
         self._validate_config()
@@ -57,7 +58,7 @@ class CaptionGenerator:
             "temperature": float(self.config.get("TEMPERATURE", 1))
         }
 
-    def generate_caption(self, summary_content: str) -> str:
+    def generate_caption(self, summary_content: str) -> Dict:
         """Generate caption from input text"""
         payload = self.create_payload(summary_content)
         headers = {
@@ -76,7 +77,7 @@ class CaptionGenerator:
             generated_content = response.json()["choices"][0]["message"]["content"]
 
             # Remove markdown code block markers if present
-            return generated_content.replace("```json", "").replace("```", "").strip()
+            return json.loads(generated_content.replace("```json", "").replace("```", "").strip())
 
         except requests.exceptions.RequestException as e:
             print(f"API request failed: {e}", file=sys.stderr)
