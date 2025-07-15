@@ -45,6 +45,9 @@ FIND_ALTERNATE_IMAGES = config.get('FIND_ALTERNATE_IMAGES', False)
 SERPAPI_API_KEY = config.get('SERP_API_KEY', "")
 SAVE_DIR = config.get('ART_DOWNLOADER_DIR', 'artdownloads')
 
+WIKIMEDIA_SEARCH_API_URL = (
+    "https://api.wikimedia.org/core/v1/commons/search/page"
+)
 SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
 
 def download_from_googlelens(qualified_urls, filename_base):
