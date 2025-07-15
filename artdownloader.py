@@ -29,27 +29,46 @@ from configenv import ConfigEnv
 
 class ArtDownloader:
     """Download artwork images from various sources."""
-    
+
     SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
-    
-    def __init__(self):
+
+    def __init__(self, params=None):
         """Initialize the downloader with configuration."""
         self.config = ConfigEnv()
         self.STOCK_PHOTO_SITES = self.config.get('STOCK_PHOTO_SITES', [])
         self.FIND_ALTERNATE_IMAGES = self.config.get('FIND_ALTERNATE_IMAGES', False)
         self.SERPAPI_API_KEY = self.config.get('SERP_API_KEY', "")
         self.SAVE_DIR = self.config.get('ART_DOWNLOADER_DIR', 'artdownloads')
-        
+
+        # Initialize artwork metadata fields
+        self.title = None
+        self.artist = None
+        self.location = None
+        self.date = None
+        self.style = None
+        self.medium = None
+        self.subject = None
+
+        # Populate from params dictionary if provided
+        if params:
+            self.title = params.get('title')
+            self.artist = params.get('artist')
+            self.location = params.get('location')
+            self.date = params.get('date')
+            self.style = params.get('style')
+            self.medium = params.get('medium')
+            self.subject = params.get('subject')
+
         self.WIKIMEDIA_SEARCH_API_URL = "https://api.wikimedia.org/core/v1/commons/search/page"
         self.WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
-        
+
         # Track downloaded URLs and results
         self.DOWNLOADED_URLS = {}
         self.FOUND_STOCK_PHOTOS = []
         self.WIKIPEDIA_IMAGES = []
         self.GOOGLE_IMAGES = []
         self.DUCKDUCKGO_IMAGES = []
-        
+
         os.makedirs(self.SAVE_DIR, exist_ok=True)
 
     def save_image(self, url, filename):
@@ -522,7 +541,7 @@ class ArtDownloader:
                 if best_result:
                     url, file, score = best_result
                     if "best_result_" in file and self.FIND_ALTERNATE_IMAGES:
-                        qualified_urls = reverse_image_lookup_url(url, title, artist, subject, location, date, style, medium)
+                        qualified_urls = reverse_image_lookup_url(url, self.title, self.artist, self.subject, self.location, self.date, self.style, self.medium)
                         if qualified_urls:
                             best_qualified_result = self.download_from_googlelens(qualified_urls=qualified_urls, filename_base=filename_base)
                             if best_qualified_result:
@@ -555,7 +574,8 @@ def main():
         parser.print_help()
         sys.exit(1)
 
-    downloader = ArtDownloader()
+
+    downloader = ArtDownloader(vars(args))
 
     query = args.query if args.query else ""
     if args.title and args.title not in query:
