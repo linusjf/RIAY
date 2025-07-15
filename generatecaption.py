@@ -10,15 +10,77 @@ Output: JSON caption output to stdout
 
 import os
 import sys
-import json
 import time
 import argparse
-from typing import Optional, Dict, Any
+from typing import Dict, Any
 import requests
 from configenv import ConfigEnv
 
 VERSION = "1.0.0"
 SCRIPT_NAME = os.path.basename(__file__)
+
+class CaptionGenerator:
+    """Class for generating captions from text using LLM APIs"""
+    
+    def __init__(self):
+        self.config = ConfigEnv(include_os_env=True)
+        self._validate_config()
+
+    def _validate_config(self) -> None:
+        """Validate required configuration values"""
+        required_vars = [
+            "TEXT_LLM_MODEL",
+            "TEXT_LLM_API_KEY",
+            "TEXT_LLM_BASE_URL",
+            "TEXT_LLM_CHAT_ENDPOINT",
+            "CAPTION_PROMPT"
+        ]
+        for var in required_vars:
+            if var not in self.config:
+                print(f"Error: Missing required configuration variable: {var}", file=sys.stderr)
+                sys.exit(1)
+
+    def create_payload(self, summary_content: str) -> Dict[str, Any]:
+        """Create the API request payload"""
+        return {
+            "model": self.config["TEXT_LLM_MODEL"],
+            "messages": [
+                {
+                    "role": "system",
+                    "content": self.config["CAPTION_PROMPT"]
+                },
+                {
+                    "role": "user",
+                    "content": summary_content
+                }
+            ],
+            "temperature": float(self.config.get("TEMPERATURE", 1))
+        }
+
+    def generate_caption(self, summary_content: str) -> str:
+        """Generate caption from input text"""
+        payload = self.create_payload(summary_content)
+        headers = {
+            "Authorization": f"Bearer {self.config['TEXT_LLM_API_KEY']}",
+            "Content-Type": "application/json"
+        }
+
+        try:
+            response = requests.post(
+                f"{self.config['TEXT_LLM_BASE_URL']}{self.config['TEXT_LLM_CHAT_ENDPOINT']}",
+                headers=headers,
+                json=payload,
+                timeout=30
+            )
+            response.raise_for_status()
+            generated_content = response.json()["choices"][0]["message"]["content"]
+
+            # Remove markdown code block markers if present
+            return generated_content.replace("```json", "").replace("```", "").strip()
+
+        except requests.exceptions.RequestException as e:
+            print(f"API request failed: {e}", file=sys.stderr)
+            sys.exit(1)
 
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments"""
@@ -38,24 +100,6 @@ def parse_args() -> argparse.Namespace:
     )
     return parser.parse_args()
 
-def create_payload(summary_content: str) -> Dict[str, Any]:
-    """Create the API request payload"""
-    config = ConfigEnv()
-    return {
-        "model": config["TEXT_LLM_MODEL"],
-        "messages": [
-            {
-                "role": "system",
-                "content": config["CAPTION_PROMPT"]
-            },
-            {
-                "role": "user",
-                "content": summary_content
-            }
-        ],
-        "temperature": float(config.get("TEMPERATURE", 1))
-    }
-
 def get_summary_content(args: argparse.Namespace) -> str:
     """Get the input text either from args or stdin"""
     if args.text:
@@ -65,54 +109,15 @@ def get_summary_content(args: argparse.Namespace) -> str:
     print("Error: No input text provided", file=sys.stderr)
     sys.exit(1)
 
-def generate_caption(summary_content: str) -> str:
-    """Generate caption from input text"""
-    config = ConfigEnv()
-    
-    # Check required configuration values
-    required_vars = [
-        "TEXT_LLM_MODEL",
-        "TEXT_LLM_API_KEY",
-        "TEXT_LLM_BASE_URL",
-        "TEXT_LLM_CHAT_ENDPOINT",
-        "CAPTION_PROMPT"
-    ]
-    for var in required_vars:
-        if var not in config:
-            print(f"Error: Missing required configuration variable: {var}", file=sys.stderr)
-            sys.exit(1)
-
-    payload = create_payload(summary_content)
-    headers = {
-        "Authorization": f"Bearer {config['TEXT_LLM_API_KEY']}",
-        "Content-Type": "application/json"
-    }
-
-    try:
-        response = requests.post(
-            f"{config['TEXT_LLM_BASE_URL']}{config['TEXT_LLM_CHAT_ENDPOINT']}",
-            headers=headers,
-            json=payload,
-            timeout=30
-        )
-        response.raise_for_status()
-        generated_content = response.json()["choices"][0]["message"]["content"]
-        
-        # Remove markdown code block markers if present
-        return generated_content.replace("```json", "").replace("```", "").strip()
-
-    except requests.exceptions.RequestException as e:
-        print(f"API request failed: {e}", file=sys.stderr)
-        sys.exit(1)
-
 def main() -> None:
     """Main function"""
     start_time = time.time()
 
     args = parse_args()
     summary_content = get_summary_content(args)
-    
-    caption = generate_caption(summary_content)
+
+    generator = CaptionGenerator()
+    caption = generator.generate_caption(summary_content)
     print(caption)
 
     elapsed_time = time.time() - start_time
