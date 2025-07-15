@@ -28,6 +28,72 @@ import json
 VERSION = "1.0.0"
 
 
+class ImageClassifier:
+    """Class for classifying images by color type."""
+
+    def __init__(self, image_path: str = None):
+        self.image_path = image_path
+        self.result = {
+            "image_color": "unknown",
+            "is_monochrome": False,
+            "is_grayscale": False,
+            "average_rgb": None
+        }
+
+    def is_monochrome(self, image: Image.Image) -> bool:
+        """Check if image has only two distinct grayscale values (likely monochrome)"""
+        gray = image.convert("L")
+        unique_values = np.unique(np.array(gray))
+        return len(unique_values) <= 2
+
+    def is_grayscale(self, image: Image.Image) -> bool:
+        """Check if R == G == B for all pixels"""
+        rgb = image.convert("RGB")
+        data = np.array(rgb)
+        r, g, b = data[..., 0], data[..., 1], data[..., 2]
+        return bool(np.all(r == g) and np.all(g == b))
+
+    def average_rgb(self, image: Image.Image):
+        """Downsample image to 1x1 to get average color"""
+        img = image.convert("RGB").resize((1, 1))
+        return img.getpixel((0, 0))
+
+    def classify(self) -> dict:
+        """Classify image and return results as dictionary."""
+        if not self.image_path:
+            return {"error": "No image path provided"}
+
+        try:
+            img = Image.open(self.image_path)
+        except Exception as e:
+            return {"error": f"Unable to open image: {e}"}
+
+        if self.is_grayscale(img):
+            self.result["is_grayscale"] = True
+            if self.is_monochrome(img):
+                self.result["image_color"] = "Monochrome"
+                self.result["is_monochrome"] = True
+            else:
+                self.result["image_color"] = "Grayscale"
+        else:
+            avg_color = self.average_rgb(img)
+            if isinstance(avg_color, tuple) and len(avg_color) == 3:
+                r, g, b = avg_color
+                self.result["average_rgb"] = {"r": r, "g": g, "b": b}
+
+                rg_diff = abs(r - g)
+                gb_diff = abs(g - b)
+
+                if rg_diff < 5 and gb_diff < 5:
+                    self.result["image_color"] = "Grayscale"
+                elif r > g > b and (r - b) > 30:
+                    self.result["image_color"] = "Sepia"
+                else:
+                    self.result["image_color"] = "Color"
+
+        return self.result
+
+
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Classify image as monochrome, grayscale, sepia or full color"
@@ -35,67 +101,6 @@ def parse_args():
     parser.add_argument("image_file", help="Path to the image file")
     parser.add_argument("-v", "--version", action="version", version=VERSION)
     return parser.parse_args()
-
-
-def is_monochrome(image: Image.Image) -> bool:
-    """Check if image has only two distinct grayscale values (likely monochrome)"""
-    gray = image.convert("L")
-    unique_values = np.unique(np.array(gray))
-    return len(unique_values) <= 2
-
-
-def is_grayscale(image: Image.Image) -> bool:
-    """Check if R == G == B for all pixels"""
-    rgb = image.convert("RGB")
-    data = np.array(rgb)
-    r, g, b = data[..., 0], data[..., 1], data[..., 2]
-    return bool(np.all(r == g) and np.all(g == b))
-
-
-def average_rgb(image: Image.Image):
-    """Downsample image to 1x1 to get average color"""
-    img = image.convert("RGB").resize((1, 1))
-    return img.getpixel((0, 0))
-
-
-def classify_image(image_path: str) -> dict:
-    """Classify image and return results as dictionary."""
-    try:
-        img = Image.open(image_path)
-    except Exception as e:
-        return {"error": f"Unable to open image: {e}"}
-
-    result = {
-        "image_color": "unknown",
-        "is_monochrome": False,
-        "is_grayscale": False,
-        "average_rgb": None
-    }
-
-    if is_grayscale(img):
-        result["is_grayscale"] = True
-        if is_monochrome(img):
-            result["image_color"] = "Monochrome"
-            result["is_monochrome"] = True
-        else:
-            result["image_color"] = "Grayscale"
-    else:
-        avg_color = average_rgb(img)
-        if isinstance(avg_color, tuple) and len(avg_color) == 3:
-            r, g, b =  avg_color
-            result["average_rgb"] = {"r": r, "g": g, "b": b}
-
-            rg_diff = abs(r - g)
-            gb_diff = abs(g - b)
-
-            if rg_diff < 5 and gb_diff < 5:
-                result["image_color"] = "Grayscale"
-            elif r > g > b and (r - b) > 30:
-                result["image_color"] = "Sepia"
-            else:
-                result["image_color"] = "Color"
-
-    return result
 
 
 def main():
@@ -106,7 +111,8 @@ def main():
         print(f"❌ File not found: {image_path}", file=sys.stderr)
         sys.exit(1)
 
-    result = classify_image(image_path)
+    classifier = ImageClassifier(image_path)
+    result = classifier.classify()
     print(json.dumps(result, indent=2))
 
 
