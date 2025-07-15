@@ -8,7 +8,7 @@ import json
 import sys
 from pathlib import Path
 
-from classifyimage import classify_image
+from classifyimage import ImageClassifier
 from detectwatermark import WatermarkDetector
 from reverseimagelookup import match_reverse_lookup
 from simtools import THRESHOLDS
@@ -45,8 +45,9 @@ def main():
         sys.exit(1)
 
     try:
-        # 1. Classify the image
-        classification = classify_image(image_path)
+        # 1. Classify the image using ImageClassifier
+        classifier = ImageClassifier(image_path)
+        classification = classifier.classify()
 
         # 2. Detect watermarks using WatermarkDetector
         detector = WatermarkDetector()
