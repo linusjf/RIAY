@@ -1,150 +1,114 @@
-#!/usr/bin/env bash
-#
-# Generate captions from text summaries using Text LLM APIs
-#
-# Usage: generatecaption /path/to/DayXXXSummary.txt
-#        or
-#        cat summary.txt | generatecaption
-# Output: Creates /path/to/DayXXXCaption.json
+#!/usr/bin/env python3
+"""
+Generate captions from text summaries using Text LLM APIs
 
-set -euo pipefail
-shopt -s inherit_errexit
+Usage: generatecaption.py "Text to summarize"
+       or
+       echo "Text to summarize" | generatecaption.py
+Output: JSON caption output to stdout
+"""
 
-readonly VERSION="1.0.0"
-readonly SCRIPT_NAME="$(basename "$0")"
+import os
+import sys
+import json
+import time
+import argparse
+from typing import Optional, Dict, Any
+import requests
 
-# Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
-source "${SCRIPT_DIR}/lib/require.sh"
-source "${SCRIPT_DIR}/lib/internet.sh"
-source "${SCRIPT_DIR}/lib/util.sh"
-source "${SCRIPT_DIR}/lib/curl.sh"
-source "${SCRIPT_DIR}/lib/lockconfig.sh"
-lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
+VERSION = "1.0.0"
+SCRIPT_NAME = os.path.basename(__file__)
 
-function usage() {
-  local exit_code=${1:-0}
-  local output_stream
-  [[ $exit_code -eq 0 ]] && output_stream=1 || output_stream=2
+def parse_args() -> argparse.Namespace:
+    """Parse command line arguments"""
+    parser = argparse.ArgumentParser(
+        description="Generate caption JSON from text using Text LLM APIs",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+    parser.add_argument(
+        "text",
+        nargs="?",
+        help="Text to generate caption from (or read from stdin if not provided)",
+    )
+    parser.add_argument(
+        "-v", "--version",
+        action="version",
+        version=f"%(prog)s {VERSION}"
+    )
+    return parser.parse_args()
 
-  cat >&$output_stream << EOF
-Usage: ${SCRIPT_NAME} [INPUT_FILE]
+def create_payload(summary_content: str) -> Dict[str, Any]:
+    """Create the API request payload"""
+    return {
+        "model": os.environ["TEXT_LLM_MODEL"],
+        "messages": [
+            {
+                "role": "system",
+                "content": os.environ["CAPTION_PROMPT"]
+            },
+            {
+                "role": "user",
+                "content": summary_content
+            }
+        ],
+        "temperature": float(os.environ.get("TEMPERATURE", 1))
+    }
 
-Generates caption JSON from a text file usually a summary using Text LLM APIs and outputs it to stdout.
-If no INPUT_FILE is provided, reads from stdin.
+def get_summary_content(args: argparse.Namespace) -> str:
+    """Get the input text either from args or stdin"""
+    if args.text:
+        return args.text
+    if not sys.stdin.isatty():
+        return sys.stdin.read().strip()
+    print("Error: No input text provided", file=sys.stderr)
+    sys.exit(1)
 
-Arguments:
-  INPUT_FILE    Path to input file (optional, defaults to stdin)
+def main() -> None:
+    """Main function"""
+    start_time = time.time()
 
-Environment variables required:
-  TEXT_LLM_API_KEY           API key for LLM service
-  TEXT_LLM_MODEL             text llm model
-  TEXT_LLM_BASE_URL           text llm base url
-  TEXT_LLM_CHAT_ENDPOINT      text llm chat endpoint
-  CAPTION_PROMPT             System prompt for caption generation
-  TEMPERATURE                Creativity parameter (0-2)
+    # Check required environment variables
+    required_vars = [
+        "TEXT_LLM_MODEL",
+        "TEXT_LLM_API_KEY",
+        "TEXT_LLM_BASE_URL",
+        "TEXT_LLM_CHAT_ENDPOINT",
+        "CAPTION_PROMPT"
+    ]
+    for var in required_vars:
+        if var not in os.environ:
+            print(f"Error: Missing required environment variable: {var}", file=sys.stderr)
+            sys.exit(1)
 
-Examples:
-  ${SCRIPT_NAME} /path/to/input.txt
-  cat input.txt | ${SCRIPT_NAME}
-  TEXT_LLM_API_KEY=abc123 ${SCRIPT_NAME} < input.txt
-EOF
+    args = parse_args()
+    summary_content = get_summary_content(args)
 
-  exit "$exit_code"
-}
+    payload = create_payload(summary_content)
+    headers = {
+        "Authorization": f"Bearer {os.environ['TEXT_LLM_API_KEY']}",
+        "Content-Type": "application/json"
+    }
 
-function version() {
-  printf "%s\n" "$VERSION"
-}
+    try:
+        response = requests.post(
+            f"{os.environ['TEXT_LLM_BASE_URL']}{os.environ['TEXT_LLM_CHAT_ENDPOINT']}",
+            headers=headers,
+            json=payload,
+            timeout=30
+        )
+        response.raise_for_status()
+        generated_content = response.json()["choices"][0]["message"]["content"]
+        
+        # Remove markdown code block markers if present
+        cleaned_content = generated_content.replace("```json", "").replace("```", "").strip()
+        print(cleaned_content)
 
-function create_payload() {
-  local summary_content="$1"
-  local meta_prompt
-  meta_prompt="$(jq -Rs <<< "$CAPTION_PROMPT")"
+    except requests.exceptions.RequestException as e:
+        print(f"API request failed: {e}", file=sys.stderr)
+        sys.exit(1)
 
-  jq -n \
-    --arg system "$meta_prompt" \
-    --arg content "$summary_content" \
-    --arg model "$TEXT_LLM_MODEL" \
-    --argjson temperature "${TEMPERATURE:-1}" \
-    '{
-      "model": $model,
-      "messages": [
-        {
-          "role": "system",
-          "content": $system
-        },
-        {
-          "role": "user",
-          "content": $content
-        }
-      ],
-      "temperature": $temperature
-    }'
-}
+    elapsed_time = time.time() - start_time
+    print(f"Generated caption in {elapsed_time:.2f} seconds", file=sys.stderr)
 
-function main() {
-  local start_time
-  start_time=$(date +%s.%N)
-
-  while [[ $# -gt 0 ]]; do
-    case "${1:-}" in
-      -h | --help) usage 0 ;;
-      -v | --version)
-        version
-        exit 0
-        ;;
-      --)
-        shift
-        break
-        ;;
-      -*) usage 1 ;;
-      *) break ;;
-    esac
-  done
-
-  local summary_content
-  local payload
-  local response
-  local generated_content
-
-  if [[ $# -gt 0 ]]; then
-    [[ -f "$1" ]] || die "Error: Input file '$1' not found"
-    summary_content="$(< "$1")"
-  else
-    summary_content="$(cat -)"
-  fi
-
-  payload="$(create_payload "$summary_content")"
-
-  response="$(
-    curl::request \
-      "${TEXT_LLM_BASE_URL}${TEXT_LLM_CHAT_ENDPOINT}" \
-      "POST" \
-      --header "Authorization: Bearer ${TEXT_LLM_API_KEY}" \
-      --header "Content-Type: application/json" \
-      --data "$payload"
-  )"
-
-  generated_content="$(echo "$response" | jq -r '.choices[0].message.content')"
-  echo "$generated_content" | sed -E '/^```(json)?[[:space:]]*$/d'
-
-  local end_time
-  end_time=$(date +%s.%N)
-  local elapsed_time
-  elapsed_time=$(echo "$end_time - $start_time" | bc)
-  printf "Generated caption in %.2f seconds\n" "$elapsed_time" >&2
-}
-
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require_commands jq tee cat bc
-  require_vars TEXT_LLM_MODEL TEXT_LLM_API_KEY TEXT_LLM_BASE_URL TEXT_LLM_CHAT_ENDPOINT
-  if "${LOGGING:-false}"; then
-    timestamp=$(date +"%Y%m%d_%H%M%S")
-    {
-      main "$@" 2> >(tee -a "${SCRIPT_NAME%.*}_${timestamp}.stderr.log" >&2)
-    } | tee -a "${SCRIPT_NAME%.*}_${timestamp}.stdout.log"
-  else
-    main "$@"
-  fi
-fi
+if __name__ == "__main__":
+    main()
