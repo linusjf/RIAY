@@ -5,7 +5,6 @@ Match image to metadata by combining classification, watermark detection and rev
 
 import argparse
 import json
-import os
 import sys
 from pathlib import Path
 
