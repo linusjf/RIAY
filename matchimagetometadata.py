@@ -68,11 +68,7 @@ def main():
         )
 
         captioner = CaptionGenerator()
-        caption = {}
-        if lookup.match_text:
-            caption = captioner.generate_caption(lookup.match_text)
-        else:
-            caption = captioner.generate_caption(" ".join([str(v) for v in [args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium] if not v]))
+        caption = captioner.generate_caption(" ".join([str(v) for v in [args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium] if not v]))
         # Combine all results
         result = classification | watermark | caption
         result["cosine_score"] = score

@@ -102,20 +102,28 @@ class ReverseImageLookup:
             organic_results = reverse_image_results.get("organic")
             if not organic_results:
                 return 0.0
-            first_match = organic_results[0]
-            title = first_match["title"]
-            url = first_match["url"]
-            destination = first_match["destination"]
-            description = first_match["description"]
-            self.match_text = ", ".join(filter(None, [
-                title,
-                clean_filename_text(url),
-                destination,
-                description
-            ]))
-            score = compare_terms(metadata_text, self.match_text, MatchMode.COSINE)
-            print(f"Matched: {image_url} —> {url}", file=sys.stderr)
-            return score
+            best_score = 0.0
+            best_match = {}
+            for organic_result in organic_results:
+                match = organic_result
+                title = match["title"]
+                url = match["url"]
+                destination = match["destination"]
+                description = match["description"]
+                match_text = ", ".join(filter(None, [
+                    title,
+                    clean_filename_text(url),
+                    destination,
+                    description
+                    ]))
+                score = compare_terms(metadata_text, match_text, MatchMode.COSINE)
+                if score > best_score:
+                    best_score = score
+                    best_match = match
+                    self.match_text = match_text
+
+            print(f"Matched: {image_url} —> {best_match["url"]}", file=sys.stderr)
+            return best_score
 
     def reverse_image_search(self, image_url, metadata_text):
         """Perform reverse image search and return qualifying URLs."""
