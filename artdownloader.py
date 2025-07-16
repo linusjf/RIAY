@@ -23,7 +23,7 @@ from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, e
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
 from simtools import compare_terms, MatchMode
-from reverseimagelookup import reverse_image_lookup_url
+from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
 
 class ArtDownloader:
@@ -543,7 +543,8 @@ class ArtDownloader:
                 if best_result:
                     url, file, score = best_result
                     if "best_result_" in file and self.FIND_ALTERNATE_IMAGES:
-                        qualified_urls = reverse_image_lookup_url(url, self.title, self.artist, self.subject, self.location, self.date, self.style, self.medium)
+                        lookup = ReverseImageLookup()
+                        qualified_urls = lookup.reverse_image_lookup_url(url, self.title, self.artist, self.subject, self.location, self.date, self.style, self.medium)
                         if qualified_urls:
                             best_qualified_result = self.download_from_googlelens(qualified_urls=qualified_urls, filename_base=self.filename_base)
                             if best_qualified_result:

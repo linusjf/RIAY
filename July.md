@@ -65,6 +65,7 @@
 - [July 16, 2025](#july-16-2025)
   - [Mystery of Light](#mystery-of-light)
   - [AI-Generated Summary: The Light That Comes From Within](#ai-generated-summary-the-light-that-comes-from-within)
+  - [The Transfiguration by Raphael depicts Christ with Moses and Elijah](#the-transfiguration-by-raphael-depicts-christ-with-moses-and-elijah)
 
 <!-- tocstop -->
 
@@ -397,3 +398,7 @@ Consider Rembrandt’s _Christ in the Storm on the Sea of Galilee_: the waves ra
 You will recall how Moses, ascending Sinai, was met with a cloud and a radiance not his own—his face shone, but only as the moon reflects the sun. Yet when our Lord was transfigured, the light came not upon Him, but from Him, as though the sun itself had stepped onto the mountain. Here, at last, was the fulfillment of all those shadows: the Law and the Prophets, represented by Moses and Elijah, bowed to Him who was their meaning. Then they vanished, leaving Christ alone—as He must always be, the center and source.
 
 The world, like Times Square, dazzles us with artificial lights, crowding out the stars. But climb the mountain, and you will see true glory: not in noise, but in silence; not in clamor, but in solitude. Raphael, that master of divine harmony, painted it just so—earth’s confusion at the base, heaven’s clarity above. Yet remember: we are not meant to linger there. Like the apostles, we descend, carrying the light within us, step by step, into the valley where duty calls. Grace is given not for our delight alone, but for our strengthening. The mountaintop is but a glimpse; the road lies always onward.
+
+### The Transfiguration by Raphael depicts Christ with Moses and Elijah
+
+[![The Transfiguration by Raphael depicts Christ with Moses and Elijah](July/jpgs/transfigurationraphael.jpg)](https://upload.wikimedia.org/wikipedia/commons/5/5b/The_Transfiguration_of_Christ.16th_c.jpg "The Transfiguration by Raphael depicts Christ with Moses and Elijah")
