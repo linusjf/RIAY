@@ -494,10 +494,9 @@ class ArtDownloader:
         print(f"\n🔍 Searching google and duckduckgo with enhanced query: {enhanced_query}", file=sys.stderr)
 
         downloaded_duckduckgo = self.download_from_duckduckgo(enhanced_query, self.filename_base)
-        #downloaded_google = self.download_from_google(enhanced_query, self.filename_base)
+        downloaded_google = self.download_from_google(enhanced_query, self.filename_base)
 
-        #return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
-        return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search)
+        return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
 
 
     def print_results(self):
