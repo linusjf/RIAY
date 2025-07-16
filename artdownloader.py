@@ -234,12 +234,12 @@ class ArtDownloader:
                 titlesnippet = strip_span_tags_but_keep_contents(result["titlesnippet"])
                 snippet = strip_span_tags_but_keep_contents(result["snippet"])
                 result_meta_data = " ".join(str(p) for p in [title, titlesnippet, snippet] if p is not None)
-                score = compare_terms(detailed_query.lower(), result_meta_data.lower(), MatchMode.HYBRID)
-                if score >= 50.0:
+                score = compare_terms(detailed_query.lower(), result_meta_data.lower(), MatchMode.COSINE)
+                if score >= 0.7:
                     qualifying_results.append((result, score))
 
             if not qualifying_results:
-                print("❌ No qualifying results found (score >= 50.0)", file=sys.stderr)
+                print("❌ No qualifying results found (score >= 0.7)", file=sys.stderr)
                 return False
 
             success = False
@@ -297,16 +297,16 @@ class ArtDownloader:
                 excerpt = strip_span_tags_but_keep_contents(page.get("excerpt", ""))
                 description = page.get("description", "")
                 page_meta_data = " ".join(str(p) for p in [key, title, excerpt, description] if p is not None)
-                score = compare_terms(detailed_query.lower(), page_meta_data.lower(), MatchMode.HYBRID)
+                score = compare_terms(detailed_query.lower(), page_meta_data.lower(), MatchMode.COSINE)
 
-                if score >= 50.0:
+                if score >= 0.7:
                     print(f"✅ Qualified page {idx+1}: {title} (score: {score:.3f})", file=sys.stderr)
                     qualifying_pages.append((title, score))
                 else:
                     print(f"❌ Excluded page {idx+1}: {title} (score: {score:.3f})")
 
             if not qualifying_pages:
-                print("❌ No qualifying pages found (score >= 50.0)", file=sys.stderr)
+                print("❌ No qualifying pages found (score >= 0.7)", file=sys.stderr)
                 return False
 
             success = False
@@ -343,16 +343,16 @@ class ArtDownloader:
                 excerpt = strip_span_tags_but_keep_contents(page.get("excerpt", ""))
                 description = page.get("description", "")
                 page_meta_data = " ".join(str(p) for p in [key, title, excerpt, description] if p is not None)
-                score = compare_terms(enhanced_query.lower(), page_meta_data.lower(), MatchMode.HYBRID)
+                score = compare_terms(enhanced_query.lower(), page_meta_data.lower(), MatchMode.COSINE)
 
-                if score >= 50.0:
+                if score >= 0.7:
                     print(f"✅ Qualified file {idx+1}: {file} (score: {score:.3f})", file=sys.stderr)
                     qualifying_pages.append((file, score))
                 else:
                     print(f"❌ Excluded file {idx+1}: {file} (score: {score:.3f})", file=sys.stderr)
 
             if not qualifying_pages:
-                print("❌ No qualifying files found (score >= 50.0)", file=sys.stderr)
+                print("❌ No qualifying files found (score >= 0.7)", file=sys.stderr)
                 return False
 
             success = False

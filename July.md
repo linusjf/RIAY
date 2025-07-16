@@ -401,4 +401,4 @@ The world, like Times Square, dazzles us with artificial lights, crowding out th
 
 ### The Transfiguration by Raphael depicts Christ with Moses and Elijah
 
-[![The Transfiguration by Raphael depicts Christ with Moses and Elijah](July/jpgs/transfigurationraphael.jpg)](https://upload.wikimedia.org/wikipedia/commons/5/51/Transfiguration_Raphael.jpg "The Transfiguration by Raphael depicts Christ with Moses and Elijah")
+[![The Transfiguration by Raphael depicts Christ with Moses and Elijah](July/jpgs/transfigurationraphael.jpg)](https://upload.wikimedia.org/wikipedia/commons/b/b5/Transfigurazione_%28Raffaello%29_September_2015-1a.jpg "The Transfiguration by Raphael depicts Christ with Moses and Elijah")
