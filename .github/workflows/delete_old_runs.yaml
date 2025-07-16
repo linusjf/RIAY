@@ -16,7 +16,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const retentionDays = 7; // adjust as needed
+            const retentionDays = 1; // adjust as needed
             const workflows = await github.rest.actions.listRepoWorkflows({
               owner: context.repo.owner,
               repo: context.repo.repo
