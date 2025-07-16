@@ -19,7 +19,7 @@ from duckduckgo_search import DDGS
 from duckduckgo_search.exceptions import RatelimitException
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 from serpapi import GoogleSearch
-from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, extract_domain_from_url
+from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, extract_domain_from_url, clean_filename
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
 from simtools import compare_terms, MatchMode
@@ -228,10 +228,9 @@ class ArtDownloader:
             if not search_results:
                 print("❌ No matching images found.", file=sys.stderr)
                 return False
-
             qualifying_results = []
             for result in search_results:
-                title = result["title"]
+                title = clean_filename(result["title"])
                 titlesnippet = strip_span_tags_but_keep_contents(result["titlesnippet"])
                 snippet = strip_span_tags_but_keep_contents(result["snippet"])
                 result_meta_data = " ".join(str(p) for p in [title, titlesnippet, snippet] if p is not None)
@@ -495,9 +494,10 @@ class ArtDownloader:
         print(f"\n🔍 Searching google and duckduckgo with enhanced query: {enhanced_query}", file=sys.stderr)
 
         downloaded_duckduckgo = self.download_from_duckduckgo(enhanced_query, self.filename_base)
-        downloaded_google = self.download_from_google(enhanced_query, self.filename_base)
+        #downloaded_google = self.download_from_google(enhanced_query, self.filename_base)
 
-        return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
+        #return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
+        return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search)
 
 
     def print_results(self):

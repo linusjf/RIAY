@@ -1,5 +1,16 @@
 import re
 from urllib.parse import urlparse
+import os
+
+def clean_filename(filename: str) -> str:
+    # Remove "File:" prefix and file extension
+    base = os.path.splitext(filename.replace("File:", "", 1))[0]
+    # Remove commas, semicolons, and parentheses
+    base = re.sub(r"[(),;]", "", base)
+    # Replace multiple spaces or underscores with a single space
+    base = re.sub(r"[_\s]+", " ", base).strip()
+    return base
+
 
 def strip_span_tags_but_keep_contents(text):
     """Remove HTML span tags while preserving their contents.
