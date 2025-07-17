@@ -94,7 +94,7 @@ function parse_artdownloader_output() {
 
 function verify_image() {
   local file="${1:-}"
-  local verifier="verifyartimage.py"
+  local verifier="${ART_VERIFIER_SCRIPT}"
   local exitcode=0
 
   if [ -z "${file:-}" ]; then
@@ -166,7 +166,7 @@ function main() {
   local day_num=$1
   local month day_string summary_file
 
-  require_vars YEAR ART_DOWNLOADER_DIR VERIFY_ART_IMAGES IMAGE_CONTENT_VALIDATION || exit $E_MISSING_ENV
+  require_vars YEAR ART_DOWNLOADER_DIR VERIFY_ART_IMAGES IMAGE_CONTENT_VALIDATION ART_VERIFIER_SCRIPT || exit $E_MISSING_ENV
 
   internet::checkinternet || exit $E_NO_INTERNET
   printf -v day_string "Day%03d" "$day_num"
