@@ -28,7 +28,11 @@ trap_exit() {
   local exitcode="$?"
   local end_time=$(date +%s)
   local duration=$((end_time - start_time))
-  echo "Added video in ${duration} seconds." >&2
+  if [[ $exitcode == 0 ]]; then
+    echo "Added video in ${duration} seconds." >&2
+  else
+    echo "Adding video failed. Time taken: ${duration} seconds." >&2
+  fi
   exit $exitcode
 }
 
