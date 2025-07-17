@@ -1,4 +1,5 @@
 # commands
-addvideo "P1YxtsNpLJA" "The Love of Jesus"
+embedarttoday 198
+#addvideo "P1YxtsNpLJA" "The Love of Jesus"
 stitch
 lintall
