@@ -28,3 +28,4 @@ testsummary.txt
 !**/Day*Summary.txt
 *.url
 *.url.txt
+!deps.txt
