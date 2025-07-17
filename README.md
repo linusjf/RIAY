@@ -5854,7 +5854,7 @@ Love, as we know, is never content with mere words or distant admiration—it la
 
 And what does He offer? Himself, wholly. Not as a king demanding tribute, but as a lover, burning with desire both to give and to receive. In this sacred exchange, we find the very heart of devotion: He gives that we might take, and takes that we might give again.
 
-As for _The Last Supper_ by Jacopo Raphaeli, observe how the mosaic captures not the agitation of betrayal’s shadow, but the calm of One who, though foreseeing the cross, rests in the Father’s will. Here is no dread, but quiet certainty—the peace of He who knows that love’s victory is already written.
+As for _The Last Supper_ by Giacomo Raphaeli, observe how the mosaic captures not the agitation of betrayal’s shadow, but the calm of One who, though foreseeing the cross, rests in the Father’s will. Here is no dread, but quiet certainty—the peace of He who knows that love’s victory is already written.
 
 Thus, in sacrament and art alike, we glimpse the same truth: love is ever inventive, ever near, and ever sure.
 
