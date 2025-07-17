@@ -338,8 +338,8 @@ class ArtDownloader:
                 return False
             for idx, page in enumerate(pages[0:5]):
                 file = page.get("key")
-                key = page.get("key", "")
-                title = page.get("title", "")
+                key = clean_filename_text(clean_filename(page.get("key")))
+                title = clean_filename_text(clean_filename(page.get("title", "")))
                 excerpt = strip_span_tags_but_keep_contents(page.get("excerpt", ""))
                 description = page.get("description", "")
                 page_meta_data = " ".join(str(p) for p in [key, title, excerpt, description] if p is not None)
