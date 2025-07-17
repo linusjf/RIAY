@@ -66,6 +66,9 @@
   - [Mystery of Light](#mystery-of-light)
   - [AI-Generated Summary: The Light That Comes From Within](#ai-generated-summary-the-light-that-comes-from-within)
   - [The Transfiguration by Raphael depicts Christ with Moses and Elijah](#the-transfiguration-by-raphael-depicts-christ-with-moses-and-elijah)
+- [July 17, 2025](#july-17-2025)
+  - [The Love of Jesus](#the-love-of-jesus)
+  - [AI-Generated Summary: The Divine Ingenuity of Love](#ai-generated-summary-the-divine-ingenuity-of-love)
 
 <!-- tocstop -->
 
@@ -402,3 +405,19 @@ The world, like Times Square, dazzles us with artificial lights, crowding out th
 ### The Transfiguration by Raphael depicts Christ with Moses and Elijah
 
 [![The Transfiguration by Raphael depicts Christ with Moses and Elijah](July/jpgs/transfigurationraphael.jpg)](https://upload.wikimedia.org/wikipedia/commons/b/b5/Transfigurazione_%28Raffaello%29_September_2015-1a.jpg "The Transfiguration by Raphael depicts Christ with Moses and Elijah")
+
+## July 17, 2025
+
+### The Love of Jesus
+
+[![The Love of Jesus](/July/jpgs/Day198.jpg)](https://youtu.be/P1YxtsNpLJA "The Love of Jesus")
+
+### AI-Generated Summary: The Divine Ingenuity of Love
+
+Love, as we know, is never content with mere words or distant admiration—it labors, invents, and contrives ways to be near the beloved. So it is with God, whose love for us is no passive affection but a fire that forges means of presence. Consider the Eucharist: here the Maker of all things, with a creativity only love could inspire, gives Himself not in one place or time alone, but in prisons, on mountaintops, in humble homes—wherever a soul hungers for Him.
+
+And what does He offer? Himself, wholly. Not as a king demanding tribute, but as a lover, burning with desire both to give and to receive. In this sacred exchange, we find the very heart of devotion: He gives that we might take, and takes that we might give again.
+
+As for _The Last Supper_ by Jacopo Raphaeli, observe how the mosaic captures not the agitation of betrayal’s shadow, but the calm of One who, though foreseeing the cross, rests in the Father’s will. Here is no dread, but quiet certainty—the peace of He who knows that love’s victory is already written.
+
+Thus, in sacrament and art alike, we glimpse the same truth: love is ever inventive, ever near, and ever sure.
