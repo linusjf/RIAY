@@ -90,6 +90,12 @@ class ArtDownloader:
                 print(f"❌ Error copying existing file: {e}", file=sys.stderr)
                 return False
 
+        # Check for PDF extension and reject
+        ext = os.path.splitext(url)[1].lower()
+        if ext == '.pdf':
+            print(f"❌ PDF files not supported: {url}", file=sys.stderr)
+            return False
+
         try:
             session = create_session_with_retries()
             headers = {
