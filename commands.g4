@@ -26,6 +26,8 @@ addimgtoday: 'addimgtoday' imagepath caption dayofyear;
 imagepath: STRING;
 caption: STRING;
 
+embedarttoday: 'embedarttoday' dayofyear;
+
 STRING: '"' .*? '"';
 YEAR: [2][0-9][0-9][0-9];
 MONTH: '1' '0'..'2' | '0' '1'..'9' | '1'..'9';

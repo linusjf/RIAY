@@ -84,6 +84,13 @@ class Commands(commandsListener):
         path_to_md = ctx.pathtomdfile().getText().strip('"')
         self._execute_command([rule_name, path_to_md])
 
+    def enterEmbedarttoday(self, ctx:commandsParser.EmbedarttodayContext):
+        """Process Embedarttoday command."""
+        rule_name = self._get_rule_name(ctx)
+        day_of_year = int(ctx.dayofyear().getText())
+        print(f"Embedding art to day {day_of_year}.")
+        self._execute_command([rule_name, str(day_of_year)])
+
     def _get_rule_name(self, ctx) -> str:
         """Get the name of the current rule being processed.
 

@@ -161,5 +161,14 @@ class commandsListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by commandsParser#embedarttoday.
+    def enterEmbedarttoday(self, ctx:commandsParser.EmbedarttodayContext):
+        pass
+
+    # Exit a parse tree produced by commandsParser#embedarttoday.
+    def exitEmbedarttoday(self, ctx:commandsParser.EmbedarttodayContext):
+        pass
+
+
 
 del commandsParser
