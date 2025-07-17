@@ -69,7 +69,7 @@
 - [July 17, 2025](#july-17-2025)
   - [The Love of Jesus](#the-love-of-jesus)
   - [AI-Generated Summary: The Divine Ingenuity of Love](#ai-generated-summary-the-divine-ingenuity-of-love)
-  - [The Last Supper by Jacopo Raphaeli, a mosaic depicting Christ's calm before the cross](#the-last-supper-by-jacopo-raphaeli-a-mosaic-depicting-christs-calm-before-the-cross)
+  - [The Last Supper by Giacomo Raphaeli, a mosaic depicting Christ's calm before the cross](#the-last-supper-by-giacomo-raphaeli-a-mosaic-depicting-christs-calm-before-the-cross)
 
 <!-- tocstop -->
 
@@ -423,6 +423,6 @@ As for _The Last Supper_ by Giacomo Raphaeli, observe how the mosaic captures no
 
 Thus, in sacrament and art alike, we glimpse the same truth: love is ever inventive, ever near, and ever sure.
 
-### The Last Supper by Jacopo Raphaeli, a mosaic depicting Christ's calm before the cross
+### The Last Supper by Giacomo Raphaeli, a mosaic depicting Christ's calm before the cross
 
-[![The Last Supper by Jacopo Raphaeli, a mosaic depicting Christ's calm before the cross](July/jpgs/thelastsupperjacoporaphaeli.jpg)](https://cdn.mosaicnatural.com/pictures/1200/9667e0d25a194e77949db2445ee93487.jpg?v "The Last Supper by Jacopo Raphaeli, a mosaic depicting Christ's calm before the cross")
+[![The Last Supper by Giacomo Raphaeli, a mosaic depicting Christ's calm before the cross](July/jpgs/thelastsupperjacoporaphaeli.jpg)](https://cdn.mosaicnatural.com/pictures/1200/9667e0d25a194e77949db2445ee93487.jpg?v "The Last Supper by Giacomo Raphaeli, a mosaic depicting Christ's calm before the cross")
