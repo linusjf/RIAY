@@ -7,4 +7,6 @@
 
 ## Bugs/Issues
 
+1. Update documentation.
+
 ## Exploratory tasks
