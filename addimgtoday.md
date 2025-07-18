@@ -1,10 +1,14 @@
 # addimgtoday - Image Markdown Appender
 
-## Description
+**Description**
+
+---
 
 A bash script that appends image markdown to a specified daily markdown file. It validates inputs, resolves paths, and formats the markdown output.
 
-## Features
+**Features**
+
+---
 
 - Validates image path and format (JPEG only)
 - Checks day number validity (1-366)
@@ -13,13 +17,19 @@ A bash script that appends image markdown to a specified daily markdown file. It
 - Supports logging to files
 - Includes error handling and usage documentation
 
-## Requirements
+**Requirements**
+
+---
 
 - Bash 4.0+
 - Core utilities: realpath, date, cat, tee
 - Configuration via config.env
 - Common functions from lib/ directory
 
-## Usage
+**Usage**
 
-### Basic Syntax
+---
+
+**Basic Syntax**
+
+---
