@@ -13,6 +13,10 @@
     - [API Request Settings](#api-request-settings)
     - [AI Model Settings](#ai-model-settings)
     - [Content Documentation Settings](#content-documentation-settings)
+    - [Transcription Settings](#transcription-settings)
+    - [YouTube Settings](#youtube-settings)
+    - [Image Generation Settings](#image-generation-settings)
+    - [Art Downloader Settings](#art-downloader-settings)
   - [Vale](#vale)
 - [Add the daily Youtube video](#add-the-daily-youtube-video)
 - [Add additional Youtube video to a day](#add-additional-youtube-video-to-a-day)
@@ -95,6 +99,12 @@ Note: You can do all this by simply executing the script `setup`.
    Substitute your DeepSeek API Key which can access YouTube Data API.
    Set up your API key using instructions at <https://docs.aicontentlabs.com/articles/deepseek-api-key/>
 
+1. Export environment variable `DEEPINFRA_TOKEN` by adding the following line to `.bash_profile`.
+
+   ```bash
+   export DEEPINFRA_TOKEN=<api_key>
+   ```
+
 **Note:** You will need to set up either DeepSeek or Gemini API keys for AI-generation of podcast summaries.
 
 ### Configuration
@@ -149,6 +159,47 @@ CURL_CONNECT_TIMEOUT=30
 CURL_MAX_TIME=90
 ```
 
+#### Transcription Settings
+
+```bash
+# Whether to transcribe videos
+TRANSCRIBE_VIDEOS=false
+# Whether to transcribe locally
+TRANSCRIBE_LOCALLY=false
+# Whether to use faster-whisper python library
+USE_FASTER_WHISPER=true
+# Whether to enable failover mode
+ENABLE_FAILOVER_MODE=true
+
+# ASR API KEY
+ASR_LLM_API_KEY="$DEEPINFRA_TOKEN"
+# ASR LLM base url
+ASR_LLM_BASE_URL="https://api.deepinfra.com/v1"
+# ASR LLM endpoint
+ASR_LLM_ENDPOINT="/openai/audio/transcriptions"
+# ASR LLM model
+ASR_LLM_MODEL="openai/whisper-large-v3"
+# ASR local model
+ASR_LOCAL_MODEL="small"
+# Initial prompt for whisper
+ASR_INITIAL_PROMPT="In Ascension Press' Rosary in a Year podcast, Fr. Mark-Mary Ames meditates with sacred art, saint writings, and scripture. Poco a poco."
+# Whether to carry initial prompt
+ASR_CARRY_INITIAL_PROMPT=true
+# Beam size for ASR
+ASR_BEAM_SIZE=5
+```
+
+#### YouTube Settings
+
+```bash
+# Number of retries for yt-dlp
+YT_DLP_RETRIES=20
+# Timeout for yt-dlp (seconds)
+YT_DLP_SOCKET_TIMEOUT=30
+# Captions output directory
+CAPTIONS_OUTPUT_DIR="captions"
+```
+
 #### AI Model Settings
 
 ```bash
@@ -171,6 +222,72 @@ CHUNK_SUMMARY_PROMPT="Summarize this text, excluding plugs, branding, and promot
 # The prompt for the final summary of all the chunk summaries
 FINAL_SUMMARY_PROMPT="Summarize the following text in the voice and style of C.S. Lewis, employing his clarity, moral insight, and rhetorical flair, as if writing directly to an intelligent but unassuming reader. Generate a title as well. Avoid modern jargon, maintain a tone of gentle conviction, and present the ideas as timeless truths. Do not include any meta-commentary, footnotes, or explanations. Retain details of artworks. Start with a level three markdown header
 '### AI-Generated Summary: '. Append your generated title (no colons, proper grammar) to the header."
+# The meta-prompt to generate image prompt and caption
+SUMMARY_IMAGE_META_PROMPT='You are an assistant that extracts visual meaning from text. Given any descriptive input, generate:
+1. "image_prompt" - a detailed, visual description suitable for generating an image.
+2. "caption" - a brief, expressive caption that summarizes or enhances the image concept. No colons.
+Return your response as a JSON object in the format: {"caption": "This is the generated caption", "image_prompt": "This is the image prompt"}'
+CAPTION_PROMPT='You are an assistant who extracts visual meaning from text related to Christian art. Given any descriptive input, generate:
+1. "caption" - a brief, expressive caption that summarizes or enhances the text using any information you have concerning Christian art the text identifies.
+Return your response as a JSON object in the format: {"caption": "This is the generated caption"}'
+SUMMARY_ARTWORK_DETAILS_PROMPT="From the following text, extract any described artwork and return a JSON object with:
+\"details\": A detailed summary including the artwork's title, artist, date, medium, style, current location of artwork (location) and subject. Fill values with empty string if not specified in the text.
+\"filename\": A lowercase alphanumeric string (no hyphens or underscores), 20 characters or fewer, representing a mostly unique filename derived from the title, artist, and date.
+\"caption\": A caption (in proper English), no more than 20 words, that uses title, artist, date,location, medium and subject (in that ordered priority).
+If no artwork is described in the text, return an empty JSON object {}."
+```
+
+#### Image Generation Settings
+
+```bash
+# Whether to auto-generate images
+AUTO_GENERATE_IMAGES=false
+# Path to image generation script
+IMAGE_GENERATION_SCRIPT="openaigenerateimage"
+# Deepinfra image generation model
+DEEPINFRA_IMAGE_GENERATION_MODEL="stabilityai/sd3.5"
+# Fal.ai image generation model
+FALAI_IMAGE_GENERATION_MODEL="janus"
+```
+
+#### Art Downloader Settings
+
+```bash
+# Whether to auto-download art
+AUTO_DOWNLOAD_ART=false
+# Art downloader directory
+ART_DOWNLOADER_DIR="artdownloads"
+# Whether to verify art images
+VERIFY_ART_IMAGES=true
+# Art verifier script
+ART_VERIFIER_SCRIPT="matchimagetometadata.py"
+# Art metadata prompt
+ART_METADATA_PROMPT="You are an expert on Christian art.
+Provided the following details about the artwork '{}'
+analyze the image and generate the following detailed metadata in json format (no markdown, no nesting of attributes, all top-level):
+\"title\": The title of the artwork,
+\"artist\": The artist or artists,
+\"medium\": oil on canvas, fresco, marble sculpture, etc.,
+\"location\": where the artwork is currently located,
+\"date\": the creation year and century,
+\"style\": the artistic style or artistic school that influenced the art,
+\"description\": Description of the artwork (including visual elements, composition, subject matter, and style).
+\"image_color\": Whether the image is in Color, Grayscale, Monochrome, Duotone/Tritone, Sepia,Color-tinted grayscale, Black-and-white etc.
+\"watermarked\": Whether the image is watermarked or not.
+\"caption\": A caption (in proper English), no more than 20 words, that uses title, artist, date, location, medium and description (in that ordered priority).
+\"analyzed\": Whether the analysis was possible or not.
+\"comments:\": Your comments other than the fileds above and if analysis was possible or not and why.
+Do not add any extraneous information that will mangle the json object expected."
+# Image content validation strictness
+IMAGE_CONTENT_VALIDATION="lenient"
+# Vector embeddings model api key
+VECTOR_EMBEDDINGS_MODEL_API_KEY="$DEEPINFRA_TOKEN"
+# Vector embeddings provider base url
+VECTOR_EMBEDDINGS_BASE_URL="https://api.deepinfra.com/v1/openai"
+# Vector embeddings model
+VECTOR_EMBEDDINGS_MODEL="thenlper/gte-large"
+# Whether to look for alternate images
+FIND_ALTERNATE_IMAGES=false
 ```
 
 #### Content Documentation Settings
