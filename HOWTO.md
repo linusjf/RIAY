@@ -106,10 +106,16 @@ It contains the following settings:
 #### General Settings
 
 ```bash
+# Project config values
+PROJECT="Rosary In A Year (RIAY)"
 # Turn on or turn off logging
-LOGGING=true
+LOGGING=false
 # The year in which the podcasts are being followed
 YEAR=2025
+
+# Github config values
+REPO_OWNER=linusjf
+REPO_NAME=RIAY
 ```
 
 #### Overlay Icon Configuration
@@ -132,27 +138,39 @@ VIDEOS_FILE="videos.txt"
 
 ```bash
 # Time between successive requests to the LLM models (seconds)
-GAP_BW_REQS=10
+GAP_BW_REQS=0
 # Maximum number of retries for a REST API call
-MAX_RETRIES=5
+CURL_MAX_RETRIES=5
 # Initial retry delay (seconds) - increases exponentially
-INITIAL_RETRY_DELAY=2
+CURL_INITIAL_RETRY_DELAY=2
 # Connection timeout for curl requests (seconds)
-CONNECT_TIMEOUT=30
+CURL_CONNECT_TIMEOUT=30
 # Maximum time for curl operations (seconds)
-MAX_TIME=90
+CURL_MAX_TIME=90
 ```
 
 #### AI Model Settings
 
 ```bash
 # Temperature for LLM responses (0 for deterministic output)
-TEMPERATURE=0
-# Supported Gemini models
-# Prompt for summarizing transcript chunks
-CHUNK_SUMMARY_PROMPT="Summarize this text, excluding plugs, branding, and promotions. Avoid mention of Day, podcast and Rosary in a Day:"
-# Prompt for final summary generation
-FINAL_SUMMARY_PROMPT="Condense the following using the writing style of CS Lewis in 500 words or less. Be concise and clear, suitable for someone who wants a quick overview. Start with a level three markdown header and annotate it as 'AI-Generated Summary:' followed by your generated title (no colons, proper grammar). Generate well-formatted and line-spaced markdown. Do not fence the markdown. Use lists instead of further sub-headings."
+TEMPERATURE=0.5
+
+# text llm api key
+TEXT_LLM_API_KEY="$DEEPSEEK_API_KEY"
+# text llm base url
+TEXT_LLM_BASE_URL="https://api.deepseek.com"
+# text llm chat model endpoint
+TEXT_LLM_CHAT_ENDPOINT="/chat/completions"
+# text llm model used for summarization
+TEXT_LLM_MODEL="deepseek-chat"
+
+# The system prompt for summarizing text.
+SYSTEM_SUMMARY_PROMPT="You are a helpful assistant that summarizes content. Be concise, helpful."
+# The prompt for summarizing chunks within the podcast transcript.
+CHUNK_SUMMARY_PROMPT="Summarize this text, excluding plugs, branding, and promotions. Avoid mention of Day, podcast and Rosary in a Day. Additionally, exclude repetitive prayers such as Our Father, Hail Mary and Glory Be. Retain details of artwork decribed including title, artist (full name), current location of artwork, medium, style, date (year, decade and century) and brief description."
+# The prompt for the final summary of all the chunk summaries
+FINAL_SUMMARY_PROMPT="Summarize the following text in the voice and style of C.S. Lewis, employing his clarity, moral insight, and rhetorical flair, as if writing directly to an intelligent but unassuming reader. Generate a title as well. Avoid modern jargon, maintain a tone of gentle conviction, and present the ideas as timeless truths. Do not include any meta-commentary, footnotes, or explanations. Retain details of artworks. Start with a level three markdown header
+'### AI-Generated Summary: '. Append your generated title (no colons, proper grammar) to the header."
 ```
 
 #### Content Documentation Settings
@@ -173,8 +191,6 @@ CONTENT_DOCS=(
   "October=October.md"
   "November=November.md"
   "December=December.md"
-  "HOWTO=HOWTO.md"
-  "SCRIPTS=SCRIPTS.md"
 )
 ```
 
