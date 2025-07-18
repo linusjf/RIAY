@@ -73,9 +73,7 @@
 - [July 18, 2025](#july-18-2025)
   - [What the Garden Reveals](#what-the-garden-reveals)
   - [AI-Generated Summary: The Choice Between Rebellion and Obedience](#ai-generated-summary-the-choice-between-rebellion-and-obedience)
-  - [Exploring the divine beauty and symbolism in Christian art through descriptive insights (Stock Image)](#exploring-the-divine-beauty-and-symbolism-in-christian-art-through-descriptive-insights-stock-image)
-  - [Exploring the depths of Christian art through descriptive insights (Stock Image)](#exploring-the-depths-of-christian-art-through-descriptive-insights-stock-image)
-  - [A thoughtful exploration of Christian art, uncovering its deep spiritual and historical significance (Stock Image)](#a-thoughtful-exploration-of-christian-art-uncovering-its-deep-spiritual-and-historical-significance-stock-image)
+  - [Vicente Macip's depiction of Jesus in the Garden of Gethsemane (Stock Image)](#vicente-macips-depiction-of-jesus-in-the-garden-of-gethsemane-stock-image)
 
 <!-- tocstop -->
 
@@ -447,14 +445,6 @@ Yet behold the Son of God in Gethsemane (as depicted by Vicente Macip in his pai
 
 Let us then fix our eyes not on the shadows of fear or the weight of suffering, but on the Guide who has walked this path before us. For in Christ’s submission lies our victory, and in His obedience, our hope.
 
-### Exploring the divine beauty and symbolism in Christian art through descriptive insights (Stock Image)
+### Vicente Macip's depiction of Jesus in the Garden of Gethsemane (Stock Image)
 
-[![Exploring the divine beauty and symbolism in Christian art through descriptive insights](July/jpgs/prayerjesusgethsemanemacip.jpg)](https://external-preview.redd.it/jesus-agony-in-the-garden-of-gethsemane-a-profound-moment-v0-rvs6g-iqzzwdMxdtYMt1o2ydX1ULoXkfjLNUbG-Bq38.jpg?auto=webp&s=f2f32aace8ea19402ee52d56ec3413bd3ce9cbdb "Exploring the divine beauty and symbolism in Christian art through descriptive insights")
-
-### Exploring the depths of Christian art through descriptive insights (Stock Image)
-
-[![Exploring the depths of Christian art through descriptive insights](July/jpgs/prayerjesusvicentemacip.jpg)](https://external-preview.redd.it/jesus-agony-in-the-garden-of-gethsemane-a-profound-moment-v0-rvs6g-iqzzwdMxdtYMt1o2ydX1ULoXkfjLNUbG-Bq38.jpg?auto=webp&s=f2f32aace8ea19402ee52d56ec3413bd3ce9cbdb "Exploring the depths of Christian art through descriptive insights")
-
-### A thoughtful exploration of Christian art, uncovering its deep spiritual and historical significance (Stock Image)
-
-[![A thoughtful exploration of Christian art, uncovering its deep spiritual and historical significance](July/jpgs/prayerjesusgethsemanemacip.jpg)](https://c8.alamy.com/comp/2J07WH1/valencia-spain-februar-14-2022-the-painting-of-prayer-of-jesus-in-gethsemane-garden-on-the-side-altar-in-the-cathedral-by-vicente-macip-2J07WH1.jpg "A thoughtful exploration of Christian art, uncovering its deep spiritual and historical significance")
+[![Vicente Macip's depiction of Jesus in the Garden of Gethsemane](July/jpgs/prayerjesusgethsemanemacip.jpg)](https://c8.alamy.com/comp/2J07WH1/valencia-spain-februar-14-2022-the-painting-of-prayer-of-jesus-in-gethsemane-garden-on-the-side-altar-in-the-cathedral-by-vicente-macip-2J07WH1.jpg "Vicente Macip's depiction of Jesus in the Garden of Gethsemane")
