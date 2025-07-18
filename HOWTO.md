@@ -276,7 +276,7 @@ analyze the image and generate the following detailed metadata in json format (n
 \"watermarked\": Whether the image is watermarked or not.
 \"caption\": A caption (in proper English), no more than 20 words, that uses title, artist, date, location, medium and description (in that ordered priority).
 \"analyzed\": Whether the analysis was possible or not.
-\"comments:\": Your comments other than the fileds above and if analysis was possible or not and why.
+\"comments:\": Your comments other than the fields above and if analysis was possible or not and why.
 Do not add any extraneous information that will mangle the json object expected."
 # Image content validation strictness
 IMAGE_CONTENT_VALIDATION="lenient"
