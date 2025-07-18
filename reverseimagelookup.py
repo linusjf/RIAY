@@ -104,7 +104,7 @@ class ReverseImageLookup:
                 return 0.0
             best_score = 0.0
             best_match = {}
-            for organic_result in organic_results:
+            for organic_result in organic_results[0:5]:
                 match = organic_result
                 title = match["title"]
                 url = match["url"]
