@@ -5904,7 +5904,7 @@ Let us then, with St. Paul, cling to the certainty that neither scourge nor sin 
 
 ##### The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ (Stock Image)
 
-[![The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ](July/jpgs/flagellationciampelli.jpg)](https://render.fineartamerica.com/images/rendered/search/print/5.5/8/break/images/artworkimages/medium/2/the-flagellation-of-christ-ca-1754-italian-school-oil-on-canvas-139-c-corrado-giaquinto-c-1703-1765.jpg "The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ")
+[![The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ](July/jpgs/flagellationciampelli.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/%22La_Flagellazione%22_di_Agostino_Ciampelli.jpg/960px-%22La_Flagellazione%22_di_Agostino_Ciampelli.jpg "The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ")
 
 ## August
 
