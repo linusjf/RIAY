@@ -77,6 +77,7 @@
 - [July 19, 2025](#july-19-2025)
   - [Glory Hidden in Suffering](#glory-hidden-in-suffering)
   - [AI-Generated Summary: The Scourging and the Prodigal](#ai-generated-summary-the-scourging-and-the-prodigal)
+  - [The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ (Stock Image)](#the-flagellation-by-agostino-ciampelli-a-fresco-depicting-the-scourging-of-christ-stock-image)
 
 <!-- tocstop -->
 
@@ -462,6 +463,10 @@ Let us then fix our eyes not on the shadows of fear or the weight of suffering, 
 
 Consider, dear reader, how the second sorrowful mystery—our Lord’s scourging—lays bare the true wages of sin. Just as the prodigal son, in his rebellion, found himself broken and alone, so does every soul that turns from its Maker. Yet here, in Christ’s stripes, we see not only sin’s cruelty but Heaven’s remedy: a love that suffers to reclaim what was lost.
 
-The fresco by Agostino Chiappelli, _The Flagellation_, whispers this truth in pigment and light. Amidst the gloom of violence, the Savior’s halo shines undimmed—a quiet defiance, a promise that no darkness can quench the Light of the World. Here is strength perfected in weakness, love triumphant even in agony.
+The fresco by Agostino Ciampelli, _The Flagellation_, whispers this truth in pigment and light. Amidst the gloom of violence, the Savior’s halo shines undimmed—a quiet defiance, a promise that no darkness can quench the Light of the World. Here is strength perfected in weakness, love triumphant even in agony.
 
 Let us then, with St. Paul, cling to the certainty that neither scourge nor sin can sever us from the love of God. To console Him is to turn from folly, to kneel in gratitude, and to take up our own small crosses with courage. For in His wounds, we find our healing.
+
+### The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ (Stock Image)
+
+[![The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ](July/jpgs/flagellationciampelli.jpg)](https://render.fineartamerica.com/images/rendered/search/print/5.5/8/break/images/artworkimages/medium/2/the-flagellation-of-christ-ca-1754-italian-school-oil-on-canvas-139-c-corrado-giaquinto-c-1703-1765.jpg "The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ")
