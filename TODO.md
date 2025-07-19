@@ -12,3 +12,5 @@
 1. Refactor where possible.
 
 ## Exploratory tasks
+
+1. Related links feature.
