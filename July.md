@@ -77,7 +77,7 @@
 - [July 19, 2025](#july-19-2025)
   - [Glory Hidden in Suffering](#glory-hidden-in-suffering)
   - [AI-Generated Summary: The Scourging and the Prodigal](#ai-generated-summary-the-scourging-and-the-prodigal)
-  - [The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ (Stock Image)](#the-flagellation-by-agostino-ciampelli-a-fresco-depicting-the-scourging-of-christ-stock-image)
+  - [The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ](#the-flagellation-by-agostino-ciampelli-a-fresco-depicting-the-scourging-of-christ)
 
 <!-- tocstop -->
 
@@ -467,6 +467,6 @@ The fresco by Agostino Ciampelli, _The Flagellation_, whispers this truth in pig
 
 Let us then, with St. Paul, cling to the certainty that neither scourge nor sin can sever us from the love of God. To console Him is to turn from folly, to kneel in gratitude, and to take up our own small crosses with courage. For in His wounds, we find our healing.
 
-### The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ (Stock Image)
+### The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ
 
 [![The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ](July/jpgs/flagellationciampelli.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/%22La_Flagellazione%22_di_Agostino_Ciampelli.jpg/960px-%22La_Flagellazione%22_di_Agostino_Ciampelli.jpg "The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ")
