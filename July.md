@@ -74,6 +74,9 @@
   - [What the Garden Reveals](#what-the-garden-reveals)
   - [AI-Generated Summary: The Choice Between Rebellion and Obedience](#ai-generated-summary-the-choice-between-rebellion-and-obedience)
   - [Vicente Macip's depiction of Jesus in the Garden of Gethsemane (Stock Image)](#vicente-macips-depiction-of-jesus-in-the-garden-of-gethsemane-stock-image)
+- [July 19, 2025](#july-19-2025)
+  - [Glory Hidden in Suffering](#glory-hidden-in-suffering)
+  - [AI-Generated Summary: The Scourging and the Prodigal](#ai-generated-summary-the-scourging-and-the-prodigal)
 
 <!-- tocstop -->
 
@@ -448,3 +451,17 @@ Let us then fix our eyes not on the shadows of fear or the weight of suffering, 
 ### Vicente Macip's depiction of Jesus in the Garden of Gethsemane (Stock Image)
 
 [![Vicente Macip's depiction of Jesus in the Garden of Gethsemane](July/jpgs/prayerjesusgethsemanemacip.jpg)](https://c8.alamy.com/comp/2J07WH1/valencia-spain-februar-14-2022-the-painting-of-prayer-of-jesus-in-gethsemane-garden-on-the-side-altar-in-the-cathedral-by-vicente-macip-2J07WH1.jpg "Vicente Macip's depiction of Jesus in the Garden of Gethsemane")
+
+## July 19, 2025
+
+### Glory Hidden in Suffering
+
+[![Glory Hidden in Suffering](/July/jpgs/Day200.jpg)](https://youtu.be/pAz4u5gw85I "Glory Hidden in Suffering")
+
+### AI-Generated Summary: The Scourging and the Prodigal
+
+Consider, dear reader, how the second sorrowful mystery—our Lord’s scourging—lays bare the true wages of sin. Just as the prodigal son, in his rebellion, found himself broken and alone, so does every soul that turns from its Maker. Yet here, in Christ’s stripes, we see not only sin’s cruelty but Heaven’s remedy: a love that suffers to reclaim what was lost.
+
+The fresco by Agostino Chiappelli, _The Flagellation_, whispers this truth in pigment and light. Amidst the gloom of violence, the Savior’s halo shines undimmed—a quiet defiance, a promise that no darkness can quench the Light of the World. Here is strength perfected in weakness, love triumphant even in agony.
+
+Let us then, with St. Paul, cling to the certainty that neither scourge nor sin can sever us from the love of God. To console Him is to turn from folly, to kneel in gratitude, and to take up our own small crosses with courage. For in His wounds, we find our healing.

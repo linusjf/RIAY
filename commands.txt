@@ -1,5 +1,5 @@
 # commands
-embedarttoday 199
-#addvideo "cO2f6tL6qPQ" "What the Garden Reveals"
+#embedarttoday 199
+addvideo "pAz4u5gw85I" "Glory Hidden in Suffering"
 stitch
 lintall

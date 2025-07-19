@@ -8,7 +8,7 @@
 ## Bugs/Issues
 
 1. Update documentation.
-2. Optimize code where possible.
-3. Refactor where possible.
+1. Optimize code where possible.
+1. Refactor where possible.
 
 ## Exploratory tasks

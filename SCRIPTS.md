@@ -8,13 +8,13 @@
 
 ### Description
 
----
+______________________________________________________________________
 
 A bash script that appends image markdown to a specified daily markdown file. It validates inputs, resolves paths, and formats the markdown output.
 
 ### Features
 
----
+______________________________________________________________________
 
 - Validates image path and format (JPEG only)
 - Checks day number validity (1-366)
@@ -25,7 +25,7 @@ A bash script that appends image markdown to a specified daily markdown file. It
 
 ### Requirements
 
----
+______________________________________________________________________
 
 - Bash 4.0+
 - Core utilities: realpath, date, cat, tee
@@ -34,11 +34,11 @@ A bash script that appends image markdown to a specified daily markdown file. It
 
 ### Usage
 
----
+______________________________________________________________________
 
 #### Basic Syntax
 
----
+______________________________________________________________________
 
 ## addsnippets - Snippet Image Processor
 
@@ -47,7 +47,7 @@ A bash script that appends image markdown to a specified daily markdown file. It
 The `addsnippets` script processes snippet images for specified days of year (DOY) and:
 
 1. Adds them to corresponding markdown files
-2. Generates compact versions with table of contents for each month
+1. Generates compact versions with table of contents for each month
 
 ### Usage
 
