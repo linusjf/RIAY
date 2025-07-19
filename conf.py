@@ -48,7 +48,11 @@ exclude_patterns = [
     "README.md",
     "Conventions/*.md",
     ".aider.chat*",
-    "TODO.md"
+    "TODO.md",
+  "SCRIPTS.md",
+  "scripts.md",
+  "addimgtoday.md",
+  "addsnippets.md"
 ]
 
 suppress_warnings = [
