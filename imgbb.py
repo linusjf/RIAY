@@ -3,17 +3,17 @@
 import requests
 import sys
 from configenv import ConfigEnv
+from configconstants import ConfigConstants
 
 # Constants
 CONFIG_FILE = 'config.env'
-IMGBB_API_KEY_VAR = "IMGBB_API_KEY"
 IMGBB_UPLOAD_URL = "https://api.imgbb.com/1/upload"
 
 # Load environment variables using ConfigEnv
 config = ConfigEnv(filepath=CONFIG_FILE,include_os_env=True)
-IMGBB_API_KEY = config.get(IMGBB_API_KEY_VAR)
+IMGBB_API_KEY = config.get(ConfigConstants.IMGBB_API_KEY)
 if not IMGBB_API_KEY:
-    raise ValueError(f"{IMGBB_API_KEY_VAR} environment variable not set")
+    raise ValueError(f"{ConfigConstants.IMGBB_API_KEY} environment variable not set")
 
 
 class ImgBBUploader:
