@@ -6,7 +6,6 @@ It executes corresponding actions based on the parsed command syntax.
 """
 
 import logging
-import os
 import subprocess
 import sys
 from pathlib import Path
@@ -18,6 +17,7 @@ from commandsParser import commandsParser
 from commandsListener import commandsListener
 from commandsverboselistener import CommandsVerboseListener
 from commandsverbosestrategy import CommandsVerboseStrategy
+from configconstants import ConfigConstants
 from configenv import ConfigEnv
 
 
@@ -60,7 +60,7 @@ class Commands(commandsListener):
         """Process Genmonth command."""
         rule_name = self._get_rule_name(ctx)
         month = ctx.month().getText()
-        year = str(self.config.get("YEAR"))
+        year = str(self.config.get(ConfigConstants.YEAR))
         if ctx.year() is not None:
             year = ctx.year().getText()
         print(f"Generating month {month} for year {year}.")
@@ -126,8 +126,9 @@ class Commands(commandsListener):
 
 
 def main() -> None:
+    config = ConfigEnv("config.env")
     """Main entry point for command processing."""
-    input_stream = FileStream("commands.txt")
+    input_stream = FileStream(config.get(ConfigConstants.COMMANDS_FILE))
     lexer = commandsLexer(input_stream)
     lexer.removeErrorListeners()
 
