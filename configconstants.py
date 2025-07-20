@@ -1,5 +1,5 @@
 class ConfigConstants:
-    """Static class containing all configuration constants from config.env"""
+    """Static class containing all configuration constants from config.env and API key constants"""
 
     # Project config
     PROJECT = "PROJECT"
@@ -88,3 +88,6 @@ class ConfigConstants:
     VECTOR_EMBEDDINGS_BASE_URL = "VECTOR_EMBEDDINGS_BASE_URL"
     VECTOR_EMBEDDINGS_MODEL = "VECTOR_EMBEDDINGS_MODEL"
     FIND_ALTERNATE_IMAGES = "FIND_ALTERNATE_IMAGES"
+
+    # API Key constants
+    OPENAI_API_KEY = "OPENAI_API_KEY"

@@ -12,9 +12,10 @@ import json
 import re
 import sys
 import time
-from typing import Dict, List, Optional, Tuple, Union
+from typing import Dict, Optional, Tuple, Union
 
 from configenv import ConfigEnv
+from configconstants import ConfigConstants
 from openai import OpenAI
 from simtools import MatchMode, compare_terms, compute_match_dicts
 
@@ -29,9 +30,9 @@ class ArtworkVerifier:
             config_path: Path to configuration file.
         """
         self.config = ConfigEnv(config_path, include_os_env=True)
-        self.openai_api_key = self.config.get("OPENAI_API_KEY")
+        self.openai_api_key = self.config.get(ConfigConstants.OPENAI_API_KEY)
         if not self.openai_api_key:
-            raise ValueError("OPENAI_API_KEY environment variable not set")
+            raise ValueError(f"{ConfigConstants.OPENAI_API_KEY} environment variable not set")
         self.client = OpenAI(api_key=self.openai_api_key)
 
     @staticmethod
@@ -101,7 +102,7 @@ class ArtworkVerifier:
         """
         print("🖼️ Generating image description...", file=sys.stderr)
         base64_image = self.encode_image_to_base64(image_path)
-        prompt = self.config.get("ART_METADATA_PROMPT", "Describe and interpret this image in detail.")
+        prompt = self.config.get(ConfigConstants.ART_METADATA_PROMPT, "Describe and interpret this image in detail.")
 
         if subject:
             prompt = prompt.replace("{}", subject)
