@@ -15,6 +15,7 @@ from pathlib import Path
 import requests
 
 from configenv import ConfigEnv
+from configconstants import ConfigConstants
 from serpapi import GoogleSearch
 
 from htmlhelper import clean_filename_text, extract_domain_from_url
@@ -30,9 +31,6 @@ class ReverseImageLookup:
 
     # Constants
     CONFIG_FILE = 'config.env'
-    STOCK_PHOTO_SITES_VAR = 'STOCK_PHOTO_SITES'
-    SERP_API_KEY_VAR = "SERP_API_KEY"
-    ZENSERP_API_KEY_VAR = "ZENSERP_API_KEY"
     ZENSERP_API_ENDPOINT = "https://app.zenserp.com/api/v2/search"
     IMAGE_URL_FILE_EXTENSION = '.url.txt'
     MIN_IMAGE_WIDTH = 350
@@ -43,14 +41,14 @@ class ReverseImageLookup:
         """Initialize the reverse image lookup service."""
         # Load environment variables using ConfigEnv
         self.config = ConfigEnv(self.CONFIG_FILE, include_os_env=True)
-        self.SERP_API_KEY = self.config[self.SERP_API_KEY_VAR]
+        self.SERP_API_KEY = self.config[ConfigConstants.SERP_API_KEY]
         if not self.SERP_API_KEY:
-            raise ValueError(f"{self.SERP_API_KEY_VAR} environment variable not set")
-        self.ZENSERP_API_KEY = self.config[self.ZENSERP_API_KEY_VAR]
+            raise ValueError(f"{ConfigConstants.SERP_API_KEY} environment variable not set")
+        self.ZENSERP_API_KEY = self.config[ConfigConstants.ZENSERP_API_KEY]
         if not self.ZENSERP_API_KEY:
-            raise ValueError(f"{self.ZENSERP_API_KEY_VAR} environment variable not set")
+            raise ValueError(f"{ConfigConstants.ZENSERP_API_KEY} environment variable not set")
         self.search_api = search_api
-        self.STOCK_PHOTO_SITES = self.config[self.STOCK_PHOTO_SITES_VAR]
+        self.STOCK_PHOTO_SITES = self.config[ConfigConstants.STOCK_PHOTO_SITES]
         self.match_text = None
 
     def verify_image_against_metadata(self, image_url, metadata_text):

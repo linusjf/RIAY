@@ -91,3 +91,5 @@ class ConfigConstants:
 
     # API Key constants
     OPENAI_API_KEY = "OPENAI_API_KEY"
+    SERP_API_KEY = "SERP_API_KEY"
+    ZENSERP_API_KEY = "ZENSERP_API_KEY"
