@@ -78,6 +78,9 @@
   - [Glory Hidden in Suffering](#glory-hidden-in-suffering)
   - [AI-Generated Summary: The Scourging and the Prodigal](#ai-generated-summary-the-scourging-and-the-prodigal)
   - [The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ](#the-flagellation-by-agostino-ciampelli-a-fresco-depicting-the-scourging-of-christ)
+- [July 20, 2025](#july-20-2025)
+  - [Thorns for Love](#thorns-for-love)
+  - [AI-Generated Summary: The Mockery of Kings and the Sovereignty of Suffering](#ai-generated-summary-the-mockery-of-kings-and-the-sovereignty-of-suffering)
 
 <!-- tocstop -->
 
@@ -470,3 +473,17 @@ Let us then, with St. Paul, cling to the certainty that neither scourge nor sin 
 ### The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ
 
 [![The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ](July/jpgs/flagellationciampelli.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/%22La_Flagellazione%22_di_Agostino_Ciampelli.jpg/960px-%22La_Flagellazione%22_di_Agostino_Ciampelli.jpg "The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ")
+
+## July 20, 2025
+
+### Thorns for Love
+
+[![Thorns for Love](/July/jpgs/Day201.jpg)](https://youtu.be/vyKk-EuhURA "Thorns for Love")
+
+### AI-Generated Summary: The Mockery of Kings and the Sovereignty of Suffering
+
+Consider, dear reader, the painting of _The Crowning with Thorns_, where the Eternal King submits to the cruelty of men. Here, the thorns pressed upon His brow are both a mockery and a coronation—earth’s scorn revealing heaven’s glory. The artist (be it Titian or another) sets beside Him the bust of Tiberius, that hollow sovereign of passing empires, as if to ask: _Which crown will you serve?_
+
+The world has always traded truth for power, yet here is the true Power, wearing weakness as a diadem. Do not mistake this for mere tragedy; it is the divine irony by which God turns the world’s cruelty into the means of our redemption. The painting whispers what Scripture shouts: that every soul must choose between Caesar’s coin and Christ’s cross.
+
+And what of us? We who flinch at suffering yet cling to comfort—do we not also weave thorns for Him when we prefer convenience to conviction? Repentance is but the act of laying down our petty crowns before the One who wore thorns for our sake. Let the image stir you: not to guilt, but to that quieter, deeper thing—a turning of the heart toward the only King worthy of all allegiance.

@@ -1,5 +1,5 @@
 # commands
 #embedarttoday 199
-addvideo "pAz4u5gw85I" "Glory Hidden in Suffering"
+addvideo "vyKk-EuhURA" "Thorns for Love"
 stitch
 lintall
