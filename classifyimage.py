@@ -21,6 +21,7 @@ import argparse
 import sys
 from pathlib import Path
 from PIL import Image
+from typing import Optional
 import numpy as np
 import json
 
@@ -31,7 +32,7 @@ VERSION = "1.0.0"
 class ImageClassifier:
     """Class for classifying images by color type."""
 
-    def __init__(self, image_path: str = None):
+    def __init__(self, image_path: Optional[str] = None):
         self.image_path = image_path
         self.result = {
             "image_color": "unknown",
