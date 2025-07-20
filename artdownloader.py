@@ -25,6 +25,7 @@ from sessionhelper import create_session_with_retries, exponential_backoff_with_
 from simtools import compare_terms, MatchMode
 from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
+from configconstants import ConfigConstants
 
 class ArtDownloader:
     """Download artwork images from various sources."""
@@ -34,11 +35,11 @@ class ArtDownloader:
     def __init__(self, params=None):
         """Initialize the downloader with configuration."""
         self.config = ConfigEnv()
-        self.STOCK_PHOTO_SITES = self.config.get('STOCK_PHOTO_SITES', [])
-        self.SOCIAL_MEDIA_SITES = self.config.get('SOCIAL_MEDIA_SITES', [])
-        self.FIND_ALTERNATE_IMAGES = self.config.get('FIND_ALTERNATE_IMAGES', False)
-        self.SERPAPI_API_KEY = self.config.get('SERP_API_KEY', "")
-        self.SAVE_DIR = self.config.get('ART_DOWNLOADER_DIR', 'artdownloads')
+        self.STOCK_PHOTO_SITES = self.config.get(ConfigConstants.STOCK_PHOTO_SITES, [])
+        self.SOCIAL_MEDIA_SITES = self.config.get(ConfigConstants.SOCIAL_MEDIA_SITES, [])
+        self.FIND_ALTERNATE_IMAGES = self.config.get(ConfigConstants.FIND_ALTERNATE_IMAGES, False)
+        self.SERPAPI_API_KEY = self.config.get(ConfigConstants.SERP_API_KEY, "")
+        self.SAVE_DIR = self.config.get(ConfigConstants.ART_DOWNLOADER_DIR, 'artdownloads')
 
         # Initialize artwork metadata fields
         self.title = None
@@ -509,7 +510,6 @@ class ArtDownloader:
 
         return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
 
-
     def print_results(self):
         """Print summary of downloaded images and results."""
         print("\nDownloaded images: ")
@@ -586,7 +586,6 @@ def main():
     if not args.query and not any([args.title, args.artist, args.location, args.style, args.medium, args.subject]):
         parser.print_help()
         sys.exit(1)
-
 
     downloader = ArtDownloader(vars(args))
 
