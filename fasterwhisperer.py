@@ -13,13 +13,14 @@ import torch
 from faster_whisper import WhisperModel
 
 from configenv import ConfigEnv
+from configconstants import ConfigConstants
 
 # Load environment variables from config.env
 config = ConfigEnv('config.env')
-MODEL_SIZE = config.get('ASR_LOCAL_MODEL')
-BEAM_SIZE = config.get('ASR_BEAM_SIZE')
-ASR_INITIAL_PROMPT = config.get('ASR_INITIAL_PROMPT')
-ASR_CARRY_INITIAL_PROMPT = config.get('ASR_CARRY_INITIAL_PROMPT')
+MODEL_SIZE = config.get(ConfigConstants.ASR_LOCAL_MODEL)
+BEAM_SIZE = config.get(ConfigConstants.ASR_BEAM_SIZE)
+ASR_INITIAL_PROMPT = config.get(ConfigConstants.ASR_INITIAL_PROMPT)
+ASR_CARRY_INITIAL_PROMPT = config.get(ConfigConstants.ASR_CARRY_INITIAL_PROMPT)
 
 
 def transcribe_audio(
