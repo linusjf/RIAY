@@ -16,6 +16,7 @@ import json
 from typing import Dict, Any
 import requests
 from configenv import ConfigEnv
+from configconstants import ConfigConstants
 
 VERSION = "1.0.0"
 SCRIPT_NAME = os.path.basename(__file__)
@@ -30,11 +31,12 @@ class CaptionGenerator:
     def _validate_config(self) -> None:
         """Validate required configuration values"""
         required_vars = [
-            "TEXT_LLM_MODEL",
-            "TEXT_LLM_API_KEY",
-            "TEXT_LLM_BASE_URL",
-            "TEXT_LLM_CHAT_ENDPOINT",
-            "CAPTION_PROMPT"
+            ConfigConstants.TEXT_LLM_MODEL,
+            ConfigConstants.TEXT_LLM_API_KEY,
+            ConfigConstants.TEXT_LLM_BASE_URL,
+            ConfigConstants.TEXT_LLM_CHAT_ENDPOINT,
+            ConfigConstants.CAPTION_PROMPT,
+            ConfigConstants.TEMPERATURE
         ]
         for var in required_vars:
             if var not in self.config:
@@ -44,31 +46,31 @@ class CaptionGenerator:
     def create_payload(self, summary_content: str) -> Dict[str, Any]:
         """Create the API request payload"""
         return {
-            "model": self.config["TEXT_LLM_MODEL"],
+            "model": self.config[ConfigConstants.TEXT_LLM_MODEL],
             "messages": [
                 {
                     "role": "system",
-                    "content": self.config["CAPTION_PROMPT"]
+                    "content": self.config[ConfigConstants.CAPTION_PROMPT]
                 },
                 {
                     "role": "user",
                     "content": summary_content
                 }
             ],
-            "temperature": float(self.config.get("TEMPERATURE", 1))
+            "temperature": float(self.config.get(ConfigConstants.TEMPERATURE, 1))
         }
 
     def generate_caption(self, summary_content: str) -> Dict:
         """Generate caption from input text"""
         payload = self.create_payload(summary_content)
         headers = {
-            "Authorization": f"Bearer {self.config['TEXT_LLM_API_KEY']}",
+            "Authorization": f"Bearer {self.config[ConfigConstants.TEXT_LLM_API_KEY]}",
             "Content-Type": "application/json"
         }
 
         try:
             response = requests.post(
-                f"{self.config['TEXT_LLM_BASE_URL']}{self.config['TEXT_LLM_CHAT_ENDPOINT']}",
+                f"{self.config[ConfigConstants.TEXT_LLM_BASE_URL]}{self.config[ConfigConstants.TEXT_LLM_CHAT_ENDPOINT]}",
                 headers=headers,
                 json=payload,
                 timeout=30
