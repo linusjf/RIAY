@@ -18,12 +18,13 @@ from enum import Enum, auto
 from fuzzywuzzy import fuzz
 from openai import OpenAI
 from configenv import ConfigEnv
+from configconstants import ConfigConstants
 
 # Constants
 ERROR_MESSAGES = {
-    "missing_api_key": "VECTOR_EMBEDDINGS_MODEL_API_KEY environment variable not set",
-    "missing_base_url": "VECTOR_EMBEDDINGS_BASE_URL environment variable not set",
-    "missing_model": "VECTOR_EMBEDDINGS_MODEL environment variable not set",
+    "missing_api_key": f"{ConfigConstants.VECTOR_EMBEDDINGS_MODEL_API_KEY} environment variable not set",
+    "missing_base_url": f"{ConfigConstants.VECTOR_EMBEDDINGS_BASE_URL} environment variable not set",
+    "missing_model": f"{ConfigConstants.VECTOR_EMBEDDINGS_MODEL} environment variable not set",
     "empty_term": "  ⚠️ Skipping comparison - empty term: '{term_a}' vs '{term_b}'",
     "invalid_mode": "Invalid mode. Must be one of {MatchMode.FUZZY}, {MatchMode.COSINE}, or {MatchMode.HYBRID}",
     "missing_key": "  ⚠️ Key '{key}' not found in second dictionary"
@@ -50,14 +51,14 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 dotenv_path = os.path.join(base_dir, "config.env")
 config  = ConfigEnv(dotenv_path, include_os_env=True)
 
-VECTOR_EMBEDDINGS_MODEL_API_KEY = config.get("VECTOR_EMBEDDINGS_MODEL_API_KEY")
+VECTOR_EMBEDDINGS_MODEL_API_KEY = config.get(ConfigConstants.VECTOR_EMBEDDINGS_MODEL_API_KEY)
 if not VECTOR_EMBEDDINGS_MODEL_API_KEY:
     raise ValueError(ERROR_MESSAGES["missing_api_key"])
 
-VECTOR_EMBEDDINGS_BASE_URL = config.get("VECTOR_EMBEDDINGS_BASE_URL")
+VECTOR_EMBEDDINGS_BASE_URL = config.get(ConfigConstants.VECTOR_EMBEDDINGS_BASE_URL)
 if not VECTOR_EMBEDDINGS_BASE_URL:
     raise ValueError(ERROR_MESSAGES["missing_base_url"])
-VECTOR_EMBEDDINGS_MODEL = config.get("VECTOR_EMBEDDINGS_MODEL")
+VECTOR_EMBEDDINGS_MODEL = config.get(ConfigConstants.VECTOR_EMBEDDINGS_MODEL)
 if not VECTOR_EMBEDDINGS_MODEL:
     raise ValueError(ERROR_MESSAGES["missing_model"])
 
