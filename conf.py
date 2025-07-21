@@ -27,6 +27,14 @@ extensions = [
     "sphinx_rtd_theme",
 ]
 
+# Absolute site URL
+html_baseurl = "https://riay.readthedocs.io/en/latest"
+
+# Load the extension
+import os, sys
+sys.path.append(os.path.abspath("."))  # or wherever the script is
+extensions.append("sphinx_sitemap_generator")
+
 templates_path = ["_templates"]
 
 include_patterns = ["index.rst", "*.md", "*/*.jpg", "*/*.pdf"]
