@@ -41,5 +41,4 @@ def generate_sitemap(app, exception):
         f.write('</urlset>\n')
 
 def setup(app):
-    app.add_config_value('html_baseurl', '', 'html')  # must be set in conf.py
     app.connect('build-finished', generate_sitemap)
