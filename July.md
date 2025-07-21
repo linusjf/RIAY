@@ -82,6 +82,9 @@
   - [Thorns for Love](#thorns-for-love)
   - [AI-Generated Summary: The Mockery of Kings and the Sovereignty of Suffering](#ai-generated-summary-the-mockery-of-kings-and-the-sovereignty-of-suffering)
   - [A divine moment captured in Christian art, reflecting faith and devotion (Stock Image)](#a-divine-moment-captured-in-christian-art-reflecting-faith-and-devotion-stock-image)
+- [July 21, 2025](#july-21-2025)
+  - [Scapegoat and Savior](#scapegoat-and-savior)
+  - [AI-Generated Summary: The Weight of Glory in Bearing the Cross](#ai-generated-summary-the-weight-of-glory-in-bearing-the-cross)
 
 <!-- tocstop -->
 
@@ -492,3 +495,19 @@ And what of us? We who flinch at suffering yet cling to comfort—do we not also
 ### A divine moment captured in Christian art, reflecting faith and devotion (Stock Image)
 
 [![A divine moment captured in Christian art, reflecting faith and devotion](July/jpgs/crowningthornsvecellio.jpg)](https://l450v.alamy.com/450v/2wc7fh2/paris-france-01-06-2024-louvre-museum-christ-crowned-with-thorns-painted-by-tiziano-vecellio-titien-2wc7fh2.jpg "A divine moment captured in Christian art, reflecting faith and devotion")
+
+## July 21, 2025
+
+### Scapegoat and Savior
+
+[![Scapegoat and Savior](/July/jpgs/Day202.jpg)](https://youtu.be/7cZKASc2Xxg "Scapegoat and Savior")
+
+### AI-Generated Summary: The Weight of Glory in Bearing the Cross
+
+Imagine, if you will, the divine paradox: the King of Heaven, bearing not a scepter of gold but a cross of wood, marching not to a throne but to Golgotha. Here is the fourth sorrowful mystery—_Jesus Carrying His Cross_—where the Lamb, like the scapegoat of old, goes willingly outside the city to sanctify the world by His suffering.
+
+And what of Simon of Cyrene, pressed into service? At first, a mere bystander compelled by Roman hands, yet in that forced labor, grace might have found him. So it is with us: our crosses, too, are often thrust upon us, but in the bearing of them, if we yield not to resentment, they become the very means by which we are drawn into the mystery of redemption.
+
+As the Angelic Doctor teaches, Christ carried His cross as a king carries his insignia—not in defeat, but in sovereign triumph. The instrument of shame is transformed into the banner of victory. Thus, our own sufferings, when united to His, are no longer mere burdens but participations in His work of salvation. To resist the cross is human; to embrace it, with trust, is to share in the divine.
+
+Take heart, then, and remember: every sorrow borne in love is a thread woven into the tapestry of grace. The cross, once a symbol of death, is now the tree of life.

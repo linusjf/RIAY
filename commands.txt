@@ -1,5 +1,5 @@
 # commands
 #embedarttoday 199
-addvideo "vyKk-EuhURA" "Thorns for Love"
+addvideo "7cZKASc2Xxg" "Scapegoat and Savior"
 stitch
 lintall
