@@ -66,6 +66,7 @@ suppress_warnings = [
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 # Add paths for custom static files
 html_static_path = ["_static"]
+html_extra_path = ["robots.txt", "sitemap.xml"]
 html_show_copyright = False
 html_show_sphinx = False
 html_theme = "sphinx_rtd_theme"

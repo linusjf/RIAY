@@ -29,3 +29,4 @@ testsummary.txt
 *.url
 *.url.txt
 !deps.txt
+!robots.txt
