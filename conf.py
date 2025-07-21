@@ -33,7 +33,7 @@ html_baseurl = "https://riay.readthedocs.io/en/latest"
 # Load the extension
 import os, sys
 sys.path.append(os.path.abspath("."))  # or wherever the script is
-extensions.append("sphinx_sitemap_generator")
+extensions.append("sphinxsitemapgenerator")
 
 templates_path = ["_templates"]
 
