@@ -10,10 +10,9 @@ Sphinxsitemapgenerator.
 # -*- coding: utf-8 -*-'
 ######################################################################
 """
-# sphinx_sitemap_generator.py
-
 from urllib.parse import urljoin
-from datetime import datetime
+from datetime import datetime, timezone
+from pathlib import Path
 
 def generate_sitemap(app, exception):
     if exception is not None:
@@ -25,20 +24,20 @@ def generate_sitemap(app, exception):
         return
 
     builder = app.builder
-    outdir = builder.outdir
+    outdir = Path(builder.outdir)  # Use pathlib.Path
     pages = builder.env.found_docs
 
-    sitemap_path = outdir + '/sitemap.xml'
-    with open(sitemap_path, 'w', encoding='utf-8') as f:
+    sitemap_path = outdir / "sitemap.xml"
+    with sitemap_path.open("w", encoding="utf-8") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
         f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
         for page in sorted(pages):
             if page.endswith("genindex") or page.endswith("search"):
                 continue
-            loc = urljoin(base_url + '/', page + '.html')
-            lastmod = datetime.utcnow().strftime('%Y-%m-%d')
-            f.write(f'  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>\n')
-        f.write('</urlset>\n')
+            loc = urljoin(base_url + "/", page + ".html")
+            lastmod = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+            f.write(f"  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>\n")
+        f.write("</urlset>\n")
 
 def setup(app):
-    app.connect('build-finished', generate_sitemap)
+    app.connect("build-finished", generate_sitemap)
