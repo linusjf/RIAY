@@ -85,6 +85,7 @@
 - [July 21, 2025](#july-21-2025)
   - [Scapegoat and Savior](#scapegoat-and-savior)
   - [AI-Generated Summary: The Weight of Glory in Bearing the Cross](#ai-generated-summary-the-weight-of-glory-in-bearing-the-cross)
+  - [A moment of divine inspiration captured in sacred art (Stock Image)](#a-moment-of-divine-inspiration-captured-in-sacred-art-stock-image)
 
 <!-- tocstop -->
 
@@ -511,3 +512,7 @@ And what of Simon of Cyrene, pressed into service? At first, a mere bystander co
 As the Angelic Doctor teaches, Christ carried His cross as a king carries his insignia—not in defeat, but in sovereign triumph. The instrument of shame is transformed into the banner of victory. Thus, our own sufferings, when united to His, are no longer mere burdens but participations in His work of salvation. To resist the cross is human; to embrace it, with trust, is to share in the divine.
 
 Take heart, then, and remember: every sorrow borne in love is a thread woven into the tapestry of grace. The cross, once a symbol of death, is now the tree of life.
+
+### A moment of divine inspiration captured in sacred art (Stock Image)
+
+[![A moment of divine inspiration captured in sacred art](July/jpgs/jesuscarryinghiscross.jpg)](https://upload.wikimedia.org/wikipedia/commons/3/32/02_Jesus_carries_His_cross.jpg "A moment of divine inspiration captured in sacred art")
