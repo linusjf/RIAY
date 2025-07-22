@@ -1,5 +1,4 @@
 # commands
 #embedarttoday 199
-addvideo "7cZKASc2Xxg" "Scapegoat and Savior"
-stitch
+addvideo "oWs0Ha8Kntk" "God's Relentless Pursuit"
 lintall
