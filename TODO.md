@@ -11,7 +11,7 @@
 1. Optimize code where possible.
 1. Refactor where possible.
 1. Augment extracted art details using LLM. Use augmented info to search especially Wiki in original language of artwork title.
-1. Optimize lintall script to lint only updated and added markdown docs.
+1. artdownloader.py - only download and save images with minimum width 350px and minimum height 480px. No thumbnails.
 
 ## Exploratory tasks
 
