@@ -71,7 +71,6 @@ class ArtDownloader:
         self.WIKIPEDIA_IMAGES = []
         self.GOOGLE_IMAGES = []
         self.DUCKDUCKGO_IMAGES = []
-        self.RTD_IMAGES = []
 
         os.makedirs(self.SAVE_DIR, exist_ok=True)
 
@@ -208,45 +207,6 @@ class ArtDownloader:
                 )
                 if self.save_image(url, filename):
                     self.DUCKDUCKGO_IMAGES.append((url, filename, score))
-                    success = True
-
-            return success
-
-        except Exception as error:
-            print(f"❌ Error: {error}", file=sys.stderr)
-        return False
-
-    def download_from_rtd(self, query, filename_base):
-        """Download image from readthedocs using DuckDuckGo search."""
-        site_query =  f"site:riay.readthedocs.io {query}"
-        print(f"\n🔍 DuckDuckGo search in readthedocs for: {site_query}")
-        try:
-            results = self.search_duckduckgo_images(site_query, max_results=10)
-            if not results:
-                print("❌ No matching images found.",file=sys.stderr)
-                return False
-            qualifying_results = []
-            for image in results[0:5]:
-                url = image["image"]
-                title = image["title"]
-                image_meta_data = " ".join(str(p) for p in [title, clean_filename_text(url)] if p is not None)
-                score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.COSINE)
-                if score >= 0.7:
-                    qualifying_results.append((image, score))
-
-            if not qualifying_results:
-                print("❌ No qualifying results found (score >= 50.0)", file=sys.stderr)
-                return False
-
-            success = False
-            for idx, (result, score) in enumerate(qualifying_results):
-                url = result["image"]
-                filename = os.path.join(
-                    self.SAVE_DIR,
-                    f"{filename_base}_{idx+1}_rtd.jpg"
-                )
-                if self.save_image(url, filename):
-                    self.RTD_IMAGES.append((url, filename, score))
                     success = True
 
             return success
@@ -548,10 +508,7 @@ class ArtDownloader:
         downloaded_duckduckgo = self.download_from_duckduckgo(enhanced_query, self.filename_base)
         downloaded_google = self.download_from_google(enhanced_query, self.filename_base)
 
-        print(f"\n🔍 Searching rtd with enhanced query: {enhanced_query}", file=sys.stderr)
-        downloaded_rtd = self.download_from_rtd(enhanced_query, self.filename_base)
-
-        return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google or downloaded_rtd)
+        return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
 
     def print_results(self):
         """Print summary of downloaded images and results."""
@@ -563,15 +520,6 @@ class ArtDownloader:
             print("\nFound stock photos (not downloaded):")
             for url in self.FOUND_STOCK_PHOTOS:
                 print(url)
-
-        if self.RTD_IMAGES:
-            print("\nReadthedocs images with scores:")
-            for filepath, score in self.RTD_IMAGES:
-                print(f"{filepath} (score: {score:.3f})")
-
-            best_rtd = max(self.RTD_IMAGES, key=lambda x: x[1], default=None)
-            if best_rtd:
-                print(f"\n⭐ Best Readthedocs image: {best_rtd[0]} (score: {best_rtd[1]:.3f})")
 
         if self.WIKIPEDIA_IMAGES:
             print("\nWikipedia images with scores:")
