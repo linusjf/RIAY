@@ -5524,7 +5524,7 @@ This is no mere depiction of suffering, but a window into its strange redemption
 - [July 22, 2025](#july-22-2025)
   - [God's Relentless Pursuit](#gods-relentless-pursuit)
   - [AI-Generated Summary: The Divine Embrace and the Rainbow of Promise](#ai-generated-summary-the-divine-embrace-and-the-rainbow-of-promise)
-  - [A vivid portrayal of divine inspiration through Christian art, capturing the essence of faith and devotion (Stock Image)](#a-vivid-portrayal-of-divine-inspiration-through-christian-art-capturing-the-essence-of-faith-and-devotion-stock-image)
+  - [Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)](#fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852)
 
 <!-- tocstop -->
 
@@ -5970,9 +5970,9 @@ Consider, too, Pietro Gagliardi’s fresco of _The Crucifixion_ in the church Sa
 
 Do you doubt whether God cares? Look upon the Crucified. The answer is written in wounds, in blood, in the unyielding fidelity of a Father who will not let us go.
 
-##### A vivid portrayal of divine inspiration through Christian art, capturing the essence of faith and devotion (Stock Image)
+##### Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)
 
-[![A vivid portrayal of divine inspiration through Christian art, capturing the essence of faith and devotion](July/jpgs/crucifixionpietrogagliardi.jpg)](http://www.davidmacchi.com/tourguide/S._Girolamo_degli_Illirici_files/Media/20100226-IMG_0404/20100226-IMG_0404.jpg "A vivid portrayal of divine inspiration through Christian art, capturing the essence of faith and devotion")
+[![Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)](July/jpgs/crucifixionpietrogagliardi.jpg)](http://www.davidmacchi.com/tourguide/S._Girolamo_degli_Illirici_files/Media/20100226-IMG_0404/20100226-IMG_0404.jpg "Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)")
 
 ## August
 
