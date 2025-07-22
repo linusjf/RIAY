@@ -89,6 +89,7 @@
 - [July 22, 2025](#july-22-2025)
   - [God's Relentless Pursuit](#gods-relentless-pursuit)
   - [AI-Generated Summary: The Divine Embrace and the Rainbow of Promise](#ai-generated-summary-the-divine-embrace-and-the-rainbow-of-promise)
+  - [A vivid portrayal of divine inspiration through Christian art, capturing the essence of faith and devotion (Stock Image)](#a-vivid-portrayal-of-divine-inspiration-through-christian-art-capturing-the-essence-of-faith-and-devotion-stock-image)
 
 <!-- tocstop -->
 
@@ -530,6 +531,10 @@ Take heart, then, and remember: every sorrow borne in love is a thread woven int
 
 You will recall the tale of the prodigal son—how the father, though wronged, never ceased his patient vigil, how he ran to meet the returning child, restoring him with robes and rings. This, dear reader, is no mere story, but a window into the very heart of God. Just as the father sought his son, so does the Almighty seek us, even to the point of the Cross. There, in that moment of dereliction—_"My God, my God, why have you forsaken me?"_—we find not abandonment, but the deepest solidarity. Christ bears our anguish, our rebellion, and yet opens His arms as the father did, welcoming even the thief into paradise.
 
-Consider, too, Pietro Gagliardi’s fresco of _The Crucifixion_, where the rainbow—that ancient sign of covenant—arches above the dying Saviour. His outstretched arms complete its curve, as if to say that here, in this very act of suffering, the promise is fulfilled. Death shall not triumph. The Cross, that instrument of shame, becomes the bridge between heaven and earth, the proof of a love that pursues us to the uttermost.
+Consider, too, Pietro Gagliardi’s fresco of _The Crucifixion_ in the church San Girolamo dei Croati (1847-1852), where the rainbow—that ancient sign of covenant—arches above the dying Saviour. His outstretched arms complete its curve, as if to say that here, in this very act of suffering, the promise is fulfilled. Death shall not triumph. The Cross, that instrument of shame, becomes the bridge between heaven and earth, the proof of a love that pursues us to the uttermost.
 
 Do you doubt whether God cares? Look upon the Crucified. The answer is written in wounds, in blood, in the unyielding fidelity of a Father who will not let us go.
+
+### A vivid portrayal of divine inspiration through Christian art, capturing the essence of faith and devotion (Stock Image)
+
+[![A vivid portrayal of divine inspiration through Christian art, capturing the essence of faith and devotion](July/jpgs/crucifixionpietrogagliardi.jpg)](http://www.davidmacchi.com/tourguide/S._Girolamo_degli_Illirici_files/Media/20100226-IMG_0404/20100226-IMG_0404.jpg "A vivid portrayal of divine inspiration through Christian art, capturing the essence of faith and devotion")
