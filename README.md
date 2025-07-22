@@ -5934,7 +5934,7 @@ And what of us? We who flinch at suffering yet cling to comfort—do we not also
 
 ##### Titian (Tiziano Vecellio)’s painting of The Crowning with Thorns located in Musée du Louvre, Paris was commissioned by the confraternity of Santa Maria delle Grazie in Milan (Stock Image)
 
-[![Titian (Tiziano Vecellio)’s painting of The Crowning with Thorns located in Musée du Louvre, Paris was commissioned by the confraternity of Santa Maria delle Grazie in Milan](July/jpgs/crowningthornsvecellio.jpg)](https://l450v.alamy.com/450v/2wc7fh2/paris-france-01-06-2024-louvre-museum-christ-crowned-with-thorns-painted-by-tiziano-vecellio-titien-2wc7fh2.jpg "Titian (Tiziano Vecellio)’s painting of The Crowning with Thorns located in Musée du Louvre, Paris was commissioned by the confraternity of Santa Maria delle Grazie in Milan")
+[![Titian (Tiziano Vecellio)’s painting of The Crowning with Thorns located in Musée du Louvre, Paris was commissioned by the confraternity of Santa Maria delle Grazie in Milan](July/jpgs/crowningthornsvecellio.jpg)](https://l450v.alamy.com/450v/2wc7fh2/paris-france-01-06-2024-louvre-museum-christ-crowned-with-thorns-painted-by-tiziano-vecellio-titien-2wc7fh2.jpg "Tiziano Vecellio’s painting of The Crowning with Thorns located in Musée du Louvre, Paris was commissioned by the confraternity of Santa Maria delle Grazie in Milan")
 
 #### July 21, 2025
 
