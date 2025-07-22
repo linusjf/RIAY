@@ -5516,7 +5516,7 @@ This is no mere depiction of suffering, but a window into its strange redemption
 - [July 20, 2025](#july-20-2025)
   - [Thorns for Love](#thorns-for-love)
   - [AI-Generated Summary: The Mockery of Kings and the Sovereignty of Suffering](#ai-generated-summary-the-mockery-of-kings-and-the-sovereignty-of-suffering)
-  - [Titian (Tiziano Vecellio)’s painting of The Crowning with Thorns located in Musée du Louvre, Paris (Stock Image)](#titian-tiziano-vecellios-painting-of-the-crowning-with-thorns-located-in-muse-du-louvre-paris-stock-image)
+  - [Titian’s painting of The Crowning with Thorns located in Musée du Louvre, Paris (Stock Image)](#titians-painting-of-the-crowning-with-thorns-located-in-muse-du-louvre-paris-stock-image)
 - [July 21, 2025](#july-21-2025)
   - [Scapegoat and Savior](#scapegoat-and-savior)
   - [AI-Generated Summary: The Weight of Glory in Bearing the Cross](#ai-generated-summary-the-weight-of-glory-in-bearing-the-cross)
@@ -5932,9 +5932,9 @@ The world has always traded truth for power, yet here is the true Power, wearing
 
 And what of us? We who flinch at suffering yet cling to comfort—do we not also weave thorns for Him when we prefer convenience to conviction? Repentance is but the act of laying down our petty crowns before the One who wore thorns for our sake. Let the image stir you: not to guilt, but to that quieter, deeper thing—a turning of the heart toward the only King worthy of all allegiance.
 
-##### Titian (Tiziano Vecellio)’s painting of The Crowning with Thorns located in Musée du Louvre, Paris (Stock Image)
+##### Titian’s painting of The Crowning with Thorns located in Musée du Louvre, Paris (Stock Image)
 
-[![Titian (Tiziano Vecellio)’s painting of The Crowning with Thorns located in Musée du Louvre, Paris was commissioned by the confraternity of Santa Maria delle Grazie in Milan](July/jpgs/crowningthornsvecellio.jpg)](https://l450v.alamy.com/450v/2wc7fh2/paris-france-01-06-2024-louvre-museum-christ-crowned-with-thorns-painted-by-tiziano-vecellio-titien-2wc7fh2.jpg "Titian (Tiziano Vecellio)’s painting of The Crowning with Thorns located in Musée du Louvre, Paris was commissioned by the confraternity of Santa Maria delle Grazie in Milan")
+[![Titian’s painting of The Crowning with Thorns located in Musée du Louvre, Paris was commissioned by the confraternity of Santa Maria delle Grazie in Milan](July/jpgs/crowningthornsvecellio.jpg)](https://l450v.alamy.com/450v/2wc7fh2/paris-france-01-06-2024-louvre-museum-christ-crowned-with-thorns-painted-by-tiziano-vecellio-titien-2wc7fh2.jpg "Titian’s painting of The Crowning with Thorns located in Musée du Louvre, Paris was commissioned by the confraternity of Santa Maria delle Grazie in Milan")
 
 #### July 21, 2025
 
