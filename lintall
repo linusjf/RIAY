@@ -32,6 +32,14 @@ function version() {
   printf "%s\n" "$VERSION"
 }
 
+function get_modified_md_files() {
+  # Get modified/added markdown files excluding venv directory
+  git ls-files --modified --others --exclude-standard | 
+    grep '\.md$' | 
+    grep -v '/venv/' |
+    xargs -r ls -1 2>/dev/null || true
+}
+
 ######################################################################
 # Display usage information
 ######################################################################
@@ -92,12 +100,19 @@ main() {
     echo "Running markdown formatter..."
   fi
 
-  mapfile -t mdfiles < <(find . -path '*/venv' -prune -o -name '*.md' -print)
   if ((force_all)); then
+    mapfile -t mdfiles < <(find . -path '*/venv' -prune -o -name '*.md' -print)
     parallel mdformat ::: "${mdfiles[@]}" || true
   else
-    if ! parallel mdformat ::: "${mdfiles[@]}"; then
-      die "mdformat failed" "${ERROR_MDFORMAT_FAILED}"
+    mapfile -t mdfiles < <(get_modified_md_files)
+    if [[ ${#mdfiles[@]} -eq 0 ]]; then
+      if ((verbose)); then
+        echo "No modified markdown files found"
+      fi
+    else
+      if ! parallel mdformat ::: "${mdfiles[@]}"; then
+        die "mdformat failed" "${ERROR_MDFORMAT_FAILED}"
+      fi
     fi
   fi
 
@@ -107,8 +122,10 @@ main() {
   if ((force_all)); then
     markdownlint --fix --ignore venv --ignore test -- **/*.md || true
   else
-    if ! markdownlint --fix --ignore venv --ignore test -- **/*.md; then
-      die "markdownlint failed" "${ERROR_MARKDOWNLINT_FAILED}"
+    if [[ ${#mdfiles[@]} -gt 0 ]]; then
+      if ! markdownlint --fix --ignore venv --ignore test -- "${mdfiles[@]}"; then
+        die "markdownlint failed" "${ERROR_MARKDOWNLINT_FAILED}"
+      fi
     fi
   fi
 
@@ -120,7 +137,7 @@ main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require_commands parallel date tee markdownlint mdformat || exit "${ERROR_MISSING_COMMAND}"
+  require_commands parallel date tee markdownlint mdformat git || exit "${ERROR_MISSING_COMMAND}"
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
