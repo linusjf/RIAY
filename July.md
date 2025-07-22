@@ -89,7 +89,7 @@
 - [July 22, 2025](#july-22-2025)
   - [God's Relentless Pursuit](#gods-relentless-pursuit)
   - [AI-Generated Summary: The Divine Embrace and the Rainbow of Promise](#ai-generated-summary-the-divine-embrace-and-the-rainbow-of-promise)
-  - [Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)](#fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852)
+  - [Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852) (Stock Image)](#fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-stock-image)
 
 <!-- tocstop -->
 
@@ -535,6 +535,6 @@ Consider, too, Pietro Gagliardi’s fresco of _The Crucifixion_ in the church Sa
 
 Do you doubt whether God cares? Look upon the Crucified. The answer is written in wounds, in blood, in the unyielding fidelity of a Father who will not let us go.
 
-### Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)
+### Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852) (Stock Image)
 
-[![Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)](July/jpgs/crucifixionpietrogagliardi.jpg)](http://www.davidmacchi.com/tourguide/S._Girolamo_degli_Illirici_files/Media/20100226-IMG_0404/20100226-IMG_0404.jpg "Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)")
+[![Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)](July/jpgs/crucifixiongagliardi1847.jpg)](https://c8.alamy.com/comp/2H2JDNG/rome-italy-august-28-2021-the-fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-2H2JDNG.jpg "Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852)")

@@ -209,6 +209,7 @@ class ArtDownloader:
                     self.DUCKDUCKGO_IMAGES.append((url, filename, score))
                     success = True
 
+            success = success or len(self.DUCKDUCKGO_IMAGES) > 0
             return success
 
         except Exception as error:
@@ -424,7 +425,7 @@ class ArtDownloader:
                     print(f"❌ Excluded file {idx+1}: {url} (score: {score:.3f})", file=sys.stderr)
 
             if not qualifying_pages:
-                print("❌ No qualifying images found (score >= 50.0)", file=sys.stderr)
+                print("❌ No qualifying images found (score >= 0.7)", file=sys.stderr)
                 return False
 
             success = False
@@ -446,6 +447,7 @@ class ArtDownloader:
                     self.GOOGLE_IMAGES.append((url, filename, score))
                     success = True
 
+            success = success or len(self.GOOGLE_IMAGES) > 0
             return success
 
         except Exception as error:
@@ -521,51 +523,42 @@ class ArtDownloader:
             for url in self.FOUND_STOCK_PHOTOS:
                 print(url)
 
-        if self.WIKIPEDIA_IMAGES:
-            print("\nWikipedia images with scores:")
-            for filepath, score in self.WIKIPEDIA_IMAGES:
-                print(f"{filepath} (score: {score:.3f})")
+        all_results = self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
+        if all_results:
+            print("\nAll search results (url, file, score):")
+            for url, file, score in all_results:
+                print(f"{url} -> {file} (score: {score:.3f})")
 
-            best_wikipedia = max(self.WIKIPEDIA_IMAGES, key=lambda x: x[1], default=None)
-            if best_wikipedia:
-                print(f"\n⭐ Best Wikipedia image: {best_wikipedia[0]} (score: {best_wikipedia[1]:.3f})")
+            sorted_results = sorted(all_results, key=lambda x: x[2], reverse=True)
 
-        if not self.WIKIPEDIA_IMAGES:
-            all_results = self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
-            if all_results:
-                print("\nAll search results (url, file, score):")
-                for url, file, score in all_results:
-                    print(f"{url} -> {file} (score: {score:.3f})")
+            best_result = None
+            for url, file, score in sorted_results:
+                if file and os.path.exists(file):
+                    best_result = (url, file, score)
+                    break
 
-                sorted_results = sorted(all_results, key=lambda x: x[2], reverse=True)
+                filename = os.path.join(self.SAVE_DIR, f"best_result_{self.filename_base}.jpg")
+                if self.save_image(url, filename):
+                    best_result = (url, filename, score)
+                    break
 
-                best_result = None
-                for url, file, score in sorted_results:
-                    if file and os.path.exists(file):
-                        best_result = (url, file, score)
-                        break
-
-                    filename = os.path.join(self.SAVE_DIR, f"best_result_{self.filename_base}.jpg")
-                    if self.save_image(url, filename):
-                        best_result = (url, filename, score)
-                        break
-
-                if best_result:
-                    url, file, score = best_result
-                    if "best_result_" in file and self.FIND_ALTERNATE_IMAGES:
-                        lookup = ReverseImageLookup()
-                        qualified_urls = lookup.reverse_image_lookup_url(url, self.title, self.artist, self.subject, self.location, self.date, self.style, self.medium)
-                        if qualified_urls:
-                            best_qualified_result = self.download_from_googlelens(qualified_urls=qualified_urls, filename_base=self.filename_base)
-                            if best_qualified_result:
-                                filepath, url_score = best_qualified_result
-                                print(f"\n⭐ Best available image (downloaded): {filepath} (score: {url_score:.3f})")
-                            else:
-                                print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
+            if best_result:
+                url, file, score = best_result
+                if "best_result_" in file and self.FIND_ALTERNATE_IMAGES:
+                    lookup = ReverseImageLookup()
+                    qualified_urls = lookup.reverse_image_lookup_url(url, self.title, self.artist, self.subject, self.location, self.date, self.style, self.medium)
+                    if qualified_urls:
+                        best_qualified_result = self.download_from_googlelens(qualified_urls=qualified_urls, filename_base=self.filename_base)
+                        if best_qualified_result:
+                            filepath, url_score = best_qualified_result
+                            print(f"\n⭐ Best available image (downloaded): {filepath} (score: {url_score:.3f})")
                         else:
                             print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
                     else:
                         print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
+                else:
+                    print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
+
 
 def main():
     """Main entry point for the script."""
@@ -603,7 +596,10 @@ def main():
 
     end_time = time.time()
     elapsed_time = end_time - start_time
-    print(f"\n⏱️ Downloaded art images in {elapsed_time:.2f} seconds", file=sys.stderr)
+    if success:
+        print(f"\n⏱️ Downloaded art images in {elapsed_time:.2f} seconds", file=sys.stderr)
+    else:
+        print(f"\n⏱️ Error occurred in downloading art images: Time taken: {elapsed_time:.2f} seconds", file=sys.stderr)
 
     sys.exit(0 if success else 1)
 
