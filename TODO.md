@@ -15,3 +15,4 @@
 ## Exploratory tasks
 
 1. Related links feature.
+2. Explore embedded vector databases to allow search against art images already downloaded (60) for semantic matches. Leaning towards sqlite-vss.
