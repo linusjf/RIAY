@@ -26,6 +26,7 @@ from simtools import compare_terms, MatchMode
 from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
+from PIL import Image
 
 class ArtDownloader:
     """Download artwork images from various sources."""
@@ -40,6 +41,8 @@ class ArtDownloader:
         self.FIND_ALTERNATE_IMAGES = self.config.get(ConfigConstants.FIND_ALTERNATE_IMAGES, False)
         self.SERPAPI_API_KEY = self.config.get(ConfigConstants.SERP_API_KEY, "")
         self.SAVE_DIR = self.config.get(ConfigConstants.ART_DOWNLOADER_DIR, 'artdownloads')
+        self.MIN_IMAGE_WIDTH = int(self.config.get(ConfigConstants.MIN_IMAGE_WIDTH, 0))
+        self.MIN_IMAGE_HEIGHT = int(self.config.get(ConfigConstants.MIN_IMAGE_HEIGHT, 0))
 
         # Initialize artwork metadata fields
         self.title = None
@@ -73,6 +76,22 @@ class ArtDownloader:
         self.DUCKDUCKGO_IMAGES = []
 
         os.makedirs(self.SAVE_DIR, exist_ok=True)
+
+    def _check_image_dimensions(self, image_path):
+        """Check if image meets minimum dimension requirements."""
+        if self.MIN_IMAGE_WIDTH <= 0 and self.MIN_IMAGE_HEIGHT <= 0:
+            return True
+            
+        try:
+            with Image.open(image_path) as img:
+                width, height = img.size
+                if width >= self.MIN_IMAGE_WIDTH and height >= self.MIN_IMAGE_HEIGHT:
+                    return True
+                print(f"❌ Image dimensions too small: {width}x{height} (min {self.MIN_IMAGE_WIDTH}x{self.MIN_IMAGE_HEIGHT})")
+                return False
+        except Exception as e:
+            print(f"❌ Error checking image dimensions: {e}")
+            return False
 
     def save_image(self, url, filename):
         """Save an image from URL to local file."""
@@ -129,6 +148,11 @@ class ArtDownloader:
                         for chunk in response.iter_content(8192):
                             f.write(chunk)
 
+                    # Check dimensions before proceeding
+                    if not self._check_image_dimensions(temp_filename):
+                        os.remove(temp_filename)
+                        return False
+
                     url_filename = os.path.splitext(temp_filename)[0] + ".url.txt"
                     with open(url_filename, "w") as url_file:
                         url_file.write(url)
@@ -137,6 +161,9 @@ class ArtDownloader:
                     if ext.lower() not in ('.jpg', '.jpeg'):
                         jpeg_path = convert_to_jpeg(temp_filename)
                         if jpeg_path:
+                            if not self._check_image_dimensions(jpeg_path):
+                                os.remove(jpeg_path)
+                                return False
                             print(f"✅ Saved: {jpeg_path} (source URL saved to {url_filename})", file=sys.stderr)
                             self.DOWNLOADED_URLS[url] = jpeg_path
                             return True
