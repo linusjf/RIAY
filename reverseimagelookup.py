@@ -33,8 +33,6 @@ class ReverseImageLookup:
     CONFIG_FILE = 'config.env'
     ZENSERP_API_ENDPOINT = "https://app.zenserp.com/api/v2/search"
     IMAGE_URL_FILE_EXTENSION = '.url.txt'
-    MIN_IMAGE_WIDTH = 350
-    MIN_IMAGE_HEIGHT = 480
     REQUIRED_MATCH_COUNT = 5
 
     def __init__(self, search_api=SEARCH_API.SERP_API):
@@ -50,6 +48,8 @@ class ReverseImageLookup:
         self.search_api = search_api
         self.STOCK_PHOTO_SITES = self.config[ConfigConstants.STOCK_PHOTO_SITES]
         self.match_text = None
+        self.MIN_IMAGE_WIDTH = self.config[ConfigConstants.MIN_IMAGE_WIDTH]
+        self.MIN_IMAGE_HEIGHT = self.config[ConfigConstants.MIN_IMAGE_HEIGHT]
 
     def verify_image_against_metadata(self, image_url, metadata_text):
         if self.search_api == self.SEARCH_API.SERP_API:
