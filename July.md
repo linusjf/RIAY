@@ -85,7 +85,7 @@
 - [July 21, 2025](#july-21-2025)
   - [Scapegoat and Savior](#scapegoat-and-savior)
   - [AI-Generated Summary: The Weight of Glory in Bearing the Cross](#ai-generated-summary-the-weight-of-glory-in-bearing-the-cross)
-  - [A moment of divine inspiration captured in sacred art (Stock Image)](#a-moment-of-divine-inspiration-captured-in-sacred-art-stock-image)
+  - [Jesus, Carrying His Cross, Helped by Simon of Cyrene (Stock Image)](#jesus-carrying-his-cross-helped-by-simon-of-cyrene-stock-image)
 - [July 22, 2025](#july-22-2025)
   - [God's Relentless Pursuit](#gods-relentless-pursuit)
   - [AI-Generated Summary: The Divine Embrace and the Rainbow of Promise](#ai-generated-summary-the-divine-embrace-and-the-rainbow-of-promise)
@@ -521,9 +521,9 @@ As the Angelic Doctor teaches, Christ carried His cross as a king carries his in
 
 Take heart, then, and remember: every sorrow borne in love is a thread woven into the tapestry of grace. The cross, once a symbol of death, is now the tree of life.
 
-### A moment of divine inspiration captured in sacred art (Stock Image)
+### Jesus, Carrying His Cross, Helped by Simon of Cyrene (Stock Image)
 
-[![A moment of divine inspiration captured in sacred art](July/jpgs/jesuscarryinghiscross.jpg)](https://upload.wikimedia.org/wikipedia/commons/3/32/02_Jesus_carries_His_cross.jpg "A moment of divine inspiration captured in sacred art")
+[![Jesus, Carrying His Cross, Helped by Simon of Cyrene](July/jpgs/jesuscarryinghiscross.jpg)](https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/the-painting-simon-of-cyrene-helps-jesus-carry-his-cross-by-josef-piens-cooreman-jozef-sedmak.jpg "Jesus, Carrying His Cross, Helped by Simon of Cyrene")
 
 ## July 22, 2025
 
