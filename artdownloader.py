@@ -41,8 +41,8 @@ class ArtDownloader:
         self.FIND_ALTERNATE_IMAGES = self.config.get(ConfigConstants.FIND_ALTERNATE_IMAGES, False)
         self.SERPAPI_API_KEY = self.config.get(ConfigConstants.SERP_API_KEY, "")
         self.SAVE_DIR = self.config.get(ConfigConstants.ART_DOWNLOADER_DIR, 'artdownloads')
-        self.MIN_IMAGE_WIDTH = int(self.config.get(ConfigConstants.MIN_IMAGE_WIDTH, 0))
-        self.MIN_IMAGE_HEIGHT = int(self.config.get(ConfigConstants.MIN_IMAGE_HEIGHT, 0))
+        self.MIN_IMAGE_WIDTH = self.config.get(ConfigConstants.MIN_IMAGE_WIDTH, 0)
+        self.MIN_IMAGE_HEIGHT = self.config.get(ConfigConstants.MIN_IMAGE_HEIGHT, 0)
 
         # Initialize artwork metadata fields
         self.title = None
