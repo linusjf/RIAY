@@ -2,7 +2,7 @@ token literal names:
 null
 'addvideo'
 'genmonth'
-'lintall'
+'lint'
 'stitch'
 'gentoc'
 'addvideotoday'
@@ -43,7 +43,7 @@ videoName
 genmonth
 month
 year
-lintall
+lint
 stitch
 gentoc
 pathtomdfile

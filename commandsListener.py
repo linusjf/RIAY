@@ -80,12 +80,12 @@ class commandsListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by commandsParser#lintall.
-    def enterLintall(self, ctx:commandsParser.LintallContext):
+    # Enter a parse tree produced by commandsParser#lint.
+    def enterLint(self, ctx:commandsParser.LintContext):
         pass
 
-    # Exit a parse tree produced by commandsParser#lintall.
-    def exitLintall(self, ctx:commandsParser.LintallContext):
+    # Exit a parse tree produced by commandsParser#lint.
+    def exitLint(self, ctx:commandsParser.LintContext):
         pass
 
 

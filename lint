@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ######################################################################
-# lintall - Lint and format all markdown files in the project
+# lint - Lint and format all markdown files in the project
 #
 # This script runs markdownlint and mdformat on all markdown files
 # in the project directory tree.
@@ -34,10 +34,10 @@ function version() {
 
 function get_modified_md_files() {
   # Get modified/added markdown files excluding venv directory
-  git ls-files --modified --others --exclude-standard | 
-    grep '\.md$' | 
-    grep -v '/venv/' |
-    xargs -r ls -1 2>/dev/null || true
+  git ls-files --modified --others --exclude-standard \
+    | grep '\.md$' \
+    | grep -v '/venv/' \
+    | xargs -r ls -1 2> /dev/null || true
 }
 
 ######################################################################

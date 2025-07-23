@@ -66,10 +66,10 @@ class Commands(commandsListener):
         print(f"Generating month {month} for year {year}.")
         self._execute_command([rule_name, month, year])
 
-    def enterLintall(self, ctx: commandsParser.LintallContext) -> None:
-        """Process Lintall command."""
+    def enterLint(self, ctx: commandsParser.LintContext) -> None:
+        """Process Lint command."""
         rule_name = self._get_rule_name(ctx)
-        print("Linting all...")
+        print("Linting added and updated markdown docs...")
         self._execute_command([rule_name])
 
     def enterStitch(self, ctx: commandsParser.StitchContext) -> None:

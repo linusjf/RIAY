@@ -1,4 +1,4 @@
 # commands
 #embedarttoday 199
-addvideo "1cJdzzj4Yrs" "Transcending Death"
-lintall
+#addvideo "1cJdzzj4Yrs" "Transcending Death"
+lint

@@ -53,7 +53,7 @@ class commandsParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'addvideo'", "'genmonth'", "'lintall'", 
+    literalNames = [ "<INVALID>", "'addvideo'", "'genmonth'", "'lint'", 
                      "'stitch'", "'gentoc'", "'addvideotoday'", "'addimgtoday'", 
                      "'embedarttoday'" ]
 
@@ -70,7 +70,7 @@ class commandsParser ( Parser ):
     RULE_genmonth = 5
     RULE_month = 6
     RULE_year = 7
-    RULE_lintall = 8
+    RULE_lint = 8
     RULE_stitch = 9
     RULE_gentoc = 10
     RULE_pathtomdfile = 11
@@ -82,7 +82,7 @@ class commandsParser ( Parser ):
     RULE_embedarttoday = 17
 
     ruleNames =  [ "program", "command", "addvideo", "videoId", "videoName", 
-                   "genmonth", "month", "year", "lintall", "stitch", "gentoc", 
+                   "genmonth", "month", "year", "lint", "stitch", "gentoc", 
                    "pathtomdfile", "addvideotoday", "dayofyear", "addimgtoday", 
                    "imagepath", "caption", "embedarttoday" ]
 
@@ -215,8 +215,8 @@ class commandsParser ( Parser ):
             return self.getTypedRuleContext(commandsParser.GenmonthContext,0)
 
 
-        def lintall(self):
-            return self.getTypedRuleContext(commandsParser.LintallContext,0)
+        def lint(self):
+            return self.getTypedRuleContext(commandsParser.LintContext,0)
 
 
         def stitch(self):
@@ -274,7 +274,7 @@ class commandsParser ( Parser ):
             elif token in [3]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 52
-                self.lintall()
+                self.lint()
                 pass
             elif token in [4]:
                 self.enterOuterAlt(localctx, 4)
@@ -584,7 +584,7 @@ class commandsParser ( Parser ):
         return localctx
 
 
-    class LintallContext(ParserRuleContext):
+    class LintContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -593,23 +593,23 @@ class commandsParser ( Parser ):
 
 
         def getRuleIndex(self):
-            return commandsParser.RULE_lintall
+            return commandsParser.RULE_lint
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLintall" ):
-                listener.enterLintall(self)
+            if hasattr( listener, "enterLint" ):
+                listener.enterLint(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLintall" ):
-                listener.exitLintall(self)
+            if hasattr( listener, "exitLint" ):
+                listener.exitLint(self)
 
 
 
 
-    def lintall(self):
+    def lint(self):
 
-        localctx = commandsParser.LintallContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_lintall)
+        localctx = commandsParser.LintContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 16, self.RULE_lint)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 77
