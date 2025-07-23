@@ -28,27 +28,30 @@ import requests
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 
-def get_config():
-    config = ConfigEnv()
-    return config
+class ArtDetailsAugmenter:
+    """Class for augmenting artwork details using LLM APIs."""
 
-def query_llm(art_json):
-    config = get_config()
-    api_key = config.get(ConfigConstants.TEXT_LLM_API_KEY)
-    base_url = config.get(ConfigConstants.TEXT_LLM_BASE_URL)
-    endpoint = config.get(ConfigConstants.TEXT_LLM_CHAT_ENDPOINT)
-    model = config.get(ConfigConstants.TEXT_LLM_MODEL)
+    def __init__(self):
+        """Initialize with configuration from environment."""
+        self.config = ConfigEnv(include_os_env=True)
 
-    if not all([api_key, base_url, endpoint, model]):
-        raise EnvironmentError("Missing required LLM configuration variables")
+    def _get_llm_config(self):
+        """Get required LLM configuration values."""
+        return {
+            'api_key': self.config.get(ConfigConstants.TEXT_LLM_API_KEY),
+            'base_url': self.config.get(ConfigConstants.TEXT_LLM_BASE_URL),
+            'endpoint': self.config.get(ConfigConstants.TEXT_LLM_CHAT_ENDPOINT),
+            'model': self.config.get(ConfigConstants.TEXT_LLM_MODEL)
+        }
 
-    url = f"{base_url.rstrip('/')}/{endpoint.lstrip('/')}"
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json"
-    }
+    def _validate_config(self, config):
+        """Validate that all required config values are present."""
+        if not all(config.values()):
+            raise EnvironmentError("Missing required LLM configuration variables")
 
-    prompt = f"""
+    def _build_llm_payload(self, art_json):
+        """Construct the payload for the LLM API request."""
+        prompt = f"""
 You are an art historian AI. Enhance the following JSON object with:
 - original_title in the original language (if not present)
 - title_language and ISO code
@@ -59,20 +62,31 @@ Return a well-formatted JSON object with the new fields added.
 Input JSON:
 {json.dumps(art_json, indent=2)}
 """
+        return {
+            "model": self.config.get(ConfigConstants.TEXT_LLM_MODEL),
+            "messages": [
+                {"role": "system", "content": "You are a helpful assistant that enriches metadata about artworks."},
+                {"role": "user", "content": prompt}
+            ]
+        }
 
-    payload = {
-        "model": model,
-        "messages": [
-            {"role": "system", "content": "You are a helpful assistant that enriches metadata about artworks."},
-            {"role": "user", "content": prompt}
-        ]
-    }
+    def augment_art_details(self, art_json):
+        """Enhance artwork JSON with additional details from LLM."""
+        config = self._get_llm_config()
+        self._validate_config(config)
 
-    response = requests.post(url, headers=headers, json=payload)
-    response.raise_for_status()
+        url = f"{config['base_url'].rstrip('/')}/{config['endpoint'].lstrip('/')}"
+        headers = {
+            "Authorization": f"Bearer {config['api_key']}",
+            "Content-Type": "application/json"
+        }
 
-    completion = response.json()
-    return completion['choices'][0]['message']['content']
+        payload = self._build_llm_payload(art_json)
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+
+        completion = response.json()
+        return completion['choices'][0]['message']['content']
 
 def main():
     if sys.stdin.isatty():
@@ -81,7 +95,8 @@ def main():
 
     try:
         input_json = json.load(sys.stdin)
-        output = query_llm(input_json)
+        augmenter = ArtDetailsAugmenter()
+        output = augmenter.augment_art_details(input_json)
         print(output)
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)
