@@ -225,8 +225,10 @@ function main() {
 
         local watermarked="$(echo "$jsonresult" | jq -r '.watermarked')"
         if [[ "$watermarked" =~ ^[Yy] ]]; then
-          err "Image is watermarked"
-          is_stock_image=true
+          if [[ ! "${best_selected_image}" == *wikipedia* ]] && [[ ! "${best_selected_image}" == *wikimedia* ]]; then
+            err "Image is watermarked"
+            is_stock_image=true
+          fi
         fi
       fi
 
