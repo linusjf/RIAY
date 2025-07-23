@@ -11,7 +11,6 @@
 1. Optimize code where possible.
 1. Refactor where possible.
 1. Augment extracted art details using LLM. Use augmented info to search especially Wiki in original language of artwork title.
-1. embedarttoday - if image url contains wikipedia or wikimedia, it cannot be watermarked i.e., stock image.
 
 ## Exploratory tasks
 
