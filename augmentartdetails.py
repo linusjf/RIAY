@@ -9,11 +9,6 @@ Augmentartdetails.
 # @description :
 # -*- coding: utf-8 -*-'
 ######################################################################
-"""
-#!/usr/bin/env python3
-"""
-augmentartdetails.py
-
 Enhances an artwork JSON record by querying an LLM with configurable API settings.
 Environment variables required:
 - TEXT_LLM_API_KEY
@@ -41,7 +36,8 @@ class ArtDetailsAugmenter:
             'api_key': self.config.get(ConfigConstants.TEXT_LLM_API_KEY),
             'base_url': self.config.get(ConfigConstants.TEXT_LLM_BASE_URL),
             'endpoint': self.config.get(ConfigConstants.TEXT_LLM_CHAT_ENDPOINT),
-            'model': self.config.get(ConfigConstants.TEXT_LLM_MODEL)
+            'model': self.config.get(ConfigConstants.TEXT_LLM_MODEL),
+            'art_details_prompt': self.config.get(ConfigConstants.ART_DETAILS_AUGMENT_PROMPT)
         }
 
     def _validate_config(self, config):
@@ -51,22 +47,12 @@ class ArtDetailsAugmenter:
 
     def _build_llm_payload(self, art_json):
         """Construct the payload for the LLM API request."""
-        prompt = f"""
-You are an art historian AI. Enhance the following JSON object with:
-- original_title in the original language (if not present)
-- title_language and ISO code
-- a 20-word caption summarizing the artwork.
-
-Return a well-formatted JSON object with the new fields added.
-
-Input JSON:
-{json.dumps(art_json, indent=2)}
-"""
+        config = self._get_llm_config()
         return {
-            "model": self.config.get(ConfigConstants.TEXT_LLM_MODEL),
+            "model": config['model'],
             "messages": [
                 {"role": "system", "content": "You are a helpful assistant that enriches metadata about artworks."},
-                {"role": "user", "content": prompt}
+                {"role": "user", "content": f"{config['art_details_prompt']}\n\nInput JSON:\n{json.dumps(art_json, indent=2)}"}
             ]
         }
 
