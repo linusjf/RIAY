@@ -81,7 +81,7 @@ class ArtDownloader:
         """Check if image meets minimum dimension requirements."""
         if self.MIN_IMAGE_WIDTH <= 0 and self.MIN_IMAGE_HEIGHT <= 0:
             return True
-            
+
         try:
             with Image.open(image_path) as img:
                 width, height = img.size
@@ -306,7 +306,7 @@ class ArtDownloader:
                             unique_filename = f"{filename_base}_{idx+1}_{source}"
                             filename = os.path.join(self.SAVE_DIR, f"{unique_filename}.jpg")
                             if self.save_image(image_url, filename):
-                                self.WIKIPEDIA_IMAGES.append((filename, score))
+                                self.WIKIPEDIA_IMAGES.append((image_url, filename, score))
                                 success = True
 
             return success
@@ -409,7 +409,7 @@ class ArtDownloader:
                         f"{unique_filename}_wikimedia.jpg"
                     )
                     if self.save_image(image_url, filename):
-                        self.WIKIPEDIA_IMAGES.append((filename, score))
+                        self.WIKIPEDIA_IMAGES.append((image_url,filename, score))
                         success = True
 
             return success
