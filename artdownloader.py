@@ -12,6 +12,7 @@ import sys
 import time
 import argparse
 import shutil
+from typing import Optional, Dict, List, Tuple, Union, Iterator, Any
 
 import requests
 import re
@@ -27,32 +28,33 @@ from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from PIL import Image
+from pathlib import Path
 
 class ArtDownloader:
     """Download artwork images from various sources."""
 
     SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
 
-    def __init__(self, params=None):
+    def __init__(self, params: Optional[Dict[str, str]] = None) -> None:
         """Initialize the downloader with configuration."""
-        self.config = ConfigEnv()
-        self.STOCK_PHOTO_SITES = self.config.get(ConfigConstants.STOCK_PHOTO_SITES, [])
-        self.SOCIAL_MEDIA_SITES = self.config.get(ConfigConstants.SOCIAL_MEDIA_SITES, [])
-        self.FIND_ALTERNATE_IMAGES = self.config.get(ConfigConstants.FIND_ALTERNATE_IMAGES, False)
-        self.SERPAPI_API_KEY = self.config.get(ConfigConstants.SERP_API_KEY, "")
-        self.SAVE_DIR = self.config.get(ConfigConstants.ART_DOWNLOADER_DIR, 'artdownloads')
-        self.MIN_IMAGE_WIDTH = self.config.get(ConfigConstants.MIN_IMAGE_WIDTH, 0)
-        self.MIN_IMAGE_HEIGHT = self.config.get(ConfigConstants.MIN_IMAGE_HEIGHT, 0)
+        self.config: ConfigEnv = ConfigEnv()
+        self.STOCK_PHOTO_SITES: List[str] = self.config.get(ConfigConstants.STOCK_PHOTO_SITES, [])
+        self.SOCIAL_MEDIA_SITES: List[str] = self.config.get(ConfigConstants.SOCIAL_MEDIA_SITES, [])
+        self.FIND_ALTERNATE_IMAGES: bool = self.config.get(ConfigConstants.FIND_ALTERNATE_IMAGES, False)
+        self.SERPAPI_API_KEY: str = self.config.get(ConfigConstants.SERP_API_KEY, "")
+        self.SAVE_DIR: str = self.config.get(ConfigConstants.ART_DOWNLOADER_DIR, 'artdownloads')
+        self.MIN_IMAGE_WIDTH: int = self.config.get(ConfigConstants.MIN_IMAGE_WIDTH, 0)
+        self.MIN_IMAGE_HEIGHT: int = self.config.get(ConfigConstants.MIN_IMAGE_HEIGHT, 0)
 
         # Initialize artwork metadata fields
-        self.title = None
-        self.artist = None
-        self.location = None
-        self.date = None
-        self.style = None
-        self.medium = None
-        self.subject = None
-        self.filename_base = None
+        self.title: Optional[str] = None
+        self.artist: Optional[str] = None
+        self.location: Optional[str] = None
+        self.date: Optional[str] = None
+        self.style: Optional[str] = None
+        self.medium: Optional[str] = None
+        self.subject: Optional[str] = None
+        self.filename_base: Optional[str] = None
 
         # Populate from params dictionary if provided
         if params:
@@ -65,19 +67,19 @@ class ArtDownloader:
             self.subject = params.get('subject')
             self.filename_base = params.get('filename')
 
-        self.WIKIMEDIA_SEARCH_API_URL = "https://api.wikimedia.org/core/v1/commons/search/page"
-        self.WIKIMEDIA_FILE_API_URL = "https://api.wikimedia.org/core/v1/commons/file"
+        self.WIKIMEDIA_SEARCH_API_URL: str = "https://api.wikimedia.org/core/v1/commons/search/page"
+        self.WIKIMEDIA_FILE_API_URL: str = "https://api.wikimedia.org/core/v1/commons/file"
 
         # Track downloaded URLs and results
-        self.DOWNLOADED_URLS = {}
-        self.FOUND_STOCK_PHOTOS = []
-        self.WIKIPEDIA_IMAGES = []
-        self.GOOGLE_IMAGES = []
-        self.DUCKDUCKGO_IMAGES = []
+        self.DOWNLOADED_URLS: Dict[str, str] = {}
+        self.FOUND_STOCK_PHOTOS: List[str] = []
+        self.WIKIPEDIA_IMAGES: List[Tuple[str, str, float]] = []
+        self.GOOGLE_IMAGES: List[Tuple[str, str, float]] = []
+        self.DUCKDUCKGO_IMAGES: List[Tuple[str, str, float]] = []
 
         os.makedirs(self.SAVE_DIR, exist_ok=True)
 
-    def _check_image_dimensions(self, image_path):
+    def _check_image_dimensions(self, image_path: str) -> bool:
         """Check if image meets minimum dimension requirements."""
         if self.MIN_IMAGE_WIDTH <= 0 and self.MIN_IMAGE_HEIGHT <= 0:
             return True
@@ -93,7 +95,7 @@ class ArtDownloader:
             print(f"❌ Error checking image dimensions: {e}")
             return False
 
-    def save_image(self, url, filename):
+    def save_image(self, url: str, filename: str) -> bool:
         """Save an image from URL to local file."""
         if url in self.DOWNLOADED_URLS:
             print(f"⏩ URL already downloaded: {url}", file=sys.stderr)
@@ -193,11 +195,11 @@ class ArtDownloader:
         wait=wait_exponential(min=1, max=10),
         stop=stop_after_attempt(5),
     )
-    def search_duckduckgo_images(self, query, max_results=10):
+    def search_duckduckgo_images(self, query: str, max_results: int = 10) -> List[Dict[str, Any]]:
         with DDGS() as ddgs:
             return ddgs.images(query, max_results=max_results)
 
-    def download_from_duckduckgo(self, query, filename_base):
+    def download_from_duckduckgo(self, query: str, filename_base: str) -> bool:
         """Download image from DuckDuckGo search."""
         print(f"\n🔍 DuckDuckGo search for: {query}")
         try:
@@ -205,7 +207,7 @@ class ArtDownloader:
             if not results:
                 print("❌ No matching images found.",file=sys.stderr)
                 return False
-            qualifying_results = []
+            qualifying_results: List[Tuple[Dict[str, Any], float]] = []
             for image in results[0:5]:
                 url = image["image"]
                 title = image["title"]
@@ -243,7 +245,7 @@ class ArtDownloader:
             print(f"❌ Error: {error}", file=sys.stderr)
         return False
 
-    def download_from_wikimedia_search(self, query, detailed_query, filename_base, source="wikimedia_search"):
+    def download_from_wikimedia_search(self, query: str, detailed_query: str, filename_base: str, source: str = "wikimedia_search") -> bool:
         """Search Wikimedia Commons for an image by query and download the top result."""
         print(f"\n🔍 Searching Wikimedia for: {query}", file=sys.stderr)
         search_endpoint = "https://commons.wikimedia.org/w/api.php"
@@ -266,7 +268,7 @@ class ArtDownloader:
             if not search_results:
                 print("❌ No matching images found.", file=sys.stderr)
                 return False
-            qualifying_results = []
+            qualifying_results: List[Tuple[Dict[str, Any], float]] = []
             for result in search_results:
                 title = clean_filename(result["title"])
                 titlesnippet = strip_span_tags_but_keep_contents(result["titlesnippet"])
@@ -315,7 +317,7 @@ class ArtDownloader:
             print(f"❌ Error: {e}", file=sys.stderr)
             return False
 
-    def download_image_from_wikipedia_article(self, query, detailed_query, filename_base):
+    def download_image_from_wikipedia_article(self, query: str, detailed_query: str, filename_base: str) -> bool:
         """Download the first usable image from a Wikipedia article."""
         print(f"\n🔍 Fetching all images from Wikipedia article: {query}", file=sys.stderr)
         try:
@@ -327,7 +329,7 @@ class ArtDownloader:
             image_data = response.json()
 
             pages = image_data.get("pages", [])
-            qualifying_pages = []
+            qualifying_pages: List[Tuple[str, float]] = []
 
             for idx, page in enumerate(pages):
                 key = page.get("key", "")
@@ -360,7 +362,7 @@ class ArtDownloader:
             print(f"❌ Error: {error}", file=sys.stderr)
             return False
 
-    def download_from_wikimedia(self, query, enhanced_query, filename_base):
+    def download_from_wikimedia(self, query: str, enhanced_query: str, filename_base: str) -> bool:
         """Download image from Wikimedia Commons."""
         print(f"\n🔍 Wikimedia Commons search for: {query}", file=sys.stderr)
         params = {"q": query}
@@ -370,7 +372,7 @@ class ArtDownloader:
                 params=params
             ).json()
             pages = response.get("pages", [])
-            qualifying_pages = []
+            qualifying_pages: List[Tuple[str, float]] = []
             if not pages:
                 print("❌ No matching images found.", file=sys.stderr)
                 return False
@@ -418,7 +420,7 @@ class ArtDownloader:
             print(f"❌ Error: {error}", file=sys.stderr)
             return False
 
-    def download_from_google(self, query, filename_base):
+    def download_from_google(self, query: str, filename_base: str) -> bool:
         """Download image from Google Images via SerpAPI."""
         print(f"\n🔍 Google search for: {query}", file=sys.stderr)
         try:
@@ -436,7 +438,7 @@ class ArtDownloader:
             if not images:
                 return False
 
-            qualifying_pages = []
+            qualifying_pages: List[Tuple[str, float]] = []
             for idx, image in enumerate(images[0:5]):
                 title = image.get("title")
                 url = image.get("original")
@@ -481,10 +483,10 @@ class ArtDownloader:
             print(f"❌ Error: {error}", file=sys.stderr)
             return False
 
-    def download_from_googlelens(self, qualified_urls, filename_base):
+    def download_from_googlelens(self, qualified_urls: List[Tuple[str, float]], filename_base: str) -> Tuple[Optional[str], Optional[float]]:
         """Download images from Google Lens reverse image search results."""
         if not qualified_urls:
-            return None
+            return (None, None)
 
         for idx, (url, score) in enumerate(qualified_urls):
             filename = os.path.join(
@@ -492,10 +494,10 @@ class ArtDownloader:
                 f"{filename_base}_{idx+1}_googlelens.jpg"
             )
             if self.save_image(url, filename):
-                return filename, score
+                return (filename, score)
         return (None, None)
 
-    def download_all(self, query):
+    def download_all(self, query: str) -> bool:
         """Download images from all available sources."""
         if self.filename_base is None:
             self.filename_base = query.replace(' ', '_')
@@ -539,7 +541,7 @@ class ArtDownloader:
 
         return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
 
-    def print_results(self):
+    def print_results(self) -> None:
         """Print summary of downloaded images and results."""
         print("\nDownloaded images: ")
         for v in self.DOWNLOADED_URLS.values():
@@ -587,7 +589,7 @@ class ArtDownloader:
                     print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
 
 
-def main():
+def main() -> None:
     """Main entry point for the script."""
     start_time = time.time()
     parser = argparse.ArgumentParser(description='Download artwork images from various sources.')
