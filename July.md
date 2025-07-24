@@ -94,6 +94,9 @@
   - [Transcending Death](#transcending-death)
   - [AI-Generated Summary: The Dawn of Everlasting Life](#ai-generated-summary-the-dawn-of-everlasting-life)
   - [Caravaggio’s The Incredulity of Saint Thomas (Stock Image)](#caravaggios-the-incredulity-of-saint-thomas-stock-image)
+- [July 24, 2025](#july-24-2025)
+  - [With Us Always](#with-us-always)
+  - [AI-Generated Summary: The Ascension and the Ever-Present Christ](#ai-generated-summary-the-ascension-and-the-ever-present-christ)
 
 <!-- tocstop -->
 
@@ -560,3 +563,17 @@ And so the ancient prayers echo—_Our Father_, _Hail Mary_, _Glory Be_—not as
 ### Caravaggio’s The Incredulity of Saint Thomas (Stock Image)
 
 [![Caravaggio’s The Incredulity of Saint Thomas](July/jpgs/incredulitycaravaggio.jpg)](http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/the-incredulity-of-saint-thomas-caravaggio.jpg "Caravaggio’s The Incredulity of Saint Thomas")
+
+## July 24, 2025
+
+### With Us Always
+
+[![With Us Always](/July/jpgs/Day205.jpg)](https://youtu.be/HNH8qgL7jfc "With Us Always")
+
+### AI-Generated Summary: The Ascension and the Ever-Present Christ
+
+The Ascension is no mere departure, as if our Lord had taken leave of us, but rather the glorious fulfillment of that ancient word: _"The Lord said to my Lord, sit at my right hand."_ He who once walked among us in the humility of flesh now reigns in the majesty of the Father’s right hand—not confined to place, as we reckon it, but sovereign over all places. For God’s presence is not measured by steps or miles, but by His divine nature, and so Christ, having borne our limits, now fills all things.
+
+Do not suppose that He is farther from you now than when He sat at supper with His disciples. It is the very opposite: then, He could be but in one room, one village; now, by His Ascension, He is nearer to each of us than our own breath. And if we would ascend with Him, we must do as Augustine taught—rise on the wings of charity, clinging to Christ by loving God and neighbor, especially in deeds of mercy.
+
+Even in art, this mystery is whispered. Consider Gandino’s painting, where the Lord’s footprints remain etched in stone, as if to say: _"Follow Me."_ For though He has ascended, His path is still open to us—to walk as He walked, to love as He loved, until we too are brought where He is.
