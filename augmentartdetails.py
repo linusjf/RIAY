@@ -21,17 +21,18 @@ import sys
 import json
 import requests
 import re
+from typing import Dict, Any, Optional
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 
 class ArtDetailsAugmenter:
     """Class for augmenting artwork details using LLM APIs."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize with configuration from environment."""
         self.config = ConfigEnv(include_os_env=True)
 
-    def _get_llm_config(self):
+    def _get_llm_config(self) -> Dict[str, Optional[str]]:
         """Get required LLM configuration values."""
         return {
             'api_key': self.config.get(ConfigConstants.TEXT_LLM_API_KEY),
@@ -41,12 +42,12 @@ class ArtDetailsAugmenter:
             'art_details_prompt': self.config.get(ConfigConstants.ART_DETAILS_AUGMENT_PROMPT)
         }
 
-    def _validate_config(self, config):
+    def _validate_config(self, config: Dict[str, Optional[str]]) -> None:
         """Validate that all required config values are present."""
         if not all(config.values()):
             raise EnvironmentError("Missing required LLM configuration variables")
 
-    def _build_llm_payload(self, art_json):
+    def _build_llm_payload(self, art_json: Dict[str, Any]) -> Dict[str, Any]:
         """Construct the payload for the LLM API request."""
         config = self._get_llm_config()
         return {
@@ -57,11 +58,11 @@ class ArtDetailsAugmenter:
             ]
         }
 
-    def _clean_output(self, output):
+    def _clean_output(self, output: str) -> str:
         """Remove markdown code guards from the output."""
         return re.sub(r'^```(?:json)?\s*|\s*```$', '', output, flags=re.MULTILINE).strip()
 
-    def augment_art_details(self, art_json):
+    def augment_art_details(self, art_json: Dict[str, Any]) -> str:
         """Enhance artwork JSON with additional details from LLM."""
         config = self._get_llm_config()
         self._validate_config(config)
@@ -80,7 +81,7 @@ class ArtDetailsAugmenter:
         output = completion['choices'][0]['message']['content']
         return self._clean_output(output)
 
-def main():
+def main() -> None:
     if sys.stdin.isatty():
         print("Please provide JSON input via stdin.", file=sys.stderr)
         sys.exit(1)
