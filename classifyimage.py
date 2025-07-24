@@ -52,14 +52,18 @@ class ImageClassifier:
         rgb = image.convert("RGB")
         data = np.array(rgb)
         r, g, b = data[..., 0], data[..., 1], data[..., 2]
-        return bool(np.all(r == g) and np.all(g == b)
+        return bool(np.all(r == g) and np.all(g == b))
 
     def average_rgb(self, image: Image.Image) -> Tuple[int, int, int]:
         """Downsample image to 1x1 to get average color"""
         img = image.convert("RGB").resize((1, 1))
-        return img.getpixel((0, 0))
+        pixel = img.getpixel((0, 0))
+        if isinstance(pixel, tuple) and len(pixel) == 3:
+            return pixel
+        else:
+            raise ValueError("Expected RGB pixel tuple (3 values), got: {}".format(pixel))
 
-    def classify(self) -> Dict[str, Union[str, bool, Optional[Dict[str, int]], Dict[str, str]]]:
+    def classify(self) -> Dict[str, Any]:
         """Classify image and return results as dictionary."""
         if not self.image_path:
             return {"error": "No image path provided"}
