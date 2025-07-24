@@ -97,6 +97,7 @@
 - [July 24, 2025](#july-24-2025)
   - [With Us Always](#with-us-always)
   - [AI-Generated Summary: The Ascension and the Ever-Present Christ](#ai-generated-summary-the-ascension-and-the-ever-present-christ)
+  - [Bernardino Gandino's 'Ascension of the Lord' portrays Christ ascending to heaven, his footprints left on stone below, surrounded by awe-struck apostles (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-portrays-christ-ascending-to-heaven-his-footprints-left-on-stone-below-surrounded-by-awe-struck-apostles-stock-image)
 
 <!-- tocstop -->
 
@@ -576,4 +577,8 @@ The Ascension is no mere departure, as if our Lord had taken leave of us, but ra
 
 Do not suppose that He is farther from you now than when He sat at supper with His disciples. It is the very opposite: then, He could be but in one room, one village; now, by His Ascension, He is nearer to each of us than our own breath. And if we would ascend with Him, we must do as Augustine taught—rise on the wings of charity, clinging to Christ by loving God and neighbor, especially in deeds of mercy.
 
-Even in art, this mystery is whispered. Consider Gandino’s painting, where the Lord’s footprints remain etched in stone, as if to say: _"Follow Me."_ For though He has ascended, His path is still open to us—to walk as He walked, to love as He loved, until we too are brought where He is.
+Even in art, this mystery is whispered. Consider Bernardino Gandino’s painting _Ascension of the Lord_, where the Lord’s footprints remain etched in stone, as if to say: _"Follow Me."_ For though He has ascended, His path is still open to us—to walk as He walked, to love as He loved, until we too are brought where He is.
+
+### Bernardino Gandino's 'Ascension of the Lord' portrays Christ ascending to heaven, his footprints left on stone below, surrounded by awe-struck apostles (Stock Image)
+
+[![Bernardino Gandino's 'Ascension of the Lord' portrays Christ ascending to heaven, his footprints left on stone below, surrounded by awe-struck apostles](July/jpgs/ascensionlordgandino.jpg)](https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Bernardino Gandino's 'Ascension of the Lord' portrays Christ ascending to heaven, his footprints left on stone below, surrounded by awe-struck apostles")
