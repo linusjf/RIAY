@@ -12,7 +12,6 @@ from classifyimage import ImageClassifier
 from detectwatermark import WatermarkDetector
 from reverseimagelookup import ReverseImageLookup
 from simtools import THRESHOLDS
-from generatecaption import CaptionGenerator
 
 def parse_arguments():
     """Parse command line arguments."""
@@ -67,10 +66,8 @@ def main():
             args.medium
         )
 
-        captioner = CaptionGenerator()
-        caption = captioner.generate_caption(" ".join([str(v) for v in [args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium] if not v]))
         # Combine all results
-        result = classification | watermark | caption
+        result = classification | watermark
         result["cosine_score"] = score
 
         print(json.dumps(result, indent=2))
