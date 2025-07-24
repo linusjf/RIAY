@@ -20,6 +20,7 @@ Environment variables required:
 import sys
 import json
 import requests
+import re
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 
@@ -56,6 +57,10 @@ class ArtDetailsAugmenter:
             ]
         }
 
+    def _clean_output(self, output):
+        """Remove markdown code guards from the output."""
+        return re.sub(r'^```(?:json)?\s*|\s*```$', '', output, flags=re.MULTILINE).strip()
+
     def augment_art_details(self, art_json):
         """Enhance artwork JSON with additional details from LLM."""
         config = self._get_llm_config()
@@ -72,7 +77,8 @@ class ArtDetailsAugmenter:
         response.raise_for_status()
 
         completion = response.json()
-        return completion['choices'][0]['message']['content']
+        output = completion['choices'][0]['message']['content']
+        return self._clean_output(output)
 
 def main():
     if sys.stdin.isatty():
