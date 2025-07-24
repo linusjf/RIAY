@@ -177,7 +177,7 @@ function main() {
     die "Summary file $summary_file does not exist" $E_MISSING_FILE
   fi
 
-  if art_details="$("${SCRIPT_DIR}/extractartdetails" "$summary_file")"; then
+  if art_details="$("${SCRIPT_DIR}/extractartdetails" "$summary_file" | "${SCRIPT_DIR}/augmentartdetails.py")"; then
     title="$(echo "$art_details" | jq '.details.title' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
     artist="$(echo "$art_details" | jq '.details.artist' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
     location="$(echo "$art_details" | jq '.details.location' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
@@ -214,10 +214,7 @@ function main() {
 
     if [[ -n "${best_selected_image:-}" ]]; then
       if "${VERIFY_ART_IMAGES:-false}"; then
-        if jsonresult="$(verify_image "${best_selected_image}")"; then
-          caption="$(echo "$jsonresult" | jq '.caption' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
-        fi
-
+        jsonresult="$(verify_image "${best_selected_image}")"
         local image_color="$(echo "$jsonresult" | jq -r '.image_color')"
         if [[ "$image_color" == *Grayscale* ]] || [[ "$image_color" == *Black-and-white* ]] || [[ "$image_color" == *Sepia* ]]; then
           err "Image color is ${image_color}"
