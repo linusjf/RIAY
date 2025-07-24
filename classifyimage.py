@@ -21,7 +21,7 @@ import argparse
 import sys
 from pathlib import Path
 from PIL import Image
-from typing import Optional
+from typing import Optional, Dict, Any, Tuple, Union
 import numpy as np
 import json
 
@@ -32,9 +32,9 @@ VERSION = "1.0.0"
 class ImageClassifier:
     """Class for classifying images by color type."""
 
-    def __init__(self, image_path: Optional[str] = None):
+    def __init__(self, image_path: Optional[str] = None) -> None:
         self.image_path = image_path
-        self.result = {
+        self.result: Dict[str, Union[str, bool, Optional[Dict[str, int]]]] = {
             "image_color": "unknown",
             "is_monochrome": False,
             "is_grayscale": False,
@@ -52,14 +52,14 @@ class ImageClassifier:
         rgb = image.convert("RGB")
         data = np.array(rgb)
         r, g, b = data[..., 0], data[..., 1], data[..., 2]
-        return bool(np.all(r == g) and np.all(g == b))
+        return bool(np.all(r == g) and np.all(g == b)
 
-    def average_rgb(self, image: Image.Image):
+    def average_rgb(self, image: Image.Image) -> Tuple[int, int, int]:
         """Downsample image to 1x1 to get average color"""
         img = image.convert("RGB").resize((1, 1))
         return img.getpixel((0, 0))
 
-    def classify(self) -> dict:
+    def classify(self) -> Dict[str, Union[str, bool, Optional[Dict[str, int]], Dict[str, str]]]:
         """Classify image and return results as dictionary."""
         if not self.image_path:
             return {"error": "No image path provided"}
@@ -95,7 +95,7 @@ class ImageClassifier:
         return self.result
 
 
-def parse_args():
+def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Classify image as monochrome, grayscale, sepia or full color"
     )
@@ -104,7 +104,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
+def main() -> None:
     args = parse_args()
     image_path = args.image_file
 
