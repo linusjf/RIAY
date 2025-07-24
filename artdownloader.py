@@ -202,7 +202,6 @@ class ArtDownloader:
     def download_from_duckduckgo(self, query: str, filename_base: str) -> bool:
         """Download image from DuckDuckGo search."""
         print(f"\n🔍 DuckDuckGo search for: {query}")
-        try:
             results = self.search_duckduckgo_images(query, max_results=10)
             if not results:
                 print("❌ No matching images found.",file=sys.stderr)
@@ -224,12 +223,13 @@ class ArtDownloader:
             for idx, (result, score) in enumerate(qualifying_results):
                 url = result["image"]
                 domain = extract_domain_from_url(url)
-                if any(social_media_domain.lower() in domain for social_media_domain in self.SOCIAL_MEDIA_SITES):
-                    continue
-                if any(stock_domain.lower() in domain for stock_domain in self.STOCK_PHOTO_SITES):
-                    self.FOUND_STOCK_PHOTOS.append(url)
-                    self.DUCKDUCKGO_IMAGES.append((url, "", score))
-                    continue
+                if domain:
+                    if any(social_media_domain.lower() in domain for social_media_domain in self.SOCIAL_MEDIA_SITES):
+                        continue
+                    if any(stock_domain.lower() in domain for stock_domain in self.STOCK_PHOTO_SITES):
+                        self.FOUND_STOCK_PHOTOS.append(url)
+                        self.DUCKDUCKGO_IMAGES.append((url, "", score))
+                        continue
                 filename = os.path.join(
                     self.SAVE_DIR,
                     f"{filename_base}_{idx+1}_duckduckgo.jpg"
@@ -460,12 +460,13 @@ class ArtDownloader:
             success = False
             for idx, (url, score) in enumerate(qualifying_pages):
                 domain = extract_domain_from_url(url)
-                if any(social_media_domain.lower() in domain for social_media_domain in self.SOCIAL_MEDIA_SITES):
-                    continue
-                if any(stock_domain.lower() in domain for stock_domain in self.STOCK_PHOTO_SITES):
-                    self.FOUND_STOCK_PHOTOS.append(url)
-                    self.GOOGLE_IMAGES.append((url, "", score))
-                    continue
+                if domain:
+                    if any(social_media_domain.lower() in domain for social_media_domain in self.SOCIAL_MEDIA_SITES):
+                        continue
+                    if any(stock_domain.lower() in domain for stock_domain in self.STOCK_PHOTO_SITES):
+                        self.FOUND_STOCK_PHOTOS.append(url)
+                        self.GOOGLE_IMAGES.append((url, "", score))
+                        continue
                 print(f"\n📥 Downloading image for qualified image {idx+1}: {url}", file=sys.stderr)
                 unique_filename = f"{filename_base}_{idx+1}"
                 filename = os.path.join(
