@@ -5505,6 +5505,7 @@ This is no mere depiction of suffering, but a window into its strange redemption
   - [The Love of Jesus](#the-love-of-jesus)
   - [AI-Generated Summary: The Divine Ingenuity of Love](#ai-generated-summary-the-divine-ingenuity-of-love)
   - [The Last Supper by Giacomo Raphaeli, a mosaic depicting Christ's calm before the cross](#the-last-supper-by-giacomo-raphaeli-a-mosaic-depicting-christs-calm-before-the-cross)
+  - [Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance (Stock Image)](#giacomo-raffaelis-mosaic-the-last-supper-in-minoritenkirche-vienna-vividly-portrays-jesus-and-his-disciples-in-a-moment-of-sacred-significance-stock-image)
 - [July 18, 2025](#july-18-2025)
   - [What the Garden Reveals](#what-the-garden-reveals)
   - [AI-Generated Summary: The Choice Between Rebellion and Obedience](#ai-generated-summary-the-choice-between-rebellion-and-obedience)
@@ -5886,13 +5887,17 @@ Love, as we know, is never content with mere words or distant admiration—it la
 
 And what does He offer? Himself, wholly. Not as a king demanding tribute, but as a lover, burning with desire both to give and to receive. In this sacred exchange, we find the very heart of devotion: He gives that we might take, and takes that we might give again.
 
-As for _The Last Supper_ by Giacomo Raphaeli, observe how the mosaic captures not the agitation of betrayal’s shadow, but the calm of One who, though foreseeing the cross, rests in the Father’s will. Here is no dread, but quiet certainty—the peace of He who knows that love’s victory is already written.
+As for _The Last Supper_ by Giacomo Raffaeli located at Vienna in the Minoritenkirche, observe how the mosaic captures not the agitation of betrayal’s shadow, but the calm of One who, though foreseeing the cross, rests in the Father’s will. Here is no dread, but quiet certainty—the peace of He who knows that love’s victory is already written.
 
 Thus, in sacrament and art alike, we glimpse the same truth: love is ever inventive, ever near, and ever sure.
 
 ##### The Last Supper by Giacomo Raphaeli, a mosaic depicting Christ's calm before the cross
 
 [![The Last Supper by Giacomo Raphaeli, a mosaic depicting Christ's calm before the cross](July/jpgs/thelastsupperjacoporaphaeli.jpg)](https://cdn.mosaicnatural.com/pictures/1200/9667e0d25a194e77949db2445ee93487.jpg?v "The Last Supper by Giacomo Raphaeli, a mosaic depicting Christ's calm before the cross")
+
+##### Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance (Stock Image)
+
+[![Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance](July/jpgs/lastsupperraffaeli.jpg)](https://thumbs.dreamstime.com/z/vienna-mosaic-last-supper-jesus-vienna-mosaic-last-supper-jesus-giacomo-raffaelli-year-as-copy-leonardo-da-138373847.jpg "Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance")
 
 #### July 18, 2025
 
