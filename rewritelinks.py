@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Script to rewrite absolute GitHub raw URLs to relative paths in markdown files."""
 
-import os
 import re
 import sys
 import argparse
 from pathlib import Path
-from typing import Match, Optional
+from typing import Match, Optional, Pattern, Dict, Any
 
 from configenv import ConfigEnv
 
@@ -19,13 +18,13 @@ GH_MARKDOWN_PREFIX = "/"
 
 class LinkRewriter:
     """Handles link rewriting operations with configurable behavior."""
-    
-    def __init__(self, use_gh_markdown: bool = False, gh_to_rtd: bool = False):
-        self.use_gh_markdown = use_gh_markdown
-        self.gh_to_rtd = gh_to_rtd
-        self.replacement_count = 0
+
+    def __init__(self, use_gh_markdown: bool = False, gh_to_rtd: bool = False) -> None:
+        self.use_gh_markdown: bool = use_gh_markdown
+        self.gh_to_rtd: bool = gh_to_rtd
+        self.replacement_count: int = 0
         self.url_base: Optional[str] = None
-        self.config = ConfigEnv(DEFAULT_ENV_FILE)
+        self.config: ConfigEnv = ConfigEnv(DEFAULT_ENV_FILE)
 
     def get_github_base_url(self) -> str:
         """Construct the GitHub base URL from environment variables.
@@ -33,8 +32,8 @@ class LinkRewriter:
         Returns:
             str: Formatted GitHub raw content base URL
         """
-        user = self.config.get("REPO_OWNER", "")
-        repo = self.config.get("REPO_NAME", "")
+        user: Optional[str] = self.config.get("REPO_OWNER", "")
+        repo: Optional[str] = self.config.get("REPO_NAME", "")
 
         if not user or not repo:
             raise ValueError(
@@ -43,25 +42,26 @@ class LinkRewriter:
 
         return GITHUB_URL_TEMPLATE.format(user=user, repo=repo)
 
-    def make_relative(self, match: Match) -> str:
+    def make_relative(self, match: Match[str]) -> str:
         """Create relative path from matched URL."""
         self.replacement_count += 1
-        file_path = match.group(1)
-        prefix = GH_MARKDOWN_PREFIX if self.use_gh_markdown else RELATIVE_PREFIX
+        file_path: str = match.group(1)
+        prefix: str = GH_MARKDOWN_PREFIX if self.use_gh_markdown else RELATIVE_PREFIX
         return f"{prefix}{file_path}"
 
-    def gh_to_rtd_relative(self, match: Match) -> str:
+    def gh_to_rtd_relative(self, match: Match[str]) -> str:
         """Convert GitHub-style relative links to RTD /_static/ links."""
         self.replacement_count += 1
         return f"](/_static/{match.group(2)})"
 
-    def gh_to_rtd_naked(self, match: Match) -> str:
+    def gh_to_rtd_naked(self, match: Match[str]) -> str:
         """Convert GitHub-style naked urls to RTD /_static/ links."""
         self.replacement_count += 1
         return f"</_static/{match.group(2)}>"
 
     def rewrite_links(self, text: str) -> str:
         """Apply the appropriate link rewriting based on configuration."""
+        pattern: Pattern[str]
         if self.gh_to_rtd:
             # Handle regular markdown links [text](/path)
             pattern = re.compile(r'(\]\()/(?!_static/)([^)]+)\)')
@@ -92,9 +92,9 @@ def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False, gh_to_rt
         print(f"Error: File not found - {md_file}", file=sys.stderr)
         return 0
 
-    rewriter = LinkRewriter(use_gh_markdown, gh_to_rtd)
-    original_text = md_file.read_text()
-    modified_text = rewriter.rewrite_links(original_text)
+    rewriter: LinkRewriter = LinkRewriter(use_gh_markdown, gh_to_rtd)
+    original_text: str = md_file.read_text()
+    modified_text: str = rewriter.rewrite_links(original_text)
 
     if rewriter.replacement_count > 0:
         md_file.write_text(modified_text)
@@ -112,7 +112,7 @@ def main() -> int:
     Returns:
         int: Exit code (0 for success)
     """
-    parser = argparse.ArgumentParser(
+    parser: argparse.ArgumentParser = argparse.ArgumentParser(
         description='Rewrite GitHub raw URLs in markdown files',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""Examples:
@@ -130,6 +130,7 @@ def main() -> int:
         parser.print_help()
         return 1
 
+    args: argparse.Namespace
     try:
         args = parser.parse_args()
     except argparse.ArgumentError:
@@ -140,7 +141,7 @@ def main() -> int:
         print("Error: Cannot use both --abs-to-gh-markdown and --gh-markdown-to-rtd together", file=sys.stderr)
         return 1
 
-    total_changes = 0
+    total_changes: int = 0
     for file_path in args.files:
         total_changes += rewrite_links_in_file(
             Path(file_path),
