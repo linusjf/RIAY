@@ -5,7 +5,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from requests import Session
 from urllib3.util.retry import Retry
-from typing import Optional, Sequence, Union
+from typing import Optional, Sequence
 
 def create_session_with_retries(
     retries: int = 5,
@@ -14,13 +14,13 @@ def create_session_with_retries(
     session: Optional[Session] = None
 ) -> Session:
     """Create a requests session with retry logic.
-    
+
     Args:
         retries: Maximum number of retries
         backoff_factor: Base multiplier for exponential backoff
         status_forcelist: HTTP status codes to force retry on
         session: Existing session to configure (creates new if None)
-        
+
     Returns:
         Configured Session object with retry logic
     """
@@ -47,12 +47,12 @@ def exponential_backoff_with_jitter(
     attempt: int = 1
 ) -> float:
     """Calculate exponential backoff with jitter.
-    
+
     Args:
         base: Base backoff time in seconds
         cap: Maximum backoff time in seconds
         attempt: Current attempt number (1-based)
-        
+
     Returns:
         Calculated backoff time with jitter in seconds
     """
