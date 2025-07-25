@@ -5,7 +5,7 @@
 
 import os
 import codecs
-from typing import Dict, Any, List, Iterator, Optional, Union
+from typing import Dict, Any, List, Union, Optional
 from pathlib import Path
 from sphinx.application import Sphinx
 
@@ -153,7 +153,7 @@ def replace_emojis_in_file(file_path: Union[str, Path]) -> None:
     }
 
     try:
-        with codecs.open(file_path, "r", encoding="utf-8") as file:
+        with codecs.open(str(file_path), "r", encoding="utf-8") as file:
             content: str = file.read()
 
         original_content: str = content
@@ -161,7 +161,7 @@ def replace_emojis_in_file(file_path: Union[str, Path]) -> None:
             content = content.replace(old, new)
 
         if content != original_content:
-            with codecs.open(file_path, "w", encoding="utf-8") as file:
+            with codecs.open(str(file_path), "w", encoding="utf-8") as file:
                 file.write(content)
             print(f"Updated: {file_path}")
     except Exception as error:
@@ -170,8 +170,12 @@ def replace_emojis_in_file(file_path: Union[str, Path]) -> None:
 
 def replace_emojis_in_markdown() -> None:
     """Find and replace emojis in all markdown files."""
-    for dirpath: str, _: List[str], filenames: List[str] in os.walk("."):
-        for filename: str in filenames:
+    filename: Optional[str] = None
+    dirpath: Optional[str] = None
+    _: List[str]
+    filenames: List[str]
+    for dirpath, _, filenames in os.walk("."):
+        for filename in filenames:
             if filename.endswith(".md"):
                 replace_emojis_in_file(os.path.join(dirpath, filename))
 
