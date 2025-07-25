@@ -53,6 +53,7 @@ class ArtDownloader:
         self.SAVE_DIR: str = self.config.get(ConfigConstants.ART_DOWNLOADER_DIR, 'artdownloads')
         self.MIN_IMAGE_WIDTH: int = self.config.get(ConfigConstants.MIN_IMAGE_WIDTH, 0)
         self.MIN_IMAGE_HEIGHT: int = self.config.get(ConfigConstants.MIN_IMAGE_HEIGHT, 0)
+        self.SEARCH_WIKIPEDIA: int = self.config.get(ConfigConstants.SEARCH_WIKIPEDIA, True)
 
         # Initialize artwork metadata fields
         self.title: Optional[str] = None
@@ -528,28 +529,33 @@ class ArtDownloader:
         if self.subject:
             enhanced_query += f" {self.subject}"
 
-        wikimedia_query = query
-        if self.artist and self.artist not in query:
-            wikimedia_query += f" by {self.artist}"
-        if self.title and self.title not in query:
-            wikimedia_query += f" {self.title}"
-        if self.date and self.date not in query:
-            wikimedia_query += f" {self.date}"
-        if self.location and self.location not in query:
-            wikimedia_query += f" {self.location}"
 
-        logger.info(f"Searching wikis with simple query: {wikimedia_query}")
+        downloaded_wikipedia_search = downloaded_wikimedia_search = downloaded_wikimedia = False
+        if self.SEARCH_WIKIPEDIA:
+            wikimedia_query = query
+            if self.artist and self.artist not in query:
+                wikimedia_query += f" by {self.artist}"
+            if self.title and self.title not in query:
+                wikimedia_query += f" {self.title}"
+            if self.date and self.date not in query:
+                wikimedia_query += f" {self.date}"
+            if self.location and self.location not in query:
+                wikimedia_query += f" {self.location}"
 
-        downloaded_wikipedia_search = self.download_image_from_wikipedia_article(wikimedia_query, enhanced_query, self.filename_base)
-        downloaded_wikimedia_search = self.download_from_wikimedia_search(wikimedia_query, enhanced_query, self.filename_base)
-        downloaded_wikimedia = self.download_from_wikimedia(wikimedia_query, enhanced_query, self.filename_base)
+            logger.info(f"Searching wikis with simple query: {wikimedia_query}")
+
+            downloaded_wikipedia_search = self.download_image_from_wikipedia_article(wikimedia_query, enhanced_query, self.filename_base)
+            downloaded_wikimedia_search = self.download_from_wikimedia_search(wikimedia_query, enhanced_query, self.filename_base)
+            downloaded_wikimedia = self.download_from_wikimedia(wikimedia_query, enhanced_query, self.filename_base)
 
         logger.info(f"Searching google and duckduckgo with enhanced query: {enhanced_query}")
 
         downloaded_duckduckgo = self.download_from_duckduckgo(enhanced_query, self.filename_base)
         downloaded_google = self.download_from_google(enhanced_query, self.filename_base)
 
-        return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
+        if self.SEARCH_WIKIPEDIA:
+            return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
+        return (downloaded_duckduckgo or downloaded_google)
 
     def print_results(self) -> None:
         """Print summary of downloaded images and results."""
