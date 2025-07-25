@@ -5,9 +5,37 @@
 
 import os
 import codecs
+import logging
+import sys
 from typing import Dict, Any, List, Union, Optional
 from pathlib import Path
 from sphinx.application import Sphinx
+
+# Set up logging to redirect stderr to logger
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('stderr.log'),
+        logging.StreamHandler(sys.stdout)  # Keep stdout as is
+    ]
+)
+logger = logging.getLogger(__name__)
+
+# Redirect stderr to logger
+class StreamToLogger:
+    def __init__(self, logger, log_level=logging.ERROR):
+        self.logger = logger
+        self.log_level = log_level
+
+    def write(self, message):
+        if message.rstrip():
+            self.logger.log(self.log_level, message.rstrip())
+
+    def flush(self):
+        pass
+
+sys.stderr = StreamToLogger(logger, logging.ERROR)
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -163,9 +191,9 @@ def replace_emojis_in_file(file_path: Union[str, Path]) -> None:
         if content != original_content:
             with codecs.open(str(file_path), "w", encoding="utf-8") as file:
                 file.write(content)
-            print(f"Updated: {file_path}")
+            logger.info(f"Updated: {file_path}")
     except Exception as error:
-        print(f"Error processing {file_path}: {error}")
+        logger.error(f"Error processing {file_path}: {error}")
 
 
 def replace_emojis_in_markdown() -> None:
@@ -187,7 +215,7 @@ def run_only_for_pdf(app: Sphinx) -> None:
         app: Sphinx application object
     """
     if app.builder.name == "latex":
-        print("Running emoji replacement for PDF build...")
+        logger.info("Running emoji replacement for PDF build...")
         replace_emojis_in_markdown()
 
 
