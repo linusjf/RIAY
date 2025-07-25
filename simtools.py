@@ -23,12 +23,14 @@ from configconstants import ConfigConstants
 from typing import Dict, List, Tuple, Union, Any, Optional
 
 # Configure logging to stderr
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(levelname)s: %(message)s',
-    stream=sys.stderr
-)
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+if not logger.handlers:
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logger.addHandler(handler)
+    logger.propagate = False
 
 # Constants
 ERROR_MESSAGES: Dict[str, str] = {

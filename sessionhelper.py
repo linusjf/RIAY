@@ -1,11 +1,23 @@
 """Helper functions for creating and managing HTTP sessions."""
 
 import random
+import logging
 import requests
 from requests.adapters import HTTPAdapter
 from requests import Session
 from urllib3.util.retry import Retry
 from typing import Optional, Sequence
+import sys
+
+# Configure logging to stderr
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+if not logger.handlers:
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logger.addHandler(handler)
+    logger.propagate = False
 
 def create_session_with_retries(
     retries: int = 5,
