@@ -11,6 +11,7 @@ import os
 import sys
 import time
 import json
+import logging
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Union, Any
 import requests
@@ -22,6 +23,14 @@ from serpapi import GoogleSearch
 from htmlhelper import clean_filename_text, extract_domain_from_url
 from simtools import compare_terms, MatchMode, THRESHOLDS
 from imgbb import upload_to_imgbb
+
+# Configure logging to stderr
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    stream=sys.stderr
+)
+logger = logging.getLogger(__name__)
 
 class ReverseImageLookup:
     """Class for performing reverse image lookups using SerpAPI and imgbb."""
@@ -42,9 +51,11 @@ class ReverseImageLookup:
         self.config: ConfigEnv = ConfigEnv(self.CONFIG_FILE, include_os_env=True)
         self.SERP_API_KEY: str = self.config[ConfigConstants.SERP_API_KEY]
         if not self.SERP_API_KEY:
+            logger.error(f"{ConfigConstants.SERP_API_KEY} environment variable not set")
             raise ValueError(f"{ConfigConstants.SERP_API_KEY} environment variable not set")
         self.ZENSERP_API_KEY: str = self.config[ConfigConstants.ZENSERP_API_KEY]
         if not self.ZENSERP_API_KEY:
+            logger.error(f"{ConfigConstants.ZENSERP_API_KEY} environment variable not set")
             raise ValueError(f"{ConfigConstants.ZENSERP_API_KEY} environment variable not set")
         self.search_api: ReverseImageLookup.SEARCH_API = search_api
         self.STOCK_PHOTO_SITES: List[str] = self.config[ConfigConstants.STOCK_PHOTO_SITES]
@@ -66,6 +77,7 @@ class ReverseImageLookup:
             visual_matches: List[Dict[str, Any]] = results["visual_matches"][0:self.REQUIRED_MATCH_COUNT]
 
             if not visual_matches:
+                logger.info("No visual matches found")
                 return 0.0
 
             first_match: Dict[str, Any] = visual_matches[0]
@@ -81,7 +93,7 @@ class ReverseImageLookup:
                 clean_filename_text(url)
             ]))
             score: float = compare_terms(metadata_text, self.match_text, MatchMode.COSINE)
-            print(f"Matched: {image_url} —> {url}", file=sys.stderr)
+            logger.info(f"Matched: {image_url} —> {url}")
             return score
         else:
             headers: Dict[str, str] = {
@@ -97,9 +109,11 @@ class ReverseImageLookup:
             data: Dict[str, Any] = json.loads(json_response)
             reverse_image_results: Dict[str, Any] = data["reverse_image_results"]
             if not reverse_image_results:
+                logger.info("No reverse image results found")
                 return 0.0
             organic_results: Optional[List[Dict[str, Any]]] = reverse_image_results.get("organic")
             if not organic_results:
+                logger.info("No organic results found")
                 return 0.0
             best_score: float = 0.0
             best_match: Dict[str, Any] = {}
@@ -121,7 +135,7 @@ class ReverseImageLookup:
                     best_match = match
                     self.match_text = match_text
 
-            print(f"Matched: {image_url} —> {best_match["url"]}", file=sys.stderr)
+            logger.info(f"Matched: {image_url} —> {best_match['url']}")
             return best_score
 
     def reverse_image_search(self, image_url: str, metadata_text: str) -> List[Tuple[str, float]]:
@@ -147,13 +161,16 @@ class ReverseImageLookup:
 
             # Skip PDF links
             if link.lower().endswith('.pdf'):
+                logger.debug(f"Skipping PDF link: {link}")
                 continue
 
             # Skip stock photo sites
             domain: Optional[str] = extract_domain_from_url(link)
             if domain and any(stock_domain.lower() in domain for stock_domain in self.STOCK_PHOTO_SITES):
+                logger.debug(f"Skipping stock photo site: {domain}")
                 continue
             if (int(image_width) < self.MIN_IMAGE_WIDTH or int(image_height) < self.MIN_IMAGE_HEIGHT):
+                logger.debug(f"Skipping small image: {image_width}x{image_height}")
                 continue
 
             match_text: str = ", ".join(filter(None, [
@@ -175,8 +192,10 @@ class ReverseImageLookup:
         """Validate that the path exists and is a file."""
         path_obj: Path = Path(path)
         if not path_obj.exists():
+            logger.error(f"File '{path}' does not exist")
             raise argparse.ArgumentTypeError(f"File '{path}' does not exist")
         if not path_obj.is_file():
+            logger.error(f"'{path}' is not a file")
             raise argparse.ArgumentTypeError(f"'{path}' is not a file")
         return path_obj
 
@@ -242,7 +261,7 @@ class ReverseImageLookup:
         if os.path.exists(url_file):
             with open(url_file, 'r', encoding='utf-8') as file:
                 source_url = file.read().strip()
-                print(f"Found source URL: {source_url}", file=sys.stderr)
+                logger.info(f"Found source URL: {source_url}")
 
         if not source_url:
             source_url, _ = upload_to_imgbb(image)
@@ -319,10 +338,7 @@ def main() -> None:
     )
 
     elapsed_time: float = time.time() - start_time
-    print(
-        f"Verified image {args.image} in {elapsed_time:.2f} seconds using {script_name}",
-        file=sys.stderr
-    )
+    logger.info(f"Verified image {args.image} in {elapsed_time:.2f} seconds using {script_name}")
     print(f"{score:.4f}")
     sys.exit(0 if score >= THRESHOLDS["cosine"] else 1)
 
