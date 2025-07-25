@@ -24,13 +24,15 @@ from htmlhelper import clean_filename_text, extract_domain_from_url
 from simtools import compare_terms, MatchMode, THRESHOLDS
 from imgbb import upload_to_imgbb
 
-# Configure logging to stderr
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    stream=sys.stderr
-)
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# Configure logging to stderr
+if not logger.handlers:
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logger.addHandler(handler)
+    logger.propagate = False
 
 class ReverseImageLookup:
     """Class for performing reverse image lookups using SerpAPI and imgbb."""

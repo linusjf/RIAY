@@ -14,13 +14,15 @@ from detectwatermark import WatermarkDetector
 from reverseimagelookup import ReverseImageLookup
 from simtools import THRESHOLDS
 
-# Configure logging to stderr
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    stream=sys.stderr
-)
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# Configure logging to stderr
+if not logger.handlers:
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logger.addHandler(handler)
+    logger.propagate = False
 
 def parse_arguments():
     """Parse command line arguments."""
