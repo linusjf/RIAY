@@ -12,6 +12,7 @@ import sys
 import time
 import argparse
 import shutil
+import logging
 from typing import Optional, Dict, List, Tuple, Any
 
 import requests
@@ -28,6 +29,14 @@ from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from PIL import Image
+
+# Configure logging to stderr
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    stream=sys.stderr
+)
+logger = logging.getLogger(__name__)
 
 class ArtDownloader:
     """Download artwork images from various sources."""
@@ -88,16 +97,16 @@ class ArtDownloader:
                 width, height = img.size
                 if width >= self.MIN_IMAGE_WIDTH and height >= self.MIN_IMAGE_HEIGHT:
                     return True
-                print(f"❌ Image dimensions too small: {width}x{height} (min {self.MIN_IMAGE_WIDTH}x{self.MIN_IMAGE_HEIGHT})")
+                logger.warning(f"Image dimensions too small: {width}x{height} (min {self.MIN_IMAGE_WIDTH}x{self.MIN_IMAGE_HEIGHT})")
                 return False
         except Exception as e:
-            print(f"❌ Error checking image dimensions: {e}")
+            logger.error(f"Error checking image dimensions: {e}")
             return False
 
     def save_image(self, url: str, filename: str) -> bool:
         """Save an image from URL to local file."""
         if url in self.DOWNLOADED_URLS:
-            print(f"⏩ URL already downloaded: {url}", file=sys.stderr)
+            logger.info(f"URL already downloaded: {url}")
             existing_file = self.DOWNLOADED_URLS[url]
             try:
                 shutil.copy2(existing_file, filename)
@@ -105,17 +114,17 @@ class ArtDownloader:
                 new_url_file = os.path.splitext(filename)[0] + ".url.txt"
                 if os.path.exists(existing_url_file):
                     shutil.copy2(existing_url_file, new_url_file)
-                print(f"✅ Copied existing file: {existing_file} -> {filename}", file=sys.stderr)
+                logger.info(f"Copied existing file: {existing_file} -> {filename}")
                 self.DOWNLOADED_URLS[url] = filename
                 return True
             except Exception as e:
-                print(f"❌ Error copying existing file: {e}", file=sys.stderr)
+                logger.error(f"Error copying existing file: {e}")
                 return False
 
         # Check for PDF extension and reject
         ext = os.path.splitext(url)[1].lower()
         if ext == '.pdf':
-            print(f"❌ PDF files not supported: {url}", file=sys.stderr)
+            logger.error(f"PDF files not supported: {url}")
             return False
 
         try:
@@ -165,28 +174,28 @@ class ArtDownloader:
                             if not self._check_image_dimensions(jpeg_path):
                                 os.remove(jpeg_path)
                                 return False
-                            print(f"✅ Saved: {jpeg_path} (source URL saved to {url_filename})", file=sys.stderr)
+                            logger.info(f"Saved: {jpeg_path} (source URL saved to {url_filename})")
                             self.DOWNLOADED_URLS[url] = jpeg_path
                             return True
                         else:
-                            print(f"⚠️ Saved original format: {temp_filename}", file=sys.stderr)
+                            logger.warning(f"Saved original format: {temp_filename}")
                             return True
                     else:
-                        print(f"✅ Saved: {temp_filename} (source URL saved to {url_filename})", file=sys.stderr)
+                        logger.info(f"Saved: {temp_filename} (source URL saved to {url_filename})")
                         return True
 
                 elif response.status_code in {408, 429, 500, 502, 503, 504}:
                     wait = exponential_backoff_with_jitter(base=2, cap=60, attempt=attempt)
-                    print(f"⚠️ Retry {attempt + 1}: HTTP {response.status_code}, waiting {wait:.2f}s...")
+                    logger.warning(f"Retry {attempt + 1}: HTTP {response.status_code}, waiting {wait:.2f}s...")
                     time.sleep(wait)
                     attempt += 1
                 else:
-                    print(f"❌ Failed with status: {response.status_code}", file=sys.stderr)
+                    logger.error(f"Failed with status: {response.status_code}")
                     break
-            print("❗ Download failed after retries.", file=sys.stderr)
-            print(f"❌ Failed to download: {url}", file=sys.stderr)
+            logger.error("Download failed after retries.")
+            logger.error(f"Failed to download: {url}")
         except Exception as error:
-            print(f"❌ Error: {error}", file=sys.stderr)
+            logger.error(f"Error: {error}")
         return False
 
     @retry(
@@ -200,11 +209,11 @@ class ArtDownloader:
 
     def download_from_duckduckgo(self, query: str, filename_base: str) -> bool:
         """Download image from DuckDuckGo search."""
-        print(f"\n🔍 DuckDuckGo search for: {query}", file=sys.stderr)
+        logger.info(f"DuckDuckGo search for: {query}")
         try:
             results = self.search_duckduckgo_images(query, max_results=10)
             if not results:
-                print("❌ No matching images found.",file=sys.stderr)
+                logger.error("No matching images found.")
                 return False
             qualifying_results: List[Tuple[Dict[str, Any], float]] = []
             for image in results[0:5]:
@@ -216,7 +225,7 @@ class ArtDownloader:
                     qualifying_results.append((image, score))
 
             if not qualifying_results:
-                print("❌ No qualifying results found (score >= 50.0)", file=sys.stderr)
+                logger.error("No qualifying results found (score >= 50.0)")
                 return False
 
             success = False
@@ -242,12 +251,12 @@ class ArtDownloader:
             return success
 
         except Exception as error:
-            print(f"❌ Error: {error}", file=sys.stderr)
+            logger.error(f"Error: {error}")
         return False
 
     def download_from_wikimedia_search(self, query: str, detailed_query: str, filename_base: str, source: str = "wikimedia_search") -> bool:
         """Search Wikimedia Commons for an image by query and download the top result."""
-        print(f"\n🔍 Searching Wikimedia for: {query}", file=sys.stderr)
+        logger.info(f"Searching Wikimedia for: {query}")
         search_endpoint = "https://commons.wikimedia.org/w/api.php"
         search_params = {
             "action": "query",
@@ -266,7 +275,7 @@ class ArtDownloader:
             search_results = search_data.get("query", {}).get("search", [])
 
             if not search_results:
-                print("❌ No matching images found.", file=sys.stderr)
+                logger.error("No matching images found.")
                 return False
             qualifying_results: List[Tuple[Dict[str, Any], float]] = []
             for result in search_results:
@@ -279,13 +288,13 @@ class ArtDownloader:
                     qualifying_results.append((result, score))
 
             if not qualifying_results:
-                print("❌ No qualifying results found (score >= 0.7)", file=sys.stderr)
+                logger.error("No qualifying results found (score >= 0.7)")
                 return False
 
             success = False
             for idx, (result, score) in enumerate(qualifying_results):
                 selected_title = result["title"]
-                print(f"Selected title {selected_title} with score: {score}", file=sys.stderr)
+                logger.info(f"Selected title {selected_title} with score: {score}")
 
                 info_params = {
                     "action": "query",
@@ -314,12 +323,12 @@ class ArtDownloader:
             return success
 
         except Exception as e:
-            print(f"❌ Error: {e}", file=sys.stderr)
+            logger.error(f"Error: {e}")
             return False
 
     def download_image_from_wikipedia_article(self, query: str, detailed_query: str, filename_base: str) -> bool:
         """Download the first usable image from a Wikipedia article."""
-        print(f"\n🔍 Fetching all images from Wikipedia article: {query}", file=sys.stderr)
+        logger.info(f"Fetching all images from Wikipedia article: {query}")
         try:
             params = {
                 "limit": 5,
@@ -340,18 +349,18 @@ class ArtDownloader:
                 score = compare_terms(detailed_query.lower(), page_meta_data.lower(), MatchMode.COSINE)
 
                 if score >= 0.7:
-                    print(f"✅ Qualified page {idx+1}: {title} (score: {score:.3f})", file=sys.stderr)
+                    logger.info(f"Qualified page {idx+1}: {title} (score: {score:.3f})")
                     qualifying_pages.append((title, score))
                 else:
-                    print(f"❌ Excluded page {idx+1}: {title} (score: {score:.3f})")
+                    logger.info(f"Excluded page {idx+1}: {title} (score: {score:.3f})")
 
             if not qualifying_pages:
-                print("❌ No qualifying pages found (score >= 0.7)", file=sys.stderr)
+                logger.error("No qualifying pages found (score >= 0.7)")
                 return False
 
             success = False
             for idx, (title, score) in enumerate(qualifying_pages):
-                print(f"\n📥 Downloading image for qualified page {idx+1}: {title}", file=sys.stderr)
+                logger.info(f"Downloading image for qualified page {idx+1}: {title}")
                 unique_filename = f"{filename_base}_{idx+1}"
                 if self.download_from_wikimedia_search(title, detailed_query, unique_filename, "wikipedia"):
                     success = True
@@ -359,12 +368,12 @@ class ArtDownloader:
             return success
 
         except Exception as error:
-            print(f"❌ Error: {error}", file=sys.stderr)
+            logger.error(f"Error: {error}")
             return False
 
     def download_from_wikimedia(self, query: str, enhanced_query: str, filename_base: str) -> bool:
         """Download image from Wikimedia Commons."""
-        print(f"\n🔍 Wikimedia Commons search for: {query}", file=sys.stderr)
+        logger.info(f"Wikimedia Commons search for: {query}")
         params = {"q": query}
         try:
             response = requests.get(
@@ -374,7 +383,7 @@ class ArtDownloader:
             pages = response.get("pages", [])
             qualifying_pages: List[Tuple[str, float]] = []
             if not pages:
-                print("❌ No matching images found.", file=sys.stderr)
+                logger.error("No matching images found.")
                 return False
             for idx, page in enumerate(pages[0:5]):
                 file = page.get("key")
@@ -386,18 +395,18 @@ class ArtDownloader:
                 score = compare_terms(enhanced_query.lower(), page_meta_data.lower(), MatchMode.COSINE)
 
                 if score >= 0.7:
-                    print(f"✅ Qualified file {idx+1}: {file} (score: {score:.3f})", file=sys.stderr)
+                    logger.info(f"Qualified file {idx+1}: {file} (score: {score:.3f})")
                     qualifying_pages.append((file, score))
                 else:
-                    print(f"❌ Excluded file {idx+1}: {file} (score: {score:.3f})", file=sys.stderr)
+                    logger.info(f"Excluded file {idx+1}: {file} (score: {score:.3f})")
 
             if not qualifying_pages:
-                print("❌ No qualifying files found (score >= 0.7)", file=sys.stderr)
+                logger.error("No qualifying files found (score >= 0.7)")
                 return False
 
             success = False
             for idx, (file, score) in enumerate(qualifying_pages):
-                print(f"\n📥 Downloading image for qualified file {idx+1}: {file}", file=sys.stderr)
+                logger.info(f"Downloading image for qualified file {idx+1}: {file}")
                 unique_filename = f"{filename_base}_{idx+1}"
                 file_response = requests.get(
                     self.WIKIMEDIA_FILE_API_URL + "/" + file,
@@ -417,12 +426,12 @@ class ArtDownloader:
             return success
 
         except Exception as error:
-            print(f"❌ Error: {error}", file=sys.stderr)
+            logger.error(f"Error: {error}")
             return False
 
     def download_from_google(self, query: str, filename_base: str) -> bool:
         """Download image from Google Images via SerpAPI."""
-        print(f"\n🔍 Google search for: {query}", file=sys.stderr)
+        logger.info(f"Google search for: {query}")
         try:
             params = {
                 "q": query,
@@ -432,7 +441,7 @@ class ArtDownloader:
             search = GoogleSearch(params)
             results = search.get_dict()
             if not results:
-                print("❌ No matching images found.", file=sys.stderr)
+                logger.error("No matching images found.")
                 return False
             images = results.get("images_results", [])
             if not images:
@@ -448,13 +457,13 @@ class ArtDownloader:
                 score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.COSINE)
 
                 if score >= 0.7:
-                    print(f"✅ Qualified image {idx+1}: {url} (score: {score:.3f})", file=sys.stderr)
+                    logger.info(f"Qualified image {idx+1}: {url} (score: {score:.3f})")
                     qualifying_pages.append((url, score))
                 else:
-                    print(f"❌ Excluded file {idx+1}: {url} (score: {score:.3f})", file=sys.stderr)
+                    logger.info(f"Excluded file {idx+1}: {url} (score: {score:.3f})")
 
             if not qualifying_pages:
-                print("❌ No qualifying images found (score >= 0.7)", file=sys.stderr)
+                logger.error("No qualifying images found (score >= 0.7)")
                 return False
 
             success = False
@@ -467,7 +476,7 @@ class ArtDownloader:
                         self.FOUND_STOCK_PHOTOS.append(url)
                         self.GOOGLE_IMAGES.append((url, "", score))
                         continue
-                print(f"\n📥 Downloading image for qualified image {idx+1}: {url}", file=sys.stderr)
+                logger.info(f"Downloading image for qualified image {idx+1}: {url}")
                 unique_filename = f"{filename_base}_{idx+1}"
                 filename = os.path.join(
                     self.SAVE_DIR,
@@ -481,7 +490,7 @@ class ArtDownloader:
             return success
 
         except Exception as error:
-            print(f"❌ Error: {error}", file=sys.stderr)
+            logger.error(f"Error: {error}")
             return False
 
     def download_from_googlelens(self, qualified_urls: List[Tuple[str, float]], filename_base: Optional[str]) -> Tuple[Optional[str], Optional[float]]:
@@ -529,13 +538,13 @@ class ArtDownloader:
         if self.location and self.location not in query:
             wikimedia_query += f" {self.location}"
 
-        print(f"\n🔍 Searching wikis with simple query: {wikimedia_query}", file=sys.stderr)
+        logger.info(f"Searching wikis with simple query: {wikimedia_query}")
 
         downloaded_wikipedia_search = self.download_image_from_wikipedia_article(wikimedia_query, enhanced_query, self.filename_base)
         downloaded_wikimedia_search = self.download_from_wikimedia_search(wikimedia_query, enhanced_query, self.filename_base)
         downloaded_wikimedia = self.download_from_wikimedia(wikimedia_query, enhanced_query, self.filename_base)
 
-        print(f"\n🔍 Searching google and duckduckgo with enhanced query: {enhanced_query}", file=sys.stderr)
+        logger.info(f"Searching google and duckduckgo with enhanced query: {enhanced_query}")
 
         downloaded_duckduckgo = self.download_from_duckduckgo(enhanced_query, self.filename_base)
         downloaded_google = self.download_from_google(enhanced_query, self.filename_base)
@@ -627,9 +636,9 @@ def main() -> None:
     end_time = time.time()
     elapsed_time = end_time - start_time
     if success:
-        print(f"\n⏱️ Downloaded art images in {elapsed_time:.2f} seconds", file=sys.stderr)
+        logger.info(f"Downloaded art images in {elapsed_time:.2f} seconds")
     else:
-        print(f"\n⏱️ Error occurred in downloading art images: Time taken: {elapsed_time:.2f} seconds", file=sys.stderr)
+        logger.error(f"Error occurred in downloading art images: Time taken: {elapsed_time:.2f} seconds")
 
     sys.exit(0 if success else 1)
 
