@@ -8,12 +8,12 @@ in-place to the files.
 
 import re
 from pathlib import Path
-from typing import Iterator, Optional
+from typing import Iterator, Optional, Pattern
 
 
-TOC_START_MARKER = "<!-- toc -->"
-TOC_END_MARKER = "<!-- tocstop -->"
-TOC_PATTERN = re.compile(
+TOC_START_MARKER: str = "<!-- toc -->"
+TOC_END_MARKER: str = "<!-- tocstop -->"
+TOC_PATTERN: Pattern[str] = re.compile(
     rf"{re.escape(TOC_START_MARKER)}.*?{re.escape(TOC_END_MARKER)}",
     flags=re.DOTALL,
 )
@@ -40,8 +40,8 @@ def strip_toc_from_file(file_path: Path) -> bool:
     Returns:
         True if changes were made, False otherwise
     """
-    original_text = file_path.read_text(encoding="utf-8")
-    new_text = TOC_PATTERN.sub("", original_text)
+    original_text: str = file_path.read_text(encoding="utf-8")
+    new_text: str = TOC_PATTERN.sub("", original_text)
     
     if new_text != original_text:
         file_path.write_text(new_text, encoding="utf-8")
@@ -58,7 +58,7 @@ def strip_toc_blocks(directory: str = ".") -> int:
     Returns:
         Number of files modified
     """
-    modified_count = 0
+    modified_count: int = 0
     
     for md_file in find_markdown_files(directory):
         if strip_toc_from_file(md_file):
@@ -70,7 +70,7 @@ def strip_toc_blocks(directory: str = ".") -> int:
 
 def main() -> None:
     """Main entry point for the script."""
-    modified = strip_toc_blocks()
+    modified: int = strip_toc_blocks()
     print(f"Modified {modified} files")
 
 
