@@ -3,9 +3,11 @@
 
 import argparse
 import json
+import logging
 import os
 import re
 from typing import Dict, Union
+import sys
 
 import cv2
 import numpy as np
@@ -29,7 +31,7 @@ class WatermarkDetector:
         freq_threshold: float = DEFAULT_FREQ_THRESHOLD
     ):
         """Initialize detector with threshold values.
-        
+
         Args:
             text_threshold: Minimum text length to consider watermarked
             edge_threshold: Edge density threshold
@@ -38,6 +40,16 @@ class WatermarkDetector:
         self.text_threshold = text_threshold
         self.edge_threshold = edge_threshold
         self.freq_threshold = freq_threshold
+        self._setup_logging()
+
+    def _setup_logging(self) -> None:
+        """Configure logging to stderr."""
+        self.logger = logging.getLogger(__name__)
+        self.logger.setLevel(logging.INFO)
+        handler = logging.StreamHandler(sys.stderr)
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        handler.setFormatter(formatter)
+        self.logger.addHandler(handler)
 
     def detect_text_regions(self, image: np.ndarray) -> str:
         """Detect and extract text from image using OCR.
@@ -141,7 +153,8 @@ def main() -> None:
         result = detector.detect(args.image)
         print(json.dumps(result, indent=2))
     except Exception as error:
-        print(json.dumps({"error": str(error)}, indent=2))
+        detector.logger.error(str(error))
+        print(json.dumps({"error": str(error)}, indent=2), file=sys.stderr)
 
 
 if __name__ == "__main__":
