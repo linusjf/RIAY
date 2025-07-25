@@ -14,7 +14,7 @@ from configenv import ConfigEnv
 # Configure logging to stderr
 logging.basicConfig(
     level=logging.INFO,
-    format='%(levelname)s: %(message)s',
+    format='%(asctime)s - %(levelname)s - %(message)s',
     stream=sys.stderr
 )
 logger = logging.getLogger(__name__)
@@ -108,10 +108,7 @@ def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False, gh_to_rt
 
     if rewriter.replacement_count > 0:
         md_file.write_text(modified_text)
-        print(
-            f"Updated {md_file}: {rewriter.replacement_count} link(s) modified",
-            file=sys.stdout
-        )
+        logger.info(f"Updated {md_file}: {rewriter.replacement_count} link(s) modified")
 
     return rewriter.replacement_count
 
@@ -160,7 +157,7 @@ def main() -> int:
         )
 
     if total_changes == 0:
-        print("No links were modified in any files", file=sys.stdout)
+        logger.info("No links were modified in any files")
 
     return 0
 

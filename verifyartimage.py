@@ -12,12 +12,21 @@ import json
 import re
 import sys
 import time
+import logging
 from typing import Dict, Optional, Tuple, Union
 
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from openai import OpenAI
 from simtools import MatchMode, compare_terms, compute_match_dicts
+
+# Configure logging to stderr
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    stream=sys.stderr
+)
+logger = logging.getLogger(__name__)
 
 
 class ArtworkVerifier:
@@ -100,7 +109,7 @@ class ArtworkVerifier:
         Returns:
             Generated image description.
         """
-        print("🖼️ Generating image description...", file=sys.stderr)
+        logger.info("🖼️ Generating image description...")
         base64_image = self.encode_image_to_base64(image_path)
         prompt = self.config.get(ConfigConstants.ART_METADATA_PROMPT, "Describe and interpret this image in detail.")
 
@@ -112,8 +121,8 @@ class ArtworkVerifier:
             input=[{"role": "user", "content": [{"type": "input_text", "text": prompt},{"type": "input_image","image_url": f"data:image/jpeg;base64,{base64_image}"},],}])
 
         image_description = response.output_text
-        print(f"🔍 Image Description: {image_description}", file=sys.stderr)
-        print(f"🔍 Token usage: {response.usage}", file=sys.stderr)
+        logger.info(f"🔍 Image Description: {image_description}")
+        logger.info(f"🔍 Token usage: {response.usage}")
         return image_description
 
     @staticmethod
@@ -153,8 +162,8 @@ class ArtworkVerifier:
         metadata_dict = vars(args)
         metadata_dict = {k: v for k, v in metadata_dict.items() if k != 'image'}
 
-        print(f"📋 Metadata text: {metadata_text}", file=sys.stderr)
-        print(f"📋 Metadata dict: {metadata_dict}", file=sys.stderr)
+        logger.info(f"📋 Metadata text: {metadata_text}")
+        logger.info(f"📋 Metadata dict: {metadata_dict}")
         return metadata_text, metadata_dict
 
     def process_image_description(self, description: str) -> Dict[str, Union[str, float, bool, Dict]]:
@@ -168,7 +177,7 @@ class ArtworkVerifier:
         """
         description = self.strip_code_guards(description)
         if not self.is_json_string(description):
-            print(f"Error in generating image description: {description}", file=sys.stderr)
+            logger.error(f"Error in generating image description: {description}")
             sys.exit(1)
 
         data = json.loads(description)
@@ -200,31 +209,31 @@ class ArtworkVerifier:
                 image_data['medium'],
                 image_data['description']
             ] if x)
-            print(f"Image description: {image_description_text}", file=sys.stderr)
+            logger.info(f"Image description: {image_description_text}")
 
             cosine_score = compare_terms(metadata_text, image_description_text, MatchMode.COSINE)
-            print(f"Similarity: {cosine_score:.4f}", file=sys.stderr)
+            logger.info(f"Similarity: {cosine_score:.4f}")
             image_data["cosine_score"] = round(cosine_score, 3)
 
-            print("🧠 Checking for matching terms...", file=sys.stderr)
+            logger.info("🧠 Checking for matching terms...")
             matched, mismatched = compute_match_dicts(metadata_dict, image_data, MatchMode.HYBRID)
             non_empty_count = len([v for v in metadata_dict.values() if v])
             is_likely_match = cosine_score >= 0.7 and len(matched) >= non_empty_count // 2
 
-            print(f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}", file=sys.stderr)
+            logger.info(f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}")
             image_data["is_likely_match"] = is_likely_match
             image_data["matched_terms"] = str(matched)
             image_data["mismatched_terms"] = str(mismatched)
 
             execution_time = time.time() - start_time
-            print(f"⏱️ Verified image in {execution_time:.2f} seconds", file=sys.stderr)
+            logger.info(f"⏱️ Verified image in {execution_time:.2f} seconds")
 
             return image_data
 
         except Exception as error:
             execution_time = time.time() - start_time
-            print(f"⏱️ Verification failed: {execution_time:.2f} seconds", file=sys.stderr)
-            print(f"❌ Error: {error}", file=sys.stderr)
+            logger.error(f"⏱️ Verification failed: {execution_time:.2f} seconds")
+            logger.error(f"❌ Error: {error}")
             raise
 
 

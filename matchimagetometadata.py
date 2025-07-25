@@ -6,12 +6,21 @@ Match image to metadata by combining classification, watermark detection and rev
 import argparse
 import json
 import sys
+import logging
 from pathlib import Path
 
 from classifyimage import ImageClassifier
 from detectwatermark import WatermarkDetector
 from reverseimagelookup import ReverseImageLookup
 from simtools import THRESHOLDS
+
+# Configure logging to stderr
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    stream=sys.stderr
+)
+logger = logging.getLogger(__name__)
 
 def parse_arguments():
     """Parse command line arguments."""
@@ -41,19 +50,23 @@ def main():
     image_path = args.image
 
     if not Path(image_path).is_file():
+        logger.error(f"File not found: {image_path}")
         print(json.dumps({"error": f"File not found: {image_path}"}))
         sys.exit(1)
 
     try:
         # 1. Classify the image using ImageClassifier
+        logger.info("Classifying image...")
         classifier = ImageClassifier(image_path)
         classification = classifier.classify()
 
         # 2. Detect watermarks using WatermarkDetector
+        logger.info("Detecting watermarks...")
         detector = WatermarkDetector()
         watermark = detector.detect(image_path)
 
         # 3. Perform reverse image lookup
+        logger.info("Performing reverse image lookup...")
         lookup = ReverseImageLookup(ReverseImageLookup.SEARCH_API.ZENSERP_API)
         score = lookup.match_reverse_lookup(
             image_path,
@@ -70,12 +83,14 @@ def main():
         result = classification | watermark
         result["cosine_score"] = score
 
+        logger.info(f"Final result: {json.dumps(result, indent=2)}")
         print(json.dumps(result, indent=2))
         if score >= THRESHOLDS["cosine"]:
             sys.exit(0)
         sys.exit(1)
 
     except Exception as e:
+        logger.error(f"Error: {e}")
         print(json.dumps({"error": str(e)}))
         sys.exit(1)
 
