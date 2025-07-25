@@ -21,9 +21,18 @@ import sys
 import json
 import requests
 import re
+import logging
 from typing import Dict, Any, Optional
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
+
+# Configure logging to stderr
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    stream=sys.stderr
+)
+logger = logging.getLogger(__name__)
 
 class ArtDetailsAugmenter:
     """Class for augmenting artwork details using LLM APIs."""
@@ -45,7 +54,9 @@ class ArtDetailsAugmenter:
     def _validate_config(self, config: Dict[str, Optional[str]]) -> None:
         """Validate that all required config values are present."""
         if not all(config.values()):
-            raise EnvironmentError("Missing required LLM configuration variables")
+            error_msg = "Missing required LLM configuration variables"
+            logger.error(error_msg)
+            raise EnvironmentError(error_msg)
 
     def _build_llm_payload(self, art_json: Dict[str, Any]) -> Dict[str, Any]:
         """Construct the payload for the LLM API request."""
@@ -74,6 +85,7 @@ class ArtDetailsAugmenter:
         }
 
         payload = self._build_llm_payload(art_json)
+        logger.info("Sending request to LLM API")
         response = requests.post(url, headers=headers, json=payload)
         response.raise_for_status()
 
@@ -83,7 +95,7 @@ class ArtDetailsAugmenter:
 
 def main() -> None:
     if sys.stdin.isatty():
-        print("Please provide JSON input via stdin.", file=sys.stderr)
+        logger.error("Please provide JSON input via stdin.")
         sys.exit(1)
 
     try:
@@ -92,7 +104,7 @@ def main() -> None:
         output = augmenter.augment_art_details(input_json)
         print(output)
     except Exception as e:
-        print(f"Error: {e}", file=sys.stderr)
+        logger.error(f"Error: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":
