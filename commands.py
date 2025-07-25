@@ -23,7 +23,7 @@ from configenv import ConfigEnv
 
 # Configure logging to stderr
 logging.basicConfig(
-    level=logging.ERROR,
+    level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     stream=sys.stderr
 )
