@@ -28,7 +28,6 @@ from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from PIL import Image
-from pathlib import Path
 
 class ArtDownloader:
     """Download artwork images from various sources."""
