@@ -75,7 +75,7 @@ class WatermarkDetector:
             Ratio of edge pixels to total pixels
         """
         edges: np.ndarray = cv2.Canny(image, *self.CANNY_THRESHOLDS)
-        edge_pixels: np.ndarray = np.sum(edges > 0)
+        edge_pixels: int = int(np.sum(edges > 0))
         total_pixels: int = image.shape[0] * image.shape[1]
         return float(edge_pixels / total_pixels)
 
