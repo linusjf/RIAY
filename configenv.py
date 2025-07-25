@@ -12,7 +12,7 @@ Configenv.
 """
 import os
 import re
-from typing import Dict, Any, Union, List, Tuple
+from typing import Dict, Any, Union, List
 
 class ConfigEnv:
     BOOL_TRUE = {"true", "1", "yes", "on"}
