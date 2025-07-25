@@ -10,11 +10,10 @@ Genreqs.
 # -*- coding: utf-8 -*-'
 ######################################################################
 """
-import os
 import re
 import subprocess
 from pathlib import Path
-from typing import Set, Dict, List, Iterator, Match, Optional
+from typing import Set, Dict, List, Match, Optional
 
 project_dir = Path(".")
 imported_modules: Set[str] = set()
