@@ -13,8 +13,7 @@ import re
 import sys
 import time
 import logging
-from pathlib import Path
-from typing import Dict, Optional, Tuple, Union, List, Any, Literal
+from typing import Dict, Optional, Tuple, Union, List
 
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
@@ -221,8 +220,8 @@ class ArtworkVerifier:
             image_data["cosine_score"] = round(cosine_score, 3)
 
             logger.info("🧠 Checking for matching terms...")
-            matched: Dict[str, str]
-            mismatched: Dict[str, str]
+            matched: List[str]
+            mismatched: List[str]
             matched, mismatched = compute_match_dicts(metadata_dict, image_data, MatchMode.HYBRID)
             non_empty_count: int = len([v for v in metadata_dict.values() if v])
             is_likely_match: bool = cosine_score >= 0.7 and len(matched) >= non_empty_count // 2

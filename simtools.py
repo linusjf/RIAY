@@ -20,7 +20,7 @@ from fuzzywuzzy import fuzz
 from openai import OpenAI
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
-from typing import Dict, List, Tuple, Union, Any, Optional
+from typing import Dict, List, Tuple, Optional, Any
 
 # Configure logging to stderr
 logger = logging.getLogger(__name__)
@@ -106,15 +106,12 @@ def compare_terms(term_a: str, term_b: str, mode: MatchMode = MatchMode.FUZZY) -
         vec1: np.ndarray = get_embedding(term_a)
         vec2: np.ndarray = get_embedding(term_b)
         score = cosine_similarity(vec1, vec2)
-    elif mode == MatchMode.HYBRID:
+    else:
         fuzzy_score: float = fuzz.partial_ratio(term_a.lower(), term_b.lower()) / 100
         vec1 = get_embedding(term_a)
         vec2 = get_embedding(term_b)
         cosine_score: float = cosine_similarity(vec1, vec2)
         score = fuzzy_score * cosine_score * 100  # Scale back to 0-100 range
-    else:
-        logger.error(ERROR_MESSAGES["invalid_mode"].format(MatchMode=MatchMode))
-        raise ValueError(ERROR_MESSAGES["invalid_mode"].format(MatchMode=MatchMode))
 
     logger.info(INFO_MESSAGES["term_comparison"].format(term_a=term_a, term_b=term_b, score=score))
     return score
@@ -156,8 +153,8 @@ def compute_match_terms(
     return (matched, mismatched)
 
 def compute_match_dicts(
-    dict1: Dict[str, str],
-    dict2: Dict[str, str],
+    dict1: Dict[str, Any],
+    dict2: Dict[str, Any],
     mode: MatchMode = MatchMode.FUZZY
 ) -> Tuple[List[str], List[str]]:
     """Compute matching between values in two dictionaries.
@@ -196,7 +193,7 @@ def compute_match_dicts(
 def get_embedding(text: str) -> np.ndarray:
     """Get text embedding using deepinfra client."""
     embeddings = deepinfra_client.embeddings.create(
-        model=VECTOR_EMBEDDINGS_MODEL,
+        model=str(VECTOR_EMBEDDINGS_MODEL),
         input=text,
         encoding_format="float"
     )
