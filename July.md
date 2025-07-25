@@ -69,7 +69,6 @@
 - [July 17, 2025](#july-17-2025)
   - [The Love of Jesus](#the-love-of-jesus)
   - [AI-Generated Summary: The Divine Ingenuity of Love](#ai-generated-summary-the-divine-ingenuity-of-love)
-  - [The Last Supper by Giacomo Raphaeli, a mosaic depicting Christ's calm before the cross](#the-last-supper-by-giacomo-raphaeli-a-mosaic-depicting-christs-calm-before-the-cross)
   - [Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance (Stock Image)](#giacomo-raffaelis-mosaic-the-last-supper-in-minoritenkirche-vienna-vividly-portrays-jesus-and-his-disciples-in-a-moment-of-sacred-significance-stock-image)
 - [July 18, 2025](#july-18-2025)
   - [What the Garden Reveals](#what-the-garden-reveals)
@@ -456,13 +455,9 @@ As for _The Last Supper_ by Giacomo Raffaeli located at Vienna in the Minoritenk
 
 Thus, in sacrament and art alike, we glimpse the same truth: love is ever inventive, ever near, and ever sure.
 
-### The Last Supper by Giacomo Raphaeli, a mosaic depicting Christ's calm before the cross
-
-[![The Last Supper by Giacomo Raphaeli, a mosaic depicting Christ's calm before the cross](July/jpgs/thelastsupperjacoporaphaeli.jpg)](https://cdn.mosaicnatural.com/pictures/1200/9667e0d25a194e77949db2445ee93487.jpg?v "The Last Supper by Giacomo Raphaeli, a mosaic depicting Christ's calm before the cross")
-
 ### Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance (Stock Image)
 
-[![Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance](July/jpgs/lastsupperraffaeli.jpg)](https://thumbs.dreamstime.com/z/vienna-mosaic-last-supper-jesus-vienna-mosaic-last-supper-jesus-giacomo-raffaelli-year-as-copy-leonardo-da-138373847.jpg "Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance")
+[![Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance](July/jpgs/lastsupperraffaeli.jpg)](https://media.gettyimages.com/id/160585076/photo/vienna-mosaic-of-last-supper-by-giacomo-raffaelli.jpg?s=1024x1024&w=gi&k=20&c=_nSIsiH-j1B5R8kHSSheqmqib7HpOzxHgIaCHx9kqfs= "Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance")
 
 ## July 18, 2025
 
