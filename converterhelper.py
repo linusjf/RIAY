@@ -1,5 +1,15 @@
 import os
 import subprocess
+import sys
+import logging
+
+# Configure logging to stderr
+logging.basicConfig(
+    level=logging.WARNING,
+    stream=sys.stderr,
+    format='%(levelname)s: %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 def convert_to_jpeg(input_path):
     """Convert image to JPEG using GraphicsMagick.
@@ -16,7 +26,7 @@ def convert_to_jpeg(input_path):
 
         # Check if GraphicsMagick is available
         if subprocess.run(["gm", "version"], capture_output=True).returncode != 0:
-            print("⚠️ GraphicsMagick (gm) not found, skipping conversion")
+            logger.warning("GraphicsMagick (gm) not found, skipping conversion")
             return None
 
         result = subprocess.run(
@@ -30,8 +40,8 @@ def convert_to_jpeg(input_path):
             os.remove(input_path)
             return output_path
         else:
-            print(f"❌ Conversion failed: {result.stderr.decode().strip()}")
+            logger.error(f"Conversion failed: {result.stderr.decode().strip()}")
             return None
     except Exception as e:
-        print(f"❌ Conversion error: {e}")
+        logger.error(f"Conversion error: {e}")
         return None
