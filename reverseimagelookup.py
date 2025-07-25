@@ -53,15 +53,15 @@ class ReverseImageLookup:
         self.MIN_IMAGE_HEIGHT: int = self.config[ConfigConstants.MIN_IMAGE_HEIGHT]
 
     def verify_image_against_metadata(self, image_url: str, metadata_text: str) -> float:
+        """Verify if image matches metadata using Google Lens."""
         if self.search_api == self.SEARCH_API.SERP_API:
-            """Verify if image matches metadata using Google Lens."""
-            params: Dict[str, Union[str, int]] = {
+            parameters: Dict[str, Union[str, int]] = {
                 "engine": "google_lens",
                 "api_key": self.SERP_API_KEY,
                 "url": image_url,
                 "type": "visual_matches"
             }
-            search: GoogleSearch = GoogleSearch(params)
+            search: GoogleSearch = GoogleSearch(parameters)
             results: Dict[str, Any] = search.get_dict()
             visual_matches: List[Dict[str, Any]] = results["visual_matches"][0:self.REQUIRED_MATCH_COUNT]
 
@@ -83,7 +83,7 @@ class ReverseImageLookup:
             score: float = compare_terms(metadata_text, self.match_text, MatchMode.COSINE)
             print(f"Matched: {image_url} —> {url}", file=sys.stderr)
             return score
-        elif self.search_api == self.SEARCH_API.ZENSERP_API:
+        else:
             headers: Dict[str, str] = {
                 "apikey": self.ZENSERP_API_KEY}
 
@@ -180,8 +180,8 @@ class ReverseImageLookup:
             raise argparse.ArgumentTypeError(f"'{path}' is not a file")
         return path_obj
 
-    def reverse_image_lookup(self, image_path: str, title: str, artist: str, subject: Optional[str] = None, 
-                           location: Optional[str] = None, date: Optional[str] = None, 
+    def reverse_image_lookup(self, image_path: str, title: str, artist: str, subject: Optional[str] = None,
+                           location: Optional[str] = None, date: Optional[str] = None,
                            style: Optional[str] = None, medium: Optional[str] = None) -> Tuple[List[Tuple[str, float]], str]:
         """Perform reverse image lookup with provided parameters."""
         image_url: str
@@ -200,7 +200,7 @@ class ReverseImageLookup:
         return qualifying_urls, delete_url
 
     def reverse_image_lookup_url(self, image_url: str, title: str, artist: str, subject: Optional[str] = None,
-                               location: Optional[str] = None, date: Optional[str] = None, 
+                               location: Optional[str] = None, date: Optional[str] = None,
                                style: Optional[str] = None, medium: Optional[str] = None) -> List[Tuple[str, float]]:
         """Perform reverse image lookup using a direct image URL."""
         metadata_text: str = ", ".join(filter(None, [
@@ -218,8 +218,8 @@ class ReverseImageLookup:
         return qualifying_urls
 
     @staticmethod
-    def get_metadata_text(title: str, artist: str, subject: Optional[str] = None, 
-                         location: Optional[str] = None, date: Optional[str] = None, 
+    def get_metadata_text(title: str, artist: str, subject: Optional[str] = None,
+                         location: Optional[str] = None, date: Optional[str] = None,
                          style: Optional[str] = None, medium: Optional[str] = None) -> str:
         """Create metadata text string from parameters."""
         return ", ".join(filter(None, [
@@ -232,8 +232,8 @@ class ReverseImageLookup:
             medium
         ]))
 
-    def match_reverse_lookup(self, image: str, title: str, artist: str, subject: Optional[str] = None, 
-                            location: Optional[str] = None, date: Optional[str] = None, 
+    def match_reverse_lookup(self, image: str, title: str, artist: str, subject: Optional[str] = None,
+                            location: Optional[str] = None, date: Optional[str] = None,
                             style: Optional[str] = None, medium: Optional[str] = None) -> float:
         """Core reverse lookup functionality."""
         source_url: Optional[str] = None
