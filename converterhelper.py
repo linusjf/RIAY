@@ -4,12 +4,14 @@ import sys
 import logging
 
 # Configure logging to stderr
-logging.basicConfig(
-    level=logging.WARNING,
-    stream=sys.stderr,
-    format='%(levelname)s: %(message)s'
-)
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.WARNING)
+
+if not logger.handlers:
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logger.addHandler(handler)
+    logger.propagate = False
 
 def convert_to_jpeg(input_path):
     """Convert image to JPEG using GraphicsMagick.
