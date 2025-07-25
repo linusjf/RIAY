@@ -5892,7 +5892,7 @@ Thus, in sacrament and art alike, we glimpse the same truth: love is ever invent
 
 ##### Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance (Stock Image)
 
-[![Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance](July/jpgs/lastsupperraffaeli.jpg)](https://media.gettyimages.com/id/160585076/photo/vienna-mosaic-of-last-supper-by-giacomo-raffaelli.jpg?s=1024x1024&w=gi&k=20&c=_nSIsiH-j1B5R8kHSSheqmqib7HpOzxHgIaCHx9kqfs= "Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance")
+[![Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance](July/jpgs/lastsupperraffaeli.jpg)](<https://img.pixers.pics/pho_wat(s3:700/FO/64/35/99/27/700_FO64359927_6dfc0ba27fcd9eeb72fb58293cbdf30a.jpg,700,356,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,306,jpg)/stickers-vienna-mosaic-of-last-supper-copy-leonardo-da-vinci.jpg.jpg> "Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance")
 
 #### July 18, 2025
 
