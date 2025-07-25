@@ -21,6 +21,15 @@ from configconstants import ConfigConstants
 from configenv import ConfigEnv
 
 
+# Configure logging to stderr
+logging.basicConfig(
+    level=logging.ERROR,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    stream=sys.stderr
+)
+logger = logging.getLogger(__name__)
+
+
 class Commands(commandsListener):
     """Listener implementation for processing commands."""
 
@@ -118,10 +127,10 @@ class Commands(commandsListener):
             if result.returncode != 0:
                 self.exitcode = 1
         except subprocess.CalledProcessError as e:
-            logging.error("Command failed: %s", str(e))
+            logger.error("Command failed: %s", str(e))
             self.exitcode = 1
         except Exception as e:
-            logging.error("Unexpected error executing command: %s", str(e))
+            logger.error("Unexpected error executing command: %s", str(e))
             self.exitcode = 1
 
 
@@ -146,7 +155,7 @@ def main() -> None:
         walker.walk(executor, tree)
         sys.exit(executor.exitcode)
     except Exception as e:
-        print(f"\nParsing failed: {type(e)} : {str(e)}")
+        logger.error("\nParsing failed: %s : %s", type(e).__name__, str(e))
         sys.exit(1)
 
 
