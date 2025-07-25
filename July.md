@@ -98,6 +98,9 @@
   - [With Us Always](#with-us-always)
   - [AI-Generated Summary: The Ascension and the Ever-Present Christ](#ai-generated-summary-the-ascension-and-the-ever-present-christ)
   - [Bernardino Gandino's 'Ascension of the Lord' portrays Christ ascending to heaven, his footprints left on stone below, surrounded by awe-struck apostles (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-portrays-christ-ascending-to-heaven-his-footprints-left-on-stone-below-surrounded-by-awe-struck-apostles-stock-image)
+- [July 25, 2025](#july-25-2025)
+  - [Promise of the Father](#promise-of-the-father)
+  - [AI-Generated Summary: The Wine of the Spirit and the Patience of Prayer](#ai-generated-summary-the-wine-of-the-spirit-and-the-patience-of-prayer)
 
 <!-- tocstop -->
 
@@ -582,3 +585,19 @@ Even in art, this mystery is whispered. Consider Bernardino Gandino’s painting
 ### Bernardino Gandino's 'Ascension of the Lord' portrays Christ ascending to heaven, his footprints left on stone below, surrounded by awe-struck apostles (Stock Image)
 
 [![Bernardino Gandino's 'Ascension of the Lord' portrays Christ ascending to heaven, his footprints left on stone below, surrounded by awe-struck apostles](July/jpgs/ascensionlordgandino.jpg)](https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Bernardino Gandino's 'Ascension of the Lord' portrays Christ ascending to heaven, his footprints left on stone below, surrounded by awe-struck apostles")
+
+## July 25, 2025
+
+### Promise of the Father
+
+[![Promise of the Father](/July/jpgs/Day206.jpg)](https://youtu.be/gGuOZ7AqBkM "Promise of the Father")
+
+### AI-Generated Summary: The Wine of the Spirit and the Patience of Prayer
+
+Pentecost, dear reader, is no mere spectacle of divine fireworks—it is the quiet triumph of hearts schooled in patient, persistent prayer. As the wise Pontiff once observed, it is the fruit of souls who, like the disciples in the upper room, have wholly surrendered their wills to God, waiting not with idle hands but with hearts aflame. Prayer, you see, is not a hasty transaction but a holy endurance, a stretching of the soul toward the Spirit who fills all things in His own time.
+
+And when at last He comes, He comes as new wine—as at Cana, where water turned to gladness, so at Pentecost, timorous men were accused of drunkenness for the joy that poured from them. This is the Spirit’s work: to make cowards bold, to turn mourning into dancing, and to seal the new covenant not with ink but with fire.
+
+Consider Restout’s _Pentecost_, where the apostles startle like men struck by lightning, while Mary, who had long known the Spirit’s overshadowing, remains serene. The artist, in his Baroque vigor, captures this divine irony: those who wait upon the Lord shall mount up with wings, but those who already rest in Him shall not be shaken.
+
+Let us then pray with confidence, not as beggars uncertain of the King’s favor, but as children who know their Father’s heart. For the Spirit does not ration His gifts; He pours them lavishly upon all who ask—and keep asking—until their cups run over.
