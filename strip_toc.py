@@ -7,9 +7,21 @@ in-place to the files.
 """
 
 import re
+import logging
+import sys
 from pathlib import Path
 from typing import Iterator, Pattern
 
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# Configure logging to stderr
+if not logger.handlers:
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logger.addHandler(handler)
+    logger.propagate = False
 
 TOC_START_MARKER: str = "<!-- toc -->"
 TOC_END_MARKER: str = "<!-- tocstop -->"
@@ -62,7 +74,7 @@ def strip_toc_blocks(directory: str = ".") -> int:
 
     for md_file in find_markdown_files(directory):
         if strip_toc_from_file(md_file):
-            print(f"Stripped ToC from: {md_file}")
+            logger.info(f"Stripped ToC from: {md_file}")
             modified_count += 1
 
     return modified_count
@@ -71,7 +83,7 @@ def strip_toc_blocks(directory: str = ".") -> int:
 def main() -> None:
     """Main entry point for the script."""
     modified: int = strip_toc_blocks()
-    print(f"Modified {modified} files")
+    logger.info(f"Modified {modified} files")
 
 
 if __name__ == "__main__":

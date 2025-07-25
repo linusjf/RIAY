@@ -17,13 +17,15 @@ from pathlib import Path
 from typing import Any, Optional
 from sphinx.application import Sphinx
 
-# Configure logging to stderr
-logging.basicConfig(
-    level=logging.WARNING,
-    format='%(levelname)s: %(message)s',
-    handlers=[logging.StreamHandler()]
-)
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.WARNING)
+
+# Configure logging to stderr
+if not logger.handlers:
+    handler = logging.StreamHandler()
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logger.addHandler(handler)
+    logger.propagate = False
 
 def generate_sitemap(app: Sphinx, exception: Optional[Exception]) -> None:
     """Generate sitemap.xml file for Sphinx documentation."""
