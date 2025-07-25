@@ -1,7 +1,18 @@
 import re
 from urllib.parse import urlparse
 import os
+import logging
 from typing import Optional
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# Configure logging to stderr
+if not logger.handlers:
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logger.addHandler(handler)
+    logger.propagate = False
 
 def clean_filename(filename: str) -> str:
     # Remove "File:" prefix and file extension
