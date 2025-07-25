@@ -1,6 +1,7 @@
 import re
 from urllib.parse import urlparse
 import os
+from typing import Optional
 
 def clean_filename(filename: str) -> str:
     # Remove "File:" prefix and file extension
@@ -12,7 +13,7 @@ def clean_filename(filename: str) -> str:
     return base
 
 
-def strip_span_tags_but_keep_contents(text):
+def strip_span_tags_but_keep_contents(text: str) -> str:
     """Remove HTML span tags while preserving their contents.
 
     Args:
@@ -27,7 +28,7 @@ def strip_span_tags_but_keep_contents(text):
     text = re.sub(r'</span>', '', text)
     return text
 
-def clean_filename_text(url):
+def clean_filename_text(url: str) -> str:
     """Clean text from URLs to create safe filenames.
 
     Args:
@@ -45,7 +46,7 @@ def clean_filename_text(url):
     # Strip leading/trailing whitespace and normalize spaces
     return cleaned.strip()
 
-def extract_domain_from_url(url):
+def extract_domain_from_url(url: Optional[str]) -> Optional[str]:
     """Extract domain from url.
 
     Args:
@@ -54,7 +55,6 @@ def extract_domain_from_url(url):
     Returns:
         Domain
     """
-
     if not url:
         return None
 
