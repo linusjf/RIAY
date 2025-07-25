@@ -12,7 +12,7 @@ import sys
 import time
 import argparse
 import shutil
-from typing import Optional, Dict, List, Tuple, Union, Iterator, Any
+from typing import Optional, Dict, List, Tuple, Any
 
 import requests
 import re
@@ -484,7 +484,7 @@ class ArtDownloader:
             print(f"❌ Error: {error}", file=sys.stderr)
             return False
 
-    def download_from_googlelens(self, qualified_urls: List[Tuple[str, float]], filename_base: str) -> Tuple[Optional[str], Optional[float]]:
+    def download_from_googlelens(self, qualified_urls: List[Tuple[str, float]], filename_base: Optional[str]) -> Tuple[Optional[str], Optional[float]]:
         """Download images from Google Lens reverse image search results."""
         if not qualified_urls:
             return (None, None)
