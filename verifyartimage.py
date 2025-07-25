@@ -13,7 +13,8 @@ import re
 import sys
 import time
 import logging
-from typing import Dict, Optional, Tuple, Union
+from pathlib import Path
+from typing import Dict, Optional, Tuple, Union, List, Any, Literal
 
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
@@ -34,17 +35,17 @@ if not logger.handlers:
 class ArtworkVerifier:
     """Class for verifying artwork images against metadata using AI models."""
 
-    def __init__(self, config_path: str = 'config.env'):
+    def __init__(self, config_path: str = 'config.env') -> None:
         """Initialize the verifier with configuration.
 
         Args:
             config_path: Path to configuration file.
         """
-        self.config = ConfigEnv(config_path, include_os_env=True)
-        self.openai_api_key = self.config.get(ConfigConstants.OPENAI_API_KEY)
+        self.config: ConfigEnv = ConfigEnv(config_path, include_os_env=True)
+        self.openai_api_key: Optional[str] = self.config.get(ConfigConstants.OPENAI_API_KEY)
         if not self.openai_api_key:
             raise ValueError(f"{ConfigConstants.OPENAI_API_KEY} environment variable not set")
-        self.client = OpenAI(api_key=self.openai_api_key)
+        self.client: OpenAI = OpenAI(api_key=self.openai_api_key)
 
     @staticmethod
     def image_to_bytes(image_path: str) -> bytes:
@@ -112,8 +113,8 @@ class ArtworkVerifier:
             Generated image description.
         """
         logger.info("🖼️ Generating image description...")
-        base64_image = self.encode_image_to_base64(image_path)
-        prompt = self.config.get(ConfigConstants.ART_METADATA_PROMPT, "Describe and interpret this image in detail.")
+        base64_image: str = self.encode_image_to_base64(image_path)
+        prompt: str = self.config.get(ConfigConstants.ART_METADATA_PROMPT, "Describe and interpret this image in detail.")
 
         if subject:
             prompt = prompt.replace("{}", subject)
@@ -122,7 +123,7 @@ class ArtworkVerifier:
             model="gpt-4o",
             input=[{"role": "user", "content": [{"type": "input_text", "text": prompt},{"type": "input_image","image_url": f"data:image/jpeg;base64,{base64_image}"},],}])
 
-        image_description = response.output_text
+        image_description: str = response.output_text
         logger.info(f"🔍 Image Description: {image_description}")
         logger.info(f"🔍 Token usage: {response.usage}")
         return image_description
@@ -157,18 +158,18 @@ class ArtworkVerifier:
         Returns:
             Tuple of (metadata text string, metadata dictionary)
         """
-        metadata_text = ", ".join(filter(None, [
+        metadata_text: str = ", ".join(filter(None, [
             args.title, args.artist, args.subject, args.location, args.date, args.style, args.medium
         ]))
 
-        metadata_dict = vars(args)
+        metadata_dict: Dict[str, str] = vars(args)
         metadata_dict = {k: v for k, v in metadata_dict.items() if k != 'image'}
 
         logger.info(f"📋 Metadata text: {metadata_text}")
         logger.info(f"📋 Metadata dict: {metadata_dict}")
         return metadata_text, metadata_dict
 
-    def process_image_description(self, description: str) -> Dict[str, Union[str, float, bool, Dict]]:
+    def process_image_description(self, description: str) -> Dict[str, Union[str, float, bool, Dict[str, str]]]:
         """Process the generated image description.
 
         Args:
@@ -182,11 +183,11 @@ class ArtworkVerifier:
             logger.error(f"Error in generating image description: {description}")
             sys.exit(1)
 
-        data = json.loads(description)
+        data: Dict[str, Union[str, float, bool, Dict[str, str]]] = json.loads(description)
         data['subject'] = data['description']
         return data
 
-    def verify(self, args: argparse.Namespace) -> Dict[str, Union[str, float, bool, Dict]]:
+    def verify(self, args: argparse.Namespace) -> Dict[str, Union[str, float, bool, Dict[str, str]]]:
         """Verify if image matches artwork metadata.
 
         Args:
@@ -195,14 +196,16 @@ class ArtworkVerifier:
         Returns:
             Dictionary containing verification results.
         """
-        start_time = time.time()
+        start_time: float = time.time()
+        metadata_text: str
+        metadata_dict: Dict[str, str]
         metadata_text, metadata_dict = self.create_metadata_text(args)
 
         try:
-            image_description = self.generate_image_description(args.image, args.subject)
-            image_data = self.process_image_description(image_description)
+            image_description: str = self.generate_image_description(args.image, args.subject)
+            image_data: Dict[str, Union[str, float, bool, Dict[str, str]]] = self.process_image_description(image_description)
 
-            image_description_text = ", ".join(str(x) for x in [
+            image_description_text: str = ", ".join(str(x) for x in [
                 image_data['title'],
                 image_data['artist'],
                 image_data['location'],
@@ -213,21 +216,23 @@ class ArtworkVerifier:
             ] if x)
             logger.info(f"Image description: {image_description_text}")
 
-            cosine_score = compare_terms(metadata_text, image_description_text, MatchMode.COSINE)
+            cosine_score: float = compare_terms(metadata_text, image_description_text, MatchMode.COSINE)
             logger.info(f"Similarity: {cosine_score:.4f}")
             image_data["cosine_score"] = round(cosine_score, 3)
 
             logger.info("🧠 Checking for matching terms...")
+            matched: Dict[str, str]
+            mismatched: Dict[str, str]
             matched, mismatched = compute_match_dicts(metadata_dict, image_data, MatchMode.HYBRID)
-            non_empty_count = len([v for v in metadata_dict.values() if v])
-            is_likely_match = cosine_score >= 0.7 and len(matched) >= non_empty_count // 2
+            non_empty_count: int = len([v for v in metadata_dict.values() if v])
+            is_likely_match: bool = cosine_score >= 0.7 and len(matched) >= non_empty_count // 2
 
             logger.info(f"🤔 Is likely match? {'Yes' if is_likely_match else 'No'}")
             image_data["is_likely_match"] = is_likely_match
             image_data["matched_terms"] = str(matched)
             image_data["mismatched_terms"] = str(mismatched)
 
-            execution_time = time.time() - start_time
+            execution_time: float = time.time() - start_time
             logger.info(f"⏱️ Verified image in {execution_time:.2f} seconds")
 
             return image_data
@@ -241,11 +246,11 @@ class ArtworkVerifier:
 
 def main() -> None:
     """Main function to verify image matches artwork metadata."""
-    verifier = ArtworkVerifier()
-    args = verifier.parse_arguments()
+    verifier: ArtworkVerifier = ArtworkVerifier()
+    args: argparse.Namespace = verifier.parse_arguments()
 
     try:
-        result = verifier.verify(args)
+        result: Dict[str, Union[str, float, bool, Dict[str, str]]] = verifier.verify(args)
         print(json.dumps(result, indent=2))
         sys.exit(0 if result["is_likely_match"] else 1)
     except Exception:
