@@ -4,11 +4,20 @@
 import re
 import sys
 import argparse
+import logging
 from pathlib import Path
 from typing import Match, Optional, Pattern, Dict, Any
 
 from configenv import ConfigEnv
 
+
+# Configure logging to stderr
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)s: %(message)s',
+    stream=sys.stderr
+)
+logger = logging.getLogger(__name__)
 
 DEFAULT_ENV_FILE = "config.env"
 GITHUB_URL_TEMPLATE = "https://raw.githubusercontent.com/{user}/{repo}/refs/heads/main/"
@@ -36,6 +45,7 @@ class LinkRewriter:
         repo: Optional[str] = self.config.get("REPO_NAME", "")
 
         if not user or not repo:
+            logger.error("REPO_OWNER and REPO_NAME must be set in environment variables")
             raise ValueError(
                 "REPO_OWNER and REPO_NAME must be set in environment variables"
             )
@@ -89,7 +99,7 @@ def rewrite_links_in_file(md_file: Path, use_gh_markdown: bool = False, gh_to_rt
         int: Number of links modified (0 if none)
     """
     if not md_file.is_file():
-        print(f"Error: File not found - {md_file}", file=sys.stderr)
+        logger.error(f"File not found - {md_file}")
         return 0
 
     rewriter: LinkRewriter = LinkRewriter(use_gh_markdown, gh_to_rtd)
@@ -138,7 +148,7 @@ def main() -> int:
         return 1
 
     if args.abs_to_gh_markdown and args.gh_markdown_to_rtd:
-        print("Error: Cannot use both --abs-to-gh-markdown and --gh-markdown-to-rtd together", file=sys.stderr)
+        logger.error("Cannot use both --abs-to-gh-markdown and --gh-markdown-to-rtd together")
         return 1
 
     total_changes: int = 0
