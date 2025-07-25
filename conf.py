@@ -5,22 +5,24 @@
 
 import os
 import codecs
-from typing import Dict, Any
+from typing import Dict, Any, List, Iterator, Optional, Union
+from pathlib import Path
+from sphinx.application import Sphinx
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-project = "RIAY"
-copyright = "Compiled by Linus Fernandes"
-author = "Linus Fernandes"
-version = "1"
-language = "English"
+project: str = "RIAY"
+copyright: str = "Compiled by Linus Fernandes"
+author: str = "Linus Fernandes"
+version: str = "1"
+language: str = "English"
 
-release = os.environ.get("READTHEDOCS_VERSION", "latest")
-master_doc = "index"
+release: str = os.environ.get("READTHEDOCS_VERSION", "latest")
+master_doc: str = "index"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-extensions = [
+extensions: List[str] = [
     "myst_parser",
     "sphinxcontrib.cairosvgconverter",
     "sphinx_rtd_dark_mode",
@@ -28,18 +30,18 @@ extensions = [
 ]
 
 # Absolute site URL
-html_baseurl = "https://riay.readthedocs.io/en/latest"
+html_baseurl: str = "https://riay.readthedocs.io/en/latest"
 
 # Load the extension
 import os, sys
 sys.path.append(os.path.abspath("."))  # or wherever the script is
 extensions.append("sphinxsitemapgenerator")
 
-templates_path = ["_templates"]
+templates_path: List[str] = ["_templates"]
 
-include_patterns = ["index.rst", "*.md", "*/*.jpg", "*/*.pdf"]
+include_patterns: List[str] = ["index.rst", "*.md", "*/*.jpg", "*/*.pdf"]
 
-exclude_patterns = [
+exclude_patterns: List[str] = [
     "stitch.md",
     "January/*.md",
     "February/*.md",
@@ -57,13 +59,13 @@ exclude_patterns = [
     "Conventions/*.md",
     ".aider.chat*",
     "TODO.md",
-  "SCRIPTS.md",
-  "scripts.md",
-  "addimgtoday.md",
-  "addsnippets.md"
+    "SCRIPTS.md",
+    "scripts.md",
+    "addimgtoday.md",
+    "addsnippets.md"
 ]
 
-suppress_warnings = [
+suppress_warnings: List[str] = [
     "toc.not_included",
     "myst.xref_missing",
     "image/svg+xml",
@@ -73,23 +75,23 @@ suppress_warnings = [
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 # Add paths for custom static files
-html_static_path = ["_static"]
-html_extra_path = ["robots.txt"]
-html_show_copyright = False
-html_show_sphinx = False
-html_theme = "sphinx_rtd_theme"
-html_split_index = True
-html_last_updated_use_utc = True
+html_static_path: List[str] = ["_static"]
+html_extra_path: List[str] = ["robots.txt"]
+html_show_copyright: bool = False
+html_show_sphinx: bool = False
+html_theme: str = "sphinx_rtd_theme"
+html_split_index: bool = True
+html_last_updated_use_utc: bool = True
 
 # user starts in dark mode
-default_dark_mode = True
+default_dark_mode: bool = True
 
 # -- Options for PDF output
-latex_engine = "lualatex"
+latex_engine: str = "lualatex"
 
-latex_show_urls = "inline"
+latex_show_urls: str = "inline"
 
-latex_elements = {
+latex_elements: Dict[str, str] = {
     'papersize': 'a4paper',
     'pointsize': '11pt',
     "fontpkg": r"""
@@ -102,59 +104,59 @@ latex_elements = {
 }
 
 # -- Options for EPUB output -------------------------------------------------
-epub_show_urls = 'inline'  # or 'no', 'footnote'
-epub_author = author
-epub_publisher = 'Linus Fernandes'
-epub_copyright = copyright
-epub_title = project
-epub_description = "Rosary in a Year"
-epub_scheme = "URL"
-epub_identifier = 'https://github.com/linusjf/RIAY'  # Should be a unique URI
-epub_uid = 'riay'  # Unique ID for EPUB file
-epub_cover = ('_static/cover.jpg', '')
-epub_exclude_files = ["_static/*.pdf"]
+epub_show_urls: str = 'inline'  # or 'no', 'footnote'
+epub_author: str = author
+epub_publisher: str = 'Linus Fernandes'
+epub_copyright: str = copyright
+epub_title: str = project
+epub_description: str = "Rosary in a Year"
+epub_scheme: str = "URL"
+epub_identifier: str = 'https://github.com/linusjf/RIAY'  # Should be a unique URI
+epub_uid: str = 'riay'  # Unique ID for EPUB file
+epub_cover: tuple[str, str] = ('_static/cover.jpg', '')
+epub_exclude_files: List[str] = ["_static/*.pdf"]
 
 # -- Options for linkcheck
 # seconds
-linkcheck_timeout = 20
+linkcheck_timeout: int = 20
 
-linkcheck_anchors = False
+linkcheck_anchors: bool = False
 
-linkcheck_report_timeouts_as_broken = False
+linkcheck_report_timeouts_as_broken: bool = False
 
-linkcheck_ignore = [
+linkcheck_ignore: List[str] = [
     r"http://localhost:\d+/",  # Ignore local dev servers
     r"https://example\.com/redirect",  # Ignore known redirect
     r"https://www.gnu.org/software/m4/m4.html",
     r"https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg",
-  r"https://www.museodelprado.es/en/the-collection/art-work/agony-in-the-garden/323edcfd-701e-403f-b27a-9c9d5c656e58",
+    r"https://www.museodelprado.es/en/the-collection/art-work/agony-in-the-garden/323edcfd-701e-403f-b27a-9c9d5c656e58",
     r"https://www.dreamstime.com/stock-photo-rome-italy-fresco-assumption-virgin-mary-main-cupola-chiesa-di-santa-maria-del-orto-march-giuseppe-image68702725",
     r"https://carlbloch.org/media//b/a/base_41135642.jpg?width=600"
 ]
 
-linkcheck_ignore_redirects = True
+linkcheck_ignore_redirects: bool = True
 
-linkcheck_workers = 1
+linkcheck_workers: int = 1
 
-linkcheck_retries = 1
+linkcheck_retries: int = 1
 
 
-def replace_emojis_in_file(file_path: str) -> None:
+def replace_emojis_in_file(file_path: Union[str, Path]) -> None:
     """Replace unsupported emojis in a file with alternatives.
 
     Args:
         file_path: Path to file to process
     """
-    replacements = {
+    replacements: Dict[str, str] = {
         "🥹": "😢",
         "🥰": "😍",
     }
 
     try:
         with codecs.open(file_path, "r", encoding="utf-8") as file:
-            content = file.read()
+            content: str = file.read()
 
-        original_content = content
+        original_content: str = content
         for old, new in replacements.items():
             content = content.replace(old, new)
 
@@ -168,13 +170,13 @@ def replace_emojis_in_file(file_path: str) -> None:
 
 def replace_emojis_in_markdown() -> None:
     """Find and replace emojis in all markdown files."""
-    for dirpath, _, filenames in os.walk("."):
-        for filename in filenames:
+    for dirpath: str, _: List[str], filenames: List[str] in os.walk("."):
+        for filename: str in filenames:
             if filename.endswith(".md"):
                 replace_emojis_in_file(os.path.join(dirpath, filename))
 
 
-def run_only_for_pdf(app) -> None:
+def run_only_for_pdf(app: Sphinx) -> None:
     """Run emoji replacement only for PDF builds.
 
     Args:
@@ -185,7 +187,7 @@ def run_only_for_pdf(app) -> None:
         replace_emojis_in_markdown()
 
 
-def setup(app) -> Dict[str, Any]:
+def setup(app: Sphinx) -> Dict[str, Any]:
     """Set up Sphinx extensions and callbacks.
 
     Args:
