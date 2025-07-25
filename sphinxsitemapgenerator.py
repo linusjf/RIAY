@@ -13,8 +13,11 @@ Sphinxsitemapgenerator.
 from urllib.parse import urljoin
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any, Optional
+from sphinx.application import Sphinx
 
-def generate_sitemap(app, exception):
+def generate_sitemap(app: Sphinx, exception: Optional[Exception]) -> None:
+    """Generate sitemap.xml file for Sphinx documentation."""
     if exception is not None:
         return
 
@@ -39,5 +42,11 @@ def generate_sitemap(app, exception):
             f.write(f"  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>\n")
         f.write("</urlset>\n")
 
-def setup(app):
+def setup(app: Sphinx) -> dict[str, Any]:
+    """Setup Sphinx extension."""
     app.connect("build-finished", generate_sitemap)
+    return {
+        'version': '1.0',
+        'parallel_read_safe': True,
+        'parallel_write_safe': True,
+    }
