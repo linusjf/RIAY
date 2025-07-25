@@ -11,31 +11,16 @@ from typing import Dict, Any, List, Union, Optional
 from pathlib import Path
 from sphinx.application import Sphinx
 
-# Set up logging to redirect stderr to logger
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('stderr.log'),
-        logging.StreamHandler(sys.stdout)  # Keep stdout as is
-    ]
-)
+# Set up logging similar to genreqs.py
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
-# Redirect stderr to logger
-class StreamToLogger:
-    def __init__(self, logger, log_level=logging.ERROR):
-        self.logger = logger
-        self.log_level = log_level
-
-    def write(self, message):
-        if message.rstrip():
-            self.logger.log(self.log_level, message.rstrip())
-
-    def flush(self):
-        pass
-
-sys.stderr = StreamToLogger(logger, logging.ERROR)
+# Configure logging to stderr
+if not logger.handlers:
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logger.addHandler(handler)
+    logger.propagate = False
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
