@@ -6,7 +6,7 @@ import json
 import logging
 import os
 import re
-from typing import Dict, Union
+from typing import Dict, Union, Optional, Tuple, Any
 import sys
 
 import cv2
@@ -18,18 +18,18 @@ from PIL import Image
 class WatermarkDetector:
     """Detect watermarks in images using multiple techniques."""
 
-    DEFAULT_TEXT_THRESHOLD = 20
-    DEFAULT_EDGE_THRESHOLD = 0.01
-    DEFAULT_FREQ_THRESHOLD = 500
-    FFT_RADIUS = 30
-    CANNY_THRESHOLDS = (100, 200)
+    DEFAULT_TEXT_THRESHOLD: int = 20
+    DEFAULT_EDGE_THRESHOLD: float = 0.01
+    DEFAULT_FREQ_THRESHOLD: float = 500
+    FFT_RADIUS: int = 30
+    CANNY_THRESHOLDS: Tuple[int, int] = (100, 200)
 
     def __init__(
         self,
         text_threshold: int = DEFAULT_TEXT_THRESHOLD,
         edge_threshold: float = DEFAULT_EDGE_THRESHOLD,
         freq_threshold: float = DEFAULT_FREQ_THRESHOLD
-    ):
+    ) -> None:
         """Initialize detector with threshold values.
 
         Args:
@@ -37,17 +37,18 @@ class WatermarkDetector:
             edge_threshold: Edge density threshold
             freq_threshold: Frequency energy threshold
         """
-        self.text_threshold = text_threshold
-        self.edge_threshold = edge_threshold
-        self.freq_threshold = freq_threshold
+        self.text_threshold: int = text_threshold
+        self.edge_threshold: float = edge_threshold
+        self.freq_threshold: float = freq_threshold
+        self.logger: logging.Logger
         self._setup_logging()
 
     def _setup_logging(self) -> None:
         """Configure logging to stderr."""
         self.logger = logging.getLogger(__name__)
         self.logger.setLevel(logging.INFO)
-        handler = logging.StreamHandler(sys.stderr)
-        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        handler: logging.StreamHandler = logging.StreamHandler(sys.stderr)
+        formatter: logging.Formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)
 
@@ -60,8 +61,8 @@ class WatermarkDetector:
         Returns:
             Extracted text with collapsed whitespace
         """
-        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        text = pytesseract.image_to_string(gray)
+        gray: np.ndarray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        text: str = pytesseract.image_to_string(gray)
         return re.sub(r'\s+', ' ', text).strip()
 
     def calculate_edge_density(self, image: np.ndarray) -> float:
@@ -73,10 +74,10 @@ class WatermarkDetector:
         Returns:
             Ratio of edge pixels to total pixels
         """
-        edges = cv2.Canny(image, *self.CANNY_THRESHOLDS)
-        edge_pixels = np.sum(edges > 0)
-        total_pixels = image.shape[0] * image.shape[1]
-        return edge_pixels / total_pixels
+        edges: np.ndarray = cv2.Canny(image, *self.CANNY_THRESHOLDS)
+        edge_pixels: np.ndarray = np.sum(edges > 0)
+        total_pixels: int = image.shape[0] * image.shape[1]
+        return float(edge_pixels / total_pixels)
 
     def calculate_frequency_energy(self, image: np.ndarray) -> float:
         """Calculate high frequency energy using FFT.
@@ -87,21 +88,24 @@ class WatermarkDetector:
         Returns:
             Normalized high frequency energy
         """
-        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        fft = np.fft.fft2(gray)
-        fft_shift = np.fft.fftshift(fft)
+        gray: np.ndarray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        fft: np.ndarray = np.fft.fft2(gray)
+        fft_shift: np.ndarray = np.fft.fftshift(fft)
 
+        rows: int
+        cols: int
         rows, cols = gray.shape
-        center_row, center_col = rows // 2, cols // 2
+        center_row: int = rows // 2
+        center_col: int = cols // 2
 
-        mask = np.ones((rows, cols), np.uint8)
+        mask: np.ndarray = np.ones((rows, cols), np.uint8)
         mask[center_row - self.FFT_RADIUS:center_row + self.FFT_RADIUS,
              center_col - self.FFT_RADIUS:center_col + self.FFT_RADIUS] = 0
 
-        high_freq = fft_shift * mask
-        magnitude = np.abs(high_freq)
+        high_freq: np.ndarray = fft_shift * mask
+        magnitude: np.ndarray = np.abs(high_freq)
 
-        return np.sum(magnitude) / (rows * cols)
+        return float(np.sum(magnitude) / (rows * cols))
 
     def detect(self, image_path: str) -> Dict[str, Union[bool, str, float]]:
         """Detect watermark in image using multiple techniques.
@@ -119,18 +123,18 @@ class WatermarkDetector:
         if not os.path.isfile(image_path):
             raise FileNotFoundError(f"File not found: {image_path}")
 
-        image = cv2.imread(image_path)
+        image: Optional[np.ndarray] = cv2.imread(image_path)
         if image is None:
             raise ValueError("Invalid image file")
 
-        text = self.detect_text_regions(image)
-        has_text = len(text) > self.text_threshold
+        text: str = self.detect_text_regions(image)
+        has_text: bool = len(text) > self.text_threshold
 
-        edge_density = self.calculate_edge_density(image)
-        high_edges = edge_density > self.edge_threshold
+        edge_density: float = self.calculate_edge_density(image)
+        high_edges: bool = edge_density > self.edge_threshold
 
-        freq_energy = self.calculate_frequency_energy(image)
-        high_freq = freq_energy > self.freq_threshold
+        freq_energy: float = self.calculate_frequency_energy(image)
+        high_freq: bool = freq_energy > self.freq_threshold
 
         return {
             "watermarked": "Yes" if (has_text or high_edges or high_freq) else "No",
@@ -142,19 +146,23 @@ class WatermarkDetector:
 
 def main() -> None:
     """Command line interface for watermark detection."""
-    parser = argparse.ArgumentParser(
+    parser: argparse.ArgumentParser = argparse.ArgumentParser(
         description="Detect watermarks in images using multiple techniques"
     )
     parser.add_argument("image", help="Path to JPEG image")
-    args = parser.parse_args()
+    args: argparse.Namespace = parser.parse_args()
 
+    detector: Optional[WatermarkDetector] = None
     try:
         detector = WatermarkDetector()
-        result = detector.detect(args.image)
+        result: Dict[str, Union[bool, str, float]] = detector.detect(args.image)
         print(json.dumps(result, indent=2))
+        sys.exit(0)
     except Exception as error:
-        detector.logger.error(str(error))
-        print(json.dumps({"error": str(error)}, indent=2), file=sys.stderr)
+        if detector:
+            detector.logger.error(str(error))
+        print(json.dumps({"error": str(error)}, indent=2))
+        sys.exit(1)
 
 
 if __name__ == "__main__":
