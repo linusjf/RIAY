@@ -3,6 +3,7 @@ from urllib.parse import urlparse
 import os
 import logging
 from typing import Optional
+import sys
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
