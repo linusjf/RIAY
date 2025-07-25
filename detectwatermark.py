@@ -6,8 +6,8 @@ import json
 import logging
 import os
 import re
-from typing import Dict, Union, Optional, Tuple, Any
 import sys
+from typing import Dict, Union, Optional, Tuple, Any
 
 import cv2
 import numpy as np
@@ -40,17 +40,18 @@ class WatermarkDetector:
         self.text_threshold: int = text_threshold
         self.edge_threshold: float = edge_threshold
         self.freq_threshold: float = freq_threshold
-        self.logger: logging.Logger
+        self.logger: logging.Logger = logging.getLogger(__name__)
         self._setup_logging()
 
     def _setup_logging(self) -> None:
         """Configure logging to stderr."""
-        self.logger = logging.getLogger(__name__)
         self.logger.setLevel(logging.INFO)
-        handler: logging.StreamHandler = logging.StreamHandler(sys.stderr)
-        formatter: logging.Formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-        handler.setFormatter(formatter)
-        self.logger.addHandler(handler)
+        if not self.logger.handlers:
+            handler: logging.StreamHandler = logging.StreamHandler(sys.stderr)
+            formatter: logging.Formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+            handler.setFormatter(formatter)
+            self.logger.addHandler(handler)
+            self.logger.propagate = False
 
     def detect_text_regions(self, image: np.ndarray) -> str:
         """Detect and extract text from image using OCR.

@@ -12,6 +12,8 @@ Genreqs.
 """
 import re
 import subprocess
+import sys
+import logging
 from pathlib import Path
 from typing import Set, Dict, List, Match, Optional
 
@@ -20,6 +22,16 @@ imported_modules: Set[str] = set()
 
 # Match import and from-import lines
 pattern: re.Pattern = re.compile(r"^\s*(?:from|import)\s+([a-zA-Z0-9_\.]+)")
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# Configure logging to stderr
+if not logger.handlers:
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logger.addHandler(handler)
+    logger.propagate = False
 
 def get_imported_modules() -> None:
     """Find all imported top-level modules."""
@@ -65,10 +77,10 @@ def main() -> None:
     found, unmatched = match_packages()
     write_dependencies(found)
 
-    print(f"✅ Saved {len(found)} dependencies to deps.txt")
+    logger.info(f"✅ Saved {len(found)} dependencies to deps.txt")
     if unmatched:
-        print("⚠️ Unmatched imports (manual check may be needed):")
-        print(", ".join(unmatched))
+        logger.warning("⚠️ Unmatched imports (manual check may be needed):")
+        logger.warning(", ".join(unmatched))
 
 if __name__ == "__main__":
     main()
