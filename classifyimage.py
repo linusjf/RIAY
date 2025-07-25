@@ -19,6 +19,7 @@ Returns: 0 on success, 1 on error
 
 import argparse
 import sys
+import logging
 from pathlib import Path
 from PIL import Image
 from typing import Optional, Dict, Any, Tuple, Union
@@ -27,6 +28,16 @@ import json
 
 
 VERSION = "1.0.0"
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# Configure logging to stderr
+if not logger.handlers:
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    logger.addHandler(handler)
+    logger.propagate = False
 
 
 class ImageClassifier:
@@ -113,7 +124,7 @@ def main() -> None:
     image_path = args.image_file
 
     if not Path(image_path).is_file():
-        print(f"❌ File not found: {image_path}", file=sys.stderr)
+        logger.error(f"File not found: {image_path}")
         sys.exit(1)
 
     classifier = ImageClassifier(image_path)
