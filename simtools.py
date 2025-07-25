@@ -13,6 +13,7 @@ Contains functions for text matching and semantic similarity.
 """
 import sys
 import os
+import logging
 import numpy as np
 from enum import Enum, auto
 from fuzzywuzzy import fuzz
@@ -21,18 +22,26 @@ from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from typing import Dict, List, Tuple, Union, Any, Optional
 
+# Configure logging to stderr
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)s: %(message)s',
+    stream=sys.stderr
+)
+logger = logging.getLogger(__name__)
+
 # Constants
 ERROR_MESSAGES: Dict[str, str] = {
     "missing_api_key": f"{ConfigConstants.VECTOR_EMBEDDINGS_MODEL_API_KEY} environment variable not set",
     "missing_base_url": f"{ConfigConstants.VECTOR_EMBEDDINGS_BASE_URL} environment variable not set",
     "missing_model": f"{ConfigConstants.VECTOR_EMBEDDINGS_MODEL} environment variable not set",
-    "empty_term": "  ⚠️ Skipping comparison - empty term: '{term_a}' vs '{term_b}'",
+    "empty_term": "⚠️ Skipping comparison - empty term: '{term_a}' vs '{term_b}'",
     "invalid_mode": "Invalid mode. Must be one of {MatchMode.FUZZY}, {MatchMode.COSINE}, or {MatchMode.HYBRID}",
-    "missing_key": "  ⚠️ Key '{key}' not found in second dictionary"
+    "missing_key": "⚠️ Key '{key}' not found in second dictionary"
 }
 
 INFO_MESSAGES: Dict[str, str] = {
-    "term_comparison": "  🔎 Comparing '{term_a}' to '{term_b}' (score: {score})",
+    "term_comparison": "🔎 Comparing '{term_a}' to '{term_b}' (score: {score})",
     "term_matching": "🧠 Checking for matching terms...",
     "dict_matching": "🧠 Checking for matching dictionary values...",
     "length_mismatch": "⚠️ Warning: Term arrays have different lengths ({len1} vs {len2})",
@@ -54,13 +63,16 @@ config: ConfigEnv = ConfigEnv(dotenv_path, include_os_env=True)
 
 VECTOR_EMBEDDINGS_MODEL_API_KEY: Optional[str] = config.get(ConfigConstants.VECTOR_EMBEDDINGS_MODEL_API_KEY)
 if not VECTOR_EMBEDDINGS_MODEL_API_KEY:
+    logger.error(ERROR_MESSAGES["missing_api_key"])
     raise ValueError(ERROR_MESSAGES["missing_api_key"])
 
 VECTOR_EMBEDDINGS_BASE_URL: Optional[str] = config.get(ConfigConstants.VECTOR_EMBEDDINGS_BASE_URL)
 if not VECTOR_EMBEDDINGS_BASE_URL:
+    logger.error(ERROR_MESSAGES["missing_base_url"])
     raise ValueError(ERROR_MESSAGES["missing_base_url"])
 VECTOR_EMBEDDINGS_MODEL: Optional[str] = config.get(ConfigConstants.VECTOR_EMBEDDINGS_MODEL)
 if not VECTOR_EMBEDDINGS_MODEL:
+    logger.error(ERROR_MESSAGES["missing_model"])
     raise ValueError(ERROR_MESSAGES["missing_model"])
 
 deepinfra_client: OpenAI = OpenAI(
@@ -82,7 +94,7 @@ def compare_terms(term_a: str, term_b: str, mode: MatchMode = MatchMode.FUZZY) -
         mode: MatchMode enum value (FUZZY, COSINE or HYBRID)
     """
     if not term_a or not term_b:
-        print(ERROR_MESSAGES["empty_term"].format(term_a=term_a, term_b=term_b), file=sys.stderr)
+        logger.warning(ERROR_MESSAGES["empty_term"].format(term_a=term_a, term_b=term_b))
         return 0.0
 
     score: float = 0.0
@@ -99,9 +111,10 @@ def compare_terms(term_a: str, term_b: str, mode: MatchMode = MatchMode.FUZZY) -
         cosine_score: float = cosine_similarity(vec1, vec2)
         score = fuzzy_score * cosine_score * 100  # Scale back to 0-100 range
     else:
+        logger.error(ERROR_MESSAGES["invalid_mode"].format(MatchMode=MatchMode))
         raise ValueError(ERROR_MESSAGES["invalid_mode"].format(MatchMode=MatchMode))
 
-    print(INFO_MESSAGES["term_comparison"].format(term_a=term_a, term_b=term_b, score=score), file=sys.stderr)
+    logger.info(INFO_MESSAGES["term_comparison"].format(term_a=term_a, term_b=term_b, score=score))
     return score
 
 def compute_match_terms(
@@ -119,10 +132,10 @@ def compute_match_terms(
     Returns:
         Tuple of (matched_terms, mismatched_terms)
     """
-    print(INFO_MESSAGES["term_matching"], file=sys.stderr)
+    logger.info(INFO_MESSAGES["term_matching"])
 
     if len(description_terms) != len(metadata_terms):
-        print(INFO_MESSAGES["length_mismatch"].format(len1=len(description_terms), len2=len(metadata_terms)), file=sys.stderr)
+        logger.warning(INFO_MESSAGES["length_mismatch"].format(len1=len(description_terms), len2=len(metadata_terms)))
         return ([], [])
 
     matched: List[str] = []
@@ -137,7 +150,7 @@ def compute_match_terms(
         else:
             mismatched.append(f"{term_a} , {term_b}")
 
-    print(INFO_MESSAGES["matched_terms"].format(matched=matched), file=sys.stderr)
+    logger.info(INFO_MESSAGES["matched_terms"].format(matched=matched))
     return (matched, mismatched)
 
 def compute_match_dicts(
@@ -155,14 +168,14 @@ def compute_match_dicts(
     Returns:
         Tuple of (matched_items, mismatched_items)
     """
-    print(INFO_MESSAGES["dict_matching"], file=sys.stderr)
+    logger.info(INFO_MESSAGES["dict_matching"])
 
     matched: List[str] = []
     mismatched: List[str] = []
 
     for key, value1 in dict1.items():
         if key not in dict2:
-            print(ERROR_MESSAGES["missing_key"].format(key=key), file=sys.stderr)
+            logger.warning(ERROR_MESSAGES["missing_key"].format(key=key))
             mismatched.append(f"{key}: {value1} , <missing>")
             continue
 
@@ -175,7 +188,7 @@ def compute_match_dicts(
         else:
             mismatched.append(f"{key}: {value1} , {value2}")
 
-    print(INFO_MESSAGES["matched_dict"].format(matched=matched), file=sys.stderr)
+    logger.info(INFO_MESSAGES["matched_dict"].format(matched=matched))
     return (matched, mismatched)
 
 def get_embedding(text: str) -> np.ndarray:
