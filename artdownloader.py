@@ -201,6 +201,7 @@ class ArtDownloader:
     def download_from_duckduckgo(self, query: str, filename_base: str) -> bool:
         """Download image from DuckDuckGo search."""
         print(f"\n🔍 DuckDuckGo search for: {query}")
+        try:
             results = self.search_duckduckgo_images(query, max_results=10)
             if not results:
                 print("❌ No matching images found.",file=sys.stderr)

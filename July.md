@@ -101,6 +101,7 @@
 - [July 25, 2025](#july-25-2025)
   - [Promise of the Father](#promise-of-the-father)
   - [AI-Generated Summary: The Wine of the Spirit and the Patience of Prayer](#ai-generated-summary-the-wine-of-the-spirit-and-the-patience-of-prayer)
+  - [Jean Restout II's Pentecost (1732) vividly portrays the biblical event with dramatic Baroque flair, showing the apostles and Mary receiving the Holy Spirit (Stock Image)](#jean-restout-iis-pentecost-1732-vividly-portrays-the-biblical-event-with-dramatic-baroque-flair-showing-the-apostles-and-mary-receiving-the-holy-spirit-stock-image)
 
 <!-- tocstop -->
 
@@ -598,6 +599,10 @@ Pentecost, dear reader, is no mere spectacle of divine fireworks—it is the qui
 
 And when at last He comes, He comes as new wine—as at Cana, where water turned to gladness, so at Pentecost, timorous men were accused of drunkenness for the joy that poured from them. This is the Spirit’s work: to make cowards bold, to turn mourning into dancing, and to seal the new covenant not with ink but with fire.
 
-Consider Restout’s _Pentecost_, where the apostles startle like men struck by lightning, while Mary, who had long known the Spirit’s overshadowing, remains serene. The artist, in his Baroque vigor, captures this divine irony: those who wait upon the Lord shall mount up with wings, but those who already rest in Him shall not be shaken.
+Consider French artist Jean Restout II’s _Pentecost_ painted in 1732, where the apostles startle like men struck by lightning, while Mary, who had long known the Spirit’s overshadowing, remains serene. The artist, in his Baroque vigor, captures this divine irony: those who wait upon the Lord shall mount up with wings, but those who already rest in Him shall not be shaken.
 
 Let us then pray with confidence, not as beggars uncertain of the King’s favor, but as children who know their Father’s heart. For the Spirit does not ration His gifts; He pours them lavishly upon all who ask—and keep asking—until their cups run over.
+
+### Jean Restout II's Pentecost (1732) vividly portrays the biblical event with dramatic Baroque flair, showing the apostles and Mary receiving the Holy Spirit (Stock Image)
+
+[![Jean Restout II's Pentecost (1732) vividly portrays the biblical event with dramatic Baroque flair, showing the apostles and Mary receiving the Holy Spirit](July/jpgs/pentecostrestout1732.jpg)](https://www.wga.hu/art/r/restout/jean2/pentecox.jpg "Jean Restout II's Pentecost (1732) vividly portrays the biblical event with dramatic Baroque flair, showing the apostles and Mary receiving the Holy Spirit")
