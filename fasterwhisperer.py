@@ -6,6 +6,7 @@ faster-whisper implementation of OpenAI's Whisper model.
 """
 
 import argparse
+import logging
 import sys
 import time
 
@@ -14,6 +15,7 @@ from faster_whisper import WhisperModel
 
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
+from loggerutil import LoggerFactory
 
 # Load environment variables from config.env
 config = ConfigEnv('config.env')
@@ -22,6 +24,11 @@ BEAM_SIZE = config.get(ConfigConstants.ASR_BEAM_SIZE)
 ASR_INITIAL_PROMPT = config.get(ConfigConstants.ASR_INITIAL_PROMPT)
 ASR_CARRY_INITIAL_PROMPT = config.get(ConfigConstants.ASR_CARRY_INITIAL_PROMPT)
 
+# Initialize logger
+logger = LoggerFactory.get_logger(
+    name=__name__,
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
 
 def transcribe_audio(
     audio_file: str,
@@ -42,11 +49,9 @@ def transcribe_audio(
     start_time = time.time()
     model = WhisperModel(model_size, device=device, compute_type=compute_type)
 
-    print(
+    logger.info(
         f"Executing faster-whisper with device '{device}' and compute type '{compute_type}' "
-        f"with device name {torch.cuda.get_device_name(0)}",
-        file=sys.stderr,
-        flush=True
+        f"with device name {torch.cuda.get_device_name(0) if device == 'cuda' else 'CPU'}"
     )
 
     segments, info = model.transcribe(
@@ -56,10 +61,8 @@ def transcribe_audio(
         condition_on_previous_text=ASR_CARRY_INITIAL_PROMPT
     )
 
-    print(
-        f"Detected language '{info.language}' with probability {info.language_probability}",
-        file=sys.stderr,
-        flush=True
+    logger.info(
+        f"Detected language '{info.language}' with probability {info.language_probability}"
     )
 
     for segment in segments:
@@ -67,11 +70,7 @@ def transcribe_audio(
     print()
 
     end_time = time.time()
-    print(
-        f"Transcribed audio in {end_time - start_time:.2f} seconds",
-        file=sys.stderr,
-        flush=True
-    )
+    logger.info(f"Transcribed audio in {end_time - start_time:.2f} seconds")
 
 
 def parse_args() -> argparse.Namespace:
