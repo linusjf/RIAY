@@ -12,11 +12,9 @@ import sys
 import time
 import argparse
 import shutil
-import logging
 from typing import Optional, Dict, List, Tuple, Any
 
 import requests
-import re
 from duckduckgo_search import DDGS
 from duckduckgo_search.exceptions import RatelimitException
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
@@ -82,8 +80,7 @@ class ArtDownloader:
         # Configure logger
         logging_enabled = self.config.get(ConfigConstants.LOGGING, False)
         self.logger = LoggerFactory.get_logger(
-            name=__name__,
-            level=logging.DEBUG,
+            name=os.path.basename(__file__),
             log_to_file=logging_enabled
         )
 
