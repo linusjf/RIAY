@@ -10,22 +10,21 @@ Sphinxsitemapgenerator.
 # -*- coding: utf-8 -*-'
 ######################################################################
 """
-import logging
+import os
 from urllib.parse import urljoin
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Optional
 from sphinx.application import Sphinx
+from configenv import ConfigEnv
+from configconstants import ConfigConstants
+from loggerutil import LoggerFactory
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.WARNING)
-
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler()
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+config = ConfigEnv("config.env")
+logger = LoggerFactory.get_logger(
+    name=os.path.basename(__file__),
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
 
 def generate_sitemap(app: Sphinx, exception: Optional[Exception]) -> None:
     """Generate sitemap.xml file for Sphinx documentation."""
