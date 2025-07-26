@@ -5,8 +5,8 @@ Match image to metadata by combining classification, watermark detection and rev
 
 import argparse
 import json
+import os
 import sys
-import logging
 from pathlib import Path
 
 from classifyimage import ImageClassifier
@@ -14,15 +14,15 @@ from detectwatermark import WatermarkDetector
 from reverseimagelookup import ReverseImageLookup
 from simtools import THRESHOLDS
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+from configenv import ConfigEnv
+from configconstants import ConfigConstants
+from loggerutil import LoggerFactory
 
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+config = ConfigEnv("config.env")
+logger = LoggerFactory.get_logger(
+    name=os.path.basename(__file__),
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
 
 def parse_arguments():
     """Parse command line arguments."""
