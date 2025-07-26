@@ -19,16 +19,15 @@ from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from openai import OpenAI
 from simtools import MatchMode, compare_terms, compute_match_dicts
+from loggerutil import LoggerFactory
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+# Initialize logger using LoggerFactory
+config = ConfigEnv("config.env")
+logger = LoggerFactory.get_logger(
+    name=__name__,
+    level=logging.INFO,
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
 
 
 class ArtworkVerifier:
@@ -43,6 +42,7 @@ class ArtworkVerifier:
         self.config: ConfigEnv = ConfigEnv(config_path, include_os_env=True)
         self.openai_api_key: Optional[str] = self.config.get(ConfigConstants.OPENAI_API_KEY)
         if not self.openai_api_key:
+            logger.error(f"{ConfigConstants.OPENAI_API_KEY} environment variable not set")
             raise ValueError(f"{ConfigConstants.OPENAI_API_KEY} environment variable not set")
         self.client: OpenAI = OpenAI(api_key=self.openai_api_key)
 
