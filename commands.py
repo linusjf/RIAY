@@ -6,6 +6,7 @@ It executes corresponding actions based on the parsed command syntax.
 """
 
 import logging
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -25,7 +26,7 @@ from loggerutil import LoggerFactory
 # Initialize logger using LoggerFactory
 config = ConfigEnv("config.env")
 logger = LoggerFactory.get_logger(
-    name=__name__,
+    name=os.path.basename(__file__),
     level=logging.DEBUG,
     log_to_file=config.get(ConfigConstants.LOGGING, False)
 )

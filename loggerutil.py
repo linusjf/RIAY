@@ -35,6 +35,9 @@ class LoggerFactory:
         Returns:
             A configured logger instance.
         """
+        if name == "__main__":
+            name = os.path.splitext(os.path.basename(sys.argv[0]))[0]
+
         logger: logging.Logger = logging.getLogger(name)
         logger.propagate = False
 
