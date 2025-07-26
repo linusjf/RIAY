@@ -3,16 +3,18 @@
 
 import argparse
 import json
-import logging
 import os
 import re
 import sys
-from typing import Dict, Union, Optional, Tuple, Any
+from typing import Dict, Union, Optional, Tuple
 
 import cv2
 import numpy as np
 import pytesseract
-from PIL import Image
+
+from configenv import ConfigEnv
+from configconstants import ConfigConstants
+from loggerutil import LoggerFactory
 
 
 class WatermarkDetector:
@@ -40,18 +42,11 @@ class WatermarkDetector:
         self.text_threshold: int = text_threshold
         self.edge_threshold: float = edge_threshold
         self.freq_threshold: float = freq_threshold
-        self.logger: logging.Logger = logging.getLogger(__name__)
-        self._setup_logging()
-
-    def _setup_logging(self) -> None:
-        """Configure logging to stderr."""
-        self.logger.setLevel(logging.INFO)
-        if not self.logger.handlers:
-            handler: logging.StreamHandler = logging.StreamHandler(sys.stderr)
-            formatter: logging.Formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-            handler.setFormatter(formatter)
-            self.logger.addHandler(handler)
-            self.logger.propagate = False
+        self.config = ConfigEnv("config.env")
+        self.logger = LoggerFactory.get_logger(
+        name=os.path.basename(__file__),
+        log_to_file=self.config.get(ConfigConstants.LOGGING, False)
+        )
 
     def detect_text_regions(self, image: np.ndarray) -> str:
         """Detect and extract text from image using OCR.
@@ -122,11 +117,13 @@ class WatermarkDetector:
             ValueError: If image cannot be read
         """
         if not os.path.isfile(image_path):
+            self.logger.error(f"File not found: {image_path}")
             raise FileNotFoundError(f"File not found: {image_path}")
 
         image: Optional[np.ndarray] = cv2.imread(image_path)
         if image is None:
-            raise ValueError("Invalid image file")
+            self.logger.error(f"Invalid image file: {image_path}")
+            raise ValueError(f"Invalid image file: {image_path}")
 
         text: str = self.detect_text_regions(image)
         has_text: bool = len(text) > self.text_threshold
