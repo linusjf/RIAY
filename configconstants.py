@@ -4,6 +4,7 @@ class ConfigConstants:
     # Project config
     PROJECT = "PROJECT"
     LOGGING = "LOGGING"
+    LOGGING_LEVEL = "LOGGING_LEVEL"
     YEAR = "YEAR"
 
     # Github config
