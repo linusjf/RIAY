@@ -11,28 +11,25 @@ import os
 import sys
 import time
 import json
-import logging
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Union, Any
 import requests
 
-from configenv import ConfigEnv
-from configconstants import ConfigConstants
 from serpapi import GoogleSearch
 
 from htmlhelper import clean_filename_text, extract_domain_from_url
 from simtools import compare_terms, MatchMode, THRESHOLDS
 from imgbb import upload_to_imgbb
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+from configenv import ConfigEnv
+from configconstants import ConfigConstants
+from loggerutil import LoggerFactory
 
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+config = ConfigEnv("config.env")
+logger = LoggerFactory.get_logger(
+    name=os.path.basename(__file__),
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
 
 class ReverseImageLookup:
     """Class for performing reverse image lookups using SerpAPI and imgbb."""
