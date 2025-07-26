@@ -14,12 +14,23 @@ import logging
 import sys
 import os
 from typing import Optional
+from configenv import ConfigEnv
+
+# Map string logging levels to logging module constants
+LOG_LEVEL_MAP = {
+    'notset': logging.NOTSET,
+    'debug': logging.DEBUG,
+    'info': logging.INFO,
+    'warning': logging.WARNING,
+    'error': logging.ERROR,
+    'critical': logging.CRITICAL
+}
 
 class LoggerFactory:
     @staticmethod
     def get_logger(
         name: str,
-        level: int = logging.INFO,
+        level: Optional[int] = None,
         logfile: Optional[str] = None,
         log_to_file: bool = False
     ) -> logging.Logger:
@@ -28,7 +39,7 @@ class LoggerFactory:
 
         Args:
             name: Logger name (usually __name__).
-            level: Logging level for the logger (default: INFO).
+            level: Logging level for the logger. If None, uses LOGGING_LEVEL from config.
             logfile: Path to the log file. Defaults to '<name>.log' if None.
             log_to_file: If True, logs to a file in addition to stderr (default: False).
 
@@ -45,6 +56,11 @@ class LoggerFactory:
         if logger.hasHandlers():
             return logger
 
+        # Set level from parameter or config
+        if level is None:
+            config = ConfigEnv()
+            level_str = config.get('LOGGING_LEVEL', 'info').lower()
+            level = LOG_LEVEL_MAP.get(level_str, logging.INFO)
         logger.setLevel(level)
 
         # Console handler (stderr)
