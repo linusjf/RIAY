@@ -13,6 +13,7 @@ import re
 import sys
 import time
 import logging
+import os
 from typing import Dict, Optional, Tuple, Union, List
 
 from configenv import ConfigEnv
@@ -24,7 +25,7 @@ from loggerutil import LoggerFactory
 # Initialize logger using LoggerFactory
 config = ConfigEnv("config.env")
 logger = LoggerFactory.get_logger(
-    name=__name__,
+    name=os.path.basename(__file__),
     level=logging.INFO,
     log_to_file=config.get(ConfigConstants.LOGGING, False)
 )
