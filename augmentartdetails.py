@@ -76,14 +76,14 @@ class ArtDetailsAugmenter:
         config = self._get_llm_config()
         self._validate_config(config)
 
-        url = f"{config['base_url'].rstrip('/')}/{config['endpoint'].lstrip('/')}"
+        url = f"{str(config['base_url']).rstrip('/')}/{str(config['endpoint']).lstrip('/')}"
         headers = {
             "Authorization": f"Bearer {config['api_key']}",
             "Content-Type": "application/json"
         }
 
         self.logger.info("Sending request to LLM API")
-        response = requests.post(url, headers=headers, json=payload)
+        response = requests.post(url, headers=headers, json=art_json)
         response.raise_for_status()
 
         completion = response.json()
