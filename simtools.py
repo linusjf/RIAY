@@ -13,24 +13,27 @@ Contains functions for text matching and semantic similarity.
 """
 import sys
 import os
-import logging
 import numpy as np
 from enum import Enum, auto
 from fuzzywuzzy import fuzz
 from openai import OpenAI
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
+from loggerutil import LoggerFactory
 from typing import Dict, List, Tuple, Optional, Any
 
-# Configure logging to stderr
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+# Load environment variables from config.env
+base_dir: str = os.path.dirname(os.path.abspath(__file__))
+dotenv_path: str = os.path.join(base_dir, "config.env")
+config: ConfigEnv = ConfigEnv(dotenv_path, include_os_env=True)
 
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+# Configure logger using LoggerFactory
+LOGGING_ENABLED = config.get(ConfigConstants.LOGGING, False)
+logger = LoggerFactory.get_logger(
+    name=__name__,
+    log_to_file=LOGGING_ENABLED,
+    logfile="simtools.log"
+)
 
 # Constants
 ERROR_MESSAGES: Dict[str, str] = {
@@ -56,12 +59,6 @@ THRESHOLDS: Dict[str, float] = {
     "cosine": 0.7,
     "hybrid": 50
 }
-
-# Load environment variables from config.env
-# This gets the path of THIS file, no matter how it's imported
-base_dir: str = os.path.dirname(os.path.abspath(__file__))
-dotenv_path: str = os.path.join(base_dir, "config.env")
-config: ConfigEnv = ConfigEnv(dotenv_path, include_os_env=True)
 
 VECTOR_EMBEDDINGS_MODEL_API_KEY: Optional[str] = config.get(ConfigConstants.VECTOR_EMBEDDINGS_MODEL_API_KEY)
 if not VECTOR_EMBEDDINGS_MODEL_API_KEY:
