@@ -2,14 +2,17 @@
 """Custom verbose error strategy for command parsing."""
 
 import sys
-import logging
-from pathlib import Path
 import subprocess
+from pathlib import Path
 from antlr4.error.ErrorStrategy import DefaultErrorStrategy, InputMismatchException
-
+from loggerutil import LoggerFactory
 
 class CommandsVerboseStrategy(DefaultErrorStrategy):
     """Custom verbose error strategy that bails on first error."""
+
+    def __init__(self):
+        super().__init__()
+        self.logger = LoggerFactory.get_logger(__name__)
 
     def recover(self, recognizer, e):
         """Report error and raise immediately."""
@@ -41,20 +44,20 @@ class CommandsVerboseStrategy(DefaultErrorStrategy):
         offending_text = offending_token.text
         input_stream = offending_token.getInputStream()
 
-        print("\n🚨 Fatal Syntax Error (Bail):")
-        print(f"  ➤ At line {line}, column {column}")
-        print(f"  ➤ Offending token: {offending_text}")
-        print(f"  ➤ Rule stack: {stack}")
-        print(f"  ➤ Parser rules: {rule_names}")
-        print(f"  ➤ Expected tokens: {expected_tokens}")
-        print(f"  ➤ Error: {type(exception)} : {str(exception)}")
+        self.logger.error("\n🚨 Fatal Syntax Error (Bail):")
+        self.logger.error(f"  ➤ At line {line}, column {column}")
+        self.logger.error(f"  ➤ Offending token: {offending_text}")
+        self.logger.error(f"  ➤ Rule stack: {stack}")
+        self.logger.error(f"  ➤ Parser rules: {rule_names}")
+        self.logger.error(f"  ➤ Expected tokens: {expected_tokens}")
+        self.logger.error(f"  ➤ Error: {type(exception)} : {str(exception)}")
 
         # Show source line
         if hasattr(input_stream, "strdata"):
             try:
                 full_line = input_stream.strdata.splitlines()[line - 1]
-                print(f"  ➤ Code: {full_line}")
-                print(" " * (column + 10) + "^")
+                self.logger.error(f"  ➤ Code: {full_line}")
+                self.logger.error(" " * (column + 10) + "^")
                 command_name = full_line.split()[0]
                 self.execute_help_command(command_name)
             except IndexError:
@@ -63,10 +66,10 @@ class CommandsVerboseStrategy(DefaultErrorStrategy):
     def execute_help_command(self, command):
         """
         Execute a command line program to show help.
-        
+
         Args:
             command: A string containing the command line program.
-        
+
         Returns:
             int: The return code of the executed command.
         """
@@ -76,14 +79,15 @@ class CommandsVerboseStrategy(DefaultErrorStrategy):
         if file_path.exists():
             cmd = cwd + "/" + command + " --help"
         try:
-            print(f"Help for script {command}:\n", file=sys.stderr)
+            self.logger.info(f"Help for script {command}:\n")
             # Use subprocess.run to execute the command
             result = subprocess.run(cmd, shell=True, check=True)
             return result.returncode
         except subprocess.CalledProcessError as e:
             # If the command returns a non-zero exit code, raise an exception
-            logging.error(e)
+            self.logger.error(e)
             self.exitcode = 1
         except Exception as e:
             # If any other exception occurs, raise it
-            raise Exception(f"Error executing help command: {str(e)}")
+            self.logger.error(f"Error executing help command: {str(e)}")
+            raise
