@@ -5,21 +5,19 @@ import re
 import sys
 import argparse
 import logging
+import os
 from pathlib import Path
 from typing import Match, Optional, Pattern
 
 from configenv import ConfigEnv
+from loggerutil import LoggerFactory
 
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+config = ConfigEnv("config.env")
+logger = LoggerFactory.get_logger(
+    name=os.path.basename(__file__),
+    log_to_file=config.get('LOGGING', False)
+)
 
 DEFAULT_ENV_FILE = "config.env"
 GITHUB_URL_TEMPLATE = "https://raw.githubusercontent.com/{user}/{repo}/refs/heads/main/"
