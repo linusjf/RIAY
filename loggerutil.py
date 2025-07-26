@@ -19,7 +19,7 @@ class LoggerFactory:
     @staticmethod
     def get_logger(
         name: str,
-        level: int,
+        level: int = logging.INFO,
         logfile: Optional[str] = None,
         log_to_file: bool = False
     ) -> logging.Logger:
@@ -28,8 +28,8 @@ class LoggerFactory:
 
         Args:
             name: Logger name (usually __name__).
+            level: Logging level for the logger (default: INFO).
             logfile: Path to the log file. Defaults to '<name>.log' if None.
-            level: Logging level for the logger (default: DEBUG).
             log_to_file: If True, logs to a file in addition to stderr (default: False).
 
         Returns:
