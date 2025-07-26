@@ -10,28 +10,26 @@ Genreqs.
 # -*- coding: utf-8 -*-'
 ######################################################################
 """
+import os
 import re
 import subprocess
-import sys
-import logging
 from pathlib import Path
 from typing import Set, Dict, List, Match, Optional
+from configenv import ConfigEnv
+from configconstants import ConfigConstants
+from loggerutil import LoggerFactory
+
+config = ConfigEnv("config.env")
+logger = LoggerFactory.get_logger(
+    name=os.path.basename(__file__),
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
 
 project_dir = Path(".")
 imported_modules: Set[str] = set()
 
 # Match import and from-import lines
 pattern: re.Pattern = re.compile(r"^\s*(?:from|import)\s+([a-zA-Z0-9_\.]+)")
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
 
 def get_imported_modules() -> None:
     """Find all imported top-level modules."""
