@@ -1,7 +1,5 @@
 import os
 import subprocess
-import sys
-import logging
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
@@ -12,13 +10,6 @@ logger = LoggerFactory.get_logger(
     name=os.path.basename(__file__),
     log_to_file=config.get(ConfigConstants.LOGGING, False)
 )
-logger.setLevel(logging.WARNING)
-
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
 
 def convert_to_jpeg(input_path):
     """Convert image to JPEG using GraphicsMagick.
