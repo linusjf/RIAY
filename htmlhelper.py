@@ -1,19 +1,17 @@
 import re
 from urllib.parse import urlparse
 import os
-import logging
 from typing import Optional
-import sys
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+from configenv import ConfigEnv
+from configconstants import ConfigConstants
+from loggerutil import LoggerFactory
 
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+config = ConfigEnv("config.env")
+logger = LoggerFactory.get_logger(
+    name=os.path.basename(__file__),
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
 
 def clean_filename(filename: str) -> str:
     # Remove "File:" prefix and file extension
