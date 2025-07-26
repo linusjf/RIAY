@@ -19,17 +19,16 @@ from commandsverboselistener import CommandsVerboseListener
 from commandsverbosestrategy import CommandsVerboseStrategy
 from configconstants import ConfigConstants
 from configenv import ConfigEnv
+from loggerutil import LoggerFactory
 
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+# Initialize logger using LoggerFactory
+config = ConfigEnv("config.env")
+logger = LoggerFactory.get_logger(
+    name=__name__,
+    level=logging.DEBUG,
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
 
 
 class Commands(commandsListener):
@@ -46,7 +45,7 @@ class Commands(commandsListener):
         video_id = ctx.videoId().getText().strip('"')
         video_name = ctx.videoName().getText().strip('"')
         rule_name = self._get_rule_name(ctx)
-        print(f"Adding video '{video_id}' with name '{video_name}'.")
+        logger.info(f"Adding video '{video_id}' with name '{video_name}'.")
         self._execute_command([rule_name, video_id, video_name])
 
     def enterAddvideotoday(self, ctx: commandsParser.AddvideotodayContext) -> None:
@@ -54,7 +53,7 @@ class Commands(commandsListener):
         video_id = ctx.videoId().getText().strip('"')
         day_of_year = int(ctx.dayofyear().getText())
         rule_name = self._get_rule_name(ctx)
-        print(f"Adding video '{video_id}' to day {day_of_year}.")
+        logger.info(f"Adding video '{video_id}' to day {day_of_year}.")
         self._execute_command([rule_name, video_id, str(day_of_year)])
 
     def enterAddimgtoday(self, ctx: commandsParser.AddimgtodayContext) -> None:
@@ -64,7 +63,7 @@ class Commands(commandsListener):
         day_of_year = int(ctx.dayofyear().getText())
         rule_name = self._get_rule_name(ctx)
         msg = f"Adding image '{image_path}' to day {day_of_year} with caption '{caption}'."
-        print(msg)
+        logger.info(msg)
         self._execute_command([rule_name, image_path, caption, str(day_of_year)])
 
     def enterGenmonth(self, ctx: commandsParser.GenmonthContext) -> None:
@@ -74,19 +73,19 @@ class Commands(commandsListener):
         year = str(self.config.get(ConfigConstants.YEAR))
         if ctx.year() is not None:
             year = ctx.year().getText()
-        print(f"Generating month {month} for year {year}.")
+        logger.info(f"Generating month {month} for year {year}.")
         self._execute_command([rule_name, month, year])
 
     def enterLint(self, ctx: commandsParser.LintContext) -> None:
         """Process Lint command."""
         rule_name = self._get_rule_name(ctx)
-        print("Linting added and updated markdown docs...")
+        logger.info("Linting added and updated markdown docs...")
         self._execute_command([rule_name])
 
     def enterStitch(self, ctx: commandsParser.StitchContext) -> None:
         """Process Stitch command."""
         rule_name = self._get_rule_name(ctx)
-        print("Stitching...")
+        logger.info("Stitching...")
         self._execute_command([rule_name])
 
     def enterGentoc(self, ctx: commandsParser.GentocContext) -> None:
@@ -99,7 +98,7 @@ class Commands(commandsListener):
         """Process Embedarttoday command."""
         rule_name = self._get_rule_name(ctx)
         day_of_year = int(ctx.dayofyear().getText())
-        print(f"Embedding art to day {day_of_year}.")
+        logger.info(f"Embedding art to day {day_of_year}.")
         self._execute_command([rule_name, str(day_of_year)])
 
     def _get_rule_name(self, ctx) -> str:
