@@ -18,8 +18,8 @@ Returns: 0 on success, 1 on error
 """
 
 import argparse
+import os
 import sys
-import logging
 from pathlib import Path
 from PIL import Image
 from typing import Optional, Dict, Any, Tuple, Union
@@ -32,11 +32,9 @@ from loggerutil import LoggerFactory
 
 VERSION = "1.0.0"
 
-config = ConfigEnv()
+config = ConfigEnv("config.env")
 logger = LoggerFactory.get_logger(
-    __name__,
-    logging.DEBUG,
-    logfile="classifyimage.log",
+    name=os.path.basename(__file__),
     log_to_file=config.get(ConfigConstants.LOGGING, False)
 )
 
