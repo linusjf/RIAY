@@ -6,8 +6,7 @@ faster-whisper implementation of OpenAI's Whisper model.
 """
 
 import argparse
-import logging
-import sys
+import os
 import time
 
 import torch
@@ -26,7 +25,7 @@ ASR_CARRY_INITIAL_PROMPT = config.get(ConfigConstants.ASR_CARRY_INITIAL_PROMPT)
 
 # Initialize logger
 logger = LoggerFactory.get_logger(
-    name=__name__,
+    name=os.path.basename(__file__),
     log_to_file=config.get(ConfigConstants.LOGGING, False)
 )
 
