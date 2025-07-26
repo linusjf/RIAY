@@ -25,16 +25,7 @@ import logging
 from typing import Dict, Any, Optional
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+from loggerutil import LoggerFactory
 
 class ArtDetailsAugmenter:
     """Class for augmenting artwork details using LLM APIs."""
@@ -42,6 +33,11 @@ class ArtDetailsAugmenter:
     def __init__(self) -> None:
         """Initialize with configuration from environment."""
         self.config = ConfigEnv(include_os_env=True)
+        self.logger = LoggerFactory.get_logger(
+            name=__name__,
+            level=logging.DEBUG,
+            log_to_file=self.config.get(ConfigConstants.LOGGING, False)
+        )
 
     def _get_llm_config(self) -> Dict[str, Optional[str]]:
         """Get required LLM configuration values."""
@@ -57,7 +53,7 @@ class ArtDetailsAugmenter:
         """Validate that all required config values are present."""
         if not all(config.values()):
             error_msg = "Missing required LLM configuration variables"
-            logger.error(error_msg)
+            self.logger.error(error_msg)
             raise EnvironmentError(error_msg)
 
     def _build_llm_payload(self, art_json: Dict[str, Any]) -> Dict[str, Any]:
@@ -86,8 +82,7 @@ class ArtDetailsAugmenter:
             "Content-Type": "application/json"
         }
 
-        payload = self._build_llm_payload(art_json)
-        logger.info("Sending request to LLM API")
+        self.logger.info("Sending request to LLM API")
         response = requests.post(url, headers=headers, json=payload)
         response.raise_for_status()
 
@@ -96,16 +91,26 @@ class ArtDetailsAugmenter:
         return self._clean_output(output)
 
 def main() -> None:
-    if sys.stdin.isatty():
-        logger.error("Please provide JSON input via stdin.")
-        sys.exit(1)
-
     try:
+        if sys.stdin.isatty():
+            logger = LoggerFactory.get_logger(
+                name=__name__,
+                level=logging.ERROR,
+                log_to_file=ConfigEnv().get(ConfigConstants.LOGGING, False)
+            )
+            logger.error("Please provide JSON input via stdin.")
+            sys.exit(1)
+
         input_json = json.load(sys.stdin)
         augmenter = ArtDetailsAugmenter()
         output = augmenter.augment_art_details(input_json)
         print(output)
     except Exception as e:
+        logger = LoggerFactory.get_logger(
+            name=__name__,
+            level=logging.ERROR,
+            log_to_file=ConfigEnv().get(ConfigConstants.LOGGING, False)
+        )
         logger.error(f"Error: {e}")
         sys.exit(1)
 
