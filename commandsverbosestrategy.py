@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 """Custom verbose error strategy for command parsing."""
 
-import sys
+import os
 import subprocess
 from pathlib import Path
 from antlr4.error.ErrorStrategy import DefaultErrorStrategy, InputMismatchException
+from configenv import ConfigEnv
+from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
 
 class CommandsVerboseStrategy(DefaultErrorStrategy):
@@ -12,7 +14,11 @@ class CommandsVerboseStrategy(DefaultErrorStrategy):
 
     def __init__(self):
         super().__init__()
-        self.logger = LoggerFactory.get_logger(__name__)
+        self.config = ConfigEnv("config.env")
+        self.logger = LoggerFactory.get_logger(
+             name=os.path.basename(__file__),
+             log_to_file=self.config.get(ConfigConstants.LOGGING, False)
+)
 
     def recover(self, recognizer, e):
         """Report error and raise immediately."""
