@@ -11,7 +11,6 @@ Contains functions for text matching and semantic similarity.
 # -*- coding: utf-8 -*-'
 ######################################################################
 """
-import sys
 import os
 import numpy as np
 from enum import Enum, auto
@@ -30,9 +29,8 @@ config: ConfigEnv = ConfigEnv(dotenv_path, include_os_env=True)
 # Configure logger using LoggerFactory
 LOGGING_ENABLED = config.get(ConfigConstants.LOGGING, False)
 logger = LoggerFactory.get_logger(
-    name=__name__,
-    log_to_file=LOGGING_ENABLED,
-    logfile="simtools.log"
+    name=os.path.basename(__file__),
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
 )
 
 # Constants
