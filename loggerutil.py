@@ -13,24 +13,14 @@ Loggerutil.
 import logging
 import sys
 import os
-from typing import Optional, Union, Literal
-
-LogLevel = Union[
-    Literal[logging.CRITICAL],
-    Literal[logging.ERROR],
-    Literal[logging.WARNING],
-    Literal[logging.INFO],
-    Literal[logging.DEBUG],
-    Literal[logging.NOTSET],
-    int
-]
+from typing import Optional
 
 class LoggerFactory:
     @staticmethod
     def get_logger(
         name: str,
+        level: int,
         logfile: Optional[str] = None,
-        level: LogLevel = logging.DEBUG,
         log_to_file: bool = False
     ) -> logging.Logger:
         """
@@ -46,6 +36,7 @@ class LoggerFactory:
             A configured logger instance.
         """
         logger: logging.Logger = logging.getLogger(name)
+        logger.propagate = False
 
         # Avoid adding handlers multiple times
         if logger.hasHandlers():
