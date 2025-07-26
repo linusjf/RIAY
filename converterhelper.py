@@ -2,9 +2,16 @@ import os
 import subprocess
 import sys
 import logging
+from configenv import ConfigEnv
+from configconstants import ConfigConstants
+from loggerutil import LoggerFactory
 
+config = ConfigEnv("config.env")
 # Configure logging to stderr
-logger = logging.getLogger(__name__)
+logger = LoggerFactory.get_logger(
+    name=os.path.basename(__file__),
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
 logger.setLevel(logging.WARNING)
 
 if not logger.handlers:

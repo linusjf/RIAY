@@ -4,19 +4,19 @@
 import re
 import sys
 import argparse
-import logging
 import os
 from pathlib import Path
 from typing import Match, Optional, Pattern
 
 from configenv import ConfigEnv
+from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
 
 
 config = ConfigEnv("config.env")
 logger = LoggerFactory.get_logger(
     name=os.path.basename(__file__),
-    log_to_file=config.get('LOGGING', False)
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
 )
 
 DEFAULT_ENV_FILE = "config.env"
