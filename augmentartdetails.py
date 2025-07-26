@@ -17,11 +17,11 @@ Environment variables required:
 - TEXT_LLM_MODEL
 """
 
+import os
 import sys
 import json
 import requests
 import re
-import logging
 from typing import Dict, Any, Optional
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
@@ -34,8 +34,7 @@ class ArtDetailsAugmenter:
         """Initialize with configuration from environment."""
         self.config = ConfigEnv(include_os_env=True)
         self.logger = LoggerFactory.get_logger(
-            name=__name__,
-            level=logging.DEBUG,
+            name=os.path.basename(__file__),
             log_to_file=self.config.get(ConfigConstants.LOGGING, False)
         )
 
@@ -95,7 +94,6 @@ def main() -> None:
         if sys.stdin.isatty():
             logger = LoggerFactory.get_logger(
                 name=__name__,
-                level=logging.ERROR,
                 log_to_file=ConfigEnv().get(ConfigConstants.LOGGING, False)
             )
             logger.error("Please provide JSON input via stdin.")
@@ -107,8 +105,7 @@ def main() -> None:
         print(output)
     except Exception as e:
         logger = LoggerFactory.get_logger(
-            name=__name__,
-            level=logging.ERROR,
+            name=os.path.basename(__file__),
             log_to_file=ConfigEnv().get(ConfigConstants.LOGGING, False)
         )
         logger.error(f"Error: {e}")
