@@ -9,19 +9,22 @@ in-place to the files.
 import re
 import logging
 import sys
+import os
 from pathlib import Path
 from typing import Iterator, Pattern
 
+from configconstants import ConfigConstants
+from configenv import ConfigEnv
+from loggerutil import LoggerFactory
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
 
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+# Initialize logger using LoggerFactory
+config = ConfigEnv("config.env")
+logger = LoggerFactory.get_logger(
+    name=os.path.basename(__file__),
+    level=logging.DEBUG,
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
 
 TOC_START_MARKER: str = "<!-- toc -->"
 TOC_END_MARKER: str = "<!-- tocstop -->"
