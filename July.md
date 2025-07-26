@@ -105,6 +105,7 @@
 - [July 26, 2025](#july-26-2025)
   - [Fiat by Fiat](#fiat-by-fiat)
   - [AI-Generated Summary: The Assumption and the Song of Hope](#ai-generated-summary-the-assumption-and-the-song-of-hope)
+  - [Magnificat: A painting by Jean-Baptiste Jouvenet (Stock Image)](#magnificat-a-painting-by-jean-baptiste-jouvenet-stock-image)
 
 <!-- tocstop -->
 
@@ -623,3 +624,7 @@ Consider, dear reader, the mystery of Mary’s Assumption—how she, who first s
 Bishop Sheen and St. Bernard remind us that her joy is not solitary; it is the first note in heaven’s chorus, where saints embrace like long-parted friends—as when Mother Teresa, in that fleeting glimpse of eternity, was met with the radiant love of her sisters. Here is the true end of all our striving: not to grasp at heaven by our own hands, but to be gathered into it, as a child is gathered into its mother’s arms.
 
 And so the _Magnificat_ echoes still, a song older than the world, yet ever new. For in Mary’s Assumption, we see not only her crown but our own hope—the hope that every tear will be undone, and every faithful heart, at last, brought home.
+
+### Magnificat: A painting by Jean-Baptiste Jouvenet (Stock Image)
+
+[![Magnificat: A painting by Jean-Baptiste Jouvenet](/July/jpgs/magnificat.jpg)](https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/magnificat-jean-baptiste-jouvenet.jpg "Magnificat: A painting by Jean-Baptiste Jouvenet")
