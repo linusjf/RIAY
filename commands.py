@@ -79,7 +79,7 @@ class Commands(commandsListener):
     def enterLint(self, ctx: commandsParser.LintContext) -> None:
         """Process Lint command."""
         rule_name = self._get_rule_name(ctx)
-        logger.info("Linting added and updated markdown docs...")
+        logger.info("Linting markdown docs...")
         self._execute_command([rule_name])
 
     def enterStitch(self, ctx: commandsParser.StitchContext) -> None:
