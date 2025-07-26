@@ -25,19 +25,19 @@ from PIL import Image
 from typing import Optional, Dict, Any, Tuple, Union
 import numpy as np
 import json
+from configenv import ConfigEnv
+from loggerutil import LoggerFactory
 
 
 VERSION = "1.0.0"
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+config = ConfigEnv()
+logger = LoggerFactory.get_logger(
+    __name__,
+    logging.DEBUG,
+    logfile="classifyimage.log",
+    log_to_file=config.get("LOGGING", False)
+)
 
 
 class ImageClassifier:
