@@ -15,6 +15,16 @@ import shutil
 from pathlib import Path
 from typing import Generator, Tuple
 
+from configenv import ConfigEnv
+from configconstants import ConfigConstants
+from loggerutil import LoggerFactory
+
+config = ConfigEnv("config.env")
+logger = LoggerFactory.get_logger(
+    name=os.path.basename(__file__),
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
+
 
 # Module-level constants
 SOURCE_ROOT = Path(".")  # Root of project directory
@@ -24,7 +34,7 @@ SUPPORTED_EXTENSIONS = {".jpg", ".pdf"}
 
 
 def collect_files_with_paths(
-    source_root: Path, 
+    source_root: Path,
     target_root: Path
 ) -> Generator[Tuple[Path, Path], None, None]:
     """Generate source and destination paths for supported files.
@@ -35,7 +45,7 @@ def collect_files_with_paths(
     Args:
         source_root: Root directory to search for files.
         target_root: Destination directory for copied files.
-        
+
     Yields:
         Tuples of (source_path, destination_path) for each supported file found.
     """
@@ -57,26 +67,26 @@ def copy_files(source_root: Path, target_root: Path) -> int:
     Args:
         source_root: Source directory to search.
         target_root: Destination directory for copies.
-        
+
     Returns:
         Number of files successfully copied.
     """
     copied_count = 0
-    
+
     for src_path, dst_path in collect_files_with_paths(source_root, target_root):
         if src_path.resolve() != dst_path.resolve():
             dst_path.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src_path, dst_path)
-            print(f"Copied {src_path} to {dst_path}")
+            logger.info(f"Copied {src_path} to {dst_path}")
             copied_count += 1
-            
+
     return copied_count
 
 
 def main() -> None:
     """Execute the main file copying operation."""
     copied = copy_files(SOURCE_ROOT, TARGET_ROOT)
-    print(f"Copied {copied} files to {TARGET_ROOT}")
+    logger.info(f"Copied {copied} files to {TARGET_ROOT}")
 
 
 if __name__ == "__main__":
