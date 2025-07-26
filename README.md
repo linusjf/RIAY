@@ -5537,6 +5537,9 @@ This is no mere depiction of suffering, but a window into its strange redemption
   - [Promise of the Father](#promise-of-the-father)
   - [AI-Generated Summary: The Wine of the Spirit and the Patience of Prayer](#ai-generated-summary-the-wine-of-the-spirit-and-the-patience-of-prayer)
   - [Jean Restout II's Pentecost (1732) vividly portrays the biblical event with dramatic Baroque flair, showing the apostles and Mary receiving the Holy Spirit (Stock Image)](#jean-restout-iis-pentecost-1732-vividly-portrays-the-biblical-event-with-dramatic-baroque-flair-showing-the-apostles-and-mary-receiving-the-holy-spirit-stock-image)
+- [July 26, 2025](#july-26-2025)
+  - [Fiat by Fiat](#fiat-by-fiat)
+  - [AI-Generated Summary: The Assumption and the Song of Hope](#ai-generated-summary-the-assumption-and-the-song-of-hope)
 
 <!-- tocstop -->
 
@@ -6041,6 +6044,20 @@ Let us then pray with confidence, not as beggars uncertain of the King’s favor
 ##### Jean Restout II's Pentecost (1732) vividly portrays the biblical event with dramatic Baroque flair, showing the apostles and Mary receiving the Holy Spirit (Stock Image)
 
 [![Jean Restout II's Pentecost (1732) vividly portrays the biblical event with dramatic Baroque flair, showing the apostles and Mary receiving the Holy Spirit](July/jpgs/pentecostrestout1732.jpg)](https://www.wga.hu/art/r/restout/jean2/pentecox.jpg "Jean Restout II's Pentecost (1732) vividly portrays the biblical event with dramatic Baroque flair, showing the apostles and Mary receiving the Holy Spirit")
+
+#### July 26, 2025
+
+##### Fiat by Fiat
+
+[![Fiat by Fiat](July/jpgs/Day207.jpg)](https://youtu.be/u8BZEZRNUek "Fiat by Fiat")
+
+##### AI-Generated Summary: The Assumption and the Song of Hope
+
+Consider, dear reader, the mystery of Mary’s Assumption—how she, who first sang the _Magnificat_ in joyful surrender, was at last received, body and soul, into the glory prepared for all who trust in God. This is no mere reward for virtue, but a foretaste of what awaits the whole Church, a promise as sure as dawn after night.
+
+Bishop Sheen and St. Bernard remind us that her joy is not solitary; it is the first note in heaven’s chorus, where saints embrace like long-parted friends—as when Mother Teresa, in that fleeting glimpse of eternity, was met with the radiant love of her sisters. Here is the true end of all our striving: not to grasp at heaven by our own hands, but to be gathered into it, as a child is gathered into its mother’s arms.
+
+And so the _Magnificat_ echoes still, a song older than the world, yet ever new. For in Mary’s Assumption, we see not only her crown but our own hope—the hope that every tear will be undone, and every faithful heart, at last, brought home.
 
 ## August
 
