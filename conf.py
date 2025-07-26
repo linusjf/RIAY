@@ -5,22 +5,20 @@
 
 import os
 import codecs
-import logging
 import sys
 from typing import Dict, Any, List, Union, Optional
 from pathlib import Path
 from sphinx.application import Sphinx
 
-# Set up logging similar to genreqs.py
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+from configenv import ConfigEnv
+from configconstants import ConfigConstants
+from loggerutil import LoggerFactory
 
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+config = ConfigEnv("config.env")
+logger = LoggerFactory.get_logger(
+    name=os.path.basename(__file__),
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
