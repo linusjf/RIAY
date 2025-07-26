@@ -26,6 +26,7 @@ from typing import Optional, Dict, Any, Tuple, Union
 import numpy as np
 import json
 from configenv import ConfigEnv
+from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
 
 
@@ -36,7 +37,7 @@ logger = LoggerFactory.get_logger(
     __name__,
     logging.DEBUG,
     logfile="classifyimage.log",
-    log_to_file=config.get("LOGGING", False)
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
 )
 
 

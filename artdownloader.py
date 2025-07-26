@@ -592,7 +592,7 @@ class ArtDownloader:
                 url, file, score = best_result
                 if "best_result_" in file and self.FIND_ALTERNATE_IMAGES:
                     lookup = ReverseImageLookup()
-                    qualified_urls = lookup.reverse_image_lookup_url(url, self.title, self.artist, self.subject, self.location, self.date, self.style, self.medium)
+                    qualified_urls = lookup.reverse_image_lookup_url(url, str(self.title), str(self.artist), self.subject, self.location, self.date, self.style, self.medium)
                     if qualified_urls:
                         best_qualified_result = self.download_from_googlelens(qualified_urls=qualified_urls, filename_base=self.filename_base)
                         if best_qualified_result:
