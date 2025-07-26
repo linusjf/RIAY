@@ -1,28 +1,22 @@
 """Image upload functionality for imgbb.com API."""
 
+import os
 import requests
-import sys
-import logging
 from typing import Optional, Tuple
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-# Configure logging to stderr
-if not logger.handlers:
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(handler)
-    logger.propagate = False
+from loggerutil import LoggerFactory
 
 # Constants
 CONFIG_FILE = 'config.env'
 IMGBB_UPLOAD_URL = "https://api.imgbb.com/1/upload"
+config = ConfigEnv(CONFIG_FILE, include_os_env=True)
+logger = LoggerFactory.get_logger(
+    name=os.path.basename(__file__),
+    log_to_file=config.get(ConfigConstants.LOGGING, False)
+)
 
 # Load environment variables using ConfigEnv
-config = ConfigEnv(filepath=CONFIG_FILE, include_os_env=True)
 IMGBB_API_KEY: Optional[str] = config.get(ConfigConstants.IMGBB_API_KEY)
 if not IMGBB_API_KEY:
     logger.error(f"{ConfigConstants.IMGBB_API_KEY} environment variable not set")
@@ -34,7 +28,7 @@ class ImgBBUploader:
 
     def __init__(self, api_key: str = IMGBB_API_KEY) -> None:
         """Initialize with API key.
-        
+
         Args:
             api_key: ImgBB API key
         """
