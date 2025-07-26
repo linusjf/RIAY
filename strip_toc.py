@@ -7,8 +7,6 @@ in-place to the files.
 """
 
 import re
-import logging
-import sys
 import os
 from pathlib import Path
 from typing import Iterator, Pattern
@@ -22,7 +20,6 @@ from loggerutil import LoggerFactory
 config = ConfigEnv("config.env")
 logger = LoggerFactory.get_logger(
     name=os.path.basename(__file__),
-    level=logging.DEBUG,
     log_to_file=config.get(ConfigConstants.LOGGING, False)
 )
 
