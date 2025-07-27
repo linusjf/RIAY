@@ -131,7 +131,7 @@ Your effort in seeking this path is commendable, like tending a garden for a sha
 
 #### Format for sharing on the WhatsApp group
 
-<https://chat.whatsapp.com/EPXBhsE4GzJ0j8YXt98YT1>
+https://chat.whatsapp.com/EPXBhsE4GzJ0j8YXt98YT1
 
 Would like to encourage the participants to share their thoughts, it can be one word, one line or a reflection, it doesn't have to be perfect. We the admins will review it before posting so feel free to drop us a note. Let us know how the days readings inspired you.
 
@@ -670,10 +670,10 @@ This reflection explores how to live out the prayer "Thy kingdom come, thy will 
 **Main Topics Discussed:**
 
 1. **The Nature of Children:** Children are presented as inherently "poor" – dependent, lacking knowledge and resources, and vulnerable. Crucially, in a healthy environment, they accept this dependence without shame or frustration, naturally turning to parents for all needs. Despite their neediness, they often exhibit joy and levity.
-1. **Childlike Humility as the Key:** This trusting dependence and acceptance of one's limitations ("poverty") is the essential characteristic for entering and experiencing the Kingdom of Heaven.
-1. **Experiencing the Kingdom Now:** The Kingdom isn't just a future reality. It is experienced *now* when we acknowledge our dependence, limitations, and needs, and bring them directly to God the Father without shame, self-hatred, or resorting to anxious self-reliance. This act of trusting dependence meeting God's providence *is* the Kingdom experience on earth.
-1. **Contrast with Adult Tendencies:** Adults often react to their inherent limitations with shame, frustration, and a drive for self-reliance, which hinders experiencing the peace of the Kingdom.
-1. **Trusting God's Will:** Praying "Thy will be done" mirrors the childlike trust that the Father knows best, loves us, and will provide what is truly needed, even if we don't know what that is (illustrated by the child-in-restaurant analogy). Jesus models this perfectly in Gethsemane.
+2. **Childlike Humility as the Key:** This trusting dependence and acceptance of one's limitations ("poverty") is the essential characteristic for entering and experiencing the Kingdom of Heaven.
+3. **Experiencing the Kingdom Now:** The Kingdom isn't just a future reality. It is experienced *now* when we acknowledge our dependence, limitations, and needs, and bring them directly to God the Father without shame, self-hatred, or resorting to anxious self-reliance. This act of trusting dependence meeting God's providence *is* the Kingdom experience on earth.
+4. **Contrast with Adult Tendencies:** Adults often react to their inherent limitations with shame, frustration, and a drive for self-reliance, which hinders experiencing the peace of the Kingdom.
+5. **Trusting God's Will:** Praying "Thy will be done" mirrors the childlike trust that the Father knows best, loves us, and will provide what is truly needed, even if we don't know what that is (illustrated by the child-in-restaurant analogy). Jesus models this perfectly in Gethsemane.
 
 **Key Takeaways:**
 
@@ -851,9 +851,9 @@ This text explores deepening one's relationship with Jesus and Mary through pray
 **Main Topics Discussed:**
 
 1. **The Opening of the Hail Mary:** Analysis of "Hail Mary, full of grace, the Lord is with thee."
-1. **Origin and Meaning:** These words are traced back to the Angel Gabriel's greeting at the Annunciation, interpreted as God's own greeting to Mary (citing Catechism 2676).
-1. **Repetition in Prayer:** Addressing the nature of repeating prayers like the Hail Mary, drawing on Pope John Paul II's perspective.
-1. **Application:** How to approach praying these specific words with renewed intention and love.
+2. **Origin and Meaning:** These words are traced back to the Angel Gabriel's greeting at the Annunciation, interpreted as God's own greeting to Mary (citing Catechism 2676).
+3. **Repetition in Prayer:** Addressing the nature of repeating prayers like the Hail Mary, drawing on Pope John Paul II's perspective.
+4. **Application:** How to approach praying these specific words with renewed intention and love.
 
 **Key Takeaways:**
 
@@ -891,9 +891,9 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 **Main Topics Discussed:**
 
 1. **Origin of the Prayer:** The phrase originates from the biblical event of the Visitation (Luke 1:39ff), where the pregnant Mary visits her relative Elizabeth.
-1. **The Visitation Context:** Upon hearing Mary's greeting, Elizabeth's unborn child (John the Baptist) leaps, and Elizabeth, filled with the Holy Spirit, proclaims these words.
-1. **Mary's Role:** Mary is presented as a powerful conduit of grace. Her greeting communicates the Holy Spirit, and her very presence sanctifyingly communicates Jesus, whom she carries. This highlights God's humility in becoming small enough to be carried by her.
-1. **Praying with Meaning:** The reflection contrasts mechanical repetition of the prayer with the way Elizabeth spoke – as a loud, joyous, Spirit-filled cry. It encourages emulating this genuine wonder and awe.
+2. **The Visitation Context:** Upon hearing Mary's greeting, Elizabeth's unborn child (John the Baptist) leaps, and Elizabeth, filled with the Holy Spirit, proclaims these words.
+3. **Mary's Role:** Mary is presented as a powerful conduit of grace. Her greeting communicates the Holy Spirit, and her very presence sanctifyingly communicates Jesus, whom she carries. This highlights God's humility in becoming small enough to be carried by her.
+4. **Praying with Meaning:** The reflection contrasts mechanical repetition of the prayer with the way Elizabeth spoke – as a loud, joyous, Spirit-filled cry. It encourages emulating this genuine wonder and awe.
 
 **Key Takeaways:**
 
@@ -929,11 +929,11 @@ This text explores how prayer and meditation deepen one's relationship with Jesu
 
 1. **Mary's Role as Intercessor:** The central theme is Mary's unique position and ability to intercede for believers with her Son, Jesus.
 
-1. **The Power of Relationship:** It draws a parallel between influence in earthly relationships ("who you know") and Mary's influence with Jesus due to their mother-son relationship.
+2. **The Power of Relationship:** It draws a parallel between influence in earthly relationships ("who you know") and Mary's influence with Jesus due to their mother-son relationship.
 
-1. **Biblical Foundation:** The relationship between King Solomon and his mother Bathsheba (1 Kings 2:19-20) serves as a key illustration.
+3. **Biblical Foundation:** The relationship between King Solomon and his mother Bathsheba (1 Kings 2:19-20) serves as a key illustration.
 
-1. **Confidence in Prayer:** Believers are encouraged to approach Mary confidently with their needs, trusting in her love and intercessory power.
+4. **Confidence in Prayer:** Believers are encouraged to approach Mary confidently with their needs, trusting in her love and intercessory power.
 
 **Key Takeaways:**
 
@@ -981,9 +981,9 @@ This text explores the nature of the "Glory Be" prayer, identifying it primarily
 **Main Topics Discussed:**
 
 1. **The "Glory Be" as Praise:** The prayer is presented as a quintessential example of praise, supported by scriptural references like Psalm 145 ("I will extol you my God and King...") and the Catechism (section 2649).
-1. **Definition of Praise:** Praise is defined as the form of prayer that most directly recognizes God *as God*. It is uniquely characterized as "entirely disinterested."
-1. **"Disinterested" Praise Explained:** This core concept means praise gives glory to God purely for His own sake – simply because He *is* – rather than focusing on what He has done for us or what we need from Him.
-1. **Contrast with Other Prayer Forms:** Praise is distinguished from:
+2. **Definition of Praise:** Praise is defined as the form of prayer that most directly recognizes God *as God*. It is uniquely characterized as "entirely disinterested."
+3. **"Disinterested" Praise Explained:** This core concept means praise gives glory to God purely for His own sake – simply because He *is* – rather than focusing on what He has done for us or what we need from Him.
+4. **Contrast with Other Prayer Forms:** Praise is distinguished from:
    - **Contrition:** Focuses on human failings and God's mercy.
    - **Petition:** Focuses on human dependence and needs presented to God.
    - **Thanksgiving:** Focuses on gratitude for God's specific actions.
@@ -1029,10 +1029,10 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 **Main Topics Discussed:**
 
 1. **Theological Foundation:** The teaching draws heavily on Scripture (Matthew 28:19 - baptizing in the Trinity's name; Psalm 36:9 - God as the fountain and source of light) and the Catechism's emphasis on the Holy Trinity as the central mystery and illuminating source of Christian faith.
-1. **The Sign of the Cross as Faith in Action:** Making the Sign is presented not merely as a ritual, but as a conscious act of faith. It's likened to opening one's eyes to perceive spiritual reality.
-1. **Analogy of Light and Sight:** The Holy Trinity is described as the fundamental "light." The grace of Baptism confers faith, which is likened to spiritual "sight," enabling believers to perceive this divine light.
-1. **Perception in God's Light:** Praying "in the name of the Father, Son, and Holy Spirit" isn't about activating God's light (which is always present), but about using our faith (sight) to see *within* that divine light. This allows a clearer view of God, faith mysteries, Mary, saints, creation, others, and oneself – revealing both inherent dignity and areas needing conversion.
-1. **Vulnerability and Growth:** Stepping into this light through the Sign of the Cross is an act of courage and vulnerability. It involves leaving darkness or hiding, allowing God's light to reveal shortcomings but also to warm, purify, enlighten, strengthen, and encourage.
+2. **The Sign of the Cross as Faith in Action:** Making the Sign is presented not merely as a ritual, but as a conscious act of faith. It's likened to opening one's eyes to perceive spiritual reality.
+3. **Analogy of Light and Sight:** The Holy Trinity is described as the fundamental "light." The grace of Baptism confers faith, which is likened to spiritual "sight," enabling believers to perceive this divine light.
+4. **Perception in God's Light:** Praying "in the name of the Father, Son, and Holy Spirit" isn't about activating God's light (which is always present), but about using our faith (sight) to see *within* that divine light. This allows a clearer view of God, faith mysteries, Mary, saints, creation, others, and oneself – revealing both inherent dignity and areas needing conversion.
+5. **Vulnerability and Growth:** Stepping into this light through the Sign of the Cross is an act of courage and vulnerability. It involves leaving darkness or hiding, allowing God's light to reveal shortcomings but also to warm, purify, enlighten, strengthen, and encourage.
 
 **Key Takeaways:**
 
@@ -1064,10 +1064,10 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 **Main Topics:**
 
 1. **Spiritual Nourishment:** The text reflects on the Hail Holy Queen prayer (*Salve Regina*), emphasizing its opening words: *"Hail Holy Queen, Mother of Mercy, our life, our sweetness, and our hope."*
-1. **Eucharistic Analogy:** Drawing from Matthew 26, Jesus’ gifts of bread and wine symbolize essential grace (*bread*) and joyful abundance (*wine*).
+2. **Eucharistic Analogy:** Drawing from Matthew 26, Jesus’ gifts of bread and wine symbolize essential grace (*bread*) and joyful abundance (*wine*).
    - *Bread*: Represents foundational grace for spiritual survival.
    - *Wine*: Symbolizes the "sweetness" of God’s love, enhancing life beyond necessities.
-1. **Mary’s Role:** The Blessed Mother is presented as a gift of "wine"—a source of spiritual sweetness and hope, deepening one’s relationship with God.
+3. **Mary’s Role:** The Blessed Mother is presented as a gift of "wine"—a source of spiritual sweetness and hope, deepening one’s relationship with God.
 
 **Key Takeaways:**
 
@@ -1100,11 +1100,11 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 
 1. **Prayer and Meditation:** Deepening one's relationship with Jesus and Mary through prayer, emphasizing their roles as sources of grace.
 
-1. **Mary’s Compassion:** Reflecting on John 19:26, Mary is portrayed as the "woman of Sorrows" who understands human suffering and serves as an intercessor.
+2. **Mary’s Compassion:** Reflecting on John 19:26, Mary is portrayed as the "woman of Sorrows" who understands human suffering and serves as an intercessor.
 
-1. **Suffering and Faith:** The "Valley of Tears" metaphor illustrates the shared human experience of hardship, with Jesus and Mary offering solace.
+3. **Suffering and Faith:** The "Valley of Tears" metaphor illustrates the shared human experience of hardship, with Jesus and Mary offering solace.
 
-1. **Devotional Practices:** Recitations of prayers like the *Our Father*, *Hail Mary*, and *Hail Holy Queen* foster communal faith and perseverance.
+4. **Devotional Practices:** Recitations of prayers like the *Our Father*, *Hail Mary*, and *Hail Holy Queen* foster communal faith and perseverance.
    **Key Takeaways:**
 
 - Mary’s suffering at the Cross and her witness to the Resurrection make her a compassionate figure for those enduring pain.
@@ -1222,8 +1222,8 @@ How we live here, what we do now matters. Let us not be afraid but Trust God. We
 ***Key Takeaways***
 
 1. **Hope and Seriousness**: Authentic hope avoids flippancy but embraces sober reflection on eternal realities.
-1. **Salvation as a Shared Mission**: Individuals are called to repent and collaborate with God for others’ salvation, prioritizing eternal concerns over trivialities.
-1. **Avoiding Fear**: For those in grace, excessive fear of Hell is counterproductive; a right relationship with God fosters hope and trust.
+2. **Salvation as a Shared Mission**: Individuals are called to repent and collaborate with God for others’ salvation, prioritizing eternal concerns over trivialities.
+3. **Avoiding Fear**: For those in grace, excessive fear of Hell is counterproductive; a right relationship with God fosters hope and trust.
 
 ***Notable Insights***
 
@@ -3429,12 +3429,12 @@ Let us remain awhile in this contemplation, beholding the innocent, scourged Lor
 Consider, if you will, that stark scene: the Crowning with Thorns, the third sorrowful mystery. To ponder it deeply is to seek a closer walk with Christ and His Mother, finding grace along the path.
 
 1. We might turn our minds, profitably, to the Angelic Doctor, St. Thomas Aquinas, that profound and saintly scholar of old, who guided this reflection.
-1. Aquinas fixes upon the crown, not as a symbol of tragic kingship, but of sheer, deliberate *indignity*. What is indignity? It is the calculated insult, the offering of contempt where honour is not merely due, but richly deserved.
-1. Those thorns, sharp and cruel, might be seen as the very 'prickles' of our own sins, or perhaps the curse upon the ground, now gathered and pressed upon the Head of Him who came to lift it.
-1. We have, perhaps, known something of this ourselves – either in receiving or, worse, in inflicting it. Think of a trust betrayed, a simple kindness met with a clever, wounding slight. It leaves a peculiar ache, a sense of profound wrongness, particularly when the one offended was utterly open and generous.
-1. Now, lift your gaze from such small, human follies to the Divine. He, who is the source of all being, all goodness, all trust, offers Himself entirely. And what is the return? A crown of thorns. Our sins, our self-absorption, our failure to respond with love and honour, are the very substance of that crown.
-1. This is the heart of the mystery: Love receiving indignity. To ponder it in prayer is to see the true nature of our rebellion and the depth of His sacrifice. It draws us closer to His wounded heart and to the heart of His Mother, who shared His suffering.
-1. Such meditation, woven with the simple, enduring threads of prayer (like the Hail Mary and Glory Be), becomes a channel of grace, deepening our bond with Christ and Mary, and teaching us the terrible cost of sin and the glorious power of the Love that bore it.
+2. Aquinas fixes upon the crown, not as a symbol of tragic kingship, but of sheer, deliberate *indignity*. What is indignity? It is the calculated insult, the offering of contempt where honour is not merely due, but richly deserved.
+3. Those thorns, sharp and cruel, might be seen as the very 'prickles' of our own sins, or perhaps the curse upon the ground, now gathered and pressed upon the Head of Him who came to lift it.
+4. We have, perhaps, known something of this ourselves – either in receiving or, worse, in inflicting it. Think of a trust betrayed, a simple kindness met with a clever, wounding slight. It leaves a peculiar ache, a sense of profound wrongness, particularly when the one offended was utterly open and generous.
+5. Now, lift your gaze from such small, human follies to the Divine. He, who is the source of all being, all goodness, all trust, offers Himself entirely. And what is the return? A crown of thorns. Our sins, our self-absorption, our failure to respond with love and honour, are the very substance of that crown.
+6. This is the heart of the mystery: Love receiving indignity. To ponder it in prayer is to see the true nature of our rebellion and the depth of His sacrifice. It draws us closer to His wounded heart and to the heart of His Mother, who shared His suffering.
+7. Such meditation, woven with the simple, enduring threads of prayer (like the Hail Mary and Glory Be), becomes a channel of grace, deepening our bond with Christ and Mary, and teaching us the terrible cost of sin and the glorious power of the Love that bore it.
 
 #### April 12,2025
 
@@ -5435,116 +5435,117 @@ This is no mere depiction of suffering, but a window into its strange redemption
 
 <!-- toc -->
 
-- [July 01, 2025](#july-01-2025)
-  - [Shared Sacrifice](#shared-sacrifice)
-  - [AI-Generated Summary: The Weight of the Cross and the Willing Heart](#ai-generated-summary-the-weight-of-the-cross-and-the-willing-heart)
-  - [Raphael's Christ Falls on the Way to Calvary, a painting depicting Christ stumbling under the cross with Mary and a crowd witnessing](#raphaels-christ-falls-on-the-way-to-calvary-a-painting-depicting-christ-stumbling-under-the-cross-with-mary-and-a-crowd-witnessing)
-- [July 02, 2025](#july-02-2025)
-  - [Love Poured Out](#love-poured-out)
-  - [AI-Generated Summary: The Sorrow and the Glory in Rubens' Descent](#ai-generated-summary-the-sorrow-and-the-glory-in-rubens-descent)
-  - [The Descent from the Cross (1616-1617) by Rubens: A dynamic, dramatic depiction of Christ's descent](#the-descent-from-the-cross-1616-1617-by-rubens-a-dynamic-dramatic-depiction-of-christs-descent)
-- [July 03, 2025](#july-03-2025)
-  - [Beyond the Tomb](#beyond-the-tomb)
-  - [AI-Generated Summary: The Dawn of Redemption](#ai-generated-summary-the-dawn-of-redemption)
-  - [The Three Marys at the Tomb by Annibale Carracci, 17th century at Hermitage Museum, reveals Baroque vividness and drama](#the-three-marys-at-the-tomb-by-annibale-carracci-17th-century-at-hermitage-museum-reveals-baroque-vividness-and-drama)
-- [July 04, 2025](#july-04-2025)
-  - [Proclaiming Christ](#proclaiming-christ)
-  - [AI-Generated Summary: The Divine Commission and the Art of Witness](#ai-generated-summary-the-divine-commission-and-the-art-of-witness)
-  - [Christ Taking Leave of the Apostles by Duccio, 14th century, Museo dell'Opera, tempera on wood, Gothic details](#christ-taking-leave-of-the-apostles-by-duccio-14th-century-museo-dellopera-tempera-on-wood-gothic-details)
-- [July 05, 2025](#july-05-2025)
-  - [Power From On High](#power-from-on-high)
-  - [AI-Generated Summary: The Divine Gift and the Art of Waiting](#ai-generated-summary-the-divine-gift-and-the-art-of-waiting)
-  - [Simone Peterzano's Pentecost depicts the Virgin and disciples receiving the Holy Spirit in Mannerist style (Stock Image)](#simone-peterzanos-pentecost-depicts-the-virgin-and-disciples-receiving-the-holy-spirit-in-mannerist-style-stock-image)
-- [July 06, 2025](#july-06-2025)
-  - [God is Never Outdone](#god-is-never-outdone)
-  - [AI-Generated Summary: The Divine Exchange Between Mother and Son](#ai-generated-summary-the-divine-exchange-between-mother-and-son)
-  - [The Divine Exchange Between Mother and Son (Stock Image)](#the-divine-exchange-between-mother-and-son-stock-image)
-- [July 07, 2025](#july-07-2025)
-  - [Gifts for Mary](#gifts-for-mary)
-  - [AI-Generated Summary: The Celestial Coronation and the Quiet Heart](#ai-generated-summary-the-celestial-coronation-and-the-quiet-heart)
-  - [Mary, Help of Christians by Giuseppe Rollini (Stock Image)](#mary-help-of-christians-by-giuseppe-rollini-stock-image)
-- [July 08, 2025](#july-08-2025)
-  - [Bonus: Introduction to Phase Four: “Finding Focus” — The Rosary in a Year (with Fr. Mark-Mary Ames)](#bonus-introduction-to-phase-four-finding-focus--the-rosary-in-a-year-with-fr-mark-mary-ames)
-  - [AI-Generated Summary: The Quiet Work of Prayer](#ai-generated-summary-the-quiet-work-of-prayer)
-  - [Beginning Our Meditation](#beginning-our-meditation)
-  - [AI-Generated Summary: The Humble Astonishment of the Annunciation](#ai-generated-summary-the-humble-astonishment-of-the-annunciation)
-  - [The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace](#the-annunciation-by-fra-angelico-1440s-at-san-marco-florence-a-serene-fresco-masterpiece-of-divine-grace)
-- [July 09, 2025](#july-09-2025)
-  - [Returning to the Visitation](#returning-to-the-visitation)
-  - [AI-Generated Summary: The New Ark and the Song of Joy](#ai-generated-summary-the-new-ark-and-the-song-of-joy)
-  - [Mary's Magnificat](#marys-magnificat)
-- [July 10, 2025](#july-10-2025)
-  - [Unworthy Yet Welcomed](#unworthy-yet-welcomed)
-  - [AI-Generated Summary: The Timeless Joy of the Nativity](#ai-generated-summary-the-timeless-joy-of-the-nativity)
-  - [Baroque Nativity scene by Pellegrini, depicting divine joy with mother and child (Stock Image)](#baroque-nativity-scene-by-pellegrini-depicting-divine-joy-with-mother-and-child-stock-image)
-- [July 11, 2025](#july-11-2025)
-  - [A Renewed 'Yes'](#a-renewed-yes)
-  - [AI-Generated Summary: The Stillness in the Storm](#ai-generated-summary-the-stillness-in-the-storm)
-  - [Fra Angelico's Simeon with the Child Jesus: Temple scene](#fra-angelicos-simeon-with-the-child-jesus-temple-scene)
-- [July 12, 2025](#july-12-2025)
-  - [Faith in the Silence](#faith-in-the-silence)
-  - [AI-Generated Summary: The Divine Pursuit in the Temple](#ai-generated-summary-the-divine-pursuit-in-the-temple)
-  - [Jesus teaching in the temple as a 12-year-old](#jesus-teaching-in-the-temple-as-a-12-year-old)
-- [July 13, 2025](#july-13-2025)
-  - [Beloved Sons and Daughters](#beloved-sons-and-daughters)
-  - [AI-Generated Summary: The Sacred Waters and the Beloved Son](#ai-generated-summary-the-sacred-waters-and-the-beloved-son)
-  - [Fresco depicting the Baptism of Christ (Stock Image)](#fresco-depicting-the-baptism-of-christ-stock-image)
-- [July 14, 2025](#july-14-2025)
-  - [New Wine, New Life](#new-wine-new-life)
-  - [AI-Generated Summary: The Divine Bridegroom and the Miracle at Cana](#ai-generated-summary-the-divine-bridegroom-and-the-miracle-at-cana)
-  - [Carl Bloch's The Wedding at Cana depicts the miracle of turning water into wine](#carl-blochs-the-wedding-at-cana-depicts-the-miracle-of-turning-water-into-wine)
-- [July 15, 2025](#july-15-2025)
-  - [Invited to the Kingdom](#invited-to-the-kingdom)
-  - [AI-Generated Summary: The Kingdom and the Storm](#ai-generated-summary-the-kingdom-and-the-storm)
-  - [Rembrandt's Christ in the Storm on the Sea of Galilee depicts a biblical scene of Christ calming the storm](#rembrandts-christ-in-the-storm-on-the-sea-of-galilee-depicts-a-biblical-scene-of-christ-calming-the-storm)
-- [July 16, 2025](#july-16-2025)
-  - [Mystery of Light](#mystery-of-light)
-  - [AI-Generated Summary: The Light That Comes From Within](#ai-generated-summary-the-light-that-comes-from-within)
-  - [The Transfiguration by Raphael depicts Christ with Moses and Elijah](#the-transfiguration-by-raphael-depicts-christ-with-moses-and-elijah)
-- [July 17, 2025](#july-17-2025)
-  - [The Love of Jesus](#the-love-of-jesus)
-  - [AI-Generated Summary: The Divine Ingenuity of Love](#ai-generated-summary-the-divine-ingenuity-of-love)
-  - [Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance (Stock Image)](#giacomo-raffaelis-mosaic-the-last-supper-in-minoritenkirche-vienna-vividly-portrays-jesus-and-his-disciples-in-a-moment-of-sacred-significance-stock-image)
-- [July 18, 2025](#july-18-2025)
-  - [What the Garden Reveals](#what-the-garden-reveals)
-  - [AI-Generated Summary: The Choice Between Rebellion and Obedience](#ai-generated-summary-the-choice-between-rebellion-and-obedience)
-  - [Vicente Macip's depiction of Jesus in the Garden of Gethsemane (Stock Image)](#vicente-macips-depiction-of-jesus-in-the-garden-of-gethsemane-stock-image)
-- [July 19, 2025](#july-19-2025)
-  - [Glory Hidden in Suffering](#glory-hidden-in-suffering)
-  - [AI-Generated Summary: The Scourging and the Prodigal](#ai-generated-summary-the-scourging-and-the-prodigal)
-  - [The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ](#the-flagellation-by-agostino-ciampelli-a-fresco-depicting-the-scourging-of-christ)
-- [July 20, 2025](#july-20-2025)
-  - [Thorns for Love](#thorns-for-love)
-  - [AI-Generated Summary: The Mockery of Kings and the Sovereignty of Suffering](#ai-generated-summary-the-mockery-of-kings-and-the-sovereignty-of-suffering)
-  - [Titian's dramatic 'The Crowning with Thorns' portrays Christ's suffering, blending intense emotion with masterful composition in this Louvre masterpiece](#titians-dramatic-the-crowning-with-thorns-portrays-christs-suffering-blending-intense-emotion-with-masterful-composition-in-this-louvre-masterpiece)
-- [July 21, 2025](#july-21-2025)
-  - [Scapegoat and Savior](#scapegoat-and-savior)
-  - [AI-Generated Summary: The Weight of Glory in Bearing the Cross](#ai-generated-summary-the-weight-of-glory-in-bearing-the-cross)
-  - [Jesus, Carrying His Cross, Helped by Simon of Cyrene (Stock Image)](#jesus-carrying-his-cross-helped-by-simon-of-cyrene-stock-image)
-- [July 22, 2025](#july-22-2025)
-  - [God's Relentless Pursuit](#gods-relentless-pursuit)
-  - [AI-Generated Summary: The Divine Embrace and the Rainbow of Promise](#ai-generated-summary-the-divine-embrace-and-the-rainbow-of-promise)
-  - [Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852) (Stock Image)](#fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-stock-image)
-- [July 23, 2025](#july-23-2025)
-  - [Transcending Death](#transcending-death)
-  - [AI-Generated Summary: The Dawn of Everlasting Life](#ai-generated-summary-the-dawn-of-everlasting-life)
-  - [Caravaggio’s The Incredulity of Saint Thomas (Stock Image)](#caravaggios-the-incredulity-of-saint-thomas-stock-image)
-- [July 24, 2025](#july-24-2025)
-  - [With Us Always](#with-us-always)
-  - [AI-Generated Summary: The Ascension and the Ever-Present Christ](#ai-generated-summary-the-ascension-and-the-ever-present-christ)
-  - [Bernardino Gandino's 'Ascension of the Lord' portrays Christ ascending to heaven, his footprints left on stone below, surrounded by awe-struck apostles (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-portrays-christ-ascending-to-heaven-his-footprints-left-on-stone-below-surrounded-by-awe-struck-apostles-stock-image)
-- [July 25, 2025](#july-25-2025)
-  - [Promise of the Father](#promise-of-the-father)
-  - [AI-Generated Summary: The Wine of the Spirit and the Patience of Prayer](#ai-generated-summary-the-wine-of-the-spirit-and-the-patience-of-prayer)
-  - [Jean Restout II's Pentecost (1732) vividly portrays the biblical event with dramatic Baroque flair, showing the apostles and Mary receiving the Holy Spirit (Stock Image)](#jean-restout-iis-pentecost-1732-vividly-portrays-the-biblical-event-with-dramatic-baroque-flair-showing-the-apostles-and-mary-receiving-the-holy-spirit-stock-image)
-- [July 26, 2025](#july-26-2025)
-  - [Fiat by Fiat](#fiat-by-fiat)
-  - [AI-Generated Summary: The Assumption and the Song of Hope](#ai-generated-summary-the-assumption-and-the-song-of-hope)
-  - [Magnificat: A painting by Jean-Baptiste Jouvenet (Stock Image)](#magnificat-a-painting-by-jean-baptiste-jouvenet-stock-image)
-- [July 27, 2025](#july-27-2025)
-  - [Mary is With Us](#mary-is-with-us)
-  - [AI-Generated Summary: The Queen Mother and Her Divine Crown](#ai-generated-summary-the-queen-mother-and-her-divine-crown)
-  - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-velzquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
+- [July 2025](#july-2025)
+  - [July 01, 2025](#july-01-2025)
+    - [Shared Sacrifice](#shared-sacrifice)
+    - [AI-Generated Summary: The Weight of the Cross and the Willing Heart](#ai-generated-summary-the-weight-of-the-cross-and-the-willing-heart)
+    - [Raphael's Christ Falls on the Way to Calvary, a painting depicting Christ stumbling under the cross with Mary and a crowd witnessing](#raphaels-christ-falls-on-the-way-to-calvary-a-painting-depicting-christ-stumbling-under-the-cross-with-mary-and-a-crowd-witnessing)
+  - [July 02, 2025](#july-02-2025)
+    - [Love Poured Out](#love-poured-out)
+    - [AI-Generated Summary: The Sorrow and the Glory in Rubens' Descent](#ai-generated-summary-the-sorrow-and-the-glory-in-rubens-descent)
+    - [The Descent from the Cross (1616-1617) by Rubens: A dynamic, dramatic depiction of Christ's descent](#the-descent-from-the-cross-1616-1617-by-rubens-a-dynamic-dramatic-depiction-of-christs-descent)
+  - [July 03, 2025](#july-03-2025)
+    - [Beyond the Tomb](#beyond-the-tomb)
+    - [AI-Generated Summary: The Dawn of Redemption](#ai-generated-summary-the-dawn-of-redemption)
+    - [The Three Marys at the Tomb by Annibale Carracci, 17th century at Hermitage Museum, reveals Baroque vividness and drama](#the-three-marys-at-the-tomb-by-annibale-carracci-17th-century-at-hermitage-museum-reveals-baroque-vividness-and-drama)
+  - [July 04, 2025](#july-04-2025)
+    - [Proclaiming Christ](#proclaiming-christ)
+    - [AI-Generated Summary: The Divine Commission and the Art of Witness](#ai-generated-summary-the-divine-commission-and-the-art-of-witness)
+    - [Christ Taking Leave of the Apostles by Duccio, 14th century, Museo dell'Opera, tempera on wood, Gothic details](#christ-taking-leave-of-the-apostles-by-duccio-14th-century-museo-dellopera-tempera-on-wood-gothic-details)
+  - [July 05, 2025](#july-05-2025)
+    - [Power From On High](#power-from-on-high)
+    - [AI-Generated Summary: The Divine Gift and the Art of Waiting](#ai-generated-summary-the-divine-gift-and-the-art-of-waiting)
+    - [Simone Peterzano's Pentecost depicts the Virgin and disciples receiving the Holy Spirit in Mannerist style (Stock Image)](#simone-peterzanos-pentecost-depicts-the-virgin-and-disciples-receiving-the-holy-spirit-in-mannerist-style-stock-image)
+  - [July 06, 2025](#july-06-2025)
+    - [God is Never Outdone](#god-is-never-outdone)
+    - [AI-Generated Summary: The Divine Exchange Between Mother and Son](#ai-generated-summary-the-divine-exchange-between-mother-and-son)
+    - [The Divine Exchange Between Mother and Son (Stock Image)](#the-divine-exchange-between-mother-and-son-stock-image)
+  - [July 07, 2025](#july-07-2025)
+    - [Gifts for Mary](#gifts-for-mary)
+    - [AI-Generated Summary: The Celestial Coronation and the Quiet Heart](#ai-generated-summary-the-celestial-coronation-and-the-quiet-heart)
+    - [Mary, Help of Christians by Giuseppe Rollini (Stock Image)](#mary-help-of-christians-by-giuseppe-rollini-stock-image)
+  - [July 08, 2025](#july-08-2025)
+    - [Bonus: Introduction to Phase Four: “Finding Focus” — The Rosary in a Year (with Fr. Mark-Mary Ames)](#bonus-introduction-to-phase-four-finding-focus--the-rosary-in-a-year-with-fr-mark-mary-ames)
+    - [AI-Generated Summary: The Quiet Work of Prayer](#ai-generated-summary-the-quiet-work-of-prayer)
+    - [Beginning Our Meditation](#beginning-our-meditation)
+    - [AI-Generated Summary: The Humble Astonishment of the Annunciation](#ai-generated-summary-the-humble-astonishment-of-the-annunciation)
+    - [The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace](#the-annunciation-by-fra-angelico-1440s-at-san-marco-florence-a-serene-fresco-masterpiece-of-divine-grace)
+  - [July 09, 2025](#july-09-2025)
+    - [Returning to the Visitation](#returning-to-the-visitation)
+    - [AI-Generated Summary: The New Ark and the Song of Joy](#ai-generated-summary-the-new-ark-and-the-song-of-joy)
+    - [Mary's Magnificat](#marys-magnificat)
+  - [July 10, 2025](#july-10-2025)
+    - [Unworthy Yet Welcomed](#unworthy-yet-welcomed)
+    - [AI-Generated Summary: The Timeless Joy of the Nativity](#ai-generated-summary-the-timeless-joy-of-the-nativity)
+    - [Baroque Nativity scene by Pellegrini, depicting divine joy with mother and child (Stock Image)](#baroque-nativity-scene-by-pellegrini-depicting-divine-joy-with-mother-and-child-stock-image)
+  - [July 11, 2025](#july-11-2025)
+    - [A Renewed 'Yes'](#a-renewed-yes)
+    - [AI-Generated Summary: The Stillness in the Storm](#ai-generated-summary-the-stillness-in-the-storm)
+    - [Fra Angelico's Simeon with the Child Jesus: Temple scene](#fra-angelicos-simeon-with-the-child-jesus-temple-scene)
+  - [July 12, 2025](#july-12-2025)
+    - [Faith in the Silence](#faith-in-the-silence)
+    - [AI-Generated Summary: The Divine Pursuit in the Temple](#ai-generated-summary-the-divine-pursuit-in-the-temple)
+    - [Jesus teaching in the temple as a 12-year-old](#jesus-teaching-in-the-temple-as-a-12-year-old)
+  - [July 13, 2025](#july-13-2025)
+    - [Beloved Sons and Daughters](#beloved-sons-and-daughters)
+    - [AI-Generated Summary: The Sacred Waters and the Beloved Son](#ai-generated-summary-the-sacred-waters-and-the-beloved-son)
+    - [Fresco depicting the Baptism of Christ (Stock Image)](#fresco-depicting-the-baptism-of-christ-stock-image)
+  - [July 14, 2025](#july-14-2025)
+    - [New Wine, New Life](#new-wine-new-life)
+    - [AI-Generated Summary: The Divine Bridegroom and the Miracle at Cana](#ai-generated-summary-the-divine-bridegroom-and-the-miracle-at-cana)
+    - [Carl Bloch's The Wedding at Cana depicts the miracle of turning water into wine](#carl-blochs-the-wedding-at-cana-depicts-the-miracle-of-turning-water-into-wine)
+  - [July 15, 2025](#july-15-2025)
+    - [Invited to the Kingdom](#invited-to-the-kingdom)
+    - [AI-Generated Summary: The Kingdom and the Storm](#ai-generated-summary-the-kingdom-and-the-storm)
+    - [Rembrandt's Christ in the Storm on the Sea of Galilee depicts a biblical scene of Christ calming the storm](#rembrandts-christ-in-the-storm-on-the-sea-of-galilee-depicts-a-biblical-scene-of-christ-calming-the-storm)
+  - [July 16, 2025](#july-16-2025)
+    - [Mystery of Light](#mystery-of-light)
+    - [AI-Generated Summary: The Light That Comes From Within](#ai-generated-summary-the-light-that-comes-from-within)
+    - [The Transfiguration by Raphael depicts Christ with Moses and Elijah](#the-transfiguration-by-raphael-depicts-christ-with-moses-and-elijah)
+  - [July 17, 2025](#july-17-2025)
+    - [The Love of Jesus](#the-love-of-jesus)
+    - [AI-Generated Summary: The Divine Ingenuity of Love](#ai-generated-summary-the-divine-ingenuity-of-love)
+    - [Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance (Stock Image)](#giacomo-raffaelis-mosaic-the-last-supper-in-minoritenkirche-vienna-vividly-portrays-jesus-and-his-disciples-in-a-moment-of-sacred-significance-stock-image)
+  - [July 18, 2025](#july-18-2025)
+    - [What the Garden Reveals](#what-the-garden-reveals)
+    - [AI-Generated Summary: The Choice Between Rebellion and Obedience](#ai-generated-summary-the-choice-between-rebellion-and-obedience)
+    - [Vicente Macip's depiction of Jesus in the Garden of Gethsemane (Stock Image)](#vicente-macips-depiction-of-jesus-in-the-garden-of-gethsemane-stock-image)
+  - [July 19, 2025](#july-19-2025)
+    - [Glory Hidden in Suffering](#glory-hidden-in-suffering)
+    - [AI-Generated Summary: The Scourging and the Prodigal](#ai-generated-summary-the-scourging-and-the-prodigal)
+    - [The Flagellation by Agostino Ciampelli, a fresco depicting the scourging of Christ](#the-flagellation-by-agostino-ciampelli-a-fresco-depicting-the-scourging-of-christ)
+  - [July 20, 2025](#july-20-2025)
+    - [Thorns for Love](#thorns-for-love)
+    - [AI-Generated Summary: The Mockery of Kings and the Sovereignty of Suffering](#ai-generated-summary-the-mockery-of-kings-and-the-sovereignty-of-suffering)
+    - [Titian's dramatic 'The Crowning with Thorns' portrays Christ's suffering, blending intense emotion with masterful composition in this Louvre masterpiece](#titians-dramatic-the-crowning-with-thorns-portrays-christs-suffering-blending-intense-emotion-with-masterful-composition-in-this-louvre-masterpiece)
+  - [July 21, 2025](#july-21-2025)
+    - [Scapegoat and Savior](#scapegoat-and-savior)
+    - [AI-Generated Summary: The Weight of Glory in Bearing the Cross](#ai-generated-summary-the-weight-of-glory-in-bearing-the-cross)
+    - [Jesus, Carrying His Cross, Helped by Simon of Cyrene (Stock Image)](#jesus-carrying-his-cross-helped-by-simon-of-cyrene-stock-image)
+  - [July 22, 2025](#july-22-2025)
+    - [God's Relentless Pursuit](#gods-relentless-pursuit)
+    - [AI-Generated Summary: The Divine Embrace and the Rainbow of Promise](#ai-generated-summary-the-divine-embrace-and-the-rainbow-of-promise)
+    - [Fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852) (Stock Image)](#fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-stock-image)
+  - [July 23, 2025](#july-23-2025)
+    - [Transcending Death](#transcending-death)
+    - [AI-Generated Summary: The Dawn of Everlasting Life](#ai-generated-summary-the-dawn-of-everlasting-life)
+    - [Caravaggio’s The Incredulity of Saint Thomas (Stock Image)](#caravaggios-the-incredulity-of-saint-thomas-stock-image)
+  - [July 24, 2025](#july-24-2025)
+    - [With Us Always](#with-us-always)
+    - [AI-Generated Summary: The Ascension and the Ever-Present Christ](#ai-generated-summary-the-ascension-and-the-ever-present-christ)
+    - [Bernardino Gandino's 'Ascension of the Lord' portrays Christ ascending to heaven, his footprints left on stone below, surrounded by awe-struck apostles (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-portrays-christ-ascending-to-heaven-his-footprints-left-on-stone-below-surrounded-by-awe-struck-apostles-stock-image)
+  - [July 25, 2025](#july-25-2025)
+    - [Promise of the Father](#promise-of-the-father)
+    - [AI-Generated Summary: The Wine of the Spirit and the Patience of Prayer](#ai-generated-summary-the-wine-of-the-spirit-and-the-patience-of-prayer)
+    - [Jean Restout II's Pentecost (1732) vividly portrays the biblical event with dramatic Baroque flair, showing the apostles and Mary receiving the Holy Spirit (Stock Image)](#jean-restout-iis-pentecost-1732-vividly-portrays-the-biblical-event-with-dramatic-baroque-flair-showing-the-apostles-and-mary-receiving-the-holy-spirit-stock-image)
+  - [July 26, 2025](#july-26-2025)
+    - [Fiat by Fiat](#fiat-by-fiat)
+    - [AI-Generated Summary: The Assumption and the Song of Hope](#ai-generated-summary-the-assumption-and-the-song-of-hope)
+    - [Magnificat: A painting by Jean-Baptiste Jouvenet (Stock Image)](#magnificat-a-painting-by-jean-baptiste-jouvenet-stock-image)
+  - [July 27, 2025](#july-27-2025)
+    - [Mary is With Us](#mary-is-with-us)
+    - [AI-Generated Summary: The Queen Mother and Her Divine Crown](#ai-generated-summary-the-queen-mother-and-her-divine-crown)
+    - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-velazquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
 
 <!-- tocstop -->
 
@@ -5900,7 +5901,7 @@ Thus, in sacrament and art alike, we glimpse the same truth: love is ever invent
 
 ##### Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance (Stock Image)
 
-[![Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance](July/jpgs/lastsupperraffaeli.jpg)](<https://img.pixers.pics/pho_wat(s3:700/FO/64/35/99/27/700_FO64359927_6dfc0ba27fcd9eeb72fb58293cbdf30a.jpg,700,356,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,306,jpg)/stickers-vienna-mosaic-of-last-supper-copy-leonardo-da-vinci.jpg.jpg> "Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance")
+[![Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance](July/jpgs/lastsupperraffaeli.jpg)](https://img.pixers.pics/pho_wat(s3:700/FO/64/35/99/27/700_FO64359927_6dfc0ba27fcd9eeb72fb58293cbdf30a.jpg,700,356,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,306,jpg)/stickers-vienna-mosaic-of-last-supper-copy-leonardo-da-vinci.jpg.jpg "Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance")
 
 #### July 18, 2025
 
