@@ -1,4 +1,8 @@
-<!-- toc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+
+<!---toc start-->
 
 - [July 2025](#july-2025)
   - [July 01, 2025](#july-01-2025)
@@ -110,9 +114,11 @@
   - [July 27, 2025](#july-27-2025)
     - [Mary is With Us](#mary-is-with-us)
     - [AI-Generated Summary: The Queen Mother and Her Divine Crown](#ai-generated-summary-the-queen-mother-and-her-divine-crown)
-    - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-velazquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
+    - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-vel%C3%A1zquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
 
-<!-- tocstop -->
+<!---toc end-->
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # July 2025
 
