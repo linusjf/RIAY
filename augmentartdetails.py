@@ -47,7 +47,6 @@ class ArtDetailsAugmenter:
             'model': self.config.get(ConfigConstants.TEXT_LLM_MODEL),
             'art_details_prompt': self.config.get(ConfigConstants.ART_DETAILS_AUGMENT_PROMPT)
         }
-        self.logger.info(llm_config)
         return llm_config
 
     def _validate_config(self, config: Dict[str, Optional[str]]) -> None:
@@ -67,7 +66,6 @@ class ArtDetailsAugmenter:
                 {"role": "user", "content": f"{config['art_details_prompt']}\n\nInput JSON:\n{json.dumps(art_json, indent=2)}"}
             ]
         }
-        self.logger.info(llm_payload)
         return llm_payload
 
     def _clean_output(self, output: str) -> str:
