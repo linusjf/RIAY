@@ -27,6 +27,8 @@ source "${SCRIPT_DIR}/lib/lockconfig.sh"
 source "${SCRIPT_DIR}/lib/validators.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
+readonly TOC_GENERATOR="doctoc"
+
 #######################################
 # Generate or update table of contents
 # Globals: none
@@ -38,11 +40,9 @@ lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 generate_toc() {
   local file="$1"
 
-  if ! markdown-toc-gen check "${file}" &> /dev/null; then
-    if ! markdown-toc-gen update "${file}" > /dev/null; then
-      err "Error: Failed to generate TOC for '${file}'"
-      return $EXIT_TOC_GENERATION_ERROR
-    fi
+  if ! doctoc "${file}" &> /dev/null; then
+    err "Error: Failed to generate TOC for '${file}'"
+    return $EXIT_TOC_GENERATION_ERROR
   fi
   return $EXIT_SUCCESS
 }
@@ -81,7 +81,7 @@ Exit Codes:
   0 - Success
   1 - Invalid arguments (incorrect usage or missing file)
   2 - File access error (file not found or unreadable)
-  3 - Dependency error (markdown-toc-gen not available)
+  3 - Dependency error (${TOC_GENERATOR} not available)
   4 - TOC generation error (failed to create/update TOC)
 
 Examples:
@@ -122,7 +122,7 @@ main() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require_commands date tee markdown-toc-gen cat || exit $EXIT_DEPENDENCY_ERROR
+  require_commands date tee "$TOC_GENERATOR" cat || exit $EXIT_DEPENDENCY_ERROR
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
