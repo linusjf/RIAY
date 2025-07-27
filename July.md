@@ -109,7 +109,7 @@
 - [July 27, 2025](#july-27-2025)
   - [Mary is With Us](#mary-is-with-us)
   - [AI-Generated Summary: The Queen Mother and Her Divine Crown](#ai-generated-summary-the-queen-mother-and-her-divine-crown)
-  - [Diego Velázquez's Baroque masterpiece depicts the Holy Trinity crowning Mary as Queen of Heaven, showcasing divine grace and regality (Stock Image)](#diego-velzquezs-baroque-masterpiece-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven-showcasing-divine-grace-and-regality-stock-image)
+  - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-velzquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
 
 <!-- tocstop -->
 
@@ -647,6 +647,6 @@ Yet her majesty is not distant, nor her care reserved for the celestial courts a
 
 Velázquez, that master of light and shadow, has captured not just a moment, but an eternal truth: that humility is exalted, that service is kingship, and that the hand which once cradled the Christ now holds a scepter for our sake. Let us then look upon this work not as a relic of the past, but as a mirror of realities beyond time, where mercy and majesty walk as one.
 
-### Diego Velázquez's Baroque masterpiece depicts the Holy Trinity crowning Mary as Queen of Heaven, showcasing divine grace and regality (Stock Image)
+### Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)
 
-[![Diego Velázquez's Baroque masterpiece depicts the Holy Trinity crowning Mary as Queen of Heaven, showcasing divine grace and regality](July/jpgs/coronationvirginvelazquez.jpg)](https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/4-coronation-of-the-virgin-diego-velazquez.jpg "Diego Velázquez's Baroque masterpiece depicts the Holy Trinity crowning Mary as Queen of Heaven, showcasing divine grace and regality")
+[![Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene](July/jpgs/coronationvirginvelazquez.jpg)](https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/the-coronation-of-the-virgin-diegovelazquez.jpg "Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene")
