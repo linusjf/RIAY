@@ -5541,6 +5541,9 @@ This is no mere depiction of suffering, but a window into its strange redemption
   - [Fiat by Fiat](#fiat-by-fiat)
   - [AI-Generated Summary: The Assumption and the Song of Hope](#ai-generated-summary-the-assumption-and-the-song-of-hope)
   - [Magnificat: A painting by Jean-Baptiste Jouvenet (Stock Image)](#magnificat-a-painting-by-jean-baptiste-jouvenet-stock-image)
+- [July 27, 2025](#july-27-2025)
+  - [Mary is With Us](#mary-is-with-us)
+  - [AI-Generated Summary: The Queen Mother and Her Divine Crown](#ai-generated-summary-the-queen-mother-and-her-divine-crown)
 
 <!-- tocstop -->
 
@@ -6063,6 +6066,20 @@ And so the _Magnificat_ echoes still, a song older than the world, yet ever new.
 ##### Magnificat: A painting by Jean-Baptiste Jouvenet (Stock Image)
 
 [![Magnificat: A painting by Jean-Baptiste Jouvenet](July/jpgs/magnificat.jpg)](https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/magnificat-jean-baptiste-jouvenet.jpg "Magnificat: A painting by Jean-Baptiste Jouvenet")
+
+#### July 27, 2025
+
+##### Mary is With Us
+
+[![Mary is With Us](July/jpgs/Day208.jpg)](https://youtu.be/UftREtQ4Tp0 "Mary is With Us")
+
+##### AI-Generated Summary: The Queen Mother and Her Divine Crown
+
+Consider, dear reader, the painting _The Coronation of the Virgin_ by Diego Velázquez, where the Trinity—Father, Son, and Holy Spirit—bestow upon Mary her heavenly crown. Here is no mere mortal woman, but the Mother of God exalted, radiant in Baroque splendor, her robes rich with color, her face alight with divine favor. This is no idle ceremony; it is the fulfillment of a promise, the crowning of she who bore the Word and now reigns as Queen of Heaven.
+
+Yet her majesty is not distant, nor her care reserved for the celestial courts alone. Like a mother who guards her children from wolves, she stands between our frail hearts and the prowling Enemy, offering refuge to the tempted, solace to the despairing. In her, we see both warrior and nurturer—a paradox only to those who forget that love is the fiercest force in all creation.
+
+Velázquez, that master of light and shadow, has captured not just a moment, but an eternal truth: that humility is exalted, that service is kingship, and that the hand which once cradled the Christ now holds a scepter for our sake. Let us then look upon this work not as a relic of the past, but as a mirror of realities beyond time, where mercy and majesty walk as one.
 
 ## August
 
