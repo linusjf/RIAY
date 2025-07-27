@@ -23,8 +23,8 @@ logger = LoggerFactory.get_logger(
     log_to_file=config.get(ConfigConstants.LOGGING, False)
 )
 
-TOC_START_MARKER: str = "<!-- toc -->"
-TOC_END_MARKER: str = "<!-- tocstop -->"
+TOC_START_MARKER: str = "<!-- START doctoc generated TOC please keep comment here to allow auto update -->"
+TOC_END_MARKER: str = "<!-- END doctoc generated TOC please keep comment here to allow auto update -->"
 TOC_PATTERN: Pattern[str] = re.compile(
     rf"{re.escape(TOC_START_MARKER)}.*?{re.escape(TOC_END_MARKER)}",
     flags=re.DOTALL,
