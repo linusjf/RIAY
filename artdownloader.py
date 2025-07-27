@@ -22,7 +22,7 @@ from serpapi import GoogleSearch
 from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, extract_domain_from_url, clean_filename
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
-from simtools import compare_terms, MatchMode
+from simtools import THRESHOLDS, compare_terms, MatchMode
 from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
@@ -220,7 +220,7 @@ class ArtDownloader:
                 title = image["title"]
                 image_meta_data = " ".join(str(p) for p in [title, clean_filename_text(url)] if p is not None)
                 score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.COSINE)
-                if score >= 0.7:
+                if score >= THRESHOLDS["cosine"] :
                     qualifying_results.append((image, score))
 
             if not qualifying_results:
@@ -283,11 +283,11 @@ class ArtDownloader:
                 snippet = strip_span_tags_but_keep_contents(result["snippet"])
                 result_meta_data = " ".join(str(p) for p in [title, titlesnippet, snippet] if p is not None)
                 score = compare_terms(detailed_query.lower(), result_meta_data.lower(), MatchMode.COSINE)
-                if score >= 0.7:
+                if score >= THRESHOLDS["cosine"]:
                     qualifying_results.append((result, score))
 
             if not qualifying_results:
-                self.logger.error("No qualifying results found (score >= 0.7)")
+                self.logger.error(f"No qualifying results found (score >= {THRESHOLDS['cosine']})")
                 return False
 
             success = False
@@ -347,14 +347,14 @@ class ArtDownloader:
                 page_meta_data = " ".join(str(p) for p in [key, title, excerpt, description] if p is not None)
                 score = compare_terms(detailed_query.lower(), page_meta_data.lower(), MatchMode.COSINE)
 
-                if score >= 0.7:
+                if score >= THRESHOLDS["cosine"]:
                     self.logger.info(f"Qualified page {idx+1}: {title} (score: {score:.3f})")
                     qualifying_pages.append((title, score))
                 else:
                     self.logger.info(f"Excluded page {idx+1}: {title} (score: {score:.3f})")
 
             if not qualifying_pages:
-                self.logger.error("No qualifying pages found (score >= 0.7)")
+                self.logger.error(f"No qualifying pages found (score >= {THRESHOLDS['cosine']})")
                 return False
 
             success = False
@@ -393,14 +393,14 @@ class ArtDownloader:
                 page_meta_data = " ".join(str(p) for p in [key, title, excerpt, description] if p is not None)
                 score = compare_terms(enhanced_query.lower(), page_meta_data.lower(), MatchMode.COSINE)
 
-                if score >= 0.7:
+                if score >= THRESHOLDS["cosine"]:
                     self.logger.info(f"Qualified file {idx+1}: {file} (score: {score:.3f})")
                     qualifying_pages.append((file, score))
                 else:
                     self.logger.info(f"Excluded file {idx+1}: {file} (score: {score:.3f})")
 
             if not qualifying_pages:
-                self.logger.error("No qualifying files found (score >= 0.7)")
+                self.logger.error(f"No qualifying files found (score >= {THRESHOLDS['cosine']})")
                 return False
 
             success = False
@@ -455,14 +455,14 @@ class ArtDownloader:
                 image_meta_data = " ".join(str(p) for p in [title, clean_filename_text(url)] if p is not None)
                 score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.COSINE)
 
-                if score >= 0.7:
+                if score >= THRESHOLDS["cosine"]:
                     self.logger.info(f"Qualified image {idx+1}: {url} (score: {score:.3f})")
                     qualifying_pages.append((url, score))
                 else:
                     self.logger.info(f"Excluded file {idx+1}: {url} (score: {score:.3f})")
 
             if not qualifying_pages:
-                self.logger.error("No qualifying images found (score >= 0.7)")
+                self.logger.error(f"No qualifying images found (score >= {THRESHOLDS['cosine']})")
                 return False
 
             success = False
