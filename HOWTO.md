@@ -33,7 +33,7 @@
 - [gm](http://www.graphicsmagick.org/)
 - [m4](https://www.gnu.org/software/m4/m4.html)
 - [stitchmd](https://github.com/abhinav/stitchmd)
-- [markdown-toc-gen](https://github.com/thesilk-tux/markdown-toc-gen)
+- [doctoc](https://github.com/ktechhub/doctoc)
 - [mdformat](https://github.com/hukkin/mdformat)
 - [markdownlint](https://github.com/DavidAnson/markdownlint)
 - [vale](https://github.com/errata-ai/vale)
