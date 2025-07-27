@@ -1,7 +1,4 @@
-# HOWTO
-
-<!-- markdownlint-disable MD033 -->
-
+<!-- generate toc using markdown-toc-gen only -->
 <!-- toc -->
 
 - [Prerequisites](#prerequisites)
@@ -26,6 +23,10 @@
 - [Using the commands utility that accepts text commands in file `commands.txt`](#using-the-commands-utility-that-accepts-text-commands-in-file-commandstxt)
 
 <!-- tocstop -->
+
+# HOWTO
+
+<!-- markdownlint-disable MD033 -->
 
 ## Prerequisites
 
