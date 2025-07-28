@@ -5483,6 +5483,8 @@ This is no mere depiction of suffering, but a window into its strange redemption
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
 
 <!---toc start-->
@@ -5598,10 +5600,17 @@ This is no mere depiction of suffering, but a window into its strange redemption
     - [Mary is With Us](#mary-is-with-us)
     - [AI-Generated Summary: The Queen Mother and Her Divine Crown](#ai-generated-summary-the-queen-mother-and-her-divine-crown)
     - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-vel%C3%A1zquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
+  - [July 28, 2025](#july-28-2025)
+    - [Praying With the Father](#praying-with-the-father)
+    - [AI-Generated Summary: The Heart of Prayer as Communion with the Father](#ai-generated-summary-the-heart-of-prayer-as-communion-with-the-father)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- toc -->
+
+<!-- tocstop -->
 
 ### July 2025
 
@@ -6140,6 +6149,16 @@ Velázquez, that master of light and shadow, has captured not just a moment, but
 ##### Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)
 
 [![Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene](July/jpgs/coronationvirginvelazquez.jpg)](https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/the-coronation-of-the-virgin-diegovelazquez.jpg "Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene")
+
+#### July 28, 2025
+
+##### Praying With the Father
+
+[![Praying With the Father](July/jpgs/Day209.jpg)](https://youtu.be/wjhuB5nUQ28 "Praying With the Father")
+
+##### AI-Generated Summary: The Heart of Prayer as Communion with the Father
+
+Prayer, dear friend, is not chiefly a matter of words, nor even of requests, but of coming awake to the living presence of the Father. He is no distant sovereign, but One who sees you plainly, hears you gladly, and takes delight in your turning toward Him. Wherever you kneel—be it a chapel or a kitchen corner—He is there, nearer than your own breath. This is the great secret: to remember that prayer is the meeting of a child with his Father, and all else flows from that. The repetitions of devotion, like well-worn paths, are but means to steady the wandering mind until it rests in Him. Let this truth sink deep—your Father waits, and in that knowing, all prayer begins.
 
 ## August
 
