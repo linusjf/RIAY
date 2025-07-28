@@ -286,15 +286,15 @@ class ArtDownloader:
             if not search_results:
                 self.logger.error("No matching images found.")
                 return False
-            qualifying_results: List[Tuple[Dict[str, Any], float]] = []
-            for result in search_results:
-                title = clean_filename(result["title"])
-                titlesnippet = strip_span_tags_but_keep_contents(result["titlesnippet"])
-                snippet = strip_span_tags_but_keep_contents(result["snippet"])
-                result_meta_data = " ".join(str(p) for p in [title, titlesnippet, snippet] if p is not None)
-                score = compare_terms(detailed_query.lower(), result_meta_data.lower(), MatchMode.COSINE)
-                if score >= THRESHOLDS["cosine"]:
-                    qualifying_results.append((result, score))
+
+            def extract_metadata(result):
+                result_meta_data = " ".join(str(p) for p in [clean_filename(result["title"]),
+                                                             strip_span_tags_but_keep_contents(result["titlesnippet"]),
+                                                             strip_span_tags_but_keep_contents(result["snippet"])
+                                                             ] if p)
+                return result_meta_data
+
+            qualifying_results = self.filter_and_score_results(search_results, extract_metadata, detailed_query)
 
             if not qualifying_results:
                 self.logger.error(f"No qualifying results found (score >= {THRESHOLDS['cosine']})")
