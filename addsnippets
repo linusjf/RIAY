@@ -116,7 +116,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  require_commands tee date cat markdown-toc-gen
+  require_commands tee date cat
   if "${LOGGING:-false}"; then
     timestamp=$(date +"%Y%m%d_%H%M%S")
     {
