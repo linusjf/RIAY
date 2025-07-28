@@ -387,29 +387,25 @@ class ArtDownloader:
                 self.logger.error("No matching images found.")
                 return False
 
-            qualifying_pages: List[Tuple[str, float]] = []
+            def extract_metadata(page):
+                page_meta_data = " ".join(str(p) for p in
+                                          [
+                                              clean_filename_text(clean_filename(page.get("key"))),
+                                              clean_filename_text(clean_filename(page.get("title"))),
+                                              strip_span_tags_but_keep_contents(page.get("excerpt")),
+                                              page.get("description")
+                                          ] if p)
+                return page_meta_data
 
-            for idx, page in enumerate(pages[:self.MAX_ALLOWED_RESULTS]):
-                file = page.get("key")
-                key = clean_filename_text(clean_filename(page.get("key")))
-                title = clean_filename_text(clean_filename(page.get("title", "")))
-                excerpt = strip_span_tags_but_keep_contents(page.get("excerpt", ""))
-                description = page.get("description", "")
-                page_meta_data = " ".join(str(p) for p in [key, title, excerpt, description] if p is not None)
-                score = compare_terms(enhanced_query.lower(), page_meta_data.lower(), MatchMode.COSINE)
-
-                if score >= THRESHOLDS["cosine"]:
-                    self.logger.info(f"Qualified file {idx+1}: {file} (score: {score:.3f})")
-                    qualifying_pages.append((file, score))
-                else:
-                    self.logger.info(f"Excluded file {idx+1}: {file} (score: {score:.3f})")
+            qualifying_pages = self.filter_and_score_results(pages, extract_metadata, enhanced_query)
 
             if not qualifying_pages:
                 self.logger.error(f"No qualifying files found (score >= {THRESHOLDS['cosine']})")
                 return False
 
             success = False
-            for idx, (file, score) in enumerate(qualifying_pages):
+            for idx, (page, score) in enumerate(qualifying_pages):
+                file = page.get("key")
                 self.logger.info(f"Downloading image for qualified file {idx+1}: {file}")
                 unique_filename = f"{filename_base}_{idx+1}"
                 file_response = requests.get(
