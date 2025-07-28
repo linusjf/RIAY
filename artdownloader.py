@@ -397,7 +397,7 @@ class ArtDownloader:
                                           ] if p)
                 return page_meta_data
 
-            qualifying_pages = self.filter_and_score_results(pages, extract_metadata, enhanced_query)
+            qualifying_pages = self.filter_and_score_results(pages[:self.MAX_ALLOWED_RESULTS], extract_metadata, enhanced_query)
 
             if not qualifying_pages:
                 self.logger.error(f"No qualifying files found (score >= {THRESHOLDS['cosine']})")
@@ -447,27 +447,23 @@ class ArtDownloader:
             if not images:
                 return False
 
-            qualifying_pages: List[Tuple[str, float]] = []
-            for idx, image in enumerate(images[:self.MAX_ALLOWED_RESULTS]):
-                title = image.get("title")
-                url = image.get("original")
-                if not url:
-                    continue
-                image_meta_data = " ".join(str(p) for p in [title, clean_filename_text(url)] if p is not None)
-                score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.COSINE)
+            def extract_metadata(image):
+                image_meta_data = " ".join(str(p) for p in
+                                          [
+                                              image.get("title"),
+                                              clean_filename_text(image.get("original"))
+                                          ] if p)
+                return image_meta_data
 
-                if score >= THRESHOLDS["cosine"]:
-                    self.logger.info(f"Qualified image {idx+1}: {url} (score: {score:.3f})")
-                    qualifying_pages.append((url, score))
-                else:
-                    self.logger.info(f"Excluded file {idx+1}: {url} (score: {score:.3f})")
+            qualifying_pages = self.filter_and_score_results(images[:self.MAX_ALLOWED_RESULTS], extract_metadata, query)
 
             if not qualifying_pages:
                 self.logger.error(f"No qualifying images found (score >= {THRESHOLDS['cosine']})")
                 return False
 
             success = False
-            for idx, (url, score) in enumerate(qualifying_pages):
+            for idx, (image, score) in enumerate(qualifying_pages):
+                url = image.get("original")
                 domain = extract_domain_from_url(url)
                 if domain:
                     if any(social_media_domain.lower() in domain for social_media_domain in self.SOCIAL_MEDIA_SITES):
