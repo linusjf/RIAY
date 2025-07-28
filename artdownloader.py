@@ -103,6 +103,17 @@ class ArtDownloader:
             self.logger.error(f"Error checking image dimensions: {e}")
             return False
 
+    def get_extension_from_mime(self, mime_type):
+        mapping = {
+        'image/png': '.png',
+        'image/webp': '.webp',
+        'image/svg+xml': '.svg',
+        'image/avif': '.avif',
+        'image/jpeg': '.jpg'
+        }
+        return mapping.get(mime_type.split(";")[0].strip(), '.jpg')
+
+
     def save_image(self, url: str, filename: str) -> bool:
         """Save an image from URL to local file."""
         if url in self.DOWNLOADED_URLS:
@@ -142,16 +153,7 @@ class ArtDownloader:
                     ext = os.path.splitext(url)[1].lower()
                     if not ext or ext not in self.SUPPORTED_FORMATS:
                         content_type = response.headers.get('content-type', '')
-                        if 'image/png' in content_type:
-                            ext = '.png'
-                        elif 'image/webp' in content_type:
-                            ext = '.webp'
-                        elif 'image/svg+xml' in content_type:
-                            ext = '.svg'
-                        elif 'image/avif' in content_type:
-                            ext = '.avif'
-                        else:
-                            ext = '.jpg'
+                        ext = self.get_extension_from_mime(content_type)
 
                     temp_filename = os.path.splitext(filename)[0] + ext
                     with open(temp_filename, "wb") as f:
