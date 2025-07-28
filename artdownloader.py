@@ -360,7 +360,8 @@ class ArtDownloader:
                 return False
 
             success = False
-            for idx, (title, score) in enumerate(qualifying_pages):
+            for idx, (result, score) in enumerate(qualifying_pages):
+                title = result["title"]
                 self.logger.info(f"Downloading image for qualified page {idx+1}: {title} {score}")
                 unique_filename = f"{filename_base}_{idx+1}"
                 if self.download_from_wikimedia_search(title, detailed_query, unique_filename, "wikipedia"):
