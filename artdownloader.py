@@ -206,6 +206,19 @@ class ArtDownloader:
         with DDGS() as ddgs:
             return ddgs.images(query, max_results=max_results)
 
+    def filter_and_score_results(self, results, extract_metadata_fn, query, threshold=THRESHOLDS["cosine"]):
+        qualifying = []
+        for idx, result in enumerate(results):
+            metadata = extract_metadata_fn(result)
+            score = compare_terms(query.lower(), metadata.lower(), MatchMode.COSINE)
+            if score >= threshold:
+                print(f"✅ Qualified result {idx+1} (score: {score:.3f})", file=sys.stderr)
+                qualifying.append((result, score))
+            else:
+                print(f"❌ Excluded result {idx+1} (score: {score:.3f})", file=sys.stderr)
+        return qualifying
+
+
     def download_from_duckduckgo(self, query: str, filename_base: str) -> bool:
         """Download image from DuckDuckGo search."""
         self.logger.info(f"DuckDuckGo search for: {query}")
@@ -214,17 +227,14 @@ class ArtDownloader:
             if not results:
                 self.logger.error("No matching images found.")
                 return False
-            qualifying_results: List[Tuple[Dict[str, Any], float]] = []
-            for image in results[0:5]:
-                url = image["image"]
-                title = image["title"]
-                image_meta_data = " ".join(str(p) for p in [title, clean_filename_text(url)] if p is not None)
-                score = compare_terms(query.lower(), image_meta_data.lower(), MatchMode.COSINE)
-                if score >= THRESHOLDS["cosine"] :
-                    qualifying_results.append((image, score))
+
+            def extract_metadata(item):
+                return " ".join(str(p) for p in [item["title"], clean_filename_text(item["image"])] if p)
+
+            qualifying_results = self.filter_and_score_results(results[:5], extract_metadata, query)
 
             if not qualifying_results:
-                self.logger.error("No qualifying results found (score >= 50.0)")
+                self.logger.error(f"No qualifying results found (score >= {THRESHOLDS['cosine']} )")
                 return False
 
             success = False
