@@ -33,19 +33,20 @@ class ArtDownloader:
     """Download artwork images from various sources."""
 
     SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
+    MAX_ALLOWED_RESULTS = 5
+    """Initialize the downloader with configuration."""
+    config: ConfigEnv = ConfigEnv(include_os_env=True)
+    STOCK_PHOTO_SITES: List[str] = config.get(ConfigConstants.STOCK_PHOTO_SITES, [])
+    SOCIAL_MEDIA_SITES: List[str] = config.get(ConfigConstants.SOCIAL_MEDIA_SITES, [])
+    FIND_ALTERNATE_IMAGES: bool = config.get(ConfigConstants.FIND_ALTERNATE_IMAGES, False)
+    SERPAPI_API_KEY: str = config.get(ConfigConstants.SERP_API_KEY, "")
+    SAVE_DIR: str = config.get(ConfigConstants.ART_DOWNLOADER_DIR, 'artdownloads')
+    MIN_IMAGE_WIDTH: int = config.get(ConfigConstants.MIN_IMAGE_WIDTH, 0)
+    MIN_IMAGE_HEIGHT: int = config.get(ConfigConstants.MIN_IMAGE_HEIGHT, 0)
+    SEARCH_WIKIPEDIA: bool = config.get(ConfigConstants.SEARCH_WIKIPEDIA, True)
+    MAX_RETRIES: int = config.get(ConfigConstants.CURL_MAX_RETRIES, 5)
 
     def __init__(self, params: Optional[Dict[str, str]] = None) -> None:
-        """Initialize the downloader with configuration."""
-        self.config: ConfigEnv = ConfigEnv()
-        self.STOCK_PHOTO_SITES: List[str] = self.config.get(ConfigConstants.STOCK_PHOTO_SITES, [])
-        self.SOCIAL_MEDIA_SITES: List[str] = self.config.get(ConfigConstants.SOCIAL_MEDIA_SITES, [])
-        self.FIND_ALTERNATE_IMAGES: bool = self.config.get(ConfigConstants.FIND_ALTERNATE_IMAGES, False)
-        self.SERPAPI_API_KEY: str = self.config.get(ConfigConstants.SERP_API_KEY, "")
-        self.SAVE_DIR: str = self.config.get(ConfigConstants.ART_DOWNLOADER_DIR, 'artdownloads')
-        self.MIN_IMAGE_WIDTH: int = self.config.get(ConfigConstants.MIN_IMAGE_WIDTH, 0)
-        self.MIN_IMAGE_HEIGHT: int = self.config.get(ConfigConstants.MIN_IMAGE_HEIGHT, 0)
-        self.SEARCH_WIKIPEDIA: int = self.config.get(ConfigConstants.SEARCH_WIKIPEDIA, True)
-
         # Initialize artwork metadata fields
         self.title: Optional[str] = None
         self.artist: Optional[str] = None
@@ -135,7 +136,7 @@ class ArtDownloader:
                 )
             }
             attempt = 0
-            while attempt < 5:
+            while attempt < self.MAX_RETRIES:
                 response = session.get(url, headers=headers, stream=True)
                 if response.status_code == 200:
                     ext = os.path.splitext(url)[1].lower()
@@ -200,7 +201,7 @@ class ArtDownloader:
     @retry(
         retry=retry_if_exception_type(RatelimitException),
         wait=wait_exponential(min=1, max=10),
-        stop=stop_after_attempt(5),
+        stop=stop_after_attempt(MAX_RETRIES),
     )
     def search_duckduckgo_images(self, query: str, max_results: int = 10) -> List[Dict[str, Any]]:
         with DDGS() as ddgs:
@@ -231,7 +232,7 @@ class ArtDownloader:
             def extract_metadata(item):
                 return " ".join(str(p) for p in [item["title"], clean_filename_text(item["image"])] if p)
 
-            qualifying_results = self.filter_and_score_results(results[:5], extract_metadata, query)
+            qualifying_results = self.filter_and_score_results(results[:self.MAX_ALLOWED_RESULTS], extract_metadata, query)
 
             if not qualifying_results:
                 self.logger.error(f"No qualifying results found (score >= {THRESHOLDS['cosine']} )")
@@ -273,7 +274,7 @@ class ArtDownloader:
             "list": "search",
             "srsearch": query,
             "srnamespace": 6,
-            "srlimit": 5,
+            "srlimit": self.MAX_ALLOWED_RESULTS,
             "srprop": "size|wordcount|timestamp|snippet|titlesnippet"
         }
 
@@ -340,7 +341,7 @@ class ArtDownloader:
         self.logger.info(f"Fetching all images from Wikipedia article: {query}")
         try:
             params = {
-                "limit": 5,
+                "limit": self.MAX_ALLOWED_RESULTS,
                 "q": query
             }
             response = requests.get("https://api.wikimedia.org/core/v1/wikipedia/en/search/page", params=params)
@@ -387,7 +388,7 @@ class ArtDownloader:
 
             qualifying_pages: List[Tuple[str, float]] = []
 
-            for idx, page in enumerate(pages[0:5]):
+            for idx, page in enumerate(pages[:self.MAX_ALLOWED_RESULTS]):
                 file = page.get("key")
                 key = clean_filename_text(clean_filename(page.get("key")))
                 title = clean_filename_text(clean_filename(page.get("title", "")))
@@ -450,7 +451,7 @@ class ArtDownloader:
                 return False
 
             qualifying_pages: List[Tuple[str, float]] = []
-            for idx, image in enumerate(images[0:5]):
+            for idx, image in enumerate(images[:self.MAX_ALLOWED_RESULTS]):
                 title = image.get("title")
                 url = image.get("original")
                 if not url:
