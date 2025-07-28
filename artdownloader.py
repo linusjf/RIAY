@@ -347,21 +347,12 @@ class ArtDownloader:
             image_data = response.json()
 
             pages = image_data.get("pages", [])
-            qualifying_pages: List[Tuple[str, float]] = []
 
-            for idx, page in enumerate(pages):
-                key = page.get("key", "")
-                title = page.get("title", "")
-                excerpt = strip_span_tags_but_keep_contents(page.get("excerpt", ""))
-                description = page.get("description", "")
-                page_meta_data = " ".join(str(p) for p in [key, title, excerpt, description] if p is not None)
-                score = compare_terms(detailed_query.lower(), page_meta_data.lower(), MatchMode.COSINE)
+            def extract_metadata(result):
+                result_meta_data = " ".join(str(p) for p in [result["key"],result["title"],strip_span_tags_but_keep_contents(result["excerpt"]),result["description"]] if p)
+                return result_meta_data
 
-                if score >= THRESHOLDS["cosine"]:
-                    self.logger.info(f"Qualified page {idx+1}: {title} (score: {score:.3f})")
-                    qualifying_pages.append((title, score))
-                else:
-                    self.logger.info(f"Excluded page {idx+1}: {title} (score: {score:.3f})")
+            qualifying_pages = self.filter_and_score_results(pages, extract_metadata, detailed_query)
 
             if not qualifying_pages:
                 self.logger.error(f"No qualifying pages found (score >= {THRESHOLDS['cosine']})")
@@ -369,7 +360,7 @@ class ArtDownloader:
 
             success = False
             for idx, (title, score) in enumerate(qualifying_pages):
-                self.logger.info(f"Downloading image for qualified page {idx+1}: {title}")
+                self.logger.info(f"Downloading image for qualified page {idx+1}: {title} {score}")
                 unique_filename = f"{filename_base}_{idx+1}"
                 if self.download_from_wikimedia_search(title, detailed_query, unique_filename, "wikipedia"):
                     success = True
@@ -390,10 +381,12 @@ class ArtDownloader:
                 params=params
             ).json()
             pages = response.get("pages", [])
-            qualifying_pages: List[Tuple[str, float]] = []
             if not pages:
                 self.logger.error("No matching images found.")
                 return False
+
+            qualifying_pages: List[Tuple[str, float]] = []
+
             for idx, page in enumerate(pages[0:5]):
                 file = page.get("key")
                 key = clean_filename_text(clean_filename(page.get("key")))
