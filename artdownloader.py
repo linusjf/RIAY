@@ -12,7 +12,7 @@ import sys
 import time
 import argparse
 import shutil
-from typing import Optional, Dict, List, Tuple, Any
+from typing import Optional, Dict, List, Tuple, Any, Set
 
 import requests
 from duckduckgo_search import DDGS
@@ -73,7 +73,7 @@ class ArtDownloader:
 
         # Track downloaded URLs and results
         self.DOWNLOADED_URLS: Dict[str, str] = {}
-        self.FOUND_STOCK_PHOTOS: List[str] = []
+        self.FOUND_STOCK_PHOTOS: Set[str] = set()
         self.WIKIPEDIA_IMAGES: List[Tuple[str, str, float]] = []
         self.GOOGLE_IMAGES: List[Tuple[str, str, float]] = []
         self.DUCKDUCKGO_IMAGES: List[Tuple[str, str, float]] = []
@@ -200,6 +200,16 @@ class ArtDownloader:
             self.logger.error(f"Error: {error}")
         return False
 
+    def is_social_media_domain(self, domain: str):
+        if any(site in domain for site in self.SOCIAL_MEDIA_SITES):
+            return True
+        return False
+
+    def is_stock_images_domain(self, domain: str):
+        if any(site in domain for site in self.STOCK_PHOTO_SITES):
+            return True
+        return False
+
     @retry(
         retry=retry_if_exception_type(RatelimitException),
         wait=wait_exponential(min=1, max=10),
@@ -245,10 +255,10 @@ class ArtDownloader:
                 url = result["image"]
                 domain = extract_domain_from_url(url)
                 if domain:
-                    if any(social_media_domain.lower() in domain for social_media_domain in self.SOCIAL_MEDIA_SITES):
+                    if self.is_social_media_domain(domain):
                         continue
-                    if any(stock_domain.lower() in domain for stock_domain in self.STOCK_PHOTO_SITES):
-                        self.FOUND_STOCK_PHOTOS.append(url)
+                    if self.is_stock_images_domain(domain):
+                        self.FOUND_STOCK_PHOTOS.add(url)
                         self.DUCKDUCKGO_IMAGES.append((url, "", score))
                         continue
                 filename = os.path.join(
@@ -468,10 +478,10 @@ class ArtDownloader:
                 url = image.get("original")
                 domain = extract_domain_from_url(url)
                 if domain:
-                    if any(social_media_domain.lower() in domain for social_media_domain in self.SOCIAL_MEDIA_SITES):
+                    if self.is_social_media_domain(domain):
                         continue
-                    if any(stock_domain.lower() in domain for stock_domain in self.STOCK_PHOTO_SITES):
-                        self.FOUND_STOCK_PHOTOS.append(url)
+                    if self.is_stock_images_domain(domain):
+                        self.FOUND_STOCK_PHOTOS.add(url)
                         self.GOOGLE_IMAGES.append((url, "", score))
                         continue
                 self.logger.info(f"Downloading image for qualified image {idx+1}: {url}")
