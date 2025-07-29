@@ -138,6 +138,11 @@ class ArtDownloader:
             self.logger.error(f"PDF files not supported: {url}")
             return False
 
+        # Reject URLs with query parameters
+        if '?' in url:
+            self.logger.error(f"URLs with query parameters not supported: {url}")
+            return False
+
         try:
             session = create_session_with_retries()
             headers = {
