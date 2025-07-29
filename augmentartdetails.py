@@ -20,8 +20,8 @@ Environment variables required:
 import os
 import sys
 import json
-import requests
 import re
+import httpx
 from typing import Dict, Any, Optional
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
@@ -82,10 +82,12 @@ class ArtDetailsAugmenter:
             "Authorization": f"Bearer {config['api_key']}",
             "Content-Type": "application/json"
         }
-        payload: Dict[str, Any] = self._build_llm_payload(art_json)
+        payload = self._build_llm_payload(art_json)
         self.logger.info("Sending request to LLM API")
-        response = requests.post(url, headers=headers, json=payload)
-        response.raise_for_status()
+
+        with httpx.Client(timeout=30.0) as client:
+            response = client.post(url, headers=headers, json=payload)
+            response.raise_for_status()
 
         completion = response.json()
         output = completion['choices'][0]['message']['content']
