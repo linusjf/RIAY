@@ -263,7 +263,8 @@ class ArtDownloader:
                     if self.is_social_media_domain(domain):
                         continue
                     if self.is_stock_images_domain(domain):
-                        self.FOUND_STOCK_PHOTOS.add(url)
+                        if '?' not in url:  # Only add to FOUND_STOCK_PHOTOS if no query parameters
+                            self.FOUND_STOCK_PHOTOS.add(url)
                         self.DUCKDUCKGO_IMAGES.append((url, "", score))
                         continue
                 filename = os.path.join(
@@ -486,7 +487,8 @@ class ArtDownloader:
                     if self.is_social_media_domain(domain):
                         continue
                     if self.is_stock_images_domain(domain):
-                        self.FOUND_STOCK_PHOTOS.add(url)
+                        if '?' not in url:  # Only add to FOUND_STOCK_PHOTOS if no query parameters
+                            self.FOUND_STOCK_PHOTOS.add(url)
                         self.GOOGLE_IMAGES.append((url, "", score))
                         continue
                 self.logger.info(f"Downloading image for qualified image {idx+1}: {url}")
