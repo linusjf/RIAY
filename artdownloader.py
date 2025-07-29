@@ -258,13 +258,15 @@ class ArtDownloader:
             success = False
             for idx, (result, score) in enumerate(qualifying_results):
                 url = result["image"]
+                if '?' in url:
+                    self.logger.warning(f"Url has query parameters: rejecting {url}")
+                    continue
                 domain = extract_domain_from_url(url)
                 if domain:
                     if self.is_social_media_domain(domain):
                         continue
                     if self.is_stock_images_domain(domain):
-                        if '?' not in url:  # Only add to FOUND_STOCK_PHOTOS if no query parameters
-                            self.FOUND_STOCK_PHOTOS.add(url)
+                        self.FOUND_STOCK_PHOTOS.add(url)
                         self.DUCKDUCKGO_IMAGES.append((url, "", score))
                         continue
                 filename = os.path.join(
@@ -482,13 +484,15 @@ class ArtDownloader:
             success = False
             for idx, (image, score) in enumerate(qualifying_pages):
                 url = image.get("original")
+                if '?' in url:
+                    self.logger.warning(f"Url has query parameters: rejecting {url}")
+                    continue
                 domain = extract_domain_from_url(url)
                 if domain:
                     if self.is_social_media_domain(domain):
                         continue
                     if self.is_stock_images_domain(domain):
-                        if '?' not in url:  # Only add to FOUND_STOCK_PHOTOS if no query parameters
-                            self.FOUND_STOCK_PHOTOS.add(url)
+                        self.FOUND_STOCK_PHOTOS.add(url)
                         self.GOOGLE_IMAGES.append((url, "", score))
                         continue
                 self.logger.info(f"Downloading image for qualified image {idx+1}: {url}")
