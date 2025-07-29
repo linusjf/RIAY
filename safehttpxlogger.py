@@ -22,7 +22,7 @@ class SafeHttpxLogger:
     REDACT_KEYS: set[str] = {"password", "token", "api_key", "authorization"}
     REDACT_VALUE_PREFIXES: set[str] = {"bearer", "basic"}
     MAX_BODY_LENGTH: int = 200
-    ENABLE_BODY_LOGGING: bool = os.getenv("DEBUG_LOG_PAYLOADS", "false").lower() == "true"
+    ENABLE_BODY_LOGGING: bool = os.getenv("DEBUG_REQUEST_PAYLOADS", "false").lower() == "true"
 
     def __init__(
         self,
@@ -32,7 +32,7 @@ class SafeHttpxLogger:
         max_body_length: Optional[int] = None
     ) -> None:
         """Initialize the logger with optional custom configuration.
-        
+
         Args:
             logger: Custom logger instance to use
             redact_keys: Set of keys to redact in URLs and JSON bodies
@@ -48,18 +48,10 @@ class SafeHttpxLogger:
     def attach(self, client: httpx.Client) -> None:
         """Attach logging hooks to an HTTPX client."""
         client.event_hooks.update({
-            "request": [self._pre_request, self.log_request],
-            "response": [self.log_response, self._post_response]
+            "request":  [self.log_request],
+            "response": [self.log_response]
         })
 
-    def _pre_request(self, request: httpx.Request) -> None:
-        """Store request start time for performance measurement."""
-        request.context["start_time"] = time.time()
-
-    def _post_response(self, response: httpx.Response) -> None:
-        """Log request duration."""
-        duration = time.time() - response.request.context["start_time"]
-        self.logger.debug(f"Request took {duration:.2f} seconds")
 
     def log_request(self, request: httpx.Request) -> None:
         """Log HTTP request details."""
@@ -116,7 +108,7 @@ class SafeHttpxLogger:
                     netloc += f":{parsed.port}"
             else:
                 netloc = parsed.netloc
-                
+
             query: List[Tuple[str, str]] = parse_qsl(parsed.query, keep_blank_values=True)
             redacted_query: List[Tuple[str, str]] = [
                 (k, "***REDACTED***") if k.lower() in self.REDACT_KEYS else (k, v)
@@ -150,10 +142,10 @@ class SafeHttpxLogger:
 
     def _sanitize_json(self, body: str) -> str:
         """Sanitize JSON body by redacting sensitive fields.
-        
+
         Args:
             body: The JSON string to sanitize
-            
+
         Returns:
             Redacted JSON string or fallback message if parsing fails
         """
