@@ -1,4 +1,4 @@
 # commands
 #embedarttoday 199
-addvideo "wjhuB5nUQ28" "Praying With the Father"
+addvideo "xg9Q080piMw" "Relationship With the Son"
 lint

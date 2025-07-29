@@ -5604,6 +5604,9 @@ This is no mere depiction of suffering, but a window into its strange redemption
     - [Praying With the Father](#praying-with-the-father)
     - [AI-Generated Summary: The Heart of Prayer as Communion with the Father](#ai-generated-summary-the-heart-of-prayer-as-communion-with-the-father)
     - [After this manner therefore pray ye Our Father which art in heaven: a painting by Heinrich Jenny (Stock Image)](#after-this-manner-therefore-pray-ye-our-father-which-art-in-heaven-a-painting-by-heinrich-jenny-stock-image)
+  - [July 29, 2025](#july-29-2025)
+    - [Relationship With the Son](#relationship-with-the-son)
+    - [AI-Generated Summary: The Quiet Majesty of the Nativity](#ai-generated-summary-the-quiet-majesty-of-the-nativity)
 
 <!---toc end-->
 
@@ -6164,6 +6167,20 @@ Prayer, dear friend, is not chiefly a matter of words, nor even of requests, but
 ##### After this manner therefore pray ye Our Father which art in heaven: a painting by Heinrich Jenny (Stock Image)
 
 [![After this manner therefore pray ye Our Father which art in heaven: a painting by Heinrich Jenny](July/jpgs/ourfatherinheavenheinrichjenny.jpg)](https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/after-this-manner-therefore-pray-ye-our-father-which-art-in-heaven-heinrich-jenny.jpg "After this manner therefore pray ye Our Father which art in heaven: a painting by Heinrich Jenny")
+
+#### July 29, 2025
+
+##### Relationship With the Son
+
+[![Relationship With the Son](July/jpgs/Day210.jpg)](https://youtu.be/xg9Q080piMw "Relationship With the Son")
+
+##### AI-Generated Summary: The Quiet Majesty of the Nativity
+
+Imagine, if you will, a scene so tender that even the stars bend low to behold it—a child laid in a manger, wrapped in the humility of human flesh, yet radiant with the uncreated Light. This is the Nativity, not as the world paints power, but as Heaven ordains it: small, silent, and sacred. The artist, unnamed but no less devout, captures not merely an event, but the very heart of the Gospel—that God stoops to enter our poverty, turning a stable into a throne.
+
+Here, in strokes of reverence, we see the paradox of eternity cradled in time. The scene whispers of shepherds and angels, of a mother’s awe and a creation hushed in recognition. It is no mere depiction; it is an invitation to kneel, to marvel, and to know that the deepest truths often come clothed in the simplest forms. For in this lowly birth lies the overthrow of all pride, the beginning of the great undoing of death itself.
+
+Let the image linger in your mind, dear reader. For what is art if not a window into the real—a reminder that the story it tells is both history and mystery, and that we, too, are part of its unfolding.
 
 ## August
 
