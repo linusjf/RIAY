@@ -72,6 +72,16 @@ class ArtDetailsAugmenter:
         """Remove markdown code guards from the output."""
         return re.sub(r'^```(?:json)?\s*|\s*```$', '', output, flags=re.MULTILINE).strip()
 
+    @contextlib.contextmanager
+    def suppress_stdout():
+        with open(os.devnull, 'w') as devnull:
+            old_stdout = sys.stdout
+            sys.stdout = devnull
+            try:
+                yield
+            finally:
+                sys.stdout = old_stdout
+
     async def augment_art_details(self, art_json: Dict[str, Any]) -> str:
         """Enhance artwork JSON with additional details from LLM."""
         config = self._get_llm_config()
@@ -92,7 +102,6 @@ class ArtDetailsAugmenter:
         completion = response.json()
         output = completion['choices'][0]['message']['content']
         return self._clean_output(output)
-
 
 async def main() -> None:
     try:
