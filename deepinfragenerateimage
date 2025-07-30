@@ -115,9 +115,9 @@ function main() {
 
   # Show feedback that prompt was received
   if [[ "${VERBOSE:-false}" == "true" ]]; then
-    printf "Received prompt: %s\n" "$prompt"
+    printf "Received prompt: %s\n" "$prompt" >&2
   else
-    printf "Processing prompt...\n"
+    printf "Processing prompt...\n" >&2
   fi
 
   # Generate and process images
