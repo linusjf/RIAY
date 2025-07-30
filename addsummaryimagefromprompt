@@ -126,10 +126,11 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   source "${SCRIPT_DIR}/lib/date.sh" || exit $EXIT_REQUIREMENTS_ERROR
   source "${SCRIPT_DIR}/lib/lockconfig.sh" || exit $EXIT_REQUIREMENTS_ERROR
 
-  require_vars DEEPINFRA_TOKEN YEAR IMAGE_GENERATION_SCRIPT || exit $EXIT_REQUIREMENTS_ERROR
-  require_commands sed basename date tee mv wc cat cp jq || exit $EXIT_REQUIREMENTS_ERROR
-
   lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env" || exit $EXIT_REQUIREMENTS_ERROR
+
+  require_vars DEEPINFRA_TOKEN YEAR IMAGE_GENERATION_SCRIPT || exit $EXIT_REQUIREMENTS_ERROR
+
+  require_commands sed basename date tee mv wc cat cp jq || exit $EXIT_REQUIREMENTS_ERROR
 
   if [[ "$#" -ne 2 ]]; then
     usage >&2
