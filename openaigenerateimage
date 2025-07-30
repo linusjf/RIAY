@@ -57,7 +57,7 @@ function generate_image() {
   local timestamp="$(date +%s)"
   local output_path="$(mktemp -t "image_${timestamp}_XXX.jpg")"
 
-  log "Generating image for prompt: ${prompt}"
+  log "Generating image for prompt: ${prompt}" >&2
 
   local request_data="{
           \"prompt\": \"${prompt}\",
@@ -76,11 +76,13 @@ function generate_image() {
 
   local image_url=$(echo "${response}" | jq -r '.data[0].url')
 
-  if [[ "${image_url}" == "null" ]]; then
+  log "$image_url" >&2
+
+  if [[ "${image_url}" == "null" ]] || [[ -z "${image_url:-}" ]]; then
     die "Failed to generate image. Response: ${response}" $EXIT_INVALID_RESPONSE
   fi
 
-  log "Downloading image from: ${image_url}"
+  log "Downloading image from: ${image_url}" >&2
   curl::download "${image_url}" "${output_path}" || exit $EXIT_DOWNLOAD_FAILURE
 
   printf "%s\n" "${output_path}"
