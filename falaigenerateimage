@@ -81,7 +81,7 @@ function generate_image() {
   request_id="$(echo "$response" | jq -r '.request_id')" \
     || die "Failed to parse request ID" 4
 
-  printf "%s\n" "$request_id"
+  echo "$request_id"
 }
 
 function poll_status() {
@@ -103,12 +103,11 @@ function poll_status() {
 
     case "$status" in
       "COMPLETED")
-        printf "\n"
         return 0
         ;;
       "IN_PROGRESS" | "IN_QUEUE")
         if [[ "${VERBOSE:-false}" == "true" ]]; then
-          printf "\r⏳ Polling status for request_id %s: (attempt %d/%d)" "$request_id" "$attempt" "$MAX_RETRIES"
+          printf "\r⏳ Polling status for request_id %s: (attempt %d/%d)" "$request_id" "$attempt" "$MAX_RETRIES" >&2
         fi
         sleep "$POLL_INTERVAL"
         ((attempt++))
@@ -146,7 +145,7 @@ function download_image() {
     || die "Failed to convert image to JPG" 6
 
   rm -f "$temp_file"
-  printf "%s\n" "$jpg_file"
+  echo "$jpg_file"
 }
 
 function read_input() {
@@ -173,7 +172,7 @@ function main() {
   [[ -z "$prompt" ]] && die "Please provide a prompt" 3
 
   if [[ "${VERBOSE:-false}" == "true" ]]; then
-    printf "\nGenerating image for prompt: %s\n" "$prompt"
+    printf "\nGenerating image for prompt: %s\n" "$prompt" >&2
   fi
 
   request_id="$(generate_image "$prompt")"

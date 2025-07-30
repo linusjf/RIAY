@@ -88,7 +88,7 @@ main() {
 
   # shellcheck disable=SC2153
   month="$(date::mfromdoy "$doy" "$YEAR")" || die "Failed to get month from DOY" $EXIT_DATE_ERROR
-  generated_image="$("${SCRIPT_DIR}/${IMAGE_GENERATION_SCRIPT}" "$prompt")" || die "Image generation failed" $EXIT_IMAGE_GEN_ERROR
+  generated_image="$("${SCRIPT_DIR}/${IMAGE_GENERATION_SCRIPT}" "$prompt" || die "Image generation failed" $EXIT_IMAGE_GEN_ERROR)"
 
   jpeg_filename="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg"
   cp "$generated_image" "$jpeg_filename" || die "Failed to copy image to ${jpeg_filename}" $EXIT_FILE_COPY_ERROR
