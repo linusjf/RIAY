@@ -135,7 +135,7 @@ fi
 
 if ! declare -f curl::save_failed_response > /dev/null; then
   function curl::save_failed_response() {
-    local data="$1"
+    local command="$1"
     local response="$2"
     local endpoint="$3"
     local timestamp
@@ -147,7 +147,7 @@ if ! declare -f curl::save_failed_response > /dev/null; then
     local filename="${curltempdir}/failed_response_${sanitized_endpoint}_${timestamp}.json"
 
     {
-      curl::redact_keys "$data"
+      curl::redact_keys "$command"
       curl::redact_keys "$response"
     } >> "$filename"
     err "Saved failed response to $filename (API keys redacted)"
