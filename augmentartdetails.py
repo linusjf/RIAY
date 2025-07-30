@@ -22,7 +22,7 @@ import sys
 import json
 import re
 import httpx
-from httpx_retries import RetryTransport, ExponentialRetry
+from httpx_retries import RetryTransport, Retry
 from typing import Dict, Any, Optional
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
@@ -86,13 +86,12 @@ class ArtDetailsAugmenter:
         payload = self._build_llm_payload(art_json)
         self.logger.info("Sending request to LLM API")
 
-        retry_strategy = ExponentialRetry(
-            max_attempts=3,
-            max_backoff_wait=30.0
+        retry = Retry(
+            total=5,
+            backoff_factor=0.5
         )
         transport = RetryTransport(
-            transport=httpx.AsyncHTTPTransport(),
-            retry_strategy=retry_strategy
+            retry=retry
         )
 
         async with httpx.AsyncClient(timeout=30.0, transport=transport) as client:
