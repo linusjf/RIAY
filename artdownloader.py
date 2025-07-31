@@ -610,7 +610,7 @@ class ArtDownloader:
         )
         return any([downloaded_duckduckgo, downloaded_google])
 
-    def download_all(self, query: str) -> bool:
+    async def download_all(self, query: str) -> bool:
         """Download images from all available sources."""
         if self.filename_base is None:
             self.filename_base = query.replace(' ', '_')
@@ -626,7 +626,7 @@ class ArtDownloader:
         self.logger.info(f"Searching google and duckduckgo with enhanced query: {enhanced_query}")
         other_sources_success = self._search_other_sources(enhanced_query)
 
-        return wikipedia_success or other_sources_success
+        return any([wikipedia_success, other_sources_success])
 
     def _print_downloaded_images(self) -> None:
         """Print list of downloaded images."""
@@ -728,7 +728,7 @@ async def main() -> None:
     if args.artist and args.artist not in query:
         query = f"{query} {args.artist}".strip()
 
-    success = downloader.download_all(
+    success = await downloader.download_all(
         query=query,
     )
 
