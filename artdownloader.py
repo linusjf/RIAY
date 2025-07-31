@@ -689,7 +689,7 @@ class ArtDownloader:
         else:
             print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
 
-    def print_results(self) -> None:
+    async def print_results(self) -> None:
         """Print summary of downloaded images and results."""
         self._print_downloaded_images()
         self._print_stock_photos()
@@ -732,7 +732,7 @@ async def main() -> None:
         query=query,
     )
 
-    downloader.print_results()
+    await downloader.print_results()
 
     end_time = time.time()
     elapsed_time = end_time - start_time
