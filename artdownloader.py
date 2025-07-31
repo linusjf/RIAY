@@ -626,52 +626,76 @@ class ArtDownloader:
 
         return wikipedia_success or other_sources_success
 
-    def print_results(self) -> None:
-        """Print summary of downloaded images and results."""
+    def _print_downloaded_images(self) -> None:
+        """Print list of downloaded images."""
         print("\nDownloaded images: ")
         for v in self.DOWNLOADED_URLS.values():
             print(v)
 
+    def _print_stock_photos(self) -> None:
+        """Print list of found stock photos."""
         if self.FOUND_STOCK_PHOTOS:
             print("\nFound stock photos (not downloaded):")
             for url in self.FOUND_STOCK_PHOTOS:
                 print(url)
 
+    def _print_all_search_results(self) -> None:
+        """Print all search results with scores."""
         all_results = self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
         if all_results:
             print("\nAll search results (url, file, score):")
             for url, file, score in all_results:
                 print(f"{url} -> {file} (score: {score:.3f})")
 
-            sorted_results = sorted(all_results, key=lambda x: x[2], reverse=True)
+    def _get_best_result(self) -> Optional[Tuple[str, str, float]]:
+        """Find and return the best available result."""
+        all_results = self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
+        sorted_results = sorted(all_results, key=lambda x: x[2], reverse=True)
 
-            best_result = None
-            for url, file, score in sorted_results:
-                if file and os.path.exists(file):
-                    best_result = (url, file, score)
-                    break
+        for url, file, score in sorted_results:
+            if file and os.path.exists(file):
+                return (url, file, score)
 
-                filename = os.path.join(self.SAVE_DIR, f"best_result_{self.filename_base}.jpg")
-                if self.save_image(url, filename):
-                    best_result = (url, filename, score)
-                    break
+            filename = os.path.join(self.SAVE_DIR, f"best_result_{self.filename_base}.jpg")
+            if self.save_image(url, filename):
+                return (url, filename, score)
 
-            if best_result:
-                url, file, score = best_result
-                if "best_result_" in file and self.FIND_ALTERNATE_IMAGES:
-                    lookup = ReverseImageLookup()
-                    qualified_urls = lookup.reverse_image_lookup_url(url, str(self.title), str(self.artist), self.subject, self.location, self.date, self.style, self.medium)
-                    if qualified_urls:
-                        best_qualified_result = self.download_from_googlelens(qualified_urls=qualified_urls, filename_base=self.filename_base)
-                        if best_qualified_result:
-                            filepath, url_score = best_qualified_result
-                            print(f"\n⭐ Best available image (downloaded): {filepath} (score: {url_score:.3f})")
-                        else:
-                            print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
-                    else:
-                        print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
+        return None
+
+    def _handle_alternate_images(self, best_result: Tuple[str, str, float]) -> None:
+        """Handle alternate image search if enabled."""
+        url, file, score = best_result
+        if "best_result_" in file and self.FIND_ALTERNATE_IMAGES:
+            lookup = ReverseImageLookup()
+            qualified_urls = lookup.reverse_image_lookup_url(
+                url, str(self.title), str(self.artist), 
+                self.subject, self.location, self.date, 
+                self.style, self.medium
+            )
+            if qualified_urls:
+                best_qualified_result = self.download_from_googlelens(
+                    qualified_urls=qualified_urls, 
+                    filename_base=self.filename_base
+                )
+                if best_qualified_result:
+                    filepath, url_score = best_qualified_result
+                    print(f"\n⭐ Best available image (downloaded): {filepath} (score: {url_score:.3f})")
                 else:
                     print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
+            else:
+                print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
+        else:
+            print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
+
+    def print_results(self) -> None:
+        """Print summary of downloaded images and results."""
+        self._print_downloaded_images()
+        self._print_stock_photos()
+        self._print_all_search_results()
+
+        best_result = self._get_best_result()
+        if best_result:
+            self._handle_alternate_images(best_result)
 
 
 def main() -> None:
