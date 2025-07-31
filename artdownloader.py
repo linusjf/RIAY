@@ -13,7 +13,7 @@ import sys
 import time
 import argparse
 import shutil
-from typing import Optional, Dict, List, Tuple, Any, Set
+from typing import Optional, Dict, List, Tuple, Any, Set, Union, Sequence
 
 import requests
 from duckduckgo_search import DDGS
@@ -29,14 +29,18 @@ from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
 from PIL import Image
+from requests import Session
+from PIL.Image import Image as PILImage
 
 class ArtDownloader:
     """Download artwork images from various sources."""
 
-    SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
-    MAX_ALLOWED_RESULTS = 5
-    MAX_WIKI_ALLOWED_RESULTS = 3
-    MAX_IMAGE_BYTES = 50 * 1024 * 1024  # 50 MB
+    SUPPORTED_FORMATS: Tuple[str, ...] = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
+    MAX_ALLOWED_RESULTS: int = 5
+    MAX_WIKI_ALLOWED_RESULTS: int = 3
+    MAX_IMAGE_BYTES: int = 50 * 1024 * 1024  # 50 MB
+    WIKIMEDIA_SEARCH_API_URL: str = "https://api.wikimedia.org/core/v1/commons/search/page"
+    WIKIMEDIA_FILE_API_URL: str = "https://api.wikimedia.org/core/v1/commons/file"
     """Initialize the downloader with configuration."""
     config: ConfigEnv = ConfigEnv(include_os_env=True)
     STOCK_PHOTO_SITES: List[str] = config.get(ConfigConstants.STOCK_PHOTO_SITES, [])
@@ -82,8 +86,8 @@ class ArtDownloader:
         self.DUCKDUCKGO_IMAGES: List[Tuple[str, str, float]] = []
 
         # Configure logger
-        logging_enabled = self.config.get(ConfigConstants.LOGGING, False)
-        self.logger = LoggerFactory.get_logger(
+        logging_enabled: bool = self.config.get(ConfigConstants.LOGGING, False)
+        self.logger: logging.Logger = LoggerFactory.get_logger(
             name=os.path.basename(__file__),
             log_to_file=logging_enabled
         )
@@ -93,17 +97,17 @@ class ArtDownloader:
     def _check_image_size(self, url: str) -> bool:
         """Check if image size exceeds PIL.Image.MAX_IMAGE_PIXELS before downloading."""
         try:
-            headers = {
+            headers: Dict[str, str] = {
                 "User-Agent": (
                     "Mozilla/5.0 (compatible; ImageDownloaderBot/1.0; "
                     "+https://github.com/linusjf/RIAY/bot-info)"
                 )
             }
-            response = requests.head(url, headers=headers, timeout=10)
+            response: requests.Response = requests.head(url, headers=headers, timeout=10)
             if response.status_code == 200:
-                content_length = response.headers.get('content-length')
+                content_length: Optional[str] = response.headers.get('content-length')
                 if content_length:
-                    file_size = int(content_length)
+                    file_size: int = int(content_length)
                     if file_size > self.MAX_IMAGE_BYTES:
                         self.logger.warning(f"Image too large (estimated {file_size} bytes exceeds {self.MAX_IMAGE_BYTES})")
                         return False
@@ -119,6 +123,8 @@ class ArtDownloader:
 
         try:
             with Image.open(image_path) as img:
+                width: int
+                height: int
                 width, height = img.size
                 if width >= self.MIN_IMAGE_WIDTH and height >= self.MIN_IMAGE_HEIGHT:
                     return True
@@ -128,8 +134,8 @@ class ArtDownloader:
             self.logger.error(f"Error checking image dimensions: {e}")
             return False
 
-    def get_extension_from_mime(self, mime_type):
-        mapping = {
+    def get_extension_from_mime(self, mime_type: str) -> str:
+        mapping: Dict[str, str] = {
         'image/png': '.png',
         'image/webp': '.webp',
         'image/svg+xml': '.svg',
@@ -140,11 +146,11 @@ class ArtDownloader:
 
     def _copy_existing_download(self, url: str, filename: str) -> bool:
         """Copy an already downloaded file from cache."""
-        existing_file = self.DOWNLOADED_URLS[url]
+        existing_file: str = self.DOWNLOADED_URLS[url]
         try:
             shutil.copy2(existing_file, filename)
-            existing_url_file = os.path.splitext(existing_file)[0] + ".url.txt"
-            new_url_file = os.path.splitext(filename)[0] + ".url.txt"
+            existing_url_file: str = os.path.splitext(existing_file)[0] + ".url.txt"
+            new_url_file: str = os.path.splitext(filename)[0] + ".url.txt"
             if os.path.exists(existing_url_file):
                 shutil.copy2(existing_url_file, new_url_file)
             self.logger.info(f"Copied existing file: {existing_file} -> {filename}")
@@ -157,7 +163,7 @@ class ArtDownloader:
     def _validate_url(self, url: str) -> bool:
         """Check if URL is valid for downloading."""
         # Check for PDF extension and reject
-        ext = os.path.splitext(url)[1].lower()
+        ext: str = os.path.splitext(url)[1].lower()
         if ext == '.pdf':
             self.logger.error(f"PDF files not supported: {url}")
             return False
@@ -174,8 +180,8 @@ class ArtDownloader:
         if not self._check_image_size(url):
             return None
 
-        session = create_session_with_retries()
-        headers = {
+        session: Session = create_session_with_retries()
+        headers: Dict[str, str] = {
             "User-Agent": (
                 "Mozilla/5.0 (compatible; ImageDownloaderBot/1.0; "
                 "+https://github.com/linusjf/RIAY/bot-info)"
@@ -184,13 +190,13 @@ class ArtDownloader:
 
         for attempt in range(self.MAX_RETRIES):
             try:
-                response = session.get(url, headers=headers, stream=True)
+                response: requests.Response = session.get(url, headers=headers, stream=True)
                 if response.status_code == 200:
-                    content_type = response.headers.get('content-type', '')
-                    ext = self.get_extension_from_mime(content_type)
+                    content_type: str = response.headers.get('content-type', '')
+                    ext: str = self.get_extension_from_mime(content_type)
                     return (response.content, ext)
                 elif response.status_code in {408, 429, 500, 502, 503, 504}:
-                    wait = exponential_backoff_with_jitter(base=2, cap=60, attempt=attempt)
+                    wait: float = exponential_backoff_with_jitter(base=2, cap=60, attempt=attempt)
                     self.logger.warning(f"Retry {attempt + 1}: HTTP {response.status_code}, waiting {wait:.2f}s...")
                     time.sleep(wait)
                 else:
@@ -214,14 +220,14 @@ class ArtDownloader:
                 os.remove(filename)
                 return False
 
-            url_filename = os.path.splitext(filename)[0] + ".url.txt"
+            url_filename: str = os.path.splitext(filename)[0] + ".url.txt"
             with open(url_filename, "w") as url_file:
                 url_file.write(url)
             self.DOWNLOADED_URLS[url] = filename
 
-            ext = os.path.splitext(filename)[1].lower()
+            ext: str = os.path.splitext(filename)[1].lower()
             if ext not in ('.jpg', '.jpeg'):
-                jpeg_path = convert_to_jpeg(filename)
+                jpeg_path: Optional[str] = convert_to_jpeg(filename)
                 if jpeg_path:
                     if not self._check_image_dimensions(jpeg_path):
                         os.remove(jpeg_path)
@@ -252,23 +258,25 @@ class ArtDownloader:
             if not self._check_image_size(url):
                 return False
 
-            result = self._download_image_data(url)
+            result: Optional[Tuple[bytes, str]] = self._download_image_data(url)
             if not result:
                 return False
 
+            image_data: bytes
+            ext: str
             image_data, ext = result
-            temp_filename = os.path.splitext(filename)[0] + ext
+            temp_filename: str = os.path.splitext(filename)[0] + ext
             return self._save_image_file(image_data, temp_filename, url)
         except Exception as error:
             self.logger.error(f"Error downloading image: {error}")
             return False
 
-    def is_social_media_domain(self, domain: str):
+    def is_social_media_domain(self, domain: str) -> bool:
         if any(site in domain for site in self.SOCIAL_MEDIA_SITES):
             return True
         return False
 
-    def is_stock_images_domain(self, domain: str):
+    def is_stock_images_domain(self, domain: str) -> bool:
         if any(site in domain for site in self.STOCK_PHOTO_SITES):
             return True
         return False
@@ -282,11 +290,11 @@ class ArtDownloader:
         with DDGS() as ddgs:
             return ddgs.images(query, max_results=max_results)
 
-    def filter_and_score_results(self, results, extract_metadata_fn, query, threshold=THRESHOLDS["cosine"]):
-        qualifying = []
+    def filter_and_score_results(self, results: List[Any], extract_metadata_fn: Any, query: str, threshold: float = THRESHOLDS["cosine"]) -> List[Tuple[Any, float]]:
+        qualifying: List[Tuple[Any, float]] = []
         for idx, result in enumerate(results):
-            metadata = extract_metadata_fn(result)
-            score = compare_terms(query.lower(), metadata.lower(), MatchMode.COSINE)
+            metadata: str = extract_metadata_fn(result)
+            score: float = compare_terms(query.lower(), metadata.lower(), MatchMode.COSINE)
             if score >= threshold:
                 print(f"✅ Qualified result {idx+1} (score: {score:.3f})", file=sys.stderr)
                 qualifying.append((result, score))
@@ -294,32 +302,31 @@ class ArtDownloader:
                 print(f"❌ Excluded result {idx+1} (score: {score:.3f})", file=sys.stderr)
         return qualifying
 
-
     def download_from_duckduckgo(self, query: str, filename_base: str) -> bool:
         """Download image from DuckDuckGo search."""
         self.logger.info(f"DuckDuckGo search for: {query}")
         try:
-            results = self.search_duckduckgo_images(query, max_results=10)
+            results: List[Dict[str, Any]] = self.search_duckduckgo_images(query, max_results=10)
             if not results:
                 self.logger.error("No matching images found.")
                 return False
 
-            def extract_metadata(item):
+            def extract_metadata(item: Dict[str, Any]) -> str:
                 return " ".join(str(p) for p in [item["title"], clean_filename_text(item["image"])] if p)
 
-            qualifying_results = self.filter_and_score_results(results[:self.MAX_ALLOWED_RESULTS], extract_metadata, query)
+            qualifying_results: List[Tuple[Dict[str, Any], float]] = self.filter_and_score_results(results[:self.MAX_ALLOWED_RESULTS], extract_metadata, query)
 
             if not qualifying_results:
                 self.logger.error(f"No qualifying results found (score >= {THRESHOLDS['cosine']} )")
                 return False
 
-            success = False
+            success: bool = False
             for idx, (result, score) in enumerate(qualifying_results):
-                url = result["image"]
+                url: str = result["image"]
                 if '?' in url:
                     self.logger.warning(f"Url has query parameters: rejecting {url}")
                     continue
-                domain = extract_domain_from_url(url)
+                domain: Optional[str] = extract_domain_from_url(url)
                 if domain:
                     if self.is_social_media_domain(domain):
                         continue
@@ -327,7 +334,7 @@ class ArtDownloader:
                         self.FOUND_STOCK_PHOTOS.add(url)
                         self.DUCKDUCKGO_IMAGES.append((url, "", score))
                         continue
-                filename = os.path.join(
+                filename: str = os.path.join(
                     self.SAVE_DIR,
                     f"{filename_base}_{idx+1}_duckduckgo.jpg"
                 )
@@ -345,8 +352,8 @@ class ArtDownloader:
     def download_from_wikimedia_search(self, query: str, detailed_query: str, filename_base: str, source: str = "wikimedia_search") -> bool:
         """Search Wikimedia Commons for an image by query and download the top result."""
         self.logger.info(f"Searching Wikimedia for: {query}")
-        search_endpoint = "https://commons.wikimedia.org/w/api.php"
-        search_params = {
+        search_endpoint: str = "https://commons.wikimedia.org/w/api.php"
+        search_params: Dict[str, Any] = {
             "action": "query",
             "format": "json",
             "list": "search",
@@ -357,34 +364,34 @@ class ArtDownloader:
         }
 
         try:
-            resp = requests.get(search_endpoint, params=search_params, timeout=30)
+            resp: requests.Response = requests.get(search_endpoint, params=search_params, timeout=30)
             resp.raise_for_status()
-            search_data = resp.json()
-            search_results = search_data.get("query", {}).get("search", [])
+            search_data: Dict[str, Any] = resp.json()
+            search_results: List[Dict[str, Any]] = search_data.get("query", {}).get("search", [])
 
             if not search_results:
                 self.logger.error("No matching images found.")
                 return False
 
-            def extract_metadata(result):
-                result_meta_data = " ".join(str(p) for p in [clean_filename(result["title"]),
+            def extract_metadata(result: Dict[str, Any]) -> str:
+                result_meta_data: str = " ".join(str(p) for p in [clean_filename(result["title"]),
                                                              strip_span_tags_but_keep_contents(result["titlesnippet"]),
                                                              strip_span_tags_but_keep_contents(result["snippet"])
                                                              ] if p)
                 return result_meta_data
 
-            qualifying_results = self.filter_and_score_results(search_results, extract_metadata, detailed_query)
+            qualifying_results: List[Tuple[Dict[str, Any], float]] = self.filter_and_score_results(search_results, extract_metadata, detailed_query)
 
             if not qualifying_results:
                 self.logger.error(f"No qualifying results found (score >= {THRESHOLDS['cosine']})")
                 return False
 
-            success = False
+            success: bool = False
             for idx, (result, score) in enumerate(qualifying_results):
-                selected_title = result["title"]
+                selected_title: str = result["title"]
                 self.logger.info(f"Selected title {selected_title} with score: {score}")
 
-                info_params = {
+                info_params: Dict[str, Any] = {
                 "action": "query",
                 "titles": selected_title,
                 "prop": "imageinfo",
@@ -392,18 +399,18 @@ class ArtDownloader:
                 "format": "json"
                 }
 
-                info_resp = requests.get(search_endpoint, params=info_params, timeout=10)
+                info_resp: requests.Response = requests.get(search_endpoint, params=info_params, timeout=10)
                 info_resp.raise_for_status()
-                info_data = info_resp.json()
-                pages = info_data.get("query", {}).get("pages", {})
+                info_data: Dict[str, Any] = info_resp.json()
+                pages: Dict[str, Any] = info_data.get("query", {}).get("pages", {})
 
                 for page in pages.values():
-                    imageinfo = page.get("imageinfo")
+                    imageinfo: List[Dict[str, Any]] = page.get("imageinfo")
                     if imageinfo:
-                        image_url = imageinfo[0].get("url")
+                        image_url: str = imageinfo[0].get("url")
                         if image_url:
-                            unique_filename = f"{filename_base}_{idx+1}_{source}"
-                            filename = os.path.join(self.SAVE_DIR, f"{unique_filename}.jpg")
+                            unique_filename: str = f"{filename_base}_{idx+1}_{source}"
+                            filename: str = os.path.join(self.SAVE_DIR, f"{unique_filename}.jpg")
                             if self.save_image(image_url, filename):
                                 self.WIKIPEDIA_IMAGES.append((image_url, filename, score))
                                 success = True
@@ -418,30 +425,30 @@ class ArtDownloader:
         """Download the first usable image from a Wikipedia article."""
         self.logger.info(f"Fetching all images from Wikipedia article: {query}")
         try:
-            params = {
+            params: Dict[str, Any] = {
                 "limit": self.MAX_WIKI_ALLOWED_RESULTS,
                 "q": query
             }
-            response = requests.get("https://api.wikimedia.org/core/v1/wikipedia/en/search/page", params=params)
-            image_data = response.json()
+            response: requests.Response = requests.get("https://api.wikimedia.org/core/v1/wikipedia/en/search/page", params=params)
+            image_data: Dict[str, Any] = response.json()
 
-            pages = image_data.get("pages", [])
+            pages: List[Dict[str, Any]] = image_data.get("pages", [])
 
-            def extract_metadata(result):
-                result_meta_data = " ".join(str(p) for p in [result["key"],result["title"],strip_span_tags_but_keep_contents(result["excerpt"]),result["description"]] if p)
+            def extract_metadata(result: Dict[str, Any]) -> str:
+                result_meta_data: str = " ".join(str(p) for p in [result["key"],result["title"],strip_span_tags_but_keep_contents(result["excerpt"]),result["description"]] if p)
                 return result_meta_data
 
-            qualifying_pages = self.filter_and_score_results(pages, extract_metadata, detailed_query)
+            qualifying_pages: List[Tuple[Dict[str, Any], float]] = self.filter_and_score_results(pages, extract_metadata, detailed_query)
 
             if not qualifying_pages:
                 self.logger.error(f"No qualifying pages found (score >= {THRESHOLDS['cosine']})")
                 return False
 
-            success = False
+            success: bool = False
             for idx, (result, score) in enumerate(qualifying_pages):
-                title = result["title"]
+                title: str = result["title"]
                 self.logger.info(f"Downloading image for qualified page {idx+1}: {title} {score}")
-                unique_filename = f"{filename_base}_{idx+1}"
+                unique_filename: str = f"{filename_base}_{idx+1}"
                 if self.download_from_wikimedia_search(title, detailed_query, unique_filename, "wikipedia"):
                     success = True
 
@@ -454,19 +461,19 @@ class ArtDownloader:
     def download_from_wikimedia(self, query: str, enhanced_query: str, filename_base: str) -> bool:
         """Download image from Wikimedia Commons."""
         self.logger.info(f"Wikimedia Commons search for: {query}")
-        params = {"q": query}
+        params: Dict[str, str] = {"q": query}
         try:
-            response = requests.get(
+            response: Dict[str, Any] = requests.get(
                 self.WIKIMEDIA_SEARCH_API_URL,
                 params=params
             ).json()
-            pages = response.get("pages", [])
+            pages: List[Dict[str, Any]] = response.get("pages", [])
             if not pages:
                 self.logger.error("No matching images found.")
                 return False
 
-            def extract_metadata(page):
-                page_meta_data = " ".join(str(p) for p in
+            def extract_metadata(page: Dict[str, Any]) -> str:
+                page_meta_data: str = " ".join(str(p) for p in
                                           [
                                               clean_filename_text(clean_filename(page.get("key"))),
                                               clean_filename_text(clean_filename(page.get("title"))),
@@ -475,25 +482,25 @@ class ArtDownloader:
                                           ] if p)
                 return page_meta_data
 
-            qualifying_pages = self.filter_and_score_results(pages[:self.MAX_WIKI_ALLOWED_RESULTS], extract_metadata, enhanced_query)
+            qualifying_pages: List[Tuple[Dict[str, Any], float]] = self.filter_and_score_results(pages[:self.MAX_WIKI_ALLOWED_RESULTS], extract_metadata, enhanced_query)
 
             if not qualifying_pages:
                 self.logger.error(f"No qualifying files found (score >= {THRESHOLDS['cosine']})")
                 return False
 
-            success = False
+            success: bool = False
             for idx, (page, score) in enumerate(qualifying_pages):
-                file = page.get("key")
+                file: str = page.get("key")
                 self.logger.info(f"Downloading image for qualified file {idx+1}: {file}")
-                unique_filename = f"{filename_base}_{idx+1}"
-                file_response = requests.get(
+                unique_filename: str = f"{filename_base}_{idx+1}"
+                file_response: Dict[str, Any] = requests.get(
                     self.WIKIMEDIA_FILE_API_URL + "/" + file,
                     headers={'User-Agent': 'Mozilla/5.0'}
                 ).json()
-                original = file_response.get("original")
+                original: Dict[str, Any] = file_response.get("original")
                 if original and "url" in original:
-                    image_url = original.get("url")
-                    filename = os.path.join(
+                    image_url: str = original.get("url")
+                    filename: str = os.path.join(
                         self.SAVE_DIR,
                         f"{unique_filename}_wikimedia.jpg"
                     )
@@ -511,41 +518,41 @@ class ArtDownloader:
         """Download image from Google Images via SerpAPI."""
         self.logger.info(f"Google search for: {query}")
         try:
-            params = {
+            params: Dict[str, str] = {
                 "q": query,
                 "tbm": "isch",
                 "api_key": self.SERPAPI_API_KEY,
             }
-            search = GoogleSearch(params)
-            results = search.get_dict()
+            search: GoogleSearch = GoogleSearch(params)
+            results: Dict[str, Any] = search.get_dict()
             if not results:
                 self.logger.error("No matching images found.")
                 return False
-            images = results.get("images_results", [])
+            images: List[Dict[str, Any]] = results.get("images_results", [])
             if not images:
                 return False
 
-            def extract_metadata(image):
-                image_meta_data = " ".join(str(p) for p in
+            def extract_metadata(image: Dict[str, Any]) -> str:
+                image_meta_data: str = " ".join(str(p) for p in
                                           [
                                               image.get("title"),
                                               clean_filename_text(image.get("original"))
                                           ] if p)
                 return image_meta_data
 
-            qualifying_pages = self.filter_and_score_results(images[:self.MAX_ALLOWED_RESULTS], extract_metadata, query)
+            qualifying_pages: List[Tuple[Dict[str, Any], float]] = self.filter_and_score_results(images[:self.MAX_ALLOWED_RESULTS], extract_metadata, query)
 
             if not qualifying_pages:
                 self.logger.error(f"No qualifying images found (score >= {THRESHOLDS['cosine']})")
                 return False
 
-            success = False
+            success: bool = False
             for idx, (image, score) in enumerate(qualifying_pages):
-                url = image.get("original")
+                url: str = image.get("original")
                 if '?' in url:
                     self.logger.warning(f"Url has query parameters: rejecting {url}")
                     continue
-                domain = extract_domain_from_url(url)
+                domain: Optional[str] = extract_domain_from_url(url)
                 if domain:
                     if self.is_social_media_domain(domain):
                         continue
@@ -554,8 +561,8 @@ class ArtDownloader:
                         self.GOOGLE_IMAGES.append((url, "", score))
                         continue
                 self.logger.info(f"Downloading image for qualified image {idx+1}: {url}")
-                unique_filename = f"{filename_base}_{idx+1}"
-                filename = os.path.join(
+                unique_filename: str = f"{filename_base}_{idx+1}"
+                filename: str = os.path.join(
                     self.SAVE_DIR,
                     f"{unique_filename}_google.jpg"
                 )
@@ -576,7 +583,7 @@ class ArtDownloader:
             return (None, None)
 
         for idx, (url, score) in enumerate(qualified_urls):
-            filename = os.path.join(
+            filename: str = os.path.join(
                 self.SAVE_DIR,
                 f"{filename_base}_{idx+1}_googlelens.jpg"
             )
@@ -586,7 +593,7 @@ class ArtDownloader:
 
     def _build_enhanced_query(self, base_query: str) -> str:
         """Build an enhanced search query by combining base query with metadata."""
-        enhanced_query = base_query
+        enhanced_query: str = base_query
         if self.artist and self.artist not in base_query:
             enhanced_query += f" by {self.artist}"
         if self.title and self.title not in base_query:
@@ -605,7 +612,7 @@ class ArtDownloader:
 
     def _build_wikimedia_query(self, base_query: str) -> str:
         """Build a specialized query for Wikimedia searches."""
-        wikimedia_query = base_query
+        wikimedia_query: str = base_query
         if self.artist and self.artist not in base_query:
             wikimedia_query += f" by {self.artist}"
         if self.title and self.title not in base_query:
@@ -618,23 +625,23 @@ class ArtDownloader:
 
     def _search_wikipedia_sources(self, wikimedia_query: str, enhanced_query: str) -> bool:
         """Search Wikipedia-related sources for images."""
-        downloaded_wikipedia_search = self.download_image_from_wikipedia_article(
+        downloaded_wikipedia_search: bool = self.download_image_from_wikipedia_article(
             wikimedia_query, enhanced_query, str(self.filename_base)
         )
-        downloaded_wikimedia_search = self.download_from_wikimedia_search(
+        downloaded_wikimedia_search: bool = self.download_from_wikimedia_search(
             wikimedia_query, enhanced_query, str(self.filename_base)
         )
-        downloaded_wikimedia = self.download_from_wikimedia(
+        downloaded_wikimedia: bool = self.download_from_wikimedia(
             wikimedia_query, enhanced_query, str(self.filename_base)
         )
         return any([downloaded_wikipedia_search, downloaded_wikimedia_search, downloaded_wikimedia])
 
     def _search_other_sources(self, enhanced_query: str) -> bool:
         """Search non-Wikipedia sources for images."""
-        downloaded_duckduckgo = self.download_from_duckduckgo(
+        downloaded_duckduckgo: bool = self.download_from_duckduckgo(
             enhanced_query, str(self.filename_base)
         )
-        downloaded_google = self.download_from_google(
+        downloaded_google: bool = self.download_from_google(
             enhanced_query, str(self.filename_base)
         )
         return any([downloaded_duckduckgo, downloaded_google])
@@ -644,16 +651,16 @@ class ArtDownloader:
         if self.filename_base is None:
             self.filename_base = query.replace(' ', '_')
 
-        enhanced_query = self._build_enhanced_query(query)
-        wikipedia_success = False
+        enhanced_query: str = self._build_enhanced_query(query)
+        wikipedia_success: bool = False
 
         if self.SEARCH_WIKIPEDIA:
-            wikimedia_query = self._build_wikimedia_query(query)
+            wikimedia_query: str = self._build_wikimedia_query(query)
             self.logger.info(f"Searching wikis with simple query: {wikimedia_query}")
             wikipedia_success = self._search_wikipedia_sources(wikimedia_query, enhanced_query)
 
         self.logger.info(f"Searching google and duckduckgo with enhanced query: {enhanced_query}")
-        other_sources_success = self._search_other_sources(enhanced_query)
+        other_sources_success: bool = self._search_other_sources(enhanced_query)
 
         return any([wikipedia_success, other_sources_success])
 
@@ -672,7 +679,7 @@ class ArtDownloader:
 
     def _print_all_search_results(self) -> None:
         """Print all search results with scores."""
-        all_results = self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
+        all_results: List[Tuple[str, str, float]] = self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
         if all_results:
             print("\nAll search results (url, file, score):")
             for url, file, score in all_results:
@@ -680,14 +687,14 @@ class ArtDownloader:
 
     def _get_best_result(self) -> Optional[Tuple[str, str, float]]:
         """Find and return the best available result."""
-        all_results = self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
-        sorted_results = sorted(all_results, key=lambda x: x[2], reverse=True)
+        all_results: List[Tuple[str, str, float]] = self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
+        sorted_results: List[Tuple[str, str, float]] = sorted(all_results, key=lambda x: x[2], reverse=True)
 
         for url, file, score in sorted_results:
             if file and os.path.exists(file):
                 return (url, file, score)
 
-            filename = os.path.join(self.SAVE_DIR, f"best_result_{self.filename_base}.jpg")
+            filename: str = os.path.join(self.SAVE_DIR, f"best_result_{self.filename_base}.jpg")
             if self.save_image(url, filename):
                 return (url, filename, score)
 
@@ -695,20 +702,25 @@ class ArtDownloader:
 
     def _handle_alternate_images(self, best_result: Tuple[str, str, float]) -> None:
         """Handle alternate image search if enabled."""
+        url: str
+        file: str
+        score: float
         url, file, score = best_result
         if "best_result_" in file and self.FIND_ALTERNATE_IMAGES:
-            lookup = ReverseImageLookup()
-            qualified_urls = lookup.reverse_image_lookup_url(
+            lookup: ReverseImageLookup = ReverseImageLookup()
+            qualified_urls: List[Tuple[str, float]] = lookup.reverse_image_lookup_url(
                 url, str(self.title), str(self.artist),
                 self.subject, self.location, self.date,
                 self.style, self.medium
             )
             if qualified_urls:
-                best_qualified_result = self.download_from_googlelens(
+                best_qualified_result: Tuple[Optional[str], Optional[float]] = self.download_from_googlelens(
                     qualified_urls=qualified_urls,
                     filename_base=self.filename_base
                 )
                 if best_qualified_result:
+                    filepath: Optional[str]
+                    url_score: Optional[float]
                     filepath, url_score = best_qualified_result
                     print(f"\n⭐ Best available image (downloaded): {filepath} (score: {url_score:.3f})")
                 else:
@@ -724,14 +736,14 @@ class ArtDownloader:
         self._print_stock_photos()
         self._print_all_search_results()
 
-        best_result = self._get_best_result()
+        best_result: Optional[Tuple[str, str, float]] = self._get_best_result()
         if best_result:
             self._handle_alternate_images(best_result)
 
 
 def parse_arguments() -> argparse.Namespace:
     """Parse and return command line arguments."""
-    parser = argparse.ArgumentParser(description='Download artwork images from various sources.')
+    parser: argparse.ArgumentParser = argparse.ArgumentParser(description='Download artwork images from various sources.')
     parser.add_argument('query', nargs='?', help='Name of artwork to search for')
     parser.add_argument('--title', help='Title of the artwork')
     parser.add_argument('--artist', help='Artist name')
@@ -752,7 +764,7 @@ def validate_arguments(args: argparse.Namespace) -> bool:
 
 def build_search_query(args: argparse.Namespace) -> str:
     """Construct the initial search query from arguments."""
-    query = args.query if args.query else ""
+    query: str = args.query if args.query else ""
     if args.title and args.title not in query:
         query = f"{query} {args.title}".strip()
     if args.artist and args.artist not in query:
@@ -761,14 +773,14 @@ def build_search_query(args: argparse.Namespace) -> str:
 
 async def run_downloader(args: argparse.Namespace, query: str) -> Tuple[bool, float]:
     """Run the main downloader workflow and return success status and elapsed time."""
-    start_time = time.time()
-    downloader = ArtDownloader(vars(args))
-    success = await downloader.download_all(query=query)
+    start_time: float = time.time()
+    downloader: ArtDownloader = ArtDownloader(vars(args))
+    success: bool = await downloader.download_all(query=query)
     await downloader.print_results()
-    elapsed_time = time.time() - start_time
+    elapsed_time: float = time.time() - start_time
     return success, elapsed_time
 
-def log_results(success: bool, elapsed_time: float, logger) -> None:
+def log_results(success: bool, elapsed_time: float, logger: logging.Logger) -> None:
     """Log the final results of the operation."""
     if success:
         logger.info(f"Downloaded art images in {elapsed_time:.2f} seconds")
@@ -777,17 +789,19 @@ def log_results(success: bool, elapsed_time: float, logger) -> None:
 
 async def main() -> None:
     """Main entry point for the script."""
-    args = parse_arguments()
+    args: argparse.Namespace = parse_arguments()
 
     if not validate_arguments(args):
         parse_arguments().print_help()
         sys.exit(1)
 
-    query = build_search_query(args)
+    query: str = build_search_query(args)
+    success: bool
+    elapsed_time: float
     success, elapsed_time = await run_downloader(args, query)
 
     # Create temporary logger for final output
-    temp_logger = LoggerFactory.get_logger(
+    temp_logger: logging.Logger = LoggerFactory.get_logger(
         name=os.path.basename(__file__),
         log_to_file=False
     )
