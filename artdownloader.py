@@ -553,15 +553,12 @@ class ArtDownloader:
                 return (filename, score)
         return (None, None)
 
-    def download_all(self, query: str) -> bool:
-        """Download images from all available sources."""
-        if self.filename_base is None:
-            self.filename_base = query.replace(' ', '_')
-
-        enhanced_query = query
-        if self.artist and self.artist not in query:
+    def _build_enhanced_query(self, base_query: str) -> str:
+        """Build an enhanced search query by combining base query with metadata."""
+        enhanced_query = base_query
+        if self.artist and self.artist not in base_query:
             enhanced_query += f" by {self.artist}"
-        if self.title and self.title not in query:
+        if self.title and self.title not in base_query:
             enhanced_query += f" {self.title}"
         if self.location:
             enhanced_query += f" {self.location}"
@@ -573,34 +570,62 @@ class ArtDownloader:
             enhanced_query += f" {self.medium}"
         if self.subject:
             enhanced_query += f" {self.subject}"
+        return enhanced_query
 
+    def _build_wikimedia_query(self, base_query: str) -> str:
+        """Build a specialized query for Wikimedia searches."""
+        wikimedia_query = base_query
+        if self.artist and self.artist not in base_query:
+            wikimedia_query += f" by {self.artist}"
+        if self.title and self.title not in base_query:
+            wikimedia_query += f" {self.title}"
+        if self.date and self.date not in base_query:
+            wikimedia_query += f" {self.date}"
+        if self.location and self.location not in base_query:
+            wikimedia_query += f" {self.location}"
+        return wikimedia_query
 
-        downloaded_wikipedia_search = downloaded_wikimedia_search = downloaded_wikimedia = False
+    def _search_wikipedia_sources(self, wikimedia_query: str, enhanced_query: str) -> bool:
+        """Search Wikipedia-related sources for images."""
+        downloaded_wikipedia_search = self.download_image_from_wikipedia_article(
+            wikimedia_query, enhanced_query, self.filename_base
+        )
+        downloaded_wikimedia_search = self.download_from_wikimedia_search(
+            wikimedia_query, enhanced_query, self.filename_base
+        )
+        downloaded_wikimedia = self.download_from_wikimedia(
+            wikimedia_query, enhanced_query, self.filename_base
+        )
+        return any([downloaded_wikipedia_search, downloaded_wikimedia_search, downloaded_wikimedia])
+
+    def _search_other_sources(self, enhanced_query: str) -> bool:
+        """Search non-Wikipedia sources for images."""
+        downloaded_duckduckgo = self.download_from_duckduckgo(
+            enhanced_query, self.filename_base
+        )
+        downloaded_google = self.download_from_google(
+            enhanced_query, self.filename_base
+        )
+        return any([downloaded_duckduckgo, downloaded_google])
+
+    def download_all(self, query: str) -> bool:
+        """Download images from all available sources."""
+        if self.filename_base is None:
+            self.filename_base = query.replace(' ', '_')
+
+        enhanced_query = self._build_enhanced_query(query)
+        
         if self.SEARCH_WIKIPEDIA:
-            wikimedia_query = query
-            if self.artist and self.artist not in query:
-                wikimedia_query += f" by {self.artist}"
-            if self.title and self.title not in query:
-                wikimedia_query += f" {self.title}"
-            if self.date and self.date not in query:
-                wikimedia_query += f" {self.date}"
-            if self.location and self.location not in query:
-                wikimedia_query += f" {self.location}"
-
+            wikimedia_query = self._build_wikimedia_query(query)
             self.logger.info(f"Searching wikis with simple query: {wikimedia_query}")
-
-            downloaded_wikipedia_search = self.download_image_from_wikipedia_article(wikimedia_query, enhanced_query, self.filename_base)
-            downloaded_wikimedia_search = self.download_from_wikimedia_search(wikimedia_query, enhanced_query, self.filename_base)
-            downloaded_wikimedia = self.download_from_wikimedia(wikimedia_query, enhanced_query, self.filename_base)
+            wikipedia_success = self._search_wikipedia_sources(wikimedia_query, enhanced_query)
 
         self.logger.info(f"Searching google and duckduckgo with enhanced query: {enhanced_query}")
-
-        downloaded_duckduckgo = self.download_from_duckduckgo(enhanced_query, self.filename_base)
-        downloaded_google = self.download_from_google(enhanced_query, self.filename_base)
+        other_sources_success = self._search_other_sources(enhanced_query)
 
         if self.SEARCH_WIKIPEDIA:
-            return (downloaded_duckduckgo or downloaded_wikipedia_search or downloaded_wikimedia or downloaded_wikimedia_search or downloaded_google)
-        return (downloaded_duckduckgo or downloaded_google)
+            return wikipedia_success or other_sources_success
+        return other_sources_success
 
     def print_results(self) -> None:
         """Print summary of downloaded images and results."""
