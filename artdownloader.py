@@ -23,7 +23,7 @@ from serpapi import GoogleSearch
 from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, extract_domain_from_url, clean_filename
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
-from simtools import THRESHOLDS, compare_terms, terms_match, MatchMode
+from simtools import THRESHOLDS, compare_terms, MatchMode
 from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
