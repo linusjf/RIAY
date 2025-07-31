@@ -23,7 +23,7 @@ require_commands curl sed cat rm date head tail basename mktemp grep cut tr mkdi
 : "${CURL_RETRY_EXP_BASE:=2}"
 : "${CURL_CONNECT_TIMEOUT:=30}"
 : "${CURL_MAX_TIME:=90}"
-: "${CURL_RETRY_STATUS_CODES[@]:?}" || CURL_RETRY_STATUS_CODES=(408 429 500 502 503 504)
+[ ${#CURL_RETRY_STATUS_CODES[@]:-0} -eq 0 ] && CURL_RETRY_STATUS_CODES=(408 429 500 502 503 504)
 
 if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
   declare -A curl__HTTP_STATUS_CODES=(
