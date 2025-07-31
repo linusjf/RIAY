@@ -474,9 +474,9 @@ class ArtDownloader:
             def extract_metadata(page: Dict[str, Any]) -> str:
                 page_meta_data: str = " ".join(str(p) for p in
                                           [
-                                              clean_filename_text(clean_filename(page.get("key"))),
-                                              clean_filename_text(clean_filename(page.get("title"))),
-                                              strip_span_tags_but_keep_contents(page.get("excerpt")),
+                                              clean_filename_text(clean_filename(page.get("key") or "")),
+                                              clean_filename_text(clean_filename(page.get("title") or "")),
+                                              strip_span_tags_but_keep_contents(page.get("excerpt") or ""),
                                               page.get("description")
                                           ] if p)
                 return page_meta_data
@@ -489,16 +489,16 @@ class ArtDownloader:
 
             success: bool = False
             for idx, (page, score) in enumerate(qualifying_pages):
-                file: str = page.get("key")
+                file: str = str(page.get("key"))
                 self.logger.info(f"Downloading image for qualified file {idx+1}: {file}")
                 unique_filename: str = f"{filename_base}_{idx+1}"
                 file_response: Dict[str, Any] = requests.get(
                     self.WIKIMEDIA_FILE_API_URL + "/" + file,
                     headers={'User-Agent': 'Mozilla/5.0'}
                 ).json()
-                original: Dict[str, Any] = file_response.get("original")
+                original: Dict[str, Any] = file_response.get("original") or {}
                 if original and "url" in original:
-                    image_url: str = original.get("url")
+                    image_url: str = str(original.get("url"))
                     filename: str = os.path.join(
                         self.SAVE_DIR,
                         f"{unique_filename}_wikimedia.jpg"
@@ -535,7 +535,7 @@ class ArtDownloader:
                 image_meta_data: str = " ".join(str(p) for p in
                                           [
                                               image.get("title"),
-                                              clean_filename_text(image.get("original"))
+                                              clean_filename_text(str(image.get("original")))
                                           ] if p)
                 return image_meta_data
 
@@ -547,7 +547,7 @@ class ArtDownloader:
 
             success: bool = False
             for idx, (image, score) in enumerate(qualifying_pages):
-                url: str = image.get("original")
+                url: str = str(image.get("original"))
                 if '?' in url:
                     self.logger.warning(f"Url has query parameters: rejecting {url}")
                     continue
@@ -722,8 +722,6 @@ class ArtDownloader:
                     url_score: Optional[float]
                     filepath, url_score = best_qualified_result
                     print(f"\n⭐ Best available image (downloaded): {filepath} (score: {url_score:.3f})")
-                else:
-                    print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
             else:
                 print(f"\n⭐ Best available image (downloaded): {file} (score: {score:.3f})")
         else:
