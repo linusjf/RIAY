@@ -7,6 +7,7 @@ This script searches for artwork images from multiple sources including:
 - Google
 """
 
+import asyncio
 import os
 import sys
 import time
@@ -668,13 +669,13 @@ class ArtDownloader:
         if "best_result_" in file and self.FIND_ALTERNATE_IMAGES:
             lookup = ReverseImageLookup()
             qualified_urls = lookup.reverse_image_lookup_url(
-                url, str(self.title), str(self.artist), 
-                self.subject, self.location, self.date, 
+                url, str(self.title), str(self.artist),
+                self.subject, self.location, self.date,
                 self.style, self.medium
             )
             if qualified_urls:
                 best_qualified_result = self.download_from_googlelens(
-                    qualified_urls=qualified_urls, 
+                    qualified_urls=qualified_urls,
                     filename_base=self.filename_base
                 )
                 if best_qualified_result:
@@ -698,7 +699,7 @@ class ArtDownloader:
             self._handle_alternate_images(best_result)
 
 
-def main() -> None:
+async def main() -> None:
     """Main entry point for the script."""
     start_time = time.time()
     parser = argparse.ArgumentParser(description='Download artwork images from various sources.')
@@ -742,4 +743,4 @@ def main() -> None:
     sys.exit(0 if success else 1)
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
