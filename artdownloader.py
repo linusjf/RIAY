@@ -367,7 +367,7 @@ class ArtDownloader:
                 info_data = info_resp.json()
                 pages = info_data.get("query", {}).get("pages", {})
 
-                for page in pages.values():
+                for page in pages.values()[:self.MAX_ALLOWED_RESULTS]:
                     imageinfo = page.get("imageinfo")
                     if imageinfo:
                         image_url = imageinfo[0].get("url")
