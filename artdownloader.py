@@ -113,25 +113,24 @@ class ArtDownloader:
         }
         return mapping.get(mime_type.split(";")[0].strip(), '.jpg')
 
+    def _copy_existing_download(self, url: str, filename: str) -> bool:
+        """Copy an already downloaded file from cache."""
+        existing_file = self.DOWNLOADED_URLS[url]
+        try:
+            shutil.copy2(existing_file, filename)
+            existing_url_file = os.path.splitext(existing_file)[0] + ".url.txt"
+            new_url_file = os.path.splitext(filename)[0] + ".url.txt"
+            if os.path.exists(existing_url_file):
+                shutil.copy2(existing_url_file, new_url_file)
+            self.logger.info(f"Copied existing file: {existing_file} -> {filename}")
+            self.DOWNLOADED_URLS[url] = filename
+            return True
+        except Exception as e:
+            self.logger.error(f"Error copying existing file: {e}")
+            return False
 
-    def save_image(self, url: str, filename: str) -> bool:
-        """Save an image from URL to local file."""
-        if url in self.DOWNLOADED_URLS:
-            self.logger.info(f"URL already downloaded: {url}")
-            existing_file = self.DOWNLOADED_URLS[url]
-            try:
-                shutil.copy2(existing_file, filename)
-                existing_url_file = os.path.splitext(existing_file)[0] + ".url.txt"
-                new_url_file = os.path.splitext(filename)[0] + ".url.txt"
-                if os.path.exists(existing_url_file):
-                    shutil.copy2(existing_url_file, new_url_file)
-                self.logger.info(f"Copied existing file: {existing_file} -> {filename}")
-                self.DOWNLOADED_URLS[url] = filename
-                return True
-            except Exception as e:
-                self.logger.error(f"Error copying existing file: {e}")
-                return False
-
+    def _validate_url(self, url: str) -> bool:
+        """Check if URL is valid for downloading."""
         # Check for PDF extension and reject
         ext = os.path.splitext(url)[1].lower()
         if ext == '.pdf':
@@ -143,67 +142,95 @@ class ArtDownloader:
             self.logger.error(f"URLs with query parameters not supported: {url}")
             return False
 
-        try:
-            session = create_session_with_retries()
-            headers = {
-                "User-Agent": (
-                    "Mozilla/5.0 (compatible; ImageDownloaderBot/1.0; "
-                    "+https://github.com/linusjf/RIAY/bot-info)"
-                )
-            }
-            attempt = 0
-            while attempt < self.MAX_RETRIES:
+        return True
+
+    def _download_image_data(self, url: str) -> Optional[Tuple[bytes, str]]:
+        """Download image data from URL with retries."""
+        session = create_session_with_retries()
+        headers = {
+            "User-Agent": (
+                "Mozilla/5.0 (compatible; ImageDownloaderBot/1.0; "
+                "+https://github.com/linusjf/RIAY/bot-info)"
+            )
+        }
+
+        for attempt in range(self.MAX_RETRIES):
+            try:
                 response = session.get(url, headers=headers, stream=True)
                 if response.status_code == 200:
-                    ext = os.path.splitext(url)[1].lower()
-                    if not ext or ext not in self.SUPPORTED_FORMATS:
-                        content_type = response.headers.get('content-type', '')
-                        ext = self.get_extension_from_mime(content_type)
-
-                    temp_filename = os.path.splitext(filename)[0] + ext
-                    with open(temp_filename, "wb") as f:
-                        for chunk in response.iter_content(8192):
-                            f.write(chunk)
-
-                    # Check dimensions before proceeding
-                    if not self._check_image_dimensions(temp_filename):
-                        os.remove(temp_filename)
-                        return False
-
-                    url_filename = os.path.splitext(temp_filename)[0] + ".url.txt"
-                    with open(url_filename, "w") as url_file:
-                        url_file.write(url)
-                    self.DOWNLOADED_URLS[url] = temp_filename
-
-                    if ext.lower() not in ('.jpg', '.jpeg'):
-                        jpeg_path = convert_to_jpeg(temp_filename)
-                        if jpeg_path:
-                            if not self._check_image_dimensions(jpeg_path):
-                                os.remove(jpeg_path)
-                                return False
-                            self.logger.info(f"Saved: {jpeg_path} (source URL saved to {url_filename})")
-                            self.DOWNLOADED_URLS[url] = jpeg_path
-                            return True
-                        else:
-                            self.logger.warning(f"Saved original format: {temp_filename}")
-                            return True
-                    else:
-                        self.logger.info(f"Saved: {temp_filename} (source URL saved to {url_filename})")
-                        return True
-
+                    content_type = response.headers.get('content-type', '')
+                    ext = self.get_extension_from_mime(content_type)
+                    return (response.content, ext)
                 elif response.status_code in {408, 429, 500, 502, 503, 504}:
                     wait = exponential_backoff_with_jitter(base=2, cap=60, attempt=attempt)
                     self.logger.warning(f"Retry {attempt + 1}: HTTP {response.status_code}, waiting {wait:.2f}s...")
                     time.sleep(wait)
-                    attempt += 1
                 else:
                     self.logger.error(f"Failed with status: {response.status_code}")
                     break
-            self.logger.error("Download failed after retries.")
-            self.logger.error(f"Failed to download: {url}")
+            except Exception as e:
+                self.logger.error(f"Download attempt {attempt + 1} failed: {e}")
+                if attempt == self.MAX_RETRIES - 1:
+                    raise
+
+        self.logger.error("Download failed after retries.")
+        return None
+
+    def _save_image_file(self, image_data: bytes, filename: str, url: str) -> bool:
+        """Save image data to file and handle post-processing."""
+        try:
+            with open(filename, "wb") as f:
+                f.write(image_data)
+
+            if not self._check_image_dimensions(filename):
+                os.remove(filename)
+                return False
+
+            url_filename = os.path.splitext(filename)[0] + ".url.txt"
+            with open(url_filename, "w") as url_file:
+                url_file.write(url)
+            self.DOWNLOADED_URLS[url] = filename
+
+            ext = os.path.splitext(filename)[1].lower()
+            if ext not in ('.jpg', '.jpeg'):
+                jpeg_path = convert_to_jpeg(filename)
+                if jpeg_path:
+                    if not self._check_image_dimensions(jpeg_path):
+                        os.remove(jpeg_path)
+                        return False
+                    self.logger.info(f"Saved: {jpeg_path} (source URL saved to {url_filename})")
+                    self.DOWNLOADED_URLS[url] = jpeg_path
+                    return True
+                else:
+                    self.logger.warning(f"Saved original format: {filename}")
+                    return True
+            else:
+                self.logger.info(f"Saved: {filename} (source URL saved to {url_filename})")
+                return True
+        except Exception as e:
+            self.logger.error(f"Error saving image file: {e}")
+            return False
+
+    def save_image(self, url: str, filename: str) -> bool:
+        """Save an image from URL to local file."""
+        if url in self.DOWNLOADED_URLS:
+            self.logger.info(f"URL already downloaded: {url}")
+            return self._copy_existing_download(url, filename)
+
+        if not self._validate_url(url):
+            return False
+
+        try:
+            result = self._download_image_data(url)
+            if not result:
+                return False
+
+            image_data, ext = result
+            temp_filename = os.path.splitext(filename)[0] + ext
+            return self._save_image_file(image_data, temp_filename, url)
         except Exception as error:
-            self.logger.error(f"Error: {error}")
-        return False
+            self.logger.error(f"Error downloading image: {error}")
+            return False
 
     def is_social_media_domain(self, domain: str):
         if any(site in domain for site in self.SOCIAL_MEDIA_SITES):
