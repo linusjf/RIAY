@@ -24,6 +24,7 @@ require_commands curl sed cat rm date head tail basename mktemp grep cut tr mkdi
 : "${CURL_CONNECT_TIMEOUT:=30}"
 : "${CURL_MAX_TIME:=90}"
 [ ${#CURL_RETRY_STATUS_CODES[@]:-0} -eq 0 ] && CURL_RETRY_STATUS_CODES=(408 429 500 502 503 504)
+[ ${#CURL_RETRY_HEADER_STATUS_CODES[@]:-0} -eq 0 ] && CURL_RETRY_HEADER_STATUS_CODES=(429 503)
 
 if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
   declare -A curl__HTTP_STATUS_CODES=(
@@ -170,6 +171,40 @@ if ! declare -f curl::should_retry > /dev/null; then
   export -f curl::should_retry
 fi
 
+if ! declare -f curl::_get_retry_after_seconds > /dev/null; then
+  function curl::_get_retry_after_seconds() {
+    local response="$1"
+    local header
+    local retry_after
+    local now_ts retry_ts wait_secs
+
+    # Extract the Retry-After header (case-insensitive)
+    header=$(echo "$response" | grep -i "^Retry-After:" | cut -d' ' -f2- | tr -d '\r')
+
+    if [[ -z "$header" ]]; then
+      echo
+      return
+    fi
+
+    if [[ "$header" =~ ^[0-9]+$ ]]; then
+      # Retry-After in seconds
+      echo "$header"
+    else
+      # Retry-After in HTTP-date format
+      retry_ts=$(date -d "$header" +%s 2>/dev/null)
+      now_ts=$(date +%s)
+
+      if [[ -n "$retry_ts" && "$retry_ts" -gt "$now_ts" ]]; then
+        wait_secs=$((retry_ts - now_ts))
+        echo "$wait_secs"
+      else
+        # Invalid or past date
+        echo
+      fi
+    fi
+  }
+fi
+
 if ! declare -f curl::handle_retry > /dev/null; then
   function curl::handle_retry() {
     local status_code="$1"
@@ -178,8 +213,16 @@ if ! declare -f curl::handle_retry > /dev/null; then
     local response_headers="$4"
     local url="$5"
 
-    if [[ $status_code -eq 408 ]] || [[ $status_code -eq 429 ]] || [[ $status_code -eq 503 ]]; then
-      local retry_after=$(echo "$response_headers" | grep -i '^retry-after:' | cut -d' ' -f2- | tr -d '\r')
+    local retry_after
+    local found=false
+    for _ in "${CURL_RETRY_STATUS_CODES[@]}"; do
+      if [[ _ == "$status_code" ]]; then
+        found=true
+        break
+      fi
+    done
+    if "$found"; then
+      retry_after="$(curl::_get_retry_after_seconds "$response_headers")"
       if [[ -n "$retry_after" ]]; then
         >&2 echo "Request failed with status $status_code: ${curl__HTTP_STATUS_CODES[$status_code]}, retrying in $retry_after seconds (Retry-After header value, attempt $retry_count/$CURL_MAX_RETRIES)"
       elif [[ $status_code -eq 429 ]]; then
