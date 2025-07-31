@@ -23,7 +23,7 @@ from serpapi import GoogleSearch
 from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, extract_domain_from_url, clean_filename
 from converterhelper import convert_to_jpeg
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
-from simtools import THRESHOLDS, compare_terms, MatchMode
+from simtools import THRESHOLDS, compare_terms, terms_match, MatchMode
 from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
@@ -35,6 +35,7 @@ class ArtDownloader:
 
     SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.webp', '.avif', '.svg')
     MAX_ALLOWED_RESULTS = 5
+    MAX_WIKI_ALLOWED_RESULTS = 3
     """Initialize the downloader with configuration."""
     config: ConfigEnv = ConfigEnv(include_os_env=True)
     STOCK_PHOTO_SITES: List[str] = config.get(ConfigConstants.STOCK_PHOTO_SITES, [])
@@ -322,7 +323,7 @@ class ArtDownloader:
             "list": "search",
             "srsearch": query,
             "srnamespace": 6,
-            "srlimit": self.MAX_ALLOWED_RESULTS,
+            "srlimit": self.MAX_WIKI_ALLOWED_RESULTS,
             "srprop": "size|wordcount|timestamp|snippet|titlesnippet"
         }
 
@@ -355,11 +356,11 @@ class ArtDownloader:
                 self.logger.info(f"Selected title {selected_title} with score: {score}")
 
                 info_params = {
-                    "action": "query",
-                    "titles": selected_title,
-                    "prop": "imageinfo",
-                    "iiprop": "url",
-                    "format": "json"
+                "action": "query",
+                "titles": selected_title,
+                "prop": "imageinfo",
+                "iiprop": "url",
+                "format": "json"
                 }
 
                 info_resp = requests.get(search_endpoint, params=info_params, timeout=10)
@@ -367,7 +368,7 @@ class ArtDownloader:
                 info_data = info_resp.json()
                 pages = info_data.get("query", {}).get("pages", {})
 
-                for page in pages.values()[:self.MAX_ALLOWED_RESULTS]:
+                for page in pages.values():
                     imageinfo = page.get("imageinfo")
                     if imageinfo:
                         image_url = imageinfo[0].get("url")
@@ -389,7 +390,7 @@ class ArtDownloader:
         self.logger.info(f"Fetching all images from Wikipedia article: {query}")
         try:
             params = {
-                "limit": self.MAX_ALLOWED_RESULTS,
+                "limit": self.MAX_WIKI_ALLOWED_RESULTS,
                 "q": query
             }
             response = requests.get("https://api.wikimedia.org/core/v1/wikipedia/en/search/page", params=params)
@@ -445,7 +446,7 @@ class ArtDownloader:
                                           ] if p)
                 return page_meta_data
 
-            qualifying_pages = self.filter_and_score_results(pages[:self.MAX_ALLOWED_RESULTS], extract_metadata, enhanced_query)
+            qualifying_pages = self.filter_and_score_results(pages[:self.MAX_WIKI_ALLOWED_RESULTS], extract_metadata, enhanced_query)
 
             if not qualifying_pages:
                 self.logger.error(f"No qualifying files found (score >= {THRESHOLDS['cosine']})")
