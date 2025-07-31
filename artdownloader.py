@@ -77,9 +77,6 @@ class ArtDownloader:
             self.subject = params.get('subject')
             self.filename_base = params.get('filename')
 
-        self.WIKIMEDIA_SEARCH_API_URL: str = "https://api.wikimedia.org/core/v1/commons/search/page"
-        self.WIKIMEDIA_FILE_API_URL: str = "https://api.wikimedia.org/core/v1/commons/file"
-
         # Track downloaded URLs and results
         self.DOWNLOADED_URLS: Dict[str, str] = {}
         self.FOUND_STOCK_PHOTOS: Set[str] = set()
