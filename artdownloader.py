@@ -588,23 +588,23 @@ class ArtDownloader:
     def _search_wikipedia_sources(self, wikimedia_query: str, enhanced_query: str) -> bool:
         """Search Wikipedia-related sources for images."""
         downloaded_wikipedia_search = self.download_image_from_wikipedia_article(
-            wikimedia_query, enhanced_query, self.filename_base
+            wikimedia_query, enhanced_query, str(self.filename_base)
         )
         downloaded_wikimedia_search = self.download_from_wikimedia_search(
-            wikimedia_query, enhanced_query, self.filename_base
+            wikimedia_query, enhanced_query, str(self.filename_base)
         )
         downloaded_wikimedia = self.download_from_wikimedia(
-            wikimedia_query, enhanced_query, self.filename_base
+            wikimedia_query, enhanced_query, str(self.filename_base)
         )
         return any([downloaded_wikipedia_search, downloaded_wikimedia_search, downloaded_wikimedia])
 
     def _search_other_sources(self, enhanced_query: str) -> bool:
         """Search non-Wikipedia sources for images."""
         downloaded_duckduckgo = self.download_from_duckduckgo(
-            enhanced_query, self.filename_base
+            enhanced_query, str(self.filename_base)
         )
         downloaded_google = self.download_from_google(
-            enhanced_query, self.filename_base
+            enhanced_query, str(self.filename_base)
         )
         return any([downloaded_duckduckgo, downloaded_google])
 
@@ -614,7 +614,8 @@ class ArtDownloader:
             self.filename_base = query.replace(' ', '_')
 
         enhanced_query = self._build_enhanced_query(query)
-        
+        wikipedia_success = False
+
         if self.SEARCH_WIKIPEDIA:
             wikimedia_query = self._build_wikimedia_query(query)
             self.logger.info(f"Searching wikis with simple query: {wikimedia_query}")
@@ -623,9 +624,7 @@ class ArtDownloader:
         self.logger.info(f"Searching google and duckduckgo with enhanced query: {enhanced_query}")
         other_sources_success = self._search_other_sources(enhanced_query)
 
-        if self.SEARCH_WIKIPEDIA:
-            return wikipedia_success or other_sources_success
-        return other_sources_success
+        return wikipedia_success or other_sources_success
 
     def print_results(self) -> None:
         """Print summary of downloaded images and results."""
