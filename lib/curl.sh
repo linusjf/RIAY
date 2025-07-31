@@ -23,6 +23,7 @@ require_commands curl sed cat rm date head tail basename mktemp grep cut tr mkdi
 : "${CURL_RETRY_EXP_BASE:=2}"
 : "${CURL_CONNECT_TIMEOUT:=30}"
 : "${CURL_MAX_TIME:=90}"
+: "${CURL_RETRY_STATUS_CODES:=(408 429 500 502 503 504)}"
 
 if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
   declare -A curl__HTTP_STATUS_CODES=(
@@ -158,7 +159,7 @@ fi
 if ! declare -f curl::should_retry > /dev/null; then
   function curl::should_retry() {
     local status_code="$1"
-    retry_status_codes=(408 429 500 502 503 504)
+    retry_status_codes=("${CURL_RETRY_STATUS_CODES[@]}")
     for _ in "${retry_status_codes[@]}"; do
       if [[ $status_code -eq _ ]]; then
         return 0
