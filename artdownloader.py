@@ -13,7 +13,8 @@ import sys
 import time
 import argparse
 import shutil
-from typing import Optional, Dict, List, Tuple, Any, Set, Union, Sequence
+import logging
+from typing import Optional, Dict, List, Tuple, Any, Set
 
 import requests
 from duckduckgo_search import DDGS
@@ -30,7 +31,6 @@ from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
 from PIL import Image
 from requests import Session
-from PIL.Image import Image as PILImage
 
 class ArtDownloader:
     """Download artwork images from various sources."""
@@ -41,6 +41,8 @@ class ArtDownloader:
     MAX_IMAGE_BYTES: int = 50 * 1024 * 1024  # 50 MB
     WIKIMEDIA_SEARCH_API_URL: str = "https://api.wikimedia.org/core/v1/commons/search/page"
     WIKIMEDIA_FILE_API_URL: str = "https://api.wikimedia.org/core/v1/commons/file"
+    WIKIMEDIA_SEARCH_PAGES_ENDPOINT: str = "https://api.wikimedia.org/core/v1/wikipedia/en/search/page"
+    WIKIMEDIA_COMMONS_SEARCH_ENDPOINT: str = "https://commons.wikimedia.org/w/api.php"
     """Initialize the downloader with configuration."""
     config: ConfigEnv = ConfigEnv(include_os_env=True)
     STOCK_PHOTO_SITES: List[str] = config.get(ConfigConstants.STOCK_PHOTO_SITES, [])
@@ -352,7 +354,7 @@ class ArtDownloader:
     def download_from_wikimedia_search(self, query: str, detailed_query: str, filename_base: str, source: str = "wikimedia_search") -> bool:
         """Search Wikimedia Commons for an image by query and download the top result."""
         self.logger.info(f"Searching Wikimedia for: {query}")
-        search_endpoint: str = "https://commons.wikimedia.org/w/api.php"
+        search_endpoint: str = self.WIKIMEDIA_COMMONS_SEARCH_ENDPOINT
         search_params: Dict[str, Any] = {
             "action": "query",
             "format": "json",
@@ -407,7 +409,7 @@ class ArtDownloader:
                 for page in pages.values():
                     imageinfo: List[Dict[str, Any]] = page.get("imageinfo")
                     if imageinfo:
-                        image_url: str = imageinfo[0].get("url")
+                        image_url: str = str(imageinfo[0].get("url"))
                         if image_url:
                             unique_filename: str = f"{filename_base}_{idx+1}_{source}"
                             filename: str = os.path.join(self.SAVE_DIR, f"{unique_filename}.jpg")
@@ -429,7 +431,7 @@ class ArtDownloader:
                 "limit": self.MAX_WIKI_ALLOWED_RESULTS,
                 "q": query
             }
-            response: requests.Response = requests.get("https://api.wikimedia.org/core/v1/wikipedia/en/search/page", params=params)
+            response: requests.Response = requests.get(self.WIKIMEDIA_SEARCH_PAGES_ENDPOINT, params=params)
             image_data: Dict[str, Any] = response.json()
 
             pages: List[Dict[str, Any]] = image_data.get("pages", [])
