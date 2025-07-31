@@ -82,6 +82,25 @@ class MatchMode(Enum):
     COSINE = auto()
     HYBRID = auto()
 
+def terms_match(term_a: str, term_b: str, mode: MatchMode = MatchMode.FUZZY) -> bool:
+    """Check if two terms match based on the specified mode and thresholds.
+
+    Args:
+        term_a: First term to compare
+        term_b: Second term to compare
+        mode: MatchMode enum value (FUZZY, COSINE or HYBRID)
+
+    Returns:
+        True if terms match according to thresholds, False otherwise
+    """
+    score = compare_terms(term_a, term_b, mode)
+    if mode == MatchMode.FUZZY:
+        return score >= THRESHOLDS["fuzzy"]
+    elif mode == MatchMode.COSINE:
+        return score >= THRESHOLDS["cosine"]
+    else:  # HYBRID
+        return score >= THRESHOLDS["hybrid"]
+
 def compare_terms(term_a: str, term_b: str, mode: MatchMode = MatchMode.FUZZY) -> float:
     """Compare two terms using the specified mode and return match score.
 
