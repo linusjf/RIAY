@@ -23,8 +23,12 @@ require_commands curl sed cat rm date head tail basename mktemp grep cut tr mkdi
 : "${CURL_RETRY_EXP_BASE:=2}"
 : "${CURL_CONNECT_TIMEOUT:=30}"
 : "${CURL_MAX_TIME:=90}"
-[ ${#CURL_RETRY_STATUS_CODES[@]:-0} -eq 0 ] && CURL_RETRY_STATUS_CODES=(408 429 500 502 503 504)
-[ ${#CURL_RETRY_HEADER_STATUS_CODES[@]:-0} -eq 0 ] && CURL_RETRY_HEADER_STATUS_CODES=(429 503)
+if [[ -z "${CURL_RETRY_STATUS_CODES:-}" ]]; then
+  CURL_RETRY_STATUS_CODES=(408 429 500 502 503 504)
+fi
+if [[ -z ${CURL_RETRY_HEADER_STATUS_CODES:-} ]]; then
+  CURL_RETRY_HEADER_STATUS_CODES=(429 503)
+fi
 
 if ! declare -p curl__HTTP_STATUS_CODES &> /dev/null; then
   declare -A curl__HTTP_STATUS_CODES=(
@@ -191,7 +195,7 @@ if ! declare -f curl::_get_retry_after_seconds > /dev/null; then
       echo "$header"
     else
       # Retry-After in HTTP-date format
-      retry_ts=$(date -d "$header" +%s 2>/dev/null)
+      retry_ts=$(date -d "$header" +%s 2> /dev/null)
       now_ts=$(date +%s)
 
       if [[ -n "$retry_ts" && "$retry_ts" -gt "$now_ts" ]]; then

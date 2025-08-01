@@ -914,7 +914,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -6227,6 +6227,23 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
 
 ## August
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+
+<!---toc start-->
+
+- [August 2025](#august-2025)
+  - [August 01, 2025](#august-01-2025)
+    - [Advocate, Queen, and Mother](#advocate-queen-and-mother)
+    - [AI-Generated Summary: The Poverty of Unseeing Prayer](#ai-generated-summary-the-poverty-of-unseeing-prayer)
+
+<!---toc end-->
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -6234,6 +6251,18 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
 ### August 2025
 
 RIAY August 2025
+
+#### August 01, 2025
+
+##### Advocate, Queen, and Mother
+
+[![Advocate, Queen, and Mother](August/jpgs/Day213.jpg)](https://youtu.be/nsxo_rpivaU "Advocate, Queen, and Mother")
+
+##### AI-Generated Summary: The Poverty of Unseeing Prayer
+
+What we find here is not the rich tapestry of devotion but a barren repetition, like a child reciting words without grasping their meaning. The soul, when it prays, ought to ascend—yet these empty phrases circle the same ground, like a bird fluttering near the earth but never taking wing. One wonders if the speaker mistakes the act of saying for the act of praying, as if Heaven could be moved by mere syllables rather than the heart’s true cry.
+
+And what of art? There is none here—no vision, no form, no color to stir the mind toward higher things. For beauty, too, is a kind of prayer, a silent hymn to the Maker of all things. But where beauty is absent, the soul grows thin, feeding only on the dry husks of habit. Let us then seek both prayer and art with fresh eyes, lest we starve while standing at the feast.
 
 ## September
 

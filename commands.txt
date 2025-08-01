@@ -1,4 +1,4 @@
 # commands
 #embedarttoday 199
-addvideo "xbYZHbG6phg" "Eternal Exchange of Love"
+addvideo "nsxo_rpivaU" "Advocate, Queen, and Mother"
 lint
