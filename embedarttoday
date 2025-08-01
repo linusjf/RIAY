@@ -179,6 +179,8 @@ function main() {
 
   if art_details="$("${SCRIPT_DIR}/extractartdetails" "$summary_file" | "${SCRIPT_DIR}/augmentartdetails.py")"; then
     title="$(echo "$art_details" | jq '.details.title' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
+    original_title="$(echo "$art_details" | jq '.details.original_title' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
+    language="$(echo "$art_details" | jq '.details.title_language_iso' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
     artist="$(echo "$art_details" | jq '.details.artist' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
     location="$(echo "$art_details" | jq '.details.location' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
     date="$(echo "$art_details" | jq '.details.date' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
@@ -189,7 +191,8 @@ function main() {
     caption="$(echo "$art_details" | jq '.caption' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
 
     local downloader_output
-    downloader_output="$("${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --artist "${artist:-}" --location "${location:-}" \
+    downloader_output="$("${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --original_title "${original_title:-}" --language "${language:-}" \
+      --artist "${artist:-}" --location "${location:-}" \
       --medium "${medium:-}" --subject "${subject:-}" --style "${style:-}" --date "${date:-}")"
 
     printf "%s\n" "$downloader_output"
