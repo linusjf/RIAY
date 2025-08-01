@@ -914,7 +914,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -5611,6 +5611,7 @@ This is no mere depiction of suffering, but a window into its strange redemption
   - [July 30, 2025](#july-30-2025)
     - [Presence of the Holy Spirit](#presence-of-the-holy-spirit)
     - [AI-Generated Summary: On Speaking to the Spirit as a Friend](#ai-generated-summary-on-speaking-to-the-spirit-as-a-friend)
+    - [AI-Generated Image: A child's hand placing a broken toy into a father's weathered hands, bathed in warm light](#ai-generated-image-a-childs-hand-placing-a-broken-toy-into-a-fathers-weathered-hands-bathed-in-warm-light)
   - [July 31, 2025](#july-31-2025)
     - [Eternal Exchange of Love](#eternal-exchange-of-love)
     - [AI-Generated Summary: The Divine Household and the Dance of Love](#ai-generated-summary-the-divine-household-and-the-dance-of-love)
@@ -6206,6 +6207,11 @@ Imagine, if you will, a conversation not with the distant or abstract, but with 
 He is called Helper for a reason. Do you tremble? Ask for steadfastness. Are you clouded by doubt? Seek clarity. The roles of the Spirit are not titles locked in scripture, but living doors swung open for your knocking. Invite Him into the dry and dusty corners of your soul, and you will find, as countless others have, that He does not merely advise from afar, but rolls up His sleeves and gets to work.
 
 And yes, the old prayers—those well-worn paths of "Our Father" and "Hail Mary"—have their place, like familiar roads leading home. But do not mistake the road for the destination. What God desires is not recitation, but relationship; not repetition, but the raw, real cry of the heart. Speak to Him as you are, and you will find Him already speaking back.
+
+##### AI-Generated Image: A child's hand placing a broken toy into a father's weathered hands, bathed in warm light
+
+![A child's hand placing a broken toy into a father's weathered hands, bathed in warm light
+](July/jpgs/Day211Summary.jpg)
 
 #### July 31, 2025
 

@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -116,7 +115,7 @@
   - [July 27, 2025](#july-27-2025)
     - [Mary is With Us](#mary-is-with-us)
     - [AI-Generated Summary: The Queen Mother and Her Divine Crown](#ai-generated-summary-the-queen-mother-and-her-divine-crown)
-    - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-vel%C3%A1zquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
+    - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-velázquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
   - [July 28, 2025](#july-28-2025)
     - [Praying With the Father](#praying-with-the-father)
     - [AI-Generated Summary: The Heart of Prayer as Communion with the Father](#ai-generated-summary-the-heart-of-prayer-as-communion-with-the-father)
@@ -128,6 +127,7 @@
   - [July 30, 2025](#july-30-2025)
     - [Presence of the Holy Spirit](#presence-of-the-holy-spirit)
     - [AI-Generated Summary: On Speaking to the Spirit as a Friend](#ai-generated-summary-on-speaking-to-the-spirit-as-a-friend)
+    - [AI-Generated Image: A child's hand placing a broken toy into a father's weathered hands, bathed in warm light](#ai-generated-image-a-childs-hand-placing-a-broken-toy-into-a-fathers-weathered-hands-bathed-in-warm-light)
   - [July 31, 2025](#july-31-2025)
     - [Eternal Exchange of Love](#eternal-exchange-of-love)
     - [AI-Generated Summary: The Divine Household and the Dance of Love](#ai-generated-summary-the-divine-household-and-the-dance-of-love)
@@ -135,7 +135,6 @@
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -723,6 +722,11 @@ Imagine, if you will, a conversation not with the distant or abstract, but with 
 He is called Helper for a reason. Do you tremble? Ask for steadfastness. Are you clouded by doubt? Seek clarity. The roles of the Spirit are not titles locked in scripture, but living doors swung open for your knocking. Invite Him into the dry and dusty corners of your soul, and you will find, as countless others have, that He does not merely advise from afar, but rolls up His sleeves and gets to work.
 
 And yes, the old prayers—those well-worn paths of "Our Father" and "Hail Mary"—have their place, like familiar roads leading home. But do not mistake the road for the destination. What God desires is not recitation, but relationship; not repetition, but the raw, real cry of the heart. Speak to Him as you are, and you will find Him already speaking back.
+
+### AI-Generated Image: A child's hand placing a broken toy into a father's weathered hands, bathed in warm light
+
+![A child's hand placing a broken toy into a father's weathered hands, bathed in warm light
+](/July/jpgs/Day211Summary.jpg)
 
 ## July 31, 2025
 
