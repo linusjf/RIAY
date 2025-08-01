@@ -1,4 +1,5 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -115,7 +116,7 @@
   - [July 27, 2025](#july-27-2025)
     - [Mary is With Us](#mary-is-with-us)
     - [AI-Generated Summary: The Queen Mother and Her Divine Crown](#ai-generated-summary-the-queen-mother-and-her-divine-crown)
-    - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-velázquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
+    - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-vel%C3%A1zquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
   - [July 28, 2025](#july-28-2025)
     - [Praying With the Father](#praying-with-the-father)
     - [AI-Generated Summary: The Heart of Prayer as Communion with the Father](#ai-generated-summary-the-heart-of-prayer-as-communion-with-the-father)
@@ -131,10 +132,12 @@
   - [July 31, 2025](#july-31-2025)
     - [Eternal Exchange of Love](#eternal-exchange-of-love)
     - [AI-Generated Summary: The Divine Household and the Dance of Love](#ai-generated-summary-the-divine-household-and-the-dance-of-love)
+    - [AI-Generated Image: A holy family bathed in divine light, where love moves in silent glances and sacred gestures](#ai-generated-image-a-holy-family-bathed-in-divine-light-where-love-moves-in-silent-glances-and-sacred-gestures)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -739,3 +742,7 @@ And yes, the old prayers—those well-worn paths of "Our Father" and "Hail Mary"
 Imagine, if you will, a home where love is not merely spoken but lived in every glance and gesture—a home where Joseph, that quiet and steadfast man, guards the mystery of the Incarnation with a foster-father’s care; where Mary, full of grace, bears not only the Son of God but also the very breath of the Spirit, her spouse; and where the Child Himself is both the promise and the fulfillment of all things. Here, in this holy family, we catch a glimpse of that greater and eternal household: the Trinity, where Father, Son, and Spirit move in perfect love, a dance so joyous that its echoes reach even into our weary world.
 
 To pray before an icon of these mysteries is not to admire a mere painting, but to step through a door—into the presence of Love itself. The prayers we repeat are not empty words, but the steady rhythm of the heart learning to beat in time with heaven. And if we linger there, we may find, as if by surprise, that we too are drawn into that sacred exchange, where every Hail Mary is a step closer, every Our Father a whispered "yes" to the divine embrace.
+
+### AI-Generated Image: A holy family bathed in divine light, where love moves in silent glances and sacred gestures
+
+![AI-Generated Image: A holy family bathed in divine light, where love moves in silent glances and sacred gestures](/July/jpgs/Day212Summary.jpg)

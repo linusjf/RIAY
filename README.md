@@ -914,7 +914,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -5615,6 +5615,7 @@ This is no mere depiction of suffering, but a window into its strange redemption
   - [July 31, 2025](#july-31-2025)
     - [Eternal Exchange of Love](#eternal-exchange-of-love)
     - [AI-Generated Summary: The Divine Household and the Dance of Love](#ai-generated-summary-the-divine-household-and-the-dance-of-love)
+    - [AI-Generated Image: A holy family bathed in divine light, where love moves in silent glances and sacred gestures](#ai-generated-image-a-holy-family-bathed-in-divine-light-where-love-moves-in-silent-glances-and-sacred-gestures)
 
 <!---toc end-->
 
@@ -6224,6 +6225,10 @@ And yes, the old prayers—those well-worn paths of "Our Father" and "Hail Mary"
 Imagine, if you will, a home where love is not merely spoken but lived in every glance and gesture—a home where Joseph, that quiet and steadfast man, guards the mystery of the Incarnation with a foster-father’s care; where Mary, full of grace, bears not only the Son of God but also the very breath of the Spirit, her spouse; and where the Child Himself is both the promise and the fulfillment of all things. Here, in this holy family, we catch a glimpse of that greater and eternal household: the Trinity, where Father, Son, and Spirit move in perfect love, a dance so joyous that its echoes reach even into our weary world.
 
 To pray before an icon of these mysteries is not to admire a mere painting, but to step through a door—into the presence of Love itself. The prayers we repeat are not empty words, but the steady rhythm of the heart learning to beat in time with heaven. And if we linger there, we may find, as if by surprise, that we too are drawn into that sacred exchange, where every Hail Mary is a step closer, every Our Father a whispered "yes" to the divine embrace.
+
+##### AI-Generated Image: A holy family bathed in divine light, where love moves in silent glances and sacred gestures
+
+![AI-Generated Image: A holy family bathed in divine light, where love moves in silent glances and sacred gestures](July/jpgs/Day212Summary.jpg)
 
 ## August
 
