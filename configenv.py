@@ -12,20 +12,25 @@ Configenv.
 """
 import os
 import re
+import threading
 from typing import Dict, Any, Union, List
 
 class ConfigEnv:
     BOOL_TRUE = {"true", "1", "yes", "on"}
     BOOL_FALSE = {"false", "0", "no", "off"}
     _instances = {}
+    _lock = threading.Lock()
 
     def __new__(cls, filepath: str = 'config.env', override: bool = False, include_os_env: bool=False):
         abs_path = os.path.abspath(filepath)
         key = (abs_path, override, include_os_env)
         if key not in cls._instances:
-            instance = super(ConfigEnv, cls).__new__(cls)
-            instance.__init__(abs_path, override, include_os_env)
-            cls._instances[key] = instance
+            with cls._lock:
+                # Double-checked locking pattern
+                if key not in cls._instances:
+                    instance = super(ConfigEnv, cls).__new__(cls)
+                    instance.__init__(abs_path, override, include_os_env)
+                    cls._instances[key] = instance
         return cls._instances[key]
 
     def __init__(self, filepath: str = 'config.env', override: bool = False, include_os_env: bool=False) -> None:
