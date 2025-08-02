@@ -142,7 +142,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 
   require_vars DEEPINFRA_TOKEN YEAR IMAGE_GENERATION_SCRIPT || exit $EXIT_REQUIREMENTS_ERROR
 
-  require_commands sed basename date tee mv wc cat cp jq || exit $EXIT_REQUIREMENTS_ERROR
+  require_commands sed basename date tee mv wc cat cp jq gm || exit $EXIT_REQUIREMENTS_ERROR
 
   if [[ "$#" -ne 2 ]]; then
     usage >&2
