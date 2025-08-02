@@ -169,7 +169,7 @@ generate_files() {
   fi
   if "${AUTO_GENERATE_IMAGES:-false}"; then
     # generate image from summary prompt
-    "{SCRIPT_DIR}/addsummaryimagefromprompt" "$summarypromptfname" "$doy" \
+    "${SCRIPT_DIR}/addsummaryimagefromprompt" "$summarypromptfname" "$doy" \
       || die "Failed to generate summary image" $EXIT_FILE_GENERATION_FAILED
   fi
 
