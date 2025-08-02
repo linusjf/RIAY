@@ -55,7 +55,7 @@ function version() {
 function generate_image() {
   local prompt="$1"
   local timestamp="$(date +%s)"
-  local output_path="$(mktemp -t "image_${timestamp}_XXX.jpg")"
+  local output_path="$(mktemp -t "image_${timestamp}_XXX.png")"
 
   log "Generating image for prompt: ${prompt}" >&2
 
