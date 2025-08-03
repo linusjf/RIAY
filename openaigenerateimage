@@ -21,10 +21,19 @@ source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
 source "${SCRIPT_DIR}/lib/curl.sh"
+source "${SCRIPT_DIR}/lib/spinner.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 require_commands date jq tee mktemp gm
 require_vars OPENAI_API_KEY
+
+NO_OF_IMAGES=1
+IMAGE_SIZE="1024x1024"
+BACKGROUND="transparent"
+OUTPUT_FORMAT="webp"
+MODEL="gpt-image-1"
+MODERATION="low"
+QUALITY="high"
 
 function usage() {
   cat << EOF
@@ -57,32 +66,26 @@ generate_image() {
   local timestamp
   timestamp="$(date +%s)"
   local output_path
-  output_path="$(mktemp -t "image_${timestamp}_XXX.png")"
+  output_path="$(mktemp -t "image_${timestamp}_XXX.webp")"
 
   log "Generating image for prompt: ${prompt}" >&2
 
   local request_data="{
     \"prompt\": \"${prompt}\",
-    \"n\": 1,
-    \"size\": \"1024x1024\",
-    \"background\": \"transparent\",
-    \"output_format\": \"png\",
-    \"model\": \"gpt-image-1\",
-    \"moderation\": \"low\",
-    \"quality\": \"high\"
+    \"n\": $NO_OF_IMAGES,
+    \"size\": \"$IMAGE_SIZE\",
+    \"background\": \"$BACKGROUND\",
+    \"output_format\": \"$OUTPUT_FORMAT\",
+    \"model\": \"$MODEL\",
+    \"moderation\": \"$MODERATION\",
+    \"quality\": \"$QUALITY\"
   }"
 
+  log "Request data: $request_data" >&2
+
   # Start spinner in background
-  local pid
-  (
-    i=0
-    local sp=$'|/-\\'
-    while true; do
-      printf "\rGenerating image... %s" "${sp:i++%${#sp}:1}" >&2
-      sleep 1
-    done
-  ) &
-  pid=$!
+  spinner::start_spinner "Working" 1
+  pid="$spinner_pid"
 
   # Run the request
   local response
@@ -93,13 +96,12 @@ generate_image() {
       --header "Authorization: Bearer ${OPENAI_API_KEY}" \
       --data "${request_data}"
   ) || {
-    kill "$pid" &> /dev/null
+    spinner::stop_spinner "$pid"
     printf "\rImage generation failed.\n" >&2
     exit $EXIT_API_FAILURE
   }
 
-  kill "$pid" &> /dev/null
-  wait "$pid" 2> /dev/null || true
+  spinner::stop_spinner "$pid"
   printf "\rImage generation complete.           \n" >&2
 
   local base64_image
