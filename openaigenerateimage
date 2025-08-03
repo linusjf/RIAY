@@ -25,7 +25,7 @@ source "${SCRIPT_DIR}/lib/spinner.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 require_commands date jq tee mktemp gm
-require_vars OPENAI_API_KEY IMAGE_GENERATION_WRAPPER_PROMPT
+require_vars OPENAI_API_KEY
 
 NO_OF_IMAGES=1
 IMAGE_SIZE="1024x1024"
@@ -68,12 +68,10 @@ generate_image() {
   local output_path
   output_path="$(mktemp -t "image_${timestamp}_XXX.webp")"
 
-  # Wrap the prompt with IMAGE_GENERATION_WRAPPER_PROMPT from config
-  local wrapped_prompt="${IMAGE_GENERATION_WRAPPER_PROMPT/\{actual_prompt\}/${prompt}}"
-  log "Generating image for wrapped prompt: ${wrapped_prompt}" >&2
+  log "Generating image for prompt: ${prompt}" >&2
 
   local request_data="{
-    \"prompt\": \"${wrapped_prompt}\",
+    \"prompt\": \"${prompt}\",
     \"n\": $NO_OF_IMAGES,
     \"size\": \"$IMAGE_SIZE\",
     \"background\": \"$BACKGROUND\",
