@@ -16,7 +16,7 @@ readonly EXIT_API_FAILURE=2
 readonly EXIT_DOWNLOAD_FAILURE=3
 readonly EXIT_INVALID_RESPONSE=4
 
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
@@ -27,7 +27,7 @@ require_commands date jq tee mktemp gm
 require_vars OPENAI_API_KEY
 
 function usage() {
-  cat << EOF
+  cat <<EOF
 Usage: ${SCRIPT_NAME} "Your image prompt"
 
 Options:
@@ -52,38 +52,65 @@ function version() {
   printf "%s\n" "${VERSION}"
 }
 
-function generate_image() {
+generate_image() {
   local prompt="$1"
-  local timestamp="$(date +%s)"
-  local output_path="$(mktemp -t "image_${timestamp}_XXX.png")"
+  local timestamp
+  timestamp="$(date +%s)"
+  local output_path
+  output_path="$(mktemp -t "image_${timestamp}_XXX.png")"
 
   log "Generating image for prompt: ${prompt}" >&2
 
   local request_data="{
-          \"prompt\": \"${prompt}\",
-          \"n\": 1,
-          \"size\": \"1024x1024\",
-          \"response_format\": \"url\"
-        }"
+    \"prompt\": \"${prompt}\",
+    \"n\": 1,
+    \"size\": \"1024x1024\",
+    \"background\": \"transparent\",
+    \"output_format\": \"png\",
+    \"model\": \"gpt-image-1\",
+    \"moderation\": \"low\",
+    \"quality\": \"high\"
+  }"
 
-  local response=$(
+  # Start spinner in background
+  local pid
+  (
+    i=0
+    sp='|/-\'
+    while true; do
+      printf "\rGenerating image... %s" "${sp:i++%${#sp}:1}" >&2
+      sleep 1
+    done
+  ) &
+  pid=$!
+
+  # Run the request
+  local response
+  response=$(
     curl::request "https://api.openai.com/v1/images/generations" \
       "POST" \
       --header "Content-Type: application/json" \
       --header "Authorization: Bearer ${OPENAI_API_KEY}" \
       --data "${request_data}"
-  ) || exit $EXIT_API_FAILURE
+  ) || {
+    kill "$pid" &>/dev/null
+    printf "\rImage generation failed.\n" >&2
+    exit $EXIT_API_FAILURE
+  }
 
-  local image_url=$(echo "${response}" | jq -r '.data[0].url')
+  kill "$pid" &>/dev/null
+  wait "$pid" 2>/dev/null || true
+  printf "\rImage generation complete.           \n" >&2
 
-  log "$image_url" >&2
+  local base64_image
+  base64_image=$(echo "${response}" | jq -r '.data[0].b64_json')
 
-  if [[ "${image_url}" == "null" ]] || [[ -z "${image_url:-}" ]]; then
+  if [[ "${base64_image}" == "null" || -z "${base64_image:-}" ]]; then
     die "Failed to generate image. Response: ${response}" $EXIT_INVALID_RESPONSE
   fi
 
-  log "Downloading image from: ${image_url}" >&2
-  curl::download "${image_url}" "${output_path}" || exit $EXIT_DOWNLOAD_FAILURE
+  log "Saving decoded image to: ${output_path}" >&2
+  echo "${base64_image}" | base64 -d >"${output_path}" || exit $EXIT_DOWNLOAD_FAILURE
 
   printf "%s\n" "${output_path}"
 }
@@ -94,18 +121,18 @@ function main() {
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -h | --help)
-        usage
-        exit $EXIT_SUCCESS
-        ;;
-      --version)
-        version
-        exit $EXIT_SUCCESS
-        ;;
-      *)
-        prompt="$1"
-        shift
-        ;;
+    -h | --help)
+      usage
+      exit $EXIT_SUCCESS
+      ;;
+    --version)
+      version
+      exit $EXIT_SUCCESS
+      ;;
+    *)
+      prompt="$1"
+      shift
+      ;;
     esac
   done
 
