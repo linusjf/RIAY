@@ -25,7 +25,7 @@ source "${SCRIPT_DIR}/lib/spinner.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 require_commands date jq tee mktemp gm
-require_vars OPENAI_API_KEY
+require_vars OPENAI_API_KEY IMAGE_GENERATION_WRAPPER_PROMPT
 
 NO_OF_IMAGES=1
 IMAGE_SIZE="1024x1024"
