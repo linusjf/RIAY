@@ -68,10 +68,12 @@ generate_image() {
   local output_path
   output_path="$(mktemp -t "image_${timestamp}_XXX.webp")"
 
-  log "Generating image for prompt: ${prompt}" >&2
+  # Wrap the prompt with IMAGE_GENERATION_WRAPPER_PROMPT from config
+  local wrapped_prompt="${IMAGE_GENERATION_WRAPPER_PROMPT/\{actual_prompt\}/${prompt}}"
+  log "Generating image for wrapped prompt: ${wrapped_prompt}" >&2
 
   local request_data="{
-    \"prompt\": \"${prompt}\",
+    \"prompt\": \"${wrapped_prompt}\",
     \"n\": $NO_OF_IMAGES,
     \"size\": \"$IMAGE_SIZE\",
     \"background\": \"$BACKGROUND\",
