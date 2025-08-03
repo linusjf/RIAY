@@ -63,11 +63,6 @@ function generate_image() {
   local prompt="$1"
   local escaped_prompt payload response request_id
 
-  # Apply wrapper prompt if configured
-  if [[ -n "${IMAGE_GENERATION_WRAPPER_PROMPT:-}" ]]; then
-    prompt="${IMAGE_GENERATION_WRAPPER_PROMPT//\{actual_prompt\}/$prompt}"
-  fi
-
   escaped_prompt="$(jq -Rs <<< "$prompt")" || die "Failed to escape prompt" 4
 
   payload="$(jq -n --arg prompt "$escaped_prompt" '{
