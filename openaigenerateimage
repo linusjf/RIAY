@@ -16,7 +16,7 @@ readonly EXIT_API_FAILURE=2
 readonly EXIT_DOWNLOAD_FAILURE=3
 readonly EXIT_INVALID_RESPONSE=4
 
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
@@ -27,7 +27,7 @@ require_commands date jq tee mktemp gm
 require_vars OPENAI_API_KEY
 
 function usage() {
-  cat <<EOF
+  cat << EOF
 Usage: ${SCRIPT_NAME} "Your image prompt"
 
 Options:
@@ -76,7 +76,7 @@ generate_image() {
   local pid
   (
     i=0
-    sp='|/-\'
+    local sp=$'|/-\\'
     while true; do
       printf "\rGenerating image... %s" "${sp:i++%${#sp}:1}" >&2
       sleep 1
@@ -93,13 +93,13 @@ generate_image() {
       --header "Authorization: Bearer ${OPENAI_API_KEY}" \
       --data "${request_data}"
   ) || {
-    kill "$pid" &>/dev/null
+    kill "$pid" &> /dev/null
     printf "\rImage generation failed.\n" >&2
     exit $EXIT_API_FAILURE
   }
 
-  kill "$pid" &>/dev/null
-  wait "$pid" 2>/dev/null || true
+  kill "$pid" &> /dev/null
+  wait "$pid" 2> /dev/null || true
   printf "\rImage generation complete.           \n" >&2
 
   local base64_image
@@ -110,7 +110,7 @@ generate_image() {
   fi
 
   log "Saving decoded image to: ${output_path}" >&2
-  echo "${base64_image}" | base64 -d >"${output_path}" || exit $EXIT_DOWNLOAD_FAILURE
+  echo "${base64_image}" | base64 -d > "${output_path}" || exit $EXIT_DOWNLOAD_FAILURE
 
   printf "%s\n" "${output_path}"
 }
@@ -121,18 +121,18 @@ function main() {
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -h | --help)
-      usage
-      exit $EXIT_SUCCESS
-      ;;
-    --version)
-      version
-      exit $EXIT_SUCCESS
-      ;;
-    *)
-      prompt="$1"
-      shift
-      ;;
+      -h | --help)
+        usage
+        exit $EXIT_SUCCESS
+        ;;
+      --version)
+        version
+        exit $EXIT_SUCCESS
+        ;;
+      *)
+        prompt="$1"
+        shift
+        ;;
     esac
   done
 
