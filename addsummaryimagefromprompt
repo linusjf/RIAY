@@ -87,24 +87,31 @@ trap trap_exit EXIT
 main() {
   local summary_prompt_fname="$1"
   local doy="$2"
-  local month generated_image jpeg_filename prompt caption json
+  local month generated_image jpeg_filename prompt caption json wrapped_prompt
 
   json="$(cat "${summary_prompt_fname}")" || die "Failed to read ${summary_prompt_fname}" $EXIT_FILE_READ_ERROR
   validate_json "$json"
   prompt="$(imageprompt::get_prompt "$json")" || die "Failed to get image prompt" $EXIT_PROMPT_ERROR
   caption="$(imageprompt::get_caption "$json")" || die "Failed to get caption" $EXIT_CAPTION_ERROR
 
+  # Apply wrapper prompt if configured
+  if [[ -n "${IMAGE_GENERATION_WRAPPER_PROMPT:-}" ]]; then
+    wrapped_prompt="${IMAGE_GENERATION_WRAPPER_PROMPT//\{actual_prompt\}/$prompt}"
+  else
+    wrapped_prompt="$prompt"
+  fi
+
   # shellcheck disable=SC2153
   month="$(date::mfromdoy "$doy" "$YEAR")" || die "Failed to get month from DOY" $EXIT_DATE_ERROR
-  if moderated_response="$("${SCRIPT_DIR}/moderateprompt.py" "$prompt")"; then
-    generated_image="$("${SCRIPT_DIR}/${IMAGE_GENERATION_SCRIPT}" "$prompt" || die "Image generation failed" $EXIT_IMAGE_GEN_ERROR)"
+  if moderated_response="$("${SCRIPT_DIR}/moderateprompt.py" "$wrapped_prompt")"; then
+    generated_image="$("${SCRIPT_DIR}/${IMAGE_GENERATION_SCRIPT}" "$wrapped_prompt" || die "Image generation failed" $EXIT_IMAGE_GEN_ERROR)"
     jpeg_filename="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg"
     cp "$generated_image" "$jpeg_filename" || die "Failed to copy image to ${jpeg_filename}" $EXIT_FILE_COPY_ERROR
     gm convert "$jpeg_filename" "$jpeg_filename" || die "Failed to convert image to jpeg format" $EXIT_FILE_CONVERT_ERROR
     "${SCRIPT_DIR}/addimgtoday" "$jpeg_filename" "AI-Generated Image: ${caption}" "$doy" || die "Failed to add image" $EXIT_ADD_IMAGE_ERROR
     rm -f "$generated_image" || warn "Failed to remove temporary image file"
   else
-    echo "Prompt: '$prompt' failed the content moderation policy used by OpenAI. Image not generated." >&2
+    echo "Prompt: '$wrapped_prompt' failed the content moderation policy used by OpenAI. Image not generated." >&2
     echo "$moderated_response" >&2
   fi
   return 0
