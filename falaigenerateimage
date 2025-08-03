@@ -187,7 +187,7 @@ function main() {
 }
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
