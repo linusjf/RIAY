@@ -6252,6 +6252,7 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
   - [August 03, 2025](#august-03-2025)
     - [Here With Jesus](#here-with-jesus)
     - [AI-Generated Summary: The Weight of Glory in Art and Prayer](#ai-generated-summary-the-weight-of-glory-in-art-and-prayer)
+    - [Caravaggio's dramatic 'The Crowning with Thorns' portrays Christ's torment with intense realism and chiaroscuro on canvas (Stock Image)](#caravaggios-dramatic-the-crowning-with-thorns-portrays-christs-torment-with-intense-realism-and-chiaroscuro-on-canvas-stock-image)
 
 <!---toc end-->
 
@@ -6308,6 +6309,10 @@ Consider two masterpieces, each a window into the Sorrowful Mysteries. First, Ca
 Then El Greco’s _Christ Carrying the Cross_, where the Savior’s form stretches heavenward, as if the very wood He bears seeks to pull Him earthward while His spirit strains upward. The colors burn with unearthly fire, a reminder that pain, too, may be transfigured.
 
 Yet these are not mere relics of piety to be admired and shelved. The true meditation begins when we step into the frame—when the thorns press against _our_ brows, when the cross’s weight bows _our_ shoulders. For prayer is no recitation of old words, but the daring act of walking beside Him now, in the ordinary moments where He still whispers, "Follow."
+
+##### Caravaggio's dramatic 'The Crowning with Thorns' portrays Christ's torment with intense realism and chiaroscuro on canvas (Stock Image)
+
+[![Caravaggio's dramatic 'The Crowning with Thorns' portrays Christ's torment with intense realism and chiaroscuro on canvas](August/jpgs/crowningwiththornscaravaggio.jpg)](https://upload.wikimedia.org/wikipedia/commons/f/f1/Michelangelo_Caravaggio_072.jpg "Caravaggio's dramatic 'The Crowning with Thorns' portrays Christ's torment with intense realism and chiaroscuro on canvas")
 
 ## September
 
