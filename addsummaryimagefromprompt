@@ -94,17 +94,10 @@ main() {
   prompt="$(imageprompt::get_prompt "$json")" || die "Failed to get image prompt" $EXIT_PROMPT_ERROR
   caption="$(imageprompt::get_caption "$json")" || die "Failed to get caption" $EXIT_CAPTION_ERROR
 
-  # Apply wrapper prompt if configured
-  if [[ -n "${IMAGE_GENERATION_WRAPPER_PROMPT:-}" ]]; then
-    wrapped_prompt="${IMAGE_GENERATION_WRAPPER_PROMPT//\{actual_prompt\}/$prompt}"
-  else
-    wrapped_prompt="$prompt"
-  fi
-
   # shellcheck disable=SC2153
   month="$(date::mfromdoy "$doy" "$YEAR")" || die "Failed to get month from DOY" $EXIT_DATE_ERROR
-  if moderated_response="$("${SCRIPT_DIR}/moderateprompt.py" "$wrapped_prompt")"; then
-    generated_image="$("${SCRIPT_DIR}/${IMAGE_GENERATION_SCRIPT}" "$wrapped_prompt" || die "Image generation failed" $EXIT_IMAGE_GEN_ERROR)"
+  if moderated_response="$("${SCRIPT_DIR}/moderateprompt.py" "$prompt")"; then
+    generated_image="$("${SCRIPT_DIR}/${IMAGE_GENERATION_SCRIPT}" "$prompt" || die "Image generation failed" $EXIT_IMAGE_GEN_ERROR)"
     jpeg_filename="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg"
     cp "$generated_image" "$jpeg_filename" || die "Failed to copy image to ${jpeg_filename}" $EXIT_FILE_COPY_ERROR
     gm convert "$jpeg_filename" "$jpeg_filename" || die "Failed to convert image to jpeg format" $EXIT_FILE_CONVERT_ERROR
