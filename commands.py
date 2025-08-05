@@ -5,6 +5,7 @@ This module implements a listener for processing commands parsed by ANTLR.
 It executes corresponding actions based on the parsed command syntax.
 """
 
+import argparse
 import logging
 import os
 import subprocess
@@ -137,8 +138,15 @@ class Commands(commandsListener):
 
 
 def main() -> None:
-    config = ConfigEnv("config.env")
     """Main entry point for command processing."""
+    parser = argparse.ArgumentParser(description='Process commands for the system.')
+    parser.add_argument('--help', '-h', action='help', default=argparse.SUPPRESS,
+                       help='Show this help message and exit.')
+    
+    # Parse known args first to handle help before processing commands file
+    args, remaining = parser.parse_known_args()
+    
+    config = ConfigEnv("config.env")
     input_stream = FileStream(config.get(ConfigConstants.COMMANDS_FILE))
     lexer = commandsLexer(input_stream)
     lexer.removeErrorListeners()
