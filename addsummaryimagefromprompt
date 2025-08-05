@@ -34,7 +34,7 @@ version() {
 }
 
 usage() {
-  cat << EOF
+  cat <<EOF
 Usage: ${SCRIPT_NAME} [options] <path_to_prompt_file>
 
 Options:
@@ -64,10 +64,10 @@ EOF
 
 validate_json() {
   local json="$1"
-  if ! jq -e '.caption and .image_prompt' <<< "$json" > /dev/null 2>&1; then
+  if ! jq -e '.caption and .image_prompt' <<<"$json" >/dev/null 2>&1; then
     die "Invalid JSON format - must contain both .caption and .image_prompt fields" $EXIT_INVALID_JSON
   fi
-  if jq -e '.caption == "" or .image_prompt == ""' <<< "$json" > /dev/null 2>&1; then
+  if jq -e '.caption == "" or .image_prompt == ""' <<<"$json" >/dev/null 2>&1; then
     die "Invalid JSON content - .caption and .image_prompt must not be empty" $EXIT_INVALID_JSON
   fi
 }
@@ -132,17 +132,17 @@ main() {
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   case "${1:-}" in
-    -v | --version)
-      version
-      exit $EXIT_SUCCESS
-      ;;
-    -h | --help)
-      usage
-      exit $EXIT_SUCCESS
-      ;;
+  -v | --version)
+    version
+    exit $EXIT_SUCCESS
+    ;;
+  -h | --help)
+    usage
+    exit $EXIT_SUCCESS
+    ;;
   esac
 
-  if command -v realpath > /dev/null 2>&1; then
+  if command -v realpath >/dev/null 2>&1; then
     readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
   else
     readonly SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd -P)"
@@ -156,7 +156,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 
   lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env" || exit $EXIT_REQUIREMENTS_ERROR
 
-  require_vars DEEPINFRA_TOKEN YEAR IMAGE_GENERATION_SCRIPT || exit $EXIT_REQUIREMENTS_ERROR
+  require_vars DEEPINFRA_TOKEN YEAR IMAGE_GENERATION_SCRIPT YEAR || exit $EXIT_REQUIREMENTS_ERROR
 
   require_commands sed basename date tee mv wc cat cp jq gm || exit $EXIT_REQUIREMENTS_ERROR
 
