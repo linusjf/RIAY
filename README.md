@@ -914,7 +914,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -6257,6 +6257,10 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
     - [Overshadowed by the Spirit](#overshadowed-by-the-spirit)
     - [AI-Generated Summary: The Silent Language of Divine Love](#ai-generated-summary-the-silent-language-of-divine-love)
     - [AI-Generated Image: A celestial embrace of fire and breath, where divine love pierces the veil of the unseen](#ai-generated-image-a-celestial-embrace-of-fire-and-breath-where-divine-love-pierces-the-veil-of-the-unseen)
+  - [August 05, 2025](#august-05-2025)
+    - [Resting With the Trinity](#resting-with-the-trinity)
+    - [AI-Generated Summary: The Soul's Homage to the Triune God](#ai-generated-summary-the-souls-homage-to-the-triune-god)
+    - [AI-Generated Image: A celestial embrace of divine light and sacred geometry](#ai-generated-image-a-celestial-embrace-of-divine-light-and-sacred-geometry)
 
 <!---toc end-->
 
@@ -6335,6 +6339,22 @@ As for the prayers repeated like the beating of that heart—Hail Mary, Our Fath
 ##### AI-Generated Image: A celestial embrace of fire and breath, where divine love pierces the veil of the unseen
 
 ![AI-Generated Image: A celestial embrace of fire and breath, where divine love pierces the veil of the unseen](August/jpgs/Day216Summary.jpg)
+
+#### August 05, 2025
+
+##### Resting With the Trinity
+
+[![Resting With the Trinity](August/jpgs/Day217.jpg)](https://youtu.be/5I6Ba6BD2nU "Resting With the Trinity")
+
+##### AI-Generated Summary: The Soul's Homage to the Triune God
+
+To adore the Holy Trinity is to be drawn into the very life of Love Himself—a mystery so vast that the heart trembles, yet so near that the humblest soul may enter. St. Elizabeth of the Trinity, with the clarity of a saint, teaches us to pray not as distant suppliants, but as children who have found their home in the Father, the Son, and the Spirit. Her words, tender yet bold, echo the _Catechism_’s call to lose ourselves in that divine fellowship where praise becomes our breath and surrender our joy.
+
+The prayers repeated here—Our Father, Hail Mary, Glory Be—are not mere recitations, but the well-worn steps by which ordinary mortals ascend to heaven. In them, we learn that devotion is not grandiloquence, but faithfulness; not novelty, but the patient turning of the heart toward the Light. Let it be so for us all.
+
+##### AI-Generated Image: A celestial embrace of divine light and sacred geometry
+
+![AI-Generated Image: A celestial embrace of divine light and sacred geometry](August/jpgs/Day217Summary.jpg)
 
 ## September
 
