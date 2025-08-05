@@ -72,12 +72,14 @@ validate_json() {
 
 trap_exit() {
   local exitcode=$?
-  local end_time=$(date +%s)
-  local duration=$((end_time - start_time))
-  if [[ $exitcode -eq "$EXIT_SUCCESS" ]]; then
-    echo "Generated image from summary in ${duration} seconds" >&2
-  else
-    echo "Image generation from summary failed. Time taken: ${duration} seconds" >&2
+  if [[ -n "${start_time:-}" ]]; then
+    local end_time=$(date +%s)
+    local duration=$((end_time - start_time))
+    if [[ $exitcode -eq "$EXIT_SUCCESS" ]]; then
+      echo "Generated image from summary in ${duration} seconds" >&2
+    else
+      echo "Image generation from summary failed. Time taken: ${duration} seconds" >&2
+    fi
   fi
   exit $exitcode
 }
