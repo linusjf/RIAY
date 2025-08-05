@@ -738,7 +738,7 @@ class ArtDownloader:
             self._handle_alternate_images(best_result)
 
 
-def parse_arguments() -> argparse.Namespace:
+def parse_arguments() -> Tuple[argparse.ArgumentParser, argparse.Namespace]:
     """Parse and return command line arguments."""
     parser: argparse.ArgumentParser = argparse.ArgumentParser(description='Download artwork images from various sources.')
     parser.add_argument('query', nargs='?', help='Name of artwork to search for')
@@ -752,7 +752,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument('--medium', help='Art medium (e.g., oil painting, sculpture)')
     parser.add_argument('--subject', help='Art subject matter')
     parser.add_argument('--filename', help='Base filename for saved images (without extension)')
-    return parser.parse_args()
+    return parser, parser.parse_args()
 
 def validate_arguments(args: argparse.Namespace) -> bool:
     """Validate that we have sufficient arguments to proceed."""
@@ -788,10 +788,10 @@ def log_results(success: bool, elapsed_time: float, logger: logging.Logger) -> N
 
 async def main() -> None:
     """Main entry point for the script."""
-    args: argparse.Namespace = parse_arguments()
+    parser, args = parse_arguments()
 
     if not validate_arguments(args):
-        parse_arguments().print_help()
+        parser.print_help()
         sys.exit(1)
 
     query: str = build_search_query(args)
