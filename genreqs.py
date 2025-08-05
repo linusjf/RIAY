@@ -74,10 +74,6 @@ def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
         description='Generate requirements from Python imports')
-    parser.add_argument(
-        '-h', '--help',
-        action='help',
-        help='Show this help message and exit')
     return parser.parse_args()
 
 def main() -> None:
