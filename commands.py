@@ -139,13 +139,14 @@ class Commands(commandsListener):
 
 def main() -> None:
     """Main entry point for command processing."""
-    parser = argparse.ArgumentParser(description='Process commands for the system.')
-    parser.add_argument('--help', '-h', action='help', default=argparse.SUPPRESS,
-                       help='Show this help message and exit.')
-    
+    parser = argparse.ArgumentParser(description='Process commands for the system.',
+                                     epilog="""
+     Parses the commands file named 'commands.txt' and executes each command sequentially
+     """)
+
     # Parse known args first to handle help before processing commands file
-    args, remaining = parser.parse_known_args()
-    
+    parser.parse_known_args()
+
     config = ConfigEnv("config.env")
     input_stream = FileStream(config.get(ConfigConstants.COMMANDS_FILE))
     lexer = commandsLexer(input_stream)
