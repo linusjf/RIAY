@@ -113,11 +113,6 @@ def parse_args() -> argparse.Namespace:
   cat artwork.json | python augmentartdetails.py
   python augmentartdetails.py -h"""
     )
-    parser.add_argument(
-        '-h', '--help',
-        action='help',
-        help='Show this help message and exit'
-    )
     return parser.parse_args()
 
 
