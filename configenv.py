@@ -166,7 +166,6 @@ class ConfigEnv:
 def parse_args():
     parser = argparse.ArgumentParser(description='Load and display environment variables from config file')
     parser.add_argument('config_file', nargs='?', default='config.env', help='Path to config file (default: config.env)')
-    parser.add_argument('--help', '-h', action='help', help='Show this help message and exit')
     return parser.parse_args()
 
 def main() -> None:
