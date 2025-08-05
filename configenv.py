@@ -13,6 +13,7 @@ Configenv.
 import os
 import re
 import threading
+import argparse
 from typing import Dict, Any, Union, List
 
 class ConfigEnv:
@@ -162,8 +163,15 @@ class ConfigEnv:
     def __contains__(self, key: str) -> bool:
         return key in self._vars
 
+def parse_args():
+    parser = argparse.ArgumentParser(description='Load and display environment variables from config file')
+    parser.add_argument('config_file', nargs='?', default='config.env', help='Path to config file (default: config.env)')
+    parser.add_argument('--help', '-h', action='help', help='Show this help message and exit')
+    return parser.parse_args()
+
 def main() -> None:
-    config = ConfigEnv("config.env", include_os_env=True)
+    args = parse_args()
+    config = ConfigEnv(args.config_file, include_os_env=True)
     for k, v in config.as_dict().items():
         print(f"{k:<25} = {repr(v)}  # type: {type(v).__name__}")
 
