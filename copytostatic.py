@@ -12,6 +12,7 @@ Example:
 
 import os
 import shutil
+import argparse
 from pathlib import Path
 from typing import Generator, Tuple
 
@@ -31,6 +32,14 @@ SOURCE_ROOT = Path(".")  # Root of project directory
 TARGET_ROOT = Path("_static")
 EXCLUDED_DIRS = {"_static", "build", "styles", "tests", ".git"}
 SUPPORTED_EXTENSIONS = {".jpg", ".pdf"}
+
+
+def parse_args() -> argparse.Namespace:
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Copy image and PDF files to static directory while excluding specified directories."
+    )
+    return parser.parse_args()
 
 
 def collect_files_with_paths(
@@ -85,6 +94,7 @@ def copy_files(source_root: Path, target_root: Path) -> int:
 
 def main() -> None:
     """Execute the main file copying operation."""
+    parse_args()  # Parse command line arguments (currently just handles --help)
     copied = copy_files(SOURCE_ROOT, TARGET_ROOT)
     logger.info(f"Copied {copied} files to {TARGET_ROOT}")
 
