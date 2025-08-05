@@ -95,11 +95,6 @@ def parse_args() -> argparse.Namespace:
         nargs="?",
         help="Text prompt to be checked for policy violations"
     )
-    parser.add_argument(
-        "-h", "--help",
-        action="help",
-        help="Show this help message and exit"
-    )
     return parser.parse_args()
 
 
