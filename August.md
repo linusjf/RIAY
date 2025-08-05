@@ -27,6 +27,7 @@
     - [Resting With the Trinity](#resting-with-the-trinity)
     - [AI-Generated Summary: The Soul's Homage to the Triune God](#ai-generated-summary-the-souls-homage-to-the-triune-god)
     - [AI-Generated Image: A celestial embrace of divine light and sacred geometry](#ai-generated-image-a-celestial-embrace-of-divine-light-and-sacred-geometry)
+    - [St. Elizabeth of the Trinity](#st-elizabeth-of-the-trinity)
 
 <!---toc end-->
 
@@ -121,3 +122,7 @@ The prayers repeated here—Our Father, Hail Mary, Glory Be—are not mere recit
 ### AI-Generated Image: A celestial embrace of divine light and sacred geometry
 
 ![AI-Generated Image: A celestial embrace of divine light and sacred geometry](/August/jpgs/Day217Summary.jpg)
+
+### St. Elizabeth of the Trinity
+
+[![St. Elizabeth of the Trinity](/August/jpgs/stelizabethtrinity.jpg)](https://carmelitesofboston.org/wp-content/uploads/2021/04/5-1.jpg "St. Eizabeth of the Trinity")
