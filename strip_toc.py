@@ -8,6 +8,7 @@ in-place to the files.
 
 import re
 import os
+import argparse
 from pathlib import Path
 from typing import Iterator, Pattern
 
@@ -80,9 +81,23 @@ def strip_toc_blocks(directory: str = ".") -> int:
     return modified_count
 
 
+def parse_args() -> argparse.Namespace:
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Remove table of contents blocks from markdown files"
+    )
+    parser.add_argument(
+        "-d", "--directory",
+        default=".",
+        help="Directory to search for markdown files (default: current directory)"
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
     """Main entry point for the script."""
-    modified: int = strip_toc_blocks()
+    args = parse_args()
+    modified: int = strip_toc_blocks(args.directory)
     logger.info(f"Modified {modified} files")
 
 
