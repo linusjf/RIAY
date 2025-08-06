@@ -13,6 +13,7 @@ Genreqs.
 import os
 import re
 import subprocess
+import argparse
 from pathlib import Path
 from typing import Set, Dict, List, Match, Optional
 from configenv import ConfigEnv
@@ -69,8 +70,15 @@ def write_dependencies(found: List[str]) -> None:
     with open("deps.txt", "w") as f:
         f.write("\n".join(sorted(found)) + "\n")
 
+def parse_args() -> argparse.Namespace:
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description='Generate requirements from Python imports')
+    return parser.parse_args()
+
 def main() -> None:
     """Main execution function."""
+    parse_args()
     get_imported_modules()
     found, unmatched = match_packages()
     write_dependencies(found)

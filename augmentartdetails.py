@@ -21,6 +21,7 @@ import os
 import sys
 import json
 import re
+import argparse
 import httpx
 from httpx_retries import RetryTransport, Retry
 from typing import Dict, Any, Optional
@@ -103,7 +104,21 @@ class ArtDetailsAugmenter:
         return self._clean_output(output)
 
 
-async def main() -> None:
+def parse_args() -> argparse.Namespace:
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Enhances an artwork JSON record by querying an LLM with configurable API settings.",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""Example usage:
+  cat artwork.json | python augmentartdetails.py
+  python augmentartdetails.py -h"""
+    )
+    return parser.parse_args()
+
+
+async def async_main() -> None:
+    """Async main function with argument parsing."""
+    parse_args()
     try:
         if sys.stdin.isatty():
             logger = LoggerFactory.get_logger(
@@ -125,5 +140,6 @@ async def main() -> None:
         logger.error(f"Error: {e}")
         sys.exit(1)
 
+
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(async_main())

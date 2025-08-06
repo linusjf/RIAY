@@ -23,6 +23,7 @@ readonly EXIT_ADD_IMAGE_ERROR=8
 readonly EXIT_REQUIREMENTS_ERROR=10
 readonly EXIT_INVALID_JSON=11
 readonly EXIT_FILE_CONVERT_ERROR=12
+readonly EXIT_INVALID_DAY=13
 
 ######################################################################
 # Functions
@@ -34,7 +35,7 @@ version() {
 
 usage() {
   cat << EOF
-Usage: ${SCRIPT_NAME} [options] <summary_prompt_file> <day_of_year>
+Usage: ${SCRIPT_NAME} [options] <path_to_prompt_file>
 
 Options:
   -v, --version    Show version information
@@ -54,9 +55,10 @@ Exit Codes:
   10 - Missing requirements
   11 - Invalid JSON format or missing required fields
   12 - Failed to convert file to jpeg format
+  13 - Invalid day number in filename
 
 Examples:
-  ${SCRIPT_NAME} summary_prompt.json 123
+  ${SCRIPT_NAME} January/Day123ImagePrompt.json
 EOF
 }
 
@@ -70,14 +72,30 @@ validate_json() {
   fi
 }
 
+extract_day_number() {
+  local filename=$(basename "$1")
+  if [[ "$filename" =~ Day([0-9]{3})ImagePrompt\.json ]]; then
+    local day_num="${BASH_REMATCH[1]}"
+    # Remove leading zeros
+    day_num=$((10#$day_num))
+    # shellcheck disable=SC2153
+    date::validate_daynumber "$day_num" "$YEAR" || die "Invalid day number $day_num for year $YEAR" $EXIT_INVALID_DAY
+    echo "$day_num"
+  else
+    die "Filename must be in format DayXXXImagePrompt.json" $EXIT_INVALID_DAY
+  fi
+}
+
 trap_exit() {
   local exitcode=$?
-  local end_time=$(date +%s)
-  local duration=$((end_time - start_time))
-  if [[ $exitcode -eq "$EXIT_SUCCESS" ]]; then
-    echo "Generated image from summary in ${duration} seconds" >&2
-  else
-    echo "Image generation from summary failed. Time taken: ${duration} seconds" >&2
+  if [[ -n "${start_time:-}" ]]; then
+    local end_time=$(date +%s)
+    local duration=$((end_time - start_time))
+    if [[ $exitcode -eq "$EXIT_SUCCESS" ]]; then
+      echo "Generated image from summary in ${duration} seconds" >&2
+    else
+      echo "Image generation from summary failed. Time taken: ${duration} seconds" >&2
+    fi
   fi
   exit $exitcode
 }
@@ -85,20 +103,19 @@ trap_exit() {
 trap trap_exit EXIT
 
 main() {
-  local summary_prompt_fname="$1"
-  local doy="$2"
+  local prompt_file="$1"
+  local doy=$(extract_day_number "$prompt_file")
   local month generated_image jpeg_filename prompt caption json wrapped_prompt
 
-  json="$(cat "${summary_prompt_fname}")" || die "Failed to read ${summary_prompt_fname}" $EXIT_FILE_READ_ERROR
+  json="$(cat "${prompt_file}")" || die "Failed to read ${prompt_file}" $EXIT_FILE_READ_ERROR
   validate_json "$json"
   prompt="$(imageprompt::get_prompt "$json")" || die "Failed to get image prompt" $EXIT_PROMPT_ERROR
   caption="$(imageprompt::get_caption "$json")" || die "Failed to get caption" $EXIT_CAPTION_ERROR
 
-  # shellcheck disable=SC2153
   month="$(date::mfromdoy "$doy" "$YEAR")" || die "Failed to get month from DOY" $EXIT_DATE_ERROR
   if moderated_response="$("${SCRIPT_DIR}/moderateprompt.py" "$prompt")"; then
     generated_image="$("${SCRIPT_DIR}/${IMAGE_GENERATION_SCRIPT}" "$prompt" || die "Image generation failed" $EXIT_IMAGE_GEN_ERROR)"
-    jpeg_filename="${month}/jpgs/Day$(printf "%03d" "${doy#0}")Summary.jpg"
+    jpeg_filename="${month}/jpgs/Day$(printf "%03d" "${doy}")Summary.jpg"
     cp "$generated_image" "$jpeg_filename" || die "Failed to copy image to ${jpeg_filename}" $EXIT_FILE_COPY_ERROR
     gm convert "$jpeg_filename" "$jpeg_filename" || die "Failed to convert image to jpeg format" $EXIT_FILE_CONVERT_ERROR
     "${SCRIPT_DIR}/addimgtoday" "$jpeg_filename" "AI-Generated Image: ${caption}" "$doy" || die "Failed to add image" $EXIT_ADD_IMAGE_ERROR
@@ -140,11 +157,11 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 
   lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env" || exit $EXIT_REQUIREMENTS_ERROR
 
-  require_vars DEEPINFRA_TOKEN YEAR IMAGE_GENERATION_SCRIPT || exit $EXIT_REQUIREMENTS_ERROR
+  require_vars DEEPINFRA_TOKEN YEAR IMAGE_GENERATION_SCRIPT YEAR || exit $EXIT_REQUIREMENTS_ERROR
 
   require_commands sed basename date tee mv wc cat cp jq gm || exit $EXIT_REQUIREMENTS_ERROR
 
-  if [[ "$#" -ne 2 ]]; then
+  if [[ "$#" -ne 1 ]]; then
     usage >&2
     exit $EXIT_INVALID_ARGS
   fi

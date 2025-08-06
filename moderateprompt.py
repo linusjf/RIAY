@@ -7,12 +7,14 @@ content categories.
 
 Usage:
     moderationprompt.py "your prompt here"
+    moderationprompt.py -h | --help
 """
 
 import json
 import os
 import sys
 import asyncio
+import argparse
 from typing import Dict, Any, Optional
 
 from openai import AsyncOpenAI
@@ -82,16 +84,33 @@ def format_results(result: Moderation) -> Dict[str, Any]:
     return filtered
 
 
+def parse_args() -> argparse.Namespace:
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Moderate user prompts using OpenAI's moderation API",
+        usage="moderationprompt.py [-h] \"your prompt\""
+    )
+    parser.add_argument(
+        "prompt",
+        nargs="?",
+        help="Text prompt to be checked for policy violations"
+    )
+    return parser.parse_args()
+
+
 async def async_main() -> None:
     """Main entry point for the script."""
-    if len(sys.argv) < 2:
+    args = parse_args()
+
+    if not args.prompt:
         print(
-            "Usage: moderationprompt.py \"your prompt here\"",
+            "Error: No prompt provided\n",
             file=sys.stderr
         )
+        parse_args().print_help()
         sys.exit(2)
 
-    prompt: str = sys.argv[1]
+    prompt: str = args.prompt
 
     if not os.getenv("OPENAI_API_KEY"):
         print(

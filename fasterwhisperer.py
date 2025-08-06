@@ -79,7 +79,12 @@ def parse_args() -> argparse.Namespace:
         Parsed arguments namespace.
     """
     parser = argparse.ArgumentParser(
-        description='Transcribe audio files using faster-whisper'
+        description='Transcribe audio files using faster-whisper',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""Examples:
+  %(prog)s audio.mp3
+  %(prog)s audio.wav --model-size large
+"""
     )
     parser.add_argument(
         'audio_file',
