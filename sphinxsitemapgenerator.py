@@ -25,7 +25,6 @@ def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
         description='Generate sitemap.xml for Sphinx documentation')
-    parser.add_argument('--help', action='help', help='Show this help message and exit')
     return parser.parse_args()
 
 def generate_sitemap(app: Sphinx, exception: Optional[Exception]) -> None:
