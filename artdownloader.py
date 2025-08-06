@@ -168,11 +168,17 @@ class ArtDownloader:
             return False
 
         # Reject URLs with query parameters
-        if '?' in url:
+        if self._url_has_query_parameters(url):
             self.logger.error(f"URLs with query parameters not supported: {url}")
             return False
 
         return True
+
+    def _url_has_query_parameters(self, url:str) -> bool:
+        # Reject URLs with query parameters
+        if '?' in url:
+            return True
+        return False
 
     def _download_image_data(self, url: str) -> Optional[Tuple[bytes, str]]:
         """Download image data from URL with retries."""
@@ -322,7 +328,7 @@ class ArtDownloader:
             success: bool = False
             for idx, (result, score) in enumerate(qualifying_results):
                 url: str = result["image"]
-                if '?' in url:
+                if self._url_has_query_parameters(url):
                     self.logger.warning(f"Url has query parameters: rejecting {url}")
                     continue
                 domain: Optional[str] = extract_domain_from_url(url)
