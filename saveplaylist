@@ -17,7 +17,6 @@ readonly EXIT_PLAYLIST_NOT_FOUND=4
 readonly EXIT_API_REQUEST_FAILED=5
 
 verbose=false
-start_time=$(date +%s)
 
 if command -v realpath > /dev/null 2>&1; then
   readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
@@ -147,10 +146,17 @@ save_playlist() {
 }
 
 trap_exit() {
-  # Calculate and output execution time
-  end_time=$(date +%s)
-  duration=$((end_time - start_time))
-  err "$SCRIPT_NAME: Downloaded playlist in $duration seconds."
+  exit_code="$?"
+  if [[ -n "${start_time:-}" ]]; then
+    # Calculate and output execution time
+    end_time=$(date +%s)
+    duration=$((end_time - start_time))
+    if [[ $exit_code == 0 ]]; then
+      err "$SCRIPT_NAME: Downloaded playlist in $duration seconds."
+    else
+      err "$SCRIPT_NAME: Error occured. Time taken: $duration seconds"
+    fi
+  fi
 }
 trap trap_exit EXIT
 
@@ -192,6 +198,7 @@ main() {
     exit $EXIT_MISSING_REQUIREMENTS
   fi
 
+  start_time=$(date +%s)
   # Check if playlist exists before proceeding
   check_playlist_exists "$playlist_id" || exit $?
 
