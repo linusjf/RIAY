@@ -28,6 +28,10 @@
     - [AI-Generated Summary: The Soul's Homage to the Triune God](#ai-generated-summary-the-souls-homage-to-the-triune-god)
     - [AI-Generated Image: A celestial embrace of divine light and sacred geometry](#ai-generated-image-a-celestial-embrace-of-divine-light-and-sacred-geometry)
     - [St. Elizabeth of the Trinity](#st-elizabeth-of-the-trinity)
+  - [August 06, 2025](#august-06-2025)
+    - [Walking With Mary](#walking-with-mary)
+    - [AI-Generated Summary: The Quiet Companionship of Mary](#ai-generated-summary-the-quiet-companionship-of-mary)
+    - [AI-Generated Image: A sacred companionship painted in abstract devotion](#ai-generated-image-a-sacred-companionship-painted-in-abstract-devotion)
 
 <!---toc end-->
 
@@ -126,3 +130,19 @@ The prayers repeated here—Our Father, Hail Mary, Glory Be—are not mere recit
 ### St. Elizabeth of the Trinity
 
 [![St. Elizabeth of the Trinity](/August/jpgs/stelizabethtrinity.jpg)](https://carmelitesofboston.org/wp-content/uploads/2021/04/5-1.jpg "St. Eizabeth of the Trinity")
+
+## August 06, 2025
+
+### Walking With Mary
+
+[![Walking With Mary](/August/jpgs/Day218.jpg)](https://youtu.be/q0bzineMACk "Walking With Mary")
+
+### AI-Generated Summary: The Quiet Companionship of Mary
+
+Imagine, if you will, a way of prayer so simple that even the weariest soul might take it up without burden. It is not a matter of lofty words or strained effort, but of inviting the Mother of Our Lord to walk beside you—not as a distant figure of stained glass, but as a living presence in your ordinary hours. Whether you kneel in a chapel or stir the soup in your kitchen, she is there, nearer than your next breath, offering a love that does not scold but shelters, does not rush but waits.
+
+This is no mechanical repetition of prayers, though they have their place, but an opening of the heart’s door to one who knows the weight of joy and sorrow alike. She who stood at the foot of the Cross understands the quiet ache of your daily duties, the unspoken fears that flicker in the dark. To keep company with her is to learn, by degrees, how to bear all things—not with gritted teeth, but with the same quiet "yes" that changed the world.
+
+### AI-Generated Image: A sacred companionship painted in abstract devotion
+
+![AI-Generated Image: A sacred companionship painted in abstract devotion](/August/jpgs/Day218Summary.jpg)
