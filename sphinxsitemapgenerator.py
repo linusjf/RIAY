@@ -11,6 +11,7 @@ Sphinxsitemapgenerator.
 ######################################################################
 """
 import os
+import argparse
 from urllib.parse import urljoin
 from datetime import datetime, timezone
 from pathlib import Path
@@ -20,11 +21,12 @@ from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
 
-config = ConfigEnv("config.env")
-logger = LoggerFactory.get_logger(
-    name=os.path.basename(__file__),
-    log_to_file=config.get(ConfigConstants.LOGGING, False)
-)
+def parse_args():
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description='Generate sitemap.xml for Sphinx documentation')
+    parser.add_argument('--help', action='help', help='Show this help message and exit')
+    return parser.parse_args()
 
 def generate_sitemap(app: Sphinx, exception: Optional[Exception]) -> None:
     """Generate sitemap.xml file for Sphinx documentation."""
@@ -60,3 +62,11 @@ def setup(app: Sphinx) -> dict[str, Any]:
         'parallel_read_safe': True,
         'parallel_write_safe': True,
     }
+
+if __name__ == '__main__':
+    config = ConfigEnv("config.env")
+    logger = LoggerFactory.get_logger(
+        name=os.path.basename(__file__),
+        log_to_file=config.get(ConfigConstants.LOGGING, False)
+    )
+    parse_args()
