@@ -17,8 +17,7 @@ class CommandsVerboseStrategy(DefaultErrorStrategy):
         self.config = ConfigEnv("config.env")
         self.logger = LoggerFactory.get_logger(
              name=os.path.basename(__file__),
-             log_to_file=self.config.get(ConfigConstants.LOGGING, False)
-)
+             log_to_file=self.config.get(ConfigConstants.LOGGING, False))
 
     def recover(self, recognizer, e):
         """Report error and raise immediately."""
