@@ -14,7 +14,7 @@ import time
 import argparse
 import shutil
 import logging
-from typing import Optional, Dict, List, Tuple, Any, Set
+from typing import Optional, Dict, List, Tuple, Any, Set, Union, Callable, Sequence, Iterator
 
 import requests
 from duckduckgo_search import DDGS
@@ -31,6 +31,7 @@ from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
 from PIL import Image
 from requests import Session
+from pathlib import Path
 
 class ArtDownloader:
     """Download artwork images from various sources."""
@@ -174,7 +175,7 @@ class ArtDownloader:
 
         return True
 
-    def _url_has_query_parameters(self, url:str) -> bool:
+    def _url_has_query_parameters(self, url: str) -> bool:
         # Reject URLs with query parameters
         if '?' in url:
             return True
@@ -295,7 +296,7 @@ class ArtDownloader:
         with DDGS() as ddgs:
             return ddgs.images(query, max_results=max_results)
 
-    def filter_and_score_results(self, results: List[Any], extract_metadata_fn: Any, query: str, threshold: float = THRESHOLDS["cosine"]) -> List[Tuple[Any, float]]:
+    def filter_and_score_results(self, results: List[Any], extract_metadata_fn: Callable[[Any], str], query: str, threshold: float = THRESHOLDS["cosine"]) -> List[Tuple[Any, float]]:
         qualifying: List[Tuple[Any, float]] = []
         for idx, result in enumerate(results):
             metadata: str = extract_metadata_fn(result)
@@ -308,9 +309,9 @@ class ArtDownloader:
         return qualifying
 
     def process_url(self, url: str, score: float,
-                is_social_media_domain,
-                is_stock_images_domain,
-                add_stock_photo_callback) -> bool:
+                is_social_media_domain: Callable[[str], bool],
+                is_stock_images_domain: Callable[[str], bool],
+                add_stock_photo_callback: Callable[[str, float], None]) -> bool:
         """
         Process a URL to determine if it's a social media or stock image domain.
 
@@ -363,7 +364,7 @@ class ArtDownloader:
                     self.logger.warning(f"Url has query parameters: rejecting {url}")
                     continue
 
-                def add_stock_photo(url, score):
+                def add_stock_photo(url: str, score: float) -> None:
                     self.FOUND_STOCK_PHOTOS.add(url)
                     self.DUCKDUCKGO_IMAGES.append((url, "", score))
 
@@ -595,7 +596,7 @@ class ArtDownloader:
                     self.logger.warning(f"Url has query parameters: rejecting {url}")
                     continue
 
-                def add_stock_photo(url, score):
+                def add_stock_photo(url: str, score: float) -> None:
                     self.FOUND_STOCK_PHOTOS.add(url)
                     self.GOOGLE_IMAGES.append((url, "", score))
 
