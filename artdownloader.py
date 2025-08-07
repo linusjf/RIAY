@@ -307,6 +307,37 @@ class ArtDownloader:
                 print(f"❌ Excluded result {idx+1} (score: {score:.3f})", file=sys.stderr)
         return qualifying
 
+    def process_url(self, url: str, score: float,
+                is_social_media_domain,
+                is_stock_images_domain,
+                add_stock_photo_callback) -> bool:
+        """
+        Process a URL to determine if it's a social media or stock image domain.
+
+        Args:
+            url (str): The URL to process.
+            score (float): Associated score for the image.
+            is_social_media_domain (Callable[[str], bool]): Function to check social media domains.
+            is_stock_images_domain (Callable[[str], bool]): Function to check stock image domains.
+            add_stock_photo_callback (Callable[[str, float], None]): Callback to handle valid stock photo URLs.
+
+        Returns:
+            bool: True if processing should continue, False if skipped.
+        """
+        domain = extract_domain_from_url(url)
+        if not domain:
+            return True  # Continue processing
+
+        if is_social_media_domain(domain):
+            return False  # Skip this URL
+
+        if is_stock_images_domain(domain):
+            add_stock_photo_callback(url, score)
+            return False  # Skip after handling
+
+        return True  # Continue processing
+
+
     def download_from_duckduckgo(self, query: str, filename_base: str) -> bool:
         """Download image from DuckDuckGo search."""
         self.logger.info(f"DuckDuckGo search for: {query}")
@@ -331,14 +362,20 @@ class ArtDownloader:
                 if self._url_has_query_parameters(url):
                     self.logger.warning(f"Url has query parameters: rejecting {url}")
                     continue
-                domain: Optional[str] = extract_domain_from_url(url)
-                if domain:
-                    if self.is_social_media_domain(domain):
-                        continue
-                    if self.is_stock_images_domain(domain):
-                        self.FOUND_STOCK_PHOTOS.add(url)
-                        self.DUCKDUCKGO_IMAGES.append((url, "", score))
-                        continue
+
+                def add_stock_photo(url, score):
+                    self.FOUND_STOCK_PHOTOS.add(url)
+                    self.DUCKDUCKGO_IMAGES.append((url, "", score))
+
+                if not self.process_url(
+                    url,
+                    score,
+                    self.is_social_media_domain,
+                    self.is_stock_images_domain,
+                    add_stock_photo
+                  ):
+                    continue
+
                 filename: str = os.path.join(
                     self.SAVE_DIR,
                     f"{filename_base}_{idx+1}_duckduckgo.jpg"
@@ -557,14 +594,20 @@ class ArtDownloader:
                 if '?' in url:
                     self.logger.warning(f"Url has query parameters: rejecting {url}")
                     continue
-                domain: Optional[str] = extract_domain_from_url(url)
-                if domain:
-                    if self.is_social_media_domain(domain):
-                        continue
-                    if self.is_stock_images_domain(domain):
-                        self.FOUND_STOCK_PHOTOS.add(url)
-                        self.GOOGLE_IMAGES.append((url, "", score))
-                        continue
+
+                def add_stock_photo(url, score):
+                    self.FOUND_STOCK_PHOTOS.add(url)
+                    self.GOOGLE_IMAGES.append((url, "", score))
+
+                if not self.process_url(
+                    url,
+                    score,
+                    self.is_social_media_domain,
+                    self.is_stock_images_domain,
+                    add_stock_photo
+                  ):
+                    continue
+
                 self.logger.info(f"Downloading image for qualified image {idx+1}: {url}")
                 unique_filename: str = f"{filename_base}_{idx+1}"
                 filename: str = os.path.join(
