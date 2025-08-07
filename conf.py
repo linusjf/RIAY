@@ -73,7 +73,8 @@ exclude_patterns: List[str] = [
     "SCRIPTS.md",
     "scripts.md",
     "addimgtoday.md",
-    "addsnippets.md"
+    "addsnippets.md",
+    "installsqlite.md"
 ]
 
 suppress_warnings: List[str] = [
