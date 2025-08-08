@@ -1,4 +1,4 @@
 # commands
 #embedarttoday 199
-addvideo "EF0B_-UL3vE" "The Gift of Prayer"
+addvideo "k2RhfVIS5VU" "Lingering in the Words"
 lint
