@@ -15,7 +15,7 @@ import re
 import sys
 import argparse
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 from configenv import ConfigEnv
 
 class ImageMetadataExtractor:
@@ -48,7 +48,7 @@ class ImageMetadataExtractor:
 
     def _get_month_and_day(self, day_num: int) -> tuple[str, int]:
         """Get month name and day of month from day of year."""
-        date = datetime(self.year, 1, 1) + datetime.timedelta(days=day_num - 1)
+        date = datetime(self.year, 1, 1) + timedelta(days=day_num - 1)
         return self.months[date.month - 1], date.day
 
     def extract_from_markdown(self, csv_path: Path, start_day: int, end_day: int) -> None:
@@ -64,7 +64,7 @@ class ImageMetadataExtractor:
             for day_num in range(start_day, end_day + 1):
                 month_name, day_of_month = self._get_month_and_day(day_num)
                 md_path = Path(f"{month_name}/Day{day_num:03d}.md")
-                
+
                 if not md_path.is_file():
                     continue
 
