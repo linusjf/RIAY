@@ -6273,6 +6273,9 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
   - [August 08, 2025](#august-08-2025)
     - [Lingering in the Words](#lingering-in-the-words)
     - [AI-Generated Summary: The Silent Song of the Nativity](#ai-generated-summary-the-silent-song-of-the-nativity)
+  - [August 09, 2025](#august-09-2025)
+    - [Words of an Angel](#words-of-an-angel)
+    - [AI-Generated Summary: The Discipline of Devotion and the Weight of Mystery](#ai-generated-summary-the-discipline-of-devotion-and-the-weight-of-mystery)
 
 <!---toc end-->
 
@@ -6415,6 +6418,20 @@ The second joyful mystery, the Visitation, calls to mind the blessed meeting of 
 What we have here, dear reader, is not a painting but a prayer—a repeated refrain, like the steady rhythm of a heartbeat or the turning of the seasons. The Nativity, that third joyful mystery, is invoked not through brushstrokes or carved stone, but through the quiet cadence of _Hail Marys_ and _Glory Bes_. It is as if the very absence of artistic detail speaks louder than any depiction might; for sometimes the deepest truths are best approached not by sight, but by the soul’s own recollection.
 
 Think of it as a window left open—not to show us a scene, but to let the wind of devotion stir within us. The artist’s hand is unseen, the medium unrecorded, yet the subject remains: that humble, radiant moment when Heaven touched Earth. And so we are reminded that some mysteries need no adornment; their power lies in the telling, and the hearing, and the heart that holds them.
+
+#### August 09, 2025
+
+##### Words of an Angel
+
+[![Words of an Angel](August/jpgs/Day221.jpg)](https://youtu.be/E3AT4KDFQD4 "Words of an Angel")
+
+##### AI-Generated Summary: The Discipline of Devotion and the Weight of Mystery
+
+Consider two moments where Heaven stooped low to touch our dusty world: first, when the boy Christ lingered in the Temple, astonishing the learned with His wisdom; second, when the grown Man stood in Jordan’s waters, hallowing all rivers with His humility. These are not mere events to recite, but mysteries to enter—like a man stepping through a door into a vast country.
+
+Prayer, dear reader, is no trifle to be rushed. As a muscle grows by steady strain, so the soul strengthens by patient meditation. Begin with twenty Hail Marys, as one begins a journey with a single step. Ponder the angel’s greeting—_"Hail, full of grace"_—not as empty words, but as a thunderclap that shook the universe. For in that moment, eternity kissed time, and a maiden’s _yes_ undid Eve’s _no_.
+
+The prayers themselves are but ropes to bind our wandering minds to the mast of truth. Repeat them until the words wear grooves in the heart, and through them, grace may flow unhindered.
 
 ## September
 
