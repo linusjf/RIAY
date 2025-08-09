@@ -25,6 +25,10 @@ class ImageMetadataExtractor:
         self.config = ConfigEnv()
         self.year = int(self.config.get("YEAR", datetime.now().year))
         self.max_days = 366 if self._is_leap_year() else 365
+        self.months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ]
 
     def _is_leap_year(self) -> bool:
         """Check if the current year is a leap year."""
@@ -42,43 +46,52 @@ class ImageMetadataExtractor:
         if start_day > end_day:
             raise ValueError("Start day must be less than or equal to end day")
 
-    def extract_from_markdown(self, md_path: Path, csv_path: Path) -> None:
-        """Extract image metadata from markdown and save to CSV."""
-        # Read the markdown content
-        with open(md_path, encoding='utf-8') as f:
-            content = f.read()
+    def _get_month_and_day(self, day_num: int) -> tuple[str, int]:
+        """Get month name and day of month from day of year."""
+        date = datetime(self.year, 1, 1) + datetime.timedelta(days=day_num - 1)
+        return self.months[date.month - 1], date.day
 
-        # Regex to extract image metadata (skip video thumbnails)
-        image_links = re.findall(r'\[!\[(.*?)\]\((.*?)\)\]\((.*?)\s+"(.*?)"\)', content)
-
-        image_data = [
-            (title, img_path, link_url)
-            for alt_text, img_path, link_url, title in image_links
-            if not link_url.startswith("https://youtu.be")
-        ]
-
-        # Open the CSV file in append mode, create if it doesn't exist
+    def extract_from_markdown(self, csv_path: Path, start_day: int, end_day: int) -> None:
+        """Extract image metadata from markdown files and save to CSV."""
         write_headers = not csv_path.exists() or csv_path.stat().st_size == 0
+        total_images = 0
 
         with open(csv_path, mode='a', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             if write_headers:
                 writer.writerow(["caption", "image_filepath", "image_url"])
-            for caption, img_path, img_url in image_data:
-                writer.writerow([caption, img_path, img_url])
+
+            for day_num in range(start_day, end_day + 1):
+                month_name, day_of_month = self._get_month_and_day(day_num)
+                md_path = Path(f"{month_name}/Day{day_num:03d}.md")
+                
+                if not md_path.is_file():
+                    continue
+
+                with open(md_path, encoding='utf-8') as f:
+                    content = f.read()
+
+                # Regex to extract image metadata (skip video thumbnails)
+                image_links = re.findall(r'\[!\[(.*?)\]\((.*?)\)\]\((.*?)\s+"(.*?)"\)', content)
+
+                image_data = [
+                    (title, img_path, link_url)
+                    for alt_text, img_path, link_url, title in image_links
+                    if not link_url.startswith("https://youtu.be")
+                ]
+
+                for caption, img_path, img_url in image_data:
+                    writer.writerow([caption, img_path, img_url])
+
+                total_images += len(image_data)
 
         if self.config.get("LOGGING", False):
-            print(f"✅ Appended {len(image_data)} image entries to {csv_path}")
+            print(f"✅ Processed days {start_day}-{end_day}, found {total_images} images in {csv_path}")
 
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
         description="Extract image metadata from markdown files"
-    )
-    parser.add_argument(
-        "markdown_file",
-        type=Path,
-        help="Path to the markdown file to process"
     )
     parser.add_argument(
         "output_csv",
@@ -109,11 +122,7 @@ def main():
         print(f"❌ {e}")
         sys.exit(1)
 
-    if not args.markdown_file.is_file():
-        print(f"❌ Markdown file not found: {args.markdown_file}")
-        sys.exit(1)
-
-    extractor.extract_from_markdown(args.markdown_file, args.output_csv)
+    extractor.extract_from_markdown(args.output_csv, args.start_day, args.end_day)
 
 if __name__ == "__main__":
     main()
