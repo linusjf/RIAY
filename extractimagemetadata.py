@@ -90,6 +90,7 @@ class ImageMetadataExtractor:
 
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
+    extractor = ImageMetadataExtractor()
     parser = argparse.ArgumentParser(
         description="Extract image metadata from markdown files"
     )
@@ -102,13 +103,13 @@ def parse_args() -> argparse.Namespace:
         "--start-day",
         type=int,
         default=1,
-        help="Starting day number (1-365/366)"
+        help=f"Starting day number (1-{extractor.max_days})"
     )
     parser.add_argument(
         "--end-day",
         type=int,
-        default=366,
-        help="Ending day number (1-365/366)"
+        default=extractor.max_days,
+        help=f"Ending day number (1-{extractor.max_days})"
     )
     return parser.parse_args()
 
