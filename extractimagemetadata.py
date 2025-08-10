@@ -16,11 +16,43 @@ import re
 import sys
 import os
 import argparse
+import time
 from pathlib import Path
 from datetime import datetime, timedelta
+from itertools import cycle
+from threading import Thread
+from typing import Optional
 from configenv import ConfigEnv
 import openai
 from loggerutil import LoggerFactory
+
+class Spinner:
+    """Simple terminal spinner for long-running operations."""
+    def __init__(self):
+        self._running = False
+        self._thread: Optional[Thread] = None
+        self._spinner = cycle(['-', '/', '|', '\\'])
+
+    def _spin(self):
+        while self._running:
+            sys.stdout.write(next(self._spinner))
+            sys.stdout.flush()
+            time.sleep(0.1)
+            sys.stdout.write('\b')
+
+    def start(self):
+        """Start the spinner animation."""
+        self._running = True
+        self._thread = Thread(target=self._spin)
+        self._thread.start()
+
+    def stop(self):
+        """Stop the spinner animation."""
+        self._running = False
+        if self._thread:
+            self._thread.join()
+        sys.stdout.write('\b \b')
+        sys.stdout.flush()
 
 class ImageMetadataExtractor:
     """Class for extracting image metadata from markdown files."""
@@ -78,6 +110,10 @@ class ImageMetadataExtractor:
             
         try:
             self.logger.info("Starting metadata augmentation with LLM")
+            spinner = Spinner()
+            spinner.start()
+            start_time = time.time()
+            
             response = self.client.chat.completions.create(
                 model=self.text_llm_model,
                 messages=[
@@ -87,10 +123,15 @@ class ImageMetadataExtractor:
                 response_format={"type": "json_object"}
             )
             
+            spinner.stop()
+            elapsed_time = time.time() - start_time
+            self.logger.info(f"Successfully augmented metadata with LLM in {elapsed_time:.2f} seconds")
+            
             augmented_data = json.loads(response.choices[0].message.content)
-            self.logger.info("Successfully augmented metadata with LLM")
             return augmented_data
         except Exception as e:
+            if 'spinner' in locals():
+                spinner.stop()
             self.logger.error(f"Failed to augment metadata: {e}")
             return metadata
 
@@ -99,6 +140,7 @@ class ImageMetadataExtractor:
         output_data = []
         total_images = 0
         self.logger.info(f"Starting metadata extraction for days {start_day} to {end_day}")
+        start_time = time.time()
 
         for day_num in range(start_day, end_day + 1):
             month_name, _ = self._get_month_and_day(day_num)
@@ -138,7 +180,8 @@ class ImageMetadataExtractor:
             self.logger.info("Starting LLM metadata augmentation")
             output_data = self._augment_metadata(output_data)
 
-        self.logger.info(f"Completed processing days {start_day}-{end_day}, found {total_images} images total")
+        elapsed_time = time.time() - start_time
+        self.logger.info(f"Completed processing days {start_day}-{end_day} in {elapsed_time:.2f} seconds, found {total_images} images total")
         return output_data
 
     def extract_to_csv(self, csv_path: Path, metadata: list[dict]) -> None:
