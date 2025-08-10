@@ -14,17 +14,23 @@ import csv
 import json
 import re
 import sys
+import os
 import argparse
 from pathlib import Path
 from datetime import datetime, timedelta
 from configenv import ConfigEnv
 import openai
+from loggerutil import LoggerFactory
 
 class ImageMetadataExtractor:
     """Class for extracting image metadata from markdown files."""
 
     def __init__(self):
         self.config = ConfigEnv(include_os_env=True)
+        self.logger = LoggerFactory.get_logger(
+            name=os.path.basename(__file__),
+            log_to_file=self.config.get("LOGGING", False)
+        )
         self.year = int(self.config.get("YEAR", datetime.now().year))
         self.max_days = 366 if self._is_leap_year() else 365
         self.months = [
@@ -41,6 +47,7 @@ class ImageMetadataExtractor:
             api_key=self.text_llm_api_key,
             base_url=self.text_llm_base_url
         )
+        self.logger.info("ImageMetadataExtractor initialized")
 
     def _is_leap_year(self) -> bool:
         """Check if the current year is a leap year."""
@@ -66,9 +73,11 @@ class ImageMetadataExtractor:
     def _augment_metadata(self, metadata: list[dict]) -> list[dict]:
         """Augment metadata using LLM."""
         if not self.augment_meta_data_prompt or not self.text_llm_api_key:
+            self.logger.debug("LLM augmentation not configured, skipping")
             return metadata
             
         try:
+            self.logger.info("Starting metadata augmentation with LLM")
             response = self.client.chat.completions.create(
                 model=self.text_llm_model,
                 messages=[
@@ -79,26 +88,32 @@ class ImageMetadataExtractor:
             )
             
             augmented_data = json.loads(response.choices[0].message.content)
+            self.logger.info("Successfully augmented metadata with LLM")
             return augmented_data
         except Exception as e:
-            if self.config.get("LOGGING", False):
-                print(f"⚠️ Failed to augment metadata: {e}")
+            self.logger.error(f"Failed to augment metadata: {e}")
             return metadata
 
     def _extract_metadata(self, start_day: int, end_day: int) -> list[dict]:
         """Extract and augment metadata from markdown files."""
         output_data = []
         total_images = 0
+        self.logger.info(f"Starting metadata extraction for days {start_day} to {end_day}")
 
         for day_num in range(start_day, end_day + 1):
             month_name, _ = self._get_month_and_day(day_num)
             md_path = Path(f"{month_name}/Day{day_num:03d}.md")
 
             if not md_path.is_file():
+                self.logger.debug(f"Markdown file not found for day {day_num}, skipping")
                 continue
 
-            with open(md_path, encoding='utf-8') as f:
-                content = f.read()
+            try:
+                with open(md_path, encoding='utf-8') as f:
+                    content = f.read()
+            except Exception as e:
+                self.logger.error(f"Error reading {md_path}: {e}")
+                continue
 
             # Regex to extract image metadata (skip video thumbnails)
             image_links = re.findall(r'\[!\[(.*?)\]\((.*?)\)\]\((.*?)\s+"(.*?)"\)', content)
@@ -116,35 +131,48 @@ class ImageMetadataExtractor:
 
             output_data.extend(image_data)
             total_images += len(image_data)
+            self.logger.debug(f"Found {len(image_data)} images for day {day_num}")
 
         # Augment metadata with LLM if configured
         if self.augment_meta_data_prompt and self.text_llm_api_key:
+            self.logger.info("Starting LLM metadata augmentation")
             output_data = self._augment_metadata(output_data)
 
-        if self.config.get("LOGGING", False):
-            print(f"✅ Processed days {start_day}-{end_day}, found {total_images} images")
+        self.logger.info(f"Completed processing days {start_day}-{end_day}, found {total_images} images total")
         return output_data
 
     def extract_to_csv(self, csv_path: Path, metadata: list[dict]) -> None:
         """Save metadata to CSV file."""
         write_headers = not csv_path.exists() or csv_path.stat().st_size == 0
+        self.logger.info(f"Saving metadata to CSV file: {csv_path}")
 
-        with open(csv_path, mode='a', newline='', encoding='utf-8') as file:
-            writer = csv.writer(file)
-            if write_headers:
-                # Get all possible field names from the first augmented record
-                fieldnames = set()
+        try:
+            with open(csv_path, mode='a', newline='', encoding='utf-8') as file:
+                writer = csv.writer(file)
+                if write_headers:
+                    fieldnames = set()
+                    for record in metadata:
+                        fieldnames.update(record.keys())
+                    writer.writerow(sorted(fieldnames))
+                    self.logger.debug(f"Wrote CSV headers: {sorted(fieldnames)}")
+
                 for record in metadata:
-                    fieldnames.update(record.keys())
-                writer.writerow(sorted(fieldnames))
-
-            for record in metadata:
-                writer.writerow([record.get(field, "") for field in sorted(record.keys())])
+                    writer.writerow([record.get(field, "") for field in sorted(record.keys())])
+            self.logger.info(f"Successfully wrote {len(metadata)} records to CSV")
+        except Exception as e:
+            self.logger.error(f"Error writing to CSV: {e}")
+            raise
 
     def extract_to_json(self, json_path: Path, metadata: list[dict]) -> None:
         """Save metadata to JSON file."""
-        with open(json_path, 'w', encoding='utf-8') as f:
-            json.dump(metadata, f, indent=2)
+        self.logger.info(f"Saving metadata to JSON file: {json_path}")
+        try:
+            with open(json_path, 'w', encoding='utf-8') as f:
+                json.dump(metadata, f, indent=2)
+            self.logger.info(f"Successfully wrote {len(metadata)} records to JSON")
+        except Exception as e:
+            self.logger.error(f"Error writing to JSON: {e}")
+            raise
 
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
@@ -188,15 +216,19 @@ def main():
     try:
         extractor._validate_day_range(args.start_day, args.end_day)
     except ValueError as e:
-        print(f"❌ {e}")
+        extractor.logger.error(f"Invalid day range: {e}")
         sys.exit(1)
 
     metadata = extractor._extract_metadata(args.start_day, args.end_day)
 
-    if str(args.output_file).lower().endswith('.json'):
-        extractor.extract_to_json(args.output_file, metadata)
-    else:
-        extractor.extract_to_csv(args.output_file, metadata)
+    try:
+        if str(args.output_file).lower().endswith('.json'):
+            extractor.extract_to_json(args.output_file, metadata)
+        else:
+            extractor.extract_to_csv(args.output_file, metadata)
+    except Exception as e:
+        extractor.logger.error(f"Failed to save output: {e}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
