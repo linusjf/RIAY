@@ -140,6 +140,8 @@ class ImageMetadataExtractor:
 
                 batch_result = json.loads(str(response.choices[0].message.content))
                 self.logger.info(f"Parsed LLM response for batch {batch_num}:\n{json.dumps(batch_result, indent=2)}")
+                batch_result = batch_result.get("artrecords")
+                self.logger.info(f"Parsed LLM response for batch {batch_num}:\n{json.dumps(batch_result, indent=2)}")
 
                 if isinstance(batch_result, list):
                     augmented_data.extend(batch_result)
