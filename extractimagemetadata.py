@@ -109,7 +109,8 @@ class ImageMetadataExtractor:
             return metadata
             
         try:
-            self.logger.info(f"Starting metadata augmentation with LLM (processing {len(metadata)} records in batches of 5)")
+            total_batches = (len(metadata) // 5) + (1 if len(metadata) % 5 else 0)
+            self.logger.info(f"Starting metadata augmentation with LLM (processing {len(metadata)} records in {total_batches} batches)")
             spinner = Spinner()
             spinner.start()
             start_time = time.time()
@@ -118,8 +119,13 @@ class ImageMetadataExtractor:
             augmented_data = []
             
             for i in range(0, len(metadata), batch_size):
+                batch_start = i + 1
+                batch_end = min(i + batch_size, len(metadata))
+                batch_num = (i // batch_size) + 1
+                self.logger.info(f"Processing batch {batch_num}/{total_batches} (records {batch_start}-{batch_end})")
+                
                 batch = metadata[i:i + batch_size]
-                self.logger.debug(f"Processing batch {i//batch_size + 1} of {len(metadata)//batch_size + 1}")
+                self.logger.debug(f"Batch {batch_num} data: {json.dumps(batch, indent=2)}")
                 
                 response = self.client.chat.completions.create(
                     model=self.text_llm_model,
@@ -133,13 +139,15 @@ class ImageMetadataExtractor:
                 batch_result = json.loads(response.choices[0].message.content)
                 if isinstance(batch_result, list):
                     augmented_data.extend(batch_result)
+                    self.logger.debug(f"Batch {batch_num} augmentation successful, added {len(batch_result)} records")
                 else:
-                    self.logger.warning("Unexpected response format from LLM")
+                    self.logger.warning(f"Unexpected response format from LLM for batch {batch_num}")
                     augmented_data.extend(batch)
+                    self.logger.debug(f"Using original data for batch {batch_num}")
             
             spinner.stop()
             elapsed_time = time.time() - start_time
-            self.logger.info(f"Successfully augmented metadata in {elapsed_time:.2f} seconds")
+            self.logger.info(f"Successfully augmented {len(augmented_data)} records in {elapsed_time:.2f} seconds")
             
             return augmented_data
         except Exception as e:
