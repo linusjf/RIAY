@@ -126,13 +126,13 @@ def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
     extractor = ImageMetadataExtractor()
     parser = argparse.ArgumentParser(
-        description="Extract image metadata from markdown files organized by day/month",
+        description="Extract image metadata from markdown files organized by month/day",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""Examples:
   %(prog)s images.csv --start-day 1 --end-day 30
   %(prog)s output.json --start-day 100
   %(prog)s all_images.csv
-  
+
 Output formats:
   CSV - Appends data if file exists, creates new with headers otherwise
   JSON - Always creates new file with complete dataset
