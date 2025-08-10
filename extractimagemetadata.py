@@ -122,10 +122,10 @@ class ImageMetadataExtractor:
                 batch_start = i + 1
                 batch_end = min(i + batch_size, len(metadata))
                 batch_num = (i // batch_size) + 1
-                self.logger.info(f"Processing batch {batch_num}/{total_batches} (records {batch_start}-{batch_end})")
-                
                 batch = metadata[i:i + batch_size]
-                self.logger.debug(f"Batch {batch_num} data: {json.dumps(batch, indent=2)}")
+                
+                self.logger.debug(f"Processing batch {batch_num}/{total_batches} (records {batch_start}-{batch_end})")
+                self.logger.debug(f"Input batch {batch_num} data:\n{json.dumps(batch, indent=2)}")
                 
                 response = self.client.chat.completions.create(
                     model=self.text_llm_model,
@@ -136,7 +136,11 @@ class ImageMetadataExtractor:
                     response_format={"type": "json_object"}
                 )
                 
+                self.logger.debug(f"Raw LLM response for batch {batch_num}:\n{response}")
+                
                 batch_result = json.loads(response.choices[0].message.content)
+                self.logger.debug(f"Parsed LLM response for batch {batch_num}:\n{json.dumps(batch_result, indent=2)}")
+                
                 if isinstance(batch_result, list):
                     augmented_data.extend(batch_result)
                     self.logger.debug(f"Batch {batch_num} augmentation successful, added {len(batch_result)} records")
@@ -148,6 +152,7 @@ class ImageMetadataExtractor:
             spinner.stop()
             elapsed_time = time.time() - start_time
             self.logger.info(f"Successfully augmented {len(augmented_data)} records in {elapsed_time:.2f} seconds")
+            self.logger.debug(f"Final augmented data:\n{json.dumps(augmented_data, indent=2)}")
             
             return augmented_data
         except Exception as e:
