@@ -18,6 +18,7 @@ import argparse
 from pathlib import Path
 from datetime import datetime, timedelta
 from configenv import ConfigEnv
+import openai
 
 class ImageMetadataExtractor:
     """Class for extracting image metadata from markdown files."""
@@ -34,6 +35,12 @@ class ImageMetadataExtractor:
         self.text_llm_api_key = self.config.get("TEXT_LLM_API_KEY", "")
         self.text_llm_base_url = self.config.get("TEXT_LLM_BASE_URL", "")
         self.text_llm_model = self.config.get("TEXT_LLM_MODEL", "")
+        
+        # Configure OpenAI client
+        self.client = openai.OpenAI(
+            api_key=self.text_llm_api_key,
+            base_url=self.text_llm_base_url
+        )
 
     def _is_leap_year(self) -> bool:
         """Check if the current year is a leap year."""
@@ -55,6 +62,28 @@ class ImageMetadataExtractor:
         """Get month name and day of month from day of year."""
         date = datetime(self.year, 1, 1) + timedelta(days=day_num - 1)
         return self.months[date.month - 1], date.day
+
+    def _augment_metadata(self, metadata: list[dict]) -> list[dict]:
+        """Augment metadata using LLM."""
+        if not self.augment_meta_data_prompt or not self.text_llm_api_key:
+            return metadata
+            
+        try:
+            response = self.client.chat.completions.create(
+                model=self.text_llm_model,
+                messages=[
+                    {"role": "system", "content": self.augment_meta_data_prompt},
+                    {"role": "user", "content": json.dumps(metadata)}
+                ],
+                response_format={"type": "json_object"}
+            )
+            
+            augmented_data = json.loads(response.choices[0].message.content)
+            return augmented_data
+        except Exception as e:
+            if self.config.get("LOGGING", False):
+                print(f"⚠️ Failed to augment metadata: {e}")
+            return metadata
 
     def extract_to_csv(self, csv_path: Path, start_day: int, end_day: int) -> None:
         """Extract image metadata from markdown files and save to CSV."""
@@ -124,6 +153,10 @@ class ImageMetadataExtractor:
 
             output_data.extend(image_data)
             total_images += len(image_data)
+
+        # Augment metadata with LLM if configured
+        if self.augment_meta_data_prompt and self.text_llm_api_key:
+            output_data = self._augment_metadata(output_data)
 
         with open(json_path, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, indent=2)
