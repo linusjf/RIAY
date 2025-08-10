@@ -103,31 +103,44 @@ class ImageMetadataExtractor:
         return self.months[date.month - 1], date.day
 
     def _augment_metadata(self, metadata: list[dict]) -> list[dict]:
-        """Augment metadata using LLM."""
+        """Augment metadata using LLM in batches of 5 records."""
         if not self.augment_meta_data_prompt or not self.text_llm_api_key:
             self.logger.debug("LLM augmentation not configured, skipping")
             return metadata
             
         try:
-            self.logger.info("Starting metadata augmentation with LLM")
+            self.logger.info(f"Starting metadata augmentation with LLM (processing {len(metadata)} records in batches of 5)")
             spinner = Spinner()
             spinner.start()
             start_time = time.time()
             
-            response = self.client.chat.completions.create(
-                model=self.text_llm_model,
-                messages=[
-                    {"role": "system", "content": self.augment_meta_data_prompt},
-                    {"role": "user", "content": json.dumps(metadata)}
-                ],
-                response_format={"type": "json_object"}
-            )
+            batch_size = 5
+            augmented_data = []
+            
+            for i in range(0, len(metadata), batch_size):
+                batch = metadata[i:i + batch_size]
+                self.logger.debug(f"Processing batch {i//batch_size + 1} of {len(metadata)//batch_size + 1}")
+                
+                response = self.client.chat.completions.create(
+                    model=self.text_llm_model,
+                    messages=[
+                        {"role": "system", "content": self.augment_meta_data_prompt},
+                        {"role": "user", "content": json.dumps(batch)}
+                    ],
+                    response_format={"type": "json_object"}
+                )
+                
+                batch_result = json.loads(response.choices[0].message.content)
+                if isinstance(batch_result, list):
+                    augmented_data.extend(batch_result)
+                else:
+                    self.logger.warning("Unexpected response format from LLM")
+                    augmented_data.extend(batch)
             
             spinner.stop()
             elapsed_time = time.time() - start_time
-            self.logger.info(f"Successfully augmented metadata with LLM in {elapsed_time:.2f} seconds")
+            self.logger.info(f"Successfully augmented metadata in {elapsed_time:.2f} seconds")
             
-            augmented_data = json.loads(response.choices[0].message.content)
             return augmented_data
         except Exception as e:
             if 'spinner' in locals():
