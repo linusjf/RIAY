@@ -1,4 +1,6 @@
 __pycache__/*
+*.csv
+*.json
 *.test
 *.bak*
 styles/Microsoft
@@ -15,6 +17,7 @@ geminimodelids.txt
 venv/**
 .aider.chat.history.md
 !**/*Summary.txt
+!**/*ImagePrompt.json
 testsummary.txt
 **/*.vtt
 **/*.en.txt
