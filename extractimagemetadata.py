@@ -23,7 +23,7 @@ class ImageMetadataExtractor:
     """Class for extracting image metadata from markdown files."""
 
     def __init__(self):
-        self.config = ConfigEnv()
+        self.config = ConfigEnv(include_os_env=True)
         self.year = int(self.config.get("YEAR", datetime.now().year))
         self.max_days = 366 if self._is_leap_year() else 365
         self.months = [
@@ -99,7 +99,7 @@ class ImageMetadataExtractor:
         total_images = 0
 
         for day_num in range(start_day, end_day + 1):
-            month_name, day_of_month = self._get_month_and_day(day_num)
+            month_name, _ = self._get_month_and_day(day_num)
             md_path = Path(f"{month_name}/Day{day_num:03d}.md")
 
             if not md_path.is_file():
@@ -117,12 +117,8 @@ class ImageMetadataExtractor:
                     "caption": title,
                     "image_filepath": img_path,
                     "image_url": link_url,
-                    "llm_api_key": self.text_llm_api_key,
-                    "llm_base_url": self.text_llm_base_url,
-                    "llm_model": self.text_llm_model,
-                    "augment_prompt": self.augment_meta_data_prompt
                 }
-                for alt_text, img_path, link_url, title in image_links
+                for _, img_path, link_url, title in image_links
                 if not link_url.startswith("https://youtu.be")
             ]
 
