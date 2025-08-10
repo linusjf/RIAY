@@ -60,7 +60,7 @@ class ImageMetadataExtractor:
         with open(csv_path, mode='a', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             if write_headers:
-                writer.writerow(["caption", "image_filepath", "image_url"])
+                writer.writerow(["day_number", "caption", "image_filepath", "image_url"])
 
             for day_num in range(start_day, end_day + 1):
                 month_name, day_of_month = self._get_month_and_day(day_num)
@@ -76,13 +76,13 @@ class ImageMetadataExtractor:
                 image_links = re.findall(r'\[!\[(.*?)\]\((.*?)\)\]\((.*?)\s+"(.*?)"\)', content)
 
                 image_data = [
-                    (title, img_path, link_url)
+                    (day_num, title, img_path, link_url)
                     for alt_text, img_path, link_url, title in image_links
                     if not link_url.startswith("https://youtu.be")
                 ]
 
-                for caption, img_path, img_url in image_data:
-                    writer.writerow([caption, img_path, img_url])
+                for day, caption, img_path, img_url in image_data:
+                    writer.writerow([day, caption, img_path, img_url])
 
                 total_images += len(image_data)
 
@@ -108,7 +108,7 @@ class ImageMetadataExtractor:
             image_links = re.findall(r'\[!\[(.*?)\]\((.*?)\)\]\((.*?)\s+"(.*?)"\)', content)
 
             image_data = [
-                {"caption": title, "image_filepath": img_path, "image_url": link_url}
+                {"day_number": day_num, "caption": title, "image_filepath": img_path, "image_url": link_url}
                 for alt_text, img_path, link_url, title in image_links
                 if not link_url.startswith("https://youtu.be")
             ]
@@ -134,12 +134,6 @@ def parse_args() -> argparse.Namespace:
         help="Path to the output file"
     )
     parser.add_argument(
-        "--output-type",
-        choices=["csv", "json"],
-        default="csv",
-        help="Output file format (csv or json)"
-    )
-    parser.add_argument(
         "--start-day",
         type=int,
         default=1,
@@ -163,10 +157,10 @@ def main():
         print(f"❌ {e}")
         sys.exit(1)
 
-    if args.output_type == "csv":
-        extractor.extract_to_csv(args.output_file, args.start_day, args.end_day)
-    else:
+    if str(args.output_file).lower().endswith('.json'):
         extractor.extract_to_json(args.output_file, args.start_day, args.end_day)
+    else:
+        extractor.extract_to_csv(args.output_file, args.start_day, args.end_day)
 
 if __name__ == "__main__":
     main()
