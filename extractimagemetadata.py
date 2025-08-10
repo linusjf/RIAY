@@ -30,6 +30,10 @@ class ImageMetadataExtractor:
             "January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
         ]
+        self.augment_meta_data_prompt = self.config.get("AUGMENT_META_DATA_PROMPT", "")
+        self.text_llm_api_key = self.config.get("TEXT_LLM_API_KEY", "")
+        self.text_llm_base_url = self.config.get("TEXT_LLM_BASE_URL", "")
+        self.text_llm_model = self.config.get("TEXT_LLM_MODEL", "")
 
     def _is_leap_year(self) -> bool:
         """Check if the current year is a leap year."""
@@ -108,7 +112,16 @@ class ImageMetadataExtractor:
             image_links = re.findall(r'\[!\[(.*?)\]\((.*?)\)\]\((.*?)\s+"(.*?)"\)', content)
 
             image_data = [
-                {"day_number": day_num, "caption": title, "image_filepath": img_path, "image_url": link_url}
+                {
+                    "day_number": day_num,
+                    "caption": title,
+                    "image_filepath": img_path,
+                    "image_url": link_url,
+                    "llm_api_key": self.text_llm_api_key,
+                    "llm_base_url": self.text_llm_base_url,
+                    "llm_model": self.text_llm_model,
+                    "augment_prompt": self.augment_meta_data_prompt
+                }
                 for alt_text, img_path, link_url, title in image_links
                 if not link_url.startswith("https://youtu.be")
             ]
