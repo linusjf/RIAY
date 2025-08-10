@@ -11,6 +11,7 @@ Extractimagemetadata.
 ######################################################################
 """
 import csv
+import json
 import re
 import sys
 import argparse
@@ -51,7 +52,7 @@ class ImageMetadataExtractor:
         date = datetime(self.year, 1, 1) + timedelta(days=day_num - 1)
         return self.months[date.month - 1], date.day
 
-    def extract_from_markdown(self, csv_path: Path, start_day: int, end_day: int) -> None:
+    def extract_to_csv(self, csv_path: Path, start_day: int, end_day: int) -> None:
         """Extract image metadata from markdown files and save to CSV."""
         write_headers = not csv_path.exists() or csv_path.stat().st_size == 0
         total_images = 0
@@ -88,6 +89,39 @@ class ImageMetadataExtractor:
         if self.config.get("LOGGING", False):
             print(f"✅ Processed days {start_day}-{end_day}, found {total_images} images in {csv_path}")
 
+    def extract_to_json(self, json_path: Path, start_day: int, end_day: int) -> None:
+        """Extract image metadata from markdown files and save to JSON."""
+        output_data = []
+        total_images = 0
+
+        for day_num in range(start_day, end_day + 1):
+            month_name, day_of_month = self._get_month_and_day(day_num)
+            md_path = Path(f"{month_name}/Day{day_num:03d}.md")
+
+            if not md_path.is_file():
+                continue
+
+            with open(md_path, encoding='utf-8') as f:
+                content = f.read()
+
+            # Regex to extract image metadata (skip video thumbnails)
+            image_links = re.findall(r'\[!\[(.*?)\]\((.*?)\)\]\((.*?)\s+"(.*?)"\)', content)
+
+            image_data = [
+                {"caption": title, "image_filepath": img_path, "image_url": link_url}
+                for alt_text, img_path, link_url, title in image_links
+                if not link_url.startswith("https://youtu.be")
+            ]
+
+            output_data.extend(image_data)
+            total_images += len(image_data)
+
+        with open(json_path, 'w', encoding='utf-8') as f:
+            json.dump(output_data, f, indent=2)
+
+        if self.config.get("LOGGING", False):
+            print(f"✅ Processed days {start_day}-{end_day}, found {total_images} images in {json_path}")
+
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
     extractor = ImageMetadataExtractor()
@@ -95,9 +129,15 @@ def parse_args() -> argparse.Namespace:
         description="Extract image metadata from markdown files"
     )
     parser.add_argument(
-        "output_csv",
+        "output_file",
         type=Path,
-        help="Path to the output CSV file"
+        help="Path to the output file"
+    )
+    parser.add_argument(
+        "--output-type",
+        choices=["csv", "json"],
+        default="csv",
+        help="Output file format (csv or json)"
     )
     parser.add_argument(
         "--start-day",
@@ -123,7 +163,10 @@ def main():
         print(f"❌ {e}")
         sys.exit(1)
 
-    extractor.extract_from_markdown(args.output_csv, args.start_day, args.end_day)
+    if args.output_type == "csv":
+        extractor.extract_to_csv(args.output_file, args.start_day, args.end_day)
+    else:
+        extractor.extract_to_json(args.output_file, args.start_day, args.end_day)
 
 if __name__ == "__main__":
     main()
