@@ -73,7 +73,7 @@ class ImageMetadataExtractor:
         self.text_llm_api_key = self.config.get("TEXT_LLM_API_KEY", "")
         self.text_llm_base_url = self.config.get("TEXT_LLM_BASE_URL", "")
         self.text_llm_model = self.config.get("TEXT_LLM_MODEL", "")
-        
+
         # Configure OpenAI client
         self.client = openai.OpenAI(
             api_key=self.text_llm_api_key,
@@ -107,26 +107,26 @@ class ImageMetadataExtractor:
         if not self.augment_meta_data_prompt or not self.text_llm_api_key:
             self.logger.debug("LLM augmentation not configured, skipping")
             return metadata
-            
+
+        spinner = Spinner()
         try:
             total_batches = (len(metadata) // 5) + (1 if len(metadata) % 5 else 0)
             self.logger.info(f"Starting metadata augmentation with LLM (processing {len(metadata)} records in {total_batches} batches)")
-            spinner = Spinner()
             spinner.start()
             start_time = time.time()
-            
+
             batch_size = 5
             augmented_data = []
-            
+
             for i in range(0, len(metadata), batch_size):
                 batch_start = i + 1
                 batch_end = min(i + batch_size, len(metadata))
                 batch_num = (i // batch_size) + 1
                 batch = metadata[i:i + batch_size]
-                
-                self.logger.debug(f"Processing batch {batch_num}/{total_batches} (records {batch_start}-{batch_end})")
+
+                self.logger.info(f"Processing batch {batch_num}/{total_batches} (records {batch_start}-{batch_end})")
                 self.logger.debug(f"Input batch {batch_num} data:\n{json.dumps(batch, indent=2)}")
-                
+
                 response = self.client.chat.completions.create(
                     model=self.text_llm_model,
                     messages=[
@@ -135,25 +135,26 @@ class ImageMetadataExtractor:
                     ],
                     response_format={"type": "json_object"}
                 )
-                
+
                 self.logger.debug(f"Raw LLM response for batch {batch_num}:\n{response}")
-                
-                batch_result = json.loads(response.choices[0].message.content)
-                self.logger.debug(f"Parsed LLM response for batch {batch_num}:\n{json.dumps(batch_result, indent=2)}")
-                
+
+                batch_result = json.loads(str(response.choices[0].message.content))
+                self.logger.info(f"Parsed LLM response for batch {batch_num}:\n{json.dumps(batch_result, indent=2)}")
+
                 if isinstance(batch_result, list):
                     augmented_data.extend(batch_result)
-                    self.logger.debug(f"Batch {batch_num} augmentation successful, added {len(batch_result)} records")
+                    self.logger.info(f"Batch {batch_num} augmentation successful, added {len(batch_result)} records")
                 else:
-                    self.logger.warning(f"Unexpected response format from LLM for batch {batch_num}")
+                    self.logger.warning(f"Unexpected response format from LLM for batch {batch_num}: {batch_result}")
                     augmented_data.extend(batch)
                     self.logger.debug(f"Using original data for batch {batch_num}")
-            
+                    return []
+
             spinner.stop()
             elapsed_time = time.time() - start_time
             self.logger.info(f"Successfully augmented {len(augmented_data)} records in {elapsed_time:.2f} seconds")
             self.logger.debug(f"Final augmented data:\n{json.dumps(augmented_data, indent=2)}")
-            
+
             return augmented_data
         except Exception as e:
             if 'spinner' in locals():

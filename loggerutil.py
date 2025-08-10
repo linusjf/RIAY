@@ -68,7 +68,7 @@ class LoggerFactory:
             '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
         )
         stream_handler: logging.StreamHandler = logging.StreamHandler(sys.stderr)
-        stream_handler.setLevel(logging.INFO)
+        stream_handler.setLevel(level)
         stream_handler.setFormatter(formatter)
         logger.addHandler(stream_handler)
 
