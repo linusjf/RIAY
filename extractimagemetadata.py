@@ -85,45 +85,8 @@ class ImageMetadataExtractor:
                 print(f"⚠️ Failed to augment metadata: {e}")
             return metadata
 
-    def extract_to_csv(self, csv_path: Path, start_day: int, end_day: int) -> None:
-        """Extract image metadata from markdown files and save to CSV."""
-        write_headers = not csv_path.exists() or csv_path.stat().st_size == 0
-        total_images = 0
-
-        with open(csv_path, mode='a', newline='', encoding='utf-8') as file:
-            writer = csv.writer(file)
-            if write_headers:
-                writer.writerow(["day_number", "caption", "image_filepath", "image_url"])
-
-            for day_num in range(start_day, end_day + 1):
-                month_name, day_of_month = self._get_month_and_day(day_num)
-                md_path = Path(f"{month_name}/Day{day_num:03d}.md")
-
-                if not md_path.is_file():
-                    continue
-
-                with open(md_path, encoding='utf-8') as f:
-                    content = f.read()
-
-                # Regex to extract image metadata (skip video thumbnails)
-                image_links = re.findall(r'\[!\[(.*?)\]\((.*?)\)\]\((.*?)\s+"(.*?)"\)', content)
-
-                image_data = [
-                    (day_num, title, img_path, link_url)
-                    for alt_text, img_path, link_url, title in image_links
-                    if not link_url.startswith("https://youtu.be")
-                ]
-
-                for day, caption, img_path, img_url in image_data:
-                    writer.writerow([day, caption, img_path, img_url])
-
-                total_images += len(image_data)
-
-        if self.config.get("LOGGING", False):
-            print(f"✅ Processed days {start_day}-{end_day}, found {total_images} images in {csv_path}")
-
-    def extract_to_json(self, json_path: Path, start_day: int, end_day: int) -> None:
-        """Extract image metadata from markdown files and save to JSON."""
+    def _extract_metadata(self, start_day: int, end_day: int) -> list[dict]:
+        """Extract and augment metadata from markdown files."""
         output_data = []
         total_images = 0
 
@@ -158,11 +121,30 @@ class ImageMetadataExtractor:
         if self.augment_meta_data_prompt and self.text_llm_api_key:
             output_data = self._augment_metadata(output_data)
 
-        with open(json_path, 'w', encoding='utf-8') as f:
-            json.dump(output_data, f, indent=2)
-
         if self.config.get("LOGGING", False):
-            print(f"✅ Processed days {start_day}-{end_day}, found {total_images} images in {json_path}")
+            print(f"✅ Processed days {start_day}-{end_day}, found {total_images} images")
+        return output_data
+
+    def extract_to_csv(self, csv_path: Path, metadata: list[dict]) -> None:
+        """Save metadata to CSV file."""
+        write_headers = not csv_path.exists() or csv_path.stat().st_size == 0
+
+        with open(csv_path, mode='a', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            if write_headers:
+                # Get all possible field names from the first augmented record
+                fieldnames = set()
+                for record in metadata:
+                    fieldnames.update(record.keys())
+                writer.writerow(sorted(fieldnames))
+
+            for record in metadata:
+                writer.writerow([record.get(field, "") for field in sorted(record.keys())])
+
+    def extract_to_json(self, json_path: Path, metadata: list[dict]) -> None:
+        """Save metadata to JSON file."""
+        with open(json_path, 'w', encoding='utf-8') as f:
+            json.dump(metadata, f, indent=2)
 
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
@@ -209,10 +191,12 @@ def main():
         print(f"❌ {e}")
         sys.exit(1)
 
+    metadata = extractor._extract_metadata(args.start_day, args.end_day)
+
     if str(args.output_file).lower().endswith('.json'):
-        extractor.extract_to_json(args.output_file, args.start_day, args.end_day)
+        extractor.extract_to_json(args.output_file, metadata)
     else:
-        extractor.extract_to_csv(args.output_file, args.start_day, args.end_day)
+        extractor.extract_to_csv(args.output_file, metadata)
 
 if __name__ == "__main__":
     main()
