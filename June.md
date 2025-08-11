@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -78,7 +77,7 @@
   - [June 18, 2025](#june-18-2025)
     - [The Faithful 'Yes'](#the-faithful-yes)
     - [AI-Generated Summary: The Divine Tapestry in Van Eyck’s Annunciation](#ai-generated-summary-the-divine-tapestry-in-van-eycks-annunciation)
-    - [Annunciation, an oil painting by the Early Netherlandish master Jan van Eyck](#annunciation-an-oil-painting-by-the-early-netherlandish-master-jan-van-eyck)
+    - [Jan van Eyck's The Annunciation portrays the angel Gabriel announcing to Mary, who humbly accepts God's will (Stock Image)](#jan-van-eycks-the-annunciation-portrays-the-angel-gabriel-announcing-to-mary-who-humbly-accepts-gods-will-stock-image)
   - [June 19, 2025](#june-19-2025)
     - [Grit and Grace](#grit-and-grace)
     - [AI-Generated Summary: The Steadfast Love of Mary’s Journey](#ai-generated-summary-the-steadfast-love-of-marys-journey)
@@ -131,6 +130,9 @@
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<!-- toc -->
+
+<!-- tocstop -->
 
 # June 2025
 
@@ -484,11 +486,9 @@ Upon the floor, the tiles recount old victories—David’s stone, Samson’s st
 
 So too must we learn to trust, not when the path is clear, but when it seems most shrouded. Every circumstance, be it trial or joy, is either an offering laid at His feet or an invitation to draw nearer. The world may mistake obedience for folly, but the faithful know: to lose oneself in His will is to find the only victory that endures. Let us then, like Mary, answer with courage, and hold fast to the hope that He who began this good work will see it through.
 
-### Annunciation, an oil painting by the Early Netherlandish master Jan van Eyck
+### Jan van Eyck's The Annunciation portrays the angel Gabriel announcing to Mary, who humbly accepts God's will (Stock Image)
 
-[![Annunciation, an oil painting by the Early Netherlandish master Jan van Eyck
-](/June/jpgs/Annunciation.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Annunciation_-_Jan_van_Eyck_-_1434_-_NG_Wash_DC.jpg/330px-Annunciation_-_Jan_van_Eyck_-_1434_-_NG_Wash_DC.jpg "Annunciation, an oil painting by the Early Netherlandish master Jan van Eyck
-")
+[![Jan van Eyck's The Annunciation portrays the angel Gabriel announcing to Mary, who humbly accepts God's will](June/jpgs/annunciationvaneyck.jpg)](https://i.pinimg.com/736x/dc/d2/0b/dcd20b9d34dfc34ecf40a2a862594715.jpg "Jan van Eyck's The Annunciation portrays the angel Gabriel announcing to Mary, who humbly accepts God's will")
 
 ## June 19, 2025
 
