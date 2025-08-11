@@ -914,7 +914,7 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 - The central quote: "Blessed are you among women, and blessed is the fruit of thy womb, Jesus."
 - Elizabeth's exclamation is described as a "work of the Holy Spirit expressed through a loud, joyous cry."
 - An anecdote about a friar's spontaneous shout of wonder at seeing a dolphin illustrates the desired, natural reaction to beauty and awe, suggesting an even greater response is appropriate when contemplating Mary, a "masterpiece of creation."
-- The core message invites readers to "ask for the grace to pray them \[the words of the Hail Mary\] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
+- The core message invites readers to "ask for the grace to pray them [the words of the Hail Mary] with genuine wonder, awe, and shouts of joy," mirroring Elizabeth's experience.
 
 The original text also includes full recitations of the Our Father (conclusion), Hail Mary, Glory Be, and the Sign of the Cross, framing the reflection within traditional Catholic prayer.
 
@@ -6279,6 +6279,9 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
   - [August 10, 2025](#august-10-2025)
     - [Elizabeth's Greeting](#elizabeths-greeting)
     - [AI-Generated Summary: The Unchanging Refuge of Prayer](#ai-generated-summary-the-unchanging-refuge-of-prayer)
+  - [August 11, 2025](#august-11-2025)
+    - [Now and at Death](#now-and-at-death)
+    - [AI-Generated Summary: The Light of the Mount and the Bread of Life](#ai-generated-summary-the-light-of-the-mount-and-the-bread-of-life)
 
 <!---toc end-->
 
@@ -6447,6 +6450,18 @@ The prayers themselves are but ropes to bind our wandering minds to the mast of 
 What we find here is not a discourse, nor even a meditation, but something far simpler and far older—the quiet repetition of prayers worn smooth by centuries of use. The "Hail Mary," the "Our Father," the "Glory Be"—these are not mere words, but well-trodden paths by which countless souls have approached the Divine. There is a peculiar comfort in such repetition, as there is in the turning of the seasons or the rhythm of the tides. The world may rush about its business, but here, in these ancient phrases, we are reminded that some things endure.
 
 One might ask why such prayers matter if they contain no new argument, no fresh insight. But that is rather like asking why a child repeats a beloved story or why a pilgrim retraces familiar steps. The value lies not in novelty, but in faithfulness—in the quiet assurance that these words, hallowed by time, are a refuge for the weary and a light for the lost. And so, though no grand truths are unveiled here, something far greater is offered: the steadying hand of tradition, pointing always toward the Eternal.
+
+#### August 11, 2025
+
+##### Now and at Death
+
+[![Now and at Death](August/jpgs/Day223.jpg)](https://youtu.be/3-iQujDnU_k "Now and at Death")
+
+##### AI-Generated Summary: The Light of the Mount and the Bread of Life
+
+Consider two mysteries, dear reader, where Heaven stooped low to touch the earth: first, upon the mount where His face shone like the sun, and His garments became white as light; second, in the upper room where common bread was made His very flesh. These are not mere events, but windows into eternity—the Transfiguration, a glimpse of glory awaiting all who love Him, and the Eucharist, the daily miracle by which He feeds us with Himself.
+
+Prayer, like a ladder, lifts us toward these mysteries, and Mary, our Mother, stands ever ready to guide us upward. Yet how often we forget that these are not distant wonders, but present realities! The mount and the supper-room are nearer to us than we dare believe, if only we have eyes to see. Let us then approach with awe, and with hearts open to the light that never fades.
 
 ## September
 
