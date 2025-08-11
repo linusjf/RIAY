@@ -5,8 +5,8 @@ from configenv import ConfigEnv
 
 class ArtDatabaseCreator:
     """Class for creating and managing an SQLite database from art records CSV."""
-    
-    def __init__(self, csv_path: Path = None, db_path: Path = None):
+
+    def __init__(self, csv_path: Path = Path("artrecords.csv"), db_path: Path = Path("art.db")):
         """Initialize with paths, loading from config if not provided."""
         config = ConfigEnv()
         self.csv_path = csv_path or Path(config.get('ART_RECORDS_CSV', 'artrecords.csv'))
@@ -39,18 +39,20 @@ class ArtDatabaseCreator:
                     PRIMARY KEY (day_number)
                 )
                 """
-                self.cursor.execute(create_table_sql)
+                if self.cursor:
+                    self.cursor.execute(create_table_sql)
 
     def import_data(self) -> None:
         """Import data from CSV into the database."""
         with open(self.csv_path, 'r', encoding='utf-8') as csvfile:
             csv_reader = csv.DictReader(csvfile)
-            
+
             for row in csv_reader:
                 columns = ', '.join(row.keys())
                 placeholders = ', '.join(['?'] * len(row))
                 sql = f"INSERT OR REPLACE INTO art_records ({columns}) VALUES ({placeholders})"
-                self.cursor.execute(sql, tuple(row.values())
+                if self.cursor:
+                    self.cursor.execute(sql, tuple(row.values()))
 
     def create_database(self) -> None:
         """Main method to create the database and import data."""
@@ -58,8 +60,9 @@ class ArtDatabaseCreator:
             self.connect()
             self.create_table()
             self.import_data()
-            self.connection.commit()
-            print(f"Successfully created SQLite database at {self.db_path}")
+            if self.connection:
+                self.connection.commit()
+                print(f"Successfully created SQLite database at {self.db_path}")
         except Exception as e:
             print(f"Error creating database: {e}")
         finally:
@@ -67,4 +70,5 @@ class ArtDatabaseCreator:
 
 if __name__ == '__main__':
     db_creator = ArtDatabaseCreator()
+
     db_creator.create_database()
