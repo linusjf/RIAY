@@ -1,6 +1,7 @@
 import csv
 import sqlite3
 from pathlib import Path
+from configenv import ConfigEnv
 
 def create_database(csv_path: Path, db_path: Path) -> None:
     """Create SQLite database from CSV file with day_number as primary key."""
@@ -35,9 +36,12 @@ def create_database(csv_path: Path, db_path: Path) -> None:
     conn.close()
 
 if __name__ == '__main__':
-    # Define file paths
-    csv_path = Path('artrecords.csv')
-    db_path = Path('art.db')
+    # Load config
+    config = ConfigEnv()
+    
+    # Define file paths from config
+    csv_path = Path(config.get('ART_RECORDS_CSV', 'artrecords.csv'))
+    db_path = Path(config.get('ART_DATABASE', 'art.db'))
 
     # Create the database
     create_database(csv_path, db_path)
