@@ -139,8 +139,7 @@ class ImageMetadataExtractor:
                 self.logger.debug(f"Raw LLM response for batch {batch_num}:\n{response}")
 
                 batch_result = json.loads(str(response.choices[0].message.content))
-                self.logger.info(f"Parsed LLM response for batch {batch_num}:\n{json.dumps(batch_result, indent=2)}")
-                batch_result = batch_result.get("artrecords")
+                batch_result = batch_result.get("artrecords", "[]")
                 self.logger.info(f"Parsed LLM response for batch {batch_num}:\n{json.dumps(batch_result, indent=2)}")
 
                 if isinstance(batch_result, list):
@@ -150,7 +149,6 @@ class ImageMetadataExtractor:
                     self.logger.warning(f"Unexpected response format from LLM for batch {batch_num}: {batch_result}")
                     augmented_data.extend(batch)
                     self.logger.debug(f"Using original data for batch {batch_num}")
-                    return []
 
             spinner.stop()
             elapsed_time = time.time() - start_time
