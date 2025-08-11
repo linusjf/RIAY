@@ -18,7 +18,7 @@ import os
 import argparse
 import time
 from pathlib import Path
-from datetime import datetime, timedelta
+from datetime import datetime
 from itertools import cycle
 from threading import Thread
 from typing import Optional
