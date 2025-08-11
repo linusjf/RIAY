@@ -13,6 +13,26 @@ class ArtDatabaseCreator:
         self.db_path = db_path or Path(config.get('ART_DATABASE', 'art.db'))
         self.connection = None
         self.cursor = None
+        self.field_types = {
+            'ISO_code': 'TEXT',
+            'artist': 'TEXT',
+            'caption': 'TEXT',
+            'date': 'TEXT',
+            'day_number': 'INTEGER',
+            'description': 'TEXT',
+            'image_filepath': 'TEXT',
+            'image_url': 'TEXT',
+            'location': 'TEXT',
+            'medium': 'TEXT',
+            'mystery_name': 'TEXT',
+            'mystery_type': 'TEXT',
+            'original_title': 'TEXT',
+            'style': 'TEXT',
+            'subject': 'TEXT',
+            'title': 'TEXT',
+            'title_language': 'TEXT',
+            'title_language_iso': 'TEXT'
+        }
 
     def connect(self) -> None:
         """Establish database connection."""
@@ -33,9 +53,17 @@ class ArtDatabaseCreator:
             fieldnames = csv_reader.fieldnames
 
             if fieldnames:
+                # Use the predefined types for each field
+                columns = []
+                for field in fieldnames:
+                    if field in self.field_types:
+                        columns.append(f"{field} {self.field_types[field]}")
+                    else:
+                        columns.append(f"{field} TEXT")  # Default to TEXT if field not in types
+
                 create_table_sql = f"""
                 CREATE TABLE IF NOT EXISTS art_records (
-                    {', '.join(f'{field} TEXT' for field in fieldnames)},
+                    {', '.join(columns)},
                     PRIMARY KEY (day_number)
                 )
                 """
@@ -70,5 +98,4 @@ class ArtDatabaseCreator:
 
 if __name__ == '__main__':
     db_creator = ArtDatabaseCreator()
-
     db_creator.create_database()
