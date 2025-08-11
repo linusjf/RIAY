@@ -1,18 +1,22 @@
 import csv
 import sqlite3
 from pathlib import Path
+import os
+import argparse
 from configenv import ConfigEnv
 from loggerutil import LoggerFactory
+from configconstants import ConfigConstants
 
 class ArtDatabaseCreator:
     """Class for creating and managing an SQLite database from art records CSV."""
 
-    def __init__(self, csv_path: Path = Path("artrecords.csv"), db_path: Path = Path("art.db")):
+    def __init__(self, csv_path=None, db_path=None):
         """Initialize with paths, loading from config if not provided."""
-        self.logger = LoggerFactory.get_logger(__name__)
-        config = ConfigEnv()
-        self.csv_path = csv_path or Path(config.get('ART_RECORDS_CSV', 'artrecords.csv'))
-        self.db_path = db_path or Path(config.get('ART_DATABASE', 'art.db'))
+        config = ConfigEnv(include_os_env=True)
+        self.logger = LoggerFactory.get_logger(name=os.path.basename(__file__),
+                                               log_to_file=config.get(ConfigConstants.LOGGING, False))
+        self.csv_path = Path(csv_path) if csv_path else Path(config.get(ConfigConstants.ART_RECORDS_CSV, 'artrecords.csv'))
+        self.db_path = Path(db_path) if db_path else Path(config.get(ConfigConstants.ART_DATABASE, 'art.db'))
         self.connection = None
         self.cursor = None
         self.field_types = {
@@ -76,6 +80,7 @@ class ArtDatabaseCreator:
                         PRIMARY KEY (day_number)
                     )
                     """
+                    self.logger.debug(f"Create table sql: {create_table_sql}")
                     if self.cursor:
                         self.cursor.execute(create_table_sql)
                     self.logger.info("Successfully created art_records table")
@@ -95,6 +100,7 @@ class ArtDatabaseCreator:
                     columns = ', '.join(row.keys())
                     placeholders = ', '.join(['?'] * len(row))
                     sql = f"INSERT OR REPLACE INTO art_records ({columns}) VALUES ({placeholders})"
+                    self.logger.debug(f"Insert table sql: {sql}")
                     if self.cursor:
                         self.cursor.execute(sql, tuple(row.values()))
                     record_count += 1
@@ -120,6 +126,25 @@ class ArtDatabaseCreator:
         finally:
             self.close()
 
+def parse_args():
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description='Create SQLite database from art records CSV',
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+    parser.add_argument(
+        '--csv',
+        help='Path to input CSV file',
+        default=None
+    )
+    parser.add_argument(
+        '--db',
+        help='Path to output SQLite database',
+        default=None
+    )
+    return parser.parse_args()
+
 if __name__ == '__main__':
-    db_creator = ArtDatabaseCreator()
+    args = parse_args()
+    db_creator = ArtDatabaseCreator(csv_path=args.csv, db_path=args.db)
     db_creator.create_database()
