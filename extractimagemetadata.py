@@ -123,6 +123,7 @@ class ImageMetadataExtractor:
                 batch_end = min(i + batch_size, len(metadata))
                 batch_num = (i // batch_size) + 1
                 batch = metadata[i:i + batch_size]
+                batch_start_time = time.time()
 
                 self.logger.info(f"Processing batch {batch_num}/{total_batches} (records {batch_start}-{batch_end})")
                 self.logger.debug(f"Input batch {batch_num} data:\n{json.dumps(batch, indent=2)}")
@@ -136,7 +137,9 @@ class ImageMetadataExtractor:
                     response_format={"type": "json_object"}
                 )
 
+                batch_time = time.time() - batch_start_time
                 self.logger.debug(f"Raw LLM response for batch {batch_num}:\n{response}")
+                self.logger.info(f"Batch {batch_num} processed in {batch_time:.2f} seconds")
 
                 batch_result = json.loads(str(response.choices[0].message.content))
                 batch_result = batch_result.get("artrecords", "[]")
