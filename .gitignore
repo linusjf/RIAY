@@ -33,3 +33,4 @@ testsummary.txt
 *.url.txt
 !deps.txt
 !robots.txt
+!artrecords.csv

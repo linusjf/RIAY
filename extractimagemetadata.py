@@ -79,6 +79,7 @@ class ImageMetadataExtractor:
             api_key=self.text_llm_api_key,
             base_url=self.text_llm_base_url
         )
+        self.batch_size = 10
         self.logger.info("ImageMetadataExtractor initialized")
 
     def _is_leap_year(self) -> bool:
@@ -110,19 +111,18 @@ class ImageMetadataExtractor:
 
         spinner = Spinner()
         try:
-            total_batches = (len(metadata) // 5) + (1 if len(metadata) % 5 else 0)
+            total_batches = (len(metadata) // self.batch_size) + (1 if len(metadata) % self.batch_size else 0)
             self.logger.info(f"Starting metadata augmentation with LLM (processing {len(metadata)} records in {total_batches} batches)")
             spinner.start()
             start_time = time.time()
 
-            batch_size = 5
             augmented_data = []
 
-            for i in range(0, len(metadata), batch_size):
+            for i in range(0, len(metadata), self.batch_size):
                 batch_start = i + 1
-                batch_end = min(i + batch_size, len(metadata))
-                batch_num = (i // batch_size) + 1
-                batch = metadata[i:i + batch_size]
+                batch_end = min(i + self.batch_size, len(metadata))
+                batch_num = (i // self.batch_size) + 1
+                batch = metadata[i:i + self.batch_size]
                 batch_start_time = time.time()
 
                 self.logger.info(f"Processing batch {batch_num}/{total_batches} (records {batch_start}-{batch_end})")
@@ -143,7 +143,7 @@ class ImageMetadataExtractor:
 
                 batch_result = json.loads(str(response.choices[0].message.content))
                 batch_result = batch_result.get("artrecords", "[]")
-                self.logger.info(f"Parsed LLM response for batch {batch_num}:\n{json.dumps(batch_result, indent=2)}")
+                self.logger.debug(f"Parsed LLM response for batch {batch_num}:\n{json.dumps(batch_result, indent=2)}")
 
                 if isinstance(batch_result, list):
                     augmented_data.extend(batch_result)
