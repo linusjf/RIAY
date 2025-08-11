@@ -2,12 +2,14 @@ import csv
 import sqlite3
 from pathlib import Path
 from configenv import ConfigEnv
+from loggerutil import LoggerFactory
 
 class ArtDatabaseCreator:
     """Class for creating and managing an SQLite database from art records CSV."""
 
     def __init__(self, csv_path: Path = Path("artrecords.csv"), db_path: Path = Path("art.db")):
         """Initialize with paths, loading from config if not provided."""
+        self.logger = LoggerFactory.get_logger(__name__)
         config = ConfigEnv()
         self.csv_path = csv_path or Path(config.get('ART_RECORDS_CSV', 'artrecords.csv'))
         self.db_path = db_path or Path(config.get('ART_DATABASE', 'art.db'))
@@ -33,66 +35,88 @@ class ArtDatabaseCreator:
             'title_language': 'TEXT',
             'title_language_iso': 'TEXT'
         }
+        self.logger.debug(f"Initialized ArtDatabaseCreator with csv_path={self.csv_path}, db_path={self.db_path}")
 
     def connect(self) -> None:
         """Establish database connection."""
+        self.logger.debug(f"Connecting to database at {self.db_path}")
         self.connection = sqlite3.connect(self.db_path)
         self.cursor = self.connection.cursor()
+        self.logger.info(f"Successfully connected to database at {self.db_path}")
 
     def close(self) -> None:
         """Close database connection."""
         if self.connection:
+            self.logger.debug("Closing database connection")
             self.connection.close()
             self.connection = None
             self.cursor = None
+            self.logger.info("Database connection closed")
 
     def create_table(self) -> None:
         """Create the art_records table if it doesn't exist."""
-        with open(self.csv_path, 'r', encoding='utf-8') as csvfile:
-            csv_reader = csv.DictReader(csvfile)
-            fieldnames = csv_reader.fieldnames
+        self.logger.debug(f"Creating table from CSV file at {self.csv_path}")
+        try:
+            with open(self.csv_path, 'r', encoding='utf-8') as csvfile:
+                csv_reader = csv.DictReader(csvfile)
+                fieldnames = csv_reader.fieldnames
 
-            if fieldnames:
-                # Use the predefined types for each field
-                columns = []
-                for field in fieldnames:
-                    if field in self.field_types:
-                        columns.append(f"{field} {self.field_types[field]}")
-                    else:
-                        columns.append(f"{field} TEXT")  # Default to TEXT if field not in types
+                if fieldnames:
+                    # Use the predefined types for each field
+                    columns = []
+                    for field in fieldnames:
+                        if field in self.field_types:
+                            columns.append(f"{field} {self.field_types[field]}")
+                        else:
+                            columns.append(f"{field} TEXT")  # Default to TEXT if field not in types
 
-                create_table_sql = f"""
-                CREATE TABLE IF NOT EXISTS art_records (
-                    {', '.join(columns)},
-                    PRIMARY KEY (day_number)
-                )
-                """
-                if self.cursor:
-                    self.cursor.execute(create_table_sql)
+                    create_table_sql = f"""
+                    CREATE TABLE IF NOT EXISTS art_records (
+                        {', '.join(columns)},
+                        PRIMARY KEY (day_number)
+                    )
+                    """
+                    if self.cursor:
+                        self.cursor.execute(create_table_sql)
+                    self.logger.info("Successfully created art_records table")
+        except Exception as e:
+            self.logger.error(f"Error creating table: {e}")
+            raise
 
     def import_data(self) -> None:
         """Import data from CSV into the database."""
-        with open(self.csv_path, 'r', encoding='utf-8') as csvfile:
-            csv_reader = csv.DictReader(csvfile)
+        self.logger.debug(f"Importing data from {self.csv_path}")
+        try:
+            with open(self.csv_path, 'r', encoding='utf-8') as csvfile:
+                csv_reader = csv.DictReader(csvfile)
+                record_count = 0
 
-            for row in csv_reader:
-                columns = ', '.join(row.keys())
-                placeholders = ', '.join(['?'] * len(row))
-                sql = f"INSERT OR REPLACE INTO art_records ({columns}) VALUES ({placeholders})"
-                if self.cursor:
-                    self.cursor.execute(sql, tuple(row.values()))
+                for row in csv_reader:
+                    columns = ', '.join(row.keys())
+                    placeholders = ', '.join(['?'] * len(row))
+                    sql = f"INSERT OR REPLACE INTO art_records ({columns}) VALUES ({placeholders})"
+                    if self.cursor:
+                        self.cursor.execute(sql, tuple(row.values()))
+                    record_count += 1
+
+                self.logger.info(f"Successfully imported {record_count} records")
+        except Exception as e:
+            self.logger.error(f"Error importing data: {e}")
+            raise
 
     def create_database(self) -> None:
         """Main method to create the database and import data."""
+        self.logger.info("Starting database creation process")
         try:
             self.connect()
             self.create_table()
             self.import_data()
             if self.connection:
                 self.connection.commit()
-                print(f"Successfully created SQLite database at {self.db_path}")
+                self.logger.info(f"Successfully created SQLite database at {self.db_path}")
         except Exception as e:
-            print(f"Error creating database: {e}")
+            self.logger.critical(f"Error creating database: {e}")
+            raise
         finally:
             self.close()
 
