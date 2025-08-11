@@ -26,6 +26,7 @@ from configenv import ConfigEnv
 import openai
 from loggerutil import LoggerFactory
 from configconstants import ConfigConstants
+from dateutils import MONTHS, is_leap_year, get_month_and_day, validate_day_range
 
 class Spinner:
     """Simple terminal spinner for long-running operations."""
@@ -65,11 +66,8 @@ class ImageMetadataExtractor:
             log_to_file=self.config.get(ConfigConstants.LOGGING, False)
         )
         self.year = int(self.config.get(ConfigConstants.YEAR, datetime.now().year))
-        self.max_days = 366 if self._is_leap_year() else 365
-        self.months = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ]
+        self.max_days = 366 if is_leap_year(self.year) else 365
+        self.months = MONTHS
         self.augment_meta_data_prompt = self.config.get(ConfigConstants.AUGMENT_META_DATA_PROMPT, "")
         self.text_llm_api_key = self.config.get(ConfigConstants.TEXT_LLM_API_KEY, "")
         self.text_llm_base_url = self.config.get(ConfigConstants.TEXT_LLM_BASE_URL, "")
@@ -83,26 +81,13 @@ class ImageMetadataExtractor:
         self.batch_size = self.config.get(ConfigConstants.AUGMENT_META_DATA_BATCH_SIZE, 10)
         self.logger.info("ImageMetadataExtractor initialized")
 
-    def _is_leap_year(self) -> bool:
-        """Check if the current year is a leap year."""
-        if self.year % 4 != 0:
-            return False
-        elif self.year % 100 != 0:
-            return True
-        else:
-            return self.year % 400 == 0
-
     def _validate_day_range(self, start_day: int, end_day: int) -> None:
         """Validate the day range is within bounds for the year."""
-        if start_day < 1 or end_day > self.max_days:
-            raise ValueError(f"Day range must be between 1 and {self.max_days}")
-        if start_day > end_day:
-            raise ValueError("Start day must be less than or equal to end day")
+        validate_day_range(self.year, start_day, end_day)
 
     def _get_month_and_day(self, day_num: int) -> tuple[str, int]:
         """Get month name and day of month from day of year."""
-        date = datetime(self.year, 1, 1) + timedelta(days=day_num - 1)
-        return self.months[date.month - 1], date.day
+        return get_month_and_day(self.year, day_num)
 
     def _augment_metadata(self, metadata: list[dict]) -> list[dict]:
         """Augment metadata using LLM in batches of 5 records."""
