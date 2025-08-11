@@ -4,7 +4,7 @@ import sqlite3
 from pathlib import Path
 import os
 import argparse
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Sequence
 from configenv import ConfigEnv
 from loggerutil import LoggerFactory
 from configconstants import ConfigConstants
@@ -65,15 +65,14 @@ class ArtDatabaseCreator:
         try:
             with open(self.csv_path, 'r', encoding='utf-8') as csvfile:
                 csv_reader = csv.DictReader(csvfile)
-                fieldnames: Optional[List[str]] = csv_reader.fieldnames
+                fieldnames: Optional[Sequence[str]] = csv_reader.fieldnames
 
                 if fieldnames:
                     # Check if table exists and drop it if it does
                     if self.cursor:
-                        self.cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='art_records'")
-                        if self.cursor.fetchone():
-                            self.logger.info("Existing art_records table found - dropping it")
-                            self.cursor.execute("DROP TABLE art_records")
+                        self.logger.info("Dropping art_records table if it exists...")
+                        self.cursor.execute("DROP TABLE if exists art_records")
+
 
                     # Use the predefined types for each field
                     columns: List[str] = []
@@ -105,14 +104,19 @@ class ArtDatabaseCreator:
                 csv_reader = csv.DictReader(csvfile)
                 record_count: int = 0
 
-                for row in Dict[str, str] in csv_reader:
-                    columns: str = ', '.join(row.keys())
-                    placeholders: str = ', '.join(['?'] * len(row))
-                    sql: str = f"INSERT OR REPLACE INTO art_records ({columns}) VALUES ({placeholders})"
-                    self.logger.debug(f"Insert table sql: {sql}")
-                    if self.cursor:
-                        self.cursor.execute(sql, tuple(row.values()))
-                    record_count += 1
+                if csv_reader:
+                    row: Dict[str, str]
+                    for row in csv_reader:
+                        columns: str = ', '.join(row.keys())
+                        placeholders: str = ', '.join(['?'] * len(row))
+                        sql: str = f"INSERT INTO art_records ({columns}) VALUES ({placeholders})"
+                        if self.cursor:
+                            self.cursor.execute("SELECT 1 FROM art_records WHERE day_number = ?", (row['day_number'],))
+                            if self.cursor.fetchone():
+                                 print(f"Duplicate found: {row['day_number']}")
+                                 continue
+                            self.cursor.execute(sql, tuple(row.values()))
+                            record_count += self.cursor.rowcount
 
                 self.logger.info(f"Successfully imported {record_count} records")
         except Exception as e:
