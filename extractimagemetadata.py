@@ -25,6 +25,7 @@ from typing import Optional
 from configenv import ConfigEnv
 import openai
 from loggerutil import LoggerFactory
+from configconstants import ConfigConstants
 
 class Spinner:
     """Simple terminal spinner for long-running operations."""
@@ -61,25 +62,25 @@ class ImageMetadataExtractor:
         self.config = ConfigEnv(include_os_env=True)
         self.logger = LoggerFactory.get_logger(
             name=os.path.basename(__file__),
-            log_to_file=self.config.get("LOGGING", False)
+            log_to_file=self.config.get(ConfigConstants.LOGGING, False)
         )
-        self.year = int(self.config.get("YEAR", datetime.now().year))
+        self.year = int(self.config.get(ConfigConstants.YEAR, datetime.now().year))
         self.max_days = 366 if self._is_leap_year() else 365
         self.months = [
             "January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
         ]
-        self.augment_meta_data_prompt = self.config.get("AUGMENT_META_DATA_PROMPT", "")
-        self.text_llm_api_key = self.config.get("TEXT_LLM_API_KEY", "")
-        self.text_llm_base_url = self.config.get("TEXT_LLM_BASE_URL", "")
-        self.text_llm_model = self.config.get("TEXT_LLM_MODEL", "")
+        self.augment_meta_data_prompt = self.config.get(ConfigConstants.AUGMENT_META_DATA_PROMPT, "")
+        self.text_llm_api_key = self.config.get(ConfigConstants.TEXT_LLM_API_KEY, "")
+        self.text_llm_base_url = self.config.get(ConfigConstants.TEXT_LLM_BASE_URL, "")
+        self.text_llm_model = self.config.get(ConfigConstants.TEXT_LLM_MODEL, "")
 
         # Configure OpenAI client
         self.client = openai.OpenAI(
             api_key=self.text_llm_api_key,
             base_url=self.text_llm_base_url
         )
-        self.batch_size = 10
+        self.batch_size = self.config.get(ConfigConstants.AUGMENT_META_DATA_BATCH_SIZE, 10)
         self.logger.info("ImageMetadataExtractor initialized")
 
     def _is_leap_year(self) -> bool:
