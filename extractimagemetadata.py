@@ -215,21 +215,19 @@ class ImageMetadataExtractor:
 
     def extract_to_csv(self, csv_path: Path, metadata: list[dict]) -> None:
         """Save metadata to CSV file."""
-        write_headers = not csv_path.exists() or csv_path.stat().st_size == 0
         self.logger.info(f"Saving metadata to CSV file: {csv_path}")
 
         try:
-            with open(csv_path, mode='a', newline='', encoding='utf-8') as file:
+            with open(csv_path, mode='w', newline='', encoding='utf-8') as file:
                 writer = csv.writer(file)
-                if write_headers:
-                    fieldnames = set()
-                    for record in metadata:
-                        fieldnames.update(record.keys())
-                    writer.writerow(sorted(fieldnames))
-                    self.logger.debug(f"Wrote CSV headers: {sorted(fieldnames)}")
+                fieldnames = set()
+                for record in metadata:
+                    fieldnames.update(record.keys())
+                writer.writerow(sorted(fieldnames))
+                self.logger.debug(f"Wrote CSV headers: {sorted(fieldnames)}")
 
                 for record in metadata:
-                    writer.writerow([record.get(field, "") for field in sorted(record.keys())])
+                    writer.writerow([record.get(field, "") for field in sorted(fieldnames)])
             self.logger.info(f"Successfully wrote {len(metadata)} records to CSV")
         except Exception as e:
             self.logger.error(f"Error writing to CSV: {e}")
@@ -258,7 +256,7 @@ def parse_args() -> argparse.Namespace:
   %(prog)s all_images.csv
 
 Output formats:
-  CSV - Appends data if file exists, creates new with headers otherwise
+  CSV - Overwrites existing file with complete dataset
   JSON - Always creates new file with complete dataset
 """
     )
