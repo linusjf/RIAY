@@ -68,6 +68,13 @@ class ArtDatabaseCreator:
                 fieldnames: Optional[List[str]] = csv_reader.fieldnames
 
                 if fieldnames:
+                    # Check if table exists and drop it if it does
+                    if self.cursor:
+                        self.cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='art_records'")
+                        if self.cursor.fetchone():
+                            self.logger.info("Existing art_records table found - dropping it")
+                            self.cursor.execute("DROP TABLE art_records")
+
                     # Use the predefined types for each field
                     columns: List[str] = []
                     for field in fieldnames:
@@ -77,7 +84,7 @@ class ArtDatabaseCreator:
                             columns.append(f"{field} TEXT")  # Default to TEXT if field not in types
 
                     create_table_sql: str = f"""
-                    CREATE TABLE IF NOT EXISTS art_records (
+                    CREATE TABLE art_records (
                         {', '.join(columns)},
                         PRIMARY KEY (day_number)
                     )
