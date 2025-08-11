@@ -1,9 +1,10 @@
+#!/usr/bin/env python3
 import csv
 import sqlite3
 from pathlib import Path
 import os
 import argparse
-from typing import Dict, List, Optional, Any, Tuple
+from typing import Dict, List, Optional
 from configenv import ConfigEnv
 from loggerutil import LoggerFactory
 from configconstants import ConfigConstants
