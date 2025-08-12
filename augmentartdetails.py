@@ -28,6 +28,7 @@ from typing import Dict, Any, Optional
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
+from markdownhelper import strip_code_guards
 
 class ArtDetailsAugmenter:
     """Class for augmenting artwork details using LLM APIs."""
@@ -101,7 +102,7 @@ class ArtDetailsAugmenter:
 
         completion = response.json()
         output = completion['choices'][0]['message']['content']
-        return self._clean_output(output)
+        return strip_code_guards(output, "json")
 
 
 def parse_args() -> argparse.Namespace:
