@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import csv
 import sqlite3
+import sqlite_vec
 import json
 from pathlib import Path
 import os
@@ -39,6 +40,15 @@ class ArtDatabaseCreator:
         """Establish database connection."""
         self.logger.debug(f"Connecting to database at {self.db_path}")
         self.connection = sqlite3.connect(self.db_path)
+        """
+        self.connection.enable_load_extension(True)
+        sqlite_vec.load(self.connection)
+        self.connection.enable_load_extension(False)
+        sqlite_version, vec_version = self.connection.execute("select sqlite_version(), vec_version()").fetchone()
+        self.logger.info(f"sqlite_version={sqlite_version}, vec_version={vec_version}")
+        vec_version, = self.connection.execute("select vec_version()").fetchone()
+        self.logger.info(f"vec_version={vec_version}")
+        """
         self.cursor = self.connection.cursor()
         self.logger.info(f"Successfully connected to database at {self.db_path}")
 
