@@ -135,10 +135,11 @@ class ImageMetadataExtractor:
                 self.logger.info(f"Batch {batch_num} processed in {batch_time:.2f} seconds")
 
                 content = str(response.choices[0].message.content)
+                self.logger.debug(f"Content for batch {batch_num}:\n{content}")
                 content = self._strip_code_guards(content)
+                self.logger.debug(f"Stripped content for batch {batch_num}:\n{content}")
                 batch_result = json.loads(content)
                 batch_result = batch_result.get("artrecords", "[]")
-                batch_result = json.loads(batch_result)
                 self.logger.debug(f"Parsed LLM response for batch {batch_num}:\n{json.dumps(batch_result, indent=2)}")
 
                 if isinstance(batch_result, list):
