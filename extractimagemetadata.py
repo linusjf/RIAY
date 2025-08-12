@@ -12,7 +12,6 @@ Extractimagemetadata.
 """
 import csv
 import json
-import re
 import sys
 import os
 import argparse
@@ -27,6 +26,7 @@ import openai
 from loggerutil import LoggerFactory
 from configconstants import ConfigConstants
 from dateutils import MONTHS, is_leap_year, get_month_and_day, validate_day_range
+from markdownhelper import strip_code_guards
 
 class Spinner:
     """Simple terminal spinner for long-running operations."""
@@ -89,13 +89,6 @@ class ImageMetadataExtractor:
         """Get month name and day of month from day of year."""
         return get_month_and_day(self.year, day_num)
 
-    def _strip_code_guards(self, content: str) -> str:
-        """Strip markdown code guards from content."""
-        # Remove ```markdown and ```json guards
-        content = re.sub(r'^\s*```(markdown|json)\s*$', '', content, flags=re.MULTILINE)
-        content = re.sub(r'^\s*```\s*$', '', content, flags=re.MULTILINE)
-        return content.strip()
-
     def _augment_metadata(self, metadata: list[dict]) -> list[dict]:
         """Augment metadata using LLM in batches."""
         if not self.augment_meta_data_prompt or not self.text_llm_api_key:
@@ -136,7 +129,7 @@ class ImageMetadataExtractor:
 
                 content = str(response.choices[0].message.content)
                 self.logger.debug(f"Content for batch {batch_num}:\n{content}")
-                content = self._strip_code_guards(content)
+                content = strip_code_guards(content)
                 self.logger.debug(f"Stripped content for batch {batch_num}:\n{content}")
                 batch_result = json.loads(content)
                 batch_result = batch_result.get("artrecords", "[]")
