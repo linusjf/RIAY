@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -51,11 +50,11 @@
   - [August 12, 2025](#august-12-2025)
     - [Intentions to the Father](#intentions-to-the-father)
     - [AI-Generated Summary: The Art of Prayerful Intentions](#ai-generated-summary-the-art-of-prayerful-intentions)
+    - [Bellini's Agony in the Garden (late 1400s), oil on panel in London’s gallery, depicts prayer and sorrow in Gethsemane (Stock Image)](#bellinis-agony-in-the-garden-late-1400s-oil-on-panel-in-londons-gallery-depicts-prayer-and-sorrow-in-gethsemane-stock-image)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -243,3 +242,7 @@ Prayer, like a ladder, lifts us toward these mysteries, and Mary, our Mother, st
 Prayer, when rightly ordered, turns not inward but outward—a lifting of others upon the heart’s altar. Here is a way of it: let each decade be given to some soul or sorrow beyond oneself, laid trustingly before the Father, the Son, the Spirit, or the Triune Majesty entire. For He is both Love itself and sovereign Power; no plea escapes His ear, no need lies beyond His good will. Come then with hope unfeigned, as children to a Father who, in ways unseen but sure, works all things for redemption.
 
 As for Bellini’s _Agony in the Garden_—there in London’s gallery it hangs, oil on panel, a Renaissance master’s hand. See how the hues, though hushed, betray no despair: even in Gethsemane’s shadow, the Light persists. Late 1400s, yet timeless as the truth it paints—that prayer, though mingled with sorrow, is the soul’s quiet fortitude.
+
+### Bellini's Agony in the Garden (late 1400s), oil on panel in London’s gallery, depicts prayer and sorrow in Gethsemane (Stock Image)
+
+[![Bellini's Agony in the Garden (late 1400s), oil on panel in London’s gallery, depicts prayer and sorrow in Gethsemane](August/jpgs/agonyingardenbellinilate1400s.jpg)](https://cdn.britannica.com/37/197037-050-7C330078/Agony-in-the-Garden-wood-Giovanni-Bellini.jpg "Bellini's Agony in the Garden (late 1400s), oil on panel in London’s gallery, depicts prayer and sorrow in Gethsemane")
