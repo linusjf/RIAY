@@ -1,0 +1,19 @@
+{
+  "artist": "TEXT",
+  "caption": "TEXT",
+  "date": "TEXT",
+  "day_number": "INTEGER",
+  "description": "TEXT",
+  "image_filepath": "TEXT",
+  "image_url": "TEXT",
+  "location": "TEXT",
+  "medium": "TEXT",
+  "mystery_name": "TEXT",
+  "mystery_type": "TEXT",
+  "original_title": "TEXT",
+  "original_title_ISO_code": "TEXT",
+  "original_title_language": "TEXT",
+  "style": "TEXT",
+  "subject": "TEXT",
+  "title": "TEXT"
+}
