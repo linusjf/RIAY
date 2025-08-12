@@ -26,7 +26,7 @@ import openai
 from loggerutil import LoggerFactory
 from configconstants import ConfigConstants
 from dateutils import MONTHS, is_leap_year, get_month_and_day, validate_day_range
-from markdownhelper import strip_code_guards
+from markdownhelper import strip_code_guard
 
 class Spinner:
     """Simple terminal spinner for long-running operations."""
@@ -129,7 +129,7 @@ class ImageMetadataExtractor:
 
                 content = str(response.choices[0].message.content)
                 self.logger.debug(f"Content for batch {batch_num}:\n{content}")
-                content = strip_code_guards(content)
+                content = strip_code_guard(content,"json")
                 self.logger.debug(f"Stripped content for batch {batch_num}:\n{content}")
                 batch_result = json.loads(content)
                 batch_result = batch_result.get("artrecords", "[]")
