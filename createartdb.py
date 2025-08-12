@@ -113,7 +113,6 @@ class ArtDatabaseCreator:
                             self.cursor.execute("SELECT 1 FROM art_records WHERE day_number = ?", (row['day_number'],))
                             if self.cursor.fetchone():
                                  print(f"Duplicate found: {row['day_number']}")
-                                 continue
                             self.cursor.execute(sql, tuple(row.values()))
                             record_count += self.cursor.rowcount
 
