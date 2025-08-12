@@ -73,9 +73,9 @@ class ArtDatabaseCreator:
                         self.logger.info("Dropping art_records table if it exists...")
                         self.cursor.execute("DROP TABLE if exists art_records")
 
-
                     # Use the predefined types for each field
                     columns: List[str] = []
+                    columns.append("record_id INTEGER PRIMARY KEY AUTOINCREMENT")  # Add auto-incrementing primary key
                     for field in fieldnames:
                         if field in self.field_types:
                             columns.append(f"{field} {self.field_types[field]}")
@@ -84,8 +84,7 @@ class ArtDatabaseCreator:
 
                     create_table_sql: str = f"""
                     CREATE TABLE art_records (
-                        {', '.join(columns)},
-                        PRIMARY KEY (day_number)
+                        {', '.join(columns)}
                     )
                     """
                     self.logger.debug(f"Create table sql: {create_table_sql}")
