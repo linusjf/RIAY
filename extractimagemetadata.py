@@ -89,8 +89,15 @@ class ImageMetadataExtractor:
         """Get month name and day of month from day of year."""
         return get_month_and_day(self.year, day_num)
 
+    def _strip_code_guards(self, content: str) -> str:
+        """Strip markdown code guards from content."""
+        # Remove ```markdown and ```json guards
+        content = re.sub(r'^\s*```(markdown|json)\s*$', '', content, flags=re.MULTILINE)
+        content = re.sub(r'^\s*```\s*$', '', content, flags=re.MULTILINE)
+        return content.strip()
+
     def _augment_metadata(self, metadata: list[dict]) -> list[dict]:
-        """Augment metadata using LLM in batches of 5 records."""
+        """Augment metadata using LLM in batches."""
         if not self.augment_meta_data_prompt or not self.text_llm_api_key:
             self.logger.debug("LLM augmentation not configured, skipping")
             return metadata
@@ -127,8 +134,11 @@ class ImageMetadataExtractor:
                 self.logger.debug(f"Raw LLM response for batch {batch_num}:\n{response}")
                 self.logger.info(f"Batch {batch_num} processed in {batch_time:.2f} seconds")
 
-                batch_result = json.loads(str(response.choices[0].message.content))
+                content = str(response.choices[0].message.content)
+                content = self._strip_code_guards(content)
+                batch_result = json.loads(content)
                 batch_result = batch_result.get("artrecords", "[]")
+                batch_result = json.loads(batch_result)
                 self.logger.debug(f"Parsed LLM response for batch {batch_num}:\n{json.dumps(batch_result, indent=2)}")
 
                 if isinstance(batch_result, list):
