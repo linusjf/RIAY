@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import csv
 import sqlite3
+import json
 from pathlib import Path
 import os
 import argparse
@@ -21,27 +22,18 @@ class ArtDatabaseCreator:
         self.db_path = Path(db_path) if db_path else Path(config.get(ConfigConstants.ART_DATABASE, 'art.db'))
         self.connection: Optional[sqlite3.Connection] = None
         self.cursor: Optional[sqlite3.Cursor] = None
-        self.field_types: Dict[str, str] = {
-            'ISO_code': 'TEXT',
-            'artist': 'TEXT',
-            'caption': 'TEXT',
-            'date': 'TEXT',
-            'day_number': 'INTEGER',
-            'description': 'TEXT',
-            'image_filepath': 'TEXT',
-            'image_url': 'TEXT',
-            'location': 'TEXT',
-            'medium': 'TEXT',
-            'mystery_name': 'TEXT',
-            'mystery_type': 'TEXT',
-            'original_title': 'TEXT',
-            'style': 'TEXT',
-            'subject': 'TEXT',
-            'title': 'TEXT',
-            'title_language': 'TEXT',
-            'title_language_iso': 'TEXT'
-        }
+        self.field_types = self._load_field_types()
         self.logger.debug(f"Initialized ArtDatabaseCreator with csv_path={self.csv_path}, db_path={self.db_path}")
+
+    def _load_field_types(self) -> Dict[str, str]:
+        """Load field types from artrecords.types file."""
+        types_path = Path(__file__).parent / 'artrecords.types'
+        try:
+            with open(types_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            self.logger.error(f"Error loading field types: {e}")
+            return {}
 
     def connect(self) -> None:
         """Establish database connection."""
@@ -73,7 +65,7 @@ class ArtDatabaseCreator:
                         self.logger.info("Dropping art_records table if it exists...")
                         self.cursor.execute("DROP TABLE if exists art_records")
 
-                    # Use the predefined types for each field
+                    # Use the loaded types for each field
                     columns: List[str] = []
                     columns.append("record_id INTEGER PRIMARY KEY AUTOINCREMENT")  # Add auto-incrementing primary key
                     for field in fieldnames:
