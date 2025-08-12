@@ -151,7 +151,7 @@ class ImageMetadataExtractor:
             self.logger.error(f"Failed to augment metadata: {e}")
             return metadata
 
-    def _extract_metadata(self, start_day: int, end_day: int) -> list[dict]:
+    def _extract_metadata(self, start_day: int, end_day: int, augment_data: bool = False) -> list[dict]:
         """Extract and augment metadata from markdown files."""
         output_data = []
         total_images = 0
@@ -191,8 +191,8 @@ class ImageMetadataExtractor:
             total_images += len(image_data)
             self.logger.debug(f"Found {len(image_data)} images for day {day_num}")
 
-        # Augment metadata with LLM if configured
-        if self.augment_meta_data_prompt and self.text_llm_api_key:
+        # Augment metadata with LLM if configured and requested
+        if augment_data and self.augment_meta_data_prompt and self.text_llm_api_key:
             self.logger.info("Starting LLM metadata augmentation")
             output_data = self._augment_metadata(output_data)
 
@@ -264,6 +264,11 @@ Output formats:
         default=extractor.max_days,
         help=f"Last day to process (1-{extractor.max_days}, default: full year)"
     )
+    parser.add_argument(
+        "--augment-data",
+        action="store_true",
+        help="Enable LLM augmentation of metadata (if configured)"
+    )
     return parser.parse_args()
 
 def main():
@@ -276,7 +281,7 @@ def main():
         extractor.logger.error(f"Invalid day range: {e}")
         sys.exit(1)
 
-    metadata = extractor._extract_metadata(args.start_day, args.end_day)
+    metadata = extractor._extract_metadata(args.start_day, args.end_day, args.augment_data)
 
     try:
         if str(args.output_file).lower().endswith('.json'):
