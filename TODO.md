@@ -18,8 +18,10 @@
 1. Use augmented art details to search especially Wiki in original language of artwork title. (Better results/matches?)
    1.1 Search using original_title and language on wikis.
    1.2 Use original_title to search for images on google and duckduckgo. (2 separate searches or integrated?)
+1. Fix for wikimedia site down. Right now, hangs.
+1. Fix for more than one art image mentioned in summary text. Handle json array as well before invoking artdownloader.py
 
 ## Exploratory tasks
 
 1. Related links feature.
-1. Explore embedded vector databases to allow search against art images already downloaded (60) for semantic matches. Leaning towards sqlite-vss.
+1. Explore embedded vector databases to allow search against art images already downloaded (60) for semantic matches. Too many hassles using sqlite-vss including custom builds for both sqlite and python source. Better to use HNSWlib instead and sync it to sqlite database.
