@@ -1,4 +1,5 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -51,10 +52,14 @@
     - [Intentions to the Father](#intentions-to-the-father)
     - [AI-Generated Summary: The Art of Prayerful Intentions](#ai-generated-summary-the-art-of-prayerful-intentions)
     - [Bellini's Agony in the Garden (late 1400s), oil on panel in London’s gallery, depicts prayer and sorrow in Gethsemane (Stock Image)](#bellinis-agony-in-the-garden-late-1400s-oil-on-panel-in-londons-gallery-depicts-prayer-and-sorrow-in-gethsemane-stock-image)
+  - [August 13, 2025](#august-13-2025)
+    - [Bring It to Jesus](#bring-it-to-jesus)
+    - [AI-Generated Summary: The Weight of Thorns and the Burden of the Cross](#ai-generated-summary-the-weight-of-thorns-and-the-burden-of-the-cross)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -246,3 +251,17 @@ As for Bellini’s _Agony in the Garden_—there in London’s gallery it hangs,
 ### Bellini's Agony in the Garden (late 1400s), oil on panel in London’s gallery, depicts prayer and sorrow in Gethsemane (Stock Image)
 
 [![Bellini's Agony in the Garden (late 1400s), oil on panel in London’s gallery, depicts prayer and sorrow in Gethsemane](August/jpgs/agonyingardenbellinilate1400s.jpg)](https://cdn.britannica.com/37/197037-050-7C330078/Agony-in-the-Garden-wood-Giovanni-Bellini.jpg "Bellini's Agony in the Garden (late 1400s), oil on panel in London’s gallery, depicts prayer and sorrow in Gethsemane")
+
+## August 13, 2025
+
+### Bring It to Jesus
+
+[![Bring It to Jesus](/August/jpgs/Day225.jpg)](https://youtu.be/QvFehWMx8bw "Bring It to Jesus")
+
+### AI-Generated Summary: The Weight of Thorns and the Burden of the Cross
+
+Consider two paintings—one by Caravaggio, the other by Titian—each a window into the sorrow of Christ. In _The Crowning with Thorns_, Caravaggio wields shadow and light like a blade, carving anguish into the canvas. The soldiers’ cruelty is palpable, their mockery as sharp as the thorns they press upon His brow. Here is suffering made visible, not softened by time but raw, immediate.
+
+Titian’s _Christ Carrying the Cross_ offers a different sorrow: the slow, grinding weight of obedience. The cross bends His shoulders; the crowd swirls about Him, indifferent or hostile. Yet in the richness of Titian’s colors, one glimpses the paradox—that such burden-bearing is itself a kind of kingship.
+
+These are not mere scenes to admire, but mirrors to peer into. What do we see there? Perhaps our own refusals to bear lesser thorns, our reluctance to lift lighter crosses. And if we look long enough, we might also find the quiet invitation: to follow, even when the road is steep and the crown is sharp.
