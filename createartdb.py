@@ -121,7 +121,7 @@ class ArtDatabaseCreator:
                         if self.cursor:
                             self.cursor.execute("SELECT 1 FROM art_records WHERE day_number = ?", (row['day_number'],))
                             if self.cursor.fetchone():
-                                 print(f"Duplicate found: {row['day_number']}")
+                                 print(f"More than one art image found for day number: {row['day_number']}")
                             self.cursor.execute(sql, tuple(row.values()) + (embedding,))
                             record_count += self.cursor.rowcount
 
@@ -149,8 +149,13 @@ class ArtDatabaseCreator:
 
             # Load embeddings from SQLite
             self.cursor.execute("SELECT record_id, embeddings FROM art_records")
-            for row_id: int, emb_blob: bytes in self.cursor.fetchall():
+            row_id: int
+            emb_blob: bytes
+            for row_id, emb_blob in self.cursor.fetchall():
                 vec: np.ndarray = np.frombuffer(emb_blob, dtype=np.float32)
+                vec = np.frombuffer(emb_blob, dtype=np.float32)
+                if vec.shape[0] != self.vector_embeddings_dimensions:
+                    raise ValueError(f"Vector ID {row_id} has dimension {vec.shape[0]}, expected {self.vector_embeddings_dimensions}")
                 p.add_items(vec, row_id)
 
             # Save the index

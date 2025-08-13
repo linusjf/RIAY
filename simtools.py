@@ -211,7 +211,7 @@ def get_embedding(text: str) -> np.ndarray:
         input=text,
         encoding_format="float"
     )
-    return np.array(embeddings.data[0].embedding)
+    return np.array(embeddings.data[0].embedding, dtype=np.float32)
 
 def cosine_similarity(vec1: np.ndarray, vec2: np.ndarray) -> float:
     """Calculate cosine similarity between two vectors."""
