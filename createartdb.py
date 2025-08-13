@@ -5,12 +5,14 @@ import json
 from pathlib import Path
 import os
 import argparse
-from typing import Dict, List, Optional, Sequence
+import numpy as np
 import hnswlib
+from typing import Dict, List, Optional, Sequence
 from configenv import ConfigEnv
 from loggerutil import LoggerFactory
 from configconstants import ConfigConstants
 from simtools import get_embedding
+from hnswlibhelper import recommend_hnsw_params
 
 class ArtDatabaseCreator:
     """Class for creating and managing an SQLite database from art records CSV."""
@@ -127,6 +129,32 @@ class ArtDatabaseCreator:
             self.logger.error(f"Error importing data: {e}")
             raise
 
+    def create_hnsw_index(self) -> None:
+        """Create HNSW index from database embeddings."""
+        self.logger.info("Creating HNSW index from database embeddings")
+        try:
+            if not self.cursor:
+                raise RuntimeError("Database cursor not available")
+
+            # Initialize HNSW index
+            p = hnswlib.Index(space='cosine', dim=self.vector_embeddings_dimensions)
+            max_elements = 10000  # Adjust based on expected dataset size
+            p.init_index(max_elements=max_elements, ef_construction=200, M=16)
+
+            # Load embeddings from SQLite
+            self.cursor.execute("SELECT record_id, embeddings FROM art_records")
+            for row_id, emb_blob in self.cursor.fetchall():
+                vec = np.frombuffer(emb_blob, dtype=np.float32)
+                p.add_items(vec, row_id)
+
+            # Save the index
+            index_path = self.db_path.with_suffix('.hnsw')
+            p.save_index(str(index_path))
+            self.logger.info(f"Saved HNSW index to {index_path}")
+        except Exception as e:
+            self.logger.error(f"Error creating HNSW index: {e}")
+            raise
+
     def create_database(self) -> None:
         """Main method to create the database and import data."""
         self.logger.info("Starting database creation process")
@@ -134,6 +162,7 @@ class ArtDatabaseCreator:
             self.connect()
             self.create_table()
             record_count: int = self.import_data()
+            self.create_hnsw_index()
             if self.connection:
                 self.connection.commit()
                 self.logger.info(f"Successfully created SQLite database at {self.db_path}")
