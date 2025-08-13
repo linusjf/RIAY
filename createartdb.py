@@ -136,10 +136,13 @@ class ArtDatabaseCreator:
             if not self.cursor:
                 raise RuntimeError("Database cursor not available")
 
+            # Get record count
+            self.cursor.execute("SELECT COUNT(*) FROM art_records")
+            record_count = self.cursor.fetchone()[0]
+
             # Initialize HNSW index
             p = hnswlib.Index(space='cosine', dim=self.vector_embeddings_dimensions)
-            max_elements = 10000  # Adjust based on expected dataset size
-            p.init_index(max_elements=max_elements, ef_construction=200, M=16)
+            p.init_index(max_elements=record_count, ef_construction=200, M=16)
 
             # Load embeddings from SQLite
             self.cursor.execute("SELECT record_id, embeddings FROM art_records")
