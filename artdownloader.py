@@ -114,7 +114,7 @@ class ArtDownloader:
             return True
         except Exception as e:
             self.logger.error(f"Error checking image size: {e}")
-            return True  # Continue with download if we can't check size
+            return False  # don't Continue with download if we can't check size
 
     def _check_image_dimensions(self, image_path: str) -> bool:
         """Check if image meets minimum dimension requirements."""
