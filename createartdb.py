@@ -38,6 +38,12 @@ class ArtDatabaseCreator:
             self.logger.error(f"Error loading field types: {e}")
             return {}
 
+    def _generate_embedding(self, row: Dict[str, str]) -> bytes:
+        """Generate embedding for the specified columns in a row."""
+        text_to_embed = ' '.join(str(row.get(col, '')) for col in self.embeddable_columns)
+        embedding = get_embedding(text_to_embed)
+        return sqlite3.Binary(embedding.tobytes())
+
     def connect(self) -> None:
         """Establish database connection."""
         self.logger.debug(f"Connecting to database at {self.db_path}")
@@ -70,12 +76,13 @@ class ArtDatabaseCreator:
 
                     # Use the loaded types for each field
                     columns: List[str] = []
-                    columns.append("record_id INTEGER PRIMARY KEY AUTOINCREMENT")  # Add auto-incrementing primary key
+                    columns.append("record_id INTEGER PRIMARY KEY AUTOINCREMENT")
                     for field in fieldnames:
                         if field in self.field_types:
                             columns.append(f"{field} {self.field_types[field]}")
                         else:
-                            columns.append(f"{field} TEXT")  # Default to TEXT if field not in types
+                            columns.append(f"{field} TEXT")
+                    columns.append("embeddings BLOB")
 
                     create_table_sql: str = f"""
                     CREATE TABLE art_records (
@@ -103,12 +110,13 @@ class ArtDatabaseCreator:
                     for row in csv_reader:
                         columns: str = ', '.join(row.keys())
                         placeholders: str = ', '.join(['?'] * len(row))
-                        sql: str = f"INSERT INTO art_records ({columns}) VALUES ({placeholders})"
+                        embedding = self._generate_embedding(row)
+                        sql: str = f"INSERT INTO art_records ({columns}, embeddings) VALUES ({placeholders}, ?)"
                         if self.cursor:
                             self.cursor.execute("SELECT 1 FROM art_records WHERE day_number = ?", (row['day_number'],))
                             if self.cursor.fetchone():
                                  print(f"Duplicate found: {row['day_number']}")
-                            self.cursor.execute(sql, tuple(row.values()))
+                            self.cursor.execute(sql, tuple(row.values()) + (embedding,))
                             record_count += self.cursor.rowcount
 
                 self.logger.info(f"Successfully imported {record_count} records")
