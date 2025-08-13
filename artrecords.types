@@ -15,5 +15,6 @@
   "original_title_language": "TEXT",
   "style": "TEXT",
   "subject": "TEXT",
-  "title": "TEXT"
+  "title": "TEXT",
+  "embeddings": "BLOB"
 }
