@@ -6,6 +6,7 @@ from pathlib import Path
 import os
 import argparse
 from typing import Dict, List, Optional, Sequence
+import hnswlib
 from configenv import ConfigEnv
 from loggerutil import LoggerFactory
 from configconstants import ConfigConstants
@@ -26,6 +27,7 @@ class ArtDatabaseCreator:
         self.field_types = self._load_field_types()
         embeddable_cols = config.get(ConfigConstants.EMBEDDABLE_COLUMNS, "")
         self.embeddable_columns = [col.strip() for col in embeddable_cols.split(",") if col.strip()]
+        self.vector_embeddings_dimensions = config.get(ConfigConstants.VECTOR_EMBEDDINGS_MODEL_DIMENSIONS,1024)
         self.logger.debug(f"Initialized ArtDatabaseCreator with csv_path={self.csv_path}, db_path={self.db_path}, embeddable_columns={self.embeddable_columns}")
 
     def _load_field_types(self) -> Dict[str, str]:
@@ -97,7 +99,7 @@ class ArtDatabaseCreator:
             self.logger.error(f"Error creating table: {e}")
             raise
 
-    def import_data(self) -> None:
+    def import_data(self) -> int:
         """Import data from CSV into the database."""
         self.logger.debug(f"Importing data from {self.csv_path}")
         try:
@@ -120,6 +122,7 @@ class ArtDatabaseCreator:
                             record_count += self.cursor.rowcount
 
                 self.logger.info(f"Successfully imported {record_count} records")
+                return record_count
         except Exception as e:
             self.logger.error(f"Error importing data: {e}")
             raise
@@ -130,7 +133,7 @@ class ArtDatabaseCreator:
         try:
             self.connect()
             self.create_table()
-            self.import_data()
+            record_count: int = self.import_data()
             if self.connection:
                 self.connection.commit()
                 self.logger.info(f"Successfully created SQLite database at {self.db_path}")
