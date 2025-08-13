@@ -129,20 +129,19 @@ class ArtDatabaseCreator:
             self.logger.error(f"Error importing data: {e}")
             raise
 
-    def create_hnsw_index(self) -> None:
+    def create_hnsw_index(self,no_of_records: int) -> None:
         """Create HNSW index from database embeddings."""
         self.logger.info("Creating HNSW index from database embeddings")
         try:
             if not self.cursor:
                 raise RuntimeError("Database cursor not available")
 
-            # Get record count
-            self.cursor.execute("SELECT COUNT(*) FROM art_records")
-            record_count = self.cursor.fetchone()[0]
+            # Get recommended HNSW parameters
+            M, ef_construction = recommend_hnsw_params(no_of_records)
 
             # Initialize HNSW index
             p = hnswlib.Index(space='cosine', dim=self.vector_embeddings_dimensions)
-            p.init_index(max_elements=record_count, ef_construction=200, M=16)
+            p.init_index(max_elements=no_of_records, ef_construction=ef_construction, M=M)
 
             # Load embeddings from SQLite
             self.cursor.execute("SELECT record_id, embeddings FROM art_records")
@@ -165,7 +164,7 @@ class ArtDatabaseCreator:
             self.connect()
             self.create_table()
             record_count: int = self.import_data()
-            self.create_hnsw_index()
+            self.create_hnsw_index(record_count)
             if self.connection:
                 self.connection.commit()
                 self.logger.info(f"Successfully created SQLite database at {self.db_path}")
