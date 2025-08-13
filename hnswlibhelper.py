@@ -10,28 +10,33 @@ Hnswlibhelper.
 # -*- coding: utf-8 -*-'
 ######################################################################
 """
-def recommend_hnsw_params(N: int):
-    """
-    Recommend HNSWlib parameters based on dataset size.
+from typing import Tuple
 
-    Parameters:
-        N (int): Number of records (vectors) in the dataset.
+def recommend_hnsw_params(N: int, dim: int) -> Tuple[int, int, int]:
+    """
+    Recommend HNSWlib parameters based on dataset size and vector dimensions.
+
+    Args:
+        N: Number of items in the dataset
+        dim: Dimensionality of the vectors
 
     Returns:
-        dict: Recommended values for M, ef_construction, ef_search.
+        Tuple containing:
+            M: Number of bi-directional links for each element
+            ef_construction: Construction time parameter
+            ef_search: Search time parameter
     """
-
-    # M (max number of connections per node)
+    # M
     if N <= 100:
-        M = min(N - 1, 64)
+        M = min(N - 1, 64 if dim > 512 else N - 1)
     elif N <= 10_000:
-        M = 48 if N > 1000 else 32
+        M = 48 if dim > 512 else 32
     elif N <= 1_000_000:
-        M = 32
+        M = 32 if dim > 512 else 24
     else:
-        M = 16  # huge datasets — memory control
+        M = 24 if dim > 512 else 16
 
-    # ef_construction (index build quality)
+    # ef_construction
     if N <= 100:
         ef_construction = 500
     elif N <= 10_000:
@@ -41,18 +46,14 @@ def recommend_hnsw_params(N: int):
     else:
         ef_construction = 150
 
-    # ef_search (query thoroughness)
+    # ef_search
     if N <= 100:
-        ef_search = N  # exact search for small datasets
+        ef_search = N
     elif N <= 10_000:
         ef_search = M * 3
     elif N <= 1_000_000:
         ef_search = M * 2
     else:
-        ef_search = M  # speed over recall
+        ef_search = M
 
-    return {
-        "M": M,
-        "ef_construction": ef_construction,
-        "ef_search": ef_search
-    }
+    return M, ef_construction, ef_search
