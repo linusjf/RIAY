@@ -42,7 +42,7 @@ class ArtDatabaseCreator:
         """Generate embedding for the specified columns in a row."""
         text_to_embed = ' '.join(str(row.get(col, '')) for col in self.embeddable_columns)
         embedding = get_embedding(text_to_embed)
-        return sqlite3.Binary(embedding.tobytes())
+        return embedding.tobytes()
 
     def connect(self) -> None:
         """Establish database connection."""
