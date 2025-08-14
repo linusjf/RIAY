@@ -14,6 +14,7 @@ import sqlite3
 import numpy as np
 import hnswlib
 import argparse
+import datetime
 from typing import cast, Literal, Dict, List, Tuple, Any
 from numpy.typing import NDArray
 from simtools import get_embedding
@@ -39,7 +40,7 @@ class ArtLocator:
         self.hnsw_path = config.get(ConfigConstants.ART_DATABASE_HNSW_INDEX, "art.hnsw")
         self.hnsw_space = config.get(ConfigConstants.ART_DATABASE_HNSW_SPACE, "cosine")
         self.max_results = config.get(ConfigConstants.ART_DATABASE_HNSW_MAX_RESULTS, 3)
-        self.year = int(config.get(ConfigConstants.YEAR, 2025))
+        self.year = int(config.get(ConfigConstants.YEAR, datetime.datetime.now().year))
 
     def get_query_vector(self, query_text: str) -> NDArray[np.float32]:
         """Generate OpenAI embedding (float32, correct dim)."""
@@ -95,7 +96,12 @@ def parse_args() -> argparse.Namespace:
         type=int,
         help="Day of year (1-365 or 1-366 for leap years)"
     )
-    return parser.parse_args()
+    args = parser.parse_args()
+    current_year = datetime.datetime.now().year
+    max_day = 366 if is_leap_year(current_year) else 365
+    if not 1 <= args.day_of_year <= max_day:
+        parser.error(f"day_of_year must be between 1 and {max_day} for year {current_year}")
+    return args
 
 if __name__ == "__main__":
     args = parse_args()
