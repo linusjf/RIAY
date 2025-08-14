@@ -15,16 +15,25 @@ import sqlite3
 import numpy as np
 import hnswlib
 import base64
+from typing import Literal, Dict, List, Tuple, Any
 from openai import OpenAI
+from openai.types import CreateEmbeddingResponse
+from numpy.typing import NDArray
 
 class ArtLocator:
     """Class for locating artworks using vector similarity search."""
-    
-    def __init__(self, db_path="artworks.db", hnsw_path="art.hnsw", 
-                 hnsw_space="cosine", max_results=5, model="text-embedding-3-large"):
+
+    def __init__(
+        self,
+        db_path: str = "artworks.db",
+        hnsw_path: str = "art.hnsw",
+        hnsw_space: Literal["cosine", "l2", "ip"] = "cosine",
+        max_results: int = 5,
+        model: str = "text-embedding-3-large"
+    ) -> None:
         """
         Initialize the ArtLocator.
-        
+
         Args:
             db_path: Path to SQLite database
             hnsw_path: Path to HNSW index file
@@ -39,23 +48,23 @@ class ArtLocator:
         self.model = model
         self.client = OpenAI()
 
-    def get_query_vector(self, query_text):
+    def get_query_vector(self, query_text: str) -> NDArray[np.float32]:
         """Generate OpenAI embedding (float32, correct dim)."""
-        resp = self.client.embeddings.create(
+        resp: CreateEmbeddingResponse = self.client.embeddings.create(
             model=self.model,
             input=query_text,
             encoding_format="float"  # returns list of floats
         )
-        vec = np.array(resp.data[0].embedding, dtype=np.float32)
+        vec: NDArray[np.float32] = np.array(resp.data[0].embedding, dtype=np.float32)
         return vec
 
-    def load_metadata(self, record_ids):
+    def load_metadata(self, record_ids: List[int]) -> Dict[int, Dict[str, Any]]:
         """Fetch artwork metadata from SQLite for given IDs."""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         placeholders = ",".join("?" for _ in record_ids)
         cursor.execute(
-            f"SELECT id, title, artist, year FROM artworks WHERE id IN ({placeholders})", 
+            f"SELECT id, title, artist, year FROM artworks WHERE id IN ({placeholders})",
             record_ids
         )
         rows = cursor.fetchall()
@@ -63,21 +72,23 @@ class ArtLocator:
         # Map ID -> metadata
         return {row[0]: {"title": row[1], "artist": row[2], "year": row[3]} for row in rows}
 
-    def search_artworks(self, query_text):
+    def search_artworks(self, query_text: str) -> None:
         """Search artworks using vector similarity."""
         # Get query vector
-        query_vec = self.get_query_vector(query_text)
+        query_vec: NDArray[np.float32] = self.get_query_vector(query_text)
 
         # Load HNSW index
         p = hnswlib.Index(space=self.hnsw_space, dim=len(query_vec))
         p.load_index(self.hnsw_path)
 
         # Run search
+        labels: NDArray[np.int64]
+        distances: NDArray[np.float32]
         labels, distances = p.knn_query(query_vec, k=self.max_results)
 
         # Convert labels to metadata
-        record_ids = labels[0].tolist()
-        meta_map = self.load_metadata(record_ids)
+        record_ids: List[int] = labels[0].tolist()
+        meta_map: Dict[int, Dict[str, Any]] = self.load_metadata(record_ids)
 
         print("\nTop matches:")
         for idx, dist in zip(record_ids, distances[0]):
