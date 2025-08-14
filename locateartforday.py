@@ -15,6 +15,7 @@ import numpy as np
 import hnswlib
 import argparse
 import datetime
+from pathlib import Path
 from typing import cast, Literal, Dict, List, Tuple, Any
 from numpy.typing import NDArray
 from simtools import get_embedding
@@ -65,7 +66,14 @@ class ArtLocator:
         """Search artworks using vector similarity."""
         validate_day_range(self.year, day_of_year, day_of_year)
         month, day = get_month_and_day(self.year, day_of_year)
-        query_text = f"{month} {day}"
+        
+        # Read summary file
+        summary_file = Path(f"{month}/Day{day_of_year:03d}Summary.txt")
+        if not summary_file.exists():
+            raise FileNotFoundError(f"Summary file not found: {summary_file}")
+        
+        with open(summary_file, 'r', encoding='utf-8') as f:
+            query_text = f.read().strip()
 
         # Get query vector
         query_vec: NDArray[np.float32] = self.get_query_vector(query_text)
