@@ -54,7 +54,7 @@ class ArtLocator:
         cursor = conn.cursor()
         placeholders = ",".join("?" for _ in record_ids)
         cursor.execute(
-            f"SELECT record_id, title, artist, date FROM artworks WHERE id IN ({placeholders})",
+            f"SELECT record_id, title, artist, date FROM art_records WHERE record_id IN ({placeholders})",
             record_ids
         )
         rows = cursor.fetchall()
@@ -65,13 +65,13 @@ class ArtLocator:
     def search_artworks(self, day_of_year: int) -> None:
         """Search artworks using vector similarity."""
         validate_day_range(self.year, day_of_year, day_of_year)
-        month, day = get_month_and_day(self.year, day_of_year)
-        
+        month, _ = get_month_and_day(self.year, day_of_year)
+
         # Read summary file
         summary_file = Path(f"{month}/Day{day_of_year:03d}Summary.txt")
         if not summary_file.exists():
             raise FileNotFoundError(f"Summary file not found: {summary_file}")
-        
+
         with open(summary_file, 'r', encoding='utf-8') as f:
             query_text = f.read().strip()
 

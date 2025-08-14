@@ -9,6 +9,7 @@ import numpy as np
 import hnswlib
 from typing import Dict, List, Optional, Sequence, Tuple, Any, Union, Iterator
 from configenv import ConfigEnv
+from logging import Logger
 from loggerutil import LoggerFactory
 from configconstants import ConfigConstants
 from simtools import get_embedding
@@ -20,7 +21,7 @@ class ArtDatabaseCreator:
     def __init__(self, csv_path: Optional[str] = None, db_path: Optional[str] = None) -> None:
         """Initialize with paths, loading from config if not provided."""
         config = ConfigEnv(include_os_env=True)
-        self.logger: logging.Logger = LoggerFactory.get_logger(
+        self.logger: Logger = LoggerFactory.get_logger(
             name=os.path.basename(__file__),
             log_to_file=config.get(ConfigConstants.LOGGING, False)
         )
