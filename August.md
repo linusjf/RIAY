@@ -1,4 +1,5 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -55,10 +56,14 @@
     - [Bring It to Jesus](#bring-it-to-jesus)
     - [AI-Generated Summary: The Weight of Thorns and Light](#ai-generated-summary-the-weight-of-thorns-and-light)
     - [Caravaggio's The Crowning with Thorns at Kunsthistorisches Museum depicts Christ's humiliation with chiaroscuro (Stock Image)](#caravaggios-the-crowning-with-thorns-at-kunsthistorisches-museum-depicts-christs-humiliation-with-chiaroscuro-stock-image)
+  - [August 14, 2025](#august-14-2025)
+    - [Entrusted to the Spirit](#entrusted-to-the-spirit)
+    - [AI-Generated Summary: The Holy Spirit's Gentle Mastery](#ai-generated-summary-the-holy-spirits-gentle-mastery)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -266,3 +271,15 @@ The text invites us not to glance, but to kneel before such scenes: to carry our
 ### Caravaggio's The Crowning with Thorns at Kunsthistorisches Museum depicts Christ's humiliation with chiaroscuro (Stock Image)
 
 [![Caravaggio's The Crowning with Thorns at Kunsthistorisches Museum depicts Christ's humiliation with chiaroscuro](August/jpgs/crowningwiththornscaravaggio.jpg)](https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/the-crowning-with-thorns-caravaggio.jpg "Caravaggio's The Crowning with Thorns at Kunsthistorisches Museum depicts Christ's humiliation with chiaroscuro")
+
+## August 14, 2025
+
+### Entrusted to the Spirit
+
+[![Entrusted to the Spirit](/August/jpgs/Day226.jpg)](https://youtu.be/t6qE186v7OM "Entrusted to the Spirit")
+
+### AI-Generated Summary: The Holy Spirit's Gentle Mastery
+
+To bring one’s intentions before the Holy Spirit is much like Mary’s surrender at the Annunciation, when she was overshadowed by divine power yet remained perfectly herself. In that holy paradox, we see how the Spirit neither crushes nor bypasses our will, but elevates it—turning fear into courage, wounds into healing, and stubborn hearts into vessels of grace. Forgiveness and conversion are not our achievements, but His gifts; not labored for, but received. The same wind that filled the Virgin’s humble _fiat_ now whispers to every soul that dares to say, _Be it done unto me_.
+
+(No artworks were described in the original text.)
