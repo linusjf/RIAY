@@ -10,26 +10,26 @@ Locateartforday.
 # -*- coding: utf-8 -*-'
 ######################################################################
 """
-#!/usr/bin/env python3
 import sqlite3
 import numpy as np
 import hnswlib
-import base64
-from typing import Literal, Dict, List, Tuple, Any
-from openai import OpenAI
-from openai.types import CreateEmbeddingResponse
+from typing import cast, Literal, Dict, List, Tuple, Any
 from numpy.typing import NDArray
+from simtools import get_embedding
+from configconstants import ConfigConstants
+from configenv import ConfigEnv
 
 class ArtLocator:
     """Class for locating artworks using vector similarity search."""
 
+    SpaceType = Literal["ip", "l2", "cosine"]
+
     def __init__(
         self,
-        db_path: str = "artworks.db",
-        hnsw_path: str = "art.hnsw",
-        hnsw_space: Literal["cosine", "l2", "ip"] = "cosine",
-        max_results: int = 5,
-        model: str = "text-embedding-3-large"
+        db_path: str = None,
+        hnsw_path: str = None,
+        hnsw_space: SpaceType = "cosine",
+        max_results: int = 3,
     ) -> None:
         """
         Initialize the ArtLocator.
@@ -41,21 +41,15 @@ class ArtLocator:
             max_results: Number of top matches to return
             model: OpenAI embedding model name
         """
-        self.db_path = db_path
-        self.hnsw_path = hnsw_path
+        config = ConfigEnv()
+        self.db_path = db_path or config.get(ConfigConstants.ART_DATABASE, "art.db")
+        self.hnsw_path = hnsw_path or config.get(ConfigConstants.ART_DATABASE_HNSW_INDEX, "art.hnsw")
         self.hnsw_space = hnsw_space
         self.max_results = max_results
-        self.model = model
-        self.client = OpenAI()
 
     def get_query_vector(self, query_text: str) -> NDArray[np.float32]:
         """Generate OpenAI embedding (float32, correct dim)."""
-        resp: CreateEmbeddingResponse = self.client.embeddings.create(
-            model=self.model,
-            input=query_text,
-            encoding_format="float"  # returns list of floats
-        )
-        vec: NDArray[np.float32] = np.array(resp.data[0].embedding, dtype=np.float32)
+        vec = get_embedding(query_text)
         return vec
 
     def load_metadata(self, record_ids: List[int]) -> Dict[int, Dict[str, Any]]:
@@ -64,7 +58,7 @@ class ArtLocator:
         cursor = conn.cursor()
         placeholders = ",".join("?" for _ in record_ids)
         cursor.execute(
-            f"SELECT id, title, artist, year FROM artworks WHERE id IN ({placeholders})",
+            f"SELECT record_id, title, artist, date FROM artworks WHERE id IN ({placeholders})",
             record_ids
         )
         rows = cursor.fetchall()
@@ -78,11 +72,11 @@ class ArtLocator:
         query_vec: NDArray[np.float32] = self.get_query_vector(query_text)
 
         # Load HNSW index
-        p = hnswlib.Index(space=self.hnsw_space, dim=len(query_vec))
+        p = hnswlib.Index(space=cast(ArtLocator.SpaceType, self.hnsw_space), dim=len(query_vec))
         p.load_index(self.hnsw_path)
 
         # Run search
-        labels: NDArray[np.int64]
+        labels: NDArray[np.uint64]
         distances: NDArray[np.float32]
         labels, distances = p.knn_query(query_vec, k=self.max_results)
 
@@ -93,7 +87,7 @@ class ArtLocator:
         print("\nTop matches:")
         for idx, dist in zip(record_ids, distances[0]):
             m = meta_map.get(idx, {})
-            print(f"- ID {idx} | {m.get('title','?')} by {m.get('artist','?')} ({m.get('year','?')}) | score={1-dist:.4f}")
+            print(f"- ID {idx} | {m.get('title','?')} by {m.get('artist','?')} ({m.get('date','?')}) | score={1-dist:.4f}")
 
 if __name__ == "__main__":
     locator = ArtLocator()
