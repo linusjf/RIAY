@@ -20,6 +20,7 @@ from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
 from typing import Dict, List, Tuple, Optional, Any
+from numpy.typing import NDArray
 
 # Load environment variables from config.env
 base_dir: str = os.path.dirname(os.path.abspath(__file__))
@@ -204,7 +205,7 @@ def compute_match_dicts(
     logger.info(INFO_MESSAGES["matched_dict"].format(matched=matched))
     return (matched, mismatched)
 
-def get_embedding(text: str) -> np.ndarray:
+def get_embedding(text: str) -> NDArray[np.float32]:
     """Get text embedding using deepinfra client."""
     embeddings = deepinfra_client.embeddings.create(
         model=str(VECTOR_EMBEDDINGS_MODEL),

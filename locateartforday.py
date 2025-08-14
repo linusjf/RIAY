@@ -26,22 +26,17 @@ class ArtLocator:
 
     def __init__(
         self,
-        hnsw_space: SpaceType = None,
-        max_results: int = None,
     ) -> None:
         """
         Initialize the ArtLocator.
 
         Args:
-            hnsw_space: Metric space ("cosine", "l2", "ip")
-            max_results: Number of top matches to return
-            model: OpenAI embedding model name
         """
-        config = ConfigEnv()
+        config = ConfigEnv(include_os_env=True)
         self.db_path = config.get(ConfigConstants.ART_DATABASE, "art.db")
         self.hnsw_path = config.get(ConfigConstants.ART_DATABASE_HNSW_INDEX, "art.hnsw")
-        self.hnsw_space = hnsw_space or config.get(ConfigConstants.ART_DATABASE_HNSW_SPACE, "cosine")
-        self.max_results = max_results or config.get(ConfigConstants.ART_DATABASE_HNSW_MAX_RESULTS, 3)
+        self.hnsw_space = config.get(ConfigConstants.ART_DATABASE_HNSW_SPACE, "cosine")
+        self.max_results = config.get(ConfigConstants.ART_DATABASE_HNSW_MAX_RESULTS, 3)
 
     def get_query_vector(self, query_text: str) -> NDArray[np.float32]:
         """Generate OpenAI embedding (float32, correct dim)."""
