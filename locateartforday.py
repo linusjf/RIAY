@@ -213,8 +213,6 @@ class ArtLocator:
             p.load_index(self.hnsw_path)
             self.logger.info(f"Loaded HNSW index from {self.hnsw_path}")
 
-            # Get base query embedding
-            base_query_embedding = self.get_query_vector(base_query_text)
 
             for mystery in mysteries:
                 query_text = base_query_text
@@ -224,6 +222,8 @@ class ArtLocator:
                     query_text += f"\nMystery type: {mystery_type}"
                     query_text += f"\nMystery name: {mystery_name}"
                     self.logger.debug(f"Searching with mystery: {mystery}")
+                    # Get query embedding
+                    query_embedding = self.get_query_vector(query_text)
 
                     # Check for direct matches first
                     direct_matches = self.get_matching_artworks(mystery_type, mystery_name)
@@ -242,7 +242,7 @@ class ArtLocator:
                         idx: int
                         embedding: NDArray[np.float32]
                         for idx, embedding in zip(record_ids, embeddings):
-                            score: float = cosine_similarity(base_query_embedding, embedding)
+                            score: float = cosine_similarity(query_embedding, embedding)
                             if score > best_score:
                                 best_score = score
                                 best_match = next(m for m in direct_matches if m['record_id'] == idx)
