@@ -18,13 +18,14 @@ import datetime
 import json
 import openai
 from pathlib import Path
-from typing import cast, Literal, Dict, List, Tuple, Any
+from typing import cast, Literal, Dict, List, Any
 from numpy.typing import NDArray
 from simtools import get_embedding
 from configconstants import ConfigConstants
 from configenv import ConfigEnv
 from dateutils import is_leap_year,get_month_and_day,validate_day_range
 from loggerutil import LoggerFactory
+from markdownhelper import strip_code_guards
 
 class ArtLocator:
     """Class for locating artworks using vector similarity search."""
@@ -51,7 +52,7 @@ class ArtLocator:
         self.text_llm_chat_endpoint = config.get(ConfigConstants.TEXT_LLM_CHAT_ENDPOINT)
         self.text_llm_model = config.get(ConfigConstants.TEXT_LLM_MODEL)
         self.logger = LoggerFactory.get_logger(
-            name=__name__,
+            name=__file__,
             log_to_file=config.get(ConfigConstants.LOGGING, False)
         )
 
@@ -95,7 +96,9 @@ class ArtLocator:
         )
 
         try:
-            mysteries = json.loads(response.choices[0].message.content)
+            content = strip_code_guards(str(response.choices[0].message.content), "json")
+            self.logger.debug(f"Rosary mysteries: {content}")
+            mysteries = json.loads(str(content))
             self.logger.info(f"Found {len(mysteries)} rosary mysteries")
             return mysteries
         except Exception as e:
@@ -116,40 +119,44 @@ class ArtLocator:
             raise FileNotFoundError(error_msg)
 
         with open(summary_file, 'r', encoding='utf-8') as f:
-            query_text = f.read().strip()
+            base_query_text = f.read().strip()
             self.logger.debug(f"Loaded query text from {summary_file}")
 
-        mysteries = self.get_rosary_mysteries(query_text)
-        if mysteries:
-            for mystery in mysteries:
-                query_text += f"\nMystery type: {mystery.get('mystery_type', '')}"
-                query_text += f"\nMystery name: {mystery.get('mystery_name', '')}"
-            self.logger.debug("Added rosary mysteries to query text")
+        mysteries = self.get_rosary_mysteries(base_query_text)
+        if not mysteries:
+            mysteries = [{"mystery_type": "", "mystery_name": ""}]
 
-        # Get query vector
-        query_vec: NDArray[np.float32] = self.get_query_vector(query_text)
-
-        # Load HNSW index
-        p = hnswlib.Index(space=cast(ArtLocator.SpaceType, self.hnsw_space), dim=len(query_vec))
+        # Load HNSW index once
+        p = hnswlib.Index(space=cast(ArtLocator.SpaceType, self.hnsw_space), dim=1536)  # OpenAI embedding dim
         p.load_index(self.hnsw_path)
         self.logger.info(f"Loaded HNSW index from {self.hnsw_path}")
 
-        # Run search
-        labels: NDArray[np.uint64]
-        distances: NDArray[np.float32]
-        labels, distances = p.knn_query(query_vec, k=self.max_results)
-        self.logger.info(f"Found {len(labels[0])} potential matches")
+        for mystery in mysteries:
+            query_text = base_query_text
+            if mystery.get("mystery_type") or mystery.get("mystery_name"):
+                query_text += f"\nMystery type: {mystery.get('mystery_type', '')}"
+                query_text += f"\nMystery name: {mystery.get('mystery_name', '')}"
+                self.logger.debug(f"Searching with mystery: {mystery}")
 
-        # Convert labels to metadata
-        record_ids: List[int] = labels[0].tolist()
-        meta_map: Dict[int, Dict[str, Any]] = self.load_metadata(record_ids)
+            # Get query vector
+            query_vec: NDArray[np.float32] = self.get_query_vector(query_text)
 
-        self.logger.info("Top matches:")
-        for idx, dist in zip(record_ids, distances[0]):
-            m = meta_map.get(idx, {})
-            match_info = f"- ID {idx} | {m.get('title','?')} by {m.get('artist','?')} ({m.get('date','?')}) | score={1-dist:.4f}"
-            self.logger.info(match_info)
-            print(match_info)
+            # Run search
+            labels: NDArray[np.uint64]
+            distances: NDArray[np.float32]
+            labels, distances = p.knn_query(query_vec, k=self.max_results)
+            self.logger.info(f"Found {len(labels[0])} potential matches for mystery")
+
+            # Convert labels to metadata
+            record_ids: List[int] = labels[0].tolist()
+            meta_map: Dict[int, Dict[str, Any]] = self.load_metadata(record_ids)
+
+            self.logger.info("Top matches:")
+            for idx, dist in zip(record_ids, distances[0]):
+                m = meta_map.get(idx, {})
+                match_info = f"- ID {idx} | {m.get('title','?')} by {m.get('artist','?')} ({m.get('date','?')}) | score={1-dist:.4f}"
+                self.logger.info(match_info)
+                print(match_info)
 
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
