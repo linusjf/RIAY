@@ -68,16 +68,16 @@ class ArtLocator:
         # Map ID -> metadata
         return {row[0]: {"title": row[1], "artist": row[2], "year": row[3]} for row in rows}
 
-    async def get_rosary_mysteries(self, text: str) -> List[Dict[str, str]]:
+    def get_rosary_mysteries(self, text: str) -> List[Dict[str, str]]:
         """Get rosary mysteries from text using LLM."""
         prompt = self.rosary_prompt.replace("{CHRISTIAN_TEXT}", text)
-        
+
         client = openai.AsyncOpenAI(
             api_key=self.text_llm_api_key,
             base_url=self.text_llm_base_url
         )
 
-        response = await client.chat.completions.create(
+        response = client.chat.completions.create(
             model=self.text_llm_model,
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
@@ -85,9 +85,9 @@ class ArtLocator:
             ],
             response_format={"type": "json_object"}
         )
-        
+
         try:
-            return eval(response.choices[0].message.content)
+            return response.choices[0].message.content
         except:
             return []
 
@@ -103,6 +103,12 @@ class ArtLocator:
 
         with open(summary_file, 'r', encoding='utf-8') as f:
             query_text = f.read().strip()
+
+        mysteries = self.get_rosary_mysteries(query_text)
+        if mysteries:
+            for mystery in mysteries:
+                query_text += f"\nMystery type: {mystery.get('mystery_type', '')}"
+                query_text += f"\nMystery name: {mystery.get('mystery_name', '')}"
 
         # Get query vector
         query_vec: NDArray[np.float32] = self.get_query_vector(query_text)
