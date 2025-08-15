@@ -16,6 +16,7 @@ import hnswlib
 import argparse
 import datetime
 import json
+import os
 import openai
 from pathlib import Path
 from typing import cast, Literal, Dict, List, Any
@@ -53,7 +54,7 @@ class ArtLocator:
         self.text_llm_chat_endpoint = config.get(ConfigConstants.TEXT_LLM_CHAT_ENDPOINT)
         self.text_llm_model = config.get(ConfigConstants.TEXT_LLM_MODEL)
         self.logger = LoggerFactory.get_logger(
-            name=__file__,
+            name=os.path.basename(__file__),
             log_to_file=config.get(ConfigConstants.LOGGING, False)
         )
 
@@ -70,7 +71,10 @@ class ArtLocator:
         cursor = conn.cursor()
         placeholders = ",".join("?" for _ in record_ids)
         cursor.execute(
-            f"SELECT record_id, title, artist, date, medium, dimensions, location, url, image_path, mystery_type, mystery_name FROM art_records WHERE record_id IN ({placeholders})",
+            f"SELECT record_id, artist, caption, date, day_number, description, image_filepath, "
+            f"image_url, location, medium, mystery_name, mystery_type, original_title, "
+            f"original_title_ISO_code, original_title_language, style, subject, title "
+            f"FROM art_records WHERE record_id IN ({placeholders})",
             record_ids
         )
         rows = cursor.fetchall()
@@ -78,16 +82,23 @@ class ArtLocator:
         # Map ID -> metadata
         return {
             row[0]: {
-                "title": row[1],
-                "artist": row[2],
+                "artist": row[1],
+                "caption": row[2],
                 "date": row[3],
-                "medium": row[4],
-                "dimensions": row[5],
-                "location": row[6],
-                "url": row[7],
-                "image_path": row[8],
-                "mystery_type": row[9],
-                "mystery_name": row[10]
+                "day_number": row[4],
+                "description": row[5],
+                "image_filepath": row[6],
+                "image_url": row[7],
+                "location": row[8],
+                "medium": row[9],
+                "mystery_name": row[10],
+                "mystery_type": row[11],
+                "original_title": row[12],
+                "original_title_ISO_code": row[13],
+                "original_title_language": row[14],
+                "style": row[15],
+                "subject": row[16],
+                "title": row[17]
             } for row in rows
         }
 
@@ -207,6 +218,8 @@ class ArtLocator:
 
                         # Get embeddings for direct matches
                         embeddings = p.get_items(record_ids, return_type='numpy')
+                        self.logger.debug(embeddings)
+                        self.logger.debug(embeddings.shape)
 
                         # Find best match by cosine similarity
                         best_score: float = -1.0
@@ -226,25 +239,22 @@ class ArtLocator:
                             continue  # Skip vector search if we found a good direct match
         else:
             self.logger.info("No rosary mysteries identified...")
+            # Get query vector
+            query_vec: NDArray[np.float32] = self.get_query_vector(base_query_text)
 
+            # Run search
+            labels: NDArray[np.uint64]
+            distances: NDArray[np.float32]
+            labels, distances = p.knn_query(query_vec, k=1) # select only one record
+            self.logger.info(f"Found {len(labels[0])} potential matches for mystery")
 
+            # Convert labels to metadata
+            record_ids: List[int] = labels[0].tolist()
+            meta_map: Dict[int, Dict[str, Any]] = self.load_metadata(record_ids)
 
-def parse_args() -> argparse.Namespace:
-    """Parse command line arguments."""
-    parser = argparse.ArgumentParser(description="Locate art for specific day of year")
-    parser.add_argument(
-        "day_of_year",
-        type=int,
-        help="Day of year (1-365 or 1-366 for leap years)"
-    )
-    args = parser.parse_args()
-    current_year = datetime.datetime.now().year
-    max_day = 366 if is_leap_year(current_year) else 365
-    if not 1 <= args.day_of_year <= max_day:
-        parser.error(f"day_of_year must be between 1 and {max_day} for year {current_year}")
-    return args
-
-if __name__ == "__main__":
-    args = parse_args()
-    locator = ArtLocator()
-    locator.search_artworks(args.day_of_year)
+            self.logger.info("Top matches:")
+            for idx, dist in zip(record_ids, distances[0]):
+                m = meta_map.get(idx, {})
+                match_info = f"- ID {idx} | {m.get('title','?')} by {m.get('artist','?')} ({m.get('date','?')}) | score={1-dist:.4f}"
+                self.logger.info(match_info)
+                print(match_info)
