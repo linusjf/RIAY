@@ -45,6 +45,7 @@ class ArtLocator:
         self.hnsw_path = config.get(ConfigConstants.ART_DATABASE_HNSW_INDEX, "art.hnsw")
         self.hnsw_space = config.get(ConfigConstants.ART_DATABASE_HNSW_SPACE, "cosine")
         self.max_results = config.get(ConfigConstants.ART_DATABASE_HNSW_MAX_RESULTS, 3)
+        self.hnsw_space_dimensions = config.get(ConfigConstants.VECTOR_EMBEDDINGS_MODEL_DIMENSIONS, 1024)
         self.year = int(config.get(ConfigConstants.YEAR, datetime.datetime.now().year))
         self.rosary_prompt = config.get(ConfigConstants.ROSARY_PROMPT)
         self.text_llm_api_key = config.get(ConfigConstants.TEXT_LLM_API_KEY)
@@ -110,6 +111,7 @@ class ArtLocator:
         self.logger.info(f"Searching artworks for day {day_of_year} of year {self.year}")
         validate_day_range(self.year, day_of_year, day_of_year)
         month, _ = get_month_and_day(self.year, day_of_year)
+        base_query_text = ""
 
         # Read summary file
         summary_file = Path(f"{month}/Day{day_of_year:03d}Summary.txt")
@@ -127,7 +129,7 @@ class ArtLocator:
             mysteries = [{"mystery_type": "", "mystery_name": ""}]
 
         # Load HNSW index once
-        p = hnswlib.Index(space=cast(ArtLocator.SpaceType, self.hnsw_space), dim=1536)  # OpenAI embedding dim
+        p = hnswlib.Index(space=cast(ArtLocator.SpaceType, self.hnsw_space), dim=self.hnsw_space_dimensions)  # OpenAI embedding dim
         p.load_index(self.hnsw_path)
         self.logger.info(f"Loaded HNSW index from {self.hnsw_path}")
 
