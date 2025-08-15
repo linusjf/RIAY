@@ -1,4 +1,4 @@
 # commands
 #embedarttoday 199
-addvideo "t6qE186v7OM" "Entrusted to the Spirit"
+addvideo "EmNgc8bCPAg" "Shared With the Trinity"
 lint

@@ -59,6 +59,9 @@
   - [August 14, 2025](#august-14-2025)
     - [Entrusted to the Spirit](#entrusted-to-the-spirit)
     - [AI-Generated Summary: The Holy Spirit's Gentle Mastery](#ai-generated-summary-the-holy-spirits-gentle-mastery)
+  - [August 15, 2025](#august-15-2025)
+    - [Shared With the Trinity](#shared-with-the-trinity)
+    - [AI-Generated Summary: On Meditating the Glorious Mysteries](#ai-generated-summary-on-meditating-the-glorious-mysteries)
 
 <!---toc end-->
 
@@ -283,3 +286,17 @@ The text invites us not to glance, but to kneel before such scenes: to carry our
 To bring one’s intentions before the Holy Spirit is much like Mary’s surrender at the Annunciation, when she was overshadowed by divine power yet remained perfectly herself. In that holy paradox, we see how the Spirit neither crushes nor bypasses our will, but elevates it—turning fear into courage, wounds into healing, and stubborn hearts into vessels of grace. Forgiveness and conversion are not our achievements, but His gifts; not labored for, but received. The same wind that filled the Virgin’s humble _fiat_ now whispers to every soul that dares to say, _Be it done unto me_.
 
 (No artworks were described in the original text.)
+
+## August 15, 2025
+
+### Shared With the Trinity
+
+[![Shared With the Trinity](/August/jpgs/Day227.jpg)](https://youtu.be/EmNgc8bCPAg "Shared With the Trinity")
+
+### AI-Generated Summary: On Meditating the Glorious Mysteries
+
+Let us consider the soul’s ascent in prayer, turning its gaze upon those radiant mysteries—the Ascension of our Lord and the fiery descent of the Spirit at Pentecost. Here, the mind is lifted not by laborious effort but by grace, as a child is carried in its father’s arms. The prayers themselves—familiar as the hearth, steady as the seasons—are but vessels; the true wine within is the soul’s silent yearning toward the Triune Light.
+
+There is no need for ornate speech, nor even many words, for as the old poets knew, the deepest longings are often wordless. One need only stand, as the disciples did, watching the heavens, or kneel as they did in the upper room, waiting—and in that posture of humility, the Spirit comes. The repetition of sacred words is not vain, any more than the tides’ ceaseless turning is vain; it is the motion of the heart being drawn, again and again, toward its Home.
+
+(No artworks are here described, for the mysteries themselves are the icons before which we meditate.)
