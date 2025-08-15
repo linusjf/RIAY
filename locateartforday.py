@@ -248,13 +248,10 @@ class ArtLocator:
                                 best_match = next(m for m in direct_matches if m['record_id'] == idx)
 
                         if best_match:
-                            best_match['similarity_score'] = best_score
-                            best_match['match_type'] = 'direct'
                             results.append(best_match)
                             continue  # Skip vector search if we found a good direct match
         else:
             self.logger.info("No rosary mysteries identified...")
-            return False
 
         print(json.dumps(results, indent=2))
         return bool(results)
