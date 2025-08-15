@@ -97,8 +97,10 @@ class ArtLocator:
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         query = """
-            SELECT record_id, title, artist, date, medium, dimensions, location, url, image_path, mystery_type, mystery_name 
-            FROM art_records 
+            SELECT record_id, artist, caption, date, day_number, description, image_filepath, 
+                   image_url, location, medium, mystery_name, mystery_type, original_title, 
+                   original_title_ISO_code, original_title_language, style, subject, title
+            FROM art_records
             WHERE (mystery_type LIKE ? OR mystery_type GLOB ?)
             AND (mystery_name LIKE ? OR mystery_name GLOB ?)
         """
@@ -112,16 +114,23 @@ class ArtLocator:
         conn.close()
         return [{
             "record_id": row[0],
-            "title": row[1],
-            "artist": row[2],
+            "artist": row[1],
+            "caption": row[2],
             "date": row[3],
-            "medium": row[4],
-            "dimensions": row[5],
-            "location": row[6],
-            "url": row[7],
-            "image_path": row[8],
-            "mystery_type": row[9],
-            "mystery_name": row[10]
+            "day_number": row[4],
+            "description": row[5],
+            "image_filepath": row[6],
+            "image_url": row[7],
+            "location": row[8],
+            "medium": row[9],
+            "mystery_name": row[10],
+            "mystery_type": row[11],
+            "original_title": row[12],
+            "original_title_ISO_code": row[13],
+            "original_title_language": row[14],
+            "style": row[15],
+            "subject": row[16],
+            "title": row[17]
         } for row in rows]
 
     def get_rosary_mysteries(self, text: str) -> List[Dict[str, str]]:
@@ -196,12 +205,12 @@ class ArtLocator:
                 if direct_matches:
                     self.logger.info(f"Found {len(direct_matches)} direct matches")
                     record_ids = [match['record_id'] for match in direct_matches]
-                    
+
                     # Get embeddings for direct matches
                     labels: NDArray[np.uint64]
                     distances: NDArray[np.float32]
                     labels, distances = p.get_items(record_ids)
-                    
+
                     # Find best match by cosine similarity
                     best_score = -1
                     best_match = None
@@ -210,7 +219,7 @@ class ArtLocator:
                         if score > best_score:
                             best_score = score
                             best_match = next(m for m in direct_matches if m['record_id'] == idx)
-                    
+
                     if best_match:
                         match_info = f"- ID {best_match['record_id']} | {best_match['title']} by {best_match['artist']} ({best_match['date']}) | direct match | score={best_score:.4f}"
                         self.logger.info(match_info)
