@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -133,6 +132,9 @@
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<!-- toc -->
+
+<!-- tocstop -->
 
 # May 2025
 
@@ -745,7 +747,7 @@ Let us then pray, as the saints have taught us: _Hail Mary, full of grace..._ an
 
 ### AI-Generated Summary: The Composure of Grace and the Folly of First Frights
 
-Consider how the untried soul trembles before what the seasoned heart receives with quiet joy. In Resto’s _Pentecost_, the disciples startle like children at a sudden noise, their faces alight with fear or wonder at the Spirit’s descent. Yet Mary stands unmoved—not for lack of awe, but because she has long known the divine whisper. She is no stranger to the fire that now dances upon her brow; was she not once overshadowed by the same Spirit? The novice flinches at the unfamiliar, but the practiced hand discerns the master’s touch.
+Consider how the untried soul trembles before what the seasoned heart receives with quiet joy. In Jean Restout II’s _Pentecost_, the disciples startle like children at a sudden noise, their faces alight with fear or wonder at the Spirit’s descent. Yet Mary stands unmoved—not for lack of awe, but because she has long known the divine whisper. She is no stranger to the fire that now dances upon her brow; was she not once overshadowed by the same Spirit? The novice flinches at the unfamiliar, but the practiced hand discerns the master’s touch.
 
 So it is with all things: the farmer hears thunder and thinks of ripe fields, while the child hides beneath the bed. The parent, weathered by nights of fevers and false alarms, knows true danger from mere discomfort. Why, then, should we marvel that Mary, who had carried Heaven within her, did not quail when Heaven came again in flame? She had thirsted for righteousness, and now she drank deeply. The disciples, new to such wonders, could but gasp.
 
