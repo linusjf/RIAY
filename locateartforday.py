@@ -192,6 +192,7 @@ class ArtLocator:
         validate_day_range(self.year, day_of_year, day_of_year)
         month, _ = get_month_and_day(self.year, day_of_year)
         base_query_text = ""
+        results = []
 
         # Read summary file
         summary_file = Path(f"{month}/Day{day_of_year:03d}Summary.txt")
@@ -206,56 +207,57 @@ class ArtLocator:
 
         mysteries = self.get_rosary_mysteries(base_query_text)
 
-
         if mysteries:
-          # Load HNSW index once
-          p = hnswlib.Index(space=cast(ArtLocator.SpaceType, self.hnsw_space), dim=self.hnsw_space_dimensions)
-          p.load_index(self.hnsw_path)
-          self.logger.info(f"Loaded HNSW index from {self.hnsw_path}")
+            # Load HNSW index once
+            p = hnswlib.Index(space=cast(ArtLocator.SpaceType, self.hnsw_space), dim=self.hnsw_space_dimensions)
+            p.load_index(self.hnsw_path)
+            self.logger.info(f"Loaded HNSW index from {self.hnsw_path}")
 
-          # Get base query embedding
-          base_query_embedding = self.get_query_vector(base_query_text)
+            # Get base query embedding
+            base_query_embedding = self.get_query_vector(base_query_text)
 
-          for mystery in mysteries:
-              query_text = base_query_text
-              mystery_type = mystery.get("mystery_type", "")
-              mystery_name = mystery.get("mystery_name", "")
-              if mystery_type or mystery_name:
-                  query_text += f"\nMystery type: {mystery_type}"
-                  query_text += f"\nMystery name: {mystery_name}"
-                  self.logger.debug(f"Searching with mystery: {mystery}")
+            for mystery in mysteries:
+                query_text = base_query_text
+                mystery_type = mystery.get("mystery_type", "")
+                mystery_name = mystery.get("mystery_name", "")
+                if mystery_type or mystery_name:
+                    query_text += f"\nMystery type: {mystery_type}"
+                    query_text += f"\nMystery name: {mystery_name}"
+                    self.logger.debug(f"Searching with mystery: {mystery}")
 
-                  # Check for direct matches first
-                  direct_matches = self.get_matching_artworks(mystery_type, mystery_name)
-                  if direct_matches:
-                      self.logger.info(f"Found {len(direct_matches)} direct matches")
-                      record_ids = [match['record_id'] for match in direct_matches]
+                    # Check for direct matches first
+                    direct_matches = self.get_matching_artworks(mystery_type, mystery_name)
+                    if direct_matches:
+                        self.logger.info(f"Found {len(direct_matches)} direct matches")
+                        record_ids = [match['record_id'] for match in direct_matches]
 
-                      # Get embeddings for direct matches
-                      embeddings = p.get_items(record_ids, return_type='numpy')
-                      self.logger.debug(embeddings)
-                      self.logger.debug(embeddings.shape)
+                        # Get embeddings for direct matches
+                        embeddings = p.get_items(record_ids, return_type='numpy')
+                        self.logger.debug(embeddings)
+                        self.logger.debug(embeddings.shape)
 
-                      # Find best match by cosine similarity
-                      best_score: float = -1.0
-                      best_match = None
-                      idx: int
-                      embedding: NDArray[np.float32]
-                      for idx, embedding in zip(record_ids, embeddings):
-                          score: float = cosine_similarity(base_query_embedding, embedding)
-                          if score > best_score:
-                              best_score = score
-                              best_match = next(m for m in direct_matches if m['record_id'] == idx)
+                        # Find best match by cosine similarity
+                        best_score: float = -1.0
+                        best_match = None
+                        idx: int
+                        embedding: NDArray[np.float32]
+                        for idx, embedding in zip(record_ids, embeddings):
+                            score: float = cosine_similarity(base_query_embedding, embedding)
+                            if score > best_score:
+                                best_score = score
+                                best_match = next(m for m in direct_matches if m['record_id'] == idx)
 
-                      if best_match:
-                          match_info = f"- ID {best_match['record_id']} | {best_match['title']} by {best_match['artist']} ({best_match['date']}) | direct match | score={best_score:.4f}"
-                          self.logger.info(match_info)
-                          print(match_info)
-                          continue  # Skip vector search if we found a good direct match
+                        if best_match:
+                            best_match['similarity_score'] = best_score
+                            best_match['match_type'] = 'direct'
+                            results.append(best_match)
+                            continue  # Skip vector search if we found a good direct match
         else:
             self.logger.info("No rosary mysteries identified...")
             return False
-        return True
+
+        print(json.dumps(results, indent=2))
+        return bool(results)
 
 def main() -> None:
     """Main entry point."""
