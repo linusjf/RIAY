@@ -97,8 +97,8 @@ class ArtLocator:
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         query = """
-            SELECT record_id, artist, caption, date, day_number, description, image_filepath, 
-                   image_url, location, medium, mystery_name, mystery_type, original_title, 
+            SELECT record_id, artist, caption, date, day_number, description, image_filepath,
+                   image_url, location, medium, mystery_name, mystery_type, original_title,
                    original_title_ISO_code, original_title_language, style, subject, title
             FROM art_records
             WHERE (mystery_type LIKE ? OR mystery_type GLOB ?)
@@ -180,8 +180,6 @@ class ArtLocator:
             self.logger.debug(f"Loaded query text from {summary_file}")
 
         mysteries = self.get_rosary_mysteries(base_query_text)
-        if not mysteries:
-            mysteries = [{"mystery_type": "", "mystery_name": ""}]
 
         # Load HNSW index once
         p = hnswlib.Index(space=cast(ArtLocator.SpaceType, self.hnsw_space), dim=self.hnsw_space_dimensions)
@@ -191,58 +189,45 @@ class ArtLocator:
         # Get base query embedding
         base_query_embedding = self.get_query_vector(base_query_text)
 
-        for mystery in mysteries:
-            query_text = base_query_text
-            mystery_type = mystery.get("mystery_type", "")
-            mystery_name = mystery.get("mystery_name", "")
-            if mystery_type or mystery_name:
-                query_text += f"\nMystery type: {mystery_type}"
-                query_text += f"\nMystery name: {mystery_name}"
-                self.logger.debug(f"Searching with mystery: {mystery}")
+        if mysteries:
+            for mystery in mysteries:
+                query_text = base_query_text
+                mystery_type = mystery.get("mystery_type", "")
+                mystery_name = mystery.get("mystery_name", "")
+                if mystery_type or mystery_name:
+                    query_text += f"\nMystery type: {mystery_type}"
+                    query_text += f"\nMystery name: {mystery_name}"
+                    self.logger.debug(f"Searching with mystery: {mystery}")
 
-                # Check for direct matches first
-                direct_matches = self.get_matching_artworks(mystery_type, mystery_name)
-                if direct_matches:
-                    self.logger.info(f"Found {len(direct_matches)} direct matches")
-                    record_ids = [match['record_id'] for match in direct_matches]
+                    # Check for direct matches first
+                    direct_matches = self.get_matching_artworks(mystery_type, mystery_name)
+                    if direct_matches:
+                        self.logger.info(f"Found {len(direct_matches)} direct matches")
+                        record_ids = [match['record_id'] for match in direct_matches]
 
-                    # Get embeddings for direct matches
-                    embeddings = p.get_items(record_ids)
+                        # Get embeddings for direct matches
+                        embeddings = p.get_items(record_ids, return_type='numpy')
 
-                    # Find best match by cosine similarity
-                    best_score = -1
-                    best_match = None
-                    for idx, embedding in zip(record_ids, embeddings):
-                        score = cosine_similarity(base_query_embedding, embedding)
-                        if score > best_score:
-                            best_score = score
-                            best_match = next(m for m in direct_matches if m['record_id'] == idx)
+                        # Find best match by cosine similarity
+                        best_score: float = -1.0
+                        best_match = None
+                        idx: int
+                        embedding: NDArray[np.float32]
+                        for idx, embedding in zip(record_ids, embeddings):
+                            score: float = cosine_similarity(base_query_embedding, embedding)
+                            if score > best_score:
+                                best_score = score
+                                best_match = next(m for m in direct_matches if m['record_id'] == idx)
 
-                    if best_match:
-                        match_info = f"- ID {best_match['record_id']} | {best_match['title']} by {best_match['artist']} ({best_match['date']}) | direct match | score={best_score:.4f}"
-                        self.logger.info(match_info)
-                        print(match_info)
-                        continue  # Skip vector search if we found a good direct match
+                        if best_match:
+                            match_info = f"- ID {best_match['record_id']} | {best_match['title']} by {best_match['artist']} ({best_match['date']}) | direct match | score={best_score:.4f}"
+                            self.logger.info(match_info)
+                            print(match_info)
+                            continue  # Skip vector search if we found a good direct match
+        else:
+            self.logger.info("No rosary mysteries identified...")
 
-            # Get query vector
-            query_vec: NDArray[np.float32] = self.get_query_vector(query_text)
 
-            # Run search
-            labels: NDArray[np.uint64]
-            distances: NDArray[np.float32]
-            labels, distances = p.knn_query(query_vec, k=self.max_results)
-            self.logger.info(f"Found {len(labels[0])} potential matches for mystery")
-
-            # Convert labels to metadata
-            record_ids: List[int] = labels[0].tolist()
-            meta_map: Dict[int, Dict[str, Any]] = self.load_metadata(record_ids)
-
-            self.logger.info("Top matches:")
-            for idx, dist in zip(record_ids, distances[0]):
-                m = meta_map.get(idx, {})
-                match_info = f"- ID {idx} | {m.get('title','?')} by {m.get('artist','?')} ({m.get('date','?')}) | score={1-dist:.4f}"
-                self.logger.info(match_info)
-                print(match_info)
 
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
