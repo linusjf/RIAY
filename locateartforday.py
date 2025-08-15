@@ -15,6 +15,7 @@ import numpy as np
 import hnswlib
 import argparse
 import datetime
+import openai
 from pathlib import Path
 from typing import cast, Literal, Dict, List, Tuple, Any
 from numpy.typing import NDArray
@@ -42,6 +43,11 @@ class ArtLocator:
         self.hnsw_space = config.get(ConfigConstants.ART_DATABASE_HNSW_SPACE, "cosine")
         self.max_results = config.get(ConfigConstants.ART_DATABASE_HNSW_MAX_RESULTS, 3)
         self.year = int(config.get(ConfigConstants.YEAR, datetime.datetime.now().year))
+        self.rosary_prompt = config.get(ConfigConstants.ROSARY_PROMPT)
+        self.text_llm_api_key = config.get(ConfigConstants.TEXT_LLM_API_KEY)
+        self.text_llm_base_url = config.get(ConfigConstants.TEXT_LLM_BASE_URL)
+        self.text_llm_chat_endpoint = config.get(ConfigConstants.TEXT_LLM_CHAT_ENDPOINT)
+        self.text_llm_model = config.get(ConfigConstants.TEXT_LLM_MODEL)
 
     def get_query_vector(self, query_text: str) -> NDArray[np.float32]:
         """Generate OpenAI embedding (float32, correct dim)."""
@@ -61,6 +67,29 @@ class ArtLocator:
         conn.close()
         # Map ID -> metadata
         return {row[0]: {"title": row[1], "artist": row[2], "year": row[3]} for row in rows}
+
+    async def get_rosary_mysteries(self, text: str) -> List[Dict[str, str]]:
+        """Get rosary mysteries from text using LLM."""
+        prompt = self.rosary_prompt.replace("{CHRISTIAN_TEXT}", text)
+        
+        client = openai.AsyncOpenAI(
+            api_key=self.text_llm_api_key,
+            base_url=self.text_llm_base_url
+        )
+
+        response = await client.chat.completions.create(
+            model=self.text_llm_model,
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt}
+            ],
+            response_format={"type": "json_object"}
+        )
+        
+        try:
+            return eval(response.choices[0].message.content)
+        except:
+            return []
 
     def search_artworks(self, day_of_year: int) -> None:
         """Search artworks using vector similarity."""
