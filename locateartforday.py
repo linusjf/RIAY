@@ -28,6 +28,25 @@ from dateutils import is_leap_year,get_month_and_day,validate_day_range
 from loggerutil import LoggerFactory
 from markdownhelper import strip_code_guards
 
+def parse_args() -> argparse.Namespace:
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description='Locate artworks for a specific day of the year using vector similarity search.',
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+    parser.add_argument(
+        'day',
+        type=int,
+        help='Day of year (1-366) to locate artwork for'
+    )
+    parser.add_argument(
+        '--year',
+        type=int,
+        default=datetime.datetime.now().year,
+        help='Year to use for date calculations'
+    )
+    return parser.parse_args()
+
 class ArtLocator:
     """Class for locating artworks using vector similarity search."""
 
@@ -258,3 +277,13 @@ class ArtLocator:
                 match_info = f"- ID {idx} | {m.get('title','?')} by {m.get('artist','?')} ({m.get('date','?')}) | score={1-dist:.4f}"
                 self.logger.info(match_info)
                 print(match_info)
+
+def main() -> None:
+    """Main entry point."""
+    args = parse_args()
+    locator = ArtLocator()
+    locator.year = args.year
+    locator.search_artworks(args.day)
+
+if __name__ == '__main__':
+    main()
