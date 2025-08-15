@@ -207,14 +207,12 @@ class ArtLocator:
                     record_ids = [match['record_id'] for match in direct_matches]
 
                     # Get embeddings for direct matches
-                    labels: NDArray[np.uint64]
-                    distances: NDArray[np.float32]
-                    labels, distances = p.get_items(record_ids)
+                    embeddings = p.get_items(record_ids)
 
                     # Find best match by cosine similarity
                     best_score = -1
                     best_match = None
-                    for idx, embedding in zip(record_ids, labels):
+                    for idx, embedding in zip(record_ids, embeddings):
                         score = cosine_similarity(base_query_embedding, embedding)
                         if score > best_score:
                             best_score = score
