@@ -15,6 +15,7 @@ import numpy as np
 import hnswlib
 import argparse
 import datetime
+import json
 import openai
 from pathlib import Path
 from typing import cast, Literal, Dict, List, Tuple, Any
@@ -23,6 +24,7 @@ from simtools import get_embedding
 from configconstants import ConfigConstants
 from configenv import ConfigEnv
 from dateutils import is_leap_year,get_month_and_day,validate_day_range
+from loggerutil import LoggerFactory
 
 class ArtLocator:
     """Class for locating artworks using vector similarity search."""
@@ -48,14 +50,20 @@ class ArtLocator:
         self.text_llm_base_url = config.get(ConfigConstants.TEXT_LLM_BASE_URL)
         self.text_llm_chat_endpoint = config.get(ConfigConstants.TEXT_LLM_CHAT_ENDPOINT)
         self.text_llm_model = config.get(ConfigConstants.TEXT_LLM_MODEL)
+        self.logger = LoggerFactory.get_logger(
+            name=__name__,
+            log_to_file=config.get(ConfigConstants.LOGGING, False)
+        )
 
     def get_query_vector(self, query_text: str) -> NDArray[np.float32]:
         """Generate OpenAI embedding (float32, correct dim)."""
+        self.logger.info("Generating query vector for text")
         vec = get_embedding(query_text)
         return vec
 
     def load_metadata(self, record_ids: List[int]) -> Dict[int, Dict[str, Any]]:
         """Fetch artwork metadata from SQLite for given IDs."""
+        self.logger.info(f"Loading metadata for record IDs: {record_ids}")
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         placeholders = ",".join("?" for _ in record_ids)
@@ -70,9 +78,9 @@ class ArtLocator:
 
     def get_rosary_mysteries(self, text: str) -> List[Dict[str, str]]:
         """Get rosary mysteries from text using LLM."""
+        self.logger.info("Getting rosary mysteries from text")
         prompt = self.rosary_prompt.replace("{CHRISTIAN_TEXT}", text)
-
-        client = openai.AsyncOpenAI(
+        client = openai.OpenAI(
             api_key=self.text_llm_api_key,
             base_url=self.text_llm_base_url
         )
@@ -87,28 +95,36 @@ class ArtLocator:
         )
 
         try:
-            return response.choices[0].message.content
-        except:
+            mysteries = json.loads(response.choices[0].message.content)
+            self.logger.info(f"Found {len(mysteries)} rosary mysteries")
+            return mysteries
+        except Exception as e:
+            self.logger.error(f"Failed to parse rosary mysteries: {e}")
             return []
 
     def search_artworks(self, day_of_year: int) -> None:
         """Search artworks using vector similarity."""
+        self.logger.info(f"Searching artworks for day {day_of_year} of year {self.year}")
         validate_day_range(self.year, day_of_year, day_of_year)
         month, _ = get_month_and_day(self.year, day_of_year)
 
         # Read summary file
         summary_file = Path(f"{month}/Day{day_of_year:03d}Summary.txt")
         if not summary_file.exists():
-            raise FileNotFoundError(f"Summary file not found: {summary_file}")
+            error_msg = f"Summary file not found: {summary_file}"
+            self.logger.error(error_msg)
+            raise FileNotFoundError(error_msg)
 
         with open(summary_file, 'r', encoding='utf-8') as f:
             query_text = f.read().strip()
+            self.logger.debug(f"Loaded query text from {summary_file}")
 
         mysteries = self.get_rosary_mysteries(query_text)
         if mysteries:
             for mystery in mysteries:
                 query_text += f"\nMystery type: {mystery.get('mystery_type', '')}"
                 query_text += f"\nMystery name: {mystery.get('mystery_name', '')}"
+            self.logger.debug("Added rosary mysteries to query text")
 
         # Get query vector
         query_vec: NDArray[np.float32] = self.get_query_vector(query_text)
@@ -116,20 +132,24 @@ class ArtLocator:
         # Load HNSW index
         p = hnswlib.Index(space=cast(ArtLocator.SpaceType, self.hnsw_space), dim=len(query_vec))
         p.load_index(self.hnsw_path)
+        self.logger.info(f"Loaded HNSW index from {self.hnsw_path}")
 
         # Run search
         labels: NDArray[np.uint64]
         distances: NDArray[np.float32]
         labels, distances = p.knn_query(query_vec, k=self.max_results)
+        self.logger.info(f"Found {len(labels[0])} potential matches")
 
         # Convert labels to metadata
         record_ids: List[int] = labels[0].tolist()
         meta_map: Dict[int, Dict[str, Any]] = self.load_metadata(record_ids)
 
-        print("\nTop matches:")
+        self.logger.info("Top matches:")
         for idx, dist in zip(record_ids, distances[0]):
             m = meta_map.get(idx, {})
-            print(f"- ID {idx} | {m.get('title','?')} by {m.get('artist','?')} ({m.get('date','?')}) | score={1-dist:.4f}")
+            match_info = f"- ID {idx} | {m.get('title','?')} by {m.get('artist','?')} ({m.get('date','?')}) | score={1-dist:.4f}"
+            self.logger.info(match_info)
+            print(match_info)
 
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
