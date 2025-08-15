@@ -20,7 +20,7 @@ import openai
 from pathlib import Path
 from typing import cast, Literal, Dict, List, Any
 from numpy.typing import NDArray
-from simtools import get_embedding
+from simtools import get_embedding, cosine_similarity
 from configconstants import ConfigConstants
 from configenv import ConfigEnv
 from dateutils import is_leap_year,get_month_and_day,validate_day_range
@@ -70,13 +70,26 @@ class ArtLocator:
         cursor = conn.cursor()
         placeholders = ",".join("?" for _ in record_ids)
         cursor.execute(
-            f"SELECT record_id, title, artist, date FROM art_records WHERE record_id IN ({placeholders})",
+            f"SELECT record_id, title, artist, date, medium, dimensions, location, url, image_path, mystery_type, mystery_name FROM art_records WHERE record_id IN ({placeholders})",
             record_ids
         )
         rows = cursor.fetchall()
         conn.close()
         # Map ID -> metadata
-        return {row[0]: {"title": row[1], "artist": row[2], "year": row[3]} for row in rows}
+        return {
+            row[0]: {
+                "title": row[1],
+                "artist": row[2],
+                "date": row[3],
+                "medium": row[4],
+                "dimensions": row[5],
+                "location": row[6],
+                "url": row[7],
+                "image_path": row[8],
+                "mystery_type": row[9],
+                "mystery_name": row[10]
+            } for row in rows
+        }
 
     def get_matching_artworks(self, mystery_type: str, mystery_name: str) -> List[Dict[str, Any]]:
         """Find artworks that directly match mystery type and name."""
@@ -84,7 +97,7 @@ class ArtLocator:
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         query = """
-            SELECT record_id, title, artist, date 
+            SELECT record_id, title, artist, date, medium, dimensions, location, url, image_path, mystery_type, mystery_name 
             FROM art_records 
             WHERE (mystery_type LIKE ? OR mystery_type GLOB ?)
             AND (mystery_name LIKE ? OR mystery_name GLOB ?)
@@ -97,7 +110,19 @@ class ArtLocator:
         ))
         rows = cursor.fetchall()
         conn.close()
-        return [{"record_id": row[0], "title": row[1], "artist": row[2], "date": row[3]} for row in rows]
+        return [{
+            "record_id": row[0],
+            "title": row[1],
+            "artist": row[2],
+            "date": row[3],
+            "medium": row[4],
+            "dimensions": row[5],
+            "location": row[6],
+            "url": row[7],
+            "image_path": row[8],
+            "mystery_type": row[9],
+            "mystery_name": row[10]
+        } for row in rows]
 
     def get_rosary_mysteries(self, text: str) -> List[Dict[str, str]]:
         """Get rosary mysteries from text using LLM."""
@@ -150,9 +175,12 @@ class ArtLocator:
             mysteries = [{"mystery_type": "", "mystery_name": ""}]
 
         # Load HNSW index once
-        p = hnswlib.Index(space=cast(ArtLocator.SpaceType, self.hnsw_space), dim=self.hnsw_space_dimensions)  # OpenAI embedding dim
+        p = hnswlib.Index(space=cast(ArtLocator.SpaceType, self.hnsw_space), dim=self.hnsw_space_dimensions)
         p.load_index(self.hnsw_path)
         self.logger.info(f"Loaded HNSW index from {self.hnsw_path}")
+
+        # Get base query embedding
+        base_query_embedding = self.get_query_vector(base_query_text)
 
         for mystery in mysteries:
             query_text = base_query_text
@@ -166,11 +194,28 @@ class ArtLocator:
                 # Check for direct matches first
                 direct_matches = self.get_matching_artworks(mystery_type, mystery_name)
                 if direct_matches:
-                    self.logger.info("Direct matches found:")
-                    for match in direct_matches:
-                        match_info = f"- ID {match['record_id']} | {match['title']} by {match['artist']} ({match['date']}) | direct match"
+                    self.logger.info(f"Found {len(direct_matches)} direct matches")
+                    record_ids = [match['record_id'] for match in direct_matches]
+                    
+                    # Get embeddings for direct matches
+                    labels: NDArray[np.uint64]
+                    distances: NDArray[np.float32]
+                    labels, distances = p.get_items(record_ids)
+                    
+                    # Find best match by cosine similarity
+                    best_score = -1
+                    best_match = None
+                    for idx, embedding in zip(record_ids, labels):
+                        score = cosine_similarity(base_query_embedding, embedding)
+                        if score > best_score:
+                            best_score = score
+                            best_match = next(m for m in direct_matches if m['record_id'] == idx)
+                    
+                    if best_match:
+                        match_info = f"- ID {best_match['record_id']} | {best_match['title']} by {best_match['artist']} ({best_match['date']}) | direct match | score={best_score:.4f}"
                         self.logger.info(match_info)
                         print(match_info)
+                        continue  # Skip vector search if we found a good direct match
 
             # Get query vector
             query_vec: NDArray[np.float32] = self.get_query_vector(query_text)
