@@ -4015,7 +4015,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
   - [May 25, 2025](#may-25-2025)
     - [He Must Increase](#he-must-increase)
     - [AI-Generated Summary: The Humble King's Way](#ai-generated-summary-the-humble-kings-way)
-    - [Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice](#crossing-ascension-cupola-1175-1200-mosaic-basilica-di-san-marco-venice)
+    - [Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco (Cupola of St. Mark), Venice](#crossing-ascension-cupola-1175-1200-mosaic-basilica-di-san-marco-cupola-of-st-mark-venice)
   - [May 26, 2025](#may-26-2025)
     - [My Soul Thirsts](#my-soul-thirsts)
     - [AI-Generated Summary: The Composure of Grace and the Folly of First Frights](#ai-generated-summary-the-composure-of-grace-and-the-folly-of-first-frights)
@@ -4647,9 +4647,9 @@ This is the royal road, dear reader: to lay aside our strivings for honor, wealt
 
 Let us then pray, as the saints have taught us: _Hail Mary, full of grace..._ and _Glory be to the Father..._—words that weave humility into praise, and praise into joy. Farewell, and may you walk this road with courage.
 
-##### Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice
+##### Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco (Cupola of St. Mark), Venice
 
-[![Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice](May/jpgs/Ascension.jpg)](https://www.wga.hu/art/zgothic/mosaics/6sanmarc/2cucros1.jpg "Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco, Venice")
+[![Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco (Cupola of St. Mark), Venice](May/jpgs/Ascension.jpg)](https://www.wga.hu/art/zgothic/mosaics/6sanmarc/2cucros1.jpg "Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco (Cupola of St. Mark), Venice")
 
 #### May 26, 2025
 
