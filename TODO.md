@@ -19,7 +19,6 @@
    1.1 Search using original_title and language on wikis.
    1.2 Use original_title to search for images on google and duckduckgo. (2 separate searches or integrated?)
 1. Fix for wikimedia site down. Right now, hangs.
-1. Fix for more than one art image mentioned in summary text. Handle json array as well before invoking artdownloader.py
 
 ## Exploratory tasks
 
