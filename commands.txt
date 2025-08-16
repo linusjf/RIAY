@@ -1,4 +1,4 @@
 # commands
 #embedarttoday 199
-addvideo "EmNgc8bCPAg" "Shared With the Trinity"
+addvideo "oxQQvAbA92E" "Lifted Up With Mary"
 lint

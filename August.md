@@ -62,6 +62,9 @@
   - [August 15, 2025](#august-15-2025)
     - [Shared With the Trinity](#shared-with-the-trinity)
     - [AI-Generated Summary: On Meditating the Glorious Mysteries](#ai-generated-summary-on-meditating-the-glorious-mysteries)
+  - [August 16, 2025](#august-16-2025)
+    - [Lifted Up With Mary](#lifted-up-with-mary)
+    - [AI-Generated Summary: The Maternal Love of Mary in Prayer](#ai-generated-summary-the-maternal-love-of-mary-in-prayer)
 
 <!---toc end-->
 
@@ -300,3 +303,15 @@ Let us consider the soul’s ascent in prayer, turning its gaze upon those radia
 There is no need for ornate speech, nor even many words, for as the old poets knew, the deepest longings are often wordless. One need only stand, as the disciples did, watching the heavens, or kneel as they did in the upper room, waiting—and in that posture of humility, the Spirit comes. The repetition of sacred words is not vain, any more than the tides’ ceaseless turning is vain; it is the motion of the heart being drawn, again and again, toward its Home.
 
 (No artworks are here described, for the mysteries themselves are the icons before which we meditate.)
+
+## August 16, 2025
+
+### Lifted Up With Mary
+
+[![Lifted Up With Mary](/August/jpgs/Day228.jpg)](https://youtu.be/oxQQvAbA92E "Lifted Up With Mary")
+
+### AI-Generated Summary: The Maternal Love of Mary in Prayer
+
+Imagine, if you will, a mother’s tenderness—not merely human, but divine—extended to every soul in need. Such is the invitation of meditative prayer when one lifts others to the care of the Blessed Virgin. Picture her as Titian did in _The Assumption of the Virgin_, radiant amid the heavens, or as Fra Angelico portrayed in _The Coronation of the Virgin_, crowned with humility beside her Son. These visions are not idle fancies but windows into a love that stoops to mend our brokenness.
+
+To pray thus is to place each troubled heart into hands that have cradled the Infant Christ. See her, in your mind’s eye, bending over the sick, the lonely, the despairing, as once she bent over the manger. For love, when truly imagined, becomes a bridge between heaven and earth—and what better guide across it than she who bore Love Incarnate?
