@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -65,11 +64,11 @@
   - [August 16, 2025](#august-16-2025)
     - [Lifted Up With Mary](#lifted-up-with-mary)
     - [AI-Generated Summary: The Maternal Love of Mary in Prayer](#ai-generated-summary-the-maternal-love-of-mary-in-prayer)
+    - [Titian's masterpiece depicting the Virgin Mary ascending to heaven, a vibrant celebration of divine glory and faith (Stock Image)](#titians-masterpiece-depicting-the-virgin-mary-ascending-to-heaven-a-vibrant-celebration-of-divine-glory-and-faith-stock-image)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -315,3 +314,7 @@ There is no need for ornate speech, nor even many words, for as the old poets kn
 Imagine, if you will, a mother’s tenderness—not merely human, but divine—extended to every soul in need. Such is the invitation of meditative prayer when one lifts others to the care of the Blessed Virgin. Picture her as Titian did in _The Assumption of the Virgin_, radiant amid the heavens, or as Fra Angelico portrayed in _The Coronation of the Virgin_, crowned with humility beside her Son. These visions are not idle fancies but windows into a love that stoops to mend our brokenness.
 
 To pray thus is to place each troubled heart into hands that have cradled the Infant Christ. See her, in your mind’s eye, bending over the sick, the lonely, the despairing, as once she bent over the manger. For love, when truly imagined, becomes a bridge between heaven and earth—and what better guide across it than she who bore Love Incarnate?
+
+### Titian's masterpiece depicting the Virgin Mary ascending to heaven, a vibrant celebration of divine glory and faith (Stock Image)
+
+[![Titian's masterpiece depicting the Virgin Mary ascending to heaven, a vibrant celebration of divine glory and faith](August/jpgs/assumptionvirgintitian.jpg)](https://c8.alamy.com/comp/KXT9KB/titian-assumption-virgin-mary-rise-to-heaven-painting-santa-maria-KXT9KB.jpg "Titian's masterpiece depicting the Virgin Mary ascending to heaven, a vibrant celebration of divine glory and faith")

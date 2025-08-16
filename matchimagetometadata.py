@@ -83,7 +83,7 @@ def main():
 
         # Combine all results
         result = classification | watermark
-        result["cosine_score"] = score
+        result["cosine_score"] = float(score)
 
         logger.info(f"Final result: {json.dumps(result, indent=2)}")
         print(json.dumps(result, indent=2))
