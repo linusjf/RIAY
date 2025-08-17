@@ -21,7 +21,7 @@ readonly E_NO_SATISFACTORY_IMAGES=7
 readonly E_NO_ART_REFERENCED=8
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -87,7 +87,7 @@ function parse_artdownloader_output() {
       best_selected_image=$(echo "$line" | awk -F': ' '{print $2}' | awk '{print $1}')
       _best_score=$(echo "$line" | grep -oP '(?<=score: )\d+\.\d+')
     fi
-  done <<< "$output"
+  done <<<"$output"
 
   echo "$best_selected_image"
 }
@@ -151,7 +151,7 @@ function append_to_day_file() {
     die "Day file $day_file does not exist" $E_MISSING_FILE
   fi
 
-  echo "$content" >> "$day_file"
+  echo "$content" >>"$day_file"
   err "Appended artwork to: $day_file"
 }
 
@@ -160,11 +160,14 @@ function trap_exit() {
   exit $exitcode
 }
 
+function should_generatemarkdown() {
+  [[ "${IMAGE_CONTENT_VALIDATION:-"lenient"}" == lenient ]]
+}
+
 function process_artwork() {
   local art_details="$1"
   local month="$2"
   local day_num="$3"
-  local start_time="$4"
 
   title="$(echo "$art_details" | jq '.details.title' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
   original_title="$(echo "$art_details" | jq '.details.original_title' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
@@ -195,13 +198,6 @@ function process_artwork() {
   fi
 
   local jsonresult
-  local generate_markdown=true
-
-  if [[ "${IMAGE_CONTENT_VALIDATION:-"lenient"}" == lenient ]]; then
-    generate_markdown=true
-  else
-    generate_markdown=false
-  fi
 
   if [[ -n "${best_selected_image:-}" ]]; then
     if "${VERIFY_ART_IMAGES:-false}"; then
@@ -220,7 +216,7 @@ function process_artwork() {
       fi
     fi
 
-    if "$generate_markdown"; then
+    if should_generatemarkdown; then
       local url_file="${best_selected_image%.*}.url.txt"
       local source_url=""
 
@@ -236,7 +232,7 @@ function process_artwork() {
       cp "$best_selected_image" "$target_file"
 
       if [[ -n "$source_url" ]]; then
-        echo "$source_url" > "$target_dir/${filename}.url.txt"
+        echo "$source_url" >"$target_dir/${filename}.url.txt"
       fi
 
       local markdown_content
@@ -253,15 +249,30 @@ function process_artwork() {
 
 function search_database() {
   day_num="$1"
+  month="$2"
   if art_details_array="$("${SCRIPT_DIR}/locateartforday.py" "$day_num")"; then
     local array_length=$(echo "$art_details_array" | jq 'length')
     if [[ "$array_length" -eq 0 ]]; then
-      err "No art details found in database"
+      err "No matching art details found in database"
       return $E_NO_ART_REFERENCED
+    else
+      for i in $(seq 0 $((array_length - 1))); do
+        local art_details=$(echo "$art_details_array" | jq ".[$i]")
+        process_db_artwork "$art_details" "$month" "$day_num"
+      done
     fi
   else
     return $E_NO_ART_REFERENCED
   fi
+}
+
+function process_db_artwork() {
+  local art_details="$1"
+  local month="$2"
+  local day_num="$3"
+  description="$(echo "$art_details" | jq '.description' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  image_filepath="$(echo "$art_details" | jq '.image_filepath' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  image_url="$(echo "$art_details" | jq '.image_url' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
 }
 
 function main() {
@@ -287,7 +298,7 @@ function main() {
     if [[ "$array_length" -eq 0 ]]; then
       err "No art details found in summary"
       err "Locating matching art from existing database..."
-      if search_database "$day_num"; then
+      if search_database "$day_num" "$month"; then
         return 0
       else
         return $E_NO_ART_REFERENCED
@@ -296,7 +307,7 @@ function main() {
 
     for i in $(seq 0 $((array_length - 1))); do
       local art_details=$(echo "$art_details_array" | jq ".[$i]")
-      process_artwork "$art_details" "$month" "$day_num" "$start_time"
+      process_artwork "$art_details" "$month" "$day_num"
     done
 
     "${SCRIPT_DIR}/genmonth" "$(date::monthnumberfrommonth "$month")" && "${SCRIPT_DIR}/stitch"
@@ -318,16 +329,16 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      -h | --help) usage 0 ;;
-      -v | --version)
-        version
-        exit 0
-        ;;
-      -d | --debug)
-        set -x
-        shift
-        ;;
-      *) break ;;
+    -h | --help) usage 0 ;;
+    -v | --version)
+      version
+      exit 0
+      ;;
+    -d | --debug)
+      set -x
+      shift
+      ;;
+    *) break ;;
     esac
   done
 
