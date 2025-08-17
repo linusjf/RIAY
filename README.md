@@ -6280,6 +6280,8 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
   - [August 09, 2025](#august-09-2025)
     - [Words of an Angel](#words-of-an-angel)
     - [AI-Generated Summary: The Discipline of Devotion and the Weight of Mystery](#ai-generated-summary-the-discipline-of-devotion-and-the-weight-of-mystery)
+    - [Mosaic depicting the young Jesus found teaching in the Temple after being lost (Stock Image)](#mosaic-depicting-the-young-jesus-found-teaching-in-the-temple-after-being-lost-stock-image)
+    - [John baptizes Jesus as the heavens open and the Spirit descends (Stock Image)](#john-baptizes-jesus-as-the-heavens-open-and-the-spirit-descends-stock-image)
   - [August 10, 2025](#august-10-2025)
     - [Elizabeth's Greeting](#elizabeths-greeting)
     - [AI-Generated Summary: The Unchanging Refuge of Prayer](#ai-generated-summary-the-unchanging-refuge-of-prayer)
@@ -6473,6 +6475,14 @@ Consider two moments where Heaven stooped low to touch our dusty world: first, w
 Prayer, dear reader, is no trifle to be rushed. As a muscle grows by steady strain, so the soul strengthens by patient meditation. Begin with twenty Hail Marys, as one begins a journey with a single step. Ponder the angel’s greeting—_"Hail, full of grace"_—not as empty words, but as a thunderclap that shook the universe. For in that moment, eternity kissed time, and a maiden’s _yes_ undid Eve’s _no_.
 
 The prayers themselves are but ropes to bind our wandering minds to the mast of truth. Repeat them until the words wear grooves in the heart, and through them, grace may flow unhindered.
+
+##### Mosaic depicting the young Jesus found teaching in the Temple after being lost (Stock Image)
+
+[![Mosaic depicting the young Jesus found teaching in the Temple after being lost](August/jpgs/LostandFound_ZgfFqydR.jpg)](https://thumbs.dreamstime.com/b/mosaic-jesus-lost-found-temple-rosary-basilica-lourdes-78705042.jpg "Mosaic depicting the young Jesus found teaching in the Temple after being lost")
+
+##### John baptizes Jesus as the heavens open and the Spirit descends (Stock Image)
+
+[![John baptizes Jesus as the heavens open and the Spirit descends](August/jpgs/Baptism_MlYETZUx.jpg)](https://reconquest.net/wp-content/uploads/2017/12/the_baptism_of_christ_verrocchio__leonardo.jpg "John baptizes Jesus as the heavens open and the Spirit descends")
 
 #### August 10, 2025
 
