@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -48,6 +47,8 @@
   - [August 11, 2025](#august-11-2025)
     - [Now and at Death](#now-and-at-death)
     - [AI-Generated Summary: The Light of the Mount and the Bread of Life](#ai-generated-summary-the-light-of-the-mount-and-the-bread-of-life)
+    - [Jesus radiates divine light before his disciples atop a mountain (Stock Image)](#jesus-radiates-divine-light-before-his-disciples-atop-a-mountain-stock-image)
+    - [Jesus institutes the Eucharist during the Passover meal (Stock Image)](#jesus-institutes-the-eucharist-during-the-passover-meal-stock-image)
   - [August 12, 2025](#august-12-2025)
     - [Intentions to the Father](#intentions-to-the-father)
     - [AI-Generated Summary: The Art of Prayerful Intentions](#ai-generated-summary-the-art-of-prayerful-intentions)
@@ -78,7 +79,6 @@
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -254,6 +254,14 @@ One might ask why such prayers matter if they contain no new argument, no fresh 
 Consider two mysteries, dear reader, where Heaven stooped low to touch the earth: first, upon the mount where His face shone like the sun, and His garments became white as light; second, in the upper room where common bread was made His very flesh. These are not mere events, but windows into eternity—the Transfiguration, a glimpse of glory awaiting all who love Him, and the Eucharist, the daily miracle by which He feeds us with Himself.
 
 Prayer, like a ladder, lifts us toward these mysteries, and Mary, our Mother, stands ever ready to guide us upward. Yet how often we forget that these are not distant wonders, but present realities! The mount and the supper-room are nearer to us than we dare believe, if only we have eyes to see. Let us then approach with awe, and with hearts open to the light that never fades.
+
+### Jesus radiates divine light before his disciples atop a mountain (Stock Image)
+
+[![Jesus radiates divine light before his disciples atop a mountain](August/jpgs/TransfigurationRaphael_zxDpVKjr.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Transfiguration_Raphael.jpg/960px-Transfiguration_Raphael.jpg "Jesus radiates divine light before his disciples atop a mountain")
+
+### Jesus institutes the Eucharist during the Passover meal (Stock Image)
+
+[![Jesus institutes the Eucharist during the Passover meal](August/jpgs/JuandeJuanesLastSupper_5URfy5Sw.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/%C3%9Altima_Cena_-_Juan_de_Juanes.jpg/960px-%C3%9Altima_Cena_-_Juan_de_Juanes.jpg "Jesus institutes the Eucharist during the Passover meal")
 
 ## August 12, 2025
 
