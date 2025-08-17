@@ -29,6 +29,7 @@ source "${SCRIPT_DIR}/lib/git.sh" || exit 1
 source "${SCRIPT_DIR}/lib/youtube.sh" || exit 1
 source "${SCRIPT_DIR}/lib/vidmd.sh" || exit 1
 source "${SCRIPT_DIR}/lib/date.sh" || exit 1
+source "${SCRIPT_DIR}/lib/random.sh" || exit 1
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
