@@ -67,6 +67,9 @@
     - [AI-Generated Summary: The Maternal Love of Mary in Prayer](#ai-generated-summary-the-maternal-love-of-mary-in-prayer)
     - [The Assumption of the Virgin by Titian, depicting Mary's ascension (Stock Image)](#the-assumption-of-the-virgin-by-titian-depicting-marys-ascension-stock-image)
     - [The Coronation of the Virgin by Fra Angelico, showing Mary crowned by Christ (Stock Image)](#the-coronation-of-the-virgin-by-fra-angelico-showing-mary-crowned-by-christ-stock-image)
+  - [August 17, 2025](#august-17-2025)
+    - [The Annunciation and the Visitation](#the-annunciation-and-the-visitation)
+    - [AI-Generated Summary: The Blessed Exchange of Joy](#ai-generated-summary-the-blessed-exchange-of-joy)
 
 <!---toc end-->
 
@@ -325,3 +328,15 @@ To pray thus is to place each troubled heart into hands that have cradled the In
 ### The Coronation of the Virgin by Fra Angelico, showing Mary crowned by Christ (Stock Image)
 
 [![The Coronation of the Virgin by Fra Angelico, showing Mary crowned by Christ](August/jpgs/coronationvirginfraangelico.jpg)](https://www.repro-tableaux.com/kunst/fra_angelico/Die-Marienkroenung-Fra-Beato-Angelico.jpg "The Coronation of the Virgin by Fra Angelico, showing Mary crowned by Christ")
+
+## August 17, 2025
+
+### The Annunciation and the Visitation
+
+[![The Annunciation and the Visitation](/August/jpgs/Day229.jpg)](https://youtu.be/6EDWor0LRuI "The Annunciation and the Visitation")
+
+### AI-Generated Summary: The Blessed Exchange of Joy
+
+The angel’s annunciation to Mary—that most wondrous interruption—ushers in not merely a message, but the Maker of messages Himself. Her swift “let it be” is the hinge upon which all human history turns. Then see how she carries this uncontainable joy to Elizabeth, whose unborn child leaps in recognition. Here is the first echo of the Gospel: the high meeting the low, the divine hidden in the ordinary. Ponder these mysteries well, for in them lies the pattern of all true joy—a gift given, a gift received, and a gift passed on.
+
+(Note: No artworks were described in the original text.)
