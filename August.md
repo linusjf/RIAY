@@ -38,6 +38,7 @@
   - [August 08, 2025](#august-08-2025)
     - [Lingering in the Words](#lingering-in-the-words)
     - [AI-Generated Summary: The Silent Song of the Nativity](#ai-generated-summary-the-silent-song-of-the-nativity)
+    - [Pellegrini’s depiction of the birth of Jesus in a humble stable (Stock Image)](#pellegrinis-depiction-of-the-birth-of-jesus-in-a-humble-stable-stock-image)
   - [August 09, 2025](#august-09-2025)
     - [Words of an Angel](#words-of-an-angel)
     - [AI-Generated Summary: The Discipline of Devotion and the Weight of Mystery](#ai-generated-summary-the-discipline-of-devotion-and-the-weight-of-mystery)
@@ -216,6 +217,10 @@ The second joyful mystery, the Visitation, calls to mind the blessed meeting of 
 What we have here, dear reader, is not a painting but a prayer—a repeated refrain, like the steady rhythm of a heartbeat or the turning of the seasons. The Nativity, that third joyful mystery, is invoked not through brushstrokes or carved stone, but through the quiet cadence of _Hail Marys_ and _Glory Bes_. It is as if the very absence of artistic detail speaks louder than any depiction might; for sometimes the deepest truths are best approached not by sight, but by the soul’s own recollection.
 
 Think of it as a window left open—not to show us a scene, but to let the wind of devotion stir within us. The artist’s hand is unseen, the medium unrecorded, yet the subject remains: that humble, radiant moment when Heaven touched Earth. And so we are reminded that some mysteries need no adornment; their power lies in the telling, and the hearing, and the heart that holds them.
+
+### Pellegrini’s depiction of the birth of Jesus in a humble stable (Stock Image)
+
+[![Pellegrini’s depiction of the birth of Jesus in a humble stable](August/jpgs/Nativity_39rJB3oz.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Pellegrini’s depiction of the birth of Jesus in a humble stable")
 
 ## August 09, 2025
 
