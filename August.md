@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -62,6 +61,8 @@
   - [August 15, 2025](#august-15-2025)
     - [Shared With the Trinity](#shared-with-the-trinity)
     - [AI-Generated Summary: On Meditating the Glorious Mysteries](#ai-generated-summary-on-meditating-the-glorious-mysteries)
+    - [Christ ascending into heaven, witnessed by his disciples (Stock Image)](#christ-ascending-into-heaven-witnessed-by-his-disciples-stock-image)
+    - [The Holy Spirit descending upon the apostles and Mary (Stock Image)](#the-holy-spirit-descending-upon-the-apostles-and-mary-stock-image)
   - [August 16, 2025](#august-16-2025)
     - [Lifted Up With Mary](#lifted-up-with-mary)
     - [AI-Generated Summary: The Maternal Love of Mary in Prayer](#ai-generated-summary-the-maternal-love-of-mary-in-prayer)
@@ -76,7 +77,6 @@
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -310,6 +310,14 @@ Let us consider the soul’s ascent in prayer, turning its gaze upon those radia
 There is no need for ornate speech, nor even many words, for as the old poets knew, the deepest longings are often wordless. One need only stand, as the disciples did, watching the heavens, or kneel as they did in the upper room, waiting—and in that posture of humility, the Spirit comes. The repetition of sacred words is not vain, any more than the tides’ ceaseless turning is vain; it is the motion of the heart being drawn, again and again, toward its Home.
 
 (No artworks are here described, for the mysteries themselves are the icons before which we meditate.)
+
+### Christ ascending into heaven, witnessed by his disciples (Stock Image)
+
+[![Christ ascending into heaven, witnessed by his disciples](August/jpgs/ascensionofthelord_wUkUMRN9.jpg)](https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Christ ascending into heaven, witnessed by his disciples")
+
+### The Holy Spirit descending upon the apostles and Mary (Stock Image)
+
+[![The Holy Spirit descending upon the apostles and Mary](August/jpgs/PentecostTitian_HarWvpzT.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Pentecost%2C_by_Titian_%281546%29_-_Santa_Maria_della_Salute_-_Venice_2016.jpg/960px-Pentecost%2C_by_Titian_%281546%29_-_Santa_Maria_della_Salute_-_Venice_2016.jpg "The Holy Spirit descending upon the apostles and Mary")
 
 ## August 16, 2025
 
