@@ -70,6 +70,8 @@
   - [August 17, 2025](#august-17-2025)
     - [The Annunciation and the Visitation](#the-annunciation-and-the-visitation)
     - [AI-Generated Summary: The Blessed Exchange of Joy](#ai-generated-summary-the-blessed-exchange-of-joy)
+    - [Depicts the angel Gabriel announcing to Mary that she will conceive Jesus (Stock Image)](#depicts-the-angel-gabriel-announcing-to-mary-that-she-will-conceive-jesus-stock-image)
+    - [Rembrandt’s portrayal of Mary visiting her cousin Elizabeth, both expecting miraculous children (Stock Image)](#rembrandts-portrayal-of-mary-visiting-her-cousin-elizabeth-both-expecting-miraculous-children-stock-image)
 
 <!---toc end-->
 
@@ -340,3 +342,11 @@ To pray thus is to place each troubled heart into hands that have cradled the In
 The angel’s annunciation to Mary—that most wondrous interruption—ushers in not merely a message, but the Maker of messages Himself. Her swift “let it be” is the hinge upon which all human history turns. Then see how she carries this uncontainable joy to Elizabeth, whose unborn child leaps in recognition. Here is the first echo of the Gospel: the high meeting the low, the divine hidden in the ordinary. Ponder these mysteries well, for in them lies the pattern of all true joy—a gift given, a gift received, and a gift passed on.
 
 (Note: No artworks were described in the original text.)
+
+### Depicts the angel Gabriel announcing to Mary that she will conceive Jesus (Stock Image)
+
+[![Depicts the angel Gabriel announcing to Mary that she will conceive Jesus](August/jpgs/annunciationvaneyck_srgfsdPW.jpg)](https://i.pinimg.com/736x/dc/d2/0b/dcd20b9d34dfc34ecf40a2a862594715.jpg "Depicts the angel Gabriel announcing to Mary that she will conceive Jesus")
+
+### Rembrandt’s portrayal of Mary visiting her cousin Elizabeth, both expecting miraculous children (Stock Image)
+
+[![Rembrandt’s portrayal of Mary visiting her cousin Elizabeth, both expecting miraculous children](August/jpgs/TheVisitation_AtuWdYmo.jpg)](https://live.staticflickr.com/65535/48379549666_845e30610d_z.jpg "Rembrandt’s portrayal of Mary visiting her cousin Elizabeth, both expecting miraculous children")
