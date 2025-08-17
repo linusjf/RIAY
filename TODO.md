@@ -19,8 +19,9 @@
    1.1 Search using original_title and language on wikis.
    1.2 Use original_title to search for images on google and duckduckgo. (2 separate searches or integrated?)
 1. Fix for wikimedia site down. Right now, hangs.
+1. Add check for stock image domains to locateartforday.py and embed it into json object.
+1. Generate fresh caption each time for image returned by locateartforday.py to prevent duplication of markdown headers which are then flagged by markdownlint.
 
 ## Exploratory tasks
 
 1. Related links feature.
-1. Explore embedded vector databases to allow search against art images already downloaded (60) for semantic matches. Too many hassles using sqlite-vss including custom builds for both sqlite and python source. Better to use HNSWlib instead and sync it to sqlite database.
