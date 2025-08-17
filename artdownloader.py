@@ -14,7 +14,7 @@ import time
 import argparse
 import shutil
 import logging
-from typing import Optional, Dict, List, Tuple, Any, Set, Union, Callable, Sequence, Iterator
+from typing import Optional, Dict, List, Tuple, Any, Set, Callable
 
 import requests
 from duckduckgo_search import DDGS
@@ -31,7 +31,6 @@ from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
 from PIL import Image
 from requests import Session
-from pathlib import Path
 
 class ArtDownloader:
     """Download artwork images from various sources."""

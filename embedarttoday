@@ -251,6 +251,19 @@ function process_artwork() {
   fi
 }
 
+function search_database() {
+  day_num="$1"
+  if art_details_array="$("${SCRIPT_DIR}/locateartforday.py" "$day_num")"; then
+    local array_length=$(echo "$art_details_array" | jq 'length')
+    if [[ "$array_length" -eq 0 ]]; then
+      err "No art details found in database"
+      return $E_NO_ART_REFERENCED
+    fi
+  else
+    return $E_NO_ART_REFERENCED
+  fi
+}
+
 function main() {
   local start_time=$(date +%s)
   validate_arguments "$@"
@@ -273,7 +286,12 @@ function main() {
     local array_length=$(echo "$art_details_array" | jq 'length')
     if [[ "$array_length" -eq 0 ]]; then
       err "No art details found in summary"
-      return $E_NO_ART_REFERENCED
+      err "Locating matching art from existing database..."
+      if search_database "$day_num"; then
+        return 0
+      else
+        return $E_NO_ART_REFERENCED
+      fi
     fi
 
     for i in $(seq 0 $((array_length - 1))); do
