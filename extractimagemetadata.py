@@ -185,7 +185,7 @@ class ImageMetadataExtractor:
                 {
                     "day_number": day_num,
                     "caption": title,
-                    "image_filepath": img_path,
+                    "image_filepath": img_path.lstrip('/'),
                     "image_url": link_url,
                 }
                 for _, img_path, link_url, title in image_links
