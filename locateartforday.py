@@ -248,6 +248,7 @@ class ArtLocator:
                                 best_match = next(m for m in direct_matches if m['record_id'] == idx)
 
                         if best_match:
+                            best_match["cosine_score"] = best_score
                             results.append(best_match)
                             continue  # Skip vector search if we found a good direct match
         else:
