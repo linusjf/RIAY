@@ -21,7 +21,7 @@ readonly E_NO_SATISFACTORY_IMAGES=7
 readonly E_NO_ART_REFERENCED=8
 
 # Load required libraries
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh" || exit 1
 source "${SCRIPT_DIR}/lib/internet.sh" || exit 1
 source "${SCRIPT_DIR}/lib/util.sh" || exit 1
@@ -88,7 +88,7 @@ function parse_artdownloader_output() {
       best_selected_image=$(echo "$line" | awk -F': ' '{print $2}' | awk '{print $1}')
       _best_score=$(echo "$line" | grep -oP '(?<=score: )\d+\.\d+')
     fi
-  done <<<"$output"
+  done <<< "$output"
 
   echo "$best_selected_image"
 }
@@ -152,7 +152,7 @@ function append_to_day_file() {
     die "Day file $day_file does not exist" $E_MISSING_FILE
   fi
 
-  echo "$content" >>"$day_file"
+  echo "$content" >> "$day_file"
   err "Appended artwork to: $day_file"
 }
 
@@ -233,7 +233,7 @@ function process_artwork() {
       cp "$best_selected_image" "$target_file"
 
       if [[ -n "$source_url" ]]; then
-        echo "$source_url" >"$target_dir/${filename}.url.txt"
+        echo "$source_url" > "$target_dir/${filename}.url.txt"
       fi
 
       local markdown_content
@@ -272,8 +272,17 @@ function process_db_artwork() {
   local month="$2"
   local day_num="$3"
   description="$(echo "$art_details" | jq '.description' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
-  image_filepath="$(echo "$art_details" | jq '.image_filepath' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
-  image_url="$(echo "$art_details" | jq '.image_url' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  image_filepath="$(echo "$art_details" | jq '.image_filepath' | sed 's/"//g' | sed 's/null//g')"
+  image_url="$(echo "$art_details" | jq '.image_url' | sed 's/"//g' | sed 's/null//g')"
+
+  local target_dir="$month/jpgs"
+  mkdir -p "$target_dir"
+  local filename="$(basename "${image_filepath%.*}")_$(random::random_string 8).jpg"
+  local target_file="${target_dir}/${filename}"
+  cp "$image_filepath" "$target_file"
+  local markdown_content
+  markdown_content="$(generate_markdown "$description" "$target_file" "$image_url" "$month" "$day_num" true)"
+  append_to_day_file "$day_num" "$markdown_content" "$month"
 }
 
 function main() {
@@ -330,16 +339,16 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -h | --help) usage 0 ;;
-    -v | --version)
-      version
-      exit 0
-      ;;
-    -d | --debug)
-      set -x
-      shift
-      ;;
-    *) break ;;
+      -h | --help) usage 0 ;;
+      -v | --version)
+        version
+        exit 0
+        ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      *) break ;;
     esac
   done
 
