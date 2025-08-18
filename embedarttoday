@@ -273,7 +273,7 @@ function process_db_artwork() {
   local art_details="$1"
   local month="$2"
   local day_num="$3"
-  description="$(echo "$art_details" | jq '.description' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  description="$(echo "$art_details" | jq '.generated_caption' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   image_filepath="$(echo "$art_details" | jq '.image_filepath' | sed 's/"//g' | sed 's/null//g')"
   image_url="$(echo "$art_details" | jq '.image_url' | sed 's/"//g' | sed 's/null//g')"
   is_stock_image="$(echo "$art_details" | jq '.is_stock_image' | sed 's/"//g' | sed 's/null//g')"

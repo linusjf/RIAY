@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -23,6 +22,9 @@
     - [Overshadowed by the Spirit](#overshadowed-by-the-spirit)
     - [AI-Generated Summary: The Silent Language of Divine Love](#ai-generated-summary-the-silent-language-of-divine-love)
     - [AI-Generated Image: A celestial embrace of fire and breath, where divine love pierces the veil of the unseen](#ai-generated-image-a-celestial-embrace-of-fire-and-breath-where-divine-love-pierces-the-veil-of-the-unseen)
+    - [\Pietro Gagliardi's Neoclassical fresco captures Christ's sacrificial love, where divine mercy triumphs through the sorrow of the Crucifixion\ (Stock Image)](#pietro-gagliardis-neoclassical-fresco-captures-christs-sacrificial-love-where-divine-mercy-triumphs-through-the-sorrow-of-the-crucifixion-stock-image)
+    - [\Pietro Gagliardi's Neoclassical fresco captures Christ's sacrificial love, where divine sorrow meets radiant victory at Calvary\ (Stock Image)](#pietro-gagliardis-neoclassical-fresco-captures-christs-sacrificial-love-where-divine-sorrow-meets-radiant-victory-at-calvary-stock-image)
+    - [Pietro Gagliardi's Neoclassical fresco captures Christ's sacrificial love, where divine sorrow meets radiant mercy at the Cross (Stock Image)](#pietro-gagliardis-neoclassical-fresco-captures-christs-sacrificial-love-where-divine-sorrow-meets-radiant-mercy-at-the-cross-stock-image)
   - [August 05, 2025](#august-05-2025)
     - [Resting With the Trinity](#resting-with-the-trinity)
     - [AI-Generated Summary: The Soul's Homage to the Triune God](#ai-generated-summary-the-souls-homage-to-the-triune-god)
@@ -89,7 +91,6 @@
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -163,6 +164,18 @@ As for the prayers repeated like the beating of that heart—Hail Mary, Our Fath
 ### AI-Generated Image: A celestial embrace of fire and breath, where divine love pierces the veil of the unseen
 
 ![AI-Generated Image: A celestial embrace of fire and breath, where divine love pierces the veil of the unseen](/August/jpgs/Day216Summary.jpg)
+
+### \Pietro Gagliardi's Neoclassical fresco captures Christ's sacrificial love, where divine mercy triumphs through the sorrow of the Crucifixion\ (Stock Image)
+
+[![\Pietro Gagliardi's Neoclassical fresco captures Christ's sacrificial love, where divine mercy triumphs through the sorrow of the Crucifixion](August/jpgs/Crucifixion_QT5gBkiv.jpg)](https://c7.alamy.com/comp/2GRFXKA/rome-italy-august-28-2021-the-fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-2GRFXKA.jpg "\Pietro Gagliardi's Neoclassical fresco captures Christ's sacrificial love, where divine mercy triumphs through the sorrow of the Crucifixion\")
+
+### \Pietro Gagliardi's Neoclassical fresco captures Christ's sacrificial love, where divine sorrow meets radiant victory at Calvary\ (Stock Image)
+
+[![\Pietro Gagliardi's Neoclassical fresco captures Christ's sacrificial love, where divine sorrow meets radiant victory at Calvary](August/jpgs/Crucifixion_34GgQV8p.jpg)](https://c7.alamy.com/comp/2GRFXKA/rome-italy-august-28-2021-the-fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-2GRFXKA.jpg "\Pietro Gagliardi's Neoclassical fresco captures Christ's sacrificial love, where divine sorrow meets radiant victory at Calvary\")
+
+### Pietro Gagliardi's Neoclassical fresco captures Christ's sacrificial love, where divine sorrow meets radiant mercy at the Cross (Stock Image)
+
+[![Pietro Gagliardi's Neoclassical fresco captures Christ's sacrificial love, where divine sorrow meets radiant mercy at the Cross](August/jpgs/Crucifixion_ym5HGcru.jpg)](https://c7.alamy.com/comp/2GRFXKA/rome-italy-august-28-2021-the-fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-2GRFXKA.jpg "Pietro Gagliardi's Neoclassical fresco captures Christ's sacrificial love, where divine sorrow meets radiant mercy at the Cross")
 
 ## August 05, 2025
 

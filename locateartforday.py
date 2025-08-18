@@ -65,6 +65,7 @@ class ArtLocator:
         self.year = int(config.get(ConfigConstants.YEAR, datetime.datetime.now().year))
         self.rosary_prompt = config.get(ConfigConstants.ROSARY_PROMPT)
         self.text_llm_api_key = config.get(ConfigConstants.TEXT_LLM_API_KEY)
+        self.temperature = config.get(ConfigConstants.TEMPERATURE)
         self.text_llm_base_url = config.get(ConfigConstants.TEXT_LLM_BASE_URL)
         self.text_llm_chat_endpoint = config.get(ConfigConstants.TEXT_LLM_CHAT_ENDPOINT)
         self.text_llm_model = config.get(ConfigConstants.TEXT_LLM_MODEL)
@@ -76,17 +77,17 @@ class ArtLocator:
 
     def generate_caption(self, json_object: str, input_text: str) -> str:
         """Generate a caption for an image record using the OpenAI API.
-        
+
         Args:
             json_object: JSON string containing artwork metadata
             input_text: Text input describing the artwork
-            
+
         Returns:
             Generated caption string
         """
         prompt = self.create_caption_prompt.replace("{json_object}", json_object)
         prompt = prompt.replace("{text_input}", input_text)
-        
+
         client = openai.OpenAI(
             api_key=self.text_llm_api_key,
             base_url=self.text_llm_base_url
@@ -99,9 +100,9 @@ class ArtLocator:
                     {"role": "system", "content": "You are a helpful assistant."},
                     {"role": "user", "content": prompt}
                 ],
-                temperature=0.3
+                temperature=self.temperature
             )
-            return str(response.choices[0].message.content).strip()
+            return str(response.choices[0].message.content).strip('"')
         except Exception as e:
             self.logger.error(f"Failed to generate caption: {e}")
             return ""
@@ -284,6 +285,7 @@ class ArtLocator:
                         if best_match:
                             best_match["cosine_score"] = best_score
                             best_match["is_stock_image"] = is_stock_image_url(best_match["image_url"])
+                            best_match["generated_caption"] = self.generate_caption(json.dumps(best_match, indent=2),query_text)
                             results.append(best_match)
                             continue  # Skip vector search if we found a good direct match
         else:
