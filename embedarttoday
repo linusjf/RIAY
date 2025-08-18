@@ -172,8 +172,8 @@ function process_artwork() {
   local day_num="$3"
 
   title="$(echo "$art_details" | jq '.details.title' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
-  original_title="$(echo "$art_details" | jq '.details.original_title' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
-  language="$(echo "$art_details" | jq '.details.title_language_iso' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g')"
+  original_title="$(echo "$art_details" | jq '.details.original_title' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  language="$(echo "$art_details" | jq '.details.title_language_iso' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   artist="$(echo "$art_details" | jq '.details.artist' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   location="$(echo "$art_details" | jq '.details.location' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   date="$(echo "$art_details" | jq '.details.date' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"

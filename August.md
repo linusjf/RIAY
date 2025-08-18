@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -82,11 +81,12 @@
   - [August 18, 2025](#august-18-2025)
     - [The Nativity and the Presentation](#the-nativity-and-the-presentation)
     - [AI-Generated Summary: The Humble Majesty of the Nativity](#ai-generated-summary-the-humble-majesty-of-the-nativity)
+    - [The Nativity, depicting the King of Heaven in a manger (Stock Image)](#the-nativity-depicting-the-king-of-heaven-in-a-manger-stock-image)
+    - [The Presentation of Jesus in the Temple, Mary and Joseph fulfilling the Law (Stock Image)](#the-presentation-of-jesus-in-the-temple-mary-and-joseph-fulfilling-the-law-stock-image)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -402,3 +402,11 @@ The Nativity and the Presentation of Jesus in the Temple are not mere events of 
 Likewise, _The Presentation of Jesus in the Temple_ reveals the obedience of Mary and Joseph, who fulfill the Law even as they cradle the Lawgiver Himself. Simeon’s prophecy pierces the moment with foreshadowed sorrow, reminding us that joy and sacrifice are ever entwined in the story of redemption.
 
 These sacred scenes call us to recognize that the Eternal entered time, the Infinite became small, and Love took on flesh—not to overwhelm, but to invite. Let us then, like Mary, ponder these things in our hearts.
+
+### The Nativity, depicting the King of Heaven in a manger (Stock Image)
+
+[![The Nativity, depicting the King of Heaven in a manger](August/jpgs/nativity.jpg)](https://c8.alamy.com/comp/KPKWHA/large-nativity-display-with-manger-shepherdswise-men-mary-joseph-and-KPKWHA.jpg "The Nativity, depicting the King of Heaven in a manger")
+
+### The Presentation of Jesus in the Temple, Mary and Joseph fulfilling the Law (Stock Image)
+
+[![The Presentation of Jesus in the Temple, Mary and Joseph fulfilling the Law](August/jpgs/presentationjesus.jpg)](https://w0.peakpx.com/wallpaper/399/564/HD-wallpaper-presentation-in-the-temple-presentation-joseph-anna-temple-simeon-mary-jesus.jpg "The Presentation of Jesus in the Temple, Mary and Joseph fulfilling the Law")
