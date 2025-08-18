@@ -44,6 +44,7 @@
     - [Returning to the Visitation](#returning-to-the-visitation)
     - [AI-Generated Summary: The New Ark and the Song of Joy](#ai-generated-summary-the-new-ark-and-the-song-of-joy)
     - [Mary's Magnificat](#marys-magnificat)
+    - [Mary, the living Ark, brings Christ to Elizabeth, their joyous meeting inspiring the Magnificat—a hymn of divine love and humility](#mary-the-living-ark-brings-christ-to-elizabeth-their-joyous-meeting-inspiring-the-magnificata-hymn-of-divine-love-and-humility)
   - [July 10, 2025](#july-10-2025)
     - [Unworthy Yet Welcomed](#unworthy-yet-welcomed)
     - [AI-Generated Summary: The Timeless Joy of the Nativity](#ai-generated-summary-the-timeless-joy-of-the-nativity)
@@ -354,6 +355,10 @@ Esurientes implevit bonis, et divites dimisit inanes.
 Sucepit Israel, puerum suum, recordatus misericordiae suae, Sicut locutus est ad patres nostros, Abraham et semeni ejus in saecula.
 
 Source: [The Magnificat](https://www.ewtn.com/catholicism/devotions/magnificat-392)
+
+### Mary, the living Ark, brings Christ to Elizabeth, their joyous meeting inspiring the Magnificat—a hymn of divine love and humility
+
+[![Mary, the living Ark, brings Christ to Elizabeth, their joyous meeting inspiring the Magnificat—a hymn of divine love and humility](July/jpgs/TheVisitation_iM9fLIuR.jpg)](https://live.staticflickr.com/65535/48379549666_845e30610d_z.jpg "Mary, the living Ark, brings Christ to Elizabeth, their joyous meeting inspiring the Magnificat—a hymn of divine love and humility")
 
 ## July 10, 2025
 
