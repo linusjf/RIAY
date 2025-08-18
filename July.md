@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -116,7 +115,7 @@
   - [July 27, 2025](#july-27-2025)
     - [Mary is With Us](#mary-is-with-us)
     - [AI-Generated Summary: The Queen Mother and Her Divine Crown](#ai-generated-summary-the-queen-mother-and-her-divine-crown)
-    - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-vel%C3%A1zquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
+    - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-velázquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
   - [July 28, 2025](#july-28-2025)
     - [Praying With the Father](#praying-with-the-father)
     - [AI-Generated Summary: The Heart of Prayer as Communion with the Father](#ai-generated-summary-the-heart-of-prayer-as-communion-with-the-father)
@@ -133,11 +132,11 @@
     - [Eternal Exchange of Love](#eternal-exchange-of-love)
     - [AI-Generated Summary: The Divine Household and the Dance of Love](#ai-generated-summary-the-divine-household-and-the-dance-of-love)
     - [AI-Generated Image: A holy family bathed in divine light, where love moves in silent glances and sacred gestures](#ai-generated-image-a-holy-family-bathed-in-divine-light-where-love-moves-in-silent-glances-and-sacred-gestures)
+    - [A humble Baroque Nativity, where divine love dwells in the Holy Family, echoing the joyous dance of the Trinity (Stock Image)](#a-humble-baroque-nativity-where-divine-love-dwells-in-the-holy-family-echoing-the-joyous-dance-of-the-trinity-stock-image)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -746,3 +745,7 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
 ### AI-Generated Image: A holy family bathed in divine light, where love moves in silent glances and sacred gestures
 
 ![AI-Generated Image: A holy family bathed in divine light, where love moves in silent glances and sacred gestures](/July/jpgs/Day212Summary.jpg)
+
+### A humble Baroque Nativity, where divine love dwells in the Holy Family, echoing the joyous dance of the Trinity (Stock Image)
+
+[![A humble Baroque Nativity, where divine love dwells in the Holy Family, echoing the joyous dance of the Trinity](July/jpgs/Nativity_ffBFWZ2W.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "A humble Baroque Nativity, where divine love dwells in the Holy Family, echoing the joyous dance of the Trinity")
