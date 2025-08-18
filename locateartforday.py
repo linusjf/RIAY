@@ -25,9 +25,10 @@ from numpy.typing import NDArray
 from simtools import get_embedding, cosine_similarity
 from configconstants import ConfigConstants
 from configenv import ConfigEnv
-from dateutils import is_leap_year,get_month_and_day,validate_day_range
+from dateutils import get_month_and_day,validate_day_range
 from loggerutil import LoggerFactory
 from markdownhelper import strip_code_guards
+from artdownloader import is_stock_image_url
 
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
@@ -249,6 +250,7 @@ class ArtLocator:
 
                         if best_match:
                             best_match["cosine_score"] = best_score
+                            best_match["is_stock_image"] = is_stock_image_url(best_match["image_url"])
                             results.append(best_match)
                             continue  # Skip vector search if we found a good direct match
         else:

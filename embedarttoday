@@ -276,6 +276,7 @@ function process_db_artwork() {
   description="$(echo "$art_details" | jq '.description' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   image_filepath="$(echo "$art_details" | jq '.image_filepath' | sed 's/"//g' | sed 's/null//g')"
   image_url="$(echo "$art_details" | jq '.image_url' | sed 's/"//g' | sed 's/null//g')"
+  is_stock_image="$(echo "$art_details" | jq '.is_stock_image' | sed 's/"//g' | sed 's/null//g')"
 
   local target_dir="$month/jpgs"
   mkdir -p "$target_dir"
@@ -283,7 +284,7 @@ function process_db_artwork() {
   local target_file="${target_dir}/${filename}"
   cp "$image_filepath" "$target_file" || return $E_MISSING_FILE
   local markdown_content
-  markdown_content="$(generate_markdown "$description" "$target_file" "$image_url" "$month" "$day_num" true)"
+  markdown_content="$(generate_markdown "$description" "$target_file" "$image_url" "$month" "$day_num" "$is_stock_image")"
   append_to_day_file "$day_num" "$markdown_content" "$month"
   return 0
 }

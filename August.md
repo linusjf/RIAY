@@ -1,4 +1,5 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -35,6 +36,7 @@
     - [The Gift of Prayer](#the-gift-of-prayer)
     - [AI-Generated Summary: The Humble Heart of Prayer](#ai-generated-summary-the-humble-heart-of-prayer)
     - [AI-Generated Image: A soul's quiet prayer in abstract devotion](#ai-generated-image-a-souls-quiet-prayer-in-abstract-devotion)
+    - [Rembrandt’s portrayal of Mary visiting her cousin Elizabeth, both expecting miraculous children](#rembrandts-portrayal-of-mary-visiting-her-cousin-elizabeth-both-expecting-miraculous-children)
   - [August 08, 2025](#august-08-2025)
     - [Lingering in the Words](#lingering-in-the-words)
     - [AI-Generated Summary: The Silent Song of the Nativity](#ai-generated-summary-the-silent-song-of-the-nativity)
@@ -87,6 +89,7 @@
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -212,6 +215,10 @@ The second joyful mystery, the Visitation, calls to mind the blessed meeting of 
 ### AI-Generated Image: A soul's quiet prayer in abstract devotion
 
 ![AI-Generated Image: A soul's quiet prayer in abstract devotion](/August/jpgs/Day219Summary.jpg)
+
+### Rembrandt’s portrayal of Mary visiting her cousin Elizabeth, both expecting miraculous children
+
+[![Rembrandt’s portrayal of Mary visiting her cousin Elizabeth, both expecting miraculous children](August/jpgs/TheVisitation_BhgYbpdU.jpg)](https://live.staticflickr.com/65535/48379549666_845e30610d_z.jpg "Rembrandt’s portrayal of Mary visiting her cousin Elizabeth, both expecting miraculous children")
 
 ## August 08, 2025
 
