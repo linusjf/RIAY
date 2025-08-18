@@ -68,10 +68,43 @@ class ArtLocator:
         self.text_llm_base_url = config.get(ConfigConstants.TEXT_LLM_BASE_URL)
         self.text_llm_chat_endpoint = config.get(ConfigConstants.TEXT_LLM_CHAT_ENDPOINT)
         self.text_llm_model = config.get(ConfigConstants.TEXT_LLM_MODEL)
+        self.create_caption_prompt = config.get(ConfigConstants.CREATE_CAPTION_PROMPT)
         self.logger = LoggerFactory.get_logger(
             name=os.path.basename(__file__),
             log_to_file=config.get(ConfigConstants.LOGGING, False)
         )
+
+    def generate_caption(self, json_object: str, input_text: str) -> str:
+        """Generate a caption for an image record using the OpenAI API.
+        
+        Args:
+            json_object: JSON string containing artwork metadata
+            input_text: Text input describing the artwork
+            
+        Returns:
+            Generated caption string
+        """
+        prompt = self.create_caption_prompt.replace("{json_object}", json_object)
+        prompt = prompt.replace("{text_input}", input_text)
+        
+        client = openai.OpenAI(
+            api_key=self.text_llm_api_key,
+            base_url=self.text_llm_base_url
+        )
+
+        try:
+            response = client.chat.completions.create(
+                model=self.text_llm_model,
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.3
+            )
+            return str(response.choices[0].message.content).strip()
+        except Exception as e:
+            self.logger.error(f"Failed to generate caption: {e}")
+            return ""
 
     def get_query_vector(self, query_text: str) -> NDArray[np.float32]:
         """Generate OpenAI embedding (float32, correct dim)."""
