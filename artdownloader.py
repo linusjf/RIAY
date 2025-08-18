@@ -32,6 +32,20 @@ from loggerutil import LoggerFactory
 from PIL import Image
 from requests import Session
 
+def is_stock_photo_url(url: str) -> bool:
+    """Check if a URL is from a known stock photo site.
+    
+    Args:
+        url: The URL to check
+        
+    Returns:
+        bool: True if URL is from a stock photo site, False otherwise
+    """
+    domain = extract_domain_from_url(url)
+    if not domain:
+        return False
+    return any(site in domain for site in ArtDownloader.STOCK_PHOTO_SITES)
+
 class ArtDownloader:
     """Download artwork images from various sources."""
 
