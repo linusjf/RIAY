@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -66,6 +65,7 @@
   - [August 14, 2025](#august-14-2025)
     - [Entrusted to the Spirit](#entrusted-to-the-spirit)
     - [AI-Generated Summary: The Holy Spirit's Gentle Mastery](#ai-generated-summary-the-holy-spirits-gentle-mastery)
+    - [Mary's humble surrender to divine grace as the angel Gabriel announces her sacred role in God's plan](#marys-humble-surrender-to-divine-grace-as-the-angel-gabriel-announces-her-sacred-role-in-gods-plan)
   - [August 15, 2025](#august-15-2025)
     - [Shared With the Trinity](#shared-with-the-trinity)
     - [AI-Generated Summary: On Meditating the Glorious Mysteries](#ai-generated-summary-on-meditating-the-glorious-mysteries)
@@ -90,7 +90,6 @@
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -338,6 +337,10 @@ The text invites us not to glance, but to kneel before such scenes: to carry our
 To bring one’s intentions before the Holy Spirit is much like Mary’s surrender at the Annunciation, when she was overshadowed by divine power yet remained perfectly herself. In that holy paradox, we see how the Spirit neither crushes nor bypasses our will, but elevates it—turning fear into courage, wounds into healing, and stubborn hearts into vessels of grace. Forgiveness and conversion are not our achievements, but His gifts; not labored for, but received. The same wind that filled the Virgin’s humble _fiat_ now whispers to every soul that dares to say, _Be it done unto me_.
 
 (No artworks were described in the original text.)
+
+### Mary's humble surrender to divine grace as the angel Gabriel announces her sacred role in God's plan
+
+[![Mary's humble surrender to divine grace as the angel Gabriel announces her sacred role in God's plan](August/jpgs/annunciationvaneyck_vFnIQU6O.jpg)](https://i.pinimg.com/736x/dc/d2/0b/dcd20b9d34dfc34ecf40a2a862594715.jpg "Mary's humble surrender to divine grace as the angel Gabriel announces her sacred role in God's plan")
 
 ## August 15, 2025
 
