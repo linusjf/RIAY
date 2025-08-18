@@ -4,6 +4,7 @@
 
 1. Add script addsummaryimagestodays.
 1. Add unit tests using BATS.
+1. Integrate artdb into artdownloader.py
 
 ## Bugs/Issues
 
@@ -22,6 +23,6 @@
 1. Add check for stock image domains to locateartforday.py and embed it into json object.
 1. Generate fresh caption each time for image returned by locateartforday.py to prevent duplication of markdown headers which are then flagged by markdownlint.
 
-## Exploratory tasks
+## Exploratory task
 
 1. Related links feature.
