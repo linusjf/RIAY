@@ -90,6 +90,7 @@
   - [August 19, 2025](#august-19-2025)
     - [The Finding of Jesus and Baptism of Jesus](#the-finding-of-jesus-and-baptism-of-jesus)
     - [AI-Generated Summary: The Divine Child Among the Teachers](#ai-generated-summary-the-divine-child-among-the-teachers)
+    - [The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers (Stock Image)](#the-finding-of-the-child-jesus-in-the-temple-artist-unknown-subject-jesus-among-teachers-stock-image)
 
 <!---toc end-->
 
@@ -444,3 +445,7 @@ We are shown two sacred scenes, dear reader, each a window into the mystery of t
 The second, _The Baptism of Christ_, unfolds at the River Jordan, where John, the last of the prophets, pours water over the One who needs no cleansing. The heavens are rent asunder, the Spirit descends like a dove, and the Father’s voice thunders—not for His sake, but for ours—declaring, “This is my beloved Son.” In these moments, eternity breaks through time, and we glimpse, as through a glass darkly, the truth that has been from the beginning.
 
 As for the prayers that follow—repetitions of the _Hail Mary_ and _Glory Be_—they are like footsteps worn smooth by generations of pilgrims, each one a small act of love, a turning of the heart toward the Light.
+
+### The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers (Stock Image)
+
+[![The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers](August/jpgs/findingchildjesustemple.jpg)](https://i.pinimg.com/originals/05/b5/cb/05b5cb88d22881e39c99be78fee452a4.jpg "The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers")
