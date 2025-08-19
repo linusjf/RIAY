@@ -1,4 +1,5 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -86,10 +87,14 @@
     - [AI-Generated Summary: The Humble Majesty of the Nativity](#ai-generated-summary-the-humble-majesty-of-the-nativity)
     - [The Nativity, depicting the King of Heaven in a manger (Stock Image)](#the-nativity-depicting-the-king-of-heaven-in-a-manger-stock-image)
     - [The Presentation of Jesus in the Temple, Mary and Joseph fulfilling the Law (Stock Image)](#the-presentation-of-jesus-in-the-temple-mary-and-joseph-fulfilling-the-law-stock-image)
+  - [August 19, 2025](#august-19-2025)
+    - [The Finding of Jesus and Baptism of Jesus](#the-finding-of-jesus-and-baptism-of-jesus)
+    - [AI-Generated Summary: The Divine Child Among the Teachers](#ai-generated-summary-the-divine-child-among-the-teachers)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -425,3 +430,17 @@ These sacred scenes call us to recognize that the Eternal entered time, the Infi
 ### The Presentation of Jesus in the Temple, Mary and Joseph fulfilling the Law (Stock Image)
 
 [![The Presentation of Jesus in the Temple, Mary and Joseph fulfilling the Law](August/jpgs/presentationjesus.jpg)](https://w0.peakpx.com/wallpaper/399/564/HD-wallpaper-presentation-in-the-temple-presentation-joseph-anna-temple-simeon-mary-jesus.jpg "The Presentation of Jesus in the Temple, Mary and Joseph fulfilling the Law")
+
+## August 19, 2025
+
+### The Finding of Jesus and Baptism of Jesus
+
+[![The Finding of Jesus and Baptism of Jesus](/August/jpgs/Day231.jpg)](https://youtu.be/HEy1ZRUnb00 "The Finding of Jesus and Baptism of Jesus")
+
+### AI-Generated Summary: The Divine Child Among the Teachers
+
+We are shown two sacred scenes, dear reader, each a window into the mystery of the Incarnation. The first, _The Finding of the Child Jesus in the Temple_, presents the boy of twelve seated among the learned men, His young face alight with wisdom beyond His years, while His mother and foster-father search for Him with tender anxiety. Here is no mere youth, but the very Son of God, revealing Himself even then as the fulfillment of the Law.
+
+The second, _The Baptism of Christ_, unfolds at the River Jordan, where John, the last of the prophets, pours water over the One who needs no cleansing. The heavens are rent asunder, the Spirit descends like a dove, and the Father’s voice thunders—not for His sake, but for ours—declaring, “This is my beloved Son.” In these moments, eternity breaks through time, and we glimpse, as through a glass darkly, the truth that has been from the beginning.
+
+As for the prayers that follow—repetitions of the _Hail Mary_ and _Glory Be_—they are like footsteps worn smooth by generations of pilgrims, each one a small act of love, a turning of the heart toward the Light.
