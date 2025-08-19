@@ -270,7 +270,19 @@ class ReverseImageLookup:
                 source_url = urllib.parse.quote(source_url, safe=":/")
                 logger.info(f"Found source URL: {source_url}")
 
-        if not source_url:
+        # If source_url ends with .webp, upload the matching .jpg file instead
+        if source_url and source_url.lower().endswith('.webp'):
+            logger.info(f"Source URL is WebP format: {source_url}")
+            # Try to find matching JPG file
+            jpg_path = os.path.splitext(image)[0] + '.jpg'
+            if os.path.exists(jpg_path):
+                logger.info(f"Found matching JPG file: {jpg_path}")
+                source_url, _ = upload_to_imgbb(jpg_path)
+                logger.info(f"Uploaded JPG to imgbb: {source_url}")
+            else:
+                logger.warning(f"No matching JPG file found for {image}, using original WebP URL")
+                source_url, _ = upload_to_imgbb(image)
+        elif not source_url:
             source_url, _ = upload_to_imgbb(image)
 
         metadata_text: str = self.get_metadata_text(
