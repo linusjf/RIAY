@@ -270,17 +270,24 @@ class ReverseImageLookup:
                 source_url = urllib.parse.quote(source_url, safe=":/")
                 logger.info(f"Found source URL: {source_url}")
 
-        # If source_url ends with .webp, upload the matching .jpg file instead
-        if source_url and source_url.lower().endswith('.webp'):
-            logger.info(f"Source URL is WebP format: {source_url}")
-            # Try to find matching JPG file
-            jpg_path = os.path.splitext(image)[0] + '.jpg'
-            if os.path.exists(jpg_path):
-                logger.info(f"Found matching JPG file: {jpg_path}")
-                source_url, _ = upload_to_imgbb(jpg_path)
-                logger.info(f"Uploaded JPG to imgbb: {source_url}")
+        # If source_url doesn't end with jpeg or jpg, upload the matching file instead
+        if source_url and not (source_url.lower().endswith('.jpeg') or source_url.lower().endswith('.jpg')):
+            logger.info(f"Source URL is not JPEG format: {source_url}")
+            # Extract file extension from source URL
+            url_extension = os.path.splitext(source_url)[1].lower()
+            
+            # Try to find matching file with the same extension
+            if url_extension:
+                matching_path = os.path.splitext(image)[0] + url_extension
+                if os.path.exists(matching_path):
+                    logger.info(f"Found matching {url_extension} file: {matching_path}")
+                    source_url, _ = upload_to_imgbb(matching_path)
+                    logger.info(f"Uploaded {url_extension} to imgbb: {source_url}")
+                else:
+                    logger.warning(f"No matching {url_extension} file found for {image}, using original URL")
+                    source_url, _ = upload_to_imgbb(image)
             else:
-                logger.warning(f"No matching JPG file found for {image}, using original WebP URL")
+                logger.warning(f"No file extension found in source URL: {source_url}, using original image")
                 source_url, _ = upload_to_imgbb(image)
         elif not source_url:
             source_url, _ = upload_to_imgbb(image)
