@@ -273,22 +273,8 @@ class ReverseImageLookup:
         # If source_url doesn't end with jpeg or jpg, upload the matching file instead
         if source_url and not (source_url.lower().endswith('.jpeg') or source_url.lower().endswith('.jpg')):
             logger.info(f"Source URL is not JPEG format: {source_url}")
-            # Extract file extension from source URL
-            url_extension = os.path.splitext(source_url)[1].lower()
-            
-            # Try to find matching file with the same extension
-            if url_extension:
-                matching_path = os.path.splitext(image)[0] + url_extension
-                if os.path.exists(matching_path):
-                    logger.info(f"Found matching {url_extension} file: {matching_path}")
-                    source_url, _ = upload_to_imgbb(matching_path)
-                    logger.info(f"Uploaded {url_extension} to imgbb: {source_url}")
-                else:
-                    logger.warning(f"No matching {url_extension} file found for {image}, using original URL")
-                    source_url, _ = upload_to_imgbb(image)
-            else:
-                logger.warning(f"No file extension found in source URL: {source_url}, using original image")
-                source_url, _ = upload_to_imgbb(image)
+            source_url, _ = upload_to_imgbb(image)
+            logger.info(f"Uploaded {image} to imgbb: {source_url}")
         elif not source_url:
             source_url, _ = upload_to_imgbb(image)
 
