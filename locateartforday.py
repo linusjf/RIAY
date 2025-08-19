@@ -75,6 +75,66 @@ class ArtLocator:
             log_to_file=config.get(ConfigConstants.LOGGING, False)
         )
 
+    def get_matching_artworks_by_title_artist(self, title: str, artist: str = "") -> List[Dict[str, Any]]:
+        """Find artworks that match title and optionally artist."""
+        self.logger.info(f"Searching for artworks with title '{title}' and artist '{artist}'")
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        if artist:
+            query = """
+                SELECT record_id, artist, caption, date, day_number, description, image_filepath,
+                       image_url, location, medium, mystery_name, mystery_type, original_title,
+                       original_title_ISO_code, original_title_language, style, subject, title,
+                       embeddings
+                FROM art_records
+                WHERE (title LIKE ? OR title GLOB ?)
+                AND (artist LIKE ? OR artist GLOB ?)
+            """
+            cursor.execute(query, (
+                f"%{title}%",
+                f"*{title}*",
+                f"%{artist}%",
+                f"*{artist}*"
+            ))
+        else:
+            query = """
+                SELECT record_id, artist, caption, date, day_number, description, image_filepath,
+                       image_url, location, medium, mystery_name, mystery_type, original_title,
+                       original_title_ISO_code, original_title_language, style, subject, title,
+                       embeddings
+                FROM art_records
+                WHERE (title LIKE ? OR title GLOB ?)
+            """
+            cursor.execute(query, (
+                f"%{title}%",
+                f"*{title}*"
+            ))
+
+        rows = cursor.fetchall()
+        conn.close()
+        return [{
+            "record_id": row[0],
+            "artist": row[1],
+            "caption": row[2],
+            "date": row[3],
+            "day_number": row[4],
+            "description": row[5],
+            "image_filepath": row[6],
+            "image_url": row[7],
+            "location": row[8],
+            "medium": row[9],
+            "mystery_name": row[10],
+            "mystery_type": row[11],
+            "original_title": row[12],
+            "original_title_ISO_code": row[13],
+            "original_title_language": row[14],
+            "style": row[15],
+            "subject": row[16],
+            "title": row[17],
+            "embeddings": row[18]
+        } for row in rows]
+
     def generate_caption(self, json_object: str, input_text: str) -> str:
         """Generate a caption for an image record using the OpenAI API.
 
