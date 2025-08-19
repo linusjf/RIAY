@@ -6341,6 +6341,7 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
     - [The Finding of Jesus and Baptism of Jesus](#the-finding-of-jesus-and-baptism-of-jesus)
     - [AI-Generated Summary: The Divine Child Among the Teachers](#ai-generated-summary-the-divine-child-among-the-teachers)
     - [The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers (Stock Image)](#the-finding-of-the-child-jesus-in-the-temple-artist-unknown-subject-jesus-among-teachers-stock-image)
+    - [The Baptism of Christ, artist unknown, River Jordan, subject: Jesus baptized by John (Stock Image)](#the-baptism-of-christ-artist-unknown-river-jordan-subject-jesus-baptized-by-john-stock-image)
 
 <!---toc end-->
 
@@ -6698,7 +6699,11 @@ As for the prayers that followâ€”repetitions of the _Hail Mary_ and _Glory Be_â€
 
 ##### The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers (Stock Image)
 
-[![The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers](August/jpgs/findingchildjesustemple.jpg)](https://i.pinimg.com/originals/05/b5/cb/05b5cb88d22881e39c99be78fee452a4.jpg "The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers")
+[![The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers](August/jpgs/findingchildjesustemple.jpg)](https://i.pinimg.com/originals/fe/d2/2b/fed22bf94a99f695f3593d82157026ac.jpg "The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers")
+
+##### The Baptism of Christ, artist unknown, River Jordan, subject: Jesus baptized by John (Stock Image)
+
+[![The Baptism of Christ, artist unknown, River Jordan, subject: Jesus baptized by John](August/jpgs/baptismofchrist.jpg)](https://thebiblespeakstoyou.com/wp-content/uploads/2017/07/John-the-Baptist.jpg "The Baptism of Christ, artist unknown, River Jordan, subject: Jesus baptized by John")
 
 ## September
 
