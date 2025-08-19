@@ -69,7 +69,7 @@ def main():
 
         # 3. Perform reverse image lookup
         logger.info("Performing reverse image lookup...")
-        lookup = ReverseImageLookup(ReverseImageLookup.SEARCH_API.ZENSERP_API)
+        lookup = ReverseImageLookup(ReverseImageLookup.SEARCH_API.SERP_API)
         score = lookup.match_reverse_lookup(
             image_path,
             args.title,
