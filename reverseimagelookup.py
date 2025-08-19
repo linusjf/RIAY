@@ -261,22 +261,7 @@ class ReverseImageLookup:
                             location: Optional[str] = None, date: Optional[str] = None,
                             style: Optional[str] = None, medium: Optional[str] = None) -> float:
         """Core reverse lookup functionality."""
-        source_url: Optional[str] = None
-        # Check for corresponding url.txt file if no source_url provided
-        url_file: str = os.path.splitext(image)[0] + self.IMAGE_URL_FILE_EXTENSION
-        if os.path.exists(url_file):
-            with open(url_file, 'r', encoding='utf-8') as file:
-                source_url = file.read().strip()
-                source_url = urllib.parse.quote(source_url, safe=":/")
-                logger.info(f"Found source URL: {source_url}")
-
-        # If source_url doesn't end with jpeg or jpg, upload the matching file instead
-        if source_url and not (source_url.lower().endswith('.jpeg') or source_url.lower().endswith('.jpg')):
-            logger.info(f"Source URL is not JPEG format: {source_url}")
-            source_url, _ = upload_to_imgbb(image)
-            logger.info(f"Uploaded {image} to imgbb: {source_url}")
-        elif not source_url:
-            source_url, _ = upload_to_imgbb(image)
+        source_url, _ = upload_to_imgbb(image)
 
         metadata_text: str = self.get_metadata_text(
             title,
