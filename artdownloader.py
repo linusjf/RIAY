@@ -31,6 +31,7 @@ from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
 from PIL import Image
 from requests import Session
+from locateartforday import ArtLocator
 
 def is_stock_image_url(url: str) -> bool:
     """Check if a URL is from a known stock photo site.

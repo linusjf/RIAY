@@ -7,6 +7,7 @@ against metadata using Google Lens via SerpAPI and imgbb for image hosting.
 
 import argparse
 from enum import Enum, auto
+import urllib.parse
 import os
 import sys
 import time
@@ -64,11 +65,12 @@ class ReverseImageLookup:
 
     def verify_image_against_metadata(self, image_url: str, metadata_text: str) -> float:
         """Verify if image matches metadata using Google Lens."""
+        encoded_url = urllib.parse.quote(image_url, safe=":/")
         if self.search_api == self.SEARCH_API.SERP_API:
             parameters: Dict[str, Union[str, int]] = {
                 "engine": "google_lens",
                 "api_key": self.SERP_API_KEY,
-                "url": image_url,
+                "url": encoded_url,
                 "type": "visual_matches"
             }
             search: GoogleSearch = GoogleSearch(parameters)
@@ -99,18 +101,22 @@ class ReverseImageLookup:
                 "apikey": self.ZENSERP_API_KEY}
 
             params: Tuple[Tuple[str, str], ...] = (
-                ("image_url",image_url),
+                ("image_url",encoded_url),
                 ("hl", "en")
             )
 
+            logger.debug(f"Invoking {self.ZENSERP_API_ENDPOINT} with image_url {encoded_url}")
             response: requests.Response = requests.get(self.ZENSERP_API_ENDPOINT, headers=headers, params=params)
             json_response: str = response.text
+            logger.debug(f"{self.ZENSERP_API_ENDPOINT} response: {json_response}")
             data: Dict[str, Any] = json.loads(json_response)
             reverse_image_results: Dict[str, Any] = data["reverse_image_results"]
+            logger.debug(f"reverse image results: {reverse_image_results}")
             if not reverse_image_results:
                 logger.info("No reverse image results found")
                 return 0.0
             organic_results: Optional[List[Dict[str, Any]]] = reverse_image_results.get("organic")
+            logger.debug(f"organic results: {organic_results}")
             if not organic_results:
                 logger.info("No organic results found")
                 return 0.0
@@ -134,7 +140,7 @@ class ReverseImageLookup:
                     best_match = match
                     self.match_text = match_text
 
-            logger.info(f"Matched: {image_url} —> {best_match['url']}")
+            logger.info(f"Matched: {encoded_url} —> {best_match['url']}")
             return best_score
 
     def reverse_image_search(self, image_url: str, metadata_text: str) -> List[Tuple[str, float]]:
@@ -221,6 +227,7 @@ class ReverseImageLookup:
                                location: Optional[str] = None, date: Optional[str] = None,
                                style: Optional[str] = None, medium: Optional[str] = None) -> List[Tuple[str, float]]:
         """Perform reverse image lookup using a direct image URL."""
+        encoded_url = urllib.parse.quote(image_url, safe=":/")
         metadata_text: str = ", ".join(filter(None, [
             title,
             artist,
@@ -232,7 +239,7 @@ class ReverseImageLookup:
             clean_filename_text(image_url)
         ]))
 
-        qualifying_urls: List[Tuple[str, float]] = self.reverse_image_search(image_url, metadata_text)
+        qualifying_urls: List[Tuple[str, float]] = self.reverse_image_search(encoded_url, metadata_text)
         return qualifying_urls
 
     @staticmethod
@@ -260,6 +267,7 @@ class ReverseImageLookup:
         if os.path.exists(url_file):
             with open(url_file, 'r', encoding='utf-8') as file:
                 source_url = file.read().strip()
+                source_url = urllib.parse.quote(source_url, safe=":/")
                 logger.info(f"Found source URL: {source_url}")
 
         if not source_url:
