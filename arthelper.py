@@ -6,8 +6,7 @@ including URL validation, domain checking, and image processing.
 """
 
 import os
-import sys
-from typing import Optional, Callable, List, Tuple, Any, Iterable
+from typing import Optional, Callable, List, Tuple, Any
 import requests
 from PIL import Image
 
@@ -20,7 +19,7 @@ from loggerutil import LoggerFactory
 
 config = ConfigEnv(include_os_env=True)
 logger = LoggerFactory.get_logger(
-    name="arthelper",
+    name=os.path.basename(__file__),
     log_to_file=config.get(ConfigConstants.LOGGING, False)
 )
 

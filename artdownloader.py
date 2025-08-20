@@ -499,7 +499,7 @@ class ArtDownloader:
                 self.logger.info(f"Found matching records for title: {self.title} and artist: {self.artist}")
             else:
                 self.logger.info(f"Found matching records for title: {self.title}")
-            qualifying = []
+            qualifying_results = []
             for idx, result in enumerate(found_records):
                 embeddings = result.get("embeddings")
                 if embeddings:
@@ -507,10 +507,13 @@ class ArtDownloader:
                     score = cosine_similarity(embeddings_array, get_embedding(query))
                     if score >= THRESHOLDS["cosine"]:
                         self.logger.info(f"✅ Qualified result {idx+1} (score: {score:.3f})")
-                        qualifying.append((result, score))
+                        qualifying_results.append((result, score))
                     else:
                         self.logger.info(f"❌ Excluded result {idx+1} (score: {score:.3f})")
 
+            if not qualifying_results:
+                self.logger.error(f"No qualifying results found (score >= {THRESHOLDS['cosine']} )")
+                return False
         return False
 
     def _search_wikipedia_sources(self, wikimedia_query: str, enhanced_query: str) -> bool:
@@ -582,7 +585,7 @@ class ArtDownloader:
 
     def _print_all_search_results(self) -> None:
         """Print all search results with scores."""
-        all_results: List[Tuple[str, str, float]] = self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
+        all_results: List[Tuple[str, str, float]] = self.ARTDB_IMAGES + self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
         if all_results:
             print("\nAll search results (url, file, score):")
             for url, file, score in all_results:
@@ -590,7 +593,7 @@ class ArtDownloader:
 
     def _get_best_result(self) -> Optional[Tuple[str, str, float]]:
         """Find and return the best available result."""
-        all_results: List[Tuple[str, str, float]] = self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
+        all_results: List[Tuple[str, str, float]] = self.ARTDB_IMAGES + self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
         sorted_results: List[Tuple[str, str, float]] = sorted(all_results, key=lambda x: x[2], reverse=True)
 
         for url, file, score in sorted_results:
