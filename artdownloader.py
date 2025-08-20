@@ -35,6 +35,7 @@ from arthelper import (
     is_social_media_domain, is_stock_images_domain, process_url,
     filter_and_score_results, build_enhanced_query, build_wikimedia_query
 )
+from locateartforday import ArtLocator
 
 class ArtDownloader:
     """Download artwork images from various sources."""
@@ -84,6 +85,7 @@ class ArtDownloader:
         # Track downloaded URLs and results
         self.DOWNLOADED_URLS: Dict[str, str] = {}
         self.FOUND_STOCK_PHOTOS: Set[str] = set()
+        self.ARTDB_IMAGES: List[Tuple[str, str, float]] = []
         self.WIKIPEDIA_IMAGES: List[Tuple[str, str, float]] = []
         self.GOOGLE_IMAGES: List[Tuple[str, str, float]] = []
         self.DUCKDUCKGO_IMAGES: List[Tuple[str, str, float]] = []
@@ -488,6 +490,9 @@ class ArtDownloader:
                 return (filename, score)
         return (None, None)
 
+    def download_from_artdb(self, query: str, filename_base: str) -> bool:
+        return False
+
     def _search_wikipedia_sources(self, wikimedia_query: str, enhanced_query: str) -> bool:
         """Search Wikipedia-related sources for images."""
         downloaded_wikipedia_search: bool = self.download_image_from_wikipedia_article(
@@ -511,6 +516,13 @@ class ArtDownloader:
         )
         return any([downloaded_duckduckgo, downloaded_google])
 
+    def _search_artdb(self, enhanced_query: str) -> bool:
+        """Search art database for images."""
+        downloaded_artdb: bool = self.download_from_artdb(
+            enhanced_query, str(self.filename_base)
+        )
+        return downloaded_artdb
+
     async def download_all(self, query: str) -> bool:
         """Download images from all available sources."""
         if self.filename_base is None:
@@ -518,18 +530,21 @@ class ArtDownloader:
 
         enhanced_query: str = build_enhanced_query(query, self.title, self.artist, self.location,
                                                  self.date, self.style, self.medium, self.subject)
+        artdb_success: bool = False
         wikipedia_success: bool = False
+        other_sources_success: bool = False
 
-        if self.SEARCH_WIKIPEDIA:
+        if self.SEARCH_WIKIPEDIA and not artdb_success:
             wikimedia_query: str = build_wikimedia_query(query, self.title, self.artist,
                                                        self.date, self.location)
             self.logger.info(f"Searching wikis with simple query: {wikimedia_query}")
             wikipedia_success = self._search_wikipedia_sources(wikimedia_query, enhanced_query)
 
-        self.logger.info(f"Searching google and duckduckgo with enhanced query: {enhanced_query}")
-        other_sources_success: bool = self._search_other_sources(enhanced_query)
+        if not artdb_success:
+            self.logger.info(f"Searching google and duckduckgo with enhanced query: {enhanced_query}")
+            other_sources_success = self._search_other_sources(enhanced_query)
 
-        return any([wikipedia_success, other_sources_success])
+        return any([artdb_success, wikipedia_success, other_sources_success])
 
     def _print_downloaded_images(self) -> None:
         """Print list of downloaded images."""
