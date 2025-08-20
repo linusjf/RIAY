@@ -28,7 +28,7 @@ from configenv import ConfigEnv
 from dateutils import get_month_and_day,validate_day_range
 from loggerutil import LoggerFactory
 from markdownhelper import strip_code_guards
-from artdownloader import is_stock_image_url
+from arthelper import is_stock_image_url
 
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
@@ -80,7 +80,7 @@ class ArtLocator:
         self.logger.info(f"Searching for artworks with title '{title}' and artist '{artist}'")
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
-        
+
         if artist:
             query = """
                 SELECT record_id, artist, caption, date, day_number, description, image_filepath,

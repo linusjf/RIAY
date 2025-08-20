@@ -14,26 +14,23 @@ import time
 import argparse
 import shutil
 import logging
-from typing import Optional, Dict, List, Tuple, Any, Set, Callable
+from typing import Optional, Dict, List, Tuple, Any, Set
 
 import requests
 from duckduckgo_search import DDGS
 from duckduckgo_search.exceptions import RatelimitException
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 from serpapi import GoogleSearch
-from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, extract_domain_from_url, clean_filename
+from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, clean_filename
 from converterhelper import convert_to_jpeg
-from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
-from simtools import THRESHOLDS, compare_terms, MatchMode
+from simtools import THRESHOLDS
 from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
-from PIL import Image
-from requests import Session
 
 from arthelper import (
-    is_stock_image_url, get_extension_from_mime, url_has_query_parameters,
+     url_has_query_parameters,
     validate_url, check_image_size, check_image_dimensions, download_image_data,
     is_social_media_domain, is_stock_images_domain, process_url,
     filter_and_score_results, build_enhanced_query, build_wikimedia_query
@@ -519,12 +516,12 @@ class ArtDownloader:
         if self.filename_base is None:
             self.filename_base = query.replace(' ', '_')
 
-        enhanced_query: str = build_enhanced_query(query, self.title, self.artist, self.location, 
+        enhanced_query: str = build_enhanced_query(query, self.title, self.artist, self.location,
                                                  self.date, self.style, self.medium, self.subject)
         wikipedia_success: bool = False
 
         if self.SEARCH_WIKIPEDIA:
-            wikimedia_query: str = build_wikimedia_query(query, self.title, self.artist, 
+            wikimedia_query: str = build_wikimedia_query(query, self.title, self.artist,
                                                        self.date, self.location)
             self.logger.info(f"Searching wikis with simple query: {wikimedia_query}")
             wikipedia_success = self._search_wikipedia_sources(wikimedia_query, enhanced_query)

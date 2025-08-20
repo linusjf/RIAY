@@ -6,13 +6,12 @@ including URL validation, domain checking, and image processing.
 """
 
 import os
-from typing import Optional, Callable, List, Set, Tuple
-from requests import Session
+import sys
+from typing import Optional, Callable, List, Tuple, Any, Iterable
 import requests
 from PIL import Image
-import logging
 
-from htmlhelper import extract_domain_from_url, clean_filename_text
+from htmlhelper import extract_domain_from_url
 from sessionhelper import create_session_with_retries, exponential_backoff_with_jitter
 from simtools import compare_terms, MatchMode, THRESHOLDS
 from configenv import ConfigEnv
@@ -25,7 +24,7 @@ logger = LoggerFactory.get_logger(
     log_to_file=config.get(ConfigConstants.LOGGING, False)
 )
 
-def is_stock_image_url(url: str, stock_photo_sites: List[str]) -> bool:
+def is_stock_image_url(url: str) -> bool:
     """Check if a URL is from a known stock photo site.
 
     Args:
@@ -35,17 +34,20 @@ def is_stock_image_url(url: str, stock_photo_sites: List[str]) -> bool:
     Returns:
         bool: True if URL is from a stock photo site, False otherwise
     """
-    domain = extract_domain_from_url(url)
-    if not domain:
-        return False
-    return any(site in domain for site in stock_photo_sites)
+    stock_photo_sites = config.get(ConfigConstants.STOCK_PHOTO_SITES)
+    if stock_photo_sites:
+        domain = extract_domain_from_url(url)
+        if not domain:
+            return False
+        return any(site in domain for site in stock_photo_sites)
+    return False
 
 def get_extension_from_mime(mime_type: str) -> str:
     """Get file extension from MIME type.
-    
+
     Args:
         mime_type: The MIME type string
-        
+
     Returns:
         str: File extension with leading dot
     """
@@ -60,10 +62,10 @@ def get_extension_from_mime(mime_type: str) -> str:
 
 def url_has_query_parameters(url: str) -> bool:
     """Check if URL contains query parameters.
-    
+
     Args:
         url: The URL to check
-        
+
     Returns:
         bool: True if URL has query parameters, False otherwise
     """
@@ -71,10 +73,10 @@ def url_has_query_parameters(url: str) -> bool:
 
 def validate_url(url: str) -> bool:
     """Check if URL is valid for downloading.
-    
+
     Args:
         url: The URL to validate
-        
+
     Returns:
         bool: True if URL is valid, False otherwise
     """
@@ -93,11 +95,11 @@ def validate_url(url: str) -> bool:
 
 def check_image_size(url: str, max_image_bytes: int) -> bool:
     """Check if image size exceeds maximum allowed size before downloading.
-    
+
     Args:
         url: The image URL
         max_image_bytes: Maximum allowed file size in bytes
-        
+
     Returns:
         bool: True if image size is acceptable, False otherwise
     """
@@ -123,12 +125,12 @@ def check_image_size(url: str, max_image_bytes: int) -> bool:
 
 def check_image_dimensions(image_path: str, min_image_width: int, min_image_height: int) -> bool:
     """Check if image meets minimum dimension requirements.
-    
+
     Args:
         image_path: Path to the image file
         min_image_width: Minimum required width
         min_image_height: Minimum required height
-        
+
     Returns:
         bool: True if image meets dimension requirements, False otherwise
     """
@@ -148,12 +150,12 @@ def check_image_dimensions(image_path: str, min_image_width: int, min_image_heig
 
 def download_image_data(url: str, max_retries: int, max_image_bytes: int) -> Optional[Tuple[bytes, str]]:
     """Download image data from URL with retries.
-    
+
     Args:
         url: The image URL
         max_retries: Maximum number of retry attempts
         max_image_bytes: Maximum allowed file size
-        
+
     Returns:
         Optional[Tuple[bytes, str]]: Tuple of (image_data, file_extension) or None if failed
     """
@@ -193,11 +195,11 @@ def download_image_data(url: str, max_retries: int, max_image_bytes: int) -> Opt
 
 def is_social_media_domain(domain: str, social_media_sites: List[str]) -> bool:
     """Check if domain is a social media site.
-    
+
     Args:
         domain: The domain to check
         social_media_sites: List of social media site domains
-        
+
     Returns:
         bool: True if domain is a social media site, False otherwise
     """
@@ -205,11 +207,11 @@ def is_social_media_domain(domain: str, social_media_sites: List[str]) -> bool:
 
 def is_stock_images_domain(domain: str, stock_photo_sites: List[str]) -> bool:
     """Check if domain is a stock image site.
-    
+
     Args:
         domain: The domain to check
         stock_photo_sites: List of stock photo site domains
-        
+
     Returns:
         bool: True if domain is a stock image site, False otherwise
     """
@@ -251,13 +253,13 @@ def process_url(url: str, score: float,
 
 def filter_and_score_results(results: List[Any], extract_metadata_fn: Callable[[Any], str], query: str, threshold: float = THRESHOLDS["cosine"]) -> List[Tuple[Any, float]]:
     """Filter and score search results based on cosine similarity.
-    
+
     Args:
         results: List of search results
         extract_metadata_fn: Function to extract metadata from a result
         query: The search query
         threshold: Minimum similarity threshold
-        
+
     Returns:
         List[Tuple[Any, float]]: List of qualifying results with their scores
     """
@@ -266,17 +268,17 @@ def filter_and_score_results(results: List[Any], extract_metadata_fn: Callable[[
         metadata = extract_metadata_fn(result)
         score = compare_terms(query.lower(), metadata.lower(), MatchMode.COSINE)
         if score >= threshold:
-            print(f"✅ Qualified result {idx+1} (score: {score:.3f})", file=sys.stderr)
+            logger.info(f"✅ Qualified result {idx+1} (score: {score:.3f})")
             qualifying.append((result, score))
         else:
-            print(f"❌ Excluded result {idx+1} (score: {score:.3f})", file=sys.stderr)
+            logger.info(f"❌ Excluded result {idx+1} (score: {score:.3f})")
     return qualifying
 
-def build_enhanced_query(base_query: str, title: Optional[str], artist: Optional[str], 
-                        location: Optional[str], date: Optional[str], style: Optional[str], 
+def build_enhanced_query(base_query: str, title: Optional[str], artist: Optional[str],
+                        location: Optional[str], date: Optional[str], style: Optional[str],
                         medium: Optional[str], subject: Optional[str]) -> str:
     """Build an enhanced search query by combining base query with metadata.
-    
+
     Args:
         base_query: The base search query
         title: Artwork title
@@ -286,7 +288,7 @@ def build_enhanced_query(base_query: str, title: Optional[str], artist: Optional
         style: Artistic style
         medium: Art medium
         subject: Subject matter
-        
+
     Returns:
         str: Enhanced search query
     """
@@ -307,17 +309,17 @@ def build_enhanced_query(base_query: str, title: Optional[str], artist: Optional
         enhanced_query += f" {subject}"
     return enhanced_query
 
-def build_wikimedia_query(base_query: str, title: Optional[str], artist: Optional[str], 
+def build_wikimedia_query(base_query: str, title: Optional[str], artist: Optional[str],
                          date: Optional[str], location: Optional[str]) -> str:
     """Build a specialized query for Wikimedia searches.
-    
+
     Args:
         base_query: The base search query
         title: Artwork title
         artist: Artist name
         date: Creation date
         location: Artwork location
-        
+
     Returns:
         str: Wikimedia-optimized search query
     """
