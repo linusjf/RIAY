@@ -14,6 +14,7 @@ import time
 import argparse
 import shutil
 import logging
+import numpy as np
 from typing import Optional, Dict, List, Tuple, Any, Set
 
 import requests
@@ -28,7 +29,6 @@ from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
-import numpy as np
 
 from arthelper import (
      url_has_query_parameters,
@@ -37,6 +37,7 @@ from arthelper import (
     filter_and_score_results, build_enhanced_query, build_wikimedia_query
 )
 from locateartforday import ArtLocator
+from fileutils import copy_file
 
 class ArtDownloader:
     """Download artwork images from various sources."""
