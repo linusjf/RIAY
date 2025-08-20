@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -95,11 +94,12 @@
   - [August 20, 2025](#august-20-2025)
     - [The Wedding at Cana and Call to Conversion](#the-wedding-at-cana-and-call-to-conversion)
     - [AI-Generated Summary: The Divine Invitation at Cana and the Kingdom's Dawn](#ai-generated-summary-the-divine-invitation-at-cana-and-the-kingdoms-dawn)
+    - [Christ’s first miracle: water to wine at Cana, unveiling divine grace and the dawn of His redemptive work](#christs-first-miracle-water-to-wine-at-cana-unveiling-divine-grace-and-the-dawn-of-his-redemptive-work)
+    - [John the Baptist points to Christ, proclaiming the Kingdom as Jesus appears, revealing God's presence among humanity](#john-the-baptist-points-to-christ-proclaiming-the-kingdom-as-jesus-appears-revealing-gods-presence-among-humanity)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -471,3 +471,11 @@ Here we see two glimpses of the same great story—the Maker stepping into His o
 Then He steps forth, proclaiming the Kingdom not as a place or a theory, but as Himself—His presence, His words, His very flesh. The call to conversion is no stern demand but an invitation: come, be remade, enter into joy. Miracles follow not as proofs to silence doubters, but as the natural overflow of God walking among men.
 
 In these mysteries, we find the pattern of all divine work: the hidden made manifest, the human touched by the eternal, and the persistent whisper—"Turn to Me, and live."
+
+### Christ’s first miracle: water to wine at Cana, unveiling divine grace and the dawn of His redemptive work
+
+[![Christ’s first miracle: water to wine at Cana, unveiling divine grace and the dawn of His redemptive work](August/jpgs/MarriageCana_VbnFyIqy.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Gerard_David_-_The_Marriage_at_Cana.jpg/960px-Gerard_David_-_The_Marriage_at_Cana.jpg "Christ’s first miracle: water to wine at Cana, unveiling divine grace and the dawn of His redemptive work")
+
+### John the Baptist points to Christ, proclaiming the Kingdom as Jesus appears, revealing God's presence among humanity
+
+[![John the Baptist points to Christ, proclaiming the Kingdom as Jesus appears, revealing God's presence among humanity](August/jpgs/Apparition_kEMJBqom.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg/960px-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg "John the Baptist points to Christ, proclaiming the Kingdom as Jesus appears, revealing God's presence among humanity")
