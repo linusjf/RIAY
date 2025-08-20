@@ -20,7 +20,7 @@ import os
 import openai
 from pathlib import Path
 import sys
-from typing import cast, Literal, Dict, List, Any
+from typing import cast, Literal, Dict, List, Any, Optional
 from numpy.typing import NDArray
 from simtools import get_embedding, cosine_similarity
 from configconstants import ConfigConstants
@@ -75,13 +75,12 @@ class ArtLocator:
             log_to_file=config.get(ConfigConstants.LOGGING, False)
         )
 
-    def get_matching_artworks_by_title_artist(self, title: str, artist: str = "") -> List[Dict[str, Any]]:
+    def get_matching_artworks_by_title_artist(self, title: Optional[str], artist: Optional[str] = None) -> List[Dict[str, Any]]:
         """Find artworks that match title and optionally artist."""
-        self.logger.info(f"Searching for artworks with title '{title}' and artist '{artist}'")
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
 
-        if artist:
+        if artist and not artist == '':
             query = """
                 SELECT record_id, artist, caption, date, day_number, description, image_filepath,
                        image_url, location, medium, mystery_name, mystery_type, original_title,
@@ -91,6 +90,7 @@ class ArtLocator:
                 WHERE (title LIKE ? OR title GLOB ?)
                 AND (artist LIKE ? OR artist GLOB ?)
             """
+            self.logger.info(f"Searching for artworks in art database with title '{title}' and artist '{artist}'")
             cursor.execute(query, (
                 f"%{title}%",
                 f"*{title}*",
@@ -106,6 +106,7 @@ class ArtLocator:
                 FROM art_records
                 WHERE (title LIKE ? OR title GLOB ?)
             """
+            self.logger.info(f"Searching for artworks in art database with title '{title}'")
             cursor.execute(query, (
                 f"%{title}%",
                 f"*{title}*"

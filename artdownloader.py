@@ -491,6 +491,10 @@ class ArtDownloader:
         return (None, None)
 
     def download_from_artdb(self, query: str, filename_base: str) -> bool:
+        locator: ArtLocator = ArtLocator()
+        found_records: List[Dict[str, Any]] = locator.get_matching_artworks_by_title_artist(self.title,self.artist)
+        if found_records:
+            self.logger.info(f"Found matching records for title: {self.title} and artist: {self.artist}")
         return False
 
     def _search_wikipedia_sources(self, wikimedia_query: str, enhanced_query: str) -> bool:
@@ -530,7 +534,8 @@ class ArtDownloader:
 
         enhanced_query: str = build_enhanced_query(query, self.title, self.artist, self.location,
                                                  self.date, self.style, self.medium, self.subject)
-        artdb_success: bool = False
+
+        artdb_success: bool = self._search_artdb(enhanced_query)
         wikipedia_success: bool = False
         other_sources_success: bool = False
 
