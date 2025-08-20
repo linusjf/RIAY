@@ -23,11 +23,12 @@ from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_excep
 from serpapi import GoogleSearch
 from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, clean_filename
 from converterhelper import convert_to_jpeg
-from simtools import THRESHOLDS
+from simtools import THRESHOLDS, cosine_similarity, get_embedding
 from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
+import numpy as np
 
 from arthelper import (
      url_has_query_parameters,
@@ -498,6 +499,17 @@ class ArtDownloader:
                 self.logger.info(f"Found matching records for title: {self.title} and artist: {self.artist}")
             else:
                 self.logger.info(f"Found matching records for title: {self.title}")
+            qualifying = []
+            for idx, result in enumerate(found_records):
+                embeddings = result.get("embeddings")
+                if embeddings:
+                    embeddings_array = np.frombuffer(embeddings, dtype=np.float32)
+                    score = cosine_similarity(embeddings_array, get_embedding(query))
+                    if score >= THRESHOLDS["cosine"]:
+                        self.logger.info(f"✅ Qualified result {idx+1} (score: {score:.3f})")
+                        qualifying.append((result, score))
+                    else:
+                        self.logger.info(f"❌ Excluded result {idx+1} (score: {score:.3f})")
 
         return False
 
