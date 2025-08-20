@@ -494,7 +494,11 @@ class ArtDownloader:
         locator: ArtLocator = ArtLocator()
         found_records: List[Dict[str, Any]] = locator.get_matching_artworks_by_title_artist(self.title,self.artist)
         if found_records:
-            self.logger.info(f"Found matching records for title: {self.title} and artist: {self.artist}")
+            if self.artist:
+                self.logger.info(f"Found matching records for title: {self.title} and artist: {self.artist}")
+            else:
+                self.logger.info(f"Found matching records for title: {self.title}")
+
         return False
 
     def _search_wikipedia_sources(self, wikimedia_query: str, enhanced_query: str) -> bool:
