@@ -5,6 +5,8 @@
 1. Add script addsummaryimagestodays.
 1. Add unit tests using BATS.
 1. Integrate artdb into artdownloader.py
+   1.1 Add function to embedarttoday to check if image is from stock image website
+   1.2 Remember to save url to {file_basename}.url.txt to enable above.
 
 ## Bugs/Issues
 
