@@ -269,10 +269,10 @@ class ArtLocator:
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": prompt}
             ],
-            response_format={"type": "json_object"}
         )
 
         try:
+            self.logger.debug(response)
             content = strip_code_guards(str(response.choices[0].message.content), "json")
             self.logger.debug(f"Rosary mysteries: {content}")
             mysteries = json.loads(str(content))

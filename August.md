@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -100,11 +99,12 @@
   - [August 21, 2025](#august-21-2025)
     - [The Transfiguration and the Eucharist](#the-transfiguration-and-the-eucharist)
     - [AI-Generated Summary: The Radiant Glory and Sacred Feast](#ai-generated-summary-the-radiant-glory-and-sacred-feast)
+    - [Raphael's luminous Transfiguration: Christ radiant on the mountain, flanked by Moses, Elijah, as awe‑struck disciples watch](#raphaels-luminous-transfiguration-christ-radiant-on-the-mountain-flanked-by-moses-elijah-as-awestruck-disciples-watch)
+    - [Juan de Juanes' Last Supper: Christ breaks bread, offers cup, disciples gather, embodying the Institution of the Eucharist](#juan-de-juanes-last-supper-christ-breaks-bread-offers-cup-disciples-gather-embodying-the-institution-of-the-eucharist)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -500,3 +500,11 @@ In the fourth mystery, the Transfiguration, he paints for us the vision of Chris
 The fifth mystery, the Institution of the Eucharist, returns us to the humble upper room where the Lord breaks the bread and offers the cup, saying, “Take and eat… this is my body… this is my blood.” In these simple words lies the profound mystery of love made present, a sacrament that sustains the soul with the very life of Christ. The Father’s authority and the boundless creative love of the Son are affirmed, assuring us that the same love that raised the world now nourishes each believer.
 
 The meditation is interwoven with the ancient prayers of the Church—Hail Mary, Our Father, Glory Be—repeated with reverent devotion, echoing the timeless rhythm of worship. No specific artwork is described within the source, and thus none can be recounted. Yet the words themselves, like a well‑crafted tapestry, reveal the eternal truths that the luminous mysteries convey: the fulfillment of the Law, the authority of the Father, and the sustaining love of Christ for all who seek Him.
+
+### Raphael's luminous Transfiguration: Christ radiant on the mountain, flanked by Moses, Elijah, as awe‑struck disciples watch
+
+[![Raphael's luminous Transfiguration: Christ radiant on the mountain, flanked by Moses, Elijah, as awe‑struck disciples watch](August/jpgs/TransfigurationRaphael_6gtT3MAH.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Transfiguration_Raphael.jpg/960px-Transfiguration_Raphael.jpg "Raphael's luminous Transfiguration: Christ radiant on the mountain, flanked by Moses, Elijah, as awe‑struck disciples watch")
+
+### Juan de Juanes' Last Supper: Christ breaks bread, offers cup, disciples gather, embodying the Institution of the Eucharist
+
+[![Juan de Juanes' Last Supper: Christ breaks bread, offers cup, disciples gather, embodying the Institution of the Eucharist](August/jpgs/JuandeJuanesLastSupper_65H6rDq6.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/%C3%9Altima_Cena_-_Juan_de_Juanes.jpg/960px-%C3%9Altima_Cena_-_Juan_de_Juanes.jpg "Juan de Juanes' Last Supper: Christ breaks bread, offers cup, disciples gather, embodying the Institution of the Eucharist")
