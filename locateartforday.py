@@ -146,6 +146,7 @@ class ArtLocator:
         Returns:
             Generated caption string
         """
+        self.logger.debug(f"Create caption prompt: {self.create_caption_prompt}")
         prompt = self.create_caption_prompt.replace("{json_object}", json_object)
         prompt = prompt.replace("{text_input}", input_text)
 
@@ -155,12 +156,14 @@ class ArtLocator:
         )
 
         try:
-            response = client.chat.completions.create(
-                model=self.text_llm_model,
-                messages=[
+            messages: List = [
                     {"role": "system", "content": "You are a helpful assistant."},
                     {"role": "user", "content": prompt}
-                ],
+                ]
+            self.logger.debug(f"messages: {messages}")
+            response = client.chat.completions.create(
+                model=self.text_llm_model,
+                messages=messages,
                 temperature=self.temperature
             )
             return str(response.choices[0].message.content).strip('"')
