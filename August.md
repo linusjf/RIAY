@@ -1,4 +1,5 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -96,10 +97,14 @@
     - [AI-Generated Summary: The Divine Invitation at Cana and the Kingdom's Dawn](#ai-generated-summary-the-divine-invitation-at-cana-and-the-kingdoms-dawn)
     - [Christ’s first miracle: water to wine at Cana, unveiling divine grace and the dawn of His redemptive work](#christs-first-miracle-water-to-wine-at-cana-unveiling-divine-grace-and-the-dawn-of-his-redemptive-work)
     - [John the Baptist points to Christ, proclaiming the Kingdom as Jesus appears, revealing God's presence among humanity](#john-the-baptist-points-to-christ-proclaiming-the-kingdom-as-jesus-appears-revealing-gods-presence-among-humanity)
+  - [August 21, 2025](#august-21-2025)
+    - [The Transfiguration and the Eucharist](#the-transfiguration-and-the-eucharist)
+    - [AI-Generated Summary: The Radiant Glory and Sacred Feast](#ai-generated-summary-the-radiant-glory-and-sacred-feast)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -479,3 +484,19 @@ In these mysteries, we find the pattern of all divine work: the hidden made mani
 ### John the Baptist points to Christ, proclaiming the Kingdom as Jesus appears, revealing God's presence among humanity
 
 [![John the Baptist points to Christ, proclaiming the Kingdom as Jesus appears, revealing God's presence among humanity](August/jpgs/Apparition_kEMJBqom.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg/960px-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg "John the Baptist points to Christ, proclaiming the Kingdom as Jesus appears, revealing God's presence among humanity")
+
+## August 21, 2025
+
+### The Transfiguration and the Eucharist
+
+[![The Transfiguration and the Eucharist](/August/jpgs/Day233.jpg)](https://youtu.be/1hG4xrAnJdw "The Transfiguration and the Eucharist")
+
+### AI-Generated Summary: The Radiant Glory and Sacred Feast
+
+Father Mark Mary, a humble friar of the Franciscan Renewal, invites the faithful to contemplate the fourth and fifth of the Luminous Mysteries, drawing us into the very heart of the Christian mystery.
+
+In the fourth mystery, the Transfiguration, he paints for us the vision of Christ, radiant upon the lofty mountain, His countenance shining like the sun. Before the astonished eyes of Peter, James, and John, the ancient prophets Moses and Elijah stand as witnesses, and a voice from heaven proclaims, “This is my beloved Son; listen to Him.” The scene reminds us that the law and the prophets find their fulfilment in the living Word, and that divine revelation beckons us to heed the Teacher’s call.
+
+The fifth mystery, the Institution of the Eucharist, returns us to the humble upper room where the Lord breaks the bread and offers the cup, saying, “Take and eat… this is my body… this is my blood.” In these simple words lies the profound mystery of love made present, a sacrament that sustains the soul with the very life of Christ. The Father’s authority and the boundless creative love of the Son are affirmed, assuring us that the same love that raised the world now nourishes each believer.
+
+The meditation is interwoven with the ancient prayers of the Church—Hail Mary, Our Father, Glory Be—repeated with reverent devotion, echoing the timeless rhythm of worship. No specific artwork is described within the source, and thus none can be recounted. Yet the words themselves, like a well‑crafted tapestry, reveal the eternal truths that the luminous mysteries convey: the fulfillment of the Law, the authority of the Father, and the sustaining love of Christ for all who seek Him.
