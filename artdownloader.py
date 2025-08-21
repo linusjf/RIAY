@@ -5,6 +5,7 @@ This script searches for artwork images from multiple sources including:
 - DuckDuckGo
 - Wikimedia Commons
 - Google
+- Internal art database art.db
 """
 
 import asyncio
@@ -61,6 +62,7 @@ class ArtDownloader:
     MIN_IMAGE_HEIGHT: int = config.get(ConfigConstants.MIN_IMAGE_HEIGHT, 0)
     SEARCH_WIKIPEDIA: bool = config.get(ConfigConstants.SEARCH_WIKIPEDIA, True)
     MAX_RETRIES: int = config.get(ConfigConstants.CURL_MAX_RETRIES, 5)
+    USE_ART_DATABASE: bool = config.get(ConfigConstants.USE_ART_DATABASE, True)
 
     def __init__(self, params: Optional[Dict[str, str]] = None) -> None:
         # Initialize artwork metadata fields
@@ -573,9 +575,12 @@ class ArtDownloader:
         enhanced_query: str = build_enhanced_query(query, self.title, self.artist, self.location,
                                                  self.date, self.style, self.medium, self.subject)
 
-        artdb_success: bool = self._search_artdb(enhanced_query)
+        artdb_success: bool = False
         wikipedia_success: bool = False
         other_sources_success: bool = False
+
+        if self.USE_ART_DATABASE:
+            artdb_success = self._search_artdb(enhanced_query)
 
         if self.SEARCH_WIKIPEDIA and not artdb_success:
             wikimedia_query: str = build_wikimedia_query(query, self.title, self.artist,
