@@ -76,6 +76,31 @@ function validate_arguments() {
   fi
 }
 
+function is_stock_photo_site() {
+  local url="$1"
+  local domain
+  
+  # Extract domain from URL
+  if [[ "$url" =~ ^https?://([^/]+) ]]; then
+    domain="${BASH_REMATCH[1]}"
+  else
+    # If it's not a full URL, assume it's already a domain
+    domain="$url"
+  fi
+  
+  # Remove www. prefix if present
+  domain="${domain#www.}"
+  
+  # Check if domain matches any stock photo site
+  for stock_site in "${STOCK_PHOTO_SITES[@]}"; do
+    if [[ "$domain" == "$stock_site" ]] || [[ "$domain" == *".$stock_site" ]]; then
+      return 0  # true - it's a stock photo site
+    fi
+  done
+  
+  return 1  # false - not a stock photo site
+}
+
 function parse_artdownloader_output() {
   local output="$1"
   local best_selected_image=""
@@ -226,6 +251,12 @@ function process_artwork() {
         source_url=$(cat "$url_file")
       else
         err "No companion URL file found"
+      fi
+
+      # Check if source URL is from a stock photo site
+      if [[ -n "$source_url" ]] && is_stock_photo_site "$source_url"; then
+        is_stock_image=true
+        err "Source URL is from stock photo site: $source_url"
       fi
 
       local target_dir="$month/jpgs"
