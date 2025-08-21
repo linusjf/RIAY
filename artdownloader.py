@@ -493,6 +493,7 @@ class ArtDownloader:
         return (None, None)
 
     def download_from_artdb(self, query: str, filename_base: str) -> bool:
+        success: bool = False
         locator: ArtLocator = ArtLocator()
         found_records: List[Dict[str, Any]] = locator.get_matching_artworks_by_title_artist(self.title,self.artist)
         if found_records:
@@ -514,8 +515,25 @@ class ArtDownloader:
 
             if not qualifying_results:
                 self.logger.error(f"No qualifying results found (score >= {THRESHOLDS['cosine']} )")
-                return False
-        return False
+                return success
+
+            for idx, (record, score) in enumerate(qualifying_results):
+                url: str = str(record.get("image_url"))
+                image_path: str = str(record.get("image_filepath"))
+                self.logger.info(f"Copying image for qualified image {idx+1}: {url} {image_path}")
+                unique_filename: str = f"{filename_base}_{idx+1}"
+                filename: str = os.path.join(
+                    self.SAVE_DIR,
+                    f"{unique_filename}_artdb.jpg"
+                )
+                if copy_file(image_path, filename):
+                    self.ARTDB_IMAGES.append((url, filename, score))
+                    url_filename: str = os.path.splitext(filename)[0] + ".url.txt"
+                    with open(url_filename, "w") as url_file:
+                        url_file.write(url)
+                    success = True
+
+        return success
 
     def _search_wikipedia_sources(self, wikimedia_query: str, enhanced_query: str) -> bool:
         """Search Wikipedia-related sources for images."""
