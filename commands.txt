@@ -1,4 +1,4 @@
 # commands
 #embedarttoday 199
-addvideo "1hG4xrAnJdw" "The Transfiguration and the Eucharist"
+addvideo "XKg7YILYBkc" "The Audacity of Christian Art: The Problem with Christ"
 lint

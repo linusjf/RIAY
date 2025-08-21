@@ -79,7 +79,7 @@ function validate_arguments() {
 function is_stock_photo_site() {
   local url="$1"
   local domain
-  
+
   # Extract domain from URL
   if [[ "$url" =~ ^https?://([^/]+) ]]; then
     domain="${BASH_REMATCH[1]}"
@@ -87,18 +87,18 @@ function is_stock_photo_site() {
     # If it's not a full URL, assume it's already a domain
     domain="$url"
   fi
-  
+
   # Remove www. prefix if present
   domain="${domain#www.}"
-  
+
   # Check if domain matches any stock photo site
   for stock_site in "${STOCK_PHOTO_SITES[@]}"; do
     if [[ "$domain" == "$stock_site" ]] || [[ "$domain" == *".$stock_site" ]]; then
-      return 0  # true - it's a stock photo site
+      return 0 # true - it's a stock photo site
     fi
   done
-  
-  return 1  # false - not a stock photo site
+
+  return 1 # false - not a stock photo site
 }
 
 function parse_artdownloader_output() {
@@ -218,11 +218,6 @@ function process_artwork() {
   local best_selected_image
   best_selected_image=$(parse_artdownloader_output "$downloader_output")
   local is_stock_image=false
-
-  if [[ "$best_selected_image" == *"best_result"* ]]; then
-    is_stock_image=true
-    err "Selected image is from stock image site"
-  fi
 
   local jsonresult
 
