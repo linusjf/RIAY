@@ -1,4 +1,4 @@
 # commands
 #embedarttoday 199
-addvideo "XKg7YILYBkc" "The Audacity of Christian Art: The Problem with Christ"
+addvideo "sTXn0uTJLsM" "The Agony in the Garden and the Scourging"
 lint

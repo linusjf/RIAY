@@ -1,4 +1,5 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -101,10 +102,16 @@
     - [AI-Generated Summary: The Radiant Glory and Sacred Feast](#ai-generated-summary-the-radiant-glory-and-sacred-feast)
     - [Raphael's luminous Transfiguration: Christ radiant on the mountain, flanked by Moses, Elijah, as awe‑struck disciples watch](#raphaels-luminous-transfiguration-christ-radiant-on-the-mountain-flanked-by-moses-elijah-as-awestruck-disciples-watch)
     - [Juan de Juanes' Last Supper: Christ breaks bread, offers cup, disciples gather, embodying the Institution of the Eucharist](#juan-de-juanes-last-supper-christ-breaks-bread-offers-cup-disciples-gather-embodying-the-institution-of-the-eucharist)
+  - [August 22, 2025](#august-22-2025)
+    - [The Agony in the Garden and the Scourging](#the-agony-in-the-garden-and-the-scourging)
+    - [AI-Generated Summary: Year‑Long Rosary Journey](#ai-generated-summary-yearlong-rosary-journey)
+    - [Agony in the Garden by Vicente Juan Masip, 16th century, oil on panel, Museo del Prado, Madrid, Jesus praying Gethsemane](#agony-in-the-garden-by-vicente-juan-masip-16th-century-oil-on-panel-museo-del-prado-madrid-jesus-praying-gethsemane)
+    - [Caravaggio’s 1607 oil on canvas, The Flagellation of Christ, at Capodimonte Museum, Naples, depicts Christ scourged at the pillar](#caravaggios-1607-oil-on-canvas-the-flagellation-of-christ-at-capodimonte-museum-naples-depicts-christ-scourged-at-the-pillar)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -508,3 +515,25 @@ The meditation is interwoven with the ancient prayers of the Church—Hail Mar
 ### Juan de Juanes' Last Supper: Christ breaks bread, offers cup, disciples gather, embodying the Institution of the Eucharist
 
 [![Juan de Juanes' Last Supper: Christ breaks bread, offers cup, disciples gather, embodying the Institution of the Eucharist](August/jpgs/JuandeJuanesLastSupper_65H6rDq6.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/%C3%9Altima_Cena_-_Juan_de_Juanes.jpg/960px-%C3%9Altima_Cena_-_Juan_de_Juanes.jpg "Juan de Juanes' Last Supper: Christ breaks bread, offers cup, disciples gather, embodying the Institution of the Eucharist")
+
+## August 22, 2025
+
+### The Agony in the Garden and the Scourging
+
+[![The Agony in the Garden and the Scourging](/August/jpgs/Day234.jpg)](https://youtu.be/sTXn0uTJLsM "The Agony in the Garden and the Scourging")
+
+### AI-Generated Summary: Year‑Long Rosary Journey
+
+Father Mark Mary, a Franciscan Friar of Renewal, invites the faithful to deepen their bond with Jesus and Mary through a meticulously crafted year‑long rosary plan. Each month is divided into daily mysteries, and listeners are encouraged to download an outline to track their progress, aided by a companion app that offers full‑length rosary recordings and daily reflections.
+
+The first two sorrowful mysteries—Jesus’ agony in the garden and the scourging at the pillar—are highlighted. Father Mark Mary guides believers to contemplate the self‑sacrificial love of Christ, urging a heartfelt gratitude and openness to the Holy Spirit. He stresses the need for prayerful reflection on the cost of the Passion and invites all to receive the gift of divine love and sacrifice.
+
+The message underscores the spiritual fruits of regular rosary devotion: growth in faith, a wellspring of grace, and a profound connection with the divine. Daily scripture readings, saintly reflections, and images of sacred art enrich the meditative experience, while a continuous invocation to the Virgin Mary and Jesus seeks her intercession, mercy, and blessing, weaving themes of devotion, forgiveness, and gratitude throughout.
+
+### Agony in the Garden by Vicente Juan Masip, 16th century, oil on panel, Museo del Prado, Madrid, Jesus praying Gethsemane
+
+[![Agony in the Garden by Vicente Juan Masip, 16th century, oil on panel, Museo del Prado, Madrid, Jesus praying Gethsemane](August/jpgs/AgonyintheGarden_OKZyoTpn.jpg)](https://www.museodelprado.es/en/the-collection/art-work/agony-in-the-garden/323edcfd-701e-403f-b27a-9c9d5c656e58 "Agony in the Garden by Vicente Juan Masip, 16th century, oil on panel, Museo del Prado, Madrid, Jesus praying Gethsemane")
+
+### Caravaggio’s 1607 oil on canvas, The Flagellation of Christ, at Capodimonte Museum, Naples, depicts Christ scourged at the pillar
+
+[![Caravaggio’s 1607 oil on canvas, The Flagellation of Christ, at Capodimonte Museum, Naples, depicts Christ scourged at the pillar](August/jpgs/Flagellation_DHOza90y.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/The_Flagellation_of_Christ-Caravaggio_%281607%29.jpg/960px-The_Flagellation_of_Christ-Caravaggio_%281607%29.jpg "Caravaggio’s 1607 oil on canvas, The Flagellation of Christ, at Capodimonte Museum, Naples, depicts Christ scourged at the pillar")
