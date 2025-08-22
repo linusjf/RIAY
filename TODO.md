@@ -4,8 +4,6 @@
 
 1. Add script addsummaryimagestodays.
 1. Add unit tests using BATS.
-1. Integrate artdb into artdownloader.py
-   1.1 Remember to save url to {file_basename}.url.txt to enable above.
 
 ## Bugs/Issues
 
@@ -17,10 +15,8 @@
    1.1 Convert requests to httpx
    1.2 Convert python scripts to async
    1.3 Create configurator object for httpx retry logic using values from config.env
-1. Use augmented art details to search especially Wiki in original language of artwork title. (Better results/matches?)
-   1.1 Search using original_title and language on wikis.
-   1.2 Use original_title to search for images on google and duckduckgo. (2 separate searches or integrated?)
 1. Fix for wikimedia site down. Right now, hangs.
+1. Convert complex prompts to json prompts.
 
 ## Exploratory task
 
