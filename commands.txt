@@ -1,4 +1,4 @@
 # commands
 #embedarttoday 199
-addvideo "sTXn0uTJLsM" "The Agony in the Garden and the Scourging"
+addvideo "3sAPltXRM-I" "The Crowning with Thorns and the Carrying of the Cross"
 lint

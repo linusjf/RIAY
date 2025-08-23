@@ -6357,6 +6357,11 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
     - [AI-Generated Summary: Year‑Long Rosary Journey](#ai-generated-summary-yearlong-rosary-journey)
     - [Agony in the Garden by Vicente Juan Masip, 16th century, oil on panel, Museo del Prado, Madrid, Jesus praying Gethsemane](#agony-in-the-garden-by-vicente-juan-masip-16th-century-oil-on-panel-museo-del-prado-madrid-jesus-praying-gethsemane)
     - [Caravaggio’s 1607 oil on canvas, The Flagellation of Christ, at Capodimonte Museum, Naples, depicts Christ scourged at the pillar](#caravaggios-1607-oil-on-canvas-the-flagellation-of-christ-at-capodimonte-museum-naples-depicts-christ-scourged-at-the-pillar)
+  - [August 23, 2025](#august-23-2025)
+    - [The Crowning with Thorns and the Carrying of the Cross](#the-crowning-with-thorns-and-the-carrying-of-the-cross)
+    - [AI-Generated Summary: The Rosary as a Journey of Bearing the Cross](#ai-generated-summary-the-rosary-as-a-journey-of-bearing-the-cross)
+    - [Anthony van Dyck, 17th-century oil on canvas, The Crowning with Thorns, depicting Christ crowned with thorns, Museo del Prado, Madrid](#anthony-van-dyck-17th-century-oil-on-canvas-the-crowning-with-thorns-depicting-christ-crowned-with-thorns-museo-del-prado-madrid)
+    - [Christ Carrying the Cross, Orazio Gentileschi, 1605, oil on canvas, Baroque depiction of Christ bearing the cross](#christ-carrying-the-cross-orazio-gentileschi-1605-oil-on-canvas-baroque-depiction-of-christ-bearing-the-cross)
 
 <!---toc end-->
 
@@ -6787,6 +6792,28 @@ The message underscores the spiritual fruits of regular rosary devotion: growth 
 ##### Caravaggio’s 1607 oil on canvas, The Flagellation of Christ, at Capodimonte Museum, Naples, depicts Christ scourged at the pillar
 
 [![Caravaggio’s 1607 oil on canvas, The Flagellation of Christ, at Capodimonte Museum, Naples, depicts Christ scourged at the pillar](August/jpgs/Flagellation_DHOza90y.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/The_Flagellation_of_Christ-Caravaggio_%281607%29.jpg/960px-The_Flagellation_of_Christ-Caravaggio_%281607%29.jpg "Caravaggio’s 1607 oil on canvas, The Flagellation of Christ, at Capodimonte Museum, Naples, depicts Christ scourged at the pillar")
+
+#### August 23, 2025
+
+##### The Crowning with Thorns and the Carrying of the Cross
+
+[![The Crowning with Thorns and the Carrying of the Cross](August/jpgs/Day235.jpg)](https://youtu.be/3sAPltXRM-I "The Crowning with Thorns and the Carrying of the Cross")
+
+##### AI-Generated Summary: The Rosary as a Journey of Bearing the Cross
+
+Father Mark Mary of the Friars of the Renewal invites us into a quiet pilgrimage of prayer. He teaches that the rosary is not a mere repetition of words, but a map that leads each month through the mysteries of Christ’s life. In particular he draws our attention to the third and fourth sorrowful mysteries, where the Crown of Thorns reminds us that the true king was mocked and clothed in purple, yet he moved forward toward the triumph of the Resurrection. The image of Jesus carrying the cross, free of resentment, invites us to remember the companions on the road—especially Simon—and to see the journey as a meeting with the Savior.
+
+He exhorts us to accept our own burdens, to carry our crosses with the humility and love that Christ himself displayed, and to ask the Holy Spirit for strength in our prayers. The session closes with a heartfelt invocation, urging a sincere commitment to this spiritual practice.
+
+The text itself is a reverent, repetitive liturgy that continually calls upon the Virgin Mary, Christ, and the Lord for intercession, forgiveness, and salvation. It repeatedly asks for mercy and protection from sin, guiding us toward eternal life and encouraging us to seek divine guidance and deliverance from suffering. The passage ends with a warm farewell, expressing gratitude for the shared journey and a desire to continue it together tomorrow.
+
+##### Anthony van Dyck, 17th-century oil on canvas, The Crowning with Thorns, depicting Christ crowned with thorns, Museo del Prado, Madrid
+
+[![Anthony van Dyck, 17th-century oil on canvas, The Crowning with Thorns, depicting Christ crowned with thorns, Museo del Prado, Madrid](August/jpgs/crowningthornsvandyck17th_q9BwYI6z.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Anthonis_van_Dyck_004.jpg/960px-Anthonis_van_Dyck_004.jpg "Anthony van Dyck, 17th-century oil on canvas, The Crowning with Thorns, depicting Christ crowned with thorns, Museo del Prado, Madrid")
+
+##### Christ Carrying the Cross, Orazio Gentileschi, 1605, oil on canvas, Baroque depiction of Christ bearing the cross
+
+[![Christ Carrying the Cross, Orazio Gentileschi, 1605, oil on canvas, Baroque depiction of Christ bearing the cross](August/jpgs/christcarryingthecross_r2LwBgXp.jpg)](https://www.artchive.com/wp-content/uploads/2024/08/christ-carrying-the-cross-orazio-gentileschi-1605.jpg "Christ Carrying the Cross, Orazio Gentileschi, 1605, oil on canvas, Baroque depiction of Christ bearing the cross")
 
 ## September
 
