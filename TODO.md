@@ -18,5 +18,3 @@
 1. Fix for wikimedia site down. Right now, hangs.
 
 ## Exploratory task
-
-1. Related links feature.
