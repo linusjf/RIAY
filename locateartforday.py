@@ -82,7 +82,7 @@ class ArtLocator:
 
         if artist and not artist == '':
             query = """
-                SELECT record_id, artist, caption, date, day_number, description, image_filepath,
+                SELECT record_id, artist, caption, date, day_num, description, image_filepath,
                        image_url, location, medium, mystery_name, mystery_type, original_title,
                        original_title_ISO_code, original_title_language, style, subject, title,
                        embeddings
@@ -99,7 +99,7 @@ class ArtLocator:
             ))
         else:
             query = """
-                SELECT record_id, artist, caption, date, day_number, description, image_filepath,
+                SELECT record_id, artist, caption, date, day_num, description, image_filepath,
                        image_url, location, medium, mystery_name, mystery_type, original_title,
                        original_title_ISO_code, original_title_language, style, subject, title,
                        embeddings
@@ -119,7 +119,7 @@ class ArtLocator:
             "artist": row[1],
             "caption": row[2],
             "date": row[3],
-            "day_number": row[4],
+            "day_num": row[4],
             "description": row[5],
             "image_filepath": row[6],
             "image_url": row[7],
@@ -184,7 +184,7 @@ class ArtLocator:
         cursor = conn.cursor()
         placeholders = ",".join("?" for _ in record_ids)
         cursor.execute(
-            f"SELECT record_id, artist, caption, date, day_number, description, image_filepath, "
+            f"SELECT record_id, artist, caption, date, day_num, description, image_filepath, "
             f"image_url, location, medium, mystery_name, mystery_type, original_title, "
             f"original_title_ISO_code, original_title_language, style, subject, title "
             f"FROM art_records WHERE record_id IN ({placeholders})",
@@ -198,7 +198,7 @@ class ArtLocator:
                 "artist": row[1],
                 "caption": row[2],
                 "date": row[3],
-                "day_number": row[4],
+                "day_num": row[4],
                 "description": row[5],
                 "image_filepath": row[6],
                 "image_url": row[7],
@@ -221,7 +221,7 @@ class ArtLocator:
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         query = """
-            SELECT record_id, artist, caption, date, day_number, description, image_filepath,
+            SELECT record_id, artist, caption, date, day_num, description, image_filepath,
                    image_url, location, medium, mystery_name, mystery_type, original_title,
                    original_title_ISO_code, original_title_language, style, subject, title
             FROM art_records
@@ -241,7 +241,7 @@ class ArtLocator:
             "artist": row[1],
             "caption": row[2],
             "date": row[3],
-            "day_number": row[4],
+            "day_num": row[4],
             "description": row[5],
             "image_filepath": row[6],
             "image_url": row[7],

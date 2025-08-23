@@ -115,13 +115,15 @@ class ImageMetadataExtractor:
                 self.logger.info(f"Processing batch {batch_num}/{total_batches} (records {batch_start}-{batch_end})")
                 self.logger.debug(f"Input batch {batch_num} data:\n{json.dumps(batch, indent=2)}")
 
+                prompt = self.augment_meta_data_prompt
+                prompt = prompt.replace("{artworks_array}", json.dumps(batch))
+                self.logger.debug(f"prompt: {prompt}")
                 response = self.client.chat.completions.create(
                     model=self.text_llm_model,
                     messages=[
-                        {"role": "system", "content": self.augment_meta_data_prompt},
-                        {"role": "user", "content": json.dumps(batch)}
+                        {"role": "system", "content": "You are a helpful assistant with knowledge of Christian art and theology."},
+                        {"role": "user", "content": prompt}
                     ],
-                    response_format={"type": "json_object"}
                 )
 
                 batch_time = time.time() - batch_start_time

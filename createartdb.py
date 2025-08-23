@@ -120,9 +120,9 @@ class ArtDatabaseCreator:
                         embedding: bytes = self._generate_embedding(row)
                         sql: str = f"INSERT INTO art_records ({columns}, embeddings) VALUES ({placeholders}, ?)"
                         if self.cursor:
-                            self.cursor.execute("SELECT 1 FROM art_records WHERE day_number = ?", (row['day_number'],))
+                            self.cursor.execute("SELECT 1 FROM art_records WHERE day_num = ?", (row['day_num'],))
                             if self.cursor.fetchone():
-                                 print(f"More than one art image found for day number: {row['day_number']}")
+                                 print(f"More than one art image found for day number: {row['day_num']}")
                             self.cursor.execute(sql, tuple(row.values()) + (embedding,))
                             record_count += self.cursor.rowcount
 
