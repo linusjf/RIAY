@@ -91,7 +91,7 @@
     - [The Finding of Jesus and Baptism of Jesus](#the-finding-of-jesus-and-baptism-of-jesus)
     - [AI-Generated Summary: The Divine Child Among the Teachers](#ai-generated-summary-the-divine-child-among-the-teachers)
     - [The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers (Stock Image)](#the-finding-of-the-child-jesus-in-the-temple-artist-unknown-subject-jesus-among-teachers-stock-image)
-    - [The Baptism of Christ, artist unknown, River Jordan, subject: Jesus baptized by John (Stock Image)](#the-baptism-of-christ-artist-unknown-river-jordan-subject-jesus-baptized-by-john-stock-image)
+    - [The Baptism of Christ, River Jordan, Jesus baptized by John (Stock Image)](#the-baptism-of-christ-river-jordan-jesus-baptized-by-john-stock-image)
   - [August 20, 2025](#august-20-2025)
     - [The Wedding at Cana and Call to Conversion](#the-wedding-at-cana-and-call-to-conversion)
     - [AI-Generated Summary: The Divine Invitation at Cana and the Kingdom's Dawn](#ai-generated-summary-the-divine-invitation-at-cana-and-the-kingdoms-dawn)
@@ -471,9 +471,9 @@ As for the prayers that followâ€”repetitions of the _Hail Mary_ and _Glory Be_â€
 
 [![The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers](August/jpgs/findingchildjesustemple.jpg)](https://i.pinimg.com/originals/fe/d2/2b/fed22bf94a99f695f3593d82157026ac.jpg "The Finding of the Child Jesus in the Temple, artist unknown, subject: Jesus among teachers")
 
-### The Baptism of Christ, artist unknown, River Jordan, subject: Jesus baptized by John (Stock Image)
+### The Baptism of Christ, River Jordan, Jesus baptized by John (Stock Image)
 
-[![The Baptism of Christ, artist unknown, River Jordan, subject: Jesus baptized by John](August/jpgs/baptismofchrist.jpg)](https://thebiblespeakstoyou.com/wp-content/uploads/2017/07/John-the-Baptist.jpg "The Baptism of Christ, artist unknown, River Jordan, subject: Jesus baptized by John")
+[![The Baptism of Christ, artist unknown, River Jordan, subject: Jesus baptized by John](August/jpgs/baptismofchrist.jpg)](https://reconquest.net/wp-content/uploads/2017/12/the_baptism_of_christ_verrocchio__leonardo.jpg "The Baptism of Christ, River Jordan, Jesus baptized by John")
 
 ## August 20, 2025
 
