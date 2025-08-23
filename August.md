@@ -85,8 +85,8 @@
   - [August 18, 2025](#august-18-2025)
     - [The Nativity and the Presentation](#the-nativity-and-the-presentation)
     - [AI-Generated Summary: The Humble Majesty of the Nativity](#ai-generated-summary-the-humble-majesty-of-the-nativity)
-    - [Nativity (Stock Image)](#nativity-stock-image)
-    - [Presentation of Jesus in the Temple (Stock Image)](#presentation-of-jesus-in-the-temple-stock-image)
+    - [Jesus Christ shepherds wise men (Stock Image)](#jesus-christ-shepherds-wise-men-stock-image)
+    - [Jesus Christ Mary Joseph Simeon (Stock Image)](#jesus-christ-mary-joseph-simeon-stock-image)
   - [August 19, 2025](#august-19-2025)
     - [The Finding of Jesus and Baptism of Jesus](#the-finding-of-jesus-and-baptism-of-jesus)
     - [AI-Generated Summary: The Divine Child Among the Teachers](#ai-generated-summary-the-divine-child-among-the-teachers)
@@ -445,13 +445,13 @@ Likewise, _The Presentation of Jesus in the Temple_ reveals the obedience of Mar
 
 These sacred scenes call us to recognize that the Eternal entered time, the Infinite became small, and Love took on flesh—not to overwhelm, but to invite. Let us then, like Mary, ponder these things in our hearts.
 
-### Nativity (Stock Image)
+### Jesus Christ shepherds wise men (Stock Image)
 
-[![Nativity](August/jpgs/thenativity.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Nativity")
+[![Jesus Christ shepherds wise men](August/jpgs/nativity_bethlehem.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Jesus Christ shepherds wise men")
 
-### Presentation of Jesus in the Temple (Stock Image)
+### Jesus Christ Mary Joseph Simeon (Stock Image)
 
-[![Presentation of Jesus in the Temple](August/jpgs/presentationjesus.jpg)](https://4.bp.blogspot.com/-iJiGGvU2qSk/UuVCQNqX6mI/AAAAAAAABvQ/fs7uT5EQRRE/s1600/JESUS-+Presentation+at+the+Temple+1.jpg "Presentation of Jesus in the Temple")
+[![Jesus Christ Mary Joseph Simeon](August/jpgs/presentation_temple.jpg)](https://stock.adobe.com/in/images/cremona-italy-may-24-2016-the-fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547/113785168 "Jesus Christ Mary Joseph Simeon")
 
 ## August 19, 2025
 
