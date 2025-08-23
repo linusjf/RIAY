@@ -6335,8 +6335,8 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
   - [August 18, 2025](#august-18-2025)
     - [The Nativity and the Presentation](#the-nativity-and-the-presentation)
     - [AI-Generated Summary: The Humble Majesty of the Nativity](#ai-generated-summary-the-humble-majesty-of-the-nativity)
-    - [The Nativity, depicting the King of Heaven in a manger (Stock Image)](#the-nativity-depicting-the-king-of-heaven-in-a-manger-stock-image)
-    - [The Presentation of Jesus in the Temple, Mary and Joseph fulfilling the Law (Stock Image)](#the-presentation-of-jesus-in-the-temple-mary-and-joseph-fulfilling-the-law-stock-image)
+    - [Nativity (Stock Image)](#nativity-stock-image)
+    - [Presentation of Jesus in the Temple (Stock Image)](#presentation-of-jesus-in-the-temple-stock-image)
   - [August 19, 2025](#august-19-2025)
     - [The Finding of Jesus and Baptism of Jesus](#the-finding-of-jesus-and-baptism-of-jesus)
     - [AI-Generated Summary: The Divine Child Among the Teachers](#ai-generated-summary-the-divine-child-among-the-teachers)
@@ -6695,13 +6695,13 @@ Likewise, _The Presentation of Jesus in the Temple_ reveals the obedience of Mar
 
 These sacred scenes call us to recognize that the Eternal entered time, the Infinite became small, and Love took on flesh—not to overwhelm, but to invite. Let us then, like Mary, ponder these things in our hearts.
 
-##### The Nativity, depicting the King of Heaven in a manger (Stock Image)
+##### Nativity (Stock Image)
 
-[![The Nativity, depicting the King of Heaven in a manger](August/jpgs/nativity.jpg)](https://c8.alamy.com/comp/KPKWHA/large-nativity-display-with-manger-shepherdswise-men-mary-joseph-and-KPKWHA.jpg "The Nativity, depicting the King of Heaven in a manger")
+[![Nativity](August/jpgs/thenativity.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Nativity")
 
-##### The Presentation of Jesus in the Temple, Mary and Joseph fulfilling the Law (Stock Image)
+##### Presentation of Jesus in the Temple (Stock Image)
 
-[![The Presentation of Jesus in the Temple, Mary and Joseph fulfilling the Law](August/jpgs/presentationjesus.jpg)](https://w0.peakpx.com/wallpaper/399/564/HD-wallpaper-presentation-in-the-temple-presentation-joseph-anna-temple-simeon-mary-jesus.jpg "The Presentation of Jesus in the Temple, Mary and Joseph fulfilling the Law")
+[![Presentation of Jesus in the Temple](August/jpgs/presentationjesus.jpg)](https://4.bp.blogspot.com/-iJiGGvU2qSk/UuVCQNqX6mI/AAAAAAAABvQ/fs7uT5EQRRE/s1600/JESUS-+Presentation+at+the+Temple+1.jpg "Presentation of Jesus in the Temple")
 
 #### August 19, 2025
 
