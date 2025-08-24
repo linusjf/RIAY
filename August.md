@@ -112,6 +112,11 @@
     - [AI-Generated Summary: The Rosary as a Journey of Bearing the Cross](#ai-generated-summary-the-rosary-as-a-journey-of-bearing-the-cross)
     - [Anthony van Dyck, 17th-century oil on canvas, The Crowning with Thorns, depicting Christ crowned with thorns, Museo del Prado, Madrid](#anthony-van-dyck-17th-century-oil-on-canvas-the-crowning-with-thorns-depicting-christ-crowned-with-thorns-museo-del-prado-madrid)
     - [Christ Carrying the Cross, Orazio Gentileschi, 1605, oil on canvas, Baroque depiction of Christ bearing the cross](#christ-carrying-the-cross-orazio-gentileschi-1605-oil-on-canvas-baroque-depiction-of-christ-bearing-the-cross)
+  - [August 24, 2025](#august-24-2025)
+    - [The Crucifixion and the Resurrection](#the-crucifixion-and-the-resurrection)
+    - [AI-Generated Summary: The Two Pillars](#ai-generated-summary-the-two-pillars)
+    - [Crucifixion of Jesus Christ (Stock Image)](#crucifixion-of-jesus-christ-stock-image)
+    - [Resurrection of Jesus Christ (Stock Image)](#resurrection-of-jesus-christ-stock-image)
 
 <!---toc end-->
 
@@ -564,3 +569,23 @@ The text itself is a reverent, repetitive liturgy that continually calls upon th
 ### Christ Carrying the Cross, Orazio Gentileschi, 1605, oil on canvas, Baroque depiction of Christ bearing the cross
 
 [![Christ Carrying the Cross, Orazio Gentileschi, 1605, oil on canvas, Baroque depiction of Christ bearing the cross](August/jpgs/christcarryingthecross_r2LwBgXp.jpg)](https://www.artchive.com/wp-content/uploads/2024/08/christ-carrying-the-cross-orazio-gentileschi-1605.jpg "Christ Carrying the Cross, Orazio Gentileschi, 1605, oil on canvas, Baroque depiction of Christ bearing the cross")
+
+## August 24, 2025
+
+### The Crucifixion and the Resurrection
+
+[![The Crucifixion and the Resurrection](/August/jpgs/Day236.jpg)](https://youtu.be/HVg1LriTRSI "The Crucifixion and the Resurrection")
+
+### AI-Generated Summary: The Two Pillars
+
+You have heard, no doubt, of two events which stand as the very pillars upon which all else rests. The first is a death; a real death upon a real wood, paid in the coin of a human body. It was a death that spoke of forgiveness even for its agents, that promised a thief a place in paradise, and that was witnessed by a Mother whose soul was pierced by a sword—so that she might be the first to ponder the awful and wonderful price of Love Himself.
+
+The second is a life; a bursting forth from the tomb, the great stone rolled back not to let a man out, but to let the world in to see its emptiness. This was no mere ghost, but a solid Man bearing the wounds of His passion as His glory, showing them to His friends as the very proofs of His victory. And to the one who doubted, He offered not a scolding but His very wounds to touch—for He knows the stuff of which we are made. This is the final hope: that out of the greatest suffering, God can and does bring the ultimate victory, working all things for good for those who are called according to His purpose.
+
+### Crucifixion of Jesus Christ (Stock Image)
+
+[![Crucifixion of Jesus Christ](August/jpgs/crucifixion_christ.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristo_crucificado.jpg/1200px-Cristo_crucificado.jpg "Crucifixion of Jesus Christ")
+
+### Resurrection of Jesus Christ (Stock Image)
+
+[![Resurrection of Jesus Christ](August/jpgs/resurrection_christ.jpg)](http://existenceofgod.org/wp-content/uploads/2015/04/resurrection-1.jpg "Resurrection of Jesus Christ")
