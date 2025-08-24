@@ -77,6 +77,11 @@ class ArtLocator:
 
     def get_matching_artworks_by_title_artist(self, title: Optional[str], artist: Optional[str] = None) -> List[Dict[str, Any]]:
         """Find artworks that match title and optionally artist."""
+        # Return empty list if title is empty
+        if not title or title.strip() == '':
+            self.logger.info("Empty title provided, returning empty results")
+            return []
+            
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
 
