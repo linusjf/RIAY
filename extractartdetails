@@ -60,11 +60,14 @@ function version() {
 function create_payload() {
   local summary_content="$1"
   local meta_prompt
-  meta_prompt="$(jq -Rs <<< "$SUMMARY_ARTWORK_DETAILS_PROMPT")"
+  meta_prompt="$(jq -Rs <<< "$RIAY_PREAMBLE_PROMPT")"
+  # Escape & and backslashes for sed
+  escaped=$(printf '%s' "$summary_content" | sed -e 's/[&/\]/\\&/g')
+  content_prompt="${SUMMARY_ARTWORK_DETAILS_PROMPT//TEXT_INPUT/${escaped}}"
 
   jq -n \
     --arg system "$meta_prompt" \
-    --arg content "$summary_content" \
+    --arg content "$content_prompt" \
     --arg model "$TEXT_LLM_MODEL" \
     --argjson temperature 0 \
     '{
