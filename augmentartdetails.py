@@ -48,6 +48,7 @@ class ArtDetailsAugmenter:
             'base_url': self.config.get(ConfigConstants.TEXT_LLM_BASE_URL),
             'endpoint': self.config.get(ConfigConstants.TEXT_LLM_CHAT_ENDPOINT),
             'model': self.config.get(ConfigConstants.TEXT_LLM_MODEL),
+            'system_prompt': self.config.get(ConfigConstants.RIAY_PREAMBLE_PROMPT),
             'art_details_prompt': self.config.get(ConfigConstants.ART_DETAILS_AUGMENT_PROMPT)
         }
         return llm_config
@@ -65,7 +66,7 @@ class ArtDetailsAugmenter:
         llm_payload: Dict[str, Any] = {
             "model": config['model'],
             "messages": [
-                {"role": "system", "content": "You are a helpful assistant that enriches metadata about artworks."},
+                {"role": "system", "content": config["system_prompt"]},
                 {"role": "user", "content": f"{config['art_details_prompt']}\n\nInput JSON:\n{json.dumps(art_json, indent=2)}"}
             ]
         }
