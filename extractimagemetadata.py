@@ -69,6 +69,7 @@ class ImageMetadataExtractor:
         self.year = int(self.config.get(ConfigConstants.YEAR, datetime.now().year))
         self.max_days = 366 if is_leap_year(self.year) else 365
         self.months = MONTHS
+        self.system_prompt = self.config.get(ConfigConstants.RIAY_PREAMBLE_PROMPT, "")
         self.augment_meta_data_prompt = self.config.get(ConfigConstants.AUGMENT_META_DATA_PROMPT, "")
         self.text_llm_api_key = self.config.get(ConfigConstants.TEXT_LLM_API_KEY, "")
         self.text_llm_base_url = self.config.get(ConfigConstants.TEXT_LLM_BASE_URL, "")
@@ -121,7 +122,7 @@ class ImageMetadataExtractor:
                 response = self.client.chat.completions.create(
                     model=self.text_llm_model,
                     messages=[
-                        {"role": "system", "content": "You are a helpful assistant with knowledge of Christian art and theology."},
+                        {"role": "system", "content": self.system_prompt},
                         {"role": "user", "content": prompt}
                     ],
                 )
