@@ -16,5 +16,6 @@
    1.2 Convert python scripts to async
    1.3 Create configurator object for httpx retry logic using values from config.env
 1. Fix for wikimedia site down. Right now, hangs.
+1. Migrate long, complex bash scripts to python.
 
 ## Exploratory task
