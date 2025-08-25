@@ -33,7 +33,7 @@
   - [August 06, 2025](#august-06-2025)
     - [Walking With Mary](#walking-with-mary)
     - [AI-Generated Summary: The Quiet Companionship of Mary](#ai-generated-summary-the-quiet-companionship-of-mary)
-    - [AI-Generated Image: A sacred companionship painted in abstract devotion](#ai-generated-image-a-sacred-companionship-painted-in-abstract-devotion)
+    - [Pietro Gagliardi's fresco The Crucifixion (1847-1852) in San Girolamo dei Croati depicts Christ's sacrificial death between two thieves (Stock Image)](#pietro-gagliardis-fresco-the-crucifixion-1847-1852-in-san-girolamo-dei-croati-depicts-christs-sacrificial-death-between-two-thieves-stock-image)
   - [August 07, 2025](#august-07-2025)
     - [The Gift of Prayer](#the-gift-of-prayer)
     - [AI-Generated Summary: The Humble Heart of Prayer](#ai-generated-summary-the-humble-heart-of-prayer)
@@ -242,9 +242,9 @@ Imagine, if you will, a way of prayer so simple that even the weariest soul migh
 
 This is no mechanical repetition of prayers, though they have their place, but an opening of the heart’s door to one who knows the weight of joy and sorrow alike. She who stood at the foot of the Cross understands the quiet ache of your daily duties, the unspoken fears that flicker in the dark. To keep company with her is to learn, by degrees, how to bear all things—not with gritted teeth, but with the same quiet "yes" that changed the world.
 
-### AI-Generated Image: A sacred companionship painted in abstract devotion
+### Pietro Gagliardi's fresco The Crucifixion (1847-1852) in San Girolamo dei Croati depicts Christ's sacrificial death between two thieves (Stock Image)
 
-![AI-Generated Image: A sacred companionship painted in abstract devotion](/August/jpgs/Day218Summary.jpg)
+[![Pietro Gagliardi's fresco The Crucifixion (1847-1852) in San Girolamo dei Croati depicts Christ's sacrificial death between two thieves](August/jpgs/Crucifixion_7RvYnnkT.jpg)](https://c7.alamy.com/comp/2GRFXKA/rome-italy-august-28-2021-the-fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-2GRFXKA.jpg "Pietro Gagliardi's fresco The Crucifixion (1847-1852) in San Girolamo dei Croati depicts Christ's sacrificial death between two thieves")
 
 ## August 07, 2025
 

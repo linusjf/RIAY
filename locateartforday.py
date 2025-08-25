@@ -354,10 +354,11 @@ class ArtLocator:
                                 best_match = next(m for m in direct_matches if m['record_id'] == idx)
 
                         if best_match:
-                            best_match["cosine_score"] = best_score
-                            best_match["is_stock_image"] = is_stock_image_url(best_match["image_url"])
-                            best_match["generated_caption"] = self.generate_caption(json.dumps(best_match, indent=2),query_text)
-                            results.append(best_match)
+                            sanitized_match = {k: v for k, v in best_match.items() if not isinstance(v, bytes)}
+                            sanitized_match["cosine_score"] = best_score
+                            sanitized_match["is_stock_image"] = is_stock_image_url(best_match["image_url"])
+                            sanitized_match["generated_caption"] = self.generate_caption(json.dumps(sanitized_match, indent=2),query_text)
+                            results.append(sanitized_match)
                             continue  # Skip vector search if we found a good direct match
         else:
             self.logger.info("No rosary mysteries identified...")
