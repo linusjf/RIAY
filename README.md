@@ -6268,7 +6268,8 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
   - [August 03, 2025](#august-03-2025)
     - [Here With Jesus](#here-with-jesus)
     - [AI-Generated Summary: The Weight of Glory in Art and Prayer](#ai-generated-summary-the-weight-of-glory-in-art-and-prayer)
-    - [Caravaggio's dramatic 'The Crowning with Thorns' portrays Christ's torment with intense realism and chiaroscuro on canvas (Stock Image)](#caravaggios-dramatic-the-crowning-with-thorns-portrays-christs-torment-with-intense-realism-and-chiaroscuro-on-canvas-stock-image)
+    - [Christ's suffering during the crowning with thorns (Stock Image)](#christs-suffering-during-the-crowning-with-thorns-stock-image)
+    - [Christ carrying the cross to Calvary (Stock Image)](#christ-carrying-the-cross-to-calvary-stock-image)
   - [August 04, 2025](#august-04-2025)
     - [Overshadowed by the Spirit](#overshadowed-by-the-spirit)
     - [AI-Generated Summary: The Silent Language of Divine Love](#ai-generated-summary-the-silent-language-of-divine-love)
@@ -6429,9 +6430,13 @@ Then El Greco’s _Christ Carrying the Cross_, where the Savior’s form stretch
 
 Yet these are not mere relics of piety to be admired and shelved. The true meditation begins when we step into the frame—when the thorns press against _our_ brows, when the cross’s weight bows _our_ shoulders. For prayer is no recitation of old words, but the daring act of walking beside Him now, in the ordinary moments where He still whispers, "Follow."
 
-##### Caravaggio's dramatic 'The Crowning with Thorns' portrays Christ's torment with intense realism and chiaroscuro on canvas (Stock Image)
+##### Christ's suffering during the crowning with thorns (Stock Image)
 
-[![Caravaggio's dramatic 'The Crowning with Thorns' portrays Christ's torment with intense realism and chiaroscuro on canvas](August/jpgs/crowningwiththornscaravaggio.jpg)](https://upload.wikimedia.org/wikipedia/commons/f/f1/Michelangelo_Caravaggio_072.jpg "Caravaggio's dramatic 'The Crowning with Thorns' portrays Christ's torment with intense realism and chiaroscuro on canvas")
+[![Christ's suffering during the crowning with thorns](August/jpgs/crowningcaravaggio.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Anthonis_van_Dyck_004.jpg/960px-Anthonis_van_Dyck_004.jpg "Christ's suffering during the crowning with thorns")
+
+##### Christ carrying the cross to Calvary (Stock Image)
+
+[![Christ carrying the cross to Calvary](August/jpgs/christcarryingelgreco.jpg)](https://www.artchive.com/wp-content/uploads/2024/08/christ-carrying-the-cross-orazio-gentileschi-1605.jpg "Christ carrying the cross to Calvary")
 
 #### August 04, 2025
 

@@ -73,6 +73,8 @@ class ArtDownloader:
         self.style: Optional[str] = None
         self.medium: Optional[str] = None
         self.subject: Optional[str] = None
+        self.mystery_name: Optional[str] = None
+        self.mystery_type: Optional[str] = None
         self.filename_base: Optional[str] = None
 
         # Populate from params dictionary if provided
@@ -84,6 +86,8 @@ class ArtDownloader:
             self.style = params.get('style')
             self.medium = params.get('medium')
             self.subject = params.get('subject')
+            self.mystery_name = params.get('mystery_name')
+            self.mystery_type = params.get('mystery_type')
             self.filename_base = params.get('filename')
 
         # Track downloaded URLs and results
@@ -503,6 +507,12 @@ class ArtDownloader:
                 self.logger.info(f"Found matching records for title: {self.title} and artist: {self.artist}")
             else:
                 self.logger.info(f"Found matching records for title: {self.title}")
+        elif self.mystery_type and self.mystery_name and self.mystery_type.strip() != '' and self.mystery_name.strip() != '':
+                 found_records = locator.get_matching_artworks(self.mystery_type, self.mystery_name)
+                 if found_records:
+                    self.logger.info(f"Found matching records for mystery_type: {self.mystery_type} and mystery_name: {self.mystery_name}")
+
+        if found_records:
             qualifying_results = []
             for idx, result in enumerate(found_records):
                 embeddings = result.get("embeddings")
@@ -682,6 +692,8 @@ def parse_arguments() -> Tuple[argparse.ArgumentParser, argparse.Namespace]:
     parser.add_argument('--style', help='Artistic style')
     parser.add_argument('--medium', help='Art medium (e.g., oil painting, sculpture)')
     parser.add_argument('--subject', help='Art subject matter')
+    parser.add_argument('--mystery_name', help='Rosary Mystery')
+    parser.add_argument('--mystery_type', help='Type of Rosary Mystery - one of Joyful, Luminous, Sorrowful or Glorious')
     parser.add_argument('--filename', help='Base filename for saved images (without extension)')
     return parser, parser.parse_args()
 

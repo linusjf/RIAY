@@ -205,13 +205,18 @@ function process_artwork() {
   style="$(echo "$art_details" | jq '.details.style' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   medium="$(echo "$art_details" | jq '.details.medium' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   subject="$(echo "$art_details" | jq '.details.subject' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  mystery_type="$(echo "$art_details" | jq '.details.mystery_type' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
+  mystery_name="$(echo "$art_details" | jq '.details.mystery_name' | sed 's/,//g' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
   filename="$(echo "$art_details" | jq '.filename' | sed 's/"//g')"
   caption="$(echo "$art_details" | jq '.caption' | sed 's/\.//g' | sed 's/"//g' | sed 's/null//g')"
 
   local downloader_output
-  downloader_output="$("${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --original_title "${original_title:-}" --language "${language:-}" \
-    --artist "${artist:-}" --location "${location:-}" \
-    --medium "${medium:-}" --subject "${subject:-}" --style "${style:-}" --date "${date:-}")"
+  downloader_output="$(
+    "${SCRIPT_DIR}/artdownloader.py" --filename "$filename" --title "${title:-}" --original_title "${original_title:-}" --language "${language:-}" \
+      --artist "${artist:-}" --location "${location:-}" \
+      --medium "${medium:-}" --subject "${subject:-}" --style "${style:-}" --date "${date:-}" \
+      --mystery_type "${mystery_type:-}" --mystery_name "${mystery_name:-}"
+  )"
 
   printf "%s\n" "$downloader_output"
 

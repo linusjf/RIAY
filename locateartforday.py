@@ -229,7 +229,7 @@ class ArtLocator:
         query = """
             SELECT record_id, artist, caption, date, day_num, description, image_filepath,
                    image_url, location, medium, mystery_name, mystery_type, original_title,
-                   original_title_ISO_code, original_title_language, style, subject, title
+                   original_title_ISO_code, original_title_language, style, subject, title, embeddings
             FROM art_records
             WHERE (mystery_type LIKE ? OR mystery_type GLOB ?)
             AND (mystery_name LIKE ? OR mystery_name GLOB ?)
@@ -260,7 +260,8 @@ class ArtLocator:
             "original_title_language": row[14],
             "style": row[15],
             "subject": row[16],
-            "title": row[17]
+            "title": row[17],
+            "embeddings": row[18]
         } for row in rows]
 
     def get_rosary_mysteries(self, text: str) -> List[Dict[str, str]]:
