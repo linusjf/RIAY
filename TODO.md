@@ -17,6 +17,5 @@
    1.3 Create configurator object for httpx retry logic using values from config.env
 1. Fix for wikimedia site down. Right now, hangs.
 1. Migrate long, complex bash scripts to python.
-1. Update search art db in artdownloader.py to search against rosary mysteries if title not located in art db.
 
 ## Exploratory task
