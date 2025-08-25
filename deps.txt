@@ -19,6 +19,7 @@ docutils==0.21.2
 duckduckgo_search==8.0.4
 filelock==3.18.0
 fuzzywuzzy==0.18.0
+hnswlib==0.8.0
 httpx==0.28.1
 idna==3.10
 imagesize==1.4.1
