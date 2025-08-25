@@ -17,5 +17,6 @@
    1.3 Create configurator object for httpx retry logic using values from config.env
 1. Fix for wikimedia site down. Right now, hangs.
 1. Migrate long, complex bash scripts to python.
+   1.1 Migrate embedarttoday to python. Then, generate fresh caption when locating art from database to avoid markdown conflicts.
 
 ## Exploratory task
