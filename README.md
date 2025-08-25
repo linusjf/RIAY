@@ -6341,8 +6341,8 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
   - [August 19, 2025](#august-19-2025)
     - [The Finding of Jesus and Baptism of Jesus](#the-finding-of-jesus-and-baptism-of-jesus)
     - [AI-Generated Summary: The Divine Child Among the Teachers](#ai-generated-summary-the-divine-child-among-the-teachers)
-    - [Jesus among the learned men (Stock Image)](#jesus-among-the-learned-men-stock-image)
-    - [Baptism of Jesus (Stock Image)](#baptism-of-jesus-stock-image)
+    - [The boy Jesus seated among learned men in the temple (Stock Image)](#the-boy-jesus-seated-among-learned-men-in-the-temple-stock-image)
+    - [John the Baptist baptizing Jesus in the River Jordan (Stock Image)](#john-the-baptist-baptizing-jesus-in-the-river-jordan-stock-image)
   - [August 20, 2025](#august-20-2025)
     - [The Wedding at Cana and Call to Conversion](#the-wedding-at-cana-and-call-to-conversion)
     - [AI-Generated Summary: The Divine Invitation at Cana and the Kingdom's Dawn](#ai-generated-summary-the-divine-invitation-at-cana-and-the-kingdoms-dawn)
@@ -6732,13 +6732,13 @@ The second, _The Baptism of Christ_, unfolds at the River Jordan, where John, th
 
 As for the prayers that follow—repetitions of the _Hail Mary_ and _Glory Be_—they are like footsteps worn smooth by generations of pilgrims, each one a small act of love, a turning of the heart toward the Light.
 
-##### Jesus among the learned men (Stock Image)
+##### The boy Jesus seated among learned men in the temple (Stock Image)
 
-[![Jesus among the learned men](August/jpgs/finding_child_jesus.jpg)](https://i.pinimg.com/originals/fe/d2/2b/fed22bf94a99f695f3593d82157026ac.jpg "Jesus among the learned men")
+[![The boy Jesus seated among learned men in the temple](August/jpgs/findingjesusintemple.jpg)](https://thumbs.dreamstime.com/b/brussels-jesus-age-12-teaching-temple-27777664.jpg "The boy Jesus seated among learned men in the temple")
 
-##### Baptism of Jesus (Stock Image)
+##### John the Baptist baptizing Jesus in the River Jordan (Stock Image)
 
-[![Baptism of Jesus](August/jpgs/baptism_of_christ.jpg)](https://www.istockphoto.com/vector/padua-baptism-of-christ-in-church-san-benedetto-vecchio-gm517403261-48689476 "Baptism of Jesus")
+[![John the Baptist baptizing Jesus in the River Jordan](August/jpgs/baptismofchrist.jpg)](https://reconquest.net/wp-content/uploads/2017/12/the_baptism_of_christ_verrocchio__leonardo.jpg "John the Baptist baptizing Jesus in the River Jordan")
 
 #### August 20, 2025
 
