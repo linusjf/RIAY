@@ -63,6 +63,7 @@ class ArtLocator:
         self.max_results = config.get(ConfigConstants.ART_DATABASE_HNSW_MAX_RESULTS, 3)
         self.hnsw_space_dimensions = config.get(ConfigConstants.VECTOR_EMBEDDINGS_MODEL_DIMENSIONS, 1024)
         self.year = int(config.get(ConfigConstants.YEAR, datetime.datetime.now().year))
+        self.system_prompt = config.get(ConfigConstants.RIAY_PREAMBLE_PROMPT)
         self.rosary_prompt = config.get(ConfigConstants.ROSARY_PROMPT)
         self.text_llm_api_key = config.get(ConfigConstants.TEXT_LLM_API_KEY)
         self.temperature = config.get(ConfigConstants.TEMPERATURE)
@@ -81,7 +82,7 @@ class ArtLocator:
         if not title or title.strip() == '':
             self.logger.info("Empty title provided, returning empty results")
             return []
-            
+
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
 
@@ -162,7 +163,7 @@ class ArtLocator:
 
         try:
             messages: List = [
-                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "system", "content": self.system_prompt},
                     {"role": "user", "content": prompt}
                 ]
             self.logger.debug(f"messages: {messages}")
@@ -274,7 +275,7 @@ class ArtLocator:
         response = client.chat.completions.create(
             model=self.text_llm_model,
             messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "system", "content": self.system_prompt},
                 {"role": "user", "content": prompt}
             ],
         )
