@@ -67,6 +67,8 @@ class ArtDownloader:
     def __init__(self, params: Optional[Dict[str, str]] = None) -> None:
         # Initialize artwork metadata fields
         self.title: Optional[str] = None
+        self.original_title: Optional[str] = None
+        self.language: Optional[str] = None
         self.artist: Optional[str] = None
         self.location: Optional[str] = None
         self.date: Optional[str] = None
@@ -80,6 +82,8 @@ class ArtDownloader:
         # Populate from params dictionary if provided
         if params:
             self.title = params.get('title')
+            self.original_title = params.get('original_title')
+            self.language = params.get('language')
             self.artist = params.get('artist')
             self.location = params.get('location')
             self.date = params.get('date')
