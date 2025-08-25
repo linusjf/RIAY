@@ -116,8 +116,8 @@
   - [August 24, 2025](#august-24-2025)
     - [The Crucifixion and the Resurrection](#the-crucifixion-and-the-resurrection)
     - [AI-Generated Summary: The Two Pillars](#ai-generated-summary-the-two-pillars)
-    - [Crucifixion of Jesus Christ (Stock Image)](#crucifixion-of-jesus-christ-stock-image)
-    - [Resurrection of Jesus Christ (Stock Image)](#resurrection-of-jesus-christ-stock-image)
+    - [Crucifixion (Stock Image)](#crucifixion-stock-image)
+    - [Resurrection (Stock Image)](#resurrection-stock-image)
   - [August 25, 2025](#august-25-2025)
     - [The Ascension and Descent of the Holy Spirit](#the-ascension-and-descent-of-the-holy-spirit)
     - [AI-Generated Summary: On the Ascension and the Coming of the Spirit](#ai-generated-summary-on-the-ascension-and-the-coming-of-the-spirit)
@@ -592,13 +592,13 @@ You have heard, no doubt, of two events which stand as the very pillars upon whi
 
 The second is a life; a bursting forth from the tomb, the great stone rolled back not to let a man out, but to let the world in to see its emptiness. This was no mere ghost, but a solid Man bearing the wounds of His passion as His glory, showing them to His friends as the very proofs of His victory. And to the one who doubted, He offered not a scolding but His very wounds to touch—for He knows the stuff of which we are made. This is the final hope: that out of the greatest suffering, God can and does bring the ultimate victory, working all things for good for those who are called according to His purpose.
 
-### Crucifixion of Jesus Christ (Stock Image)
+### Crucifixion (Stock Image)
 
-[![Crucifixion of Jesus Christ](August/jpgs/crucifixion_christ.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristo_crucificado.jpg/1200px-Cristo_crucificado.jpg "Crucifixion of Jesus Christ")
+[![Crucifixion](August/jpgs/crucifixion.jpg)](https://c7.alamy.com/comp/2GRFXKA/rome-italy-august-28-2021-the-fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-2GRFXKA.jpg "Crucifixion")
 
-### Resurrection of Jesus Christ (Stock Image)
+### Resurrection (Stock Image)
 
-[![Resurrection of Jesus Christ](August/jpgs/resurrection_christ.jpg)](http://existenceofgod.org/wp-content/uploads/2015/04/resurrection-1.jpg "Resurrection of Jesus Christ")
+[![Resurrection](August/jpgs/resurrection.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg/960px-Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg "Resurrection")
 
 ## August 25, 2025
 
