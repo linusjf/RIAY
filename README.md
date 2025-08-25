@@ -6367,6 +6367,11 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
     - [AI-Generated Summary: The Two Pillars](#ai-generated-summary-the-two-pillars)
     - [Crucifixion of Jesus Christ (Stock Image)](#crucifixion-of-jesus-christ-stock-image)
     - [Resurrection of Jesus Christ (Stock Image)](#resurrection-of-jesus-christ-stock-image)
+  - [August 25, 2025](#august-25-2025)
+    - [The Ascension and Descent of the Holy Spirit](#the-ascension-and-descent-of-the-holy-spirit)
+    - [AI-Generated Summary: On the Ascension and the Coming of the Spirit](#ai-generated-summary-on-the-ascension-and-the-coming-of-the-spirit)
+    - [Bernardino Gandino's 17th-century Baroque oil painting depicts Christ ascending to heaven surrounded by angels, witnessed by apostles (Stock Image)](#bernardino-gandinos-17th-century-baroque-oil-painting-depicts-christ-ascending-to-heaven-surrounded-by-angels-witnessed-by-apostles-stock-image)
+    - [Simone Peterzano's 1575-1580 Mannerist Pentecost depicts the Holy Spirit descending upon the Virgin and apostles with elongated figures and vibrant colors (Stock Image)](#simone-peterzanos-1575-1580-mannerist-pentecost-depicts-the-holy-spirit-descending-upon-the-virgin-and-apostles-with-elongated-figures-and-vibrant-colors-stock-image)
 
 <!---toc end-->
 
@@ -6839,6 +6844,28 @@ The second is a life; a bursting forth from the tomb, the great stone rolled bac
 ##### Resurrection of Jesus Christ (Stock Image)
 
 [![Resurrection of Jesus Christ](August/jpgs/resurrection_christ.jpg)](http://existenceofgod.org/wp-content/uploads/2015/04/resurrection-1.jpg "Resurrection of Jesus Christ")
+
+#### August 25, 2025
+
+##### The Ascension and Descent of the Holy Spirit
+
+[![The Ascension and Descent of the Holy Spirit](August/jpgs/Day237.jpg)](https://youtu.be/ArJaW6JRIV0 "The Ascension and Descent of the Holy Spirit")
+
+##### AI-Generated Summary: On the Ascension and the Coming of the Spirit
+
+We are invited to consider that the Lord’s Ascension is no mere departure to some far country, as if He were a traveler taking His leave of us. Rather, it is His glorious entry into a new and higher mode of being, whereby He is no longer confined by place or circumstance, but becomes present to all creation in a more intimate and immediate fashion. He ascends, body and soul, to take His rightful place at the Father’s right hand.
+
+Then comes the third mystery, the descent of the Holy Spirit at Pentecost. Here we find the model of all prayerful waiting in the figures of Mary and the disciples, who tarried in the upper room with one accord in ardent and persevering supplication. This confident anticipation was not left unrewarded. The Spirit descended as tongues of fire, not to destroy, but to renew and invigorate the very hearts of those upon whom He rested.
+
+Consider the transformation of Peter, who but weeks before had been weak with fear and denied his Master. Now, filled with that same Spirit, he stood and proclaimed the gospel with such boldness and clarity that a great multitude, some three thousand souls, were pierced to the heart and received baptism. Thus, we see that the same wind which once shook the house is able to shake a man from his fears and make him a new creation, a herald of the truth. The reflection ends, as all such meditations should, with a prayer that we too might be so renewed.
+
+##### Bernardino Gandino's 17th-century Baroque oil painting depicts Christ ascending to heaven surrounded by angels, witnessed by apostles (Stock Image)
+
+[![Bernardino Gandino's 17th-century Baroque oil painting depicts Christ ascending to heaven surrounded by angels, witnessed by apostles](August/jpgs/ascensionofthelord_ioJ46UFQ.jpg)](https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Bernardino Gandino's 17th-century Baroque oil painting depicts Christ ascending to heaven surrounded by angels, witnessed by apostles")
+
+##### Simone Peterzano's 1575-1580 Mannerist Pentecost depicts the Holy Spirit descending upon the Virgin and apostles with elongated figures and vibrant colors (Stock Image)
+
+[![Simone Peterzano's 1575-1580 Mannerist Pentecost depicts the Holy Spirit descending upon the Virgin and apostles with elongated figures and vibrant colors](August/jpgs/pentecostsimonepeterzano_tEocH1M7.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.12926920.7055475/2959742.jpg "Simone Peterzano's 1575-1580 Mannerist Pentecost depicts the Holy Spirit descending upon the Virgin and apostles with elongated figures and vibrant colors")
 
 ## September
 
