@@ -15,7 +15,6 @@ import time
 import argparse
 import shutil
 import logging
-import numpy as np
 from typing import Optional, Dict, List, Tuple, Any, Set
 
 import requests
@@ -25,7 +24,7 @@ from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_excep
 from serpapi import GoogleSearch
 from htmlhelper import strip_span_tags_but_keep_contents, clean_filename_text, clean_filename
 from converterhelper import convert_to_jpeg
-from simtools import THRESHOLDS, cosine_similarity, get_embedding
+from simtools import THRESHOLDS
 from reverseimagelookup import ReverseImageLookup
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
@@ -37,8 +36,6 @@ from arthelper import (
     is_social_media_domain, is_stock_images_domain, process_url,
     filter_and_score_results, build_enhanced_query, build_wikimedia_query
 )
-from locateartforday import ArtLocator
-from fileutils import copy_file
 
 class ArtDownloader:
     """Download artwork images from various sources."""
@@ -62,7 +59,6 @@ class ArtDownloader:
     MIN_IMAGE_HEIGHT: int = config.get(ConfigConstants.MIN_IMAGE_HEIGHT, 0)
     SEARCH_WIKIPEDIA: bool = config.get(ConfigConstants.SEARCH_WIKIPEDIA, True)
     MAX_RETRIES: int = config.get(ConfigConstants.CURL_MAX_RETRIES, 5)
-    USE_ART_DATABASE: bool = config.get(ConfigConstants.USE_ART_DATABASE, True)
 
     def __init__(self, params: Optional[Dict[str, str]] = None) -> None:
         # Initialize artwork metadata fields
@@ -75,8 +71,6 @@ class ArtDownloader:
         self.style: Optional[str] = None
         self.medium: Optional[str] = None
         self.subject: Optional[str] = None
-        self.mystery_name: Optional[str] = None
-        self.mystery_type: Optional[str] = None
         self.filename_base: Optional[str] = None
 
         # Populate from params dictionary if provided
@@ -90,14 +84,11 @@ class ArtDownloader:
             self.style = params.get('style')
             self.medium = params.get('medium')
             self.subject = params.get('subject')
-            self.mystery_name = params.get('mystery_name')
-            self.mystery_type = params.get('mystery_type')
             self.filename_base = params.get('filename')
 
         # Track downloaded URLs and results
         self.DOWNLOADED_URLS: Dict[str, str] = {}
         self.FOUND_STOCK_PHOTOS: Set[str] = set()
-        self.ARTDB_IMAGES: List[Tuple[str, str, float]] = []
         self.WIKIPEDIA_IMAGES: List[Tuple[str, str, float]] = []
         self.GOOGLE_IMAGES: List[Tuple[str, str, float]] = []
         self.DUCKDUCKGO_IMAGES: List[Tuple[str, str, float]] = []
@@ -502,55 +493,6 @@ class ArtDownloader:
                 return (filename, score)
         return (None, None)
 
-    def download_from_artdb(self, query: str, filename_base: str) -> bool:
-        success: bool = False
-        locator: ArtLocator = ArtLocator()
-        found_records: List[Dict[str, Any]] = locator.get_matching_artworks_by_title_artist(self.title,self.artist)
-        if found_records:
-            if self.artist:
-                self.logger.info(f"Found matching records for title: {self.title} and artist: {self.artist}")
-            else:
-                self.logger.info(f"Found matching records for title: {self.title}")
-        elif self.mystery_type and self.mystery_name and self.mystery_type.strip() != '' and self.mystery_name.strip() != '':
-                 found_records = locator.get_matching_artworks(self.mystery_type, self.mystery_name)
-                 if found_records:
-                    self.logger.info(f"Found matching records for mystery_type: {self.mystery_type} and mystery_name: {self.mystery_name}")
-
-        if found_records:
-            qualifying_results = []
-            for idx, result in enumerate(found_records):
-                embeddings = result.get("embeddings")
-                if embeddings:
-                    embeddings_array = np.frombuffer(embeddings, dtype=np.float32)
-                    score = cosine_similarity(embeddings_array, get_embedding(query))
-                    if score >= THRESHOLDS["cosine"]:
-                        self.logger.info(f"✅ Qualified result {idx+1} (score: {score:.3f})")
-                        qualifying_results.append((result, score))
-                    else:
-                        self.logger.info(f"❌ Excluded result {idx+1} (score: {score:.3f})")
-
-            if not qualifying_results:
-                self.logger.error(f"No qualifying results found (score >= {THRESHOLDS['cosine']} )")
-                return success
-
-            for idx, (record, score) in enumerate(qualifying_results):
-                url: str = str(record.get("image_url"))
-                image_path: str = str(record.get("image_filepath"))
-                self.logger.info(f"Copying image for qualified image {idx+1}: {url} {image_path}")
-                unique_filename: str = f"{filename_base}_{idx+1}"
-                filename: str = os.path.join(
-                    self.SAVE_DIR,
-                    f"{unique_filename}_artdb.jpg"
-                )
-                if copy_file(image_path, filename):
-                    self.ARTDB_IMAGES.append((url, filename, score))
-                    url_filename: str = os.path.splitext(filename)[0] + ".url.txt"
-                    with open(url_filename, "w") as url_file:
-                        url_file.write(url)
-                    success = True
-
-        return success
-
     def _search_wikipedia_sources(self, wikimedia_query: str, enhanced_query: str) -> bool:
         """Search Wikipedia-related sources for images."""
         downloaded_wikipedia_search: bool = self.download_image_from_wikipedia_article(
@@ -574,12 +516,6 @@ class ArtDownloader:
         )
         return any([downloaded_duckduckgo, downloaded_google])
 
-    def _search_artdb(self, enhanced_query: str) -> bool:
-        """Search art database for images."""
-        downloaded_artdb: bool = self.download_from_artdb(
-            enhanced_query, str(self.filename_base)
-        )
-        return downloaded_artdb
 
     async def download_all(self, query: str) -> bool:
         """Download images from all available sources."""
@@ -589,24 +525,19 @@ class ArtDownloader:
         enhanced_query: str = build_enhanced_query(query, self.title, self.artist, self.location,
                                                  self.date, self.style, self.medium, self.subject)
 
-        artdb_success: bool = False
         wikipedia_success: bool = False
         other_sources_success: bool = False
 
-        if self.USE_ART_DATABASE:
-            artdb_success = self._search_artdb(enhanced_query)
-
-        if self.SEARCH_WIKIPEDIA and not artdb_success:
+        if self.SEARCH_WIKIPEDIA:
             wikimedia_query: str = build_wikimedia_query(query, self.title, self.artist,
                                                        self.date, self.location)
             self.logger.info(f"Searching wikis with simple query: {wikimedia_query}")
             wikipedia_success = self._search_wikipedia_sources(wikimedia_query, enhanced_query)
 
-        if not artdb_success:
-            self.logger.info(f"Searching google and duckduckgo with enhanced query: {enhanced_query}")
-            other_sources_success = self._search_other_sources(enhanced_query)
+        self.logger.info(f"Searching google and duckduckgo with enhanced query: {enhanced_query}")
+        other_sources_success = self._search_other_sources(enhanced_query)
 
-        return any([artdb_success, wikipedia_success, other_sources_success])
+        return any([wikipedia_success, other_sources_success])
 
     def _print_downloaded_images(self) -> None:
         """Print list of downloaded images."""
@@ -623,7 +554,7 @@ class ArtDownloader:
 
     def _print_all_search_results(self) -> None:
         """Print all search results with scores."""
-        all_results: List[Tuple[str, str, float]] = self.ARTDB_IMAGES + self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
+        all_results: List[Tuple[str, str, float]] = self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
         if all_results:
             print("\nAll search results (url, file, score):")
             for url, file, score in all_results:
@@ -631,7 +562,7 @@ class ArtDownloader:
 
     def _get_best_result(self) -> Optional[Tuple[str, str, float]]:
         """Find and return the best available result."""
-        all_results: List[Tuple[str, str, float]] = self.ARTDB_IMAGES + self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
+        all_results: List[Tuple[str, str, float]] = self.WIKIPEDIA_IMAGES + self.DUCKDUCKGO_IMAGES + self.GOOGLE_IMAGES
         sorted_results: List[Tuple[str, str, float]] = sorted(all_results, key=lambda x: x[2], reverse=True)
 
         for url, file, score in sorted_results:
@@ -696,8 +627,6 @@ def parse_arguments() -> Tuple[argparse.ArgumentParser, argparse.Namespace]:
     parser.add_argument('--style', help='Artistic style')
     parser.add_argument('--medium', help='Art medium (e.g., oil painting, sculpture)')
     parser.add_argument('--subject', help='Art subject matter')
-    parser.add_argument('--mystery_name', help='Rosary Mystery')
-    parser.add_argument('--mystery_type', help='Type of Rosary Mystery - one of Joyful, Luminous, Sorrowful or Glorious')
     parser.add_argument('--filename', help='Base filename for saved images (without extension)')
     return parser, parser.parse_args()
 
