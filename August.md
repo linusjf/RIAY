@@ -123,6 +123,10 @@
     - [AI-Generated Summary: On the Ascension and the Coming of the Spirit](#ai-generated-summary-on-the-ascension-and-the-coming-of-the-spirit)
     - [Bernardino Gandino's 17th-century Baroque oil painting depicts Christ ascending to heaven surrounded by angels, witnessed by apostles (Stock Image)](#bernardino-gandinos-17th-century-baroque-oil-painting-depicts-christ-ascending-to-heaven-surrounded-by-angels-witnessed-by-apostles-stock-image)
     - [Simone Peterzano's 1575-1580 Mannerist Pentecost depicts the Holy Spirit descending upon the Virgin and apostles with elongated figures and vibrant colors (Stock Image)](#simone-peterzanos-1575-1580-mannerist-pentecost-depicts-the-holy-spirit-descending-upon-the-virgin-and-apostles-with-elongated-figures-and-vibrant-colors-stock-image)
+  - [August 26, 2025](#august-26-2025)
+    - [The Assumption and Coronation of Mary](#the-assumption-and-coronation-of-mary)
+    - [AI-Generated Summary: The Queen's Crown and the Christian Hope](#ai-generated-summary-the-queens-crown-and-the-christian-hope)
+    - [The Virgin Mary being crowned as Queen of Heaven](#the-virgin-mary-being-crowned-as-queen-of-heaven)
 
 <!---toc end-->
 
@@ -621,3 +625,19 @@ Consider the transformation of Peter, who but weeks before had been weak with fe
 ### Simone Peterzano's 1575-1580 Mannerist Pentecost depicts the Holy Spirit descending upon the Virgin and apostles with elongated figures and vibrant colors (Stock Image)
 
 [![Simone Peterzano's 1575-1580 Mannerist Pentecost depicts the Holy Spirit descending upon the Virgin and apostles with elongated figures and vibrant colors](August/jpgs/pentecostsimonepeterzano_tEocH1M7.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.12926920.7055475/2959742.jpg "Simone Peterzano's 1575-1580 Mannerist Pentecost depicts the Holy Spirit descending upon the Virgin and apostles with elongated figures and vibrant colors")
+
+## August 26, 2025
+
+### The Assumption and Coronation of Mary
+
+[![The Assumption and Coronation of Mary](/August/jpgs/Day238.jpg)](https://youtu.be/P9FP_tiGEMM "The Assumption and Coronation of Mary")
+
+### AI-Generated Summary: The Queen's Crown and the Christian Hope
+
+We are shown a picture of the end for which we were made, not in some abstract doctrine, but in the person of a woman assumed into glory. She is, you see, the firstfruits of the harvest, the promise that what is sown a natural body will be raised a spiritual body. Her song, which begins with a blessing for herself, ends with a prophecy for all the poor and hungry of the earth; the private joy becomes the public hope.
+
+And from this assumption flows her coronation. If the first is the promise, the second is the pattern. She is crowned not for her own sake, but to be our Mother and Advocate, to intercede with a love that understands our weakness. Her whole purpose is to draw us toward that same Spirit, to grant us the grace to say our own ‘yes’ and to trust, as she did, in the Father’s perfect faithfulness. It is a picture of the world made right: where the humble are exalted and love reigns from a throne.
+
+### The Virgin Mary being crowned as Queen of Heaven
+
+[![The Virgin Mary being crowned as Queen of Heaven](August/jpgs/coronationvirgin.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg/960px-Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg "The Virgin Mary being crowned as Queen of Heaven")
