@@ -20,6 +20,7 @@ readonly E_MISSING_FILE=6
 readonly E_NO_SATISFACTORY_IMAGES=7
 readonly E_NO_ART_REFERENCED=8
 readonly E_PROCESSING_ERROR=9
+readonly E_NO_MYSTERIES_FOUND=10
 
 # Load required libraries
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
@@ -340,7 +341,7 @@ function main() {
       "${SCRIPT_DIR}/genmonth" "$(date::monthnumberfrommonth "$month")" && "${SCRIPT_DIR}/stitch"
       return 0
     else
-      return $E_NO_ART_REFERENCED
+      return $E_NO_MYSTERIES_FOUND
     fi
   fi
 
