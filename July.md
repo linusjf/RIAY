@@ -1,4 +1,5 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -39,7 +40,6 @@
     - [AI-Generated Summary: The Quiet Work of Prayer](#ai-generated-summary-the-quiet-work-of-prayer)
     - [Beginning Our Meditation](#beginning-our-meditation)
     - [AI-Generated Summary: The Humble Astonishment of the Annunciation](#ai-generated-summary-the-humble-astonishment-of-the-annunciation)
-    - [The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace](#the-annunciation-by-fra-angelico-1440s-at-san-marco-florence-a-serene-fresco-masterpiece-of-divine-grace)
     - [Fra Angelico's mid-1430s tempera panel Annunciation depicts the Archangel Gabriel announcing to Mary that she will bear the Son of God, housed at the Museo del Prado](#fra-angelicos-mid-1430s-tempera-panel-annunciation-depicts-the-archangel-gabriel-announcing-to-mary-that-she-will-bear-the-son-of-god-housed-at-the-museo-del-prado)
   - [July 09, 2025](#july-09-2025)
     - [Returning to the Visitation](#returning-to-the-visitation)
@@ -117,7 +117,7 @@
   - [July 27, 2025](#july-27-2025)
     - [Mary is With Us](#mary-is-with-us)
     - [AI-Generated Summary: The Queen Mother and Her Divine Crown](#ai-generated-summary-the-queen-mother-and-her-divine-crown)
-    - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-velázquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
+    - [Diego Velázquez's Baroque masterpiece shows the Trinity crowning Mary as Queen of Heaven, a divine and solemn scene (Stock Image)](#diego-vel%C3%A1zquezs-baroque-masterpiece-shows-the-trinity-crowning-mary-as-queen-of-heaven-a-divine-and-solemn-scene-stock-image)
   - [July 28, 2025](#july-28-2025)
     - [Praying With the Father](#praying-with-the-father)
     - [AI-Generated Summary: The Heart of Prayer as Communion with the Father](#ai-generated-summary-the-heart-of-prayer-as-communion-with-the-father)
@@ -139,6 +139,7 @@
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -298,10 +299,6 @@ Consider, dear reader, the scene so tenderly rendered by Fra Angelico: a young m
 Gabriel’s reply—_“Nothing is impossible with God”_—is the thread that stitches heaven to earth. In that fresco at San Marco, we see it: humility meeting grace, the divine condescension that bends low to lift us high. The Annunciation is not merely a past event, but an eternal truth—that God still enters the ordinary, if we, like Mary, have the courage to say _“Let it be.”_
 
 And so the Incarnation begins, not with fanfare, but with a whisper, a surrender, a joy that would undo the world’s sorrow.
-
-### The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace
-
-[![The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace](July/jpgs/annunciationfraangelico.jpg)](https://upload.wikimedia.org/wikipedia/commons/8/86/Fra_Angelico%2C_The_Annunciation%2C_ca._1443%3B_Convent_of_San_Marco%2C_Florence_%282%29.jpg "The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace")
 
 ### Fra Angelico's mid-1430s tempera panel Annunciation depicts the Archangel Gabriel announcing to Mary that she will bear the Son of God, housed at the Museo del Prado
 
