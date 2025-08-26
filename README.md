@@ -5546,7 +5546,7 @@ This is no mere depiction of suffering, but a window into its strange redemption
   - [July 12, 2025](#july-12-2025)
     - [Faith in the Silence](#faith-in-the-silence)
     - [AI-Generated Summary: The Divine Pursuit in the Temple](#ai-generated-summary-the-divine-pursuit-in-the-temple)
-    - [Jesus teaching in the temple as a 12-year-old](#jesus-teaching-in-the-temple-as-a-12-year-old)
+    - [The Finding of Jesus in the Temple, depicting the youthful Christ astonishing scholars with divine wisdom in the Jerusalem Temple (Stock Image)](#the-finding-of-jesus-in-the-temple-depicting-the-youthful-christ-astonishing-scholars-with-divine-wisdom-in-the-jerusalem-temple-stock-image)
   - [July 13, 2025](#july-13-2025)
     - [Beloved Sons and Daughters](#beloved-sons-and-daughters)
     - [AI-Generated Summary: The Sacred Waters and the Beloved Son](#ai-generated-summary-the-sacred-waters-and-the-beloved-son)
@@ -5901,9 +5901,9 @@ Augustine reminds us that God’s silence is never absence, but an invitation to
 
 And if you should see that Baroque painting in Brussels—Mary and Joseph amid the temple’s shadows, their faces alight with mingled relief and awe—remember this: the God who seemed lost was always near, and every seeking heart will find Him in the end.
 
-##### Jesus teaching in the temple as a 12-year-old
+##### The Finding of Jesus in the Temple, depicting the youthful Christ astonishing scholars with divine wisdom in the Jerusalem Temple (Stock Image)
 
-[![Jesus teaching in the temple as a 12-year-old](July/jpgs/divinepursuittemple.jpg)](https://i.ytimg.com/vi/I9ms9NM2hwc/maxresdefault.jpg "Jesus teaching in the temple as a 12-year-old")
+[![The Finding of Jesus in the Temple, depicting the youthful Christ astonishing scholars with divine wisdom in the Jerusalem Temple](July/jpgs/BrusselsFindingJesus_yJ9hzUsU.jpg)](https://thumbs.dreamstime.com/b/brussels-jesus-age-12-teaching-temple-27777664.jpg "The Finding of Jesus in the Temple, depicting the youthful Christ astonishing scholars with divine wisdom in the Jerusalem Temple")
 
 #### July 13, 2025
 
