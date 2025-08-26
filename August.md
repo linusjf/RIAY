@@ -126,7 +126,8 @@
   - [August 26, 2025](#august-26-2025)
     - [The Assumption and Coronation of Mary](#the-assumption-and-coronation-of-mary)
     - [AI-Generated Summary: The Queen's Crown and the Christian Hope](#ai-generated-summary-the-queens-crown-and-the-christian-hope)
-    - [The Virgin Mary being crowned as Queen of Heaven](#the-virgin-mary-being-crowned-as-queen-of-heaven)
+    - [Giuseppe Mattia Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity (Stock Image)](#giuseppe-mattia-borgniss-18th-century-baroque-fresco-depicts-the-virgin-marys-coronation-as-queen-of-heaven-by-the-holy-trinity-stock-image)
+    - [Gothic stained glass window depicting Mary's Assumption into heaven, surrounded by angels in Burgos Cathedral, Spain (Stock Image)](#gothic-stained-glass-window-depicting-marys-assumption-into-heaven-surrounded-by-angels-in-burgos-cathedral-spain-stock-image)
 
 <!---toc end-->
 
@@ -638,6 +639,10 @@ We are shown a picture of the end for which we were made, not in some abstract d
 
 And from this assumption flows her coronation. If the first is the promise, the second is the pattern. She is crowned not for her own sake, but to be our Mother and Advocate, to intercede with a love that understands our weakness. Her whole purpose is to draw us toward that same Spirit, to grant us the grace to say our own ‘yes’ and to trust, as she did, in the Father’s perfect faithfulness. It is a picture of the world made right: where the humble are exalted and love reigns from a throne.
 
-### The Virgin Mary being crowned as Queen of Heaven
+### Giuseppe Mattia Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity (Stock Image)
 
-[![The Virgin Mary being crowned as Queen of Heaven](August/jpgs/coronationvirgin.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg/960px-Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg "The Virgin Mary being crowned as Queen of Heaven")
+[![Giuseppe Mattia Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity](August/jpgs/Coronation_lWoWB3NA.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.8926670.7055475/763119.jpg "Giuseppe Mattia Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity")
+
+### Gothic stained glass window depicting Mary's Assumption into heaven, surrounded by angels in Burgos Cathedral, Spain (Stock Image)
+
+[![Gothic stained glass window depicting Mary's Assumption into heaven, surrounded by angels in Burgos Cathedral, Spain](August/jpgs/cathedralburgos_NmsH4NxJ.jpg)](https://c8.alamy.com/comp/PR002K/stained-glass-window-depicting-the-assumption-of-mary-in-the-cathedral-of-burgos-castille-spain-PR002K.jpg "Gothic stained glass window depicting Mary's Assumption into heaven, surrounded by angels in Burgos Cathedral, Spain")
