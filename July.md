@@ -40,6 +40,7 @@
     - [Beginning Our Meditation](#beginning-our-meditation)
     - [AI-Generated Summary: The Humble Astonishment of the Annunciation](#ai-generated-summary-the-humble-astonishment-of-the-annunciation)
     - [The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace](#the-annunciation-by-fra-angelico-1440s-at-san-marco-florence-a-serene-fresco-masterpiece-of-divine-grace)
+    - [Fra Angelico's mid-1430s tempera panel Annunciation depicts the Archangel Gabriel announcing to Mary that she will bear the Son of God, housed at the Museo del Prado](#fra-angelicos-mid-1430s-tempera-panel-annunciation-depicts-the-archangel-gabriel-announcing-to-mary-that-she-will-bear-the-son-of-god-housed-at-the-museo-del-prado)
   - [July 09, 2025](#july-09-2025)
     - [Returning to the Visitation](#returning-to-the-visitation)
     - [AI-Generated Summary: The New Ark and the Song of Joy](#ai-generated-summary-the-new-ark-and-the-song-of-joy)
@@ -301,6 +302,10 @@ And so the Incarnation begins, not with fanfare, but with a whisper, a surrender
 ### The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace
 
 [![The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace](July/jpgs/annunciationfraangelico.jpg)](https://upload.wikimedia.org/wikipedia/commons/8/86/Fra_Angelico%2C_The_Annunciation%2C_ca._1443%3B_Convent_of_San_Marco%2C_Florence_%282%29.jpg "The Annunciation by Fra Angelico, 1440s, at San Marco, Florence A serene fresco masterpiece of divine grace")
+
+### Fra Angelico's mid-1430s tempera panel Annunciation depicts the Archangel Gabriel announcing to Mary that she will bear the Son of God, housed at the Museo del Prado
+
+[![Fra Angelico's mid-1430s tempera panel Annunciation depicts the Archangel Gabriel announcing to Mary that she will bear the Son of God, housed at the Museo del Prado](July/jpgs/Annunciation_TDJfJGaz.jpg)](https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg "Fra Angelico's mid-1430s tempera panel Annunciation depicts the Archangel Gabriel announcing to Mary that she will bear the Son of God, housed at the Museo del Prado")
 
 ## July 09, 2025
 
