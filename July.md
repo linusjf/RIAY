@@ -93,7 +93,7 @@
   - [July 21, 2025](#july-21-2025)
     - [Scapegoat and Savior](#scapegoat-and-savior)
     - [AI-Generated Summary: The Weight of Glory in Bearing the Cross](#ai-generated-summary-the-weight-of-glory-in-bearing-the-cross)
-    - [Jesus, Carrying His Cross, Helped by Simon of Cyrene (Stock Image)](#jesus-carrying-his-cross-helped-by-simon-of-cyrene-stock-image)
+    - [Orazio Gentileschi's 1605 Baroque oil painting depicts Christ carrying the cross to Calvary with profound emotional realism Museo del Prado, Madrid](#orazio-gentileschis-1605-baroque-oil-painting-depicts-christ-carrying-the-cross-to-calvary-with-profound-emotional-realism-museo-del-prado-madrid)
   - [July 22, 2025](#july-22-2025)
     - [God's Relentless Pursuit](#gods-relentless-pursuit)
     - [AI-Generated Summary: The Divine Embrace and the Rainbow of Promise](#ai-generated-summary-the-divine-embrace-and-the-rainbow-of-promise)
@@ -572,9 +572,9 @@ As the Angelic Doctor teaches, Christ carried His cross as a king carries his in
 
 Take heart, then, and remember: every sorrow borne in love is a thread woven into the tapestry of grace. The cross, once a symbol of death, is now the tree of life.
 
-### Jesus, Carrying His Cross, Helped by Simon of Cyrene (Stock Image)
+### Orazio Gentileschi's 1605 Baroque oil painting depicts Christ carrying the cross to Calvary with profound emotional realism Museo del Prado, Madrid
 
-[![Jesus, Carrying His Cross, Helped by Simon of Cyrene](July/jpgs/jesuscarryinghiscross.jpg)](https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/the-painting-simon-of-cyrene-helps-jesus-carry-his-cross-by-josef-piens-cooreman-jozef-sedmak.jpg "Jesus, Carrying His Cross, Helped by Simon of Cyrene")
+[![Orazio Gentileschi's 1605 Baroque oil painting depicts Christ carrying the cross to Calvary with profound emotional realism Museo del Prado, Madrid](July/jpgs/christcarryingthecross_ZttQAC07.jpg)](https://www.artchive.com/wp-content/uploads/2024/08/christ-carrying-the-cross-orazio-gentileschi-1605.jpg "Orazio Gentileschi's 1605 Baroque oil painting depicts Christ carrying the cross to Calvary with profound emotional realism Museo del Prado, Madrid")
 
 ## July 22, 2025
 
