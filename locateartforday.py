@@ -359,7 +359,6 @@ class ArtLocator:
                             sanitized_match["is_stock_image"] = is_stock_image_url(best_match["image_url"])
                             sanitized_match["generated_caption"] = self.generate_caption(json.dumps(sanitized_match, indent=2),query_text)
                             results.append(sanitized_match)
-                            continue  # Skip vector search if we found a good direct match
         else:
             self.logger.info("No rosary mysteries identified...")
 

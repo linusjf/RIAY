@@ -128,6 +128,11 @@
     - [AI-Generated Summary: The Queen's Crown and the Christian Hope](#ai-generated-summary-the-queens-crown-and-the-christian-hope)
     - [Giuseppe Mattia Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity (Stock Image)](#giuseppe-mattia-borgniss-18th-century-baroque-fresco-depicts-the-virgin-marys-coronation-as-queen-of-heaven-by-the-holy-trinity-stock-image)
     - [Gothic stained glass window depicting Mary's Assumption into heaven, surrounded by angels in Burgos Cathedral, Spain (Stock Image)](#gothic-stained-glass-window-depicting-marys-assumption-into-heaven-surrounded-by-angels-in-burgos-cathedral-spain-stock-image)
+  - [August 27, 2025](#august-27-2025)
+    - [The Annunciation and the Visitation - Day 239](#the-annunciation-and-the-visitation---day-239)
+    - [AI-Generated Summary: The Ever-Fresh Mystery](#ai-generated-summary-the-ever-fresh-mystery)
+    - [Jan van Eyck's 1434-1436 oil panel The Annunciation depicts Gabriel's divine message to Mary at the National Gallery of Art](#jan-van-eycks-1434-1436-oil-panel-the-annunciation-depicts-gabriels-divine-message-to-mary-at-the-national-gallery-of-art)
+    - [The Visitation by Unknown artist depicts Mary and Elizabeth's joyful meeting at Ein Karem](#the-visitation-by-unknown-artist-depicts-mary-and-elizabeths-joyful-meeting-at-ein-karem)
 
 <!---toc end-->
 
@@ -646,3 +651,21 @@ And from this assumption flows her coronation. If the first is the promise, the 
 ### Gothic stained glass window depicting Mary's Assumption into heaven, surrounded by angels in Burgos Cathedral, Spain (Stock Image)
 
 [![Gothic stained glass window depicting Mary's Assumption into heaven, surrounded by angels in Burgos Cathedral, Spain](August/jpgs/cathedralburgos_NmsH4NxJ.jpg)](https://c8.alamy.com/comp/PR002K/stained-glass-window-depicting-the-assumption-of-mary-in-the-cathedral-of-burgos-castille-spain-PR002K.jpg "Gothic stained glass window depicting Mary's Assumption into heaven, surrounded by angels in Burgos Cathedral, Spain")
+
+## August 27, 2025
+
+### The Annunciation and the Visitation - Day 239
+
+[![The Annunciation and the Visitation](/August/jpgs/Day239.jpg)](https://youtu.be/Kgzk-oiT76Y "The Annunciation and the Visitation")
+
+### AI-Generated Summary: The Ever-Fresh Mystery
+
+The well-worn path of a repeated prayer is not a prison for the spirit, but a door; and it is we who must choose to turn the handle and step through. The wise man does not merely tread the same stones day after day, but pauses to notice a new aspect of the vista—the light through a different branch, the scent of the air after rain. So it is proposed that one should approach these holy mysteries not as a task to be completed, but as a country to be explored. By fixing the mind upon a fresh particular in a well-known scene—a single joy in the Annunciation, a singular grace in the Visitation—the whole is made new again. This is the work of a lifetime: to let the familiar become a well of endless depth, that by this varied contemplation, the soul might continually draw nearer to the Divine Life which is its source.
+
+### Jan van Eyck's 1434-1436 oil panel The Annunciation depicts Gabriel's divine message to Mary at the National Gallery of Art
+
+[![Jan van Eyck's 1434-1436 oil panel The Annunciation depicts Gabriel's divine message to Mary at the National Gallery of Art](August/jpgs/annunciationvaneyck_z48wfGTY.jpg)](https://i.pinimg.com/736x/dc/d2/0b/dcd20b9d34dfc34ecf40a2a862594715.jpg "Jan van Eyck's 1434-1436 oil panel The Annunciation depicts Gabriel's divine message to Mary at the National Gallery of Art")
+
+### The Visitation by Unknown artist depicts Mary and Elizabeth's joyful meeting at Ein Karem
+
+[![The Visitation by Unknown artist depicts Mary and Elizabeth's joyful meeting at Ein Karem](August/jpgs/marygreetseliz_voWoKlex.jpg)](https://www.crossroadsinitiative.com/wp-content/uploads/2016/01/mary-greets-eliz-painting.jpg "The Visitation by Unknown artist depicts Mary and Elizabeth's joyful meeting at Ein Karem")
