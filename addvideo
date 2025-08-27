@@ -153,7 +153,7 @@ generate_files() {
     echo
     echo "## $formatdt"
     echo
-    echo "### $caption - Day $day"
+    echo "### $caption - Day $doy"
     echo
     echo "$md"
     "${SCRIPT_DIR}/summarizevideo" -- "$vid" >| "$summaryfname" \
