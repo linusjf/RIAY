@@ -20,9 +20,9 @@ import os
 import openai
 from pathlib import Path
 import sys
-from typing import cast, Literal, Dict, List, Any, Optional
+from typing import cast, Literal, Dict, List, Any
 from numpy.typing import NDArray
-from simtools import get_embedding, cosine_similarity
+from simtools import get_embedding
 from configconstants import ConfigConstants
 from configenv import ConfigEnv
 from dateutils import get_month_and_day,validate_day_range
@@ -75,72 +75,6 @@ class ArtLocator:
             name=os.path.basename(__file__),
             log_to_file=config.get(ConfigConstants.LOGGING, False)
         )
-
-    def get_matching_artworks_by_title_artist(self, title: Optional[str], artist: Optional[str] = None) -> List[Dict[str, Any]]:
-        """Find artworks that match title and optionally artist."""
-        # Return empty list if title is empty
-        if not title or title.strip() == '':
-            self.logger.info("Empty title provided, returning empty results")
-            return []
-
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-
-        if artist and not artist == '':
-            query = """
-                SELECT record_id, artist, caption, date, day_num, description, image_filepath,
-                       image_url, location, medium, mystery_name, mystery_type, original_title,
-                       original_title_ISO_code, original_title_language, style, subject, title,
-                       embeddings
-                FROM art_records
-                WHERE (title LIKE ? OR title GLOB ?)
-                AND (artist LIKE ? OR artist GLOB ?)
-            """
-            self.logger.info(f"Searching for artworks in art database with title '{title}' and artist '{artist}'")
-            cursor.execute(query, (
-                f"%{title}%",
-                f"*{title}*",
-                f"%{artist}%",
-                f"*{artist}*"
-            ))
-        else:
-            query = """
-                SELECT record_id, artist, caption, date, day_num, description, image_filepath,
-                       image_url, location, medium, mystery_name, mystery_type, original_title,
-                       original_title_ISO_code, original_title_language, style, subject, title,
-                       embeddings
-                FROM art_records
-                WHERE (title LIKE ? OR title GLOB ?)
-            """
-            self.logger.info(f"Searching for artworks in art database with title '{title}'")
-            cursor.execute(query, (
-                f"%{title}%",
-                f"*{title}*"
-            ))
-
-        rows = cursor.fetchall()
-        conn.close()
-        return [{
-            "record_id": row[0],
-            "artist": row[1],
-            "caption": row[2],
-            "date": row[3],
-            "day_num": row[4],
-            "description": row[5],
-            "image_filepath": row[6],
-            "image_url": row[7],
-            "location": row[8],
-            "medium": row[9],
-            "mystery_name": row[10],
-            "mystery_type": row[11],
-            "original_title": row[12],
-            "original_title_ISO_code": row[13],
-            "original_title_language": row[14],
-            "style": row[15],
-            "subject": row[16],
-            "title": row[17],
-            "embeddings": row[18]
-        } for row in rows]
 
     def generate_caption(self, json_object: str, input_text: str) -> str:
         """Generate a caption for an image record using the OpenAI API.
@@ -337,25 +271,19 @@ class ArtLocator:
                         self.logger.info(f"Found {len(direct_matches)} direct matches")
                         record_ids = [match['record_id'] for match in direct_matches]
 
-                        # Get embeddings for direct matches
-                        embeddings = p.get_items(record_ids, return_type='numpy')
-                        self.logger.debug(embeddings)
-                        self.logger.debug(embeddings.shape)
+                        # Define a filter: only allow neighbors with even labels
+                        def record_id_label_filter(label):
+                            return label in record_ids
 
-                        # Find best match by cosine similarity
-                        best_score: float = -1.0
-                        best_match = None
-                        idx: int
-                        embedding: NDArray[np.float32]
-                        for idx, embedding in zip(record_ids, embeddings):
-                            score: float = cosine_similarity(query_embedding, embedding)
-                            if score > best_score:
-                                best_score = score
-                                best_match = next(m for m in direct_matches if m['record_id'] == idx)
+                        # Find best match by cosine distances
+                        labels, distances = p.knn_query([query_embedding], k=1, num_threads=1, filter=record_id_label_filter)
+                        self.logger.debug(labels)
+                        self.logger.debug(distances)
 
+                        best_match = next(m for m in direct_matches if m['record_id'] == labels[0])
                         if best_match:
                             sanitized_match = {k: v for k, v in best_match.items() if not isinstance(v, bytes)}
-                            sanitized_match["cosine_score"] = best_score
+                            sanitized_match["cosine_score"] = float(1 - np.ravel(distances)[0])
                             sanitized_match["is_stock_image"] = is_stock_image_url(best_match["image_url"])
                             sanitized_match["generated_caption"] = self.generate_caption(json.dumps(sanitized_match, indent=2),query_text)
                             results.append(sanitized_match)
