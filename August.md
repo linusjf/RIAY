@@ -695,4 +695,4 @@ And so the prayers continue, as they have for ages—the familiar words of the O
 
 ### Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon in the Jerusalem Temple, 18th century, Church of St Gall, Prague
 
-\[![Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon in the Jerusalem Temple, 18th century, Church of St Gall, Prague](August/jpgs/PraguePresentation_Qfc5R4yr.jpg)\](<https://as2.ftcdn.net/jp> g/02/34/87/33/1000_F_234873301_FgABd7WONbY9DLBAR8ugRz4iDElboWDu.jpg "Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon in the Jerusalem Temple, 18th century, Church of St Gall, Prague")
+[![Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon in the Jerusalem Temple, 18th century, Church of St Gall, Prague](August/jpgs/PraguePresentation_Qfc5R4yr.jpg)](https://as2.ftcdn.net/jpg/02/34/87/33/1000_F_234873301_FgABd7WONbY9DLBAR8ugRz4iDElboWDu.jpg "Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon in the Jerusalem Temple, 18th century, Church of St Gall, Prague")
