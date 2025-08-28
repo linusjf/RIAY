@@ -214,7 +214,7 @@ class ImageMetadataExtractor:
 
         try:
             with open(csv_path, mode='w', newline='', encoding='utf-8') as file:
-                writer = csv.writer(file)
+                writer = csv.writer(file, quoting=csv.QUOTE_ALL)
                 fieldnames = set()
                 for record in metadata:
                     fieldnames.update(record.keys())

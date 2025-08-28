@@ -110,11 +110,14 @@ class ArtDatabaseCreator:
         try:
             with open(self.csv_path, 'r', encoding='utf-8') as csvfile:
                 csv_reader: csv.DictReader = csv.DictReader(csvfile)
+                rows = list(csv_reader)
+                no_of_lines: int = len(rows)
                 record_count: int = 0
 
                 if csv_reader:
                     row: Dict[str, str]
-                    for row in csv_reader:
+                    self.logger.info("Inserting records into table. This may take time since vector embeddings are obtained remotely via web service")
+                    for row in rows:
                         columns: str = ', '.join(row.keys())
                         placeholders: str = ', '.join(['?'] * len(row))
                         embedding: bytes = self._generate_embedding(row)
@@ -122,8 +125,9 @@ class ArtDatabaseCreator:
                         if self.cursor:
                             self.cursor.execute("SELECT 1 FROM art_records WHERE day_num = ?", (row['day_num'],))
                             if self.cursor.fetchone():
-                                 print(f"More than one art image found for day number: {row['day_num']}")
+                                 self.logger.info(f"More than one art image found for day number: {row['day_num']}")
                             self.cursor.execute(sql, tuple(row.values()) + (embedding,))
+                            self.logger.info(f"Record {record_count + 1} of {no_of_lines} inserted.")
                             record_count += self.cursor.rowcount
 
                 self.logger.info(f"Successfully imported {record_count} records")
