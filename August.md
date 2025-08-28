@@ -137,7 +137,7 @@
     - [The Nativity and the Presentation - Day 240](#the-nativity-and-the-presentation---day-240)
     - [AI-Generated Summary: On the Matter of Wandering Thoughts in Prayer](#ai-generated-summary-on-the-matter-of-wandering-thoughts-in-prayer)
     - [Pellegrini's 18th-century Rococo fresco in Vienna depicts the Nativity with graceful figures and soft colors (Stock Image)](#pellegrinis-18th-century-rococo-fresco-in-vienna-depicts-the-nativity-with-graceful-figures-and-soft-colors-stock-image)
-    - [Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon in the Jerusalem Temple, 18th century, Church of St Gall, Prague](#baroque-oil-painting-of-mary-and-joseph-presenting-infant-jesus-to-simeon-in-the-jerusalem-temple-18th-century-church-of-st-gall-prague)
+    - [Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon at the Temple by an unknown 18th century artist in Prague's Church of St Gall](#baroque-oil-painting-of-mary-and-joseph-presenting-infant-jesus-to-simeon-at-the-temple-by-an-unknown-18th-century-artist-in-pragues-church-of-st-gall)
 
 <!---toc end-->
 
@@ -691,8 +691,8 @@ And so the prayers continue, as they have for ages—the familiar words of the O
 
 ### Pellegrini's 18th-century Rococo fresco in Vienna depicts the Nativity with graceful figures and soft colors (Stock Image)
 
-[![Pellegrini's 18th-century Rococo fresco in Vienna depicts the Nativity with graceful figures and soft colors](August/jpgs/Nativity_x1mS53X9.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Pellegrini's 18th-century Rococo fresco in Vienna depicts the Nativity with graceful figures and soft colors")
+[![Pellegrini's 18th-century Rococo fresco in Vienna depicts the Nativity with graceful figures and soft colors](August/jpgs/Nativity_x8QJ8Py4.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Pellegrini's 18th-century Rococo fresco in Vienna depicts the Nativity with graceful figures and soft colors")
 
-### Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon in the Jerusalem Temple, 18th century, Church of St Gall, Prague
+### Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon at the Temple by an unknown 18th century artist in Prague's Church of St Gall
 
-[![Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon in the Jerusalem Temple, 18th century, Church of St Gall, Prague](August/jpgs/PraguePresentation_Qfc5R4yr.jpg)](https://as2.ftcdn.net/jpg/02/34/87/33/1000_F_234873301_FgABd7WONbY9DLBAR8ugRz4iDElboWDu.jpg "Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon in the Jerusalem Temple, 18th century, Church of St Gall, Prague")
+[![Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon at the Temple by an unknown 18th century artist in Prague's Church of St Gall](August/jpgs/PraguePresentation_QKGS5adF.jpg)](https://as2.ftcdn.net/jpg/02/34/87/33/1000_F_234873301_FgABd7WONbY9DLBAR8ugRz4iDElboWDu.jpg "Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon at the Temple by an unknown 18th century artist in Prague's Church of St Gall")
