@@ -6388,6 +6388,9 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
     - [AI-Generated Summary: On the Matter of Wandering Thoughts in Prayer](#ai-generated-summary-on-the-matter-of-wandering-thoughts-in-prayer)
     - [Pellegrini's 18th-century Rococo fresco in Vienna depicts the Nativity with graceful figures and soft colors (Stock Image)](#pellegrinis-18th-century-rococo-fresco-in-vienna-depicts-the-nativity-with-graceful-figures-and-soft-colors-stock-image)
     - [Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon at the Temple by an unknown 18th century artist in Prague's Church of St Gall](#baroque-oil-painting-of-mary-and-joseph-presenting-infant-jesus-to-simeon-at-the-temple-by-an-unknown-18th-century-artist-in-pragues-church-of-st-gall)
+  - [August 29, 2025](#august-29-2025)
+    - [The Finding of Jesus and Baptism of Jesus - Day 241](#the-finding-of-jesus-and-baptism-of-jesus---day-241)
+    - [AI-Generated Summary: On the Quieting of the Soul](#ai-generated-summary-on-the-quieting-of-the-soul)
 
 <!---toc end-->
 
@@ -6946,6 +6949,16 @@ And so the prayers continue, as they have for ages—the familiar words of the O
 ##### Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon at the Temple by an unknown 18th century artist in Prague's Church of St Gall
 
 [![Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon at the Temple by an unknown 18th century artist in Prague's Church of St Gall](August/jpgs/PraguePresentation_QKGS5adF.jpg)](https://as2.ftcdn.net/jpg/02/34/87/33/1000_F_234873301_FgABd7WONbY9DLBAR8ugRz4iDElboWDu.jpg "Baroque oil painting of Mary and Joseph presenting infant Jesus to Simeon at the Temple by an unknown 18th century artist in Prague's Church of St Gall")
+
+#### August 29, 2025
+
+##### The Finding of Jesus and Baptism of Jesus - Day 241
+
+[![The Finding of Jesus and Baptism of Jesus](August/jpgs/Day241.jpg)](https://youtu.be/XeLkohwxsPI "The Finding of Jesus and Baptism of Jesus")
+
+##### AI-Generated Summary: On the Quieting of the Soul
+
+The noise that clamours at the hour of prayer is but the echo of a life too much given to the world’s bustle. You would not expect a tree to bear fruit in a single season if the soil were poor; so too must you cultivate a spirit of quietude in the whole of your daily walk. For it is in the common hours that the soul is made ready for the uncommon moment of devotion. A life that seeks peace will, in due course, find its prayers becoming more recollected and its heart more still. And from this quieted heart, we turn our minds to certain sacred mysteries, which are to be meditated upon not with words, but in silence.
 
 ## September
 
