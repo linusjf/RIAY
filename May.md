@@ -1,4 +1,5 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -35,7 +36,7 @@
     - [AI-Generated Summary: Deepening Devotion Through Sacred Art and Prayer](#ai-generated-summary-deepening-devotion-through-sacred-art-and-prayer)
       - [Key Insights](#key-insights)
       - [Closing Devotions](#closing-devotions)
-    - [Fra Angelico’s Annunciation (mid-1430s)](#fra-angelicos-annunciation-mid-1430s)
+    - [Fra Angelico’s Annunciation, a renowned fresco painted in the mid-1430s, is located in the Convent of San Marco, Florence, Italy](#fra-angelicos-annunciation-a-renowned-fresco-painted-in-the-mid-1430s-is-located-in-the-convent-of-san-marco-florence-italy)
   - [May 10,2025](#may-102025)
     - [Joy in the Darkness](#joy-in-the-darkness)
     - [AI-Generated Summary: Rembrandt’s The Visitation and the Divine Light of Shared Faith](#ai-generated-summary-rembrandts-the-visitation-and-the-divine-light-of-shared-faith)
@@ -43,7 +44,7 @@
       - [Theological and Emotional Depth](#theological-and-emotional-depth)
       - [Reflections on the Scene](#reflections-on-the-scene)
       - [Connection to Prayer](#connection-to-prayer)
-    - [Rembrandt's The Visitation](#rembrandts-the-visitation)
+    - [Rembrandt's The Visitation painted in 1640, depicts the meeting of the Virgin Mary and her cousin Elizabeth, both pregnant, and is notable for its exquisite use of light and shadow](#rembrandts-the-visitation-painted-in-1640-depicts-the-meeting-of-the-virgin-mary-and-her-cousin-elizabeth-both-pregnant-and-is-notable-for-its-exquisite-use-of-light-and-shadow)
   - [May 11,2025](#may-112025)
     - [Worship and Warmth](#worship-and-warmth)
     - [AI-Generated Summary: A Meditation on Pellegrini’s Nativity and the Adoration of the Christ Child](#ai-generated-summary-a-meditation-on-pellegrinis-nativity-and-the-adoration-of-the-christ-child)
@@ -132,6 +133,7 @@
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -374,9 +376,9 @@ The text explores how prayer, meditation, and sacred art can deepen one’s spir
 
 Fra Angelico’s humility (as noted by Vasari) mirrors the text’s call to quiet devotion—a harmony of art, prayer, and surrender.
 
-### Fra Angelico’s Annunciation (mid-1430s)
+### Fra Angelico’s Annunciation, a renowned fresco painted in the mid-1430s, is located in the Convent of San Marco, Florence, Italy
 
-[![Fra Angelico’s Annunciation (mid-1430s)](/May/jpgs/Annunciation.jpg)](https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg "Fra Angelico’s Annunciation (mid-1430s)")
+[![Fra Angelico’s Annunciation, a renowned fresco painted in the mid-1430s, is located in the Convent of San Marco, Florence, Italy](/May/jpgs/Annunciation.jpg)](https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg "Fra Angelico’s Annunciation, a renowned fresco painted in the mid-1430s, is located in the Convent of San Marco, Florence, Italy")
 
 ## May 10,2025
 
@@ -419,9 +421,9 @@ The repeated "Hail Mary" and "Glory Be" prayers in the original text echo the pa
 
 In _The Visitation_, Rembrandt distills a moment where heaven touches earth, and two women—illuminated by faith—become vessels of grace. The artwork, like the prayers it inspires, reminds us that divine companionship transforms uncertainty into hope.
 
-### Rembrandt's The Visitation
+### Rembrandt's The Visitation painted in 1640, depicts the meeting of the Virgin Mary and her cousin Elizabeth, both pregnant, and is notable for its exquisite use of light and shadow
 
-[![Rembrandt's The Visitation](/May/jpgs/TheVisitation.jpg)](https://live.staticflickr.com/65535/48379549666_845e30610d_z.jpg "Rembrandt's The Visitation")
+[![Rembrandt's The Visitation painted in 1640, depicts the meeting of the Virgin Mary and her cousin Elizabeth, both pregnant, and is notable for its exquisite use of light and shadow](/May/jpgs/TheVisitation.jpg)](https://live.staticflickr.com/65535/48379549666_845e30610d_z.jpg "Rembrandt's The Visitation painted in 1640, depicts the meeting of the Virgin Mary and her cousin Elizabeth, both pregnant, and is notable for its exquisite use of light and shadow")
 
 ## May 11,2025
 
