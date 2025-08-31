@@ -148,6 +148,11 @@
     - [AI-Generated Summary: On Spiritual Dryness](#ai-generated-summary-on-spiritual-dryness)
     - [Gerard David's 1500 oil painting at the Louvre depicts Christ's first miracle transforming water into wine at the Wedding at Cana](#gerard-davids-1500-oil-painting-at-the-louvre-depicts-christs-first-miracle-transforming-water-into-wine-at-the-wedding-at-cana)
     - [Lorenzo Lotto's 1525-1530 oil painting at the Louvre depicts Christ protecting the adulteress, proclaiming God's kingdom through mercy](#lorenzo-lottos-1525-1530-oil-painting-at-the-louvre-depicts-christ-protecting-the-adulteress-proclaiming-gods-kingdom-through-mercy)
+  - [August 31, 2025](#august-31-2025)
+    - [The Transfiguration and the Eucharist - Day 243](#the-transfiguration-and-the-eucharist---day-243)
+    - [AI-Generated Summary: On Hearing the Divine Voice](#ai-generated-summary-on-hearing-the-divine-voice)
+    - [Raphael's 1516-1520 Transfiguration depicts Christ in divine light on Mount Tabor, with apostles below witnessing His glory](#raphaels-1516-1520-transfiguration-depicts-christ-in-divine-light-on-mount-tabor-with-apostles-below-witnessing-his-glory)
+    - [Juan de Juanes’s 1562 oil panel The Last Supper depicts Christ instituting the Eucharist at the Museo del Prado](#juan-de-juaness-1562-oil-panel-the-last-supper-depicts-christ-instituting-the-eucharist-at-the-museo-del-prado)
 
 <!---toc end-->
 
@@ -750,3 +755,25 @@ And what are the mysteries set before us? The second Luminous Mystery shows us t
 ### Lorenzo Lotto's 1525-1530 oil painting at the Louvre depicts Christ protecting the adulteress, proclaiming God's kingdom through mercy
 
 [![Lorenzo Lotto's 1525-1530 oil painting at the Louvre depicts Christ protecting the adulteress, proclaiming God's kingdom through mercy](August/jpgs/AdulterousWoman_3YHEpoin.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Lorenzo_Lotto_-_The_adulterous_woman_-_Louvre.JPG/960px-Lorenzo_Lotto_-_The_adulterous_woman_-_Louvre.JPG "Lorenzo Lotto's 1525-1530 oil painting at the Louvre depicts Christ protecting the adulteress, proclaiming God's kingdom through mercy")
+
+## August 31, 2025
+
+### The Transfiguration and the Eucharist - Day 243
+
+[![The Transfiguration and the Eucharist](/August/jpgs/Day243.jpg)](https://youtu.be/nl30gJN6Qyo "The Transfiguration and the Eucharist")
+
+### AI-Generated Summary: On Hearing the Divine Voice
+
+We often suppose that God is silent in our prayers, a complaint as common as it is sorrowful. But the true trouble, I suspect, lies not in a failure of His speech but in a failure of our own hearing. We listen for a command, for a voice from a whirlwind, and miss the Word which speaks continually through the sacred page. For the scriptures are the sure ground upon which we may meet Him; by reading and praying with the Bible, we allow His thoughts to become our own, and our private prayers are then informed by that which is eternally true.
+
+This leads us quite naturally to the great mysteries which make tangible that truth. Consider the Fourth Luminous Mystery, the Transfiguration, captured in Raphael's masterwork. There, upon the mount, the Lord is suspended in a mandorla of divine light, flanked by the lawgiver and the prophet, while below, the apostles shield their eyes from a glory they can scarcely comprehend.
+
+Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by Juan de Juanes with solemn devotion. The God-Man stands at the centre of the long table, the consecrated host held aloft, while around Him the faces of the apostles reveal the first awe of that everlasting sacrifice. In these mysteries, we see the story of our faith made manifest, a perpetual reminder of the glory that was revealed and the gift that was given.
+
+### Raphael's 1516-1520 Transfiguration depicts Christ in divine light on Mount Tabor, with apostles below witnessing His glory
+
+[![Raphael's 1516-1520 Transfiguration depicts Christ in divine light on Mount Tabor, with apostles below witnessing His glory](August/jpgs/TransfigurationRaphael_0rtnTQgc.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Transfiguration_Raphael.jpg/960px-Transfiguration_Raphael.jpg "Raphael's 1516-1520 Transfiguration depicts Christ in divine light on Mount Tabor, with apostles below witnessing His glory")
+
+### Juan de Juanes’s 1562 oil panel The Last Supper depicts Christ instituting the Eucharist at the Museo del Prado
+
+[![Juan de Juanes’s 1562 oil panel The Last Supper depicts Christ instituting the Eucharist at the Museo del Prado](August/jpgs/JuandeJuanesLastSupper_8WSfeJXy.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/%C3%9Altima_Cena_-_Juan_de_Juanes.jpg/960px-%C3%9Altima_Cena_-_Juan_de_Juanes.jpg "Juan de Juanes’s 1562 oil panel The Last Supper depicts Christ instituting the Eucharist at the Museo del Prado")
