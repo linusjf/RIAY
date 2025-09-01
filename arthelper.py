@@ -109,6 +109,8 @@ def check_image_size(url: str, max_image_bytes: int) -> bool:
                 "+https://github.com/linusjf/RIAY/bot-info)"
             )
         }
+        if not url.startswith(('http://', 'https://')):
+            raise ValueError("URL must start with http:// or https://")
         response = requests.head(url, headers=headers, timeout=10)
         if response.status_code == 200:
             content_length = response.headers.get('content-length')
