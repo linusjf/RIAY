@@ -44,6 +44,8 @@ class ConfigEnv:
     def _load_types(self, types_path):
         if os.path.exists(types_path):
             import json
+            if '../' in types_path or '..\\' in types_path:
+                raise Exception('Invalid file path')
             with open(types_path) as f:
                 json_obj = json.load(f)
                 return json_obj
