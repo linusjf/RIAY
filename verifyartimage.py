@@ -57,6 +57,8 @@ class ArtworkVerifier:
         Returns:
             The image file content as bytes.
         """
+        if '../' in image_path or '..\\' in image_path:
+            raise Exception('Invalid file path')
         with open(image_path, "rb") as file:
             return file.read()
 
