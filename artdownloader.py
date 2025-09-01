@@ -129,6 +129,8 @@ class ArtDownloader:
                 return False
 
             url_filename: str = os.path.splitext(filename)[0] + ".url.txt"
+            if '../' in url_filename or '..\\' in url_filename:
+                raise Exception('Invalid file path')
             with open(url_filename, "w") as url_file:
                 url_file.write(url)
             self.DOWNLOADED_URLS[url] = filename
