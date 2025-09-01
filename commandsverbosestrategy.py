@@ -3,6 +3,7 @@
 
 import os
 import subprocess
+import re
 from pathlib import Path
 from antlr4.error.ErrorStrategy import DefaultErrorStrategy, InputMismatchException
 from configenv import ConfigEnv
@@ -78,6 +79,8 @@ class CommandsVerboseStrategy(DefaultErrorStrategy):
         Returns:
             int: The return code of the executed command.
         """
+        if not re.match(r'^[a-zA-Z0-9_\-/\\]+$', command):
+            raise ValueError("Invalid command format")
         cwd = str(Path.cwd())
         cmd = ""
         file_path = Path(cwd + "/" + command)
