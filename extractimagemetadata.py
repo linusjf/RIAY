@@ -213,6 +213,8 @@ class ImageMetadataExtractor:
         self.logger.info(f"Saving metadata to CSV file: {csv_path}")
 
         try:
+            if '../' in str(csv_path) or '..\\' in str(csv_path):
+                raise Exception('Invalid file path')
             with open(csv_path, mode='w', newline='', encoding='utf-8') as file:
                 writer = csv.writer(file, quoting=csv.QUOTE_ALL)
                 fieldnames = set()
