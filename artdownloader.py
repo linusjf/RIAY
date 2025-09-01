@@ -121,6 +121,8 @@ class ArtDownloader:
     def _save_image_file(self, image_data: bytes, filename: str, url: str) -> bool:
         """Save image data to file and handle post-processing."""
         try:
+            if '../' in filename or '..\\' in filename:
+                raise Exception('Invalid file path')
             with open(filename, "wb") as f:
                 f.write(image_data)
 
