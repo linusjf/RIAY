@@ -7030,6 +7030,26 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
 
 ## September
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+
+<!---toc start-->
+
+- [September 2025](#september-2025)
+  - [September 01, 2025](#september-01-2025)
+    - [The Sorrowful Mysteries - Day 244](#the-sorrowful-mysteries---day-244)
+    - [AI-Generated Summary: The Strength Found in Sorrow](#ai-generated-summary-the-strength-found-in-sorrow)
+    - [Vicente Masip's 1550 oil painting at the Prado depicts Christ praying in Gethsemane as angels bring the chalice and apostles sleep](#vicente-masips-1550-oil-painting-at-the-prado-depicts-christ-praying-in-gethsemane-as-angels-bring-the-chalice-and-apostles-sleep)
+    - [Bouguereau's 1880 oil painting depicts Christ's brutal scourging at the pillar with divine resignation, located in La Rochelle Cathedral](#bouguereaus-1880-oil-painting-depicts-christs-brutal-scourging-at-the-pillar-with-divine-resignation-located-in-la-rochelle-cathedral)
+    - [Van Dyck's 1620 Baroque masterpiece in Madrid's Prado Museum depicts Christ's paradoxical coronation with thorns](#van-dycks-1620-baroque-masterpiece-in-madrids-prado-museum-depicts-christs-paradoxical-coronation-with-thorns)
+
+<!---toc end-->
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -7037,6 +7057,28 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
 ### September 2025
 
 RIAY September 2025
+
+#### September 01, 2025
+
+##### The Sorrowful Mysteries - Day 244
+
+[![The Sorrowful Mysteries](September/jpgs/Day244.jpg)](https://youtu.be/QTHGSFpWUnU "The Sorrowful Mysteries")
+
+##### AI-Generated Summary: The Strength Found in Sorrow
+
+To pray but a single decade is a good thing, yet to pray three is to build a muscle of the soul, strengthening the will for a slower, deeper attention. This is the work of the first Sorrowful Mysteries: the Agony in the Garden, where a perfect will submitted to a bitter cup; the Scourging at the Pillar, where Love itself was torn by the whip; and the Crowning with Thorns, wherein the true King wore a crown of mockery. It is a hard road, this contemplation of suffering, but it is a transformative journey, one that offers not mere sentiment, but the very grace that is our salvation.
+
+##### Vicente Masip's 1550 oil painting at the Prado depicts Christ praying in Gethsemane as angels bring the chalice and apostles sleep
+
+[![Vicente Masip's 1550 oil painting at the Prado depicts Christ praying in Gethsemane as angels bring the chalice and apostles sleep](September/jpgs/AgonyintheGarden_G4T98qe3.jpg)](https://www.museodelprado.es/en/the-collection/art-work/agony-in-the-garden/323edcfd-701e-403f-b27a-9c9d5c656e58 "Vicente Masip's 1550 oil painting at the Prado depicts Christ praying in Gethsemane as angels bring the chalice and apostles sleep")
+
+##### Bouguereau's 1880 oil painting depicts Christ's brutal scourging at the pillar with divine resignation, located in La Rochelle Cathedral
+
+[![Bouguereau's 1880 oil painting depicts Christ's brutal scourging at the pillar with divine resignation, located in La Rochelle Cathedral](September/jpgs/flagellationbouguereau_nCYgVBxQ.jpg)](https://upload.wikimedia.org/wikipedia/commons/5/56/William-Adolphe_Bouguereau_%281825-1905%29_-_The_Flagellation_of_Our_Lord_Jesus_Christ_%281880%29.jpg "Bouguereau's 1880 oil painting depicts Christ's brutal scourging at the pillar with divine resignation, located in La Rochelle Cathedral")
+
+##### Van Dyck's 1620 Baroque masterpiece in Madrid's Prado Museum depicts Christ's paradoxical coronation with thorns
+
+[![Van Dyck's 1620 Baroque masterpiece in Madrid's Prado Museum depicts Christ's paradoxical coronation with thorns](September/jpgs/crowningthornsvandyck17th_pzYsz3v8.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Anthonis_van_Dyck_004.jpg/960px-Anthonis_van_Dyck_004.jpg "Van Dyck's 1620 Baroque masterpiece in Madrid's Prado Museum depicts Christ's paradoxical coronation with thorns")
 
 ## October
 
