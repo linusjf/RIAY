@@ -50,6 +50,8 @@ class ImgBBUploader:
         """
         logger.info(f"Attempting to upload image: {image_path}")
         try:
+            if '../' in image_path or '..\\' in image_path:
+                raise Exception('Invalid file path')
             with open(image_path, "rb") as file:
                 response: requests.Response = requests.post(
                     self.upload_url,
