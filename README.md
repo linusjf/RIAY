@@ -7051,6 +7051,12 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
     - [Orazio Gentileschi's 1605 Baroque oil painting depicts Christ's agonizing journey to Calvary under the heavy wooden cross](#orazio-gentileschis-1605-baroque-oil-painting-depicts-christs-agonizing-journey-to-calvary-under-the-heavy-wooden-cross)
     - [Pietro Gagliardi's 1847-1852 fresco in San Girolamo dei Croati depicts Christ's Crucifixion with the Virgin Mary, John, and Mary Magdalene mourning at the foot of the cross (Stock Image)](#pietro-gagliardis-1847-1852-fresco-in-san-girolamo-dei-croati-depicts-christs-crucifixion-with-the-virgin-mary-john-and-mary-magdalene-mourning-at-the-foot-of-the-cross-stock-image)
     - [Annibale Carracci's 1593 oil painting Resurrection at the Louvre depicts Christ triumphantly emerging from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-1593-oil-painting-resurrection-at-the-louvre-depicts-christ-triumphantly-emerging-from-the-tomb-as-roman-soldiers-recoil-in-awe)
+  - [September 03, 2025](#september-03-2025)
+    - [The Glorious Mysteries - Day 246](#the-glorious-mysteries---day-246)
+    - [AI-Generated Summary: On the Recitation of the Rosary](#ai-generated-summary-on-the-recitation-of-the-rosary)
+    - [Christ ascends in a mandorla of light, supported by angels, with the Virgin Mary and astonished apostles below in this 12th-century Byzantine mosaic at St Mark's Basilica](#christ-ascends-in-a-mandorla-of-light-supported-by-angels-with-the-virgin-mary-and-astonished-apostles-below-in-this-12th-century-byzantine-mosaic-at-st-marks-basilica)
+    - [Titian's 1546 oil painting Pentecost in Venice depicts the Holy Spirit descending as fire upon Mary and the apostles](#titians-1546-oil-painting-pentecost-in-venice-depicts-the-holy-spirit-descending-as-fire-upon-mary-and-the-apostles)
+    - [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting the Assumption of Mary into heaven, welcomed by Christ (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-the-assumption-of-mary-into-heaven-welcomed-by-christ-stock-image)
 
 <!---toc end-->
 
@@ -7107,6 +7113,28 @@ We are asked to consider the last steps of the great drama: the heavy weight of 
 ##### Annibale Carracci's 1593 oil painting Resurrection at the Louvre depicts Christ triumphantly emerging from the tomb as Roman soldiers recoil in awe
 
 [![Annibale Carracci's 1593 oil painting Resurrection at the Louvre depicts Christ triumphantly emerging from the tomb as Roman soldiers recoil in awe](September/jpgs/Resurrection_693w4bGo.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg/960px-Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg "Annibale Carracci's 1593 oil painting Resurrection at the Louvre depicts Christ triumphantly emerging from the tomb as Roman soldiers recoil in awe")
+
+#### September 03, 2025
+
+##### The Glorious Mysteries - Day 246
+
+[![The Glorious Mysteries](September/jpgs/Day246.jpg)](https://youtu.be/mnEuLFjua4Q "The Glorious Mysteries")
+
+##### AI-Generated Summary: On the Recitation of the Rosary
+
+One finds, in these texts, a common thread not of narrative or description, but of petition and praise. They are not accounts of events to be summarized, but rather the very substance of devotion itself—the repeated and heartfelt prayers of the faithful. The Hail Mary, the Our Father, the Glory Be; these are the well-worn paths upon which the soul travels, not to learn a new thing, but to be reminded of an eternal one. It is the act of turning the mind, again and again, to the sacred mysteries—the Ascension, the Descent of the Holy Spirit, the Assumption—even when the artwork that might illustrate them remains unseen. The value lies not in the novelty of the words, but in the steadfastness of the heart that speaks them. It is a practice wherein the repetition is not emptiness, but a deepening, like a stream that wears away stone not by force, but by constancy.
+
+##### Christ ascends in a mandorla of light, supported by angels, with the Virgin Mary and astonished apostles below in this 12th-century Byzantine mosaic at St Mark's Basilica
+
+[![Christ ascends in a mandorla of light, supported by angels, with the Virgin Mary and astonished apostles below in this 12th-century Byzantine mosaic at St Mark's Basilica](September/jpgs/Ascension_RC9ZqBGH.jpg)](https://www.wga.hu/art/zgothic/mosaics/6sanmarc/2cucros1.jpg "Christ ascends in a mandorla of light, supported by angels, with the Virgin Mary and astonished apostles below in this 12th-century Byzantine mosaic at St Mark's Basilica")
+
+##### Titian's 1546 oil painting Pentecost in Venice depicts the Holy Spirit descending as fire upon Mary and the apostles
+
+[![Titian's 1546 oil painting Pentecost in Venice depicts the Holy Spirit descending as fire upon Mary and the apostles](September/jpgs/PentecostTitian_GBKG6Gpe.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Pentecost%2C_by_Titian_%281546%29_-_Santa_Maria_della_Salute_-_Venice_2016.jpg/960px-Pentecost%2C_by_Titian_%281546%29_-_Santa_Maria_della_Salute_-_Venice_2016.jpg "Titian's 1546 oil painting Pentecost in Venice depicts the Holy Spirit descending as fire upon Mary and the apostles")
+
+##### A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting the Assumption of Mary into heaven, welcomed by Christ (Stock Image)
+
+[![A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting the Assumption of Mary into heaven, welcomed by Christ](September/jpgs/cathedralburgos_0gFIVHzV.jpg)](https://c8.alamy.com/comp/PR002K/stained-glass-window-depicting-the-assumption-of-mary-in-the-cathedral-of-burgos-castille-spain-PR002K.jpg "A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting the Assumption of Mary into heaven, welcomed by Christ")
 
 ## October
 
