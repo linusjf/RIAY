@@ -25,6 +25,12 @@
     - [Christ ascends in a mandorla of light, supported by angels, with the Virgin Mary and astonished apostles below in this 12th-century Byzantine mosaic at St Mark's Basilica](#christ-ascends-in-a-mandorla-of-light-supported-by-angels-with-the-virgin-mary-and-astonished-apostles-below-in-this-12th-century-byzantine-mosaic-at-st-marks-basilica)
     - [Titian's 1546 oil painting Pentecost in Venice depicts the Holy Spirit descending as fire upon Mary and the apostles](#titians-1546-oil-painting-pentecost-in-venice-depicts-the-holy-spirit-descending-as-fire-upon-mary-and-the-apostles)
     - [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting the Assumption of Mary into heaven, welcomed by Christ (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-the-assumption-of-mary-into-heaven-welcomed-by-christ-stock-image)
+  - [September 04, 2025](#september-04-2025)
+    - [The Glorious and Joyful Mysteries - Day 247](#the-glorious-and-joyful-mysteries---day-247)
+    - [AI-Generated Summary: On a Certain Kind of Prayer](#ai-generated-summary-on-a-certain-kind-of-prayer)
+    - [Giuseppe Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity (Stock Image)](#giuseppe-borgniss-18th-century-baroque-fresco-depicts-the-virgin-marys-coronation-as-queen-of-heaven-by-the-holy-trinity-stock-image)
+    - [Jan van Eyck's 1434-1436 oil panel The Annunciation depicts Gabriel's divine message to the Virgin Mary, housed in Washington DC's National Gallery of Art](#jan-van-eycks-1434-1436-oil-panel-the-annunciation-depicts-gabriels-divine-message-to-the-virgin-mary-housed-in-washington-dcs-national-gallery-of-art)
+    - [The Visitation depicts Mary and Elizabeth's sacred encounter, their unborn children recognizing God's divine work within them](#the-visitation-depicts-mary-and-elizabeths-sacred-encounter-their-unborn-children-recognizing-gods-divine-work-within-them)
 
 <!---toc end-->
 
@@ -103,3 +109,27 @@ One finds, in these texts, a common thread not of narrative or description, but 
 ### A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting the Assumption of Mary into heaven, welcomed by Christ (Stock Image)
 
 [![A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting the Assumption of Mary into heaven, welcomed by Christ](September/jpgs/cathedralburgos_0gFIVHzV.jpg)](https://c8.alamy.com/comp/PR002K/stained-glass-window-depicting-the-assumption-of-mary-in-the-cathedral-of-burgos-castille-spain-PR002K.jpg "A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting the Assumption of Mary into heaven, welcomed by Christ")
+
+## September 04, 2025
+
+### The Glorious and Joyful Mysteries - Day 247
+
+[![The Glorious and Joyful Mysteries](/September/jpgs/Day247.jpg)](https://youtu.be/g3SRbSxBUWM "The Glorious and Joyful Mysteries")
+
+### AI-Generated Summary: On a Certain Kind of Prayer
+
+We are told of a soul at its prayers, moving through the sacred pattern of the Glorious and Joyful Mysteries. It first contemplates that final and most glorious truth: the Coronation of our Lady as Queen of Heaven. From that height, it turns back to the beginning of joy, to the Annunciation—that great disturbance of the universe where a Virgin is saluted and consents—and then to the Visitation, where blessing is carried from one house to another and joy leaps in the womb.
+
+The rest, as you have found, is not a tale to be summarized but a practice to be performed; the well-worn paths of the _Hail Mary_ and the _Our Father_, which are not the window through which we look at the landscape, but the very footsteps of the walker upon the road itself.
+
+### Giuseppe Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity (Stock Image)
+
+[![Giuseppe Mattia Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity](September/jpgs/Coronation_GvTJjFMM.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.8926670.7055475/763119.jpg "Giuseppe Mattia Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity")
+
+### Jan van Eyck's 1434-1436 oil panel The Annunciation depicts Gabriel's divine message to the Virgin Mary, housed in Washington DC's National Gallery of Art
+
+[![Jan van Eyck's 1434-1436 oil panel the Annunciation depicts Gabriel's divine message to the Virgin Mary, housed in Washington DC's National Gallery of Art](September/jpgs/annunciationvaneyck_LBUuhNoB.jpg)](https://i.pinimg.com/736x/dc/d2/0b/dcd20b9d34dfc34ecf40a2a862594715.jpg "Jan van Eyck's 1434-1436 oil panel The Annunciation depicts Gabriel's divine message to the Virgin Mary, housed in Washington DC's National Gallery of Art")
+
+### The Visitation depicts Mary and Elizabeth's sacred encounter, their unborn children recognizing God's divine work within them
+
+[![The Visitation depicts Mary and Elizabeth's sacred encounter, their unborn children recognizing God's divine work within them](September/jpgs/marygreetseliz_UXg4TTHw.jpg)](https://www.crossroadsinitiative.com/wp-content/uploads/2016/01/mary-greets-eliz-painting.jpg "The Visitation depicts Mary and Elizabeth's sacred encounter, their unborn children recognizing God's divine work within them")
