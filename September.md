@@ -31,6 +31,12 @@
     - [Giuseppe Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity (Stock Image)](#giuseppe-borgniss-18th-century-baroque-fresco-depicts-the-virgin-marys-coronation-as-queen-of-heaven-by-the-holy-trinity-stock-image)
     - [Jan van Eyck's 1434-1436 oil panel The Annunciation depicts Gabriel's divine message to the Virgin Mary, housed in Washington DC's National Gallery of Art](#jan-van-eycks-1434-1436-oil-panel-the-annunciation-depicts-gabriels-divine-message-to-the-virgin-mary-housed-in-washington-dcs-national-gallery-of-art)
     - [The Visitation depicts Mary and Elizabeth's sacred encounter, their unborn children recognizing God's divine work within them](#the-visitation-depicts-mary-and-elizabeths-sacred-encounter-their-unborn-children-recognizing-gods-divine-work-within-them)
+  - [September 05, 2025](#september-05-2025)
+    - [The Joyful Mysteries - Day 248](#the-joyful-mysteries---day-248)
+    - [AI-Generated Summary: The Habit of Heaven](#ai-generated-summary-the-habit-of-heaven)
+    - [Giovanni Antonio Pellegrini's 18th-century Rococo Nativity, in oil on canvas at Vienna's Salesianerkirche, depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)](#giovanni-antonio-pellegrinis-18th-century-rococo-nativity-in-oil-on-canvas-at-viennas-salesianerkirche-depicts-the-newborn-christ-adored-by-mary-joseph-and-angels-stock-image)
+    - [Giulio Campi's 1547 fresco in Cremona depicts Mary and Joseph presenting the infant Jesus to Simeon in the Temple (Stock Image)](#giulio-campis-1547-fresco-in-cremona-depicts-mary-and-joseph-presenting-the-infant-jesus-to-simeon-in-the-temple-stock-image)
+    - [A 20th-century Byzantine mosaic in Lourdes depicting young Jesus teaching elders in the Temple, found by Mary and Joseph (Stock Image)](#a-20th-century-byzantine-mosaic-in-lourdes-depicting-young-jesus-teaching-elders-in-the-temple-found-by-mary-and-joseph-stock-image)
 
 <!---toc end-->
 
@@ -133,3 +139,25 @@ The rest, as you have found, is not a tale to be summarized but a practice to be
 ### The Visitation depicts Mary and Elizabeth's sacred encounter, their unborn children recognizing God's divine work within them
 
 [![The Visitation depicts Mary and Elizabeth's sacred encounter, their unborn children recognizing God's divine work within them](September/jpgs/marygreetseliz_UXg4TTHw.jpg)](https://www.crossroadsinitiative.com/wp-content/uploads/2016/01/mary-greets-eliz-painting.jpg "The Visitation depicts Mary and Elizabeth's sacred encounter, their unborn children recognizing God's divine work within them")
+
+## September 05, 2025
+
+### The Joyful Mysteries - Day 248
+
+[![The Joyful Mysteries](/September/jpgs/Day248.jpg)](https://youtu.be/aVQ9sliPQzI "The Joyful Mysteries")
+
+### AI-Generated Summary: The Habit of Heaven
+
+One finds in these texts not a discourse, but the very practice of devotion itself—the well-worn path of the Rosary, trodden by countless souls. It is the joyful mysteries upon which the mind is to settle: the Nativity, the Presentation in the Temple, and the Finding of the Child Jesus among the teachers. The substance is not in novel argument but in the familiar, repeated cadences of the Our Father and the Hail Mary, which are to the spirit what a steady rhythm is to a walker. They are the means by which the great truth is not merely considered but, through holy habit, allowed to sink into the very grain of the soul. The value lies not in the variety of the words, which are few and oft-repeated, but in the constancy of the attention turned toward the sacred event. It is an invitation to a quiet companionship in prayer, a shared journey toward a destination both magnificent and humble.
+
+### Giovanni Antonio Pellegrini's 18th-century Rococo Nativity, in oil on canvas at Vienna's Salesianerkirche, depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)
+
+[![Giovanni Antonio Pellegrini's 18th-century Rococo Nativity, in oil on canvas at Vienna's Salesianerkirche, depicts the newborn Christ adored by Mary, Joseph, and angels](September/jpgs/Nativity_tQSrZMQB.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Giovanni Antonio Pellegrini's 18th-century Rococo Nativity, in oil on canvas at Vienna's Salesianerkirche, depicts the newborn Christ adored by Mary, Joseph, and angels")
+
+### Giulio Campi's 1547 fresco in Cremona depicts Mary and Joseph presenting the infant Jesus to Simeon in the Temple (Stock Image)
+
+[![Giulio Campi's 1547 fresco in Cremona depicts Mary and Joseph presenting the infant Jesus to Simeon in the Temple](September/jpgs/PresentationinTemple_dxSTllfi.jpg)](https://stock.adobe.com/in/images/cremona-italy-may-24-2016-the-fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547/113785168 "Giulio Campi's 1547 fresco in Cremona depicts Mary and Joseph presenting the infant Jesus to Simeon in the Temple")
+
+### A 20th-century Byzantine mosaic in Lourdes depicting young Jesus teaching elders in the Temple, found by Mary and Joseph (Stock Image)
+
+[![A 20th-century Byzantine mosaic in Lourdes depicting young Jesus teaching elders in the Temple, found by Mary and Joseph](September/jpgs/LostandFound_N59pNHw5.jpg)](https://thumbs.dreamstime.com/b/mosaic-jesus-lost-found-temple-rosary-basilica-lourdes-78705042.jpg "A 20th-century Byzantine mosaic in Lourdes depicting young Jesus teaching elders in the Temple, found by Mary and Joseph")
