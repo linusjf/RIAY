@@ -7069,6 +7069,12 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
     - [Giovanni Antonio Pellegrini's 18th-century Rococo Nativity, in oil on canvas at Vienna's Salesianerkirche, depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)](#giovanni-antonio-pellegrinis-18th-century-rococo-nativity-in-oil-on-canvas-at-viennas-salesianerkirche-depicts-the-newborn-christ-adored-by-mary-joseph-and-angels-stock-image)
     - [Giulio Campi's 1547 fresco in Cremona depicts Mary and Joseph presenting the infant Jesus to Simeon in the Temple (Stock Image)](#giulio-campis-1547-fresco-in-cremona-depicts-mary-and-joseph-presenting-the-infant-jesus-to-simeon-in-the-temple-stock-image)
     - [A 20th-century Byzantine mosaic in Lourdes depicting young Jesus teaching elders in the Temple, found by Mary and Joseph (Stock Image)](#a-20th-century-byzantine-mosaic-in-lourdes-depicting-young-jesus-teaching-elders-in-the-temple-found-by-mary-and-joseph-stock-image)
+  - [September 06, 2025](#september-06-2025)
+    - [The Luminous Mysteries - Day 249](#the-luminous-mysteries---day-249)
+    - [AI-Generated Summary: On the First Luminous Mysteries](#ai-generated-summary-on-the-first-luminous-mysteries)
+    - [The Baptism of Christ, an Italian Renaissance fresco in Padua's Church of San Benedetto, depicts Jesus baptized by John as the Holy Spirit descends (Stock Image)](#the-baptism-of-christ-an-italian-renaissance-fresco-in-paduas-church-of-san-benedetto-depicts-jesus-baptized-by-john-as-the-holy-spirit-descends-stock-image)
+    - [Gerard David's 1500 oil painting at the Louvre depicts Christ's first miracle, transforming water into wine at the Wedding at Cana](#gerard-davids-1500-oil-painting-at-the-louvre-depicts-christs-first-miracle-transforming-water-into-wine-at-the-wedding-at-cana-1)
+    - [James Tissot's 1894 gouache painting 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing (Stock Image)](#james-tissots-1894-gouache-painting-healing-of-the-lepers-at-capernaum-depicts-christ-proclaiming-gods-kingdom-through-miraculous-healing-stock-image)
 
 <!---toc end-->
 
@@ -7193,6 +7199,28 @@ One finds in these texts not a discourse, but the very practice of devotion itse
 ##### A 20th-century Byzantine mosaic in Lourdes depicting young Jesus teaching elders in the Temple, found by Mary and Joseph (Stock Image)
 
 [![A 20th-century Byzantine mosaic in Lourdes depicting young Jesus teaching elders in the Temple, found by Mary and Joseph](September/jpgs/LostandFound_N59pNHw5.jpg)](https://thumbs.dreamstime.com/b/mosaic-jesus-lost-found-temple-rosary-basilica-lourdes-78705042.jpg "A 20th-century Byzantine mosaic in Lourdes depicting young Jesus teaching elders in the Temple, found by Mary and Joseph")
+
+#### September 06, 2025
+
+##### The Luminous Mysteries - Day 249
+
+[![The Luminous Mysteries](September/jpgs/Day249.jpg)](https://youtu.be/Pn9KJM04KB4 "The Luminous Mysteries")
+
+##### AI-Generated Summary: On the First Luminous Mysteries
+
+We are invited to consider the first of these Luminous Mysteries, which are themselves a proclamation of that Light which came into the world. The first is the Baptism in the Jordan, where the voice of the Father declares the Son, and the Spirit, in the form of a dove, confirms the truth of the thing. The second mystery is the manifestation at the wedding in Cana, where the water of mere custom was made the wine of joy by His who commands all matter. The third is the Proclamation of the Kingdom, with its call to repentance and the promise of a comfort that the world cannot give. In these, we see the pattern of Heaven breaking through, not to destroy the world, but to fill it, as light fills a room.
+
+##### The Baptism of Christ, an Italian Renaissance fresco in Padua's Church of San Benedetto, depicts Jesus baptized by John as the Holy Spirit descends (Stock Image)
+
+[![The Baptism of Christ, an Italian Renaissance fresco in Padua's Church of San Benedetto, depicts Jesus baptized by John as the Holy Spirit descends](September/jpgs/BaptismofChrist_3Hmb2E10.jpg)](https://www.istockphoto.com/vector/padua-baptism-of-christ-in-church-san-benedetto-vecchio-gm517403261-48689476 "The Baptism of Christ, an Italian Renaissance fresco in Padua's Church of San Benedetto, depicts Jesus baptized by John as the Holy Spirit descends")
+
+##### Gerard David's 1500 oil painting at the Louvre depicts Christ's first miracle, transforming water into wine at the Wedding at Cana
+
+[![Gerard David's 1500 oil painting at the Louvre depicts Christ's first miracle, transforming water into wine at the Wedding at Cana](September/jpgs/MarriageCana_gPErhheg.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Gerard_David_-_The_Marriage_at_Cana.jpg/960px-Gerard_David_-_The_Marriage_at_Cana.jpg "Gerard David's 1500 oil painting at the Louvre depicts Christ's first miracle, transforming water into wine at the Wedding at Cana")
+
+##### James Tissot's 1894 gouache painting 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing (Stock Image)
+
+[![James Tissot's 1894 gouache painting 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing](September/jpgs/healingofthelepers_fVUDP7cz.jpg)](https://www.alamy.com/healing-of-the-lepers-at-capernaum-1894-by-james-tissot-image557924107.html "James Tissot's 1894 gouache painting 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing")
 
 ## October
 
