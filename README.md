@@ -7075,6 +7075,11 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
     - [The Baptism of Christ, an Italian Renaissance fresco in Padua's Church of San Benedetto, depicts Jesus baptized by John as the Holy Spirit descends (Stock Image)](#the-baptism-of-christ-an-italian-renaissance-fresco-in-paduas-church-of-san-benedetto-depicts-jesus-baptized-by-john-as-the-holy-spirit-descends-stock-image)
     - [Gerard David's 1500 oil painting at the Louvre depicts Christ's first miracle, transforming water into wine at the Wedding at Cana](#gerard-davids-1500-oil-painting-at-the-louvre-depicts-christs-first-miracle-transforming-water-into-wine-at-the-wedding-at-cana-1)
     - [James Tissot's 1894 gouache painting 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing (Stock Image)](#james-tissots-1894-gouache-painting-healing-of-the-lepers-at-capernaum-depicts-christ-proclaiming-gods-kingdom-through-miraculous-healing-stock-image)
+  - [September 07, 2025](#september-07-2025)
+    - [The Luminous and Sorrowful Mysteries - Day 250](#the-luminous-and-sorrowful-mysteries---day-250)
+    - [AI-Generated Summary: On the Recitation of the Mysteries](#ai-generated-summary-on-the-recitation-of-the-mysteries)
+    - [Henry Ossawa Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist](#henry-ossawa-tanners-christ-and-the-disciples-before-the-last-supper-c-1900-oil-on-canvas-depicts-christs-spiritual-preparation-before-instituting-the-eucharist)
+    - [Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's agony while His disciples sleep, painted in oil on canvas for Vicenza Cathedral (Stock Image)](#alessandro-maganzas-the-prayer-of-jesus-in-gethsemane-c-1590-1610-depicts-christs-agony-while-his-disciples-sleep-painted-in-oil-on-canvas-for-vicenza-cathedral-stock-image)
 
 <!---toc end-->
 
@@ -7221,6 +7226,26 @@ We are invited to consider the first of these Luminous Mysteries, which are them
 ##### James Tissot's 1894 gouache painting 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing (Stock Image)
 
 [![James Tissot's 1894 gouache painting 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing](September/jpgs/healingofthelepers_fVUDP7cz.jpg)](https://www.alamy.com/healing-of-the-lepers-at-capernaum-1894-by-james-tissot-image557924107.html "James Tissot's 1894 gouache painting 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing")
+
+#### September 07, 2025
+
+##### The Luminous and Sorrowful Mysteries - Day 250
+
+[![The Luminous and Sorrowful Mysteries](September/jpgs/Day250.jpg)](https://youtu.be/7Isg4PYEBMM "The Luminous and Sorrowful Mysteries")
+
+##### AI-Generated Summary: On the Recitation of the Mysteries
+
+It is a curious and rather beautiful thing, is it not, how the soul, by the steady repetition of hallowed words, seeks to clothe itself in a garment of prayer? The text presented is not a discourse to be summarized, but rather the very substance of a devotion—the recitation of the Fifth Luminous Mystery, which concerns that most profound of gifts, the Institution of the Eucharist, and the first of the Sorrowful Mysteries, the Agony in the Garden.
+
+One finds here the familiar cadence of the Our Father, the gentle salutation of the Hail Mary, and the solemn praise of the Glory Be, woven together like a tapestry. Their purpose is not to inform the intellect but to form the will, to draw the one who prays ever deeper into the contemplation of these great and terrible and glorious acts. There is no description of art, for the mysteries themselves are the icons before which the heart is meant to kneel. The repetition is the whole of the matter; it is the steps taken along a well-worn path that leads, not to a new idea, but to a familiar and beloved country.
+
+##### Henry Ossawa Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist
+
+[![Henry Ossawa Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist](September/jpgs/christdiscipleshenrytanner_7jY9IyBJ.jpg)](https://upload.wikimedia.org/wikipedia/commons/a/ae/Christ_and_the_Disciples_Before_the_Last_Supper_by_Henry_Ossawa_Tanner.jpg "Henry Ossawa Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist")
+
+##### Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's agony while His disciples sleep, painted in oil on canvas for Vicenza Cathedral (Stock Image)
+
+[![Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's agony while His disciples sleep, painted in oil on canvas for Vicenza Cathedral](September/jpgs/Gethsemane_IdcDYHC6.jpg)](https://www.istockphoto.com/photo/vicenza-the-painting-of-prayer-of-jesus-in-gethsemane-garden-in-the-cathedral-by-gm1922845709-555481794 "Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's agony while His disciples sleep, painted in oil on canvas for Vicenza Cathedral")
 
 ## October
 
