@@ -48,6 +48,12 @@
     - [AI-Generated Summary: On the Recitation of the Mysteries](#ai-generated-summary-on-the-recitation-of-the-mysteries)
     - [Henry Ossawa Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist](#henry-ossawa-tanners-christ-and-the-disciples-before-the-last-supper-c-1900-oil-on-canvas-depicts-christs-spiritual-preparation-before-instituting-the-eucharist)
     - [Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's agony while His disciples sleep, painted in oil on canvas for Vicenza Cathedral (Stock Image)](#alessandro-maganzas-the-prayer-of-jesus-in-gethsemane-c-1590-1610-depicts-christs-agony-while-his-disciples-sleep-painted-in-oil-on-canvas-for-vicenza-cathedral-stock-image)
+  - [September 08, 2025](#september-08-2025)
+    - [The Sorrowful Mysteries - Day 251](#the-sorrowful-mysteries---day-251)
+    - [AI-Generated Summary: On the Reiteration of Prayer](#ai-generated-summary-on-the-reiteration-of-prayer)
+    - [Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with academic precision and divine resignation](#bouguereaus-1880-oil-painting-the-flagellation-of-our-lord-jesus-christ-depicts-christs-brutal-scourging-with-academic-precision-and-divine-resignation)
+    - [Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers pressing the thorn crown onto Christ's head with violent intensity as he endures with serene dignity](#titians-christ-crowned-with-thorns-c-15421543-depicts-roman-soldiers-pressing-the-thorn-crown-onto-christs-head-with-violent-intensity-as-he-endures-with-serene-dignity)
+    - [Raphael's 1516-17 'Christ Falls on the Way to Calvary' depicts Christ's third fall under the cross's weight during his sorrowful journey to Calvary](#raphaels-1516-17-christ-falls-on-the-way-to-calvary-depicts-christs-third-fall-under-the-crosss-weight-during-his-sorrowful-journey-to-calvary)
 
 <!---toc end-->
 
@@ -214,3 +220,25 @@ One finds here the familiar cadence of the Our Father, the gentle salutation of 
 ### Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's agony while His disciples sleep, painted in oil on canvas for Vicenza Cathedral (Stock Image)
 
 [![Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's agony while His disciples sleep, painted in oil on canvas for Vicenza Cathedral](September/jpgs/Gethsemane_IdcDYHC6.jpg)](https://www.istockphoto.com/photo/vicenza-the-painting-of-prayer-of-jesus-in-gethsemane-garden-in-the-cathedral-by-gm1922845709-555481794 "Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's agony while His disciples sleep, painted in oil on canvas for Vicenza Cathedral")
+
+## September 08, 2025
+
+### The Sorrowful Mysteries - Day 251
+
+[![The Sorrowful Mysteries](/September/jpgs/Day251.jpg)](https://youtu.be/Kl86rTEDHh8 "The Sorrowful Mysteries")
+
+### AI-Generated Summary: On the Reiteration of Prayer
+
+My dear reader, one finds in this text not a discourse or a story, but the very substance of devotion itself—the repeated and heartfelt recitation of prayer. It is the meditation on the Sorrowful Mysteries that forms the core: the Scourging at the Pillar, the Crowning with Thorns, and the Carrying of the Cross. These are not merely recounted but entered into through the familiar and comforting rhythm of the Hail Mary, the Our Father, and the Glory Be. The text is the vessel for this act of worship, a gentle and persistent turning of the soul toward a sacred focus, culminating in a simple expression of gratitude. There is no art here to describe, for the action itself is the object.
+
+### Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with academic precision and divine resignation
+
+[![Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with academic precision and divine resignation](September/jpgs/flagellationbouguereau_SUwtWBen.jpg)](https://upload.wikimedia.org/wikipedia/commons/5/56/William-Adolphe_Bouguereau_%281825-1905%29_-_The_Flagellation_of_Our_Lord_Jesus_Christ_%281880%29.jpg "Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with academic precision and divine resignation")
+
+### Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers pressing the thorn crown onto Christ's head with violent intensity as he endures with serene dignity
+
+[![Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers pressing the thorn crown onto Christ's head with violent intensity as he endures with serene dignity](September/jpgs/CrowningwithThorns_VQhft2Pq.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Titian_-_Crowning_with_Thorns_-_WGA22806.jpg/960px-Titian_-_Crowning_with_Thorns_-_WGA22806.jpg "Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers pressing the thorn crown onto Christ's head with violent intensity as he endures with serene dignity")
+
+### Raphael's 1516-17 'Christ Falls on the Way to Calvary' depicts Christ's third fall under the cross's weight during his sorrowful journey to Calvary
+
+[![Raphael's 1516-17 'Christ Falls on the Way to Calvary' depicts Christ's third fall under the cross's weight during his sorrowful journey to Calvary](September/jpgs/christfallswaycalvaryraphael_jKrMrsBO.jpg)](https://upload.wikimedia.org/wikipedia/commons/4/44/Raffaello_Sanzio_-_Christ_Falls_on_the_Way_to_Calvary_-_WGA18828.jpg "Raphael's 1516-17 'Christ Falls on the Way to Calvary' depicts Christ's third fall under the cross's weight during his sorrowful journey to Calvary")
