@@ -73,7 +73,7 @@ if not VECTOR_EMBEDDINGS_MODEL:
     logger.error(ERROR_MESSAGES["missing_model"])
     raise ValueError(ERROR_MESSAGES["missing_model"])
 
-deepinfra_client: OpenAI = OpenAI(
+embeddings_client: OpenAI = OpenAI(
     api_key=VECTOR_EMBEDDINGS_MODEL_API_KEY,
     base_url=VECTOR_EMBEDDINGS_BASE_URL,
 )
@@ -206,8 +206,8 @@ def compute_match_dicts(
     return (matched, mismatched)
 
 def get_embedding(text: str) -> NDArray[np.float32]:
-    """Get text embedding using deepinfra client."""
-    embeddings = deepinfra_client.embeddings.create(
+    """Get text embedding using embeddings client."""
+    embeddings = embeddings_client.embeddings.create(
         model=str(VECTOR_EMBEDDINGS_MODEL),
         input=text,
         encoding_format="float"
