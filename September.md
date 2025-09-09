@@ -54,6 +54,12 @@
     - [Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with academic precision and divine resignation](#bouguereaus-1880-oil-painting-the-flagellation-of-our-lord-jesus-christ-depicts-christs-brutal-scourging-with-academic-precision-and-divine-resignation)
     - [Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers pressing the thorn crown onto Christ's head with violent intensity as he endures with serene dignity](#titians-christ-crowned-with-thorns-c-15421543-depicts-roman-soldiers-pressing-the-thorn-crown-onto-christs-head-with-violent-intensity-as-he-endures-with-serene-dignity)
     - [Raphael's 1516-17 'Christ Falls on the Way to Calvary' depicts Christ's third fall under the cross's weight during his sorrowful journey to Calvary](#raphaels-1516-17-christ-falls-on-the-way-to-calvary-depicts-christs-third-fall-under-the-crosss-weight-during-his-sorrowful-journey-to-calvary)
+  - [September 09, 2025](#september-09-2025)
+    - [The Sorrowful and Glorious Mysteries - Day 252](#the-sorrowful-and-glorious-mysteries---day-252)
+    - [AI-Generated Summary: On Certain Great Mysteries](#ai-generated-summary-on-certain-great-mysteries)
+    - [James Tissot's 1886-94 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's perspective, showing the crowd below in gouache realism](#james-tissots-1886-94-what-our-lord-saw-from-the-cross-depicts-the-crucifixion-from-christs-perspective-showing-the-crowd-below-in-gouache-realism)
+    - [Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ emerging gloriously from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-resurrection-1593-oil-on-canvas-louvre-depicts-christ-emerging-gloriously-from-the-tomb-as-roman-soldiers-recoil-in-awe)
+    - [Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as apostles watch in wonder (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-depicts-christ-ascending-into-heaven-as-apostles-watch-in-wonder-stock-image)
 
 <!---toc end-->
 
@@ -242,3 +248,27 @@ My dear reader, one finds in this text not a discourse or a story, but the very 
 ### Raphael's 1516-17 'Christ Falls on the Way to Calvary' depicts Christ's third fall under the cross's weight during his sorrowful journey to Calvary
 
 [![Raphael's 1516-17 'Christ Falls on the Way to Calvary' depicts Christ's third fall under the cross's weight during his sorrowful journey to Calvary](September/jpgs/christfallswaycalvaryraphael_jKrMrsBO.jpg)](https://upload.wikimedia.org/wikipedia/commons/4/44/Raffaello_Sanzio_-_Christ_Falls_on_the_Way_to_Calvary_-_WGA18828.jpg "Raphael's 1516-17 'Christ Falls on the Way to Calvary' depicts Christ's third fall under the cross's weight during his sorrowful journey to Calvary")
+
+## September 09, 2025
+
+### The Sorrowful and Glorious Mysteries - Day 252
+
+[![The Sorrowful and Glorious Mysteries](/September/jpgs/Day252.jpg)](https://youtu.be/m35SPWXvC7I "The Sorrowful and Glorious Mysteries")
+
+### AI-Generated Summary: On Certain Great Mysteries
+
+We are bid to consider a progression of three great and solemn mysteries, as a man might climb a mountain from its darkest vale to its sunlit peak. The first is that final, terrible mystery of sorrow: the Crucifixion of Our Lord, where all the weight of a world's wrong was laid upon a single frame. From this depth of despair, we are then lifted—as indeed we are always lifted from such depths—to the first glorious mystery: the Resurrection. Here is the great reversal, the divine laughter that answers the world's grimace, the truth that a pierced hand has forever unlocked the door of death.
+
+And being thus lifted, we are not left as orphans. For the final step in this ascent is the second glorious mystery: the Ascension. It is not a departure, but a coronation; the moment when the Man who walked with us passed through the very veil of the heavens to prepare a place, so that our own nature might forever have a share in the very life of God.
+
+### James Tissot's 1886-94 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's perspective, showing the crowd below in gouache realism
+
+[![James Tissot's 1886-94 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's perspective, showing the crowd below in gouache realism](September/jpgs/viewfromcross_MxjE9hOv.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg/960px-Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg "James Tissot's 1886-94 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's perspective, showing the crowd below in gouache realism")
+
+### Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ emerging gloriously from the tomb as Roman soldiers recoil in awe
+
+[![Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ emerging gloriously from the tomb as Roman soldiers recoil in awe](September/jpgs/Resurrection_Gsu0Edyd.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg/960px-Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg "Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ emerging gloriously from the tomb as Roman soldiers recoil in awe")
+
+### Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as apostles watch in wonder (Stock Image)
+
+[![Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as apostles watch in wonder](September/jpgs/ascensionofthelord_yN5GCped.jpg)](https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as apostles watch in wonder")
