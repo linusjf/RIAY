@@ -7092,6 +7092,12 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
     - [James Tissot's 1886-94 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's perspective, showing the crowd below in gouache realism](#james-tissots-1886-94-what-our-lord-saw-from-the-cross-depicts-the-crucifixion-from-christs-perspective-showing-the-crowd-below-in-gouache-realism)
     - [Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ emerging gloriously from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-resurrection-1593-oil-on-canvas-louvre-depicts-christ-emerging-gloriously-from-the-tomb-as-roman-soldiers-recoil-in-awe)
     - [Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as apostles watch in wonder (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-depicts-christ-ascending-into-heaven-as-apostles-watch-in-wonder-stock-image)
+  - [September 10, 2025](#september-10-2025)
+    - [The Glorious Mysteries - Day 253](#the-glorious-mysteries---day-253)
+    - [AI-Generated Summary: On the Glorious Mysteries](#ai-generated-summary-on-the-glorious-mysteries)
+    - [Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending upon Mary and the apostles in Mannerist style at San Fedele, Milan (Stock Image)](#simone-peterzanos-pentecost-c-1580-oil-on-canvas-depicts-the-holy-spirit-descending-upon-mary-and-the-apostles-in-mannerist-style-at-san-fedele-milan-stock-image)
+    - [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's Assumption into heaven, welcomed by Christ (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-marys-assumption-into-heaven-welcomed-by-christ-stock-image)
+    - [Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](#diego-vel%C3%A1zquezs-coronation-of-the-virgin-c-1641-1644-an-oil-on-canvas-at-the-prado-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven)
 
 <!---toc end-->
 
@@ -7304,6 +7310,28 @@ And being thus lifted, we are not left as orphans. For the final step in this as
 ##### Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as apostles watch in wonder (Stock Image)
 
 [![Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as apostles watch in wonder](September/jpgs/ascensionofthelord_yN5GCped.jpg)](https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as apostles watch in wonder")
+
+#### September 10, 2025
+
+##### The Glorious Mysteries - Day 253
+
+[![The Glorious Mysteries](September/jpgs/Day253.jpg)](https://youtu.be/XLTtRRQoKeU "The Glorious Mysteries")
+
+##### AI-Generated Summary: On the Glorious Mysteries
+
+We are asked to contemplate a thing of great simplicity and profound depth: the final Glorious Mysteries. The words themselves are few and oft-repeated, like a well-worn path to a familiar and beloved door. In this repetition, one does not find emptiness, but rather the steady rhythm of a heart turned toward the divine—the Our Father, the Hail Mary, the Glory Be. These are not incantations to change the will of Heaven, but the humble means by which a soul may be shaped to receive it. The mysteries themselves—the Spirit's descent, the Lady's Assumption, her Coronation—stand as great, unshakeable facts behind the prayer, like sunlit mountains glimpsed through the mists of our own devotion. The prayer is our looking; the mystery is the thing seen.
+
+##### Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending upon Mary and the apostles in Mannerist style at San Fedele, Milan (Stock Image)
+
+[![Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending upon Mary and the apostles in Mannerist style at San Fedele, Milan](September/jpgs/pentecostsimonepeterzano_r5rrOCkv.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.12926920.7055475/2959742.jpg "Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending upon Mary and the apostles in Mannerist style at San Fedele, Milan")
+
+##### A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's Assumption into heaven, welcomed by Christ (Stock Image)
+
+[![A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's Assumption into heaven, welcomed by Christ](September/jpgs/cathedralburgos_7TNeHNsT.jpg)](https://c8.alamy.com/comp/PR002K/stained-glass-window-depicting-the-assumption-of-mary-in-the-cathedral-of-burgos-castille-spain-PR002K.jpg "A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's Assumption into heaven, welcomed by Christ")
+
+##### Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven
+
+[![Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](September/jpgs/Coronation_ei2EdoGd.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg/960px-Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg "Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven")
 
 ## October
 
