@@ -7104,6 +7104,7 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
     - [Fra Angelico's 'The Annunciation' (mid-1430s), a tempera panel in Madrid's Prado, depicts Gabriel's announcement to Mary within Renaissance architecture](#fra-angelicos-the-annunciation-mid-1430s-a-tempera-panel-in-madrids-prado-depicts-gabriels-announcement-to-mary-within-renaissance-architecture)
     - ['The Visitation' depicts Mary and Elizabeth's sacred encounter, recognizing God's work within them at Ein Karem](#the-visitation-depicts-mary-and-elizabeths-sacred-encounter-recognizing-gods-work-within-them-at-ein-karem)
     - [Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)](#giovanni-antonio-pellegrinis-18th-century-rococo-the-nativity-in-vienna-depicts-the-newborn-christ-adored-by-mary-joseph-and-angels-stock-image)
+    - [Holding Mary's Hand](#holding-marys-hand)
 
 <!---toc end-->
 
@@ -7360,6 +7361,10 @@ One finds here not a discourse to be parsed, but a well-worn path for the feet o
 ##### Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)
 
 [![Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels](September/jpgs/Nativity_Tv5OAYsQ.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels")
+
+##### Holding Mary's Hand
+
+![Holding Mary's Hand](September/jpgs/holdingmaryshand.jpg)
 
 ## October
 
