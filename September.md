@@ -66,6 +66,12 @@
     - [Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending upon Mary and the apostles in Mannerist style at San Fedele, Milan (Stock Image)](#simone-peterzanos-pentecost-c-1580-oil-on-canvas-depicts-the-holy-spirit-descending-upon-mary-and-the-apostles-in-mannerist-style-at-san-fedele-milan-stock-image)
     - [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's Assumption into heaven, welcomed by Christ (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-marys-assumption-into-heaven-welcomed-by-christ-stock-image)
     - [Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](#diego-vel%C3%A1zquezs-coronation-of-the-virgin-c-1641-1644-an-oil-on-canvas-at-the-prado-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven)
+  - [September 11, 2025](#september-11-2025)
+    - [The Joyful Mysteries - Day 254](#the-joyful-mysteries---day-254)
+    - [AI-Generated Summary: The Recitation of Joyful Mysteries](#ai-generated-summary-the-recitation-of-joyful-mysteries)
+    - [Fra Angelico's 'The Annunciation' (mid-1430s), a tempera panel in Madrid's Prado, depicts Gabriel's announcement to Mary within Renaissance architecture](#fra-angelicos-the-annunciation-mid-1430s-a-tempera-panel-in-madrids-prado-depicts-gabriels-announcement-to-mary-within-renaissance-architecture)
+    - ['The Visitation' depicts Mary and Elizabeth's sacred encounter, recognizing God's work within them at Ein Karem](#the-visitation-depicts-mary-and-elizabeths-sacred-encounter-recognizing-gods-work-within-them-at-ein-karem)
+    - [Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)](#giovanni-antonio-pellegrinis-18th-century-rococo-the-nativity-in-vienna-depicts-the-newborn-christ-adored-by-mary-joseph-and-angels-stock-image)
 
 <!---toc end-->
 
@@ -300,3 +306,25 @@ We are asked to contemplate a thing of great simplicity and profound depth: the 
 ### Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven
 
 [![Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](September/jpgs/Coronation_ei2EdoGd.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg/960px-Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg "Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven")
+
+## September 11, 2025
+
+### The Joyful Mysteries - Day 254
+
+[![The Joyful Mysteries](/September/jpgs/Day254.jpg)](https://youtu.be/jRIkndNiwn4 "The Joyful Mysteries")
+
+### AI-Generated Summary: The Recitation of Joyful Mysteries
+
+One finds here not a discourse to be parsed, but a well-worn path for the feet of devotion. It is the repetition of ancient and familiar forms—the Hail Mary, the Our Father, the Glory Be—spoken not for novelty but for constancy, like a steady rhythm beneath the tumult of our days. The purpose is not to inform the intellect, but to form the soul through a humble return to the same words, the same truths, the same mysteries. The heart of the matter lies in the naming of the Joyful Mysteries themselves: the Annunciation, the Visitation, and the Nativity. These are the great pillars around which the prayer circles, the fixed points of light by which the faithful orient their hearts toward a singular, joyful hope.
+
+### Fra Angelico's 'The Annunciation' (mid-1430s), a tempera panel in Madrid's Prado, depicts Gabriel's announcement to Mary within Renaissance architecture
+
+[![Fra Angelico's 'The Annunciation' (mid-1430s), a tempera panel in Madrid's Prado, depicts Gabriel's announcement to Mary within Renaissance architecture](September/jpgs/Annunciation_TvKvtHJh.jpg)](https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg "Fra Angelico's 'The Annunciation' (mid-1430s), a tempera panel in Madrid's Prado, depicts Gabriel's announcement to Mary within Renaissance architecture")
+
+### 'The Visitation' depicts Mary and Elizabeth's sacred encounter, recognizing God's work within them at Ein Karem
+
+[!['The Visitation' depicts Mary and Elizabeth's sacred encounter, recognizing God's work within them at Ein Karem](September/jpgs/marygreetseliz_WAo3ShX7.jpg)](https://www.crossroadsinitiative.com/wp-content/uploads/2016/01/mary-greets-eliz-painting.jpg "'The Visitation' depicts Mary and Elizabeth's sacred encounter, recognizing God's work within them at Ein Karem")
+
+### Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)
+
+[![Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels](September/jpgs/Nativity_Tv5OAYsQ.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels")
