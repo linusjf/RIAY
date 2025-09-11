@@ -48,7 +48,7 @@ My Dear Readers, we embark together upon a new spiritual expedition, not into un
 
 Consider the man who can pray in any season of life; is he not like a dwelling built upon rock, unshaken by tempest? This ancient practice, central to the spiritual lives of saints and simple folk across the ages, has proven its power to renew souls and even the Church itself. Some, mistaking its outward simplicity, might dismiss it, yet it is through this very engagement with Scripture and tradition that we may, as it were, build and inhabit a spiritual basilica.
 
-Imagine constructing such a sacred space within the soul. First, the foundation is laid with intellectual and prayerful understanding, perhaps akin to mastering the catechism. Then, the structure is adorned, filled with the beauty and richness passed down through the ages. But the true purpose is not merely the building or the adornment; it is the _living_ within its hallowed precincts. This is not a single visit, like a tourist's hurried glance, but a constant dwelling, a repeated return to pray, to live, and to draw sustenance from the spiritual treasures held within. It is a practice to be inhabited regularly, like attendance at Mass, embodying Scripture and tradition through continuous discipline.
+Imagine constructing such a sacred space within the soul. First, the foundation is laid with intellectual and prayerful understanding, perhaps akin to mastering the catechism. Then, the structure is adorned, filled with the beauty and richness passed down through the ages. But the true purpose is not merely the building or the adornment; it is the *living* within its hallowed precincts. This is not a single visit, like a tourist's hurried glance, but a constant dwelling, a repeated return to pray, to live, and to draw sustenance from the spiritual treasures held within. It is a practice to be inhabited regularly, like attendance at Mass, embodying Scripture and tradition through continuous discipline.
 
 Approaching this prayer, we find wisdom in focusing deeply on a small part rather than rushing through the whole. It is like a pilgrim resolving to return to a sacred shrine rather than attempting to see every monument at once. Such resolution allows us to relax, to concentrate, and to return again and again, not worrying about what is missed, but rather mining the depths of what is explored. This applies profoundly to the Mysteries of Christ's life; we need not grasp all at once, trusting we may return for ever-deeper understanding.
 
@@ -93,8 +93,8 @@ It seems a common plight amongst earnest souls is the struggle with prayer, part
 
 The text before us points to several pitfalls:
 
-- **The neglect of the heart's connection:** We may fail to dedicate quiet time simply to _be_ with God, turning prayer into a task rather than a relationship.
-- **Instruction without illumination:** Often, we are taught the _form_ of the prayer but not its deeper _meaning_ or contemplative spirit, leaving us feeling insecure or the practice hollow.
+- **The neglect of the heart's connection:** We may fail to dedicate quiet time simply to *be* with God, turning prayer into a task rather than a relationship.
+- **Instruction without illumination:** Often, we are taught the *form* of the prayer but not its deeper *meaning* or contemplative spirit, leaving us feeling insecure or the practice hollow.
 - **The folly of haste:** We attempt too much too soon, burdening ourselves with expectations that outstrip our present capacity, transforming devotion into a hurried checklist.
 
 This last point is particularly poignant. Like an athlete returning to fundamentals, we must approach spiritual discipline with humility and truthfulness about where we stand. The temptation is to perform, to feel like a 'good Christian' by completing a prescribed amount, rather than seeking to know and love God, and to allow God to love us. This leads to rushing, to a mechanical drone, and ultimately, to a struggle to genuinely cherish the practice.
@@ -103,7 +103,7 @@ Yet, there is a path forward, marked by grace and patience:
 
 - **Cultivating Presence:** Taking time to simply breathe and practice the awareness of God's presence, perhaps using imagination to aid connection.
 - **Revisiting the Familiar:** Looking anew at common prayers, allowing their profound truths and the mysteries they touch upon to resonate deeply within us.
-- **Praying Within One's Strength:** Approaching prayer honestly, doing what we _can_ pray well, with focus and contemplation, rather than what we feel we _should_ be able to do. It is far better to pray a small part mindfully than the whole mechanically.
+- **Praying Within One's Strength:** Approaching prayer honestly, doing what we *can* pray well, with focus and contemplation, rather than what we feel we *should* be able to do. It is far better to pray a small part mindfully than the whole mechanically.
 
 To aid pilgrims on this journey, a year-long program is announced for 2025. It is structured as a 'prayer exercise plan,' designed to begin gently, teaching the fundamental encounter with God, Jesus, and Mary, and illuminating the deep meaning of the core prayers and mysteries. It aims to build capacity gradually, starting small and slowly increasing, not for the sake of speed, but to cultivate a deeper love for the Lord, for Mary, and for the Rosary as a path to profound relationship. It is a return to the basics, a source of grace for all, whether beginner, struggling soul, or one seeking deeper waters. Progress is made, as in all worthy endeavours, little by little, yet success is assured for those who persevere.
 
@@ -131,7 +131,7 @@ Your effort in seeking this path is commendable, like tending a garden for a sha
 
 #### Format for sharing on the WhatsApp group
 
-<https://chat.whatsapp.com/EPXBhsE4GzJ0j8YXt98YT1>
+https://chat.whatsapp.com/EPXBhsE4GzJ0j8YXt98YT1
 
 Would like to encourage the participants to share their thoughts, it can be one word, one line or a reflection, it doesn't have to be perfect. We the admins will review it before posting so feel free to drop us a note. Let us know how the days readings inspired you.
 
@@ -153,7 +153,7 @@ All the WhatsApp groups are closed for 2025, if anyone wants to follow the progr
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 
-**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+**Table of Contents** *generated with [DocToc](https://github.com/ktechhub/doctoc)*
 
 <!---toc start-->
 
@@ -320,7 +320,7 @@ Consider the Rosary not as a task to be completed, but as a path to be walked, s
 
 Prayer is, at its heart, an act of faith: to offer up our tangled hopes and hidden fears, and in return, to receive the peace that the world cannot give. Do not be troubled if it feels strange at first. Even the saints began as beginners. Persist, and you will find what all the saints have known—that in the quiet surrender of prayer, the soul is met, held, and transformed by Love Himself.
 
-And so we lift our hearts, not alone, but as children of Mary, who teaches us to say with her, _"Be it done unto me according to Thy word."_ For in the end, prayer is not our work, but His—a gift already given, waiting only to be unwrapped.
+And so we lift our hearts, not alone, but as children of Mary, who teaches us to say with her, *"Be it done unto me according to Thy word."* For in the end, prayer is not our work, but His—a gift already given, waiting only to be unwrapped.
 
 ##### AI-Generated Image: A sacred dance of prayer, where stillness meets surrender and grace unfolds like a whispered verse
 
@@ -334,12 +334,12 @@ And so we lift our hearts, not alone, but as children of Mary, who teaches us to
 
 ##### ROSARY IN A YEAR DAY 02 Michelle Jackson
 
-_The King knows "you/me"_
-_This is so personal for me_
-\_The king of the universe knows me even before i was knit in my mother's womb,\* _He knows the very number of hairs on my head,_ _how precious and heart striking it is to know that._ _The King sees me, the King Knows me, the King "Loves" to hear my voice_ ❤‍🔥 _and the King knows my name_ 😍😍
-_My God My God how I love Thee. This way of praying having the image of Him in our hearts when we pray is something so precious, we see ourselves and feel so unworthy while all along He looks at us in Love._
-_Thank you Jesus._
-_i once asked Jesus while at a retreat to call to my name aloud and He did while it was on the last day of the retreat we were all having a JAM dance (Jesus and me) in the midst of all the music and loud noise I heard someone call my name it was clear and soft I asked my husband if he called my name and he said no and I knew it at once it was Jesus who called my name. So yes ,The King knows me/ the King knows you/ the King knows each of us by name_ 😇😢❤‍🔥
+*The King knows "you/me"*
+*This is so personal for me*
+\_The king of the universe knows me even before i was knit in my mother's womb,\* *He knows the very number of hairs on my head,* *how precious and heart striking it is to know that.* *The King sees me, the King Knows me, the King "Loves" to hear my voice* ❤‍🔥 *and the King knows my name* 😍😍
+*My God My God how I love Thee. This way of praying having the image of Him in our hearts when we pray is something so precious, we see ourselves and feel so unworthy while all along He looks at us in Love.*
+*Thank you Jesus.*
+*i once asked Jesus while at a retreat to call to my name aloud and He did while it was on the last day of the retreat we were all having a JAM dance (Jesus and me) in the midst of all the music and loud noise I heard someone call my name it was clear and soft I asked my husband if he called my name and he said no and I knew it at once it was Jesus who called my name. So yes ,The King knows me/ the King knows you/ the King knows each of us by name* 😇😢❤‍🔥
 
 ##### Day 2 - Michael Eltham
 
@@ -437,9 +437,9 @@ Being in the workshop with Jesus as my teacher today was just awesome 👌. I wa
 
 ##### Rosary IN A YEAR DAY 03- Heart of Jesus Michelle Jackson
 
-_Jesus who are You?_
-_Jesus, What is Your heart like?_
-_Jesus, what is Your heart like to me?_
+*Jesus who are You?*
+*Jesus, What is Your heart like?*
+*Jesus, what is Your heart like to me?*
 \_Jesus is my safe space, my home, my heaven, my best friend, my hope, my life, my saviour, my EVERYTHING. The very meaning of my life_❤‍🔥
 Yes Jesus' heart is full of Patience and Mercy
 I see myself like a child in His workshop and inspite of Him giving me instructions i keep interrupting Him and asking if i'm doing well and all i see is He smiles back at me , im in a hurry but He is not, He's full of Love and I feel so safe and free to be myself that even though i'm messing up He's not angry or upset. Im trying to keep up, looking at what He's doing but i don't seem to match n i cry , and just then He tells me His secret, that He loves spending time with me and loves it that i'm spending time with Him. And that's what Mamma told Him, that we need to spend time together.😭❤‍🔥😢 It melts my heart hearing that, i drop the tools and jump onto Him and He embraces me.
@@ -472,11 +472,11 @@ Notable insights include the analogy of learning in a woodshop with Jesus, highl
 
 ##### RIAY Day 4/ 04- 01- 2025
 
-_Praying with Mary_
+*Praying with Mary*
 Immaculate Heart of Mary beside the Sacred Heart of Jesus is a picture frame has been in my heart and home for like forever. Yet it took me a minute to focus on a picture of Mother Mary to pray.
 Very beautifully reflected upon by Fr... Mary was actively involved in the growth of her Son Jesus in every aspect Mind Body and Spirit, her own beloved Son..and then John her second beloved son...then San Juan " Am I not your mother?" And the list can go on...
 
-God our loving Father I pray today for myself and all Catholics who have taken Our Blessed Mother Mary for granted and for all who have turned their back on her. _may we understand that we cannot and never will be able to love her more than Jesus did_
+God our loving Father I pray today for myself and all Catholics who have taken Our Blessed Mother Mary for granted and for all who have turned their back on her. *may we understand that we cannot and never will be able to love her more than Jesus did*
 May we receive grace everyday through her maternal intercession. Amen.
 Poco poco Fr Mark. God bless you too. Thankyou. 🙏🏻
 
@@ -630,15 +630,15 @@ Jeff Cavins shares a powerful testimony of spiritual transformation rooted in Sc
 
 ###### Memorable Quotes
 
-- _"I had such a hunger for Scripture... but I didn’t know the story."_
+- *"I had such a hunger for Scripture... but I didn’t know the story."*
 
-- _"When I studied the early Church, I realized everything I was doing couldn’t be found there—but everything they were doing could."_
+- *"When I studied the early Church, I realized everything I was doing couldn’t be found there—but everything they were doing could."*
 
-- _"God is not against repetition—our heartbeat, our breathing, even wisdom in Hebrew is learned by repetition."_
+- *"God is not against repetition—our heartbeat, our breathing, even wisdom in Hebrew is learned by repetition."*
 
-- _"Mary, the Queen Mother, doesn't take away from Jesus. She magnifies Him, as she leads us through His life."_
+- *"Mary, the Queen Mother, doesn't take away from Jesus. She magnifies Him, as she leads us through His life."*
 
-- _"The Rosary allows us to create a small temple in time—a place of peace and focus wherever we are."_
+- *"The Rosary allows us to create a small temple in time—a place of peace and focus wherever we are."*
 
 This testimony highlights how Scripture and Catholic tradition can work together to bring clarity, depth, and renewed faith, especially through the rediscovery of Mary’s biblical role and the power of contemplative prayer.
 
@@ -677,21 +677,21 @@ This reflection explores how to live out the prayer "Thy kingdom come, thy will 
 **Main Topics Discussed:**
 
 1. **The Nature of Children:** Children are presented as inherently "poor" – dependent, lacking knowledge and resources, and vulnerable. Crucially, in a healthy environment, they accept this dependence without shame or frustration, naturally turning to parents for all needs. Despite their neediness, they often exhibit joy and levity.
-1. **Childlike Humility as the Key:** This trusting dependence and acceptance of one's limitations ("poverty") is the essential characteristic for entering and experiencing the Kingdom of Heaven.
-1. **Experiencing the Kingdom Now:** The Kingdom isn't just a future reality. It is experienced _now_ when we acknowledge our dependence, limitations, and needs, and bring them directly to God the Father without shame, self-hatred, or resorting to anxious self-reliance. This act of trusting dependence meeting God's providence _is_ the Kingdom experience on earth.
-1. **Contrast with Adult Tendencies:** Adults often react to their inherent limitations with shame, frustration, and a drive for self-reliance, which hinders experiencing the peace of the Kingdom.
-1. **Trusting God's Will:** Praying "Thy will be done" mirrors the childlike trust that the Father knows best, loves us, and will provide what is truly needed, even if we don't know what that is (illustrated by the child-in-restaurant analogy). Jesus models this perfectly in Gethsemane.
+2. **Childlike Humility as the Key:** This trusting dependence and acceptance of one's limitations ("poverty") is the essential characteristic for entering and experiencing the Kingdom of Heaven.
+3. **Experiencing the Kingdom Now:** The Kingdom isn't just a future reality. It is experienced *now* when we acknowledge our dependence, limitations, and needs, and bring them directly to God the Father without shame, self-hatred, or resorting to anxious self-reliance. This act of trusting dependence meeting God's providence *is* the Kingdom experience on earth.
+4. **Contrast with Adult Tendencies:** Adults often react to their inherent limitations with shame, frustration, and a drive for self-reliance, which hinders experiencing the peace of the Kingdom.
+5. **Trusting God's Will:** Praying "Thy will be done" mirrors the childlike trust that the Father knows best, loves us, and will provide what is truly needed, even if we don't know what that is (illustrated by the child-in-restaurant analogy). Jesus models this perfectly in Gethsemane.
 
 **Key Takeaways:**
 
 - True Christian humility involves recognizing and accepting our dependence on God without shame.
-- Bringing our acknowledged poverty and need to God in trust is how we experience His Kingdom and its peace _now_.
+- Bringing our acknowledged poverty and need to God in trust is how we experience His Kingdom and its peace *now*.
 - We are called to shed the adult burdens of shame and self-reliance regarding our limitations.
 - Trusting God's will ("Thy will be done") frees us from anxiety and allows us to live with joy and confidence, like a child secure in their parent's care.
 
 **Notable Insights/Quotes:**
 
-- The core insight: Bringing our dependence to meet God's perfect Providence _is_ the experience of the Kingdom now, and its fruit is peace.
+- The core insight: Bringing our dependence to meet God's perfect Providence *is* the experience of the Kingdom now, and its fruit is peace.
 - Children accept dependence "without shame, discouragement, or self-hatred" and are "not tempted towards self-reliance."
 - The goal is "childlike trust and dependence, without shame or frustration."
 - Jesus' prayer, "Father... not my will but your will be done," exemplifies the trusting relationship we enter through the Our Father.
@@ -729,7 +729,7 @@ Accessing this daily grace requires active participation. Personal prayer each d
 
 **\*Focus on the Present:**
 
-The core message is to trust God for _today's_ needs and challenges, rather than worrying about the future. God provides what is necessary _for this day._
+The core message is to trust God for *today's* needs and challenges, rather than worrying about the future. God provides what is necessary *for this day.*
 
 **Sufficiency of Grace:** God's grace is abundant and sufficient for the present moment's demands – enabling perseverance, carrying one's cross, and living generously and joyfully \*today\*. It's not necessarily stockpiled for future use.
 
@@ -798,7 +798,7 @@ Mercy should "flow freely from our hearts just as it flows from God's."
 
 The unforgiving servant's lord revoking forgiveness underscores the seriousness of our call to forgive.
 
-_The personal nacho anecdote provides a relatable insight into the unexpected difficulty of sharing/showing mercy, even on a small scale._
+*The personal nacho anecdote provides a relatable insight into the unexpected difficulty of sharing/showing mercy, even on a small scale.*
 
 "True forgiveness is supernatural, a 'God thing,' not merely human."
 
@@ -858,15 +858,15 @@ This text explores deepening one's relationship with Jesus and Mary through pray
 **Main Topics Discussed:**
 
 1. **The Opening of the Hail Mary:** Analysis of "Hail Mary, full of grace, the Lord is with thee."
-1. **Origin and Meaning:** These words are traced back to the Angel Gabriel's greeting at the Annunciation, interpreted as God's own greeting to Mary (citing Catechism 2676).
-1. **Repetition in Prayer:** Addressing the nature of repeating prayers like the Hail Mary, drawing on Pope John Paul II's perspective.
-1. **Application:** How to approach praying these specific words with renewed intention and love.
+2. **Origin and Meaning:** These words are traced back to the Angel Gabriel's greeting at the Annunciation, interpreted as God's own greeting to Mary (citing Catechism 2676).
+3. **Repetition in Prayer:** Addressing the nature of repeating prayers like the Hail Mary, drawing on Pope John Paul II's perspective.
+4. **Application:** How to approach praying these specific words with renewed intention and love.
 
 **Key Takeaways:**
 
 - The initial words of the Hail Mary are considered God's way of teaching us how to approach the Blessed Mother, similar to how the "Our Father" teaches us to approach God the Father.
-- The theological depth of the prayer (e.g., "full of grace") is profound; Pope John Paul II's encyclical _Redemptoris Mater_ is recommended for further study.
-- Repetition in prayer should not be seen as dry or boring. Instead, it can be an "outpouring of love" where the _feeling_ and _affection_ behind the constant words can be ever fresh and new.
+- The theological depth of the prayer (e.g., "full of grace") is profound; Pope John Paul II's encyclical *Redemptoris Mater* is recommended for further study.
+- Repetition in prayer should not be seen as dry or boring. Instead, it can be an "outpouring of love" where the *feeling* and *affection* behind the constant words can be ever fresh and new.
 - Praying "Hail Mary, full of grace, the Lord is with thee" is an opportunity to express love, acknowledge Mary's unique grace, ask for grace, and deepen one's relationship with her and Jesus. The focus should be on the loving intention behind the repeated words.
 
 **Notable Quotes/Insights:**
@@ -898,9 +898,9 @@ This text explores the spiritual significance of the prayer phrase, "Blessed are
 **Main Topics Discussed:**
 
 1. **Origin of the Prayer:** The phrase originates from the biblical event of the Visitation (Luke 1:39ff), where the pregnant Mary visits her relative Elizabeth.
-1. **The Visitation Context:** Upon hearing Mary's greeting, Elizabeth's unborn child (John the Baptist) leaps, and Elizabeth, filled with the Holy Spirit, proclaims these words.
-1. **Mary's Role:** Mary is presented as a powerful conduit of grace. Her greeting communicates the Holy Spirit, and her very presence sanctifyingly communicates Jesus, whom she carries. This highlights God's humility in becoming small enough to be carried by her.
-1. **Praying with Meaning:** The reflection contrasts mechanical repetition of the prayer with the way Elizabeth spoke – as a loud, joyous, Spirit-filled cry. It encourages emulating this genuine wonder and awe.
+2. **The Visitation Context:** Upon hearing Mary's greeting, Elizabeth's unborn child (John the Baptist) leaps, and Elizabeth, filled with the Holy Spirit, proclaims these words.
+3. **Mary's Role:** Mary is presented as a powerful conduit of grace. Her greeting communicates the Holy Spirit, and her very presence sanctifyingly communicates Jesus, whom she carries. This highlights God's humility in becoming small enough to be carried by her.
+4. **Praying with Meaning:** The reflection contrasts mechanical repetition of the prayer with the way Elizabeth spoke – as a loud, joyous, Spirit-filled cry. It encourages emulating this genuine wonder and awe.
 
 **Key Takeaways:**
 
@@ -936,11 +936,11 @@ This text explores how prayer and meditation deepen one's relationship with Jesu
 
 1. **Mary's Role as Intercessor:** The central theme is Mary's unique position and ability to intercede for believers with her Son, Jesus.
 
-1. **The Power of Relationship:** It draws a parallel between influence in earthly relationships ("who you know") and Mary's influence with Jesus due to their mother-son relationship.
+2. **The Power of Relationship:** It draws a parallel between influence in earthly relationships ("who you know") and Mary's influence with Jesus due to their mother-son relationship.
 
-1. **Biblical Foundation:** The relationship between King Solomon and his mother Bathsheba (1 Kings 2:19-20) serves as a key illustration.
+3. **Biblical Foundation:** The relationship between King Solomon and his mother Bathsheba (1 Kings 2:19-20) serves as a key illustration.
 
-1. **Confidence in Prayer:** Believers are encouraged to approach Mary confidently with their needs, trusting in her love and intercessory power.
+4. **Confidence in Prayer:** Believers are encouraged to approach Mary confidently with their needs, trusting in her love and intercessory power.
 
 **Key Takeaways:**
 
@@ -955,7 +955,7 @@ This text explores how prayer and meditation deepen one's relationship with Jesu
 - Confidence in approaching Mary stems from her unique position and her demonstrated intercession (e.g., the Wedding at Cana).
   **Notable Quotes & Insights:**
 
-- The interaction between Solomon and Bathsheba highlights the principle: Solomon shows great honor and assures her, _"Make your request, my mother, for I will not refuse you,"_ demonstrating the power derived from their relationship _before_ knowing the request.
+- The interaction between Solomon and Bathsheba highlights the principle: Solomon shows great honor and assures her, *"Make your request, my mother, for I will not refuse you,"* demonstrating the power derived from their relationship *before* knowing the request.
 
 - A core insight is that the principle of relational influence is **perfected in the spiritual realm** with Mary and Jesus.
 
@@ -988,9 +988,9 @@ This text explores the nature of the "Glory Be" prayer, identifying it primarily
 **Main Topics Discussed:**
 
 1. **The "Glory Be" as Praise:** The prayer is presented as a quintessential example of praise, supported by scriptural references like Psalm 145 ("I will extol you my God and King...") and the Catechism (section 2649).
-1. **Definition of Praise:** Praise is defined as the form of prayer that most directly recognizes God _as God_. It is uniquely characterized as "entirely disinterested."
-1. **"Disinterested" Praise Explained:** This core concept means praise gives glory to God purely for His own sake – simply because He _is_ – rather than focusing on what He has done for us or what we need from Him.
-1. **Contrast with Other Prayer Forms:** Praise is distinguished from:
+2. **Definition of Praise:** Praise is defined as the form of prayer that most directly recognizes God *as God*. It is uniquely characterized as "entirely disinterested."
+3. **"Disinterested" Praise Explained:** This core concept means praise gives glory to God purely for His own sake – simply because He *is* – rather than focusing on what He has done for us or what we need from Him.
+4. **Contrast with Other Prayer Forms:** Praise is distinguished from:
    - **Contrition:** Focuses on human failings and God's mercy.
    - **Petition:** Focuses on human dependence and needs presented to God.
    - **Thanksgiving:** Focuses on gratitude for God's specific actions.
@@ -1004,7 +1004,7 @@ This text explores the nature of the "Glory Be" prayer, identifying it primarily
 
 **Notable Quotes & Insights:**
 
-- Praise is "entirely disinterested," giving God glory "for His own sake, simply because He _is_."
+- Praise is "entirely disinterested," giving God glory "for His own sake, simply because He *is*."
 - It represents a "radically disinterested" act, an "exodus" from self towards God.
 - **Analogy:** Like a new father filled with love just looking at his newborn, rejoicing in the child's existence itself, praise rejoices in God's being. It is a prayer of "disinterested love and praise."
 
@@ -1019,7 +1019,7 @@ The text frames this explanation within invocations to the Trinity and includes 
 ##### ROSARY IN A YEAR DAY 17 - "Turn on the Light" Michelle Jackson
 
 "IN THE NAME OF THE FATHER AND OF THE SON AND OF THE HOLYSPIRIT - THE SIGN OF THE CROSS"
-_The mystery of the most Holy Trinity is the central mystery of Christian Faith and life , it is the mystery of God Himself. It also is the source of all other mysteries of Faith, the Light that enlightens them. Truly one needs Faith to understand that. We need to ask the HolySpirit for grace to See which God gives us through Baptism all through our lives. And when we make the sign of the cross we are opening our eyes to see Him, to see all of creation and all other mysteries in His light. Jesus Christ is the Light of the World and we need His light to guide us through, there are many other lights in this world to lead us astray, so to know and see the difference we need to understand the path we are taking if it leads us to Him or away from Him. May Christ' light be our light always. Jesus said whoever follows me shall never walk in darkness._
+*The mystery of the most Holy Trinity is the central mystery of Christian Faith and life , it is the mystery of God Himself. It also is the source of all other mysteries of Faith, the Light that enlightens them. Truly one needs Faith to understand that. We need to ask the HolySpirit for grace to See which God gives us through Baptism all through our lives. And when we make the sign of the cross we are opening our eyes to see Him, to see all of creation and all other mysteries in His light. Jesus Christ is the Light of the World and we need His light to guide us through, there are many other lights in this world to lead us astray, so to know and see the difference we need to understand the path we are taking if it leads us to Him or away from Him. May Christ' light be our light always. Jesus said whoever follows me shall never walk in darkness.*
 
 Hebrew 11:6
 
@@ -1036,10 +1036,10 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 **Main Topics Discussed:**
 
 1. **Theological Foundation:** The teaching draws heavily on Scripture (Matthew 28:19 - baptizing in the Trinity's name; Psalm 36:9 - God as the fountain and source of light) and the Catechism's emphasis on the Holy Trinity as the central mystery and illuminating source of Christian faith.
-1. **The Sign of the Cross as Faith in Action:** Making the Sign is presented not merely as a ritual, but as a conscious act of faith. It's likened to opening one's eyes to perceive spiritual reality.
-1. **Analogy of Light and Sight:** The Holy Trinity is described as the fundamental "light." The grace of Baptism confers faith, which is likened to spiritual "sight," enabling believers to perceive this divine light.
-1. **Perception in God's Light:** Praying "in the name of the Father, Son, and Holy Spirit" isn't about activating God's light (which is always present), but about using our faith (sight) to see _within_ that divine light. This allows a clearer view of God, faith mysteries, Mary, saints, creation, others, and oneself – revealing both inherent dignity and areas needing conversion.
-1. **Vulnerability and Growth:** Stepping into this light through the Sign of the Cross is an act of courage and vulnerability. It involves leaving darkness or hiding, allowing God's light to reveal shortcomings but also to warm, purify, enlighten, strengthen, and encourage.
+2. **The Sign of the Cross as Faith in Action:** Making the Sign is presented not merely as a ritual, but as a conscious act of faith. It's likened to opening one's eyes to perceive spiritual reality.
+3. **Analogy of Light and Sight:** The Holy Trinity is described as the fundamental "light." The grace of Baptism confers faith, which is likened to spiritual "sight," enabling believers to perceive this divine light.
+4. **Perception in God's Light:** Praying "in the name of the Father, Son, and Holy Spirit" isn't about activating God's light (which is always present), but about using our faith (sight) to see *within* that divine light. This allows a clearer view of God, faith mysteries, Mary, saints, creation, others, and oneself – revealing both inherent dignity and areas needing conversion.
+5. **Vulnerability and Growth:** Stepping into this light through the Sign of the Cross is an act of courage and vulnerability. It involves leaving darkness or hiding, allowing God's light to reveal shortcomings but also to warm, purify, enlighten, strengthen, and encourage.
 
 **Key Takeaways:**
 
@@ -1052,7 +1052,7 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 **Notable Insights:**
 
 - Analogy: Just as masterpieces in a dark basilica need external light to be seen, faith mysteries need the light of the Trinity to be understood.
-- Insight: "Praying 'in the name of the Father, and of the Son, and of the Holy Spirit' isn't like turning on God's light... Instead, it's using our capacity, given through faith (likened to sight), to perceive things _in_ God's light."
+- Insight: "Praying 'in the name of the Father, and of the Son, and of the Holy Spirit' isn't like turning on God's light... Instead, it's using our capacity, given through faith (likened to sight), to perceive things *in* God's light."
 - Insight: Making the Sign of the Cross is an act of "courage and vulnerability—stepping out of hiding or darkness into God's light."
 - Concluding the prayer with the Sign signifies entrusting oneself fully to God's continued light and care.
 
@@ -1070,26 +1070,26 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 
 **Main Topics:**
 
-1. **Spiritual Nourishment:** The text reflects on the Hail Holy Queen prayer (_Salve Regina_), emphasizing its opening words: _"Hail Holy Queen, Mother of Mercy, our life, our sweetness, and our hope."_
-1. **Eucharistic Analogy:** Drawing from Matthew 26, Jesus’ gifts of bread and wine symbolize essential grace (_bread_) and joyful abundance (_wine_).
-   - _Bread_: Represents foundational grace for spiritual survival.
-   - _Wine_: Symbolizes the "sweetness" of God’s love, enhancing life beyond necessities.
-1. **Mary’s Role:** The Blessed Mother is presented as a gift of "wine"—a source of spiritual sweetness and hope, deepening one’s relationship with God.
+1. **Spiritual Nourishment:** The text reflects on the Hail Holy Queen prayer (*Salve Regina*), emphasizing its opening words: *"Hail Holy Queen, Mother of Mercy, our life, our sweetness, and our hope."*
+2. **Eucharistic Analogy:** Drawing from Matthew 26, Jesus’ gifts of bread and wine symbolize essential grace (*bread*) and joyful abundance (*wine*).
+   - *Bread*: Represents foundational grace for spiritual survival.
+   - *Wine*: Symbolizes the "sweetness" of God’s love, enhancing life beyond necessities.
+3. **Mary’s Role:** The Blessed Mother is presented as a gift of "wine"—a source of spiritual sweetness and hope, deepening one’s relationship with God.
 
 **Key Takeaways:**
 
-- God provides both essentials (_bread_) and joyful abundance (_wine_) in the spiritual life.
+- God provides both essentials (*bread*) and joyful abundance (*wine*) in the spiritual life.
 - Mary’s love exemplifies this "sweetness," enriching the journey toward salvation.
-- Prayer and meditation (e.g., _Our Father_, _Hail Mary_) are tools to cultivate these relationships.
+- Prayer and meditation (e.g., *Our Father*, *Hail Mary*) are tools to cultivate these relationships.
 
 **Notable Insights:**
 
-- _"God doesn’t just provide the bare minimum ('bread') but also desires to give 'wine'—experiences of sweetness and joy."_
-- Mary is described as _"our life, our sweetness, and our hope,"_ highlighting her role in spiritual enrichment.
+- *"God doesn’t just provide the bare minimum ('bread') but also desires to give 'wine'—experiences of sweetness and joy."*
+- Mary is described as *"our life, our sweetness, and our hope,"* highlighting her role in spiritual enrichment.
 
 **Repeated Prayers:**
 
-- _Our Father_, _Hail Mary_, _Glory Be_, and _Sign of the Cross_ are recited, underscoring their importance in devotion.
+- *Our Father*, *Hail Mary*, *Glory Be*, and *Sign of the Cross* are recited, underscoring their importance in devotion.
 
 #### January 19,2025
 
@@ -1107,11 +1107,11 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 
 1. **Prayer and Meditation:** Deepening one's relationship with Jesus and Mary through prayer, emphasizing their roles as sources of grace.
 
-1. **Mary’s Compassion:** Reflecting on John 19:26, Mary is portrayed as the "woman of Sorrows" who understands human suffering and serves as an intercessor.
+2. **Mary’s Compassion:** Reflecting on John 19:26, Mary is portrayed as the "woman of Sorrows" who understands human suffering and serves as an intercessor.
 
-1. **Suffering and Faith:** The "Valley of Tears" metaphor illustrates the shared human experience of hardship, with Jesus and Mary offering solace.
+3. **Suffering and Faith:** The "Valley of Tears" metaphor illustrates the shared human experience of hardship, with Jesus and Mary offering solace.
 
-1. **Devotional Practices:** Recitations of prayers like the _Our Father_, _Hail Mary_, and _Hail Holy Queen_ foster communal faith and perseverance.
+4. **Devotional Practices:** Recitations of prayers like the *Our Father*, *Hail Mary*, and *Hail Holy Queen* foster communal faith and perseverance.
    **Key Takeaways:**
 
 - Mary’s suffering at the Cross and her witness to the Resurrection make her a compassionate figure for those enduring pain.
@@ -1121,7 +1121,7 @@ Father Mark Mary explains how prayer, specifically the Sign of the Cross, deepen
 
 **Notable Insights:**
 
-_The 'Hail Holy Queen' prayer resonates deeply with those acquainted with suffering._
+*The 'Hail Holy Queen' prayer resonates deeply with those acquainted with suffering.*
 
 - Mary’s role extends beyond sorrow; she is a hopeful guide, having witnessed Christ’s Resurrection.
 - Suffering, while painful, can be a pathway to deeper connection with Jesus and Mary.
@@ -1212,33 +1212,33 @@ The reflection highlights how Mary responds to human need with compassion, bring
 
 That was an intense journey with Father Mike,on our own salvation and the salvation of our loved ones. God is Love and He desires Salvation of the whole World. More than we desire the salvation of our loved ones God is already pursuing us.
 
-_And for those gone astray, the Good shepherd goes in search, not wanting to lose even one. He searches and brings us back to His flock._ _He reveals His heart to those who respond and co-operate with His Will for mankind. He did reveal this to our blessed Mother of when she appeared to the 3 visionaries, to pray many Rosaries for poor sinners and taught them to pray a special prayer after every decade. So precious._ _Our life is precious, bought by the Blood Of The Lamb and we need to take that seriously asking grace to reflect on our life and our living. Does it please God?_ _Do we please Him or the World?Do we know our Worth?_
-_When we die we either will go to heaven or hell._
+*And for those gone astray, the Good shepherd goes in search, not wanting to lose even one. He searches and brings us back to His flock.* *He reveals His heart to those who respond and co-operate with His Will for mankind. He did reveal this to our blessed Mother of when she appeared to the 3 visionaries, to pray many Rosaries for poor sinners and taught them to pray a special prayer after every decade. So precious.* *Our life is precious, bought by the Blood Of The Lamb and we need to take that seriously asking grace to reflect on our life and our living. Does it please God?* *Do we please Him or the World?Do we know our Worth?*
+*When we die we either will go to heaven or hell.*
 
 How we live here, what we do now matters. Let us not be afraid but Trust God. We are Christians.and Christians are people of Hope. The Hope that comes from God Himself. Thank you Lord for Your Saving Grace and Your Love for us all. May the whole world respond to that grace and co-operate and desire our own salvation and the salvation of the whole world. May the whole world be Sanctified Sanctified and purified. Amen.
 
 ##### AI-Generated Summary: Overview of the Fatima Prayer and Christian Hope
 
-**_Main Topics Discussed_**
+***Main Topics Discussed***
 
 - **Fatima Prayer**: The prayer "Oh my Jesus, forgive us our sins..." was given by Our Lady of Fatima to encourage praying for sinners and souls in need of mercy. It is recited at the end of each rosary decade.
 - **Christian Hope**: A grace from God, hope involves trusting in salvation for oneself and others, rooted in God’s love (Matthew 18).
 - **Four Last Things**: Reflection on death, judgment, Heaven, and Hell fosters a balanced perspective—hopeful yet serious about salvation.
 - **Role of Prayer**: Participating in God’s saving work by entrusting others to Him with confidence in His mercy.
 
-**_Key Takeaways_**
+***Key Takeaways***
 
 1. **Hope and Seriousness**: Authentic hope avoids flippancy but embraces sober reflection on eternal realities.
-1. **Salvation as a Shared Mission**: Individuals are called to repent and collaborate with God for others’ salvation, prioritizing eternal concerns over trivialities.
-1. **Avoiding Fear**: For those in grace, excessive fear of Hell is counterproductive; a right relationship with God fosters hope and trust.
+2. **Salvation as a Shared Mission**: Individuals are called to repent and collaborate with God for others’ salvation, prioritizing eternal concerns over trivialities.
+3. **Avoiding Fear**: For those in grace, excessive fear of Hell is counterproductive; a right relationship with God fosters hope and trust.
 
-**_Notable Insights_**
+***Notable Insights***
 
 - "Prayer is participation in God’s saving work."
 - "Christian hope combines confidence in God’s mercy with seriousness about judgment."
 - The Fatima prayer aligns with Mary’s request to intercede for souls, especially the most vulnerable.
 
-**_Conclusion_**
+***Conclusion***
 
 The text underscores a hopeful yet earnest approach to salvation, urging personal holiness and active spiritual work for others. The Fatima prayer serves as a tool for this mission, grounded in trust in God’s mercy.
 
@@ -1310,7 +1310,7 @@ Herein are some reflections upon intentional prayer and the very foundations of 
 - The discourse ponders upon that most profound theme, 'home,' as revealed in Christ's promise that in His Father's house are many dwelling-places, and that He goes to make ready a place for us, and shall return to gather us unto Himself. The central assurance is that the Lord has indeed prepared a place for us.
 - This promise is linked to the glorious mystery of the Ascension. In a true sense, this prepared place is already ours, for Christ Himself is gone thither and is enthroned in His heavenly home. Those washed clean in Christ's baptism already partake of this verity and victory.
 - Drawing from insights attributed to Pope Benedict XVI, the text reflects on the meaning of Christ's Ascension, explaining that through this event, man has been drawn into a new and wondrous intimacy with the Divine. Man discovers his true and permanent dwelling within the very being of God.
-- Heaven, it is suggested, is not merely a locale upon some celestial map, but Christ Himself, that Divine Person in whom God and man are inseparably united, and who fully welcomes humanity. Our veritable 'home' is found in our very being _in_ God, accomplished through Christ, particularly through the grace of baptism.
+- Heaven, it is suggested, is not merely a locale upon some celestial map, but Christ Himself, that Divine Person in whom God and man are inseparably united, and who fully welcomes humanity. Our veritable 'home' is found in our very being *in* God, accomplished through Christ, particularly through the grace of baptism.
 - Drawing nigh unto Jesus and entering into communion with Him permits us to enter into this blessed state of being in God. We are already knit together with Him through the waters of baptism, through faithful living, and by His freely given grace, and can taste of this connection even whilst still upon our earthly journey.
 - The discourse acknowledges the aches and sorrows of this mortal coil, the presence of suffering and pain. Yet, it strongly emphasizes that these trials are but fleeting shadows and hold no ultimate dominion. The pangs of the flesh, the infirmities, the sorrows that weigh upon the heart, and even death itself, are but travellers passing through.
 - Herein lies our hope and sure confidence: that Jesus Christ is Risen indeed, and is Ascended, having made ready a place in the High Heavens. Through our relationship with Him, we may draw nigh unto Heaven even in this present moment, gaining the perspective that our present pain is but a transient thing, whilst the eternal reality with Christ is one of unending joy.
@@ -1349,7 +1349,7 @@ We profess belief in the great articles of our faith, among them the forgiveness
 
 Consider the parable of the Prodigal Son. The father, seeing his lost boy return, runs to him, embraces him, and throws a feast. The son, laden with the heavy bag of his wasted life and sins, is met with utter, complete forgiveness. The father takes the bag, destroys it, and cancels the debt.
 
-Here is the curious paradox: we are like the son at the feast, forgiven, embraced, the burden lifted. Yet, too often, we stand there bent over, our hands still cupped as if carrying the weight that is no longer there. We have received the forgiveness, but we have not yet truly _believed_ it in our bones.
+Here is the curious paradox: we are like the son at the feast, forgiven, embraced, the burden lifted. Yet, too often, we stand there bent over, our hands still cupped as if carrying the weight that is no longer there. We have received the forgiveness, but we have not yet truly *believed* it in our bones.
 
 What does it mean, then, to believe in the forgiveness of sins?
 
@@ -1405,7 +1405,7 @@ Goa, India
 
 ##### AI-Generated Summary: The Ark New and Old and the Joy of God's Presence
 
-Let us turn our minds, for a moment, to two scenes, separated by centuries but bound by a profound reality. The first takes us back to ancient Israel, to the Ark of the Covenant. This was no mere box, but a sacred chest, built to God's precise design, intended as the very dwelling place of His presence among His people. Within it lay the staff of Aaron, a pot of manna, and the tablets of the Law – symbols of priesthood, sustenance, and divine command. It was the heart of the Tabernacle, later the Temple, and the cloud of God's glory, the _Shekinah_, would fill that space, signifying His powerful, guiding presence, leading Israel to victory and meeting them there. Yet, in time, this glorious Ark was lost to history.
+Let us turn our minds, for a moment, to two scenes, separated by centuries but bound by a profound reality. The first takes us back to ancient Israel, to the Ark of the Covenant. This was no mere box, but a sacred chest, built to God's precise design, intended as the very dwelling place of His presence among His people. Within it lay the staff of Aaron, a pot of manna, and the tablets of the Law – symbols of priesthood, sustenance, and divine command. It was the heart of the Tabernacle, later the Temple, and the cloud of God's glory, the *Shekinah*, would fill that space, signifying His powerful, guiding presence, leading Israel to victory and meeting them there. Yet, in time, this glorious Ark was lost to history.
 
 Now, consider a second scene, recounted by the Evangelist Luke: the Visitation. Mary, having received the Annunciation, travels to visit her cousin Elizabeth. Here, we perceive something remarkable, a parallel that Luke seems keen for us to grasp. Just as the Ark was the vessel of God's presence, Mary is presented as a new, living Ark, carrying within her the very Son of God – the true Bread from Heaven, the Giver of the new Law, our eternal High Priest.
 
@@ -1418,7 +1418,7 @@ Observe the striking similarities Luke draws between Mary's journey and the acco
 
 It seems clear, then, that Luke intends for us to see Mary as the New Ark, bearing the true presence of God.
 
-What does this mean for us? The old Ark was the source of Israel's guidance and victory because God was _there_. The Visitation reveals that God is now present with us in an even more intimate way, dwelling in Jesus, carried by Mary. And the fruit of this presence, as shown by Elizabeth and John, is immense joy.
+What does this mean for us? The old Ark was the source of Israel's guidance and victory because God was *there*. The Visitation reveals that God is now present with us in an even more intimate way, dwelling in Jesus, carried by Mary. And the fruit of this presence, as shown by Elizabeth and John, is immense joy.
 
 Perhaps we, who have God present in Jesus – in the Blessed Sacrament, in prayer, through His Mother – sometimes lack this vibrant joy. This contemplation of Mary, the New Ark, and the joyful Visitation should stir us to seek a renewed awareness of God's presence, trusting that He is indeed with us, ready to guide, meet, teach, and bring us victory, just as He promised. Such reflection naturally draws us into prayer, seeking that very presence and the joy it bestows.
 
@@ -1465,7 +1465,7 @@ This narrative, explored through the lens of scripture and reflection, reveals p
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 
-**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+**Table of Contents** *generated with [DocToc](https://github.com/ktechhub/doctoc)*
 
 <!---toc start-->
 
@@ -1610,7 +1610,7 @@ Through prayer and meditation on such mysteries, we deepen our relationship with
 Nadya Baracho
 Goa, India
 
-_Joyful Mysteries_
+*Joyful Mysteries*
 5\. The finding of Lord Jesus in the temple - Luke 2:41-52
 Jesus, along with his parents, makes the pilgrimage to Jerusalem for the feast of the passover. Though it was obligatory for Jewish boys to make the pilgrimage at the age of 13, Jesus accompanies his father Joseph at the age of 12 in preparation for the following year. Mary is faithful in accompanying her spouse and son. This teaches us that our life on earth is a pilgrimage, we are all walking in faith towards being more holy.
 Jesus was lost and found in 3 days, which was an indication of Mary losing him at Mt. Calvary and getting him back in 3 days.
@@ -1656,7 +1656,7 @@ Jesus by dying on the cross, going to the tomb and resurrecting, washed away our
 - At this juncture, the veil between heaven and earth is drawn back. The heavens open, the Holy Spirit descends in the form of a dove, and the very voice of the Father declares, "This is my beloved Son." Here, the Trinity is revealed, and Jesus is shown forth as the Messiah, the Anointed One upon whom the Spirit rests.
 - The Jordan itself is steeped in history – the crossing into the Promised Land, the deeds of prophets. Now, it becomes the stage for a new beginning, a new entry into God's kingdom.
 - John's baptism was a powerful, concrete act of repentance and conversion, a symbolic washing away of the past and a step towards a new life in anticipation of the coming Messiah.
-- But Jesus' baptism is different. He, having no sin of His own, enters the water _for us_. He steps into the place of sinners, taking upon Himself the burden of mankind's guilt, prefiguring the ultimate act of identification on the Cross.
+- But Jesus' baptism is different. He, having no sin of His own, enters the water *for us*. He steps into the place of sinners, taking upon Himself the burden of mankind's guilt, prefiguring the ultimate act of identification on the Cross.
 - This descent into the Jordan foreshadows His descent into death itself. He carries our sins into the tomb, as it were, only to rise again, cleansed, making our own cleansing possible. This is why He would later refer to His Passion as a "baptism."
 - Echoes of ancient rituals resonate here. John beholds Jesus and cries, "Behold, the Lamb of God!" – recognising Him as both the unblemished Passover Lamb, whose sacrifice saves, and the Scapegoat, upon whom the sins of the people were symbolically laid before being driven into the wilderness.
 - Indeed, immediately after His baptism, the Spirit leads Jesus into the wilderness, just as the scapegoat was led out. He is the true Lamb, offered for us, His sacrifice made present in the Mass.
@@ -1723,10 +1723,10 @@ Consider that pivotal moment when Jesus stepped forth, as told in the Gospel of 
 
 Mark this:
 
-- **"Gospel,"** or _Evangelion_ in the Greek, was no mere piece of interesting news. In that ancient world, it was the term for a royal announcement of victory or the birth of an emperor – a message that _changed_ things simply by being declared. It was performative, not just informative. When the early Christians used this word for Jesus's message, they were saying, "Here is the true King's saving decree, a message that _does_ something, that brings about the very salvation it speaks of through His deeds and words."
-- **"Kingdom of God"** is likewise misunderstood if we think only of a place or a government. The Greek word speaks less of a territory and more of a _reign_, the active _lordship_ of the King. Think of it less as a noun and more as a verb: God _reigning_.
+- **"Gospel,"** or *Evangelion* in the Greek, was no mere piece of interesting news. In that ancient world, it was the term for a royal announcement of victory or the birth of an emperor – a message that *changed* things simply by being declared. It was performative, not just informative. When the early Christians used this word for Jesus's message, they were saying, "Here is the true King's saving decree, a message that *does* something, that brings about the very salvation it speaks of through His deeds and words."
+- **"Kingdom of God"** is likewise misunderstood if we think only of a place or a government. The Greek word speaks less of a territory and more of a *reign*, the active *lordship* of the King. Think of it less as a noun and more as a verb: God *reigning*.
 
-Jesus's proclamation, then, is not just a prediction of a future state, but the announcement that God's active, saving reign is breaking into the world _now_, through Him. His miracles, His teachings, His very presence – these are not illustrations of the Kingdom; they are the Kingdom in action, God Himself actively ruling, shepherding, and saving. The glorious news is precisely this: God is not distant or idle. He is here, He is active, He is King. We are not left to save ourselves by our own frantic efforts. His reign is at hand, accessible through Christ, by the Spirit. To sit with this truth in prayer is to find a deep and abiding peace.
+Jesus's proclamation, then, is not just a prediction of a future state, but the announcement that God's active, saving reign is breaking into the world *now*, through Him. His miracles, His teachings, His very presence – these are not illustrations of the Kingdom; they are the Kingdom in action, God Himself actively ruling, shepherding, and saving. The glorious news is precisely this: God is not distant or idle. He is here, He is active, He is King. We are not left to save ourselves by our own frantic efforts. His reign is at hand, accessible through Christ, by the Spirit. To sit with this truth in prayer is to find a deep and abiding peace.
 
 #### February 06,2025
 
@@ -1783,7 +1783,7 @@ Let us ponder the fifth Luminous Mystery, that astonishing moment when Our Lord 
 
 Now, let us turn our minds to a most profound moment, the Agony in the Garden, the first of the Sorrowful Mysteries, a place where prayer and grace meet. Picture Gethsemane, a name meaning "oil press". Just as olives are crushed to yield precious oil, or grapes trodden for wine, or wheat broken for bread, so too was the Son of Man pressed in that garden.
 
-Here, in the shadow of suffering, we see Jesus, our Lord, wrestling with a sorrow so deep it threatened death itself. St. Thomas tells us this grief surpassed all others, for it sprang from a perfect wisdom and charity, lamenting the weight of _all_ sins simultaneously. While we know sorrow, His was unique, born of His divine and human perfection.
+Here, in the shadow of suffering, we see Jesus, our Lord, wrestling with a sorrow so deep it threatened death itself. St. Thomas tells us this grief surpassed all others, for it sprang from a perfect wisdom and charity, lamenting the weight of *all* sins simultaneously. While we know sorrow, His was unique, born of His divine and human perfection.
 
 Consider His movement through the garden: from the general company, to the chosen few (Peter, James, John), and finally, utterly alone. This mirrors, perhaps, the deepening levels of intimacy we are called to seek with Him, culminating in that solitary, sacred space of union with the Father.
 
@@ -1834,9 +1834,9 @@ Turn your mind to that scene, as recorded in the Gospel. The soldiers, poor delu
 - They placed a reed in His hand, a mock scepter.
 - Then they knelt, not in reverence, but in vile mockery, spitting upon Him and striking Him with the very reed they had given Him. "Hail, King of the Jews!" they sneered.
 
-Observe the nature of this torment. The scourging and the crucifixion were dreadful, yes, but they were the grim, standard fare of Roman justice, or injustice as it often was. But this? This was something _extra_. This was not mere punishment; it was _insult_. It was a deliberate, calculated act of humiliation, aiming not just at His flesh, but at His very claim – or rather, the claim others made for Him – to Kingship. There is a stench of something more than merely human cruelty here; one sniffs the air of the Pit itself in such gratuitous malice.
+Observe the nature of this torment. The scourging and the crucifixion were dreadful, yes, but they were the grim, standard fare of Roman justice, or injustice as it often was. But this? This was something *extra*. This was not mere punishment; it was *insult*. It was a deliberate, calculated act of humiliation, aiming not just at His flesh, but at His very claim – or rather, the claim others made for Him – to Kingship. There is a stench of something more than merely human cruelty here; one sniffs the air of the Pit itself in such gratuitous malice.
 
-They thought they had Him utterly defeated, a plaything for their cruel sport. But mark the profound, cosmic irony: the One they mocked as King _was_, in sober truth, the King. The scarlet robe, the thorny crown, the fragile reed – these became, in the divine reality, the very insignia of His true, albeit paradoxical, sovereignty.
+They thought they had Him utterly defeated, a plaything for their cruel sport. But mark the profound, cosmic irony: the One they mocked as King *was*, in sober truth, the King. The scarlet robe, the thorny crown, the fragile reed – these became, in the divine reality, the very insignia of His true, albeit paradoxical, sovereignty.
 
 He stands there, the Suffering Servant of ancient prophecy, bearing not only the physical pain but the shame, the spitting, the utter degradation that reflects the ugliness of human sin, which is, at root, humanity's turning away from God to crown itself. Yet, even in that abject state, His inner dignity remains unbroken, rooted in the unshakeable presence of God within Him. He is the Lamb led to slaughter, yes, but also the meek and victorious One, strong precisely because His identity is anchored not in earthly power, but in His Sonship.
 
@@ -1895,13 +1895,13 @@ Herein we consider the first of the Glorious Mysteries, that astounding event kn
 
 - The Scriptures tell us of that first Easter dawn: the trembling earth, the angel like lightning, the stone rolled back not to let Jesus out, but to let the witnesses in. The guards, understandably, were undone by terror. But to the faithful women, the angel declared the impossible: "He is not here; for he has risen." And presently, Jesus Himself stood before them.
 
-- This was no mere resuscitation, like Lazarus returning to his old life destined for a second death. Nor was it a spectral haunting or a mere flicker of mystical insight. No, this was something utterly unprecedented, a new _kind_ of reality breaking into our familiar world. The silence in the Gospels about the moment of rising suggests a mystery held within the Godhead, beyond our full apprehension, yet undeniably real in its effects.
+- This was no mere resuscitation, like Lazarus returning to his old life destined for a second death. Nor was it a spectral haunting or a mere flicker of mystical insight. No, this was something utterly unprecedented, a new *kind* of reality breaking into our familiar world. The silence in the Gospels about the moment of rising suggests a mystery held within the Godhead, beyond our full apprehension, yet undeniably real in its effects.
 
 - The Resurrection is, in truth, a glorious mystery, a glimpse of a new creation already begun. It is a historical event, yes, but one that transcends history, an evolutionary leap for humanity and indeed, for all reality. It ushers in a new mode of existence, deathless and eternal, affecting every soul and opening a future previously unimaginable.
 
 - The first witnesses grappled with this utterly novel reality. It demands not just belief, but a humble receptivity, a willingness to become disciples of this Risen Lord. It reshapes our understanding of Scripture and the very fabric of existence, revealing a dimension that prefigures the eternal New Creation where suffering is no more.
 
-- Jesus' resurrected body is not merely a sign; it is the very basis of our destiny, our faith, our joy. He _is_ eternally, the Son of God in whom all hope is placed. In His resurrection, He already inhabits the fullness of that New Creation into which He invites us to share – a share in His deathless life, the promise of eternity, a world where tears are wiped away. We are called to approach this glorious, mysterious reality with profound humility and expectant faith.
+- Jesus' resurrected body is not merely a sign; it is the very basis of our destiny, our faith, our joy. He *is* eternally, the Son of God in whom all hope is placed. In His resurrection, He already inhabits the fullness of that New Creation into which He invites us to share – a share in His deathless life, the promise of eternity, a world where tears are wiped away. We are called to approach this glorious, mysterious reality with profound humility and expectant faith.
 
 - (Let us remember the simple prayers – the Sign of the Cross, the Our Father, the Hail Mary, the Glory Be – as pathways into this mystery. And may we continue this journey together.)
 
@@ -1919,7 +1919,7 @@ Think of it this way:
 
 - **More than Leaving:** The Ascension is not merely Jesus going away, like a ship sailing over the horizon. It is His glorious entry into a new state of being, a "new Exodus" into the very heart of God's reality.
 - **The King Takes His Throne:** The ancient promise of Psalm 110, "The Lord says to my Lord: 'Sit at my right hand'," finds its fulfillment here. Sitting at God's right hand isn't about finding a chair in a specific corner of the universe; it signifies authority, power, and participation in God's divine dominion. Jesus returns to this place of ultimate authority and presence.
-- **God and Space:** We often imagine God _in_ space, like a very large person somewhere out there. But God is not contained _by_ space; He is the ground _of_ space. His presence is divine, not spatial. Jesus, who lived within our spatial limitations, now passes _through_ them into the Father's boundless, divine presence.
+- **God and Space:** We often imagine God *in* space, like a very large person somewhere out there. But God is not contained *by* space; He is the ground *of* space. His presence is divine, not spatial. Jesus, who lived within our spatial limitations, now passes *through* them into the Father's boundless, divine presence.
 - **Our Place in Him:** Here is the wonder! By taking His human body into this divine realm, Jesus has, as it were, carved out a space for humanity within God's own life. The Ascension means that through Him, we now have a new, glorified access to the Father.
 - **Hope for the Journey:** This event opens the door to a future where justice reigns, tears are wiped away, and creation itself is renewed. It assures us that our faith is not in vain, offering courage and strength for our earthly pilgrimage, knowing that eternal life, a place with the Father, is offered to us through Christ. It is a journey we share, sustained by prayer and fellowship, looking towards that glorious reality.
 
@@ -1953,7 +1953,7 @@ Consider, if you will, the Fourth Glorious Mystery, that of Mary's Assumption. T
 
 To grasp this, let us look back. Remember the Ark of the Covenant? That sacred chest, God's dwelling place among His people, overshadowed by the Glory Cloud. It held the Law, the priestly staff, the heavenly bread – tokens of God's presence and provision. It was holy, set apart.
 
-Now, turn your gaze to Mary. When the Angel came, the Glory Cloud returned, overshadowing _her_. She became the new Ark, carrying within her not symbols, but the very reality: Jesus, the new Law written on hearts, the eternal High Priest, the true Bread of Life. It is a striking parallel, long pondered by devout minds. Just as King David danced before the old Ark, bringing it to Jerusalem with great joy, so too does the New David, Christ Himself, desire His new Ark – Mary – to be with Him in the heavenly Jerusalem.
+Now, turn your gaze to Mary. When the Angel came, the Glory Cloud returned, overshadowing *her*. She became the new Ark, carrying within her not symbols, but the very reality: Jesus, the new Law written on hearts, the eternal High Priest, the true Bread of Life. It is a striking parallel, long pondered by devout minds. Just as King David danced before the old Ark, bringing it to Jerusalem with great joy, so too does the New David, Christ Himself, desire His new Ark – Mary – to be with Him in the heavenly Jerusalem.
 
 The old Ark, being holy, was treated with immense reverence. How much more so Mary, the living Ark, filled with grace and bearing God Himself? It seems fitting, indeed necessary, that this most holy vessel should not suffer decay but be brought entirely, body and soul, into the heavenly temple. And is this not precisely what the vision in Revelation hints at? When the temple in heaven is opened, the Ark of the Covenant is seen, followed immediately by the sign of the Woman clothed with the sun. Many have seen in this a glimpse of Mary, the new Ark, in her glorified state.
 
@@ -1975,7 +1975,7 @@ This Woman, though sometimes seen as the Church, is here chiefly considered as M
 
 Indeed, the wise St. John Damascene, writing long ago, observed that no mind, be it human or angelic, could adequately praise Mary, through whom we perceive God's glory. He called her Queen Mother, benefactress, God's mother, and queen over all creation.
 
-From this perspective, Mary is indeed worthy of veneration – the highest given to a creature, called _hyperdulia_ – distinct entirely from the _latria_, the adoration reserved for God alone. Honouring her is, in truth, a way of honouring her Son.
+From this perspective, Mary is indeed worthy of veneration – the highest given to a creature, called *hyperdulia* – distinct entirely from the *latria*, the adoration reserved for God alone. Honouring her is, in truth, a way of honouring her Son.
 
 Her role as Queen Mother continues as she intercedes for us, sharing in her Son's authority and pouring out grace. Her Queenship is seen as the glorification of her motherhood, fruitful and effective for those who turn to her. We are encouraged to honour her and place our confidence in her as a great intercessor and advocate in heaven.
 
@@ -1991,7 +1991,7 @@ Such a practice often includes familiar prayers, like the Hail Mary, parts of th
 
 Herein we consider a path, trodden by many faithful souls, which leads us deeper into the divine narrative: the devout contemplation of the Rosary's Mysteries. This is not merely a counting of beads or a hurried recitation of prayers, but rather an invitation to step within those sacred moments of Christ's life and His Mother's, seeking not just the historical fact, but the spiritual reality hidden within.
 
-Think of it as looking _through_ the window of scripture at the very heart of God's dealings with mankind. We are encouraged to linger in these scenes, allowing the Holy Spirit to illumine their meaning for our own journey. It is a way to foster a more intimate acquaintance with both Our Lord Jesus and His Blessed Mother Mary, a source, we are told, of abundant grace.
+Think of it as looking *through* the window of scripture at the very heart of God's dealings with mankind. We are encouraged to linger in these scenes, allowing the Holy Spirit to illumine their meaning for our own journey. It is a way to foster a more intimate acquaintance with both Our Lord Jesus and His Blessed Mother Mary, a source, we are told, of abundant grace.
 
 The method is straightforward:
 
@@ -2150,8 +2150,8 @@ Mary stands before us as the perfect disciple – faithful, obedient, growing in
 
 Behold, Jesus steps into Galilee, and His message rings out: "The time is fulfilled, and the kingdom of God is at hand; repent and believe in the gospel." (Mark 1:14-15). This is the heart of our contemplation.
 
-- **The Kingdom is Himself:** Pope John Paul II wisely pointed out that this 'Kingdom' is not merely a place or a future event, but is, in truth, present in the very person of Jesus. When He declares it is "at hand," He means _He_ is here.
-- **Proclamation by Word and Deed:** This is no mere announcement; it is an _arrival_. Jesus speaks of the Kingdom, yes, through parables ("The Kingdom of Heaven is like..."), teaching, and declaring His authority. But He also _brings_ it into being through His actions.
+- **The Kingdom is Himself:** Pope John Paul II wisely pointed out that this 'Kingdom' is not merely a place or a future event, but is, in truth, present in the very person of Jesus. When He declares it is "at hand," He means *He* is here.
+- **Proclamation by Word and Deed:** This is no mere announcement; it is an *arrival*. Jesus speaks of the Kingdom, yes, through parables ("The Kingdom of Heaven is like..."), teaching, and declaring His authority. But He also *brings* it into being through His actions.
 - **Actions Reveal the King:** Consider His deeds: He calls ordinary folk to follow Him. He confronts the shadows of evil, casting out demons. He touches and heals the sick – the leper, the paralytic, Peter's mother-in-law – showing power over suffering. He calls Levi, the outcast tax collector, offering a new life, demonstrating power over sin. He declares Himself the Bridegroom, the Lord of the Sabbath.
 - **The Core Message:** Through all this, Jesus reveals Himself as the one humanity truly seeks – the King with power over sickness and sin, who tenderly calls sinners to Himself. The message is clear and urgent: Turn away from what separates you (repent), and trust utterly in this good news (believe).
 - **Finding What the Heart Seeks:** The good news is that Jesus, the powerful and loving Lord, is near, especially to the outcast and the sinner. All that the restless heart longs for is found in Him.
@@ -2215,19 +2215,19 @@ Consider, if you will, that well-known tale of the Prodigal Son. Does it not pai
 
 Sin, you see, is precisely this: taking what is given by sheer grace and attempting to make ourselves masters of it, to live as if God were not the Giver.
 
-But turn your gaze back to the Garden. Christ, the Son, does not demand His inheritance to spend it _away_ from the Father. Instead, He willingly takes upon Himself the _inheritance_ of the sinner – the full, awful burden and consequence of our squandering, which is ultimately death. He, the innocent Lamb, accepts this fate.
+But turn your gaze back to the Garden. Christ, the Son, does not demand His inheritance to spend it *away* from the Father. Instead, He willingly takes upon Himself the *inheritance* of the sinner – the full, awful burden and consequence of our squandering, which is ultimately death. He, the innocent Lamb, accepts this fate.
 
 - He bore the weight of our rebellion.
 - He freely embraced the Father's terrifying plan, saying, "Not my will, but Yours."
 - He revealed the true, ugly face of sin and its final destination.
 
-Thus, while we sought to take God's gifts (and even God's Son, our true inheritance) and live independently, Jesus took _our_ debt and _our_ consequences, freely submitting to the Father's will. It is by this willing sacrifice, by the shedding of His blood, that we are saved from the ruin our own "prodigal" choices would bring. The Agony in the Garden is the hour the Lamb embraced the cross for us.
+Thus, while we sought to take God's gifts (and even God's Son, our true inheritance) and live independently, Jesus took *our* debt and *our* consequences, freely submitting to the Father's will. It is by this willing sacrifice, by the shedding of His blood, that we are saved from the ruin our own "prodigal" choices would bring. The Agony in the Garden is the hour the Lamb embraced the cross for us.
 
 ## March
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 
-**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+**Table of Contents** *generated with [DocToc](https://github.com/ktechhub/doctoc)*
 
 <!---toc start-->
 
@@ -2402,7 +2402,7 @@ Let us consider, if you will, how prayer and quiet reflection might serve as a c
 
 ##### AI-Generated Summary The Cross and God's Astonishing Pursuit
 
-We are brought to consider that most stark and terrible scene: the Crucifixion and death of Our Lord. Upon that hill, between two criminals, the very heart of reality is laid bare. Here is a terrible unveiling of what sin _is_, what it truly costs, and the ruin it brings. But more profoundly, it is the ultimate answer to the deepest question of the human heart: What is God like? Is He good? Does He care?
+We are brought to consider that most stark and terrible scene: the Crucifixion and death of Our Lord. Upon that hill, between two criminals, the very heart of reality is laid bare. Here is a terrible unveiling of what sin *is*, what it truly costs, and the ruin it brings. But more profoundly, it is the ultimate answer to the deepest question of the human heart: What is God like? Is He good? Does He care?
 
 The cross proclaims, with dreadful clarity, that God is not a distant, indifferent potentate.
 
@@ -2453,13 +2453,13 @@ This hope is the foundation upon which we stand, and from which our prayers natu
 
 Now, the Ascension: a mystery indeed, glorious and perhaps, at first glance, a touch perplexing. We see the Man, Jesus, blessing His friends, then lifted up, vanishing into the cloud, returning, as it were, to His own country. It might seem, to the disciples left behind, like a parting, a loss. Yet, consider the homecoming of a great King, having won the decisive battle, returning to His capital city. Is that a loss for the city? No, it is triumph! Heaven itself, we are told, sang with joy at the Victorious King's return to the Father's house.
 
-But what of us, still here? Does His going mean distance? Not at all. This is the heart of the matter, a paradox only God could weave. As Pope Benedict reminds us, when He said, "I go away and I will come to you," He meant a _new_ coming, a perpetual presence made possible by His being with the Father.
+But what of us, still here? Does His going mean distance? Not at all. This is the heart of the matter, a paradox only God could weave. As Pope Benedict reminds us, when He said, "I go away and I will come to you," He meant a *new* coming, a perpetual presence made possible by His being with the Father.
 
 Think of it like this:
 
 - His ascent is not abandonment, but a transition to a different mode of being with us.
 - Just as from the mountaintop He saw His disciples struggling on the sea and came to them, so from the Father's right hand, unrestricted by earthly bounds, He sees us always.
-- His presence at the Father's side means He is _more_ accessible, not less, for He is now everywhere that God is.
+- His presence at the Father's side means He is *more* accessible, not less, for He is now everywhere that God is.
 - Indeed, His going was necessary and good, for it paved the way for the coming of the Holy Spirit.
 - The Spirit is the very means by which we gain this ongoing, privileged access and closeness to the ascended Christ.
 - Through the Spirit, we can call upon Him, certain that the King on His throne sees and hears us.
@@ -2498,11 +2498,11 @@ It would seem that the path deeper into the Divine embrace, and the source of mu
 
 Consider, friends, the quiet power of prayer and meditation, those pathways by which we draw near to the King and His Mother, becoming channels of His good grace. Let us fix our minds upon the Fourth Glorious Mystery, the Assumption of Mary, a signpost of God's faithfulness.
 
-The heart of this mystery, and indeed of much of our walk with God, lies in _promises fulfilled_. Recall Elizabeth's inspired greeting to Mary: "Blessed is she who believed that there would be a fulfillment of what was spoken to her from the Lord." Mary's great song, the Magnificat, echoes this theme, celebrating God's mighty works and the keeping of ancient vows.
+The heart of this mystery, and indeed of much of our walk with God, lies in *promises fulfilled*. Recall Elizabeth's inspired greeting to Mary: "Blessed is she who believed that there would be a fulfillment of what was spoken to her from the Lord." Mary's great song, the Magnificat, echoes this theme, celebrating God's mighty works and the keeping of ancient vows.
 
 But what of us? We, too, are called to belief and, sometimes, to sacrifice. Our Lord Himself spoke plainly to Peter: those who give up worldly goods or even dear relationships for His sake will receive a hundredfold return, here and now, and eternal life besides. This is no mere arithmetic; it is the divine generosity that utterly outstrips our own. God is never, ever outdone. Therefore, when He asks us to relinquish something good, even for a season, we ought not shrink back, for the promised recompense is unimaginably greater.
 
-Yet, trusting this promise often involves a period of waiting, a vulnerable time when the fulfillment is not yet visible. Doubts may creep in like mist. We find ourselves in a state of anticipation, called to believe _before_ we see the full harvest. Small glimpses of God's faithfulness along the way – a simple need met unexpectedly, a prayer answered in a surprising fashion – serve as little anchors, reinforcing our faith and urging us onward.
+Yet, trusting this promise often involves a period of waiting, a vulnerable time when the fulfillment is not yet visible. Doubts may creep in like mist. We find ourselves in a state of anticipation, called to believe *before* we see the full harvest. Small glimpses of God's faithfulness along the way – a simple need met unexpectedly, a prayer answered in a surprising fashion – serve as little anchors, reinforcing our faith and urging us onward.
 
 It is here that Mary becomes our great exemplar. She was told to trust, to cast out fear, and she responded with a simple, profound 'yes'. The path was not without hardship, the promise unfolding through trials and uncertainties, yet her trust held firm. Her Assumption, body and soul into glory, is the magnificent culmination, the utter and complete fulfillment of God's promise to her, a sharing in her Son's triumph over death.
 
@@ -2556,16 +2556,16 @@ Let us rejoice in this good news! Our Lady, Queen of Heaven and Earth, loves us,
 
 ##### AI-Generated Summary The Practice of Holy Reading
 
-Friends, let us turn our minds to a venerable path, a way of meeting the Divine Word not merely with the intellect, but with the whole soul. This is the practice known as _Lexio Divina_, a sacred reading of Scripture, which unfolds in four simple yet profound movements:
+Friends, let us turn our minds to a venerable path, a way of meeting the Divine Word not merely with the intellect, but with the whole soul. This is the practice known as *Lexio Divina*, a sacred reading of Scripture, which unfolds in four simple yet profound movements:
 
-- **Reading (_Lexio_)**: Here we approach the text prayerfully, allowing God to speak. One reads the passage entire, then perhaps a smaller portion, even a single word, again and again, seeking not just the plain sense, but listening for the whisper meant for _us_, here and now. It is a receiving, a quiet opening of the ear of the heart.
-- **Meditation (_Meditatio_)**: Having received, we now engage. This is the time to ponder, to ask questions of the text, to see connections, perhaps even to place ourselves within the scene using our imagination. It is a chewing upon the Word, allowing its flavour to penetrate our being, moving from the head to the heart.
-- **Prayer (_Orio_)**: From pondering, we naturally turn to address God Himself. One helpful pattern is the 'Four Rs':
+- **Reading (*Lexio*)**: Here we approach the text prayerfully, allowing God to speak. One reads the passage entire, then perhaps a smaller portion, even a single word, again and again, seeking not just the plain sense, but listening for the whisper meant for *us*, here and now. It is a receiving, a quiet opening of the ear of the heart.
+- **Meditation (*Meditatio*)**: Having received, we now engage. This is the time to ponder, to ask questions of the text, to see connections, perhaps even to place ourselves within the scene using our imagination. It is a chewing upon the Word, allowing its flavour to penetrate our being, moving from the head to the heart.
+- **Prayer (*Orio*)**: From pondering, we naturally turn to address God Himself. One helpful pattern is the 'Four Rs':
   - **Receive**: Acknowledging the truth God has revealed.
   - **Respond**: Offering our heart's movement, be it adoration, praise, or a simple 'yes' to conversion. The Spirit guides this.
   - **Request**: Asking for the grace needed to live out what we have received and responded to.
   - **Rejoice**: Giving thanks for God's goodness, His Word, and the very gift of this time with Him, even if it feels dry.
-- **Contemplation (_Contemplatio_)**: This is often the quiet culmination, a simple resting in God's presence. It is less about _doing_ and more about _receiving_ His truth and grace, savouring His nearness. Think of it not as striving, but as simply being present, allowing God to work within. It is His gift, and feeling nothing does not mean nothing is happening.
+- **Contemplation (*Contemplatio*)**: This is often the quiet culmination, a simple resting in God's presence. It is less about *doing* and more about *receiving* His truth and grace, savouring His nearness. Think of it not as striving, but as simply being present, allowing God to work within. It is His gift, and feeling nothing does not mean nothing is happening.
 
 Consider, as a pattern for this prayer, that pivotal moment: the Annunciation to the Blessed Virgin Mary. The angel speaks (Reading), Mary ponders the greeting (Meditation), she asks her question and receives the astonishing answer – "nothing is impossible with God" (Prayer - Receive/Respond), and finally, she offers her magnificent 'Fiat': "Let it be to me according to your word" (Prayer - Respond/Request/Rejoice).
 
@@ -2651,7 +2651,7 @@ What, then, is the shape of this waiting prayer?
 - It is adoration and praise for God's promises, knowing we are heirs to them if we persevere.
 - It is an invitation to greater trust and patience, rooted in the certainty of God's goodness.
 - It involves making our requests known, asking for grace to remain faithful even when deep desires seem long unfulfilled.
-- Crucially, it requires surrendering our own precise expectations of _how_ and _when_ God will act, trusting His perfect timing and wisdom.
+- Crucially, it requires surrendering our own precise expectations of *how* and *when* God will act, trusting His perfect timing and wisdom.
 - It concludes with rejoicing and thanksgiving for God's unwavering fidelity, drawing courage from those, like Simeon and Anna, who saw His promises come to pass.
 
 The plain fact is this: waiting upon God is never done alone, nor is it ever in vain. We are encouraged to look to Him with renewed hope, to see His goodness, and to share the desires of our hearts with a blend of boldness and surrender, confident that in Him, we are ever accompanied. Such prayer is often framed by the Sign of the Cross and includes the familiar comfort of the Our Father, Hail Mary, and Glory Be.
@@ -2669,7 +2669,7 @@ Consider the peculiar incident of the Boy Jesus, at the tender age of twelve, be
 - His parents, Mary and Joseph, endured three days of anxious searching, a poignant picture of human worry even within the Holy Family. Their relief at finding Him among the learned teachers is palpable.
 - Yet, Jesus' response to His mother's gentle rebuke is startling: "Did you not know that I must be in my Father's house?" This is His earliest recorded utterance, a profound declaration of His divine sonship and purpose, spoken with the quiet authority of one already about His essential business.
 - Mary, we are told, kept these things in her heart, a reminder that even those closest to God do not always immediately grasp the full mystery.
-- This episode prompts a question for us: How do _we_ seek Him? Jesus' question, "How is it that you sought me?", echoes through the ages, inviting us to examine the manner and place of our own seeking.
+- This episode prompts a question for us: How do *we* seek Him? Jesus' question, "How is it that you sought me?", echoes through the ages, inviting us to examine the manner and place of our own seeking.
 - Do we seek Him in the clamour and distractions of the world, or in the quiet precincts of His "Father's house"—in prayer, in His Word (Scripture), in the Sacraments, in the stillness? The text gently suggests the latter is the true path.
 - Seeking God is not merely our effort; it is a dance of love wherein He also seeks us, desiring our company in the silence and stillness where His voice is heard.
 - The struggle is real, for worldly pursuits often seem easier or more immediately gratifying than the discipline of seeking God in the quiet. Yet, the call remains: to surrender our own plans, remove distractions, and seek Him wholeheartedly.
@@ -2686,7 +2686,7 @@ Consider the peculiar incident of the Boy Jesus, at the tender age of twelve, be
 Herein lies a brief account of a reflection upon the Rosary, that venerable pathway, focusing upon the first of the Luminous Mysteries.
 
 - This practice serves as a means to deepen our relationship with the Lord Jesus and His Mother, receiving thereby a measure of grace.
-- The session employed _Lectio Divina_, a sacred reading, centred upon the Baptism of Christ as recorded in Matthew 3:13-17, under the theme "begin as the Beloved."
+- The session employed *Lectio Divina*, a sacred reading, centred upon the Baptism of Christ as recorded in Matthew 3:13-17, under the theme "begin as the Beloved."
 - The scripture recounts the profound moment: Jesus submitting to John's baptism, the heavens opening, the Holy Spirit descending visibly like a dove, and the very voice of the Father declaring, "This is my beloved Son, with whom I am well pleased."
 - This mystery reveals Christ as the promised Messiah, offers a glimpse of the Holy Trinity, and marks the commencement of Jesus' public work by unveiling His true divine nature.
 - The heart of the reflection rests upon the great truth that Jesus is the Beloved Son, and through our relationship with God, we are invited to share in this same glorious status. Our fundamental identity is that of beloved children of God.
@@ -2753,7 +2753,7 @@ The invitation extended is therefore urgent and twofold:
 - **Repent:** Not merely feeling sorry, but a fundamental change of mind and heart, a turning away from our own small, crooked paths.
 - **Believe:** To trust utterly in this Good News, that the Kingdom is truly here, the Shepherd truly present, desiring to guide us.
 
-The text rightly stresses the immediacy of this call. The time for hesitation is past; the time to surrender our entire lives, trusting Him completely, is _now_. We are urged to release whatever hinders this full surrender, allowing Jesus, our true Shepherd, to lead, protect, and guide us into peace.
+The text rightly stresses the immediacy of this call. The time for hesitation is past; the time to surrender our entire lives, trusting Him completely, is *now*. We are urged to release whatever hinders this full surrender, allowing Jesus, our true Shepherd, to lead, protect, and guide us into peace.
 
 This Good News – that the King, the Shepherd, the Healer is present and active – is the heart of the matter. The response called for is an open heart, a willing repentance, and a complete giving of oneself. Such a response is often nurtured and expressed through prayer, seeking the grace to remain open, surrendered, and trusting, allowing the Good Shepherd to do His work within us. The conclusion of such prayer is naturally filled with rejoicing and gratitude for the grace received and the peace found under His gentle, powerful hand.
 
@@ -2793,8 +2793,8 @@ Here is a brief contemplation on a profound mystery, aimed at deepening our walk
 - We fix our gaze upon the Fifth Luminous Mystery: that Supper where Our Lord, on the very eve of His suffering, gathered with His own.
 - Consider the scene: Jesus, knowing full well what lay ahead, yet filled with an intense, burning desire to share this final Passover. It was not merely duty, but a profound yearning to complete the Father's will and offer Himself for the world's salvation. He saw Himself already as both the Priest and the Lamb.
 - Then came the astonishing act. He took bread, gave thanks, and broke it, declaring, "This is my body given for you." He took the chalice, saying, "This cup is the new covenant in my blood, poured out for you."
-- Mark well those simple, yet earth-shattering words: "given for you," "poured out for you." The very heart of the matter lies in that personal, direct address – _for you_. He did not merely perform a ritual; He gave Himself, utterly and entirely, for _each_ soul present and for every soul to come.
-- This is not just a memory we recall, but a reality in which He remains present. He is the Bread of Life who gives Himself and continues to give Himself in the Holy Sacrament, driven by that same earnest desire for total self-gift and for the reception of _you_.
+- Mark well those simple, yet earth-shattering words: "given for you," "poured out for you." The very heart of the matter lies in that personal, direct address – *for you*. He did not merely perform a ritual; He gave Himself, utterly and entirely, for *each* soul present and for every soul to come.
+- This is not just a memory we recall, but a reality in which He remains present. He is the Bread of Life who gives Himself and continues to give Himself in the Holy Sacrament, driven by that same earnest desire for total self-gift and for the reception of *you*.
 - The good news, the very core of His heart revealed at that table, is this: He burns with love for you and freely gives His life, His body, His blood.
 - Our response? To receive this incredible gift of being beloved, of being given for, and in turn, to offer back our poor selves entirely in response to His magnificent, total self-giving. We are called to live within the covenant sealed by His blood.
 - This leads us naturally to adoration, gratitude, and a longing for deeper reverence and more frequent communion with Him, praying for the grace to respond with our own total gift of self. For He is truly "God with us," present in His passion and His Eucharistic heart. This time of prayer, often including familiar petitions like the Lord's Prayer and Hail Mary, is our humble attempt to receive and respond to this boundless love.
@@ -2828,11 +2828,11 @@ Consider, if you will, that most profound and sorrowful scene in the Garden of G
 One seeks, perhaps, a deeper draught from the wellspring of Faith, a truer converse with the King. Prayer and meditation, indeed, are the paths inward, where grace flows and the relationship with Christ and His Mother deepens. Today, we fix our gaze upon a sorrowful scene, the Second Mystery: the Scourging at the Pillar, as recounted in Matthew's Gospel.
 
 - Consider the stark choice presented by Pilate: Barabbas, whose very name echoes "son of the father," yet a rebel and a murderer, chosen by the clamouring world over the true Son of the Father, delivered up to be scourged. A chilling reflection on humanity's perennial preference for the counterfeit.
-- Picture the scene with the mind's eye – the whips, perhaps tipped with bone or metal, tearing flesh. This was no mere chastisement, but a brutal spectacle intended, perhaps, to sate a mob, yet revealing a deeper, divine purpose. Dare to look into His eyes amidst the agony; behold the love that endures this for _you_.
+- Picture the scene with the mind's eye – the whips, perhaps tipped with bone or metal, tearing flesh. This was no mere chastisement, but a brutal spectacle intended, perhaps, to sate a mob, yet revealing a deeper, divine purpose. Dare to look into His eyes amidst the agony; behold the love that endures this for *you*.
 - Hear His silent declaration, echoed later: "My Body, given for you; My Blood, poured out." This suffering was not forced upon Him; He laid down His life freely, out of a fierce, saving love. None took it from Him; He gave it. This is the core of His longing – to save, to draw near.
-- How often we strive in vain to prove our worth in the world's harsh ledger, seeking validation in fleeting glances or hollow achievements. Yet our true, immeasurable worth is declared in _that_ moment, at _that_ pillar. We are not merely valued; we are _purchased_, bought with the highest possible price – His precious blood.
+- How often we strive in vain to prove our worth in the world's harsh ledger, seeking validation in fleeting glances or hollow achievements. Yet our true, immeasurable worth is declared in *that* moment, at *that* pillar. We are not merely valued; we are *purchased*, bought with the highest possible price – His precious blood.
 - What, then, is our fitting response? Adoration for such boundless goodness, repentance for our foolish attempts to justify ourselves apart from Him, and a humble plea for the grace to remain steadfast, particularly in the quiet discipline of prayer.
-- Receiving such a gift, the love that cost Him everything, can feel strangely difficult, almost too heavy to bear. We are prone to forget who we are, children of _that_ Father, bought at _that_ price. We need the very Spirit He breathed forth to remain present to this reality, perhaps alongside His sorrowful Mother.
+- Receiving such a gift, the love that cost Him everything, can feel strangely difficult, almost too heavy to bear. We are prone to forget who we are, children of *that* Father, bought at *that* price. We need the very Spirit He breathed forth to remain present to this reality, perhaps alongside His sorrowful Mother.
 - So let us give thanks for the Lamb scourged, for the gift freely given that cost Him His very life. Let us linger in this sacred space of prayer, beholding the Crucified King, receiving the Body and Blood offered for our salvation.
 - These moments of contemplation are often punctuated by ancient, heartfelt prayers – the Hail Mary, the Glory Be – before settling into a final, fruitful silence, where the soul can simply rest in the presence of Love Incarnate.
 
@@ -2874,11 +2874,11 @@ The aim is to see Jesus not merely as a historical figure, but as the living Kin
 
 ##### AI-Generated Summary: The Weight and the Will
 
-Consider the curious case of Simon of Cyrene, compelled by circumstance to take up the Lord's Cross. Here lies a profound paradox: though forced, Simon faced a choice not _whether_ to carry it, but _how_. He could have borne the burden grudgingly, a mere physical act devoid of soul.
+Consider the curious case of Simon of Cyrene, compelled by circumstance to take up the Lord's Cross. Here lies a profound paradox: though forced, Simon faced a choice not *whether* to carry it, but *how*. He could have borne the burden grudgingly, a mere physical act devoid of soul.
 
 Contrast this, if you will, with the Lord Himself. Arrested, condemned, the Cross laid upon Him – yet, in a deeper sense, utterly free. His was not the freedom of escape, but the perfect freedom of absolute obedience to His Father's will, willingly laying down His life.
 
-And what of our own burdens? The crosses laid upon _our_ shoulders, often unlooked for and unwanted – suffering, loss, hardship. Here too, the same choice presents itself. We are compelled by circumstance, yet we retain the freedom to choose our response: bitter resistance or a yielding, a surrender, not to mere fate, but to the Hand that permits it.
+And what of our own burdens? The crosses laid upon *our* shoulders, often unlooked for and unwanted – suffering, loss, hardship. Here too, the same choice presents itself. We are compelled by circumstance, yet we retain the freedom to choose our response: bitter resistance or a yielding, a surrender, not to mere fate, but to the Hand that permits it.
 
 This surrender is not a meek defeat, but the very ground where one might encounter the Lord in the midst of affliction. By accepting the burden in imitation of Christ, trusting that God can work even through tragedy, we open ourselves to His presence, His strength, and His redemptive power.
 
@@ -2976,7 +2976,7 @@ The city, Jerusalem, was then a confluence of nations. People from every corner 
 - Some were utterly astonished and perplexed, asking, "What can this mean?"
 - Others, perhaps more cynical or simply unable to grasp the divine, scoffed, "They are filled with new wine!"
 
-This scoffing, this earthly explanation for a heavenly reality, is telling. They saw unusual behaviour and sought a common, horizontal cause – drunkenness. But the truth was infinitely grander. The disciples _were_ filled with "new wine," but not the fruit of the vine crushed by man; rather, the very grace of the Holy Spirit, the promise of the Father, the power Christ had told them to await.
+This scoffing, this earthly explanation for a heavenly reality, is telling. They saw unusual behaviour and sought a common, horizontal cause – drunkenness. But the truth was infinitely grander. The disciples *were* filled with "new wine," but not the fruit of the vine crushed by man; rather, the very grace of the Holy Spirit, the promise of the Father, the power Christ had told them to await.
 
 The Holy Spirit is no mere force or feeling, but a real, eternal, divine Person. His coming at Pentecost was the inaugural outpouring, fulfilling the promise and empowering the Church. This same "new wine," this grace, continues to be poured into us today, not just through that first Pentecost, but through:
 
@@ -3097,7 +3097,7 @@ We turn our minds to the second Joyful Mystery: the Visitation.
 From this blessed encounter, St. Alphonsus draws a powerful invitation for us.
 
 - He meditates on Mary's journey as an act of pure charity, imagining her explaining her purpose: to console.
-- He then prays, asking this same Mary, whose very presence sanctified Elizabeth's home and caused John the Baptist to leap for joy, to visit _his_ soul. To console him, yes, but more profoundly, to sanctify him.
+- He then prays, asking this same Mary, whose very presence sanctified Elizabeth's home and caused John the Baptist to leap for joy, to visit *his* soul. To console him, yes, but more profoundly, to sanctify him.
 - Herein lies the lesson: Mary is indeed our Mother, given to us by Christ Himself. She is the Consoler of the afflicted and the channel through whom God often brings sanctification into our lives.
 - We are encouraged to approach her as Elizabeth did, acknowledging her unique role and asking her, simply and directly, to be a mother to us now – to visit us, to console us in our need, and most importantly, to bring Jesus to us and sanctify our souls.
 
@@ -3109,7 +3109,7 @@ This reflection, guided by St. Alphonsus's devotion, leads us naturally to praye
 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+**Table of Contents** *generated with [DocToc](https://github.com/ktechhub/doctoc)*
 
 <!---toc start-->
 
@@ -3327,7 +3327,7 @@ Our focus rests upon one luminous moment within this prayerful journey: the Wedd
 
 - We consider the moment when the wine failed, and Mary, with quiet confidence, brought the lack to her Son's attention.
 - Jesus' initial response, seemingly a gentle demurral that His "hour" had not yet come, is the key to a deeper understanding.
-- As wise souls like St. Alphonsus Liguori, drawing upon others such as Chrysostom and Aquinas, have observed, this was not a refusal, but an indication that were it _anyone else_ asking, the miracle would have waited.
+- As wise souls like St. Alphonsus Liguori, drawing upon others such as Chrysostom and Aquinas, have observed, this was not a refusal, but an indication that were it *anyone else* asking, the miracle would have waited.
 - Yet, because it was His Mother, the request was granted, the divine timetable, as it were, anticipated out of love and honour.
 - It seems God Himself had, in His wisdom, decreed that the requests of His Mother would find a unique and ready hearing. This is not to elevate Mary to divinity, but to recognise her singular place as the Mother of God Incarnate.
 - Consider, if you will, the simple fact of earthly life: a mother's request often holds a different weight, a natural priority, which is both right and just. How much more so for the Son who is God?
@@ -3349,9 +3349,9 @@ Well now, let us consider that pivotal moment, the third luminous mystery, when 
 
 Think of it thus: a new Kingdom requires a new law, and this law, unlike the old, springs not from fear or obligation, but from a radical, utterly new sort of Love.
 
-- As the wise Augustine observed, perhaps the mountain where Christ delivered His great sermon signifies not just a place, but a higher plane of righteousness. The old precepts, given perhaps for a people guided by necessary fear towards an earthly promise, were good indeed. But the new law, for a people freed by Love and destined for a heavenly Kingdom, is _greater_. The same God, you see, provides precepts fitting for the time and the people.
-- So, Jesus stands as the Lawgiver of this new realm. He contrasts the old ways with His own startling pronouncements: "You have heard it said... _But I say to you..._" He lifts the standard higher, infinitely higher. Mercy, forgiveness, love even for enemies – these are the demanding, yet beautiful, coin of His realm.
-- Now, one might feel a chill of discouragement here. How can mere mortals possibly meet such a standard? Ah, but here is the glorious secret! This capacity does not come from our own strained efforts. It flows, quite naturally, from the new Love He Himself bestows. It's rather like how a deep love for a child utterly transforms parents, enabling sacrifices and generosity they might never have imagined before. The _action_ changes because the _love_ has changed.
+- As the wise Augustine observed, perhaps the mountain where Christ delivered His great sermon signifies not just a place, but a higher plane of righteousness. The old precepts, given perhaps for a people guided by necessary fear towards an earthly promise, were good indeed. But the new law, for a people freed by Love and destined for a heavenly Kingdom, is *greater*. The same God, you see, provides precepts fitting for the time and the people.
+- So, Jesus stands as the Lawgiver of this new realm. He contrasts the old ways with His own startling pronouncements: "You have heard it said... *But I say to you...*" He lifts the standard higher, infinitely higher. Mercy, forgiveness, love even for enemies – these are the demanding, yet beautiful, coin of His realm.
+- Now, one might feel a chill of discouragement here. How can mere mortals possibly meet such a standard? Ah, but here is the glorious secret! This capacity does not come from our own strained efforts. It flows, quite naturally, from the new Love He Himself bestows. It's rather like how a deep love for a child utterly transforms parents, enabling sacrifices and generosity they might never have imagined before. The *action* changes because the *love* has changed.
 - This Love is nothing less than a revelation of God Himself, seen in Christ. And by His grace, through the indwelling Spirit, this new Love is written upon our very hearts. The Holy Spirit empowers us, brings us into this Kingdom, and enables us to live its demanding, beautiful law.
 - So, when the demands of this new life seem daunting, remember that the power is not ours alone. It is Christ living through us, by the Spirit. The task, then, is simply to ask for that grace, to be filled with this divine Love, and so learn to love as He loved.
 
@@ -3390,7 +3390,7 @@ And often, the most practical way to take that next step, right here and now, is
 
 Let us turn our thoughts, for a moment, to that most central Mystery: the giving of Himself in the Eucharist. Our guide in this brief contemplation is the redoubtable Catherine of Siena, a soul plunged deep into Divine conversation, who lived and laboured mightily in a distant age (1347-1380). She was a Dominican sister, though not cloistered, whose life was marked by profound vision and practical service to the poor and powerful alike. Her great work, the "Dialogue," records her spiritual converse with God.
 
-The heart of our meditation rests upon words God spoke to her soul, revealing the _why_ behind His gifts: "because I love you so much."
+The heart of our meditation rests upon words God spoke to her soul, revealing the *why* behind His gifts: "because I love you so much."
 
 - The very fount of this Mystery, we are told, is an 'abyss' – bottomless, unquenchable – of God's sheer, unyielding love for His creation, a love likened to a parent's deepest affection for a child.
 - In response to our need, this boundless love pours forth the Eucharist, the "sweet truth as food," a Gift born from the very depths of God's burning heart, given for our salvation.
@@ -3408,11 +3408,11 @@ The heart of our meditation rests upon words God spoke to her soul, revealing th
 
 It is a peculiar thing, this human condition, burdened as it is with fear and the prospect of suffering. Yet, the ancient paths of prayer and quiet contemplation offer a means to navigate these shadowed valleys, drawing us nearer to the Master and His Mother, and opening conduits for that grace we so desperately need.
 
-Consider, if you will, that first Sorrowful Mystery, the Agony in the Garden, and the profound insights granted by good St. Alphonsus. Here we see the very heart of our Lord laid bare, not in abstract theology, but in raw, human apprehension. He, who knew no sin, nonetheless took upon Himself the full weight of our _fearfulness_, intending to bestow upon us His own courage.
+Consider, if you will, that first Sorrowful Mystery, the Agony in the Garden, and the profound insights granted by good St. Alphonsus. Here we see the very heart of our Lord laid bare, not in abstract theology, but in raw, human apprehension. He, who knew no sin, nonetheless took upon Himself the full weight of our *fearfulness*, intending to bestow upon us His own courage.
 
-Picture Him in Gethsemane: weary, sorrowful, gripped by a terrible dread of the coming pain and the lonely door of death. This was no mere play-acting; He truly _feared_. And in this, He became our perfect fellow-sufferer and guide.
+Picture Him in Gethsemane: weary, sorrowful, gripped by a terrible dread of the coming pain and the lonely door of death. This was no mere play-acting; He truly *feared*. And in this, He became our perfect fellow-sufferer and guide.
 
-How did He face it? Not by denying the fear, but by turning, again and again, to His Father. His anguish drove Him _into_ dialogue with the Almighty, not away from Him. This is the plain truth for us too: when fear grips us, our anchor is not in stoic self-reliance, but in steadfast relationship with God.
+How did He face it? Not by denying the fear, but by turning, again and again, to His Father. His anguish drove Him *into* dialogue with the Almighty, not away from Him. This is the plain truth for us too: when fear grips us, our anchor is not in stoic self-reliance, but in steadfast relationship with God.
 
 We see echoes of this struggle in lesser trials, perhaps even in the chill of a desert night or the dizzying height of a cliff face. One hears tell of men put to the test in the wilderness – cold biting deep, the stomach churning before a sheer drop. And there, a leader, himself afraid, steps forward first, naming his fear aloud even as he descends. He fixes his gaze not on the abyss below, but on the task, on the trust required, perhaps even on the One who faced a far greater abyss for us.
 
@@ -3433,7 +3433,7 @@ Our guide in this particular reflection is none other than St. Bridget of Sweden
 - Bridget, born in 1303, was granted visions from a young age, glimpses into the very heart of Christ's suffering.
 - She lived a full life in the world, married, and raised eight children, one of whom, Katherine, became a saint herself.
 - After her husband's death, she embraced a life of intense prayer and service as a Third Order Franciscan, founding a religious order, the Bridgettines, and earning her place as a co-patron of Europe.
-- Her _Revelations_ are a record of mystical insights, offered for spiritual nourishment and prayer.
+- Her *Revelations* are a record of mystical insights, offered for spiritual nourishment and prayer.
 
 Now, a word of caution is necessary. The Gospels speak of the Scourging with a certain holy modesty, hinting at the horror without dwelling upon its raw brutality. Yet, St. Bridget, through the eyes of the Blessed Mother, offers a more piercing vision. Those sensitive to such depictions, akin perhaps to certain unflinching portrayals in film, may find this difficult. It is a prayerful, imaginative entry into the Lord's Passion, but it does not flinch from the pain.
 
@@ -3459,12 +3459,12 @@ Let us remain awhile in this contemplation, beholding the innocent, scourged Lor
 Consider, if you will, that stark scene: the Crowning with Thorns, the third sorrowful mystery. To ponder it deeply is to seek a closer walk with Christ and His Mother, finding grace along the path.
 
 1. We might turn our minds, profitably, to the Angelic Doctor, St. Thomas Aquinas, that profound and saintly scholar of old, who guided this reflection.
-1. Aquinas fixes upon the crown, not as a symbol of tragic kingship, but of sheer, deliberate _indignity_. What is indignity? It is the calculated insult, the offering of contempt where honour is not merely due, but richly deserved.
-1. Those thorns, sharp and cruel, might be seen as the very 'prickles' of our own sins, or perhaps the curse upon the ground, now gathered and pressed upon the Head of Him who came to lift it.
-1. We have, perhaps, known something of this ourselves – either in receiving or, worse, in inflicting it. Think of a trust betrayed, a simple kindness met with a clever, wounding slight. It leaves a peculiar ache, a sense of profound wrongness, particularly when the one offended was utterly open and generous.
-1. Now, lift your gaze from such small, human follies to the Divine. He, who is the source of all being, all goodness, all trust, offers Himself entirely. And what is the return? A crown of thorns. Our sins, our self-absorption, our failure to respond with love and honour, are the very substance of that crown.
-1. This is the heart of the mystery: Love receiving indignity. To ponder it in prayer is to see the true nature of our rebellion and the depth of His sacrifice. It draws us closer to His wounded heart and to the heart of His Mother, who shared His suffering.
-1. Such meditation, woven with the simple, enduring threads of prayer (like the Hail Mary and Glory Be), becomes a channel of grace, deepening our bond with Christ and Mary, and teaching us the terrible cost of sin and the glorious power of the Love that bore it.
+2. Aquinas fixes upon the crown, not as a symbol of tragic kingship, but of sheer, deliberate *indignity*. What is indignity? It is the calculated insult, the offering of contempt where honour is not merely due, but richly deserved.
+3. Those thorns, sharp and cruel, might be seen as the very 'prickles' of our own sins, or perhaps the curse upon the ground, now gathered and pressed upon the Head of Him who came to lift it.
+4. We have, perhaps, known something of this ourselves – either in receiving or, worse, in inflicting it. Think of a trust betrayed, a simple kindness met with a clever, wounding slight. It leaves a peculiar ache, a sense of profound wrongness, particularly when the one offended was utterly open and generous.
+5. Now, lift your gaze from such small, human follies to the Divine. He, who is the source of all being, all goodness, all trust, offers Himself entirely. And what is the return? A crown of thorns. Our sins, our self-absorption, our failure to respond with love and honour, are the very substance of that crown.
+6. This is the heart of the mystery: Love receiving indignity. To ponder it in prayer is to see the true nature of our rebellion and the depth of His sacrifice. It draws us closer to His wounded heart and to the heart of His Mother, who shared His suffering.
+7. Such meditation, woven with the simple, enduring threads of prayer (like the Hail Mary and Glory Be), becomes a channel of grace, deepening our bond with Christ and Mary, and teaching us the terrible cost of sin and the glorious power of the Love that bore it.
 
 #### April 12,2025
 
@@ -3481,9 +3481,9 @@ The heart of this reflection turns towards that sorrowful mystery where the King
 From Saint Josemaria's meditations, we glean a profound insight concerning this heavy burden:
 
 - **The Paradox of Love:** That the Cross, the very symbol of suffering and ignominy, can, through the alchemy of Love, be transformed utterly, becoming not a burden to be endured begrudgingly, but a throne from which the Lord reigns.
-- **The Tale of Three Crosses:** Consider the three crosses borne to Golgotha that day. Two were hoisted upon men by force, symbols of their just condemnation, carried perhaps with curses and despair, offering no redemption. But the third, though physically alike, was borne by the Innocent One, embraced freely, _for love_. This willing, loving carriage transmuted wood and weight into the very vehicle of Mercy's triumph. One led to death, another to salvation (for a repentant thief), but the one carried _in Love_ became the Throne from which salvation flowed.
+- **The Tale of Three Crosses:** Consider the three crosses borne to Golgotha that day. Two were hoisted upon men by force, symbols of their just condemnation, carried perhaps with curses and despair, offering no redemption. But the third, though physically alike, was borne by the Innocent One, embraced freely, *for love*. This willing, loving carriage transmuted wood and weight into the very vehicle of Mercy's triumph. One led to death, another to salvation (for a repentant thief), but the one carried *in Love* became the Throne from which salvation flowed.
 - **Our Own Burdens:** The invitation, then, is to look upon our own crosses – the trials, the weariness, the unexpected sorrows – not as mere impositions to be resented, but as potential thrones. It is to seek the grace to embrace them, not with stoic resignation, but with the very Love that empowered Christ.
-- **Suffering With, Reigning With:** For it is in carrying our crosses _with_ Him, in Love, that we suffer _with_ Him, die _with_ Him, and thus, are promised the astonishing privilege of reigning _with_ Him forever.
+- **Suffering With, Reigning With:** For it is in carrying our crosses *with* Him, in Love, that we suffer *with* Him, die *with* Him, and thus, are promised the astonishing privilege of reigning *with* Him forever.
 
 The session, after dwelling on this transforming truth, grounded itself in the familiar rhythm of common prayers – the Hail Mary, the Glory Be, the Sign of the Cross – binding hearts together in shared petition and praise. It is a simple, yet profound, path offered: to meet our own small burdens with the great Love that made the Cross of Christ a Throne of Glory.
 
@@ -3562,7 +3562,7 @@ Day 105 of the Rosary in a Year podcast focuses on the Second Glorious Mystery, 
 
 ##### AI-Generated Summary: The Hidden Power and Divinity of the Holy Spirit
 
-This reflection delves into the Third Glorious Mystery, the Descent of the Holy Spirit, drawing heavily upon the wisdom of St. Ambrose's _On the Holy Spirit_. The core message revolves around the often-hidden nature of the Holy Spirit, whose power and divinity are revealed not through overt displays, but through the subtle yet transformative work of unveiling Christ and uniting us with him. While Pentecost offers a more visible manifestation of the Spirit, the reflection emphasizes the importance of recognizing and honoring the Spirit's continuous, often unseen, activity in our lives. One of the key takeaways is the profound unity within the Trinity.
+This reflection delves into the Third Glorious Mystery, the Descent of the Holy Spirit, drawing heavily upon the wisdom of St. Ambrose's *On the Holy Spirit*. The core message revolves around the often-hidden nature of the Holy Spirit, whose power and divinity are revealed not through overt displays, but through the subtle yet transformative work of unveiling Christ and uniting us with him. While Pentecost offers a more visible manifestation of the Spirit, the reflection emphasizes the importance of recognizing and honoring the Spirit's continuous, often unseen, activity in our lives. One of the key takeaways is the profound unity within the Trinity.
 
 The Holy Spirit is not a separate entity or a temporary replacement for Jesus, but rather fully God, consubstantial with the Father and the Son. This unity is emphasized through the analogy of the Father sending both his Word (Jesus) and his breath (the Holy Spirit). The Spirit's role is intrinsically linked to Christ, revealing him to us and disposing our hearts to receive him in faith. This interconnectedness highlights the Trinity's collaborative work in salvation. The reflection underscores that the Spirit’s presence doesn't signify diversity within the Godhead, but rather demonstrates the unified power of the divine. This "fire" of the Spirit refines our good deeds and consumes our sins, further solidifying the transformative power of the Trinity working within us. The reflection also explores the intriguing paradox of the Holy Spirit's hiddenness.
 
@@ -3717,7 +3717,7 @@ Mary’s “fiat” is true freedom—freely choosing God’s will, receiving al
 
 Mary’s first “fiat” at the Annunciation was a profound act of freedom. The Presentation, however, represents a deepening of this “yes.” Her initial consent encompassed all that would unfold, including Jesus’ suffering and death. In the temple, she renewed this consent, uniting her motherly heart’s sacrifice with his.
 
-This illuminates a deeper truth about commitment. Our initial “yes” to God, whether in religious life or other vocations, implies lifelong faithfulness, even amidst unforeseen trials. Each challenge presents a choice: renew our commitment or withdraw. We may be tempted to think we didn’t agree to _these_ specific hardships.
+This illuminates a deeper truth about commitment. Our initial “yes” to God, whether in religious life or other vocations, implies lifelong faithfulness, even amidst unforeseen trials. Each challenge presents a choice: renew our commitment or withdraw. We may be tempted to think we didn’t agree to *these* specific hardships.
 
 Yet, like Mary, we are called to seek wisdom, prudence, and courage, freely reaffirming our “yes” even when facing unexpected difficulties. Her profound sacrifice, freely receiving her son and freely offering him back to the Father, serves as our guide.
 
@@ -3729,15 +3729,15 @@ Yet, like Mary, we are called to seek wisdom, prudence, and courage, freely reaf
 
 ##### AI-Generated Summary: The Boy in the Temple
 
-We moderns, much like theatre-goers privy to the play’s ending, often approach the Gospels with a certain detachment. We know the climax, the resurrection, the triumph. The mystery, the conflict, the very tension of the narrative is, for many, diminished by foreknowledge. But imagine, if you will, a world without such spoilers. Imagine the raw, electric uncertainty that gripped the first century, a world wrestling with the question: _Who is this Jesus?_
+We moderns, much like theatre-goers privy to the play’s ending, often approach the Gospels with a certain detachment. We know the climax, the resurrection, the triumph. The mystery, the conflict, the very tension of the narrative is, for many, diminished by foreknowledge. But imagine, if you will, a world without such spoilers. Imagine the raw, electric uncertainty that gripped the first century, a world wrestling with the question: *Who is this Jesus?*
 
 This meditation, drawing upon the wisdom of St. Cyril of Alexandria, invites us to revisit the fifth joyful mystery – the finding of Jesus in the temple – with fresh eyes. St. Cyril, living closer to that age of questioning, understood the profound significance of this seemingly simple event. He saw in the boy Jesus, discoursing with the learned doctors, not merely precocious intelligence, but the burgeoning wisdom and grace of God incarnate.
 
-Recall the scene: Mary and Joseph, frantic with worry, discover their son after three days. Mary’s gentle rebuke, referencing Joseph as “thy father,” elicits a response that reverberates with divine authority: “Did ye not know that I must be at my Father’s…here?” Here, in this sacred space, Jesus openly identifies his true Father, not the earthly Joseph, but the Almighty. He declares, in essence, _I am Lord_.
+Recall the scene: Mary and Joseph, frantic with worry, discover their son after three days. Mary’s gentle rebuke, referencing Joseph as “thy father,” elicits a response that reverberates with divine authority: “Did ye not know that I must be at my Father’s…here?” Here, in this sacred space, Jesus openly identifies his true Father, not the earthly Joseph, but the Almighty. He declares, in essence, *I am Lord*.
 
 This declaration, so easily glossed over by modern eyes, would have struck a first-century Jewish audience with the force of thunder. It was a claim of messianic identity, a veiled assertion of divinity, whispered within the hallowed halls of the temple. For those who had ears to hear, it was a revelation of breathtaking magnitude.
 
-St. Cyril emphasizes the unfolding nature of this revelation. Even Mary and Joseph, those closest to Jesus, did not fully grasp the implications of his words. They, like the rest of humanity, were on a journey of discovery, learning step by step the true identity of the child they loved. Like Mary, we too are called to ponder these things, to “keep all these sayings in her heart.” The Hail Marys that punctuate this meditation serve as gentle reminders, echoing the wonder and the mystery of the boy in the temple, the boy who is Lord. _Glory be to the Father, and to the Son, and to the Holy Ghost._
+St. Cyril emphasizes the unfolding nature of this revelation. Even Mary and Joseph, those closest to Jesus, did not fully grasp the implications of his words. They, like the rest of humanity, were on a journey of discovery, learning step by step the true identity of the child they loved. Like Mary, we too are called to ponder these things, to “keep all these sayings in her heart.” The Hail Marys that punctuate this meditation serve as gentle reminders, echoing the wonder and the mystery of the boy in the temple, the boy who is Lord. *Glory be to the Father, and to the Son, and to the Holy Ghost.*
 
 #### April 24,2025
 
@@ -3756,7 +3756,7 @@ Why, you might ask, did Jesus, being sinless God, submit to John's baptism? Greg
 - He did it to make holy the one baptizing Him, John.
 - He went down into the water, as it were, to bury the old, fallen nature inherited from Adam.
 - He sanctified the very waters, preparing the way for our own baptism by water and the Spirit.
-- In doing so, He allows us, through faith, to descend and ascend _with_ Him.
+- In doing so, He allows us, through faith, to descend and ascend *with* Him.
 
 Imagine the scene: As Jesus emerges, the heavens, shut tight since Adam's disobedience barred us from Paradise (remember the angel with the flaming sword?), are dramatically torn open. This is the crucial point Gregory emphasizes. Christ, the New Adam, carries humanity up with Him, reopening the path to God that had been closed.
 
@@ -3814,7 +3814,7 @@ And so, when we pray – reciting the familiar words of the Our Father, the Hail
 
 ##### AI-Generated Summary: The Indwelling Kingdom and the Call to Conversion
 
-Prayer and meditation deepen our relationship with Jesus and Mary, becoming a wellspring of grace for the world. This reflection, drawing upon St. John Eudes’ _The Life and the Kingdom of Jesus_, contemplates the third Luminous Mystery: the proclamation of the Kingdom and the call to conversion.
+Prayer and meditation deepen our relationship with Jesus and Mary, becoming a wellspring of grace for the world. This reflection, drawing upon St. John Eudes’ *The Life and the Kingdom of Jesus*, contemplates the third Luminous Mystery: the proclamation of the Kingdom and the call to conversion.
 
 St. John Eudes (1601-1680), a tireless servant of God, journeyed as a parish missionary, founded the Sisters of Our Lady of Charity of the Refuge (now the Good Shepherd Sisters) to minister to vulnerable women, and established six seminaries in France, answering the Council of Trent’s call for improved priestly formation. He also championed devotion to the Sacred Hearts of Jesus and Mary.
 
@@ -3854,7 +3854,7 @@ Like Peter yearning for the mountaintop tranquility with Christ, we are often te
 
 Drawing upon the wisdom of St. Cyril of Jerusalem and Alexandria, this reflection explores the Fifth Luminous Mystery, the institution of the Eucharist. St. Cyril of Jerusalem, a staunch defender of orthodoxy, emphasizes the literal meaning of Christ's words at the Last Supper: "This is my body…This is my blood." This understanding is further illuminated by St. Cyril of Alexandria, who argues for the sacramental, not merely symbolic, interpretation of these words. He affirms the real presence of Christ in the Eucharist, a belief rooted in the early Church and supported by Christ's power to transform, as seen in the miracle at Cana.
 
-Two key concepts help us understand the workings of sacraments: _ex opere operato_ and _ex opere operantis_. The former refers to the objective reality of the sacrament, independent of individual belief or priestly holiness. Baptism cleanses from original sin, and marriage forms an indissoluble bond, regardless of the individuals involved. The latter, _ex opere operantis_, describes the subjective fruitfulness of the sacrament, dependent on the recipient's disposition and cooperation with grace. While transubstantiation occurs objectively, the benefits of communion rely on the recipient's devoutness and openness. St. Cyril of Alexandria highlights this, stating that devout reception allows us to "bear Christ in us."
+Two key concepts help us understand the workings of sacraments: *ex opere operato* and *ex opere operantis*. The former refers to the objective reality of the sacrament, independent of individual belief or priestly holiness. Baptism cleanses from original sin, and marriage forms an indissoluble bond, regardless of the individuals involved. The latter, *ex opere operantis*, describes the subjective fruitfulness of the sacrament, dependent on the recipient's disposition and cooperation with grace. While transubstantiation occurs objectively, the benefits of communion rely on the recipient's devoutness and openness. St. Cyril of Alexandria highlights this, stating that devout reception allows us to "bear Christ in us."
 
 Communion, therefore, is a profound encounter with God, who offers himself fully to us. Yet, the transformative power of this gift hinges on our response. Like seeds sown on different soils, the Eucharist may yield no fruit, some fruit, or abundant fruit, depending on the state of our lives. To cultivate "good soil," we must diligently avoid sin, nurture a daily prayer life, immerse ourselves in Scripture, and practice charity. While the elements truly become Christ's body and blood, our cooperation with grace determines whether we draw strength and partake in divine nature.
 
@@ -3898,7 +3898,7 @@ Let us consider a specific point of reflection: the dreadful Scourging at the Pi
 
 - The initial torturers departed, but others took their place. To Faustina's astonishment, these were not pagans or soldiers, but priests, religious, church leaders, and layfolk – souls one might expect to be His friends. They scourged Him without mercy, venting a surprising malice.
 
-- Observe the difference: during the first assault, Jesus remained silent, looking away. But under the blows of these _ungrateful_ souls, He closed His eyes, uttering a soft moan of pain. He explained that the malice of these souls, those who had received so much yet turned against Him, constituted a torture _greater than His physical death_. Imagine! The betrayal of a friend cuts deeper than the hatred of an enemy.
+- Observe the difference: during the first assault, Jesus remained silent, looking away. But under the blows of these *ungrateful* souls, He closed His eyes, uttering a soft moan of pain. He explained that the malice of these souls, those who had received so much yet turned against Him, constituted a torture *greater than His physical death*. Imagine! The betrayal of a friend cuts deeper than the hatred of an enemy.
 
 - Faustina felt an agony mirroring His. Yet, Jesus acknowledged her sincere empathy, finding solace in her shared sorrow.
 
@@ -3914,7 +3914,7 @@ We are thus presented with a choice. Will we be like those who turned away, forg
 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+**Table of Contents** *generated with [DocToc](https://github.com/ktechhub/doctoc)*
 
 <!---toc start-->
 
@@ -4064,13 +4064,13 @@ RIAY May 2025
 
 My dear friends, let us consider a rather uncomfortable subject: the matter of compromise, particularly where Truth is concerned. We see it starkly in Pilate’s handling of Our Lord during His Passion, specifically the dreadful episode of the crowning with thorns.
 
-Archbishop Sheen, in his reflections, points out Pilate’s predicament. Here was a man trying to navigate between the demands of a hostile crowd and the nagging voice of his own conscience. His solution? A compromise. He had Jesus scourged, hoping, perhaps, that the sight of blood would satisfy the accusers without forcing him to condemn an innocent man. But such bargains rarely, if ever, lead to justice. As Sheen rightly observes, if Jesus were guilty, He deserved condemnation; if innocent, release. Pilate’s middle path was rooted not in a search for truth – he never sincerely asked _who_ Jesus was – but in political expediency and self-preservation.
+Archbishop Sheen, in his reflections, points out Pilate’s predicament. Here was a man trying to navigate between the demands of a hostile crowd and the nagging voice of his own conscience. His solution? A compromise. He had Jesus scourged, hoping, perhaps, that the sight of blood would satisfy the accusers without forcing him to condemn an innocent man. But such bargains rarely, if ever, lead to justice. As Sheen rightly observes, if Jesus were guilty, He deserved condemnation; if innocent, release. Pilate’s middle path was rooted not in a search for truth – he never sincerely asked *who* Jesus was – but in political expediency and self-preservation.
 
 Now, before we judge Pilate too harshly, we must look inward. Have we not all, at times, behaved similarly? I recall my own younger days, striving to be seen as ‘well-rounded’, participating in just enough religious activity to appear respectable, while simultaneously dipping my toes into worldly ways to gain acceptance there. It was a balancing act, an attempt to please opposing sides, much like Pilate’s. It was, I came to realise, a form of hypocrisy.
 
 This leads us to a crucial point:
 
-- **Truth Demands All:** True faith cannot be merely _part_ of one's life, a compartment kept separate from others, or a tool used for social advantage. It must be the foundation upon which the _entire_ life is built. Christ must be King, not a constitutional monarch whose power we limit.
+- **Truth Demands All:** True faith cannot be merely *part* of one's life, a compartment kept separate from others, or a tool used for social advantage. It must be the foundation upon which the *entire* life is built. Christ must be King, not a constitutional monarch whose power we limit.
 - **Compromise is Mockery:** When we attempt to bargain with God, to dilute His commands, or to keep areas of our lives cordoned off from His influence – perhaps by consuming questionable things, engaging in gossip to fit in, or prioritising convenience over righteousness – we are, in effect, doing what the soldiers did. We place a crown of thorns upon Him, put a reed in His hand, and pay Him feigned homage. We treat the King of the Universe as a pawn in our own game of self-interest.
 - **The Ongoing Battle:** Even after recognising this, the temptation to compromise persists. It whispers to us to accept mediocrity, to flirt with lesser sins, to appease people or passions rather than stand firm for what is right and true. It is a spirit that shies away from hard truths and seeks easy ways out.
 
@@ -4098,7 +4098,7 @@ Key insights include:
 
 - Faith does not erase pain but infuses it with meaning.
 - The cross teaches that victory often wears the guise of defeat.
-- Closing prayers (e.g., _Hail Mary_, _Glory Be_) anchor this hope in divine grace, seeking intercession for perseverance.
+- Closing prayers (e.g., *Hail Mary*, *Glory Be*) anchor this hope in divine grace, seeking intercession for perseverance.
 
 In brief: the cross is both burden and beacon—a call to carry our trials with Christ, trusting in their hidden triumph.
 
@@ -4111,12 +4111,12 @@ In brief: the cross is both burden and beacon—a call to carry our trials with 
 ##### AI-Generated Summary: A Meditation on Mary's Sorrow at the Cross
 
 - **Mary’s Witness**: The crucifixion is portrayed through Mary’s eyes, blending her memory of Jesus as both the infant of Bethlehem and the suffering man of Calvary. Her dual vision sharpens her grief, making her sorrow a lens for deeper contemplation.
-- **Brutality of the Cross**: St. Bridget’s _Revelations_ underscores the physical torment—nails piercing flesh, limbs wrenched, veins ruptured—while Mary’s steadfast presence magnifies the horror and holiness of the scene.
+- **Brutality of the Cross**: St. Bridget’s *Revelations* underscores the physical torment—nails piercing flesh, limbs wrenched, veins ruptured—while Mary’s steadfast presence magnifies the horror and holiness of the scene.
 - **Devotion’s Paradox**: Mary’s Magnificat, a song of divine glory, contrasts with her anguish at the cross. Her suffering does not diminish Christ’s majesty but reveals its cost, proving that love and sorrow amplify redemption’s weight.
 - **Spiritual Invitation**: To meditate on Mary’s perspective is to awaken sharper sorrow for sin, fiercer gratitude for sacrifice, and truer contrition. Her heart becomes a school for the penitent.
-- **Prayer as Response**: The repeated _Hail Mary_ and _Glory Be_ are not mere recitations but echoes of Mary’s own surrender, framing the crucifixion within praise and petition. The closing trinitarian formula seals the meditation as both gift and grace.
+- **Prayer as Response**: The repeated *Hail Mary* and *Glory Be* are not mere recitations but echoes of Mary’s own surrender, framing the crucifixion within praise and petition. The closing trinitarian formula seals the meditation as both gift and grace.
 
-_In brevity, the text weaves brutality, devotion, and prayer into a tapestry meant to pierce the soul as the nails pierced Christ—through the heart of His mother._
+*In brevity, the text weaves brutality, devotion, and prayer into a tapestry meant to pierce the soul as the nails pierced Christ—through the heart of His mother.*
 
 #### May 04,2025
 
@@ -4168,7 +4168,7 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 - **Abiding in Love**
 
   - Life’s purpose is found in devotion: abiding in faith, giving thanks, and living as Christ’s hands in the world.
-  - Prayers like the _Hail Mary_ and _Glory Be_ anchor the heart in gratitude and intercession.
+  - Prayers like the *Hail Mary* and *Glory Be* anchor the heart in gratitude and intercession.
 
 - **Final Blessing**
 
@@ -4188,7 +4188,7 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 - **Prayer as the Furnace of Love**: True love for God grows through prayer, which acts like a furnace, sustaining and intensifying the Spirit’s fire. Without prayer, the fire dwindles; with it, the heart is purified and transformed.
 - **Carrying the Cross**: The cross, borne with Jesus, becomes the fuel for this inner fire. Just as fire needs oxygen, the soul needs prayer to keep the Spirit’s flame alive.
 - **A Call for Renewal**: The text implores the Holy Spirit to rekindle love, faith, and hope where they have grown cold, invoking the same power that animated the saints.
-- **Closing Prayers**: The passage concludes with repeated invocations of the _Hail Mary_ and _Glory Be_, honoring Mary and the Trinity, and ends with a blessing of gratitude for divine grace.
+- **Closing Prayers**: The passage concludes with repeated invocations of the *Hail Mary* and *Glory Be*, honoring Mary and the Trinity, and ends with a blessing of gratitude for divine grace.
 
 #### May 07,2025
 
@@ -4237,7 +4237,7 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 
 - **Prayers and Devotion**:
 
-  - The text includes repeated invocations like the _Hail Mary_ and _Glory Be_, affirming reverence for Mary and Christ.
+  - The text includes repeated invocations like the *Hail Mary* and *Glory Be*, affirming reverence for Mary and Christ.
   - A closing reflection on the Beatitudes ties trust in Mary to broader spiritual growth.
 
 - **Practical Note**:
@@ -4252,7 +4252,7 @@ _In brevity, the text weaves brutality, devotion, and prayer into a tapestry mea
 
 ##### AI-Generated Summary: Deepening Devotion Through Sacred Art and Prayer
 
-The text explores how prayer, meditation, and sacred art can deepen one’s spiritual relationship with Jesus and Mary. It emphasizes the value of contemplative engagement with religious artworks, using Fra Angelico’s _Annunciation_ as a focal point.
+The text explores how prayer, meditation, and sacred art can deepen one’s spiritual relationship with Jesus and Mary. It emphasizes the value of contemplative engagement with religious artworks, using Fra Angelico’s *Annunciation* as a focal point.
 
 ###### Key Insights
 
@@ -4264,12 +4264,12 @@ The text explores how prayer, meditation, and sacred art can deepen one’s spir
 - **Structure of Contemplation**:
 
   - Sessions begin with historical context and visual description to guide reflection.
-  - Fra Angelico’s _Annunciation_ (mid-1430s) is analyzed for its theological and artistic depth.
+  - Fra Angelico’s *Annunciation* (mid-1430s) is analyzed for its theological and artistic depth.
 
 - **Symbolism in Fra Angelico’s Work**:
 
   - The painting juxtaposes two arches: Mary (in blue, holding a book) and Gabriel (bowing in reverence).
-  - Adam and Eve appear in the background, linking the Fall to Mary’s redemptive _fiat_.
+  - Adam and Eve appear in the background, linking the Fall to Mary’s redemptive *fiat*.
   - A golden beam and descending dove signify divine intervention.
 
 - **Theological Contrasts**:
@@ -4283,7 +4283,7 @@ The text explores how prayer, meditation, and sacred art can deepen one’s spir
 
 ###### Closing Devotions
 
-- Recitation of the _Hail Mary_ and _Glory Be_, honoring Mary and the Trinity.
+- Recitation of the *Hail Mary* and *Glory Be*, honoring Mary and the Trinity.
 - A farewell blessing, expressing gratitude and hope.
 
 Fra Angelico’s humility (as noted by Vasari) mirrors the text’s call to quiet devotion—a harmony of art, prayer, and surrender.
@@ -4300,7 +4300,7 @@ Fra Angelico’s humility (as noted by Vasari) mirrors the text’s call to quie
 
 ##### AI-Generated Summary: Rembrandt’s The Visitation and the Divine Light of Shared Faith
 
-Rembrandt’s _The Visitation_ (c. 1640) captures a biblical moment rich in spiritual and artistic significance. The Dutch master, working amid Europe’s religious upheavals, imbues the scene with tender humanity and divine mystery.
+Rembrandt’s *The Visitation* (c. 1640) captures a biblical moment rich in spiritual and artistic significance. The Dutch master, working amid Europe’s religious upheavals, imbues the scene with tender humanity and divine mystery.
 
 ###### Key Elements of the Painting
 
@@ -4331,7 +4331,7 @@ The repeated "Hail Mary" and "Glory Be" prayers in the original text echo the pa
 - Praise for divine intervention ("Holy Mary, Mother of God").
 - Trust in God’s eternal light ("Glory be to the Father, and to the Son...").
 
-In _The Visitation_, Rembrandt distills a moment where heaven touches earth, and two women—illuminated by faith—become vessels of grace. The artwork, like the prayers it inspires, reminds us that divine companionship transforms uncertainty into hope.
+In *The Visitation*, Rembrandt distills a moment where heaven touches earth, and two women—illuminated by faith—become vessels of grace. The artwork, like the prayers it inspires, reminds us that divine companionship transforms uncertainty into hope.
 
 ##### Rembrandt's The Visitation painted in 1640, depicts the meeting of the Virgin Mary and her cousin Elizabeth, both pregnant, and is notable for its exquisite use of light and shadow
 
@@ -4347,13 +4347,13 @@ In _The Visitation_, Rembrandt distills a moment where heaven touches earth, and
 
 The Venetian artist Giovanni Antonio Pellegrini, commissioned by an Austrian empress in the early 18th century, captures the Nativity with striking tenderness and reverence in his oil-on-plaster painting. The infant Christ lies cradled in the manger, the focal point of a scene suffused with devotion. Mary kneels in adoration, her robes of pink and blue a traditional emblem of humility and grace, while Joseph stands guard in earthy brown, a silent sentinel. The composition balances symmetry and warmth: two angels, winged and robed in soft hues, flank the holy family, their presence elevating the humble setting. Above, a luminous sky, alive with clouds, bathes the scene in celestial light.
 
-Mary’s outstretched hand cradles a white cloth, its folds forming a subtle triangle—an echo of Trinitarian mystery. The Christ child, radiant and serene, reaches toward the viewer, his gesture both an offering and a summons. Here, divinity intersects with humanity in the quiet intimacy of Bethlehem. Every gaze—Joseph’s steadfastness, Mary’s wonder, the angels’ reverence—converges upon the newborn, a visual hymn to Philippians 2:10: _at the name of Jesus, every knee shall bow_. The manger becomes a throne; the adoration of creatures for their Creator begins not in splendor, but in vulnerability.
+Mary’s outstretched hand cradles a white cloth, its folds forming a subtle triangle—an echo of Trinitarian mystery. The Christ child, radiant and serene, reaches toward the viewer, his gesture both an offering and a summons. Here, divinity intersects with humanity in the quiet intimacy of Bethlehem. Every gaze—Joseph’s steadfastness, Mary’s wonder, the angels’ reverence—converges upon the newborn, a visual hymn to Philippians 2:10: *at the name of Jesus, every knee shall bow*. The manger becomes a throne; the adoration of creatures for their Creator begins not in splendor, but in vulnerability.
 
-Yet this worship is not distant or austere. Pellegrini infuses the scene with familial tenderness—the love of a mother for her child, the protective presence of a foster father. The mystery of the Incarnation is thus twofold: it commands awe yet invites closeness. To stand before this painting is to join that circle of adoration, to witness the _Logos_ swaddled in flesh, and to respond with the same humility as Mary, who "pondered these things in her heart."
+Yet this worship is not distant or austere. Pellegrini infuses the scene with familial tenderness—the love of a mother for her child, the protective presence of a foster father. The mystery of the Incarnation is thus twofold: it commands awe yet invites closeness. To stand before this painting is to join that circle of adoration, to witness the *Logos* swaddled in flesh, and to respond with the same humility as Mary, who "pondered these things in her heart."
 
-The meditation extends beyond the visual to the spiritual. Just as the figures in the painting kneel before Christ, so too are we called to orient our lives toward him—to embody the Nativity’s dual call of worship and love. Prayers like the _Our Father_ and _Hail Mary_ become not mere recitations, but acts of participation in that eternal adoration. The reflection closes with a Trinitarian blessing, a reminder that the crib of Bethlehem points always to the Cross and the Resurrection—the full arc of redemption, begun in a stable’s quiet glow.
+The meditation extends beyond the visual to the spiritual. Just as the figures in the painting kneel before Christ, so too are we called to orient our lives toward him—to embody the Nativity’s dual call of worship and love. Prayers like the *Our Father* and *Hail Mary* become not mere recitations, but acts of participation in that eternal adoration. The reflection closes with a Trinitarian blessing, a reminder that the crib of Bethlehem points always to the Cross and the Resurrection—the full arc of redemption, begun in a stable’s quiet glow.
 
-_In the name of the Father, the Son, and the Holy Spirit._
+*In the name of the Father, the Son, and the Holy Spirit.*
 
 **Key Themes:**
 
@@ -4373,17 +4373,17 @@ _In the name of the Father, the Son, and the Holy Spirit._
 
 ##### AI-Generated Summary: A Reflection on Campy’s Fresco and the Devotion of Mary
 
-The fresco by Julio Campy (1547), a master from Cremona renowned for his altarpieces, depicts the _Presentation of Jesus in the Temple_. Mary places the infant Christ upon the altar, encircled by Simeon, an elderly woman, and Joseph—a scene shifting from the serenity of the Nativity to the temple’s clamor.
+The fresco by Julio Campy (1547), a master from Cremona renowned for his altarpieces, depicts the *Presentation of Jesus in the Temple*. Mary places the infant Christ upon the altar, encircled by Simeon, an elderly woman, and Joseph—a scene shifting from the serenity of the Nativity to the temple’s clamor.
 
 Here lies a striking contrast: Simeon, overcome by the fulfillment of prophecy, shuts his eyes in peace, while Mary’s gaze remains fixed on her Son. Amid the chaos, her posture is one of unwavering adoration—a model of devotion undisturbed by circumstance. The passage invites us to emulate her steadiness, anchoring ourselves in worship even when turmoil threatens distraction.
 
-The text weaves prayers of gratitude and submission—_Our Father_, _Hail Mary_—reiterating themes of reverence and divine guidance. It closes with doxology:
+The text weaves prayers of gratitude and submission—*Our Father*, *Hail Mary*—reiterating themes of reverence and divine guidance. It closes with doxology:
 
-> _Glory be to the Father, the Son, and the Holy Spirit._
+> *Glory be to the Father, the Son, and the Holy Spirit.*
 
 In Campy’s art and the accompanying meditation, we find a call to mirror Mary’s offering: to hold fast to faith, not as escape, but as the lens through which all life is rightly seen.
 
-_Blessed art thou among women... pray for us sinners._
+*Blessed art thou among women... pray for us sinners.*
 
 ##### Fresco of Presentation in the Temple in Chiesa di Santa Rita by Giulio Campi (1547) (Stock Image)
 
@@ -4401,7 +4401,7 @@ The scene depicted is a Byzantine-style mosaic of the Finding of Jesus in the Te
 
 Here, human responses fracture like light through glass: some marvel, others bristle at His authority, a few are stirred toward belief. Yet Mary stands apart, her devotion unshaken—a harmony of maternal love and grace-wrought worship. Where the scholars falter, she sees; where they question, she adores. Her gaze is fixed not on the mystery’s difficulty, but on its Author.
 
-The passage then turns from art to exhortation. To seek Christ as Mary did—not by labor alone, but by grace—is the summons. A prayer pleads for the Spirit’s aid to emulate her faith, followed by the rhythmic cadence of _Hail Marys_, as if each repetition polishes the soul’s mirror to reflect His light more clearly. The _Glory Be_ crowns these devotions, a brief blaze of praise to the Triune God.
+The passage then turns from art to exhortation. To seek Christ as Mary did—not by labor alone, but by grace—is the summons. A prayer pleads for the Spirit’s aid to emulate her faith, followed by the rhythmic cadence of *Hail Marys*, as if each repetition polishes the soul’s mirror to reflect His light more clearly. The *Glory Be* crowns these devotions, a brief blaze of praise to the Triune God.
 
 In this mosaic and meditation alike, two truths emerge: Christ’s revelation divides hearts even as it unites them to Himself, and grace alone bends the knee in true worship. The prayers are not incantations but open hands—waiting to receive what Mary already grasped.
 
@@ -4417,11 +4417,11 @@ In this mosaic and meditation alike, two truths emerge: Christ’s revelation di
 
 ##### AI-Generated Summary: The Mystery and Majesty of Christ’s Baptism in a 16th-Century Fresco
 
-An unknown artist’s fresco, _Baptism of Christ_, in Padua’s church of San Benedetto, captures the moment Jesus kneels on jagged rocks by the Jordan River. Clad in white, He submits to John the Baptist, who pours water over His head. Above them, cherubs and angels bear symbols of the Passion—a cross, nails, a lance—while the Holy Spirit descends as a dove in golden light. Shadowed onlookers, including a mother and child, witness the scene, their presence a silent testament to the event’s gravity.
+An unknown artist’s fresco, *Baptism of Christ*, in Padua’s church of San Benedetto, captures the moment Jesus kneels on jagged rocks by the Jordan River. Clad in white, He submits to John the Baptist, who pours water over His head. Above them, cherubs and angels bear symbols of the Passion—a cross, nails, a lance—while the Holy Spirit descends as a dove in golden light. Shadowed onlookers, including a mother and child, witness the scene, their presence a silent testament to the event’s gravity.
 
 This baptism is no ordinary rite. Unlike John’s earlier baptisms for repentance, Christ’s immersion signifies His embrace of humanity’s sin, a prelude to the cross. The heavens tear open; the Father’s voice proclaims, “This is my beloved Son.” Here, the invisible is made visible, the eternal breaks into time. The artist underscores this paradox: light pierces darkness, angels hold instruments of suffering, yet divine joy radiates. The fresco is not merely a depiction but an invitation—to ponder the mystery of God made flesh, submitting to a sinner’s baptism.
 
-The text reflects on the Jordan’s banks as a threshold where Christ’s trust in the Father is unveiled. His submission mirrors the believer’s journey: baptized into His death and resurrection, we too are called to carry the cross, anchored in our identity as God’s beloved. The passage closes with prayers—_Our Father_, _Hail Mary_, _Glory Be_—seeking grace to embrace this truth.
+The text reflects on the Jordan’s banks as a threshold where Christ’s trust in the Father is unveiled. His submission mirrors the believer’s journey: baptized into His death and resurrection, we too are called to carry the cross, anchored in our identity as God’s beloved. The passage closes with prayers—*Our Father*, *Hail Mary*, *Glory Be*—seeking grace to embrace this truth.
 
 In this fusion of art and devotion, the fresco whispers a timeless lesson: the path of glory is paved with humility, and the light of Christ outshines even the shadow of the cross.
 
@@ -4437,13 +4437,13 @@ In this fusion of art and devotion, the fresco whispers a timeless lesson: the p
 
 ##### AI-Generated Summary: Reflections on Carl Bloch’s The Wedding at Cana and the Quiet Miracles of Christ
 
-Carl Bloch’s _The Wedding at Cana_ captures a moment of divine humility. Painted in the classical realism style, the scene unfolds beneath a grand archway, where servants gasp as water turns to wine in their pitchers. Yet the true focus lies elsewhere: Jesus sits quietly at the banquet table beside Mary, unnoticed by the bride and groom. His miracle is not for spectacle but for love—a theme woven through his acts of healing and provision.
+Carl Bloch’s *The Wedding at Cana* captures a moment of divine humility. Painted in the classical realism style, the scene unfolds beneath a grand archway, where servants gasp as water turns to wine in their pitchers. Yet the true focus lies elsewhere: Jesus sits quietly at the banquet table beside Mary, unnoticed by the bride and groom. His miracle is not for spectacle but for love—a theme woven through his acts of healing and provision.
 
 Bloch, a Danish artist shaped by Rembrandt and Italian masters, frames the miracle through the servants’ awe, while Christ’s unassuming presence reminds us that divinity often works in hidden ways. The painting invites meditation: initially, the viewer might mistake another figure for Jesus, only to find him seated apart, his power veiled in compassion. This mirrors his earthly ministry—turning water to wine to preserve joy, feeding the hungry, and healing the broken, all without demand for recognition.
 
 The bond between Jesus and Mary is tenderly rendered. Their shared glance speaks of impending sacrifice, a silent dialogue of love for humanity. The artwork becomes a window into their sacred relationship, urging the observer to rest in that same love.
 
-Devotional prayers interspersed throughout the text—the _Our Father_, _Hail Mary_, and _Glory Be_—anchor the reflection in worship. They echo the painting’s themes: grace, intercession, and the quiet majesty of a God who serves.
+Devotional prayers interspersed throughout the text—the *Our Father*, *Hail Mary*, and *Glory Be*—anchor the reflection in worship. They echo the painting’s themes: grace, intercession, and the quiet majesty of a God who serves.
 
 In sum, Bloch’s masterpiece and the accompanying meditation reveal a Christ who transforms the ordinary with quiet power, asking not for admiration but offering love. The miracle at Cana, like all his works, whispers that divinity dwells among us, often unseen, always giving.
 
@@ -4459,11 +4459,11 @@ In sum, Bloch’s masterpiece and the accompanying meditation reveal a Christ wh
 
 ##### AI-Generated Summary: James Tissot’s Healing of the Lepers at Capernaum and the Kingdom of God
 
-James Tissot, a French artist known for merging impressionism and realism, shifted from secular subjects to religious themes after his return to Catholicism. His painting _Healing of the Lepers at Capernaum_ captures a moment of divine intervention: a leper kneels on cobblestones, reaching toward a group that includes a figure in white—presumably Christ—touching a child’s head. Light falls on a nearby house, while shadows drape the street, visually underscoring the contrast between despair and hope, suffering and healing.
+James Tissot, a French artist known for merging impressionism and realism, shifted from secular subjects to religious themes after his return to Catholicism. His painting *Healing of the Lepers at Capernaum* captures a moment of divine intervention: a leper kneels on cobblestones, reaching toward a group that includes a figure in white—presumably Christ—touching a child’s head. Light falls on a nearby house, while shadows drape the street, visually underscoring the contrast between despair and hope, suffering and healing.
 
 The work reflects the biblical narrative where Christ heals ten lepers, yet only one returns to give thanks. This omission of gratitude becomes a parable of human frailty—divine grace is freely given, but it demands a response. The "kingdom of God" is not a static realm but God’s active presence: teaching, saving, and restoring. Tissot’s composition, with its interplay of light and shadow, mirrors this tension between divine offer and human reception.
 
-True faith, the passage argues, is more than passive belief; it requires worship, obedience, and trust. Gratitude is the heartbeat of repentance, a surrender to God’s guidance. The text closes with repeated prayers—the _Hail Mary_, invoking Mary’s intercession, and the _Glory Be_, praising the Trinity—emphasizing dependence on mercy and the communal nature of devotion.
+True faith, the passage argues, is more than passive belief; it requires worship, obedience, and trust. Gratitude is the heartbeat of repentance, a surrender to God’s guidance. The text closes with repeated prayers—the *Hail Mary*, invoking Mary’s intercession, and the *Glory Be*, praising the Trinity—emphasizing dependence on mercy and the communal nature of devotion.
 
 In sum, Tissot’s painting and the accompanying meditation weave art and theology into a call to action: to receive grace with humility, to repent with hope, and to answer divine light with human gratitude.
 
@@ -4479,11 +4479,11 @@ In sum, Tissot’s painting and the accompanying meditation weave art and theolo
 
 ##### AI-Generated Summary: The Radiance of Divine Light in the Transfiguration Window
 
-The stained glass window of the Transfiguration in Vienna’s Votive Church is a luminous testament to Christ’s divine nature. At its heart stands Jesus, ablaze with unearthly light, flanked by Moses and Elijah—figures of the Law and the Prophets—while below, the apostles Peter, James, and John gaze upward in wonder. The artist (unknown) employs rich hues, yet Christ’s brilliance dominates, a visual echo of His declaration: _I am the light of the world_. The church itself, a neo-Gothic marvel by Heinrich von Ferstel (completed 1879), frames this masterpiece, where glass and light conspire to reveal sacred truth.
+The stained glass window of the Transfiguration in Vienna’s Votive Church is a luminous testament to Christ’s divine nature. At its heart stands Jesus, ablaze with unearthly light, flanked by Moses and Elijah—figures of the Law and the Prophets—while below, the apostles Peter, James, and John gaze upward in wonder. The artist (unknown) employs rich hues, yet Christ’s brilliance dominates, a visual echo of His declaration: *I am the light of the world*. The church itself, a neo-Gothic marvel by Heinrich von Ferstel (completed 1879), frames this masterpiece, where glass and light conspire to reveal sacred truth.
 
-Here, the Transfiguration is no mere event but a revelation: Christ, the _sun at noonday_, unveils the glory that the Law and Prophets—like dawn—could only foreshadow. The window’s very medium speaks of grace; as sunlight transforms stained glass into a tapestry of fire, so divine illumination reveals meaning in what was once opaque. The apostles, trembling at the sight, embody our own frailty before such radiance—yet also our hope. For to behold this light is to be warmed, clarified, and remade.
+Here, the Transfiguration is no mere event but a revelation: Christ, the *sun at noonday*, unveils the glory that the Law and Prophets—like dawn—could only foreshadow. The window’s very medium speaks of grace; as sunlight transforms stained glass into a tapestry of fire, so divine illumination reveals meaning in what was once opaque. The apostles, trembling at the sight, embody our own frailty before such radiance—yet also our hope. For to behold this light is to be warmed, clarified, and remade.
 
-The accompanying prayers—_Our Father_, _Hail Mary_, _Glory Be_—are not mere recitations but echoes of that moment on the mount. They are petitions for the very light the window depicts: forgiveness to cleanse, guidance to steady, and grace to transfigure our own shadows into clarity. The closing blessing is no formality but a whispered promise: that the same light which once dazzled the apostles still pierces the dimness of our world, if we have eyes to see.
+The accompanying prayers—*Our Father*, *Hail Mary*, *Glory Be*—are not mere recitations but echoes of that moment on the mount. They are petitions for the very light the window depicts: forgiveness to cleanse, guidance to steady, and grace to transfigure our own shadows into clarity. The closing blessing is no formality but a whispered promise: that the same light which once dazzled the apostles still pierces the dimness of our world, if we have eyes to see.
 
 In this fusion of art and devotion, the window becomes more than decoration; it is a summons. Like the apostles, we are called to witness, to kneel, and—in time—to reflect.
 
@@ -4505,7 +4505,7 @@ Consider His peace—not the absence of storm, but the mastery over it. As He on
 
 And here lies our lesson: if He, facing the cross, could rest in trust, then why should we, in our lesser trials, fret like orphans? His authority is not diminished by our chaos, nor His love undone by our failures. Repent, believe, and take heart—for the same hands that broke the bread and bore the nails hold all things, even now.
 
-_Glory be to the Father, and to the Son, and to the Holy Spirit._
+*Glory be to the Father, and to the Son, and to the Holy Spirit.*
 
 ##### Giacomo Raffaelli (1753-1836) , an Italian mosaicist, created a life-sized mosaic copy of Leonardo da Vinci's "The Last Supper" (Stock Image)
 
@@ -4523,7 +4523,7 @@ Consider the painting by Masip, where our Lord kneels in Gethsemane, His sorrow 
 
 Peter, too, betrayed—yet he wept and was restored. Judas, though offered the same mercy, turned inward to despair. The lesson is plain as morning: God’s forgiveness waits, but we must open the door. Christ’s agony in the garden was not merely for nails and thorns, but for hearts that would rather perish than be pardoned.
 
-To the weary soul, this is your comfort: come as you are, but do not stay as you are. The prayers we repeat—the _Hail Mary_, the _Glory Be_—are not incantations but lifelines, thrown across the chasm of our failings. Mercy is always nearer than we dare hope.
+To the weary soul, this is your comfort: come as you are, but do not stay as you are. The prayers we repeat—the *Hail Mary*, the *Glory Be*—are not incantations but lifelines, thrown across the chasm of our failings. Mercy is always nearer than we dare hope.
 
 ##### Agony in the Garden by Vicente Masip, also known as Vicente Juan Masip
 
@@ -4543,7 +4543,7 @@ Here is the Lamb, whole and holy, wrapped in the white of innocence, His flesh s
 
 And here lies the great mystery—that in His wounds, we see our healing; in His weakness, our strength. As St. Paul writes, neither anguish nor peril, neither the lash nor the nail, can sever us from the love of God. For Christ, even in His Passion, is still the Way, the Truth, and the Life. His love is a fortress that no assault of sin or death can overthrow.
 
-Let us then, with the Blessed Mother, say, _Hail Mary, full of grace_, and with the Church, _Glory be to the Father_, for in these sorrows we find the very heart of joy.
+Let us then, with the Blessed Mother, say, *Hail Mary, full of grace*, and with the Church, *Glory be to the Father*, for in these sorrows we find the very heart of joy.
 
 ##### Giovanni Antonio Bazzi known as Sodoma, Christ at the Column (c. 1510-1515; detached fresco, 140 x 101 cm; Siena, Pinacoteca Nazionale)
 
@@ -4557,13 +4557,13 @@ Let us then, with the Blessed Mother, say, _Hail Mary, full of grace_, and with 
 
 ##### AI-Generated Summary: The Suffering King and the Call to Repentance
 
-Behold Titian’s _Christ Crowned with Thorns_, where the divine meets the cruelty of men. Here stands our Lord, robed in rose, His body noble as the sculpted heroes of old, yet bowed under the mockery of those who know not what they do. Behind Him, cold and unfeeling, looms the bust of Tiberius—earthly power, blind to the true King who suffers before it.
+Behold Titian’s *Christ Crowned with Thorns*, where the divine meets the cruelty of men. Here stands our Lord, robed in rose, His body noble as the sculpted heroes of old, yet bowed under the mockery of those who know not what they do. Behind Him, cold and unfeeling, looms the bust of Tiberius—earthly power, blind to the true King who suffers before it.
 
 See how the thorns are pressed deeper by a wooden pole, a small but piercing detail. It is not merely a painting of long-past violence; it is a mirror. In every act of indifference, in every preference for the world’s empty crowns over His love, in every distrust of His mercy—we too press the thorns upon His brow. The soldiers’ hands are ours.
 
 Yet here also is grace, if we will have it. To sorrow for our sins is to share in His suffering rightly, not as tormentors but as penitents. Let us ask, then, for the tears that cleanse and the strength to turn away when temptation whispers. For only by kneeling before the crucified can we rise unshackled.
 
-_Hail Mary, full of grace... Glory be to the Father..._ So we pray, again and again, that our hearts may learn what our lips repeat. And may He, who bore the thorns for love of us, grant us peace. Amen.
+*Hail Mary, full of grace... Glory be to the Father...* So we pray, again and again, that our hearts may learn what our lips repeat. And may He, who bore the thorns for love of us, grant us peace. Amen.
 
 ##### Titian’s Christ Crowned with Thorns (c. 1542–1543)
 
@@ -4583,9 +4583,9 @@ And do we not still? Each year, a procession winds through city streets, the cro
 
 Here lies the question pressed upon us: When we behold the sacred, do we see with the centurion’s awakening heart, or with the hardness of those who passed by? The story is familiar, yet it demands to be encountered afresh, as if we were those Roman guards, ignorant of the Man’s name, yet pierced by the weight of His silence.
 
-Let us then pray—not as recitation, but as a laying bare of the soul: _Forgive us our trespasses. Thy will be done. Pray for us sinners now._ For in the end, it is not the crowd’s noise, but the quiet witness of the heart, that answers the cross.
+Let us then pray—not as recitation, but as a laying bare of the soul: *Forgive us our trespasses. Thy will be done. Pray for us sinners now.* For in the end, it is not the crowd’s noise, but the quiet witness of the heart, that answers the cross.
 
-_Glory be to the Father, and to the Son, and to the Holy Spirit. Amen._
+*Glory be to the Father, and to the Son, and to the Holy Spirit. Amen.*
 
 ##### Pieter Bruegel the Elder’s The Procession to Calvary (1564)
 
@@ -4605,7 +4605,7 @@ Two thieves flank Him: one bathed in the light of repentance, the other lost in 
 
 Here is the paradox of the Cross: in suffering, victory; in death, life; in darkest grief, the dawn of unending joy. The rainbow, once a sign of God’s promise to Noah, now crowns the Crucified, declaring that no storm lasts forever, no night is without morning. Let those who suffer take heart—the arms that stretched to complete the bow of heaven’s covenant will one day wipe away every tear.
 
-And so we pray, not as those without hope, but as children who know their Father keeps His word. _Hail Mary, full of grace... Glory be to the Father..._ For in the end, all shall be well, and all shall be well, and every manner of thing shall be well.
+And so we pray, not as those without hope, but as children who know their Father keeps His word. *Hail Mary, full of grace... Glory be to the Father...* For in the end, all shall be well, and all shall be well, and every manner of thing shall be well.
 
 ##### The fresco of Crucifixion in the church San Girolamo dei Croati by Pietro Gagliardi (1847-1852) (Stock Image)
 
@@ -4625,7 +4625,7 @@ So too did our Lord live: His whole life a steady gaze upon the Father, His pray
 
 This is the pattern set before us. To pray in secret, to act without demand for earthly praise, to fix our eyes, like Carracci’s Christ, on what is above. For the Father who sees in secret does not forget. He answers not with perishable rewards, but with the gift of Himself—the Spirit’s grace, the hope of resurrection, and the joy of a will surrendered to Love’s design.
 
-Let us then, with Mary, say again the old prayers, not as incantations, but as steady steps toward that same gaze. _Hail Mary, full of grace… Glory be to the Father…_ For in them we rehearse the posture of eternity: hands open, head bowed, eyes lifted—waiting for the dawn.
+Let us then, with Mary, say again the old prayers, not as incantations, but as steady steps toward that same gaze. *Hail Mary, full of grace… Glory be to the Father…* For in them we rehearse the posture of eternity: hands open, head bowed, eyes lifted—waiting for the dawn.
 
 God bless you.
 
@@ -4643,11 +4643,11 @@ God bless you.
 
 Imagine, if you will, a great and ancient basilica, its walls and ceilings aglow with mosaics crafted over eight hundred years by hands both skilled and devout. Here, Byzantine masters first laid their golden tesserae, later joined by Florentine and Venetian artists, each adding to the splendor that points not to themselves, but to Him who sits enthroned above—Christ, cloaked in celestial blue, bearing the wood of the cross, attended by angels.
 
-In this sacred art, we see a truth as old as the Gospel: the path to glory winds downward first. The Baptist kneels, declaring, _He must increase, but I must decrease._ The Blessed Mother bows, her _Magnificat_ echoing heaven’s paradox—_He has put down the mighty and exalted the lowly._ And Christ Himself, though equal to God, _emptied Himself_, as St. Paul tells us, descending to the depths of mortal shame that we might rise with Him.
+In this sacred art, we see a truth as old as the Gospel: the path to glory winds downward first. The Baptist kneels, declaring, *He must increase, but I must decrease.* The Blessed Mother bows, her *Magnificat* echoing heaven’s paradox—*He has put down the mighty and exalted the lowly.* And Christ Himself, though equal to God, *emptied Himself*, as St. Paul tells us, descending to the depths of mortal shame that we might rise with Him.
 
 This is the royal road, dear reader: to lay aside our strivings for honor, wealth, or mastery, and instead take up the quiet, often painful work of trust. Prayer, sacrifice, and charity are its markers; obedience to Truth, its compass. For only when we surrender our anxious grip on life do we find it—life abundant, life eternal.
 
-Let us then pray, as the saints have taught us: _Hail Mary, full of grace..._ and _Glory be to the Father..._—words that weave humility into praise, and praise into joy. Farewell, and may you walk this road with courage.
+Let us then pray, as the saints have taught us: *Hail Mary, full of grace...* and *Glory be to the Father...*—words that weave humility into praise, and praise into joy. Farewell, and may you walk this road with courage.
 
 ##### Crossing (Ascension) cupola 1175-1200 Mosaic Basilica di San Marco (Cupola of St. Mark), Venice
 
@@ -4661,13 +4661,13 @@ Let us then pray, as the saints have taught us: _Hail Mary, full of grace..._ an
 
 ##### AI-Generated Summary: The Composure of Grace and the Folly of First Frights
 
-Consider how the untried soul trembles before what the seasoned heart receives with quiet joy. In Jean Restout II’s _Pentecost_, the disciples startle like children at a sudden noise, their faces alight with fear or wonder at the Spirit’s descent. Yet Mary stands unmoved—not for lack of awe, but because she has long known the divine whisper. She is no stranger to the fire that now dances upon her brow; was she not once overshadowed by the same Spirit? The novice flinches at the unfamiliar, but the practiced hand discerns the master’s touch.
+Consider how the untried soul trembles before what the seasoned heart receives with quiet joy. In Jean Restout II’s *Pentecost*, the disciples startle like children at a sudden noise, their faces alight with fear or wonder at the Spirit’s descent. Yet Mary stands unmoved—not for lack of awe, but because she has long known the divine whisper. She is no stranger to the fire that now dances upon her brow; was she not once overshadowed by the same Spirit? The novice flinches at the unfamiliar, but the practiced hand discerns the master’s touch.
 
 So it is with all things: the farmer hears thunder and thinks of ripe fields, while the child hides beneath the bed. The parent, weathered by nights of fevers and false alarms, knows true danger from mere discomfort. Why, then, should we marvel that Mary, who had carried Heaven within her, did not quail when Heaven came again in flame? She had thirsted for righteousness, and now she drank deeply. The disciples, new to such wonders, could but gasp.
 
-Let us not mistake her calm for coldness. No—her stillness was the fruit of longing fulfilled, as the deer pants not for the brook’s noise but its waters. If we would face the Spirit’s fire unshaken, we must first learn to hunger for it. Pray, then, not as those who fear the answer, but as those who know the Giver. _Come, Holy Spirit_—but come to hearts already waiting.
+Let us not mistake her calm for coldness. No—her stillness was the fruit of longing fulfilled, as the deer pants not for the brook’s noise but its waters. If we would face the Spirit’s fire unshaken, we must first learn to hunger for it. Pray, then, not as those who fear the answer, but as those who know the Giver. *Come, Holy Spirit*—but come to hearts already waiting.
 
-_Our Father... Hail Mary... Glory be..._ Thus we end as we began: in petition, in praise, in the old and good words that steady us like a well-worn path. Go in peace, but go alert—lest you mistake God’s thunder for mere noise.
+*Our Father... Hail Mary... Glory be...* Thus we end as we began: in petition, in praise, in the old and good words that steady us like a well-worn path. Go in peace, but go alert—lest you mistake God’s thunder for mere noise.
 
 ##### “Pentecost” by Jean Restout II (1692–1768)
 
@@ -4685,9 +4685,9 @@ Behold the fresco—a vision of heavenly splendor, where Mary, robed in red and 
 
 See how the small cherub, with effortless ease, tramples the dragon! So too does Mary, in her humility, crush the serpent’s head. Her victory is not won by sword or stratagem, but by the childlike trust that bends low to rise high. And mark this well: her privileges, though unique, are not for hoarding. Like a mountain stream that overflows to nourish the valley below, her grace spills into the lives of those who seek her aid. She is both mirror and model—reflecting Christ’s triumph, yet bidding us follow in her steps of innocence and hope.
 
-And what response does such a vision demand? The ancient prayers rise unbidden: the _Our Father_, where we learn to call God "Abba"; the _Hail Mary_, where we echo the angel’s greeting; the _Glory Be_, where we join the ceaseless praise of heaven. These are not empty words, but threads in the same divine tapestry, weaving us into the story of redemption. So let us give thanks, and with quiet hearts, await the morrow’s mercies—for the journey continues, and the saints go with us.
+And what response does such a vision demand? The ancient prayers rise unbidden: the *Our Father*, where we learn to call God "Abba"; the *Hail Mary*, where we echo the angel’s greeting; the *Glory Be*, where we join the ceaseless praise of heaven. These are not empty words, but threads in the same divine tapestry, weaving us into the story of redemption. So let us give thanks, and with quiet hearts, await the morrow’s mercies—for the journey continues, and the saints go with us.
 
-_Peace be to you, in the Name of the Father, and of the Son, and of the Holy Ghost. Amen._
+*Peace be to you, in the Name of the Father, and of the Son, and of the Holy Ghost. Amen.*
 
 ##### The Assumption of Virgin Mary in the main cupola in Chiesa di Santa Maria del Orto by Giuseppe and Andrea Orazi 1706
 
@@ -4701,9 +4701,9 @@ _Peace be to you, in the Name of the Father, and of the Son, and of the Holy Gho
 
 ##### AI-Generated Summary: The Divine Coronation and the Love That Crowns Us All
 
-Consider Velázquez’s _The Coronation of the Virgin_—a vision not merely of paint and light, but of heaven’s own joy. Here, the humble Mary, robed in purple and blue, sits amid clouds and cherubs, while above her, the Father and the Son place upon her head a crown of roses. Between them hovers the Spirit, a dove alight with radiance, pouring forth glory upon her. This is no mere ceremony; it is the consummation of love, where Mary—daughter, mother, and spouse—is drawn into the very heart of the Trinity.
+Consider Velázquez’s *The Coronation of the Virgin*—a vision not merely of paint and light, but of heaven’s own joy. Here, the humble Mary, robed in purple and blue, sits amid clouds and cherubs, while above her, the Father and the Son place upon her head a crown of roses. Between them hovers the Spirit, a dove alight with radiance, pouring forth glory upon her. This is no mere ceremony; it is the consummation of love, where Mary—daughter, mother, and spouse—is drawn into the very heart of the Trinity.
 
-As at Christ’s baptism, so here: the heavens open, the divine Persons rejoice, and love is proclaimed. Yet this moment is hers alone, a unique union with God. And though we are not called to her singular dignity, we are invited—through baptism—into that same divine embrace. What then shall we do, beholding such love? We pray, as the Church has always prayed: _Hail Mary, full of grace… Glory be to the Father…_ For in these words, we too are crowned—not with roses, but with the promise of His eternal joy.
+As at Christ’s baptism, so here: the heavens open, the divine Persons rejoice, and love is proclaimed. Yet this moment is hers alone, a unique union with God. And though we are not called to her singular dignity, we are invited—through baptism—into that same divine embrace. What then shall we do, beholding such love? We pray, as the Church has always prayed: *Hail Mary, full of grace… Glory be to the Father…* For in these words, we too are crowned—not with roses, but with the promise of His eternal joy.
 
 ##### Coronation of the Virgin, a painting on oil on canvas of the Holy Trinity crowning the Blessed Virgin Mary, at the Museo del Prado
 
@@ -4717,11 +4717,11 @@ As at Christ’s baptism, so here: the heavens open, the divine Persons rejoice,
 
 ##### AI-Generated Summary: The Humble Light of the Annunciation
 
-Consider, dear reader, the quiet power of Henry Tanner’s _Annunciation_. Here is no queenly Mary enthroned in gold, but a young woman—barefoot, perched on an unmade bed, her face alight with wonder and fear as the divine message pierces her humble room. The artist shows us not majesty, but humanity: the trembling hands, the startled gaze, the raw surrender of a soul who knows herself small yet says, _Be it done unto me_.
+Consider, dear reader, the quiet power of Henry Tanner’s *Annunciation*. Here is no queenly Mary enthroned in gold, but a young woman—barefoot, perched on an unmade bed, her face alight with wonder and fear as the divine message pierces her humble room. The artist shows us not majesty, but humanity: the trembling hands, the startled gaze, the raw surrender of a soul who knows herself small yet says, *Be it done unto me*.
 
 How unlike our proud strivings! We fret over our inadequacies, as if strength were ours to manufacture. But Tanner’s Mary reminds us that heaven’s work is done not by the mighty, but by the willing. The light that floods her plain chamber does not scorn its simplicity; it hallows it. So too with us: our weakness, acknowledged, becomes the vessel for grace.
 
-And mark how her prayer—_Hail Mary, full of grace_—echoes through ages, a testament that the lowly are lifted not by their own merit, but by the One who fills empty hands. The glory is ever His; our part is only to kneel, to receive, to trust. For in the end, all true greatness begins where self-sufficiency ends.
+And mark how her prayer—*Hail Mary, full of grace*—echoes through ages, a testament that the lowly are lifted not by their own merit, but by the One who fills empty hands. The glory is ever His; our part is only to kneel, to receive, to trust. For in the end, all true greatness begins where self-sufficiency ends.
 
 ##### The Annunciation, an 1898 painting by African-American painter Henry Ossawa Tanner
 
@@ -4739,7 +4739,7 @@ Consider, if you will, Maldelli’s tender rendering of that sacred moment when 
 
 The Gospel does not say Joseph accompanied her, yet reason whispers he must have. For what faithful steward, entrusted with so precious a charge, would let her wander alone? Here is a truth often overlooked: God’s providence moves not only through the miraculous but through the quiet hands of those who shield and serve. Joseph, in his unassuming vigilance, becomes a mirror of divine care.
 
-Let us then pause, as the painting bids us, to honor such hidden faithfulness. Pray with the _Hail Mary_, that ancient echo of Gabriel’s greeting, and the _Glory Be_, where all grace finds its source. And in our own seasons of frailty, may we, like Mary, find a Joseph—some mortal instrument of Heaven’s kindness—to walk beside us.
+Let us then pause, as the painting bids us, to honor such hidden faithfulness. Pray with the *Hail Mary*, that ancient echo of Gabriel’s greeting, and the *Glory Be*, where all grace finds its source. And in our own seasons of frailty, may we, like Mary, find a Joseph—some mortal instrument of Heaven’s kindness—to walk beside us.
 
 ##### The painting of Visitation in the church Chiesa dei Santi Severino e Sossio by Federico Maldarelli (1889) (Stock Image)
 
@@ -4759,8 +4759,8 @@ How fitting that God, who chose a virgin’s womb for His coming, should also ch
 
 See, then, the glance exchanged between these two: Mary and Joseph, bound not by flesh but by a love divine, their hearts brimming with gratitude—for the Child, for each other, for the angel’s word that knit their lives together. In such moments, Heaven touches earth, and the ordinary becomes a vessel of grace. Let us, with them, offer our own prayers, that we too might learn to serve in silence, and so make room for the Light.
 
-_Hail Mary, full of grace..._
-_Glory be to the Father..._
+*Hail Mary, full of grace...*
+*Glory be to the Father...*
 Farewell, and may His peace attend you.
 
 ##### Gerard van Honthorst - Adoration of the Shepherds (1622)
@@ -4773,7 +4773,7 @@ Farewell, and may His peace attend you.
 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+**Table of Contents** *generated with [DocToc](https://github.com/ktechhub/doctoc)*
 
 <!---toc start-->
 
@@ -4925,7 +4925,7 @@ For though he is guardian, protector, a shield against harm, he cannot spare his
 
 And so we see that true devotion is not in grand gestures, but in the daily surrender to God’s will—in the patient bearing of sorrows we cannot prevent, in the love that endures even when all seems lost. Joseph, silent and strong, teaches us this: that to love is to consent to suffer, and in that suffering, to find the deepest peace.
 
-_Glory be to the Father, and to the Son, and to the Holy Spirit._
+*Glory be to the Father, and to the Son, and to the Holy Spirit.*
 
 [![The painting of Presentation of Jesus in the Temple in church kostel Svatého Havla by unknown baroque artist](June/jpgs/PraguePresentation.jpg)](https://as2.ftcdn.net/jpg/02/34/87/33/1000_F_234873301_FgABd7WONbY9DLBAR8ugRz4iDElboWDu.jpg "The painting of Presentation of Jesus in the Temple in church kostel Svatého Havla by unknown baroque artist")
 
@@ -4943,7 +4943,7 @@ Yet mark this well: when Joseph departs, the Father’s provision does not falte
 
 At Cana, the last thread of ordinary shelter is loosed. Mary, with a mother’s discernment, brings the need for wine to her son, not to command but to release. Her quiet plea is the final surrender of maternal claim, that He might step forth into the harvest of His mission. And so the guardian becomes the guarded; the teacher, the disciple. Even in the sword-pierced joy of her faithfulness, we find the unfailing truth: love never abdicates, though its forms may change.
 
-_Glory be to the Father, who ordains each season of care; to the Son, who fulfills every duty with divine tenderness; and to the Spirit, who weaves these bonds beyond the unraveling of death. Amen._
+*Glory be to the Father, who ordains each season of care; to the Son, who fulfills every duty with divine tenderness; and to the Spirit, who weaves these bonds beyond the unraveling of death. Amen.*
 
 ##### Jesus, at 12, teaching in the Temple (Stock Image)
 
@@ -4957,11 +4957,11 @@ _Glory be to the Father, who ordains each season of care; to the Son, who fulfil
 
 ##### AI-Generated Summary: The Humble Majesty of Divine Obedience
 
-Here we behold a scene both tender and mighty: the Son of God, sinless yet submitting to the waters, and His herald John, trembling at the weight of his task. In this sacred moment, as in the Annunciation, humility is the threshold of glory. The dove descends not upon the proud, but upon the obedient—those who, like Mary, whisper _fiat_, or like John, yield despite their unworthiness.
+Here we behold a scene both tender and mighty: the Son of God, sinless yet submitting to the waters, and His herald John, trembling at the weight of his task. In this sacred moment, as in the Annunciation, humility is the threshold of glory. The dove descends not upon the proud, but upon the obedient—those who, like Mary, whisper *fiat*, or like John, yield despite their unworthiness.
 
 Christ’s baptism reveals a paradox: the Almighty kneels, the Sinless One is washed, and in this act, righteousness is fulfilled. The Spirit descends where hearts are lowly, not where crowns are grasped. So too must we learn that true confidence springs not from self-assertion, but from surrender. To obey is not to cower; it is to stand firm in the current of God’s will, knowing that the humble hand receiving the dove is mightier than the clenched fist of kings.
 
-Let us then pray—not as those bargaining with heaven, but as children trusting a Father. For the same Spirit that hovered over Jordan waits to hallow the willing heart. _Our Father... Hail Mary..._ Thus ends our meditation, but not our calling.
+Let us then pray—not as those bargaining with heaven, but as children trusting a Father. For the same Spirit that hovered over Jordan waits to hallow the willing heart. *Our Father... Hail Mary...* Thus ends our meditation, but not our calling.
 
 ##### The Baptism of Christ by Leonardo Da Vinci created in the studio of Andrea del Verrochio around 1475
 
@@ -5013,15 +5013,15 @@ And what of us? We stand in that crowd, stones half-lifted in our hands. Will we
 
 ##### AI-Generated Summary: The Divine and the Human in Raphael’s Vision
 
-Behold Raphael’s _The Transfiguration_, where heaven’s glory and earth’s frailty meet. Above, Christ stands radiant, bathed in uncreated light, flanked by Moses and Elijah—the Law and the Prophets bowing to their fulfillment. Below, the disciples stagger, their faces alight with awe or shadowed by confusion, while a boy writhes, gripped by forces darker than they dare name. Here is the paradox of our condition: the divine splendor above, the human tumult below.
+Behold Raphael’s *The Transfiguration*, where heaven’s glory and earth’s frailty meet. Above, Christ stands radiant, bathed in uncreated light, flanked by Moses and Elijah—the Law and the Prophets bowing to their fulfillment. Below, the disciples stagger, their faces alight with awe or shadowed by confusion, while a boy writhes, gripped by forces darker than they dare name. Here is the paradox of our condition: the divine splendor above, the human tumult below.
 
 Mark well the contrast. The disciples, though chosen, falter; their faith is thin as morning mist. They cannot cast out the demon, not for lack of power given, but for lack of trust in the Giver. Yet the father, desperate as he is, still pleads—and Christ, who rebukes weak faith, rewards even the mustard seed of it. Raphael, that wise painter, shows us the two scenes as one: the mountain’s light and the valley’s struggle are bound together. The same Lord who shines in glory stoops to heal the broken.
 
 And so the lesson stands plain: faith is not a feeling, nor a merit, but a fixing of the eyes upon Him who has all authority. The disciples’ failure lies not in their weakness, but in forgetting whose strength upholds them. We, like they, are called not to measure our might, but to act in the certainty of His. Let the demon-possessed boy remind us—our despair is but the shadow that flees when His face is turned upon it.
 
-Thus, the painting whispers and the Scripture shouts: _Look up_. The same Christ who transfigured the mountain transfigures the heart. Pray, then, not as those who grope in doubt, but as those who know the hand that holds them. And if your faith is small, ask—as the father did—for it to be made great. For He who commands the demons will not despise the trembling voice that calls on Him.
+Thus, the painting whispers and the Scripture shouts: *Look up*. The same Christ who transfigured the mountain transfigures the heart. Pray, then, not as those who grope in doubt, but as those who know the hand that holds them. And if your faith is small, ask—as the father did—for it to be made great. For He who commands the demons will not despise the trembling voice that calls on Him.
 
-_Glory be to the Father, and to the Son, and to the Holy Spirit._ Amen.
+*Glory be to the Father, and to the Son, and to the Holy Spirit.* Amen.
 
 ##### Raphael's The Transfiguration
 
@@ -5057,9 +5057,9 @@ Behold a scene both solemn and radiant: the Son of Man kneels in the garden, His
 
 The painter, skilled in the language of contrast, draws our gaze not to the slumbering forms, nor even to the approaching soldiers half-hidden in gloom, but to the One who kneels in surrender. Every line, every fold of cloth, every blade of grass points toward Him, as all things must, for He is the still center round which the cosmos turns. This is the moment where darkness is not merely resisted but taken into Himself, where agony is transmuted into glory.
 
-And what of us, dear reader? We are bid to follow where He has gone before—to lay down our sins, our fears, our very selves, as a patient yields to the surgeon’s hand. For only in surrender is there true alignment; only in relinquishment is there redemption. The prayers woven through this meditation—the _Ave Maria_, the _Gloria Patri_—are not mere recitations but echoes of that primal yielding, rehearsals for the day when all knees shall bow and all hearts confess.
+And what of us, dear reader? We are bid to follow where He has gone before—to lay down our sins, our fears, our very selves, as a patient yields to the surgeon’s hand. For only in surrender is there true alignment; only in relinquishment is there redemption. The prayers woven through this meditation—the *Ave Maria*, the *Gloria Patri*—are not mere recitations but echoes of that primal yielding, rehearsals for the day when all knees shall bow and all hearts confess.
 
-So let us pray, not as those who bargain, but as those who trust: _Thy will be done_. For in that submission lies our freedom, and in that darkness, His unyielding light.
+So let us pray, not as those who bargain, but as those who trust: *Thy will be done*. For in that submission lies our freedom, and in that darkness, His unyielding light.
 
 ##### The Prayer of Jesus in Gethsemane by Alessandro Maganza (Stock Image)
 
@@ -5073,13 +5073,13 @@ So let us pray, not as those who bargain, but as those who trust: _Thy will be d
 
 ##### AI-Generated Summary: The Divine Drama in Caravaggio's Light and Shadow
 
-Behold Caravaggio’s _The Flagellation of Christ_, where light and darkness wage their ancient war upon the canvas. Here, in the year 1607, a master’s hand has captured not merely a scene, but the very essence of human cruelty and divine submission. Christ, bound to the column, stands luminous—His suffering etched in muscle and shadow, while three tormentors encircle Him like embodiments of sin itself.
+Behold Caravaggio’s *The Flagellation of Christ*, where light and darkness wage their ancient war upon the canvas. Here, in the year 1607, a master’s hand has captured not merely a scene, but the very essence of human cruelty and divine submission. Christ, bound to the column, stands luminous—His suffering etched in muscle and shadow, while three tormentors encircle Him like embodiments of sin itself.
 
 The first strikes with a hatred that twists the soul; the second, half-turned away, lends his strength to evil yet dares not meet its gaze—a portrait of the cowardice that sustains wickedness. But the third is most terrible: he calculates, he prepares, he chooses. Here is rebellion in its purest form—not the sin of the weak, but of the willful.
 
 Caravaggio’s brush does not flinch. His chiaroscuro lays bare the battle we all know: the pride that strikes, the indifference that permits, the cold intellect that justifies. Yet in the center, undimmed, is Light—the courage of the Lamb, silent before His shearers. This is no mere painting; it is a mirror for the soul, a call to repentance, a summons to step from shadow into grace.
 
-And so the prayers rise—_Hail Mary, Glory Be_—not as empty words, but as echoes of that same light, pleading for the strength to choose it. For the drama on that canvas is ours as well: every day, we stand with the soldiers or with Christ. Let us then pray, and choose wisely.
+And so the prayers rise—*Hail Mary, Glory Be*—not as empty words, but as echoes of that same light, pleading for the strength to choose it. For the drama on that canvas is ours as well: every day, we stand with the soldiers or with Christ. Let us then pray, and choose wisely.
 
 ##### The Flagellation of Christ: Painting by Caravaggio
 
@@ -5093,11 +5093,11 @@ And so the prayers rise—_Hail Mary, Glory Be_—not as empty words, but as ech
 
 ##### AI-Generated Summary: The Silent Majesty of Suffering and the Call to Behold
 
-Here we see a masterwork of Caravaggio, _Ecce Homo_, where the divine and the human meet in a moment of terrible beauty. Christ stands bound, crowned with thorns, His face a quiet sea amidst the storm of mockery. The painter, with his unflinching eye, shows us not only the cruelty of men but the flicker of pity in their hearts—even Pilate hesitates, caught between duty and dread. The old man’s gesture, _Behold the man_, is not merely historical; it is an eternal summons to every soul.
+Here we see a masterwork of Caravaggio, *Ecce Homo*, where the divine and the human meet in a moment of terrible beauty. Christ stands bound, crowned with thorns, His face a quiet sea amidst the storm of mockery. The painter, with his unflinching eye, shows us not only the cruelty of men but the flicker of pity in their hearts—even Pilate hesitates, caught between duty and dread. The old man’s gesture, *Behold the man*, is not merely historical; it is an eternal summons to every soul.
 
 This is no distant spectacle, but a mirror held to our own hearts. Do we, like the bystander, glimpse the truth too late? Or do we, in seeing His suffering, recognize the weight of our own failings? The thorns, the blood, the silent endurance—these are not just marks of pain, but the very instruments of our redemption. To behold Him is to be called to repentance, to kneel not in despair, but in hope, for His sacrifice is the light that pierces the darkest guilt.
 
-And so we pray, not as isolated souls, but as a body united in grace. The _Our Father_, the _Hail Mary_—these are not empty words, but the breath of a shared faith, the rope that binds us to mercy. For in His wounds, we find our healing; in His resurrection, our victory. Let us then, with sober hearts, behold the man—and in beholding, be transformed.
+And so we pray, not as isolated souls, but as a body united in grace. The *Our Father*, the *Hail Mary*—these are not empty words, but the breath of a shared faith, the rope that binds us to mercy. For in His wounds, we find our healing; in His resurrection, our victory. Let us then, with sober hearts, behold the man—and in beholding, be transformed.
 
 ##### Caravaggio's Ecce Homo - Behold The Man
 
@@ -5115,13 +5115,13 @@ And so we pray, not as isolated souls, but as a body united in grace. The _Our F
 
 ##### AI-Generated Summary: The Weight and the Lightness of the Cross
 
-Consider, dear reader, the paradox so vividly captured in Gentileschi’s _Christ Carrying the Cross_: here is the Son of God, bowed beneath the crushing weight of wood and sin, yet His face betrays not despair, but a quiet, unshakable resolve. The artist, with his Caravaggesque mastery of light and shadow, shows us not only the agony of the cross but the strange, sustaining peace beneath it.
+Consider, dear reader, the paradox so vividly captured in Gentileschi’s *Christ Carrying the Cross*: here is the Son of God, bowed beneath the crushing weight of wood and sin, yet His face betrays not despair, but a quiet, unshakable resolve. The artist, with his Caravaggesque mastery of light and shadow, shows us not only the agony of the cross but the strange, sustaining peace beneath it.
 
 Two women stand near—one radiant with devotion, the other shrouded in grief—reminding us that suffering is never borne alone. And though Simon strains beside Him, we sense the deeper truth: this burden, though real, is not the final word. For Christ Himself spoke of a yoke that is easy, a load that is light—not because the cross is featherlight, but because He carries it with us, and we with Him.
 
 Herein lies the mystery: the rest He promises is not freedom from weight, but a strength within it. The world sees only the sweat, the splinters, the stumbling; faith sees further. It knows that behind every Gethsemane lies a resurrection, and that the hands which bear the cross are the same that will cast it aside in triumph.
 
-So let us pray, as the saints have prayed—_Our Father_, _Hail Mary_—not to escape the weight, but to find, as He did, the lightness of trust in the Father’s will. For in that surrender, even the heaviest cross becomes a gateway to joy.
+So let us pray, as the saints have prayed—*Our Father*, *Hail Mary*—not to escape the weight, but to find, as He did, the lightness of trust in the Father’s will. For in that surrender, even the heaviest cross becomes a gateway to joy.
 
 ##### Christ carrying the Cross (1605) by Orazio Gentileschi
 
@@ -5143,7 +5143,7 @@ And now, dear friend, consider where you would have stood that day. Would you ha
 
 Let us then pray, not as those who repeat empty words, but as those who kneel in the shadow of the cross, daring to look up into the face of Him who first looked upon us with such unutterable love.
 
-_Our Father... Hail Mary... Glory be..._
+*Our Father... Hail Mary... Glory be...*
 
 Go in peace, and may the grace of that holy gaze attend you always.
 
@@ -5159,13 +5159,13 @@ Go in peace, and may the grace of that holy gaze attend you always.
 
 ##### AI-Generated Summary: The Mercy of the Risen Lord and the Faith of St. Thomas
 
-Consider Caravaggio’s _The Incredulity of St. Thomas_, where the resurrected Christ, with gentle firmness, guides the trembling hand of His disciple to the wound in His side. Here we see not a rebuke for doubt, but a divine condescension—a Lord who meets His servant in the very place of his uncertainty. Thomas, far from a mere skeptic, embodies the hunger of every soul that longs not for abstract proofs, but for the living God.
+Consider Caravaggio’s *The Incredulity of St. Thomas*, where the resurrected Christ, with gentle firmness, guides the trembling hand of His disciple to the wound in His side. Here we see not a rebuke for doubt, but a divine condescension—a Lord who meets His servant in the very place of his uncertainty. Thomas, far from a mere skeptic, embodies the hunger of every soul that longs not for abstract proofs, but for the living God.
 
 And how does Christ answer? Not with scorn, but with mercy. He offers His wounds as the seal of His love, inviting Thomas—and all who come after—to touch and believe. Here is the heart of the matter: faith is not a cold assent, but an encounter with the One who bore our sorrows. The resurrection is not a doctrine to be debated, but a reality to be lived—does your life bear its mark?
 
 Let us then pray for grace to seek Him as Thomas did, not shrinking from our need, but bringing it to the feet of Him who welcomes all. And as we do, may we find, as Thomas did, that our faltering faith is met with a love that will not let us go.
 
-_Hail Mary, full of grace… Glory be to the Father…_ So we pray, asking the saints to intercede, and so we part, blessed in the name of Him who is our peace.
+*Hail Mary, full of grace… Glory be to the Father…* So we pray, asking the saints to intercede, and so we part, blessed in the name of Him who is our peace.
 
 ##### Caravaggio's The Incredulity of St. Thomas
 
@@ -5253,9 +5253,9 @@ This is the way of heaven: the meek inherit, the mourners are comforted, the pro
 
 ##### AI-Generated Summary: The Divine Tapestry in Van Eyck’s Annunciation
 
-Consider, dear reader, how Jan van Eyck’s _The Annunciation_ weaves earthly artistry with heavenly truth. The very stones of its architecture speak: the Romanesque arches above, sturdy and ancient, yield to the Gothic below, as if the old covenant itself bows to the new. Here is the silent drama of prophecy fulfilled, where shadows retreat before the coming Light.
+Consider, dear reader, how Jan van Eyck’s *The Annunciation* weaves earthly artistry with heavenly truth. The very stones of its architecture speak: the Romanesque arches above, sturdy and ancient, yield to the Gothic below, as if the old covenant itself bows to the new. Here is the silent drama of prophecy fulfilled, where shadows retreat before the coming Light.
 
-Upon the floor, the tiles recount old victories—David’s stone, Samson’s strength—yet these are but whispers of the greater conquest to come. In Mary’s humble _fiat_, evil meets its doom, though the world sees only a maiden’s quiet surrender. Her words, inverted to mortal eyes, rise straight to Heaven, a reminder that true dialogue with the Divine often turns worldly logic upside down.
+Upon the floor, the tiles recount old victories—David’s stone, Samson’s strength—yet these are but whispers of the greater conquest to come. In Mary’s humble *fiat*, evil meets its doom, though the world sees only a maiden’s quiet surrender. Her words, inverted to mortal eyes, rise straight to Heaven, a reminder that true dialogue with the Divine often turns worldly logic upside down.
 
 So too must we learn to trust, not when the path is clear, but when it seems most shrouded. Every circumstance, be it trial or joy, is either an offering laid at His feet or an invitation to draw nearer. The world may mistake obedience for folly, but the faithful know: to lose oneself in His will is to find the only victory that endures. Let us then, like Mary, answer with courage, and hold fast to the hope that He who began this good work will see it through.
 
@@ -5279,7 +5279,7 @@ Virtue, as the wise tell us, is no fleeting impulse but a habit of the soul, a w
 
 So too must we walk, not in grand gestures that fade like morning mist, but in the quiet, daily offering of ourselves. Grace perfects nature, but only where nature has first bent its knee in willing labor. Let us then take courage from her example, and pray for the fortitude to love as she loved: not for reward, but because Love Himself first loved us.
 
-_Glory be to the Father, and to the Son, and to the Holy Spirit._
+*Glory be to the Father, and to the Son, and to the Holy Spirit.*
 
 ##### Basilica of the Visitation in Ein Karem, a village in the hill country of Judea where John the Baptist was born
 
@@ -5295,7 +5295,7 @@ _Glory be to the Father, and to the Son, and to the Holy Spirit._
 
 Consider, if you will, a painting—now vanished, stolen from the world’s sight—where light and shadow conspire to reveal a truth too often forgotten. Caravaggio, that master of stark realism, once depicted the birth of our Lord not in regal splendor, but in a barn’s quiet obscurity. The Virgin gazes upon her child; St. Francis and St. Lawrence kneel in awe, their lives of poverty and service now bending toward the poverty of God Himself. An angel descends, not with fanfare, but as a whisper, pointing to the infant who is both Maker and made.
 
-Here lies the divine paradox: the One who is Beauty, Strength, and Eternal Life lies swaddled in straw. St. Francis knew this well—his _Praises of God_ exalts the Almighty’s majesty, yet it is that very majesty which makes the manger so staggering. For how could He who is Sufficiency become needful? How could the Refuge of all souls have no roof but a stable’s beams? The prayer of the saints, like Caravaggio’s brush, directs us not to marvels afar, but to the near, the lowly, the human face of Love.
+Here lies the divine paradox: the One who is Beauty, Strength, and Eternal Life lies swaddled in straw. St. Francis knew this well—his *Praises of God* exalts the Almighty’s majesty, yet it is that very majesty which makes the manger so staggering. For how could He who is Sufficiency become needful? How could the Refuge of all souls have no roof but a stable’s beams? The prayer of the saints, like Caravaggio’s brush, directs us not to marvels afar, but to the near, the lowly, the human face of Love.
 
 And so we are left with this: to see in Mary’s child the fullness of God’s humility, and in His humility, the fullness of His power. Let us pray for grace to kneel with Francis and Lawrence, to adore not merely the idea of Incarnation, but the dusty, radiant fact of it. For in that stable, eternity entered time, and the shadows of a fallen world were pierced by uncreated Light.
 
@@ -5311,7 +5311,7 @@ And so we are left with this: to see in Mary’s child the fullness of God’s h
 
 ##### AI-Generated Summary: The Light and the Song
 
-Behold _Simeon’s Song of Praise_ by Arent de Gelder, a pupil of Rembrandt, where light and shadow dance as if heaven itself leaned near. The old priest Simeon, robed in solemn vestments, lifts the Child—not merely an infant, but the Light of the World—whose radiance spills upon his weathered face. Mary stands by, her hands folded, her gaze inward, as one who treasures mysteries in her heart. The darkness around them is not empty; it is a canvas for revelation.
+Behold *Simeon’s Song of Praise* by Arent de Gelder, a pupil of Rembrandt, where light and shadow dance as if heaven itself leaned near. The old priest Simeon, robed in solemn vestments, lifts the Child—not merely an infant, but the Light of the World—whose radiance spills upon his weathered face. Mary stands by, her hands folded, her gaze inward, as one who treasures mysteries in her heart. The darkness around them is not empty; it is a canvas for revelation.
 
 Here is the paradox of joy and sorrow: Simeon sings while foreseeing the sword that will pierce Mary’s soul. Yet neither turns away. Mary’s prayer is no mere recitation; it is the quiet, ceaseless turning of a soul toward its Maker. The painting whispers that to hold the divine is to be both illuminated and undone.
 
@@ -5329,7 +5329,7 @@ And what of us? We are called to walk as Mary did—not in strength of our own, 
 
 ##### AI-Generated Summary: The Meekness of the Boy Christ and the Courage of Knowing
 
-Consider, dear reader, the painting by William Holman Hunt, _The Finding of the Savior in the Temple_. Here, the young Jesus stands serene amidst the learned men of Jerusalem, His bare feet upon the temple’s patterned stones, His mother whispering near. The Pharisees, clad in embroidered robes, debate with furrowed brows, yet the Child speaks with a quiet authority that needs no raised voice.
+Consider, dear reader, the painting by William Holman Hunt, *The Finding of the Savior in the Temple*. Here, the young Jesus stands serene amidst the learned men of Jerusalem, His bare feet upon the temple’s patterned stones, His mother whispering near. The Pharisees, clad in embroidered robes, debate with furrowed brows, yet the Child speaks with a quiet authority that needs no raised voice.
 
 How unlike our own trembling hearts! At twelve, many of us quake at the mere thought of standing before others—recalling, perhaps, some schoolroom recitation where our knees shook like reeds in the wind. But the Boy Christ, though meek, was never timid. His confidence flowed not from arrogance, but from the sure knowledge of who He was: the beloved Son, sent to do the Father’s will.
 
@@ -5349,11 +5349,11 @@ Let us then ask for grace to walk as He walked: unshaken by scorn, unswayed by p
 
 ##### AI-Generated Summary: The Humble Herald and the Divine Dawn
 
-Consider, dear reader, the painter Ivanov’s labor of twenty years—_The Appearance of Christ Before the People_—a canvas where neoclassical precision and romantic fervor meet. There stands John the Baptist, clad in camel’s hair, his sun-worn hand outstretched toward the distant figure of Christ, who emerges from the wilderness in a cloak of blue and tunic of red, humble yet radiant. About them, a throng gathers: disciples, seekers, even the artist himself and his friend Gogol, their faces alight with wonder, doubt, or trembling hope. The river curves like grace itself around the rocks, its waters stirred by those stepping forward to be cleansed.
+Consider, dear reader, the painter Ivanov’s labor of twenty years—*The Appearance of Christ Before the People*—a canvas where neoclassical precision and romantic fervor meet. There stands John the Baptist, clad in camel’s hair, his sun-worn hand outstretched toward the distant figure of Christ, who emerges from the wilderness in a cloak of blue and tunic of red, humble yet radiant. About them, a throng gathers: disciples, seekers, even the artist himself and his friend Gogol, their faces alight with wonder, doubt, or trembling hope. The river curves like grace itself around the rocks, its waters stirred by those stepping forward to be cleansed.
 
-John’s voice echoes the Scripture: _"Behold, the Lamb of God!"_ He is no Messiah, only a herald—a man who knew his place and kept it, who rejoiced to decrease that Christ might increase. Unlike Saul, who clung to a fading crown, John surrendered his followers freely, pointing them to the One whose sandals he felt unworthy to untie. Here is the model of every true servant: obedience without envy, witness without self-seeking, a life poured out so others might find the Source.
+John’s voice echoes the Scripture: *"Behold, the Lamb of God!"* He is no Messiah, only a herald—a man who knew his place and kept it, who rejoiced to decrease that Christ might increase. Unlike Saul, who clung to a fading crown, John surrendered his followers freely, pointing them to the One whose sandals he felt unworthy to untie. Here is the model of every true servant: obedience without envy, witness without self-seeking, a life poured out so others might find the Source.
 
-And what of us? Does our own baptismal calling mirror his? Do we, in word and deed, direct souls toward the Light, or do we obscure Him with our own shadow? Where we have succeeded, let us give thanks; where we have faltered, let us seek mercy and rise again. For the world still waits, whether it knows it or not, for those who will proclaim—with their lives as much as their lips—_"He must increase, but I must decrease."_
+And what of us? Does our own baptismal calling mirror his? Do we, in word and deed, direct souls toward the Light, or do we obscure Him with our own shadow? Where we have succeeded, let us give thanks; where we have faltered, let us seek mercy and rise again. For the world still waits, whether it knows it or not, for those who will proclaim—with their lives as much as their lips—*"He must increase, but I must decrease."*
 
 ##### Apparition of the Messiah, an oil painting on canvas, measuring 540 cm × 750 cm, by Russian painter Alexander Andreyevich Ivanov (1806–1858)
 
@@ -5367,9 +5367,9 @@ And what of us? Does our own baptismal calling mirror his? Do we, in word and de
 
 ##### AI-Generated Summary: The Weight of the World and the Wine of Grace
 
-Consider Veronese’s _The Wedding at Cana_, a lavish feast where a hundred souls revel, yet only two—the bride and Christ—meet our gaze. They seem to look past us, as if drawn to the _Mona Lisa_ on the far wall, while the true miracle (water becoming wine) humbly unfolds in the corner. So it is with our own sight: we fixate on lesser wonders, blind to the quiet glory at hand.
+Consider Veronese’s *The Wedding at Cana*, a lavish feast where a hundred souls revel, yet only two—the bride and Christ—meet our gaze. They seem to look past us, as if drawn to the *Mona Lisa* on the far wall, while the true miracle (water becoming wine) humbly unfolds in the corner. So it is with our own sight: we fixate on lesser wonders, blind to the quiet glory at hand.
 
-And what of _Atlas_, that titan of stone, forever bowed beneath the heavens? From St. Patrick’s altar, one sees him straining, a mirror of our own weary attempts to bear life’s weight alone. But here is the truth: Atlas’ burden was a punishment, not a calling. The world was never ours to carry. At Cana, when the wine ran dry—as our own strength always does—Christ provided not merely enough, but abundantly.
+And what of *Atlas*, that titan of stone, forever bowed beneath the heavens? From St. Patrick’s altar, one sees him straining, a mirror of our own weary attempts to bear life’s weight alone. But here is the truth: Atlas’ burden was a punishment, not a calling. The world was never ours to carry. At Cana, when the wine ran dry—as our own strength always does—Christ provided not merely enough, but abundantly.
 
 Yet how often we turn away, preferring our futile toil to His easy yoke! The orphan spirit whispers that we are alone, but the Bridegroom stands at the center of the feast, holding all things together. Surrender your load to Him; He who turned water into wine can surely turn your labor into rest. The myth of Atlas is but a shadow; the substance is Christ, who lifts the weight we were never meant to bear.
 
@@ -5387,7 +5387,7 @@ Yet how often we turn away, preferring our futile toil to His easy yoke! The orp
 
 Consider the tempest—how it tosses the little boat, how the waves rise like hungry beasts, and how the hearts of men falter. Rembrandt, that master of shadow and light, has shown us the scene: the disciples laboring in terror, some straining at the oars, others clutching the rails, all but forgetting the One who sleeps in the stern. Yet when He wakes, the winds obey, and the sea grows still as a child hushed by its mother’s voice.
 
-Here is the mystery: the storm was real, the danger great, but their fear was needless. For the Lord of the winds was in the boat with them. So it is with us. The world rages, the waves of trouble mount, and we—like those first followers—cry out in our frailty, _Do you not care?_ Yet He does care, and He is never late, though He may seem to slumber. The lesson is plain, though hard to learn: trust is not a pretty sentiment, but the only reasonable response to Him who made the sea and rules it still.
+Here is the mystery: the storm was real, the danger great, but their fear was needless. For the Lord of the winds was in the boat with them. So it is with us. The world rages, the waves of trouble mount, and we—like those first followers—cry out in our frailty, *Do you not care?* Yet He does care, and He is never late, though He may seem to slumber. The lesson is plain, though hard to learn: trust is not a pretty sentiment, but the only reasonable response to Him who made the sea and rules it still.
 
 The Church, like that storm-tossed vessel, will not sink, for Christ is in her. And what is asked of us? Not that we deny the storm, but that we fix our eyes upon the Master of it. To fret is human; to believe is divine. Let us then, when the gales blow hardest, do the one thing needful—turn to Him, and find our peace in His command.
 
@@ -5403,7 +5403,7 @@ The Church, like that storm-tossed vessel, will not sink, for Christ is in her. 
 
 ##### AI-Generated Summary: The Radiant Mystery of the Transfiguration
 
-Consider, dear reader, an icon not as mere pigment on wood, but as a window flung open to eternity. _The Savior’s Transfiguration_, ascribed to Theophanes the Greek, is such a window—a silent sermon in gold and azure. Here, Christ stands bathed in uncreated light, His garments whiter than any fuller could bleach them, while Moses and Elijah, those ancient witnesses to God’s glory, flank Him like living pillars. Below, the disciples shield their eyes, save one who dares gaze upward, his darkened robes pierced by that pale, celestial radiance.
+Consider, dear reader, an icon not as mere pigment on wood, but as a window flung open to eternity. *The Savior’s Transfiguration*, ascribed to Theophanes the Greek, is such a window—a silent sermon in gold and azure. Here, Christ stands bathed in uncreated light, His garments whiter than any fuller could bleach them, while Moses and Elijah, those ancient witnesses to God’s glory, flank Him like living pillars. Below, the disciples shield their eyes, save one who dares gaze upward, his darkened robes pierced by that pale, celestial radiance.
 
 The icon’s genius lies not in its adherence to earthly perspective, but in its reversal of it: the lines converge not upon the viewer’s eye, but upon the divine reality behind the veil. This is no painter’s fancy, but theology in line and hue—a confession that the Word became flesh and dwelt among us, full of grace and truth.
 
@@ -5421,7 +5421,7 @@ Yet mark how the glory of Tabor casts its light on human frailty. Peter, who beh
 
 ##### AI-Generated Summary: The Quiet Love Before the Supper
 
-In Henry Ossawa Tanner’s _Christ and the Disciples Before the Last Supper_, we see a moment hushed with divine intention. The street is dark, the air thick with unspoken sorrow and love. There stands the Lord, clad in white, staff in hand, facing His disciples—one pleading, one waiting—while shadowed figures linger near the door. Tanner, that master of light and longing, captures not the glory of the Transfiguration, but the deeper glory of humility: God soon to give Himself as bread and wine.
+In Henry Ossawa Tanner’s *Christ and the Disciples Before the Last Supper*, we see a moment hushed with divine intention. The street is dark, the air thick with unspoken sorrow and love. There stands the Lord, clad in white, staff in hand, facing His disciples—one pleading, one waiting—while shadowed figures linger near the door. Tanner, that master of light and longing, captures not the glory of the Transfiguration, but the deeper glory of humility: God soon to give Himself as bread and wine.
 
 Here is love burning in the heart of Christ, love His followers do not yet understand. They stand at the threshold, as we so often do, unaware of the gift before them. Yet we, unlike children ignorant of a parent’s care, may choose to step into that light—to receive, to abide, to return again and again to the Supper where He offers all. "Take and eat," He says, not as a distant king, but as the Bridegroom whose love is fiercer than death. Let us then approach, not as strangers, but as those who know the voice that calls them.
 
@@ -5437,9 +5437,9 @@ Here is love burning in the heart of Christ, love His followers do not yet under
 
 ##### AI-Generated Summary: The Betrayal and the Human Heart
 
-Consider Giotto’s _The Arrest of Christ, Kiss of Judas_, where the traitor steps forward in his yellow cloak, lips poised for that dreadful kiss, while Christ meets his gaze with sorrowful stillness. The crowd writhes with torches and sticks, Peter’s knife flashes in anger, and the midnight sky presses down upon them all. Here, Giotto—that father of the Renaissance—paints not merely a scene, but the very anatomy of betrayal: its intimacy, its violence, its terrible ordinariness.
+Consider Giotto’s *The Arrest of Christ, Kiss of Judas*, where the traitor steps forward in his yellow cloak, lips poised for that dreadful kiss, while Christ meets his gaze with sorrowful stillness. The crowd writhes with torches and sticks, Peter’s knife flashes in anger, and the midnight sky presses down upon them all. Here, Giotto—that father of the Renaissance—paints not merely a scene, but the very anatomy of betrayal: its intimacy, its violence, its terrible ordinariness.
 
-Yet the greater lesson lies not in Judas alone, but in the quiet whisper that says, _There, but for the grace of God, go I._ Augustine reminds us that the worst of sins are not the deeds of monsters, but the choices of men like ourselves—men who first grew discouraged, then distracted, then despairing. Judas, too, once loved and followed; his fall began not with a kiss, but with small resentments, with eyes turned from the sacred to the ledger, until even the perfume anointing Christ seemed waste to him.
+Yet the greater lesson lies not in Judas alone, but in the quiet whisper that says, *There, but for the grace of God, go I.* Augustine reminds us that the worst of sins are not the deeds of monsters, but the choices of men like ourselves—men who first grew discouraged, then distracted, then despairing. Judas, too, once loved and followed; his fall began not with a kiss, but with small resentments, with eyes turned from the sacred to the ledger, until even the perfume anointing Christ seemed waste to him.
 
 But take heart. If Judas’s story unsettles, it is only to show us our own frailty—and the mercy that waits to restore even the most broken of hearts. For Christ seeks not the perfect, but the penitent; not the strong, but those who know their need of Him. Let us then examine our own hearts, not in fear, but in hope, for He is ever near to those who call upon Him.
 
@@ -5455,11 +5455,11 @@ But take heart. If Judas’s story unsettles, it is only to show us our own frai
 
 ##### AI-Generated Summary: The Unseen Depth of Suffering and Love
 
-Consider Bouguereau’s _The Flagellation of Our Lord Jesus Christ_—a work of piercing beauty and sorrow. Here, the divine is bound, His body luminous yet wounded, His gaze turned heavenward as men prepare to scourge Him. The crowd watches, some with indifference, others with cruelty, while a child, innocent and uncomprehending, is lifted high—a stark contrast to the brutality below.
+Consider Bouguereau’s *The Flagellation of Our Lord Jesus Christ*—a work of piercing beauty and sorrow. Here, the divine is bound, His body luminous yet wounded, His gaze turned heavenward as men prepare to scourge Him. The crowd watches, some with indifference, others with cruelty, while a child, innocent and uncomprehending, is lifted high—a stark contrast to the brutality below.
 
 Bouguereau, a master of his craft, renders the scene with such precision that one might be tempted to admire only the skill of the hand, the play of light, the composition. But this is a pitfall, for the true weight of the painting lies not in its technique but in its terrible truth: the Son of God, enduring suffering for love of us.
 
-Do we not often approach sacred things thus—dissecting the vessel while ignoring the wine within? We critique the homily’s delivery but miss its call to repentance; we analyze the brushstrokes but evade the question they pose: _Who is this Man, and why does He suffer so?_ The answer, if we dare receive it, is both dreadful and glorious: He does it to bring us home.
+Do we not often approach sacred things thus—dissecting the vessel while ignoring the wine within? We critique the homily’s delivery but miss its call to repentance; we analyze the brushstrokes but evade the question they pose: *Who is this Man, and why does He suffer so?* The answer, if we dare receive it, is both dreadful and glorious: He does it to bring us home.
 
 Here, then, is the challenge. Before this image, let us not merely observe, but kneel. Let us ask, in the quiet of our hearts, where we withhold trust, where we resist surrender. For if He endured the lash to claim us, shall we not yield to His love? The painting is not merely art—it is an invitation. Will we accept it?
 
@@ -5475,7 +5475,7 @@ Here, then, is the challenge. Before this image, let us not merely observe, but 
 
 ##### AI-Generated Summary: The Paradox of Power in Van Dyck's Crowning with Thorns
 
-Consider Sir Anthony van Dyck’s _The Crowning with Thorns_, painted when the artist was scarcely more than a youth, yet bearing the weight of a master’s hand. Here we see Christ, bound and bleeding, His body a testament to cruelty, while a soldier presses the thorned crown upon His head. The scene thrums with Baroque vigor—diagonal lines, shadow and light, the axe and the twisted vines—all conspiring to show not defeat, but a hidden triumph.
+Consider Sir Anthony van Dyck’s *The Crowning with Thorns*, painted when the artist was scarcely more than a youth, yet bearing the weight of a master’s hand. Here we see Christ, bound and bleeding, His body a testament to cruelty, while a soldier presses the thorned crown upon His head. The scene thrums with Baroque vigor—diagonal lines, shadow and light, the axe and the twisted vines—all conspiring to show not defeat, but a hidden triumph.
 
 Observe the faces: wrath and pity peer through the cell window; a dog barks, blind to the sacred drama; a man in red robes watches, perhaps Pilate himself, who thought he held power, yet stood before the true King. Here lies the paradox—the One who seems weakest is strongest, the mocked is the enthroned. As St. Paul writes, the foolishness of God is wiser than men, and the weakness of God stronger.
 
@@ -5491,7 +5491,7 @@ This is no mere depiction of suffering, but a window into its strange redemption
 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+**Table of Contents** *generated with [DocToc](https://github.com/ktechhub/doctoc)*
 
 <!---toc start-->
 
@@ -5645,11 +5645,11 @@ RIAY July 2025
 
 ##### AI-Generated Summary: The Weight of the Cross and the Willing Heart
 
-In Raphael’s _Christ Falls on the Way to Calvary_, we witness not merely a scene of suffering, but a moment where divine and human wills converge with terrible beauty. Here, the Savior stumbles beneath the cross, His thorn-crowned head bowed, yet His gaze meets His mother’s—a silent exchange of sorrow and surrender. The painting’s vertical composition, a departure from tradition, draws the eye upward, as if to remind us that this agony is not an end, but a lifting.
+In Raphael’s *Christ Falls on the Way to Calvary*, we witness not merely a scene of suffering, but a moment where divine and human wills converge with terrible beauty. Here, the Savior stumbles beneath the cross, His thorn-crowned head bowed, yet His gaze meets His mother’s—a silent exchange of sorrow and surrender. The painting’s vertical composition, a departure from tradition, draws the eye upward, as if to remind us that this agony is not an end, but a lifting.
 
-The crowd presses in, a tumult of violence and urgency: soldiers with banners like streaks of blood, a stranger straining to bear the cross’s weight, two other condemned men trudging toward Golgotha. Yet at the center, Mary stands, her arms outstretched—not in helpless despair, but in a posture of offering. Does she, too, utter in her heart, _Not my will, but Thine_? Raphael captures this mystery—that love’s deepest work is often done in letting go.
+The crowd presses in, a tumult of violence and urgency: soldiers with banners like streaks of blood, a stranger straining to bear the cross’s weight, two other condemned men trudging toward Golgotha. Yet at the center, Mary stands, her arms outstretched—not in helpless despair, but in a posture of offering. Does she, too, utter in her heart, *Not my will, but Thine*? Raphael captures this mystery—that love’s deepest work is often done in letting go.
 
-Pope John Paul II once spoke of Mary’s _fiat_ at the cross, her active participation in the work of redemption. She does not flee or protest, but stands as both mother and disciple, her suffering woven into the fabric of grace. And so the painting becomes an icon of the Christian life: to bear what we must, to yield what we love, and to trust that in the breaking, something holy is made whole. Let us remember, then, when we see this image, that the road to Calvary is walked not alone, but with a Mother’s tears mingled with the Savior’s blood.
+Pope John Paul II once spoke of Mary’s *fiat* at the cross, her active participation in the work of redemption. She does not flee or protest, but stands as both mother and disciple, her suffering woven into the fabric of grace. And so the painting becomes an icon of the Christian life: to bear what we must, to yield what we love, and to trust that in the breaking, something holy is made whole. Let us remember, then, when we see this image, that the road to Calvary is walked not alone, but with a Mother’s tears mingled with the Savior’s blood.
 
 ##### Raphael's Christ Falls on the Way to Calvary, a painting depicting Christ stumbling under the cross with Mary and a crowd witnessing
 
@@ -5663,7 +5663,7 @@ Pope John Paul II once spoke of Mary’s _fiat_ at the cross, her active partici
 
 ##### AI-Generated Summary: The Sorrow and the Glory in Rubens' Descent
 
-Consider, dear reader, _The Descent from the Cross_ by Peter Paul Rubens—a masterwork where agony and reverence meet. Painted in 1617, it is Baroque in spirit: a tempest of emotion, yet ordered by a classical restraint. The sky broods navy; the cross looms heavy; and there, pale as moonlight, lies the body of Christ, lowered with trembling care by those who loved Him. His wounds weep; His flesh is drained of life. The Virgin, robed in sorrow’s blue, stretches trembling hands toward her Son—her grief quiet, yet deeper than the sea.
+Consider, dear reader, *The Descent from the Cross* by Peter Paul Rubens—a masterwork where agony and reverence meet. Painted in 1617, it is Baroque in spirit: a tempest of emotion, yet ordered by a classical restraint. The sky broods navy; the cross looms heavy; and there, pale as moonlight, lies the body of Christ, lowered with trembling care by those who loved Him. His wounds weep; His flesh is drained of life. The Virgin, robed in sorrow’s blue, stretches trembling hands toward her Son—her grief quiet, yet deeper than the sea.
 
 Rubens, that Flemish giant, knew well how light and shadow might preach. Here, chiaroscuro carves the scene with divine drama, each fold of cloth, each anguished face, a testament to the weight of love’s sacrifice. Yet observe: though the painting spares us not the horror of the Cross, it does not wallow. Even in death, there is dignity; in Mary’s gaze, a hope that pierces the dark.
 
@@ -5683,7 +5683,7 @@ So let the painting speak: in every shadow, a promise; in every tear, a dawn uns
 
 ##### AI-Generated Summary: The Dawn of Redemption
 
-Behold _The Holy Women at Christ’s Tomb_ by Annibale Carracci, a masterwork where the solemnity of the Resurrection meets the vigor of the Baroque. Here, in the hushed light of dawn, three women—clad in robes of red, blue, and gold—stand transfixed before an angel, whose radiant form and outstretched hand declare the unthinkable: the tomb is empty. The painter, with a craftsman’s precision and a poet’s heart, captures their awe in every fold of fabric, every startled glance.
+Behold *The Holy Women at Christ’s Tomb* by Annibale Carracci, a masterwork where the solemnity of the Resurrection meets the vigor of the Baroque. Here, in the hushed light of dawn, three women—clad in robes of red, blue, and gold—stand transfixed before an angel, whose radiant form and outstretched hand declare the unthinkable: the tomb is empty. The painter, with a craftsman’s precision and a poet’s heart, captures their awe in every fold of fabric, every startled glance.
 
 And yet, is it not strange that Scripture speaks little of Mary, the Lord’s own mother, in these post-Resurrection accounts? Perhaps, as some have whispered, she knew the truth before the others—her sorrow turned to joy in solitude. Carracci’s scene, though silent, thrums with that same mystery: the moment when despair is overturned, and the world, though unchanged to the eye, is made new.
 
@@ -5701,9 +5701,9 @@ And yet, is it not strange that Scripture speaks little of Mary, the Lord’s ow
 
 ##### AI-Generated Summary: The Divine Commission and the Art of Witness
 
-Behold Duccio’s _Appearance on the Mountain in Galilee_, where the risen Christ, clad in crimson and blue, stands upon a golden hill, His hands aloft in blessing and command. The apostles, each face a story of awe, gather on the rough slope below—youth beside elder, all knit by wonder. Here is Byzantium’s glory softened by Gothic tenderness, a meeting of heaven’s gold and earth’s muted tones. The mountain, though stylized, hints at depth, as if the very ground strains to bear the weight of this moment: the Master’s charge to carry His word to all nations.
+Behold Duccio’s *Appearance on the Mountain in Galilee*, where the risen Christ, clad in crimson and blue, stands upon a golden hill, His hands aloft in blessing and command. The apostles, each face a story of awe, gather on the rough slope below—youth beside elder, all knit by wonder. Here is Byzantium’s glory softened by Gothic tenderness, a meeting of heaven’s gold and earth’s muted tones. The mountain, though stylized, hints at depth, as if the very ground strains to bear the weight of this moment: the Master’s charge to carry His word to all nations.
 
-Yet the painting is but a shadow of the truth it points to—that every believer, then and now, is called to the same sacred work. To know Christ is to make Him known; to love Him is to speak of Him. When last did your lips shape His name for another’s sake? To the lapsed, the weary, the doubting? Take heart: the same Lord who stood on that mountain walks with you still, His presence your courage, His Spirit your words. Pray for the readiness of a disciple, that when the moment comes, you may say, like Peter, _"Lord, You know I love You,"_ and go.
+Yet the painting is but a shadow of the truth it points to—that every believer, then and now, is called to the same sacred work. To know Christ is to make Him known; to love Him is to speak of Him. When last did your lips shape His name for another’s sake? To the lapsed, the weary, the doubting? Take heart: the same Lord who stood on that mountain walks with you still, His presence your courage, His Spirit your words. Pray for the readiness of a disciple, that when the moment comes, you may say, like Peter, *"Lord, You know I love You,"* and go.
 
 ##### Christ Taking Leave of the Apostles by Duccio, 14th century, Museo dell'Opera, tempera on wood, Gothic details
 
@@ -5717,7 +5717,7 @@ Yet the painting is but a shadow of the truth it points to—that every believer
 
 ##### AI-Generated Summary: The Divine Gift and the Art of Waiting
 
-Consider, dear reader, how the world prizes power seized by force—the clenched fist, the towering edifice, the self-made triumph. Yet Heaven’s economy operates otherwise. True power descends as a gift, like the tongues of flame at Pentecost, alighting only on those who wait with open hands. Simone Peterzano’s _Pentecost_ captures this mystery: the Virgin, still and expectant, bathed in golden light; the disciples, their faces upturned as the Dove’s radiance pierces the dark. Here is Mannerist drama indeed—not of human striving, but divine generosity.
+Consider, dear reader, how the world prizes power seized by force—the clenched fist, the towering edifice, the self-made triumph. Yet Heaven’s economy operates otherwise. True power descends as a gift, like the tongues of flame at Pentecost, alighting only on those who wait with open hands. Simone Peterzano’s *Pentecost* captures this mystery: the Virgin, still and expectant, bathed in golden light; the disciples, their faces upturned as the Dove’s radiance pierces the dark. Here is Mannerist drama indeed—not of human striving, but divine generosity.
 
 Lent teaches us to labor; Easter, to receive. The world clamors for control, but the Christian kneels, knowing that every true strength—like those painted flames above each head—comes not by our cunning, but by grace. To wait is not idleness; it is the soul’s posture before the Giver of all good things.
 
@@ -5733,7 +5733,7 @@ Lent teaches us to labor; Easter, to receive. The world clamors for control, but
 
 ##### AI-Generated Summary: The Divine Exchange Between Mother and Son
 
-Consider the _Assumption of Mary_, that radiant work in Burgos Cathedral, where glass and light conspire to tell a tale older than the world. Here, the Virgin ascends, haloed in gold, borne upon azure clouds by angels whose wings are fragments of heaven’s own palette. Below, two saints tend a garden where a tomb lies empty—a silent witness to the victory she now shares. The disciples gaze upward, their faces alight with wonder, as Gothic tracery weaves their awe into the very stone.
+Consider the *Assumption of Mary*, that radiant work in Burgos Cathedral, where glass and light conspire to tell a tale older than the world. Here, the Virgin ascends, haloed in gold, borne upon azure clouds by angels whose wings are fragments of heaven’s own palette. Below, two saints tend a garden where a tomb lies empty—a silent witness to the victory she now shares. The disciples gaze upward, their faces alight with wonder, as Gothic tracery weaves their awe into the very stone.
 
 Now mark the deeper truth: as Mary once clothed the Christ-child in swaddling bands, so He, transfigured, wore a garment “dazzling white”—some say of her making. What poetry in this! For as she gave Him flesh, He returns to her the raiment of divinity. Augustine saw it plainly: His flesh was hers; now His glory is hers. She who nursed Him, mourned Him, offered Him up, is herself lifted up, dressed in light, assumed beyond the reach of death.
 
@@ -5751,7 +5751,7 @@ This is the law of Heaven’s economy: give all, receive more. Mary gave her Son
 
 ##### AI-Generated Summary: The Celestial Coronation and the Quiet Heart
 
-Behold a vision of heavenly splendor, where the Mother of God is enthroned in glory, crowned as Queen of Heaven, her Son, the Christ Child, radiant upon her lap. Giuseppe Rolini, with a master’s hand, has rendered this truth in fresco—_Mary, Help of Christians_—where academic precision meets the fire of Baroque grandeur, all bathed in hues both solemn and sublime.
+Behold a vision of heavenly splendor, where the Mother of God is enthroned in glory, crowned as Queen of Heaven, her Son, the Christ Child, radiant upon her lap. Giuseppe Rolini, with a master’s hand, has rendered this truth in fresco—*Mary, Help of Christians*—where academic precision meets the fire of Baroque grandeur, all bathed in hues both solemn and sublime.
 
 Here, saints and angels gather as witnesses: Joseph, pure as the lily he bears; martyrs and confessors from every age; and above them all, the Eternal Father, His light uncreated, the Dove hovering at His breast. The clouds glow as if lit from within, and the procession stretches beyond sight, a reminder that this glory is but a glimpse of what awaits the faithful.
 
@@ -5783,9 +5783,9 @@ Here, then, is the secret: to pray is not to perform, but to be present—to tak
 
 ##### AI-Generated Summary: The Humble Astonishment of the Annunciation
 
-Consider, dear reader, the scene so tenderly rendered by Fra Angelico: a young maiden and a celestial messenger, each bowing in mutual reverence. Here is no spectacle of earthly power, but a quiet revolution—the moment the Infinite chose to dwell within the finite. Mary’s question, _“How can this be?”_ is not doubt, but the rightful wonder of a heart confronted with the impossible made possible by God.
+Consider, dear reader, the scene so tenderly rendered by Fra Angelico: a young maiden and a celestial messenger, each bowing in mutual reverence. Here is no spectacle of earthly power, but a quiet revolution—the moment the Infinite chose to dwell within the finite. Mary’s question, *“How can this be?”* is not doubt, but the rightful wonder of a heart confronted with the impossible made possible by God.
 
-Gabriel’s reply—_“Nothing is impossible with God”_—is the thread that stitches heaven to earth. In that fresco at San Marco, we see it: humility meeting grace, the divine condescension that bends low to lift us high. The Annunciation is not merely a past event, but an eternal truth—that God still enters the ordinary, if we, like Mary, have the courage to say _“Let it be.”_
+Gabriel’s reply—*“Nothing is impossible with God”*—is the thread that stitches heaven to earth. In that fresco at San Marco, we see it: humility meeting grace, the divine condescension that bends low to lift us high. The Annunciation is not merely a past event, but an eternal truth—that God still enters the ordinary, if we, like Mary, have the courage to say *“Let it be.”*
 
 And so the Incarnation begins, not with fanfare, but with a whisper, a surrender, a joy that would undo the world’s sorrow.
 
@@ -5805,7 +5805,7 @@ Consider, dear reader, how Mary, bearing the Eternal Word within her, becomes th
 
 In the Visitation, we see this mystery unfold with radiant simplicity. Mary, having received the angel’s tidings, hastens to Elizabeth, and at their meeting, joy overflows into poetry. Words alone could not suffice; the soul must sing. Thus, the Magnificat springs forth, not as mere speech, but as a hymn—proof that the deepest truths demand the elevation of song.
 
-Here, too, we learn of Mary’s charity. St. Alphonsus reminds us that her journey to Elizabeth was no small act, but a labor of love, a mother’s kindness extended before she had yet held her own Child. And so, in our own need, we may rightly echo St. Mother Teresa’s plea: _"Mary, be a mother to me now."_ For she who bore the Savior does not cease to bear us to Him.
+Here, too, we learn of Mary’s charity. St. Alphonsus reminds us that her journey to Elizabeth was no small act, but a labor of love, a mother’s kindness extended before she had yet held her own Child. And so, in our own need, we may rightly echo St. Mother Teresa’s plea: *"Mary, be a mother to me now."* For she who bore the Savior does not cease to bear us to Him.
 
 ##### Mary's Magnificat
 
@@ -5879,7 +5879,7 @@ Let us then, like Joseph and Mary in Pellegrini’s painting, adore with quiet w
 
 Imagine, if you will, a scene of holy tumult—the temple alive with motion, voices clashing like waves, and Simeon, the aged prophet, leaning back as if the weight of revelation has overcome him. Yet amid this whirlwind stands the Virgin, her eyes fixed unwaveringly upon the Child in her arms. Here is the very picture of devotion: where others are tossed by distraction, she is anchored in love.
 
-This fresco, though the artist’s hand is not named for us, captures a truth as old as the Fall and as fresh as grace—that freedom lies not in the absence of burden, but in the willing embrace of it. Mary’s _fiat_ echoes still, a quiet thunder in the soul: "All my time is free," as the saint once said, for what is given freely to God is never lost. The world may rush and clamor, but love, if it is love indeed, chooses its chains and in them finds wings.
+This fresco, though the artist’s hand is not named for us, captures a truth as old as the Fall and as fresh as grace—that freedom lies not in the absence of burden, but in the willing embrace of it. Mary’s *fiat* echoes still, a quiet thunder in the soul: "All my time is free," as the saint once said, for what is given freely to God is never lost. The world may rush and clamor, but love, if it is love indeed, chooses its chains and in them finds wings.
 
 So it is with all sacred art: it does not merely depict, but invites. Look again at Mary’s stillness, and you will see the heart of the mystery—that He whom the heavens could not contain was placed into human hands, not by force, but because Love Himself willed it so.
 
@@ -5913,11 +5913,11 @@ And if you should see that Baroque painting in Brussels—Mary and Joseph amid t
 
 ##### AI-Generated Summary: The Sacred Waters and the Beloved Son
 
-Baptism, dear reader, is no mere ritual; it is the river where heaven meets earth, as it did when our Lord stood in the Jordan. There, the Father’s voice broke through the clouds, declaring Him the Beloved—a truth not for Him alone, but for all who follow. For if we are baptized, we too are named _beloved_, and this is no fleeting comfort, but the very armor we must wear before stepping into the wilderness of this world.
+Baptism, dear reader, is no mere ritual; it is the river where heaven meets earth, as it did when our Lord stood in the Jordan. There, the Father’s voice broke through the clouds, declaring Him the Beloved—a truth not for Him alone, but for all who follow. For if we are baptized, we too are named *beloved*, and this is no fleeting comfort, but the very armor we must wear before stepping into the wilderness of this world.
 
-Consider the fresco _Baptism of Christ_ in Church of San Benedetto, Padua, where the artist­wise as the old painters often were­has hidden nails and thorns amid the waters, whispering of the cross even in the moment of blessing. Light and shadow dance there, as they must in every Christian life: the light of the Father’s favor, the shadow of the trial to come. Yet the light prevails, for resurrection is the end of the story.
+Consider the fresco *Baptism of Christ* in Church of San Benedetto, Padua, where the artist­wise as the old painters often were­has hidden nails and thorns amid the waters, whispering of the cross even in the moment of blessing. Light and shadow dance there, as they must in every Christian life: the light of the Father’s favor, the shadow of the trial to come. Yet the light prevails, for resurrection is the end of the story.
 
-To be baptized is to be given a name, a home, a certainty: _You are mine_. And with that certainty, we may face all things—not because the road is easy, but because we know whose children we are.
+To be baptized is to be given a name, a home, a certainty: *You are mine*. And with that certainty, we may face all things—not because the road is easy, but because we know whose children we are.
 
 ##### Fresco depicting the Baptism of Christ (Stock Image)
 
@@ -5933,7 +5933,7 @@ To be baptized is to be given a name, a home, a certainty: _You are mine_. And w
 
 Consider, dear reader, the scene at Cana—a humble wedding, the wine exhausted, the hosts dismayed. Here, the Maker of all things steps quietly into human need, turning water into wine not with fanfare, but as a husband provides for his beloved: unseen, yet abundantly. This is no mere wonder, but a sign—a foretaste of the new creation, where joy flows unending from the hand of Christ, the true Bridegroom.
 
-Carl Bloch’s _The Wedding at Cana_ captures this mystery with fitting subtlety: the Savior’s gesture is gentle, his power veiled, as all great love ever is. The jars, once empty, brim with the richness of grace, for He who fashioned the vine delights to give good gifts. Let us learn from Mary’s wisdom: "Do whatever He tells you." In obedience, as in that Galilean feast, the ordinary becomes radiant with His presence.
+Carl Bloch’s *The Wedding at Cana* captures this mystery with fitting subtlety: the Savior’s gesture is gentle, his power veiled, as all great love ever is. The jars, once empty, brim with the richness of grace, for He who fashioned the vine delights to give good gifts. Let us learn from Mary’s wisdom: "Do whatever He tells you." In obedience, as in that Galilean feast, the ordinary becomes radiant with His presence.
 
 ##### Carl Bloch's The Wedding at Cana depicts the miracle of turning water into wine
 
@@ -5949,7 +5949,7 @@ Carl Bloch’s _The Wedding at Cana_ captures this mystery with fitting subtlety
 
 The kingdom of God is not a distant hope but a present reality embodied in Christ Himself, who comes to us as guide, teacher, and healer. To enter this kingdom, we must turn from ourselves and place our faith in Him—not as a mere teacher of virtues, but as the very source of life and grace. For as Augustine wisely saw, the old law, given in fear, could only bind; but Christ, in love, sets us free, and by His Spirit, we are empowered to live as we were meant to live—not by our own striving, but by His life within us.
 
-Consider Rembrandt’s _Christ in the Storm on the Sea of Galilee_: the waves rage, the disciples tremble, yet there sits the Lord, sovereign even in the tempest. How like us they are—frightened, doubting whether He cares, whether He can save. But the storm is no less real for His presence; it is His presence that makes all the difference. He does not promise calm seas, but He does command our trust. When the winds howl, we must learn to fix our eyes not on the waves, but on Him who rules them. For He who stilled the storm then is the same yesterday, today, and forever.
+Consider Rembrandt’s *Christ in the Storm on the Sea of Galilee*: the waves rage, the disciples tremble, yet there sits the Lord, sovereign even in the tempest. How like us they are—frightened, doubting whether He cares, whether He can save. But the storm is no less real for His presence; it is His presence that makes all the difference. He does not promise calm seas, but He does command our trust. When the winds howl, we must learn to fix our eyes not on the waves, but on Him who rules them. For He who stilled the storm then is the same yesterday, today, and forever.
 
 ##### Rembrandt's Christ in the Storm on the Sea of Galilee depicts a biblical scene of Christ calming the storm
 
@@ -5983,13 +5983,13 @@ Love, as we know, is never content with mere words or distant admiration—it la
 
 And what does He offer? Himself, wholly. Not as a king demanding tribute, but as a lover, burning with desire both to give and to receive. In this sacred exchange, we find the very heart of devotion: He gives that we might take, and takes that we might give again.
 
-As for _The Last Supper_ by Giacomo Raffaeli located at Vienna in the Minoritenkirche, observe how the mosaic captures not the agitation of betrayal’s shadow, but the calm of One who, though foreseeing the cross, rests in the Father’s will. Here is no dread, but quiet certainty—the peace of He who knows that love’s victory is already written.
+As for *The Last Supper* by Giacomo Raffaeli located at Vienna in the Minoritenkirche, observe how the mosaic captures not the agitation of betrayal’s shadow, but the calm of One who, though foreseeing the cross, rests in the Father’s will. Here is no dread, but quiet certainty—the peace of He who knows that love’s victory is already written.
 
 Thus, in sacrament and art alike, we glimpse the same truth: love is ever inventive, ever near, and ever sure.
 
 ##### Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance (Stock Image)
 
-[![Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance](July/jpgs/lastsupperraffaeli.jpg)](<https://img.pixers.pics/pho_wat(s3:700/FO/64/35/99/27/700_FO64359927_6dfc0ba27fcd9eeb72fb58293cbdf30a.jpg,700,356,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,306,jpg)/stickers-vienna-mosaic-of-last-supper-copy-leonardo-da-vinci.jpg.jpg> "Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance")
+[![Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance](July/jpgs/lastsupperraffaeli.jpg)](https://img.pixers.pics/pho_wat(s3:700/FO/64/35/99/27/700_FO64359927_6dfc0ba27fcd9eeb72fb58293cbdf30a.jpg,700,356,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,306,jpg)/stickers-vienna-mosaic-of-last-supper-copy-leonardo-da-vinci.jpg.jpg "Giacomo Raffaeli's mosaic 'The Last Supper' in Minoritenkirche, Vienna, vividly portrays Jesus and his disciples in a moment of sacred significance")
 
 #### July 18, 2025
 
@@ -6001,7 +6001,7 @@ Thus, in sacrament and art alike, we glimpse the same truth: love is ever invent
 
 You will find, dear reader, that sin is not merely the breaking of rules but the turning away from Love Himself. The prodigal son, in his grasping for independence, spurned his father’s house—not just his wealth, but his very presence. So it is with us: sin is the heart’s foolish whisper that we might fare better alone, severed from the Source of all good.
 
-Yet behold the Son of God in Gethsemane (as depicted by Vicente Macip in his painting _Prayer of Jesus in Gethsemane Garden_), who in His agony did not clutch at His own will but surrendered it, saying, "Not as I will, but as Thou wilt." Here is the perfect counter to our rebellion: obedience rooted in love, trust that clings to the Father even when the cup is bitter. The painter Massip, in his rendering of Judas, shows us a man poised between light and darkness—his halo half-gold, half-black—as if to say that even then, mercy waited, had he but turned back.
+Yet behold the Son of God in Gethsemane (as depicted by Vicente Macip in his painting *Prayer of Jesus in Gethsemane Garden*), who in His agony did not clutch at His own will but surrendered it, saying, "Not as I will, but as Thou wilt." Here is the perfect counter to our rebellion: obedience rooted in love, trust that clings to the Father even when the cup is bitter. The painter Massip, in his rendering of Judas, shows us a man poised between light and darkness—his halo half-gold, half-black—as if to say that even then, mercy waited, had he but turned back.
 
 Let us then fix our eyes not on the shadows of fear or the weight of suffering, but on the Guide who has walked this path before us. For in Christ’s submission lies our victory, and in His obedience, our hope.
 
@@ -6019,7 +6019,7 @@ Let us then fix our eyes not on the shadows of fear or the weight of suffering, 
 
 Consider, dear reader, how the second sorrowful mystery—our Lord’s scourging—lays bare the true wages of sin. Just as the prodigal son, in his rebellion, found himself broken and alone, so does every soul that turns from its Maker. Yet here, in Christ’s stripes, we see not only sin’s cruelty but Heaven’s remedy: a love that suffers to reclaim what was lost.
 
-The fresco by Agostino Ciampelli, _The Flagellation_, whispers this truth in pigment and light. Amidst the gloom of violence, the Savior’s halo shines undimmed—a quiet defiance, a promise that no darkness can quench the Light of the World. Here is strength perfected in weakness, love triumphant even in agony.
+The fresco by Agostino Ciampelli, *The Flagellation*, whispers this truth in pigment and light. Amidst the gloom of violence, the Savior’s halo shines undimmed—a quiet defiance, a promise that no darkness can quench the Light of the World. Here is strength perfected in weakness, love triumphant even in agony.
 
 Let us then, with St. Paul, cling to the certainty that neither scourge nor sin can sever us from the love of God. To console Him is to turn from folly, to kneel in gratitude, and to take up our own small crosses with courage. For in His wounds, we find our healing.
 
@@ -6035,7 +6035,7 @@ Let us then, with St. Paul, cling to the certainty that neither scourge nor sin 
 
 ##### AI-Generated Summary: The Mockery of Kings and the Sovereignty of Suffering
 
-Consider, dear reader, Titian (Tiziano Vecellio)'s painting of _The Crowning with Thorns_ (located in Musée du Louvre, Paris) where the Eternal King submits to the cruelty of men. Here, the thorns pressed upon His brow are both a mockery and a coronation—earth’s scorn revealing heaven’s glory. The artist (be it Titian or another) sets beside Him the bust of Tiberius, that hollow sovereign of passing empires, as if to ask: _Which crown will you serve?_
+Consider, dear reader, Titian (Tiziano Vecellio)'s painting of *The Crowning with Thorns* (located in Musée du Louvre, Paris) where the Eternal King submits to the cruelty of men. Here, the thorns pressed upon His brow are both a mockery and a coronation—earth’s scorn revealing heaven’s glory. The artist (be it Titian or another) sets beside Him the bust of Tiberius, that hollow sovereign of passing empires, as if to ask: *Which crown will you serve?*
 
 The world has always traded truth for power, yet here is the true Power, wearing weakness as a diadem. Do not mistake this for mere tragedy; it is the divine irony by which God turns the world’s cruelty into the means of our redemption. The painting whispers what Scripture shouts: that every soul must choose between Caesar’s coin and Christ’s cross.
 
@@ -6053,7 +6053,7 @@ And what of us? We who flinch at suffering yet cling to comfort—do we not also
 
 ##### AI-Generated Summary: The Weight of Glory in Bearing the Cross
 
-Imagine, if you will, the divine paradox: the King of Heaven, bearing not a scepter of gold but a cross of wood, marching not to a throne but to Golgotha. Here is the fourth sorrowful mystery—_Jesus Carrying His Cross_—where the Lamb, like the scapegoat of old, goes willingly outside the city to sanctify the world by His suffering.
+Imagine, if you will, the divine paradox: the King of Heaven, bearing not a scepter of gold but a cross of wood, marching not to a throne but to Golgotha. Here is the fourth sorrowful mystery—*Jesus Carrying His Cross*—where the Lamb, like the scapegoat of old, goes willingly outside the city to sanctify the world by His suffering.
 
 And what of Simon of Cyrene, pressed into service? At first, a mere bystander compelled by Roman hands, yet in that forced labor, grace might have found him. So it is with us: our crosses, too, are often thrust upon us, but in the bearing of them, if we yield not to resentment, they become the very means by which we are drawn into the mystery of redemption.
 
@@ -6073,9 +6073,9 @@ Take heart, then, and remember: every sorrow borne in love is a thread woven int
 
 ##### AI-Generated Summary: The Divine Embrace and the Rainbow of Promise
 
-You will recall the tale of the prodigal son—how the father, though wronged, never ceased his patient vigil, how he ran to meet the returning child, restoring him with robes and rings. This, dear reader, is no mere story, but a window into the very heart of God. Just as the father sought his son, so does the Almighty seek us, even to the point of the Cross. There, in that moment of dereliction—_"My God, my God, why have you forsaken me?"_—we find not abandonment, but the deepest solidarity. Christ bears our anguish, our rebellion, and yet opens His arms as the father did, welcoming even the thief into paradise.
+You will recall the tale of the prodigal son—how the father, though wronged, never ceased his patient vigil, how he ran to meet the returning child, restoring him with robes and rings. This, dear reader, is no mere story, but a window into the very heart of God. Just as the father sought his son, so does the Almighty seek us, even to the point of the Cross. There, in that moment of dereliction—*"My God, my God, why have you forsaken me?"*—we find not abandonment, but the deepest solidarity. Christ bears our anguish, our rebellion, and yet opens His arms as the father did, welcoming even the thief into paradise.
 
-Consider, too, Pietro Gagliardi’s fresco of _The Crucifixion_ in the church San Girolamo dei Croati (1847-1852), where the rainbow—that ancient sign of covenant—arches above the dying Saviour. His outstretched arms complete its curve, as if to say that here, in this very act of suffering, the promise is fulfilled. Death shall not triumph. The Cross, that instrument of shame, becomes the bridge between heaven and earth, the proof of a love that pursues us to the uttermost.
+Consider, too, Pietro Gagliardi’s fresco of *The Crucifixion* in the church San Girolamo dei Croati (1847-1852), where the rainbow—that ancient sign of covenant—arches above the dying Saviour. His outstretched arms complete its curve, as if to say that here, in this very act of suffering, the promise is fulfilled. Death shall not triumph. The Cross, that instrument of shame, becomes the bridge between heaven and earth, the proof of a love that pursues us to the uttermost.
 
 Do you doubt whether God cares? Look upon the Crucified. The answer is written in wounds, in blood, in the unyielding fidelity of a Father who will not let us go.
 
@@ -6093,9 +6093,9 @@ Do you doubt whether God cares? Look upon the Crucified. The answer is written i
 
 The resurrection of Christ is no mere historical curiosity, dear reader, but the very hinge upon which the universe turns—a sudden and glorious eruption of life where death had reigned. It is as if the first true morning broke upon a world that had known only twilight, scattering the shadows with a light no darkness can quench. This is the Paschal candle’s promise: that the old order of decay is undone, and a new creation stirs within the womb of time.
 
-Consider Caravaggio’s _The Incredulity of Saint Thomas_—how the wounded Lord, with infinite patience, guides the trembling hand of doubt to touch the very scars that seal our hope. Here is the Baroque’s bold truth: divine mercy leans low to meet us in our unbelief. The painting, like the resurrection itself, is an invitation: not to spectate, but to partake.
+Consider Caravaggio’s *The Incredulity of Saint Thomas*—how the wounded Lord, with infinite patience, guides the trembling hand of doubt to touch the very scars that seal our hope. Here is the Baroque’s bold truth: divine mercy leans low to meet us in our unbelief. The painting, like the resurrection itself, is an invitation: not to spectate, but to partake.
 
-And so the ancient prayers echo—_Our Father_, _Hail Mary_, _Glory Be_—not as incantations, but as the heartbeat of a life reborn. For if death could not hold Him, neither shall it claim those who are His. The world’s glories fade like grass; yet here stands the undying thing, the love that will not let us go.
+And so the ancient prayers echo—*Our Father*, *Hail Mary*, *Glory Be*—not as incantations, but as the heartbeat of a life reborn. For if death could not hold Him, neither shall it claim those who are His. The world’s glories fade like grass; yet here stands the undying thing, the love that will not let us go.
 
 ##### Caravaggio’s The Incredulity of Saint Thomas (Stock Image)
 
@@ -6109,11 +6109,11 @@ And so the ancient prayers echo—_Our Father_, _Hail Mary_, _Glory Be_—not as
 
 ##### AI-Generated Summary: The Ascension and the Ever-Present Christ
 
-The Ascension is no mere departure, as if our Lord had taken leave of us, but rather the glorious fulfillment of that ancient word: _"The Lord said to my Lord, sit at my right hand."_ He who once walked among us in the humility of flesh now reigns in the majesty of the Father’s right hand—not confined to place, as we reckon it, but sovereign over all places. For God’s presence is not measured by steps or miles, but by His divine nature, and so Christ, having borne our limits, now fills all things.
+The Ascension is no mere departure, as if our Lord had taken leave of us, but rather the glorious fulfillment of that ancient word: *"The Lord said to my Lord, sit at my right hand."* He who once walked among us in the humility of flesh now reigns in the majesty of the Father’s right hand—not confined to place, as we reckon it, but sovereign over all places. For God’s presence is not measured by steps or miles, but by His divine nature, and so Christ, having borne our limits, now fills all things.
 
 Do not suppose that He is farther from you now than when He sat at supper with His disciples. It is the very opposite: then, He could be but in one room, one village; now, by His Ascension, He is nearer to each of us than our own breath. And if we would ascend with Him, we must do as Augustine taught—rise on the wings of charity, clinging to Christ by loving God and neighbor, especially in deeds of mercy.
 
-Even in art, this mystery is whispered. Consider Bernardino Gandino’s painting _Ascension of the Lord_, where the Lord’s footprints remain etched in stone, as if to say: _"Follow Me."_ For though He has ascended, His path is still open to us—to walk as He walked, to love as He loved, until we too are brought where He is.
+Even in art, this mystery is whispered. Consider Bernardino Gandino’s painting *Ascension of the Lord*, where the Lord’s footprints remain etched in stone, as if to say: *"Follow Me."* For though He has ascended, His path is still open to us—to walk as He walked, to love as He loved, until we too are brought where He is.
 
 ##### Bernardino Gandino's 'Ascension of the Lord' portrays Christ ascending to heaven, his footprints left on stone below, surrounded by awe-struck apostles (Stock Image)
 
@@ -6131,7 +6131,7 @@ Pentecost, dear reader, is no mere spectacle of divine fireworks—it is the qui
 
 And when at last He comes, He comes as new wine—as at Cana, where water turned to gladness, so at Pentecost, timorous men were accused of drunkenness for the joy that poured from them. This is the Spirit’s work: to make cowards bold, to turn mourning into dancing, and to seal the new covenant not with ink but with fire.
 
-Consider French artist Jean Restout II’s _Pentecost_ painted in 1732, where the apostles startle like men struck by lightning, while Mary, who had long known the Spirit’s overshadowing, remains serene. The artist, in his Baroque vigor, captures this divine irony: those who wait upon the Lord shall mount up with wings, but those who already rest in Him shall not be shaken.
+Consider French artist Jean Restout II’s *Pentecost* painted in 1732, where the apostles startle like men struck by lightning, while Mary, who had long known the Spirit’s overshadowing, remains serene. The artist, in his Baroque vigor, captures this divine irony: those who wait upon the Lord shall mount up with wings, but those who already rest in Him shall not be shaken.
 
 Let us then pray with confidence, not as beggars uncertain of the King’s favor, but as children who know their Father’s heart. For the Spirit does not ration His gifts; He pours them lavishly upon all who ask—and keep asking—until their cups run over.
 
@@ -6147,11 +6147,11 @@ Let us then pray with confidence, not as beggars uncertain of the King’s favor
 
 ##### AI-Generated Summary: The Assumption and the Song of Hope
 
-Consider, dear reader, the mystery of Mary’s Assumption—how she, who first sang the _Magnificat_ in joyful surrender, was at last received, body and soul, into the glory prepared for all who trust in God. This is no mere reward for virtue, but a foretaste of what awaits the whole Church, a promise as sure as dawn after night.
+Consider, dear reader, the mystery of Mary’s Assumption—how she, who first sang the *Magnificat* in joyful surrender, was at last received, body and soul, into the glory prepared for all who trust in God. This is no mere reward for virtue, but a foretaste of what awaits the whole Church, a promise as sure as dawn after night.
 
 Bishop Sheen and St. Bernard remind us that her joy is not solitary; it is the first note in heaven’s chorus, where saints embrace like long-parted friends—as when Mother Teresa, in that fleeting glimpse of eternity, was met with the radiant love of her sisters. Here is the true end of all our striving: not to grasp at heaven by our own hands, but to be gathered into it, as a child is gathered into its mother’s arms.
 
-And so the _Magnificat_ echoes still, a song older than the world, yet ever new. For in Mary’s Assumption, we see not only her crown but our own hope—the hope that every tear will be undone, and every faithful heart, at last, brought home.
+And so the *Magnificat* echoes still, a song older than the world, yet ever new. For in Mary’s Assumption, we see not only her crown but our own hope—the hope that every tear will be undone, and every faithful heart, at last, brought home.
 
 ##### Magnificat: A painting by Jean-Baptiste Jouvenet (Stock Image)
 
@@ -6165,7 +6165,7 @@ And so the _Magnificat_ echoes still, a song older than the world, yet ever new.
 
 ##### AI-Generated Summary: The Queen Mother and Her Divine Crown
 
-Consider, dear reader, the painting _The Coronation of the Virgin_ by Diego Velázquez, where the Trinity—Father, Son, and Holy Spirit—bestow upon Mary her heavenly crown. Here is no mere mortal woman, but the Mother of God exalted, radiant in Baroque splendor, her robes rich with color, her face alight with divine favor. This is no idle ceremony; it is the fulfillment of a promise, the crowning of she who bore the Word and now reigns as Queen of Heaven.
+Consider, dear reader, the painting *The Coronation of the Virgin* by Diego Velázquez, where the Trinity—Father, Son, and Holy Spirit—bestow upon Mary her heavenly crown. Here is no mere mortal woman, but the Mother of God exalted, radiant in Baroque splendor, her robes rich with color, her face alight with divine favor. This is no idle ceremony; it is the fulfillment of a promise, the crowning of she who bore the Word and now reigns as Queen of Heaven.
 
 Yet her majesty is not distant, nor her care reserved for the celestial courts alone. Like a mother who guards her children from wolves, she stands between our frail hearts and the prowling Enemy, offering refuge to the tempted, solace to the despairing. In her, we see both warrior and nurturer—a paradox only to those who forget that love is the fiercest force in all creation.
 
@@ -6197,7 +6197,7 @@ Prayer, dear friend, is not chiefly a matter of words, nor even of requests, but
 
 ##### AI-Generated Summary: The Quiet Majesty of the Nativity
 
-Imagine, if you will, a scene so tender that even the stars bend low to behold it—a child laid in a manger, wrapped in the humility of human flesh, yet radiant with the uncreated Light. This is the _Nativity,Prebystery of Salesianerkirche, Vienna_, not as the world paints power, but as Heaven ordains it: small, silent, and sacred. The artist, unnamed but no less devout, captures not merely an event, but the very heart of the Gospel—that God stoops to enter our poverty, turning a stable into a throne.
+Imagine, if you will, a scene so tender that even the stars bend low to behold it—a child laid in a manger, wrapped in the humility of human flesh, yet radiant with the uncreated Light. This is the *Nativity,Prebystery of Salesianerkirche, Vienna*, not as the world paints power, but as Heaven ordains it: small, silent, and sacred. The artist, unnamed but no less devout, captures not merely an event, but the very heart of the Gospel—that God stoops to enter our poverty, turning a stable into a throne.
 
 Here, in strokes of reverence, we see the paradox of eternity cradled in time. The scene whispers of shepherds and angels, of a mother’s awe and a creation hushed in recognition. It is no mere depiction; it is an invitation to kneel, to marvel, and to know that the deepest truths often come clothed in the simplest forms. For in this lowly birth lies the overthrow of all pride, the beginning of the great undoing of death itself.
 
@@ -6252,7 +6252,7 @@ To pray before an icon of these mysteries is not to admire a mere painting, but 
 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+**Table of Contents** *generated with [DocToc](https://github.com/ktechhub/doctoc)*
 
 <!---toc start-->
 
@@ -6454,11 +6454,11 @@ You will find no painted saints here, no gilded altars nor marble carvings—onl
 
 ##### AI-Generated Summary: The Weight of Glory in Art and Prayer
 
-Consider two masterpieces, each a window into the Sorrowful Mysteries. First, Caravaggio’s _The Crowning with Thorns_—a brutal yet luminous scene where light and shadow wrestle upon the canvas, much as cruelty and grace contend in the human soul. Here, Christ’s suffering is no distant tale but a present agony, rendered with such vividness that one might flinch to meet His gaze.
+Consider two masterpieces, each a window into the Sorrowful Mysteries. First, Caravaggio’s *The Crowning with Thorns*—a brutal yet luminous scene where light and shadow wrestle upon the canvas, much as cruelty and grace contend in the human soul. Here, Christ’s suffering is no distant tale but a present agony, rendered with such vividness that one might flinch to meet His gaze.
 
-Then El Greco’s _Christ Carrying the Cross_, where the Savior’s form stretches heavenward, as if the very wood He bears seeks to pull Him earthward while His spirit strains upward. The colors burn with unearthly fire, a reminder that pain, too, may be transfigured.
+Then El Greco’s *Christ Carrying the Cross*, where the Savior’s form stretches heavenward, as if the very wood He bears seeks to pull Him earthward while His spirit strains upward. The colors burn with unearthly fire, a reminder that pain, too, may be transfigured.
 
-Yet these are not mere relics of piety to be admired and shelved. The true meditation begins when we step into the frame—when the thorns press against _our_ brows, when the cross’s weight bows _our_ shoulders. For prayer is no recitation of old words, but the daring act of walking beside Him now, in the ordinary moments where He still whispers, "Follow."
+Yet these are not mere relics of piety to be admired and shelved. The true meditation begins when we step into the frame—when the thorns press against *our* brows, when the cross’s weight bows *our* shoulders. For prayer is no recitation of old words, but the daring act of walking beside Him now, in the ordinary moments where He still whispers, "Follow."
 
 ##### Christ's suffering during the crowning with thorns (Stock Image)
 
@@ -6498,7 +6498,7 @@ As for the prayers repeated like the beating of that heart—Hail Mary, Our Fath
 
 ##### AI-Generated Summary: The Soul's Homage to the Triune God
 
-To adore the Holy Trinity is to be drawn into the very life of Love Himself—a mystery so vast that the heart trembles, yet so near that the humblest soul may enter. St. Elizabeth of the Trinity, with the clarity of a saint, teaches us to pray not as distant suppliants, but as children who have found their home in the Father, the Son, and the Spirit. Her words, tender yet bold, echo the _Catechism_’s call to lose ourselves in that divine fellowship where praise becomes our breath and surrender our joy.
+To adore the Holy Trinity is to be drawn into the very life of Love Himself—a mystery so vast that the heart trembles, yet so near that the humblest soul may enter. St. Elizabeth of the Trinity, with the clarity of a saint, teaches us to pray not as distant suppliants, but as children who have found their home in the Father, the Son, and the Spirit. Her words, tender yet bold, echo the *Catechism*’s call to lose ourselves in that divine fellowship where praise becomes our breath and surrender our joy.
 
 The prayers repeated here—Our Father, Hail Mary, Glory Be—are not mere recitations, but the well-worn steps by which ordinary mortals ascend to heaven. In them, we learn that devotion is not grandiloquence, but faithfulness; not novelty, but the patient turning of the heart toward the Light. Let it be so for us all.
 
@@ -6554,7 +6554,7 @@ The second joyful mystery, the Visitation, calls to mind the blessed meeting of 
 
 ##### AI-Generated Summary: The Silent Song of the Nativity
 
-What we have here, dear reader, is not a painting but a prayer—a repeated refrain, like the steady rhythm of a heartbeat or the turning of the seasons. The Nativity, that third joyful mystery, is invoked not through brushstrokes or carved stone, but through the quiet cadence of _Hail Marys_ and _Glory Bes_. It is as if the very absence of artistic detail speaks louder than any depiction might; for sometimes the deepest truths are best approached not by sight, but by the soul’s own recollection.
+What we have here, dear reader, is not a painting but a prayer—a repeated refrain, like the steady rhythm of a heartbeat or the turning of the seasons. The Nativity, that third joyful mystery, is invoked not through brushstrokes or carved stone, but through the quiet cadence of *Hail Marys* and *Glory Bes*. It is as if the very absence of artistic detail speaks louder than any depiction might; for sometimes the deepest truths are best approached not by sight, but by the soul’s own recollection.
 
 Think of it as a window left open—not to show us a scene, but to let the wind of devotion stir within us. The artist’s hand is unseen, the medium unrecorded, yet the subject remains: that humble, radiant moment when Heaven touched Earth. And so we are reminded that some mysteries need no adornment; their power lies in the telling, and the hearing, and the heart that holds them.
 
@@ -6572,7 +6572,7 @@ Think of it as a window left open—not to show us a scene, but to let the wind 
 
 Consider two moments where Heaven stooped low to touch our dusty world: first, when the boy Christ lingered in the Temple, astonishing the learned with His wisdom; second, when the grown Man stood in Jordan’s waters, hallowing all rivers with His humility. These are not mere events to recite, but mysteries to enter—like a man stepping through a door into a vast country.
 
-Prayer, dear reader, is no trifle to be rushed. As a muscle grows by steady strain, so the soul strengthens by patient meditation. Begin with twenty Hail Marys, as one begins a journey with a single step. Ponder the angel’s greeting—_"Hail, full of grace"_—not as empty words, but as a thunderclap that shook the universe. For in that moment, eternity kissed time, and a maiden’s _yes_ undid Eve’s _no_.
+Prayer, dear reader, is no trifle to be rushed. As a muscle grows by steady strain, so the soul strengthens by patient meditation. Begin with twenty Hail Marys, as one begins a journey with a single step. Ponder the angel’s greeting—*"Hail, full of grace"*—not as empty words, but as a thunderclap that shook the universe. For in that moment, eternity kissed time, and a maiden’s *yes* undid Eve’s *no*.
 
 The prayers themselves are but ropes to bind our wandering minds to the mast of truth. Repeat them until the words wear grooves in the heart, and through them, grace may flow unhindered.
 
@@ -6626,7 +6626,7 @@ Prayer, like a ladder, lifts us toward these mysteries, and Mary, our Mother, st
 
 Prayer, when rightly ordered, turns not inward but outward—a lifting of others upon the heart’s altar. Here is a way of it: let each decade be given to some soul or sorrow beyond oneself, laid trustingly before the Father, the Son, the Spirit, or the Triune Majesty entire. For He is both Love itself and sovereign Power; no plea escapes His ear, no need lies beyond His good will. Come then with hope unfeigned, as children to a Father who, in ways unseen but sure, works all things for redemption.
 
-As for Bellini’s _Agony in the Garden_—there in London’s gallery it hangs, oil on panel, a Renaissance master’s hand. See how the hues, though hushed, betray no despair: even in Gethsemane’s shadow, the Light persists. Late 1400s, yet timeless as the truth it paints—that prayer, though mingled with sorrow, is the soul’s quiet fortitude.
+As for Bellini’s *Agony in the Garden*—there in London’s gallery it hangs, oil on panel, a Renaissance master’s hand. See how the hues, though hushed, betray no despair: even in Gethsemane’s shadow, the Light persists. Late 1400s, yet timeless as the truth it paints—that prayer, though mingled with sorrow, is the soul’s quiet fortitude.
 
 ##### Bellini's Agony in the Garden (late 1400s), oil on panel in London’s gallery, depicts prayer and sorrow in Gethsemane (Stock Image)
 
@@ -6640,9 +6640,9 @@ As for Bellini’s _Agony in the Garden_—there in London’s gallery it hangs,
 
 ##### AI-Generated Summary: The Weight of Thorns and Light
 
-Caravaggio’s _The Crowning with Thorns_ is no mere spectacle of cruelty, but a window into the divine drama of humiliation and grace. Here, in the dim chamber of the Kunsthistorisches Museum, Christ’s bowed head accepts the mocking crown, each thorn a echo of our own rebellions pressed upon the sinless. The painter’s hand, wielding chiaroscuro like a sword, cleaves light from shadow—as if to say that even in this darkness, Heaven’s radiance cannot be extinguished.
+Caravaggio’s *The Crowning with Thorns* is no mere spectacle of cruelty, but a window into the divine drama of humiliation and grace. Here, in the dim chamber of the Kunsthistorisches Museum, Christ’s bowed head accepts the mocking crown, each thorn a echo of our own rebellions pressed upon the sinless. The painter’s hand, wielding chiaroscuro like a sword, cleaves light from shadow—as if to say that even in this darkness, Heaven’s radiance cannot be extinguished.
 
-The text invites us not to glance, but to kneel before such scenes: to carry our own storms and sorrows, as Christ carried His cross, into the quiet furnace of prayer. Two intentions per decade—no more, no less—lest we mistake devotion for distraction. For in the _Hail Mary_ and the _Our Father_, as in Caravaggio’s brushstrokes, eternity bleeds into time, and the soul, like the Savior in that flickering gloom, is both wounded and illuminated.
+The text invites us not to glance, but to kneel before such scenes: to carry our own storms and sorrows, as Christ carried His cross, into the quiet furnace of prayer. Two intentions per decade—no more, no less—lest we mistake devotion for distraction. For in the *Hail Mary* and the *Our Father*, as in Caravaggio’s brushstrokes, eternity bleeds into time, and the soul, like the Savior in that flickering gloom, is both wounded and illuminated.
 
 ##### Caravaggio's The Crowning with Thorns at Kunsthistorisches Museum depicts Christ's humiliation with chiaroscuro (Stock Image)
 
@@ -6656,7 +6656,7 @@ The text invites us not to glance, but to kneel before such scenes: to carry our
 
 ##### AI-Generated Summary: The Holy Spirit's Gentle Mastery
 
-To bring one’s intentions before the Holy Spirit is much like Mary’s surrender at the Annunciation, when she was overshadowed by divine power yet remained perfectly herself. In that holy paradox, we see how the Spirit neither crushes nor bypasses our will, but elevates it—turning fear into courage, wounds into healing, and stubborn hearts into vessels of grace. Forgiveness and conversion are not our achievements, but His gifts; not labored for, but received. The same wind that filled the Virgin’s humble _fiat_ now whispers to every soul that dares to say, _Be it done unto me_.
+To bring one’s intentions before the Holy Spirit is much like Mary’s surrender at the Annunciation, when she was overshadowed by divine power yet remained perfectly herself. In that holy paradox, we see how the Spirit neither crushes nor bypasses our will, but elevates it—turning fear into courage, wounds into healing, and stubborn hearts into vessels of grace. Forgiveness and conversion are not our achievements, but His gifts; not labored for, but received. The same wind that filled the Virgin’s humble *fiat* now whispers to every soul that dares to say, *Be it done unto me*.
 
 (No artworks were described in the original text.)
 
@@ -6694,7 +6694,7 @@ There is no need for ornate speech, nor even many words, for as the old poets kn
 
 ##### AI-Generated Summary: The Maternal Love of Mary in Prayer
 
-Imagine, if you will, a mother’s tenderness—not merely human, but divine—extended to every soul in need. Such is the invitation of meditative prayer when one lifts others to the care of the Blessed Virgin. Picture her as Titian did in _The Assumption of the Virgin_, radiant amid the heavens, or as Fra Angelico portrayed in _The Coronation of the Virgin_, crowned with humility beside her Son. These visions are not idle fancies but windows into a love that stoops to mend our brokenness.
+Imagine, if you will, a mother’s tenderness—not merely human, but divine—extended to every soul in need. Such is the invitation of meditative prayer when one lifts others to the care of the Blessed Virgin. Picture her as Titian did in *The Assumption of the Virgin*, radiant amid the heavens, or as Fra Angelico portrayed in *The Coronation of the Virgin*, crowned with humility beside her Son. These visions are not idle fancies but windows into a love that stoops to mend our brokenness.
 
 To pray thus is to place each troubled heart into hands that have cradled the Infant Christ. See her, in your mind’s eye, bending over the sick, the lonely, the despairing, as once she bent over the manger. For love, when truly imagined, becomes a bridge between heaven and earth—and what better guide across it than she who bore Love Incarnate?
 
@@ -6734,9 +6734,9 @@ The angel’s annunciation to Mary—that most wondrous interruption—ushers in
 
 ##### AI-Generated Summary: The Humble Majesty of the Nativity
 
-The Nativity and the Presentation of Jesus in the Temple are not mere events of antiquity, but living truths that speak to the heart. In _The Nativity_, we see the King of Heaven laid in a manger, attended by shepherds and wise men alike—a paradox of divine humility. Here, God descends to dwell among us, not in splendor, but in the quiet poverty of Bethlehem.
+The Nativity and the Presentation of Jesus in the Temple are not mere events of antiquity, but living truths that speak to the heart. In *The Nativity*, we see the King of Heaven laid in a manger, attended by shepherds and wise men alike—a paradox of divine humility. Here, God descends to dwell among us, not in splendor, but in the quiet poverty of Bethlehem.
 
-Likewise, _The Presentation of Jesus in the Temple_ reveals the obedience of Mary and Joseph, who fulfill the Law even as they cradle the Lawgiver Himself. Simeon’s prophecy pierces the moment with foreshadowed sorrow, reminding us that joy and sacrifice are ever entwined in the story of redemption.
+Likewise, *The Presentation of Jesus in the Temple* reveals the obedience of Mary and Joseph, who fulfill the Law even as they cradle the Lawgiver Himself. Simeon’s prophecy pierces the moment with foreshadowed sorrow, reminding us that joy and sacrifice are ever entwined in the story of redemption.
 
 These sacred scenes call us to recognize that the Eternal entered time, the Infinite became small, and Love took on flesh—not to overwhelm, but to invite. Let us then, like Mary, ponder these things in our hearts.
 
@@ -6756,11 +6756,11 @@ These sacred scenes call us to recognize that the Eternal entered time, the Infi
 
 ##### AI-Generated Summary: The Divine Child Among the Teachers
 
-We are shown two sacred scenes, dear reader, each a window into the mystery of the Incarnation. The first, _The Finding of the Child Jesus in the Temple_, presents the boy of twelve seated among the learned men, His young face alight with wisdom beyond His years, while His mother and foster-father search for Him with tender anxiety. Here is no mere youth, but the very Son of God, revealing Himself even then as the fulfillment of the Law.
+We are shown two sacred scenes, dear reader, each a window into the mystery of the Incarnation. The first, *The Finding of the Child Jesus in the Temple*, presents the boy of twelve seated among the learned men, His young face alight with wisdom beyond His years, while His mother and foster-father search for Him with tender anxiety. Here is no mere youth, but the very Son of God, revealing Himself even then as the fulfillment of the Law.
 
-The second, _The Baptism of Christ_, unfolds at the River Jordan, where John, the last of the prophets, pours water over the One who needs no cleansing. The heavens are rent asunder, the Spirit descends like a dove, and the Father’s voice thunders—not for His sake, but for ours—declaring, “This is my beloved Son.” In these moments, eternity breaks through time, and we glimpse, as through a glass darkly, the truth that has been from the beginning.
+The second, *The Baptism of Christ*, unfolds at the River Jordan, where John, the last of the prophets, pours water over the One who needs no cleansing. The heavens are rent asunder, the Spirit descends like a dove, and the Father’s voice thunders—not for His sake, but for ours—declaring, “This is my beloved Son.” In these moments, eternity breaks through time, and we glimpse, as through a glass darkly, the truth that has been from the beginning.
 
-As for the prayers that follow—repetitions of the _Hail Mary_ and _Glory Be_—they are like footsteps worn smooth by generations of pilgrims, each one a small act of love, a turning of the heart toward the Light.
+As for the prayers that follow—repetitions of the *Hail Mary* and *Glory Be*—they are like footsteps worn smooth by generations of pilgrims, each one a small act of love, a turning of the heart toward the Light.
 
 ##### The boy Jesus seated among learned men in the temple (Stock Image)
 
@@ -7031,85 +7031,84 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
 ## September
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+**Table of Contents** *generated with [DocToc](https://github.com/ktechhub/doctoc)*
 
 <!---toc start-->
 
-- [September 2025](#september-2025)
-  - [September 01, 2025](#september-01-2025)
-    - [The Sorrowful Mysteries - Day 244](#the-sorrowful-mysteries---day-244)
-    - [AI-Generated Summary: The Strength Found in Sorrow](#ai-generated-summary-the-strength-found-in-sorrow)
-    - [Vicente Masip's 1550 oil painting at the Prado depicts Christ praying in Gethsemane as angels bring the chalice and apostles sleep](#vicente-masips-1550-oil-painting-at-the-prado-depicts-christ-praying-in-gethsemane-as-angels-bring-the-chalice-and-apostles-sleep)
-    - [Bouguereau's 1880 oil painting depicts Christ's brutal scourging at the pillar with divine resignation, located in La Rochelle Cathedral](#bouguereaus-1880-oil-painting-depicts-christs-brutal-scourging-at-the-pillar-with-divine-resignation-located-in-la-rochelle-cathedral)
-    - [Van Dyck's 1620 Baroque masterpiece in Madrid's Prado Museum depicts Christ's paradoxical coronation with thorns](#van-dycks-1620-baroque-masterpiece-in-madrids-prado-museum-depicts-christs-paradoxical-coronation-with-thorns)
-  - [September 02, 2025](#september-02-2025)
-    - [The Sorrowful and Glorious Mysteries - Day 245](#the-sorrowful-and-glorious-mysteries---day-245)
-    - [AI-Generated Summary: On the Final Mysteries](#ai-generated-summary-on-the-final-mysteries)
-    - [Orazio Gentileschi's 1605 Baroque oil painting depicts Christ's agonizing journey to Calvary under the heavy wooden cross](#orazio-gentileschis-1605-baroque-oil-painting-depicts-christs-agonizing-journey-to-calvary-under-the-heavy-wooden-cross)
-    - [Pietro Gagliardi's 1847-1852 fresco in San Girolamo dei Croati depicts Christ's Crucifixion with the Virgin Mary, John, and Mary Magdalene mourning at the foot of the cross (Stock Image)](#pietro-gagliardis-1847-1852-fresco-in-san-girolamo-dei-croati-depicts-christs-crucifixion-with-the-virgin-mary-john-and-mary-magdalene-mourning-at-the-foot-of-the-cross-stock-image)
-    - [Annibale Carracci's 1593 oil painting Resurrection at the Louvre depicts Christ triumphantly emerging from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-1593-oil-painting-resurrection-at-the-louvre-depicts-christ-triumphantly-emerging-from-the-tomb-as-roman-soldiers-recoil-in-awe)
-  - [September 03, 2025](#september-03-2025)
-    - [The Glorious Mysteries - Day 246](#the-glorious-mysteries---day-246)
-    - [AI-Generated Summary: On the Recitation of the Rosary](#ai-generated-summary-on-the-recitation-of-the-rosary)
-    - [Christ ascends in a mandorla of light, supported by angels, with the Virgin Mary and astonished apostles below in this 12th-century Byzantine mosaic at St Mark's Basilica](#christ-ascends-in-a-mandorla-of-light-supported-by-angels-with-the-virgin-mary-and-astonished-apostles-below-in-this-12th-century-byzantine-mosaic-at-st-marks-basilica)
-    - [Titian's 1546 oil painting Pentecost in Venice depicts the Holy Spirit descending as fire upon Mary and the apostles](#titians-1546-oil-painting-pentecost-in-venice-depicts-the-holy-spirit-descending-as-fire-upon-mary-and-the-apostles)
-    - [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting the Assumption of Mary into heaven, welcomed by Christ (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-the-assumption-of-mary-into-heaven-welcomed-by-christ-stock-image)
-  - [September 04, 2025](#september-04-2025)
-    - [The Glorious and Joyful Mysteries - Day 247](#the-glorious-and-joyful-mysteries---day-247)
-    - [AI-Generated Summary: On a Certain Kind of Prayer](#ai-generated-summary-on-a-certain-kind-of-prayer)
-    - [Giuseppe Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity (Stock Image)](#giuseppe-borgniss-18th-century-baroque-fresco-depicts-the-virgin-marys-coronation-as-queen-of-heaven-by-the-holy-trinity-stock-image)
-    - [Jan van Eyck's 1434-1436 oil panel The Annunciation depicts Gabriel's divine message to the Virgin Mary, housed in Washington DC's National Gallery of Art](#jan-van-eycks-1434-1436-oil-panel-the-annunciation-depicts-gabriels-divine-message-to-the-virgin-mary-housed-in-washington-dcs-national-gallery-of-art)
-    - [The Visitation depicts Mary and Elizabeth's sacred encounter, their unborn children recognizing God's divine work within them](#the-visitation-depicts-mary-and-elizabeths-sacred-encounter-their-unborn-children-recognizing-gods-divine-work-within-them)
-  - [September 05, 2025](#september-05-2025)
-    - [The Joyful Mysteries - Day 248](#the-joyful-mysteries---day-248)
-    - [AI-Generated Summary: The Habit of Heaven](#ai-generated-summary-the-habit-of-heaven)
-    - [Giovanni Antonio Pellegrini's 18th-century Rococo Nativity, in oil on canvas at Vienna's Salesianerkirche, depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)](#giovanni-antonio-pellegrinis-18th-century-rococo-nativity-in-oil-on-canvas-at-viennas-salesianerkirche-depicts-the-newborn-christ-adored-by-mary-joseph-and-angels-stock-image)
-    - [Giulio Campi's 1547 fresco in Cremona depicts Mary and Joseph presenting the infant Jesus to Simeon in the Temple (Stock Image)](#giulio-campis-1547-fresco-in-cremona-depicts-mary-and-joseph-presenting-the-infant-jesus-to-simeon-in-the-temple-stock-image)
-    - [A 20th-century Byzantine mosaic in Lourdes depicting young Jesus teaching elders in the Temple, found by Mary and Joseph (Stock Image)](#a-20th-century-byzantine-mosaic-in-lourdes-depicting-young-jesus-teaching-elders-in-the-temple-found-by-mary-and-joseph-stock-image)
-  - [September 06, 2025](#september-06-2025)
-    - [The Luminous Mysteries - Day 249](#the-luminous-mysteries---day-249)
-    - [AI-Generated Summary: On the First Luminous Mysteries](#ai-generated-summary-on-the-first-luminous-mysteries)
-    - [The Baptism of Christ, an Italian Renaissance fresco in Padua's Church of San Benedetto, depicts Jesus baptized by John as the Holy Spirit descends (Stock Image)](#the-baptism-of-christ-an-italian-renaissance-fresco-in-paduas-church-of-san-benedetto-depicts-jesus-baptized-by-john-as-the-holy-spirit-descends-stock-image)
-    - [Gerard David's 1500 oil painting at the Louvre depicts Christ's first miracle, transforming water into wine at the Wedding at Cana](#gerard-davids-1500-oil-painting-at-the-louvre-depicts-christs-first-miracle-transforming-water-into-wine-at-the-wedding-at-cana-1)
-    - [James Tissot's 1894 gouache painting 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing (Stock Image)](#james-tissots-1894-gouache-painting-healing-of-the-lepers-at-capernaum-depicts-christ-proclaiming-gods-kingdom-through-miraculous-healing-stock-image)
-  - [September 07, 2025](#september-07-2025)
-    - [The Luminous and Sorrowful Mysteries - Day 250](#the-luminous-and-sorrowful-mysteries---day-250)
-    - [AI-Generated Summary: On the Recitation of the Mysteries](#ai-generated-summary-on-the-recitation-of-the-mysteries)
-    - [Henry Ossawa Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist](#henry-ossawa-tanners-christ-and-the-disciples-before-the-last-supper-c-1900-oil-on-canvas-depicts-christs-spiritual-preparation-before-instituting-the-eucharist)
-    - [Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's agony while His disciples sleep, painted in oil on canvas for Vicenza Cathedral (Stock Image)](#alessandro-maganzas-the-prayer-of-jesus-in-gethsemane-c-1590-1610-depicts-christs-agony-while-his-disciples-sleep-painted-in-oil-on-canvas-for-vicenza-cathedral-stock-image)
-  - [September 08, 2025](#september-08-2025)
-    - [The Sorrowful Mysteries - Day 251](#the-sorrowful-mysteries---day-251)
-    - [AI-Generated Summary: On the Reiteration of Prayer](#ai-generated-summary-on-the-reiteration-of-prayer)
-    - [Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with academic precision and divine resignation](#bouguereaus-1880-oil-painting-the-flagellation-of-our-lord-jesus-christ-depicts-christs-brutal-scourging-with-academic-precision-and-divine-resignation)
-    - [Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers pressing the thorn crown onto Christ's head with violent intensity as he endures with serene dignity](#titians-christ-crowned-with-thorns-c-15421543-depicts-roman-soldiers-pressing-the-thorn-crown-onto-christs-head-with-violent-intensity-as-he-endures-with-serene-dignity)
-    - [Raphael's 1516-17 'Christ Falls on the Way to Calvary' depicts Christ's third fall under the cross's weight during his sorrowful journey to Calvary](#raphaels-1516-17-christ-falls-on-the-way-to-calvary-depicts-christs-third-fall-under-the-crosss-weight-during-his-sorrowful-journey-to-calvary)
-  - [September 09, 2025](#september-09-2025)
-    - [The Sorrowful and Glorious Mysteries - Day 252](#the-sorrowful-and-glorious-mysteries---day-252)
-    - [AI-Generated Summary: On Certain Great Mysteries](#ai-generated-summary-on-certain-great-mysteries)
-    - [James Tissot's 1886-94 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's perspective, showing the crowd below in gouache realism](#james-tissots-1886-94-what-our-lord-saw-from-the-cross-depicts-the-crucifixion-from-christs-perspective-showing-the-crowd-below-in-gouache-realism)
-    - [Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ emerging gloriously from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-resurrection-1593-oil-on-canvas-louvre-depicts-christ-emerging-gloriously-from-the-tomb-as-roman-soldiers-recoil-in-awe)
-    - [Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as apostles watch in wonder (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-depicts-christ-ascending-into-heaven-as-apostles-watch-in-wonder-stock-image)
-  - [September 10, 2025](#september-10-2025)
-    - [The Glorious Mysteries - Day 253](#the-glorious-mysteries---day-253)
-    - [AI-Generated Summary: On the Glorious Mysteries](#ai-generated-summary-on-the-glorious-mysteries)
-    - [Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending upon Mary and the apostles in Mannerist style at San Fedele, Milan (Stock Image)](#simone-peterzanos-pentecost-c-1580-oil-on-canvas-depicts-the-holy-spirit-descending-upon-mary-and-the-apostles-in-mannerist-style-at-san-fedele-milan-stock-image)
-    - [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's Assumption into heaven, welcomed by Christ (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-marys-assumption-into-heaven-welcomed-by-christ-stock-image)
-    - [Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](#diego-vel%C3%A1zquezs-coronation-of-the-virgin-c-1641-1644-an-oil-on-canvas-at-the-prado-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven)
-  - [September 11, 2025](#september-11-2025)
-    - [The Joyful Mysteries - Day 254](#the-joyful-mysteries---day-254)
-    - [AI-Generated Summary: The Recitation of Joyful Mysteries](#ai-generated-summary-the-recitation-of-joyful-mysteries)
-    - [Fra Angelico's 'The Annunciation' (mid-1430s), a tempera panel in Madrid's Prado, depicts Gabriel's announcement to Mary within Renaissance architecture](#fra-angelicos-the-annunciation-mid-1430s-a-tempera-panel-in-madrids-prado-depicts-gabriels-announcement-to-mary-within-renaissance-architecture)
-    - ['The Visitation' depicts Mary and Elizabeth's sacred encounter, recognizing God's work within them at Ein Karem](#the-visitation-depicts-mary-and-elizabeths-sacred-encounter-recognizing-gods-work-within-them-at-ein-karem)
-    - [Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)](#giovanni-antonio-pellegrinis-18th-century-rococo-the-nativity-in-vienna-depicts-the-newborn-christ-adored-by-mary-joseph-and-angels-stock-image)
-    - [Holding Mary's Hand](#holding-marys-hand)
+* [September 2025](#september-2025)
+  * [September 01, 2025](#september-01-2025)
+    * [The Sorrowful Mysteries - Day 244](#the-sorrowful-mysteries---day-244)
+    * [AI-Generated Summary: The Strength Found in Sorrow](#ai-generated-summary-the-strength-found-in-sorrow)
+    * [Vicente Masip's 1550 oil painting at the Prado depicts Christ praying in Gethsemane as angels bring the chalice and apostles sleep](#vicente-masips-1550-oil-painting-at-the-prado-depicts-christ-praying-in-gethsemane-as-angels-bring-the-chalice-and-apostles-sleep)
+    * [Bouguereau's 1880 oil painting depicts Christ's brutal scourging at the pillar with divine resignation, located in La Rochelle Cathedral](#bouguereaus-1880-oil-painting-depicts-christs-brutal-scourging-at-the-pillar-with-divine-resignation-located-in-la-rochelle-cathedral)
+    * [Van Dyck's 1620 Baroque masterpiece in Madrid's Prado Museum depicts Christ's paradoxical coronation with thorns](#van-dycks-1620-baroque-masterpiece-in-madrids-prado-museum-depicts-christs-paradoxical-coronation-with-thorns)
+  * [September 02, 2025](#september-02-2025)
+    * [The Sorrowful and Glorious Mysteries - Day 245](#the-sorrowful-and-glorious-mysteries---day-245)
+    * [AI-Generated Summary: On the Final Mysteries](#ai-generated-summary-on-the-final-mysteries)
+    * [Orazio Gentileschi's 1605 Baroque oil painting depicts Christ's agonizing journey to Calvary under the heavy wooden cross](#orazio-gentileschis-1605-baroque-oil-painting-depicts-christs-agonizing-journey-to-calvary-under-the-heavy-wooden-cross)
+    * [Pietro Gagliardi's 1847-1852 fresco in San Girolamo dei Croati depicts Christ's Crucifixion with the Virgin Mary, John, and Mary Magdalene mourning at the foot of the cross (Stock Image)](#pietro-gagliardis-1847-1852-fresco-in-san-girolamo-dei-croati-depicts-christs-crucifixion-with-the-virgin-mary-john-and-mary-magdalene-mourning-at-the-foot-of-the-cross-stock-image)
+    * [Annibale Carracci's 1593 oil painting Resurrection at the Louvre depicts Christ triumphantly emerging from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-1593-oil-painting-resurrection-at-the-louvre-depicts-christ-triumphantly-emerging-from-the-tomb-as-roman-soldiers-recoil-in-awe)
+  * [September 03, 2025](#september-03-2025)
+    * [The Glorious Mysteries - Day 246](#the-glorious-mysteries---day-246)
+    * [AI-Generated Summary: On the Recitation of the Rosary](#ai-generated-summary-on-the-recitation-of-the-rosary)
+    * [Christ ascends in a mandorla of light, supported by angels, with the Virgin Mary and astonished apostles below in this 12th-century Byzantine mosaic at St Mark's Basilica](#christ-ascends-in-a-mandorla-of-light-supported-by-angels-with-the-virgin-mary-and-astonished-apostles-below-in-this-12th-century-byzantine-mosaic-at-st-marks-basilica)
+    * [Titian's 1546 oil painting Pentecost in Venice depicts the Holy Spirit descending as fire upon Mary and the apostles](#titians-1546-oil-painting-pentecost-in-venice-depicts-the-holy-spirit-descending-as-fire-upon-mary-and-the-apostles)
+    * [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting the Assumption of Mary into heaven, welcomed by Christ (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-the-assumption-of-mary-into-heaven-welcomed-by-christ-stock-image)
+  * [September 04, 2025](#september-04-2025)
+    * [The Glorious and Joyful Mysteries - Day 247](#the-glorious-and-joyful-mysteries---day-247)
+    * [AI-Generated Summary: On a Certain Kind of Prayer](#ai-generated-summary-on-a-certain-kind-of-prayer)
+    * [Giuseppe Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity (Stock Image)](#giuseppe-borgniss-18th-century-baroque-fresco-depicts-the-virgin-marys-coronation-as-queen-of-heaven-by-the-holy-trinity-stock-image)
+    * [Jan van Eyck's 1434-1436 oil panel The Annunciation depicts Gabriel's divine message to the Virgin Mary, housed in Washington DC's National Gallery of Art](#jan-van-eycks-1434-1436-oil-panel-the-annunciation-depicts-gabriels-divine-message-to-the-virgin-mary-housed-in-washington-dcs-national-gallery-of-art)
+    * [The Visitation depicts Mary and Elizabeth's sacred encounter, their unborn children recognizing God's divine work within them](#the-visitation-depicts-mary-and-elizabeths-sacred-encounter-their-unborn-children-recognizing-gods-divine-work-within-them)
+  * [September 05, 2025](#september-05-2025)
+    * [The Joyful Mysteries - Day 248](#the-joyful-mysteries---day-248)
+    * [AI-Generated Summary: The Habit of Heaven](#ai-generated-summary-the-habit-of-heaven)
+    * [Giovanni Antonio Pellegrini's 18th-century Rococo Nativity, in oil on canvas at Vienna's Salesianerkirche, depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)](#giovanni-antonio-pellegrinis-18th-century-rococo-nativity-in-oil-on-canvas-at-viennas-salesianerkirche-depicts-the-newborn-christ-adored-by-mary-joseph-and-angels-stock-image)
+    * [Giulio Campi's 1547 fresco in Cremona depicts Mary and Joseph presenting the infant Jesus to Simeon in the Temple (Stock Image)](#giulio-campis-1547-fresco-in-cremona-depicts-mary-and-joseph-presenting-the-infant-jesus-to-simeon-in-the-temple-stock-image)
+    * [A 20th-century Byzantine mosaic in Lourdes depicting young Jesus teaching elders in the Temple, found by Mary and Joseph (Stock Image)](#a-20th-century-byzantine-mosaic-in-lourdes-depicting-young-jesus-teaching-elders-in-the-temple-found-by-mary-and-joseph-stock-image)
+  * [September 06, 2025](#september-06-2025)
+    * [The Luminous Mysteries - Day 249](#the-luminous-mysteries---day-249)
+    * [AI-Generated Summary: On the First Luminous Mysteries](#ai-generated-summary-on-the-first-luminous-mysteries)
+    * [The Baptism of Christ, an Italian Renaissance fresco in Padua's Church of San Benedetto, depicts Jesus baptized by John as the Holy Spirit descends (Stock Image)](#the-baptism-of-christ-an-italian-renaissance-fresco-in-paduas-church-of-san-benedetto-depicts-jesus-baptized-by-john-as-the-holy-spirit-descends-stock-image)
+    * [Gerard David's 1500 oil painting at the Louvre depicts Christ's first miracle, transforming water into wine at the Wedding at Cana](#gerard-davids-1500-oil-painting-at-the-louvre-depicts-christs-first-miracle-transforming-water-into-wine-at-the-wedding-at-cana-1)
+    * [James Tissot's 1894 gouache painting 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing (Stock Image)](#james-tissots-1894-gouache-painting-healing-of-the-lepers-at-capernaum-depicts-christ-proclaiming-gods-kingdom-through-miraculous-healing-stock-image)
+  * [September 07, 2025](#september-07-2025)
+    * [The Luminous and Sorrowful Mysteries - Day 250](#the-luminous-and-sorrowful-mysteries---day-250)
+    * [AI-Generated Summary: On the Recitation of the Mysteries](#ai-generated-summary-on-the-recitation-of-the-mysteries)
+    * [Henry Ossawa Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist](#henry-ossawa-tanners-christ-and-the-disciples-before-the-last-supper-c-1900-oil-on-canvas-depicts-christs-spiritual-preparation-before-instituting-the-eucharist)
+    * [Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's agony while His disciples sleep, painted in oil on canvas for Vicenza Cathedral (Stock Image)](#alessandro-maganzas-the-prayer-of-jesus-in-gethsemane-c-1590-1610-depicts-christs-agony-while-his-disciples-sleep-painted-in-oil-on-canvas-for-vicenza-cathedral-stock-image)
+  * [September 08, 2025](#september-08-2025)
+    * [The Sorrowful Mysteries - Day 251](#the-sorrowful-mysteries---day-251)
+    * [AI-Generated Summary: On the Reiteration of Prayer](#ai-generated-summary-on-the-reiteration-of-prayer)
+    * [Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with academic precision and divine resignation](#bouguereaus-1880-oil-painting-the-flagellation-of-our-lord-jesus-christ-depicts-christs-brutal-scourging-with-academic-precision-and-divine-resignation)
+    * [Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers pressing the thorn crown onto Christ's head with violent intensity as he endures with serene dignity](#titians-christ-crowned-with-thorns-c-15421543-depicts-roman-soldiers-pressing-the-thorn-crown-onto-christs-head-with-violent-intensity-as-he-endures-with-serene-dignity)
+    * [Raphael's 1516-17 'Christ Falls on the Way to Calvary' depicts Christ's third fall under the cross's weight during his sorrowful journey to Calvary](#raphaels-1516-17-christ-falls-on-the-way-to-calvary-depicts-christs-third-fall-under-the-crosss-weight-during-his-sorrowful-journey-to-calvary)
+  * [September 09, 2025](#september-09-2025)
+    * [The Sorrowful and Glorious Mysteries - Day 252](#the-sorrowful-and-glorious-mysteries---day-252)
+    * [AI-Generated Summary: On Certain Great Mysteries](#ai-generated-summary-on-certain-great-mysteries)
+    * [James Tissot's 1886-94 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's perspective, showing the crowd below in gouache realism](#james-tissots-1886-94-what-our-lord-saw-from-the-cross-depicts-the-crucifixion-from-christs-perspective-showing-the-crowd-below-in-gouache-realism)
+    * [Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ emerging gloriously from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-resurrection-1593-oil-on-canvas-louvre-depicts-christ-emerging-gloriously-from-the-tomb-as-roman-soldiers-recoil-in-awe)
+    * [Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as apostles watch in wonder (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-depicts-christ-ascending-into-heaven-as-apostles-watch-in-wonder-stock-image)
+  * [September 10, 2025](#september-10-2025)
+    * [The Glorious Mysteries - Day 253](#the-glorious-mysteries---day-253)
+    * [AI-Generated Summary: On the Glorious Mysteries](#ai-generated-summary-on-the-glorious-mysteries)
+    * [Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending upon Mary and the apostles in Mannerist style at San Fedele, Milan (Stock Image)](#simone-peterzanos-pentecost-c-1580-oil-on-canvas-depicts-the-holy-spirit-descending-upon-mary-and-the-apostles-in-mannerist-style-at-san-fedele-milan-stock-image)
+    * [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's Assumption into heaven, welcomed by Christ (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-marys-assumption-into-heaven-welcomed-by-christ-stock-image)
+    * [Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](#diego-vel%C3%A1zquezs-coronation-of-the-virgin-c-1641-1644-an-oil-on-canvas-at-the-prado-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven)
+    * [Holding Mary's Hand](#holding-marys-hand)
+  * [September 11, 2025](#september-11-2025)
+    * [The Joyful Mysteries - Day 254](#the-joyful-mysteries---day-254)
+    * [AI-Generated Summary: The Recitation of Joyful Mysteries](#ai-generated-summary-the-recitation-of-joyful-mysteries)
+    * [Fra Angelico's 'The Annunciation' (mid-1430s), a tempera panel in Madrid's Prado, depicts Gabriel's announcement to Mary within Renaissance architecture](#fra-angelicos-the-annunciation-mid-1430s-a-tempera-panel-in-madrids-prado-depicts-gabriels-announcement-to-mary-within-renaissance-architecture)
+    * ['The Visitation' depicts Mary and Elizabeth's sacred encounter, recognizing God's work within them at Ein Karem](#the-visitation-depicts-mary-and-elizabeths-sacred-encounter-recognizing-gods-work-within-them-at-ein-karem)
+    * [Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)](#giovanni-antonio-pellegrinis-18th-century-rococo-the-nativity-in-vienna-depicts-the-newborn-christ-adored-by-mary-joseph-and-angels-stock-image)
+    * [Holding Mary's Hand](#holding-marys-hand-1)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -7194,7 +7193,7 @@ One finds, in these texts, a common thread not of narrative or description, but 
 
 We are told of a soul at its prayers, moving through the sacred pattern of the Glorious and Joyful Mysteries. It first contemplates that final and most glorious truth: the Coronation of our Lady as Queen of Heaven. From that height, it turns back to the beginning of joy, to the Annunciation—that great disturbance of the universe where a Virgin is saluted and consents—and then to the Visitation, where blessing is carried from one house to another and joy leaps in the womb.
 
-The rest, as you have found, is not a tale to be summarized but a practice to be performed; the well-worn paths of the _Hail Mary_ and the _Our Father_, which are not the window through which we look at the landscape, but the very footsteps of the walker upon the road itself.
+The rest, as you have found, is not a tale to be summarized but a practice to be performed; the well-worn paths of the *Hail Mary* and the *Our Father*, which are not the window through which we look at the landscape, but the very footsteps of the walker upon the road itself.
 
 ##### Giuseppe Borgnis's 18th-century Baroque fresco depicts the Virgin Mary's coronation as Queen of Heaven by the Holy Trinity (Stock Image)
 
@@ -7339,6 +7338,10 @@ We are asked to contemplate a thing of great simplicity and profound depth: the 
 ##### Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven
 
 [![Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](September/jpgs/Coronation_ei2EdoGd.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg/960px-Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg "Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven")
+
+##### Holding Mary's Hand
+
+![Holding Mary's Hand](September/jpgs/holdingmaryshand.jpg)
 
 #### September 11, 2025
 

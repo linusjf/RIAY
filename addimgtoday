@@ -18,6 +18,7 @@ readonly ERR_INVALID_PATH=3
 readonly ERR_INVALID_IMAGE=4
 readonly ERR_MARKDOWN_FILE=5
 readonly ERR_INVALID_DAY=6
+readonly ERR_GENERATING_MD=7
 
 # Source common functions
 if command -v realpath > /dev/null 2>&1; then
@@ -67,6 +68,7 @@ Exit Codes:
   4               Invalid image format (not JPEG)
   5               Markdown file not found
   6               Invalid day number (1 - 366)
+  7               Error generating markdown
 
 Examples:
   $SCRIPT_NAME /path/to/image.jpg "My Image Caption" 123
@@ -113,7 +115,11 @@ append_image_markdown() {
   } >> "$markdown_file"
 
   out "Appended image markdown to $markdown_file"
-  return 0
+
+  if "${SCRIPT_DIR}/genmonth" "$(date::monthnumberfrommonth "$month")" && "${SCRIPT_DIR}/stitch"; then
+    return 0
+  fi
+  return $ERR_GENERATING_MD
 }
 
 check_path_under_current_dir() {
