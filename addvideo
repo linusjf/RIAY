@@ -21,6 +21,7 @@ readonly EXIT_NO_INTERNET=5
 readonly EXIT_OVERLAY_FAILED=6
 readonly EXIT_FILE_GENERATION_FAILED=7
 readonly EXIT_VIDEO_EXISTS=8
+readonly EXIT_EMBED_ART_FAILURE=9
 
 trap trap_exit EXIT
 
@@ -70,6 +71,7 @@ Exit Codes:
   6  Failed to generate overlay
   7  Failed to generate files
   8  Video already exists in ${VIDEOS_FILE}
+  9  Failed to embed art image(s)
 EOF
   exit "$exitcode"
 }
@@ -165,7 +167,7 @@ generate_files() {
   } >| "$fname"
 
   if "${AUTO_DOWNLOAD_ART:-false}"; then
-    "${SCRIPT_DIR}/embedarttoday" "$doy" || true
+    "${SCRIPT_DIR}/embedarttoday" "$doy" || die "Failed to embed art in markdown" $EXIT_EMBED_ART_FAILURE
   fi
   if "${AUTO_GENERATE_IMAGES:-false}"; then
     # generate image from summary prompt

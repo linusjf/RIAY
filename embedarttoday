@@ -326,7 +326,7 @@ function main() {
 
   require_vars YEAR ART_DOWNLOADER_DIR VERIFY_ART_IMAGES IMAGE_CONTENT_VALIDATION ART_VERIFIER_SCRIPT USE_ART_DATABASE || exit $E_MISSING_ENV
 
-  internet::checkinternet || exit $E_NO_INTERNET
+  internet::checkinternet || return $E_NO_INTERNET
   printf -v day_string "Day%03d" "$day_num"
   month=$(date -d "${YEAR}-01-01 +$((day_num - 1)) days" +"%B")
 
