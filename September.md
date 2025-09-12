@@ -1,5 +1,4 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -65,7 +64,7 @@
     - [AI-Generated Summary: On the Glorious Mysteries](#ai-generated-summary-on-the-glorious-mysteries)
     - [Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending upon Mary and the apostles in Mannerist style at San Fedele, Milan (Stock Image)](#simone-peterzanos-pentecost-c-1580-oil-on-canvas-depicts-the-holy-spirit-descending-upon-mary-and-the-apostles-in-mannerist-style-at-san-fedele-milan-stock-image)
     - [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's Assumption into heaven, welcomed by Christ (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-marys-assumption-into-heaven-welcomed-by-christ-stock-image)
-    - [Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](#diego-vel%C3%A1zquezs-coronation-of-the-virgin-c-1641-1644-an-oil-on-canvas-at-the-prado-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven)
+    - [Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](#diego-velázquezs-coronation-of-the-virgin-c-1641-1644-an-oil-on-canvas-at-the-prado-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven)
     - [Holding Mary's Hand](#holding-marys-hand)
   - [September 11, 2025](#september-11-2025)
     - [The Joyful Mysteries - Day 254](#the-joyful-mysteries---day-254)
@@ -73,11 +72,16 @@
     - [Fra Angelico's 'The Annunciation' (mid-1430s), a tempera panel in Madrid's Prado, depicts Gabriel's announcement to Mary within Renaissance architecture](#fra-angelicos-the-annunciation-mid-1430s-a-tempera-panel-in-madrids-prado-depicts-gabriels-announcement-to-mary-within-renaissance-architecture)
     - ['The Visitation' depicts Mary and Elizabeth's sacred encounter, recognizing God's work within them at Ein Karem](#the-visitation-depicts-mary-and-elizabeths-sacred-encounter-recognizing-gods-work-within-them-at-ein-karem)
     - [Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)](#giovanni-antonio-pellegrinis-18th-century-rococo-the-nativity-in-vienna-depicts-the-newborn-christ-adored-by-mary-joseph-and-angels-stock-image)
+  - [September 12, 2025](#september-12-2025)
+    - [The Joyful and Luminous Mysteries - Day 255](#the-joyful-and-luminous-mysteries---day-255)
+    - [AI-Generated Summary: On Three Mysteries](#ai-generated-summary-on-three-mysteries)
+    - [Giulio Campi's 1547 fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Jesus to Simeon (Stock Image)](#giulio-campis-1547-fresco-the-presentation-of-jesus-in-the-temple-in-cremona-depicts-mary-and-joseph-presenting-the-infant-jesus-to-simeon-stock-image)
+    - [The young Jesus astonishes Temple scholars with divine wisdom in 'Jesus Teaching in the Temple' (Stock Image)](#the-young-jesus-astonishes-temple-scholars-with-divine-wisdom-in-jesus-teaching-in-the-temple-stock-image)
+    - [Alexander Ivanov's 1837-1857 oil painting 'Apparition of the Messiah' depicts John the Baptist revealing Christ to a diverse crowd at the Jordan](#alexander-ivanovs-1837-1857-oil-painting-apparition-of-the-messiah-depicts-john-the-baptist-revealing-christ-to-a-diverse-crowd-at-the-jordan)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 <!-- toc -->
 
 <!-- tocstop -->
@@ -333,3 +337,25 @@ One finds here not a discourse to be parsed, but a well-worn path for the feet o
 ### Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)
 
 [![Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels](September/jpgs/Nativity_Tv5OAYsQ.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Giovanni Antonio Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels")
+
+## September 12, 2025
+
+### The Joyful and Luminous Mysteries - Day 255
+
+[![The Joyful and Luminous Mysteries](/September/jpgs/Day255.jpg)](https://youtu.be/uD9ZMm6jQqE "The Joyful and Luminous Mysteries")
+
+### AI-Generated Summary: On Three Mysteries
+
+We are told of a child, presented in the temple according to the old law, a sign of obedience and humility. Then comes the finding of the same child, not lost but about his Father’s business, astounding the learned men with his understanding. And from these joys we move to a light unveiled at the river Jordan, where the heavens themselves were opened at his baptism, and the Voice declared the beloved Son. In these things we see the pattern: the humble act, the divine revelation, and the quiet, staggering truth that the ordinary world is charged with a grandeur it cannot contain.
+
+### Giulio Campi's 1547 fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Jesus to Simeon (Stock Image)
+
+[![Giulio Campi's 1547 fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Jesus to Simeon](September/jpgs/PresentationinTemple_exJreHA5.jpg)](https://stock.adobe.com/in/images/cremona-italy-may-24-2016-the-fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547/113785168 "Giulio Campi's 1547 fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Jesus to Simeon")
+
+### The young Jesus astonishes Temple scholars with divine wisdom in 'Jesus Teaching in the Temple' (Stock Image)
+
+[![The young Jesus astonishes Temple scholars with divine wisdom in 'Jesus Teaching in the Temple'](September/jpgs/BrusselsFindingJesus_gQHQbnDe.jpg)](https://thumbs.dreamstime.com/b/brussels-jesus-age-12-teaching-temple-27777664.jpg "The young Jesus astonishes Temple scholars with divine wisdom in 'Jesus Teaching in the Temple'")
+
+### Alexander Ivanov's 1837-1857 oil painting 'Apparition of the Messiah' depicts John the Baptist revealing Christ to a diverse crowd at the Jordan
+
+[![Alexander Ivanov's 1837-1857 oil painting 'Apparition of the Messiah' depicts John the Baptist revealing Christ to a diverse crowd at the Jordan](September/jpgs/Apparition_Bm8LxpXw.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg/960px-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg "Alexander Ivanov's 1837-1857 oil painting 'Apparition of the Messiah' depicts John the Baptist revealing Christ to a diverse crowd at the Jordan")
