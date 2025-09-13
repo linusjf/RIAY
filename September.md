@@ -1,4 +1,5 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 **Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
@@ -64,7 +65,7 @@
     - [AI-Generated Summary: On the Glorious Mysteries](#ai-generated-summary-on-the-glorious-mysteries)
     - [Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending upon Mary and the apostles in Mannerist style at San Fedele, Milan (Stock Image)](#simone-peterzanos-pentecost-c-1580-oil-on-canvas-depicts-the-holy-spirit-descending-upon-mary-and-the-apostles-in-mannerist-style-at-san-fedele-milan-stock-image)
     - [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's Assumption into heaven, welcomed by Christ (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-marys-assumption-into-heaven-welcomed-by-christ-stock-image)
-    - [Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](#diego-velázquezs-coronation-of-the-virgin-c-1641-1644-an-oil-on-canvas-at-the-prado-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven)
+    - [Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), an oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](#diego-vel%C3%A1zquezs-coronation-of-the-virgin-c-1641-1644-an-oil-on-canvas-at-the-prado-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven)
     - [Holding Mary's Hand](#holding-marys-hand)
   - [September 11, 2025](#september-11-2025)
     - [The Joyful Mysteries - Day 254](#the-joyful-mysteries---day-254)
@@ -78,10 +79,17 @@
     - [Giulio Campi's 1547 fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Jesus to Simeon (Stock Image)](#giulio-campis-1547-fresco-the-presentation-of-jesus-in-the-temple-in-cremona-depicts-mary-and-joseph-presenting-the-infant-jesus-to-simeon-stock-image)
     - [The young Jesus astonishes Temple scholars with divine wisdom in 'Jesus Teaching in the Temple' (Stock Image)](#the-young-jesus-astonishes-temple-scholars-with-divine-wisdom-in-jesus-teaching-in-the-temple-stock-image)
     - [Alexander Ivanov's 1837-1857 oil painting 'Apparition of the Messiah' depicts John the Baptist revealing Christ to a diverse crowd at the Jordan](#alexander-ivanovs-1837-1857-oil-painting-apparition-of-the-messiah-depicts-john-the-baptist-revealing-christ-to-a-diverse-crowd-at-the-jordan)
+  - [September 13, 2025](#september-13-2025)
+    - [The Luminous Mysteries - Day 256](#the-luminous-mysteries---day-256)
+    - [AI-Generated Summary: On the Recitation of Prayer](#ai-generated-summary-on-the-recitation-of-prayer)
+    - [Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle at the wedding feast](#gerard-davids-the-marriage-at-cana-c-1500-oil-on-wood-louvre-depicts-christs-first-miracle-at-the-wedding-feast)
+    - [Lorenzo Lotto's 1525-1530 oil painting 'Christ and the Adulteress' in the Louvre depicts Jesus proclaiming mercy and forgiveness](#lorenzo-lottos-1525-1530-oil-painting-christ-and-the-adulteress-in-the-louvre-depicts-jesus-proclaiming-mercy-and-forgiveness)
+    - ['The Transfiguration' in Vienna's Votive Church depicts Jesus radiant in divine light before his disciples with Moses and Elijah](#the-transfiguration-in-viennas-votive-church-depicts-jesus-radiant-in-divine-light-before-his-disciples-with-moses-and-elijah)
 
 <!---toc end-->
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -359,3 +367,25 @@ We are told of a child, presented in the temple according to the old law, a sign
 ### Alexander Ivanov's 1837-1857 oil painting 'Apparition of the Messiah' depicts John the Baptist revealing Christ to a diverse crowd at the Jordan
 
 [![Alexander Ivanov's 1837-1857 oil painting 'Apparition of the Messiah' depicts John the Baptist revealing Christ to a diverse crowd at the Jordan](September/jpgs/Apparition_Bm8LxpXw.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg/960px-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg "Alexander Ivanov's 1837-1857 oil painting 'Apparition of the Messiah' depicts John the Baptist revealing Christ to a diverse crowd at the Jordan")
+
+## September 13, 2025
+
+### The Luminous Mysteries - Day 256
+
+[![The Luminous Mysteries](/September/jpgs/Day256.jpg)](https://youtu.be/sDzl6XzjRho "The Luminous Mysteries")
+
+### AI-Generated Summary: On the Recitation of Prayer
+
+My dear reader, one finds in this text not a discourse or a tale, but the very substance of devotion itself—the repeated and rhythmic cadence of ancient prayers. It is the echo of a soul at its work, a practice as old as the hills upon which the faith was built. Here are the Luminous Mysteries contemplated: the turning of water into wine at Cana, the proclamation of a coming Kingdom, and the glorious Transfiguration upon the mount. Yet the text does not pause to paint these scenes for us; rather, it is the vehicle for the prayer that such mysteries inspire. It is the earnest repetition of the Hail Mary, the Our Father, and the Gloria Patri—the simple, well-worn tools for shaping the heart. There is a lesson here, that the value is not in novelty of words, but in the faithful return to the old and good paths, much as a man finds comfort in the familiar steps of a well-trodden path through his own garden.
+
+### Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle at the wedding feast
+
+[![Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle at the wedding feast](September/jpgs/MarriageCana_BqeqOFCz.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Gerard_David_-_The_Marriage_at_Cana.jpg/960px-Gerard_David_-_The_Marriage_at_Cana.jpg "Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle at the wedding feast")
+
+### Lorenzo Lotto's 1525-1530 oil painting 'Christ and the Adulteress' in the Louvre depicts Jesus proclaiming mercy and forgiveness
+
+[![Lorenzo Lotto's 1525-1530 oil painting 'Christ and the Adulteress' in the Louvre depicts Jesus proclaiming mercy and forgiveness](September/jpgs/AdulterousWoman_Dm5ajDTv.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Lorenzo_Lotto_-_The_adulterous_woman_-_Louvre.JPG/960px-Lorenzo_Lotto_-_The_adulterous_woman_-_Louvre.JPG "Lorenzo Lotto's 1525-1530 oil painting 'Christ and the Adulteress' in the Louvre depicts Jesus proclaiming mercy and forgiveness")
+
+### 'The Transfiguration' in Vienna's Votive Church depicts Jesus radiant in divine light before his disciples with Moses and Elijah
+
+[!['The Transfiguration' in Vienna's Votive Church depicts Jesus radiant in divine light before his disciples with Moses and Elijah](September/jpgs/Transfiguration_hbd3SUKY.jpg)](https://in.pinterest.com/pin/305822630958390299/ "'The Transfiguration' in Vienna's Votive Church depicts Jesus radiant in divine light before his disciples with Moses and Elijah")
