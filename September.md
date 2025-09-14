@@ -85,6 +85,12 @@
     - [Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle at the wedding feast](#gerard-davids-the-marriage-at-cana-c-1500-oil-on-wood-louvre-depicts-christs-first-miracle-at-the-wedding-feast)
     - [Lorenzo Lotto's 1525-1530 oil painting 'Christ and the Adulteress' in the Louvre depicts Jesus proclaiming mercy and forgiveness](#lorenzo-lottos-1525-1530-oil-painting-christ-and-the-adulteress-in-the-louvre-depicts-jesus-proclaiming-mercy-and-forgiveness)
     - ['The Transfiguration' in Vienna's Votive Church depicts Jesus radiant in divine light before his disciples with Moses and Elijah](#the-transfiguration-in-viennas-votive-church-depicts-jesus-radiant-in-divine-light-before-his-disciples-with-moses-and-elijah)
+  - [September 14, 2025](#september-14-2025)
+    - [The Luminous and Sorrowful Mysteries - Day 257](#the-luminous-and-sorrowful-mysteries---day-257)
+    - [AI-Generated Summary: On a Certain Sequence of Holy Mysteries](#ai-generated-summary-on-a-certain-sequence-of-holy-mysteries)
+    - [Henry Ossawa Tanner's 1900 oil painting 'Christ and the Disciples Before the Last Supper' depicts the spiritual preparation for the Institution of the Eucharist](#henry-ossawa-tanners-1900-oil-painting-christ-and-the-disciples-before-the-last-supper-depicts-the-spiritual-preparation-for-the-institution-of-the-eucharist)
+    - [Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610), oil on canvas in Vicenza Cathedral, depicts Christ's agony while His disciples sleep (Stock Image)](#alessandro-maganzas-the-prayer-of-jesus-in-gethsemane-c-1590-1610-oil-on-canvas-in-vicenza-cathedral-depicts-christs-agony-while-his-disciples-sleep-stock-image)
+    - [Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation, located in La Rochelle Cathedral](#bouguereaus-1880-oil-painting-the-flagellation-of-our-lord-jesus-christ-depicts-christs-brutal-scourging-with-divine-resignation-located-in-la-rochelle-cathedral)
 
 <!---toc end-->
 
@@ -389,3 +395,27 @@ My dear reader, one finds in this text not a discourse or a tale, but the very s
 ### 'The Transfiguration' in Vienna's Votive Church depicts Jesus radiant in divine light before his disciples with Moses and Elijah
 
 [!['The Transfiguration' in Vienna's Votive Church depicts Jesus radiant in divine light before his disciples with Moses and Elijah](September/jpgs/Transfiguration_hbd3SUKY.jpg)](https://in.pinterest.com/pin/305822630958390299/ "'The Transfiguration' in Vienna's Votive Church depicts Jesus radiant in divine light before his disciples with Moses and Elijah")
+
+## September 14, 2025
+
+### The Luminous and Sorrowful Mysteries - Day 257
+
+[![The Luminous and Sorrowful Mysteries](/September/jpgs/Day257.jpg)](https://youtu.be/UmsLY7-QSXs "The Luminous and Sorrowful Mysteries")
+
+### AI-Generated Summary: On a Certain Sequence of Holy Mysteries
+
+We are given a glimpse into a most solemn progression, where the soul moves from the light of a final, glorious gift to the gathering shadows of a coming sorrow. It begins in that upper room, with the fifth Luminous Mystery—the Institution of the Holy Eucharist. This is the great and final sacrament of Light, the gift of His very self, the sustenance for the dark road ahead.
+
+And that road is taken up immediately thereafter, as the meditations turn, as they ever must, to the Sorrowful Mysteries. The journey into shadow commences with the Agony in the Garden, that lonely struggle where all weight of the world was felt in a cup, and proceeds directly to the Scourging at the Pillar, the first brutal yielding of the sacred flesh to the cruelty of fallen men. The text provides no further particulars on artworks or the finer points of meditation, leaving us only with the stark and awful names of these great and terrible truths.
+
+### Henry Ossawa Tanner's 1900 oil painting 'Christ and the Disciples Before the Last Supper' depicts the spiritual preparation for the Institution of the Eucharist
+
+[![Henry Ossawa Tanner's 1900 oil painting 'Christ and the Disciples Before the Last Supper' depicts the spiritual preparation for the Institution of the Eucharist](September/jpgs/christdiscipleshenrytanner_ymsp5C0x.jpg)](https://upload.wikimedia.org/wikipedia/commons/a/ae/Christ_and_the_Disciples_Before_the_Last_Supper_by_Henry_Ossawa_Tanner.jpg "Henry Ossawa Tanner's 1900 oil painting 'Christ and the Disciples Before the Last Supper' depicts the spiritual preparation for the Institution of the Eucharist")
+
+### Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610), oil on canvas in Vicenza Cathedral, depicts Christ's agony while His disciples sleep (Stock Image)
+
+[![Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610), oil on canvas in Vicenza Cathedral, depicts Christ's agony while His disciples sleep](September/jpgs/Gethsemane_smA6IYe0.jpg)](https://www.istockphoto.com/photo/vicenza-the-painting-of-prayer-of-jesus-in-gethsemane-garden-in-the-cathedral-by-gm1922845709-555481794 "Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610), oil on canvas in Vicenza Cathedral, depicts Christ's agony while His disciples sleep")
+
+### Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation, located in La Rochelle Cathedral
+
+[![Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation, located in La Rochelle Cathedral](September/jpgs/flagellationbouguereau_kDDIEJdA.jpg)](https://upload.wikimedia.org/wikipedia/commons/5/56/William-Adolphe_Bouguereau_%281825-1905%29_-_The_Flagellation_of_Our_Lord_Jesus_Christ_%281880%29.jpg "Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation, located in La Rochelle Cathedral")
