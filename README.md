@@ -7123,6 +7123,12 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
     - [Henry Ossawa Tanner's 1900 oil painting 'Christ and the Disciples Before the Last Supper' depicts the spiritual preparation for the Institution of the Eucharist](#henry-ossawa-tanners-1900-oil-painting-christ-and-the-disciples-before-the-last-supper-depicts-the-spiritual-preparation-for-the-institution-of-the-eucharist)
     - [Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610), oil on canvas in Vicenza Cathedral, depicts Christ's agony while His disciples sleep (Stock Image)](#alessandro-maganzas-the-prayer-of-jesus-in-gethsemane-c-1590-1610-oil-on-canvas-in-vicenza-cathedral-depicts-christs-agony-while-his-disciples-sleep-stock-image)
     - [Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation, located in La Rochelle Cathedral](#bouguereaus-1880-oil-painting-the-flagellation-of-our-lord-jesus-christ-depicts-christs-brutal-scourging-with-divine-resignation-located-in-la-rochelle-cathedral)
+  - [September 15, 2025](#september-15-2025)
+    - [The Sorrowful Mysteries - Day 258](#the-sorrowful-mysteries---day-258)
+    - [AI-Generated Summary: The Final Sorrowful Mysteries](#ai-generated-summary-the-final-sorrowful-mysteries)
+    - [Titian's 'Christ Crowned with Thorns' (c 1542–1543), oil on canvas at the Louvre, depicts Roman soldiers pressing the thorn crown onto Christ's head with violent solemnity](#titians-christ-crowned-with-thorns-c-15421543-oil-on-canvas-at-the-louvre-depicts-roman-soldiers-pressing-the-thorn-crown-onto-christs-head-with-violent-solemnity)
+    - [Pieter Bruegel the Elder's 'The Procession to Calvary' (1564, oil on panel) depicts Christ carrying His cross through an indifferent crowd to Golgotha](#pieter-bruegel-the-elders-the-procession-to-calvary-1564-oil-on-panel-depicts-christ-carrying-his-cross-through-an-indifferent-crowd-to-golgotha)
+    - [James Tissot's 1886-1894 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective](#james-tissots-1886-1894-what-our-lord-saw-from-the-cross-depicts-the-crucifixion-from-christs-unique-perspective)
 
 <!---toc end-->
 
@@ -7451,6 +7457,28 @@ And that road is taken up immediately thereafter, as the meditations turn, as th
 ##### Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation, located in La Rochelle Cathedral
 
 [![Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation, located in La Rochelle Cathedral](September/jpgs/flagellationbouguereau_kDDIEJdA.jpg)](https://upload.wikimedia.org/wikipedia/commons/5/56/William-Adolphe_Bouguereau_%281825-1905%29_-_The_Flagellation_of_Our_Lord_Jesus_Christ_%281880%29.jpg "Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation, located in La Rochelle Cathedral")
+
+#### September 15, 2025
+
+##### The Sorrowful Mysteries - Day 258
+
+[![The Sorrowful Mysteries](September/jpgs/Day258.jpg)](https://youtu.be/LfuH40X27FE "The Sorrowful Mysteries")
+
+##### AI-Generated Summary: The Final Sorrowful Mysteries
+
+We are brought to consider the final acts of a great suffering, where the King of all creation is made a mockery of a king, crowned not with gold but with thorns. Then follows the long and weary road, the bearing of the instrument of one's own death up the hill of execution. And at the last, the final mystery: the crucifixion itself, the ultimate price paid at the place of the skull. This is the heart of the matter, the sorrow that precedes the joy, the death that must come before the resurrection.
+
+##### Titian's 'Christ Crowned with Thorns' (c 1542–1543), oil on canvas at the Louvre, depicts Roman soldiers pressing the thorn crown onto Christ's head with violent solemnity
+
+[![Titian's 'Christ Crowned with Thorns' (c 1542–1543), oil on canvas at the Louvre, depicts Roman soldiers pressing the thorn crown onto Christ's head with violent solemnity](September/jpgs/CrowningwithThorns_f91CPig2.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Titian_-_Crowning_with_Thorns_-_WGA22806.jpg/960px-Titian_-_Crowning_with_Thorns_-_WGA22806.jpg "Titian's 'Christ Crowned with Thorns' (c 1542–1543), oil on canvas at the Louvre, depicts Roman soldiers pressing the thorn crown onto Christ's head with violent solemnity")
+
+##### Pieter Bruegel the Elder's 'The Procession to Calvary' (1564, oil on panel) depicts Christ carrying His cross through an indifferent crowd to Golgotha
+
+[![Pieter Bruegel the Elder's 'The Procession to Calvary' (1564, oil on panel) depicts Christ carrying His cross through an indifferent crowd to Golgotha](September/jpgs/Calvary_CXIxazHT.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pieter_Bruegel_d._%C3%84._007.jpg/960px-Pieter_Bruegel_d._%C3%84._007.jpg "Pieter Bruegel the Elder's 'The Procession to Calvary' (1564, oil on panel) depicts Christ carrying His cross through an indifferent crowd to Golgotha")
+
+##### James Tissot's 1886-1894 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective
+
+[![James Tissot's 1886-1894 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective](September/jpgs/viewfromcross_6RlNI5uw.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg/960px-Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg "James Tissot's 1886-1894 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective")
 
 ## October
 
