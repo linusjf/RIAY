@@ -97,6 +97,12 @@
     - [Titian's 'Christ Crowned with Thorns' (c 1542–1543), oil on canvas at the Louvre, depicts Roman soldiers pressing the thorn crown onto Christ's head with violent solemnity](#titians-christ-crowned-with-thorns-c-15421543-oil-on-canvas-at-the-louvre-depicts-roman-soldiers-pressing-the-thorn-crown-onto-christs-head-with-violent-solemnity)
     - [Pieter Bruegel the Elder's 'The Procession to Calvary' (1564, oil on panel) depicts Christ carrying His cross through an indifferent crowd to Golgotha](#pieter-bruegel-the-elders-the-procession-to-calvary-1564-oil-on-panel-depicts-christ-carrying-his-cross-through-an-indifferent-crowd-to-golgotha)
     - [James Tissot's 1886-1894 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective](#james-tissots-1886-1894-what-our-lord-saw-from-the-cross-depicts-the-crucifixion-from-christs-unique-perspective)
+  - [September 16, 2025](#september-16-2025)
+    - [The Glorious Mysteries - Day 259](#the-glorious-mysteries---day-259)
+    - [AI-Generated Summary: On the Recitation of the Glorious Mysteries](#ai-generated-summary-on-the-recitation-of-the-glorious-mysteries)
+    - [Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ's glorious emergence from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-resurrection-1593-oil-on-canvas-louvre-depicts-christs-glorious-emergence-from-the-tomb-as-roman-soldiers-recoil-in-awe)
+    - [Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending bodily into heaven as the apostles watch in wonder (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-depicts-christ-ascending-bodily-into-heaven-as-the-apostles-watch-in-wonder-stock-image)
+    - [Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending as tongues of fire upon Mary and the apostles in Mannerist style, located in Milan's Church of San Fedele (Stock Image)](#simone-peterzanos-pentecost-c-1580-oil-on-canvas-depicts-the-holy-spirit-descending-as-tongues-of-fire-upon-mary-and-the-apostles-in-mannerist-style-located-in-milans-church-of-san-fedele-stock-image)
 
 <!---toc end-->
 
@@ -447,3 +453,25 @@ We are brought to consider the final acts of a great suffering, where the King o
 ### James Tissot's 1886-1894 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective
 
 [![James Tissot's 1886-1894 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective](September/jpgs/viewfromcross_6RlNI5uw.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg/960px-Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg "James Tissot's 1886-1894 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective")
+
+## September 16, 2025
+
+### The Glorious Mysteries - Day 259
+
+[![The Glorious Mysteries](/September/jpgs/Day259.jpg)](https://youtu.be/dziAhO8pPww "The Glorious Mysteries")
+
+### AI-Generated Summary: On the Recitation of the Glorious Mysteries
+
+We find here not a discourse to be parsed, but a path to be walked; the well-worn steps of the Glorious Mysteries. The soul is not invited to a lecture on the Resurrection, the Ascension, or the descent of the Spirit at Pentecost, but is rather taken by the hand and led through them. The repetition of the ancient prayers—the Hail Mary, the Our Father, the Glory Be—is the very manner of the walking. This is not the chatter of men inventing new things to say, but the humble and joyful work of participating in a reality far greater than themselves. The words themselves, though they may appear scant to the critic, are like familiar stones in a path up a holy mountain; their value is not in their novelty but in their placement, leading the traveller ever upward toward the light.
+
+### Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ's glorious emergence from the tomb as Roman soldiers recoil in awe
+
+[![Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ's glorious emergence from the tomb as Roman soldiers recoil in awe](September/jpgs/Resurrection_gXyNcPMD.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg/960px-Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg "Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ's glorious emergence from the tomb as Roman soldiers recoil in awe")
+
+### Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending bodily into heaven as the apostles watch in wonder (Stock Image)
+
+[![Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending bodily into heaven as the apostles watch in wonder](September/jpgs/ascensionofthelord_i6Qnj0pH.jpg)](https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending bodily into heaven as the apostles watch in wonder")
+
+### Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending as tongues of fire upon Mary and the apostles in Mannerist style, located in Milan's Church of San Fedele (Stock Image)
+
+[![Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending as tongues of fire upon Mary and the apostles in Mannerist style, located in Milan's Church of San Fedele](September/jpgs/pentecostsimonepeterzano_oo7S7Gza.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.12926920.7055475/2959742.jpg "Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending as tongues of fire upon Mary and the apostles in Mannerist style, located in Milan's Church of San Fedele")
