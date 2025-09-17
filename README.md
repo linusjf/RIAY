@@ -7135,6 +7135,12 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
     - [Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ's glorious emergence from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-resurrection-1593-oil-on-canvas-louvre-depicts-christs-glorious-emergence-from-the-tomb-as-roman-soldiers-recoil-in-awe)
     - [Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending bodily into heaven as the apostles watch in wonder (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-depicts-christ-ascending-bodily-into-heaven-as-the-apostles-watch-in-wonder-stock-image)
     - [Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending as tongues of fire upon Mary and the apostles in Mannerist style, located in Milan's Church of San Fedele (Stock Image)](#simone-peterzanos-pentecost-c-1580-oil-on-canvas-depicts-the-holy-spirit-descending-as-tongues-of-fire-upon-mary-and-the-apostles-in-mannerist-style-located-in-milans-church-of-san-fedele-stock-image)
+  - [September 17, 2025](#september-17-2025)
+    - [The Glorious and Joyful Mysteries - Day 260](#the-glorious-and-joyful-mysteries---day-260)
+    - [AI-Generated Summary: On Certain Mysteries](#ai-generated-summary-on-certain-mysteries)
+    - [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's glorious assumption into heaven, welcomed by Christ (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-marys-glorious-assumption-into-heaven-welcomed-by-christ-stock-image)
+    - [Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](#diego-vel%C3%A1zquezs-coronation-of-the-virgin-c-1641-1644-oil-on-canvas-at-the-prado-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven)
+    - [Fra Angelico's 'The Annunciation' (mid-1430s, tempera on panel, Prado) depicts Gabriel's announcement to Mary within Renaissance architecture](#fra-angelicos-the-annunciation-mid-1430s-tempera-on-panel-prado-depicts-gabriels-announcement-to-mary-within-renaissance-architecture)
 
 <!---toc end-->
 
@@ -7507,6 +7513,28 @@ We find here not a discourse to be parsed, but a path to be walked; the well-wor
 ##### Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending as tongues of fire upon Mary and the apostles in Mannerist style, located in Milan's Church of San Fedele (Stock Image)
 
 [![Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending as tongues of fire upon Mary and the apostles in Mannerist style, located in Milan's Church of San Fedele](September/jpgs/pentecostsimonepeterzano_oo7S7Gza.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.12926920.7055475/2959742.jpg "Simone Peterzano's 'Pentecost' (c 1580, oil on canvas) depicts the Holy Spirit descending as tongues of fire upon Mary and the apostles in Mannerist style, located in Milan's Church of San Fedele")
+
+#### September 17, 2025
+
+##### The Glorious and Joyful Mysteries - Day 260
+
+[![The Glorious and Joyful Mysteries](September/jpgs/Day260.jpg)](https://youtu.be/-jSLAnPxw98 "The Glorious and Joyful Mysteries")
+
+##### AI-Generated Summary: On Certain Mysteries
+
+We are told of a progression of wonders, beginning with the fourth, where the Blessed Mother, having finished her course, was assumed, body and soul, into the glory that awaits all who are in her Son. This is followed by the fifth, her Coronation, where she is rightly honoured as Queen of Heaven and Earth by the whole court of the redeemed. And from this glory, the telling turns back to the first beginning: the Annunciation. Here, the great silence of heaven was broken as the messenger was sent to the Virgin, and the world, holding its breath, received its answer.
+
+##### A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's glorious assumption into heaven, welcomed by Christ (Stock Image)
+
+[![A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's glorious assumption into heaven, welcomed by Christ](September/jpgs/cathedralburgos_QRt8sDyc.jpg)](https://c8.alamy.com/comp/PR002K/stained-glass-window-depicting-the-assumption-of-mary-in-the-cathedral-of-burgos-castille-spain-PR002K.jpg "A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's glorious assumption into heaven, welcomed by Christ")
+
+##### Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven
+
+[![Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](September/jpgs/Coronation_oqV3X8nw.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg/960px-Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg "Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven")
+
+##### Fra Angelico's 'The Annunciation' (mid-1430s, tempera on panel, Prado) depicts Gabriel's announcement to Mary within Renaissance architecture
+
+[![Fra Angelico's 'The Annunciation' (mid-1430s, tempera on panel, Prado) depicts Gabriel's announcement to Mary within Renaissance architecture](September/jpgs/Annunciation_8fHmemvh.jpg)](https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg "Fra Angelico's 'The Annunciation' (mid-1430s, tempera on panel, Prado) depicts Gabriel's announcement to Mary within Renaissance architecture")
 
 ## October
 
