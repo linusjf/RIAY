@@ -19,6 +19,8 @@ from typing import Dict, Optional, Tuple, Union, List
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from openai import OpenAI
+import httpx
+from tenacity import retry, wait_exponential, stop_after_attempt
 from simtools import MatchMode, compare_terms, compute_match_dicts
 from loggerutil import LoggerFactory
 
@@ -45,7 +47,9 @@ class ArtworkVerifier:
         if not self.openai_api_key:
             logger.error(f"{ConfigConstants.OPENAI_API_KEY} environment variable not set")
             raise ValueError(f"{ConfigConstants.OPENAI_API_KEY} environment variable not set")
-        self.client: OpenAI = OpenAI(api_key=self.openai_api_key)
+        timeout = httpx.Timeout(60.0, connect=10.0)
+        http_client=httpx.Client(timeout=timeout)
+        self.client: OpenAI = OpenAI(http_client=http_client,api_key=self.openai_api_key)
 
     @staticmethod
     def image_to_bytes(image_path: str) -> bytes:
@@ -121,9 +125,15 @@ class ArtworkVerifier:
         if subject:
             prompt = prompt.replace("{}", subject)
 
-        response = self.client.responses.create(
+        # Add retry logic with exponential backoff
+        @retry(wait=wait_exponential(multiplier=1, min=2, max=10), stop=stop_after_attempt(3))
+        def safe_chat_response(prompt: str):
+            return self.client.responses.create(
             model="gpt-4o",
-            input=[{"role": "user", "content": [{"type": "input_text", "text": prompt},{"type": "input_image","image_url": f"data:image/jpeg;base64,{base64_image}"},],}])
+            input=[{"role": "user", "content": [{"type": "input_text", "text": prompt},{"type": "input_image","image_url": f"data:image/jpeg;base64,{base64_image}"},],}]
+            )
+
+        response = safe_chat_response(prompt)
 
         image_description: str = response.output_text
         logger.info(f"🔍 Image Description: {image_description}")
