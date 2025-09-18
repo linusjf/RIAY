@@ -18,6 +18,5 @@
 1. Fix for wikimedia site down. Right now, hangs.
 1. Migrate long, complex bash scripts to python.
    1.1 Migrate embedarttoday to python.
-1. Add timeout to openai python calls.
 
 ## Exploratory task
