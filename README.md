@@ -7141,6 +7141,12 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
     - [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting Mary's glorious assumption into heaven, welcomed by Christ (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-marys-glorious-assumption-into-heaven-welcomed-by-christ-stock-image)
     - [Diego Velázquez's 'Coronation of the Virgin' (c 1641-1644), oil on canvas at the Prado, depicts the Holy Trinity crowning Mary as Queen of Heaven](#diego-vel%C3%A1zquezs-coronation-of-the-virgin-c-1641-1644-oil-on-canvas-at-the-prado-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven)
     - [Fra Angelico's 'The Annunciation' (mid-1430s, tempera on panel, Prado) depicts Gabriel's announcement to Mary within Renaissance architecture](#fra-angelicos-the-annunciation-mid-1430s-tempera-on-panel-prado-depicts-gabriels-announcement-to-mary-within-renaissance-architecture)
+  - [September 18, 2025](#september-18-2025)
+    - [The Joyful Mysteries - Day 261](#the-joyful-mysteries---day-261)
+    - [AI-Generated Summary: The Substance of the Prayers](#ai-generated-summary-the-substance-of-the-prayers)
+    - ['The Visitation' depicts Mary and Elizabeth's joyful meeting, both miraculously pregnant with Jesus and John the Baptist](#the-visitation-depicts-mary-and-elizabeths-joyful-meeting-both-miraculously-pregnant-with-jesus-and-john-the-baptist)
+    - [Giovanni Antonio Pellegrini's 18th-century Rococo 'Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)](#giovanni-antonio-pellegrinis-18th-century-rococo-nativity-in-vienna-depicts-the-newborn-christ-adored-by-mary-joseph-and-angels-stock-image)
+    - [A Baroque oil painting depicting the Presentation of the infant Jesus to Simeon in the Temple, created by an unknown 18th century artist in Prague's Church of St Gall](#a-baroque-oil-painting-depicting-the-presentation-of-the-infant-jesus-to-simeon-in-the-temple-created-by-an-unknown-18th-century-artist-in-pragues-church-of-st-gall)
 
 <!---toc end-->
 
@@ -7535,6 +7541,28 @@ We are told of a progression of wonders, beginning with the fourth, where the Bl
 ##### Fra Angelico's 'The Annunciation' (mid-1430s, tempera on panel, Prado) depicts Gabriel's announcement to Mary within Renaissance architecture
 
 [![Fra Angelico's 'The Annunciation' (mid-1430s, tempera on panel, Prado) depicts Gabriel's announcement to Mary within Renaissance architecture](September/jpgs/Annunciation_8fHmemvh.jpg)](https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg "Fra Angelico's 'The Annunciation' (mid-1430s, tempera on panel, Prado) depicts Gabriel's announcement to Mary within Renaissance architecture")
+
+#### September 18, 2025
+
+##### The Joyful Mysteries - Day 261
+
+[![The Joyful Mysteries](September/jpgs/Day261.jpg)](https://youtu.be/ZmfiOWgEOHo "The Joyful Mysteries")
+
+##### AI-Generated Summary: The Substance of the Prayers
+
+We find ourselves not with a narrative to be told, but with the very substance of devotion itself: the familiar and well-worn paths of the Hail Mary, the Our Father, and the Glory Be, repeated not as empty recitation but as the beating heart of a meditation on the Joyful Mysteries. The text speaks of the Visitation, and looks ahead to the Nativity and the Presentation in the Temple, though it does not describe them; it is enough that they are named, for these are the stations of a well-known journey. The purpose here is not to inform the intellect with new details, but to form the soul through faithful repetition, turning the mind and the heart toward those great truths which are, for the faithful, as real and solid as the earth beneath their feet. It is the act of prayer itself that is the matter, and in its rhythm one may perceive the deeper reality it seeks to honour.
+
+##### 'The Visitation' depicts Mary and Elizabeth's joyful meeting, both miraculously pregnant with Jesus and John the Baptist
+
+[!['The Visitation' depicts Mary and Elizabeth's joyful meeting, both miraculously pregnant with Jesus and John the Baptist](September/jpgs/marygreetseliz_5ygOx6sS.jpg)](https://www.crossroadsinitiative.com/wp-content/uploads/2016/01/mary-greets-eliz-painting.jpg "'The Visitation' depicts Mary and Elizabeth's joyful meeting, both miraculously pregnant with Jesus and John the Baptist")
+
+##### Giovanni Antonio Pellegrini's 18th-century Rococo 'Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)
+
+[![Giovanni Antonio Pellegrini's 18th-century Rococo 'Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels](September/jpgs/Nativity_aslRkiRq.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Giovanni Antonio Pellegrini's 18th-century Rococo 'Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels")
+
+##### A Baroque oil painting depicting the Presentation of the infant Jesus to Simeon in the Temple, created by an unknown 18th century artist in Prague's Church of St Gall
+
+[![A Baroque oil painting depicting the Presentation of the infant Jesus to Simeon in the Temple, created by an unknown 18th century artist in Prague's Church of St Gall](September/jpgs/PraguePresentation_N0bM6sts.jpg)](https://as2.ftcdn.net/jpg/02/34/87/33/1000_F_234873301_FgABd7WONbY9DLBAR8ugRz4iDElboWDu.jpg "A Baroque oil painting depicting the Presentation of the infant Jesus to Simeon in the Temple, created by an unknown 18th century artist in Prague's Church of St Gall")
 
 ## October
 
