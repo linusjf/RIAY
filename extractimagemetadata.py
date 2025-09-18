@@ -77,7 +77,7 @@ class ImageMetadataExtractor:
         self.text_llm_base_url = self.config.get(ConfigConstants.TEXT_LLM_BASE_URL, "")
         self.text_llm_model = self.config.get(ConfigConstants.TEXT_LLM_MODEL, "")
 
-        timeout = httpx.Timeout(30.0, connect=10.0)
+        timeout = httpx.Timeout(150, connect=30.0)
         http_client=httpx.Client(timeout=timeout)
         # Configure OpenAI client
         self.client = openai.OpenAI(http_client=http_client,
