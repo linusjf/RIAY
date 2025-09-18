@@ -24,6 +24,8 @@ from threading import Thread
 from typing import Optional
 from configenv import ConfigEnv
 import openai
+import httpx
+from tenacity import retry, wait_exponential, stop_after_attempt
 from loggerutil import LoggerFactory
 from configconstants import ConfigConstants
 from dateutils import MONTHS, is_leap_year, get_month_and_day, validate_day_range
@@ -75,8 +77,10 @@ class ImageMetadataExtractor:
         self.text_llm_base_url = self.config.get(ConfigConstants.TEXT_LLM_BASE_URL, "")
         self.text_llm_model = self.config.get(ConfigConstants.TEXT_LLM_MODEL, "")
 
+        timeout = httpx.Timeout(30.0, connect=10.0)
+        http_client=httpx.Client(timeout=timeout)
         # Configure OpenAI client
-        self.client = openai.OpenAI(
+        self.client = openai.OpenAI(http_client=http_client,
             api_key=self.text_llm_api_key,
             base_url=self.text_llm_base_url
         )
@@ -104,6 +108,16 @@ class ImageMetadataExtractor:
             spinner.start()
             start_time = time.time()
 
+            # Add retry logic with exponential backoff
+            @retry(wait=wait_exponential(multiplier=1, min=2, max=10), stop=stop_after_attempt(3))
+            def safe_chat_completion(prompt: str):
+                return self.client.chat.completions.create(
+                model=self.text_llm_model,
+                messages=[
+                        {"role": "system", "content": self.system_prompt},
+                        {"role": "user", "content": prompt}
+                ])
+
             augmented_data = []
 
             for i in range(0, len(metadata), self.batch_size):
@@ -119,13 +133,7 @@ class ImageMetadataExtractor:
                 prompt = self.augment_meta_data_prompt
                 prompt = prompt.replace("{artworks_array}", json.dumps(batch))
                 self.logger.debug(f"prompt: {prompt}")
-                response = self.client.chat.completions.create(
-                    model=self.text_llm_model,
-                    messages=[
-                        {"role": "system", "content": self.system_prompt},
-                        {"role": "user", "content": prompt}
-                    ],
-                )
+                response = safe_chat_completion(prompt)
 
                 batch_time = time.time() - batch_start_time
                 self.logger.debug(f"Raw LLM response for batch {batch_num}:\n{response}")
