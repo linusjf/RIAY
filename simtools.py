@@ -16,6 +16,8 @@ import numpy as np
 from enum import Enum, auto
 from fuzzywuzzy import fuzz
 from openai import OpenAI
+import httpx
+from tenacity import retry, wait_exponential, stop_after_attempt
 from configenv import ConfigEnv
 from configconstants import ConfigConstants
 from loggerutil import LoggerFactory
@@ -73,7 +75,8 @@ if not VECTOR_EMBEDDINGS_MODEL:
     logger.error(ERROR_MESSAGES["missing_model"])
     raise ValueError(ERROR_MESSAGES["missing_model"])
 
-embeddings_client: OpenAI = OpenAI(
+timeout = httpx.Timeout(30.0, connect=10.0)
+embeddings_client: OpenAI = OpenAI(http_client=httpx.Client(timeout=timeout),
     api_key=VECTOR_EMBEDDINGS_MODEL_API_KEY,
     base_url=VECTOR_EMBEDDINGS_BASE_URL,
 )
@@ -206,12 +209,16 @@ def compute_match_dicts(
     return (matched, mismatched)
 
 def get_embedding(text: str) -> NDArray[np.float32]:
-    """Get text embedding using embeddings client."""
-    embeddings = embeddings_client.embeddings.create(
-        model=str(VECTOR_EMBEDDINGS_MODEL),
-        input=text,
-        encoding_format="float"
+    # Add retry logic with exponential backoff
+    @retry(wait=wait_exponential(multiplier=1, min=2, max=10), stop=stop_after_attempt(3))
+    def safe_embedding(text: str):
+        return embeddings_client.embeddings.create(
+            model=str(VECTOR_EMBEDDINGS_MODEL),
+            input=text,
+            encoding_format="float"
     )
+    """Get text embedding using embeddings client."""
+    embeddings = safe_embedding(text)
     return np.array(embeddings.data[0].embedding, dtype=np.float32)
 
 def cosine_similarity(vec1: NDArray[np.float32], vec2: NDArray[np.float32]) -> float:
