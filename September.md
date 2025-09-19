@@ -115,6 +115,12 @@
     - ['The Visitation' depicts Mary and Elizabeth's joyful meeting, both miraculously pregnant with Jesus and John the Baptist](#the-visitation-depicts-mary-and-elizabeths-joyful-meeting-both-miraculously-pregnant-with-jesus-and-john-the-baptist)
     - [Giovanni Antonio Pellegrini's 18th-century Rococo 'Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)](#giovanni-antonio-pellegrinis-18th-century-rococo-nativity-in-vienna-depicts-the-newborn-christ-adored-by-mary-joseph-and-angels-stock-image)
     - [A Baroque oil painting depicting the Presentation of the infant Jesus to Simeon in the Temple, created by an unknown 18th century artist in Prague's Church of St Gall](#a-baroque-oil-painting-depicting-the-presentation-of-the-infant-jesus-to-simeon-in-the-temple-created-by-an-unknown-18th-century-artist-in-pragues-church-of-st-gall)
+  - [September 19, 2025](#september-19-2025)
+    - [The Joyful and Luminous Mysteries - Day 262](#the-joyful-and-luminous-mysteries---day-262)
+    - [AI-Generated Summary: On Certain Rosary Mysteries](#ai-generated-summary-on-certain-rosary-mysteries)
+    - [A young Jesus astonishes Temple scholars with divine wisdom in this depiction of the fifth Joyful Mystery (Stock Image)](#a-young-jesus-astonishes-temple-scholars-with-divine-wisdom-in-this-depiction-of-the-fifth-joyful-mystery-stock-image)
+    - [Alexander Ivanov's 'Apparition of the Messiah' (1837-1857) depicts John the Baptist revealing Christ's approach at the Jordan River, capturing the first Luminous Mystery](#alexander-ivanovs-apparition-of-the-messiah-1837-1857-depicts-john-the-baptist-revealing-christs-approach-at-the-jordan-river-capturing-the-first-luminous-mystery)
+    - [Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle of turning water into wine](#gerard-davids-the-marriage-at-cana-c-1500-oil-on-wood-louvre-depicts-christs-first-miracle-of-turning-water-into-wine)
 
 <!---toc end-->
 
@@ -531,3 +537,29 @@ We find ourselves not with a narrative to be told, but with the very substance o
 ### A Baroque oil painting depicting the Presentation of the infant Jesus to Simeon in the Temple, created by an unknown 18th century artist in Prague's Church of St Gall
 
 [![A Baroque oil painting depicting the Presentation of the infant Jesus to Simeon in the Temple, created by an unknown 18th century artist in Prague's Church of St Gall](September/jpgs/PraguePresentation_N0bM6sts.jpg)](https://as2.ftcdn.net/jpg/02/34/87/33/1000_F_234873301_FgABd7WONbY9DLBAR8ugRz4iDElboWDu.jpg "A Baroque oil painting depicting the Presentation of the infant Jesus to Simeon in the Temple, created by an unknown 18th century artist in Prague's Church of St Gall")
+
+## September 19, 2025
+
+### The Joyful and Luminous Mysteries - Day 262
+
+[![The Joyful and Luminous Mysteries](/September/jpgs/Day262.jpg)](https://youtu.be/w1pJZnxDxPs "The Joyful and Luminous Mysteries")
+
+### AI-Generated Summary: On Certain Rosary Mysteries
+
+We are told of a boy, not yet a man, who was found in His Father’s house, speaking with the teachers and answering their questions. This is the fifth Joyful Mystery, the Finding in the Temple, which speaks to a truth we all, in our quieter moments, know: that the soul finds its true home not where it is coddled, but where it is challenged and where it may seek the source of all wisdom.
+
+Then comes the light, breaking upon the world in a new way. The first Luminous Mystery shows us the Man at the river Jordan, baptized by His cousin, and the heavens themselves torn open to declare a beloved Son. It is the beginning of a public work, a quiet inauguration that thunders through the ages.
+
+The second mystery of light takes us to a wedding feast in a small town, where the wine—that simple, gladdening drink of fellowship—runs short. At a mother’s gentle plea, water is turned to wine, not merely to save a family’s honour, but as a first sign; a quiet, joyful revelation of the glory that has come to dwell among us, turning the ordinary into the extraordinary.
+
+### A young Jesus astonishes Temple scholars with divine wisdom in this depiction of the fifth Joyful Mystery (Stock Image)
+
+[![A young Jesus astonishes Temple scholars with divine wisdom in this depiction of the fifth Joyful Mystery](September/jpgs/BrusselsFindingJesus_sfZCi2EP.jpg)](https://thumbs.dreamstime.com/b/brussels-jesus-age-12-teaching-temple-27777664.jpg "A young Jesus astonishes Temple scholars with divine wisdom in this depiction of the fifth Joyful Mystery")
+
+### Alexander Ivanov's 'Apparition of the Messiah' (1837-1857) depicts John the Baptist revealing Christ's approach at the Jordan River, capturing the first Luminous Mystery
+
+[![Alexander Ivanov's 'Apparition of the Messiah' (1837-1857) depicts John the Baptist revealing Christ's approach at the Jordan River, capturing the first Luminous Mystery](September/jpgs/Apparition_eYKNlKEy.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg/960px-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2_-_%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B0_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D1%83_%28%D0%AF%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9C%D0%B5%D1%81%D1%81%D0%B8%D0%B8%29_-_Google_Art_Project.jpg "Alexander Ivanov's 'Apparition of the Messiah' (1837-1857) depicts John the Baptist revealing Christ's approach at the Jordan River, capturing the first Luminous Mystery")
+
+### Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle of turning water into wine
+
+[![Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle of turning water into wine](September/jpgs/MarriageCana_vv2ubBqJ.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Gerard_David_-_The_Marriage_at_Cana.jpg/960px-Gerard_David_-_The_Marriage_at_Cana.jpg "Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle of turning water into wine")
