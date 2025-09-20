@@ -7153,6 +7153,12 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
     - [A young Jesus astonishes Temple scholars with divine wisdom in this depiction of the fifth Joyful Mystery (Stock Image)](#a-young-jesus-astonishes-temple-scholars-with-divine-wisdom-in-this-depiction-of-the-fifth-joyful-mystery-stock-image)
     - [Alexander Ivanov's 'Apparition of the Messiah' (1837-1857) depicts John the Baptist revealing Christ's approach at the Jordan River, capturing the first Luminous Mystery](#alexander-ivanovs-apparition-of-the-messiah-1837-1857-depicts-john-the-baptist-revealing-christs-approach-at-the-jordan-river-capturing-the-first-luminous-mystery)
     - [Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle of turning water into wine](#gerard-davids-the-marriage-at-cana-c-1500-oil-on-wood-louvre-depicts-christs-first-miracle-of-turning-water-into-wine)
+  - [September 20, 2025](#september-20-2025)
+    - [The Luminous Mysteries - Day 263](#the-luminous-mysteries---day-263)
+    - [AI-Generated Summary: On the Concluding Mysteries](#ai-generated-summary-on-the-concluding-mysteries)
+    - [James Tissot's 1894 gouache 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing (Stock Image)](#james-tissots-1894-gouache-healing-of-the-lepers-at-capernaum-depicts-christ-proclaiming-gods-kingdom-through-miraculous-healing-stock-image)
+    - [The Transfiguration' in Vienna's Votive Church depicts Christ radiant in divine light before His disciples, Moses, and Elijah](#the-transfiguration-in-viennas-votive-church-depicts-christ-radiant-in-divine-light-before-his-disciples-moses-and-elijah)
+    - [Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist](#tanners-christ-and-the-disciples-before-the-last-supper-c-1900-oil-on-canvas-depicts-christs-spiritual-preparation-before-instituting-the-eucharist)
 
 <!---toc end-->
 
@@ -7595,6 +7601,32 @@ The second mystery of light takes us to a wedding feast in a small town, where t
 ##### Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle of turning water into wine
 
 [![Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle of turning water into wine](September/jpgs/MarriageCana_vv2ubBqJ.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Gerard_David_-_The_Marriage_at_Cana.jpg/960px-Gerard_David_-_The_Marriage_at_Cana.jpg "Gerard David's 'The Marriage at Cana' (c 1500, oil on wood, Louvre) depicts Christ's first miracle of turning water into wine")
+
+#### September 20, 2025
+
+##### The Luminous Mysteries - Day 263
+
+[![The Luminous Mysteries](September/jpgs/Day263.jpg)](https://youtu.be/AsOzNOctW1Q "The Luminous Mysteries")
+
+##### AI-Generated Summary: On the Concluding Mysteries
+
+We are invited to consider the final three rays of light that proceed from the life of Our Lord, those mysteries which illuminate the path from proclamation to transfiguration, and thence to the most sacred of gifts. The third of these luminous mysteries calls to mind the Proclamation of the Kingdom, wherein the Master began His great work, bidding all men to a turning of the heart, a metanoia, that they might be ready to receive a kingship not of this world.
+
+Then follows that great and terrible wonder, the fourth mystery: the Transfiguration. Here, upon the high place, the veil of His mortal frame was drawn back for a moment, and the glory that was always within shone forth before His chosen three, a foretaste of the glory that is to be revealed in us.
+
+And so we come to the fifth and final light, the very source and summit: the Institution of the Eucharist. In the upper room, on the eve of His passion, He performed the ultimate alchemy, making of common bread His very Body, and of common wine His very Blood, a perpetual testament and sustenance for His children until the end of days.
+
+##### James Tissot's 1894 gouache 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing (Stock Image)
+
+[![James Tissot's 1894 gouache 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing](September/jpgs/healingofthelepers_cz2a0iwC.jpg)](https://www.alamy.com/healing-of-the-lepers-at-capernaum-1894-by-james-tissot-image557924107.html "James Tissot's 1894 gouache 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing")
+
+##### The Transfiguration' in Vienna's Votive Church depicts Christ radiant in divine light before His disciples, Moses, and Elijah
+
+[![The Transfiguration' in Vienna's Votive Church depicts Christ radiant in divine light before His disciples, Moses, and Elijah](September/jpgs/Transfiguration_kggbh6o0.jpg)](https://in.pinterest.com/pin/305822630958390299/ "The Transfiguration' in Vienna's Votive Church depicts Christ radiant in divine light before His disciples, Moses, and Elijah")
+
+##### Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist
+
+[![Henry Ossawa Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist](September/jpgs/christdiscipleshenrytanner_QngsUdrC.jpg)](https://upload.wikimedia.org/wikipedia/commons/a/ae/Christ_and_the_Disciples_Before_the_Last_Supper_by_Henry_Ossawa_Tanner.jpg "Henry Ossawa Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist")
 
 ## October
 
