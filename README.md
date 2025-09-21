@@ -7159,6 +7159,12 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
     - [James Tissot's 1894 gouache 'Healing of the Lepers at Capernaum' depicts Christ proclaiming God's kingdom through miraculous healing (Stock Image)](#james-tissots-1894-gouache-healing-of-the-lepers-at-capernaum-depicts-christ-proclaiming-gods-kingdom-through-miraculous-healing-stock-image)
     - [The Transfiguration' in Vienna's Votive Church depicts Christ radiant in divine light before His disciples, Moses, and Elijah](#the-transfiguration-in-viennas-votive-church-depicts-christ-radiant-in-divine-light-before-his-disciples-moses-and-elijah)
     - [Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist](#tanners-christ-and-the-disciples-before-the-last-supper-c-1900-oil-on-canvas-depicts-christs-spiritual-preparation-before-instituting-the-eucharist)
+  - [September 21, 2025](#september-21-2025)
+    - [The Sorrowful Mysteries - Day 264](#the-sorrowful-mysteries---day-264)
+    - [AI-Generated Summary: The Sorrowful Mysteries](#ai-generated-summary-the-sorrowful-mysteries)
+    - [Alessandro Maganza's c 1590-1610 'The Prayer of Jesus in Gethsemane' depicts Christ's spiritual agony as His disciples sleep nearby (Stock Image)](#alessandro-maganzas-c-1590-1610-the-prayer-of-jesus-in-gethsemane-depicts-christs-spiritual-agony-as-his-disciples-sleep-nearby-stock-image)
+    - [Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation](#bouguereaus-1880-oil-painting-the-flagellation-of-our-lord-jesus-christ-depicts-christs-brutal-scourging-with-divine-resignation)
+    - [Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers violently pressing the thorn crown onto Christ's head as he endures with serene dignity](#titians-christ-crowned-with-thorns-c-15421543-depicts-roman-soldiers-violently-pressing-the-thorn-crown-onto-christs-head-as-he-endures-with-serene-dignity)
 
 <!---toc end-->
 
@@ -7627,6 +7633,30 @@ And so we come to the fifth and final light, the very source and summit: the Ins
 ##### Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist
 
 [![Henry Ossawa Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist](September/jpgs/christdiscipleshenrytanner_QngsUdrC.jpg)](https://upload.wikimedia.org/wikipedia/commons/a/ae/Christ_and_the_Disciples_Before_the_Last_Supper_by_Henry_Ossawa_Tanner.jpg "Henry Ossawa Tanner's 'Christ and the Disciples Before the Last Supper' (c 1900, oil on canvas) depicts Christ's spiritual preparation before instituting the Eucharist")
+
+#### September 21, 2025
+
+##### The Sorrowful Mysteries - Day 264
+
+[![The Sorrowful Mysteries](September/jpgs/Day264.jpg)](https://youtu.be/oXBG_xxvrHg "The Sorrowful Mysteries")
+
+##### AI-Generated Summary: The Sorrowful Mysteries
+
+We are invited to contemplate the profound and terrible weight of the Sorrowful Mysteries. The first finds a Man, wholly God, in a garden, bowed not by the weight of sin but by the full knowledge of it, accepting the bitter cup of a will not His own. From this agony of spirit, we are led to the second mystery: the Scourging. Here, the Love that spoke worlds into being submits to the cruelty of His creatures, His flesh torn by the whip, a physical torment endured for a healing we could not ourselves achieve.
+
+The third mystery presents a darker mockery still. The soldiers, in their coarse humour, fashion a crown from thorns and press it upon His head. They clothe Him in purple, a king's colour, and offer a reed for a sceptre, thus making a ghastly pantomime of His true kingship. In this crowning, we see not only the infliction of a new and exquisite pain, but the world’s jeering rejection of the very principle of Glory it so desperately needs.
+
+##### Alessandro Maganza's c 1590-1610 'The Prayer of Jesus in Gethsemane' depicts Christ's spiritual agony as His disciples sleep nearby (Stock Image)
+
+[![Alessandro Maganza's c 1590-1610 'The Prayer of Jesus in Gethsemane' depicts Christ's spiritual agony as His disciples sleep nearby](September/jpgs/Gethsemane_5fLb8AYt.jpg)](https://www.istockphoto.com/photo/vicenza-the-painting-of-prayer-of-jesus-in-gethsemane-garden-in-the-cathedral-by-gm1922845709-555481794 "Alessandro Maganza's c 1590-1610 'The Prayer of Jesus in Gethsemane' depicts Christ's spiritual agony as His disciples sleep nearby")
+
+##### Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation
+
+[![Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation](September/jpgs/flagellationbouguereau_pK7slHKu.jpg)](https://upload.wikimedia.org/wikipedia/commons/5/56/William-Adolphe_Bouguereau_%281825-1905%29_-_The_Flagellation_of_Our_Lord_Jesus_Christ_%281880%29.jpg "Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation")
+
+##### Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers violently pressing the thorn crown onto Christ's head as he endures with serene dignity
+
+[![Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers violently pressing the thorn crown onto Christ's head as he endures with serene dignity](September/jpgs/CrowningwithThorns_XaStg5Ly.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Titian_-_Crowning_with_Thorns_-_WGA22806.jpg/960px-Titian_-_Crowning_with_Thorns_-_WGA22806.jpg "Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers violently pressing the thorn crown onto Christ's head as he endures with serene dignity")
 
 ## October
 
