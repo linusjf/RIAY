@@ -133,6 +133,12 @@
     - [Alessandro Maganza's c 1590-1610 'The Prayer of Jesus in Gethsemane' depicts Christ's spiritual agony as His disciples sleep nearby (Stock Image)](#alessandro-maganzas-c-1590-1610-the-prayer-of-jesus-in-gethsemane-depicts-christs-spiritual-agony-as-his-disciples-sleep-nearby-stock-image)
     - [Bouguereau's 1880 oil painting 'The Flagellation of Our Lord Jesus Christ' depicts Christ's brutal scourging with divine resignation](#bouguereaus-1880-oil-painting-the-flagellation-of-our-lord-jesus-christ-depicts-christs-brutal-scourging-with-divine-resignation)
     - [Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers violently pressing the thorn crown onto Christ's head as he endures with serene dignity](#titians-christ-crowned-with-thorns-c-15421543-depicts-roman-soldiers-violently-pressing-the-thorn-crown-onto-christs-head-as-he-endures-with-serene-dignity)
+  - [September 22, 2025](#september-22-2025)
+    - [The Sorrowful and Glorious Mysteries - Day 265](#the-sorrowful-and-glorious-mysteries---day-265)
+    - [AI-Generated Summary: The Weight and the Glory](#ai-generated-summary-the-weight-and-the-glory)
+    - [Raphael's 'Christ Falls on the Way to Calvary' (1516-1517) depicts Christ stumbling under the cross's weight on the Via Dolorosa, with Mary and witnesses present](#raphaels-christ-falls-on-the-way-to-calvary-1516-1517-depicts-christ-stumbling-under-the-crosss-weight-on-the-via-dolorosa-with-mary-and-witnesses-present)
+    - [James Tissot's 1886-94 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's perspective, showing the crowd below in gouache on paper, housed at the Brooklyn Museum](#james-tissots-1886-94-what-our-lord-saw-from-the-cross-depicts-the-crucifixion-from-christs-perspective-showing-the-crowd-below-in-gouache-on-paper-housed-at-the-brooklyn-museum)
+    - [Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Jesus Christ's glorious emergence from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-resurrection-1593-oil-on-canvas-louvre-depicts-jesus-christs-glorious-emergence-from-the-tomb-as-roman-soldiers-recoil-in-awe)
 
 <!---toc end-->
 
@@ -625,3 +631,31 @@ The third mystery presents a darker mockery still. The soldiers, in their coarse
 ### Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers violently pressing the thorn crown onto Christ's head as he endures with serene dignity
 
 [![Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers violently pressing the thorn crown onto Christ's head as he endures with serene dignity](September/jpgs/CrowningwithThorns_XaStg5Ly.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Titian_-_Crowning_with_Thorns_-_WGA22806.jpg/960px-Titian_-_Crowning_with_Thorns_-_WGA22806.jpg "Titian's 'Christ Crowned with Thorns' (c 1542–1543) depicts Roman soldiers violently pressing the thorn crown onto Christ's head as he endures with serene dignity")
+
+## September 22, 2025
+
+### The Sorrowful and Glorious Mysteries - Day 265
+
+[![The Sorrowful and Glorious Mysteries](/September/jpgs/Day265.jpg)](https://youtu.be/BhWMiiXKg2Y "The Sorrowful and Glorious Mysteries")
+
+### AI-Generated Summary: The Weight and the Glory
+
+We find ourselves, dear reader, at the very crux of the matter, where the long road of sorrow turns at last toward the uncreated light. The meditation begins with that terrible, glorious burden—the Carrying of the Cross. Here we see the Divine, in the person of Christ, taking the full weight of that rough timber and of a world’s sin upon His shoulders, a picture of every small and great suffering we are asked to bear.
+
+From this we move to the fifth and final sorrow: the Crucifixion itself. This is the great contradiction, the moment where Life Himself submits to death, where the King is enthroned upon a cross. It is not a morbid fixation, but a solemn contemplation of the price paid, the ultimate act of love that purchased humanity’s redemption.
+
+And then, as if a door had been flung open in a silent house, the meditation turns at once to the first Glorious Mystery: the Resurrection. This is the great rebuttal to despair, the event that shatters the finality of the tomb. It is the third day, the new dawn, the vindication of every hope and the promise that death itself is but a sleep from which we shall all awake.
+
+The prayers themselves—the repeated Ave Marias, the Paternoster, the Gloria—are not incantations but the steady rhythm of the heart turning these things over, much as one turns a precious stone in the hand to see it catch the light from different angles. They are the humble means by which the soul attends to the reality behind the mystery. The text provides the simple, faithful structure for this attendance, a path walked in prayerful repetition toward a truth that is never repetitive, but ever new.
+
+### Raphael's 'Christ Falls on the Way to Calvary' (1516-1517) depicts Christ stumbling under the cross's weight on the Via Dolorosa, with Mary and witnesses present
+
+[![Raphael's 'Christ Falls on the Way to Calvary' (1516-1517) depicts Christ stumbling under the cross's weight on the Via Dolorosa, with Mary and witnesses present](September/jpgs/christfallswaycalvaryraphael_z45vAGkE.jpg)](https://upload.wikimedia.org/wikipedia/commons/4/44/Raffaello_Sanzio_-_Christ_Falls_on_the_Way_to_Calvary_-_WGA18828.jpg "Raphael's 'Christ Falls on the Way to Calvary' (1516-1517) depicts Christ stumbling under the cross's weight on the Via Dolorosa, with Mary and witnesses present")
+
+### James Tissot's 1886-94 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's perspective, showing the crowd below in gouache on paper, housed at the Brooklyn Museum
+
+[![James Tissot's 1886-94 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's perspective, showing the crowd below in gouache on paper, housed at the Brooklyn Museum](September/jpgs/viewfromcross_y0yrAq3X.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg/960px-Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg "James Tissot's 1886-94 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's perspective, showing the crowd below in gouache on paper, housed at the Brooklyn Museum")
+
+### Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Jesus Christ's glorious emergence from the tomb as Roman soldiers recoil in awe
+
+[![Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ's glorious emergence from the tomb as Roman soldiers recoil in awe](September/jpgs/Resurrection_1uKOAHBN.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg/960px-Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg "Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ's glorious emergence from the tomb as Roman soldiers recoil in awe")
