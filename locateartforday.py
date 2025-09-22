@@ -22,7 +22,7 @@ import httpx
 from tenacity import retry, wait_exponential, stop_after_attempt
 from pathlib import Path
 import sys
-from typing import cast, Literal, Dict, List, Any
+from typing import cast, Literal, Dict, List, Any, Optional
 from numpy.typing import NDArray
 from simtools import get_embedding
 from configconstants import ConfigConstants
@@ -80,11 +80,12 @@ class ArtLocator:
 
     # Add retry logic with exponential backoff
     @retry(wait=wait_exponential(multiplier=1, min=2, max=10), stop=stop_after_attempt(3))
-    def safe_chat_completion(self, client: openai.OpenAI, messages: List):
+    def safe_chat_completion(self, client: openai.OpenAI, messages: List, temperature: float, top_p: float):
         return client.chat.completions.create(
             model=self.text_llm_model,
             messages=messages,
-            temperature=self.temperature)
+            temperature=temperature,
+            top_p=top_p)
 
     def generate_caption(self, json_object: str, input_text: str) -> str:
         """Generate a caption for an image record using the OpenAI API.
@@ -112,7 +113,7 @@ class ArtLocator:
                 ]
             self.logger.debug(f"messages: {messages}")
 
-            response = self.safe_chat_completion(client, messages)
+            response = self.safe_chat_completion(client, messages,1.0, 0.9)
             return str(response.choices[0].message.content).strip('"')
         except Exception as e:
             self.logger.error(f"Failed to generate caption: {e}")
@@ -217,7 +218,7 @@ class ArtLocator:
                 {"role": "system", "content": self.system_prompt},
                 {"role": "user", "content": prompt}
         ]
-        response = self.safe_chat_completion(client, messages)
+        response = self.safe_chat_completion(client, messages,self.temperature,1.0)
 
         try:
             self.logger.debug(response)
