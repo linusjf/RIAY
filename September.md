@@ -139,6 +139,12 @@
     - [Raphael's 'Christ Falls on the Way to Calvary' (1516-1517) depicts Christ stumbling under the cross's weight on the Via Dolorosa, with Mary and witnesses present](#raphaels-christ-falls-on-the-way-to-calvary-1516-1517-depicts-christ-stumbling-under-the-crosss-weight-on-the-via-dolorosa-with-mary-and-witnesses-present)
     - [James Tissot's 1886-94 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's perspective, showing the crowd below in gouache on paper, housed at the Brooklyn Museum](#james-tissots-1886-94-what-our-lord-saw-from-the-cross-depicts-the-crucifixion-from-christs-perspective-showing-the-crowd-below-in-gouache-on-paper-housed-at-the-brooklyn-museum)
     - [Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Jesus Christ's glorious emergence from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-resurrection-1593-oil-on-canvas-louvre-depicts-jesus-christs-glorious-emergence-from-the-tomb-as-roman-soldiers-recoil-in-awe)
+  - [September 23, 2025](#september-23-2025)
+    - [The Glorious Mysteries - Day 266](#the-glorious-mysteries---day-266)
+    - [AI-Generated Summary: The Glorious Mysteries](#ai-generated-summary-the-glorious-mysteries)
+    - [Bernardino Gandino's 'Ascension of the Lord' depicts the risen Christ ascending into heaven as the apostles watch in awe (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-depicts-the-risen-christ-ascending-into-heaven-as-the-apostles-watch-in-awe-stock-image)
+    - [Titian's 1546 'Pentecost' in Venice depicts the Holy Spirit descending as fire upon Mary and the apostles](#titians-1546-pentecost-in-venice-depicts-the-holy-spirit-descending-as-fire-upon-mary-and-the-apostles)
+    - [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting 'The Assumption of Mary', body and soul into heaven (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-the-assumption-of-mary-body-and-soul-into-heaven-stock-image)
 
 <!---toc end-->
 
@@ -659,3 +665,27 @@ The prayers themselves—the repeated Ave Marias, the Paternoster, the Gloria—
 ### Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Jesus Christ's glorious emergence from the tomb as Roman soldiers recoil in awe
 
 [![Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ's glorious emergence from the tomb as Roman soldiers recoil in awe](September/jpgs/Resurrection_1uKOAHBN.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg/960px-Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg "Annibale Carracci's 'Resurrection' (1593, oil on canvas, Louvre) depicts Christ's glorious emergence from the tomb as Roman soldiers recoil in awe")
+
+## September 23, 2025
+
+### The Glorious Mysteries - Day 266
+
+[![The Glorious Mysteries](/September/jpgs/Day266.jpg)](https://youtu.be/mt5SBg4CLDc "The Glorious Mysteries")
+
+### AI-Generated Summary: The Glorious Mysteries
+
+One finds in these fragments a glimpse of the great turning points, the hinges upon which the door of our salvation swings open. We are told of the second mystery, where the Lord, His work accomplished, ascended to prepare a place, leaving the disciples not as orphans but with a promise. Then comes the third, the rushing wind and tongues of fire at Pentecost, where the Comforter Himself descended to give courage to timid hearts and a common tongue to a scattered people.
+
+The fourth mystery speaks of a singular grace, the Assumption of the Blessed Virgin, who was taken up, body and soul, into the glory that awaits all who are in her Son. This is the final mystery named, a sure and certain hope of the destiny prepared for our human nature, now glorified in her as the first fruits of the Resurrection. As for the rest, the text is a tapestry woven chiefly from the familiar and hallowed prayers of the faithful, the very repetition of which is a kind of answer in itself.
+
+### Bernardino Gandino's 'Ascension of the Lord' depicts the risen Christ ascending into heaven as the apostles watch in awe (Stock Image)
+
+[![Bernardino Gandino's 'Ascension of the Lord' depicts the risen Christ ascending into heaven as the apostles watch in awe](September/jpgs/ascensionofthelord_d81nSNyQ.jpg)](https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Bernardino Gandino's 'Ascension of the Lord' depicts the risen Christ ascending into heaven as the apostles watch in awe")
+
+### Titian's 1546 'Pentecost' in Venice depicts the Holy Spirit descending as fire upon Mary and the apostles
+
+[![Titian's 1546 'Pentecost' in Venice depicts the Holy Spirit descending as fire upon Mary and the apostles](September/jpgs/PentecostTitian_r0xsSTY0.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Pentecost%2C_by_Titian_%281546%29_-_Santa_Maria_della_Salute_-_Venice_2016.jpg/960px-Pentecost%2C_by_Titian_%281546%29_-_Santa_Maria_della_Salute_-_Venice_2016.jpg "Titian's 1546 'Pentecost' in Venice depicts the Holy Spirit descending as fire upon Mary and the apostles")
+
+### A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting 'The Assumption of Mary', body and soul into heaven (Stock Image)
+
+[![A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting 'The Assumption of Mary', body and soul into heaven](September/jpgs/cathedralburgos_tnp1lb0I.jpg)](https://c8.alamy.com/comp/PR002K/stained-glass-window-depicting-the-assumption-of-mary-in-the-cathedral-of-burgos-castille-spain-PR002K.jpg "A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting 'The Assumption of Mary', body and soul into heaven")
