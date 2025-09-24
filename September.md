@@ -145,6 +145,12 @@
     - [Bernardino Gandino's 'Ascension of the Lord' depicts the risen Christ ascending into heaven as the apostles watch in awe (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-depicts-the-risen-christ-ascending-into-heaven-as-the-apostles-watch-in-awe-stock-image)
     - [Titian's 1546 'Pentecost' in Venice depicts the Holy Spirit descending as fire upon Mary and the apostles](#titians-1546-pentecost-in-venice-depicts-the-holy-spirit-descending-as-fire-upon-mary-and-the-apostles)
     - [A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting 'The Assumption of Mary', body and soul into heaven (Stock Image)](#a-13th-15th-century-gothic-stained-glass-window-in-burgos-cathedral-depicting-the-assumption-of-mary-body-and-soul-into-heaven-stock-image)
+  - [September 24, 2025](#september-24-2025)
+    - [The Glorious and Joyful Mysteries - Day 267](#the-glorious-and-joyful-mysteries---day-267)
+    - [AI-Generated Summary: On the Mysteries of the Rosary](#ai-generated-summary-on-the-mysteries-of-the-rosary)
+    - [Velázquez's 'Coronation of the Virgin' (c 1641-1644) depicts the Holy Trinity crowning Mary as Queen of Heaven in a Baroque oil painting at the Prado](#vel%C3%A1zquezs-coronation-of-the-virgin-c-1641-1644-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven-in-a-baroque-oil-painting-at-the-prado)
+    - [Fra Angelico's 'The Annunciation' (mid-1430s) depicts Gabriel's announcement to Mary in tempera on panel, housed in the Museo del Prado](#fra-angelicos-the-annunciation-mid-1430s-depicts-gabriels-announcement-to-mary-in-tempera-on-panel-housed-in-the-museo-del-prado)
+    - ['The Visitation' depicts Mary and Elizabeth's joyful meeting, their mutual recognition of God's work as they embrace, both pregnant with Jesus and John the Baptist](#the-visitation-depicts-mary-and-elizabeths-joyful-meeting-their-mutual-recognition-of-gods-work-as-they-embrace-both-pregnant-with-jesus-and-john-the-baptist)
 
 <!---toc end-->
 
@@ -689,3 +695,29 @@ The fourth mystery speaks of a singular grace, the Assumption of the Blessed Vir
 ### A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting 'The Assumption of Mary', body and soul into heaven (Stock Image)
 
 [![A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting 'The Assumption of Mary', body and soul into heaven](September/jpgs/cathedralburgos_tnp1lb0I.jpg)](https://c8.alamy.com/comp/PR002K/stained-glass-window-depicting-the-assumption-of-mary-in-the-cathedral-of-burgos-castille-spain-PR002K.jpg "A 13th-15th century Gothic stained glass window in Burgos Cathedral depicting 'The Assumption of Mary', body and soul into heaven")
+
+## September 24, 2025
+
+### The Glorious and Joyful Mysteries - Day 267
+
+[![The Glorious and Joyful Mysteries](/September/jpgs/Day267.jpg)](https://youtu.be/qgSu2O_BXYU "The Glorious and Joyful Mysteries")
+
+### AI-Generated Summary: On the Mysteries of the Rosary
+
+You will find, as so often in these matters, that the thing itself is not a complex argument but a simple, repeated action—like a path worn smooth by the feet of many travellers. The text presents not a discourse on the Glorious and Joyful Mysteries, but the very recitation of the prayers themselves: the Our Father, the Hail Mary, the Glory Be. It is the doing of the thing that is the point.
+
+The mysteries are named, as one might name landmarks on a well-known journey. The fifth Glorious Mystery is the Coronation of our Lady as Queen of Heaven, a final truth about the nature of a creature so perfectly obedient that her destiny is a crown. Then the path turns back to the beginning, to the first Joyful Mysteries. The Annunciation, where a young woman’s consent changes the course of the world, and the Visitation, where that hidden truth is recognised by another, and joy leaps in the womb.
+
+There is a sense in which the repetition is the meaning. One does not analyse the steps while walking the path; one simply walks, and in the walking, the heart is shaped to the contours of the story. The text contains no pictures or descriptions of art, for the prayer is the making of the ikon within the soul. The mysteries are not explained, but encountered, decade by decade, as a man might return to a familiar room to find, each time, that the light from the window has changed.
+
+### Velázquez's 'Coronation of the Virgin' (c 1641-1644) depicts the Holy Trinity crowning Mary as Queen of Heaven in a Baroque oil painting at the Prado
+
+[![Velázquez's 'Coronation of the Virgin' (c 1641-1644) depicts the Holy Trinity crowning Mary as Queen of Heaven in a Baroque oil painting at the Prado](September/jpgs/Coronation_4T0lzkOd.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg/960px-Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg "Velázquez's 'Coronation of the Virgin' (c 1641-1644) depicts the Holy Trinity crowning Mary as Queen of Heaven in a Baroque oil painting at the Prado")
+
+### Fra Angelico's 'The Annunciation' (mid-1430s) depicts Gabriel's announcement to Mary in tempera on panel, housed in the Museo del Prado
+
+[![Fra Angelico's 'The Annunciation' (mid-1430s) depicts Gabriel's announcement to Mary in tempera on panel, housed in the Museo del Prado](September/jpgs/Annunciation_2yFiq8km.jpg)](https://4.bp.blogspot.com/-ujfCtTV6yhs/VI1NW92kIBI/AAAAAAAAJBo/aFOIoUu7aqs/s1600/Annunciation_Prado_ca.+1426.jpg "Fra Angelico's 'The Annunciation' (mid-1430s) depicts Gabriel's announcement to Mary in tempera on panel, housed in the Museo del Prado")
+
+### 'The Visitation' depicts Mary and Elizabeth's joyful meeting, their mutual recognition of God's work as they embrace, both pregnant with Jesus and John the Baptist
+
+[!['The Visitation' depicts Mary and Elizabeth's joyful meeting, their mutual recognition of God's work as they embrace, both pregnant with Jesus and John the Baptist](September/jpgs/marygreetseliz_fijNhCeD.jpg)](https://www.crossroadsinitiative.com/wp-content/uploads/2016/01/mary-greets-eliz-painting.jpg "'The Visitation' depicts Mary and Elizabeth's joyful meeting, their mutual recognition of God's work as they embrace, both pregnant with Jesus and John the Baptist")
