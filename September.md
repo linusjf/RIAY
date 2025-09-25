@@ -151,6 +151,12 @@
     - [Velázquez's 'Coronation of the Virgin' (c 1641-1644) depicts the Holy Trinity crowning Mary as Queen of Heaven in a Baroque oil painting at the Prado](#vel%C3%A1zquezs-coronation-of-the-virgin-c-1641-1644-depicts-the-holy-trinity-crowning-mary-as-queen-of-heaven-in-a-baroque-oil-painting-at-the-prado)
     - [Fra Angelico's 'The Annunciation' (mid-1430s) depicts Gabriel's announcement to Mary in tempera on panel, housed in the Museo del Prado](#fra-angelicos-the-annunciation-mid-1430s-depicts-gabriels-announcement-to-mary-in-tempera-on-panel-housed-in-the-museo-del-prado)
     - ['The Visitation' depicts Mary and Elizabeth's joyful meeting, their mutual recognition of God's work as they embrace, both pregnant with Jesus and John the Baptist](#the-visitation-depicts-mary-and-elizabeths-joyful-meeting-their-mutual-recognition-of-gods-work-as-they-embrace-both-pregnant-with-jesus-and-john-the-baptist)
+  - [September 25, 2025](#september-25-2025)
+    - [The Joyful Mysteries - Day 268](#the-joyful-mysteries---day-268)
+    - [AI-Generated Summary: On the Joyful Mysteries](#ai-generated-summary-on-the-joyful-mysteries)
+    - [Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)](#pellegrinis-18th-century-rococo-the-nativity-in-vienna-depicts-the-newborn-christ-adored-by-mary-joseph-and-angels-stock-image)
+    - [Giulio Campi's 1547 fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Christ to Simeon (Stock Image)](#giulio-campis-1547-fresco-the-presentation-of-jesus-in-the-temple-in-cremona-depicts-mary-and-joseph-presenting-the-infant-christ-to-simeon-stock-image)
+    - [A young Jesus astonishes the Temple scholars with his divine wisdom in this depiction of 'The Finding of Jesus in the Temple' (Stock Image)](#a-young-jesus-astonishes-the-temple-scholars-with-his-divine-wisdom-in-this-depiction-of-the-finding-of-jesus-in-the-temple-stock-image)
 
 <!---toc end-->
 
@@ -721,3 +727,27 @@ There is a sense in which the repetition is the meaning. One does not analyse th
 ### 'The Visitation' depicts Mary and Elizabeth's joyful meeting, their mutual recognition of God's work as they embrace, both pregnant with Jesus and John the Baptist
 
 [!['The Visitation' depicts Mary and Elizabeth's joyful meeting, their mutual recognition of God's work as they embrace, both pregnant with Jesus and John the Baptist](September/jpgs/marygreetseliz_fijNhCeD.jpg)](https://www.crossroadsinitiative.com/wp-content/uploads/2016/01/mary-greets-eliz-painting.jpg "'The Visitation' depicts Mary and Elizabeth's joyful meeting, their mutual recognition of God's work as they embrace, both pregnant with Jesus and John the Baptist")
+
+## September 25, 2025
+
+### The Joyful Mysteries - Day 268
+
+[![The Joyful Mysteries](/September/jpgs/Day268.jpg)](https://youtu.be/NipvdrzHtZY "The Joyful Mysteries")
+
+### AI-Generated Summary: On the Joyful Mysteries
+
+You will find, as many have before you, that the Joyful Mysteries are not merely a recitation of distant events, but a path trod into the very heart of a great story. The third is the Nativity itself, the humble and glorious arrival of the King in a stable. The fourth is the Presentation, where the infant Lord is brought to the Temple in accordance with the ancient Law. And the fifth, which seems to hold a particular lesson for parents and children alike, is the Finding in the Temple. This is the account of the boy Jesus, at twelve years of age, remaining behind in Jerusalem. After a search of three days, his parents found him not at play, but sitting among the teachers in the Temple, hearing them and asking questions, and all who heard him were astonished at his understanding.
+
+The text itself is composed of the familiar and comforting rhythms of the Rosary prayers—the Our Father, the many Hail Marys, the Gloria. It is a tapestry woven not with new words, but with the old, good words repeated until they sink past the mind and into the heart. There is also mention of a new book, an interactive guide for little ones, designed with flaps and wheels to lead a child’s hand and heart into this same prayer. It contains all the necessary prayers and is filled with pictures, for a child, like the rest of us, must first be drawn in by a kind of beauty.
+
+### Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels (Stock Image)
+
+[![Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels](September/jpgs/Nativity_dkXivanF.jpg)](https://thumbs.dreamstime.com/z/vienna-nativity-paint-presbytery-salesianerkirche-church-giovanni-antonio-pellegrini-austria-december-48772274.jpg "Pellegrini's 18th-century Rococo 'The Nativity' in Vienna depicts the newborn Christ adored by Mary, Joseph, and angels")
+
+### Giulio Campi's 1547 fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Christ to Simeon (Stock Image)
+
+[![Giulio Campi's 1547 fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Christ to Simeon](September/jpgs/PresentationinTemple_IUQP0Qny.jpg)](https://stock.adobe.com/in/images/cremona-italy-may-24-2016-the-fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547/113785168 "Giulio Campi's 1547 fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Christ to Simeon")
+
+### A young Jesus astonishes the Temple scholars with his divine wisdom in this depiction of 'The Finding of Jesus in the Temple' (Stock Image)
+
+[![A young Jesus astonishes the Temple scholars with his divine wisdom in this depiction of 'The Finding of Jesus in the Temple'](September/jpgs/BrusselsFindingJesus_rmtQDV3Q.jpg)](https://thumbs.dreamstime.com/b/brussels-jesus-age-12-teaching-temple-27777664.jpg "A young Jesus astonishes the Temple scholars with his divine wisdom in this depiction of 'The Finding of Jesus in the Temple'")
