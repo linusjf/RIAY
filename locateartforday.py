@@ -113,7 +113,7 @@ class ArtLocator:
                 ]
             self.logger.debug(f"messages: {messages}")
 
-            response = self.safe_chat_completion(client, messages,1.0, 0.9)
+            response = self.safe_chat_completion(client, messages,1.2, 0.8)
             return str(response.choices[0].message.content).strip('"')
         except Exception as e:
             self.logger.error(f"Failed to generate caption: {e}")
