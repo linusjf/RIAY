@@ -22,7 +22,9 @@ import httpx
 from tenacity import retry, wait_exponential, stop_after_attempt
 from pathlib import Path
 import sys
-from typing import cast, Literal, Dict, List, Any, Optional
+import random
+from typing import cast, Literal, Dict, List, Any
+
 from numpy.typing import NDArray
 from simtools import get_embedding
 from configconstants import ConfigConstants
@@ -273,8 +275,9 @@ class ArtLocator:
 
                     # Check for direct matches first
                     direct_matches = self.get_matching_artworks(mystery_type, mystery_name)
+                    count_matches = len(direct_matches)
                     if direct_matches:
-                        self.logger.info(f"Found {len(direct_matches)} direct matches")
+                        self.logger.info(f"Found {count_matches} direct matches")
                         record_ids = [match['record_id'] for match in direct_matches]
 
                         # Define a filter: only allow neighbors with even labels
@@ -282,14 +285,19 @@ class ArtLocator:
                             return label in record_ids
 
                         # Find best match by cosine distances
-                        labels, distances = p.knn_query([query_embedding], k=1, num_threads=1, filter=record_id_label_filter)
+                        labels, distances = p.knn_query([query_embedding], k=count_matches, num_threads=1, filter=record_id_label_filter)
                         self.logger.debug(labels)
                         self.logger.debug(distances)
 
-                        best_match = next(m for m in direct_matches if m['record_id'] == labels[0])
+                        if self.randomize_art_found:
+                            selected_index = random.randrange(0, count_matches)
+                        else:
+                            selected_index = 0
+
+                        best_match = next(m for m in direct_matches if m['record_id'] == labels[0][selected_index])
                         if best_match:
                             sanitized_match = {k: v for k, v in best_match.items() if not isinstance(v, bytes)}
-                            sanitized_match["cosine_score"] = float(1 - np.ravel(distances)[0])
+                            sanitized_match["cosine_score"] = float(1 - distances[0][selected_index])
                             sanitized_match["is_stock_image"] = is_stock_image_url(best_match["image_url"])
                             sanitized_match["generated_caption"] = self.generate_caption(json.dumps(sanitized_match, indent=2),query_text)
                             results.append(sanitized_match)
