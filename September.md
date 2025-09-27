@@ -163,6 +163,12 @@
     - [Ivanov's 'Apparition of the Messiah' (1837-1857) depicts John the Baptist revealing Christ to a diverse crowd, a monumental Russian Romantic oil painting in Moscow's Tretyakov Gallery](#ivanovs-apparition-of-the-messiah-1837-1857-depicts-john-the-baptist-revealing-christ-to-a-diverse-crowd-a-monumental-russian-romantic-oil-painting-in-moscows-tretyakov-gallery)
     - [Gerard David's c 1500 oil painting 'The Marriage at Cana' in the Louvre depicts Jesus performing his first miracle at a wedding feast](#gerard-davids-c-1500-oil-painting-the-marriage-at-cana-in-the-louvre-depicts-jesus-performing-his-first-miracle-at-a-wedding-feast)
     - [James Tissot’s 1894 gouache 'Healing of the Lepers at Capernaum' depicts Jesus proclaiming God's kingdom through an act of compassionate healing (Stock Image)](#james-tissots-1894-gouache-healing-of-the-lepers-at-capernaum-depicts-jesus-proclaiming-gods-kingdom-through-an-act-of-compassionate-healing-stock-image)
+  - [September 27, 2025](#september-27-2025)
+    - [The Luminous and Sorrowful Mysteries - Day 270](#the-luminous-and-sorrowful-mysteries---day-270)
+    - [AI-Generated Summary: On the Mysteries of Light and Sorrow](#ai-generated-summary-on-the-mysteries-of-light-and-sorrow)
+    - ['The Transfiguration' depicts Jesus radiant in divine light before His disciples, with Moses and Elijah, in Vienna's Votive Church](#the-transfiguration-depicts-jesus-radiant-in-divine-light-before-his-disciples-with-moses-and-elijah-in-viennas-votive-church)
+    - [Henry Ossawa Tanner's 1900 oil painting 'Christ and the Disciples Before the Last Supper' paints the spiritual preparation for the Institution of the Eucharist](#henry-ossawa-tanners-1900-oil-painting-christ-and-the-disciples-before-the-last-supper-paints-the-spiritual-preparation-for-the-institution-of-the-eucharist)
+    - [Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's spiritual agony as his disciples sleep (Stock Image)](#alessandro-maganzas-the-prayer-of-jesus-in-gethsemane-c-1590-1610-depicts-christs-spiritual-agony-as-his-disciples-sleep-stock-image)
 
 <!---toc end-->
 
@@ -785,3 +791,29 @@ The third mystery is the Proclamation of the Kingdom. This is no mere announceme
 ### James Tissot’s 1894 gouache 'Healing of the Lepers at Capernaum' depicts Jesus proclaiming God's kingdom through an act of compassionate healing (Stock Image)
 
 [![James Tissot’s 1894 gouache 'Healing of the Lepers at Capernaum' depicts Jesus proclaiming God's kingdom through an act of compassionate healing](September/jpgs/healingofthelepers_9IfW7BUA.jpg)](https://www.alamy.com/healing-of-the-lepers-at-capernaum-1894-by-james-tissot-image557924107.html "James Tissot’s 1894 gouache 'Healing of the Lepers at Capernaum' depicts Jesus proclaiming God's kingdom through an act of compassionate healing")
+
+## September 27, 2025
+
+### The Luminous and Sorrowful Mysteries - Day 270
+
+[![The Luminous and Sorrowful Mysteries](/September/jpgs/Day270.jpg)](https://youtu.be/AR5qpwI7xmM "The Luminous and Sorrowful Mysteries")
+
+### AI-Generated Summary: On the Mysteries of Light and Sorrow
+
+You will have observed that the final steps along the way of Light lead us to a great height and then to a quiet room. The fourth of these Luminous Mysteries is the Transfiguration, where, upon the mountain, the Master’s face shone like the sun and his clothes became as light itself, and the Law and the Prophets, in the persons of Moses and Elijah, were seen conversing with him. This was a glimpse of the country we are made for, a sudden brightness breaking through the familiar human form.
+
+From that peak, we are brought down to the fifth mystery, the Institution of the Holy Eucharist. Here, in the upper room, He performed the ultimate alchemy, taking the common stuff of bread and wine and making them the vehicle of His own life, a perpetual fountain of grace for His children. It is the gift that bridges the chasm between His departure and our present need.
+
+And then, as if the very light is swallowed by a gathering shadow, we pass from the Mysteries of Light to the first of the Sorrowful Mysteries: the Agony in the Garden. Here we find no radiance, but a man alone in the darkness, pressed down by a weight He alone could bear, praying in such anguish that his sweat fell like drops of blood. It is the beginning of the great reversal, where the will of the Son is freely given over to the will of the Father, and the long road to the redemption of the world is trod.
+
+### 'The Transfiguration' depicts Jesus radiant in divine light before His disciples, with Moses and Elijah, in Vienna's Votive Church
+
+[!['The Transfiguration' depicts Jesus radiant in divine light before His disciples, with Moses and Elijah, in Vienna's Votive Church](September/jpgs/Transfiguration_7xUkOLLR.jpg)](https://in.pinterest.com/pin/305822630958390299/ "'The Transfiguration' depicts Jesus radiant in divine light before His disciples, with Moses and Elijah, in Vienna's Votive Church")
+
+### Henry Ossawa Tanner's 1900 oil painting 'Christ and the Disciples Before the Last Supper' paints the spiritual preparation for the Institution of the Eucharist
+
+[![Henry Ossawa Tanner's 1900 oil painting 'Christ and the Disciples Before the Last Supper' paints the spiritual preparation for the Institution of the Eucharist](September/jpgs/christdiscipleshenrytanner_oUfnVHHM.jpg)](https://upload.wikimedia.org/wikipedia/commons/a/ae/Christ_and_the_Disciples_Before_the_Last_Supper_by_Henry_Ossawa_Tanner.jpg "Henry Ossawa Tanner's 1900 oil painting 'Christ and the Disciples Before the Last Supper' depicts the spiritual preparation for the Institution of the Eucharist")
+
+### Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's spiritual agony as his disciples sleep (Stock Image)
+
+[![Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's spiritual agony as his disciples sleep](September/jpgs/Gethsemane_myie0vDI.jpg)](https://www.istockphoto.com/photo/vicenza-the-painting-of-prayer-of-jesus-in-gethsemane-garden-in-the-cathedral-by-gm1922845709-555481794 "Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's spiritual agony as his disciples sleep")
