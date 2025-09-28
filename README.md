@@ -7201,6 +7201,12 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
     - ['The Transfiguration' depicts Jesus radiant in divine light before His disciples, with Moses and Elijah, in Vienna's Votive Church](#the-transfiguration-depicts-jesus-radiant-in-divine-light-before-his-disciples-with-moses-and-elijah-in-viennas-votive-church)
     - [Henry Ossawa Tanner's 1900 oil painting 'Christ and the Disciples Before the Last Supper' paints the spiritual preparation for the Institution of the Eucharist](#henry-ossawa-tanners-1900-oil-painting-christ-and-the-disciples-before-the-last-supper-paints-the-spiritual-preparation-for-the-institution-of-the-eucharist)
     - [Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's spiritual agony as his disciples sleep (Stock Image)](#alessandro-maganzas-the-prayer-of-jesus-in-gethsemane-c-1590-1610-depicts-christs-spiritual-agony-as-his-disciples-sleep-stock-image)
+  - [September 28, 2025](#september-28-2025)
+    - [The Sorrowful Mysteries - Day 271](#the-sorrowful-mysteries---day-271)
+    - [AI-Generated Summary: On the Sorrowful Mysteries](#ai-generated-summary-on-the-sorrowful-mysteries)
+    - [Caravaggio's 1607 Baroque masterpiece 'The Flagellation of Christ,' in Naples, depicts Christ's brutal scourging at the pillar](#caravaggios-1607-baroque-masterpiece-the-flagellation-of-christ-in-naples-depicts-christs-brutal-scourging-at-the-pillar)
+    - [Van Dyck's 1620 Baroque painting 'The Crowning with Thorns' depicts Roman soldiers mockingly pressing a thorny crown upon Christ's head](#van-dycks-1620-baroque-painting-the-crowning-with-thorns-depicts-roman-soldiers-mockingly-pressing-a-thorny-crown-upon-christs-head)
+    - [Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ's solitary suffering amidst an indifferent crowd](#pieter-bruegel-the-elders-1564-oil-painting-the-procession-to-calvary-depicts-christs-solitary-suffering-amidst-an-indifferent-crowd)
 
 <!---toc end-->
 
@@ -7849,6 +7855,32 @@ And then, as if the very light is swallowed by a gathering shadow, we pass from 
 ##### Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's spiritual agony as his disciples sleep (Stock Image)
 
 [![Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's spiritual agony as his disciples sleep](September/jpgs/Gethsemane_myie0vDI.jpg)](https://www.istockphoto.com/photo/vicenza-the-painting-of-prayer-of-jesus-in-gethsemane-garden-in-the-cathedral-by-gm1922845709-555481794 "Alessandro Maganza's 'The Prayer of Jesus in Gethsemane' (c 1590-1610) depicts Christ's spiritual agony as his disciples sleep")
+
+#### September 28, 2025
+
+##### The Sorrowful Mysteries - Day 271
+
+[![The Sorrowful Mysteries](September/jpgs/Day271.jpg)](https://youtu.be/oUcaLnflRE4 "The Sorrowful Mysteries")
+
+##### AI-Generated Summary: On the Sorrowful Mysteries
+
+One finds in these fragments a path trod with solemn steps, a meditation on that great and terrible turning point which we call the Sorrowful Mysteries. The soul is led, as it were, to consider three particular stations along that dolorous way.
+
+First, there is the Scourging at the Pillar, a contemplation of the Word made flesh subjected to the lash, bound to that cold stone not for His own transgressions, but for ours. Then follows the Crowning with Thorns, a bitter parody of kingship where cruelty masquerades as homage, pressing a crown not of gold but of piercing bramble upon the brow of the true King. And lastly, the Carrying of the Cross, that arduous journey to Calvary where the weight of the wood is but an outward sign of the far heavier burden of a world’s sin borne upon His shoulders.
+
+These are not mere events of history, you understand, but mysteries into which we are invited to enter, that we might find, hidden in their very heart of darkness, the seeds of a brighter dawn.
+
+##### Caravaggio's 1607 Baroque masterpiece 'The Flagellation of Christ,' in Naples, depicts Christ's brutal scourging at the pillar
+
+[![Caravaggio's 1607 Baroque masterpiece 'The Flagellation of Christ,' in Naples, depicts Christ's brutal scourging at the pillar](September/jpgs/Flagellation_KH1IzacU.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/The_Flagellation_of_Christ-Caravaggio_%281607%29.jpg/960px-The_Flagellation_of_Christ-Caravaggio_%281607%29.jpg "Caravaggio's 1607 Baroque masterpiece 'The Flagellation of Christ,' in Naples, depicts Christ's brutal scourging at the pillar")
+
+##### Van Dyck's 1620 Baroque painting 'The Crowning with Thorns' depicts Roman soldiers mockingly pressing a thorny crown upon Christ's head
+
+[![Van Dyck's 1620 Baroque painting 'The Crowning with Thorns' depicts Roman soldiers mockingly pressing a thorny crown upon Christ's head](September/jpgs/crowningthornsvandyck17th_A7ODjFxJ.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Anthonis_van_Dyck_004.jpg/960px-Anthonis_van_Dyck_004.jpg "Van Dyck's 1620 Baroque painting 'The Crowning with Thorns' depicts Roman soldiers mockingly pressing a thorny crown upon Christ's head")
+
+##### Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ's solitary suffering amidst an indifferent crowd
+
+[![Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ's solitary suffering amidst an indifferent crowd](September/jpgs/Calvary_jmIdmplH.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pieter_Bruegel_d._%C3%84._007.jpg/960px-Pieter_Bruegel_d._%C3%84._007.jpg "Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ's solitary suffering amidst an indifferent crowd")
 
 ## October
 
