@@ -175,6 +175,12 @@
     - [Caravaggio's 1607 Baroque masterpiece 'The Flagellation of Christ,' in Naples, depicts Christ's brutal scourging at the pillar](#caravaggios-1607-baroque-masterpiece-the-flagellation-of-christ-in-naples-depicts-christs-brutal-scourging-at-the-pillar)
     - [Van Dyck's 1620 Baroque painting 'The Crowning with Thorns' depicts Roman soldiers mockingly pressing a thorny crown upon Christ's head](#van-dycks-1620-baroque-painting-the-crowning-with-thorns-depicts-roman-soldiers-mockingly-pressing-a-thorny-crown-upon-christs-head)
     - [Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ's solitary suffering amidst an indifferent crowd](#pieter-bruegel-the-elders-1564-oil-painting-the-procession-to-calvary-depicts-christs-solitary-suffering-amidst-an-indifferent-crowd)
+  - [September 29, 2025](#september-29-2025)
+    - [The Sorrowful and Glorious Mysteries - Day 272](#the-sorrowful-and-glorious-mysteries---day-272)
+    - [AI-Generated Summary: On Sorrows and Glories](#ai-generated-summary-on-sorrows-and-glories)
+    - [Pietro Gagliardi's 1847-1852 fresco 'Crucifixion' in San Girolamo dei Croati depicts Christ's sacrifice with the Virgin Mary, John, and Mary Magdalene (Stock Image)](#pietro-gagliardis-1847-1852-fresco-crucifixion-in-san-girolamo-dei-croati-depicts-christs-sacrifice-with-the-virgin-mary-john-and-mary-magdalene-stock-image)
+    - [Annibale Carracci's 1593 Baroque masterpiece 'Resurrection' depicts Christ triumphantly emerging from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-1593-baroque-masterpiece-resurrection-depicts-christ-triumphantly-emerging-from-the-tomb-as-roman-soldiers-recoil-in-awe)
+    - [Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as the apostles watch in wonder (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-depicts-christ-ascending-into-heaven-as-the-apostles-watch-in-wonder-stock-image)
 
 <!---toc end-->
 
@@ -849,3 +855,27 @@ These are not mere events of history, you understand, but mysteries into which w
 ### Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ's solitary suffering amidst an indifferent crowd
 
 [![Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ's solitary suffering amidst an indifferent crowd](September/jpgs/Calvary_jmIdmplH.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pieter_Bruegel_d._%C3%84._007.jpg/960px-Pieter_Bruegel_d._%C3%84._007.jpg "Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ's solitary suffering amidst an indifferent crowd")
+
+## September 29, 2025
+
+### The Sorrowful and Glorious Mysteries - Day 272
+
+[![The Sorrowful and Glorious Mysteries](/September/jpgs/Day272.jpg)](https://youtu.be/CuESInfWMZ0 "The Sorrowful and Glorious Mysteries")
+
+### AI-Generated Summary: On Sorrows and Glories
+
+My dear reader, one finds in these mysteries a pattern as old as the world itself—that the deepest sorrow must ever give way to a greater glory. First comes the fifth sorrowful mystery, the Crucifixion, where the King is nailed to the wood and completes His work at Calvary. It is the final, terrible price.
+
+But see how the story does not end there. For the first glorious mystery is the Resurrection, where on the third day He rises, shattering the very chains of death. And then, as a man might return home after a long campaign, the second glorious mystery shows us the Ascension. Forty days after His rising, He ascends bodily into heaven, leaving His apostles not as orphans, but as witnesses to a promise fulfilled. This is the true order of things: from the darkest Friday dawns the brightest Sunday, and from the dust of this world, we are shown the path to the next.
+
+### Pietro Gagliardi's 1847-1852 fresco 'Crucifixion' in San Girolamo dei Croati depicts Christ's sacrifice with the Virgin Mary, John, and Mary Magdalene (Stock Image)
+
+[![Pietro Gagliardi's 1847-1852 fresco 'Crucifixion' in San Girolamo dei Croati depicts Christ's sacrifice with the Virgin Mary, John, and Mary Magdalene](September/jpgs/Crucifixion_rJCc5uIc.jpg)](https://c7.alamy.com/comp/2GRFXKA/rome-italy-august-28-2021-the-fresco-of-crucifixion-in-the-church-san-girolamo-dei-croati-by-pietro-gagliardi-1847-1852-2GRFXKA.jpg "Pietro Gagliardi's 1847-1852 fresco 'Crucifixion' in San Girolamo dei Croati depicts Christ's sacrifice with the Virgin Mary, John, and Mary Magdalene")
+
+### Annibale Carracci's 1593 Baroque masterpiece 'Resurrection' depicts Christ triumphantly emerging from the tomb as Roman soldiers recoil in awe
+
+[![Annibale Carracci's 1593 Baroque masterpiece 'Resurrection' depicts Christ triumphantly emerging from the tomb as Roman soldiers recoil in awe](September/jpgs/Resurrection_q0CGPBrh.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg/960px-Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg "Annibale Carracci's 1593 Baroque masterpiece 'Resurrection' depicts Christ triumphantly emerging from the tomb as Roman soldiers recoil in awe")
+
+### Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as the apostles watch in wonder (Stock Image)
+
+[![Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as the apostles watch in wonder](September/jpgs/ascensionofthelord_yjL7zu3d.jpg)](https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as the apostles watch in wonder")
