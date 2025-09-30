@@ -284,7 +284,12 @@ main() {
   vid="$1"
   caption="$2"
 
+  # Start timer
+  readonly validate_start_time=$(date +%s)
   validate_inputs "$vid" "$caption" || exit $?
+  readonly validate_end_time=$(date +%s)
+  local validate_duration=$((validate_end_time - validate_start_time))
+  echo "Validated video in ${validate_duration} seconds" >&2
 
   if ! internet::checkinternet; then
     echo "Error: No internet connection available" >&2
