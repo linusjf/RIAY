@@ -7213,6 +7213,12 @@ Then follows the Fifth Mystery, the Institution of the Eucharist, portrayed by J
     - [Pietro Gagliardi's 1847-1852 fresco 'Crucifixion' in San Girolamo dei Croati depicts Christ's sacrifice with the Virgin Mary, John, and Mary Magdalene (Stock Image)](#pietro-gagliardis-1847-1852-fresco-crucifixion-in-san-girolamo-dei-croati-depicts-christs-sacrifice-with-the-virgin-mary-john-and-mary-magdalene-stock-image)
     - [Annibale Carracci's 1593 Baroque masterpiece 'Resurrection' depicts Christ triumphantly emerging from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-1593-baroque-masterpiece-resurrection-depicts-christ-triumphantly-emerging-from-the-tomb-as-roman-soldiers-recoil-in-awe)
     - [Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as the apostles watch in wonder (Stock Image)](#bernardino-gandinos-ascension-of-the-lord-depicts-christ-ascending-into-heaven-as-the-apostles-watch-in-wonder-stock-image)
+  - [September 30, 2025](#september-30-2025)
+    - [The Glorious Mysteries - Day 273](#the-glorious-mysteries---day-273)
+    - [AI-Generated Summary: On the Ineffable and the Practical](#ai-generated-summary-on-the-ineffable-and-the-practical)
+    - [Cesare Mariani's 1863 fresco 'Assumption of the Virgin with Vision of St Bonaventure' in Rome depicts Mary's bodily ascent into heaven](#cesare-marianis-1863-fresco-assumption-of-the-virgin-with-vision-of-st-bonaventure-in-rome-depicts-marys-bodily-ascent-into-heaven)
+    - [Giuseppe Rollini's 19th-century fresco in Turin, 'Mary, Help of Christians', depicts the Virgin's coronation and intercessory role (Stock Image)](#giuseppe-rollinis-19th-century-fresco-in-turin-mary-help-of-christians-depicts-the-virgins-coronation-and-intercessory-role-stock-image)
+    - [Simone Peterzano's 1580 Mannerist 'Pentecost' in Milan depicts the Holy Spirit descending as fire upon Mary and the apostles (Stock Image)](#simone-peterzanos-1580-mannerist-pentecost-in-milan-depicts-the-holy-spirit-descending-as-fire-upon-mary-and-the-apostles-stock-image)
 
 <!---toc end-->
 
@@ -7911,6 +7917,32 @@ But see how the story does not end there. For the first glorious mystery is the 
 ##### Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as the apostles watch in wonder (Stock Image)
 
 [![Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as the apostles watch in wonder](September/jpgs/ascensionofthelord_yjL7zu3d.jpg)](https://render.fineartamerica.com/images/rendered/default/print/5.5/8/break/images/artworkimages/medium/1/the-painting-ascension-of-the-lord-by-bernardino-gandino-jozef-sedmak.jpg "Bernardino Gandino's 'Ascension of the Lord' depicts Christ ascending into heaven as the apostles watch in wonder")
+
+#### September 30, 2025
+
+##### The Glorious Mysteries - Day 273
+
+[![The Glorious Mysteries](September/jpgs/Day273.jpg)](https://youtu.be/yvdDmrdBLjk "The Glorious Mysteries")
+
+##### AI-Generated Summary: On the Ineffable and the Practical
+
+My dear reader, one finds in such texts a curious division—like two different countries on the same map. On one hand, there is the recitation of holy things: the Glorious Mysteries of the Assumption and Coronation, the descent of the Spirit. These are the high roads of the spirit, the great truths we are invited to contemplate. Yet the text itself, the very parchment before us, contains not the contemplation but only the signposts—the names of the mysteries without their substance, the repeated prayers without the accompanying silence of the heart.
+
+It is as if one were given the title of a great book but not its chapters, or the name of a celestial city but no description of its streets. We are told of the Assumption of Mary, that she was taken up, body and soul; we are told of her Coronation as Queen. These are not small things. They speak of the destiny for which humanity was made, a promise written into the very fabric of a creation that will one day be glorified, not discarded.
+
+Yet here, the substance is withheld. We are left with the scaffolding of devotion—the Hail Marys, the Our Fathers—which are, of course, the necessary tools for the work. But the work itself, the interior castle we mean to build with them, is not described. It is a reminder that the map is not the territory, and the prayer is not the encounter, though it is the means by which we hope to arrive there. We are given the method, but the vision—the artwork of the soul that these mysteries would paint upon it—remains, in this instance, unseen.
+
+##### Cesare Mariani's 1863 fresco 'Assumption of the Virgin with Vision of St Bonaventure' in Rome depicts Mary's bodily ascent into heaven
+
+[![Cesare Mariani's 1863 fresco 'Assumption of the Virgin with Vision of St Bonaventure' in Rome depicts Mary's bodily ascent into heaven](September/jpgs/Assumption_FS5Gibw4.jpg)](https://as2.ftcdn.net/jpg/04/64/38/29/1000_F_464382946_EIK0RNI7i73omFzvLLXqQafxXBkZxLZB.jpg "Cesare Mariani's 1863 fresco 'Assumption of the Virgin with Vision of St Bonaventure' in Rome depicts Mary's bodily ascent into heaven")
+
+##### Giuseppe Rollini's 19th-century fresco in Turin, 'Mary, Help of Christians', depicts the Virgin's coronation and intercessory role (Stock Image)
+
+[![Giuseppe Rollini's 19th-century fresco in Turin, 'Mary, Help of Christians', depicts the Virgin's coronation and intercessory role](September/jpgs/maryhelpofchristiansrolini_0XTr6tto.jpg)](https://c8.alamy.com/comp/JBNNMG/turin-italy-march-15-2017-the-detail-of-fresco-mary-help-of-christians-JBNNMG.jpg "Giuseppe Rollini's 19th-century fresco in Turin, 'Mary, Help of Christians', depicts the Virgin's coronation and intercessory role")
+
+##### Simone Peterzano's 1580 Mannerist 'Pentecost' in Milan depicts the Holy Spirit descending as fire upon Mary and the apostles (Stock Image)
+
+[![Simone Peterzano's 1580 Mannerist 'Pentecost' in Milan depicts the Holy Spirit descending as fire upon Mary and the apostles](September/jpgs/pentecostsimonepeterzano_P8cVFfpJ.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.12926920.7055475/2959742.jpg "Simone Peterzano's 1580 Mannerist 'Pentecost' in Milan depicts the Holy Spirit descending as fire upon Mary and the apostles")
 
 ## October
 
