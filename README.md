@@ -7946,6 +7946,27 @@ Yet here, the substance is withheld. We are left with the scaffolding of devotio
 
 ## October
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/ktechhub/doctoc)_
+
+<!---toc start-->
+
+- [October 2025](#october-2025)
+  - [October 01, 2025](#october-01-2025)
+    - [The Joyful Mysteries - Day 274](#the-joyful-mysteries---day-274)
+    - [AI-Generated Summary: On the Recitation of Mysteries](#ai-generated-summary-on-the-recitation-of-mysteries)
+    - [Jan van Eyck's 1434-1436 oil panel 'The Annunciation' at the National Gallery of Art depicts Gabriel announcing to Mary she will bear God's Son](#jan-van-eycks-1434-1436-oil-panel-the-annunciation-at-the-national-gallery-of-art-depicts-gabriel-announcing-to-mary-she-will-bear-gods-son)
+    - [Federico Maldarelli's 1889 oil painting 'The Visitation' in Naples depicts Mary and Elizabeth's sacred meeting, both pregnant with Jesus and John the Baptist (Stock Image)](#federico-maldarellis-1889-oil-painting-the-visitation-in-naples-depicts-mary-and-elizabeths-sacred-meeting-both-pregnant-with-jesus-and-john-the-baptist-stock-image)
+    - [Gerard van Honthorst's 1622 Baroque masterpiece 'Adoration of the Shepherds' depicts the Nativity, with humble shepherds illuminated by divine light as they worship the newborn Christ](#gerard-van-honthorsts-1622-baroque-masterpiece-adoration-of-the-shepherds-depicts-the-nativity-with-humble-shepherds-illuminated-by-divine-light-as-they-worship-the-newborn-christ)
+    - [Aert de Gelder's 1700-1710 oil painting 'Simeon's Song of Praise' depicts the Presentation of Jesus in the Temple at the Mauritshuis](#aert-de-gelders-1700-1710-oil-painting-simeons-song-of-praise-depicts-the-presentation-of-jesus-in-the-temple-at-the-mauritshuis)
+
+<!---toc end-->
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <!-- toc -->
 
 <!-- tocstop -->
@@ -7953,6 +7974,36 @@ Yet here, the substance is withheld. We are left with the scaffolding of devotio
 ### October 2025
 
 RIAY October 2025
+
+#### October 01, 2025
+
+##### The Joyful Mysteries - Day 274
+
+[![The Joyful Mysteries](October/jpgs/Day274.jpg)](https://youtu.be/qjzjk8oINrs "The Joyful Mysteries")
+
+##### AI-Generated Summary: On the Recitation of Mysteries
+
+It may be observed by anyone who sets himself to this devotion that the rhythm of the prayer, which began at a pace suited to private contemplation, has now found a steadier and more corporate beat—the very cadence one might adopt when praying in common with the friars. It is a movement from the tentative steps of a novice toward the firm, measured tread of a pilgrim on a well-worn path.
+
+The mysteries themselves, those windows into divine humility, were the first four Joyful ones. The Annunciation, where eternity broke into time and a young woman’s _fiat_ changed the course of all things. The Visitation, where grace overflowed from one expectant mother to another, and sanctity leapt in the womb. The Nativity, where the Word became a crying infant laid in straw, the ultimate descent of Love into poverty. And finally, the Presentation, where the Child was brought to the Temple, and aged Simeon saw in that small bundle both the consolation of a people and the sword that would pierce a soul.
+
+No images or carvings were described to fix these scenes before the inward eye; only the bare, glorious facts remain—which are, as we know, always enough.
+
+##### Jan van Eyck's 1434-1436 oil panel 'The Annunciation' at the National Gallery of Art depicts Gabriel announcing to Mary she will bear God's Son
+
+[![Jan van Eyck's 1434-1436 oil panel 'The Annunciation' at the National Gallery of Art depicts Gabriel announcing to Mary she will bear God's Son](October/jpgs/annunciationvaneyck_FEzTLIe3.jpg)](https://i.pinimg.com/736x/dc/d2/0b/dcd20b9d34dfc34ecf40a2a862594715.jpg "Jan van Eyck's 1434-1436 oil panel 'The Annunciation' at the National Gallery of Art depicts Gabriel announcing to Mary she will bear God's Son")
+
+##### Federico Maldarelli's 1889 oil painting 'The Visitation' in Naples depicts Mary and Elizabeth's sacred meeting, both pregnant with Jesus and John the Baptist (Stock Image)
+
+[![Federico Maldarelli's 1889 oil painting 'The Visitation' in Naples depicts Mary and Elizabeth's sacred meeting, both pregnant with Jesus and John the Baptist](October/jpgs/MaldarelliVisitation_7oZQAhQV.jpg)](https://stock.adobe.com/nz/images/naples-italy-april-21-2023-the-painting-of-visitation-in-the-church-chiesa-dei-santi-severino-e-sossio-by-federico-maldarelli-1889/614877275 "Federico Maldarelli's 1889 oil painting 'The Visitation' in Naples depicts Mary and Elizabeth's sacred meeting, both pregnant with Jesus and John the Baptist")
+
+##### Gerard van Honthorst's 1622 Baroque masterpiece 'Adoration of the Shepherds' depicts the Nativity, with humble shepherds illuminated by divine light as they worship the newborn Christ
+
+[![Gerard van Honthorst's 1622 Baroque masterpiece 'Adoration of the Shepherds' depicts the Nativity, with humble shepherds illuminated by divine light as they worship the newborn Christ](October/jpgs/AdorationShepherds_KO3YDcIj.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_%281622%29.jpg/960px-Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_%281622%29.jpg "Gerard van Honthorst's 1622 Baroque masterpiece 'Adoration of the Shepherds' depicts the Nativity, with humble shepherds illuminated by divine light as they worship the newborn Christ")
+
+##### Aert de Gelder's 1700-1710 oil painting 'Simeon's Song of Praise' depicts the Presentation of Jesus in the Temple at the Mauritshuis
+
+[![Aert de Gelder's 1700-1710 oil painting 'Simeon's Song of Praise' depicts the Presentation of Jesus in the Temple at the Mauritshuis](October/jpgs/SimeonSong_czj6TgaJ.jpg)](https://upload.wikimedia.org/wikipedia/commons/d/dc/Aert_de_Gelder_-_Het_loflied_van_Simeon.jpg "Aert de Gelder's 1700-1710 oil painting 'Simeon's Song of Praise' depicts the Presentation of Jesus in the Temple at the Mauritshuis")
 
 ## November
 
