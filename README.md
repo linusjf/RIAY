@@ -7962,6 +7962,13 @@ Yet here, the substance is withheld. We are left with the scaffolding of devotio
     - [Federico Maldarelli's 1889 oil painting 'The Visitation' in Naples depicts Mary and Elizabeth's sacred meeting, both pregnant with Jesus and John the Baptist (Stock Image)](#federico-maldarellis-1889-oil-painting-the-visitation-in-naples-depicts-mary-and-elizabeths-sacred-meeting-both-pregnant-with-jesus-and-john-the-baptist-stock-image)
     - [Gerard van Honthorst's 1622 Baroque masterpiece 'Adoration of the Shepherds' depicts the Nativity, with humble shepherds illuminated by divine light as they worship the newborn Christ](#gerard-van-honthorsts-1622-baroque-masterpiece-adoration-of-the-shepherds-depicts-the-nativity-with-humble-shepherds-illuminated-by-divine-light-as-they-worship-the-newborn-christ)
     - [Aert de Gelder's 1700-1710 oil painting 'Simeon's Song of Praise' depicts the Presentation of Jesus in the Temple at the Mauritshuis](#aert-de-gelders-1700-1710-oil-painting-simeons-song-of-praise-depicts-the-presentation-of-jesus-in-the-temple-at-the-mauritshuis)
+  - [October 02, 2025](#october-02-2025)
+    - [The Joyful and Luminous Mysteries - Day 275](#the-joyful-and-luminous-mysteries---day-275)
+    - [AI-Generated Summary: On the Finding in the Temple](#ai-generated-summary-on-the-finding-in-the-temple)
+    - [A young Jesus astonishes Temple scholars with divine wisdom in this depiction of the Finding in the Temple (Stock Image)](#a-young-jesus-astonishes-temple-scholars-with-divine-wisdom-in-this-depiction-of-the-finding-in-the-temple-stock-image)
+    - [An unknown artist's Renaissance fresco 'The Baptism of Christ' in Padua's Church of San Benedetto depicts John baptizing Jesus as the Holy Spirit descends (Stock Image)](#an-unknown-artists-renaissance-fresco-the-baptism-of-christ-in-paduas-church-of-san-benedetto-depicts-john-baptizing-jesus-as-the-holy-spirit-descends-stock-image)
+    - [Gerard David's c 1500 oil painting 'The Marriage at Cana' in the Louvre depicts Jesus performing his first miracle of turning water into wine](#gerard-davids-c-1500-oil-painting-the-marriage-at-cana-in-the-louvre-depicts-jesus-performing-his-first-miracle-of-turning-water-into-wine)
+    - [Rembrandt's 1633 oil painting 'Christ in the Storm on the Sea of Galilee' dramatically captures Jesus calming the tempest](#rembrandts-1633-oil-painting-christ-in-the-storm-on-the-sea-of-galilee-dramatically-captures-jesus-calming-the-tempest)
 
 <!---toc end-->
 
@@ -8004,6 +8011,38 @@ No images or carvings were described to fix these scenes before the inward eye; 
 ##### Aert de Gelder's 1700-1710 oil painting 'Simeon's Song of Praise' depicts the Presentation of Jesus in the Temple at the Mauritshuis
 
 [![Aert de Gelder's 1700-1710 oil painting 'Simeon's Song of Praise' depicts the Presentation of Jesus in the Temple at the Mauritshuis](October/jpgs/SimeonSong_czj6TgaJ.jpg)](https://upload.wikimedia.org/wikipedia/commons/d/dc/Aert_de_Gelder_-_Het_loflied_van_Simeon.jpg "Aert de Gelder's 1700-1710 oil painting 'Simeon's Song of Praise' depicts the Presentation of Jesus in the Temple at the Mauritshuis")
+
+#### October 02, 2025
+
+##### The Joyful and Luminous Mysteries - Day 275
+
+[![The Joyful and Luminous Mysteries](October/jpgs/Day275.jpg)](https://youtu.be/lLhtU2MdcvM "The Joyful and Luminous Mysteries")
+
+##### AI-Generated Summary: On the Finding in the Temple
+
+My dear reader, you must picture a scene, not of loss, but of a quiet and startling discovery. It is the finding of the Child in the temple, where He was not misplaced but purposefully at home, sitting among the teachers. His mother’s question, which any earthly parent would ask, meets with a reply that hints at a deeper, more eternal obedience. The Boy was about His Father’s business, a first faint signal of the great schism between the natural affections of a family and the overwhelming claims of Heaven.
+
+Then comes the Baptism in the Jordan, where the heavens themselves were torn open. The voice of the Father declares His pleasure, and the Spirit descends like a dove. Here, in the river’s common water, is the sacred pattern set forth: the Son submits, the Father blesses, the Spirit empowers. It is the public and solemn beginning of the great work of redemption.
+
+And at the wedding in Cana, we see a thing both homely and divine. The wine fails, and the need is simple, human. His mother, with a quiet faith, instructs the servants to do whatever He says. From mere water, drawn for cleansing, comes the best wine, a sign of how the Law is to be fulfilled by Grace. It was the first of His signs, not a public spectacle, but a generous gift to save a humble feast from shame, showing that His kingdom begins in the transformation of the ordinary.
+
+The final mystery considered is the Proclamation of the Kingdom. Here, the call goes out, clear and urgent: the time is fulfilled, the kingdom of God is at hand. It is a summons to turn away from the old paths, to repent, and to believe in this good news. This is the great declaration for which all that came before was but a preparation.
+
+##### A young Jesus astonishes Temple scholars with divine wisdom in this depiction of the Finding in the Temple (Stock Image)
+
+[![A young Jesus astonishes Temple scholars with divine wisdom in this depiction of the Finding in the Temple](October/jpgs/BrusselsFindingJesus_LXWSiuRK.jpg)](https://thumbs.dreamstime.com/b/brussels-jesus-age-12-teaching-temple-27777664.jpg "A young Jesus astonishes Temple scholars with divine wisdom in this depiction of the Finding in the Temple")
+
+##### An unknown artist's Renaissance fresco 'The Baptism of Christ' in Padua's Church of San Benedetto depicts John baptizing Jesus as the Holy Spirit descends (Stock Image)
+
+[![An unknown artist's Renaissance fresco 'The Baptism of Christ' in Padua's Church of San Benedetto depicts John baptizing Jesus as the Holy Spirit descends](October/jpgs/BaptismofChrist_LdIWwxho.jpg)](https://www.istockphoto.com/vector/padua-baptism-of-christ-in-church-san-benedetto-vecchio-gm517403261-48689476 "An unknown artist's Renaissance fresco 'The Baptism of Christ' in Padua's Church of San Benedetto depicts John baptizing Jesus as the Holy Spirit descends")
+
+##### Gerard David's c 1500 oil painting 'The Marriage at Cana' in the Louvre depicts Jesus performing his first miracle of turning water into wine
+
+[![Gerard David's c 1500 oil painting 'The Marriage at Cana' in the Louvre depicts Jesus performing his first miracle of turning water into wine](October/jpgs/MarriageCana_TAZr72QC.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Gerard_David_-_The_Marriage_at_Cana.jpg/960px-Gerard_David_-_The_Marriage_at_Cana.jpg "Gerard David's c 1500 oil painting 'The Marriage at Cana' in the Louvre depicts Jesus performing his first miracle of turning water into wine")
+
+##### Rembrandt's 1633 oil painting 'Christ in the Storm on the Sea of Galilee' dramatically captures Jesus calming the tempest
+
+[![Rembrandt's 1633 oil painting 'Christ in the Storm on the Sea of Galilee' dramatically captures Jesus calming the tempest](October/jpgs/stormsea1633rembrandt_rZwyBynK.jpg)](https://upload.wikimedia.org/wikipedia/commons/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg "Rembrandt's 1633 oil painting 'Christ in the Storm on the Sea of Galilee' dramatically captures Jesus calming the tempest")
 
 ## November
 
