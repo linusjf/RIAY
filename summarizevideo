@@ -47,6 +47,9 @@ Environment variables required:
   TEXT_LLM_CHAT_ENDPOINT      text llm chat endpoint
   SUMMARY_IMAGE_META_PROMPT  System prompt for image prompt and caption generation
   TEMPERATURE                Creativity parameter (0-2)
+  TOP_P                      The model keeps only the smallest set of tokens whose cumulative probability mass is ≤ top_p.
+                             Then it samples from that reduced set.
+                             This is called nucleus sampling
 
 Examples:
   ${SCRIPT_NAME} dQw4w9WgXcQ
@@ -70,7 +73,7 @@ function summarize_chunk_llm() {
   local prompt="$(get_chunk_prompt "$chunk")"
   local escaped_prompt="$(jq -Rs <<< "$prompt")"
   local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
-  local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --arg model "${TEXT_LLM_MODEL}" --argjson temperature "$TEMPERATURE" \
+  local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --arg model "${TEXT_LLM_MODEL}" --argjson temperature "$TEMPERATURE" --argjson top_p "$TOP_P" \
     '{
   "model": $model,
   "messages": [
@@ -83,7 +86,8 @@ function summarize_chunk_llm() {
       "content": $content
     }
   ],
-  "temperature": $temperature
+  "temperature": $temperature,
+  "top_p": $top_p
 }')"
 
   local response
@@ -128,6 +132,7 @@ function final_summary() {
       --arg content "$escaped_prompt" \
       --arg model "$TEXT_LLM_MODEL" \
       --argjson temperature "$TEMPERATURE" \
+      --argjson top_p "$TOP_P" \
       '{
       "model": $model,
       "messages": [
@@ -140,7 +145,8 @@ function final_summary() {
           "content": $content
         }
       ],
-      "temperature": $temperature
+      "temperature": $temperature,
+      "top_p": $top_p
     }'
   )"
 
@@ -192,7 +198,7 @@ function main() {
     usage 1
   fi
 
-  require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR TEXT_LLM_MODEL TEXT_LLM_API_KEY TEXT_LLM_BASE_URL TEXT_LLM_CHAT_ENDPOINT TRANSCRIBE_VIDEOS
+  require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR TEXT_LLM_MODEL TEXT_LLM_API_KEY TEXT_LLM_BASE_URL TEXT_LLM_CHAT_ENDPOINT TRANSCRIBE_VIDEOS TEMPERATURE TOP_P
 
   local VIDEO_ID="$1"
   local captions_file="${CAPTIONS_OUTPUT_DIR}/${VIDEO_ID}.en.txt"
