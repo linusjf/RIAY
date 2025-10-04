@@ -97,9 +97,7 @@ function main() {
 
   require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR
 
-  if $verbose; then
-    >&2 echo "Starting processing for video $VIDEO_ID"
-  fi
+  >&2 echo "Starting processing for video $VIDEO_ID"
 
   local VIDEO_TITLE
   VIDEO_TITLE="$(youtube::get_video_title "$VIDEO_ID" || exit $EXIT_NO_TITLE)"
@@ -107,9 +105,7 @@ function main() {
     die "Error: Could not fetch video title" $EXIT_NO_TITLE
   fi
 
-  if $verbose; then
-    >&2 echo "Video title retrieved: $VIDEO_TITLE"
-  fi
+  >&2 echo "Video title retrieved: $VIDEO_TITLE"
 
   if ! youtube::has_captions_in_language "$VIDEO_ID" "$language"; then
     die "Error: No captions in English available for ${VIDEO_ID}" $EXIT_NO_CAPTIONS
