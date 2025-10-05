@@ -7983,6 +7983,13 @@ Yet here, the substance is withheld. We are left with the scaffolding of devotio
     - [Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ carrying the cross through an indifferent crowd](#pieter-bruegel-the-elders-1564-oil-painting-the-procession-to-calvary-depicts-christ-carrying-the-cross-through-an-indifferent-crowd)
     - [James Tissot's 1886-1894 gouache 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective, held at the Brooklyn Museum](#james-tissots-1886-1894-gouache-what-our-lord-saw-from-the-cross-depicts-the-crucifixion-from-christs-unique-perspective-held-at-the-brooklyn-museum)
     - [Caravaggio's 1601-1602 'The Incredulity of Saint Thomas' depicts the apostle verifying Christ's resurrection by touching His wounds, housed at Sanssouci Palace](#caravaggios-1601-1602-the-incredulity-of-saint-thomas-depicts-the-apostle-verifying-christs-resurrection-by-touching-his-wounds-housed-at-sanssouci-palace)
+  - [October 05, 2025](#october-05-2025)
+    - [The Glorious Mysteries - Day 278](#the-glorious-mysteries---day-278)
+    - [AI-Generated Summary: On the Recurring Invocation That Forms the Heart of Common Prayer](#ai-generated-summary-on-the-recurring-invocation-that-forms-the-heart-of-common-prayer)
+    - [Byzantine mosaicists' 12th-century mosaic 'The Ascension' in St Mark's Basilica depicts Christ rising to heaven amid angels, with the Virgin Mary and astonished apostles below](#byzantine-mosaicists-12th-century-mosaic-the-ascension-in-st-marks-basilica-depicts-christ-rising-to-heaven-amid-angels-with-the-virgin-mary-and-astonished-apostles-below)
+    - [Simone Peterzano's 1580 Mannerist 'Pentecost' in Milan depicts the Holy Spirit descending upon Mary and the apostles (Stock Image)](#simone-peterzanos-1580-mannerist-pentecost-in-milan-depicts-the-holy-spirit-descending-upon-mary-and-the-apostles-stock-image)
+    - [Cesare Mariani's 1863 fresco 'Assumption of the Virgin with Vision of St Bonaventure' in Rome depicts the Virgin Mary's bodily ascent into heaven](#cesare-marianis-1863-fresco-assumption-of-the-virgin-with-vision-of-st-bonaventure-in-rome-depicts-the-virgin-marys-bodily-ascent-into-heaven)
+    - [Giuseppe Mattia Borgnis's 18th-century Baroque fresco 'Coronation of the Virgin' depicts Mary being crowned Queen of Heaven (Stock Image)](#giuseppe-mattia-borgniss-18th-century-baroque-fresco-coronation-of-the-virgin-depicts-mary-being-crowned-queen-of-heaven-stock-image)
 
 <!---toc end-->
 
@@ -8115,6 +8122,32 @@ My dear reader, one observes in this progression a most profound truth, that the
 ##### Caravaggio's 1601-1602 'The Incredulity of Saint Thomas' depicts the apostle verifying Christ's resurrection by touching His wounds, housed at Sanssouci Palace
 
 [![Caravaggio's 1601-1602 'The Incredulity of Saint Thomas' depicts the apostle verifying Christ's resurrection by touching His wounds, housed at Sanssouci Palace](October/jpgs/incredulity_SDEFEMok.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Der_ungl%C3%A4ubige_Thomas_-_Michelangelo_Merisi%2C_named_Caravaggio.jpg/960px-Der_ungl%C3%A4ubige_Thomas_-_Michelangelo_Merisi%2C_named_Caravaggio.jpg "Caravaggio's 1601-1602 'The Incredulity of Saint Thomas' depicts the apostle verifying Christ's resurrection by touching His wounds, housed at Sanssouci Palace")
+
+#### October 05, 2025
+
+##### The Glorious Mysteries - Day 278
+
+[![The Glorious Mysteries](October/jpgs/Day278.jpg)](https://youtu.be/K19qrA9Sdis "The Glorious Mysteries")
+
+##### AI-Generated Summary: On the Recurring Invocation That Forms the Heart of Common Prayer
+
+My dear reader, you have stumbled upon what might appear to the modern mind as a barren field—a landscape of repetition, where the same words are turned over and over like smooth stones in the hand. There is no grand narrative here, no detailed iconography of saints or mysteries, only the simple, sturdy framework of prayer itself. It is the Hail Mary, the Our Father, the Glory Be, repeated not as empty incantations but as the very steps of a well-trodden path, a ladder of petition and praise. One finds mention of the Glorious Mysteries—the Ascension, the Descent of the Spirit, the Assumption and Coronation of Our Lady—but they are named only as signposts along the way, their profound depths left for the pray-er to contemplate in silence. The whole concludes not with a theological treatise, but with a common, human gratitude for fellowship in the act, and a hope to continue the journey on the morrow. For it is in such patient recurrence that the heart, often so stubborn, may at last learn its way home.
+
+##### Byzantine mosaicists' 12th-century mosaic 'The Ascension' in St Mark's Basilica depicts Christ rising to heaven amid angels, with the Virgin Mary and astonished apostles below
+
+[![Byzantine mosaicists' 12th-century mosaic 'The Ascension' in St Mark's Basilica depicts Christ rising to heaven amid angels, with the Virgin Mary and astonished apostles below](October/jpgs/Ascension_m0o1xcbS.jpg)](https://www.wga.hu/art/zgothic/mosaics/6sanmarc/2cucros1.jpg "Byzantine mosaicists' 12th-century mosaic 'The Ascension' in St Mark's Basilica depicts Christ rising to heaven amid angels, with the Virgin Mary and astonished apostles below")
+
+##### Simone Peterzano's 1580 Mannerist 'Pentecost' in Milan depicts the Holy Spirit descending upon Mary and the apostles (Stock Image)
+
+[![Simone Peterzano's 1580 Mannerist 'Pentecost' in Milan depicts the Holy Spirit descending upon Mary and the apostles](October/jpgs/pentecostsimonepeterzano_Ul42r0l5.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.12926920.7055475/2959742.jpg "Simone Peterzano's 1580 Mannerist 'Pentecost' in Milan depicts the Holy Spirit descending upon Mary and the apostles")
+
+##### Cesare Mariani's 1863 fresco 'Assumption of the Virgin with Vision of St Bonaventure' in Rome depicts the Virgin Mary's bodily ascent into heaven
+
+[![Cesare Mariani's 1863 fresco 'Assumption of the Virgin with Vision of St Bonaventure' in Rome depicts the Virgin Mary's bodily ascent into heaven](October/jpgs/Assumption_MOQJdXH2.jpg)](https://as2.ftcdn.net/jpg/04/64/38/29/1000_F_464382946_EIK0RNI7i73omFzvLLXqQafxXBkZxLZB.jpg "Cesare Mariani's 1863 fresco 'Assumption of the Virgin with Vision of St Bonaventure' in Rome depicts the Virgin Mary's bodily ascent into heaven")
+
+##### Giuseppe Mattia Borgnis's 18th-century Baroque fresco 'Coronation of the Virgin' depicts Mary being crowned Queen of Heaven (Stock Image)
+
+[![Giuseppe Mattia Borgnis's 18th-century Baroque fresco 'Coronation of the Virgin' depicts Mary being crowned Queen of Heaven](October/jpgs/Coronation_x5xxkdIs.jpg)](https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.8926670.7055475/763119.jpg "Giuseppe Mattia Borgnis's 18th-century Baroque fresco 'Coronation of the Virgin' depicts Mary being crowned Queen of Heaven")
 
 ## November
 
