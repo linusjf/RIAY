@@ -15,6 +15,7 @@ source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
 source "${SCRIPT_DIR}/lib/curl.sh"
 source "${SCRIPT_DIR}/lib/youtube.sh"
+source "${SCRIPT_DIR}/lib/random.sh"
 source "${SCRIPT_DIR}/lib/lockconfig.sh"
 lockconfig::lock_config_vars "${SCRIPT_DIR}/config.env"
 
@@ -65,7 +66,10 @@ function get_chunk_prompt() {
 
 function get_final_prompt() {
   local input="$1"
-  printf "%s\n\n%s\n" "${FINAL_SUMMARY_PROMPT}" "${input}"
+  local final_prompt="${FINAL_SUMMARY_PROMPT}"
+  local random_length="$(random::random_int 10 30)"
+  new_final_prompt="${final_prompt//<no>/$random_length}"
+  printf "%s\n\n%s\n" "${new_final_prompt}" "${input}"
 }
 
 function summarize_chunk_llm() {

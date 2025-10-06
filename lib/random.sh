@@ -34,3 +34,18 @@ if ! declare -f random::random_string > /dev/null; then
   }
   export -f random::random_string
 fi
+
+if ! declare -f random::random_int > /dev/null; then
+  random::random_int() {
+    local min=$1
+    local max=$2
+
+    if [[ -z $min || -z $max || $min -ge $max ]]; then
+      echo "Usage: random_int <min> <max>" >&2
+      return 1
+    fi
+
+    echo $((min + RANDOM % (max - min + 1)))
+  }
+  export -f random::random_int
+fi
