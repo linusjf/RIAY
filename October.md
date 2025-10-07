@@ -49,6 +49,13 @@
     - ['The Visitation' depicts Mary and Elizabeth's sacred encounter in Ein Karem, where both women recognize God's miraculous work through their unborn children](#the-visitation-depicts-mary-and-elizabeths-sacred-encounter-in-ein-karem-where-both-women-recognize-gods-miraculous-work-through-their-unborn-children)
     - [Caravaggio's 1600 Baroque masterpiece 'Nativity with St Francis and St Lawrence' depicts Christ's birth with dramatic chiaroscuro, though the original oil painting was stolen in 1969](#caravaggios-1600-baroque-masterpiece-nativity-with-st-francis-and-st-lawrence-depicts-christs-birth-with-dramatic-chiaroscuro-though-the-original-oil-painting-was-stolen-in-1969)
     - [Giulio Campi's fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Christ to Simeon (Stock Image)](#giulio-campis-fresco-the-presentation-of-jesus-in-the-temple-in-cremona-depicts-mary-and-joseph-presenting-the-infant-christ-to-simeon-stock-image)
+  - [October 07, 2025](#october-07-2025)
+    - [The Joyful and Luminous Mysteries - Day 280](#the-joyful-and-luminous-mysteries---day-280)
+    - [AI-Generated Summary: On the Finding in the Temple and Those First Great Shining Mysteries Wherein the Divine Light Broke Upon the World](#ai-generated-summary-on-the-finding-in-the-temple-and-those-first-great-shining-mysteries-wherein-the-divine-light-broke-upon-the-world)
+    - [A 20th-century Byzantine Revival mosaic in Lourdes' Rosary Basilica depicting Mary and Joseph finding the young Jesus teaching in the Temple (Stock Image)](#a-20th-century-byzantine-revival-mosaic-in-lourdes-rosary-basilica-depicting-mary-and-joseph-finding-the-young-jesus-teaching-in-the-temple-stock-image)
+    - [An unknown Renaissance fresco, 'The Baptism of Christ', depicting Jesus baptized by John the Baptist in the Jordan River with the Holy Spirit descending as a dove, located in Padua's Church of San Benedetto (Stock Image)](#an-unknown-renaissance-fresco-the-baptism-of-christ-depicting-jesus-baptized-by-john-the-baptist-in-the-jordan-river-with-the-holy-spirit-descending-as-a-dove-located-in-paduas-church-of-san-benedetto-stock-image)
+    - [Gerard David's 'The Marriage at Cana' (c 1500), an Early Netherlandish oil painting in the Louvre, depicts Jesus performing his first miracle of turning water into wine](#gerard-davids-the-marriage-at-cana-c-1500-an-early-netherlandish-oil-painting-in-the-louvre-depicts-jesus-performing-his-first-miracle-of-turning-water-into-wine)
+    - [Rembrandt's 1633 oil painting 'Christ in the Storm on the Sea of Galilee' dramatically captures Jesus calming the tempest, demonstrating divine authority over nature](#rembrandts-1633-oil-painting-christ-in-the-storm-on-the-sea-of-galilee-dramatically-captures-jesus-calming-the-tempest-demonstrating-divine-authority-over-nature)
 
 <!---toc end-->
 
@@ -235,3 +242,31 @@ Yet when we enter, we find the rooms strangely bare. The prayers are repeated li
 ### Giulio Campi's fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Christ to Simeon (Stock Image)
 
 [![Giulio Campi's 1547 fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Christ to Simeon](October/jpgs/PresentationinTemple_rsG3byzT.jpg)](https://stock.adobe.com/in/images/cremona-italy-may-24-2016-the-fresco-of-presentation-in-the-temple-in-chiesa-di-santa-rita-by-giulio-campi-1547/113785168 "Giulio Campi's 1547 fresco 'The Presentation of Jesus in the Temple' in Cremona depicts Mary and Joseph presenting the infant Christ to Simeon")
+
+## October 07, 2025
+
+### The Joyful and Luminous Mysteries - Day 280
+
+[![The Joyful and Luminous Mysteries](/October/jpgs/Day280.jpg)](https://youtu.be/qB_xMC1t9Ak "The Joyful and Luminous Mysteries")
+
+### AI-Generated Summary: On the Finding in the Temple and Those First Great Shining Mysteries Wherein the Divine Light Broke Upon the World
+
+It is a curious thing that we should find the Divine Boy not among the pots and pans of the kitchen, nor at play in the streets, but seated among the learned doctors in the Temple, both hearing them and asking questions. His mother’s gentle rebuke was met with that first mysterious declaration of a higher allegiance, a work that was His Father’s.
+
+Then came the great Shining Mysteries, those moments when the Light Himself stepped from the quiet years into the public eye. First, in the waters of the Jordan, where the sinless One was baptized among sinners, and the voice of the Father thundered approval while the Spirit, in the form of a dove, descended. Next, at a wedding in Cana, where a mother’s quiet plea moved the Maker of the vine to turn water into wine, a plain hint of glory tucked into a domestic crisis. And then, the Proclamation: a call went out across the land for all to turn from their own ways and believe the Good News that the Kingdom of God, so long waited for, had at last drawn near.
+
+### A 20th-century Byzantine Revival mosaic in Lourdes' Rosary Basilica depicting Mary and Joseph finding the young Jesus teaching in the Temple (Stock Image)
+
+[![A 20th-century Byzantine Revival mosaic in Lourdes' Rosary Basilica depicting Mary and Joseph finding the young Jesus teaching in the Temple](October/jpgs/LostandFound_ugogH8j8.jpg)](https://thumbs.dreamstime.com/b/mosaic-jesus-lost-found-temple-rosary-basilica-lourdes-78705042.jpg "A 20th-century Byzantine Revival mosaic in Lourdes' Rosary Basilica depicting Mary and Joseph finding the young Jesus teaching in the Temple")
+
+### An unknown Renaissance fresco, 'The Baptism of Christ', depicting Jesus baptized by John the Baptist in the Jordan River with the Holy Spirit descending as a dove, located in Padua's Church of San Benedetto (Stock Image)
+
+[![An unknown Renaissance fresco, 'The Baptism of Christ', depicting Jesus baptized by John the Baptist in the Jordan River with the Holy Spirit descending as a dove, located in Padua's Church of San Benedetto](October/jpgs/BaptismofChrist_OdaxfrgU.jpg)](https://www.istockphoto.com/vector/padua-baptism-of-christ-in-church-san-benedetto-vecchio-gm517403261-48689476 "An unknown Renaissance fresco, 'The Baptism of Christ', depicting Jesus baptized by John the Baptist in the Jordan River with the Holy Spirit descending as a dove, located in Padua's Church of San Benedetto")
+
+### Gerard David's 'The Marriage at Cana' (c 1500), an Early Netherlandish oil painting in the Louvre, depicts Jesus performing his first miracle of turning water into wine
+
+[![Gerard David's 'The Marriage at Cana' (c 1500), an Early Netherlandish oil painting in the Louvre, depicts Jesus performing his first miracle of turning water into wine](October/jpgs/MarriageCana_S1ZiEIrp.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Gerard_David_-_The_Marriage_at_Cana.jpg/960px-Gerard_David_-_The_Marriage_at_Cana.jpg "Gerard David's 'The Marriage at Cana' (c 1500), an Early Netherlandish oil painting in the Louvre, depicts Jesus performing his first miracle of turning water into wine")
+
+### Rembrandt's 1633 oil painting 'Christ in the Storm on the Sea of Galilee' dramatically captures Jesus calming the tempest, demonstrating divine authority over nature
+
+[![Rembrandt's 1633 oil painting 'Christ in the Storm on the Sea of Galilee' dramatically captures Jesus calming the tempest, demonstrating divine authority over nature](October/jpgs/stormsea1633rembrandt_AV1QtrWc.jpg)](https://upload.wikimedia.org/wikipedia/commons/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg "Rembrandt's 1633 oil painting 'Christ in the Storm on the Sea of Galilee' dramatically captures Jesus calming the tempest, demonstrating divine authority over nature")
