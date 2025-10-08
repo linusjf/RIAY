@@ -8004,6 +8004,13 @@ Yet here, the substance is withheld. We are left with the scaffolding of devotio
     - [An unknown Renaissance fresco, 'The Baptism of Christ', depicting Jesus baptized by John the Baptist in the Jordan River with the Holy Spirit descending as a dove, located in Padua's Church of San Benedetto (Stock Image)](#an-unknown-renaissance-fresco-the-baptism-of-christ-depicting-jesus-baptized-by-john-the-baptist-in-the-jordan-river-with-the-holy-spirit-descending-as-a-dove-located-in-paduas-church-of-san-benedetto-stock-image)
     - [Gerard David's 'The Marriage at Cana' (c 1500), an Early Netherlandish oil painting in the Louvre, depicts Jesus performing his first miracle of turning water into wine](#gerard-davids-the-marriage-at-cana-c-1500-an-early-netherlandish-oil-painting-in-the-louvre-depicts-jesus-performing-his-first-miracle-of-turning-water-into-wine)
     - [Rembrandt's 1633 oil painting 'Christ in the Storm on the Sea of Galilee' dramatically captures Jesus calming the tempest, demonstrating divine authority over nature](#rembrandts-1633-oil-painting-christ-in-the-storm-on-the-sea-of-galilee-dramatically-captures-jesus-calming-the-tempest-demonstrating-divine-authority-over-nature)
+  - [October 08, 2025](#october-08-2025)
+    - [The Luminous and Sorrowful Mysteries - Day 281](#the-luminous-and-sorrowful-mysteries---day-281)
+    - [AI-Generated Summary: On the Unfolding of Divine Mysteries Through Light and Sorrow in the Rosary](#ai-generated-summary-on-the-unfolding-of-divine-mysteries-through-light-and-sorrow-in-the-rosary)
+    - [Theophanes the Greek's 1403 fresco 'The Transfiguration' at the Tretyakov Gallery depicts Christ in divine light with Moses and Elijah](#theophanes-the-greeks-1403-fresco-the-transfiguration-at-the-tretyakov-gallery-depicts-christ-in-divine-light-with-moses-and-elijah)
+    - [Juan de Juanes' 1562 Spanish Renaissance masterpiece 'The Last Supper' depicts Christ instituting the Eucharist at the final meal](#juan-de-juanes-1562-spanish-renaissance-masterpiece-the-last-supper-depicts-christ-instituting-the-eucharist-at-the-final-meal)
+    - [Giotto's 1304-1306 fresco in Padua's Scrovegni Chapel captures Judas's treacherous kiss during Christ's arrest in Gethsemane](#giottos-1304-1306-fresco-in-paduas-scrovegni-chapel-captures-judass-treacherous-kiss-during-christs-arrest-in-gethsemane)
+    - [Giovanni Antonio Bazzi's 'Christ at the Column' (c 1510-1515), a fresco in Siena's Pinacoteca Nazionale, depicts the bound and wounded Christ during his flagellation](#giovanni-antonio-bazzis-christ-at-the-column-c-1510-1515-a-fresco-in-sienas-pinacoteca-nazionale-depicts-the-bound-and-wounded-christ-during-his-flagellation)
 
 <!---toc end-->
 
@@ -8218,6 +8225,36 @@ Then came the great Shining Mysteries, those moments when the Light Himself step
 ##### Rembrandt's 1633 oil painting 'Christ in the Storm on the Sea of Galilee' dramatically captures Jesus calming the tempest, demonstrating divine authority over nature
 
 [![Rembrandt's 1633 oil painting 'Christ in the Storm on the Sea of Galilee' dramatically captures Jesus calming the tempest, demonstrating divine authority over nature](October/jpgs/stormsea1633rembrandt_AV1QtrWc.jpg)](https://upload.wikimedia.org/wikipedia/commons/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg "Rembrandt's 1633 oil painting 'Christ in the Storm on the Sea of Galilee' dramatically captures Jesus calming the tempest, demonstrating divine authority over nature")
+
+#### October 08, 2025
+
+##### The Luminous and Sorrowful Mysteries - Day 281
+
+[![The Luminous and Sorrowful Mysteries](October/jpgs/Day281.jpg)](https://youtu.be/QbQcedqxTFs "The Luminous and Sorrowful Mysteries")
+
+##### AI-Generated Summary: On the Unfolding of Divine Mysteries Through Light and Sorrow in the Rosary
+
+My dear reader, one finds in these mysteries a most curious pattern—first a glimpse of that glory which is our true country, followed by the terrible road by which we must travel to reach it. In the fourth luminous mystery, we are taken up the mountain with Peter, James, and John, where the veil is lifted for a moment and the Master's face shines like the sun itself, His clothes becoming as light. There He stands, talking with Moses and Elijah, as if all of sacred history were gathered on that summit to acknowledge its fulfillment. It is as if He were saying, "This is what I have always been, though you saw only the carpenter's son."
+
+Then comes the fifth mystery, where He gives us not merely a vision to behold but a reality to consume. At that final meal, He takes the common stuff of bread and wine and makes them the very vehicles of His presence—His Body, His Blood—commanding His friends to do this in remembrance. He was planting a seed that would feed nations.
+
+But the vision fades, and the sustenance given, we descend with Him into the shadows of the first sorrowful mystery. Here, in the garden, we see the weight of all our rebellions pressing upon one human heart. In profound distress, He accepts the bitter cup of the Father's will, while those He asked to watch could only sleep. Then follows the second mystery, that brutal stripping and scourging at the pillar—where the same Body, given in love at the supper, is now taken by force and cruelty. It is the same flesh, first offered, then torn; first transfigured in light, then disfigured by sin. One cannot help but see that the love which shines on the mountain is the very same that bleeds at the pillar.
+
+##### Theophanes the Greek's 1403 fresco 'The Transfiguration' at the Tretyakov Gallery depicts Christ in divine light with Moses and Elijah
+
+[![Theophanes the Greek's 1403 fresco 'The Transfiguration' at the Tretyakov Gallery depicts Christ in divine light with Moses and Elijah](October/jpgs/transfiguration_WHMI2CNA.jpg)](https://classicaliconography.org/wp-content/uploads/2023/08/Transfiguration_by_Feofan_Grek_from_Spaso-Preobrazhensky_Cathedral_in_Pereslavl-Zalessky_15th_c_Tretyakov_gallery-e1691500465284.jpeg "Theophanes the Greek's 1403 fresco 'The Transfiguration' at the Tretyakov Gallery depicts Christ in divine light with Moses and Elijah")
+
+##### Juan de Juanes' 1562 Spanish Renaissance masterpiece 'The Last Supper' depicts Christ instituting the Eucharist at the final meal
+
+[![Juan de Juanes' 1562 Spanish Renaissance masterpiece 'The Last Supper' depicts Christ instituting the Eucharist at the final meal](October/jpgs/JuandeJuanesLastSupper_kj472MYn.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/%C3%9Altima_Cena_-_Juan_de_Juanes.jpg/960px-%C3%9Altima_Cena_-_Juan_de_Juanes.jpg "Juan de Juanes' 1562 Spanish Renaissance masterpiece 'The Last Supper' depicts Christ instituting the Eucharist at the final meal")
+
+##### Giotto's 1304-1306 fresco in Padua's Scrovegni Chapel captures Judas's treacherous kiss during Christ's arrest in Gethsemane
+
+[![Giotto's 1304-1306 fresco in Padua's Scrovegni Chapel captures Judas's treacherous kiss during Christ's arrest in Gethsemane](October/jpgs/arrestofchristgiotto_We6a5cPE.jpg)](https://upload.wikimedia.org/wikipedia/commons/e/ef/Giotto_-_Scrovegni_-_-31-_-_Kiss_of_Judas.jpg "Giotto's 1304-1306 fresco in Padua's Scrovegni Chapel captures Judas's treacherous kiss during Christ's arrest in Gethsemane")
+
+##### Giovanni Antonio Bazzi's 'Christ at the Column' (c 1510-1515), a fresco in Siena's Pinacoteca Nazionale, depicts the bound and wounded Christ during his flagellation
+
+[![Giovanni Antonio Bazzi's 'Christ at the Column' (c 1510-1515), a fresco in Siena's Pinacoteca Nazionale, depicts the bound and wounded Christ during his flagellation](October/jpgs/Colonna_dhmP44yB.jpg)](https://cdn.finestresullarte.info/rivista/immagini/2022/2055/giovanni-antonio-bazzi-sodoma-cristo-alla-colonna.jpg "Giovanni Antonio Bazzi's 'Christ at the Column' (c 1510-1515), a fresco in Siena's Pinacoteca Nazionale, depicts the bound and wounded Christ during his flagellation")
 
 ## November
 
