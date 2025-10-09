@@ -8011,6 +8011,13 @@ Yet here, the substance is withheld. We are left with the scaffolding of devotio
     - [Juan de Juanes' 1562 Spanish Renaissance masterpiece 'The Last Supper' depicts Christ instituting the Eucharist at the final meal](#juan-de-juanes-1562-spanish-renaissance-masterpiece-the-last-supper-depicts-christ-instituting-the-eucharist-at-the-final-meal)
     - [Giotto's 1304-1306 fresco in Padua's Scrovegni Chapel captures Judas's treacherous kiss during Christ's arrest in Gethsemane](#giottos-1304-1306-fresco-in-paduas-scrovegni-chapel-captures-judass-treacherous-kiss-during-christs-arrest-in-gethsemane)
     - [Giovanni Antonio Bazzi's 'Christ at the Column' (c 1510-1515), a fresco in Siena's Pinacoteca Nazionale, depicts the bound and wounded Christ during his flagellation](#giovanni-antonio-bazzis-christ-at-the-column-c-1510-1515-a-fresco-in-sienas-pinacoteca-nazionale-depicts-the-bound-and-wounded-christ-during-his-flagellation)
+  - [October 09, 2025](#october-09-2025)
+    - [The Sorrowful and Glorious Mysteries - Day 282](#the-sorrowful-and-glorious-mysteries---day-282)
+    - [AI-Generated Summary: On the Sorrowful Weight of Thorns and Wood and the Glorious Dawn That Follows](#ai-generated-summary-on-the-sorrowful-weight-of-thorns-and-wood-and-the-glorious-dawn-that-follows)
+    - [Caravaggio's 1605 'Ecce Homo' in Genoa depicts Christ crowned with thorns as Pilate presents him to the mocking crowd](#caravaggios-1605-ecce-homo-in-genoa-depicts-christ-crowned-with-thorns-as-pilate-presents-him-to-the-mocking-crowd)
+    - [Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ falling under the cross's weight amidst an indifferent crowd, housed in Vienna's Kunsthistorisches Museum](#pieter-bruegel-the-elders-1564-oil-painting-the-procession-to-calvary-depicts-christ-falling-under-the-crosss-weight-amidst-an-indifferent-crowd-housed-in-viennas-kunsthistorisches-museum)
+    - [James Tissot's 1886-1894 gouache 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective, housed at the Brooklyn Museum](#james-tissots-1886-1894-gouache-what-our-lord-saw-from-the-cross-depicts-the-crucifixion-from-christs-unique-perspective-housed-at-the-brooklyn-museum)
+    - [Annibale Carracci's 1593 oil painting 'Resurrection' at the Louvre depicts Christ gloriously emerging from the tomb as Roman soldiers recoil in awe](#annibale-carraccis-1593-oil-painting-resurrection-at-the-louvre-depicts-christ-gloriously-emerging-from-the-tomb-as-roman-soldiers-recoil-in-awe)
 
 <!---toc end-->
 
@@ -8255,6 +8262,32 @@ But the vision fades, and the sustenance given, we descend with Him into the sha
 ##### Giovanni Antonio Bazzi's 'Christ at the Column' (c 1510-1515), a fresco in Siena's Pinacoteca Nazionale, depicts the bound and wounded Christ during his flagellation
 
 [![Giovanni Antonio Bazzi's 'Christ at the Column' (c 1510-1515), a fresco in Siena's Pinacoteca Nazionale, depicts the bound and wounded Christ during his flagellation](October/jpgs/Colonna_dhmP44yB.jpg)](https://cdn.finestresullarte.info/rivista/immagini/2022/2055/giovanni-antonio-bazzi-sodoma-cristo-alla-colonna.jpg "Giovanni Antonio Bazzi's 'Christ at the Column' (c 1510-1515), a fresco in Siena's Pinacoteca Nazionale, depicts the bound and wounded Christ during his flagellation")
+
+#### October 09, 2025
+
+##### The Sorrowful and Glorious Mysteries - Day 282
+
+[![The Sorrowful and Glorious Mysteries](October/jpgs/Day282.jpg)](https://youtu.be/gQQK_uwyWRs "The Sorrowful and Glorious Mysteries")
+
+##### AI-Generated Summary: On the Sorrowful Weight of Thorns and Wood and the Glorious Dawn That Follows
+
+My dear reader, one must imagine the soldiers in the praetorium, not as monsters from a fable, but as ordinary men whose cruelty was the commonplace sort, who fashioned a crown from the bramble—that most unkingly diadem—and pressed it upon a brow that knew no sin. This is the third mystery: the Crowning with Thorns. Then follows the fourth, a spectacle of a different order, where the weight of the Cross is not merely that of timber, but of a world’s transgression borne up a narrow path. The fifth mystery is the thing itself: the Crucifixion, where the Love that made the worlds is nailed to the tree He made. Yet this is not the final word, for the first of the Glorious Mysteries shatters the silence of the tomb—the Resurrection—where Death itself begins to work backwards.
+
+##### Caravaggio's 1605 'Ecce Homo' in Genoa depicts Christ crowned with thorns as Pilate presents him to the mocking crowd
+
+[![Caravaggio's 1605 'Ecce Homo' in Genoa depicts Christ crowned with thorns as Pilate presents him to the mocking crowd](October/jpgs/EcceHomo_vWnsKphY.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Caravaggio_%28Michelangelo_Merisi%29_-_Ecce_Homo_-_Google_Art_Project.jpg/960px-Caravaggio_%28Michelangelo_Merisi%29_-_Ecce_Homo_-_Google_Art_Project.jpg "Caravaggio's 1605 'Ecce Homo' in Genoa depicts Christ crowned with thorns as Pilate presents him to the mocking crowd")
+
+##### Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ falling under the cross's weight amidst an indifferent crowd, housed in Vienna's Kunsthistorisches Museum
+
+[![Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ falling under the cross's weight amidst an indifferent crowd, housed in Vienna's Kunsthistorisches Museum](October/jpgs/Calvary_MPHoTQII.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pieter_Bruegel_d._%C3%84._007.jpg/960px-Pieter_Bruegel_d._%C3%84._007.jpg "Pieter Bruegel the Elder's 1564 oil painting 'The Procession to Calvary' depicts Christ falling under the cross's weight amidst an indifferent crowd, housed in Vienna's Kunsthistorisches Museum")
+
+##### James Tissot's 1886-1894 gouache 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective, housed at the Brooklyn Museum
+
+[![James Tissot's 1886-1894 gouache 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective, housed at the Brooklyn Museum](October/jpgs/viewfromcross_mVMgBxqL.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg/960px-Brooklyn_Museum_-_What_Our_Lord_Saw_from_the_Cross_%28Ce_que_voyait_Notre-Seigneur_sur_la_Croix%29_-_James_Tissot.jpg "James Tissot's 1886-1894 gouache 'What Our Lord Saw from the Cross' depicts the Crucifixion from Christ's unique perspective, housed at the Brooklyn Museum")
+
+##### Annibale Carracci's 1593 oil painting 'Resurrection' at the Louvre depicts Christ gloriously emerging from the tomb as Roman soldiers recoil in awe
+
+[![Annibale Carracci's 1593 oil painting 'Resurrection' at the Louvre depicts Christ gloriously emerging from the tomb as Roman soldiers recoil in awe](October/jpgs/Resurrection_kBfOT3Vh.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg/960px-Annibale_Carracci%2C_Resurrezione%2C_Louvre.jpg "Annibale Carracci's 1593 oil painting 'Resurrection' at the Louvre depicts Christ gloriously emerging from the tomb as Roman soldiers recoil in awe")
 
 ## November
 
