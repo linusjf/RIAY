@@ -47,6 +47,11 @@ def parse_args() -> argparse.Namespace:
     )
     return parser.parse_args()
 
+def random_int(a, b):
+    """Return a random integer N such that a <= N < b."""
+    return random.randrange(a, b)
+
+
 class ArtLocator:
     """Class for locating artworks using vector similarity search."""
 
@@ -103,6 +108,8 @@ class ArtLocator:
         self.logger.debug(f"Create caption prompt: {self.create_caption_prompt}")
         prompt = self.create_caption_prompt.replace("{json_object}", json_object)
         prompt = prompt.replace("{text_input}", input_text)
+        caption_length = random_int(10, 30)
+        prompt = prompt.replace("{no}", str(caption_length))
 
         timeout = httpx.Timeout(30.0, connect=10.0)
         client = openai.OpenAI(http_client=httpx.Client(timeout=timeout),
