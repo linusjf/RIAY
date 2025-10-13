@@ -53,6 +53,51 @@ class ArtDatabaseCreator:
         embedding: np.ndarray = get_embedding(text_to_embed)
         return embedding.tobytes()
 
+    def create_indexes(self) -> None:
+        """Create indexes on the specified columns in self.indexed_columns."""
+        if not self.indexed_columns:
+            self.logger.info("No columns specified for indexing")
+            return
+            
+        self.logger.info(f"Creating indexes on columns: {self.indexed_columns}")
+        
+        for column in self.indexed_columns:
+            index_name = f"idx_art_records_{column}"
+            create_index_sql = f"CREATE INDEX IF NOT EXISTS {index_name} ON art_records ({column})"
+            
+            try:
+                if self.cursor:
+                    self.cursor.execute(create_index_sql)
+                    self.logger.debug(f"Created index {index_name} on column {column}")
+            except Exception as e:
+                self.logger.error(f"Error creating index {index_name} on column {column}: {e}")
+                # Continue with other indexes even if one fails
+                continue
+        
+        self.logger.info("Finished creating single-column indexes")
+
+    def create_compound_index(self) -> None:
+        """Create a compound index using all columns in self.indexed_columns."""
+        if not self.indexed_columns:
+            self.logger.info("No columns specified for compound indexing")
+            return
+            
+        self.logger.info(f"Creating compound index on columns: {self.indexed_columns}")
+        
+        # Create a compound index name based on all columns
+        index_name = f"idx_art_records_compound_{'_'.join(self.indexed_columns)}"
+        columns_list = ', '.join(self.indexed_columns)
+        create_index_sql = f"CREATE INDEX IF NOT EXISTS {index_name} ON art_records ({columns_list})"
+        
+        try:
+            if self.cursor:
+                self.cursor.execute(create_index_sql)
+                self.logger.debug(f"Created compound index {index_name} on columns {columns_list}")
+                self.logger.info("Successfully created compound index")
+        except Exception as e:
+            self.logger.error(f"Error creating compound index {index_name} on columns {columns_list}: {e}")
+            raise
+
     def connect(self) -> None:
         """Establish database connection."""
         self.logger.debug(f"Connecting to database at {self.db_path}")
@@ -180,6 +225,8 @@ class ArtDatabaseCreator:
             self.connect()
             self.create_table()
             record_count: int = self.import_data()
+            self.create_indexes()
+            self.create_compound_index()
             self.create_hnsw_index(record_count)
             if self.connection:
                 self.connection.commit()
