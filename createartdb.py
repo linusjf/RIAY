@@ -30,10 +30,12 @@ class ArtDatabaseCreator:
         self.connection: Optional[sqlite3.Connection] = None
         self.cursor: Optional[sqlite3.Cursor] = None
         self.field_types: Dict[str, str] = self._load_field_types()
+        indexed_cols: str = config.get(ConfigConstants.INDEXED_COLUMNS, "")
+        self.indexed_columns: List[str] = [col.strip() for col in indexed_cols.split(",") if col.strip()]
         embeddable_cols: str = config.get(ConfigConstants.EMBEDDABLE_COLUMNS, "")
         self.embeddable_columns: List[str] = [col.strip() for col in embeddable_cols.split(",") if col.strip()]
         self.vector_embeddings_dimensions: int = config.get(ConfigConstants.VECTOR_EMBEDDINGS_MODEL_DIMENSIONS, 1024)
-        self.logger.debug(f"Initialized ArtDatabaseCreator with csv_path={self.csv_path}, db_path={self.db_path}, embeddable_columns={self.embeddable_columns}")
+        self.logger.debug(f"Initialized ArtDatabaseCreator with csv_path={self.csv_path}, db_path={self.db_path}, indexed_columns={self.indexed_columns}, embeddable_columns={self.embeddable_columns}")
 
     def _load_field_types(self) -> Dict[str, str]:
         """Load field types from artrecords.types file."""
