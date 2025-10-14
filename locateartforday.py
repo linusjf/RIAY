@@ -173,9 +173,9 @@ class ArtLocator:
             } for row in rows
         }
 
-    def get_matching_artworks(self, mystery_type: str, mystery_name: str) -> List[Dict[str, Any]]:
+    def get_matching_artworks(self, mystery_name: str) -> List[Dict[str, Any]]:
         """Find artworks that directly match mystery type and name."""
-        self.logger.info(f"Searching for direct matches of {mystery_type}/{mystery_name}")
+        self.logger.info(f"Searching for direct matches of {mystery_name}")
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         query = """
@@ -183,15 +183,11 @@ class ArtLocator:
                    image_url, location, medium, mystery_name, mystery_type, original_title,
                    original_title_ISO_code, original_title_language, style, subject, title, embeddings
             FROM art_records
-            WHERE (mystery_type LIKE ? OR mystery_type GLOB ?)
-            AND (mystery_name LIKE ? OR mystery_name GLOB ?)
+            WHERE mystery_name is ?
         """
-        cursor.execute(query, (
-            f"%{mystery_type}%",
-            f"*{mystery_type}*",
-            f"%{mystery_name}%",
-            f"*{mystery_name}*"
-        ))
+        cursor.execute(query,
+            (mystery_name,)
+        )
         rows = cursor.fetchall()
         conn.close()
         return [{
@@ -271,17 +267,15 @@ class ArtLocator:
 
             for mystery in mysteries:
                 query_text = base_query_text
-                mystery_type = mystery.get("mystery_type", "")
                 mystery_name = mystery.get("mystery_name", "")
-                if mystery_type or mystery_name:
-                    query_text += f"\nMystery type: {mystery_type}"
+                if mystery_name:
                     query_text += f"\nMystery name: {mystery_name}"
                     self.logger.debug(f"Searching with mystery: {mystery}")
                     # Get query embedding
                     query_embedding = self.get_query_vector(query_text)
 
                     # Check for direct matches first
-                    direct_matches = self.get_matching_artworks(mystery_type, mystery_name)
+                    direct_matches = self.get_matching_artworks(mystery_name)
                     count_matches = len(direct_matches)
                     if direct_matches:
                         self.logger.info(f"Found {count_matches} direct matches")
