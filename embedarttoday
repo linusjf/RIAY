@@ -161,6 +161,8 @@ function generate_markdown() {
     header="### ${caption}"
   fi
 
+  header="${header} - Day ${day_num}"
+
   local video_md
   video_md=$(vidmd::videomarkdown "$caption" "$image_path" "$source_url")
 
