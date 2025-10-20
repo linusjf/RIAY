@@ -64,12 +64,70 @@ function get_chunk_prompt() {
   printf "%s\n\n%s\n" "${CHUNK_SUMMARY_PROMPT}" "${chunk}"
 }
 
+function get_preprocess_chunk_prompt() {
+  local chunk="$1"
+  printf "%s\n\n%s\n" "${PREPROCESS_CHUNK_PROMPT}" "${chunk}"
+}
+
 function get_final_prompt() {
   local input="$1"
   local final_prompt="${FINAL_SUMMARY_PROMPT}"
   local random_length="$(random::random_int 10 30)"
   new_final_prompt="${final_prompt//<no>/$random_length}"
   printf "%s\n\n%s\n" "${new_final_prompt}" "${input}"
+}
+
+function preprocess_chunk_llm() {
+  local chunk="$1"
+  local prompt="$(get_preprocess_chunk_prompt "$chunk")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
+  local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_PREPROCESS_PROMPT")"
+  local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --arg model "${TEXT_LLM_MODEL}" --argjson temperature "$TEMPERATURE" --argjson top_p "$TOP_P" \
+    '{
+  "model": $model,
+  "messages": [
+    {
+      "role": "system",
+      "content": $system
+    },
+    {
+      "role": "user",
+      "content": $content
+    }
+  ],
+  "temperature": $temperature,
+  "top_p": $top_p
+}')"
+
+  local response
+  response="$(
+    curl::request \
+      "${TEXT_LLM_BASE_URL}${TEXT_LLM_CHAT_ENDPOINT}" \
+      "POST" \
+      --header "Authorization: Bearer ${TEXT_LLM_API_KEY}" \
+      --header "Content-Type: application/json" \
+      --data "$payload"
+  )"
+
+  if ! echo "$response" | jq . > /dev/null 2>&1; then
+    err "Text LLM API returned invalid response"
+    return 1
+  fi
+
+  PREPROCESSED_CHUNK="$(echo "$response" | jq -r '.choices[0].message.content')"
+}
+
+function preprocess_chunk() {
+  local chunk="$1"
+
+  if [[ -n "${TEXT_LLM_API_KEY:-}" ]]; then
+    if preprocess_chunk_llm "$chunk"; then
+      return 0
+    fi
+  fi
+
+  err "Failed to preprocess chunk (no working APIs available)"
+  return 1
 }
 
 function summarize_chunk_llm() {
@@ -202,7 +260,9 @@ function main() {
     usage 1
   fi
 
-  require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR TEXT_LLM_MODEL TEXT_LLM_API_KEY TEXT_LLM_BASE_URL TEXT_LLM_CHAT_ENDPOINT TRANSCRIBE_VIDEOS TEMPERATURE TOP_P
+  require_vars YOUTUBE_API_KEY CAPTIONS_OUTPUT_DIR TEXT_LLM_MODEL TEXT_LLM_API_KEY TEXT_LLM_BASE_URL TEXT_LLM_CHAT_ENDPOINT \
+    TRANSCRIBE_VIDEOS TEMPERATURE TOP_P PREPROCESS_CHUNK_PROMPT CHUNK_SUMMARY_PROMPT FINAL_SUMMARY_PROMPT SYSTEM_SUMMARY_PROMPT \
+    SYSTEM_PREPROCESS_PROMPT
 
   local VIDEO_ID="$1"
   local captions_file="${CAPTIONS_OUTPUT_DIR}/${VIDEO_ID}.en.txt"
@@ -252,9 +312,12 @@ function main() {
   local INTERMEDIATE_SUMMARIES=()
   local start_time=$(date +%s)
   for chunk in "${CHUNKS[@]}"; do
+    local PREPROCESSED_CHUNK
+    preprocess_chunk "$chunk"
     local SUMMARIZED_CHUNK
-    summarize_chunk "$chunk"
+    summarize_chunk "$PREPROCESSED_CHUNK"
     INTERMEDIATE_SUMMARIES+=("${SUMMARIZED_CHUNK}")
+    PREPROCESSED_CHUNK=""
     SUMMARIZED_CHUNK=""
     if $verbose; then
       >&2 echo "Processed chunk (length: ${#chunk} chars)"
