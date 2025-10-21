@@ -321,21 +321,31 @@ function main() {
     fi
   fi
 
-  local TRANSCRIPT
-  TRANSCRIPT="$(cat "$captions_file")"
-
-  if [[ -z "$TRANSCRIPT" ]]; then
-    die "Error: Transcript conversion failed"
+  if [ ! -s "$captions_file" ]; then
+    die "Error: ${captions_file} empty. Transcript conversion failed."
   fi
 
-  >&2 echo "Transcript extracted (length: ${#TRANSCRIPT} chars)"
-
   local TOTAL_LEN="$(wc -c < "$captions_file")"
+  >&2 echo "Transcript extracted (length: ${TOTAL_LEN} chars)"
 
   local CHUNKS=()
-  for ((i = 0; i < TOTAL_LEN; i += CHUNK_SIZE)); do
-    CHUNKS+=("${TRANSCRIPT:i:CHUNK_SIZE}")
-  done
+  buffer=""
+
+  # Read the file, replace newlines with spaces, and split sentences at ., !, or ?
+  sentences=$(tr '\n' ' ' < "$captions_file" | sed 's/\([.!?]\) \+/\1\n/g')
+
+  while IFS= read -r sentence; do
+    sentence="${sentence} "
+    if ((${#buffer} + ${#sentence} > CHUNK_SIZE)); then
+      CHUNKS+=("$buffer")
+      buffer="$sentence"
+    else
+      buffer+="$sentence"
+    fi
+  done <<< "$sentences"
+
+  # Add the remaining buffer as the last chunk
+  [[ -n "$buffer" ]] && CHUNKS+=("$buffer")
 
   >&2 echo "Split transcript into ${#CHUNKS[@]} chunks"
 
