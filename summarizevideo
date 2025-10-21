@@ -307,20 +307,22 @@ function main() {
 
   local INTERMEDIATE_SUMMARIES=()
   local start_time=$(date +%s)
+  declare -i chunk_num=1
   for chunk in "${CHUNKS[@]}"; do
     local PREPROCESSED_CHUNK
     preprocess_chunk "$chunk"
-    >&2 echo "Preprocessed chunk (length: ${#chunk} chars)"
+    >&2 echo "Preprocessed chunk ${chunk_num} (length: ${#chunk} chars)"
     local SUMMARIZED_CHUNK
     summarize_chunk "$PREPROCESSED_CHUNK"
     INTERMEDIATE_SUMMARIES+=("${SUMMARIZED_CHUNK}")
-    >&2 echo "Summarized chunk (length: ${#PREPROCESSED_CHUNK} chars)"
+    >&2 echo "Summarized chunk ${chunk_num} (length: ${#PREPROCESSED_CHUNK} chars)"
     PREPROCESSED_CHUNK=""
     SUMMARIZED_CHUNK=""
     if [[ "${GAP_BW_REQS}" -gt 0 ]]; then
       >&2 echo "Waiting for ${GAP_BW_REQS} seconds before initiating next request...."
       sleep "$GAP_BW_REQS"
     fi
+    ((chunk_num++))
   done
 
   local FINAL_INPUT
