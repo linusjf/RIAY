@@ -330,7 +330,8 @@ function main() {
 
   >&2 echo "Transcript extracted (length: ${#TRANSCRIPT} chars)"
 
-  local TOTAL_LEN=${#TRANSCRIPT}
+  local TOTAL_LEN="$(wc -c < "$captions_file")"
+
   local CHUNKS=()
   for ((i = 0; i < TOTAL_LEN; i += CHUNK_SIZE)); do
     CHUNKS+=("${TRANSCRIPT:i:CHUNK_SIZE}")
