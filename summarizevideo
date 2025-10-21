@@ -35,25 +35,59 @@ function usage() {
   >&"$output" cat << EOF
 Usage: ${SCRIPT_NAME} [OPTIONS] <youtube-video-id>
 
+Summarizes YouTube videos by extracting captions and using AI APIs to generate
+comprehensive markdown-formatted summaries. The script processes video captions
+in chunks, generates intermediate summaries, and produces a final consolidated summary.
+
 Options:
-  -d, --debug             Enable debug output
+  -d, --debug             Enable debug output (set -x)
   --verbose               Enable verbose output
   --version               Show version information
   --help                  Show this help message
 
-Environment variables required:
+Required Environment Variables:
   TEXT_LLM_API_KEY           API key for LLM service
-  TEXT_LLM_MODEL             text llm model
-  TEXT_LLM_BASE_URL           text llm base url
-  TEXT_LLM_CHAT_ENDPOINT      text llm chat endpoint
-  SUMMARY_IMAGE_META_PROMPT  System prompt for image prompt and caption generation
-  TEMPERATURE                Creativity parameter (0-2)
-  TOP_P                      The model keeps only the smallest set of tokens whose cumulative probability mass is ≤ top_p.
-                             Then it samples from that reduced set.
-                             This is called nucleus sampling
+  TEXT_LLM_MODEL             Text LLM model name
+  TEXT_LLM_BASE_URL          Base URL for LLM API
+  TEXT_LLM_CHAT_ENDPOINT     Chat endpoint for LLM API
+  YOUTUBE_API_KEY            YouTube Data API key for caption extraction
+  CAPTIONS_OUTPUT_DIR        Directory to store extracted captions
+  TRANSCRIBE_VIDEOS          Whether to transcribe videos (true/false)
+  TEMPERATURE                Creativity parameter for LLM (0-2)
+  TOP_P                      Nucleus sampling parameter (0-1)
+  CHUNK_SIZE                 Size of text chunks for processing
+  GAP_BW_REQS                Delay between API requests (seconds)
+
+Prompt Environment Variables:
+  SYSTEM_SUMMARY_PROMPT      System prompt for summary generation
+  CHUNK_SUMMARY_PROMPT       Prompt for chunk summarization
+  FINAL_SUMMARY_PROMPT       Prompt for final summary consolidation
+  SYSTEM_PREPROCESS_PROMPT   System prompt for text preprocessing
+  PREPROCESS_CHUNK_PROMPT    Prompt for chunk preprocessing
+
+Process:
+  1. Extract captions from YouTube video (download or transcribe)
+  2. Split transcript into chunks of CHUNK_SIZE characters
+  3. Preprocess each chunk using LLM
+  4. Generate intermediate summaries for each preprocessed chunk
+  5. Consolidate intermediate summaries into final comprehensive summary
+  6. Output markdown-formatted summary to stdout
 
 Examples:
-  ${SCRIPT_NAME} dQw4w9WgXcQ
+  ${SCRIPT_NAME} dQw4w9WgXcQ                    # Summarize specific video
+  ${SCRIPT_NAME} --verbose ABC123def456         # Verbose output for debugging
+  ${SCRIPT_NAME} --help                         # Show this help message
+
+Exit Codes:
+  0 - Success
+  1 - Usage error or invalid arguments
+  2 - Processing error (transcription, API failure, etc.)
+
+Notes:
+  - Requires YouTube Data API key for caption extraction
+  - Falls back to transcription if caption download fails
+  - Respects rate limiting with GAP_BW_REQS delays
+  - Outputs clean markdown without code block markers
 EOF
 
   exit "$exit_code"
