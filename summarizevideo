@@ -294,9 +294,7 @@ function main() {
     die "Error: Transcript conversion failed"
   fi
 
-  if $verbose; then
-    >&2 echo "Transcript extracted (length: ${#TRANSCRIPT} chars)"
-  fi
+  >&2 echo "Transcript extracted (length: ${#TRANSCRIPT} chars)"
 
   local CHUNK_SIZE=8000
   local TOTAL_LEN=${#TRANSCRIPT}
@@ -305,25 +303,24 @@ function main() {
     CHUNKS+=("${TRANSCRIPT:i:CHUNK_SIZE}")
   done
 
-  if $verbose; then
-    >&2 echo "Split transcript into ${#CHUNKS[@]} chunks"
-  fi
+  >&2 echo "Split transcript into ${#CHUNKS[@]} chunks"
 
   local INTERMEDIATE_SUMMARIES=()
   local start_time=$(date +%s)
   for chunk in "${CHUNKS[@]}"; do
     local PREPROCESSED_CHUNK
     preprocess_chunk "$chunk"
+    >&2 echo "Preprocessed chunk (length: ${#chunk} chars)"
     local SUMMARIZED_CHUNK
     summarize_chunk "$PREPROCESSED_CHUNK"
     INTERMEDIATE_SUMMARIES+=("${SUMMARIZED_CHUNK}")
+    >&2 echo "Summarized chunk (length: ${#PREPROCESSED_CHUNK} chars)"
     PREPROCESSED_CHUNK=""
     SUMMARIZED_CHUNK=""
-    if $verbose; then
-      >&2 echo "Processed chunk (length: ${#chunk} chars)"
+    if [[ "${GAP_BW_REQS}" -gt 0 ]]; then
       >&2 echo "Waiting for ${GAP_BW_REQS} seconds before initiating next request...."
+      sleep "$GAP_BW_REQS"
     fi
-    sleep "$GAP_BW_REQS"
   done
 
   local FINAL_INPUT
@@ -340,9 +337,7 @@ function main() {
     die "ERROR: Failed to generate final summary (no working API available)"
   fi
 
-  if $verbose; then
-    >&2 echo "Final summary generated successfully"
-  fi
+  >&2 echo "Final summary generated successfully"
 
   >&2 echo "Summarized captions in ${elapsed_time} seconds"
   echo -e "${FINAL_SUMMARY}" | sed -E '/^```(markdown)?[[:space:]]*$/d'
