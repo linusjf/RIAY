@@ -347,7 +347,7 @@ function main() {
   # Add the remaining buffer as the last chunk
   [[ -n "$buffer" ]] && CHUNKS+=("$buffer")
 
-  >&2 echo "Split transcript into ${#CHUNKS[@]} chunks"
+  >&2 echo "Split transcript into ${#CHUNKS[@]} chunk(s)"
 
   local INTERMEDIATE_SUMMARIES=()
   local start_time=$(date +%s)
@@ -383,7 +383,7 @@ function main() {
   # Add the remaining buffer as the last chunk
   [[ -n "$buffer" ]] && CHUNKS+=("$buffer")
 
-  >&2 echo "Split preprocessed input into ${#CHUNKS[@]} chunks"
+  >&2 echo "Split preprocessed input into ${#CHUNKS[@]} chunk(s)"
 
   chunk_num=1
   for chunk in "${CHUNKS[@]}"; do
