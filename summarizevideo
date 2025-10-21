@@ -67,7 +67,7 @@ Prompt Environment Variables:
 
 Process:
   1. Extract captions from YouTube video (download or transcribe)
-  2. Split transcript into chunks of CHUNK_SIZE characters
+  2. Split transcript into chunks of ${CHUNK_SIZE} characters
   3. Preprocess each chunk using LLM
   4. Generate intermediate summaries for each preprocessed chunk
   5. Consolidate intermediate summaries into final comprehensive summary
