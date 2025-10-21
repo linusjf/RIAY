@@ -356,11 +356,41 @@ function main() {
     local PREPROCESSED_CHUNK
     preprocess_chunk "$chunk"
     >&2 echo "Preprocessed chunk ${chunk_num} (length: ${#chunk} chars)"
-    local SUMMARIZED_CHUNK
-    summarize_chunk "$PREPROCESSED_CHUNK"
-    INTERMEDIATE_SUMMARIES+=("${SUMMARIZED_CHUNK}")
-    >&2 echo "Summarized chunk ${chunk_num} (length: ${#PREPROCESSED_CHUNK} chars)"
+    PREPROCESSED+=("${PREPROCESSED_CHUNK}")
     PREPROCESSED_CHUNK=""
+    if [[ "${GAP_BW_REQS}" -gt 0 ]]; then
+      >&2 echo "Waiting for ${GAP_BW_REQS} seconds before initiating next request...."
+      sleep "$GAP_BW_REQS"
+    fi
+    ((chunk_num++))
+  done
+
+  local PREPROCESSED_INPUT
+  PREPROCESSED_INPUT=$(printf "%s" "${PREPROCESSED[@]}")
+
+  CHUNKS=()
+  buffer=""
+  while IFS= read -r sentence; do
+    sentence="${sentence} "
+    if ((${#buffer} + ${#sentence} > CHUNK_SIZE)); then
+      CHUNKS+=("$buffer")
+      buffer="$sentence"
+    else
+      buffer+="$sentence"
+    fi
+  done <<< "$PREPROCESSED_INPUT"
+
+  # Add the remaining buffer as the last chunk
+  [[ -n "$buffer" ]] && CHUNKS+=("$buffer")
+
+  >&2 echo "Split preprocessed input into ${#CHUNKS[@]} chunks"
+
+  chunk_num=1
+  for chunk in "${CHUNKS[@]}"; do
+    local SUMMARIZED_CHUNK
+    summarize_chunk "$chunk"
+    INTERMEDIATE_SUMMARIES+=("${SUMMARIZED_CHUNK}")
+    >&2 echo "Summarized chunk ${chunk_num} (length: ${#chunk} chars)"
     SUMMARIZED_CHUNK=""
     if [[ "${GAP_BW_REQS}" -gt 0 ]]; then
       >&2 echo "Waiting for ${GAP_BW_REQS} seconds before initiating next request...."
