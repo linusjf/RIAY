@@ -263,6 +263,21 @@ function final_summary() {
   FINAL_SUMMARY="$(echo "$response" | jq -r '.choices[0].message.content')"
 }
 
+function wait_between_requests() {
+  local gap="${1:-0}"
+
+  # Ensure gap is a valid non-negative integer
+  if ! [[ "$gap" =~ ^[0-9]+$ ]]; then
+    >&2 echo "Error: Invalid wait time '$gap'. Must be a non-negative integer."
+    return 1
+  fi
+
+  if [[ "$gap" -gt 0 ]]; then
+    >&2 echo "Waiting for ${gap} seconds before initiating next request..."
+    sleep "$gap"
+  fi
+}
+
 function main() {
   local verbose=false
 
@@ -358,10 +373,7 @@ function main() {
     >&2 echo "Preprocessed chunk ${chunk_num} (length: ${#chunk} chars)"
     PREPROCESSED+=("${PREPROCESSED_CHUNK}")
     PREPROCESSED_CHUNK=""
-    if [[ "${GAP_BW_REQS}" -gt 0 ]]; then
-      >&2 echo "Waiting for ${GAP_BW_REQS} seconds before initiating next request...."
-      sleep "$GAP_BW_REQS"
-    fi
+    wait_between_requests "$GAP_BW_REQS"
     ((chunk_num++))
   done
 
@@ -392,10 +404,7 @@ function main() {
     INTERMEDIATE_SUMMARIES+=("${SUMMARIZED_CHUNK}")
     >&2 echo "Summarized chunk ${chunk_num} (length: ${#chunk} chars)"
     SUMMARIZED_CHUNK=""
-    if [[ "${GAP_BW_REQS}" -gt 0 ]]; then
-      >&2 echo "Waiting for ${GAP_BW_REQS} seconds before initiating next request...."
-      sleep "$GAP_BW_REQS"
-    fi
+    wait_between_requests "$GAP_BW_REQS"
     ((chunk_num++))
   done
 
