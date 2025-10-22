@@ -149,8 +149,6 @@ VIDEOS_FILE="videos.txt"
 #### API Request Settings
 
 ```bash
-# Time between successive requests to the LLM models (seconds)
-GAP_BW_REQS=0
 # Maximum number of retries for a REST API call
 CURL_MAX_RETRIES=5
 # Initial retry delay (seconds) - increases exponentially

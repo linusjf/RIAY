@@ -56,7 +56,6 @@ Required Environment Variables:
   TEMPERATURE                Creativity parameter for LLM (0-2)
   TOP_P                      Nucleus sampling parameter (0-1)
   CHUNK_SIZE                 Size of text chunks for processing
-  GAP_BW_REQS                Delay between API requests (seconds)
 
 Prompt Environment Variables:
   SYSTEM_SUMMARY_PROMPT      System prompt for summary generation
@@ -86,7 +85,6 @@ Exit Codes:
 Notes:
   - Requires YouTube Data API key for caption extraction
   - Falls back to transcription if caption download fails
-  - Respects rate limiting with GAP_BW_REQS delays
   - Outputs clean markdown without code block markers
 EOF
 
@@ -263,21 +261,6 @@ function final_summary() {
   FINAL_SUMMARY="$(echo "$response" | jq -r '.choices[0].message.content')"
 }
 
-function wait_between_requests() {
-  local gap="${1:-0}"
-
-  # Ensure gap is a valid non-negative integer
-  if ! [[ "$gap" =~ ^[0-9]+$ ]]; then
-    >&2 echo "Error: Invalid wait time '$gap'. Must be a non-negative integer."
-    return 1
-  fi
-
-  if [[ "$gap" -gt 0 ]]; then
-    >&2 echo "Waiting for ${gap} seconds before initiating next request..."
-    sleep "$gap"
-  fi
-}
-
 split_into_chunks() {
   local input="$1"
   local chunk_size="${2:-8000}" # Default chunk size = 8000 chars
@@ -381,7 +364,6 @@ function main() {
     >&2 echo "Preprocessed chunk ${chunk_num} (length: ${#chunk} chars)"
     PREPROCESSED+=("${PREPROCESSED_CHUNK}")
     PREPROCESSED_CHUNK=""
-    wait_between_requests "$GAP_BW_REQS"
     ((chunk_num++))
   done
 
@@ -400,7 +382,6 @@ function main() {
     INTERMEDIATE_SUMMARIES+=("${SUMMARIZED_CHUNK}")
     >&2 echo "Summarized chunk ${chunk_num} (length: ${#chunk} chars)"
     SUMMARIZED_CHUNK=""
-    wait_between_requests "$GAP_BW_REQS"
     ((chunk_num++))
   done
 
