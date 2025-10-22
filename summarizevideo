@@ -9,7 +9,7 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/internet.sh"
 source "${SCRIPT_DIR}/lib/util.sh"
@@ -32,7 +32,8 @@ function usage() {
     output=2
   fi
 
-  >&"$output" cat <<EOF
+  # shellcheck disable=SC2153
+  >&"$output" cat << EOF
 Usage: ${SCRIPT_NAME} [OPTIONS] <youtube-video-id>
 
 Summarizes YouTube videos by extracting captions and using AI APIs to generate
@@ -112,8 +113,8 @@ function get_final_prompt() {
 function preprocess_chunk_llm() {
   local chunk="$1"
   local prompt="$(get_preprocess_chunk_prompt "$chunk")"
-  local escaped_prompt="$(jq -Rs <<<"$prompt")"
-  local escaped_system_prompt="$(jq -Rs <<<"$SYSTEM_PREPROCESS_PROMPT")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
+  local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_PREPROCESS_PROMPT")"
   local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --arg model "${TEXT_LLM_MODEL}" --argjson temperature "$TEMPERATURE" --argjson top_p "$TOP_P" \
     '{
   "model": $model,
@@ -141,7 +142,7 @@ function preprocess_chunk_llm() {
       --data "$payload"
   )"
 
-  if ! echo "$response" | jq . >/dev/null 2>&1; then
+  if ! echo "$response" | jq . > /dev/null 2>&1; then
     err "Text LLM API returned invalid response"
     return 1
   fi
@@ -165,8 +166,8 @@ function preprocess_chunk() {
 function summarize_chunk_llm() {
   local chunk="$1"
   local prompt="$(get_chunk_prompt "$chunk")"
-  local escaped_prompt="$(jq -Rs <<<"$prompt")"
-  local escaped_system_prompt="$(jq -Rs <<<"$SYSTEM_SUMMARY_PROMPT")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
+  local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
   local payload="$(jq -n --arg system "$escaped_system_prompt" --arg content "$escaped_prompt" --arg model "${TEXT_LLM_MODEL}" --argjson temperature "$TEMPERATURE" --argjson top_p "$TOP_P" \
     '{
   "model": $model,
@@ -194,7 +195,7 @@ function summarize_chunk_llm() {
       --data "$payload"
   )"
 
-  if ! echo "$response" | jq . >/dev/null 2>&1; then
+  if ! echo "$response" | jq . > /dev/null 2>&1; then
     err "Text LLM API returned invalid response"
     return 1
   fi
@@ -218,8 +219,8 @@ function summarize_chunk() {
 function final_summary() {
   local input="$1"
   local prompt="$(get_final_prompt "$input")"
-  local escaped_prompt="$(jq -Rs <<<"$prompt")"
-  local escaped_system_prompt="$(jq -Rs <<<"$SYSTEM_SUMMARY_PROMPT")"
+  local escaped_prompt="$(jq -Rs <<< "$prompt")"
+  local escaped_system_prompt="$(jq -Rs <<< "$SYSTEM_SUMMARY_PROMPT")"
   local payload="$(
     jq -n \
       --arg system "$escaped_system_prompt" \
@@ -253,7 +254,7 @@ function final_summary() {
       --data "$payload"
   )"
 
-  if ! echo "$response" | jq . >/dev/null 2>&1; then
+  if ! echo "$response" | jq . > /dev/null 2>&1; then
     err "Text LLM API returned invalid response"
     return 1
   fi
@@ -276,7 +277,7 @@ split_into_chunks() {
     else
       buffer+="$sentence"
     fi
-  done <<<"$input"
+  done <<< "$input"
 
   # Add remaining buffer as the last chunk
   [[ -n "$buffer" ]] && chunks_ref+=("$buffer")
@@ -287,25 +288,25 @@ function main() {
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
-    -d | --debug)
-      set -x
-      shift
-      ;;
-    --version)
-      version
-      exit 0
-      ;;
-    --verbose)
-      verbose=true
-      shift
-      ;;
-    --help) usage 0 ;;
-    --)
-      shift
-      break
-      ;;
-    -*) usage 1 ;;
-    *) break ;;
+      -d | --debug)
+        set -x
+        shift
+        ;;
+      --version)
+        version
+        exit 0
+        ;;
+      --verbose)
+        verbose=true
+        shift
+        ;;
+      --help) usage 0 ;;
+      --)
+        shift
+        break
+        ;;
+      -*) usage 1 ;;
+      *) break ;;
     esac
   done
 
@@ -344,11 +345,11 @@ function main() {
     die "Error: ${captions_file} empty. Transcript conversion failed."
   fi
 
-  local TOTAL_LEN="$(wc -c <"$captions_file")"
+  local TOTAL_LEN="$(wc -c < "$captions_file")"
   >&2 echo "Transcript extracted (length: ${TOTAL_LEN} chars)"
 
   # Read the file, replace newlines with spaces, and split sentences at ., !, or ?
-  sentences=$(tr '\n' ' ' <"$captions_file" | sed 's/\([.!?]\) \+/\1\n/g')
+  sentences=$(tr '\n' ' ' < "$captions_file" | sed 's/\([.!?]\) \+/\1\n/g')
 
   local CHUNKS=()
   split_into_chunks "$sentences" "$CHUNK_SIZE" CHUNKS
