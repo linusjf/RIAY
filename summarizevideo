@@ -409,6 +409,7 @@ function main() {
 
   local FINAL_SUMMARY=""
 
+  >&2 echo "Preparing final summary..."
   final_summary "$FINAL_INPUT"
 
   local end_time=$(date +%s)
