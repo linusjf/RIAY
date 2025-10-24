@@ -53,7 +53,7 @@ jobs:
         run: lychee --config .lychee.toml README.md
 
       - name: Archive Link Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: lychee-report
           path: lychee.out
