@@ -50,13 +50,16 @@ jobs:
           sudo mv lychee /usr/local/bin/
 
       - name: Run Link Checker
-        run: lychee --config .lychee.toml README.md
+        run: set -o pipefail lychee --config .lychee.toml README.md | tee lychee.out rc=${PIPESTATUS[0]} echo "lychee_exit_code=$rc" >&2 exit $rc
 
       - name: Archive Link Report
         uses: actions/upload-artifact@v5
+        if: always()
         with:
           name: lychee-report
-          path: lychee.out
+          path: |
+            lychee.out
+            lychee.json
 
   trigger-docs-build:
     name: Trigger Docs Build
