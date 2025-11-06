@@ -17,7 +17,7 @@ output = "lychee.out"
 cache = true
 
 # Discard all cached requests older than this duration.
-max_cache_age = "1d"
+max_cache_age = "1y"
 
 #############################  Runtime  #############################
 

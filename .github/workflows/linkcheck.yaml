@@ -38,7 +38,9 @@ jobs:
   link-check:
     name: Check Links
     needs: check-content-changes
-    if: needs.check-content-changes.outputs.relevant_changed == 'true'
+    if: ${{ needs.check-content-changes.outputs.relevant_changed == 'true' }}
+    # if: ${{ always() }}
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -50,16 +52,15 @@ jobs:
           sudo mv lychee /usr/local/bin/
 
       - name: Run Link Checker
-        run: set -o pipefail lychee --config .lychee.toml README.md | tee lychee.out rc=${PIPESTATUS[0]} echo "lychee_exit_code=$rc" >&2 exit $rc
+        run: lychee --config .lychee.toml README.md
 
       - name: Archive Link Report
+        if: ${{ always() && env.ACT != 'true' }}
         uses: actions/upload-artifact@v5
-        if: always()
         with:
           name: lychee-report
           path: |
             lychee.out
-            lychee.json
 
   trigger-docs-build:
     name: Trigger Docs Build
