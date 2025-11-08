@@ -1,4 +1,4 @@
 # commands
 #embedarttoday 199
-addvideo "5EPhJvccV98" "The Glorious Mysteries"
+addvideo "u2kYoySevP8" "The Joyful Mysteries"
 lint
