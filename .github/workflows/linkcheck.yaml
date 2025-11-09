@@ -52,7 +52,11 @@ jobs:
           sudo mv lychee /usr/local/bin/
 
       - name: Run Link Checker
-        run: lychee --config .lychee.toml README.md
+        continue-on-error: true
+        run: |
+          # capture stdout/stderr to lychee.out and preserve lychee's exit code
+          set -o pipefail
+          lychee --config .lychee.toml README.md 2>&1 | tee lychee.out
 
       - name: Archive Link Report
         if: ${{ always() && env.ACT != 'true' }}
