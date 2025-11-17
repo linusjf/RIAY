@@ -374,7 +374,7 @@ function main() {
   CHUNKS=()
   split_into_chunks "$PREPROCESSED_INPUT" "$CHUNK_SIZE" CHUNKS
 
-  >&2 echo "Split preprocessed input into ${#CHUNKS[@]} chunk(s)"
+  >&2 echo "Merged preprocessed input into ${#CHUNKS[@]} chunk(s)"
 
   chunk_num=1
   for chunk in "${CHUNKS[@]}"; do
