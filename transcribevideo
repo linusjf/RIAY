@@ -10,7 +10,7 @@ readonly VERSION="1.0.0"
 readonly SCRIPT_NAME="$(basename "$0")"
 
 # Source utility libraries
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd -P)"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)"
 source "${SCRIPT_DIR}/lib/require.sh"
 source "${SCRIPT_DIR}/lib/curl.sh"
 source "${SCRIPT_DIR}/lib/files.sh"
@@ -38,7 +38,7 @@ function usage() {
   local output_stream=1
   ((exit_code != 0)) && output_stream=2
 
-  cat >&"${output_stream}" << EOF
+  cat >&"${output_stream}" <<EOF
 Usage: ${SCRIPT_NAME} [OPTIONS] <youtube_video_id>
 
 Options:
@@ -72,31 +72,31 @@ function dryrun() {
 function parse_args() {
   while (($# > 0)); do
     case "$1" in
-      -h | --help) usage 0 ;;
-      -v | --verbose) VERBOSE=true ;;
-      -d | --debug) DEBUG=true ;;
-      -n | --dry-run) DRY_RUN=true ;;
-      -o | --output)
-        shift
-        OUTPUT_FILE="$1"
-        CUSTOM_OUTPUT=true
-        ;;
-      --version)
-        version
-        exit 0
-        ;;
-      -*)
-        err "Unknown option: $1"
+    -h | --help) usage 0 ;;
+    -v | --verbose) VERBOSE=true ;;
+    -d | --debug) DEBUG=true ;;
+    -n | --dry-run) DRY_RUN=true ;;
+    -o | --output)
+      shift
+      OUTPUT_FILE="$1"
+      CUSTOM_OUTPUT=true
+      ;;
+    --version)
+      version
+      exit 0
+      ;;
+    -*)
+      err "Unknown option: $1"
+      usage 1
+      ;;
+    *)
+      if [[ -z "${VIDEO_ID}" ]]; then
+        VIDEO_ID="$1"
+      else
+        err "Too many arguments"
         usage 1
-        ;;
-      *)
-        if [[ -z "${VIDEO_ID}" ]]; then
-          VIDEO_ID="$1"
-        else
-          err "Too many arguments"
-          usage 1
-        fi
-        ;;
+      fi
+      ;;
     esac
     shift
   done
@@ -120,7 +120,7 @@ function check_local_prerequisites() {
 function transcribe_via_webservice() {
   local audio_file="$1"
   local url="${ASR_LLM_BASE_URL}${ASR_LLM_ENDPOINT}"
-  log "Transcribing with Whisper ${url}"
+  >&2 echo "Transcribing with Whisper ${url}"
   curl::request "$url" \
     "POST" \
     --header "Authorization: Bearer ${ASR_LLM_API_KEY}" \
@@ -138,25 +138,25 @@ function transcribe_locally() {
       ./fasterwhisperer.py "$audio_file"
     else
       err "Python package ${FASTER_WHISPER} and its dependencies not available. Exiting transcribe_locally..."
-      return
+      return 1
     fi
   else
     if check_local_prerequisites; then
       whisper --task transcribe --model "${ASR_LOCAL_MODEL:-base}" --output_format txt --language en \
-        --initial_prompt "${ASR_INITIAL_PROMPT:-}" --carry_initial_prompt "${ASR_CARRY_INITIAL_PROMPT:-false}" --beam_size "${ASR_BEAM_SIZE:-5}" "$audio_file" &> /dev/null || return 1
+        --initial_prompt "${ASR_INITIAL_PROMPT:-}" --carry_initial_prompt "${ASR_CARRY_INITIAL_PROMPT:-false}" --beam_size "${ASR_BEAM_SIZE:-5}" "$audio_file" &>/dev/null || return 1
       # since transcript is saved in current directory
       local file_name="$(basename "$audio_file")"
       cat "${file_name%.*}.txt"
     else
       err "ffmpeg and/or whisper not available. Exiting transcribe_locally..."
-      return
+      return 1
     fi
   fi
 }
 
 function transcribe_audio() {
   local audio_file="$1"
-  log "Transcribing with Whisper..."
+  echo "Transcribing with Whisper..." >&2
   local start_time=$(date +%s)
 
   if ${TRANSCRIBE_LOCALLY:-false}; then
@@ -166,16 +166,16 @@ function transcribe_audio() {
         err "ffmpeg, whisper or faster-whisper not available or failed. Trying webservice instead..."
         # compress wav to flac for webservice if ffmpeg available
         flac_audio="${audio_file%.*}.flac"
-        ffmpeg -i "$audio_file" -compression_level 8 "$flac_audio" 2> /dev/null
+        ffmpeg -i "$audio_file" -compression_level 8 "$flac_audio" 2>/dev/null || return 1
         audio_file="$flac_audio"
-        transcribe_via_webservice "$audio_file"
+        transcribe_via_webservice "$audio_file" || return 1
       else
         err "ffmpeg, whisper or faster-whisper not available or failed. Exiting..."
         return
       fi
     fi
   else
-    transcribe_via_webservice "$audio_file"
+    transcribe_via_webservice "$audio_file" || return 1
   fi
 
   local end_time=$(date +%s)
@@ -193,13 +193,11 @@ function main() {
 
   ${DEBUG} && set -x
 
-  ${VERBOSE} && log "Downloading audio for video ID: ${VIDEO_ID}"
+  >&2 echo "Downloading audio for video ID: ${VIDEO_ID}"
   if youtube::check_video_exists "${VIDEO_ID}"; then
-    local audio_file="$("${SCRIPT_DIR}/downloadaudio" "${VIDEO_ID}")" \
-      && transcribe_audio "${audio_file}" > "${OUTPUT_FILE}" || return 1
-    if ${VERBOSE}; then
-      log "Transcription saved to: ${OUTPUT_FILE}"
-    fi
+    local audio_file="$("${SCRIPT_DIR}/downloadaudio" "${VIDEO_ID}")" &&
+      transcribe_audio "${audio_file}" >"${OUTPUT_FILE}" || return 1
+    >&2 echo "Transcription saved to: ${OUTPUT_FILE}"
   else
     die "Video id ${VIDEO_ID} is invalid or private. Exiting..."
   fi
