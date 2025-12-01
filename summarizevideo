@@ -283,6 +283,21 @@ split_into_chunks() {
   [[ -n "$buffer" ]] && chunks_ref+=("$buffer")
 }
 
+append_day_to_summary() {
+  local text="$1"
+  local day="$2"
+
+  # Split first line (title) from remainder
+  local title="${text%%$'\n'*}"
+  local rest="${text#"$title"}"
+
+  # Append day to title
+  title="$title - Day $day"
+
+  # Output updated text
+  printf "%s%s" "$title" "$rest"
+}
+
 function main() {
   local verbose=false
 
@@ -404,7 +419,11 @@ function main() {
   >&2 echo "Final summary generated successfully"
 
   >&2 echo "Summarized captions in ${elapsed_time} seconds"
-  echo -e "${FINAL_SUMMARY}" | sed -E '/^```(markdown)?[[:space:]]*$/d'
+  FINAL_SUMMARY="$(echo -e "${FINAL_SUMMARY}" | sed -E '/^```(markdown)?[[:space:]]*$/d')"
+  no_videos="$(wc -l < "${VIDEOS_FILE}")"
+  day_num=$((no_videos + 1))
+  output=$(append_day_to_summary "$FINAL_SUMMARY" $day_num)
+  echo "$output"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
