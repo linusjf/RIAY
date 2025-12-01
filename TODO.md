@@ -18,5 +18,9 @@
 1. Fix for wikimedia site down. Right now, hangs.
 1. Migrate long, complex bash scripts to python.
    1.1 Migrate embedarttoday to python.
+1. Append day number to AI-generated summary title to ensure uniqueness within markdown README.
+1. Support open ai transcription models. Current one only support whisper from deepinfra.
 
 ## Exploratory task
+
+1. Feature to convert AI-generated summary to audio file.
