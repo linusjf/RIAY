@@ -403,7 +403,7 @@ function main() {
 
   local FINAL_INPUT
   FINAL_INPUT=$(printf "%s\n\n" "${INTERMEDIATE_SUMMARIES[@]}")
-  echo "$FINAL_INPUT" > "${CAPTIONS_DIR}/${VIDEO_ID}_summarized_chunks"
+  echo "$FINAL_INPUT" > "${CAPTIONS_OUTPUT_DIR}/${VIDEO_ID}_summarized_chunks.txt"
 
   local FINAL_SUMMARY=""
 
