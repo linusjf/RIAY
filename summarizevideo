@@ -385,6 +385,7 @@ function main() {
 
   local PREPROCESSED_INPUT
   PREPROCESSED_INPUT=$(printf "%s" "${PREPROCESSED[@]}")
+  echo "$PREPROCESSED_INPUT" > "${CAPTIONS_OUTPUT_DIR}/${VIDEO_ID}_preprocessed_chunks.txt"
 
   CHUNKS=()
   split_into_chunks "$PREPROCESSED_INPUT" "$CHUNK_SIZE" CHUNKS
