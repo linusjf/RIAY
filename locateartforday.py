@@ -266,7 +266,8 @@ class ArtLocator:
 
 
             for mystery in mysteries:
-                query_text = base_query_text
+                query_text = mystery.get("mystery_text", "")
+                self.logger.debug(f"Mystery text: {query_text}")
                 mystery_name = mystery.get("mystery_name", "")
                 if mystery_name:
                     query_text += f"\nMystery name: {mystery_name}"
