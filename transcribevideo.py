@@ -100,34 +100,36 @@ def check_local_prerequisites() -> bool:
         return False
 
 
-def transcribe_via_webservice(audio_file: str, config: dict) -> str:
-    """Transcribe audio using web service API."""
-    url = f"{config['ASR_LLM_BASE_URL']}{config['ASR_LLM_ENDPOINT']}"
-    logger.info(f"Transcribing with Whisper {url}")
-    
+def transcribe_via_openai_api(audio_file: str, config: dict) -> str:
+    """Transcribe audio using OpenAI Whisper API directly."""
     try:
-        with open(audio_file, 'rb') as f:
-            files_data = {
-                'file': (os.path.basename(audio_file), f, 'audio/wav'),
-                'model': (None, config['ASR_LLM_MODEL']),
-                'response_format': (None, 'text'),
-                'prompt': (None, config.get('ASR_INITIAL_PROMPT', ''))
-            }
-            
-            headers = {
-                'Authorization': f"Bearer {config['ASR_LLM_API_KEY']}"
-            }
-            
-            response = curl.request(
-                url,
-                "POST",
-                headers=headers,
-                files=files_data
+        # Import OpenAI client
+        from openai import OpenAI
+        
+        # Initialize OpenAI client with API key
+        client = OpenAI(api_key=config['ASR_LLM_API_KEY'])
+        
+        logger.info(f"Transcribing with OpenAI Whisper API using model: {config['ASR_LLM_MODEL']}")
+        
+        # Open the audio file
+        with open(audio_file, 'rb') as audio:
+            # Call the OpenAI Whisper API
+            response = client.audio.transcriptions.create(
+                model=config['ASR_LLM_MODEL'],
+                file=audio,
+                response_format="text",
+                prompt=config.get('ASR_INITIAL_PROMPT', ''),
+                language="en"
             )
-            
-            return response.text if hasattr(response, 'text') else str(response)
+        
+        # The response is already text when response_format="text"
+        return response
+        
+    except ImportError:
+        logger.error("OpenAI Python library not installed. Install with: pip install openai")
+        raise
     except Exception as e:
-        logger.error(f"Web service transcription failed: {e}")
+        logger.error(f"OpenAI API transcription failed: {e}")
         raise
 
 
@@ -160,7 +162,7 @@ def transcribe_locally(audio_file: str, config: dict) -> str:
                     "--output_format", "txt",
                     "--language", "en",
                     "--initial_prompt", config.get('ASR_INITIAL_PROMPT', ''),
-                    "--carry_initial_prompt", str(config.get('ASR_CARRY_INITIAL_PROMPT', 'false')).lower(),
+                    "--carry_initial_propmt", str(config.get('ASR_CARRY_INITIAL_PROMPT', 'false')).lower(),
                     "--beam_size", str(config.get('ASR_BEAM_SIZE', 5)),
                     audio_file
                 ]
@@ -198,8 +200,8 @@ def transcribe_audio(audio_file: str, config: dict) -> str:
                 return transcribe_locally(audio_file, config)
             except Exception as e:
                 if config.get('ENABLE_FAILOVER_MODE', True):
-                    logger.warning(f"Local transcription failed: {e}. Trying webservice instead...")
-                    # Convert to FLAC for web service if needed
+                    logger.warning(f"Local transcription failed: {e}. Trying OpenAI API instead...")
+                    # Convert to FLAC for OpenAI API if needed
                     flac_audio = Path(audio_file).with_suffix('.flac')
                     try:
                         subprocess.run(
@@ -207,16 +209,16 @@ def transcribe_audio(audio_file: str, config: dict) -> str:
                             capture_output=True,
                             check=True
                         )
-                        result = transcribe_via_webservice(str(flac_audio), config)
+                        result = transcribe_via_openai_api(str(flac_audio), config)
                         flac_audio.unlink(missing_ok=True)
                         return result
                     except Exception as e2:
-                        logger.error(f"Web service fallback also failed: {e2}")
+                        logger.error(f"OpenAI API fallback also failed: {e2}")
                         raise
                 else:
                     raise
         else:
-            return transcribe_via_webservice(audio_file, config)
+            return transcribe_via_openai_api(audio_file, config)
     finally:
         duration = time.time() - start_time
         logger.info(f"Transcribed video in {duration:.2f} seconds")
