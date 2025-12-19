@@ -5,30 +5,17 @@ Downloads audio from YouTube and sends to Whisper for transcription.
 """
 
 import argparse
-import os
 import sys
 import subprocess
-import tempfile
 import time
 import logging
 from pathlib import Path
-from typing import Optional, Tuple
+from typing import Optional
 
 # Add the script directory to the path to import local modules
 SCRIPT_DIR = Path(__file__).parent.absolute()
 sys.path.insert(0, str(SCRIPT_DIR))
 
-try:
-    from lib import require, curl, files, python, youtube, lockconfig
-except ImportError:
-    # Fallback for direct module imports
-    sys.path.insert(0, str(SCRIPT_DIR / "lib"))
-    import require
-    import curl
-    import files
-    import python
-    import youtube
-    import lockconfig
 
 # Import ConfigEnv and ConfigConstants
 try:
@@ -49,6 +36,15 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 
+def is_package_installed(package_name: str) -> bool:
+    """Check if a Python package is installed."""
+    try:
+        __import__(package_name)
+        return True
+    except ImportError:
+        return False
+
+
 def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
@@ -60,41 +56,41 @@ Examples:
   %(prog)s -v dQw4w9WgXcQ -o custom_output.txt
         """
     )
-    
+
     parser.add_argument(
         "video_id",
         help="YouTube video ID"
     )
-    
+
     parser.add_argument(
         "-v", "--verbose",
         action="store_true",
         help="Enable verbose output"
     )
-    
+
     parser.add_argument(
         "-d", "--debug",
         action="store_true",
         help="Enable debug mode"
     )
-    
+
     parser.add_argument(
         "-n", "--dry-run",
         action="store_true",
         help="Run without making any changes"
     )
-    
+
     parser.add_argument(
         "-o", "--output",
         help="Specify custom output file path"
     )
-    
+
     parser.add_argument(
         "--version",
         action="version",
         version=f"%(prog)s {VERSION}"
     )
-    
+
     return parser.parse_args()
 
 
@@ -115,12 +111,12 @@ def transcribe_via_openai_api(audio_file: str, config: ConfigEnv) -> str:
     try:
         # Import OpenAI client
         from openai import OpenAI
-        
+
         # Initialize OpenAI client with API key
         client = OpenAI(api_key=config.get(ConfigConstants.ASR_LLM_API_KEY))
-        
+
         logger.info(f"Transcribing with OpenAI Whisper API using model: {config.get(ConfigConstants.ASR_LLM_MODEL)}")
-        
+
         # Open the audio file
         with open(audio_file, 'rb') as audio:
             # Call the OpenAI Whisper API
@@ -131,10 +127,10 @@ def transcribe_via_openai_api(audio_file: str, config: ConfigEnv) -> str:
                 prompt=config.get(ConfigConstants.ASR_INITIAL_PROMPT, ''),
                 language="en"
             )
-        
+
         # The response is already text when response_format="text"
         return response
-        
+
     except ImportError:
         logger.error("OpenAI Python library not installed. Install with: pip install openai")
         raise
@@ -147,7 +143,7 @@ def transcribe_locally(audio_file: str, config: ConfigEnv) -> str:
     """Transcribe audio using local installation."""
     if config.get(ConfigConstants.USE_FASTER_WHISPER, False):
         try:
-            if python.is_package_installed(FASTER_WHISPER):
+            if is_package_installed(FASTER_WHISPER):
                 # Run fasterwhisperer.py script
                 result = subprocess.run(
                     [sys.executable, str(SCRIPT_DIR / "fasterwhisperer.py"), audio_file],
@@ -176,14 +172,14 @@ def transcribe_locally(audio_file: str, config: ConfigEnv) -> str:
                     "--beam_size", str(config.get(ConfigConstants.ASR_BEAM_SIZE, 5)),
                     audio_file
                 ]
-                
+
                 result = subprocess.run(
                     cmd,
                     capture_output=True,
                     text=True,
                     check=True
                 )
-                
+
                 # Whisper saves output to a file with same base name
                 output_file = Path(audio_file).with_suffix('.txt')
                 if output_file.exists():
@@ -202,7 +198,7 @@ def transcribe_audio(audio_file: str, config: ConfigEnv) -> str:
     """Transcribe audio file using appropriate method."""
     logger.info("Transcribing with Whisper...")
     start_time = time.time()
-    
+
     try:
         if config.get(ConfigConstants.TRANSCRIBE_LOCALLY, False):
             logger.info("Transcribing locally... This may take longer than usual...")
@@ -246,17 +242,17 @@ def dry_run(video_id: str, output_file: str, config: ConfigEnv) -> None:
 def main() -> None:
     """Main function."""
     args = parse_args()
-    
+
     # Set logging level
     if args.debug:
         logging.getLogger().setLevel(logging.DEBUG)
     elif args.verbose:
         logging.getLogger().setLevel(logging.INFO)
-    
+
     # Load configuration using ConfigEnv
     config_path = SCRIPT_DIR / "config.env"
     config = ConfigEnv(str(config_path))
-    
+
     # Check required environment variables using ConfigConstants
     required_vars = [
         ConfigConstants.OPENAI_API_KEY,
@@ -271,27 +267,27 @@ def main() -> None:
         ConfigConstants.ASR_INITIAL_PROMPT,
         ConfigConstants.ASR_BEAM_SIZE
     ]
-    
+
     for var in required_vars:
         if not config.get(var):
             logger.error(f"Required configuration variable not found: {var}")
             sys.exit(1)
-    
+
     # Determine output file
     if args.output:
         output_file = args.output
     else:
         output_file = str(Path(config.get(ConfigConstants.CAPTIONS_OUTPUT_DIR)) / f"{args.video_id}.en.txt")
-    
+
     # Create output directory if it doesn't exist
     output_dir = Path(output_file).parent
     output_dir.mkdir(parents=True, exist_ok=True)
-    
+
     # Dry run
     if args.dry_run:
         dry_run(args.video_id, output_file, config)
         return
-    
+
     # Check if video exists
     logger.info(f"Downloading audio for video ID: {args.video_id}")
     if youtube.check_video_exists(args.video_id):
@@ -301,7 +297,7 @@ def main() -> None:
             if not download_audio_script.exists():
                 logger.error(f"downloadaudio script not found at {download_audio_script}")
                 sys.exit(1)
-            
+
             result = subprocess.run(
                 [str(download_audio_script), args.video_id],
                 capture_output=True,
@@ -309,26 +305,26 @@ def main() -> None:
                 check=True
             )
             audio_file = result.stdout.strip()
-            
+
             if not audio_file or not Path(audio_file).exists():
                 logger.error(f"Failed to download audio for video {args.video_id}")
                 sys.exit(1)
-            
+
             # Transcribe audio
             transcription = transcribe_audio(audio_file, config)
-            
+
             # Save transcription
             with open(output_file, 'w', encoding='utf-8') as f:
                 f.write(transcription)
-            
+
             logger.info(f"Transcription saved to: {output_file}")
-            
+
             # Clean up audio file
             try:
                 Path(audio_file).unlink()
             except OSError as e:
                 logger.warning(f"Could not delete audio file {audio_file}: {e}")
-                
+
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to download audio: {e}")
             if e.stderr:
