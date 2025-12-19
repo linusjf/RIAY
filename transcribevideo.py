@@ -52,11 +52,11 @@ def check_video_exists(video_id: str) -> bool:
     try:
         # Try to access the video via YouTube's oembed endpoint
         oembed_url = f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={video_id}&format=json"
-        
+
         # Set a reasonable timeout
         request = urllib.request.Request(oembed_url)
         request.add_header('User-Agent', 'Mozilla/5.0 (compatible; YouTubeVideoChecker/1.0)')
-        
+
         try:
             response = urllib.request.urlopen(request, timeout=10)
             # If we get a successful response (status 200), the video exists
@@ -76,7 +76,7 @@ def check_video_exists(video_id: str) -> bool:
             logger.warning(f"URL error checking video {video_id}: {e.reason}")
             # Network issues - we'll still try to download
             return True
-        
+
         return False
     except Exception as e:
         logger.warning(f"Error checking if video {video_id} exists: {e}")
@@ -291,7 +291,7 @@ def main() -> None:
 
     # Load configuration using ConfigEnv
     config_path = SCRIPT_DIR / "config.env"
-    config = ConfigEnv(str(config_path))
+    config = ConfigEnv(str(config_path),override=True, include_os_env=True)
 
     # Check required environment variables using ConfigConstants
     required_vars = [
@@ -309,7 +309,7 @@ def main() -> None:
     ]
 
     for var in required_vars:
-        if not config.get(var):
+        if config.get(var) is None:
             logger.error(f"Required configuration variable not found: {var}")
             sys.exit(1)
 
