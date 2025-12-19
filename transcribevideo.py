@@ -152,10 +152,23 @@ def transcribe_via_openai_api(audio_file: str, config: ConfigEnv) -> str:
         # Import OpenAI client
         from openai import OpenAI
 
-        # Initialize OpenAI client with API key
-        client = OpenAI(api_key=config.get(ConfigConstants.ASR_LLM_API_KEY))
-
-        logger.info(f"Transcribing with OpenAI Whisper API using model: {config.get(ConfigConstants.ASR_LLM_MODEL)}")
+        # Get base URL and endpoint from config
+        base_url = config.get(ConfigConstants.ASR_LLM_BASE_URL)
+        endpoint = config.get(ConfigConstants.ASR_LLM_ENDPOINT)
+        
+        if not base_url or not endpoint:
+            logger.error("ASR_LLM_BASE_URL or ASR_LLM_ENDPOINT not configured")
+            raise ValueError("ASR_LLM_BASE_URL or ASR_LLM_ENDPOINT not configured")
+        
+        # Construct the full URL
+        full_url = f"{base_url}{endpoint}"
+        logger.info(f"Transcribing with OpenAI Whisper API using endpoint: {full_url}")
+        
+        # Initialize OpenAI client with API key and custom base URL
+        client = OpenAI(
+            api_key=config.get(ConfigConstants.ASR_LLM_API_KEY),
+            base_url=full_url
+        )
 
         # Open the audio file
         with open(audio_file, 'rb') as audio:
