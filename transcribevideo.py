@@ -30,6 +30,16 @@ except ImportError:
     import youtube
     import lockconfig
 
+# Import ConfigEnv and ConfigConstants
+try:
+    from configenv import ConfigEnv
+    from configconstants import ConfigConstants
+except ImportError:
+    # Add parent directory to path for direct imports
+    sys.path.insert(0, str(SCRIPT_DIR.parent))
+    from configenv import ConfigEnv
+    from configconstants import ConfigConstants
+
 VERSION = "1.0.0"
 SCRIPT_NAME = Path(__file__).name
 FASTER_WHISPER = "faster-whisper"
@@ -100,25 +110,25 @@ def check_local_prerequisites() -> bool:
         return False
 
 
-def transcribe_via_openai_api(audio_file: str, config: dict) -> str:
+def transcribe_via_openai_api(audio_file: str, config: ConfigEnv) -> str:
     """Transcribe audio using OpenAI Whisper API directly."""
     try:
         # Import OpenAI client
         from openai import OpenAI
         
         # Initialize OpenAI client with API key
-        client = OpenAI(api_key=config['ASR_LLM_API_KEY'])
+        client = OpenAI(api_key=config.get(ConfigConstants.ASR_LLM_API_KEY))
         
-        logger.info(f"Transcribing with OpenAI Whisper API using model: {config['ASR_LLM_MODEL']}")
+        logger.info(f"Transcribing with OpenAI Whisper API using model: {config.get(ConfigConstants.ASR_LLM_MODEL)}")
         
         # Open the audio file
         with open(audio_file, 'rb') as audio:
             # Call the OpenAI Whisper API
             response = client.audio.transcriptions.create(
-                model=config['ASR_LLM_MODEL'],
+                model=config.get(ConfigConstants.ASR_LLM_MODEL),
                 file=audio,
                 response_format="text",
-                prompt=config.get('ASR_INITIAL_PROMPT', ''),
+                prompt=config.get(ConfigConstants.ASR_INITIAL_PROMPT, ''),
                 language="en"
             )
         
@@ -133,9 +143,9 @@ def transcribe_via_openai_api(audio_file: str, config: dict) -> str:
         raise
 
 
-def transcribe_locally(audio_file: str, config: dict) -> str:
+def transcribe_locally(audio_file: str, config: ConfigEnv) -> str:
     """Transcribe audio using local installation."""
-    if config.get('USE_FASTER_WHISPER', False):
+    if config.get(ConfigConstants.USE_FASTER_WHISPER, False):
         try:
             if python.is_package_installed(FASTER_WHISPER):
                 # Run fasterwhisperer.py script
@@ -158,12 +168,12 @@ def transcribe_locally(audio_file: str, config: dict) -> str:
                 cmd = [
                     "whisper",
                     "--task", "transcribe",
-                    "--model", config.get('ASR_LOCAL_MODEL', 'base'),
+                    "--model", config.get(ConfigConstants.ASR_LOCAL_MODEL, 'base'),
                     "--output_format", "txt",
                     "--language", "en",
-                    "--initial_prompt", config.get('ASR_INITIAL_PROMPT', ''),
-                    "--carry_initial_propmt", str(config.get('ASR_CARRY_INITIAL_PROMPT', 'false')).lower(),
-                    "--beam_size", str(config.get('ASR_BEAM_SIZE', 5)),
+                    "--initial_prompt", config.get(ConfigConstants.ASR_INITIAL_PROMPT, ''),
+                    "--carry_initial_propmt", str(config.get(ConfigConstants.ASR_CARRY_INITIAL_PROMPT, 'false')).lower(),
+                    "--beam_size", str(config.get(ConfigConstants.ASR_BEAM_SIZE, 5)),
                     audio_file
                 ]
                 
@@ -188,18 +198,18 @@ def transcribe_locally(audio_file: str, config: dict) -> str:
             raise RuntimeError("Local transcription prerequisites not met")
 
 
-def transcribe_audio(audio_file: str, config: dict) -> str:
+def transcribe_audio(audio_file: str, config: ConfigEnv) -> str:
     """Transcribe audio file using appropriate method."""
     logger.info("Transcribing with Whisper...")
     start_time = time.time()
     
     try:
-        if config.get('TRANSCRIBE_LOCALLY', False):
+        if config.get(ConfigConstants.TRANSCRIBE_LOCALLY, False):
             logger.info("Transcribing locally... This may take longer than usual...")
             try:
                 return transcribe_locally(audio_file, config)
             except Exception as e:
-                if config.get('ENABLE_FAILOVER_MODE', True):
+                if config.get(ConfigConstants.ENABLE_FAILOVER_MODE, True):
                     logger.warning(f"Local transcription failed: {e}. Trying OpenAI API instead...")
                     # Convert to FLAC for OpenAI API if needed
                     flac_audio = Path(audio_file).with_suffix('.flac')
@@ -224,7 +234,7 @@ def transcribe_audio(audio_file: str, config: dict) -> str:
         logger.info(f"Transcribed video in {duration:.2f} seconds")
 
 
-def dry_run(video_id: str, output_file: str, config: dict) -> None:
+def dry_run(video_id: str, output_file: str, config: ConfigEnv) -> None:
     """Perform dry run without actual processing."""
     logger.info(f"DRY RUN: Would process video ID: {video_id}")
     logger.info(f"DRY RUN: Would create output file: {output_file}")
@@ -243,27 +253,27 @@ def main() -> None:
     elif args.verbose:
         logging.getLogger().setLevel(logging.INFO)
     
-    # Load configuration
+    # Load configuration using ConfigEnv
     config_path = SCRIPT_DIR / "config.env"
-    config = lockconfig.lock_config_vars(str(config_path))
+    config = ConfigEnv(str(config_path))
     
-    # Check required environment variables
+    # Check required environment variables using ConfigConstants
     required_vars = [
-        'OPENAI_API_KEY',
-        'CAPTIONS_OUTPUT_DIR',
-        'ASR_LLM_API_KEY',
-        'ASR_LLM_BASE_URL',
-        'ASR_LLM_ENDPOINT',
-        'ASR_LLM_MODEL',
-        'ASR_LOCAL_MODEL',
-        'TRANSCRIBE_LOCALLY',
-        'ENABLE_FAILOVER_MODE',
-        'ASR_INITIAL_PROMPT',
-        'ASR_BEAM_SIZE'
+        ConfigConstants.OPENAI_API_KEY,
+        ConfigConstants.CAPTIONS_OUTPUT_DIR,
+        ConfigConstants.ASR_LLM_API_KEY,
+        ConfigConstants.ASR_LLM_BASE_URL,
+        ConfigConstants.ASR_LLM_ENDPOINT,
+        ConfigConstants.ASR_LLM_MODEL,
+        ConfigConstants.ASR_LOCAL_MODEL,
+        ConfigConstants.TRANSCRIBE_LOCALLY,
+        ConfigConstants.ENABLE_FAILOVER_MODE,
+        ConfigConstants.ASR_INITIAL_PROMPT,
+        ConfigConstants.ASR_BEAM_SIZE
     ]
     
     for var in required_vars:
-        if var not in config:
+        if not config.get(var):
             logger.error(f"Required configuration variable not found: {var}")
             sys.exit(1)
     
@@ -271,7 +281,7 @@ def main() -> None:
     if args.output:
         output_file = args.output
     else:
-        output_file = str(Path(config['CAPTIONS_OUTPUT_DIR']) / f"{args.video_id}.en.txt")
+        output_file = str(Path(config.get(ConfigConstants.CAPTIONS_OUTPUT_DIR)) / f"{args.video_id}.en.txt")
     
     # Create output directory if it doesn't exist
     output_dir = Path(output_file).parent
