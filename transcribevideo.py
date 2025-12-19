@@ -11,6 +11,8 @@ import time
 import logging
 from pathlib import Path
 from typing import Optional
+import urllib.request
+import urllib.error
 
 # Add the script directory to the path to import local modules
 SCRIPT_DIR = Path(__file__).parent.absolute()
@@ -43,6 +45,44 @@ def is_package_installed(package_name: str) -> bool:
         return True
     except ImportError:
         return False
+
+
+def check_video_exists(video_id: str) -> bool:
+    """Check if a YouTube video exists and is accessible."""
+    try:
+        # Try to access the video via YouTube's oembed endpoint
+        oembed_url = f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={video_id}&format=json"
+        
+        # Set a reasonable timeout
+        request = urllib.request.Request(oembed_url)
+        request.add_header('User-Agent', 'Mozilla/5.0 (compatible; YouTubeVideoChecker/1.0)')
+        
+        try:
+            response = urllib.request.urlopen(request, timeout=10)
+            # If we get a successful response (status 200), the video exists
+            if response.status == 200:
+                logger.debug(f"Video {video_id} exists and is accessible")
+                return True
+        except urllib.error.HTTPError as e:
+            # 404 means video doesn't exist or is private
+            if e.code == 404:
+                logger.debug(f"Video {video_id} not found (404)")
+                return False
+            # Other HTTP errors might indicate temporary issues
+            logger.warning(f"HTTP error checking video {video_id}: {e.code}")
+            # For other errors, we'll still try to download (might be temporary)
+            return True
+        except urllib.error.URLError as e:
+            logger.warning(f"URL error checking video {video_id}: {e.reason}")
+            # Network issues - we'll still try to download
+            return True
+        
+        return False
+    except Exception as e:
+        logger.warning(f"Error checking if video {video_id} exists: {e}")
+        # If the check fails for any reason, we'll still try to download
+        # and let the download process fail if the video truly doesn't exist
+        return True
 
 
 def parse_args() -> argparse.Namespace:
@@ -290,7 +330,7 @@ def main() -> None:
 
     # Check if video exists
     logger.info(f"Downloading audio for video ID: {args.video_id}")
-    if youtube.check_video_exists(args.video_id):
+    if check_video_exists(args.video_id):
         try:
             # Download audio using downloadaudio script
             download_audio_script = SCRIPT_DIR / "downloadaudio"
