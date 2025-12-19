@@ -1,3 +1,3 @@
 # commands
-addvideo "Qj6yBqy7ncM" "The Luminous Mysteries"
+addvideo "Dg8-hdoyIks" "The Sorrowful Mysteries"
 lint
