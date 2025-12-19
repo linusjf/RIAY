@@ -156,12 +156,21 @@ def transcribe_via_openai_api(audio_file: str, config: ConfigEnv) -> str:
         base_url = config.get(ConfigConstants.ASR_LLM_BASE_URL)
         endpoint = config.get(ConfigConstants.ASR_LLM_ENDPOINT)
         
-        if not base_url or not endpoint:
-            logger.error("ASR_LLM_BASE_URL or ASR_LLM_ENDPOINT not configured")
-            raise ValueError("ASR_LLM_BASE_URL or ASR_LLM_ENDPOINT not configured")
+        if not base_url:
+            logger.error("ASR_LLM_BASE_URL not configured")
+            raise ValueError("ASR_LLM_BASE_URL not configured")
         
         # Construct the full URL
-        full_url = f"{base_url}{endpoint}"
+        # If endpoint is provided, append it to base_url
+        # Otherwise, use base_url as is (it should already include the full endpoint)
+        if endpoint:
+            # Ensure base_url doesn't end with slash and endpoint doesn't start with slash
+            base_url = base_url.rstrip('/')
+            endpoint = endpoint.lstrip('/')
+            full_url = f"{base_url}/{endpoint}"
+        else:
+            full_url = base_url
+        
         logger.info(f"Transcribing with OpenAI Whisper API using endpoint: {full_url}")
         
         # Initialize OpenAI client with API key and custom base URL
