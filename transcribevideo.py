@@ -290,7 +290,7 @@ class VideoTranscriber:
                 self.logger.error("ffmpeg and/or whisper not available")
                 raise RuntimeError("Local transcription prerequisites not met")
 
-    def transcribe_audio_chunks(self, audio_file: str) -> str:
+    def transcribe_audio_chunks(self, audio_file: str, delete_audio: bool = False) -> str:
         """Transcribe audio file, splitting into chunks if longer than MAX_CHUNK_DURATION."""
         self.logger.info("Transcribing with Whisper...")
         start_time = time.time()
@@ -318,12 +318,15 @@ class VideoTranscriber:
 
                         all_transcripts.append(chunk_transcript)
 
-                        # Clean up chunk file
-                        try:
-                            Path(chunk_file).unlink()
-                            self.logger.debug(f"Deleted chunk file: {chunk_file}")
-                        except OSError as e:
-                            self.logger.warning(f"Could not delete chunk file {chunk_file}: {e}")
+                        # Clean up chunk file only if delete_audio is True
+                        if delete_audio:
+                            try:
+                                Path(chunk_file).unlink()
+                                self.logger.debug(f"Deleted chunk file: {chunk_file}")
+                            except OSError as e:
+                                self.logger.warning(f"Could not delete chunk file {chunk_file}: {e}")
+                        else:
+                            self.logger.debug(f"Retained chunk file: {chunk_file}")
 
                     # Combine all transcripts
                     combined_transcript = "\n\n".join(all_transcripts)
@@ -359,9 +362,9 @@ class VideoTranscriber:
             else:
                 raise
 
-    def transcribe_audio(self, audio_file: str) -> str:
+    def transcribe_audio(self, audio_file: str, delete_audio: bool = False) -> str:
         """Transcribe audio file using appropriate method (wrapper for backward compatibility)."""
-        return self.transcribe_audio_chunks(audio_file)
+        return self.transcribe_audio_chunks(audio_file, delete_audio)
 
     def dry_run(self, video_id: str, output_file: str, delete_audio: bool) -> None:
         """Perform dry run without actual processing."""
@@ -436,7 +439,7 @@ class VideoTranscriber:
                 self.logger.info(f"Downloaded audio to: {audio_file}")
 
                 # Transcribe audio (with chunking if needed)
-                transcription = self.transcribe_audio(audio_file)
+                transcription = self.transcribe_audio(audio_file, delete_audio)
 
                 # Save transcription
                 with open(output_file, 'w', encoding='utf-8') as f:
