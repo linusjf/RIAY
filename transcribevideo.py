@@ -3,7 +3,6 @@
 Transcribe YouTube videos using OpenAI Whisper API.
 Downloads audio from YouTube and sends to Whisper for transcription.
 """
-
 import argparse
 import sys
 import subprocess
@@ -14,6 +13,7 @@ import urllib.request
 import urllib.error
 from typing import List, Optional
 import os
+from importlib.metadata import PackageNotFoundError, version
 
 # Add the script directory to the path to import local modules
 SCRIPT_DIR = Path(__file__).parent.absolute()
@@ -42,17 +42,17 @@ class VideoTranscriber:
 
     def __init__(self, config_path: Optional[str] = None) -> None:
         """Initialize with configuration."""
-        config = ConfigEnv(config_path if config_path else str(SCRIPT_DIR / "config.env"), 
+        config = ConfigEnv(config_path if config_path else str(SCRIPT_DIR / "config.env"),
                           override=True, include_os_env=True)
-        
+
         self.logger = LoggerFactory.get_logger(
             name=os.path.basename(__file__),
             log_to_file=config.get(ConfigConstants.LOGGING, False)
         )
-        
+
         self.config = config
         self.script_dir = SCRIPT_DIR
-        
+
         # Load configuration values
         self.required_vars = [
             ConfigConstants.OPENAI_API_KEY,
@@ -67,17 +67,18 @@ class VideoTranscriber:
             ConfigConstants.ASR_INITIAL_PROMPT,
             ConfigConstants.ASR_BEAM_SIZE
         ]
-        
+
         self.logger.debug(f"Initialized VideoTranscriber with config_path={config_path}")
+
 
     @staticmethod
     def is_package_installed(package_name: str) -> bool:
-        """Check if a Python package is installed."""
         try:
-            __import__(package_name)
+            version(package_name)
             return True
-        except ImportError:
+        except PackageNotFoundError:
             return False
+
 
     def check_video_exists(self, video_id: str) -> bool:
         """Check if a YouTube video exists and is accessible."""
@@ -265,8 +266,8 @@ class VideoTranscriber:
                         "--output_format", "txt",
                         "--language", "en",
                         "--initial_prompt", self.config.get(ConfigConstants.ASR_INITIAL_PROMPT, ''),
-                        "--carry_initial_propmt", str(self.config.get(ConfigConstants.ASR_CARRY_INITIAL_PROMPT, 'false')).lower(),
                         "--beam_size", str(self.config.get(ConfigConstants.ASR_BEAM_SIZE, 5)),
+                        "--carry_initial_prompt", str(self.config.get(ConfigConstants.ASR_CARRY_INITIAL_PROMPT, False)).capitalize(),
                         audio_file
                     ]
 
@@ -386,17 +387,17 @@ class VideoTranscriber:
                 return False
         return True
 
-    def transcribe_video(self, video_id: str, output_file: Optional[str] = None, 
-                        verbose: bool = False, debug: bool = False, 
+    def transcribe_video(self, video_id: str, output_file: Optional[str] = None,
+                        verbose: bool = False, debug: bool = False,
                         dry_run: bool = False, delete_audio: bool = False) -> bool:
         """Main method to transcribe a video."""
-        
+
         # Set logging level based on arguments
         if debug:
             self.logger.setLevel(logging.DEBUG)
         elif verbose:
             self.logger.setLevel(logging.INFO)
-        
+
         # Check required configuration
         if not self.check_required_config():
             return False
@@ -428,7 +429,8 @@ class VideoTranscriber:
                     [str(download_audio_script), video_id],
                     capture_output=True,
                     text=True,
-                    check=True
+                    check=True,
+                    timeout=60
                 )
                 audio_file = result.stdout.strip()
 
@@ -531,10 +533,10 @@ Examples:
 def main() -> None:
     """Main function."""
     args = parse_args()
-    
+
     # Create transcriber instance
     transcriber = VideoTranscriber()
-    
+
     # Transcribe the video
     success = transcriber.transcribe_video(
         video_id=args.video_id,
@@ -544,7 +546,7 @@ def main() -> None:
         dry_run=args.dry_run,
         delete_audio=args.delete_audio
     )
-    
+
     if not success:
         sys.exit(1)
 

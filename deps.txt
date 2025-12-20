@@ -41,3 +41,4 @@ torch==2.6.0+cu124
 typing_extensions==4.13.1
 urllib3==2.3.0
 webencodings==0.5.1
+faster-whisper==1.2.1
