@@ -337,7 +337,7 @@ function main() {
   local captions_file="${CAPTIONS_OUTPUT_DIR}/${VIDEO_ID}.en.txt"
 
   if "${TRANSCRIBE_VIDEOS:-false}"; then
-    if ! "${SCRIPT_DIR}/transcribevideo" "$VIDEO_ID" -o "$captions_file"; then
+    if ! "${SCRIPT_DIR}/transcribevideo.py" "$VIDEO_ID" -o "$captions_file"; then
       die "Error transcribing captions for ${VIDEO_ID}"
     fi
   else
