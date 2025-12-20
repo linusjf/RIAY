@@ -14,6 +14,7 @@ import urllib.error
 from typing import List, Optional
 import os
 from importlib.metadata import PackageNotFoundError, version
+from tenacity import retry, wait_exponential, stop_after_attempt
 
 # Add the script directory to the path to import local modules
 SCRIPT_DIR = Path(__file__).parent.absolute()
@@ -70,6 +71,34 @@ class VideoTranscriber:
 
         self.logger.debug(f"Initialized VideoTranscriber with config_path={config_path}")
 
+    @retry(wait=wait_exponential(multiplier=1, min=2, max=10), stop=stop_after_attempt(3))
+    def _download_audio_with_retry(self, video_id: str) -> str:
+        """Download audio with exponential retry logic."""
+        download_audio_script = self.script_dir / "downloadaudio"
+        if not download_audio_script.exists():
+            self.logger.error(f"downloadaudio script not found at {download_audio_script}")
+            raise FileNotFoundError(f"downloadaudio script not found at {download_audio_script}")
+
+        self.logger.debug(f"Attempting to download audio for video {video_id}")
+        result = subprocess.run(
+            [str(download_audio_script), video_id],
+            capture_output=True,
+            text=True,
+            check=True,
+            timeout=60
+        )
+        
+        audio_file = result.stdout.strip()
+        
+        if not audio_file:
+            self.logger.error(f"downloadaudio script returned empty output for video {video_id}")
+            raise ValueError(f"downloadaudio script returned empty output for video {video_id}")
+            
+        if not Path(audio_file).exists():
+            self.logger.error(f"Downloaded audio file does not exist: {audio_file}")
+            raise FileNotFoundError(f"Downloaded audio file does not exist: {audio_file}")
+            
+        return audio_file
 
     @staticmethod
     def is_package_installed(package_name: str) -> bool:
@@ -419,25 +448,8 @@ class VideoTranscriber:
         self.logger.info(f"Downloading audio for video ID: {video_id}")
         if self.check_video_exists(video_id):
             try:
-                # Download audio using downloadaudio script
-                download_audio_script = self.script_dir / "downloadaudio"
-                if not download_audio_script.exists():
-                    self.logger.error(f"downloadaudio script not found at {download_audio_script}")
-                    return False
-
-                result = subprocess.run(
-                    [str(download_audio_script), video_id],
-                    capture_output=True,
-                    text=True,
-                    check=True,
-                    timeout=60
-                )
-                audio_file = result.stdout.strip()
-
-                if not audio_file or not Path(audio_file).exists():
-                    self.logger.error(f"Failed to download audio for video {video_id}")
-                    return False
-
+                # Download audio using downloadaudio script with retry logic
+                audio_file = self._download_audio_with_retry(video_id)
                 self.logger.info(f"Downloaded audio to: {audio_file}")
 
                 # Transcribe audio (with chunking if needed)
@@ -462,7 +474,7 @@ class VideoTranscriber:
                 return True
 
             except subprocess.CalledProcessError as e:
-                self.logger.error(f"Failed to download audio: {e}")
+                self.logger.error(f"Failed to download audio after retries: {e}")
                 if e.stderr:
                     self.logger.error(f"Error output: {e.stderr}")
                 return False
