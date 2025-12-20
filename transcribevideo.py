@@ -9,9 +9,11 @@ import sys
 import subprocess
 import time
 import logging
+import tempfile
 from pathlib import Path
 import urllib.request
 import urllib.error
+from typing import List, Tuple
 
 # Add the script directory to the path to import local modules
 SCRIPT_DIR = Path(__file__).parent.absolute()
@@ -31,6 +33,7 @@ except ImportError:
 VERSION = "1.0.0"
 SCRIPT_NAME = Path(__file__).name
 FASTER_WHISPER = "faster-whisper"
+MAX_CHUNK_DURATION = 600  # 10 minutes in seconds
 
 # Initialize logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -145,6 +148,73 @@ def check_local_prerequisites() -> bool:
         return False
 
 
+def get_audio_duration(audio_file: str) -> float:
+    """Get the duration of an audio file in seconds using ffprobe."""
+    try:
+        cmd = [
+            "ffprobe",
+            "-v", "error",
+            "-show_entries", "format=duration",
+            "-of", "default=noprint_wrappers=1:nokey=1",
+            audio_file
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+        duration = float(result.stdout.strip())
+        logger.info(f"Audio file duration: {duration:.2f} seconds ({duration/60:.2f} minutes)")
+        return duration
+    except (subprocess.CalledProcessError, FileNotFoundError, ValueError) as e:
+        logger.error(f"Failed to get audio duration: {e}")
+        raise RuntimeError(f"Could not determine audio file duration: {e}")
+
+
+def split_audio_file(audio_file: str, chunk_duration: int = MAX_CHUNK_DURATION) -> List[str]:
+    """
+    Split audio file into chunks of specified duration.
+    Returns list of chunk file paths.
+    """
+    try:
+        # Get total duration
+        total_duration = get_audio_duration(audio_file)
+        
+        # Calculate number of chunks needed
+        num_chunks = int(total_duration // chunk_duration) + (1 if total_duration % chunk_duration > 0 else 0)
+        
+        if num_chunks <= 1:
+            logger.info(f"Audio file is {total_duration/60:.2f} minutes, no splitting needed")
+            return [audio_file]
+        
+        logger.info(f"Splitting {total_duration/60:.2f} minute audio into {num_chunks} chunks")
+        
+        audio_path = Path(audio_file)
+        chunk_files = []
+        
+        for i in range(num_chunks):
+            start_time = i * chunk_duration
+            chunk_filename = f"{audio_path.stem}_chunk_{i:03d}{audio_path.suffix}"
+            chunk_file = audio_path.parent / chunk_filename
+            
+            cmd = [
+                "ffmpeg",
+                "-i", audio_file,
+                "-ss", str(start_time),
+                "-t", str(chunk_duration),
+                "-c", "copy",
+                "-y",  # Overwrite output file if exists
+                str(chunk_file)
+            ]
+            
+            logger.debug(f"Creating chunk {i+1}/{num_chunks}: {chunk_filename}")
+            subprocess.run(cmd, capture_output=True, check=True)
+            chunk_files.append(str(chunk_file))
+        
+        logger.info(f"Created {len(chunk_files)} chunk files")
+        return chunk_files
+        
+    except Exception as e:
+        logger.error(f"Failed to split audio file: {e}")
+        raise
+
+
 def transcribe_via_openai_api(audio_file: str, config: ConfigEnv) -> str:
     """Transcribe audio using OpenAI Whisper API directly."""
     try:
@@ -245,40 +315,79 @@ def transcribe_locally(audio_file: str, config: ConfigEnv) -> str:
             raise RuntimeError("Local transcription prerequisites not met")
 
 
-def transcribe_audio(audio_file: str, config: ConfigEnv) -> str:
-    """Transcribe audio file using appropriate method."""
+def transcribe_audio_chunks(audio_file: str, config: ConfigEnv) -> str:
+    """Transcribe audio file, splitting into chunks if longer than MAX_CHUNK_DURATION."""
     logger.info("Transcribing with Whisper...")
     start_time = time.time()
-
+    
     try:
-        if config.get(ConfigConstants.TRANSCRIBE_LOCALLY, False):
-            logger.info("Transcribing locally... This may take longer than usual...")
-            try:
-                return transcribe_locally(audio_file, config)
-            except Exception as e:
-                if config.get(ConfigConstants.ENABLE_FAILOVER_MODE, True):
-                    logger.warning(f"Local transcription failed: {e}. Trying OpenAI API instead...")
-                    # Convert to FLAC for OpenAI API if needed
-                    flac_audio = Path(audio_file).with_suffix('.flac')
+        # Check if we should use local transcription
+        use_local = config.get(ConfigConstants.TRANSCRIBE_LOCALLY, False)
+        
+        # Get audio duration and split if needed
+        try:
+            duration = get_audio_duration(audio_file)
+            if duration > MAX_CHUNK_DURATION:
+                logger.info(f"Audio file is {duration/60:.2f} minutes, splitting into chunks")
+                chunk_files = split_audio_file(audio_file)
+                
+                # Transcribe each chunk
+                all_transcripts = []
+                for i, chunk_file in enumerate(chunk_files):
+                    logger.info(f"Transcribing chunk {i+1}/{len(chunk_files)}")
+                    
+                    if use_local:
+                        chunk_transcript = transcribe_locally(chunk_file, config)
+                    else:
+                        chunk_transcript = transcribe_via_openai_api(chunk_file, config)
+                    
+                    all_transcripts.append(chunk_transcript)
+                    
+                    # Clean up chunk file
                     try:
-                        subprocess.run(
-                            ["ffmpeg", "-i", audio_file, "-compression_level", "8", str(flac_audio)],
-                            capture_output=True,
-                            check=True
-                        )
-                        result = transcribe_via_openai_api(str(flac_audio), config)
-                        flac_audio.unlink(missing_ok=True)
-                        return result
-                    except Exception as e2:
-                        logger.error(f"OpenAI API fallback also failed: {e2}")
-                        raise
+                        Path(chunk_file).unlink()
+                        logger.debug(f"Deleted chunk file: {chunk_file}")
+                    except OSError as e:
+                        logger.warning(f"Could not delete chunk file {chunk_file}: {e}")
+                
+                # Combine all transcripts
+                combined_transcript = "\n\n".join(all_transcripts)
+                logger.info(f"Combined {len(chunk_files)} chunks into final transcript")
+                
+                duration = time.time() - start_time
+                logger.info(f"Transcribed video in {duration:.2f} seconds")
+                return combined_transcript
+            else:
+                # File is short enough, transcribe normally
+                logger.info(f"Audio file is {duration/60:.2f} minutes, transcribing as single file")
+                if use_local:
+                    return transcribe_locally(audio_file, config)
                 else:
-                    raise
+                    return transcribe_via_openai_api(audio_file, config)
+                    
+        except Exception as e:
+            logger.error(f"Failed to process audio file: {e}")
+            raise
+            
+    except Exception as e:
+        # Handle failover mode for API transcription
+        if not use_local and config.get(ConfigConstants.ENABLE_FAILOVER_MODE, True):
+            logger.warning(f"Chunked transcription failed: {e}. Trying single file transcription...")
+            try:
+                if use_local:
+                    return transcribe_locally(audio_file, config)
+                else:
+                    return transcribe_via_openai_api(audio_file, config)
+            except Exception as e2:
+                logger.error(f"Fallback transcription also failed: {e2}")
+                raise
         else:
-            return transcribe_via_openai_api(audio_file, config)
-    finally:
-        duration = time.time() - start_time
-        logger.info(f"Transcribed video in {duration:.2f} seconds")
+            raise
+
+
+def transcribe_audio(audio_file: str, config: ConfigEnv) -> str:
+    """Transcribe audio file using appropriate method (wrapper for backward compatibility)."""
+    return transcribe_audio_chunks(audio_file, config)
 
 
 def dry_run(video_id: str, output_file: str, config: ConfigEnv) -> None:
@@ -286,6 +395,7 @@ def dry_run(video_id: str, output_file: str, config: ConfigEnv) -> None:
     logger.info(f"DRY RUN: Would process video ID: {video_id}")
     logger.info(f"DRY RUN: Would create output file: {output_file}")
     logger.info("DRY RUN: Would download audio using downloadaudio script")
+    logger.info("DRY RUN: Would check audio duration and split if > 10 minutes")
     logger.info("DRY RUN: Would transcribe and/or translate audio using Whisper API")
     logger.info("DRY RUN: Would clean up temporary files")
 
@@ -361,7 +471,9 @@ def main() -> None:
                 logger.error(f"Failed to download audio for video {args.video_id}")
                 sys.exit(1)
 
-            # Transcribe audio
+            logger.info(f"Downloaded audio to: {audio_file}")
+
+            # Transcribe audio (with chunking if needed)
             transcription = transcribe_audio(audio_file, config)
 
             # Save transcription
@@ -373,6 +485,7 @@ def main() -> None:
             # Clean up audio file
             try:
                 Path(audio_file).unlink()
+                logger.debug(f"Deleted audio file: {audio_file}")
             except OSError as e:
                 logger.warning(f"Could not delete audio file {audio_file}: {e}")
 
