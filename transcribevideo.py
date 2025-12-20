@@ -363,14 +363,17 @@ class VideoTranscriber:
         """Transcribe audio file using appropriate method (wrapper for backward compatibility)."""
         return self.transcribe_audio_chunks(audio_file)
 
-    def dry_run(self, video_id: str, output_file: str) -> None:
+    def dry_run(self, video_id: str, output_file: str, delete_audio: bool) -> None:
         """Perform dry run without actual processing."""
         self.logger.info(f"DRY RUN: Would process video ID: {video_id}")
         self.logger.info(f"DRY RUN: Would create output file: {output_file}")
         self.logger.info("DRY RUN: Would download audio using downloadaudio script")
         self.logger.info("DRY RUN: Would check audio duration and split if > 10 minutes")
         self.logger.info("DRY RUN: Would transcribe and/or translate audio using Whisper API")
-        self.logger.info("DRY RUN: Would clean up temporary files")
+        if delete_audio:
+            self.logger.info("DRY RUN: Would delete audio files after transcription")
+        else:
+            self.logger.info("DRY RUN: Would retain audio files after transcription")
 
     def check_required_config(self) -> bool:
         """Check if all required configuration variables are present."""
@@ -382,7 +385,7 @@ class VideoTranscriber:
 
     def transcribe_video(self, video_id: str, output_file: Optional[str] = None, 
                         verbose: bool = False, debug: bool = False, 
-                        dry_run: bool = False) -> bool:
+                        dry_run: bool = False, delete_audio: bool = False) -> bool:
         """Main method to transcribe a video."""
         
         # Set logging level based on arguments
@@ -405,7 +408,7 @@ class VideoTranscriber:
 
         # Dry run
         if dry_run:
-            self.dry_run(video_id, output_file)
+            self.dry_run(video_id, output_file, delete_audio)
             return True
 
         # Check if video exists
@@ -441,12 +444,15 @@ class VideoTranscriber:
 
                 self.logger.info(f"Transcription saved to: {output_file}")
 
-                # Clean up audio file
-                try:
-                    Path(audio_file).unlink()
-                    self.logger.debug(f"Deleted audio file: {audio_file}")
-                except OSError as e:
-                    self.logger.warning(f"Could not delete audio file {audio_file}: {e}")
+                # Clean up audio file only if delete_audio is True
+                if delete_audio:
+                    try:
+                        Path(audio_file).unlink()
+                        self.logger.info(f"Deleted audio file: {audio_file}")
+                    except OSError as e:
+                        self.logger.warning(f"Could not delete audio file {audio_file}: {e}")
+                else:
+                    self.logger.info(f"Audio file retained: {audio_file}")
 
                 return True
 
@@ -472,6 +478,7 @@ def parse_args() -> argparse.Namespace:
 Examples:
   %(prog)s dQw4w9WgXcQ
   %(prog)s -v dQw4w9WgXcQ -o custom_output.txt
+  %(prog)s dQw4w9WgXcQ --delete-audio
         """
     )
 
@@ -504,6 +511,12 @@ Examples:
     )
 
     parser.add_argument(
+        "--delete-audio",
+        action="store_true",
+        help="Delete audio files after transcription (default: retain audio files)"
+    )
+
+    parser.add_argument(
         "--version",
         action="version",
         version=f"%(prog)s {VERSION}"
@@ -525,7 +538,8 @@ def main() -> None:
         output_file=args.output,
         verbose=args.verbose,
         debug=args.debug,
-        dry_run=args.dry_run
+        dry_run=args.dry_run,
+        delete_audio=args.delete_audio
     )
     
     if not success:
