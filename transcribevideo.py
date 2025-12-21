@@ -14,7 +14,7 @@ import urllib.error
 from typing import List, Optional
 import os
 from importlib.metadata import PackageNotFoundError, version
-from tenacity import retry, wait_exponential, stop_after_attempt
+from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 
 # Add the script directory to the path to import local modules
 SCRIPT_DIR = Path(__file__).parent.absolute()
@@ -36,6 +36,7 @@ VERSION = "1.0.0"
 SCRIPT_NAME = Path(__file__).name
 FASTER_WHISPER = "faster-whisper"
 MAX_CHUNK_DURATION = 600  # 10 minutes in seconds
+OPENAI_TIMEOUT = 30  # Timeout in seconds for OpenAI API calls
 
 
 class VideoTranscriber:
@@ -222,11 +223,17 @@ class VideoTranscriber:
             self.logger.error(f"Failed to split audio file: {e}")
             raise
 
+    @retry(
+        wait=wait_exponential(multiplier=1, min=2, max=10),
+        stop=stop_after_attempt(3),
+        retry=retry_if_exception_type((TimeoutError, ConnectionError, Exception))
+    )
     def transcribe_via_openai_api(self, audio_file: str) -> str:
-        """Transcribe audio using OpenAI Whisper API directly."""
+        """Transcribe audio using OpenAI Whisper API directly with timeout and retry logic."""
         try:
             # Import OpenAI client
             from openai import OpenAI
+            import httpx
 
             # Get base URL and endpoint from config
             base_url = self.config.get(ConfigConstants.ASR_LLM_BASE_URL)
@@ -239,22 +246,34 @@ class VideoTranscriber:
 
             self.logger.info(f"Transcribing with OpenAI Whisper API using endpoint: {full_url}")
 
-            # Initialize OpenAI client with API key and custom base URL
+            # Initialize OpenAI client with API key, custom base URL, and timeout
             client = OpenAI(
                 api_key=self.config.get(ConfigConstants.ASR_LLM_API_KEY),
-                base_url=full_url
+                base_url=full_url,
+                timeout=httpx.Timeout(OPENAI_TIMEOUT, connect=10.0)  # 30 second timeout, 10 second connect timeout
             )
 
             # Open the audio file
             with open(audio_file, 'rb') as audio:
-                # Call the OpenAI Whisper API
-                response = client.audio.transcriptions.create(
-                    model=self.config.get(ConfigConstants.ASR_LLM_MODEL),
-                    file=audio,
-                    response_format="text",
-                    prompt=self.config.get(ConfigConstants.ASR_INITIAL_PROMPT, ''),
-                    language="en"
-                )
+                # Call the OpenAI Whisper API with retry logic
+                try:
+                    response = client.audio.transcriptions.create(
+                        model=self.config.get(ConfigConstants.ASR_LLM_MODEL),
+                        file=audio,
+                        response_format="text",
+                        prompt=self.config.get(ConfigConstants.ASR_INITIAL_PROMPT, ''),
+                        language="en"
+                    )
+                except httpx.TimeoutException as e:
+                    self.logger.warning(f"OpenAI API request timed out after {OPENAI_TIMEOUT} seconds: {e}")
+                    raise TimeoutError(f"OpenAI API request timed out after {OPENAI_TIMEOUT} seconds") from e
+                except httpx.ConnectError as e:
+                    self.logger.warning(f"OpenAI API connection error: {e}")
+                    raise ConnectionError(f"OpenAI API connection error: {e}") from e
+                except Exception as e:
+                    # Log and re-raise for retry logic
+                    self.logger.warning(f"OpenAI API error (will retry): {e}")
+                    raise
 
             # The response is already text when response_format="text"
             return response
@@ -262,9 +281,21 @@ class VideoTranscriber:
         except ImportError:
             self.logger.error("OpenAI Python library not installed. Install with: pip install openai")
             raise
-        except Exception as e:
-            self.logger.error(f"OpenAI API transcription failed: {e}")
+        except (TimeoutError, ConnectionError) as e:
+            # These will be retried by the decorator
+            self.logger.warning(f"OpenAI API transient error (will retry): {e}")
             raise
+        except Exception as e:
+            # Check if this is a retryable error
+            error_str = str(e).lower()
+            retryable_errors = ['timeout', 'connection', 'rate limit', 'server error', 'internal error', 'gateway']
+            if any(retry_error in error_str for retry_error in retryable_errors):
+                self.logger.warning(f"Retryable OpenAI API error (will retry): {e}")
+                raise
+            else:
+                # Non-retryable errors (e.g., invalid audio file, authentication error)
+                self.logger.error(f"Non-retryable OpenAI API error: {e}")
+                raise
 
     def transcribe_locally(self, audio_file: str) -> str:
         """Transcribe audio using local installation."""
