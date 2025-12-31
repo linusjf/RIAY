@@ -60,7 +60,7 @@ jobs:
 
       - name: Archive Link Report
         if: ${{ always() && env.ACT != 'true' }}
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: lychee-report
           path: |
